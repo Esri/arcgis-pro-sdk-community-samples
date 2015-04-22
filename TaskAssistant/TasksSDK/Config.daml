@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="TasksSDK.dll" defaultNamespace="TasksSDK" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{5779636e-982b-4e38-b22a-13c80aa70272}" version="1.0" desktopVersion="1.1.3004">
+    <Name>TasksSDK</Name>
+    <Description>Illustrates the Tasks API calls.  The API allows you to open an .esriTasks file, close the current
+    task item or export a task item.</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team</Author>
+    <Company>Esri</Company>
+    <Date>4/1/2015 11:36:42 AM, 2015</Date>
+    <Subject>Framework</Subject>
+  </AddInInfo>
+  <modules>
+    <insertModule id="TasksSDK_Module" className="Module1" autoLoad="false" caption="Module1">
+      <groups>
+        <group id="TasksSDK_Group1" caption="Tasks" appearsOnAddInTab="true">
+          <button refID="TasksSDK_OpenTask" size="large" />
+          <button refID="TasksSDK_CloseTask" size="large" />
+          <button refID="TasksSDK_ExportTask" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="TasksSDK_OpenTask" caption="Open Task" className="OpenTask" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Open Task">Open an esri task file (.esriTasks) and add it as a task item to the project.<disabledText /></tooltip>
+        </button>
+        <button id="TasksSDK_CloseTask" caption="Close Task" className="CloseTask" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" condition="esri_tasks_IsTaskFileLoadedCondition">
+          <tooltip heading="Close Task">Closes the current task<disabledText /></tooltip>
+        </button>
+        <button id="TasksSDK_ExportTask" caption="Export Task" className="ExportTask" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" condition="esri_tasks_HasProjectTasksCondition">
+          <tooltip heading="Export Task">Save the task item as a task file (.esriTasks).<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

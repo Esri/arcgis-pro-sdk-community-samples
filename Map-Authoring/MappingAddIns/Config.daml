@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- //   Copyright 2015 Esri
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       http://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License. -->
+<ArcGIS defaultAssembly="MappingSampleAddIns.dll" defaultNamespace="MappingSampleAddIns" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{cc7881f4-bd27-4d9d-b32b-78b1e3f230c4}" version="1.0" desktopVersion="1.1.3007">
+    <Name>Mapping Sample AddIns</Name>
+    <Description>Adds additions controls to work with a map</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team</Author>
+    <Company>Esri</Company>
+    <Date>4/1/2015 10:53:29 AM, 2015</Date>
+    <Subject>Map Authoring</Subject>
+  </AddInInfo>
+  <modules>
+    <insertModule id="MappingSampleAddIns_Module" className="MappingSampleAddIns.MappingSampleAddIns" autoLoad="false" caption="Mapping Sample AddIns">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="SampleAddIns_Tab1" caption="New Tab">
+          <group refID="SampleAddIns_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid an empty group-->
+        <group id="MappingSampleAddIns_Group1" caption="Mapping" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="MappingSampleAddIns_UpdateBasemap" size="large" />
+          <button refID="MappingSampleAddIns_AddLayer" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="MappingSampleAddIns_UpdateBasemap" caption="Street Basemap" className="MappingSampleAddIns.UpdateBasemap" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Tooltip Heading">Set Basemap layer to AGOL Street Map<disabledText /></tooltip>
+        </button>
+        <button id="MappingSampleAddIns_AddLayer" caption="Add Layer" className="MappingSampleAddIns.AddLayer.AddLayer" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Tooltip Heading">Add New Layer<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

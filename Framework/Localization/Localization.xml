@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Localization</name>
+    </assembly>
+    <members>
+        <member name="T:Localization.DockpaneLocalizedView">
+            <summary>
+            Interaction logic for DockpaneLocalizedView.xaml
+            </summary>
+            <summary>
+            DockpaneLocalizedView
+            </summary>
+        </member>
+        <member name="M:Localization.DockpaneLocalizedView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Localization.DockpaneLocalizedViewModel.#ctor">
+            <summary>
+            Dockpane constructor is used to initialize some sample data
+            </summary>
+        </member>
+        <member name="M:Localization.DockpaneLocalizedViewModel.Show">
+            <summary>
+            Show the DockPane.
+            </summary>
+        </member>
+        <member name="P:Localization.DockpaneLocalizedViewModel.SampleRecords">
+            <summary>
+            Sample Records list of sample record objects
+            </summary>
+        </member>
+        <member name="P:Localization.DockpaneLocalizedViewModel.Heading">
+            <summary>
+            Text shown near the top of the DockPane.
+            </summary>
+        </member>
+        <member name="T:Localization.DockpaneLocalized_ShowButton">
+            <summary>
+            Button implementation to show the DockPane.
+            </summary>
+        </member>
+        <member name="T:Localization.Module1">
+            <summary>
+            This localization sample shows how to 'Globalize' an add-in by providing an add-in with 
+            text translated into different languages and showing support for different regions (locale).
+            A ProTutorial based on this sample is also available.
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            2. Click Start button to open ArcGIS Pro.
+            3. Open the "Add-ins tab" on the ArcGIS Pro ribbon to see the sample button and dockpane in English.  Close ArcGIS Pro.
+            
+            __4. Testing other languages__: in order to test other languages you need to install the proper language pack in ArcGIS Pro first.  Once you have additional languages installed you can change ArcGIS Pro's default language in the ArcGIS Pro Options dialog: 
+            ![package](Images/Localization/ArcGISoptions.png)
+            
+            In order to view this sample you have to install the German language pack for ArcGIS Pro and Windows.  Change the language option to German and restart ArcGIS Pro.  Open the 'Registrierkarte Add-in' tab and verify that the language of you add-in is correct.
+            ![package](Images/Localization/Test4.png)
+            
+            Please note that the date and the currency field does not reflect he language change.  The reason is that their settings are not defined by the language but instead by the region.
+            
+            __5. Testing other region settings__: in order to change your region please use the Windows control panel's Region settings dialog and change the format to 'German' (please note that you might have to install a language pack for this to work):  
+            ![package](Images/Localization/Region.png)
+            
+            After you change your region setting, debug your add-in (with the language setting for German still in place) and verify that the date and currency columns are now defined consistently with the region settings of Windows. 
+            ![package](Images/Localization/Test5.png)
+            </remarks>
+        </member>
+        <member name="P:Localization.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="T:Localization.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Localization.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Localization.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Localization.Properties.Resources.DockPaneCol1">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:Localization.Properties.Resources.DockPaneCol2">
+            <summary>
+              Looks up a localized string similar to Birthdate.
+            </summary>
+        </member>
+        <member name="P:Localization.Properties.Resources.DockPaneCol3">
+            <summary>
+              Looks up a localized string similar to Payment.
+            </summary>
+        </member>
+        <member name="P:Localization.Properties.Resources.DockPaneCol4">
+            <summary>
+              Looks up a localized string similar to Location.
+            </summary>
+        </member>
+        <member name="P:Localization.Properties.Resources.DockPaneTitle">
+            <summary>
+              Looks up a localized string similar to This is my sample grid.
+            </summary>
+        </member>
+        <member name="T:Localization.SampleRecord">
+            <summary>
+            Sample data is stored in a 'Sample record'
+            </summary>
+        </member>
+        <member name="P:Localization.SampleRecord.SampleRecords">
+            <summary>
+            returns some sample data
+            </summary>
+        </member>
+    </members>
+</doc>

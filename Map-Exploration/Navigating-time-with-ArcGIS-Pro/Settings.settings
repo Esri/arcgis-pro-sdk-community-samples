@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TimeNavigation" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PlaybackSpeed" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">-2000</Value>
+    </Setting>
+    <Setting Name="StepUnit" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="StepValue" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

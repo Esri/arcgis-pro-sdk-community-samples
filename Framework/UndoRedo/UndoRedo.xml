@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PreRel_UndoRedo</name>
+    </assembly>
+    <members>
+        <member name="T:PreRel_UndoRedo.Module1">
+            <summary>
+            This sample demonstrates how to add operations onto the undo/redo stack.    ArcGIS Pro contains multiple undo/redo stacks.  Generally one exists for each dockpane.
+            The undo/redo stack is exposed using the OperationManager property on the Dockpane.  Custom operations (inheriting from 
+            ArcGIS.Desktop.Framework.Contracts.Operations) are pushed onto the OperationManager.
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            2. Click Start button to open ArcGIS Pro.
+            3. ArcGIS Pro will open.
+            4. Navigate to the Add-Ins tab
+            5. Click the Show Sample DockPane button in the Undo_Redo group.  The Sample dockpane should be displayed
+            6. Use the Fixed Zoom In and Fixed Zoom Out buttons to see zoom in and zoom out operations added to the undo stack for the sample dockpane.
+            7. Use the Undo/Redo/Remove Operation/Clear All Operations buttons to manipulate the undo stack.
+            </remarks>
+        </member>
+        <member name="P:PreRel_UndoRedo.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="T:PreRel_UndoRedo.SampleDockPaneView">
+            <summary>
+            Interaction logic for SampleDockPaneView.xaml
+            </summary>
+            <summary>
+            SampleDockPaneView
+            </summary>
+        </member>
+        <member name="M:PreRel_UndoRedo.SampleDockPaneView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:PreRel_UndoRedo.SampleDockPaneViewModel.Show">
+            <summary>
+            Show the DockPane.
+            </summary>
+        </member>
+        <member name="F:PreRel_UndoRedo.SampleDockPaneViewModel._heading">
+            <summary>
+            Text shown near the top of the DockPane.
+            </summary>
+        </member>
+        <member name="T:PreRel_UndoRedo.SampleDockPane_ShowButton">
+            <summary>
+            Button implementation to show the DockPane.
+            </summary>
+        </member>
+    </members>
+</doc>

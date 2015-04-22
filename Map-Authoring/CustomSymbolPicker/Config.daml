@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="CustomSymbolPicker.dll" defaultNamespace="CustomSymbolPicker" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{5c34edd0-a2d6-4085-b105-edebd058a002}" version="1.0" desktopVersion="1.1.3040">
+    <Name>CustomSymbolPicker</Name>
+    <Description>Search symbols in styles, create a symbol gallery and apply symbol to a feature layer</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>deep4730</Author>
+    <Company>Esri</Company>
+    <Date>4/11/2015 11:38:37 AM, 2015</Date>
+    <Subject>Map Authoring</Subject>
+
+  </AddInInfo>
+  <modules>
+    <insertModule id="CustomSymbolPicker_Module" className="SymbolPickerModule" autoLoad="true" caption="SymbolPickerModule">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="CustomSymbolPicker_Tab1" caption="New Tab">
+          <group refID="CustomSymbolPicker_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="CustomSymbolPicker_Group1" caption="Carto" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="CustomSymbolPicker_Gallery_Search_Dockpane_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="CustomSymbolPicker_Gallery_Search_Dockpane_ShowButton" caption="Custom Symbol Picker" className="Gallery_Search_Dockpane_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+          <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="CustomSymbolPicker_Gallery_Search_Dockpane" caption="Custom Symbol Picker" className="Gallery_Search_DockpaneViewModel" keytip="DockPane" initiallyVisible="true" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="Gallery_Search_DockpaneView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

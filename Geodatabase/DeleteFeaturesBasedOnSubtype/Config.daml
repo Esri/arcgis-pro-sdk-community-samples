@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="DeleteFeaturesBasedOnSubtype.dll" defaultNamespace="DeleteFeaturesBasedOnSubtype" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{04b9287c-e236-4a43-b94f-bd8678138e6a}" version="1.0" desktopVersion="1.1.2923">
+    <Name>DeleteFeaturesBasedOnSubtype</Name>
+    <Subject>Geodatabase</Subject>
+    <Description>An Addin which will list all subtypes for a Feature Class and allow deletion of all features which have the selected subtype</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team</Author>
+    <Company>Esri</Company>
+    <Date>3/3/2015 11:30:56 AM, 2015</Date>
+  </AddInInfo>
+  <dependencies>
+    <!--<dependency name="ADCore.daml" />-->
+    <!--<dependency name="ADMapping.daml" />-->
+    <!--<dependency name="Editing.daml" />-->
+  </dependencies>
+  <categories></categories>
+  <!-- uncomment to add a key accelerator/short cut for the control -->
+  <accelerators>
+    <!--<insertAccelerator refID="Your_Control_Id_Here" flags="Ctrl" key="F1" />-->
+  </accelerators>
+  <modules>
+    <insertModule id="acme_Module_113056" className="DeleteBasedOnSubtypeModule" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="Module1_Tab1_Id" caption="New Tab">
+          <group refID="acme_Group_113056"/>
+        </tab>-->
+      </tabs>
+      <tabGroups></tabGroups>
+      <toolbars></toolbars>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="acme_Group_113056" caption="Data Management" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="acme_DockPaneButton_154441" size="large" />
+          <comboBox refID="DeleteFeaturesBasedOnSubtype_SubtypesComboBox" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <comboBox id="DeleteFeaturesBasedOnSubtype_SubtypesComboBox" caption="Delete All Features Having Subtype" className="SubtypesComboBox" condition="esri_mapping_mapPane" itemWidth="140" extendedCaption="Extended Caption" isEditable="false" isReadOnly="true" resizable="true">
+          <tooltip heading="Tooltip Heading">Subtype List<disabledText /></tooltip>
+        </comboBox>
+      </controls>
+      <galleries></galleries>
+      <menus></menus>
+      <splitButtons></splitButtons>
+      <palettes></palettes>
+      <panes></panes>
+      <dockPanes></dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

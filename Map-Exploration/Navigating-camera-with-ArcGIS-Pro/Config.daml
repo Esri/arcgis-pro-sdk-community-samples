@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="CameraNavigation.dll" defaultNamespace="CameraNavigation" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{ce2d1bec-a155-4e87-8268-164f4d5787c6}" version="1.0" desktopVersion="1.0.1611">
+    <Name>Navigating camera with ArcGIS Pro</Name>
+    <Description>Navigating camera with ArcGIS Pro</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>Esri, http://www.esri.com</Company>
+    <Date>11/13/2014</Date>
+    <Subject>Map-Exploration</Subject>
+  </AddInInfo>
+  <modules>
+    <insertModule id="CameraNavigation_Module" className="CameraModule" autoLoad="true" caption="Camera">
+      <tabs>
+        <tab id="CameraNavigation_CameraTab" caption="CAMERA" condition="esri_mapping_mapPane">
+          <group refID="CameraNavigation_CameraGroup" />
+        </tab>
+      </tabs>
+      <groups>
+        <group id="CameraNavigation_CameraGroup" caption="CAMERA">
+          <button refID="CameraNavigation_CameraPane_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <button id="CameraNavigation_CameraPane_ShowButton" caption="Show Camera Properties " className="CameraNavigation.CameraPane_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Show Camera Properties">
+            Show Camera Properties<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="CameraNavigation_Camera_CameraPane" caption="Camera Properties" className="CameraNavigation.CameraPaneViewModel" keytip="DockPane" initiallyVisible="true" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="CameraNavigation.CameraPane" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

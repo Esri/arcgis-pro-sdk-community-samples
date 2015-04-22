@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--//   Copyright 2015 Esri
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       http://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License. 
+-->
+<ArcGIS defaultAssembly="ProgressDialog.dll" defaultNamespace="ProgressDialog" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{82baa3e5-3fc2-4f5f-9a44-fd7d23ed709a}" version="1.0" desktopVersion="1.0.1140">
+    <Name>ProgressDialog</Name>
+    <Description>ProgressDialog description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>charlesm</Author>
+    <Company>Acme</Company>
+    <Date>4/16/2015 10:12:47 AM, 2015</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ProgressDialog_Module" className="ProgressDialogModule" autoLoad="false" caption="ProgressDialogModule">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="ProgressDialog_Tab1" caption="New Tab">
+          <group refID="ProgressDialog_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ProgressDialog_Group1" caption="Progress Dialog Test" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <splitButton refID="ProgressDialog_RunDialogButtons" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ProgressDialog_RunDialogButtons_Items_Button1" caption="Simple Progress Dialog" className="RunDialogButtonsSimple" loadOnClick="true" smallImage="Images\GenericButtonBlack16.png" largeImage="Images\GenericButtonBlack32.png">
+          <tooltip heading="Shows a Simple Progress Dialog">
+            Shows a Simple Progress Dialog<disabledText /></tooltip>
+        </button>
+        <button id="ProgressDialog_RunDialogButtons_Items_Button2" caption="Cancelable Progress Dlg" className="RunDialogButtonsCancel" loadOnClick="true" smallImage="Images\GenericButtonBlack16.png" largeImage="Images\GenericButtonBlack32.png">
+          <tooltip heading="Shows a Simple Progress Dialog">
+            Shows a Simple Progress Dialog<disabledText /></tooltip>
+        </button>
+        <button id="ProgressDialog_RunDialogButtons_Items_Button3" caption="Manual Progress Dlg" className="RunDialogButtonsManual" loadOnClick="true" smallImage="Images\GenericButtonBlack16.png" largeImage="Images\GenericButtonBlack32.png">
+          <tooltip heading="Shows a Manually managed Progress Dialog">Shows a Manually managed Progress Dialog<disabledText />
+          </tooltip>
+        </button>
+      </controls>
+      <splitButtons>
+        <splitButton id="ProgressDialog_RunDialogButtons">
+          <button refID="ProgressDialog_RunDialogButtons_Items_Button1" />
+          <button refID="ProgressDialog_RunDialogButtons_Items_Button2" />
+          <button refID="ProgressDialog_RunDialogButtons_Items_Button3" />
+        </splitButton>
+      </splitButtons>
+    </insertModule>
+  </modules>
+</ArcGIS>

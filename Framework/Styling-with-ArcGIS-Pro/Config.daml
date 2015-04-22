@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--//   Copyright 2014 Esri
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       http://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License. 
+-->
+<ArcGIS defaultAssembly="ControlStyles.dll" defaultNamespace="ControlStyles" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{b985446c-1ee8-45f2-8d10-222eab8a0bde}" version="1.0" desktopVersion="1.0.1420">
+    <Name>ControlStyles</Name>
+    <Description>ArcGIS Pro UI Design</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>Esri</Company>
+    <Date>9/9/2014 2:58:19 PM, 2014</Date>
+    <Subject>Framework</Subject>
+  </AddInInfo>
+  <modules>
+    <insertModule id="ControlStyles_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="ControlStyles_Tab1" caption="UI Design">
+          <group refID="ControlStyles_Group1" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ControlStyles_Group1" caption="ArcGIS Pro UI Design" appearsOnAddInTab="false">
+          <!-- host controls within groups -->
+          <button refID="ControlStyles_ArcGISProControlStylesDockPane_ShowButton" size="large" />
+          <!--<button refID="ControlStyles_FontUsage_ArcGISProFontUsageDockPane_ShowButton" size="large" />-->
+          <button refID="ControlStyles_Colors_ArcGISProColorsDockpane_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ControlStyles_ArcGISProControlStylesDockPane_ShowButton" caption="Control Styles" className="ArcGISProControlStylesDockPane_ShowButton" loadOnClick="true" smallImage="Images\style-icon16.png" largeImage="Images\style-icon32.png">
+          <tooltip heading="Show Dockpane">ArcGIS Pro Control Styles<disabledText /></tooltip>
+        </button>
+        <button id="ControlStyles_FontUsage_ArcGISProFontUsageDockPane_ShowButton" caption="Font Usage" className="ControlStyles.FontUsage.ArcGISProFontUsageDockPane_ShowButton" loadOnClick="true" smallImage="Images\Fonts-icon16.png" largeImage="Images\Fonts-icon32.png">
+          <tooltip heading="Show Dockpane">ArcGIS Pro Font Usage<disabledText /></tooltip>
+        </button>
+        <button id="ControlStyles_Colors_ArcGISProColorsDockpane_ShowButton" caption="Colors " className="ControlStyles.Colors.ArcGISProColorsDockpane_ShowButton" loadOnClick="true" smallImage="Images\Actions-fill-color-icon16.png" largeImage="Images\Actions-fill-color-icon32.png">
+          <tooltip heading="Show Dockpane">ArcGIS Pro Colors<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="ControlStyles_ArcGISProControlStylesDockPane" caption="ArcGIS Pro Control Styles" className="ArcGISProControlStylesDockPaneViewModel" keytip="ArcGIS Pro Control Styles" initiallyVisible="true" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="ArcGISProControlStylesDockPaneView" />
+        </dockPane>
+        <dockPane id="ControlStyles_FontUsage_ArcGISProFontUsageDockPane" caption="ArcGIS Pro Font Usage" className="ControlStyles.FontUsage.ArcGISProFontUsageDockPaneViewModel" keytip="DockPane" initiallyVisible="true" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="ControlStyles.FontUsage.ArcGISProFontUsageDockPaneView" />
+        </dockPane>
+        <dockPane id="ControlStyles_Colors_ArcGISProColorsDockpane" caption="ArcGIS Pro Colors" className="ControlStyles.Colors.ArcGISProColorsDockpaneViewModel" keytip="DockPane" initiallyVisible="true" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="ControlStyles.Colors.ArcGISProColorsDockpaneView" />
+        </dockPane>
+      </dockPanes>
+      <menus></menus>
+    </insertModule>
+  </modules>
+</ArcGIS>

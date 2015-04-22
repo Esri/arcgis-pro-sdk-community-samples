@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="WorkwithProjects.WorkWithProjectsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"                                             
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="300">
+    <!--
+    //   Copyright 2015 Esri
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       http://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License. 
+-->
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
+            <TextBlock Grid.Column="1" Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                    FontSize="16" FontWeight="Light">
+                <TextBlock.ToolTip>
+                    <WrapPanel Orientation="Vertical" MaxWidth="300">
+                        <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
+                    </WrapPanel>
+                </TextBlock.ToolTip>
+            </TextBlock>
+        </DockPanel>
+        <Grid  Grid.Row="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel  Margin="6,6,6,6" Grid.Row="0" Orientation="Vertical" Background="Transparent">
+                <TextBlock Margin="6,6,6,6" Background="BurlyWood" TextAlignment="Center">Open Project</TextBlock>
+                <StackPanel  Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Stretch" >
+                    <TextBlock VerticalAlignment="Center">Project path: </TextBlock>
+                    <TextBox Margin="6,0,6,0" Name="txtOpenProjPath" Text="{Binding Path=OpenProjectPath}" HorizontalAlignment="Stretch" Width="150"></TextBox>
+                    <Button Name="BtnOpenProj" Command="{Binding OpenProjectCommand}">Open Project</Button>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="6,6,6,6" Grid.Row="1" Orientation="Vertical" Background="Transparent">
+                <TextBlock Margin="6,6,6,6" Background="BurlyWood"  TextAlignment="Center">Imports a map documents</TextBlock>
+                <StackPanel  Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Stretch" >
+                    <TextBlock VerticalAlignment="Center">Add Folder [Path]:</TextBlock>
+                    <TextBox Margin="6,0,6,0" Name="txtFolderPath" Text="{Binding Path=FolderPath}" HorizontalAlignment="Stretch" Width="150"></TextBox>
+                    <Button Name="BtnAddFolderToProj" Command="{Binding AddFolderToProjectCommand}">Add Folder To Project</Button>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Stretch" >
+                    <TextBlock VerticalAlignment="Center">Filter Folder Content by:</TextBlock>
+                    <TextBox Margin="6,6,6,0" Name="txtFilter" Text="{Binding Path=Filter}" HorizontalAlignment="Stretch" Width="150"></TextBox>
+                </StackPanel>
+
+                <TextBlock>Import by selecting an Item:</TextBlock>
+                <ListBox Margin="6,6,6,6"                     
+                    ScrollViewer.VerticalScrollBarVisibility="Auto"
+                    ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                    SelectedItem="{Binding MxdItem}" MinHeight="100"
+                    ItemsSource="{Binding MxdItems}" DisplayMemberPath="Path">
+                </ListBox>
+            </StackPanel>
+            <StackPanel Margin="6,6,6,6" Grid.Row="2" Orientation="Vertical" Background="Transparent">
+                <TextBlock Margin="6,6,6,6" Background="BurlyWood" TextAlignment="Center">Create new project using a template</TextBlock>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel  Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Stretch" >
+                        <TextBlock VerticalAlignment="Center">New Project Name:</TextBlock>
+                        <TextBox Margin="6,6,6,6" Name="txtProjectName" Text="{Binding Path=ProjectName}" HorizontalAlignment="Stretch" Width="150"></TextBox>
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Stretch" >
+                        <TextBlock VerticalAlignment="Center">New Project Path:</TextBlock>
+                        <TextBox Margin="6,6,6,6" Name="txtProjectPath" Text="{Binding Path=ProjectPath}" HorizontalAlignment="Stretch" Width="150"></TextBox>
+                    </StackPanel>
+                    <TextBlock>Create a new Project by selecting a template:</TextBlock>
+                    <ListBox Margin="6,6,6,6"                     
+                        ScrollViewer.VerticalScrollBarVisibility="Auto"
+                        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                        SelectedItem="{Binding TemplatePath}" MinHeight="100"
+                        ItemsSource="{Binding TemplatePaths}" >
+                    </ListBox>
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</UserControl>

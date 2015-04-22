@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--//   Copyright 2014 Esri
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       http://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License. 
+-->
+<ArcGIS defaultAssembly="TimeNavigation.dll" defaultNamespace="TimeNavigation" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{57f1bfc8-4ec8-4178-9000-2a7d2b956cea}" version="1.0" desktopVersion="1.0.1387">
+    <Name>Time Navigation</Name>
+    <Description>Adds additional controls to navigate through time.</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>>Esri, http://www.esri.com</Company>
+    <Date>9/3/2014 4:45:39 PM, 2014</Date>
+    <Subject>Map-Exploration</Subject>
+  </AddInInfo>
+  <modules>
+    <insertModule id="TimeNavigation_Module" className="TimeModule" autoLoad="true" caption="Time">
+      <tabGroups>
+        <tabGroup id="TimeNavigation_TimeTabGroup" caption="TIME">
+          <color A="255" R="24" G="69" B="59" />
+          <borderColor A="0" R="251" G="226" B="195" />
+        </tabGroup>
+      </tabGroups>
+      <tabs>
+        <tab id="TimeNavigation_PlaybackTab" caption="NAVIGATION" condition="TimeNavigation_MapTimeEnabledCondition" tabGroupID="TimeNavigation_TimeTabGroup">
+          <group refID="TimeNavigation_MapTime_Group" />
+          <group refID="TimeNavigation_TimeStep_Group" />
+          <group refID="TimeNavigation_Bookmarks_Group" />
+        </tab>
+      </tabs>
+      <groups>
+        <group id="TimeNavigation_MapTime_Group" caption="Map Time">
+          <customControl refID="TimeNavigation_MapTimeControl" />
+          <gallery refID="TimeNavigation_Gallery1" inline="false" size="large" />
+        </group>
+        <group id="TimeNavigation_TimeStep_Group" caption="Time Step">
+          <comboBox refID="TimeNavigation_TimeStepValue" />
+          <comboBox refID="TimeNavigation_TimeStepUnit" />
+          <button refID="TimeNavigation_PreviousStepButton" />
+          <button refID="TimeNavigation_NextStepButton" />
+        </group>
+        <group id="TimeNavigation_Bookmarks_Group" caption="Bookmarks">
+          <gallery refID="TimeNavigation_BkmGallery" />
+          <customControl refID="TimeNavigation_BkmNavControl" />
+        </group>
+      </groups>
+      <controls>
+        <!-- Map Time -->
+        <customControl id="TimeNavigation_MapTimeControl" caption="Map Time" className="TimeNavigation.MapTimeViewModel" loadOnClick="true" condition="MapEx_Addin_MapTimeEnabledCondition">
+          <content className="TimeNavigation.MapTimeView" />
+        </customControl>
+        <!-- Time Step-->
+        <comboBox id="TimeNavigation_TimeStepValue" caption="Value: " className="TimeNavigation.TimeStepValue" sizeString="XXXXXXXXXX" noEdit="false" condition="MapEx_Addin_MapTimeEnabledCondition" />
+        <comboBox id="TimeNavigation_TimeStepUnit" caption="Unit: " className="TimeNavigation.TimeStepUnit" sizeString="XXXXXXXXXX" noEdit="true" condition="MapEx_Addin_MapTimeEnabledCondition" />
+        <button id="TimeNavigation_NextStepButton" caption="Next" className="TimeNavigation.NextStepButton" loadOnClick="true" largeImage="Images\NextStep32.png" condition="MapEx_Addin_MapTimeEnabledCondition" />
+        <button id="TimeNavigation_PreviousStepButton" caption="Previous" className="TimeNavigation.PreviousStepButton" loadOnClick="true" largeImage="Images\PreviousStep32.png" condition="MapEx_Addin_MapTimeEnabledCondition" />
+        <!-- Bookmarks -->
+        <customControl id="TimeNavigation_BkmNavControl" caption="Bookmark Navigation" className="TimeNavigation.TimeBkmNavViewModel" loadOnClick="true" condition="MapEx_Addin_MapTimeEnabledCondition">
+          <content className="TimeNavigation.TimeBkmNavView" />
+        </customControl>
+      </controls>
+      <galleries>
+        <gallery id="TimeNavigation_BkmGallery" caption="Bookmarks" className="TimeNavigation.TimeBkmGallery" resizable="true" rows="4" itemsInRow="4" itemWidth="84" itemHeight="84" dataTemplateFile="pack://application:,,,/TimeNavigation;component/Bookmarks/TimeBkmGalleryTemplate.xaml" templateID="TimeBkmItemTemplate" largeImage="Images\TimeBookmarks32.png" condition="MapEx_Addin_MapTimeEnabledCondition">
+          <button refID="esri_mapping_createBookmark" />
+        </gallery>
+      </galleries>
+    </insertModule>
+  </modules>
+  <conditions>
+    <insertCondition id="TimeNavigation_MapTimeEnabledCondition" caption="Time Enabled">
+      <and>
+        <state id="TimeNavigation_MapTimeEnabledState" />
+        <state id="esri_mapping_mapPane" />
+      </and>
+    </insertCondition>
+  </conditions>
+</ArcGIS>

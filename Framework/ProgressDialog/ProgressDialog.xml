@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProgressDialog</name>
+    </assembly>
+    <members>
+        <member name="T:ProgressDialog.ProgressDialogModule">
+             <summary>
+             This Sample shows different patterns that exercise the progress dialog.  
+               1. Simple progress dialog
+               2. Cancelable progress dialog
+               3. Manually control a progress dialog
+             </summary>
+             <remarks>
+            1. Open this solution in Visual Studio 2013.  
+            2. Save the Project Exploration Tasks.esriTasks file in this solution to a location on your disk.
+            3. Click the build menu and select Build Solution.
+            4. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.
+            5. Open any project - it can be an existing project containing data or a new empty project.
+            6. Click on the Add-in tab and see the split button in the 'Progress Dialog Test' group.
+            7. Click on any of the split buttons to see the respective progress dialog implementation work.
+             </remarks>
+        </member>
+        <member name="M:ProgressDialog.ProgressDialogModule.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="M:ProgressDialog.ProgressDialogModule.ExecuteCommand(System.String)">
+            <summary>
+            Generic implementation of ExecuteCommand to allow calls to
+            <see cref="M:ArcGIS.Desktop.Framework.FrameworkApplication.ExecuteCommand(System.String)"/> to execute commands in
+            your Module.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ProgressDialog.ProgressDialogModule.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="T:ProgressDialog.RunDialogButtonsSimple">
+            <summary>
+            Exercises a simple non-cancelable progress dialog
+            </summary>
+        </member>
+        <member name="T:ProgressDialog.RunDialogButtonsCancel">
+            <summary>
+            Exercises a simple cancelable progress dialog
+            </summary>
+        </member>
+        <member name="T:ProgressDialog.RunDialogButtonsManual">
+            <summary>
+            Exercises a simple non-cancelable progress dialog manual controlled
+            </summary>
+        </member>
+    </members>
+</doc>

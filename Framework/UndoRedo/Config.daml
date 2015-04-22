@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- //   Copyright 2015 Esri
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       http://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.
+-->
+<ArcGIS defaultAssembly="PreRel_UndoRedo.dll" defaultNamespace="PreRel_UndoRedo" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{e6efe7e0-f371-4218-aff0-0f080375d487}" version="1.0" desktopVersion="1.0.1547">
+    <Name>UndoRedo</Name>
+    <Description>PreRel_UndoRedo description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri</Company>
+    <Date>10/22/2014 5:34:03 AM, 2014</Date>
+  </AddInInfo>
+  <modules>
+    <insertModule id="PreRel_UndoRedo_Module" className="Module1" autoLoad="false" caption="Module1">
+      <groups>
+        <group id="PreRel_UndoRedo_Group1" caption="Undo_Redo" appearsOnAddInTab="true">
+          <button refID="PreRel_UndoRedo_SampleDockPane_ShowButton" size="large" />
+          <button refID="PreRel_UndoRedo_AddOperation" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- TODO add your controls here -->
+        <button id="PreRel_UndoRedo_SampleDockPane_ShowButton" caption="Show Sample DockPane" className="SampleDockPane_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+          <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
+        </button>
+        <button id="PreRel_UndoRedo_AddOperation" caption="Add Operation" className="AddOperation" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Add Operation">
+            <disabledText />
+          </tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="PreRel_UndoRedo_SampleDockPane" caption="SampleDockPane" className="SampleDockPaneViewModel" keytip="DockPane" initiallyVisible="true" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="SampleDockPaneView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

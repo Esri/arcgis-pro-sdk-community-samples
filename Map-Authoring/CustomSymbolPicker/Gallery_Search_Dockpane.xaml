@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="CustomSymbolPicker.Gallery_Search_DockpaneView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"                                             
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
+            <TextBlock Grid.Column="1" Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                    FontSize="16" FontWeight="Light">
+                <TextBlock.ToolTip>
+                    <WrapPanel Orientation="Vertical" MaxWidth="300">
+                        <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
+                    </WrapPanel>
+                </TextBlock.ToolTip>
+      </TextBlock>
+        </DockPanel>
+
+        <ComboBox x:Name="itemType" HorizontalAlignment="Stretch" Margin="160,38,21,0" VerticalAlignment="Top" Width="120" Grid.Row="1" 
+                   ItemsSource="{Binding Choices}"  SelectedItem="{Binding SelectedChoice, Mode=TwoWay}">
+        </ComboBox>
+
+        <ComboBox x:Name="referencedStyles" HorizontalAlignment="Stretch" Margin="160,77,21,0" VerticalAlignment="Top" Width="120" 
+                  DropDownOpened="referencedStyles_DropDownOpened" Grid.Row="1" 
+                  ItemsSource="{Binding StyleProjectItems}"  SelectedItem="{Binding SelectedStyleProjectItem, Mode=TwoWay}" DisplayMemberPath="Path">
+    
+        </ComboBox>
+        <Label Content="Search for:" HorizontalAlignment="Stretch" Margin="20,36,161,0" VerticalAlignment="Top" Width="120" Height="32" Grid.Row="1"/>
+        <Label Content="In this style:" HorizontalAlignment="Stretch" Margin="20,73,192,0" VerticalAlignment="Top" RenderTransformOrigin="-0.316,0.154" Width="89" Grid.Row="1"/>
+
+        <TextBox x:Name="searchBox" HorizontalAlignment="Stretch" Height="23" Margin="10,117,171,0" TextWrapping="Wrap" Text="{Binding SearchString, Mode=TwoWay}" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+
+        <Button Content="Search" HorizontalAlignment="Stretch" Margin="160,116,21,0" VerticalAlignment="Top" Width="120" Height="24" Grid.Row="1"
+                Command="{Binding SearchResultCommand}" >             
+            </Button>
+
+
+        <ListBox x:Name="symbolListBox" Margin="10,161,0,10" Grid.Row="1"   
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                 ItemsSource="{Binding StyleItems}"
+                 SelectedItem="{Binding SelectedStyleItem, Mode=TwoWay}">
+
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+
+                    <WrapPanel Orientation="Horizontal"/>
+
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2" Height="64"  ToolTip="{Binding Name}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding PreviewImage}" HorizontalAlignment="Center" Stretch="None" VerticalAlignment="Top"/>
+                        <TextBlock TextAlignment="Center" TextTrimming="CharacterEllipsis"  Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        
+    </Grid>
+</UserControl>

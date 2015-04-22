@@ -1,0 +1,53 @@
+﻿<!-- TODO: Write a brief abstract explaining this sample -->
+  
+This sample provide four buttons showing the construction of geometry types of type MapPoint, Multipoint, Polyline, and Polygon.  
+  
+
+<a href="http://pro.arcgis.com/en/pro-app/beta/sdk/" target="_blank">View it live</a>
+
+<!-- TODO: Fill this section below with metadata about this sample-->
+```
+Language:      VB
+Subject:       Geometry, Geodatabase
+Contracts:     Button
+Contributor:   ArcGIS Pro SDK
+Organization:  Esri
+Date:          2/16/2015 11:21:52 AM, 2015
+ArcGIS Pro:    1.1.3059
+Visual Studio: Visual Studio 12.0
+```
+
+##Resources
+
+ArcGIS Pro SDK resources, including concepts, guides, tutorials, and snippets, will be available at ArcGIS Pro 1.1 Beta in the [arcgis-pro-sdk repository](https://github.com/esri/arcgis-pro-sdk). The [arcgis-pro-sdk-community-samples repo](https://github.com/esri/arcgis-pro-sdk-community-samples) hosts ArcGIS Pro samples that provide some guidance on how to use the new .NET API to extend ArcGIS Pro. A complete [API Reference](http://pro.arcgis.com/en/pro-app/beta/sdk/api-reference/) is also available online.
+
+* [ArcGIS Pro API Reference Guide](http://pro.arcgis.com/en/pro-app/beta/sdk/api-reference/)
+* [arcgis-pro-sdk-community-samples](../../../arcgis-pro-sdk-community-samples)
+* <a href="http://pro.arcgis.com/en/pro-app/beta/sdk/" target="_blank">ArcGIS Pro SDK (prodev.arcgis.com)</a>
+* [FAQ](../../wiki/FAQ)
+* [ProConcepts: ArcGIS Pro Add in Samples](https://github.com/Esri/arcgis-pro-sdk-community-samples/wiki/ProConcepts-ArcGIS-Pro-Add-in-Samples)
+
+##Download
+
+Download the ArcGIS Pro SDK from the [ArcGIS Pro Beta Community](http://pro.arcgis.com/en/pro-app/).
+
+##How to use the sample
+<!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
+  
+1. In Visual Studio click the Build menu. Then select Build Solution.  
+2. Click Start button to open ArcGIS Pro.  
+3. ArcGIS Pro will open.  
+4. Go to the ADD-IN tab  
+5. Click the Setup button to ensure that the appropriate layers are created. The setup code will ensure that we have a layer of type point,  
+   multi-point, polyline, and polygon. Once the conditions are meet then the individual buttons will become enabled.  
+6. Step through the buttons to create the various geometry types.  
+  
+
+[](Esri Tags: ArcGIS-Pro-SDK)
+[](Esri Language: VB)​
+
+<p align = center><img src="https://github.com/Esri/arcgis-pro-sdk/wiki/images/ArcGISPro.png"  alt="pre-req" align = "top" height = "20" width = "20" >
+<b> ArcGIS Pro 1.1 SDK for Microsoft .NET Framework (Beta)</b>
+</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Home](https://github.com/Esri/arcgis-pro-sdk/wiki) | <a href="http://pro.arcgis.com/en/pro-app/beta/sdk" target="_blank">ArcGIS Pro SDK</a> | <a href="http://pro.arcgis.com/en/pro-app/beta/sdk/api-reference/" target="_blank">API Reference</a> | [Requirements](https://github.com/Esri/arcgis-pro-sdk/wiki#system-requirements) | [Download](https://github.com/Esri/arcgis-pro-sdk/wiki#download) |  <a href="http://github.com/esri/arcgis-pro-sdk-community-samples" target="_blank">Samples</a>
+

@@ -62,65 +62,47 @@ Below is the list of all ArcGIS Pro samples that are part of this repository.
 
 ####Content
 
-* [WorkwithProjects (c#)](../../tree/master/Content/WorkwithProjects)  
-
+$ContentTOC$
 
 ####Editing
 
-* [UpdateAttributesWithSketch (c#)](../../tree/master/Editing/UpdateAttributesWithSketch)  
-
+$EditingTOC$
 
 ####Framework
 
-* [Localization (c#)](../../tree/master/Framework/Localization)  
-* [ProgressDialog (c#)](../../tree/master/Framework/ProgressDialog)  
-* [Styling with ArcGIS Pro (c#)](../../tree/master/Framework/Styling-with-ArcGIS-Pro)  
-* [UndoRedo (c#)](../../tree/master/Framework/UndoRedo)  
-
+$FrameworkTOC$
 
 ####Geoprocessing
 
-* [GeoprocessingExecuteAsync (c#)](../../tree/master/Geoprocessing/GeoprocessingExecuteAsync)  
-
+$GeoprocessingTOC$
 
 ####Geometry
 
-* [ConstructingGeometries_CSharp (c#)](../../tree/master/Geometry/Constructing-Geometries/ConstructingGeometries_CSharp)  
-* [ConstructingGeometries_VB (vb)](../../tree/master/Geometry/Constructing-Geometries/ConstructingGeometries_VB)  
-
+$GeometryTOC$
 
 ####Geodatabase
 
-* [DeleteFeaturesBasedOnSubtype (c#)](../../tree/master/Geodatabase/DeleteFeaturesBasedOnSubtype)  
-
+$GeodatabaseTOC$
 
 ####Map Authoring
 
-* [AddRasterLayer (c#)](../../tree/master/Map-Authoring/AddRasterLayer)  
-* [CustomSymbolPicker (c#)](../../tree/master/Map-Authoring/CustomSymbolPicker)  
-* [MappingAddIns (c#)](../../tree/master/Map-Authoring/MappingAddIns)  
-
+$Map-AuthoringTOC$
 
 ####Map Exploration
 
-* [Navigating camera with ArcGIS Pro (c#)](../../tree/master/Map-Exploration/Navigating-camera-with-ArcGIS-Pro)  
-* [Navigating time with ArcGIS Pro (c#)](../../tree/master/Map-Exploration/Navigating-time-with-ArcGIS-Pro)  
-
+$Map-ExplorationTOC$
 
 ####Layouts
 
-* [TextElementAddin (c#)](../../tree/master/Layouts/TextElementAddin)  
-
+$LayoutsTOC$
 
 ####Task Assistant
 
-* [TasksSDK (c#)](../../tree/master/TaskAssistant/TasksSDK)  
-
+$TaskAssistantTOC$
 
 ####Workflow
 
-* [JobManagement (c#)](../../tree/master/Workflow/JobManagement)  
-
+$WorkflowTOC$
 
 ## Issues
 

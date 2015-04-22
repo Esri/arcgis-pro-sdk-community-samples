@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ControlStyles</name>
+    </assembly>
+    <members>
+        <member name="T:ControlStyles.Colors.ArcGISProColorsDockpaneView">
+            <summary>
+            Interaction logic for ArcGISProColorsDockpaneView.xaml
+            </summary>
+            <summary>
+            ArcGISProColorsDockpaneView
+            </summary>
+        </member>
+        <member name="M:ControlStyles.Colors.ArcGISProColorsDockpaneView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ControlStyles.Colors.ArcGISProColorsDockpaneViewModel.Show">
+            <summary>
+            Show the DockPane.
+            </summary>
+        </member>
+        <member name="P:ControlStyles.Colors.ArcGISProColorsDockpaneViewModel.ProColors">
+            <summary>
+            List of the ArcGIS Pro defined Colors.
+            </summary>
+        </member>
+        <member name="P:ControlStyles.Colors.ArcGISProColorsDockpaneViewModel.CopyColorKeyCmd">
+            <summary>
+            Represents the Copy to Clipboard command
+            </summary>
+        </member>
+        <member name="P:ControlStyles.Colors.ArcGISProColorsDockpaneViewModel.CopyRefDictCmd">
+            <summary>
+            Represents the Copy to Clipboard command for Reference dictionary
+            </summary>
+        </member>
+        <member name="T:ControlStyles.Colors.ArcGISProColorsDockpane_ShowButton">
+            <summary>
+            Button implementation to show the DockPane.
+            </summary>
+        </member>
+        <member name="T:ControlStyles.ArcGISProControlStylesDockPaneView">
+            <summary>
+            Interaction logic for ArcGISProControlStylesDockPaneView.xaml
+            </summary>
+            <summary>
+            ArcGISProControlStylesDockPaneView
+            </summary>
+        </member>
+        <member name="M:ControlStyles.ArcGISProControlStylesDockPaneView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ControlStyles.ArcGISProControlStylesDockPaneViewModel.Show">
+            <summary>
+            Show the DockPane.
+            </summary>
+        </member>
+        <member name="M:ControlStyles.ArcGISProControlStylesDockPaneViewModel.StripTrailingText(System.String,System.String)">
+            <summary>
+            strips the pattern from the trailing end of given text, which must be at the trailing end of the text.
+            This is needed to avoid problems if we ever create a namespace that includes "ViewModel"
+            </summary>
+        </member>
+        <member name="P:ControlStyles.ArcGISProControlStylesDockPaneViewModel.Heading">
+            <summary>
+            Text shown near the top of the DockPane.
+            </summary>
+        </member>
+        <member name="P:ControlStyles.ArcGISProControlStylesDockPaneViewModel.ControlTypes">
+            <summary>
+            List of controls to view the Styles for
+            </summary>
+        </member>
+        <member name="P:ControlStyles.ArcGISProControlStylesDockPaneViewModel.SelectedControl">
+            <summary>
+            The Selected Control.
+            </summary>
+        </member>
+        <member name="P:ControlStyles.ArcGISProControlStylesDockPaneViewModel.CopyControlXamlCmd">
+            <summary>
+            Represents the Copy to Clipboard command
+            </summary>
+        </member>
+        <member name="P:ControlStyles.ArcGISProControlStylesDockPaneViewModel.CopyDictionaryCmd">
+            <summary>
+            Represents the Copy to Clipboard command
+            </summary>
+        </member>
+        <member name="T:ControlStyles.ArcGISProControlStylesDockPane_ShowButton">
+            <summary>
+            Button implementation to show the DockPane.
+            </summary>
+        </member>
+        <member name="T:ControlStyles.ButtonStyleView">
+            <summary>
+            Interaction logic for ButtonStyleView.xaml
+            </summary>
+            <summary>
+            ButtonStyleView
+            </summary>
+        </member>
+        <member name="M:ControlStyles.ButtonStyleView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="F:ControlStyles.ButtonStyleViewModel._listButtons">
+            <summary>
+            Collection of Styles that will be displayed
+            </summary>
+        </member>
+        <member name="T:ControlStyles.CheckBoxStyleView">
+            <summary>
+            Interaction logic for CheckBoxStyleView.xaml
+            </summary>
+            <summary>
+            CheckBoxStyleView
+            </summary>
+        </member>
+        <member name="M:ControlStyles.CheckBoxStyleView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="F:ControlStyles.CheckBoxStyleViewModel._listChBx">
+            <summary>
+            Collection of Styles that will be displayed
+            </summary>
+        </member>
+        <member name="T:ControlStyles.FontUsage.ArcGISProFontUsageDockPaneView">
+            <summary>
+            Interaction logic for ArcGISProFontUsageDockPaneView.xaml
+            </summary>
+            <summary>
+            ArcGISProFontUsageDockPaneView
+            </summary>
+        </member>
+        <member name="M:ControlStyles.FontUsage.ArcGISProFontUsageDockPaneView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ControlStyles.FontUsage.ArcGISProFontUsageDockPaneViewModel.Show">
+            <summary>
+            Show the DockPane.
+            </summary>
+        </member>
+        <member name="F:ControlStyles.FontUsage.ArcGISProFontUsageDockPaneViewModel._heading">
+            <summary>
+            Text shown near the top of the DockPane.
+            </summary>
+        </member>
+        <member name="T:ControlStyles.FontUsage.ArcGISProFontUsageDockPane_ShowButton">
+            <summary>
+            Button implementation to show the DockPane.
+            </summary>
+        </member>
+        <member name="T:ControlStyles.Module1">
+            <summary>
+            This sample demonstrates how to create UI elements in your Add-in that have the ArcGIS Pro "look and feel". 
+            For example, when you load this sample you will be able to get the xaml code to create a "Esri Simple Button".  
+            Xaml code for buttons, check boxes, colors can be obtained from this sample. 
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            2. Click Start button to open ArcGIS Pro.
+            3. ArcGIS Pro will open. Click on the new UI Design tab created by this add-in. Two buttons are created on the ribbon in a ArcGIS Pro UI Design group - Control Styles and Colors. 
+            ![UI](screenshots/UIDesign.png)
+            4. Control Styles button: Clicking this button launches the ArcGIS Pro Control Styles dockpane. Select the control you are interested in to view its available styles. You can then click on the Copy button next to the Xaml code for that style to paste into your add-in.
+            ![Controls](screenshots/controls.png)
+            5. Colors button: Clicking this button launches the ArcGIS Pro Colors dockpane. Select any of the Esri colors available in the gallery. You can then click on the Copy button next to the Xaml code for that color to paste into your add-in.
+            ![Colors](screenshots/colors.png)
+            </remarks>
+        </member>
+        <member name="P:ControlStyles.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:ControlStyles.Utils.CopyStringToClipboard(System.String)">
+            <summary>
+            Represents the Copy to Clipboard method
+            </summary>
+        </member>
+        <member name="T:ControlStyles.RadioButtonStyleView">
+            <summary>
+            Interaction logic for RadioButtonStyleView.xaml
+            </summary>
+            <summary>
+            RadioButtonStyleView
+            </summary>
+        </member>
+        <member name="M:ControlStyles.RadioButtonStyleView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="F:ControlStyles.RadioButtonStyleViewModel._listRadioBtns">
+            <summary>
+            Collection of Styles that will be displayed
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DeleteFeaturesBasedOnSubtype</name>
+    </assembly>
+    <members>
+        <member name="T:DeleteFeaturesBasedOnSubtype.SubtypesComboBox">
+            <summary>
+            Represents the ComboBox which will list the subtypes for the FeatureClass.
+            Also encapsulates the logic for deleting the features corresponding to the selected subtype
+            </summary>
+        </member>
+        <member name="M:DeleteFeaturesBasedOnSubtype.SubtypesComboBox.#ctor">
+            <summary>
+            Combo Box contructor
+            </summary>
+        </member>
+        <member name="M:DeleteFeaturesBasedOnSubtype.SubtypesComboBox.OnDropDownOpened">
+            <summary>
+            The on comboBox selection change event. 
+            </summary>
+            <param name="item">The newly selected combo box item</param>
+        </member>
+        <member name="M:DeleteFeaturesBasedOnSubtype.SubtypesComboBox.OnSelectionChange(ArcGIS.Desktop.Framework.Contracts.ComboBoxItem)">
+            <summary>
+            The on comboBox selection change event. 
+            </summary>
+            <param name="item">The newly selected combo box item</param>
+        </member>
+        <member name="T:DeleteFeaturesBasedOnSubtype.DeleteBasedOnSubtypeModule">
+            <summary>
+            This addin will list all subtypes for a Feature Class and allow deletion of all features which have the selected subtype
+            </summary>    
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            2. Click Start button to open ArcGIS Pro.
+            3. ArcGIS Pro will open. 
+            4. Open a map view that contains at least one Feature Layer whose source points to a Feature Class (From either a File Geodatabase or an Enterprise Geodatabase)
+            5. Make sure the Map Pane and the corresponding Table of Contents (TOC) Pane are Open and the Map Pane is Active
+            6. Click on the Add-In Tab
+            7. Observe that when no Layer is selected in the TOC, clicking on the combobox will show an empty list. An empty list will also be shown if the Layer is not a Feature Layer i.e. if it is a standalone table.
+            8. Select a Feature Layer which has a Feature Class as the Data Source from the TOC pane 
+            9. Opening the Combobox will list all the subtypes for the FeatureClass
+            10. On Selecting a Subtype, all the features with that subtype will be deleted from the FeatureClass and thereby cleared from the Map
+            </remarks>
+        </member>
+        <member name="P:DeleteFeaturesBasedOnSubtype.DeleteBasedOnSubtypeModule.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+    </members>
+</doc>
