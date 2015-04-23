@@ -11,10 +11,10 @@ to manipulate workflow manager databases while focusing only on one Job Type
 Language:      C#
 Subject:       Framework Content
 Contracts:     Button, Dock Pane
-Contributor:   William Moreland
-Organization:  ESRI
-Date:          4/13/2015 2:25:10 PM, 2015
-ArcGIS Pro:    1.1.3059
+Contributor:   ArcGIS Pro SDK
+Organization:  Esri
+Date:          4/23/2015
+ArcGIS Pro:    ArcGIS Pro 1.1 Beta
 Visual Studio: Visual Studio 12.0
 ```
 

@@ -12,10 +12,10 @@ ArcGIS.Desktop.Framework.Contracts.Operations) are pushed onto the OperationMana
 Language:      C#
 Subject:       $subject$
 Contracts:     Button, Dock Pane
-Contributor:   ArcGIS Pro SDK Team, arcgisprosdk@esri.com
-Organization:  esri
-Date:          10/22/2014 5:34:03 AM, 2014
-ArcGIS Pro:    1.1.3059
+Contributor:   ArcGIS Pro SDK
+Organization:  Esri
+Date:          4/23/2015
+ArcGIS Pro:    ArcGIS Pro 1.1 Beta
 Visual Studio: Visual Studio 12.0
 ```
 

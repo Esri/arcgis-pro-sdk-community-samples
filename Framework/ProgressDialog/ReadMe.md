@@ -13,10 +13,10 @@
 Language:      C#
 Subject:       Framework
 Contracts:     Button, Split Buttons
-Contributor:   charlesm
-Organization:  Acme
-Date:          4/16/2015 10:12:47 AM, 2015
-ArcGIS Pro:    1.1.3059
+Contributor:   ArcGIS Pro SDK
+Organization:  Esri
+Date:          4/23/2015
+ArcGIS Pro:    ArcGIS Pro 1.1 Beta
 Visual Studio: Visual Studio 12.0
 ```
 

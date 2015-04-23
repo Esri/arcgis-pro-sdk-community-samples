@@ -12,10 +12,10 @@ to apply to the currently selected feature layer in the Contents pane
 Language:      C#
 Subject:       Map Authoring
 Contracts:     Button, Dock Pane
-Contributor:   deep4730
+Contributor:   ArcGIS Pro SDK
 Organization:  Esri
-Date:          4/11/2015 11:38:37 AM, 2015
-ArcGIS Pro:    1.1.3059
+Date:          4/23/2015
+ArcGIS Pro:    ArcGIS Pro 1.1 Beta
 Visual Studio: Visual Studio 12.0
 ```
 

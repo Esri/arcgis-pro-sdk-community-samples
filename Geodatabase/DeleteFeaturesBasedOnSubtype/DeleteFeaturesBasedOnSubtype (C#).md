@@ -10,10 +10,10 @@ This addin will list all subtypes for a Feature Class and allow deletion of all 
 Language:      C#
 Subject:       Geodatabase
 Contracts:     Gallery, Dock Pane, Pane, Menu, Palette, Split Buttons
-Contributor:   ArcGIS Pro SDK Team
+Contributor:   ArcGIS Pro SDK
 Organization:  Esri
-Date:          3/3/2015 11:30:56 AM, 2015
-ArcGIS Pro:    1.1.3059
+Date:          4/23/2015
+ArcGIS Pro:    ArcGIS Pro 1.1 Beta
 Visual Studio: Visual Studio 12.0
 ```
 

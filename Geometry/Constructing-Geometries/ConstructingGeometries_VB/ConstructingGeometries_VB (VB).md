@@ -2,20 +2,20 @@
   
 This sample provide four buttons showing the construction of geometry types of type MapPoint, Multipoint, Polyline, and Polygon.  
   
-
 <a href="http://pro.arcgis.com/en/pro-app/beta/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:      VB
-Subject:       Geometry, Geodatabase
-Contracts:     Button
+Subject:       Framework
+Contracts:     Button, Split Buttons
 Contributor:   ArcGIS Pro SDK
 Organization:  Esri
-Date:          2/16/2015 11:21:52 AM, 2015
-ArcGIS Pro:    1.1.3059
+Date:          4/23/2015
+ArcGIS Pro:    ArcGIS Pro 1.1 Beta
 Visual Studio: Visual Studio 12.0
 ```
+
 
 ##Resources
 

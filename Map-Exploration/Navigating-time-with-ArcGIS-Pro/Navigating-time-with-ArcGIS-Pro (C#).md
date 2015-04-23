@@ -10,10 +10,10 @@ This sample provides a new tab and controls that allow you to set the time in th
 Language:      C#
 Subject:       Map-Exploration
 Contracts:     Button, Gallery
-Contributor:   ArcGIS Pro SDK Team, arcgisprosdk@esri.com
-Organization:  >Esri, http://www.esri.com
-Date:          9/3/2014 4:45:39 PM, 2014
-ArcGIS Pro:    1.1.3059
+Contributor:   ArcGIS Pro SDK
+Organization:  Esri
+Date:          4/23/2015
+ArcGIS Pro:    ArcGIS Pro 1.1 Beta
 Visual Studio: Visual Studio 12.0
 ```
 

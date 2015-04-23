@@ -10,10 +10,10 @@ Sample solution for modifying text in a layout.
 Language:      C#
 Subject:       Layouts
 Contracts:     Button
-Contributor:   JeffB
+Contributor:   ArcGIS Pro SDK
 Organization:  Esri
-Date:          4/14/2015 11:34:44 AM, 2015
-ArcGIS Pro:    1.1.3059
+Date:          4/23/2015
+ArcGIS Pro:    ArcGIS Pro 1.1 Beta
 Visual Studio: Visual Studio 12.0
 ```
 

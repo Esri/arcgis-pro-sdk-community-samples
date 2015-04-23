@@ -12,8 +12,8 @@ Subject:       Geometry, Geodatabase
 Contracts:     Button
 Contributor:   ArcGIS Pro SDK
 Organization:  Esri
-Date:          2/16/2015 11:21:52 AM, 2015
-ArcGIS Pro:    1.1.3059
+Date:          4/23/2015
+ArcGIS Pro:    ArcGIS Pro 1.1 Beta
 Visual Studio: Visual Studio 12.0
 ```
 

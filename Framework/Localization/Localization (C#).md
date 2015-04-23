@@ -12,10 +12,10 @@ A ProTutorial based on this sample is also available.
 Language:      C#
 Subject:       Framework
 Contracts:     Button, Dock Pane
-Contributor:   Wolfgang
-Organization:  Acme
-Date:          1/13/2015 1:31:18 PM, 2015
-ArcGIS Pro:    1.1.3059
+Contributor:   ArcGIS Pro SDK
+Organization:  Esri
+Date:          4/23/2015
+ArcGIS Pro:    ArcGIS Pro 1.1 Beta
 Visual Studio: Visual Studio 12.0
 ```
 

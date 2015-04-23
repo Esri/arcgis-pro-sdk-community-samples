@@ -12,10 +12,10 @@ Xaml code for buttons, check boxes, colors can be obtained from this sample.
 Language:      C#
 Subject:       Framework
 Contracts:     Button, Dock Pane, Menu
-Contributor:   ArcGIS Pro SDK Team, arcgisprosdk@esri.com
+Contributor:   ArcGIS Pro SDK
 Organization:  Esri
-Date:          9/9/2014 2:58:19 PM, 2014
-ArcGIS Pro:    1.1.3059
+Date:          4/23/2015
+ArcGIS Pro:    ArcGIS Pro 1.1 Beta
 Visual Studio: Visual Studio 12.0
 ```
 

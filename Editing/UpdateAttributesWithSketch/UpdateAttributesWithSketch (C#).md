@@ -9,10 +9,10 @@ finding intersecting features, updating attributes and performing the edit throu
 Language:      C#
 Subject:       Editing
 Contracts:     Tool
-Contributor:   ArcGIS Pro SDK Team
+Contributor:   ArcGIS Pro SDK
 Organization:  Esri
-Date:          4/13/2015 4:11:39 PM, 2015
-ArcGIS Pro:    1.1.3059
+Date:          4/23/2015
+ArcGIS Pro:    ArcGIS Pro 1.1 Beta
 Visual Studio: Visual Studio 12.0
 ```
 

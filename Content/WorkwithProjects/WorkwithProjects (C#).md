@@ -13,10 +13,10 @@
 Language:      C#
 Subject:       Framework
 Contracts:     Button, Dock Pane
-Contributor:   Wolfgang
-Organization:  Acme
-Date:          4/17/2015 8:31:35 AM, 2015
-ArcGIS Pro:    1.1.3059
+Contributor:   ArcGIS Pro SDK
+Organization:  Esri
+Date:          4/22/2015
+ArcGIS Pro:    ArcGIS Pro 1.1 Beta
 Visual Studio: Visual Studio 12.0
 ```
 

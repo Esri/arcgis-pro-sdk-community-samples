@@ -11,10 +11,10 @@ and add it to the current map.
 Language:      C#
 Subject:       Map Authoring
 Contracts:     Button
-Contributor:   ArcGIS Pro SDK Team
-Organization:  ESRI
-Date:          4/9/2015 11:28:51 AM, 2015
-ArcGIS Pro:    1.1.3059
+Contributor:   ArcGIS Pro SDK
+Organization:  Esri
+Date:          4/23/2015
+ArcGIS Pro:    ArcGIS Pro 1.1 Beta
 Visual Studio: Visual Studio 12.0
 ```
 

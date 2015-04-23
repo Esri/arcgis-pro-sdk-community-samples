@@ -11,10 +11,10 @@ and zoom to or pan to a new camera position.
 Language:      C#
 Subject:       Map-Exploration
 Contracts:     Button, Dock Pane
-Contributor:   ArcGIS Pro SDK Team, arcgisprosdk@esri.com
-Organization:  Esri, http://www.esri.com
-Date:          11/13/2014
-ArcGIS Pro:    1.1.3059
+Contributor:   ArcGIS Pro SDK
+Organization:  Esri
+Date:          4/23/2015
+ArcGIS Pro:    ArcGIS Pro 1.1 Beta
 Visual Studio: Visual Studio 12.0
 ```
 
