@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DivideLines</name>
+    </assembly>
+    <members>
+        <member name="T:DivideLines.DivideLines">
+            <summary>Tool with an embeded control for dividing a polyline into number of parts of equal length or parts of a certain length.</summary>
+        </member>
+        <member name="M:DivideLines.DivideLines.#ctor">
+            <summary>Set properties for the tool.</summary>
+            <remarks>Defines the embeded control the tool is associated with. See config.daml. Set as maptool.</remarks>
+        </member>
+        <member name="T:DivideLines.DivideLinesView">
+            <summary>
+            Interaction logic for DivideLinesView.xaml
+            </summary>
+            <summary>
+            DivideLinesView
+            </summary>
+        </member>
+        <member name="M:DivideLines.DivideLinesView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:DivideLines.DivideLinesViewModel.DivideLinesAsync(System.Boolean,System.Double)">
+            <summary>
+            Divide the first selected feature into equal parts or by map unit distance.
+            </summary>
+            <param name="numberOfParts">Number of parts to create.</param>
+            <param name="value">Value for number or parts or distance.</param>
+            <returns></returns>
+        </member>
+        <member name="F:DivideLines.frmDivideBy.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DivideLines.frmDivideBy.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DivideLines.frmDivideBy.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:DivideLines.Module1">
+            <summary>This sample provides a tool that divides a line into an equal number of parts or a number of parts of a given length.</summary>
+            <remarks>
+            	<para>This sample creates a map tool that is similar to other editing tools in the Modify Features pane, in that it opens a control within the pane with a dialog
+            for user input. It follows the MVVM pattern used by the editing tools.</para>
+            	<para>To use this sample:</para>
+            	<list type="number">
+            		<item>Debug through Visual Studio or compile and run ArcGIS Pro.</item>
+            		<item>In Pro, add or create a map with lines.</item>
+            		<item>Select a single line in the map.</item>
+            		<item>Click the Divide Lines tool in the Divide group within the Modify Features pane.</item>
+            		<item>In the pane for Divide Lines, select the option and enter a value. Click on Divide.</item>
+            	</list>
+            	<para>The selected line should be divided and the selection cleared. The tool remains active to enable selection of other lines to repeat the process.</para>
+            ![UI](Screenshots/Screen.png)
+            </remarks>
+        </member>
+        <member name="M:DivideLines.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="P:DivideLines.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+    </members>
+</doc>

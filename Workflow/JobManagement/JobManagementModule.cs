@@ -26,10 +26,11 @@ using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Internal.Framework.Controls;
 using ArcGIS.Desktop.Workflow.Models;
 using ArcGIS.Desktop.Workflow.Models.ConfigItems;
-using ArcGIS.Desktop.Workflow.Models.SupportClasses;
+using ArcGIS.Desktop.Workflow.Models.Queries;
 using ArcGIS.Desktop.Workflow.Models.JobModels;
 using ArcGIS.Desktop.Workflow;
 using ArcGIS.Core.CIM;
+using ArcGIS.Core.Data;
 using System.Threading.Tasks;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
@@ -157,7 +158,7 @@ namespace WorkflowSample
                 var item = fields[i];
                 DataGridTextColumn newCol = new DataGridTextColumn();
                 newCol.Header = item.Alias;
-                if(item.Type == esriFieldType.esriFieldTypeDate)
+                if(item.Type == FieldType.Date)
                 {
                     Binding newBinding = new Binding(String.Format("Values[{0}]", item.Index));
                     newBinding.StringFormat = System.Globalization.DateTimeFormatInfo.CurrentInfo.ShortDatePattern;

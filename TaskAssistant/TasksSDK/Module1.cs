@@ -31,9 +31,9 @@ namespace TasksSDK
   /// <remarks>
   ///1. Open this solution in Visual Studio 2013.  
   ///2. Save the Project Exploration Tasks.esriTasks file in this solution to a location on your disk.
-  ///3. Open the OpenTask.cs file and change the parameter of the TaskAssistantModule.OpenTask method to be the 
+  ///3. Open the OpenTask.cs file and change the parameter of the TaskAssistantModule.OpenTaskAsync method to be the 
   ///location where you saved the esriTasks file. 
-  ///4. Open the ExportTask.cs file and modify the path parameter in the TaskAssistantModule.ExportTask method 
+  ///4. Open the ExportTask.cs file and modify the path parameter in the TaskAssistantModule.ExportTaskAsync method 
   ///if you wish the task item to be exported to a different location.
   ///5. Click the build menu and select Build Solution.
   ///6. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.
@@ -99,7 +99,7 @@ namespace TasksSDK
     /// <summary>
     /// The unique identifier of the current task item.
     /// </summary>
-    public string taskGuid;
+    public Guid taskGuid;
 
   }
 }

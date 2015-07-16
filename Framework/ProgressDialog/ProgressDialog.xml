@@ -5,21 +5,23 @@
     </assembly>
     <members>
         <member name="T:ProgressDialog.ProgressDialogModule">
-             <summary>
-             This Sample shows different patterns that exercise the progress dialog.  
-               1. Simple progress dialog
-               2. Cancelable progress dialog
-               3. Manually control a progress dialog
-             </summary>
-             <remarks>
+            <summary>
+            This Sample shows different patterns that exercise the progress dialog.  
+            1. Simple progress dialog
+            2. Cancelable progress dialog
+            3. Manually control a progress dialog
+            </summary>
+            <remarks>
             1. Open this solution in Visual Studio 2013.  
-            2. Save the Project Exploration Tasks.esriTasks file in this solution to a location on your disk.
-            3. Click the build menu and select Build Solution.
-            4. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.
-            5. Open any project - it can be an existing project containing data or a new empty project.
-            6. Click on the Add-in tab and see the split button in the 'Progress Dialog Test' group.
-            7. Click on any of the split buttons to see the respective progress dialog implementation work.
-             </remarks>
+            1. Click the build menu and select Build Solution.
+            1. Run ArCGIS Pro without running the Visual Studio Debugger.
+            1. Progress Dialog boxes are disabled when debugging in Visual Studio.
+            1. Open any project - it can be an existing project containing data or a new empty project.
+            1. Click on the Add-in tab and see the split button in the 'Progress Dialog Test' group.
+            ![UI](Screenshots/Screen.png)
+            1. Click on any of the split buttons to see the respective progress dialog implementation work.
+            ![UI](Screenshots/Screen2.png)
+            </remarks>
         </member>
         <member name="M:ProgressDialog.ProgressDialogModule.CanUnload">
             <summary>

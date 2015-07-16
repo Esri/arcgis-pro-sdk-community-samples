@@ -88,7 +88,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <AddInContent Include="Config.daml" />
+    <AddInContent Include="Config.daml">
+      <SubType>Designer</SubType>
+    </AddInContent>
     <AddInContent Include="Images\AddInDesktop16.png" />
     <AddInContent Include="Images\AddInDesktop32.png" />
   </ItemGroup>
@@ -106,6 +108,10 @@
   <ItemGroup>
     <None Include="ProgressDialog %28C#%29.md" />
     <None Include="ReadMe.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Screenshots\Screen.png" />
+    <None Include="Screenshots\Screen2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.PackageAddIn" />

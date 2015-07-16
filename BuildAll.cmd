@@ -6,14 +6,12 @@ set /a countbuild=0
 set /a counterror=0
 for /r %%x in (*.sln) do (
  echo. 
- echo Building: 
- echo %%x 
+ echo Building: "%%x"
  set /a countbuild=!countbuild!+1
- devenv "%%x" /build "Debug" 
+ devenv.exe "%%x" /rebuild "Debug" 
  if ERRORLEVEL 1 (
 	set buildfailed=1 
-	echo. 
-	echo build solution failed
+	echo solution build for "%%x" failed
 	echo.
 	set /a counterror=!counterror!+1
  )
@@ -24,20 +22,20 @@ GOTO DONE
 
 :ERROR
 echo.
-echo --------------------------
+echo -------------------------------
 echo Build failed with error(s)
 echo Solutions built: !countbuild!
-echo Error builds: !counterror!
-echo --------------------------
+echo Solutions with broken builds: !counterror!
+echo -------------------------------
 GOTO END
 
 :DONE
 echo.
-echo -------------------
+echo ------------------------
 echo Build successful
 echo Solutions built: !countbuild!
-echo Error builds: !counterror!
-echo -------------------
+echo Solutions with broken builds: !counterror!
+echo ------------------------
 :END
 
 

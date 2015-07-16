@@ -58,8 +58,8 @@
   <conditions>
     <insertCondition id="environment_ready_for_sample" caption="Pre-requisites to run the sample are met.">
       <and>
-        <state id="layers_exists"/>
-        <state id="esri_mapping_mapPane"/>
+        <state id="layers_exists" />
+        <state id="esri_mapping_mapPane" />
       </and>
     </insertCondition>
     <insertCondition id="geometry_points_constructed_condition" caption="Sample points construction completed and map view visible.">

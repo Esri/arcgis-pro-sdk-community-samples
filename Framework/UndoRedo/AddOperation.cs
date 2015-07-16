@@ -9,7 +9,7 @@
 //   distributed under the License is distributed on an "AS IS" BASIS,
 //   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //   See the License for the specific language governing permissions and
-//   limitations under the License.
+//   limitations under the License. 
 
 using System;
 using System.Collections.Generic;
@@ -22,6 +22,14 @@ using ArcGIS.Desktop.Mapping;
 
 namespace PreRel_UndoRedo
 {
+    /// <summary>
+    /// Button to illustrate how operations can be added to different OperationManagers. 
+    /// </summary>
+    /// <remarks>
+    /// In ArcGIS Pro does not contain a single application undo/redo stack. In general, undo operations are organized per Pane and DockPane.
+    /// 
+    /// See <see cref="ArcGIS.Desktop.Framework.OperationManager"/> for additional information on the OperationManager and undo/redo stacks.
+    /// </remarks>
     internal class AddOperation : Button
     {
         protected override async void OnClick()
@@ -38,12 +46,12 @@ namespace PreRel_UndoRedo
                 await vm.OperationManager.DoAsync(op);
 
 
-            // OPTION 2 - add the operation to the active panes operation manager
+            // OR  OPTION 2 - add the operation to the active panes operation manager
             //Pane pane = FrameworkApplication.Panes.ActivePane;
             //if ((pane != null) && (pane.OperationManager != null))
             //    await pane.OperationManager.DoAsync(op);                
 
-            // OPTION 3 - add the operation to the active maps operation manager
+            // OR  OPTION 3 - add the operation to the active maps operation manager
             //if ((MappingModule.ActiveMapView != null) && (MappingModule.ActiveMapView.Map != null))
             //    await MappingModule.ActiveMapView.Map.OperationManager.DoAsync(op);
 

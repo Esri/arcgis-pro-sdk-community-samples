@@ -23,10 +23,10 @@ using ArcGIS.Desktop.TaskAssistant;
 namespace TasksSDK
 {
   /// <summary>
-  /// Button which implements the OpenTask API method.
+  /// Button which implements the OpenTaskAsync API method.
   /// </summary>
   /// <remarks>
-  /// The OpenTask API method takes an .esriTasks file as a parameter.  This task file will be added to the 
+  /// The OpenTaskAsync API method takes an .esriTasks file as a parameter.  This task file will be added to the 
   /// project and loaded into the Tasks pane. The method returns a unique identifier which represents the task item.
   /// Use this identifier for other Tasks API calls.
   /// </remarks>
@@ -37,14 +37,14 @@ namespace TasksSDK
       // pass an .esriTasks File and it will be added to project and loaded in the Tasks pane
       try
       {
-        string guid = await TaskAssistantModule.OpenTask(@"c:\Tasks\Project Exploration Tasks.esriTasks");
+        Guid guid = await TaskAssistantModule.OpenTaskAsync(@"\\sbe1\solutions\Tasks\Get Started.esriTasks");
 
-        // keep the guid for CloseTask
+        // keep the guid for CloseTaskAsync
         Module1.Current.taskGuid = guid;
       }
       catch (OpenTaskException e)
       {
-        System.Windows.MessageBox.Show(e.Message);
+        ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(e.Message);
       }
     }
   }

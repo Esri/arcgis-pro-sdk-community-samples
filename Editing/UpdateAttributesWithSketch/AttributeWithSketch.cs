@@ -22,6 +22,7 @@ using ArcGIS.Desktop.Editing;
 using ArcGIS.Desktop.Editing.Attributes;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
+using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 
@@ -34,39 +35,40 @@ namespace UpdateAttributesWithSketch
       IsSketchTool = true;
       SketchType = SketchGeometryType.Line;
       SketchOutputMode = ArcGIS.Desktop.Mapping.SketchOutputMode.Map;
+      UseSnapping = true;
     }
 
     protected override Task<bool> OnSketchCompleteAsync(ArcGIS.Core.Geometry.Geometry geometry)
     {
       //Simple check for selected layer
-      if (MappingModule.ActiveTOC.SelectedLayers.Count == 0)
+      if (MapView.Active.GetSelectedLayers().Count == 0)
       {
-        System.Windows.MessageBox.Show("Select a layer in the toc");
+        MessageBox.Show("Please select a layer in the toc","Update attributes with sketch");
         return Task.FromResult(true);
       }
 
-      //jump to CIM thread
-      return QueuedTask.Run(async () =>
+      //Run on MCT
+      return QueuedTask.Run(() =>
       {
         //Get the selected layer in toc
-        var featLayer = MappingModule.ActiveTOC.SelectedLayers[0] as FeatureLayer;
+        var featLayer = MapView.Active.GetSelectedLayers().First() as FeatureLayer;
 
         //find feature oids under the sketch for the selected layer
-        var features = await MapView.Active.HitTestAsync(geometry, CancelableProgressor.None);
-        var featOids = features.Where(x => x.Item1 == featLayer).Select(x => x.Item2).First();
+        var features = MapView.Active.GetFeatures(geometry);
+        var featOids = features[featLayer];
 
         //update the attributes of those features
-        var fi = new FeatureInspector(true);
-        await fi.FillAsync(featLayer, featOids);
-        await fi.Attributes.Where(a => a.FieldName == "PARCEL_ID").First().SetValueAsync(42);
+        var insp = new Inspector();
+        insp.Load(featLayer, featOids);
+        insp["PARCEL_ID"] = 42;
 
         //create and execute the edit operation
         var op = new EditOperation();
-        op.Name = "The ultimate answer";
+        op.Name = "Update parcel";
         op.SelectModifiedFeatures = true;
         op.SelectNewFeatures = false;
-        op.Modify(fi);
-        return await op.ExecuteAsync();
+        op.Modify(insp);
+        return op.Execute();
       });
     }
   }

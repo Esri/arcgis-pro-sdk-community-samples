@@ -22,74 +22,73 @@ using System.Threading.Tasks;
 
 namespace UpdateAttributesWithSketch
 {
-  /// <summary>This sample creates a sketch tool that can be used to update the attributes of features that it intersects. It shows an example of creating a sketch tool,
-  /// finding intersecting features, updating attributes and performing the edit through an edit operation.</summary>
-  /// <remarks>
-  /// 	<para>To use this sample:</para>
-  /// 	<list type="number">
-  /// 		<item>Examine the code within AttributeWithSketch.cs.</item>
-  /// 		<item>Replace the string "PARCEL_ID" with a field name from data you will add to the application.</item>
-  /// 		<item>Build or debug start the sample through Visual Studio.</item>
-  /// 		<item>Create a new map and add some data or open an existing map with known data.</item>
-  /// 		<item>Examine the ADD-IN TAB on the ribbon, the sample should be present.</item>
-  /// 		<item>Select the layer in the table of contents who's attributes you wish to update with this tool.</item>
-  /// 		<item>Select the tool in the ADD-IN TAB.</item>
-  /// 		<item>Sketch a line across features in the selected layer.</item>
-  /// 		<item>Features that intersect the sketch will have their attributes updated.</item>
-  /// 	</list>
-  /// </remarks>
-  internal class Module1 : Module
-  {
-    private static Module1 _this = null;
-
     /// <summary>
-    /// Retrieve the singleton instance to this module here
+    /// This sample creates a sketch tool that can be used to update the attributes of features that it intersects. It shows an example of creating a sketch tool, finding intersecting features, updating attributes and performing the edit through an edit operation.
     /// </summary>
-    public static Module1 Current
+    /// <remarks>
+    /// 1. Examine the code within AttributeWithSketch.cs.
+    /// 1. Replace the string "PARCEL_ID" with a field name from data you will add to the application.
+    /// 1. Build or debug start the sample through Visual Studio.
+    /// 1. Create a new map and add some data or open an existing map with known data.
+    /// 1. Examine the ADD-IN TAB on the ribbon, the sample should be present.
+    /// 1. Select the layer in the table of contents who's attributes you wish to update with this tool.
+    /// 1. Select the tool in the ADD-IN TAB.
+    /// 1. Sketch a line across features in the selected layer.
+    /// 1. Features that intersect the sketch will have their attributes updated.
+    /// ![UI](Screenshots/Screen.png)    
+    /// </remarks>
+    internal class Module1 : Module
     {
-      get
-      {
-        return _this ?? (_this = (Module1)FrameworkApplication.FindModule("UpdateAttributesWithSketch_Module"));
-      }
+        private static Module1 _this = null;
+
+        /// <summary>
+        /// Retrieve the singleton instance to this module here
+        /// </summary>
+        public static Module1 Current
+        {
+            get
+            {
+                return _this ?? (_this = (Module1)FrameworkApplication.FindModule("UpdateAttributesWithSketch_Module"));
+            }
+        }
+
+        #region Overrides
+        /// <summary>
+        /// Called by Framework when ArcGIS Pro is closing
+        /// </summary>
+        /// <returns>False to prevent Pro from closing, otherwise True</returns>
+        protected override bool CanUnload()
+        {
+            //TODO - add your business logic
+            //return false to ~cancel~ Application close
+            return true;
+        }
+
+        /// <summary>
+        /// Generic implementation of ExecuteCommand to allow calls to
+        /// <see cref="FrameworkApplication.ExecuteCommand"/> to execute commands in
+        /// your Module.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        protected override Func<Task> ExecuteCommand(string id)
+        {
+
+            //TODO: replace generic implementation with custom logic
+            //etc as needed for your Module
+            var command = FrameworkApplication.GetPlugInWrapper(id) as ICommand;
+            if (command == null)
+                return () => Task.FromResult(0);
+            if (!command.CanExecute(null))
+                return () => Task.FromResult(0);
+
+            return () =>
+            {
+                command.Execute(null); // if it is a tool, execute will set current tool
+                return Task.FromResult(0);
+            };
+        }
+        #endregion Overrides
+
     }
-
-    #region Overrides
-    /// <summary>
-    /// Called by Framework when ArcGIS Pro is closing
-    /// </summary>
-    /// <returns>False to prevent Pro from closing, otherwise True</returns>
-    protected override bool CanUnload()
-    {
-      //TODO - add your business logic
-      //return false to ~cancel~ Application close
-      return true;
-    }
-
-    /// <summary>
-    /// Generic implementation of ExecuteCommand to allow calls to
-    /// <see cref="FrameworkApplication.ExecuteCommand"/> to execute commands in
-    /// your Module.
-    /// </summary>
-    /// <param name="id"></param>
-    /// <returns></returns>
-    protected override Func<Task> ExecuteCommand(string id)
-    {
-
-      //TODO: replace generic implementation with custom logic
-      //etc as needed for your Module
-      var command = FrameworkApplication.GetPlugInWrapper(id) as ICommand;
-      if (command == null)
-        return () => Task.FromResult(0);
-      if (!command.CanExecute(null))
-        return () => Task.FromResult(0);
-
-      return () =>
-      {
-        command.Execute(null); // if it is a tool, execute will set current tool
-        return Task.FromResult(0);
-      };
-    }
-    #endregion Overrides
-
-  }
 }

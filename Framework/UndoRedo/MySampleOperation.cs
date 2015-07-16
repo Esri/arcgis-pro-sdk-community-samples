@@ -9,7 +9,7 @@
 //   distributed under the License is distributed on an "AS IS" BASIS,
 //   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //   See the License for the specific language governing permissions and
-//   limitations under the License.
+//   limitations under the License. 
 
 using ArcGIS.Desktop.Framework.Contracts;
 using System;
@@ -20,46 +20,67 @@ using System.Threading.Tasks;
 
 namespace PreRel_UndoRedo
 {
-    internal static class PreRel_UndoRedo
+  internal static class PreRel_UndoRedo
+  {
+    internal static string Category = "SampleCategory";
+  }
+
+  /// <summary>
+  /// An empty sample undo/redo operation used for illustrating how to add to an OperationManager.
+  /// </summary>
+  internal class MySampleOperation : Operation
+  {
+    public MySampleOperation()
     {
-        internal static string Category = "SampleCategory";
+      // TODO - do init stuff here.  Pass parameters as necessary
     }
 
-    internal class MySampleOperation : Operation
+    /// <summary>
+    /// Gets the name of the operation
+    /// </summary>
+    public override string Name
     {
-        public MySampleOperation()
-        {
-            // TODO - do init stuff here.  Pass parameters as necessary
-        }
-
-        public override string Name
-        {
-            get { return "Sample Operation"; }
-        }
-
-        public override string Category
-        {
-            get { return PreRel_UndoRedo.Category; }
-        }
-
-        protected override Task DoAsync()
-        {
-            // TODO - do something here 
-
-            return Task.FromResult(0);
-        }
-
-        protected override Task RedoAsync()
-        {
-            return DoAsync();
-        }
-
-        protected override Task UndoAsync()
-        {
-            // TODO - undo the something here
-
-            return Task.FromResult(0);
-        }
-
+      get { return "Sample Operation"; }
     }
+
+    /// <summary>
+    /// Gets the category of the operation
+    /// </summary>
+    public override string Category
+    {
+      get { return PreRel_UndoRedo.Category; }
+    }
+
+    /// <summary>
+    /// Performs the operation
+    /// </summary>
+    /// <returns>A Task to the DoAsync method</returns>
+    protected override Task DoAsync()
+    {
+      // TODO - do something here 
+
+      return Task.FromResult(0);
+    }
+
+    /// <summary>
+    /// Repeats the operation
+    /// </summary>
+    /// <returns>A Task to the RedoAsync method</returns>
+    protected override Task RedoAsync()
+    {
+      return DoAsync();
+    }
+
+    /// <summary>
+    /// Undo the operation to reset the state
+    /// </summary>
+    /// <returns>A Task to the UndoAsync method</returns>
+    protected override Task UndoAsync()
+    {
+      // TODO - undo the something here
+
+      return Task.FromResult(0);
+    }
+
+  }
 }

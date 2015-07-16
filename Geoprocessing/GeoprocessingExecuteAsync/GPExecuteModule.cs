@@ -28,14 +28,15 @@ namespace GeoprocessingExecuteAsync
     /// method which draws a buffer around that line.
     /// </summary>
     /// <remarks>
-    ///1. In Visual Studio click the Build menu. Then select Build Solution.
-    ///2. Click Start button to open ArcGIS Pro.
-    ///3. ArcGIS Pro will open. 
-    ///4. Open a map view and zoom in to your area of interest. 
-    ///5. Click on BufferGeometryTool button on the ADD-IN TAB and then click on several points on the map to draw a line.
-    ///5. Double-click completes the line and the ExecuteAsync tool is called with this line
-    ///as the input to Buffer (Analysis Tools toolbox) tool.
-    ///6. Once the execution of the Buffer tool is complete, the buffered polygon as added to display.
+    /// 1. In Visual Studio click the Build menu. Then select Build Solution.
+    /// 2. Click Start button to open ArcGIS Pro.
+    /// 3. ArcGIS Pro will open. 
+    /// 4. Open a map view and zoom in to your area of interest. 
+    /// 5. Click on BufferGeometryTool button on the ADD-IN TAB and then click on several points on the map to draw a line.
+    /// 5. Double-click completes the line and the ExecuteAsync tool is called with this line as the input to Buffer (Analysis Tools toolbox) tool.
+    /// ![UI](Screenshots/Screen.png)
+    /// 6. Once the execution of the Buffer tool is complete, the buffered polygon as added to display.
+    /// ![UI](Screenshots/Screen2.png)
     /// </remarks>
     internal class GPExecuteModule : Module
     {

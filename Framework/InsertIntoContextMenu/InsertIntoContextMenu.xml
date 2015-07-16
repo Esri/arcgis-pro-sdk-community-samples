@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InsertIntoContextMenu</name>
+    </assembly>
+    <members>
+        <member name="T:InsertIntoContextMenu.CIMViewerView">
+            <summary>
+            Interaction logic for CIMViewerView.xaml
+            </summary>
+            <summary>
+            CIMViewerView
+            </summary>
+        </member>
+        <member name="M:InsertIntoContextMenu.CIMViewerView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:InsertIntoContextMenu.Module1">
+            <summary>
+            This sample provides a custom control button that will be available
+            in the context menu for a feature layer in the TOC. Selecting this
+            option will display a window containing the metadata for the layer.
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            2. Click Start button to open ArcGIS Pro.
+            3. ArcGIS Pro will open.
+            4. Open a map that contains feature geometry.
+            5. Right click on a  feature layer in the TOC.
+            6. Select Layer Viewer.
+            ![UI](Screenshots/Screen.png)
+            7. The application will display the layer's metadata information.
+            ![UI](Screenshots/Screen2.png)
+            </remarks>
+        </member>
+        <member name="M:InsertIntoContextMenu.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="P:InsertIntoContextMenu.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+    </members>
+</doc>

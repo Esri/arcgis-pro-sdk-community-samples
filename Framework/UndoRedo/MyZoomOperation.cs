@@ -9,22 +9,24 @@
 //   distributed under the License is distributed on an "AS IS" BASIS,
 //   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //   See the License for the specific language governing permissions and
-//   limitations under the License.
+//   limitations under the License. 
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Mapping;
+using ArcGIS.Desktop.Framework.Threading.Tasks;
 
 namespace PreRel_UndoRedo
 {
+  /// <summary>
+  /// A sample undo/redo operation that illustrates zoom in and zoom out actions. 
+  /// </summary>
   internal class MyZoomOperation : Operation
   {
-    private static readonly double MinimumScale = 100.0;
-    private static readonly double MinimumElevation = 10;
-    private static readonly double MaximumScale = 1000000000.0;
-    private static readonly double MaximumElevation = MaximumScale;
-
-
     private bool _zoomIn;
     private Camera _origCamera;
 
@@ -33,59 +35,80 @@ namespace PreRel_UndoRedo
       _zoomIn = zoomIn;
     }
 
+    /// <summary>
+    /// Gets the name of the operation
+    /// </summary>
     public override string Name
     {
-        get { 
-          if (_zoomIn)
-            return "Fixed Zoom In";
-          else
-            return "Fixed Zoom Out"; 
-        }
+      get { 
+        if (_zoomIn)
+          return "Fixed Zoom In";
+        else
+          return "Fixed Zoom Out"; 
+      }
     }
 
+    /// <summary>
+    /// Gets the category of the operation
+    /// </summary>
     public override string Category
     {
-        get { return PreRel_UndoRedo.Category; }
+      get { return PreRel_UndoRedo.Category; }
     }
 
-    protected override async Task DoAsync()
+    /// <summary>
+    /// Performs the operation
+    /// </summary>
+    /// <returns>A Task to the Do method</returns>
+    protected override bool Do()
     {
+      // get the active mapview
       MapView activeMapView = MapView.Active;
       if (activeMapView == null)
-        return;
+          return true;
 
-      Camera camera = await activeMapView.GetCameraAsync();
-      _origCamera = await activeMapView.GetCameraAsync();
-
-      double factor = (_zoomIn) ? 0.75 : 1.25;
-
-      if (activeMapView.ViewMode == ViewMode.Map)
+      // note that MapView.ZoomInFixed and MapView.ZoomOutFixed must be called on the MCT
+      QueuedTask.Run(() =>
       {
-        double scale = camera.Scale * factor;
-        if (_zoomIn)
-          camera.Scale = scale > MinimumScale ? scale : MinimumScale;
-        else
-          camera.Scale = scale < MaximumScale ? scale : MaximumScale;
-      }
-      else
-      {
-        double z = camera.Z * factor;
-        if (_zoomIn)
-          camera.Z = z > MinimumElevation ? z : MinimumElevation;
-        else
-          camera.Z = z < MaximumScale ? z : MaximumScale;
-      }
+        // get the original camera position for undo
+        _origCamera = activeMapView.Camera;
 
-      await activeMapView.ZoomToAsync(camera);
+        // dp the zoom in/zoom out
+        if (_zoomIn)
+          activeMapView.ZoomInFixed();
+        else
+          activeMapView.ZoomOutFixed();
+      });
+
+      return true;
     }
 
+    /// <summary>
+    /// Performs the operation
+    /// </summary>
+    /// <returns>A Task to the DoAsync method</returns>
+    protected override Task DoAsync()
+    {
+      Do();
+      return Task.FromResult(0);
+    }
+
+    /// <summary>
+    /// Repeats the operation
+    /// </summary>
+    /// <returns>A Task to the RedoAsync method</returns>
     protected override Task RedoAsync()
     {
       return DoAsync();
     }
 
+    /// <summary>
+    /// Undo the operation to reset the state
+    /// </summary>
+    /// <returns>A Task to the UndoAsync method</returns>
     protected override async Task UndoAsync()
     {
+      // no need to wrap ZoomToAsync in QueuedTask.Run
       MapView activeMapView = MapView.Active;
       if (activeMapView == null)
         return;

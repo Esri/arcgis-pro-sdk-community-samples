@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="CommandFilter.CommandFilterDockPaneView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"                                             
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30" VerticalAlignment="Center">
+            <Separator DockPanel.Dock="Bottom"></Separator>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <StackPanel.ToolTip>
+                        <ToolTip>
+                            <TextBlock Text="{Binding Path=IsFilteringTooltip}" 
+                               FontWeight="Regular" FontSize="12" Foreground="{DynamicResource Esri_Gray155}"></TextBlock>
+                        </ToolTip>
+                    </StackPanel.ToolTip>
+                    <CheckBox IsChecked="{Binding Path=IsFiltering, Mode=TwoWay}" Margin="2,0,2,0"></CheckBox>
+                    <TextBlock Text="{Binding Path=IsFilteringText}" FontWeight="Regular" FontSize="12" Foreground="{DynamicResource Esri_Gray155}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <StackPanel.ToolTip>
+                        <ToolTip>
+                            <TextBlock Text="{Binding Path=PopMessageBoxTooltip}" 
+                               FontWeight="Regular" FontSize="12" Foreground="{DynamicResource Esri_Gray155}"></TextBlock>
+                        </ToolTip>
+                    </StackPanel.ToolTip>
+                    <CheckBox IsChecked="{Binding Path=ShowMessageBox, Mode=TwoWay}" Margin="15,0,2,0"></CheckBox>
+                    <TextBlock Text="Pop Message Box on Filter" FontWeight="Regular" FontSize="12" Foreground="{DynamicResource Esri_Gray155}"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </DockPanel>
+        <DockPanel LastChildFill="True" Grid.Row="1" Margin="0,10,0,0">
+            <TextBlock Text="Commands Clicked:" DockPanel.Dock="Top" Margin="5" Style="{DynamicResource H5TextBlock}"></TextBlock>
+            
+            <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto" BorderBrush="Gray" BorderThickness="1" Margin="5"
+                     ItemsSource="{Binding Path=CommandFilters}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid VerticalAlignment="Center" HorizontalAlignment="Left">
+                            <Grid.ToolTip>
+                                <ToolTip>
+                                    <ToolTip.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="40"></ColumnDefinition>
+                                                <ColumnDefinition Width="180"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="100"></RowDefinition>
+                                                <RowDefinition Height="Auto"></RowDefinition>
+                                            </Grid.RowDefinitions>
+
+                                            <Image HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" Source="{Binding Path=Thumbnail}"
+                                                   Grid.Row="0" Grid.Column="0">
+                                            </Image>
+                                            <TextBlock Text="{Binding Path=Tooltip}" Margin="5,0,0,0" TextWrapping="Wrap"
+                                                           FontWeight="Regular" FontSize="12" Foreground="{DynamicResource Esri_Gray155}"
+                                                           TextTrimming="CharacterEllipsis" Grid.Row="0" Grid.Column="1"></TextBlock>
+
+                                            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                                                <TextBlock Text="Id: " FontWeight="Regular" FontSize="12" Foreground="{DynamicResource Esri_Gray155}"></TextBlock>
+                                                <TextBlock Text="{Binding Path=Id}" FontWeight="Regular" FontSize="12" Foreground="{DynamicResource Esri_Gray155}"
+                                                           TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"></TextBlock>
+                                            </StackPanel>
+                                        </Grid>
+                                    </ToolTip.Content>
+                                </ToolTip>
+                            </Grid.ToolTip>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".7*"></ColumnDefinition>
+                                <ColumnDefinition Width=".3*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Path=Caption}" Margin="3,2,15,2" Grid.Column="0" VerticalAlignment="Center"
+                                       FontWeight="Regular" FontSize="12" Foreground="{DynamicResource Esri_Gray155}"></TextBlock>
+                            
+                            <StackPanel Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Center">
+                                <TextBlock Text="Count: " FontWeight="Regular" FontSize="12" Foreground="{DynamicResource Esri_Gray155}"></TextBlock>
+                                <TextBlock Text="{Binding Path=ClickCount, StringFormat={}{0}}" FontWeight="Regular" FontSize="12" Foreground="{DynamicResource Esri_Gray155}"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+    </Grid>
+</UserControl>

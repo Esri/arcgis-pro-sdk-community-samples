@@ -12,6 +12,7 @@
 //   limitations under the License. 
 
 using ArcGIS.Core.Data;
+using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Editing;
 using ArcGIS.Desktop.Framework.Contracts;
 using System;
@@ -50,15 +51,17 @@ namespace DeleteFeaturesBasedOnSubtype
         /// <param name="item">The newly selected combo box item</param>
         protected override void OnDropDownOpened()
         {
-            if (MappingModule.ActiveTOC.SelectedLayers.Count == 1)
+            if (MapView.Active.GetSelectedLayers().Count == 1)
             {
                 Clear();
                 QueuedTask.Run(() =>
                 {
-                    var layer = MappingModule.ActiveTOC.SelectedLayers[0];
+                    var layer = MapView.Active.GetSelectedLayers()[0];
                     if (layer is FeatureLayer)
                     {
                         var featureLayer = layer as FeatureLayer;
+                        if (featureLayer.GetTable().GetDatastore() is UnknownDatastore)
+                            return;
                         using (var table = featureLayer.GetTable())
                         {
                             IReadOnlyList<Subtype> readOnlyList;
@@ -84,7 +87,7 @@ namespace DeleteFeaturesBasedOnSubtype
         /// The on comboBox selection change event. 
         /// </summary>
         /// <param name="item">The newly selected combo box item</param>
-        protected override void OnSelectionChange(ComboBoxItem item)
+        protected async override void OnSelectionChange(ComboBoxItem item)
         {
 
             if (item == null)
@@ -92,14 +95,15 @@ namespace DeleteFeaturesBasedOnSubtype
 
             if (string.IsNullOrEmpty(item.Text))
                 return;
-
-            QueuedTask.Run(async () =>
+            string error = String.Empty;
+            bool result = false;
+            await QueuedTask.Run(async () =>
             {
-                var layer = MappingModule.ActiveTOC.SelectedLayers[0];
+                var layer = MapView.Active.GetSelectedLayers()[0];
                 if (layer is FeatureLayer)
                 {
                     var featureLayer = layer as FeatureLayer;
-                    if (featureLayer.GetTable().GetWorkspace() == null)
+                    if (featureLayer.GetTable().GetDatastore() is UnknownDatastore)
                         return;
                     using (var table = featureLayer.GetTable())
                     {
@@ -110,31 +114,40 @@ namespace DeleteFeaturesBasedOnSubtype
                         {
                             using (var rowCursor = table.Search(queryFilter, false))
                             {
-                                var editOperation = new EditOperation {Versioned = false};
+                                var editOperation = new EditOperation();
                                 editOperation.Callback(context =>
                                 {
                                     while (rowCursor.MoveNext())
                                     {
                                         using (var row = rowCursor.Current)
                                         {
+                                            context.Invalidate(row);
                                             row.Delete();
                                         }
                                     }
-                                    context.invalidate(table);
-                                }, table.GetWorkspace());
-                                var result = await editOperation.ExecuteAsync();
+                                }, table);
+                                if (table.GetRegistrationType().Equals(RegistrationType.Nonversioned) &&
+                                    Project.Current.HasEdits)
+                                {
+                                    error =
+                                        "The FeatureClass is Non-Versioned and there are Unsaved Edits in the Project. Please save or discard the edits before attempting Non-Versioned Edits";
+                                }
+                                else
+                                    result = await editOperation.ExecuteAsync();
                                 if (!result)
-                                    MessageBox.Show(String.Format("Could not delete features for subtype {0} : {1}",
-                                        item.Text, editOperation.ErrorMessage));
+                                    error = editOperation.ErrorMessage;
                             }
                         }
                         catch (Exception e)
                         {
-                            Console.WriteLine(e);
+                            error = e.Message;
                         }                        
                     }
                 }
-            });   
+            });
+            if (!result)
+                MessageBox.Show(String.Format("Could not delete features for subtype {0} : {1}",
+                    item.Text, error));
         }
 
     }

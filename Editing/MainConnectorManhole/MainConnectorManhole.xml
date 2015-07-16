@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MainConnectorManhole</name>
+    </assembly>
+    <members>
+        <member name="T:MainConnectorManhole.Module1">
+            <summary>This sample creates a sketch tool that creates multiple features in 3D. It demonstrates a line sketch tool, working with 3D geometry, and edit templates.</summary>
+            <remarks>
+            1. The sample was initially created for internal demonstrations to show feature construction in 3D. 
+            1. It requires the main (line), connector (line) and manhole (point) 3D layers in a scene. 
+            1. The demonstration shows using the sketch to draw on a surface with the resulting features created underneath and connecting.
+            ![UI](Screenshots/Screen.png)
+            1. The following two screenshots are examples of the expected output.
+            ![UI](Screenshots/OutputExample1.png)
+            ![UI](Screenshots/OutputExample2.png)
+            </remarks>
+        </member>
+        <member name="M:MainConnectorManhole.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="P:MainConnectorManhole.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+    </members>
+</doc>

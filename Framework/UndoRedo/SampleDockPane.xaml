@@ -55,6 +55,7 @@
           <Button Content="Fixed Zoom out" Style="{StaticResource Esri_SimpleButton}"
                 Command="{Binding FixedZoomOutCommand}"/>
         </WrapPanel>
+        <Button Content="Composite Operation (Zoom in x3)" Style="{StaticResource Esri_SimpleButton}" Command="{Binding CompositeZoomInCommand}"/>
       </StackPanel>     
     </DockPanel>
     

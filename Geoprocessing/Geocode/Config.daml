@@ -1,0 +1,52 @@
+﻿<ArcGIS defaultAssembly="Geocode.dll" defaultNamespace="Geocode" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{98f0e9b8-740a-43eb-ba9e-8249112e1ef9}" version="1.0" desktopVersion="1.1.3181">
+    <Name>Geocode</Name>
+    <Description>This sample provides a new tab and controls that launches a Geocode dialog window.</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>robe4677</Author>
+    <Company>Acme</Company>
+    <Date>5/29/2015 3:16:05 PM, 2015</Date>
+    <Subject>Geoprocessing</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <!--
+//Copyright 2015 Esri
+
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       http://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.
+-->
+  <modules>
+    <insertModule id="Geocode_Module" className="GeocodeModule" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="Geocode_Tab1" caption="New Tab">
+          <group refID="Geocode_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="Geocode_Group1" caption="Geocode Group" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="Geocode_GeocodeButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="Geocode_GeocodeButton" caption="Geocode Address" className="GeocodeButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

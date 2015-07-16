@@ -67,9 +67,9 @@ Friend Class createPolygons
         Return QueuedTask.Run(
             Function()
                 ' get the underlying feature class for each layer
-                Dim polygonFeatureClass = DirectCast(polygonLayer.GetTableAsync().Result, FeatureClass)
+                Dim polygonFeatureClass = DirectCast(polygonLayer.GetTable(), FeatureClass)
                 Dim polygonDefinition = DirectCast(polygonFeatureClass.GetDefinition(), FeatureClassDefinition)
-                Dim lineFeatureClass = DirectCast(lineLayer.GetTableAsync().Result, FeatureClass)
+                Dim lineFeatureClass = DirectCast(lineLayer.GetTable(), FeatureClass)
 
                 ' construct a cursor to retrieve the line features
                 Dim lineCursor = lineFeatureClass.Search(Nothing, False)

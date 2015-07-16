@@ -43,7 +43,7 @@
         </group>
       </groups>
       <controls>
-        <button id="WorkwithProjects_WorkWithProjects_ShowButton" caption="Show Work With Projects" className="WorkWithProjects_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" condition="esri_mapping_openProjectCondition" >
+        <button id="WorkwithProjects_WorkWithProjects_ShowButton" caption="Show Work With Projects" className="WorkWithProjects_ShowButton" loadOnClick="true" smallImage="Images\Dino16.png" largeImage="Images\Dino32.png" condition="esri_mapping_openProjectCondition" >
           <tooltip heading="Show Work With Projects Dockpane">
             Show Work With Projects Dockpane<disabledText /></tooltip>
         </button>

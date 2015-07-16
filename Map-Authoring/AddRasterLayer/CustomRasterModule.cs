@@ -30,9 +30,10 @@ namespace AddRasterLayer
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
     /// 2. Click Start button to open ArcGIS Pro.
     /// 3. ArcGIS Pro will open. 
-    /// 4. Open a map view.
+    /// 4. Open a map view (using this path: "CIMPATH=map/map.xml")
     /// 5. Click on the ADD-IN tab. 
     /// 6. Click the Add Raster Layer button to add a new raster layer to the map.
+    /// ![UI](Screenshots/Screen.png)
     /// </remarks>
     internal class CustomRasterModule : Module
     {

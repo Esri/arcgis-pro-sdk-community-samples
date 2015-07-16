@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ArcGISOnlineConnect</name>
+    </assembly>
+    <members>
+        <member name="T:ArcGISOnlineConnect.AgolDockpaneView">
+            <summary>
+            Interaction logic for AgolDockpaneView.xaml
+            </summary>
+            <summary>
+            AgolDockpaneView
+            </summary>
+        </member>
+        <member name="M:ArcGISOnlineConnect.AgolDockpaneView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ArcGISOnlineConnect.AgolDockpaneViewModel.Show">
+            <summary>
+            Show the DockPane.
+            </summary>
+        </member>
+        <member name="F:ArcGISOnlineConnect.AgolDockpaneViewModel._heading">
+            <summary>
+            Text shown near the top of the DockPane.
+            </summary>
+        </member>
+        <member name="F:ArcGISOnlineConnect.AgolDockpaneViewModel._AgolUrl">
+            <summary>
+            Returns the current active ArcGIS Online string
+            </summary>
+        </member>
+        <member name="F:ArcGISOnlineConnect.AgolDockpaneViewModel._AgolQuery">
+            <summary>
+            Selected query: one of the AGOL queries has been selected by the user
+            </summary>
+        </member>
+        <member name="F:ArcGISOnlineConnect.AgolDockpaneViewModel._CallParams">
+            <summary>
+            The list of parameters for the selected query
+            </summary>
+        </member>
+        <member name="F:ArcGISOnlineConnect.AgolDockpaneViewModel._CommandDoQuery">
+            <summary>
+            Command for executing queries.  Bind to this property in the view.
+            </summary>
+        </member>
+        <member name="F:ArcGISOnlineConnect.AgolDockpaneViewModel._QueryResult">
+            <summary>
+            Query Result display area
+            </summary>
+        </member>
+        <member name="F:ArcGISOnlineConnect.AgolDockpaneViewModel._CommandQuery">
+            <summary>
+            text for command query button
+            </summary>
+        </member>
+        <member name="M:ArcGISOnlineConnect.AgolDockpaneViewModel.CmdDoQuery">
+            <summary>
+            Execute the query command
+            </summary>
+        </member>
+        <member name="M:ArcGISOnlineConnect.AgolDockpaneViewModel.CanDoQuery">
+            <summary>
+            Determines the visibility (enabled state) of the query button
+            </summary>
+            <returns>true if enabled</returns>
+        </member>
+        <member name="P:ArcGISOnlineConnect.AgolDockpaneViewModel.AgolQueries">
+            <summary>
+            Agol Queries:  all queries are loaded into this dictionary and presented for user selection
+            </summary>
+        </member>
+        <member name="T:ArcGISOnlineConnect.AgolDockpane_ShowButton">
+            <summary>
+            Button implementation to show the DockPane.
+            </summary>
+        </member>
+        <member name="T:ArcGISOnlineConnect.ArcGISOnlineHelpers.AgolFolderContent">
+            <summary>
+            Class used to encapsulate ArcGIS Online Folder content query result
+            </summary>
+        </member>
+        <member name="M:ArcGISOnlineConnect.ArcGISOnlineHelpers.AgolFolderContent.LoadAgolFolderContent(System.String)">
+            <summary>
+            Convert json string into ArcGIS Online Folder content query result
+            </summary>
+            <param name="json">returned json string from AGOL query</param>
+            <returns>ArcGIS online Folder content result</returns>
+        </member>
+        <member name="T:ArcGISOnlineConnect.ArcGISOnlineHelpers.AgolUserContent">
+            <summary>
+            Class used to encapsulate ArcGIS Online Content (from a content query result)
+            </summary>
+        </member>
+        <member name="M:ArcGISOnlineConnect.ArcGISOnlineHelpers.AgolUserContent.LoadAgolUserContent(System.String)">
+            <summary>
+            Convert json string into ArcGIS Online user content class
+            </summary>
+            <param name="json">returned json string from AGOL query</param>
+            <returns>ArcGIS online user content</returns>
+        </member>
+        <member name="T:ArcGISOnlineConnect.ArcGISOnlineHelpers.AgolFolder">
+            <summary>
+            Class used to encapsulate ArcGIS Online folders
+            </summary>
+        </member>
+        <member name="T:ArcGISOnlineConnect.ArcGISOnlineHelpers.AgolItem">
+            <summary>
+            Class used to encapsulate ArcGIS Online items
+            </summary>
+        </member>
+        <member name="T:ArcGISOnlineConnect.ArcGISOnlineHelpers.AgolSearchResult">
+            <summary>
+            Class used to encapsulate ArcGIS Online item search results
+            </summary>
+        </member>
+        <member name="M:ArcGISOnlineConnect.ArcGISOnlineHelpers.AgolSearchResult.LoadAgolSearchResult(System.String)">
+            <summary>
+            Convert json string into ArcGIS Online search result class
+            </summary>
+            <param name="json">returned json string from AGOL query</param>
+            <returns>ArcGIS online search result</returns>
+        </member>
+        <member name="T:ArcGISOnlineConnect.ArcGISOnlineHelpers.AgolUser">
+            <summary>
+            Class used to encapsulate ArcGIS Online user
+            </summary>
+        </member>
+        <member name="M:ArcGISOnlineConnect.ArcGISOnlineHelpers.AgolUser.LoadAgolUser(System.String)">
+            <summary>
+            Convert json string into ArcGIS Online user class
+            </summary>
+            <param name="json">returned json string from AGOL user query</param>
+            <returns>ArcGIS online user class</returns>
+        </member>
+        <member name="T:ArcGISOnlineConnect.ArcGISOnlineHelpers.ArcGISOnlineQueries">
+            <summary>
+            List of ArcGIS online queries with input parameters to test
+            </summary>
+        </member>
+        <member name="T:ArcGISOnlineConnect.ArcGISOnlineHelpers.ArcGISOnlineQueries.AGSQueryType">
+            <summary>
+            The available canned queries thus far
+            </summary>
+        </member>
+        <member name="T:ArcGISOnlineConnect.ArcGISOnlineHelpers.ArcGISOnlineQueries.AGSQueries">
+            <summary>
+            Preformatted AGS queries
+            </summary>
+        </member>
+        <member name="F:ArcGISOnlineConnect.ArcGISOnlineHelpers.ArcGISOnlineQueries.AGSQueries.ArcGisOnlineQueryTypesDictionary">
+            <summary>
+            The qt uris, key'd by AGS qt type
+            </summary>
+        </member>
+        <member name="M:ArcGISOnlineConnect.ArcGISOnlineHelpers.ArcGISOnlineQueries.AGSQueries.ArcGisOnlineQuery(ArcGISOnlineConnect.ArcGISOnlineHelpers.ArcGISOnlineQueries.AGSQueryType)">
+            <summary>
+            The initial template or format string for the specified
+            type...
+            </summary>
+            <param name="qt"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ArcGISOnlineConnect.Module1">
+            <summary>
+            ArcGISOnlineConnect exercises a collection of programmatic interactions with ArcGIS Online using EsriHttpClient
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            2. Click Start button to open ArcGIS Pro.
+            3. ArcGIS Pro will open. 
+            4. Open any project file. Click on the Add-in tab on the ribbon and then on the Show "AgolDockpane" button.
+            ![UI](Screenshot/AgolInterface.png)  
+            5. On top the AgolDockpane (pane) you find the ArcGIS Online Uri used for the interaction with ArcGIS Online (your portal).
+            6. Select from the 'AGOL operation' listbox by starting with 'GetRest' (go through the list top to bottom doing the following steps):
+            7. Verify the Parameter(s) required for the query you just selected (note: default values are filled in by using return values from previous query results so sequence is important)
+            8. Click on the "Run ... ArcGIS Online Query" button to execute the query.
+            9. View the results in text box on the bottom of the AgolDockpane.  
+            10. Please not that ArcGIS Online queries return json and various content returned in json is deserialized into the respective c# class.
+            11. Also note that permissions and content are required for various queries (i.e. content or folder queries)
+            </remarks>
+        </member>
+        <member name="M:ArcGISOnlineConnect.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="P:ArcGISOnlineConnect.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+    </members>
+</doc>

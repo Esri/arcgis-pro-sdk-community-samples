@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CoreHostGDB</name>
+    </assembly>
+    <members>
+        <member name="M:CoreHostGDB.Common.RelayCommand.#ctor(System.Action)">
+            <summary>
+            Default constructor - provide the function to be executed
+            </summary>
+            <param name="execMethod">The function to be executed</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:CoreHostGDB.Common.RelayCommand.#ctor(System.Action,System.Func{System.Boolean})" -->
+        <member name="M:CoreHostGDB.Common.TaskUtils.StartSTATask``1(System.Func{``0})">
+            <summary>
+            The problem is that Core.Data must be STA. An STA thread can't be a threadpool thread 
+            and must pump a message loop
+            </summary>
+            <remarks>Note: there is no non-generic equivalent for TaskCompletionSource</remarks>
+            <typeparam name="T"></typeparam>
+            <param name="func"></param>
+            <returns>Task{T}</returns>
+        </member>
+        <member name="T:CoreHostGDB.Common.StringToBoolConverter">
+             <summary>
+            If the string length &gt; 0 is "true" then true is returned, otherwise false.
+             </summary>
+             <remarks>If the string value "true" is passed as the parameter the returned bool is flipped</remarks>
+        </member>
+        <member name="M:CoreHostGDB.Common.StringToBoolConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts OnlineUri query string length to a bool. A query string length &gt; 0 returns true
+            </summary>
+            <returns>Pass "true" as the parameter to flip (reverse) the returned bool (i.e. !true or !false)</returns>
+        </member>
+        <member name="T:CoreHostGDB.Common.BoolToVisibilityConverter">
+            <summary>
+            Converts the given bool to a Visibility
+            </summary>
+        </member>
+        <member name="T:CoreHostGDB.ForRows.DynamicDataRow">
+            <summary>
+            Inherits from <see cref="T:System.Dynamic.DynamicObject"/>. Implements a class
+            that dynamically changes its properties at runtime. The set of properties is changed
+            to match the columns of the selected GDB table.
+            </summary>
+            <remarks>This class is bindable</remarks>
+        </member>
+        <member name="T:CoreHostGDB.Program">
+            <summary>
+            WPF application that implements a generic File GDB reader
+            </summary>
+            <remarks>
+            1. Open this solution in Visual Studio 
+            1. Click the build menu and select Build Solution.
+            1. Click the Start button to run the WPF app.  
+            1. Specify a valid path to a file geodatabase path in the 'Open a GDB' input field and click the 'Open' button.  
+            1. The 'Open a Dataset' dropdown is filled with all available datasets.  
+            1. Select a dataset on the 'Open a Dataset' dropdown and click the 'Read' button.
+            1. View the table showing the dataset's content.
+            ![UI](Screenshots/Screen.png)
+            </remarks>
+        </member>
+        <member name="T:CoreHostGDB.UI.ExtendListView">
+            <summary>
+            From <a href="http://social.technet.microsoft.com/wiki/contents/articles/17635.the-equivalent-to-autogeneratecolumns-for-a-listviewgridview.aspx"/>
+            </summary>
+        </member>
+        <member name="T:CoreHostGDB.UI.GDBGrid">
+            <summary>
+            Interaction logic for GDBGrid.xaml
+            </summary>
+            <summary>
+            GDBGrid
+            </summary>
+        </member>
+        <member name="M:CoreHostGDB.UI.GDBGrid.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:CoreHostGDB.UI.GDBGridViewModel.GDBPath">
+            <summary>
+            Gets and sets the path to the GDB to be opened
+            </summary>
+        </member>
+        <member name="P:CoreHostGDB.UI.GDBGridViewModel.Tables">
+            <summary>
+            Gets the tables for the given GDB
+            </summary>
+        </member>
+        <member name="P:CoreHostGDB.UI.GDBGridViewModel.Rows">
+            <summary>
+            Gets the current set of rows for the selected table
+            </summary>
+        </member>
+        <member name="P:CoreHostGDB.UI.GDBGridViewModel.ColumnData">
+            <summary>
+            Gets the column data (name, type, etc)
+            </summary>
+        </member>
+        <member name="P:CoreHostGDB.UI.GDBGridViewModel.SelectedTableName">
+            <summary>
+            Gets and sets the selected table name (for the opened GDB)
+            </summary>
+        </member>
+        <member name="P:CoreHostGDB.UI.GDBGridViewModel.TableHasNoRows">
+            <summary>
+            Gets and sets the string to display if the selected table has no rows
+            </summary>
+        </member>
+        <member name="P:CoreHostGDB.UI.GDBGridViewModel.ProgressValue">
+            <summary>
+            Gets the value to set on the progress
+            </summary>
+        </member>
+        <member name="P:CoreHostGDB.UI.GDBGridViewModel.MaxProgressValue">
+            <summary>
+            Gets the max value to set on the progress
+            </summary>
+        </member>
+        <member name="P:CoreHostGDB.UI.GDBGridViewModel.IsExecutingQuery">
+            <summary>
+            Gets whether a query is executing or not
+            </summary>
+        </member>
+        <member name="P:CoreHostGDB.UI.GDBGridViewModel.BrowseForGDBCommand">
+            <summary>
+            Gets the Browse for GDB command
+            </summary>
+        </member>
+        <member name="P:CoreHostGDB.UI.GDBGridViewModel.OpenGDBCommand">
+            <summary>
+            Gets the Open GDB command
+            </summary>
+        </member>
+        <member name="P:CoreHostGDB.UI.GDBGridViewModel.ReadTableCommand">
+            <summary>
+            Gets the rows from the selected table
+            </summary>
+        </member>
+    </members>
+</doc>

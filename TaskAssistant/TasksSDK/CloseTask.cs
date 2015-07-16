@@ -23,11 +23,11 @@ using ArcGIS.Desktop.TaskAssistant;
 namespace TasksSDK
 {
   /// <summary>
-  /// Button which implements the CloseTask API  method.  
+  /// Button which implements the CloseTaskAsync API  method.  
   /// </summary>
   /// <remarks>
-  /// Close the task item which is represented by the unique identifier passed to the CloseTask API call. 
-  /// In this example we will close the task item which was opened using the OpenTask button.  The CloseTask
+  /// Close the task item which is represented by the unique identifier passed to the CloseTaskAsync API call. 
+  /// In this example we will close the task item which was opened using the OpenTask button.  The CloseTaskAsync
   /// API call unloads the task item from the Tasks pane and removes it from the project.
   /// <para>
   /// Note the condition associated with this button in the config.daml (esri_tasks_IsTaskFileLoadedCondition).   
@@ -39,8 +39,8 @@ namespace TasksSDK
     protected override async void OnClick()
     {
       // unload 
-      if (!string.IsNullOrEmpty(Module1.Current.taskGuid))
-        await TaskAssistantModule.CloseTask(Module1.Current.taskGuid);
+      if (Module1.Current.taskGuid != Guid.Empty)
+        await TaskAssistantModule.CloseTaskAsync(Module1.Current.taskGuid);
     }
   }
 }

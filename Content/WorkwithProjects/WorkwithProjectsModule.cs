@@ -21,22 +21,21 @@ namespace WorkwithProjects
 {
     /// <summary>
     /// This sample illustrates working with ArcGIS Projects.  The sample provides the following functionality
-    ///   1. Open an existing project.
-    ///   2. Opens an existing project, imports a map document (via a folder connection), and saves the project to a different location
-    ///   3. Creates a new project using the supplied name from a project template.
+    /// 1. Open an existing project.
+    /// 1. Opens an existing project, imports a map document (via a folder connection), and saves the project to a different location
+    /// 1. Creates a new project using the supplied name from a project template.
     /// </summary>
     /// <remarks>
-    ///1. Open this solution in Visual Studio 2013.  
-    ///2. Click the build menu and select Build Solution.
-    ///3. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.
-    ///4. Open any project - it can be an existing project containing data or a new empty project.
-    ///5. Click on the Add-in tab and see that a 'Work with Projects' buttons are added to a Tasks group.
-    ///6. The 'Work with Projects' button opens the 'Work with Projects' pane. 
-    ///7. To open a new project enter a valid project path and click "open Project"
-    ///8. To import an existing mxd document into an existing project, add a folder that contains 
-    ///   mxd files under 'Add Folder [Path]:' then select an item from the list of MXDs
-    ///9. To create a new project enter a new Project Name, and an existing folder path, then select
-    ///   a template to create a new project
+    /// 1. Open this solution in Visual Studio 2013.  
+    /// 1. Click the build menu and select Build Solution.
+    /// 1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.
+    /// 1. Open any project - it can be an existing project containing data or a new empty project.
+    /// 1. Click on the Add-in tab and see that a 'Work with Projects' buttons are added to a Tasks group.
+    /// 1. The 'Work with Projects' button opens the 'Work with Projects' pane. 
+    /// 1. To open a new project enter a valid project path and click "open Project"
+    /// 1. To import an existing mxd document into an existing project, add a folder that contains mxd files under 'Add Folder [Path]:' then select an item from the list of MXDs
+    /// 1. To create a new project enter a new Project Name, and an existing folder path, then select a template to create a new project
+    /// ![UI](Screenshots/Screen.png)
     /// </remarks>
     internal class WorkwithProjectsModule : Module
     {

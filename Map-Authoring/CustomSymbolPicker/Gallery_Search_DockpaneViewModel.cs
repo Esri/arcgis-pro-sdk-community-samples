@@ -18,14 +18,12 @@ using System.Text;
 using System.Threading.Tasks;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
-using ArcGIS.Desktop.Mapping.Style;
 using System.Windows.Input;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 using ArcGIS.Core.CIM;
 using System.Windows.Data;
 using ArcGIS.Desktop.Core;
-using ArcGIS.Desktop.Mapping.Symbology;
 
 namespace CustomSymbolPicker
 {
@@ -40,10 +38,10 @@ namespace CustomSymbolPicker
         private const string _dockPaneID = "CustomSymbolPicker_Gallery_Search_Dockpane";
 
         //List of style items returned by search and displayed in the list box
-        private IList<StyleItem> _styleItems = new List<StyleItem>();
+        private IList<SymbolStyleItem> _styleItems = new List<SymbolStyleItem>();
 
         //The style item selected in the search results
-        private StyleItem _selectedStyleItem = null;
+        private SymbolStyleItem _selectedStyleItem = null;
 
         //Types of symbols (styles items) that can be searched for in a style
         private List<string> _choices = new List<string>() {
@@ -156,9 +154,9 @@ namespace CustomSymbolPicker
         #endregion Properties for user inputs
 
 
-        #region ListBox of StyleItems returned by search
+        #region ListBox of SymbolStyleItems returned by search
 
-        public IList<StyleItem> StyleItems
+        public IList<SymbolStyleItem> StyleItems
         {
             get
             {
@@ -166,7 +164,7 @@ namespace CustomSymbolPicker
             }
         }
 
-        public StyleItem SelectedStyleItem
+        public SymbolStyleItem SelectedStyleItem
         {
             get
             {
@@ -216,7 +214,7 @@ namespace CustomSymbolPicker
             else _itemTypeToSearch = StyleItemType.PointSymbol;
 
             //Search for symbols in the selected style
-            _styleItems = await SelectedStyleProjectItem.SearchItemsAsync(_itemTypeToSearch, _searchString);
+            _styleItems = await SelectedStyleProjectItem.SearchSymbolsAsync(_itemTypeToSearch, _searchString);
 
             NotifyPropertyChanged(() => StyleItems);
             NotifyPropertyChanged(() => StyleProjectItems);
@@ -225,7 +223,7 @@ namespace CustomSymbolPicker
 
         //Create a CIMSymbol from style item selected in the results gallery list box and
         //apply this newly created symbol to the feature layer currently selected in Contents pane
-        private async void ApplyTheSelectedSymbol(StyleItem selectedStyleItemToApply)
+        private async void ApplyTheSelectedSymbol(SymbolStyleItem selectedStyleItemToApply)
         {
             if (selectedStyleItemToApply == null || string.IsNullOrEmpty(selectedStyleItemToApply.Key))
                 return;
@@ -233,23 +231,58 @@ namespace CustomSymbolPicker
             await QueuedTask.Run(() =>
             {
                 //Get the feature layer currently selected in the Contents pane
-                FeatureLayer ftrLayer = MappingModule.ActiveTOC.MostRecentlySelectedLayer as FeatureLayer;
+                var selectedLayers = MapView.Active.GetSelectedLayers();
 
+                //Only one feature layer should be selected in the Contents pane
+                if(selectedLayers.Count != 1)
+                {
+                    ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Select the feature layer to which you want to apply the selected symbol. Only one feature layer should be selected.");
+                    //Clear the current selection in gallery
+                    _selectedStyleItem = null;
+                    NotifyPropertyChanged(() => SelectedStyleItem);
+                    return;
+                }
+
+                FeatureLayer ftrLayer = selectedLayers[0] as FeatureLayer;
+
+                //The selected layer should be a feature layer
                 if (ftrLayer == null)
                     return;
 
-                //Create symbol from style item. 
-                CIMSymbol symbolFromStyleItem = selectedStyleItemToApply.GetObject() as CIMSymbol;
-
-                //Set real world setting for created symbol = feature layer's setting 
-                //so that there isn't a mismatch between symbol and feature layer
-                SymbolBuilder.SetRealWorldUnits(symbolFromStyleItem, ftrLayer.UsesRealWorldSymbolSizes);
+                //Get symbol from symbol style item. 
+                CIMSymbol symbolFromStyleItem = selectedStyleItemToApply.Symbol;
+                                
+                //Make sure there isn't a mismatch between the type of selected symbol in gallery and feature layer geometry type
+                if ((symbolFromStyleItem is CIMPointSymbol && ftrLayer.ShapeType != esriGeometryType.esriGeometryPoint) ||
+                    (symbolFromStyleItem is CIMLineSymbol && ftrLayer.ShapeType != esriGeometryType.esriGeometryPolyline) ||
+                    (symbolFromStyleItem is CIMPolygonSymbol && ftrLayer.ShapeType != esriGeometryType.esriGeometryPolygon && ftrLayer.ShapeType != esriGeometryType.esriGeometryMultiPatch))
+                {
+                    ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("There is a mismatch between symbol type and feature layer geometry type.");
+                    //Clear the current selection in gallery
+                    _selectedStyleItem = null;
+                    NotifyPropertyChanged(() => SelectedStyleItem);
+                    return;
+                }
+                   
 
                 //Get simple renderer from feature layer
                 CIMSimpleRenderer currentRenderer = ftrLayer.GetRenderer() as CIMSimpleRenderer;
 
+                if (currentRenderer == null)
+                {
+                    ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Select a feature layer symbolized with a simple renderer.");
+                    //Clear the current selection in gallery
+                    _selectedStyleItem = null;
+                    NotifyPropertyChanged(() => SelectedStyleItem);
+                    return;
+                }
+
+                //Set real world setting for created symbol = feature layer's setting 
+                //so that there isn't a mismatch between symbol and feature layer
+                SymbolFactory.SetRealWorldUnits(symbolFromStyleItem, ftrLayer.UsesRealWorldSymbolSizes);
+               
                 //Set current renderer's symbol reference = symbol reference of the newly created symbol
-                currentRenderer.Symbol = SymbolBuilder.MakeSymbolReference(symbolFromStyleItem);
+                currentRenderer.Symbol = SymbolFactory.MakeSymbolReference(symbolFromStyleItem);
 
                 //Update feature layer renderer with new symbol
                 ftrLayer.SetRenderer(currentRenderer);

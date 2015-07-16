@@ -32,16 +32,26 @@ using ArcGIS.Desktop.Core;
 namespace ConstructingGeometries
 {
     /// <summary>
-    /// This sample provide four buttons showing the construction of geometry types of type MapPoint, Multipoint, Polyline, and Polygon.
+    /// This shows how to:
+    /// * Construct and manipulate geometries
+    /// * Use GeometryEngine functionality
+    /// * Search and retrieve features
     /// </summary>
     /// <remarks>
+    /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+    /// 1. Make sure that the Sample data is unzipped in c:\data 
+    /// 1. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 2. Click Start button to open ArcGIS Pro.
-    /// 3. ArcGIS Pro will open.
-    /// 4. Go to the ADD-IN tab
-    /// 5. Click the Setup button to ensure that the appropriate layers are created. The setup code will ensure that we have a layer of type point,
-    ///    multi-point, polyline, and polygon. Once the conditions are meet then the individual buttons will become enabled.
-    /// 6. Step through the buttons to create the various geometry types.
+    /// 1. Click Start button to open ArcGIS Pro.
+    /// 1. ArcGIS Pro will open, select the FeatureTest.aprx project
+    /// 1. Click on the ADD-IN tab and make sure that your active map contains editable point/multipoint/line/polygon features.
+    /// ![UI](Screenshots/ScreenPoints.png)
+    /// 1. Click the createPoints button to create random points over the current extent of the map
+    /// 1. The map extent shows the random created points
+    /// ![UI](Screenshots/ScreenPoints1.png)
+    /// 1. Repeat the same with the createPolylines and the createPolygons buttons.
+    /// ![UI](Screenshots/ScreenPoints2.png)
+    /// ![UI](Screenshots/ScreenPoints3.png)
     /// </remarks>
     internal class ConstructingGeometriesModule : Module
     {

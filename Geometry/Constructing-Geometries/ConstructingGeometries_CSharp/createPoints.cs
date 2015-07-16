@@ -77,7 +77,7 @@ namespace ConstructingGeometries
 
                 // define an area of interest. Random points are generated in the allowed
                 // confines of the allow extent range
-                var areaOfInterest = MapView.Active.GetExtentAsync().Result;
+                var areaOfInterest = MapView.Active.Extent;
 
                 MapPoint newMapPoint = null;
 

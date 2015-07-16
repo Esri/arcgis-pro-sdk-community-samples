@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DriveTimeGP</name>
+    </assembly>
+    <members>
+        <member name="M:DriveTimeGP.DriveTimeGPTool.OnSketchCompleteAsync(ArcGIS.Core.Geometry.Geometry)">
+            <summary>
+            Constructs the point and drive time distances to be passed as parameter to ExecuteToolAsync
+            Runs the DriveTime Analysis 
+            http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Network/ESRI_DriveTime_US/GPServer/CreateDriveTimePolygons
+            </summary>
+            <param name="geometry"></param>
+            <returns>Geoprocessing result object as a Task</returns>
+        </member>
+        <member name="T:DriveTimeGP.Module1">
+            <summary>
+            This samples shows how to call the esri drive time geoprocessing service @ http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Network/ESRI_DriveTime_US/GPServer/CreateDriveTimePolygons 
+            and then displays the drive time areas for 3 times.
+            </summary>
+            <remarks>    
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro will open. 
+            1. Open any project file but make sure that you have a base map. 
+            1. Active a map view.
+            1. Click on the Add-in tab on the ribbon and then on the "DriveTimeGPTool" button.
+            1. The sketch tool (point) is now enabled - click on the map to get drive times for the click location.
+            1. Wait for the GP task to finish and you can view the updated map and popup.
+            ![UI](Screenshots/DriveTime.png)
+            </remarks>
+        </member>
+        <member name="M:DriveTimeGP.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="P:DriveTimeGP.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+    </members>
+</doc>

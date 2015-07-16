@@ -1,0 +1,45 @@
+﻿<!--//   Copyright 2015 Esri
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       http://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License. -->
+<ArcGIS defaultAssembly="ExtendTool.dll" defaultNamespace="ExtendTool" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{c6999ec1-98ba-43fc-a5ea-b8196965e659}" version="1.0" desktopVersion="1.1.3133">
+    <Name>ExtendTool</Name>
+    <Description>ExtendTool</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team</Author>
+    <Company>Esri</Company>
+    <Date>5/18/2015</Date>
+    <Subject>Editing</Subject>
+  </AddInInfo>
+  <modules>
+    <insertModule id="ExtendTool_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="ExtendTool_Tab1" caption="New Tab">
+          <group refID="ExtendTool_Group1"/>
+        </tab>-->
+      </tabs>
+      <!--<groups>
+        <group id="ExtendTool_Group1" caption="Group 1" appearsOnAddInTab="true">
+          <tool refID="ExtendTool_Extend" size="large" />
+        </group>
+      </groups> -->
+      <controls>
+        <!-- add your controls here -->
+        <tool id="ExtendTool_Extend" caption="Extend " className="Extend" loadOnClick="true" smallImage="Images\EditingExtendTool16.png" largeImage="Images\EditingExtendTool32.png" condition="esri_mapping_mapPane" categoryRefID="esri_editing_CommandList">
+          <tooltip heading="Extend">Extend a line to the intersection of another feature.<disabledText /></tooltip>
+          <content L_group="Sample Tools" />
+        </tool>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

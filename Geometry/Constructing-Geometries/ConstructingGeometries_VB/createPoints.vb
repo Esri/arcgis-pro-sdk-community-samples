@@ -74,7 +74,7 @@ Friend Class createPoints
 
                 ' define an area of interest. Random points are generated in the allowed
                 ' confines of the allow extent range
-                Dim areaOfInterest = MapView.Active.GetExtentAsync().Result
+                Dim areaOfInterest = MapView.Active.Extent
 
                 Dim newMapPoint As MapPoint
 

@@ -15,7 +15,7 @@ using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using System.Windows.Input;
-using ArcGIS.Desktop.Workflow.Models.SupportClasses;
+using ArcGIS.Desktop.Workflow.Models.Queries;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
 using ArcGIS.Desktop.Workflow.Models.JobModels;

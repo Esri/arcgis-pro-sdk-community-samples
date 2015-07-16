@@ -81,7 +81,7 @@ namespace MappingSampleAddIns.AddLayer
       return QueuedTask.Run(() =>
       {
         Map map = MapView.Active.Map;
-        return Layer.Create(new Uri(uri), map);
+        return LayerFactory.CreateLayer(new Uri(uri), map);
       });
     }
 

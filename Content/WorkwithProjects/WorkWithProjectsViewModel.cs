@@ -222,12 +222,11 @@ namespace WorkwithProjects
             try
             {   
                 // Add a folder to the Project
-                var folderToAdd = Item.Create(addFolderPath);
+                var folderToAdd = ItemFactory.Create(addFolderPath);
                 var folder = await Project.Current.AddAsync(folderToAdd);
                 // search MXDs
-                var folderContents = await folder.GetItems();
 
-                _mxdItems = folderContents.Where(content => content.Name.EndsWith(Filter, StringComparison.CurrentCultureIgnoreCase));
+                _mxdItems = folder.Where(content => content.Name.EndsWith(Filter, StringComparison.CurrentCultureIgnoreCase));
                 BindingOperations.EnableCollectionSynchronization(MxdItems, _lockMxdItemCollection);
                 NotifyPropertyChanged(() => MxdItems);
             }

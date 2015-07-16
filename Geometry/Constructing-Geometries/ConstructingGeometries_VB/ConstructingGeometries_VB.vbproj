@@ -3,10 +3,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
-    <SchemaVersion>
-    </SchemaVersion>
+    <ProductVersion></ProductVersion>
+    <SchemaVersion></SchemaVersion>
     <ProjectGuid>{2782CDB7-A9B7-4387-9B0F-C102CC95EEA9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>ConstructingGeometries_VB</RootNamespace>
@@ -53,7 +51,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ArcGIS.Desktop.GeoProcessing">
-      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\Pro\bin\Extensions\GeoProcessing\ArcGIS.Desktop.GeoProcessing.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\GeoProcessing\ArcGIS.Desktop.GeoProcessing.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -151,8 +149,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Readme.md" />
-    <None Include="ConstructingGeometries_VB %28VB%29.md" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

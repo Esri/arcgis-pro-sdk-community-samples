@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FeatureSelection</name>
+    </assembly>
+    <members>
+        <member name="T:FeatureSelection.FeatureSelectionDockPaneView">
+            <summary>
+            Interaction logic for FeatureSelectionDockPaneView.xaml
+            </summary>
+            <summary>
+            FeatureSelectionDockPaneView
+            </summary>
+        </member>
+        <member name="M:FeatureSelection.FeatureSelectionDockPaneView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:FeatureSelection.FeatureSelectionDockPaneViewModel">
+            <summary>
+            ViewModel for the Dock Pane
+            </summary>
+        </member>
+        <member name="M:FeatureSelection.FeatureSelectionDockPaneViewModel.InitializeAsync">
+            <summary>
+            Called when the dock pane is first initialized.
+            </summary>
+        </member>
+        <member name="M:FeatureSelection.FeatureSelectionDockPaneViewModel.Show">
+            <summary>
+            Show the DockPane.
+            </summary>
+        </member>
+        <member name="T:FeatureSelection.FieldAttributeInfo">
+            <summary>
+            Represents a single row in the data grid storing the field name, alias, and attribute value for a given row.
+            </summary>
+        </member>
+        <member name="T:FeatureSelection.SelectedLayerInfo">
+            <summary>
+            Used to persist the state of the selected layer and object ID for a given map.
+            </summary>
+        </member>
+        <member name="T:FeatureSelection.FeatureSelectionDockPane_ShowButton">
+            <summary>
+            Button implementation to show the DockPane.
+            </summary>
+        </member>
+        <member name="M:FeatureSelection.FeatureSelectionTool.#ctor">
+            <summary>
+            Specify the sketch geometry and sketch output type. Screen sketches allow you to perform interactive selection in 2D and 3D.
+            </summary>
+        </member>
+        <member name="M:FeatureSelection.FeatureSelectionTool.OnSketchCompleteAsync(ArcGIS.Core.Geometry.Geometry)">
+            <summary>
+            Called when the sketch is finished.
+            </summary>
+        </member>
+        <member name="M:FeatureSelection.FeatureSelectionTool.OnToolKeyDown(ArcGIS.Desktop.Mapping.MapViewKeyEventArgs)">
+            <summary>
+            Set whether the ctrl or shift key is pressed.
+            </summary>
+        </member>
+        <member name="M:FeatureSelection.FeatureSelectionTool.OnToolKeyUp(ArcGIS.Desktop.Mapping.MapViewKeyEventArgs)">
+            <summary>
+            Set whether the ctrl or shift key is pressed.
+            </summary>
+        </member>
+        <member name="T:FeatureSelection.Module1">
+            <summary>
+            This sample provides a map tool and a dock pane that allow you to create new selections and manipulate existing selections within the map.
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            2. Click Start button to open ArcGIS Pro.
+            3. ArcGIS Pro will open. 
+            4. With a map view active go to the Add-In tab and click the Feature Selection button.
+            5. This will open the Feature Selection dock pane.
+            6. Select the layer of interest in the Combo box and in the list below it will show the object ids of the selected features.
+            ![UI](Screenshots/screenshot1.png)
+            7. Select any of the object ids to see the attributes for that feature.
+            8. Click the select tool next to the layers combo box to interactively select features for that layer in the map.
+            9. Right-click a given row in the attributes data grid and select Create New Expression to add that criteria to the where clause.
+            10. This where clause can be used to further narrow down the selection.
+            ![UI](Screenshots/screenshot2.png)
+            </remarks>
+        </member>
+        <member name="M:FeatureSelection.Module1.SetAsExpression">
+            <summary>
+            Sets the new expression using the selected field and corresponding attribute
+            </summary>
+        </member>
+        <member name="M:FeatureSelection.Module1.AddToExpression">
+            <summary>
+            Appends to the expression using the selected field and corresponding attribute
+            </summary>
+        </member>
+        <member name="M:FeatureSelection.Module1.GetFormattedExpression(FeatureSelection.FieldAttributeInfo)">
+            <summary>
+            Gets a string representing a new clause using the information defined in the FieldAttributeInfo
+            </summary>
+            <param name="fieldAttribute"></param>
+        </member>
+        <member name="F:FeatureSelection.Module1._dockPane">
+            <summary>
+            Stores the instance of the Feature Selection dock pane viewmodel
+            </summary>
+        </member>
+        <member name="M:FeatureSelection.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="P:FeatureSelection.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="P:FeatureSelection.Module1.CanSetAsExpression">
+            <summary>
+            Returns true if a new expression can be set
+            </summary>
+        </member>
+        <member name="P:FeatureSelection.Module1.CanAddToExpression">
+            <summary>
+            Returns true if a the expression can be appended to
+            </summary>
+        </member>
+    </members>
+</doc>

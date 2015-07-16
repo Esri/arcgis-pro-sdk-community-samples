@@ -28,8 +28,6 @@ using System.Windows.Shapes;
 using ArcGIS.Core;
 using ArcGIS.Core.CIM;
 using ArcGIS.Desktop.Mapping;
-using ArcGIS.Desktop.Mapping.Symbology;
-using ArcGIS.Desktop.Mapping.Style;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Threading;

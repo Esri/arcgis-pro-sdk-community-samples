@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="ReplaceAttachments.dll" defaultNamespace="ReplaceAttachments" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{e0e8ab91-08d1-4280-b4d8-2062850542ed}" version="1.0" desktopVersion="1.1.3053">
+    <Name>ReplaceAttachments</Name>
+    <Description>Given that a layer with a FeatureClass as the Datasource is selected, for all related FeatureClasses having attachments, Replace All Attachments matching a given attachment with a new attachment</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>Pro SDK Team</Author>
+    <Company>Esri</Company>
+    <Date>4/16/2015 3:39:38 PM, 2015</Date>
+    <Subject>Geodatabase</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ReplaceAttachments_Module" className="Module1" autoLoad="false" caption="ReplaceAttachments">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="ReplaceAttachments_Tab1" caption="New Tab">
+          <group refID="ReplaceAttachments_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ReplaceAttachments_Group1" caption="Attachments" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="ReplaceAttachments_AttachmentsDockpane_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ReplaceAttachments_AttachmentsDockpane_ShowButton" caption="Show Replace Attachments Addin" className="AttachmentsDockpane_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+          <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="ReplaceAttachments_AttachmentsDockpane" caption="Replace Attachments " className="AttachmentsDockpaneViewModel" keytip="DockPane" initiallyVisible="true" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="AttachmentsDockpaneView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

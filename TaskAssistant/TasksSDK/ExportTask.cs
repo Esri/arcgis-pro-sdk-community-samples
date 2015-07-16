@@ -24,10 +24,10 @@ using ArcGIS.Desktop.TaskAssistant;
 namespace TasksSDK
 {
   /// <summary>
-  /// Button which implements the ExportTask API  method.  
+  /// Button which implements the ExportTaskAsync API  method.  
   /// </summary>
   /// <remarks>
-  /// Export the task item which is represented by the unique identifier passed to the ExportTask API call.  Export
+  /// Export the task item which is represented by the unique identifier passed to the ExportTaskAsync API call.  Export
   /// the task to an .esriTasks file. 
   /// <para>
   /// In this example we will export the first task item found in the collection of project task items.
@@ -41,24 +41,20 @@ namespace TasksSDK
     protected override async void OnClick()
     {
       // get the first taskItem from the project pane
-      var taskItem = Project.Current.GetTasks().FirstOrDefault();
+      var taskItem = Project.Current.GetItems<TaskProjectItem>().FirstOrDefault();
       if (taskItem == null)
         return;
 
-      // if it's valid
-      if (!taskItem.IsInvalid)
+      // use the TaskGuid property on the ProjectItem to obtain the unique identifier for the task item
+      // pass this guid to the ExportTaskAsync method
+      try
       {
-        // use the TaskGuid property on the ProjectItem to obtain the unique identifier for the task item
-        // pass this guid to the ExportTask method
-        try
-        {
-          string fileName = await TaskAssistantModule.ExportTask(taskItem.TaskGuid, "c:\\temp");
-          System.Windows.MessageBox.Show("Task saved to " + fileName);
-        }
-        catch (ExportTaskException e)
-        {
-          System.Windows.MessageBox.Show("Error saving task " + e.Message);
-        }
+        string fileName = await TaskAssistantModule.ExportTaskAsync(taskItem.TaskGuid, "c:\\temp");
+        ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Task saved to " + fileName);
+      }
+      catch (ExportTaskException e)
+      {
+        ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Error saving task " + e.Message);
       }
     }
   }

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="FilterFeaturesBasedOnAttributesWithinAnExtent.dll" defaultNamespace="FilterFeaturesBasedOnAttributesWithinAnExtent" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{90708d5f-75c5-4764-8a90-3a925bc380bc}" version="1.0" desktopVersion="1.1.3046">
+    <Name>FilterFeaturesBasedOnAttributesWithinAnExtent</Name>
+    <Description>Find all features with matching attributes within the selected extent</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>Pro SDK Team</Author>
+    <Company>Esri</Company>
+    <Date>4/15/2015 3:09:34 PM, 2015</Date>
+    <Subject>Geodatabase</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ProAppModule3_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="ProAppModule3_Tab1" caption="New Tab">
+          <group refID="ProAppModule3_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ProAppModule3_Group1" caption="Group 1" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="ProAppModule3_Dockpane1_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ProAppModule3_Dockpane1_ShowButton" caption="Filter Selected Features" className="Dockpane1_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+          <tooltip heading="Filter Selected Features">Find all features with matching attributes within the selected extent<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="ProAppModule3_Dockpane1" caption="Filter Features Within Selected Extent" className="Dockpane1ViewModel" keytip="DockPane" initiallyVisible="true" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="Dockpane1View" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>
