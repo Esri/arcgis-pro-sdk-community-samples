@@ -122,6 +122,8 @@ namespace ExplodeMultipartFeature
         } //switch
 
         //delete the original feature and execute the creates
+        //op.Delete(insp.MapMember, insp.ObjectID);
+        //double cast to workaround 1.1 bug
         op.Delete(insp.MapMember, (long)(int)insp.ObjectIDAttribute.CurrentValue);
         op.Execute();
       });
