@@ -17,7 +17,7 @@
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team</Author>
     <Company>Esri</Company>
-    <Date>8/4/2015</Date>
+    <Date>8/17/2015</Date>
     <Subject>Editing</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
