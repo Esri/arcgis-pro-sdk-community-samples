@@ -14,7 +14,7 @@ Language:      C#
 Subject:       Framework
 Contributor:   ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:  Esri, http://www.esri.com
-Date:          16-Jul-15
+Date:          8/27/2015
 ArcGIS Pro:    1.1
 Visual Studio: 2013
 ```

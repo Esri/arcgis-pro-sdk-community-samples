@@ -68,7 +68,7 @@ Read the [Installing ArcGIS Pro SDK for .NET](https://github.com/Esri/arcgis-pro
 
 ##ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 49 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 51 ArcGIS Pro samples that are included in this repository.  
 
 ####Content
 
@@ -81,6 +81,8 @@ Below is the list of 49 ArcGIS Pro samples that are included in this repository.
 
 * [ConstructionTool (c#)](../../tree/master/Editing/ConstructionTool)  
 * [DivideLines (c#)](../../tree/master/Editing/DivideLines)  
+* [EventModule (c#)](../../tree/master/Editing/EventModule)  
+* [ExplodeMultipartFeature (c#)](../../tree/master/Editing/ExplodeMultipartFeature)  
 * [ExtendTool (c#)](../../tree/master/Editing/ExtendTool)  
 * [MainConnectorManhole (c#)](../../tree/master/Editing/MainConnectorManhole)  
 * [UpdateAttributesWithSketch (c#)](../../tree/master/Editing/UpdateAttributesWithSketch)  

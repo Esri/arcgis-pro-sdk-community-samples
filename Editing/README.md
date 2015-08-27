@@ -15,6 +15,8 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Editing' top
 
 * [ConstructionTool (c#)](../../../tree/master/Editing/ConstructionTool)  
 * [DivideLines (c#)](../../../tree/master/Editing/DivideLines)  
+* [EventModule (c#)](../../../tree/master/Editing/EventModule)  
+* [ExplodeMultipartFeature (c#)](../../../tree/master/Editing/ExplodeMultipartFeature)  
 * [ExtendTool (c#)](../../../tree/master/Editing/ExtendTool)  
 * [MainConnectorManhole (c#)](../../../tree/master/Editing/MainConnectorManhole)  
 * [UpdateAttributesWithSketch (c#)](../../../tree/master/Editing/UpdateAttributesWithSketch)  

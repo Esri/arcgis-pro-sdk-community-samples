@@ -13,7 +13,7 @@ Language:      C#
 Subject:       Map Authoring
 Contributor:   ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:  Esri, http://www.esri.com
-Date:          16-Jul-15
+Date:          8/27/2015
 ArcGIS Pro:    1.1
 Visual Studio: 2013
 ```
@@ -44,8 +44,9 @@ Visual Studio: 2013
 13. Symbol gallery will be populated with search results.  
 14. Click on a feature layer in Contents pane for which the symbol has to be updated.  
 15. Click on a symbol in the Custom Symbol Picker gallery - this will update the symbol for the feature layer currently selected in Contents pane.  
-  
 ![UI](Screenshots/Screen.png)  
+  
+
 
 [](Esri Tags: ArcGIS-Pro-SDK)
 [](Esri Language: C-Sharp)​

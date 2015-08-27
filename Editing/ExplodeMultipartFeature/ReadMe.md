@@ -1,7 +1,7 @@
-##LayersPane
+##ExplodeMultipartFeature
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-The Layers pane sample uses a docking pane to query and display feature classes and their content.  Access to feature classes is provided through the layers of the active map.  
+This sample creates a command that emulates the Explode Multipart Feature command on the advanced editing toolbar within ArcMap.  
   
 
 
@@ -10,7 +10,7 @@ The Layers pane sample uses a docking pane to query and display feature classes 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:      C#
-Subject:       Framework
+Subject:       Editing
 Contributor:   ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:  Esri, http://www.esri.com
 Date:          8/27/2015
@@ -29,14 +29,12 @@ Visual Studio: 2013
 
 ##How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-2. Click Start button to open ArcGIS Pro.  
-3. ArcGIS Pro will open.   
-4. Open any project file that contains a map with layers.    
-5. Click on the Add-in tab on the ribbon and then on the "Open LayersPane" button.  
-6. Click the 'Search button' and the pane's grid will display the selected feature layer's columns and data.  
-7. Enter a valid SQL where clause like 'objectid = 1' in the text box next to the search button and click Search again.  
-8. The data displayed is now restricted to records that match the given where clause.  
+To use this sample:  
+1. Build or debug the sample through Visual Studio.  
+2. In Pro, select a multipart feature you wish to explode.  
+3. Click the Explode Multipart Features command in the samples group in the edit modify features pane.  
+The selected multipart feature will be separated into individual features.  
+Note that donut polygon features are not supported by this sample.  
   
 
 

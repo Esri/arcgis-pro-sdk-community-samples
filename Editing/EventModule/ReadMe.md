@@ -1,8 +1,7 @@
-##LayersPane
+##EventModule
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-The Layers pane sample uses a docking pane to query and display feature classes and their content.  Access to feature classes is provided through the layers of the active map.  
-  
+This sample demonstrates how to setup edit events in a module to act like an extension.  
 
 
 <a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
@@ -10,7 +9,7 @@ The Layers pane sample uses a docking pane to query and display feature classes 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:      C#
-Subject:       Framework
+Subject:       Editing
 Contributor:   ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:  Esri, http://www.esri.com
 Date:          8/27/2015
@@ -29,14 +28,12 @@ Visual Studio: 2013
 
 ##How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-2. Click Start button to open ArcGIS Pro.  
-3. ArcGIS Pro will open.   
-4. Open any project file that contains a map with layers.    
-5. Click on the Add-in tab on the ribbon and then on the "Open LayersPane" button.  
-6. Click the 'Search button' and the pane's grid will display the selected feature layer's columns and data.  
-7. Enter a valid SQL where clause like 'objectid = 1' in the text box next to the search button and click Search again.  
-8. The data displayed is now restricted to records that match the given where clause.  
+In Pro there are two types of edit events you can subscribe to; row based events for create/change/delete on rows, and edit completed events for when an edit operation completes. Both can get you similar information but the row events give you more control and information during the edit as compared to after it. You can subscribe to these events within a custom control or using a module without any controls, similar to extensions in ArcMap.
+To create an add-in that acts like an extension, the module must be set to autoLoad = true in Config.daml. Your code is then placed in the Initialize method for the module.<br />  
+Edit completed events listen to all layers in all maps. Row events listen for specific changes to specific tables. Since the module is initialized before the project's maps and layers, you subscribe to these events after the project is opened.
+To use this sample you can either compile and open Pro or run through the Visual Studio debugger.<br />  
+You should see edit and row events fired while editing data.<br />  
+To stop this add-in you can delete it with the add-in manager in the application.
   
 
 
