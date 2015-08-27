@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GeometrySamples</name>
+    </assembly>
+    <members>
+        <member name="T:GeometrySamples.Module1">
+            <summary>
+            This sample show how to convert a multi part geometry in single part 
+            geometries and how to retrieve the outermost ring(s) of a polygon.
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            2. Click Start button to open ArcGIS Pro.
+            3. ArcGIS Pro will open. 
+            4. Create or open a polygon layer as the only feature layer in the current map.
+            5. Digitize a polygon with multiple parts including holes.
+            6. Switch to the ADDIN ribbon and click the 'Outermost Ring(s)' button in the ArcGIS Pro SDK Samples group.
+            7. The button will inspect the geometries of the polygon features and store the outer most ring(s) of the existing features as new features in the same feature class.
+            </remarks>
+        </member>
+        <member name="P:GeometrySamples.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:GeometrySamples.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="M:GeometrySamples.Module1.GetOutermostRingsAsync(ArcGIS.Core.Geometry.Polygon)">
+            <summary>
+            The methods retrieves the outer ring(s) of the input polygon.
+            </summary>
+            <param name="inputPolygon">Input Polygon.</param>
+            <returns>The outer most (exterior, clockwise) ring(s) of the polygon. If the input is null or empty, a null pointer is returned.</returns>
+        </member>
+        <member name="M:GeometrySamples.Module1.GetOutermostRings(ArcGIS.Core.Geometry.Polygon)">
+            <summary>
+            The methods retrieves the outer ring(s) of the input polygon.
+            This method must be called on the MCT. Use QueuedTask.Run.
+            </summary>
+            <param name="inputPolygon">Input Polygon.</param>
+            <returns>The outer most (exterior, clockwise) ring(s) of the polygon. If the input is null or empty, a null pointer is returned.</returns>
+            <remarks>This method must be called on the MCT. Use QueuedTask.Run.</remarks>
+        </member>
+        <member name="M:GeometrySamples.Module1.MultipartToSinglePartAsync(ArcGIS.Core.Geometry.Geometry)">
+            <summary>
+            This method takes an input multi part geometry and breaks the parts into individual standalone geometries.
+            </summary>
+            <param name="inputGeometry">The geometry to be exploded into the individual parts.</param>
+            <returns>An enumeration of individual parts as standalone geometries. The type of geometry is maintained, i.e.
+            if the input geometry is of type Polyline then each geometry in the return is of type Polyline as well.
+            If the input geometry is of type Unknown then an empty list is returned.</returns>
+        </member>
+        <member name="M:GeometrySamples.Module1.MultipartToSinglePart(ArcGIS.Core.Geometry.Geometry)">
+            <summary>
+            This method takes an input multi part geometry and breaks the parts into individual standalone geometries.
+            This method must be called on the MCT. Use QueuedTask.Run.
+            </summary>
+            <param name="inputGeometry">The geometry to be exploded into the individual parts.</param>
+            <returns>An enumeration of individual parts as standalone geometries. The type of geometry is maintained, i.e.
+            if the input geometry is of type Polyline then each geometry in the return is of type Polyline as well.
+            If the input geometry is of type Unknown then an empty list is returned.</returns>
+            <remarks>This method must be called on the MCT. Use QueuedTask.Run.</remarks>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,26 @@
+﻿<ArcGIS defaultAssembly="GeometrySamples.dll" defaultNamespace="GeometrySamples" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{e90a6bee-b050-4b2d-bfd5-986a3ffc12bd}" version="1.0" desktopVersion="1.1.3308">
+    <Name>GeometrySamples</Name>
+    <Description>ArcGIS Pro SDK Sample showing methods to explode multipart geometry into single part geometries
+    and how to retrieve the outer most ring(s) of a multipart geometry.</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team</Author>
+    <Company>Esri</Company>
+    <Date>8/14/2015 8:26:46 AM, 2015</Date>
+    <Subject>Geometry</Subject>
+  </AddInInfo>
+  <modules>
+    <insertModule id="GeometrySamples_Module" className="Module1" autoLoad="false" caption="Module1">
+      <groups>
+        <group id="GeometrySamples_Group1" caption="ArcGIS Pro SDK Samples" appearsOnAddInTab="true">
+          <button refID="GeometrySamples_Button1" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <button id="GeometrySamples_Button1" caption="Outermost Ring(s)" className="Button1" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="ArcGIS Pro SDK Samples">Returns the outer most polygon(s) of a multipart geometry.<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

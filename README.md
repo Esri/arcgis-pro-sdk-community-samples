@@ -68,7 +68,7 @@ Read the [Installing ArcGIS Pro SDK for .NET](https://github.com/Esri/arcgis-pro
 
 ##ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 51 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 52 ArcGIS Pro samples that are included in this repository.  
 
 ####Content
 
@@ -116,6 +116,7 @@ Below is the list of 51 ArcGIS Pro samples that are included in this repository.
 
 * [ConstructingGeometries_CSharp (c#)](../../tree/master/Geometry/Constructing-Geometries/ConstructingGeometries_CSharp)  
 * [ConstructingGeometries_VB (vb)](../../tree/master/Geometry/Constructing-Geometries/ConstructingGeometries_VB)  
+* [GeometrySamples (c#)](../../tree/master/Geometry/GeometrySamples)  
 
 
 ####Geodatabase
