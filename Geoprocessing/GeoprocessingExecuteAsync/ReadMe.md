@@ -13,9 +13,9 @@ Language:      C#
 Subject:       Geoprocessing
 Contributor:   ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:  Esri, http://www.esri.com
-Date:          8/27/2015
+Date:          9/3/2015
 ArcGIS Pro:    1.1
-Visual Studio: 2013
+Visual Studio: 2013, 2015
 ```
 
 ##Resources

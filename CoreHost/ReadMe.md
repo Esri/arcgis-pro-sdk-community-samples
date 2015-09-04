@@ -61,6 +61,7 @@ The requirements for the machine on which you develop your ArcGIS Pro add-ins ar
 
 ####Supported IDEs
 
+* Visual Studio 2015 (Professional, Enterprise, and Community Editions)
 * Visual Studio 2013 (Professional, Premium, Ultimate, and Community Editions) 
 
 ##Download
@@ -68,9 +69,9 @@ The requirements for the machine on which you develop your ArcGIS Pro add-ins ar
 ArcGIS Pro SDK for .NET can be downloaded and installed using either one of the following options:
 
 * Download and install from within Visual Studio
-* Download from MyEsri.com
+* Download from MyEsri.com (Visual Studio 2013 only)
 
-Read the [Installing ArcGIS Pro SDK for .NET](https://github.com/Esri/arcgis-pro-sdk/wiki#installing-arcgis-pro-sdk-for-net) section below for more information.
+Read [Installing ArcGIS Pro SDK for .NET](https://github.com/Esri/arcgis-pro-sdk/wiki#installing-arcgis-pro-sdk-for-net) for more information.
 
 ## Issues
 
