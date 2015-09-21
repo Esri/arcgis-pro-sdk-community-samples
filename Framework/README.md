@@ -49,6 +49,7 @@ Detailed instructions can be found here: [ProGuide: Contribute Samples](https://
 * [FAQ](http://github.com/Esri/arcgis-pro-sdk/wiki/FAQ)
 * [ArcGIS Pro SDK icons](https://github.com/Esri/arcgis-pro-sdk/releases/tag/1.1.0.3308)
 * [ProConcepts: ArcGIS Pro Add in Samples](https://github.com/Esri/arcgis-pro-sdk-community-samples/wiki/ProConcepts-ArcGIS-Pro-Add-in-Samples)
+* [Sample data for ArcGIS Pro SDK Community Samples](https://github.com/Esri/arcgis-pro-sdk-community-samples/releases)
 
 ##Requirements
 The requirements for the machine on which you develop your ArcGIS Pro add-ins are listed here.

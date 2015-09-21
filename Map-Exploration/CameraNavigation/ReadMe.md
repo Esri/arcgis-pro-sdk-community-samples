@@ -13,7 +13,7 @@ Language:      C#
 Subject:       Map-Exploration
 Contributor:   ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:  Esri, http://www.esri.com
-Date:          9/3/2015
+Date:          9/21/2015
 ArcGIS Pro:    1.1
 Visual Studio: 2013, 2015
 ```
@@ -26,6 +26,7 @@ Visual Studio: 2013, 2015
 * [FAQ](http://github.com/Esri/arcgis-pro-sdk/wiki/FAQ)
 * [ArcGIS Pro SDK icons](https://github.com/Esri/arcgis-pro-sdk/releases/tag/1.1.0.3308)
 * [ProConcepts: ArcGIS Pro Add in Samples](https://github.com/Esri/arcgis-pro-sdk-community-samples/wiki/ProConcepts-ArcGIS-Pro-Add-in-Samples)
+* [Sample data for ArcGIS Pro SDK Community Samples](https://github.com/Esri/arcgis-pro-sdk-community-samples/releases)
 
 ##How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
