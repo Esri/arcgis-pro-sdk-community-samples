@@ -23,6 +23,11 @@
             ![UI](Screenshots/Screen2.png)
             </remarks>
         </member>
+        <member name="P:ProgressDialog.ProgressDialogModule.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
         <member name="M:ProgressDialog.ProgressDialogModule.CanUnload">
             <summary>
             Called by Framework when ArcGIS Pro is closing
@@ -37,11 +42,6 @@
             </summary>
             <param name="id"></param>
             <returns></returns>
-        </member>
-        <member name="P:ProgressDialog.ProgressDialogModule.Current">
-            <summary>
-            Retrieve the singleton instance to this module here
-            </summary>
         </member>
         <member name="T:ProgressDialog.RunDialogButtonsSimple">
             <summary>

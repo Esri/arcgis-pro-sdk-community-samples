@@ -86,9 +86,24 @@
             ![UI](Screenshots/screenshot2.png)
             </remarks>
         </member>
+        <member name="P:FeatureSelection.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="P:FeatureSelection.Module1.CanSetAsExpression">
+            <summary>
+            Returns true if a new expression can be set
+            </summary>
+        </member>
         <member name="M:FeatureSelection.Module1.SetAsExpression">
             <summary>
             Sets the new expression using the selected field and corresponding attribute
+            </summary>
+        </member>
+        <member name="P:FeatureSelection.Module1.CanAddToExpression">
+            <summary>
+            Returns true if a the expression can be appended to
             </summary>
         </member>
         <member name="M:FeatureSelection.Module1.AddToExpression">
@@ -112,21 +127,6 @@
             Called by Framework when ArcGIS Pro is closing
             </summary>
             <returns>False to prevent Pro from closing, otherwise True</returns>
-        </member>
-        <member name="P:FeatureSelection.Module1.Current">
-            <summary>
-            Retrieve the singleton instance to this module here
-            </summary>
-        </member>
-        <member name="P:FeatureSelection.Module1.CanSetAsExpression">
-            <summary>
-            Returns true if a new expression can be set
-            </summary>
-        </member>
-        <member name="P:FeatureSelection.Module1.CanAddToExpression">
-            <summary>
-            Returns true if a the expression can be appended to
-            </summary>
         </member>
     </members>
 </doc>

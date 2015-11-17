@@ -56,6 +56,11 @@
             10. The Query layer will list the datasets referencing the domain selected 
             </remarks>
         </member>
+        <member name="P:DomainsUsage.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
         <member name="M:DomainsUsage.Module1.CanUnload">
             <summary>
             Called by Framework when ArcGIS Pro is closing
@@ -70,11 +75,6 @@
             </summary>
             <param name="id"></param>
             <returns></returns>
-        </member>
-        <member name="P:DomainsUsage.Module1.Current">
-            <summary>
-            Retrieve the singleton instance to this module here
-            </summary>
         </member>
     </members>
 </doc>

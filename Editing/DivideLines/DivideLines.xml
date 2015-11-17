@@ -66,16 +66,16 @@
             ![UI](Screenshots/Screen.png)
             </remarks>
         </member>
+        <member name="P:DivideLines.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
         <member name="M:DivideLines.Module1.CanUnload">
             <summary>
             Called by Framework when ArcGIS Pro is closing
             </summary>
             <returns>False to prevent Pro from closing, otherwise True</returns>
-        </member>
-        <member name="P:DivideLines.Module1.Current">
-            <summary>
-            Retrieve the singleton instance to this module here
-            </summary>
         </member>
     </members>
 </doc>

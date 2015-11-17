@@ -22,11 +22,6 @@
             Show the DockPane.
             </summary>
         </member>
-        <member name="M:CommandFilter.CommandFilterDockPaneViewModel.ToggleFiltering">
-            <summary>
-            Toggle the filtering status
-            </summary>
-        </member>
         <member name="P:CommandFilter.CommandFilterDockPaneViewModel.IsFiltering">
             <summary>
             Gets and sets the IsFiltering status
@@ -53,6 +48,11 @@
             Gets the current command filters
             </summary>
         </member>
+        <member name="M:CommandFilter.CommandFilterDockPaneViewModel.ToggleFiltering">
+            <summary>
+            Toggle the filtering status
+            </summary>
+        </member>
         <member name="T:CommandFilter.CommandFilterDockPane_ShowButton">
             <summary>
             Button implementation to show the DockPane.
@@ -74,6 +74,22 @@
         <member name="M:CommandFilter.CommandFilter.UnRegister">
             <summary>
             Unregister for command filtering
+            </summary>
+        </member>
+        <member name="P:CommandFilter.CommandFilter.PopMessageBox">
+            <summary>
+            Gets or sets the 'Pop Message Box' property. True will pop a message box if the
+            clicked command is filtered
+            </summary>
+        </member>
+        <member name="P:CommandFilter.CommandFilter.IsRegistered">
+            <summary>
+            Gets the flag indicating whether the filter is registered
+            </summary>
+        </member>
+        <member name="P:CommandFilter.CommandFilter.IsFiltering">
+            <summary>
+            Gets whether we are filtering
             </summary>
         </member>
         <member name="M:CommandFilter.CommandFilter.StartFiltering">
@@ -99,20 +115,10 @@
             Implements IDisposable
             </summary>
         </member>
-        <member name="P:CommandFilter.CommandFilter.PopMessageBox">
+        <member name="P:CommandFilter.Models.CommandFilterItem.ClickCount">
             <summary>
-            Gets or sets the 'Pop Message Box' property. True will pop a message box if the
-            clicked command is filtered
-            </summary>
-        </member>
-        <member name="P:CommandFilter.CommandFilter.IsRegistered">
-            <summary>
-            Gets the flag indicating whether the filter is registered
-            </summary>
-        </member>
-        <member name="P:CommandFilter.CommandFilter.IsFiltering">
-            <summary>
-            Gets whether we are filtering
+            Gets and sets the number of times a command has been clicked during
+            filtering.
             </summary>
         </member>
         <member name="M:CommandFilter.Models.CommandFilterItem.ToString">
@@ -122,12 +128,6 @@
             <returns>
             A string that represents the current object.
             </returns>
-        </member>
-        <member name="P:CommandFilter.Models.CommandFilterItem.ClickCount">
-            <summary>
-            Gets and sets the number of times a command has been clicked during
-            filtering.
-            </summary>
         </member>
         <member name="T:CommandFilter.Module1">
             <summary>
@@ -147,6 +147,11 @@
             ![UI](Screenshots/Usage.png)
             </remarks>
         </member>
+        <member name="P:CommandFilter.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
         <member name="M:CommandFilter.Module1.PackUriForResource(System.String,System.String)">
             <summary>
             Formats a URI given an image name and an optional Image path component.
@@ -160,11 +165,6 @@
             Called by Framework when ArcGIS Pro is closing
             </summary>
             <returns>False to prevent Pro from closing, otherwise True</returns>
-        </member>
-        <member name="P:CommandFilter.Module1.Current">
-            <summary>
-            Retrieve the singleton instance to this module here
-            </summary>
         </member>
     </members>
 </doc>

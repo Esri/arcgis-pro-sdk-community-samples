@@ -22,14 +22,14 @@
             Dockpane constructor is used to initialize some sample data
             </summary>
         </member>
-        <member name="M:Localization.DockpaneLocalizedViewModel.Show">
-            <summary>
-            Show the DockPane.
-            </summary>
-        </member>
         <member name="P:Localization.DockpaneLocalizedViewModel.SampleRecords">
             <summary>
             Sample Records list of sample record objects
+            </summary>
+        </member>
+        <member name="M:Localization.DockpaneLocalizedViewModel.Show">
+            <summary>
+            Show the DockPane.
             </summary>
         </member>
         <member name="P:Localization.DockpaneLocalizedViewModel.Heading">

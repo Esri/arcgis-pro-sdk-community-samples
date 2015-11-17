@@ -21,6 +21,11 @@
             10. On Selecting a Subtype, a new Version will be created with a Random Name and all the features with that subtype will be deleted from the newly created Version in the FeatureClass
             </remarks>
         </member>
+        <member name="P:DeleteFeaturesBasedOnSubtypeVersioned.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
         <member name="M:DeleteFeaturesBasedOnSubtypeVersioned.Module1.CanUnload">
             <summary>
             Called by Framework when ArcGIS Pro is closing
@@ -35,11 +40,6 @@
             </summary>
             <param name="id"></param>
             <returns></returns>
-        </member>
-        <member name="P:DeleteFeaturesBasedOnSubtypeVersioned.Module1.Current">
-            <summary>
-            Retrieve the singleton instance to this module here
-            </summary>
         </member>
         <member name="T:DeleteFeaturesBasedOnSubtypeVersioned.SubtypesComboBox">
             <summary>

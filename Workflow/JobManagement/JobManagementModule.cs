@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Internal.Core;
 using ArcGIS.Desktop.Internal.Mapping;
 using ArcGIS.Desktop.Mapping;
 using System.Runtime.InteropServices;
-
+using ConfigurationManager = ArcGIS.Desktop.Workflow.Models.ConfigurationManager;
 
 
 namespace WorkflowSample

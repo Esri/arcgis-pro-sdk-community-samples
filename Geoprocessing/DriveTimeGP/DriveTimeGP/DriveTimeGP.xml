@@ -30,16 +30,16 @@
             ![UI](Screenshots/DriveTime.png)
             </remarks>
         </member>
+        <member name="P:DriveTimeGP.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
         <member name="M:DriveTimeGP.Module1.CanUnload">
             <summary>
             Called by Framework when ArcGIS Pro is closing
             </summary>
             <returns>False to prevent Pro from closing, otherwise True</returns>
-        </member>
-        <member name="P:DriveTimeGP.Module1.Current">
-            <summary>
-            Retrieve the singleton instance to this module here
-            </summary>
         </member>
     </members>
 </doc>

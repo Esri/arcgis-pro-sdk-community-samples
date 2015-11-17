@@ -15,6 +15,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Framework' t
 
 * [BookmarksComboBox (c#)](../../../tree/master/Framework/BookmarksComboBox)  
 * [CommandFilter (c#)](../../../tree/master/Framework/CommandFilter)  
+* [CoordinateSystemDialog (c#)](../../../tree/master/Framework/CoordinateSystemDialog)  
 * [DockPaneBookmarkAdvanced (c#)](../../../tree/master/Framework/DockPaneBookmarkAdvanced)  
 * [DockpaneSimple (c#)](../../../tree/master/Framework/DockpaneSimple)  
 * [FontStyles (c#)](../../../tree/master/Framework/FontStyles)  

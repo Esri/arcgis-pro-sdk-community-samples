@@ -35,16 +35,16 @@
             ![UI](Screenshots/Screen2.png)
             </remarks>
         </member>
+        <member name="P:InsertIntoContextMenu.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
         <member name="M:InsertIntoContextMenu.Module1.CanUnload">
             <summary>
             Called by Framework when ArcGIS Pro is closing
             </summary>
             <returns>False to prevent Pro from closing, otherwise True</returns>
-        </member>
-        <member name="P:InsertIntoContextMenu.Module1.Current">
-            <summary>
-            Retrieve the singleton instance to this module here
-            </summary>
         </member>
     </members>
 </doc>

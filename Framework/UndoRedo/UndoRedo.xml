@@ -56,6 +56,16 @@
             An empty sample undo/redo operation used for illustrating how to add to an OperationManager.
             </summary>
         </member>
+        <member name="P:PreRel_UndoRedo.MySampleOperation.Name">
+            <summary>
+            Gets the name of the operation
+            </summary>
+        </member>
+        <member name="P:PreRel_UndoRedo.MySampleOperation.Category">
+            <summary>
+            Gets the category of the operation
+            </summary>
+        </member>
         <member name="M:PreRel_UndoRedo.MySampleOperation.DoAsync">
             <summary>
             Performs the operation
@@ -74,19 +84,19 @@
             </summary>
             <returns>A Task to the UndoAsync method</returns>
         </member>
-        <member name="P:PreRel_UndoRedo.MySampleOperation.Name">
+        <member name="T:PreRel_UndoRedo.MyZoomOperation">
+            <summary>
+            A sample undo/redo operation that illustrates zoom in and zoom out actions. 
+            </summary>
+        </member>
+        <member name="P:PreRel_UndoRedo.MyZoomOperation.Name">
             <summary>
             Gets the name of the operation
             </summary>
         </member>
-        <member name="P:PreRel_UndoRedo.MySampleOperation.Category">
+        <member name="P:PreRel_UndoRedo.MyZoomOperation.Category">
             <summary>
             Gets the category of the operation
-            </summary>
-        </member>
-        <member name="T:PreRel_UndoRedo.MyZoomOperation">
-            <summary>
-            A sample undo/redo operation that illustrates zoom in and zoom out actions. 
             </summary>
         </member>
         <member name="M:PreRel_UndoRedo.MyZoomOperation.Do">
@@ -112,16 +122,6 @@
             Undo the operation to reset the state
             </summary>
             <returns>A Task to the UndoAsync method</returns>
-        </member>
-        <member name="P:PreRel_UndoRedo.MyZoomOperation.Name">
-            <summary>
-            Gets the name of the operation
-            </summary>
-        </member>
-        <member name="P:PreRel_UndoRedo.MyZoomOperation.Category">
-            <summary>
-            Gets the category of the operation
-            </summary>
         </member>
         <member name="T:PreRel_UndoRedo.SampleDockPaneView">
             <summary>
@@ -198,6 +198,17 @@
             </summary>
             <returns>A Task that represents the FixedZoomIn method</returns>
         </member>
+        <member name="P:PreRel_UndoRedo.SampleDockPaneViewModel.CanUndo">
+            <summary>
+            Determines if the undo button can be enabled.  It should be enabled if operations exist on the undo stack of the OperationManager.
+            </summary>
+            <returns>returns True if operations exist</returns>
+        </member>
+        <member name="P:PreRel_UndoRedo.SampleDockPaneViewModel.CanRedo">
+            <summary>
+            Determines if the redo button can be enabled. It should be enabled if operations exist on the redo stack of the OperationManager 
+            </summary>
+        </member>
         <member name="F:PreRel_UndoRedo.SampleDockPaneViewModel._undoCmd">
             <summary>
             The Undo command; binds to a button on the view
@@ -238,17 +249,6 @@
         <member name="M:PreRel_UndoRedo.SampleDockPaneViewModel.ClearOperations">
             <summary>
             Action for the ClearOperations button; clears the undo and redo stacks of a specific category of operations
-            </summary>
-        </member>
-        <member name="P:PreRel_UndoRedo.SampleDockPaneViewModel.CanUndo">
-            <summary>
-            Determines if the undo button can be enabled.  It should be enabled if operations exist on the undo stack of the OperationManager.
-            </summary>
-            <returns>returns True if operations exist</returns>
-        </member>
-        <member name="P:PreRel_UndoRedo.SampleDockPaneViewModel.CanRedo">
-            <summary>
-            Determines if the redo button can be enabled. It should be enabled if operations exist on the redo stack of the OperationManager 
             </summary>
         </member>
         <member name="T:PreRel_UndoRedo.SampleDockPane_ShowButton">

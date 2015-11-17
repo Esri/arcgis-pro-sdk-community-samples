@@ -32,6 +32,11 @@
             Returns the current active ArcGIS Online string
             </summary>
         </member>
+        <member name="P:ArcGISOnlineConnect.AgolDockpaneViewModel.AgolQueries">
+            <summary>
+            Agol Queries:  all queries are loaded into this dictionary and presented for user selection
+            </summary>
+        </member>
         <member name="F:ArcGISOnlineConnect.AgolDockpaneViewModel._AgolQuery">
             <summary>
             Selected query: one of the AGOL queries has been selected by the user
@@ -67,11 +72,6 @@
             Determines the visibility (enabled state) of the query button
             </summary>
             <returns>true if enabled</returns>
-        </member>
-        <member name="P:ArcGISOnlineConnect.AgolDockpaneViewModel.AgolQueries">
-            <summary>
-            Agol Queries:  all queries are loaded into this dictionary and presented for user selection
-            </summary>
         </member>
         <member name="T:ArcGISOnlineConnect.AgolDockpane_ShowButton">
             <summary>
@@ -183,16 +183,16 @@
             11. Also note that permissions and content are required for various queries (i.e. content or folder queries)
             </remarks>
         </member>
+        <member name="P:ArcGISOnlineConnect.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
         <member name="M:ArcGISOnlineConnect.Module1.CanUnload">
             <summary>
             Called by Framework when ArcGIS Pro is closing
             </summary>
             <returns>False to prevent Pro from closing, otherwise True</returns>
-        </member>
-        <member name="P:ArcGISOnlineConnect.Module1.Current">
-            <summary>
-            Retrieve the singleton instance to this module here
-            </summary>
         </member>
     </members>
 </doc>

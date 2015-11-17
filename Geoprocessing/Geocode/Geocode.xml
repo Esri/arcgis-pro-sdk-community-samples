@@ -9,36 +9,6 @@
             Datacontract for the JSON response returned from the ArcGIS Online geocoder
             </summary>
         </member>
-        <member name="T:Geocode.ObservableObject">
-            <summary>
-            Base class that provide implementation for
-            property notification for binding to WPF UI
-            </summary>
-        </member>
-        <member name="M:Geocode.ObservableObject.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
-            <summary>
-            Handle property changed
-            </summary>
-            <param name="e"></param>
-        </member>
-        <member name="M:Geocode.ObservableObject.RaisePropertyChanged(System.String)">
-            <summary>
-            Handle property changed. Ensure the property exists
-            </summary>
-            <param name="propertyName"></param>
-        </member>
-        <member name="M:Geocode.ObservableObject.VerifyPropertyName(System.String)">
-            <summary>
-            Warns the developer if this Object does not have a public property with
-            the specified name. This method does not exist in a Release build.
-            </summary>
-            <param name="propertyName"></param>
-        </member>
-        <member name="E:Geocode.ObservableObject.PropertyChanged">
-            <summary>
-            Event for property changed
-            </summary>
-        </member>
         <member name="M:Geocode.CandidateResponse.#ctor">
             <summary>
             Default constructor
@@ -60,12 +30,6 @@
             Default Constructor
             </summary>
         </member>
-        <member name="M:Geocode.CandidateLocation.ToPointN">
-            <summary>
-            Convert the location to a CIM Point
-            </summary>
-            <returns></returns>
-        </member>
         <member name="P:Geocode.CandidateLocation.CandidateDetails">
             <summary>
             The displayed information - formatted as address, score, and X,Y
@@ -75,6 +39,12 @@
             <summary>
             The spatial reference wkid for the candidate
             </summary>
+        </member>
+        <member name="M:Geocode.CandidateLocation.ToPointN">
+            <summary>
+            Convert the location to a CIM Point
+            </summary>
+            <returns></returns>
         </member>
         <member name="P:Geocode.CandidateExtent.WKID">
             <summary>
@@ -101,12 +71,6 @@
             Default constructor
             </summary>
         </member>
-        <member name="M:Geocode.CIMPointGraphicHelper.UpdateLocation(ArcGIS.Core.Internal.CIM.PointN)">
-            <summary>
-            Update the CIMPointGraphic location
-            </summary>
-            <param name="point"></param>
-        </member>
         <member name="P:Geocode.CIMPointGraphicHelper.graphicID">
             <summary>
             Gets and sets id for this graphic relevant to the specific mapview
@@ -122,6 +86,12 @@
             <summary>
             Gets the wrapped CIMPointGraphic
             </summary>
+        </member>
+        <member name="M:Geocode.CIMPointGraphicHelper.UpdateLocation(ArcGIS.Core.Internal.CIM.PointN)">
+            <summary>
+            Update the CIMPointGraphic location
+            </summary>
+            <param name="point"></param>
         </member>
         <member name="M:Geocode.CIMHelpers.MakeCIMPointGraphic(ArcGIS.Core.Internal.CIM.PointN)">
             <summary>
@@ -230,16 +200,16 @@
             ![UI](Screenshots/Screen2.png)
             </remarks>
         </member>
+        <member name="P:Geocode.GeocodeModule.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
         <member name="M:Geocode.GeocodeModule.CanUnload">
             <summary>
             Called by Framework when ArcGIS Pro is closing
             </summary>
             <returns>False to prevent Pro from closing, otherwise True</returns>
-        </member>
-        <member name="P:Geocode.GeocodeModule.Current">
-            <summary>
-            Retrieve the singleton instance to this module here
-            </summary>
         </member>
         <member name="T:Geocode.GeocodeWindow">
             <summary>
@@ -286,6 +256,36 @@
             <typeparam name="T">The type of the object to serialize</typeparam>
             <param name="obj">The instance of type T to be serialized</param>
             <returns>A Json string</returns>
+        </member>
+        <member name="T:Geocode.ObservableObject">
+            <summary>
+            Base class that provide implementation for
+            property notification for binding to WPF UI
+            </summary>
+        </member>
+        <member name="E:Geocode.ObservableObject.PropertyChanged">
+            <summary>
+            Event for property changed
+            </summary>
+        </member>
+        <member name="M:Geocode.ObservableObject.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Handle property changed
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geocode.ObservableObject.RaisePropertyChanged(System.String)">
+            <summary>
+            Handle property changed. Ensure the property exists
+            </summary>
+            <param name="propertyName"></param>
+        </member>
+        <member name="M:Geocode.ObservableObject.VerifyPropertyName(System.String)">
+            <summary>
+            Warns the developer if this Object does not have a public property with
+            the specified name. This method does not exist in a Release build.
+            </summary>
+            <param name="propertyName"></param>
         </member>
     </members>
 </doc>

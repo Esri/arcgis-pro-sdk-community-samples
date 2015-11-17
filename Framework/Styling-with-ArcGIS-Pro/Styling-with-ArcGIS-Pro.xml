@@ -60,12 +60,6 @@
             Show the DockPane.
             </summary>
         </member>
-        <member name="M:ControlStyles.ArcGISProControlStylesDockPaneViewModel.StripTrailingText(System.String,System.String)">
-            <summary>
-            strips the pattern from the trailing end of given text, which must be at the trailing end of the text.
-            This is needed to avoid problems if we ever create a namespace that includes "ViewModel"
-            </summary>
-        </member>
         <member name="P:ControlStyles.ArcGISProControlStylesDockPaneViewModel.Heading">
             <summary>
             Text shown near the top of the DockPane.
@@ -79,6 +73,12 @@
         <member name="P:ControlStyles.ArcGISProControlStylesDockPaneViewModel.SelectedControl">
             <summary>
             The Selected Control.
+            </summary>
+        </member>
+        <member name="M:ControlStyles.ArcGISProControlStylesDockPaneViewModel.StripTrailingText(System.String,System.String)">
+            <summary>
+            strips the pattern from the trailing end of given text, which must be at the trailing end of the text.
+            This is needed to avoid problems if we ever create a namespace that includes "ViewModel"
             </summary>
         </member>
         <member name="P:ControlStyles.ArcGISProControlStylesDockPaneViewModel.CopyControlXamlCmd">

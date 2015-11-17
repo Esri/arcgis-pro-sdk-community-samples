@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="CoordinateSystemAddin.dll" defaultNamespace="CoordinateSystemAddin" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{1b3c4d8c-4b75-4367-bccb-1930bb952ada}" version="1.0" desktopVersion="1.2.4644">
+    <Name>CoordinateSystemDialog</Name>
+    <Description>CoordinateSystemDialog description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>charlesm</Author>
+    <Company>Acme</Company>
+    <Date>11/13/2015 10:50:36 AM, 2015</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="CoordinateSystemAddin_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="CoordinateSystemAddin_Tab1" caption="New Tab">
+          <group refID="CoordinateSystemAddin_Group1"/>
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="CoordinateSystemAddin_Group1" caption="Group 1" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="CoordinateSystemAddin_ShowDialogButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="CoordinateSystemAddin_ShowDialogButton" caption="Pick Coord Sys." className="ShowDialogButton" loadOnClick="true" smallImage="Images\BexDog16.png" largeImage="Images\BexDog32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Coordinate system picker">Show the coordinate system picker<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

@@ -66,6 +66,11 @@
             12. Click Go and the matching object ids will be listed.
             </remarks>
         </member>
+        <member name="P:FilterFeaturesBasedOnAttributesWithinAnExtent.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
         <member name="M:FilterFeaturesBasedOnAttributesWithinAnExtent.Module1.CanUnload">
             <summary>
             Called by Framework when ArcGIS Pro is closing
@@ -80,11 +85,6 @@
             </summary>
             <param name="id"></param>
             <returns></returns>
-        </member>
-        <member name="P:FilterFeaturesBasedOnAttributesWithinAnExtent.Module1.Current">
-            <summary>
-            Retrieve the singleton instance to this module here
-            </summary>
         </member>
     </members>
 </doc>

@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CoordinateSystemAddin</name>
+    </assembly>
+    <members>
+        <member name="T:CoordinateSystemAddin.Common.ReverseBoolConverter">
+            <summary>
+            Returns the opposite or 'Not' of the input - True for False and False for True
+            </summary>
+        </member>
+        <member name="T:CoordinateSystemAddin.Common.BoolToVisibilityConverter">
+            <summary>
+            Converts the given bool to a Visibility
+            </summary>
+        </member>
+        <member name="T:CoordinateSystemAddin.Module1">
+            <summary>
+            This sample displays a dialog box showing available -Geographic Coordinate Systems- and
+            available -Projected Coordinate Systems- from which the operator can select a coordinate system.
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro will open.
+            1. Either create a new blank project OR open an existing project.
+            1. Click on the ADD-IN TAB.
+            1. Click on the -Pick Coord Sys.- button in the Carto group. ![Coordinate systems loading](Screenshots/Screen1.png)
+            1. The Pick Coord System dialog will open up.
+            1. The code behind queries for all available coordinate systems.  ![Coordinate systems dialog](Screenshots/Screen2.png)
+            </remarks>
+        </member>
+        <member name="P:CoordinateSystemAddin.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:CoordinateSystemAddin.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="T:CoordinateSystemAddin.Resource1">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:CoordinateSystemAddin.Resource1.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:CoordinateSystemAddin.Resource1.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:CoordinateSystemAddin.Resource1.sr_out">
+            <summary>
+              Looks up a localized string similar to Geographic Coordinate Systems/Africa/Abidjan 1987|GCS_Abidjan_1987|4143|GEOGCS[&apos;GCS_Abidjan_1987&apos;,DATUM[&apos;D_Abidjan_1987&apos;,SPHEROID[&apos;Clarke_1880_RGS&apos;,6378249.145,293.465]],PRIMEM[&apos;Greenwich&apos;,0.0],UNIT[&apos;Degree&apos;,0.0174532925199433]]Geographic Coordinate Systems/Africa/Accra|GCS_Accra|4168|GEOGCS[&apos;GCS_Accra&apos;,DATUM[&apos;D_Accra&apos;,SPHEROID[&apos;War_Office&apos;,6378300.0,296.0]],PRIMEM[&apos;Greenwich&apos;,0.0],UNIT[&apos;Degree&apos;,0.0174532925199433]]Geographic Coordinate Systems/Africa/Adindan|GCS_Adindan|4201|GEOGCS[&apos;GCS_Adindan&apos;,DATUM[&apos;D_A [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:CoordinateSystemAddin.Resource1.String1">
+            <summary>
+              Looks up a localized string similar to string1.
+            </summary>
+        </member>
+        <member name="T:CoordinateSystemAddin.UI.CoordSysDialog">
+            <summary>
+            Interaction logic for CoordSysDialog.xaml
+            </summary>
+            <summary>
+            CoordSysDialog
+            </summary>
+        </member>
+        <member name="P:CoordinateSystemAddin.UI.CoordSysDialog.SpatialReference">
+            <summary>
+            The selected Spatial Reference based on the picker selection
+            </summary>
+        </member>
+        <member name="M:CoordinateSystemAddin.UI.CoordSysDialog.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:CoordinateSystemAddin.UI.CoordSysPickerView">
+            <summary>
+            Interaction logic for CoordinateSystemPicker.xaml
+            </summary>
+            <remarks>Handy reference on how to style the TreeView:
+            <a href="http://blogs.msdn.com/b/mikehillberg/archive/2009/10/30/treeview-and-hierarchicaldatatemplate-step-by-step.aspx"/>
+            </remarks>
+            <summary>
+            CoordSysPickerView
+            </summary>
+        </member>
+        <member name="M:CoordinateSystemAddin.UI.CoordSysPickerView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

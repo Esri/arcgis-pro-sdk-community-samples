@@ -70,7 +70,7 @@ Read [Installing ArcGIS Pro SDK for .NET](https://github.com/Esri/arcgis-pro-sdk
 
 ##ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 52 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 53 ArcGIS Pro samples that are included in this repository.  
 
 ####Content
 
@@ -94,6 +94,7 @@ Below is the list of 52 ArcGIS Pro samples that are included in this repository.
 
 * [BookmarksComboBox (c#)](../../tree/master/Framework/BookmarksComboBox)  
 * [CommandFilter (c#)](../../tree/master/Framework/CommandFilter)  
+* [CoordinateSystemDialog (c#)](../../tree/master/Framework/CoordinateSystemDialog)  
 * [DockPaneBookmarkAdvanced (c#)](../../tree/master/Framework/DockPaneBookmarkAdvanced)  
 * [DockpaneSimple (c#)](../../tree/master/Framework/DockpaneSimple)  
 * [FontStyles (c#)](../../tree/master/Framework/FontStyles)  

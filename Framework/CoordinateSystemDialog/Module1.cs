@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows.Input;
+using ArcGIS.Desktop.Framework;
+using ArcGIS.Desktop.Framework.Contracts;
+using System.Threading.Tasks;
+
+namespace CoordinateSystemAddin
+{
+  /// <summary>
+  /// This sample displays a dialog box showing available -Geographic Coordinate Systems- and
+  /// available -Projected Coordinate Systems- from which the operator can select a coordinate system.
+  /// </summary>
+  /// <remarks>
+  /// 1. In Visual Studio click the Build menu. Then select Build Solution.
+  /// 1. Click Start button to open ArcGIS Pro.
+  /// 1. ArcGIS Pro will open.
+  /// 1. Either create a new blank project OR open an existing project.
+  /// 1. Click on the ADD-IN TAB.
+  /// 1. Click on the -Pick Coord Sys.- button in the Carto group. ![Coordinate systems loading](Screenshots/Screen1.png)
+  /// 1. The Pick Coord System dialog will open up.
+  /// 1. The code behind queries for all available coordinate systems.  ![Coordinate systems dialog](Screenshots/Screen2.png)
+  /// </remarks>
+  internal class Module1 : Module
+  {
+    private static Module1 _this = null;
+
+    /// <summary>
+    /// Retrieve the singleton instance to this module here
+    /// </summary>
+    public static Module1 Current
+    {
+      get
+      {
+        return _this ?? (_this = (Module1)FrameworkApplication.FindModule("CoordinateSystemPicker_Module"));
+      }
+    }
+
+    #region Overrides
+    /// <summary>
+    /// Called by Framework when ArcGIS Pro is closing
+    /// </summary>
+    /// <returns>False to prevent Pro from closing, otherwise True</returns>
+    protected override bool CanUnload()
+    {
+      //TODO - add your business logic
+      //return false to ~cancel~ Application close
+      return true;
+    }
+
+    #endregion Overrides
+
+  }
+}

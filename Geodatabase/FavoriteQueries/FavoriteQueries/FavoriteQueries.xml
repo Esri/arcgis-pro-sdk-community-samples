@@ -79,6 +79,11 @@
             11. The results are displayed below in the same Pane
             </remarks>
         </member>
+        <member name="P:FavoriteQueries.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
         <member name="M:FavoriteQueries.Module1.CanUnload">
             <summary>
             Called by Framework when ArcGIS Pro is closing
@@ -93,11 +98,6 @@
             </summary>
             <param name="id"></param>
             <returns></returns>
-        </member>
-        <member name="P:FavoriteQueries.Module1.Current">
-            <summary>
-            Retrieve the singleton instance to this module here
-            </summary>
         </member>
     </members>
 </doc>

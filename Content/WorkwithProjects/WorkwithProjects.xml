@@ -37,6 +37,11 @@
             ![UI](Screenshots/Screen.png)
             </remarks>
         </member>
+        <member name="P:WorkwithProjects.WorkwithProjectsModule.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
         <member name="M:WorkwithProjects.WorkwithProjectsModule.CanUnload">
             <summary>
             Called by Framework when ArcGIS Pro is closing
@@ -52,14 +57,34 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="P:WorkwithProjects.WorkwithProjectsModule.Current">
-            <summary>
-            Retrieve the singleton instance to this module here
-            </summary>
-        </member>
         <member name="F:WorkwithProjects.WorkWithProjectsViewModel._lockMxdItemCollection">
             <summary>
             used to lock collections for use by multiple threads
+            </summary>
+        </member>
+        <member name="P:WorkwithProjects.WorkWithProjectsViewModel.Filter">
+            <summary>
+            Folder Filter property
+            </summary>
+        </member>
+        <member name="P:WorkwithProjects.WorkWithProjectsViewModel.OpenProjectPath">
+            <summary>
+            Open Project Path property
+            </summary>
+        </member>
+        <member name="P:WorkwithProjects.WorkWithProjectsViewModel.FolderPath">
+            <summary>
+            Folder Path property
+            </summary>
+        </member>
+        <member name="P:WorkwithProjects.WorkWithProjectsViewModel.ProjectPath">
+            <summary>
+            Project Path property
+            </summary>
+        </member>
+        <member name="P:WorkwithProjects.WorkWithProjectsViewModel.ProjectName">
+            <summary>
+            Project Name property
             </summary>
         </member>
         <member name="F:WorkwithProjects.WorkWithProjectsViewModel._mxdItems">
@@ -111,31 +136,6 @@
         <member name="F:WorkwithProjects.WorkWithProjectsViewModel._heading">
             <summary>
             Text shown near the top of the DockPane.
-            </summary>
-        </member>
-        <member name="P:WorkwithProjects.WorkWithProjectsViewModel.Filter">
-            <summary>
-            Folder Filter property
-            </summary>
-        </member>
-        <member name="P:WorkwithProjects.WorkWithProjectsViewModel.OpenProjectPath">
-            <summary>
-            Open Project Path property
-            </summary>
-        </member>
-        <member name="P:WorkwithProjects.WorkWithProjectsViewModel.FolderPath">
-            <summary>
-            Folder Path property
-            </summary>
-        </member>
-        <member name="P:WorkwithProjects.WorkWithProjectsViewModel.ProjectPath">
-            <summary>
-            Project Path property
-            </summary>
-        </member>
-        <member name="P:WorkwithProjects.WorkWithProjectsViewModel.ProjectName">
-            <summary>
-            Project Name property
             </summary>
         </member>
         <member name="T:WorkwithProjects.WorkWithProjects_ShowButton">
