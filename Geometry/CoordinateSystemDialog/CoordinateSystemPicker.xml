@@ -16,7 +16,8 @@
         </member>
         <member name="T:CoordinateSystemAddin.Module1">
             <summary>
-            This sample provides a re-usable Coordinate Picker User Control. Embed within your Add-in   /// if you need to provide a UI component similar to the core Coordinate Picker on the Pro Map 
+            This sample provides a re-usable Coordinate Picker User Control. Embed within your Add-in 
+            if you need to provide a UI component similar to the core Coordinate Picker on the Pro Map 
             property sheet. The list of Coordinate systems is loaded the first time the dialog is 
             opened and remains cached for the duration of the Pro session. When a user picks a 
             Coordinate System, and clicks OK, it can be retrieved via the SpatialReference property on 
@@ -28,7 +29,7 @@
             1. ArcGIS Pro will open.
             1. Either create a new blank project OR open an existing project.
             1. Click on the ADD-IN TAB.
-            1. Click on the -Pick Coord Sys.- button in the Carto group. ![Coordinate systems loading](Screenshots/Screen1.png)
+            1. Click on the *Pick Coord Sys.* button. ![Coordinate systems loading](Screenshots/Screen1.png)
             1. The Pick Coord System dialog will open up.
             1. The code behind queries for all available coordinate systems.  ![Coordinate systems dialog](Screenshots/Screen2.png)
             </remarks>
@@ -102,6 +103,36 @@
         <member name="M:CoordinateSystemAddin.UI.CoordSysPickerView.InitializeComponent">
             <summary>
             InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
             </summary>
         </member>
     </members>

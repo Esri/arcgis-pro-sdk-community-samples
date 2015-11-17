@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 namespace CoordinateSystemAddin
 {
   /// <summary>
-  /// This sample provides a re-usable Coordinate Picker User Control. Embed within your Add-in   /// if you need to provide a UI component similar to the core Coordinate Picker on the Pro Map 
+  /// This sample provides a re-usable Coordinate Picker User Control. Embed within your Add-in 
+  /// if you need to provide a UI component similar to the core Coordinate Picker on the Pro Map 
   /// property sheet. The list of Coordinate systems is loaded the first time the dialog is 
   /// opened and remains cached for the duration of the Pro session. When a user picks a 
   /// Coordinate System, and clicks OK, it can be retrieved via the SpatialReference property on 
@@ -22,7 +23,7 @@ namespace CoordinateSystemAddin
   /// 1. ArcGIS Pro will open.
   /// 1. Either create a new blank project OR open an existing project.
   /// 1. Click on the ADD-IN TAB.
-  /// 1. Click on the -Pick Coord Sys.- button in the Carto group. ![Coordinate systems loading](Screenshots/Screen1.png)
+  /// 1. Click on the *Pick Coord Sys.* button. ![Coordinate systems loading](Screenshots/Screen1.png)
   /// 1. The Pick Coord System dialog will open up.
   /// 1. The code behind queries for all available coordinate systems.  ![Coordinate systems dialog](Screenshots/Screen2.png)
   /// </remarks>
