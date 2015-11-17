@@ -15,6 +15,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Geometry' to
 
 * [ConstructingGeometries_CSharp (c#)](../../../tree/master/Geometry/Constructing-Geometries/ConstructingGeometries_CSharp)  
 * [ConstructingGeometries_VB (vb)](../../../tree/master/Geometry/Constructing-Geometries/ConstructingGeometries_VB)  
+* [CoordinateSystemDialog (c#)](../../../tree/master/Geometry/CoordinateSystemDialog)  
 * [GeometrySamples (c#)](../../../tree/master/Geometry/GeometrySamples)  
 
 

@@ -94,7 +94,6 @@ Below is the list of 53 ArcGIS Pro samples that are included in this repository.
 
 * [BookmarksComboBox (c#)](../../tree/master/Framework/BookmarksComboBox)  
 * [CommandFilter (c#)](../../tree/master/Framework/CommandFilter)  
-* [CoordinateSystemDialog (c#)](../../tree/master/Framework/CoordinateSystemDialog)  
 * [DockPaneBookmarkAdvanced (c#)](../../tree/master/Framework/DockPaneBookmarkAdvanced)  
 * [DockpaneSimple (c#)](../../tree/master/Framework/DockpaneSimple)  
 * [FontStyles (c#)](../../tree/master/Framework/FontStyles)  
@@ -119,6 +118,7 @@ Below is the list of 53 ArcGIS Pro samples that are included in this repository.
 
 * [ConstructingGeometries_CSharp (c#)](../../tree/master/Geometry/Constructing-Geometries/ConstructingGeometries_CSharp)  
 * [ConstructingGeometries_VB (vb)](../../tree/master/Geometry/Constructing-Geometries/ConstructingGeometries_VB)  
+* [CoordinateSystemDialog (c#)](../../tree/master/Geometry/CoordinateSystemDialog)  
 * [GeometrySamples (c#)](../../tree/master/Geometry/GeometrySamples)  
 
 

@@ -1,7 +1,8 @@
 ##CoordinateSystemPicker
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample displays a dialog box showing available -Geographic Coordinate Systems- and available -Projected Coordinate Systems- from which the operator can select a coordinate system.  
+This sample provides a re-usable Coordinate Picker User Control. Embed within your Add-in   /// if you need to provide a UI component similar to the core Coordinate Picker on the Pro Map  property sheet. The list of Coordinate systems is loaded the first time the dialog is  opened and remains cached for the duration of the Pro session. When a user picks a   
+Coordinate System, and clicks OK, it can be retrieved via the SpatialReference property on  the dialog.  
   
 
 
@@ -10,7 +11,7 @@ This sample displays a dialog box showing available -Geographic Coordinate Syste
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:      C#
-Subject:       Framework
+Subject:       Geometry
 Contributor:   ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:  Esri, http://www.esri.com
 Date:          11/17/2015

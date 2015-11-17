@@ -16,8 +16,11 @@
         </member>
         <member name="T:CoordinateSystemAddin.Module1">
             <summary>
-            This sample displays a dialog box showing available -Geographic Coordinate Systems- and
-            available -Projected Coordinate Systems- from which the operator can select a coordinate system.
+            This sample provides a re-usable Coordinate Picker User Control. Embed within your Add-in   /// if you need to provide a UI component similar to the core Coordinate Picker on the Pro Map 
+            property sheet. The list of Coordinate systems is loaded the first time the dialog is 
+            opened and remains cached for the duration of the Pro session. When a user picks a 
+            Coordinate System, and clicks OK, it can be retrieved via the SpatialReference property on 
+            the dialog.
             </summary>
             <remarks>
             1. In Visual Studio click the Build menu. Then select Build Solution.
