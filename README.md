@@ -70,12 +70,13 @@ Read [Installing ArcGIS Pro SDK for .NET](https://github.com/Esri/arcgis-pro-sdk
 
 ##ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 53 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 54 ArcGIS Pro samples that are included in this repository.  
 
 ####Content
 
 * [ArcGISOnlineConnect (c#)](../../tree/master/Content/ArcGISOnline/ArcGISOnlineConnect)  
 * [ExcelDropHandler (c#)](../../tree/master/Content/ExcelDropHandler)  
+* [FolderConnectionManager (c#)](../../tree/master/Content/FolderConnectionManager)  
 * [WorkwithProjects (c#)](../../tree/master/Content/WorkwithProjects)  
 
 

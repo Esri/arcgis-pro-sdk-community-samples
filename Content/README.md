@@ -15,6 +15,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Content' top
 
 * [ArcGISOnlineConnect (c#)](../../../tree/master/Content/ArcGISOnline/ArcGISOnlineConnect)  
 * [ExcelDropHandler (c#)](../../../tree/master/Content/ExcelDropHandler)  
+* [FolderConnectionManager (c#)](../../../tree/master/Content/FolderConnectionManager)  
 * [WorkwithProjects (c#)](../../../tree/master/Content/WorkwithProjects)  
 
 

@@ -1,7 +1,7 @@
-##AddLayers
+##FolderConnectionManager
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-Mimics the Browse Esri Map Layers dialog from the arcgis online webmap viewer. Shows use of EsriHttpClient and Newtonsoft.Json  
+Allows saving and loading folder connections to a Project.  
   
 
 
@@ -10,7 +10,7 @@ Mimics the Browse Esri Map Layers dialog from the arcgis online webmap viewer. S
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:      C#
-Subject:       Sharing, Content
+Subject:       Content
 Contributor:   ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:  Esri, http://www.esri.com
 Date:          12/7/2015
@@ -30,12 +30,15 @@ Visual Studio: 2013, 2015
 
 ##How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-2. Click Start button to open ArcGIS Pro.  
-3. ArcGIS Pro will open.   
-4. Open any project file. Click on the Add-in tab on the ribbon and then on the "Show the 'Browse Esri Map Layers' dialog" button.  
-5. The Browse Esri map layers button will be displayed and fill in available content from ArcGIS Online.  
-![UI](ScreenShots/BrowseAGOL.png)    
+   
+1. Open ArcGIS Pro and either a new or existing Project.  
+2. Create a new Folder Connection in the Project window.  
+![UI](Images/FolderConnect.png)    
+3. Click the "Save Connections" button in the "Folder Connection Manager" Add-In pane. The current Folder /// Connection's will be saved as a list in the text file.  
+4. Remove the Folder Connection you just created by right-clicking on it in the Project window and selecting "Remove".  
+![UI](Images/RemoveFolder.png)  
+5. Load your saved Folder Connection by clicking the "Load Connection" button in the "Folder Connection Manager" /// Add-In pane. Select the text file you saved in step three.  
+6. Verify that your Folder Connection has returned to the Project.  
   
 
 

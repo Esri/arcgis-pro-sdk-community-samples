@@ -16,7 +16,7 @@ Language:      C#
 Subject:       Geodatabase
 Contributor:   ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:  Esri, http://www.esri.com
-Date:          11/17/2015
+Date:          12/7/2015
 ArcGIS Pro:    1.1
 Visual Studio: 2013, 2015
 ```
