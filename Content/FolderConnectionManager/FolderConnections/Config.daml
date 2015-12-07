@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+//   Copyright 2015 Esri
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       http://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.
+-->
+<ArcGIS defaultAssembly="FolderConnections.dll" defaultNamespace="FolderConnections" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{677aa346-e49c-44b1-be7c-dee0a76ed078}" version="1.0" desktopVersion="1.1.3308">
+    <Name>FolderConnectionManager</Name>
+    <Description>Allows saving and loading folder connections to a Project.</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>Andrew Ortego</Author>
+    <Company>Esri</Company>
+    <Date>9/14/2015 1:23:45 PM, 2015</Date>
+    <Subject>Content</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="FolderConnections_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="FolderConnections_Tab1" caption="New Tab">
+          <group refID="FolderConnections_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="FolderConnections_Group1" caption="Folder Connection Manager" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="FolderConnections_ShowFolders" size="large" />
+          <button refID="FolderConnections_SaveConnections" size="large" />
+          <button refID="FolderConnections_LoadConnections" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="FolderConnections_ShowFolders" caption="Display Connections" className="DisplayConnections" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Display Connections">Display all folder connections in the current Project<disabledText /></tooltip>
+        </button>
+        <button id="FolderConnections_SaveConnections" caption="Save Connections" className="SaveConnections" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Save Connections">Save the current Project's folder connections into a text file<disabledText /></tooltip>
+        </button>
+        <button id="FolderConnections_LoadConnections" caption="Load Connections" className="LoadConnections" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Load Connections">Load a text file containing directories to be used as folder connections<disabledText /></tooltip>
+        </button>        
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>
