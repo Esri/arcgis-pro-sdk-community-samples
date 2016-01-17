@@ -18,8 +18,8 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            
         </Grid.RowDefinitions>
 
         <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
@@ -47,6 +47,6 @@
         </StackPanel>
         
         <Button Content="Go" HorizontalAlignment="Right" Margin="10" Grid.Row="3" VerticalAlignment="Top" Width="75" Click="ButtonBase_OnClick"/>
-        <DataGrid HorizontalAlignment="Left" Height="Auto" Grid.Row="4" ItemsSource="{Binding FeatureData}" VerticalAlignment="Top" Width="Auto"/>
+        <DataGrid HorizontalAlignment="Left" Grid.Row="4" ItemsSource="{Binding FeatureData}" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>
