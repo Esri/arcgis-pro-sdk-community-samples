@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dijit/themes/claro/claro.css">
+  <script>dojoConfig = { parseOnLoad: true }</script>
+  <style>
+    body { width: 100%;height: 100%; }
+     div {
+       width: 100%;
+       height: 100%;
+       overflow: hidden;
+     }
+
+    .success {
+      background-color: #ccffcc;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body class="claro">
+  <div id="tree" class="success"></div>
+  <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="async: true"></script>
+  <script>
+    require([
+      "dojo/data/ItemFileReadStore",
+      "dijit/Tree",
+      "dijit/tree/ForestStoreModel",
+      "dojo/domReady!"
+    ], function (ItemFileReadStore, Tree, ForestStoreModel) {
+      var theData = {
+        //identifier: 'name',
+        label: 'name',
+        items: 'insert data here'
+      };
+
+      // store
+      var theStore = new ItemFileReadStore({
+        data: theData
+      });
+
+      // create model to interface Tree to store
+      var theModel = new ForestStoreModel({
+        store: theStore,
+        query: { type: 'insert root type field here' },
+        rootId: 'statesroot',
+        rootLabel: 'insert root layer here'
+      });
+
+      var tree = new Tree({
+        model: theModel
+      }, "tree"); // make sure you have a target HTML element with this id
+      tree.startup();
+
+      dojo.connect(window, "onresize", tree, "resize");
+
+      //<div data-dojo-type="dojo/data/ItemFileReadStore" data-dojo-props="data:storeData2" data-dojo-id="geographyStore2"></div>
+      //<div data-dojo-type="dijit/tree/ForestStoreModel" data-dojo-id="geographyModel2" data-dojo-props="store:geographyStore2, query:{type: 'continent'}, rootId:'Geography', rootLabel:'Geography'"></div>
+      //<div data-dojo-type="dijit/Tree" data-dojo-props="model:geographyModel2"></div>
+
+    });
+  </script>
+</body>
+</html>

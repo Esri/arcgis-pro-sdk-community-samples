@@ -1,0 +1,77 @@
+﻿<!--
+//   Copyright 2014 Esri
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       http://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License. 
+-->
+
+<ArcGIS defaultAssembly="CustomAnimation.dll" defaultNamespace="CustomAnimation" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{5fc28b12-dad5-4a18-9e09-0d888cdf3a2b}" version="1.0" desktopVersion="1.2.4664">
+    <Name>Custom Animation</Name>
+    <Description>Adds commands to the ribbon to create custom animations.</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>Esri, http://www.esri.com</Company>
+    <Date>11/30/2015 5:30:00 PM, 2015</Date>
+    <Subject>Map Exploration</Subject>
+  </AddInInfo>
+  <modules>
+    <insertModule id="CustomAnimation_Module" className="Animation" autoLoad="false" caption="Animation">
+      <groups>
+        <group id="CustomAnimation_TimingGroup" caption="Timing" appearsOnAddInTab="true">
+          <customControl refID="CustomAnimation_TimingControl" size="large" />
+        </group>
+        <group id="CustomAnimation_Path" caption="Path" appearsOnAddInTab="true">
+          <button refID="CustomAnimation_FollowPath" size="large" />
+          <customControl refID="CustomAnimation_PathOptionsControl" size="large" />
+        </group>
+        <group id="CustomAnimation_AroundPointGroup" caption="Around Point" appearsOnAddInTab="true">
+          <tool refID="CustomAnimation_CenterAt" size="large" />
+          <editBox refID="CustomAnimation_Edit" size="middle" />
+        </group>
+      </groups>
+      <controls>
+        <customControl id="CustomAnimation_TimingControl" caption="TimingControl " className="TimingControlViewModel" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" condition="esri_mapping_mapPane" >
+          <content className="TimingControlView" />
+          <tooltip heading="Timing Options">
+            Configure where in the track the keyframes are added to the animation.
+            <disabledText>Active view must be a 3D scene.</disabledText>
+          </tooltip>
+        </customControl>
+        <button id="CustomAnimation_FollowPath" caption="Follow Path" className="FollowPath" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Follow Path">
+            Adds new keyframes to follow the path of the first selected 3D line in the scene.
+            <disabledText>Active view must be a 3D scene.</disabledText>
+          </tooltip>
+        </button>
+        <customControl id="CustomAnimation_PathOptionsControl" caption="PathOptionsControl" className="PathOptionsControlViewModel" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" condition="esri_mapping_mapPane" >
+          <content className="PathOptionsControlView" />
+          <tooltip heading="Path Options">
+            Configure how the keyframes are constructed along the path which includes the height above the path, how often to create keyframes, and the pitch of the camera along the line.
+            <disabledText>Active view must be a 3D scene.</disabledText>
+          </tooltip>
+        </customControl>
+        <tool id="CustomAnimation_CenterAt" caption="Center At" className="CenterAt" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" condition="esri_mapping_mapPane" >
+          <tooltip heading="Center At">
+            Tool can be used to click in the view to center the camera at that position and create keyframes that rotate around the point keeping the clicked location at the center of the view.
+            <disabledText>Active view must be a 3D scene.</disabledText>
+          </tooltip>
+        </tool>     
+        <editBox id="CustomAnimation_Edit" caption="Degrees: " className="DegreesEdit" sizeString="XXXXXXXX" dataType="double" format="N2" condition="esri_mapping_mapPane">
+          <tooltip heading="Degrees">
+            Specify the degree rotation to make around the center point. A positive value will rotate counter-clockwise and a negative value will rotate clockwise.
+            <disabledText>Active view must be a 3D scene.</disabledText>
+          </tooltip>
+        </editBox>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CustomPopup</name>
+    </assembly>
+    <members>
+        <member name="T:CustomPopup.CustomPopupTool">
+            <summary>
+            Implementation of custom pop-up tool.
+            </summary>
+        </member>
+        <member name="M:CustomPopup.CustomPopupTool.#ctor">
+            <summary>
+            Define the tool as a sketch tool that draws a rectangle in screen space on the view.
+            </summary>
+        </member>
+        <member name="M:CustomPopup.CustomPopupTool.OnSketchCompleteAsync(ArcGIS.Core.Geometry.Geometry)">
+            <summary>
+            Called when a sketch is completed.
+            </summary>
+        </member>
+        <member name="M:CustomPopup.CustomPopupTool.CreateCommands">
+            <summary>
+            Create and return a new collection of popup commands
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CustomPopup.CustomPopupTool.OnPopupCommand(ArcGIS.Desktop.Mapping.PopupContent)">
+            <summary>
+            The method called when the custom popup command is clicked.
+            </summary>
+        </member>
+        <member name="M:CustomPopup.CustomPopupTool.CanExecutePopupCommand(ArcGIS.Desktop.Mapping.PopupContent)">
+            <summary>
+            The method called periodically by the framework to determine if the command should be enabled.
+            </summary>
+        </member>
+        <member name="T:CustomPopup.DynamicPopupContent">
+            <summary>
+            Implementation of a custom popup content class
+            </summary>
+        </member>
+        <member name="M:CustomPopup.DynamicPopupContent.#ctor(ArcGIS.Desktop.Mapping.MapMember,System.Int64)">
+            <summary>
+            Constructor initializing the base class with the layer and object id associated with the pop-up content
+            </summary>
+        </member>
+        <member name="M:CustomPopup.DynamicPopupContent.OnCreateHtmlContent">
+            <summary>
+            Called the first time the pop-up content is viewed. This is good practice when you may show a pop-up for multiple items at a time. 
+            This allows you to delay generating the html content until the item is actually viewed.
+            </summary>
+        </member>
+        <member name="M:CustomPopup.DynamicPopupContent.ShowStatistics">
+            <summary>
+            Show a message box with the Min and Max value and associated field.
+            </summary>
+        </member>
+        <member name="M:CustomPopup.DynamicPopupContent.IsNumericFieldType(ArcGIS.Core.Data.FieldType)">
+            <summary>
+            Test if the field is a numeric type.
+            </summary>
+        </member>
+        <member name="T:CustomPopup.PopupModule">
+             <summary>
+             This sample shows how to author custom pop-up content to display in a pop-up window. 
+             In this example we are generating html and javascript code using the Google Charts api to create rich and interactive content in the pop-up. 
+             This example also shows how to add your own commands to the bottom of the pop-up window. 
+             </summary>
+             <remarks>
+             1. In Visual Studio click the Build menu. Then select Build Solution.
+             2. Click Start button to open ArcGIS Pro.
+             3. ArcGIS Pro will open. 
+             4. Open a map view. Click on the Add-In tab on the ribbon.
+             5. Within this tab there is a Custom Pop-up tool. Click it to activate the tool.
+             6. In the map click and drag a box around the features you want to identify.
+             7. The pop-up window should display and you should see a table showing the values for all the visible numeric fields in the layer. 
+             It will also display a pie chart for those same fields.
+             8. As you click through the pop-up results the content is being generated dynamically for each feature.
+             9. The pop-up window also has a custom command "Show statistics" at the bottom of the window that when clicked shows additional information about the feature.
+            
+            ![UI](screenshots/Popup.png)
+             </remarks>
+        </member>
+        <member name="P:CustomPopup.PopupModule.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:CustomPopup.PopupModule.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+    </members>
+</doc>

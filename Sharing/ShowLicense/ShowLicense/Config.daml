@@ -1,0 +1,37 @@
+﻿<ArcGIS defaultAssembly="ShowLicense.dll" defaultNamespace="ShowLicense" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{ecad0b41-2dd0-4d63-8cf6-664e506bce99}" version="1.0" desktopVersion="1.1.3308">
+    <Name>ShowLicense</Name>
+    <Description>Display license in the Add-In dialogue</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>Chunming Peng</Author>
+    <Company>Esri</Company>
+    <Date>7/22/2015 11:50:03 AM, 2015</Date>
+    <Subject>Sharing</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ShowLicense_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="ShowLicense_Tab1" caption="New Tab">
+          <group refID="ShowLicense_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ShowLicense_Group1" caption="Licensing API" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="ShowLicense_ShowLicenseButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ShowLicense_ShowLicenseButton" caption="Show License" className="ShowLicenseButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Show License Info">Show license level, extensions and their expiration dates.<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

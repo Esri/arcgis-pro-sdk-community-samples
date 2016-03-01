@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CustomAnimation</name>
+    </assembly>
+    <members>
+        <member name="T:CustomAnimation.CenterAt">
+            <summary>
+            Tool used to click in the view and capture the point clicked to be used to construct keyframes around.
+            </summary>
+        </member>
+        <member name="M:CustomAnimation.CenterAt.OnToolMouseUp(ArcGIS.Desktop.Mapping.MapViewMouseButtonEventArgs)">
+            <summary>
+            Called when the mouse button is released in the view.
+            </summary>
+        </member>
+        <member name="M:CustomAnimation.CenterAt.HandleMouseUpAsync(ArcGIS.Desktop.Mapping.MapViewMouseButtonEventArgs)">
+            <summary>
+            Asynchronous callback if the OnTooMouseUp event is handled.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:CustomAnimation.CenterAt.OnUpdate">
+            <summary>
+            Called regularly by the framework.
+            </summary>
+        </member>
+        <member name="T:CustomAnimation.DegreesEdit">
+            <summary>
+            Edit box which is used to set the total number of degrees to rotate around the point.
+            </summary>
+        </member>
+        <member name="M:CustomAnimation.DegreesEdit.OnEnter">
+            <summary>
+            Called when text is committed to the edit box.
+            </summary>
+        </member>
+        <member name="T:CustomAnimation.Animation">
+            <summary>
+            This sample shows how to create custom animations such as flying along a 3D line feature and rotating around a point of interest.
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            2. Click Start button to open ArcGIS Pro.
+            3. ArcGIS Pro will open. 
+            4. With a 3D scene view active go to the Add-In tab.
+            5. Select a 3D line features in the scene.
+            6. Click the Follow Path button. This will create new keyframes that you can use to animate along the path. 
+            7. On the Animation tab click the play button to fly along the line. Additional options are available in the Path group on the Add-In tab to configure how the keyframes are created.
+            8. Click the Center At tool and with the tool active click a point of interest in the view.
+            9. New keyframes will be constructed that will fly around the point keeping the point you clicked at the center of the view.
+            </remarks>
+        </member>
+        <member name="P:CustomAnimation.Animation.Current">
+            <summary>
+            Get the singleton instance to this module.
+            </summary>
+        </member>
+        <member name="P:CustomAnimation.Animation.Settings">
+            <summary>
+            Get the settings persisted with the user profile for the add-in.
+            </summary>
+        </member>
+        <member name="M:CustomAnimation.Animation.CreateKeyframesAlongPath(ArcGIS.Core.Geometry.Polyline,ArcGIS.Core.Geometry.Unit)">
+            <summary>
+            Creates keyframes along the path using the user defined settings.
+            </summary>
+            <param name="line">The geometry of the line to fly along.</param>
+            <param name="verticalUnit">The elevation unit of the 3D layer</param>
+        </member>
+        <member name="M:CustomAnimation.Animation.CreateKeyframesAroundPoint(ArcGIS.Core.Geometry.MapPoint)">
+            <summary>
+            Create keyframes centered around a point. 
+            </summary>
+            <param name="point">The center point around which the keyframes are created.</param>
+        </member>
+        <member name="M:CustomAnimation.Animation.OffsetCamera(ArcGIS.Desktop.Mapping.Camera,ArcGIS.Core.Geometry.Polyline,ArcGIS.Core.Geometry.MapPoint,System.Double)">
+            <summary>
+            Creates a new camera offset from the provided camera around an ellipse.
+            </summary>
+            <param name="camera">The starting camera.</param>
+            <param name="ellipse">The ellipse around which the camera will rotate.</param>
+            <param name="centerPoint">The center point of the ellipse.</param>
+            <param name="percentAlong">The percentage around the ellipse to create the camera.</param>
+        </member>
+        <member name="M:CustomAnimation.Animation.CloneCamera(ArcGIS.Desktop.Mapping.Camera)">
+            <summary>
+            Creates a clone of an existing camera.
+            </summary>
+        </member>
+        <member name="M:CustomAnimation.Animation.GetInsertTime(ArcGIS.Desktop.Mapping.Animation)">
+            <summary>
+            Get the time time to begin inserting new keyframes and shift any existing keyframes if necessary.
+            </summary>
+            <param name="animation">The animation to be modified.</param>
+        </member>
+        <member name="M:CustomAnimation.Animation.ShiftKeyframes(System.Double,System.Double)">
+            <summary>
+            Shift the existing keyframes from the provided time by the provided duration.
+            </summary>
+            <param name="insertTime">The time at which all keyframes after should be shifted.</param>
+            <param name="duration">The amount of time to shift each keyframe.</param>
+        </member>
+        <member name="T:CustomAnimation.FollowPath">
+            <summary>
+            Button used to construct keyframes from a selected 3D line feature.
+            </summary>
+        </member>
+        <member name="T:CustomAnimation.PathOptionsControlView">
+            <summary>
+            Interaction logic for PathOptionsControlView.xaml
+            </summary>
+            <summary>
+            PathOptionsControlView
+            </summary>
+        </member>
+        <member name="M:CustomAnimation.PathOptionsControlView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:CustomAnimation.PathOptionsControlViewModel">
+            <summary>
+            ViewModel for the path options custom control.
+            </summary>
+        </member>
+        <member name="T:CustomAnimation.TimingControlView">
+            <summary>
+            Interaction logic for TimingControlView.xaml
+            </summary>
+            <summary>
+            TimingControlView
+            </summary>
+        </member>
+        <member name="M:CustomAnimation.TimingControlView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:CustomAnimation.TimingControlViewModel">
+            <summary>
+            ViewModel for the timing options control.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>

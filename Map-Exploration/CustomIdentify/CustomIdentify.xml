@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CustomIdentify</name>
+    </assembly>
+    <members>
+        <member name="T:CustomIdentify.CustomIdentify">
+            <summary>
+            Implementation of custom pop-up tool.
+            </summary>
+        </member>
+        <member name="M:CustomIdentify.CustomIdentify.#ctor">
+            <summary>
+            Define the tool as a sketch tool that draws a rectangle in screen space on the view.
+            </summary>
+        </member>
+        <member name="M:CustomIdentify.CustomIdentify.OnSketchCompleteAsync(ArcGIS.Core.Geometry.Geometry)">
+            <summary>
+            Called when a sketch is completed.
+            </summary>
+        </member>
+        <member name="T:CustomIdentify.DynamicPopupContent">
+            <summary>
+            Implementation of a custom popup content class
+            </summary>
+        </member>
+        <member name="M:CustomIdentify.DynamicPopupContent.#ctor(ArcGIS.Desktop.Mapping.MapMember,System.Int64,System.String,CustomIdentify.RelateInfo)">
+            <summary>
+            Constructor initializing the base class with the layer and object id associated with the pop-up content
+            </summary>
+        </member>
+        <member name="M:CustomIdentify.DynamicPopupContent.OnCreateHtmlContent">
+            <summary>
+            Called the first time the pop-up content is viewed. This is good practice when you may show a pop-up for multiple items at a time. 
+            This allows you to delay generating the html content until the item is actually viewed.
+            </summary>
+        </member>
+        <member name="T:CustomIdentify.HierarchyRow">
+            <summary>
+            Representation of the selected feature's Relationship Hierarchy
+            </summary>
+        </member>
+        <member name="T:CustomIdentify.Module1">
+             <summary>
+             This sample shows how to author a tool that can be used to identify features and display the content in a pop-up window. 
+             The identify will also show Relationship Class information if one exists in that feature class. The result will be displayed in a pop-up window using html and dojo.
+             Note: The identify is authored to query the features in the topmost layer of the map.
+             </summary>
+             <remarks>
+             1. In Visual Studio click the Build menu. Then select Build Solution.
+             2. Click Start button to open ArcGIS Pro.
+             3. ArcGIS Pro will open. 
+             4. Open a map view. The map should contain a few feature classes, preferably they should also contain Relates to other Feature classes.
+             5. Click on the Add-In tab on the ribbon.
+             5. Within this tab there is a Custom Identify tool. Click it to activate the tool.
+             6. In the map click and drag a box around the features you want to identify.
+             7. The pop-up window should display and you should see the results of the identify. The features you selected could have relates to other feature classes. 
+             This will be displayed also in a hierarchical manner. 
+             8. As you click through the pop-up results the content is being generated dynamically for each feature.
+            
+            
+            ![UI](screenshots/CustomIdentify.png)
+             </remarks>
+        </member>
+        <member name="P:CustomIdentify.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:CustomIdentify.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="M:CustomIdentify.RelateInfo.#ctor(ArcGIS.Desktop.Mapping.FeatureLayer,ArcGIS.Core.Data.Selection)">
+            <summary>
+            Represents the Relationship Class information
+            </summary>
+            <param name="featureLayer"></param>
+            <param name="selection"></param>
+        </member>
+        <member name="M:CustomIdentify.RelateInfo.GetPopupContent(System.Collections.Generic.Dictionary{ArcGIS.Desktop.Mapping.BasicFeatureLayer,System.Collections.Generic.List{System.Int64}})">
+            <summary>
+            Gets the hierarcchical row that describes the selected feature
+            </summary>
+            <param name="selectedFeatures"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

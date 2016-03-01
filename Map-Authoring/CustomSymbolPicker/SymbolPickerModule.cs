@@ -43,7 +43,7 @@ namespace CustomSymbolPicker
     /// 13. Symbol gallery will be populated with search results.
     /// 14. Click on a feature layer in Contents pane for which the symbol has to be updated.
     /// 15. Click on a symbol in the Custom Symbol Picker gallery - this will update the symbol for the feature layer currently selected in Contents pane.
-    /// ![UI](Screenshots/Screen.png)
+    /// ![SymbolPicker](Screenshots/SymbolPicker.png)
     /// </remarks>
     internal class SymbolPickerModule : Module
     {
