@@ -50,17 +50,10 @@ namespace RemoveAddins
                     localKey = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
                     esriKey = localKey.OpenSubKey(regPath);
                 }
-                if (esriKey == null)
-                {
-                    //this is an error
-                    throw new System.InvalidOperationException(err1);
-                }
 
-                foreach (var key in esriKey.GetValueNames())
-                {
-                    myAddInPathKeys.Add(key.ToString());
-                }
-                
+                if (esriKey != null)
+                    myAddInPathKeys.AddRange(esriKey.GetValueNames().Select(key => key.ToString()));
+
             }
             catch (InvalidOperationException ie)
             {
@@ -73,7 +66,7 @@ namespace RemoveAddins
             }
 
             return myAddInPathKeys;
-           
+
         }
     }
 }
