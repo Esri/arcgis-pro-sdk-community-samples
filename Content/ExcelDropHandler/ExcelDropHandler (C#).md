@@ -13,7 +13,7 @@ Language:      C#
 Subject:       Content
 Contributor:   ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:  Esri, http://www.esri.com
-Date:          3/1/2016
+Date:          3/17/2016
 ArcGIS Pro:    1.2
 Visual Studio: 2013, 2015
 ```
@@ -25,7 +25,7 @@ Visual Studio: 2013, 2015
 * [arcgis-pro-sdk-community-samples](http://github.com/Esri/arcgis-pro-sdk-community-samples)
 * [ArcGIS Pro DAML ID Reference](http://github.com/Esri/arcgis-pro-sdk/wiki/ArcGIS Pro DAML ID Reference)
 * [FAQ](http://github.com/Esri/arcgis-pro-sdk/wiki/FAQ)
-* [ArcGIS Pro SDK icons](https://github.com/Esri/arcgis-pro-sdk/releases/tag/1.1.0.3308)
+* [ArcGIS Pro SDK icons](https://github.com/Esri/arcgis-pro-sdk/releases/tag/1.2.0.5023)
 * [ProConcepts: ArcGIS Pro Add in Samples](https://github.com/Esri/arcgis-pro-sdk-community-samples/wiki/ProConcepts-ArcGIS-Pro-Add-in-Samples)
 * [Sample data for ArcGIS Pro SDK Community Samples](https://github.com/Esri/arcgis-pro-sdk-community-samples/releases)
 

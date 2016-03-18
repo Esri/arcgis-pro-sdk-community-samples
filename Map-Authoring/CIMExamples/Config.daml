@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+
+   Copyright 2016 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+
+<ArcGIS defaultAssembly="CIMExamples.dll" defaultNamespace="CIMExamples" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{3a5f4c65-762f-459b-96ec-24d3bf5013b4}" version="1.0" desktopVersion="1.2.4644">
+    <Name>CIMExamples</Name>
+    <Description>CIMExamples description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>arcgisprosdk</Author>
+    <Company>Esri</Company>
+    <Date>2/16/2016 2:43:04 PM, 2016</Date>
+    <Subject>Map Authoring</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="CIMExamples_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="CIMExamples_Tab1" caption="CIM Examples" keytip="T1">
+          <group refID="CIMExamples_Group1"/>
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="CIMExamples_Group1" caption="CIM Examples Group" appearsOnAddInTab="false" keytip="G1">
+          <!-- host controls within groups -->
+          <button refID="CIMExamples_CreateCIMRendererFromScratch" size="large" />
+          <button refID="CIMExamples_CreateCIMRendererWithDefinition" size="large" />
+          <button refID="CIMExamples_CreateSymbolLevelsOnUSHighways" size="large" />
+          <button refID="CIMExamples_ChangeLayerDataSource" size="large" />
+          <button refID="CIMExamples_ChangeLayerSelectionColor" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="CIMExamples_CreateCIMRendererFromScratch" keytip="B1" caption="Renderer From Scratch"  className="CreateCIMRendererFromScratch" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Renderer From Scratch">Provide sample to create CIMUniqueValueRenderer from scratch<disabledText /></tooltip>
+        </button>
+        <button id="CIMExamples_CreateCIMRendererWithDefinition" keytip="B2" caption="Renderer via Definition" className="CreateCIMRendererWithDefinition" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Renderer via Definition">Same as above but using the UniqueValueRendererDefinition class and the layer to configure the underlying Renderer<disabledText /></tooltip>
+        </button>
+        <button id="CIMExamples_CreateSymbolLevelsOnUSHighways" keytip="B3" caption="Create Symbol Levels" className="CreateSymbolLevelsOnUSHighways" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Create Symbol Levels">How to create the equivalent of symbol levels in Pro.<disabledText /></tooltip>
+        </button>
+        <button id="CIMExamples_ChangeLayerDataSource" keytip="B4" caption="Layer DataSource" className="ChangeLayerDataSource" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Layer DataSource">How to change out the Data Connection (equivalent to changing "DataSource" in ArcObjects)<disabledText /></tooltip>
+        </button>
+        <button id="CIMExamples_ChangeLayerSelectionColor" keytip="B5" caption="Layer Selection Color" className="ChangeLayerSelectionColor" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Layer Selection Color">Change the selection color for the given feature layer<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

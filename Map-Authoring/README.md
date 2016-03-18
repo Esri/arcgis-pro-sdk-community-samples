@@ -14,6 +14,7 @@ This repository contains ArcGIS Pro Add-In Samples for the ArcGIS Pro 1.2 SDK fo
 This folder contains ArcGIS Pro Add-In Samples that fall under the 'Map-Authoring' topic:
 
 * [AddRasterLayer (c#)](../../../tree/master/Map-Authoring/AddRasterLayer)  
+* [CIMExamples (c#)](../../../tree/master/Map-Authoring/CIMExamples)  
 * [CustomSymbolPicker (c#)](../../../tree/master/Map-Authoring/CustomSymbolPicker)  
 * [ExportWeb3DObjectResource (c#)](../../../tree/master/Map-Authoring/ExportWeb3DObjectResource/ExportWeb3DObjectResource)  
 * [LayersPane (c#)](../../../tree/master/Map-Authoring/LayersPane)  
@@ -41,7 +42,7 @@ Detailed instructions can be found here: [ProGuide: Contribute Samples](https://
 * [arcgis-pro-sdk-community-samples](http://github.com/Esri/arcgis-pro-sdk-community-samples)
 * [ArcGIS Pro DAML ID Reference](http://github.com/Esri/arcgis-pro-sdk/wiki/ArcGIS Pro DAML ID Reference)
 * [FAQ](http://github.com/Esri/arcgis-pro-sdk/wiki/FAQ)
-* [ArcGIS Pro SDK icons](https://github.com/Esri/arcgis-pro-sdk/releases/tag/1.1.0.3308)
+* [ArcGIS Pro SDK icons](https://github.com/Esri/arcgis-pro-sdk/releases/tag/1.2.0.5023)
 * [ProConcepts: ArcGIS Pro Add in Samples](https://github.com/Esri/arcgis-pro-sdk-community-samples/wiki/ProConcepts-ArcGIS-Pro-Add-in-Samples)
 * [Sample data for ArcGIS Pro SDK Community Samples](https://github.com/Esri/arcgis-pro-sdk-community-samples/releases)
 
@@ -80,7 +81,7 @@ ArcGIS Pro SDK for .NET can be downloaded and installed using either one of the 
 * Download and install from within Visual Studio (recommended option)
 * Download from MyEsri.com
 
-Read the [ProGuide: Installation and Upgrade](http://github.com/ArcGIS/arcgis-pro-sdk/wiki/ProGuide-Installation-and-Upgrade) for detailed installation instructions.
+Read the [ProGuide: Installation and Upgrade](http://github.com/Esri/arcgis-pro-sdk/wiki/ProGuide-Installation-and-Upgrade) for detailed installation instructions.
 
 ## Issues
 

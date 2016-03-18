@@ -1,4 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
+
+
 <ArcGIS defaultAssembly="LivingAtlasOfTheWorld.dll" defaultNamespace="LivingAtlasOfTheWorld" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{b500eb63-2569-41d6-91d6-41b183c7f240}" version="1.0" desktopVersion="1.0.1140">
     <Name>LivingAtlasOfTheWorld</Name>

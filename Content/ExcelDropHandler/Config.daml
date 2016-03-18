@@ -1,4 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
+
+
 <ArcGIS defaultAssembly="ExcelDropHandler.dll" defaultNamespace="ExcelDropHandler" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{1d184dfb-8c6c-4819-b6df-48be536e19af}" version="1.0" desktopVersion="1.1.3247">
     <Name>ExcelDropHandler</Name>
