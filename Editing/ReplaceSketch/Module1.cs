@@ -22,24 +22,29 @@ using System.Threading.Tasks;
 
 namespace ReplaceSketch
 {
-  /// <summary>
-  /// This sample adds the ReplaceSketch command to the sketch context menu. 
-  /// This allows you to add the shape of a line or polygon to the edit sketch by right clicking on the feature and choosing this command.
-  /// It is equivalent to the ArcMap editing sketch context menu item.
-  /// </summary>
-  /// <remarks>
-  /// To install this add-in:
-  /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-  /// 
-  /// The replace sketch functionality is useful when you want to create a sketch from an underlying feature.
-  /// For example you may want to split a polygon with an underlying road or stream. 
-  /// To do this you would:
-  /// 1. Select a polygon to split.
-  /// 2. Activate the editor split tool.
-  /// 3. Right-click over a whole line feature that pass through the polygon and select ReplaceSketch.
-  /// 4. Continue or adjust the sketch as necessary then finish the sketch to use it as the splitting line.
-  /// </remarks>
-  internal class Module1 : Module
+    /// <summary>
+    /// This sample adds the ReplaceSketch command to the sketch context menu. 
+    /// This allows you to add the shape of a line or polygon to the edit sketch by right clicking on the feature and choosing this command.
+    /// It is equivalent to the ArcMap editing sketch context menu item.
+    /// </summary>
+    /// <remarks>
+    /// To install this add-in:
+    /// 1. In Visual Studio click the Build menu. Then select Build Solution.
+    /// 
+    /// The replace sketch functionality is useful when you want to create a sketch from an underlying feature.
+    /// For example you may want to split a polygon with an underlying road or stream. 
+    /// To do this you would:
+    /// 2. Select a polygon to split.
+    /// 3. Activate the editor split tool.
+    /// ![UI](Screenshots/Screenshot1.png)  
+    /// 4. Right-click over a whole line feature that passes through the polygon
+    /// ![UI](Screenshots/Screenshot2.png)  
+    /// 5. And select ReplaceSketch.
+    /// ![UI](Screenshots/Screenshot3.png)  
+    /// 6. Continue or adjust the sketch as necessary then finish the sketch to use it as the splitting line.
+    /// ![UI](Screenshots/Screenshot4.png)  
+    /// </remarks>
+    internal class Module1 : Module
   {
     private static Module1 _this = null;
 

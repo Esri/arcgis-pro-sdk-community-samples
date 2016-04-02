@@ -13,7 +13,7 @@ Language:      C#
 Subject:       Geometry
 Contributor:   ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:  Esri, http://www.esri.com
-Date:          3/17/2016
+Date:          4/1/2016
 ArcGIS Pro:    1.2
 Visual Studio: 2013, 2015
 ```
