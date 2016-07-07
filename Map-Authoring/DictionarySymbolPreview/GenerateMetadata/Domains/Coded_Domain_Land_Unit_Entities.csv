@@ -1,0 +1,193 @@
+Name,Value
+Unspecified,000000
+Command and Control,110000
+Command and Control : Broadcast Transmitter Antennae,110100
+Command and Control : Civil Affairs,110200
+Command and Control : Civil-Military Cooperation,110300
+Command and Control : Information Operations,110400
+Command and Control : Liaison,110500
+Command and Control : Military Information Support (MISO),110600
+Command and Control : Military Information Support (MISO) : Broadcast Transmitter Antennae,110601
+Command and Control : Radio,110700
+Command and Control : Radio Relay,110800
+Command and Control : Radio Teletype Center,110900
+Command and Control : Signal,111000
+Command and Control : Signal : Radio,111001
+Command and Control : Signal : Radio Relay,111002
+Command and Control : Signal : Teletype,111003
+Command and Control : Signal : Tactical Satellite,111004
+Command and Control : Signal : Video Imagery (Combat Camera),111005
+Command and Control : Tactical Satellite,111100
+Command and Control : Video Imagery (Combat Camera),111200
+Movement and Maneuver : Air Assault with Organic Lift,120100
+Movement and Maneuver : Air Traffic Services/Airfield Operations,120200
+Movement and Maneuver : Amphibious,120300
+Movement and Maneuver : Antitank/Antiarmor,120400
+Movement and Maneuver : Antitank/Antiarmor : Armored,120401
+Movement and Maneuver : Antitank/Antiarmor : Motorized,120402
+Movement and Maneuver : Armor/Armored/Mechanized/Self-Propelled/Tracked,120500
+Movement and Maneuver : Armor/Armored/Mechanized/Self-Propelled/Tracked : Reconnaissance/Cavalry/Scout,120501
+Movement and Maneuver : Armor/Armored/Mechanized/Self-Propelled/Tracked : Amphibious,120502
+Movement and Maneuver : Army Aviation/Aviation Rotary Wing,120600
+Movement and Maneuver : Army Aviation/Aviation Rotary Wing : Reconnaissance,120601
+Movement and Maneuver : Aviation Composite,120700
+Movement and Maneuver : Aviation Fixed Wing,120800
+Movement and Maneuver : Aviation Fixed Wing : Reconnaissance,120801
+Movement and Maneuver : Combat,120900
+Movement and Maneuver : Combined Arms,121000
+Movement and Maneuver : Infantry,121100
+Movement and Maneuver : Infantry : Amphibious,121101
+Movement and Maneuver : Infantry : Armored/Mechanized/Tracked,121102
+Movement and Maneuver : Infantry : Main Gun System,121103
+Movement and Maneuver : Infantry : Motorized,121104
+Movement and Maneuver : Infantry : Infantry Fighting Vehicle,121105
+Movement and Maneuver : Observer,121200
+Movement and Maneuver : Reconnaissance/Cavalry/Scout,121300
+Movement and Maneuver : Reconnaissance/Cavalry/Scout : Reconnaissance and Surveillance,121301
+Movement and Maneuver : Reconnaissance/Cavalry/Scout : Marine,121302
+Movement and Maneuver : Reconnaissance/Cavalry/Scout : Motorized,121303
+Movement and Maneuver : Sea Air Land (SEAL),121400
+Movement and Maneuver : Sniper,121500
+Movement and Maneuver : Surveillance,121600
+Movement and Maneuver : Special Forces,121700
+Movement and Maneuver : SOF,121800
+Movement and Maneuver : SOF : Fixed Wing MISO,121801
+Movement and Maneuver : SOF : Ground,121802
+Movement and Maneuver : SOF : Special Boat,121803
+Movement and Maneuver : SOF : Special SSNR,121804
+Movement and Maneuver : SOF : Underwater Demolition Team,121805
+Movement and Maneuver : Unmanned Aerial Systems,121900
+Fires : Air Defense,130100
+Fires : Air Defense : Main Gun System,130101
+Fires : Air Defense : Missile,130102
+Fires : Air/Land Naval Gunfire Liaison,130200
+Fires : Field Artillery,130300
+Fires : Field Artillery : Self-propelled,130301
+Fires : Field Artillery : Target Acquisition,130302
+Fires : Field Artillery Observer,130400
+Fires : Joint Fire Support,130500
+Fires : Meteorological,130600
+Fires : Missile,130700
+Fires : Mortar,130800
+Fires : Mortar : Armored/Mechanized/Tracked,130801
+Fires : Mortar : Self-Propelled Wheeled,130802
+Fires : Mortar : Towed,130803
+Fires : Survey,130900
+Protection : CBRN Defense,140100
+Protection : CBRN Defense : Mechanized,140101
+Protection : CBRN Defense : Motorized,140102
+Protection : CBRN Defense : Reconnaissance,140103
+Protection : CBRN Defense : Reconnaissance Armored,140104
+Protection : CBRN Defense : Reconnaissance Equipped,140105
+Protection : Combat Support (Maneuver Enhancement),140200
+Protection : Criminal Investigation Division,140300
+Protection : Diving,140400
+Protection : Dog,140500
+Protection : Drilling,140600
+Protection : Engineer,140700
+Protection : Engineer : Mechanized,140701
+Protection : Engineer : Motorized,140702
+Protection : Engineer : Reconnaissance,140703
+Protection : Explosive Ordnance Disposal (EOD),140800
+Protection : Field Camp Construction,140900
+Protection : Fire Fighting/Fire Protection,141000
+Protection : Geospatial Support/Geospatial Information Support,141100
+Protection : Military Police,141200
+Protection : Mine,141300
+Protection : Mine Clearing,141400
+Protection : Mine Launching,141500
+Protection : Mine Laying,141600
+Protection : Security,141700
+Protection : Security : Mechanized,141701
+Protection : Security : Motorized,141702
+Protection : Search and Rescue,141800
+Protection : Security Police (Air),141900
+Protection : Shore Patrol,142000
+Protection : Topographic,142100
+Intelligence : Analysis,150100
+Intelligence : Counterintelligence,150200
+Intelligence : Direction Finding,150300
+Intelligence : Electronic Ranging,150400
+Intelligence : Electronic Warfare,150500
+Intelligence : Electronic Warfare : Analysis,150501
+Intelligence : Electronic Warfare : Direction Finding,150502
+Intelligence : Electronic Warfare : Intercept,150503
+Intelligence : Electronic Warfare : Jamming,150504
+Intelligence : Electronic Warfare : Search,150505
+Intelligence : Intercept (Search and Recording),150600
+Intelligence : Interrogation,150700
+Intelligence : Jamming,150800
+Intelligence : Joint Intelligence Center,150900
+Intelligence : Military Intelligence,151000
+Intelligence : Search,151100
+Intelligence : Sensor,151200
+Sustainment,160000
+Sustainment : Administrative,160100
+Sustainment : All Classes of Supply,160200
+Sustainment : Airport of Debarkation/Airport of Embarkation,160300
+Sustainment : Ammunition,160400
+Sustainment : Band,160500
+Sustainment : Combat Service Support,160600
+Sustainment : Finance,160700
+Sustainment : Judge Advocate General,160800
+Sustainment : Labor,160900
+Sustainment : Laundry/Bath,161000
+Sustainment : Maintenance,161100
+Sustainment : Material,161200
+Sustainment : Medical,161300
+Sustainment : Medical Treatment Facility,161400
+Sustainment : Morale Welfare and Recreation,161500
+Sustainment : Mortuary Affairs/Graves Registration,161600
+Sustainment : Multiple Classes of Supply,161700
+Sustainment : NATO Supply Class I,161800
+Sustainment : NATO Supply Class II,161900
+Sustainment : NATO Supply Class III,162000
+Sustainment : NATO Supply Class IV,162100
+Sustainment : NATO Supply Class V,162200
+Sustainment : Ordnance,162300
+Sustainment : Personnel Services,162400
+Sustainment : Petroleum Oil and Lubricants,162500
+Sustainment : Pipeline,162600
+Sustainment : Postal,162700
+Sustainment : Public Affairs/Public Information,162800
+Sustainment : Quartermaster,162900
+Sustainment : Railhead,163000
+Sustainment : Religious Support,163100
+Sustainment : Replacement Holding Unit,163200
+Sustainment : Sea Port of Debarkation/Sea Port of Embarkation,163300
+Sustainment : Supply,163400
+Sustainment : Joint Information Bureau,163500
+Sustainment : Transportation,163600
+Sustainment : US Supply Class I,163700
+Sustainment : US Supply Class II,163800
+Sustainment : US Supply Class III,163900
+Sustainment : US Supply Class IV,164000
+Sustainment : US Supply Class V,164100
+Sustainment : US Supply Class VI,164200
+Sustainment : US Supply Class VII,164300
+Sustainment : US Supply Class VIII,164400
+Sustainment : US Supply Class IX,164500
+Sustainment : US Supply Class X,164600
+Sustainment : Water,164700
+Sustainment : Water Purification,164800
+Sustainment : Broadcast,164900
+Naval : Naval,170100
+Named Headquarters : Allied Command Europe Rapid Reaction Corps (ARRC),180100
+Named Headquarters : Allied Command Operations,180200
+Named Headquarters : International Security Assistance Force (ISAF),180300
+Named Headquarters : Multinational (MN),180400
+Emergency Operation (Land Units),190000
+Law Enforcement (Land Units),200000
+Law Enforcement (Land Units) : ATF DOJ,200100
+Law Enforcement (Land Units) : Border Patrol,200200
+Law Enforcement (Land Units) : Customs Service,200300
+Law Enforcement (Land Units) : DEA,200400
+Law Enforcement (Land Units) : DOJ,200500
+Law Enforcement (Land Units) : FBI,200600
+Law Enforcement (Land Units) : Police,200700
+Law Enforcement (Land Units) : Prison,200800
+Law Enforcement (Land Units) : US Secret Service (USSS),200900
+Law Enforcement (Land Units) : TSA,201000
+Law Enforcement (Land Units) : Coast Guard,201100
+Law Enforcement (Land Units) : US Marshals Service,201200
+Law Enforcement (Land Units) : Internal Security Force,201300

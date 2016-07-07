@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 
+
+
 <ArcGIS defaultAssembly="HookProCommands.dll" defaultNamespace="HookProCommands" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{588e8517-6081-4373-aba7-f346ea531bed}" version="1.0" desktopVersion="1.1.2914">
+  <AddInInfo id="{588e8517-6081-4373-aba7-f346ea531bed}" version="1.0" desktopVersion="1.3.5777">
     <Name>HookProCommands</Name>
     <Description>HookProCommands description</Description>
     <Image>Images\AddinDesktop32.png</Image>

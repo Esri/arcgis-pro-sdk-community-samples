@@ -1,0 +1,218 @@
+Name,Value
+Unspecified,000000
+Weapon/Weapon System,110000
+Weapon/Weapon System : Rifle,110100
+Weapon/Weapon System : Rifle : Single Shot Rifle,110101
+Weapon/Weapon System : Rifle : Semiautomatic Rifle,110102
+Weapon/Weapon System : Rifle : Automatic Rifle,110103
+Weapon/Weapon System : Machine Gun,110200
+Weapon/Weapon System : Machine Gun : Light,110201
+Weapon/Weapon System : Machine Gun : Medium,110202
+Weapon/Weapon System : Machine Gun : Heavy,110203
+Weapon/Weapon System : Grenade Launcher,110300
+Weapon/Weapon System : Grenade Launcher : Light,110301
+Weapon/Weapon System : Grenade Launcher : Medium,110302
+Weapon/Weapon System : Grenade Launcher : Heavy,110303
+Weapon/Weapon System : Flame Thrower,110400
+Weapon/Weapon System : Air Defense Gun,110500
+Weapon/Weapon System : Air Defense Gun : Light,110501
+Weapon/Weapon System : Air Defense Gun : Medium,110502
+Weapon/Weapon System : Air Defense Gun : Heavy,110503
+Weapon/Weapon System : Antitank Gun,110600
+Weapon/Weapon System : Antitank Gun : Light,110601
+Weapon/Weapon System : Antitank Gun : Medium,110602
+Weapon/Weapon System : Antitank Gun : Heavy,110603
+Weapon/Weapon System : Direct Fire Gun,110700
+Weapon/Weapon System : Direct Fire Gun : Light,110701
+Weapon/Weapon System : Direct Fire Gun : Medium,110702
+Weapon/Weapon System : Direct Fire Gun : Heavy,110703
+Weapon/Weapon System : Recoilless Gun,110800
+Weapon/Weapon System : Recoilless Gun : Light,110801
+Weapon/Weapon System : Recoilless Gun : Medium,110802
+Weapon/Weapon System : Recoilless Gun : Heavy,110803
+Weapon/Weapon System : Howitzer,110900
+Weapon/Weapon System : Howitzer : Light,110901
+Weapon/Weapon System : Howitzer : Medium,110902
+Weapon/Weapon System : Howitzer : Heavy,110903
+Weapon/Weapon System : Missile Launcher,111000
+Weapon/Weapon System : Missile Launcher : Light,111001
+Weapon/Weapon System : Missile Launcher : Medium,111002
+Weapon/Weapon System : Missile Launcher : Heavy,111003
+Weapon/Weapon System : ADML,111100
+Weapon/Weapon System : ADML : Light,111101
+Weapon/Weapon System : ADML : Light- Light Transporter-Launcher and Radar (TLAR),111102
+Weapon/Weapon System : ADML : Light- Light Tactical Landing Approach Radar (TELAR),111103
+Weapon/Weapon System : ADML : Medium,111104
+Weapon/Weapon System : ADML : Medium- TLAR,111105
+Weapon/Weapon System : ADML : Medium- TELAR Air Defense Missile Launcher,111106
+Weapon/Weapon System : ADML : Heavy,111107
+Weapon/Weapon System : ADML : Heavy- TLAR,111108
+Weapon/Weapon System : ADML : Heavy- TELAR,111109
+Weapon/Weapon System : Antitank Missile Launcher,111200
+Weapon/Weapon System : Antitank Missile Launcher : Light,111201
+Weapon/Weapon System : Antitank Missile Launcher : Medium,111202
+Weapon/Weapon System : Antitank Missile Launcher : Heavy,111203
+Weapon/Weapon System : Surface-to-Surface Missile Launcher,111300
+Weapon/Weapon System : Surface-to-Surface Missile Launcher : Light,111301
+Weapon/Weapon System : Surface-to-Surface Missile Launcher : Medium,111302
+Weapon/Weapon System : Surface-to-Surface Missile Launcher : Heavy,111303
+Weapon/Weapon System : Mortar,111400
+Weapon/Weapon System : Mortar : Light,111401
+Weapon/Weapon System : Mortar : Medium,111402
+Weapon/Weapon System : Mortar : Heavy,111403
+Weapon/Weapon System : Single Rocket Launcher,111500
+Weapon/Weapon System : Single Rocket Launcher : Light,111501
+Weapon/Weapon System : Single Rocket Launcher : Medium,111502
+Weapon/Weapon System : Single Rocket Launcher : Heavy,111503
+Weapon/Weapon System : Multiple Rocket Launcher,111600
+Weapon/Weapon System : Multiple Rocket Launcher : Light,111601
+Weapon/Weapon System : Multiple Rocket Launcher : Medium,111602
+Weapon/Weapon System : Multiple Rocket Launcher : Heavy,111603
+Weapon/Weapon System : Antitank Rocket Launcher,111700
+Weapon/Weapon System : Antitank Rocket Launcher : Light,111701
+Weapon/Weapon System : Antitank Rocket Launcher : Medium,111702
+Weapon/Weapon System : Antitank Rocket Launcher : Heavy,111703
+Weapon/Weapon System : Nonlethal Weapon,111800
+Weapon/Weapon System : Taser,111900
+Weapon/Weapon System : Water Cannon,112000
+Vehicle,120000
+Vehicle : Armored Vehicle,120100
+Vehicle : Armored Vehicle : Armored Fighting Vehicle,120101
+Vehicle : Armored Vehicle : Armored Fighting Vehicle C2,120102
+Vehicle : Armored Vehicle : Armored Personnel Carrier,120103
+Vehicle : Armored Vehicle : Armored Personnel Carrier Ambulance,120104
+Vehicle : Armored Vehicle : Armored Protected Vehicle,120105
+Vehicle : Armored Vehicle : Armored Protected Vehicle Recovery,120106
+Vehicle : Armored Vehicle : Armored Protected Medical Evacuation,120107
+Vehicle : Armored Vehicle : Armored Personnel Carrier-Recovery,120108
+Vehicle : Armored Vehicle : Combat Service Support Vehicle,120109
+Vehicle : Armored Vehicle : Light Wheeled Armored Vehicle,120110
+Vehicle : Tank,120200
+Vehicle : Tank : Light,120201
+Vehicle : Tank : Medium,120202
+Vehicle : Tank : Heavy,120203
+Vehicle : Tank Recovery Vehicle,120300
+Vehicle : Tank Recovery Vehicle : Light,120301
+Vehicle : Tank Recovery Vehicle : Medium,120302
+Vehicle : Tank Recovery Vehicle : Heavy,120303
+Engineer Equipment,130000
+Engineer Equipment : Bridge,130100
+Engineer Equipment : Bridge Mounted on Utility Vehicle,130200
+Engineer Equipment : Fixed Bridge,130300
+Engineer Equipment : Floating Bridge,130400
+Engineer Equipment : Folding Girder Bridge,130500
+Engineer Equipment : Hollow Deck Bridge,130600
+Engineer Equipment : Drill,130700
+Engineer Equipment : Drill : Drill Mounted on Utility Vehicle,130701
+Engineer Equipment : Earthmover,130800
+Engineer Equipment : Earthmover : Multifunctional Earthmover/Digger,130801
+Engineer Equipment : Mine Clearing Equipment,130900
+Engineer Equipment : Mine Clearing Equipment : Trailer Mounted,130901
+Engineer Equipment : Mine Clearing Equipment : Mine Clearing Equipment on Tank Chassis,130902
+Engineer Equipment : Mine Laying Equipment,131000
+Engineer Equipment : Mine Laying Equipment : Mine Laying Equipment on Utility Vehicle,131001
+Engineer Equipment : Mine Laying Equipment : Armored Carrier with Volcano,131002
+Engineer Equipment : Mine Laying Equipment : Truck Mounted with Volcano,131003
+Engineer Equipment : Dozer,131100
+Engineer Equipment : Dozer : Dozer-Armored,131101
+Engineer Equipment : Armored Assault,131200
+Engineer Equipment : Armored Engineer Recon Vehicle (AERV),131300
+Engineer Equipment : Backhoe,131400
+Engineer Equipment : Construction Vehicle,131500
+Engineer Equipment : Ferry Transporter,131600
+Utility Vehicles : Utility Vehicle,140100
+Utility Vehicles : Medical,140200
+Utility Vehicles : Medical Evacuation,140300
+Utility Vehicles : Mobile Emergency Physician,140400
+Utility Vehicles : Bus,140500
+Utility Vehicles : Semi-Trailer and Truck,140600
+Utility Vehicles : Semi-Trailer and Truck : Light,140601
+Utility Vehicles : Semi-Trailer and Truck : Medium,140602
+Utility Vehicles : Semi-Trailer and Truck : Heavy,140603
+Utility Vehicles : Limited Cross Country Truck,140700
+Utility Vehicles : Cross Country Truck,140800
+Utility Vehicles : Petroleum-Oil and Lubricant,140900
+Utility Vehicles : Water,141000
+Utility Vehicles : Amphibious Utility Wheeled Vehicle,141100
+Utility Vehicles : Tow Truck,141200
+Utility Vehicles : Tow Truck : Light,141201
+Utility Vehicles : Tow Truck : Heavy,141202
+Train : Locomotive,150100
+Train : Railcar,150200
+Civilian Vehicle : Automobile,160100
+Civilian Vehicle : Automobile : Compact,160101
+Civilian Vehicle : Automobile : Midsize,160102
+Civilian Vehicle : Automobile : Sedan,160103
+Civilian Vehicle : Open-Bed Truck,160200
+Civilian Vehicle : Open-Bed Truck : Pickup,160201
+Civilian Vehicle : Open-Bed Truck : Small,160202
+Civilian Vehicle : Open-Bed Truck : Large,160203
+Civilian Vehicle : Multiple Passenger Vehicle,160300
+Civilian Vehicle : Multiple Passenger Vehicle : Van,160301
+Civilian Vehicle : Multiple Passenger Vehicle : Small Bus,160302
+Civilian Vehicle : Multiple Passenger Vehicle : Large Bus,160303
+Civilian Vehicle : Utility Vehicle,160400
+Civilian Vehicle : Utility Vehicle : Sport Utility Vehicle (SUV),160401
+Civilian Vehicle : Utility Vehicle : Small Box Truck,160402
+Civilian Vehicle : Utility Vehicle : Large Box Truck,160403
+Civilian Vehicle : Jeep Type Vehicle,160500
+Civilian Vehicle : Jeep Type Vehicle : Small/Light,160501
+Civilian Vehicle : Jeep Type Vehicle : Medium,160502
+Civilian Vehicle : Jeep Type Vehicle : Large/Heavy,160503
+Civilian Vehicle : Tractor Trailer with Box,160600
+Civilian Vehicle : Tractor Trailer with Box : Small/Light,160601
+Civilian Vehicle : Tractor Trailer with Box : Medium,160602
+Civilian Vehicle : Tractor Trailer with Box : Large/Heavy,160603
+Civilian Vehicle : Tractor Trailer with Flatbed,160700
+Civilian Vehicle : Tractor Trailer with Flatbed : Small/Light,160701
+Civilian Vehicle : Tractor Trailer with Flatbed : Medium,160702
+Civilian Vehicle : Tractor Trailer with Flatbed : Large/Heavy,160703
+Civilian Vehicle : Known Insurgent Vehicle,160800
+Civilian Vehicle : Drug Vehicle,160900
+Law Enforcement (Land Equipment),170000
+Law Enforcement (Land Equipment) : ATF DOJ,170100
+Law Enforcement (Land Equipment) : Border Patrol,170200
+Law Enforcement (Land Equipment) : Customs Service,170300
+Law Enforcement (Land Equipment) : DEA,170400
+Law Enforcement (Land Equipment) : DOJ,170500
+Law Enforcement (Land Equipment) : FBI,170600
+Law Enforcement (Land Equipment) : Police,170700
+Law Enforcement (Land Equipment) : US Secret Service (USSS),170800
+Law Enforcement (Land Equipment) : TSA,170900
+Law Enforcement (Land Equipment) : Coast Guard,171000
+Law Enforcement (Land Equipment) : US Marshals Service,171100
+Pack Animals,180000
+Missile Support,190000
+Missile Support : Transloader,190100
+Missile Support : Transporter,190200
+Missile Support : Crane/Loading Device,190300
+Missile Support : Propellant Transporter,190400
+Missile Support : Warhead Transporter,190500
+Other Equipment : Antennae,200100
+Other Equipment : Bomb,200200
+Other Equipment : Booby Trap,200300
+Other Equipment : CBRN Equipment,200400
+Other Equipment : Computer System,200500
+Other Equipment : Command Launch Equipment (CLE),200600
+Other Equipment : Generator Set,200700
+Other Equipment : Ground-based Midcourse Defense (GMD) Fire Control (GFC) Center,200800
+Other Equipment : In-Flight Interceptor Communications System (IFICS) Data Terminal (IDT),200900
+Other Equipment : Laser,201000
+Other Equipment : Military Information Support Operations (MISO),201100
+Other Equipment : Sustainment Shipments,201200
+Other Equipment : Tent,201300
+Other Equipment : Unit Deployment Shipments,201400
+Other Equipment : Emergency Medical Operation,201500
+Other Equipment : Emergency Medical Operation : Medical Evacuation Helicopter,201501
+Land Mines : Land Mine,210100
+Land Mines : Antipersonnel Land Mine (APL),210200
+Land Mines : Antitank Mine,210300
+Land Mines : Improvised Explosives Device (IED),210400
+Land Mines : Less than lethal,210500
+Sensors : Sensor,220100
+Sensors : Sensor Emplaced,220200
+Sensors : Radar,220300
+Emergency Operation (Land Equipment),230000
+Emergency Operation (Land Equipment) : Ambulance,230100
+Emergency Operation (Land Equipment) : Fire Fighting/Fire Protection,230200
+Manual Track (Land Equipment),240000

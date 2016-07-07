@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ReplaceSketch</RootNamespace>
     <AssemblyName>ReplaceSketch</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
   </PropertyGroup>
@@ -101,6 +101,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="ReadMe.md" />
     <None Include="Screenshots\Screenshot1.png" />
     <None Include="Screenshots\Screenshot2.png" />
     <None Include="Screenshots\Screenshot3.png" />

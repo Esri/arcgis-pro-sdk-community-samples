@@ -1,0 +1,17 @@
+Name,Value
+Unspecified,00
+Ship Propulsion : Nuclear Powered,01
+Ship Capacity : Heavy,02
+Ship Capacity : Light,03
+Ship Capacity : Medium,04
+Cargo Capacity : Dock,05
+Cargo Capacity : Logistics,06
+Cargo Capacity : Tank,07
+Cargo Capacity : Vehicle,08
+Ship Mobility : Fast,09
+Ship Mobility : Air-Cushioned (US),10
+Ship Mobility : Air-Cushioned (NATO),11
+Ship Mobility : Hydrofoil,12
+USV Control : Autonomous Control,13
+USV Control : Remotely Piloted,14
+USV Control : Expendable,15

@@ -12,8 +12,10 @@
 //   limitations under the License.
 using System;
 using System.Collections.Generic;
+using System.Resources;
 using System.Threading;
 using System.Threading.Tasks;
+using ArcGIS.Core.Geometry;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Mapping;
 
@@ -34,29 +36,61 @@ namespace FeatureDynamicMenu
         protected override void OnPopup()
         {
             _selectedFeatures.Clear();
-            Add("Select item to flash the feature:", "", false, true, true);
+            
             if (FeatureSelectionDynamic.FeatureSelection.Count == 0)
             {
-                this.Add("Nothing is selected");
+                this.Add("No features found", "", false, true, true);
             }
             else
             {
+                Add("Select item to flash the feature:", "", false, true, true);
                 foreach (var kvp in FeatureSelectionDynamic.FeatureSelection)
                 {
                     string layer = kvp.Key.Name;
+                    string imageFile = GetImageFileName(kvp.Key);
                     var oids = kvp.Value;
                     foreach (var oid in oids)
                     {
                         Add(string.Format("{0}: oid {1}", layer, oid),
-                            "", false, true, false, _delegate, kvp.Key, oid);
-                        //This is a hack here
-                        _selectedFeatures.Add(new Tuple<BasicFeatureLayer, long>(kvp.Key, oid));
-                    }
-                    this.AddSeparator();
+                            $"pack://application:,,,/FeatureDynamicMenu;Component/Images/{imageFile}", false, true, false, _delegate, kvp.Key, oid);
+                        //This is a hack here                        
+                        _selectedFeatures.Add(new Tuple<BasicFeatureLayer, long>(kvp.Key, oid));                                                
+                    }                    
                 }
             }
 
         }
+
+        private string GetImageFileName(BasicFeatureLayer layer)
+        {
+            string imageFileName = "";
+            switch (layer.ShapeType)
+            {
+                case ArcGIS.Core.CIM.esriGeometryType.esriGeometryPoint:
+                case ArcGIS.Core.CIM.esriGeometryType.esriGeometryMultipoint:
+                    imageFileName = "esri_PntFeature.png";
+                    break;
+                case ArcGIS.Core.CIM.esriGeometryType.esriGeometryLine:
+                case ArcGIS.Core.CIM.esriGeometryType.esriGeometryPolyline:
+                case ArcGIS.Core.CIM.esriGeometryType.esriGeometryPath:
+                case ArcGIS.Core.CIM.esriGeometryType.esriGeometryCircularArc:
+                case ArcGIS.Core.CIM.esriGeometryType.esriGeometryEllipticArc:
+                case ArcGIS.Core.CIM.esriGeometryType.esriGeometryMultiPatch:
+                    imageFileName = "esri_LinFeature.png";
+                    break;
+                case ArcGIS.Core.CIM.esriGeometryType.esriGeometryEnvelope:
+                case ArcGIS.Core.CIM.esriGeometryType.esriGeometryPolygon:
+                    imageFileName = "esri_PolFeature.png";
+                    break;
+                default:
+                    imageFileName = "esri_PntFeature.png";
+                    break;
+            }
+
+            return imageFileName;
+        }
+
+       
 
         //protected override void OnClick(int index)
         //{
@@ -73,6 +107,10 @@ namespace FeatureDynamicMenu
             mapView?.FlashFeature(layer, oid);
             Thread.Sleep(1000);
             mapView?.FlashFeature(layer, oid);
+
+            //Show pop-up of feature
+            mapView?.ShowPopup(layer, oid);
+
         }
     }
 

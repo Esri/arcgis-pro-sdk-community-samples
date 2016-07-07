@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MainConnectorManhole</RootNamespace>
     <AssemblyName>MainConnectorManhole</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -108,6 +108,7 @@
     <AddInContent Include="Images\3DAnalystInterpolateLine32.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ReadMe.md" />
     <None Include="Screenshots\OutputExample1.png" />
     <None Include="Screenshots\OutputExample2.png" />
   </ItemGroup>

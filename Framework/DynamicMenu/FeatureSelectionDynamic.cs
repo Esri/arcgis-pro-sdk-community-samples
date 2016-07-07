@@ -20,6 +20,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
 using ArcGIS.Core.Geometry;
 using ArcGIS.Desktop.Framework;
@@ -58,6 +59,7 @@ namespace FeatureDynamicMenu
         private static readonly object LockSelection = new object();
 
         private bool _showingContextMenu = false;
+        private double _tolerance = 3;
 
         /// <summary>
         /// Define the tool as a sketch tool that draws a rectangle in screen space on the view.
@@ -65,56 +67,14 @@ namespace FeatureDynamicMenu
         public FeatureSelectionDynamic()
         {
             IsSketchTool = true;
-            SketchType = SketchGeometryType.Rectangle;
+            SketchType = SketchGeometryType.Point;
             SketchOutputMode = SketchOutputMode.Screen;
 
             // binding sync: we need to lock this selection collection since it will be updated
-            // asynchronousely from a worker thread
+            // asynchronously from a worker thread
             BindingOperations.EnableCollectionSynchronization(Selection, LockSelection);
         }
-        /// <summary>
-        /// Called when a sketch is completed.
-        /// </summary>
-        protected async override Task<bool> OnSketchCompleteAsync(Geometry geometry)
-        {
-            lock (LockSelection)
-            {
-                Selection.Clear();
-            }
-            POINT pt;
-            GetCursorPos(out pt);
-            _clickedPoint = new Point(pt.X, pt.Y);
-            await QueuedTask.Run(() =>
-            {
-                var mapView = MapView.Active;
-
-                //Get the features that intersect the sketch geometry.
-                var features = mapView?.GetFeatures(geometry);
-
-                if (features == null)
-                    return false;
-
-                var firstLyr = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault(); //get the first layer in the map
-
-                if (firstLyr == null)
-                    return false;
-
-                var oidList = features[firstLyr]; //gets the OIds of all the features selected for the first layer in the map.
-
-                // add to the list asynchronously
-                lock (LockSelection)
-                {
-                    Selection.Add(firstLyr, oidList); //adding the first layer selected and its OIDs
-                }
-
-                return true;
-
-            });
-            if (Selection.Count > 0)
-                ShowContextMenu();
-
-            return true;
-        }
+       
 
         internal static IDictionary<BasicFeatureLayer, List<long>> FeatureSelection => Selection;
 
@@ -134,5 +94,106 @@ namespace FeatureDynamicMenu
             contextMenu.IsOpen = true;
         }
         public System.Windows.Point MouseLocation => _clickedPoint;
+        public double PixelTolerance => _tolerance;
+
+        private  async Task<List<long>>  GetFeaturesWithinGeometryAsync(FeatureLayer featureLayer)
+        {
+            return await QueuedTask.Run(() =>
+            {
+                List<long> oids = new List<long>();
+                //Get the client point edges
+                Point topLeft = new Point(_toolClickedPoint.X - PixelTolerance, _toolClickedPoint.Y + PixelTolerance);
+                Point bottomRight = new Point(_toolClickedPoint.X + PixelTolerance, _toolClickedPoint.Y - PixelTolerance);
+
+                //convert the client points to Map points
+                MapPoint mapTopLeft = MapView.Active.ClientToMap(topLeft);
+                MapPoint mapBottomRight = MapView.Active.ClientToMap(bottomRight);
+
+                //create a geometry using these points
+                Geometry envelopeGeometry = EnvelopeBuilder.CreateEnvelope(mapTopLeft, mapBottomRight);
+
+
+                if (envelopeGeometry == null)
+                    return null;
+
+                //Spatial query to gather the OIDs of the features within the geometry
+                SpatialQueryFilter spatialQueryFilter = new SpatialQueryFilter
+                {
+                    FilterGeometry = envelopeGeometry,
+                    SpatialRelationship = SpatialRelationship.Intersects,
+
+                };
+
+                using (RowCursor rowCursor = featureLayer.Search(spatialQueryFilter))
+                {
+
+                    while (rowCursor.MoveNext())
+                    {
+                        using (Row row = rowCursor.Current)
+                        {
+                            var id = row.GetObjectID();
+                            oids.Add(id);
+
+                        }
+                    }
+                }
+
+                return oids;
+            });
+        }
+        /// <summary>
+        /// Occurs when a mouse button is pressed on the view.
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnToolMouseDown(MapViewMouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == System.Windows.Input.MouseButton.Left)
+                e.Handled = true; //Handle the event args to get the call to the corresponding async method
+        }
+
+        private Point _toolClickedPoint;
+        /// <summary>
+        /// Occurs when the OnToolMouseDown event is handled.
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns></returns>
+        protected async override Task HandleMouseDownAsync(MapViewMouseButtonEventArgs e)
+        {
+            lock (LockSelection)
+            {
+                Selection.Clear();
+            }
+            POINT pt;
+            GetCursorPos(out pt);
+            _clickedPoint = new Point(pt.X, pt.Y); //Point on screen to show the context menu
+
+            await QueuedTask.Run(async () =>
+            {
+                //Convert the clicked point in client coordinates to the corresponding map coordinates.
+                _toolClickedPoint = e.ClientPoint;
+
+                var allLyrs = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>(); //get all the layers in teh TOC for that map
+
+                if (allLyrs == null)
+                    return;
+
+                List<long> oidList = new List<long>();                
+
+                foreach (var lyr in allLyrs)
+                {
+                    oidList = await GetFeaturesWithinGeometryAsync(lyr); //gets the oids of all the features within 3 pixels of the point clicked
+                    if (oidList != null && oidList.Count > 0)
+                    {
+                        lock (LockSelection)
+                        {
+                            Selection.Add(lyr, oidList);
+                        }
+                    }
+                }                
+            });
+
+           // if (Selection.Count > 0)
+           ShowContextMenu();
+        }
     }
 }

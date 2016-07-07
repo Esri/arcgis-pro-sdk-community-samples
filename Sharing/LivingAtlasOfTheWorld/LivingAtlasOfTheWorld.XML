@@ -1,0 +1,327 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LivingAtlasOfTheWorld</name>
+    </assembly>
+    <members>
+        <member name="T:LivingAtlasOfTheWorld.Common.StringExtensions">
+            <summary>
+            Class represents extensions to the System.string class
+            </summary>
+        </member>
+        <member name="M:LivingAtlasOfTheWorld.Common.StringExtensions.IsEmpty(System.String)">
+            <summary>
+            Returns whether the string is empty
+            </summary>
+            <param name="theString"></param>
+            <returns>True if the string is empty</returns>
+        </member>
+        <member name="T:LivingAtlasOfTheWorld.Common.OnlineQueryToString">
+            <summary>
+            Converts OnlineUri to string (returns the Query property)
+            </summary>
+        </member>
+        <member name="M:LivingAtlasOfTheWorld.Common.OnlineQueryToString.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Returns the query string property or an empty string if the value is null
+            </summary>
+            <returns>The query string</returns>
+        </member>
+        <member name="T:LivingAtlasOfTheWorld.Common.OnlineUriToString">
+            <summary>
+            Converts OnlineUri to string (returns the Query property)
+            </summary>
+        </member>
+        <member name="M:LivingAtlasOfTheWorld.Common.OnlineUriToString.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Returns the query string property or an empty string if the value is null
+            </summary>
+            <returns>The query string</returns>
+        </member>
+        <member name="T:LivingAtlasOfTheWorld.Common.BoolToVisibilityConverter">
+            <summary>
+            Converts the given bool to a Visibility
+            </summary>
+        </member>
+        <member name="T:LivingAtlasOfTheWorld.Models.OnlineQuery">
+            <summary>
+            Represents the key attributes requuired to structure online search queries
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.Models.OnlineQuery.Portal">
+            <summary>
+            Gets and sets the Portal URL.
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.Models.OnlineQuery.GroupID">
+            <summary>
+            Gets and sets an associated group id
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.Models.OnlineQuery.Keywords">
+            <summary>
+            Gets and sets keywords associated with the query (can be comma delimited)
+            </summary>
+            <remarks>These are key~words~, not key~phrases~</remarks>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.Models.OnlineQuery.OnlineUri">
+            <summary>
+            Gets and sets the OnlineUri associated with the query - a preconfigured content filter that has
+            a descriptive name.
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.Models.OnlineQuery.Referer">
+            <summary>
+            Gets and sets the referer (for the HTTP Header)
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.Models.OnlineQuery.Start">
+            <summary>
+            Gets and Sets the starting number for the query
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.Models.OnlineQuery.Num">
+            <summary>
+            Gets and Sets the max number of results per query
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.Models.OnlineQuery.Content">
+            <summary>
+            Gets and sets the content type for the query
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.Models.OnlineQuery.FinalUrl">
+            <summary>
+            Gets the FinalUrl given all the current query parameters
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.Models.OnlineQuery.Response">
+            <summary>
+            Gets and sets the most recent response from the Portal
+            </summary>
+        </member>
+        <member name="T:LivingAtlasOfTheWorld.Models.OnlineResultItem">
+            <summary>
+            An individual result from an online query
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.Models.OnlineResultItem.Id">
+            <summary>
+            Gets and sets the item id
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.Models.OnlineResultItem.Title">
+            <summary>
+            Gets and sets the item title
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.Models.OnlineResultItem.Snippet">
+            <summary>
+            Gets and sets the item snippet
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.Models.OnlineResultItem.Url">
+            <summary>
+            Gets and sets tne item url
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.Models.OnlineResultItem.Item">
+            <summary>
+            Gets and sets the underlying item for this result
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.Models.OnlineResultItem.ThumbnailUrl">
+            <summary>
+            Gets the Thumbnail url of the ResultItem
+            </summary>
+        </member>
+        <member name="M:LivingAtlasOfTheWorld.Models.OnlineResultItem.SetThumbnailURL(System.String,System.String,System.String)">
+            <summary>
+            Provide the item thumbnail URL for the given item id and thumbnail url
+            </summary>
+            <param name="portal">The portal web url</param>
+            <param name="thumbnail">The thumbnail url from the online item</param>
+            <param name="id">the online item id</param>
+            <returns></returns>
+        </member>
+        <member name="T:LivingAtlasOfTheWorld.Models.OnlineUri">
+            <summary>
+            Holds the query information for each query 'entry' or 'name'
+            </summary>
+            <remarks>Names match the equivalent named queries on the arcgis online web map viewer</remarks>
+        </member>
+        <member name="T:LivingAtlasOfTheWorld.Models.OnlineUriFactory">
+            <summary>
+            Creates the list of online query URLS used to retrieve content
+            </summary>
+        </member>
+        <member name="M:LivingAtlasOfTheWorld.Models.OnlineUriFactory.CreateOnlineUri(System.String,System.Int32,System.Boolean)">
+            <summary>
+            Make an OnlineUri with the specified name. The order can be used for sorting.
+            </summary>
+            <param name="name">The name of the query</param>
+            <param name="order">Order for sorting</param>
+            <param name="indent">True to indent the name by 3 spaces</param>
+            <returns>An OnlineUri</returns>
+        </member>
+        <member name="M:LivingAtlasOfTheWorld.Models.OnlineUriFactory.CreateOnlineUri(System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+            Make an OnlineUri with the specified name and tag string. The order can be used for sorting.
+            </summary>
+            <param name="name">The name of the query</param>
+            <param name="tags">Additional tag(s) to be added to the query string</param>
+            <param name="order">Order for sorting</param>
+            <param name="indent">True to indent the name by 3 spaces</param>
+            <returns>An OnlineUri</returns>
+        </member>
+        <member name="M:LivingAtlasOfTheWorld.Models.OnlineUriFactory.CreateOnlineUris">
+            <summary>
+            Create the OnlineUris to be used in the Browse dialog
+            </summary>
+        </member>
+        <member name="T:LivingAtlasOfTheWorld.Module1">
+            <summary>
+            Mimics the Browse Esri Map Layers dialog from the arcgis online webmap viewer. Shows use of EsriHttpClient and Newtonsoft.Json
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            1. This solution is using the **Newtonsoft.Json Nuget**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package Newtonsoft.Json". 
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro will open. 
+            1. Open any project file. Click on the Add-in tab on the ribbon and then on the "Show the 'Browse Esri Map Layers' dialog" button.
+            1. The Browse Esri map layers button will be displayed and fill in available content from ArcGIS Online.
+            ![UI](ScreenShots/BrowseAGOL.png)  
+            </remarks>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:LivingAtlasOfTheWorld.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="T:LivingAtlasOfTheWorld.SubmitOnlineQuery">
+            <summary>
+            Submit queries to online
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.SubmitOnlineQuery.Response">
+            <summary>
+            Gets the original response from the portal
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.SubmitOnlineQuery.ErrorResponse">
+            <summary>
+            Gets the error response if there was an exception
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.SubmitOnlineQuery.MaxResponseLength">
+            <summary>
+            Gets and sets the (approx) maximum number of characters for the DEBUG response
+            </summary>
+            <remarks>Has no effect on the length of the actual response from online</remarks>
+        </member>
+        <member name="M:LivingAtlasOfTheWorld.SubmitOnlineQuery.ExecAsync(LivingAtlasOfTheWorld.Models.OnlineQuery,System.Collections.ObjectModel.ObservableCollection{LivingAtlasOfTheWorld.Models.OnlineResultItem},System.Int32)">
+            <summary>
+            Execute the given query and return the result
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LivingAtlasOfTheWorld.SubmitOnlineQuery.ExecWithEsriClientAsync(LivingAtlasOfTheWorld.Models.OnlineQuery,System.Collections.ObjectModel.ObservableCollection{LivingAtlasOfTheWorld.Models.OnlineResultItem},System.Int32)">
+            <summary>
+            Execute the given query and return the result
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LivingAtlasOfTheWorld.UI.BrowseLayersDialog">
+            <summary>
+            Interaction logic for BrowseLayersDialog.xaml
+            </summary>
+            <summary>
+            BrowseLayersDialog
+            </summary>
+        </member>
+        <member name="M:LivingAtlasOfTheWorld.UI.BrowseLayersDialog.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:LivingAtlasOfTheWorld.UI.BrowseLayersViewModel">
+            <summary>
+            Represents the settings for the Browse Dialog
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.UI.BrowseLayersViewModel.Title">
+            <summary>
+            Gets the title
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.UI.BrowseLayersViewModel.Keywords">
+            <summary>
+            Gets and sets the keywords for the current query
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.UI.BrowseLayersViewModel.BrowseQueryList">
+            <summary>
+            Gets the list of supported named queries
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.UI.BrowseLayersViewModel.SelectedOnlineQuery">
+            <summary>
+            Gets and sets the selected Uri to be submitted
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.UI.BrowseLayersViewModel.ProgressValue">
+            <summary>
+            Gets the value to set on the progress
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.UI.BrowseLayersViewModel.MaxProgressValue">
+            <summary>
+            Gets the max value to set on the progress
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.UI.BrowseLayersViewModel.IsExecutingQuery">
+            <summary>
+            Gets whether a query is executing or not
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.UI.BrowseLayersViewModel.Results">
+            <summary>
+            Gets the list of results from the query
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.UI.BrowseLayersViewModel.ResultOptions">
+            <summary>
+            Gets the list of supported result options
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.UI.BrowseLayersViewModel.SelectedResultOption">
+            <summary>
+            Gets and sets the current result option
+            </summary>
+            <remarks>Whether to return web maps or layers</remarks>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.UI.BrowseLayersViewModel.LinkText">
+            <summary>
+            Gets the relevant link text to display on the thumbnails
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.UI.BrowseLayersViewModel.AddStatus">
+            <summary>
+            Gets the add status
+            </summary>
+        </member>
+        <member name="P:LivingAtlasOfTheWorld.UI.BrowseLayersViewModel.SubmitQueryCommand">
+            <summary>
+            Gets a command to "manually" submit the query (assumes  keywords have been added) 
+            </summary>
+        </member>
+    </members>
+</doc>

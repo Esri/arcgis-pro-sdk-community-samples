@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReplaceAttachments", "ReplaceAttachments\ReplaceAttachments.csproj", "{5DB9F7C4-403F-4F3A-8D5C-0707136AE2E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReplaceAttachments", "ReplaceAttachments.csproj", "{5DB9F7C4-403F-4F3A-8D5C-0707136AE2E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
+
+
 <!--
 
    Copyright 2016 Esri
@@ -19,7 +21,7 @@
 
 -->
 <ArcGIS defaultAssembly="InsertIntoContextMenu.dll" defaultNamespace="InsertIntoContextMenu" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{9376ec8f-364c-47ea-be87-bd2588b066a4}" version="1.0" desktopVersion="1.1.3226">
+  <AddInInfo id="{9376ec8f-364c-47ea-be87-bd2588b066a4}" version="1.0" desktopVersion="1.3.5777">
     <Name>InsertIntoContextMenu</Name>
     <Description>InsertIntoContextMenu description</Description>
     <Image>Images\AddinDesktop32.png</Image>

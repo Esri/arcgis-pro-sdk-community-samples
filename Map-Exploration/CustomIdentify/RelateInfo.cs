@@ -26,6 +26,9 @@ using ArcGIS.Desktop.Mapping;
 
 namespace CustomIdentify
 {
+    /// <summary>
+    /// Class to managed the related information for a given feature layer
+    /// </summary>
     public class RelateInfo
     {
         /// <summary>
@@ -84,6 +87,13 @@ namespace CustomIdentify
             return popupContents;
         }
 
+        /// <summary>
+        /// Finds all related children
+        /// </summary>
+        /// <param name="featureClassName"></param>
+        /// <param name="objectID"></param>
+        /// <param name="rcException"></param>
+        /// <returns></returns>
         public async Task<HierarchyRow> GetRelationshipChildren(string featureClassName, long objectID, string rcException = "")
         {
             
@@ -95,16 +105,14 @@ namespace CustomIdentify
                 type = featureClassName
             };
 
-            var relationshipClassDefinitions = GetRelationsshipClassDefinitionsFromFeatureClass(featureClassName);
-           
-
-
-
+            var relationshipClassDefinitions = GetRelationshipClassDefinitionsFromFeatureClass(featureClassName);
             foreach (var relationshipClassDefinition in relationshipClassDefinitions)
             {
                 var rcName = relationshipClassDefinition.GetName(); //get the name
                 if (rcException == rcName) //exception so we don't go in circles
                     continue;
+                //Alternate way of getting the features classes in the relationship (new at 1.3):  
+                //IReadOnlyList<Definition> definitions = GetRelatedDefinitions(relationshipClassDefinition, DefinitionRelationshipType.DatasetsRelatedThrough);  
                 var relationshipClass = _geodatabase.OpenDataset<RelationshipClass>(rcName); //open the relationship class
 
                 var origin = relationshipClassDefinition.GetOriginClass(); //get the origin of the relationship class
@@ -162,7 +170,7 @@ namespace CustomIdentify
             return geodatabase;
         }
         
-        private IEnumerable<RelationshipClassDefinition> GetRelationsshipClassDefinitionsFromFeatureClass(string featureClassName)
+        private IEnumerable<RelationshipClassDefinition> GetRelationshipClassDefinitionsFromFeatureClass(string featureClassName)
         {
             
             return _geodatabase.GetDefinitions<RelationshipClassDefinition>().
@@ -261,21 +269,18 @@ namespace CustomIdentify
                             }
                         }
                     }
-                    catch (GeodatabaseFieldException fieldException)
+                    catch (GeodatabaseFieldException )
                     {
                         // One of the fields in the where clause might not exist. There are multiple ways this can be handled:
                         // Handle error appropriately
                     }
                     catch (Exception exception)
                     {
-                        // logger.Error(exception.Message);
+                        System.Diagnostics.Debug.Write(exception.Message);
                     }               
                 return value;
             });            
         }
-
-
-
     }
 }
 

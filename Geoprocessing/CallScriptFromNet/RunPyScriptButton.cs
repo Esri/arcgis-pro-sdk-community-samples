@@ -15,6 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using ArcGIS.Desktop.Framework;
@@ -43,8 +44,22 @@ namespace CallScriptFromNet
         protected override void OnClick()
         {
             // TODO: fix the path to test1.py so that it points to the proper file location
-            object myCommand = "python " + @"C:\ProSDK\arcgis-pro-sdk-community-samples\Geoprocessing\CallScriptFromNet\test1.py";
-            System.Diagnostics.ProcessStartInfo procStartInfo = new System.Diagnostics.ProcessStartInfo("cmd", "/c" + myCommand);
+
+            var pathProExe = System.IO.Path.GetDirectoryName((new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath);
+            if (pathProExe == null) return;
+            pathProExe = Uri.UnescapeDataString(pathProExe);
+            pathProExe = System.IO.Path.Combine(pathProExe, @"Python\envs\arcgispro-py3");
+            System.Diagnostics.Debug.WriteLine(pathProExe);
+            var pathPython = System.IO.Path.GetDirectoryName((new System.Uri(Assembly.GetExecutingAssembly().CodeBase)).AbsolutePath);
+            if (pathPython == null) return;
+            pathPython = Uri.UnescapeDataString(pathPython);
+            System.Diagnostics.Debug.WriteLine(pathPython);
+
+            var myCommand = string.Format(@"/c """"{0}"" ""{1}""""",
+                System.IO.Path.Combine(pathProExe, "python.exe"),
+                System.IO.Path.Combine(pathPython, "test1.py"));
+            System.Diagnostics.Debug.WriteLine(myCommand);
+            var procStartInfo = new System.Diagnostics.ProcessStartInfo("cmd", myCommand);
 
             procStartInfo.RedirectStandardOutput = true;
             procStartInfo.RedirectStandardError = true;

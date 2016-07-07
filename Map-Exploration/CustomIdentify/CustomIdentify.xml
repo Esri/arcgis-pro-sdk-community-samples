@@ -40,6 +40,21 @@
             Representation of the selected feature's Relationship Hierarchy
             </summary>
         </member>
+        <member name="P:CustomIdentify.HierarchyRow.name">
+            <summary>
+            Name to display
+            </summary>
+        </member>
+        <member name="P:CustomIdentify.HierarchyRow.type">
+            <summary>
+            Type for group by
+            </summary>
+        </member>
+        <member name="F:CustomIdentify.HierarchyRow.children">
+            <summary>
+            Related child rows
+            </summary>
+        </member>
         <member name="T:CustomIdentify.Module1">
              <summary>
              This sample shows how to author a tool that can be used to identify features and display the content in a pop-up window. 
@@ -73,6 +88,11 @@
             </summary>
             <returns>False to prevent Pro from closing, otherwise True</returns>
         </member>
+        <member name="T:CustomIdentify.RelateInfo">
+            <summary>
+            Class to managed the related information for a given feature layer
+            </summary>
+        </member>
         <member name="M:CustomIdentify.RelateInfo.#ctor(ArcGIS.Desktop.Mapping.FeatureLayer,ArcGIS.Core.Data.Selection)">
             <summary>
             Represents the Relationship Class information
@@ -85,6 +105,15 @@
             Gets the hierarcchical row that describes the selected feature
             </summary>
             <param name="selectedFeatures"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CustomIdentify.RelateInfo.GetRelationshipChildren(System.String,System.Int64,System.String)">
+            <summary>
+            Finds all related children
+            </summary>
+            <param name="featureClassName"></param>
+            <param name="objectID"></param>
+            <param name="rcException"></param>
             <returns></returns>
         </member>
     </members>

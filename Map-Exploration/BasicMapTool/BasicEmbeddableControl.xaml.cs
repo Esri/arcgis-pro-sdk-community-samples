@@ -37,6 +37,9 @@ namespace BasicMapTool {
     /// Interaction logic for BasicEmbeddableControlView.xaml
     /// </summary>
     public partial class BasicEmbeddableControlView : UserControl {
+        /// <summary>
+        /// constructor for embeddable control
+        /// </summary>
         public BasicEmbeddableControlView() {
             InitializeComponent();
         }

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+
+   Copyright 2016 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="UploadVtpkToAgol.dll" defaultNamespace="UploadVtpkToAgol" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{e706895b-16b0-42f2-8eb1-49020fcc8b9f}" version="1.0" desktopVersion="1.3.5777">
+    <Name>UploadVtpkToAgol</Name>
+    <Description>UploadVtpkToAgol description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>tush6415</Author>
+    <Company>Esri, http://www.esri.com</Company>
+    <Date>3/5/2016 11:32:50 AM, 2016</Date>
+    <Subject>Sharing</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="UploadVtpkToAgol_Module" className="UploadVtpkToAgolModule" autoLoad="false" caption="UploadVtpkToAgolModule">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="UploadVtpkToAgol" caption="Upload to ArcGIS Online" keytip="T1">
+          <group refID="UploadVtpkToAgol_Group2" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="UploadVtpkToAgol_Group2" caption="Upload" appearsOnAddInTab="false" keytip="G2">
+          <!-- host controls within groups -->
+          <button refID="UploadVtpkToAgol_UploadVectorTile_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="UploadVtpkToAgol_UploadVectorTile_ShowButton" caption="Show &amp; Upload Vector Tile" className="UploadVectorTile_ShowButton" loadOnClick="true" smallImage="Images\MarsCat16.png" largeImage="Images\MarsCat32.png" keytip="B2">
+          <tooltip heading="Show Dockpane">Show and upload a vector tile package to ArcGIS Online<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="UploadVtpkToAgol_UploadVectorTile" caption="Show &amp; Upload Vector Tile" className="UploadVectorTileViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="UploadVectorTileView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+
+   Copyright 2016 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="BingStreetside.dll" defaultNamespace="BingStreetside" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{0d2eff3c-d98c-4421-ac9e-44ec874e6757}" version="1.0" desktopVersion="1.3.5777">
+    <Name>BingStreetside</Name>
+    <Description>BingStreetside description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>Wolfgang</Author>
+    <Company>Acme</Company>
+    <Date>4/6/2016 12:25:20 PM, 2016</Date>
+    <Subject>Map Exploration</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="BingStreetside_Module" className="BingStreetsideModule" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="BingStreetside_Tab1" caption="Bing Streetside" keytip="T1">
+          <group refID="BingStreetside_Group1" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="BingStreetside_Group1" caption="Bing Streetside" keytip="G1">
+          <!-- host controls within groups -->
+          <button refID="BingStreetside_BingStreetside_ShowButton" size="large" />
+          <tool refID="BingStreetside_BingStreetsideTool" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="BingStreetside_BingStreetside_ShowButton" caption="Show Bing Streetside Pane" className="BingStreetside_ShowButton" loadOnClick="true" smallImage="Images\Dino16.png" largeImage="Images\Dino32.png" keytip="B1">
+          <tooltip heading="Show Dockpane">Shows the Bing Streetside Dockpane<disabledText /></tooltip>
+        </button>
+        <tool id="BingStreetside_BingStreetsideTool" caption="Bing Streetside View Tool" className="BingStreetsideTool" loadOnClick="true" smallImage="Images\Look16.png" largeImage="Images\Look32.png" condition="esri_mapping_mapPane" keytip="B2">
+          <tooltip heading="Tooltip Heading">Click on street on the map to sync location with Bing Streetside Dockpane<disabledText /></tooltip>
+        </tool>
+      </controls>
+      <dockPanes>
+        <dockPane id="BingStreetside_BingStreetside" caption="Bing Streetside Viewer" className="BingStreetsideViewModel" dock="group" dockWith="esri_core_contentsDockPane" isDropTarget="true">
+          <content className="BingStreetsideView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

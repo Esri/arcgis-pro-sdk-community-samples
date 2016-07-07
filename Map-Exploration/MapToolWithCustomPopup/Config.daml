@@ -1,0 +1,43 @@
+<ArcGIS defaultAssembly="CustomPopup.dll" defaultNamespace="CustomPopup" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{997969c2-c517-4481-af7e-dbdb0e20399c}" version="1.0" desktopVersion="1.3.5777">
+    <Name>Custom Pop-up Tool</Name>
+    <Description>Show a custom pop-up.</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>Esri, http://www.esri.com</Company>
+    <Date>9/28/2015</Date>
+    <Subject>Map-Exploration</Subject>
+  </AddInInfo>
+  <modules>
+    <insertModule id="CustomPopup_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- 
+      <tabs>
+        <tab id="CustomPopup_Tab1" caption="Plenary">
+          <group refID="CustomPopup_Group1"/>
+        </tab>
+      </tabs>
+      -->
+      <groups>
+        <group id="CustomPopup_Group1" caption="Plenary Demo 3" appearsOnAddInTab="true" >
+          <tool refID="CustomPopup_CustomPopupTool" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <tool id="CustomPopup_CustomPopupTool" caption="Pop-up (Customized)" 
+              className="CustomPopupTool" loadOnClick="true" 
+              smallImage="Images\T-Rex16.png" largeImage="Images\T-Rex32.png" 
+              condition="esri_mapping_mapPane">
+          <tooltip heading="Pop-up (Customized)">
+            Shows a custom pop-up for features in the map.<disabledText /></tooltip>
+        </tool>
+      </controls>
+    </insertModule>
+    <updateModule refID="ProAppModule1_Module">
+      <tabs>
+        <updateTab refID="Plenary_Tab">
+          <insertGroup refID="CustomPopup_Group1" insert="after"/>
+        </updateTab>
+      </tabs>
+    </updateModule>
+  </modules>
+</ArcGIS>

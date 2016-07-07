@@ -1,0 +1,20 @@
+Name,Value
+Unspecified,00
+Crime : Assassination (Activities),01
+Crime : Execution (Wrongful Killing) (Activities),02
+Crime : Hijacking/Hijacked (Activities),03
+Psychological Operations : House-to-House,04
+Crime : Kidnapping (Activities),05
+Crime : Murder,06
+Crime : Piracy (Activities),07
+Crime : Rape (Activities),08
+Psychological Operations : Written Psychological Operations,09
+Crime : Pirate,10
+IED Category : False,11
+IED Category : Find,12
+IED Category : Found and Cleared,13
+IED Category : Hoax (Decoy),14
+Incident Qualifier : Attempted,15
+Incident Qualifier : Accident,16
+Incident Qualifier : Incident,17
+Crime : Theft,18

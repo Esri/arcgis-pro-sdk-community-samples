@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Bing Streetside Viewer</title>
+  <meta http-equiv="x-ua-compatible" content="IE=Edge,11,10" />
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <script type='text/javascript' src='https://www.bing.com/mapspreview/sdk/mapcontrol?branch=release'></script>
+  <script type='text/javascript'>
+    var map;
+    function loadMapScenario() {
+      map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+        credentials: 'Your Bing Maps Key',
+        mapTypeId: Microsoft.Maps.MapTypeId.streetside,
+        zoom: 18,
+        streetsideOptions: { showHeadingCompass: false, showZoomButtons: false },
+        center: new Microsoft.Maps.Location(34.056763, -117.195665)
+      });
+      //map.setView({ mapTypeId: Microsoft.Maps.MapTypeId.streetside });
+      Microsoft.Maps.Events.addHandler(map, 'viewchangeend', function () { updateWPFView(map); });
+      // notify WPF that bingmap changed
+      function updateWPFView(map) {
+        var options = map.getOptions();
+        window.external.ShowLatLngHeading(map.getCenter().latitude, map.getCenter().longitude, options.heading);
+      }
+    }
+    // change the map view (called from WPF)
+    function setViewFromWPF(lng, lat, heading) {
+      map.setView({
+        center: new Microsoft.Maps.Location(lat, lng),
+        heading: heading
+      });
+    }
+    // change the heading only
+    function setHeadingFromWPF(heading) {
+      map.setView({
+        center: map.getCenter(),
+        heading: heading
+      });
+    }
+    // change the map view (called from WPF)
+    function setViewCenterFromWPF(lng, lat) {
+      //alert ("lng: " + lng + " lat:" + lat);
+      map.setView({
+        center: new Microsoft.Maps.Location(lat, lng)
+      });
+    }
+  </script>
+</head>
+<body onload='loadMapScenario();'>
+  <div id='myMap' style="left: 0px; top: 0px; width: 100%; height: 100%; position: absolute"></div>
+</body>
+</html>

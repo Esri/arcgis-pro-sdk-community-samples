@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WorkflowSample</RootNamespace>
     <AssemblyName>WorkflowSample</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -36,6 +36,7 @@
     <StartAction>Program</StartAction>
     <StartProgram>C:\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe</StartProgram>
     <PlatformTarget>x64</PlatformTarget>
+    <DocumentationFile>JobManagement.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ArcGIS.Desktop.Ribbon.Wpf">

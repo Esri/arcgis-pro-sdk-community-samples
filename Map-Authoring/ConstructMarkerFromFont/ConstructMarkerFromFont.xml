@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ConstructMarkerFromFont</name>
+    </assembly>
+    <members>
+        <member name="T:ConstructMarkerFromFont.Construct_MarkerView">
+            <summary>
+            Interaction logic for Construct_MarkerView.xaml
+            </summary>
+            <summary>
+            Construct_MarkerView
+            </summary>
+        </member>
+        <member name="M:ConstructMarkerFromFont.Construct_MarkerView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ConstructMarkerFromFont.Construct_MarkerViewModel">
+            <summary>
+            View model for the Construct marker from Fonts dockpane
+            </summary>
+        </member>
+        <member name="M:ConstructMarkerFromFont.Construct_MarkerViewModel.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ConstructMarkerFromFont.Construct_MarkerViewModel.InitializeAsync">
+            <summary>
+            Override to implement custom initialization code for this dockpane
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ConstructMarkerFromFont.Construct_MarkerViewModel._heading">
+            <summary>
+            Text shown near the top of the DockPane.
+            </summary>
+        </member>
+        <member name="P:ConstructMarkerFromFont.Construct_MarkerViewModel.FontFamilyCollection">
+            <summary>
+            Collection of font families to display in the font family list. By default this is Fonts.SystemFontFamilies,
+            but a client could set this to another collection returned by Fonts.GetFontFamilies, e.g., a collection of
+            application-defined fonts.
+            </summary>
+        </member>
+        <member name="P:ConstructMarkerFromFont.Construct_MarkerViewModel.SelectedFontFamily">
+            <summary>
+            Holds the selected Font
+            </summary>
+        </member>
+        <member name="P:ConstructMarkerFromFont.Construct_MarkerViewModel.TypeFaceCollection">
+            <summary>
+            Collection of typefaces to display in the Type face list. 
+            </summary>
+        </member>
+        <member name="P:ConstructMarkerFromFont.Construct_MarkerViewModel.SelectedTypeFace">
+            <summary>
+            Holds the selected Style. 
+            </summary>
+        </member>
+        <member name="P:ConstructMarkerFromFont.Construct_MarkerViewModel.CharacterItemCollection">
+            <summary>
+            Collection of Characters to display in the listbox.
+            </summary>
+        </member>
+        <member name="P:ConstructMarkerFromFont.Construct_MarkerViewModel.SelectedCharacter">
+            <summary>
+            Holds the selected character
+            </summary>
+        </member>
+        <member name="P:ConstructMarkerFromFont.Construct_MarkerViewModel.Size">
+            <summary>
+            Holds the selected size for the marker
+            </summary>
+        </member>
+        <member name="P:ConstructMarkerFromFont.Construct_MarkerViewModel.PointFeatureLayer">
+            <summary>
+            Holds the point feature layer that will be rendered with the selected character.
+            </summary>
+        </member>
+        <member name="P:ConstructMarkerFromFont.Construct_MarkerViewModel.DockpaneVisible">
+            <summary>
+            Controls the visible state of the controls on the dockpane
+            </summary>
+        </member>
+        <member name="M:ConstructMarkerFromFont.Construct_MarkerViewModel.GetSelectedPointFeatureLayer">
+            <summary>
+            Returns the selected point layer in the TOC. 
+            </summary>
+        </member>
+        <member name="M:ConstructMarkerFromFont.Construct_MarkerViewModel.Show">
+            <summary>
+            Show the DockPane.
+            </summary>
+        </member>
+        <member name="M:ConstructMarkerFromFont.Construct_MarkerViewModel.InitializeFontFamilyList">
+            <summary>
+            Gets the System Fonts to build the collection.
+            </summary>
+        </member>
+        <member name="M:ConstructMarkerFromFont.Construct_MarkerViewModel.InitializeTypefaceList">
+            <summary>
+            Gets the typefaces available for the selected font. 
+            </summary>
+            <remarks>BoldSimulated and ObliqueSimulated font styles are filtered out of this collection. ArcGIS Pro does not render these styles.</remarks>
+        </member>
+        <member name="M:ConstructMarkerFromFont.Construct_MarkerViewModel.ApplyFontAsMarker">
+            <summary>
+            Method for applying the selected character to the point feature layer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ConstructMarkerFromFont.Construct_MarkerViewModel._applyFontMarkerCmd">
+            <summary>
+             Command to apply the Font marker as the layer's symbol
+             </summary>
+        </member>
+        <member name="T:ConstructMarkerFromFont.Construct_Marker_ShowButton">
+            <summary>
+            Button implementation to show the DockPane.
+            </summary>
+        </member>
+        <member name="T:ConstructMarkerFromFont.Module1">
+            <summary>
+            This sample demonstrate how to create a CIMMarker from a font file and use it to render a point feature layer.
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution. 
+            2. This solution is using the **Extended.Wpf.Toolkit Nuget**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package Extended.Wpf.Toolkit".
+            3. Click Start button to open ArcGIS Pro.
+            4. ArcGIS Pro will open. 
+            5. Open any project file that contains a point feature layer. 
+            6. Right click on the point feature layer to bring up the context menu.
+            7. Select the "Construct Marker from Fonts" menu item.
+            8. This will open the "Construct Marker from Fonts" dockpane.
+            9. Select a font, style and size and click Apply to render the point feature layer with the selected character.
+            ![UI](ScreenShots/ConstructMarkerFromFonts.png)  
+            </remarks>
+        </member>
+        <member name="P:ConstructMarkerFromFont.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:ConstructMarkerFromFont.Module1.Initialize">
+            <summary>
+            Called by Framework whenever this Module is loaded.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ConstructMarkerFromFont.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>

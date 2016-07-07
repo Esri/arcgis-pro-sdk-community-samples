@@ -1,0 +1,56 @@
+Name,Value
+Unspecified,00
+Radar : Airborne Search and Bombing,02
+Radar : Airborne Intercept,03
+Radar : Altimeter,04
+Radar : Airborne Reconnaissance and Mapping,05
+Radar : Air Traffic Control (Air),06
+Radar : Beacon Transponder (not IFF) (Air),07
+Radar : Battlefield Surveillance (Air),08
+Radar : Controlled Intercept (Air),10
+Communications : Cellular/Mobile (Air),11
+Radar : Coastal Surveillance,12
+Radar : Decoy/Mimic,13
+Radar : Data Transmission (Air),14
+Radar : Early Warning (Air),16
+Radar : Fire Control (Air),17
+Radar : Ground Mapping,18
+Radar : Identification Friend or Foe (Interrogator) (Air),21
+Radar : Ionospheric Sounding (Air),23
+Radar : Identification Friend or Foe (Transponder) (Air),24
+Jammer : Barrage Jammer (Air),25
+Jammer : Click Jammer (Air),26
+Jammer : Deceptive Jammer (Air),27
+Jammer : Frequency Swept Jammer (Air),28
+Jammer : Jammer (General) (Air),29
+Jammer : Noise Jammer (Air),30
+Jammer : Pulsed Jammer (Air),31
+Jammer : Repeater Jammer (Air),32
+Jammer : Spot Noise Jammer (Air),33
+Jammer : Transponder Jammer (Air),34
+Radar : Missile Acquisition (Air),35
+Radar : Missile Control (Air),36
+Radar : Missile Downlink,37
+Radar : Meteorological (Air),38
+Jammer : Multi-Function (Air),39
+Radar : Missile Guidance (Air),40
+Radar : Missile Homing,41
+Jammer : Missile Tracking (Air),42
+Jammer : Navigational/General (Air),43
+Jammer : Navigational/Distance Measuring Equipment (Air),44
+Jammer : Navigation/Terrain Following (Air),45
+Jammer : Navigational/Weather Avoidance (Air),46
+Communications : Omni-Line of Sight (LOS) (Air),47
+Radar : Proximity Use,48
+Communications : Point-to-Point Line of Sight (LOS) (Air),49
+Radar : Instrumentation (Air),50
+Radar : Range Only (Air),51
+Radar : Space (Air),54
+Radar : Surface Search (Air),55
+Radar : Satellite Uplink,57
+Radar : Target Acquisition,58
+Radar : Target Illumination (Air),59
+Radar : Target Tracking (Air),61
+Radar : Unknown (Air),62
+Radar : Video Remoting (Air),63
+Radar : Experimental (Air),64

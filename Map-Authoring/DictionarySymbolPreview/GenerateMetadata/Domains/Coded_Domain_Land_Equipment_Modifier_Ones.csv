@@ -1,0 +1,11 @@
+Name,Value
+Unspecified,00
+Sensor Type : Biological,01
+Sensor Type : Chemical,02
+Sensor Type : Early Warning Radar,03
+Sensor Type : Intrusion,04
+Sensor Type : Nuclear,05
+Sensor Type : Radiological,06
+Sensor Type : Upgraded Early Warning Radar,07
+Crime : Hijacking (Land Equipment),08
+Organization : Civilian (Land Equipment),09

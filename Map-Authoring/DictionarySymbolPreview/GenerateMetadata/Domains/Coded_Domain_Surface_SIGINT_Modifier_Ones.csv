@@ -1,0 +1,50 @@
+Name,Value
+Unspecified,00
+Radar : Anti-Aircraft Fire Control (Sea Surface),01
+Radar : Air Traffic Control (Sea Surface),06
+Radar : Beacon Transponder (not IFF) (Sea Surface),07
+Radar : Controlled Approach (Sea Surface),09
+Radar : Controlled Intercept (Sea Surface),10
+Communications : Cellular/Mobile (Sea Surface),11
+Jammer : Decoy/Mimic (Sea Surface),13
+Radar : Data Transmission (Sea Surface),14
+Radar : Early Warning (Sea Surface),16
+Radar : Fire Control (Sea Surface),17
+Radar : Height Finding (Sea Surface),19
+Radar : Identification Friend or Foe (Interrogator) (Sea Surface),21
+Radar : Instrument Landing System (Sea Surface),22
+Radar : Identification Friend or Foe (Transponder) (Sea Surface),24
+Jammer : Barrage Jammer (Sea Surface),25
+Jammer : Click Jammer (Sea Surface),26
+Jammer : Deceptive Jammer (Sea Surface),27
+Jammer : Frequency Swept Jammer (Sea Surface),28
+Jammer : Jammer (General) (Sea Surface),29
+Jammer : Noise Jammer (Sea Surface),30
+Jammer : Pulsed Jammer (Sea Surface),31
+Jammer : Repeater Jammer (Sea Surface),32
+Jammer : Spot Noise Jammer (Sea Surface),33
+Jammer : Transponder Jammer (Sea Surface),34
+Radar : Missile Acquisition (Sea Surface),35
+Jammer : Missile Control (Sea Surface),36
+Radar : Meteorological (Sea Surface),38
+Jammer : Multi-Function (Sea Surface),39
+Radar : Missile Guidance (Sea Surface),40
+Jammer : Missile Tracking (Sea Surface),42
+Jammer : Navigational/General (Sea Surface),43
+Jammer : Navigational/Distance Measuring Equipment (Sea Surface),44
+Jammer : Navigation/Terrain Following (Sea Surface),45
+Jammer : Navigational/Weather Avoidance (Sea Surface),46
+Air/Land/Sea Surface/Subsurface Communications : Omni-Line of Sight (LOS) (Sea Surface),47
+Communications : Point-to-Point Line of Sight (LOS) (Sea Surface),49
+Radar : Instrumentation (Sea Surface),50
+Radar : Range Only (Sea Surface),51
+Radar : Sonobuoy (Sea Surface),52
+Radar : Space (Sea Surface),54
+Radar : Surface Search (Sea Surface),55
+Communications : Satellite Uplink (Sea Surface),57
+Jammer : Target Acquisition (Sea Surface),58
+Radar : Target Illumination (Sea Surface),59
+Radar : Target Tracking (Sea Surface),61
+Radar : Unknown (Sea Surface),62
+Radar : Video Remoting (Sea Surface),63
+Radar : Experimental (Sea Surface),64

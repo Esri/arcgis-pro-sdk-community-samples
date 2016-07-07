@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UploadItem</name>
+    </assembly>
+    <members>
+        <member name="T:UploadItem.Dockpane1View">
+            <summary>
+            Interaction logic for UploadDockPaneView.xaml
+            </summary>
+            <summary>
+            Dockpane1View
+            </summary>
+        </member>
+        <member name="M:UploadItem.Dockpane1View.#ctor">
+            <summary>
+            Built-in method to initialize all components within this dockpane
+            </summary>
+        </member>
+        <member name="M:UploadItem.Dockpane1View.checkEmptyFields">
+            <summary>
+            Check if input fields are empty or invalid
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UploadItem.Dockpane1View.OnClickUploadSubmit(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Call back method to be called when "uploadsubmit" button is clicked
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:UploadItem.Dockpane1View.OnClickClearContents(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Call back method to be called when "clearContents" button is clicked
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:UploadItem.Dockpane1View.uploadItem(System.String,System.String,System.String,System.String)">
+            <summary>
+            Uploads a local item to online with its parameters
+            </summary>
+            <param name="baseURI"></param>
+            <param name="itemPathStr"></param>
+            <param name="thumbnail"></param>
+            <param name="tags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UploadItem.Dockpane1View.SearchPortalItemREST(System.String,System.String,System.String)">
+            <summary>
+            Search for item in the active portal or the portal URL specified.
+            Returns itemdID or null if item not found.
+            </summary>
+            <param name="itemName">Item Name as a string</param>
+            <param name="itemType">Item TYpe as a string. Use types used by AGO/portal</param>
+            <param name="portalURL">PortalURL as a string. Optional. When specified, searchs in that URL, else under active portal</param>
+            <returns>PortalItem. Null if item was not found</returns>
+        </member>
+        <member name="M:UploadItem.Dockpane1View.itemPathBrowse_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Opens up a file browse dialogue for user to choose item from local
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:UploadItem.Dockpane1View.thumbnailPathBrowse_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Opens up a file browse dialogue for user to choose thumbnail from local
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:UploadItem.Dockpane1View.GetActivePortal_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            call back method to be triggered when "Get active portal" button is pressed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:UploadItem.Dockpane1View.copyToClipboard_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            call back method to be triggered when "Copy to clipboard" button is pressed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:UploadItem.Dockpane1View.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:UploadItem.Dockpane1ViewModel">
+            <summary>
+            This sample provides a new tab and controls that allow you to upload the desktop content item
+             to AGOL or portal.
+            </summary>
+        </member>
+        <member name="M:UploadItem.Dockpane1ViewModel.Show">
+            <summary>
+            Show the DockPane.
+            </summary>
+        </member>
+        <member name="F:UploadItem.Dockpane1ViewModel._heading">
+            <summary>
+            Text shown near the top of the DockPane.
+            </summary>
+        </member>
+        <member name="T:UploadItem.Dockpane1_ShowButton">
+            <summary>
+            Button implementation to show the DockPane.
+            </summary>
+        </member>
+        <member name="T:UploadItem.Module1">
+            <summary>
+            This sample allows uploading a desktop content item to AGOL or portal.
+            </summary>    
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro will open. 
+            1. Open any project file. Click on the Add-in tab on the ribbon and then on the "Upload AGOL item" button.
+            ![UI](Screenshots/Screen1.png)  
+            1. Fill in the required input fields and click the "Submit" button.  
+            </remarks>
+        </member>
+        <member name="P:UploadItem.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:UploadItem.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="T:ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts.FeatureService">
+            <summary>
+            DataContract for JSON response of a feature service. Unnecessary elements are commented out.
+            Uncomment them, add classes if necessary to make them usable.
+            </summary>
+        </member>
+        <member name="T:ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts.Layer">
+            <summary>
+            Datacontract class to be used with FeatureServeice class, WebMapServiceInfo class
+            </summary>
+        </member>
+        <member name="T:ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts.FullExtent">
+            <summary>
+            Datacontract class to be used with FeatureServeice class
+            </summary>
+        </member>
+        <member name="T:ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts.InitialExtent">
+            <summary>
+            Datacontract class to be used with FeatureServeice class
+            </summary>
+        </member>
+        <member name="T:ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts.SpatialReference">
+            <summary>
+            Datacontract class to be used with FeatureServeice class
+            </summary>
+        </member>
+        <member name="T:ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts.MapService">
+            <summary>
+            DataContract for JSON response of a hosted map service. Unnecessary elements are commented out.
+            Uncomment them, add classes if necessary to make them usable.
+            Needs cleaning up
+            </summary>
+        </member>
+        <member name="T:ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts.SceneService">
+            <summary>
+            Data contract - for /serviceName/sceneServer/ resource
+            </summary>
+        </member>
+        <member name="T:ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts.WebSceneServiceLayer">
+            <summary>
+            A generic service layer in a WebScene
+            </summary>
+        </member>
+        <member name="T:ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts.ElevationLayer">
+            <summary>
+            Elevation layer within a basemap layer for a webscene
+            </summary>
+        </member>
+        <member name="T:ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts.WebSceneLayerInfo">
+            <summary>
+            Root class when deserializing webscene item's data REST endpoint.
+            </summary>
+        </member>
+        <member name="T:ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts.WebMapLayerInfo">
+            <summary>
+            Root class when deserializing webmap item's data REST endpoint.
+            This is the starting point.
+            </summary>
+        </member>
+        <member name="T:ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts.WebMapServiceLayer">
+            <summary>
+            Spec for layers in a WebMap
+            Complete WebMap Layer Spec. Up to date as of Nov 18 2014.
+            </summary>
+        </member>
+        <member name="T:ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts.OnlineItem">
+            <summary>
+            DataContract to deserialize any online item. Can be used for packages, services, webmaps, webscenes etc.
+            For webmaps, webscenes, to know the contents, use WebMapLayerInfo, WebSceneLayerInfo classes.
+            </summary>
+        </member>
+        <member name="T:ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts.SearchGroupItem">
+            <summary>
+            SearchGroupItem contails all of UserGroups object and more KVPs
+            </summary>
+        </member>
+    </members>
+</doc>

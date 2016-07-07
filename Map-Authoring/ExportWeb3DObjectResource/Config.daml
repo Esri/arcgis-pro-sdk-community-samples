@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+
+<!--
+
+   Copyright 2016 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="ExportWeb3DObjectResource.dll" defaultNamespace="ExportWeb3DObjectResource" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{074702c2-a80a-49db-84e8-ef7b39568de0}" version="1.0" desktopVersion="1.3.5777">
+    <Name>ExportWeb3DObjectResource</Name>
+    <Description>Exports 3D marker symbol layer to web 3D object resource</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team</Author>
+    <Company>Esri</Company>
+    <Date>6/26/2015 2:04:49 PM, 2015</Date>
+    <Subject>Map Authoring</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ExportWeb3DObjectResource_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="ExportWeb3DObjectResource_Tab1" caption="Export Web 3D Object" condition="esri_mapping_onlyFeatureLayersSelectedCondition">
+          <group refID="ExportWeb3DObjectResource_Group1"/>
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ExportWeb3DObjectResource_Group1" caption="Export Web 3D Object" appearsOnAddInTab="false">
+          <!-- host controls within groups -->
+          <editBox refID="downscaleFactorTextBox" size="large" separator="true" />
+          <editBox refID="maxtextureDimensionTextBox" size="large" separator="true" />
+          <button refID="ExportWeb3DObjectResource_UI_Options" size="large" separator="true"/>
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <editBox id="downscaleFactorTextBox" dataType="double" caption="Texture Downscale Factor" sizeString="01234567" className="DownScaleFactorEditBox" />
+        <editBox id="maxtextureDimensionTextBox" dataType="int64" caption="Max Texture Dimension" sizeString="01234567" className="MaxTextureDimensionEditBox" />
+        <button id="ExportWeb3DObjectResource_UI_Options" caption="Export" className="ExportButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Export Web 3D Object">Exports 3D marker symbol as web 3D object resource<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveAddins", "RemoveAddins\RemoveAddins.csproj", "{45EC1B85-EFC9-4927-A437-4B7C0CC6C5AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveAddins", "RemoveAddins.csproj", "{45EC1B85-EFC9-4927-A437-4B7C0CC6C5AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

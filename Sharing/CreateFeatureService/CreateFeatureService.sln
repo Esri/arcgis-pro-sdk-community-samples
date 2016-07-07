@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateFeatureService", "CreateFeatureService\CreateFeatureService.csproj", "{58F91F4B-B7A9-4EC6-A8F8-6473E6BD3360}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateFeatureService", "CreateFeatureService.csproj", "{58F91F4B-B7A9-4EC6-A8F8-6473E6BD3360}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

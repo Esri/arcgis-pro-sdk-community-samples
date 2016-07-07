@@ -1,0 +1,276 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BingStreetside</name>
+    </assembly>
+    <members>
+        <member name="T:BingStreetside.BingStreetsideView">
+            <summary>
+            Interaction logic for BingStreetsideView.xaml
+            </summary>
+            <summary>
+            BingStreetsideView
+            </summary>
+        </member>
+        <member name="M:BingStreetside.BingStreetsideView.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BingStreetside.BingStreetsideView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:BingStreetside.ValueAngleConverter">
+            <summary>
+            The converter used to compute the rotation angle from the slider value.
+            </summary>
+        </member>
+        <member name="M:BingStreetside.ValueAngleConverter.Convert(System.Object[],System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            
+            </summary>
+            <param name="values"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BingStreetside.ValueAngleConverter.ConvertBack(System.Object,System.Type[],System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="targetTypes"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BingStreetside.ValueTextConverter">
+            <summary>
+            Convert the slider value to text.
+            </summary>
+        </member>
+        <member name="M:BingStreetside.ValueTextConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BingStreetside.ValueTextConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BingStreetside.CameraHeadingHelper">
+            <summary>
+            Helper methods for manipulating the CameraHeading control
+            </summary>
+        </member>
+        <member name="M:BingStreetside.CameraHeadingHelper.FindParent``1(System.Windows.FrameworkElement)">
+            <summary>
+            Get the parent of an item.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="current"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BingStreetside.CameraHeadingHelper.GetAngle(System.Double,System.Double,System.Double)">
+            <summary>
+            Get the rotation angle from the value.
+            </summary>
+            <param name="value"></param>
+            <param name="maximum"></param>
+            <param name="minimum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BingStreetside.CameraHeadingHelper.GetAngleR(System.Windows.Point,System.Double)">
+            <summary>
+             Get the rotation angle from the position of the mouse.
+            </summary>
+            <param name="pos"></param>
+            <param name="radius"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BingStreetside.BingStreetsideTool.#ctor">
+            <summary> 
+             Constructor 
+            </summary> 
+        </member>
+        <member name="M:BingStreetside.BingStreetsideTool.OnSketchCompleteAsync(ArcGIS.Core.Geometry.Geometry)">
+            <summary> 
+             On sketch completion find the intersecting features, flash features and show the number of features selected per layer 
+            </summary> 
+            <param name="geometry"></param> 
+            <returns></returns> 
+        </member>
+        <member name="M:BingStreetside.BingStreetsideViewModel.Show">
+            <summary>
+            Show the DockPane.
+            </summary>
+        </member>
+        <member name="F:BingStreetside.BingStreetsideViewModel._bingKey">
+            <summary>
+            TODO: define your bing map key here:
+            </summary>
+        </member>
+        <member name="F:BingStreetside.BingStreetsideViewModel._headingValue">
+            <summary>
+            Property bound to by the heading slider Value property.
+            </summary>
+        </member>
+        <member name="T:BingStreetside.BingStreetside_ShowButton">
+            <summary>
+            Button implementation to show the DockPane.
+            </summary>
+        </member>
+        <member name="T:BingStreetside.HtmlInterop">
+            <summary>
+            Interop with javascript calls into this methods here
+            </summary>
+        </member>
+        <member name="M:BingStreetside.HtmlInterop.ShowLatLngHeading(System.Double,System.Double,System.Int32)">
+            <summary>
+            Update Big Map using new coords and heading
+            </summary>
+            <param name="lat"></param>
+            <param name="lng"></param>
+            <param name="heading"></param>
+        </member>
+        <member name="T:BingStreetside.BingStreetsideModule">
+            <summary>
+            This sample demonstrates the usagle of the WebBrowser control and how to interface between C# and HTML5/JavaScript and vise versa.  
+            The sample is using a Bing Map's Streetside API to demonstrate these functions.  In order to use this sample you have to apply with Bing Maps for a Bing Maps API developer key.  You can find the instructions on how to do this below.  
+            </summary>
+            <remarks>
+            Using Bing Maps API: To use the Bing Maps APIs, you must have a (Bing Maps Key)[https://msdn.microsoft.com/en-us/library/dd877180.aspx].
+            Note: When you use the Bing Maps APIs with a Bing Maps Key, usage transactions are logged. See Understanding (Bing Maps Transactions)[https://msdn.microsoft.com/en-us/library/ff859477.aspx] for more information.
+            Creating a Bing Maps Key
+            1. Go to the Bing Maps Dev Center at https://www.bingmapsportal.com/. 
+            ** If you have a Bing Maps account, sign in with the Microsoft account that you used to create the account or create a new one.For new accounts, follow the instructions in (Creating a Bing Maps Account)[https://msdn.microsoft.com/en-us/library/gg650598.aspx].
+            2. Select Keys under My Account.
+            3. Provide the following information to create a key:
+            ** Application name: Required.The name of the application.
+            ** Application URL: The URL of the application.
+            ** Key type: Required. Select the key type that you want to create.You can find descriptions of key and application types (here)[https://www.microsoft.com/maps/create-a-bing-maps-key.aspx].
+            ** Application type: Required. Select the application type that best represents the application that will use this key.You can find descriptions of key and application types (here)[https://www.microsoft.com/maps/create-a-bing-maps-key.aspx].  
+            4.	Type the characters of the security code, and then click Create. The new key displays in the list of available keys.Use this key to authenticate your Bing Maps application as described in the documentation for the Bing Maps API you are using.
+             
+            Note: the Bing map preview SDK overview used in this sample can be found here: https://www.bing.com/mapspreview/sdk/mapcontrol/isdk#overview
+            
+            Using the sample:
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro will open. 
+            1. Create a new project using the Map.aptx template.  
+            1. With a map view active go to the "Bing Streetside" tab and click the "Show Bing Streetside Pane" button.
+            1. This will open the "Bing Streetside Viewer" dock pane.
+            ![UI](Screenshots/screenshot1.png)
+            1. Paste the "Bing Maps Key" that you obtained from Microsoft (see instructions above) and click the "Define Bing Map Key" button.  
+            1. For convenience you can also define your Bing Key under the following code comment: "TODO: define your bing map key here:"
+            1. The "Bing Streetside Viewer" dock pane now displays Bing Map's street view pane (starting at Esri).
+            ![UI](Screenshots/screenshot2.png)
+            1. Click on the "N New York St" arrow pointing north on the "Bing Streetside Viewer" and see the location on the map pane being updated.  
+            ![UI](Screenshots/screenshot3.png)
+            1. The view heading on the "Bing Map Streetside" view can be changed by clicking on the "Change Heading" control above the "Bing Map Streetside" control and dragging the heading arrow into a new direction.  
+            ![UI](Screenshots/screenshot4.png)
+            1. Click the "Bing Streetside View Tool" button and click on a new street location on the map pane.
+            1. Notice that "Bing Map Streetside" will update it's view to the new clicked on location.
+            ![UI](Screenshots/screenshot5.png)
+            </remarks>
+        </member>
+        <member name="P:BingStreetside.BingStreetsideModule.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:BingStreetside.BingStreetsideModule.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="M:BingStreetside.BingStreetsideModule.SetMapLocationFromBing(System.Nullable{System.Double},System.Nullable{System.Double},System.Int32)">
+            <summary>Get the Lat, Long from the Bing StreetSide View to set the location on the Pro Map</summary>
+        </member>
+        <member name="T:BingStreetside.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:BingStreetside.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:BingStreetside.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:BingStreetside.Properties.Resources.BingStreetsidePage">
+             <summary>
+               Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+            
+            &lt;html lang=&quot;en&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+            &lt;head&gt;
+                &lt;meta charset=&quot;utf-8&quot; /&gt;
+                &lt;title&gt;&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+            
+            &lt;/body&gt;
+            &lt;/html&gt;.
+             </summary>
+        </member>
+        <member name="T:BingStreetside.Utility.WebBrowserUtility">
+            <summary>
+            Utility dependency property for web browser control used in MVVM
+            </summary>
+        </member>
+        <member name="F:BingStreetside.Utility.WebBrowserUtility.BindableSourceProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BingStreetside.Utility.WebBrowserUtility.GetBindableSource(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BingStreetside.Utility.WebBrowserUtility.SetBindableSource(System.Windows.DependencyObject,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BingStreetside.Utility.WebBrowserUtility.BindableSourcePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BingStreetside.Utility.WebBrowserUtility.InvokeScript(System.String,System.Object[])">
+            <summary>
+            Invoke a Javascript function from c# using invoke script
+            </summary>
+            <param name="jsFunction"></param>
+            <param name="jsParams"></param>
+        </member>
+    </members>
+</doc>

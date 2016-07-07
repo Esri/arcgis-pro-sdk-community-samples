@@ -1,0 +1,128 @@
+Name,Value
+Unspecified,000000
+Installation,110000
+Installation : Aircraft Production/Assembly,110100
+Installation : Ammunition and Explosives/Assembly,110200
+Installation : Ammunition Cache,110300
+Installation : Armament Production,110400
+Installation : Black List Location,110500
+Installation : Chemical-Biological-Radiological and Nuclear (CBRN),110600
+Installation : Engineering Equipment Production,110700
+Installation : Engineering Equipment Production : Bridge,110701
+Installation : Equipment Manufacture,110800
+Installation : Government Leadership,110900
+Installation : Gray List Location,111000
+Installation : Mass Grave Site,111100
+Installation : Materiel,111200
+Installation : Mine,111300
+Installation : Missile and Space System Production,111400
+Installation : Nuclear (Non CBRN Defense),111500
+Installation : Printed Media,111600
+Installation : Safe House,111700
+Installation : White List Location,111800
+Installation : Tented Camp,111900
+Installation : Tented Camp : Displaced Persons / Refugee / Evacuees Camp,111901
+Installation : Tented Camp : Training Camp,111902
+Installation : Warehouse/Storage Facility,112000
+Installation : Law Enforcement,112100
+Installation : Law Enforcement : Bureau of Alcohol-Tobacco-Firearms and Explosives (ATF) (Department of Justice),112101
+Installation : Law Enforcement : Border Patrol,112102
+Installation : Law Enforcement : Customs Service,112103
+Installation : Law Enforcement : Drug Enforcement Administration (DEA),112104
+Installation : Law Enforcement : Department of Justice (DOJ),112105
+Installation : Law Enforcement : Federal Bureau of Investigation (FBI),112106
+Installation : Law Enforcement : Police,112107
+Installation : Law Enforcement : Prison,112108
+Installation : Law Enforcement : United States Secret Service (USSS),112109
+Installation : Law Enforcement : Transportation Security Administration (TSA),112110
+Installation : Law Enforcement : Coast Guard,112111
+Installation : Law Enforcement : US Marshals Service,112112
+Installation : Emergency Operation,112200
+Installation : Emergency Operation : Fire Station,112201
+Installation : Emergency Operation : Emergency Medical Operation,112202
+Infrastructure : Agriculture and Food,120100
+Infrastructure : Agriculture and Food : Agriculture Laboratory,120101
+Infrastructure : Agriculture and Food : Animal Feedlot,120102
+Infrastructure : Agriculture and Food : Commercial Food Distribution Center,120103
+Infrastructure : Agriculture and Food : Farm/Ranch,120104
+Infrastructure : Agriculture and Food : Food Distribution,120105
+Infrastructure : Agriculture and Food : Food Production Center,120106
+Infrastructure : Agriculture and Food : Food Retail,120107
+Infrastructure : Agriculture and Food : Grain Storage,120108
+Infrastructure : Banking- Finance- and Insurance,120200
+Infrastructure : Banking- Finance- and Insurance : ATM,120201
+Infrastructure : Banking- Finance- and Insurance : Bank,120202
+Infrastructure : Banking- Finance- and Insurance : Bullion Storage,120203
+Infrastructure : Banking- Finance- and Insurance : Economic Infrastructure Asset,120204
+Infrastructure : Banking- Finance- and Insurance : Federal Reserve Bank,120205
+Infrastructure : Banking- Finance- and Insurance : Financial Exchange,120206
+Infrastructure : Banking- Finance- and Insurance : Financial Services-Other,120207
+Infrastructure : Commercial,120300
+Infrastructure : Commercial : Chemical Plant,120301
+Infrastructure : Commercial : Firearms Manufacturer,120302
+Infrastructure : Commercial : Firearms Retailer,120303
+Infrastructure : Commercial : Hazardous Material Production,120304
+Infrastructure : Commercial : Hazardous Material Storage,120305
+Infrastructure : Commercial : Industrial Site,120306
+Infrastructure : Commercial : Landfill,120307
+Infrastructure : Commercial : Pharmaceutical Manufacturer,120308
+Infrastructure : Commercial : Contaminated Hazardous Waste Site,120309
+Infrastructure : Commercial : Toxic Release Inventory,120310
+Infrastructure : Educational Facilities,120400
+Infrastructure : Educational Facilities : College/University,120401
+Infrastructure : Educational Facilities : School,120402
+Infrastructure : Energy Facility,120500
+Infrastructure : Energy Facility : Electric Power,120501
+Infrastructure : Energy Facility : Generation Station,120502
+Infrastructure : Energy Facility : Natural Gas Facility,120503
+Infrastructure : Energy Facility : Petroleum Facility,120504
+Infrastructure : Energy Facility : Petroleum/Gas/Oil,120505
+Infrastructure : Energy Facility : Propane Facility,120506
+Infrastructure : Government Site Infrastructure,120600
+Infrastructure : Medical : Medical,120701
+Infrastructure : Medical : Medical Treatment Facility (Hospital),120702
+Infrastructure : Military,120800
+Infrastructure : Military : Military Armory,120801
+Infrastructure : Military : Military Base,120802
+Infrastructure : Postal Services,120900
+Infrastructure : Postal Services : Postal Distribution Center,120901
+Infrastructure : Postal Services : Post Office,120902
+Infrastructure : Public Venues,121000
+Infrastructure : Public Venues : Enclosed Facility,121001
+Infrastructure : Public Venues : Open Facility,121002
+Infrastructure : Public Venues : Recreational Area,121003
+Infrastructure : Public Venues : Religious Institution,121004
+Infrastructure : Special Needs,121100
+Infrastructure : Special Needs : Adult Day Care,121101
+Infrastructure : Special Needs : Child Day Care,121102
+Infrastructure : Special Needs : Elder Care,121103
+Infrastructure : Telecommunications,121200
+Infrastructure : Telecommunications : Broadcast Transmitter Antennae,121201
+Infrastructure : Telecommunications : Telecommunications,121202
+Infrastructure : Telecommunications : Telecommunications Tower,121203
+Infrastructure : Transportation,121300
+Infrastructure : Transportation : Airport/Air Base,121301
+Infrastructure : Transportation : Air Traffic Control Facility,121302
+Infrastructure : Transportation : Bus Station,121303
+Infrastructure : Transportation : Ferry Terminal,121304
+Infrastructure : Transportation : Helicopter Landing Site,121305
+Infrastructure : Transportation : Maintenance Facility,121306
+Infrastructure : Transportation : Railhead/Railroad Station,121307
+Infrastructure : Transportation : Rest Stop,121308
+Infrastructure : Transportation : Sea Port/Naval Base,121309
+Infrastructure : Transportation : Ship Yard,121310
+Infrastructure : Transportation : Toll Facility,121311
+Infrastructure : Transportation : Traffic Inspection Facility,121312
+Infrastructure : Transportation : Tunnel,121313
+Infrastructure : Water Supply,121400
+Infrastructure : Water Supply : Control Valve,121401
+Infrastructure : Water Supply : Dam,121402
+Infrastructure : Water Supply : Discharge Outfall,121403
+Infrastructure : Water Supply : Ground Water Well,121404
+Infrastructure : Water Supply : Pumping Station,121405
+Infrastructure : Water Supply : Reservoir,121406
+Infrastructure : Water Supply : Storage Tower,121407
+Infrastructure : Water Supply : Surface Water Intake,121408
+Infrastructure : Water Supply : Wastewater Treatment Facility,121409
+Infrastructure : Water Supply : Water,121410
+Infrastructure : Water Supply : Water Treatment,121411

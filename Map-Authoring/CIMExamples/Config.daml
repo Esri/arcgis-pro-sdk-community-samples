@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
+
+
 <!--
 
    Copyright 2016 Esri
@@ -20,7 +22,7 @@
 -->
 
 <ArcGIS defaultAssembly="CIMExamples.dll" defaultNamespace="CIMExamples" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{3a5f4c65-762f-459b-96ec-24d3bf5013b4}" version="1.0" desktopVersion="1.2.4644">
+  <AddInInfo id="{3a5f4c65-762f-459b-96ec-24d3bf5013b4}" version="1.0" desktopVersion="1.3.5777">
     <Name>CIMExamples</Name>
     <Description>CIMExamples description</Description>
     <Image>Images\AddinDesktop32.png</Image>

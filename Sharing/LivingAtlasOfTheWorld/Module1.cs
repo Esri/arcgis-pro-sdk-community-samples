@@ -22,10 +22,11 @@ namespace LivingAtlasOfTheWorld {
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 2. Click Start button to open ArcGIS Pro.
-    /// 3. ArcGIS Pro will open. 
-    /// 4. Open any project file. Click on the Add-in tab on the ribbon and then on the "Show the 'Browse Esri Map Layers' dialog" button.
-    /// 5. The Browse Esri map layers button will be displayed and fill in available content from ArcGIS Online.
+    /// 1. This solution is using the **Newtonsoft.Json Nuget**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package Newtonsoft.Json". 
+    /// 1. Click Start button to open ArcGIS Pro.
+    /// 1. ArcGIS Pro will open. 
+    /// 1. Open any project file. Click on the Add-in tab on the ribbon and then on the "Show the 'Browse Esri Map Layers' dialog" button.
+    /// 1. The Browse Esri map layers button will be displayed and fill in available content from ArcGIS Online.
     /// ![UI](ScreenShots/BrowseAGOL.png)  
     /// </remarks>
     internal class Module1 : Module {

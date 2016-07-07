@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
+
+
 <!--
 
    Copyright 2016 Esri
@@ -19,7 +21,7 @@
 
 -->
 <ArcGIS defaultAssembly="GeometrySamples.dll" defaultNamespace="GeometrySamples" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{e90a6bee-b050-4b2d-bfd5-986a3ffc12bd}" version="1.0" desktopVersion="1.1.3308">
+  <AddInInfo id="{e90a6bee-b050-4b2d-bfd5-986a3ffc12bd}" version="1.0" desktopVersion="1.3.5777">
     <Name>GeometrySamples</Name>
     <Description>ArcGIS Pro SDK Sample showing methods to explode multipart geometry into single part geometries
     and how to retrieve the outer most ring(s) of a multipart geometry.</Description>

@@ -1,0 +1,95 @@
+Name,Value
+Unspecified,000000
+Military (Sea Surface),110000
+Military Combatant,120000
+Military Combatant : Carrier,120100
+Military Combatant : Surface Combatant- Line,120200
+Military Combatant : Surface Combatant- Line : Battleship,120201
+Military Combatant : Surface Combatant- Line : Cruiser,120202
+Military Combatant : Surface Combatant- Line : Destroyer,120203
+Military Combatant : Surface Combatant- Line : Frigate,120204
+Military Combatant : Surface Combatant- Line : Corvette,120205
+Military Combatant : Surface Combatant- Line : Littoral Combatant Ship,120206
+Military Combatant : Amphibious Warfare Ship,120300
+Military Combatant : Amphibious Warfare Ship : Command Ship,120301
+Military Combatant : Amphibious Warfare Ship : Assault- Non-specified,120302
+Military Combatant : Amphibious Warfare Ship : Assault Ship- General,120303
+Military Combatant : Amphibious Warfare Ship : Assault Ship- Multipurpose,120304
+Military Combatant : Amphibious Warfare Ship : Assault Ship- Helicopter,120305
+Military Combatant : Amphibious Warfare Ship : Transport Dock,120306
+Military Combatant : Amphibious Warfare Ship : Landing Ship,120307
+Military Combatant : Amphibious Warfare Ship : Landing Craft,120308
+Military Combatant : Mine Warfare Ship,120400
+Military Combatant : Mine Warfare Ship : Mine Layer,120401
+Military Combatant : Mine Warfare Ship : Mine Sweeper,120402
+Military Combatant : Mine Warfare Ship : Mine Sweeper- Drone,120403
+Military Combatant : Mine Warfare Ship : Mine Hunter,120404
+Military Combatant : Mine Warfare Ship : Mine Countermeasures,120405
+Military Combatant : Mine Warfare Ship : Mine Countermeasures- Support Ship,120406
+Military Combatant : Patrol Boat,120500
+Military Combatant : Patrol Boat : Patrol Craft- Submarine Chaser/Escort- General,120501
+Military Combatant : Patrol Boat : Patrol Ship- General,120502
+Military Combatant : Decoy,120600
+Military Combatant : Unmanned Surface Water Vehicle (USV),120700
+Military Combatant : Speedboat,120800
+Military Combatant : Speedboat : Rigid-Hull Inflatable Boat,120801
+Military Combatant : Jet Ski,120900
+Military Combatant : Navy Task Organization,121000
+Military Combatant : Navy Task Organization : Navy Task Element,121001
+Military Combatant : Navy Task Organization : Navy Task Force,121002
+Military Combatant : Navy Task Organization : Navy Task Group,121003
+Military Combatant : Navy Task Organization : Navy Task Unit,121004
+Military Combatant : Navy Task Organization : Convoy,121005
+Military Combatant : Sea-Based X-Band (SBX) Radar,121100
+Military Noncombatant,130000
+Military Noncombatant : Auxiliary Ship,130100
+Military Noncombatant : Auxiliary Ship : Ammunition Ship,130101
+Military Noncombatant : Auxiliary Ship : Naval Stores Ship,130102
+Military Noncombatant : Auxiliary Ship : Auxiliary Flag Ship,130103
+Military Noncombatant : Auxiliary Ship : Intelligence Collector,130104
+Military Noncombatant : Auxiliary Ship : Oceanographic Research Ship,130105
+Military Noncombatant : Auxiliary Ship : Survey Ship,130106
+Military Noncombatant : Auxiliary Ship : Hospital Ship,130107
+Military Noncombatant : Auxiliary Ship : Naval Cargo Ship,130108
+Military Noncombatant : Auxiliary Ship : Combat Support Ship- Fast,130109
+Military Noncombatant : Auxiliary Ship : Oiler- Replenishment,130110
+Military Noncombatant : Auxiliary Ship : Repair Ship,130111
+Military Noncombatant : Auxiliary Ship : Submarine Tender,130112
+Military Noncombatant : Auxiliary Ship : Tug- Ocean Going,130113
+Military Noncombatant : Service Craft/Yard,130200
+Military Noncombatant : Service Craft/Yard : Barge- Not Self-Propelled,130201
+Military Noncombatant : Service Craft/Yard : Barge- Self-Propelled,130202
+Military Noncombatant : Service Craft/Yard : Tug- Harbor,130203
+Military Noncombatant : Service Craft/Yard : Launch,130204
+Civilian (Sea Surface),140000
+Civilian (Sea Surface) : Merchant Ship,140100
+Civilian (Sea Surface) : Merchant Ship : Cargo- General,140101
+Civilian (Sea Surface) : Merchant Ship : Container Ship,140102
+Civilian (Sea Surface) : Merchant Ship : Dredge,140103
+Civilian (Sea Surface) : Merchant Ship : Roll On/Roll Off,140104
+Civilian (Sea Surface) : Merchant Ship : Ferry,140105
+Civilian (Sea Surface) : Merchant Ship : Heavy Lift,140106
+Civilian (Sea Surface) : Merchant Ship : Hovercraft,140107
+Civilian (Sea Surface) : Merchant Ship : Lash Carrier (with Barges),140108
+Civilian (Sea Surface) : Merchant Ship : Oiler/Tanker,140109
+Civilian (Sea Surface) : Merchant Ship : Passenger,140110
+Civilian (Sea Surface) : Merchant Ship : Tug- Ocean Going,140111
+Civilian (Sea Surface) : Merchant Ship : Tow,140112
+Civilian (Sea Surface) : Merchant Ship : Transport Ship- Hazardous Material,140113
+Civilian (Sea Surface) : Merchant Ship : Junk/Dhow,140114
+Civilian (Sea Surface) : Merchant Ship : Barge- Not Self-Propelled,140115
+Civilian (Sea Surface) : Merchant Ship : Hospital Ship,140116
+Civilian (Sea Surface) : Fishing Vessel,140200
+Civilian (Sea Surface) : Fishing Vessel : Drifter,140201
+Civilian (Sea Surface) : Fishing Vessel : Trawler,140202
+Civilian (Sea Surface) : Fishing Vessel : Dredger,140203
+Civilian (Sea Surface) : Law Enforcement Vessel,140300
+Civilian (Sea Surface) : Leisure Craft- Sailing,140400
+Civilian (Sea Surface) : Leisure Craft- Motorized,140500
+Civilian (Sea Surface) : Leisure Craft- Motorized : Rigid-Hull Inflatable Boat,140501
+Civilian (Sea Surface) : Leisure Craft- Motorized : Speedboat,140502
+Civilian (Sea Surface) : Jet Ski,140600
+Civilian (Sea Surface) : Unmanned Surface Water Vehicle (USV),140700
+Own Ship,150000
+Fused Track (Sea Surface),160000
+Manual Track (Sea Surface),170000

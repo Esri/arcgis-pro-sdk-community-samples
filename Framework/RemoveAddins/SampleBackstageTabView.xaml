@@ -1,0 +1,86 @@
+﻿<!--//   Copyright 2015 Esri
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       http://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.-->
+    
+    <UserControl x:Class="RemoveAddins.SampleBackstageTabView"  x:ClassModifier="internal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"              
+             xmlns:local="clr-namespace:RemoveAddins"
+             mc:Ignorable="d" >
+
+    <UserControl.Resources>
+      
+        <ResourceDictionary >
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Core;component\Project\ProjectBackstageTemplates.xaml"/>                
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+
+
+    <Grid Style="{StaticResource BackStagePanel}" HorizontalAlignment="Left" Height="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+
+            <DataTemplate x:Key="AddInItem" DataType="{x:Type local:AddInFileInfo}">
+                <StackPanel Orientation="Horizontal" Background="Transparent">
+                    <Image Source="{Binding Image}"
+                           Width="16" Height="16" Stretch="Fill" Margin="5"
+                                DockPanel.Dock="Left"/>
+                    <TextBlock Text="{Binding AddInFileName}" Margin="0,4,0,4"/>
+                </StackPanel>
+
+            </DataTemplate>
+
+        </Grid.Resources>
+        <DockPanel Grid.Row="0"  Style="{StaticResource BackStagePanel}">
+            <TextBlock DockPanel.Dock="Left" Style="{StaticResource BackStageTitle}"
+          Text="Sample Backstage Tab"></TextBlock>
+
+        </DockPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,60,0,56" Style="{StaticResource BackStagePanel}" >
+            <TextBlock Text="Add-in Folder"/>
+
+            <ComboBox ItemsSource="{Binding AllAddInPaths}"  
+                        SelectedItem="{Binding SelectedAddInPath, Mode=TwoWay}" DisplayMemberPath="FullName"
+                        SelectedIndex="0" MinWidth="100"></ComboBox>
+
+            <TextBlock Text="Add-ins available:"/>
+            <ListBox Height="185"
+                ScrollViewer.VerticalScrollBarVisibility="Auto"                
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled"                  
+                ItemsSource="{Binding AddIns, Mode=TwoWay}"
+                ItemTemplate="{StaticResource AddInItem}"
+                SelectionMode="Multiple">
+                <ListBox.ItemContainerStyle>
+                    <!-- This Style binds a ListBoxItem to a the ViewModelItem. -->
+                    <Style TargetType="ListBoxItem">
+                        <Setter 
+                        Property="IsSelected"
+                        Value="{Binding IsSelected, Mode=TwoWay}" />
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+            <Button Content="Delete" Style="{DynamicResource Esri_SimpleButton}" ToolTip="Esri_SimpleButton" Command="{Binding DeleteAddInsCommand}"/>
+            
+            <TextBlock Text="Adding and removing add-ins requires an application restart to take effect." Foreground="{DynamicResource Esri_Red4}" FontWeight="SemiBold" />
+        </StackPanel>
+
+    </Grid>
+
+</UserControl>

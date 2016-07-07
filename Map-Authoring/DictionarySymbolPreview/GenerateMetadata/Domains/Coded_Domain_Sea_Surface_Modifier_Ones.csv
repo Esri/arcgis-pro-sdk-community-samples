@@ -1,0 +1,25 @@
+Name,Value
+Unspecified,00
+Mission Area : Own Ship,01
+Mission Area : Antiair Warfare,02
+Mission Area : Antisubmarine Warfare (Sea Surface),03
+Mission Area : Escort,04
+Mission Area : Electronic Warfare,05
+Mission Area : Intelligence- Surveillance- Reconnaissance,06
+Mission Area : Mine Countermeasures (Sea Surface),07
+Mission Area : Missile Defense,08
+Mission Area : Medical,09
+Mission Area : Mine Warfare (Sea Surface),10
+Mission Area : Remote Multi-Mission Vehicle (USV-only),11
+Asset Capability : SOF (Sea Surface),12
+Mission Area : Surface Warfare (Sea Surface),13
+Weapons Capability : Ballistic Missile (Sea Surface),14
+Weapons Capability : Guided Missile (Sea Surface),15
+Weapons Capability : Other Guided Missile (Sea Surface),16
+Weapons Capability : Torpedo,17
+Asset Capability : Drone-Equipped,18
+Asset Capability : Helicopter-Equipped/VSTOL,19
+Mission Area : Ballistic Missile Defense- Shooter,20
+Mission Area : Ballistic Missile Defense- Long-Range Surveillance and Track (LRST),21
+Mission Area : Sea-Base X-Band,22
+Crime : Hijacking/Hijacked (Sea Surface),23

@@ -1,0 +1,34 @@
+Name,Value
+Unspecified,000000
+Ice Systems : Limits : Limits of Visual Observation,110501
+Ice Systems : Limits : Limits of Under Cast,110502
+Ice Systems : Limits : Limits of Radar Observation,110503
+Ice Systems : Limits : Observed Ice Edge or Boundary,110504
+Ice Systems : Limits : Estimated Ice Edge or Boundary,110505
+Ice Systems : Limits : Ice Edge or Boundary From Radar,110506
+Ice Systems : Openings in the Ice : Cracks,110601
+Ice Systems : Openings in the Ice : Cracks at a Specific Location,110602
+Ice Systems : Openings in the Ice : Lead,110603
+Ice Systems : Openings in the Ice : Frozen Lead,110604
+Hydrography : Depth : Depth Curve,120102
+Hydrography : Depth : Depth Contour,120103
+Hydrography : Coastal Hydrography : Coastline,120201
+Hydrography : Coastal Hydrography : Foreshore - Line,120205
+Hydrography : Ports and Harbors : Anchorage - Line,120305
+Hydrography : Ports and Harbors : Pier/Wharf/Quay,120308
+Hydrography : Ports and Harbors : Offshore Loading Facility - Line,120317
+Hydrography : Ports and Harbors : Ramp - Above Water,120319
+Hydrography : Ports and Harbors : Ramp - Below Water,120320
+Hydrography : Ports and Harbors : Breakwater/Groin/Jetty - Above Water,120326
+Hydrography : Ports and Harbors : Breakwater/Groin/Jetty - Below Water,120327
+Hydrography : Ports and Harbors : Seawall,120328
+Hydrography : Aids to Navigation : Leading Line,120407
+Hydrography : Dangers/Hazards : Breakers,120511
+Hydrography : Dangers/Hazards : Reef,120512
+Hydrography : Tide and Current : Current Flow - Ebb,120702
+Hydrography : Tide and Current : Current Flow - Flood,120703
+Limits : Maritime Limit Boundary,150100
+Limits : Restricted Area,150300
+Man-Made Structures : Submarine Cable,160100
+Man-Made Structures : Canal,160300
+Man-Made Structures : Pipelines/Pipe,160800

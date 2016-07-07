@@ -1,0 +1,39 @@
+Name,Value
+Unspecified,00
+Radar : Beacon Transponder (not IFF) (Sea Subsurface),07
+Communications : Cellular/Mobile (Sea Subsurface),11
+Jammer : Decoy/Mimic (Sea Subsurface),13
+Radar : Data Transmission (Sea Subsurface),14
+Radar : Early Warning (Sea Subsurface),16
+Radar : Identification Friend or Foe (Interrogator) (Sea Subsurface),21
+Radar : Identification Friend or Foe (Transponder) (Sea Subsurface),24
+Jammer : Barrage Jammer (Sea Subsurface),25
+Jammer : Click Jammer (Sea Subsurface),26
+Jammer : Deceptive Jammer (Sea Subsurface),27
+Jammer : Frequency Swept Jammer (Sea Subsurface),28
+Jammer : Jammer (General) (Sea Subsurface),29
+Jammer : Noise Jammer (Sea Subsurface),30
+Jammer : Pulsed Jammer (Sea Subsurface),31
+Jammer : Repeater Jammer (Sea Subsurface),32
+Jammer : Spot Noise Jammer (Sea Subsurface),33
+Jammer : Transponder Jammer (Sea Subsurface),34
+Jammer : Missile Control (Sea Subsurface),36
+Jammer : Multi-Function (Sea Subsurface),39
+Jammer : Missile Tracking (Sea Subsurface),42
+Jammer : Navigational/General (Sea Subsurface),43
+Jammer : Navigational/Distance Measuring Equipment (Sea Subsurface),44
+Jammer : Navigation/Terrain Following (Sea Subsurface),45
+Jammer : Navigational/Weather Avoidance (Sea Subsurface),46
+Communications : Omni-Line of Sight (LOS) (Sea Subsurface),47
+Communications : Point-to-Point Line of Sight (LOS) (Sea Subsurface),49
+Radar : Instrumentation (Sea Subsurface),50
+Radar : Range Only (Sea Subsurface),51
+Radar : Sonobuoy (Sea Subsurface),52
+Radar : Space (Sea Subsurface),54
+Radar : Surface Search (Sea Subsurface),55
+Communications : Satellite Uplink (Sea Subsurface),57
+Jammer : Target Acquisition (Sea Subsurface),58
+Radar : Target Tracking (Sea Subsurface),61
+Radar : Unknown (Sea Subsurface),62
+Radar : Video Remoting (Sea Subsurface),63
+Radar : Experimental (Sea Subsurface),64

@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>bookmark_comboBox_solution</RootNamespace>
     <AssemblyName>bookmark_comboBox_solution</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -97,7 +97,9 @@
     <Compile Include="Module1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="ReadMe.md" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Screenshots\Screen.png" />
   </ItemGroup>

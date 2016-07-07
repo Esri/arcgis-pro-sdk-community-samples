@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+   Copyright 2016 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="DictionarySymbolPreview.dll" defaultNamespace="DictionarySymbolPreview" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{5cae51b6-74c8-4e54-b482-262831e8325b}" version="1.0" desktopVersion="1.3.5563">
+    <Name>DictionarySymbolPreview</Name>
+    <Description>Adds the Mil-Std-2525D Symbol Preview Dockpane to Pro</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>arcgisprosdk</Author>
+    <Company>Esri</Company>
+    <Date>5/16/2016 11:00:23 AM, 2016</Date>
+    <Subject>Framework, Map Authoring, Carto</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="DictionarySymbolPreview_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="DictionarySymbolPreview_Tab1" caption="New Tab">
+          <group refID="DictionarySymbolPreview_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="DictionarySymbolPreview_Group1" caption="Mil2525d" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="DictionarySymbolPreview_SymbolPreview_ShowButton" size="large" />
+          <toolPalette refID="esri_mapping_selectToolPalette" size="large" />
+          <button refID="esri_mapping_clearSelectionButton" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="DictionarySymbolPreview_SymbolPreview_ShowButton" caption="Show Mil2525d Symbol Preview" className="SymbolPreview_ShowButton" loadOnClick="true" smallImage="Images\Rabbit16.png" largeImage="Images\Rabbit32.png">
+          <tooltip heading="Show Dockpane">Show the Mil2525d Symbol Preview Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="DictionarySymbolPreview_SymbolPreview" caption="Mil-Std-2525D Symbol Preview" className="SymbolPreviewViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="SymbolPreviewView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

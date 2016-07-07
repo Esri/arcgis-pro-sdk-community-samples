@@ -39,6 +39,7 @@ namespace CoreHostSample {
     /// 1. Click the Start button to run the console app.
     /// 1. View the table definition in your file geodatabase
     /// ![UI](Screenshots/ConsoleWindow.png)
+    /// 1. Once the output stops press any key to close the application.  
     /// </remarks>
     class Program {
         //[STAThread] must be present on the Application entry point
@@ -68,7 +69,8 @@ namespace CoreHostSample {
                         Console.WriteLine(TableString(fdsDef as TableDefinition));
                     }
                 }
-                Console.Read();
+                Console.WriteLine("Press any key to close this app.");
+                Console.ReadKey();
             }
             catch (Exception e)
             {

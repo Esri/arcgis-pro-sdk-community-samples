@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 
+
+
 <!--//   Copyright 2014 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -15,7 +17,7 @@
 //   limitations under the License. 
 -->
 <ArcGIS defaultAssembly="ControlStyles.dll" defaultNamespace="ControlStyles" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{b985446c-1ee8-45f2-8d10-222eab8a0bde}" version="1.0" desktopVersion="1.0.1420">
+  <AddInInfo id="{b985446c-1ee8-45f2-8d10-222eab8a0bde}" version="1.0" desktopVersion="1.3.5777">
     <Name>ControlStyles</Name>
     <Description>ArcGIS Pro UI Design</Description>
     <Image>Images\AddinDesktop32.png</Image>

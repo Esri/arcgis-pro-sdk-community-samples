@@ -1,0 +1,53 @@
+Name,Value
+Unspecified,000000
+Military (Air),110000
+Military (Air) : Fixed-Wing,110100
+Military (Air) : Fixed-Wing : Medical Evacuation (MEDEVAC),110101
+Military (Air) : Fixed-Wing : Attack/Strike,110102
+Military (Air) : Fixed-Wing : Bomber,110103
+Military (Air) : Fixed-Wing : Fighter,110104
+Military (Air) : Fixed-Wing : Fighter/Bomber,110105
+Military (Air) : Fixed-Wing : Cargo,110107
+Military (Air) : Fixed-Wing : Electronic Combat (EC)/Jammer,110108
+Military (Air) : Fixed-Wing : Tanker,110109
+Military (Air) : Fixed-Wing : Patrol,110110
+Military (Air) : Fixed-Wing : Reconnaissance,110111
+Military (Air) : Fixed-Wing : Trainer,110112
+Military (Air) : Fixed-Wing : Utility,110113
+Military (Air) : Fixed-Wing : VSTOL,110114
+Military (Air) : Fixed-Wing : Airborne Command Post (ACP),110115
+Military (Air) : Fixed-Wing : Airborne Early Warning (AEW),110116
+Military (Air) : Fixed-Wing : Antisurface Warfare,110117
+Military (Air) : Fixed-Wing : Antisubmarine Warfare,110118
+Military (Air) : Fixed-Wing : Communications,110119
+Military (Air) : Fixed-Wing : Combat Search and Rescue (CSAR),110120
+Military (Air) : Fixed-Wing : Electronic Support (ES),110121
+Military (Air) : Fixed-Wing : Government,110122
+Military (Air) : Fixed-Wing : Mine Countermeasures (MCM),110123
+Military (Air) : Fixed-Wing : Personnel Recovery,110124
+Military (Air) : Fixed-Wing : Search and Rescue,110125
+Military (Air) : Fixed-Wing : Special Operations Forces,110126
+Military (Air) : Fixed-Wing : Ultra Light,110127
+Military (Air) : Fixed-Wing : Photographic Reconnaissance,110128
+Military (Air) : Fixed-Wing : Very Important Person (VIP),110129
+Military (Air) : Fixed-Wing : Suppression of Enemy Air Defense,110130
+Military (Air) : Fixed-Wing : Passenger,110131
+Military (Air) : Fixed-Wing : Escort,110132
+Military (Air) : Fixed-Wing : Electronic Attack (EA),110133
+Military (Air) : Rotary-Wing,110200
+Military (Air) : Unmanned Aircraft (UA- UAV- UAS- RPV),110300
+Military (Air) : Vertical-Takeoff UAV (VT-UAV),110400
+Military (Air) : Lighter Than Air,110500
+Military (Air) : Airship,110600
+Military (Air) : Tethered Lighter Than Air,110700
+Civilian (Air),120000
+Civilian (Air) : Fixed Wing,120100
+Civilian (Air) : Rotary Wing,120200
+Civilian (Air) : Unmanned Aircraft (UA- UAV- UAS- RPV),120300
+Civilian (Air) : Lighter Than Air,120400
+Civilian (Air) : Airship,120500
+Civilian (Air) : Tethered Lighter than Air,120600
+Weapon (Air),130000
+Weapon (Air) : Bomb,130100
+Weapon (Air) : Decoy,130200
+Manual Track (Air),140000

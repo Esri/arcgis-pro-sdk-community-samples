@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="LayerPopups.dll" defaultNamespace="LayerPopups" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{de0f7b68-519e-4e95-9736-41001956038e}" version="1.0" desktopVersion="1.3.5563">
+    <Name>LayerPopups</Name>
+    <Description>Shows how to define layer popups that will be persisted in the layer's CIM definition. The Sample
+    defines a set of 'helper' classes modelled after the similar pattern ArcGIS.Desktop.Mapping implements
+  for Renderer definitions. Popups can be defined that incorporate text, field values, images, charts, etc.</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>arcgisprosdk</Author>
+    <Company>Esri</Company>
+    <Date>3/29/2016 2:42:36 PM, 2016</Date>
+    <Subject>Map Exploration</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="LayerPopups_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="LayerPopups_Tab1" caption="New Tab">
+          <group refID="LayerPopups_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="LayerPopups_Group1" caption="Layer Popup" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="LayerPopups_ResetPopup" size="large" />
+          <button refID="LayerPopups_SimplePopup" size="large" />
+          <button refID="LayerPopups_AdvancedPopup" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="LayerPopups_SimplePopup" caption="SimplePopup " className="SimplePopup" loadOnClick="true" smallImage="Images\BexDog16.png" largeImage="Images\BexDog32.png">
+          <tooltip heading="Tooltip Heading">Apply a simple popup to the U.S. States layer<disabledText /></tooltip>
+        </button>
+        <button id="LayerPopups_ResetPopup" caption="ResetPopup " className="ResetPopup" loadOnClick="true" smallImage="Images\Bessy16.png" largeImage="Images\Bessy32.png">
+          <tooltip heading="Tooltip Heading">Reset the U.S. States layer popup back to it default setting<disabledText /></tooltip>
+        </button>
+        <button id="LayerPopups_AdvancedPopup" caption="AdvancedPopup " className="AdvancedPopup" loadOnClick="true" smallImage="Images\T-Rex16.png" largeImage="Images\T-Rex32.png">
+          <tooltip heading="Tooltip Heading">Apply a popup to the U.S. States layer containing text, table, an image, and charts<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

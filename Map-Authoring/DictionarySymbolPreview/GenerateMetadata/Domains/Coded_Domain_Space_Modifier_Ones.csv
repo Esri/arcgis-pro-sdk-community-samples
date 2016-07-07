@@ -1,0 +1,8 @@
+Name,Value
+Unspecified,00
+Orbit : Low Earth Orbit (LEO),01
+Orbit : Medium Earth Orbit (MEO),02
+Orbit : High Earth Orbit (HEO),03
+Orbit : Geosynchronous Orbit (GSO),04
+Orbit : Geostationary Orbit (GO),05
+Orbit : Molniya Orbit (MO),06

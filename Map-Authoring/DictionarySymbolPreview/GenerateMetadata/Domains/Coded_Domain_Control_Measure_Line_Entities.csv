@@ -1,0 +1,145 @@
+Name,Value
+Unspecified,000000
+Command and Control Lines : Boundary,110100
+Command and Control Lines : Light Line,110200
+Maneuver Lines : Forward Line of Troops : Friendly Present,140101
+Maneuver Lines : Forward Line of Troops : Friendly Planned or on Order,140102
+Maneuver Lines : Forward Line of Troops : Enemy Known,140103
+Maneuver Lines : Forward Line of Troops : Enemy Suspected or Templated,140104
+Maneuver Lines : Phase Line,140300
+Maneuver Lines : Forward Edge of the Battle Area,140400
+Maneuver Lines : Forward Edge of the Battle Area : Proposed or On Order,140401
+Maneuver Lines : Principal Direction of Fire,140500
+Maneuver Lines : Direction of Attack : Friendly Aviation,140601
+Maneuver Lines : Direction of Attack : Friendly Direction of Main Attack,140602
+Maneuver Lines : Direction of Attack : Friendly Direction of Supporting Attack,140603
+Maneuver Lines : Direction of Attack : Friendly Planned or On Order,140604
+Maneuver Lines : Direction of Attack : Feint,140605
+Maneuver Lines : Direction of Attack : Enemy Confirmed,140606
+Maneuver Lines : Direction of Attack : Enemy Templated or Suspected,140607
+Maneuver Lines : Final Coordination Line,140700
+Maneuver Lines : Infiltration Lane,140800
+Maneuver Lines : Limit of Advance,140900
+Maneuver Lines : Line of Departure,141000
+Maneuver Lines : Line of Departure/Line of Contact,141100
+Maneuver Lines : Probable Line of Deployment,141200
+Maneuver Lines : Bridgehead Line,141400
+Maneuver Lines : Holding Line,141500
+Maneuver Lines : Release Line,141600
+Maneuver Lines : Ambush,141700
+Maneuver Areas : Battle Position : Contain,151204
+Maneuver Areas : Battle Position : Retain,151205
+Maneuver Areas : Axis of Advance : Friendly Airborne/Aviation,151401
+Maneuver Areas : Axis of Advance : Attack Helicopter,151402
+Maneuver Areas : Axis of Advance : Main Attack,151403
+Maneuver Areas : Axis of Advance : Supporting Attack,151404
+Maneuver Areas : Axis of Advance : Supporting Attack Planned or On Order,151405
+Maneuver Areas : Axis of Advance : Feint,151406
+Maneuver Areas : Axis of Advance : Enemy Confirmed,151407
+Maneuver Areas : Axis of Advance : Enemy Templated or Suspected,151408
+Maneuver Areas : Attack by Fire Position,152000
+Maneuver Areas : Support by Fire,152100
+Maneuver Areas : Search Area/Reconnaissance Area,152200
+Air Corridors : Air Corridor,170100
+Air Corridors : Low Level Transit Route,170200
+Air Corridors : Minimum-Risk Route,170300
+Air Corridors : Safe Lane,170400
+Air Corridors : Standard Use Army Aircraft Flight Route,170500
+Air Corridors : Transit Corridor,170600
+Air Corridors : Unmanned Aircraft (UA) Route,170700
+Airspace Control Lines : Identification Friend or Foe Off Line,190100
+Airspace Control Lines : Identification Friend or Foe On Line,190200
+Maritime Points : Navigational,218400
+Maritime Lines : Bearing Line,220100
+Maritime Lines : Bearing Line : Electronic,220101
+Maritime Lines : Bearing Line : Electronic Warfare (EW),220102
+Maritime Lines : Bearing Line : Acoustic,220103
+Maritime Lines : Bearing Line : Acoustic (Ambiguous),220104
+Maritime Lines : Bearing Line : Torpedo,220105
+Maritime Lines : Bearing Line : Electro-Optical Intercept,220106
+Maritime Lines : Bearing Line : Jammer,220107
+Maritime Lines : Bearing Line : Radio Direction Finder (RDF),220108
+Deception : Decoy/Dummy,230100
+Deception : Decoy/Dummy/Feint,230200
+Fires Areas : Linear Targets : Linear Target,240701
+Fires Areas : Linear Targets : Linear Smoke Target,240702
+Fires Areas : Linear Targets : Final Protective Fire (FPF),240703
+Fire Lines : Fire Support Coordination Line (FSCL),260100
+Fire Lines : Coordinated Fire Line (CFL),260200
+Fire Lines : No Fire Line,260300
+Fire Lines : Battlefield Coordination Line,260400
+Fire Lines : Restrictive Fire Line,260500
+Fire Lines : Munition Flight Path,260600
+Protection Areas : Obstacle Effects : Block,270501
+Protection Areas : Obstacle Effects : Disrupt,270502
+Protection Areas : Obstacle Effects : Fix,270503
+Protection Areas : Obstacle Effects : Turn,270504
+Protection Areas : Obstacle Bypass : Easy,270601
+Protection Areas : Obstacle Bypass : Difficult,270602
+Protection Areas : Obstacle Bypass : Impossible,270603
+Protection Areas : Bridge or Gap,271100
+Protection Areas : Roadblocks- Craters and Blown Bridges : Planned,271201
+Protection Areas : Roadblocks- Craters and Blown Bridges : Explosives-State of Readiness 1 (Safe),271202
+Protection Areas : Roadblocks- Craters and Blown Bridges : Explosives-State of Readiness 2 (armed but passable),271203
+Protection Areas : Roadblocks- Craters and Blown Bridges : Roadblock Complete (Executed),271204
+Protection Areas : Bridge,271400
+Protection Areas : Ford Easy,271500
+Protection Areas : Ford Difficult,271600
+Protection Points : Abatis,280100
+Protection Points : Vertical Obstructions : Overhead Wire,282003
+Protection Lines : Obstacle Line,290100
+Protection Lines : Antitank Obstacles : Under Construction,290201
+Protection Lines : Antitank Obstacles : Completed,290202
+Protection Lines : Antitank Obstacles : Reinforced-with Antitank Mines,290203
+Protection Lines : Antitank Obstacles : Antitank Wall,290204
+Protection Lines : Wire Obstacles : Unspecified Wire,290301
+Protection Lines : Wire Obstacles : Single Fence Wire,290302
+Protection Lines : Wire Obstacles : Double Fence Wire,290303
+Protection Lines : Wire Obstacles : Double Apron Fence,290304
+Protection Lines : Wire Obstacles : Low Wire Fence,290305
+Protection Lines : Wire Obstacles : High Wire Fence,290306
+Protection Lines : Wire Obstacles : Single Concertina,290307
+Protection Lines : Wire Obstacles : Double Strand Concertina,290308
+Protection Lines : Wire Obstacles : Triple Strand Concertina,290309
+Protection Lines : Mine Cluster,290400
+Protection Lines : Trip Wire,290500
+Protection Lines : Lane,290600
+Protection Lines : Ferry,290700
+Protection Lines : Raft Site,290800
+Protection Lines : Fortified Line,290900
+Protection Lines : Fortified Position,291000
+Intelligence Lines : Intelligence Coordination Line,300100
+Sustainment Lines : Moving Convoy,330100
+Sustainment Lines : Halted Convoy,330200
+Sustainment Lines : Main Supply Route,330300
+Sustainment Lines : Main Supply Route : One Way Traffic,330301
+Sustainment Lines : Main Supply Route : Two Way Traffic,330302
+Sustainment Lines : Main Supply Route : Alternating Traffic,330303
+Sustainment Lines : Alternate Supply Route,330400
+Sustainment Lines : Alternate Supply Route : One Way Traffic,330401
+Sustainment Lines : Alternate Supply Route : Two Way Traffic,330402
+Sustainment Lines : Alternate Supply Route : Alternating Traffic,330403
+Mission Tasks : Block,340100
+Mission Tasks : Breach,340200
+Mission Tasks : Bypass,340300
+Mission Tasks : Canalize,340400
+Mission Tasks : Clear,340500
+Mission Tasks : Counterattack,340600
+Mission Tasks : Counterattack by Fire,340700
+Mission Tasks : Delay,340800
+Mission Tasks : Disrupt,341000
+Mission Tasks : Fix,341100
+Mission Tasks : Follow and Assume,341200
+Mission Tasks : Follow and Support,341300
+Mission Tasks : Isolate,341500
+Mission Tasks : Occupy,341700
+Mission Tasks : Penetrate,341800
+Mission Tasks : Relief in Place (RIP),341900
+Mission Tasks : Retire/Retirement,342000
+Mission Tasks : Secure,342100
+Mission Tasks : Security : Cover,342201
+Mission Tasks : Security : Guard,342202
+Mission Tasks : Security : Screen,342203
+Mission Tasks : Seize,342300
+Mission Tasks : Withdraw,342400
+Mission Tasks : Withdraw Under Pressure,342500

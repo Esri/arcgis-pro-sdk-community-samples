@@ -1,0 +1,254 @@
+Name,Value
+Unspecified,000000
+Command and Control Points : Action Point (General),130100
+Command and Control Points : Amnesty Point,130200
+Command and Control Points : Checkpoint,130300
+Command and Control Points : Center of Main Effort,130400
+Command and Control Points : Contact Point,130500
+Command and Control Points : Coordinating Point,130600
+Command and Control Points : Decision Point,130700
+Command and Control Points : Distress Call,130800
+Command and Control Points : Entry Control Point,130900
+Command and Control Points : Fly-To-Point : Fly-To-Point (Sonobuoy),131001
+Command and Control Points : Fly-To-Point : Fly-To-Point (Weapon),131002
+Command and Control Points : Fly-To-Point : Fly-To-Point (Normal),131003
+Command and Control Points : Linkup Point,131100
+Command and Control Points : Passage Point,131200
+Command and Control Points : Point of Interest,131300
+Command and Control Points : Point of Interest : Launch Event (Point of Interest),131301
+Command and Control Points : Rally Point,131400
+Command and Control Points : Release Point,131500
+Command and Control Points : Start Point,131600
+Command and Control Points : Special Point,131700
+Command and Control Points : Waypoint,131800
+Command and Control Points : Airfield,131900
+Maneuver Points : Observation Post/Outpost (Unspecified),160100
+Maneuver Points : Observation Post/Outpost (Specified),160200
+Maneuver Points : Observation Post/Outpost (Specified) : Reconnaissance Outpost,160201
+Maneuver Points : Observation Post/Outpost (Specified) : Forward Observer Outpost,160202
+Maneuver Points : Observation Post/Outpost (Specified) : CBRN Observation Outpost,160203
+Maneuver Points : Observation Post/Outpost (Specified) : Sensor Outpost/Listening Post,160204
+Maneuver Points : Observation Post/Outpost (Specified) : Combat Outpost,160205
+Maneuver Points : Target Reference Point,160300
+Maneuver Points : Point of Departure,160400
+Airspace Control Points,180000
+Airspace Control Points : Air Control Point,180100
+Airspace Control Points : Communications Checkpoint,180200
+Airspace Control Points : Downed Aircrew Pick-Up Point,180300
+Airspace Control Points : Pop-up Point,180400
+Airspace Control Points : Air Control Rendezvous,180500
+Airspace Control Points : TACAN,180600
+Airspace Control Points : CAP Station,180700
+Airspace Control Points : AEW Station,180800
+Airspace Control Points : ASW (Helo and F/W) Station,180900
+Airspace Control Points : Strike Initial Point,181000
+Airspace Control Points : Replemenshment Station,181100
+Airspace Control Points : Tanking,181200
+Airspace Control Points : Antisubmarine Warfare- Rotary Wing,181300
+Airspace Control Points : SUCAP - Fixed Wing,181400
+Airspace Control Points : SUCAP - Rotary Wing,181500
+Airspace Control Points : MIW - Fixed Wing,181600
+Airspace Control Points : MIW - Rotary Wing,181700
+Airspace Control Points : Tomcat,181800
+Airspace Control Points : Rescue,181900
+Airspace Control Points : Unmanned Aerial System (UAS/UA),182000
+Airspace Control Points : VTUA,182100
+Airspace Control Points : Orbit,182200
+Airspace Control Points : Orbit - Figure Eight,182300
+Airspace Control Points : Orbit - Race Track,182400
+Airspace Control Points : Orbit - Random Closed,182500
+Maritime Areas : Ship Area of Interest,200400
+Maritime Areas : Active Maneuver Area,200500
+Maritime Areas : Cued Acquisition Doctrine,200600
+Maritime Areas : Radar Search Doctrine,200700
+Maritime Points : Plan Ship,210100
+Maritime Points : Aim Point,210200
+Maritime Points : Defended Asset,210300
+Maritime Points : Drop Point,210400
+Maritime Points : Entry Point,210500
+Maritime Points : Air Detonation,210600
+Maritime Points : Ground Zero,210700
+Maritime Points : Impact Point,210800
+Maritime Points : Predicted Impact Point,210900
+Maritime Points : Launched Torpedo,211000
+Maritime Points : Missile Detection Point,211100
+Maritime Points : Acoustic Countermeasure (Decoy),211200
+Maritime Points : Electronic Countermeasures (ECM) Decoy,211300
+Maritime Points : Brief Contact,211400
+Maritime Points : Datum Lost Contact,211500
+Maritime Points : BT Buoy Drop,211600
+Maritime Points : Reported Bottom Sub,211700
+Maritime Points : Moving Haven,211800
+Maritime Points : Screen Center,211900
+Maritime Points : Lost Contact,212000
+Maritime Points : Sinker,212100
+Maritime Points : Trial Track,212200
+Maritime Points : Acoustic Fix,212300
+Maritime Points : Electromagnetic Fix,212400
+Maritime Points : Electromagnetic - Magnetic Anomaly Detection (MAD),212500
+Maritime Points : Optical Fix,212600
+Maritime Points : Formation,212700
+Maritime Points : Harbor,212800
+Maritime Points : Harbor Entrance Point : A,212901
+Maritime Points : Harbor Entrance Point : Q,212902
+Maritime Points : Harbor Entrance Point : X,212903
+Maritime Points : Harbor Entrance Point : Y,212904
+Maritime Points : Dip Position,213000
+Maritime Points : Search,213100
+Maritime Points : Search Area,213200
+Maritime Points : Search Center,213300
+Maritime Points : Navigational Reference Point (Search),213400
+Maritime Points : Sonobuoy,213500
+Maritime Points : Sonobuoy : Ambient Noise,213501
+Maritime Points : Sonobuoy : Air Transportable Communication,213502
+Maritime Points : Sonobuoy : Barra,213503
+Maritime Points : Sonobuoy : Bathythermograph Transmitting,213504
+Maritime Points : Sonobuoy : Command Active Multi-Beam (CAMBS),213505
+Maritime Points : Sonobuoy : Command Active Sonobuoy Directional Command Active Sonobuoy System (CASS),213506
+Maritime Points : Sonobuoy : Digital Frequency Analysis and Recording (DIFAR),213507
+Maritime Points : Sonobuoy : Directional Command Active Sonobuoy System (DICASS),213508
+Maritime Points : Sonobuoy : Expendable Reliable Acoustic Path Sonobuoy (ERAPS),213509
+Maritime Points : Sonobuoy : Expired,213510
+Maritime Points : Sonobuoy : Kingpin,213511
+Maritime Points : Sonobuoy : Low Frequency Analysis and Recording (LOFAR),213512
+Maritime Points : Sonobuoy : Pattern Center,213513
+Maritime Points : Sonobuoy : Range Only,213514
+Maritime Points : Sonobuoy : Vertical Line Array Directional Frequency Analysis and Recording (DIFAR),213515
+Maritime Points : Reference Point,213600
+Maritime Points : Special Point,213700
+Maritime Points : Navigational Reference Point,213800
+Maritime Points : Data Link Reference Point,213900
+Maritime Points : Forward Observer / Spotter Position,214000
+Maritime Points : Vital Area Center,214100
+Maritime Points : Corridor Tab Point,214200
+Maritime Points : Enemy Point,214300
+Maritime Points : Marshall Point,214400
+Maritime Points : Position and Intended Movement (PIM),214500
+Maritime Points : Pre-Landfall Waypoint,214600
+Maritime Points : Estimated Position (EP),214700
+Maritime Points : Waypoint,214800
+Maritime Points : General Subsurface Station,214900
+Maritime Points : Submarine Subsurface Station,215000
+Maritime Points : Submarine Antisubmarine Warfare Subsurface Station,215100
+Maritime Points : Unmanned Underwater Vehicle Subsurface Station,215200
+Maritime Points : Antisubmarine Warfare (ASW) Unmanned Underwater Vehicle Subsurface Station,215300
+Maritime Points : Mine Warfare Unmanned Underwater Vehicle Subsurface Station,215400
+Maritime Points : Surface Warfare Unmanned Underwater Vehicle Subsurface Station,215500
+Maritime Points : General Surface Station,215600
+Maritime Points : Antisubmarine Warfare (ASW) Surface Station,215700
+Maritime Points : Mine Warfare Surface Station,215800
+Maritime Points : Non-Combatant Surface Station,215900
+Maritime Points : Picket Surface Station,216000
+Maritime Points : Rendezvous Surface Station,216100
+Maritime Points : Replenishment at Sea Surface Station,216200
+Maritime Points : Rescue Surface Station,216300
+Maritime Points : Surface Warfare Surface Station,216400
+Maritime Points : Unmanned Underwater Vehicle Surface Station,216500
+Maritime Points : Antisubmarine Warfare (ASW) Unmanned Underwater Vehicle Surface Station,216600
+Maritime Points : Mine Warfare Unmanned Underwater Vehicle Surface Station,216700
+Maritime Points : Remote Multi-Mission Vehicle Mine Warfare Unmanned Underwater,216800
+Maritime Points : Surface Warfare Mine Warfare Unmanned Underwater Vehicle,216900
+Maritime Points : Shore Control Station,217000
+Maritime Points : General Route,217100
+Maritime Points : Diversion Route,217200
+Maritime Points : Position and Intended Movement (PIM) Route,217300
+Maritime Points : Picket Route,217400
+Maritime Points : Point R Route,217500
+Maritime Points : Rendezvous Route,217600
+Maritime Points : Waypoint Route,217700
+Maritime Points : Clutter-Stationary or Cease Reporting,217800
+Maritime Points : Tentative or Provisional Track,217900
+Maritime Points : Distressed Vessel,218000
+Maritime Points : Ditched Aircraft/Downed Aircraft,218100
+Maritime Points : Person in Water/Bailout,218200
+Maritime Points : Iceberg,218300
+Maritime Points : Oil Rig,218500
+Maritime Points : Sea Mine-Like,218600
+Maritime Points : Bottom Return/Non-Mine Like Bottom Object (NOMBO),218700
+Maritime Points : Bottom Return/Non-Mine Like Bottom Object (NOMBO)/Installation Manmade,218800
+Maritime Points : Marine Life,218900
+Maritime Points : Sea Anomaly (Wake-Current-Knuckle),219000
+Maritime Points : Bottom Return/Non-MILCO-Wreck-Dangerous,219100
+Maritime Points : Bottom Return/Non-MILCO-Wreck-Non Dangerous,219200
+Fires Areas : Point Targets : Point or Single Target,240601
+Fires Areas : Point Targets : Nuclear Target,240602
+Fires Areas : Point Targets : Target-Recorded,240603
+Fires Areas : Fire Support Station,240900
+Fires Points : Firing Point,250100
+Fires Points : Hide Point,250200
+Fires Points : Launch Point,250300
+Fires Points : Reload Point,250400
+Fires Points : Survey Control Point,250500
+Protection Areas : Minefield : Dummy,270705
+Protection Points : Antipersonnel Mine,280200
+Protection Points : Antipersonnel Mine : With Directional Effects,280201
+Protection Points : Antitank Mine,280300
+Protection Points : Antitank Mine with Anti-handling Device,280400
+Protection Points : Wide Area Antitank Mine,280500
+Protection Points : Unspecified Mine,280600
+Protection Points : Booby Trap,280700
+Protection Points : Engineer Regulating Point,280800
+Protection Points : Shelter,280900
+Protection Points : Shelter Above Ground,281000
+Protection Points : Below Ground Shelter,281100
+Protection Points : Fort,281200
+Protection Points : Chemical Event,281300
+Protection Points : Chemical Event : Toxic Industrial Material,281301
+Protection Points : Biological Event,281400
+Protection Points : Biological Event : Toxic Industrial Material,281401
+Protection Points : Nuclear Event,281500
+Protection Points : Nuclear Fallout Producing Event,281600
+Protection Points : Radiological,281700
+Protection Points : Radiological : Toxic Industrial Material,281701
+Protection Points : Decontamination/Site,281800
+Protection Points : Decontamination/Site : Alternate,281801
+Protection Points : Decontamination/Site : Equipment,281802
+Protection Points : Decontamination/Site : Troop,281803
+Protection Points : Decontamination/Site : Equipment/Troop,281804
+Protection Points : Decontamination/Site : Operational,281805
+Protection Points : Decontamination/Site : Thorough,281806
+Protection Points : Decontamination/Site : Main Equipment,281807
+Protection Points : Decontamination/Site : Forward Troop,281808
+Protection Points : Decontamination/Site : Wounded Personnel,281809
+Protection Points : Tetrahedrons- Dragons Teeth- and Other Similar Obstacles : Fixed and Prefabricated,281901
+Protection Points : Tetrahedrons- Dragons Teeth- and Other Similar Obstacles : Movable,281902
+Protection Points : Tetrahedrons- Dragons Teeth- and Other Similar Obstacles : Movable and Prefabricated,281903
+Protection Points : Vertical Obstructions : Tower-Low,282001
+Protection Points : Vertical Obstructions : Tower-High,282002
+Sustainment Points : Ambulance Exchange Point,320100
+Sustainment Points : Ammunition Supply Point,320200
+Sustainment Points : Ammunition Transfer Point,320300
+Sustainment Points : Cannibalization Point,320400
+Sustainment Points : Casualty Collection Point,320500
+Sustainment Points : Civilian Collection Point,320600
+Sustainment Points : Detainee Collection Point,320700
+Sustainment Points : Enemy Prisoner of War Collection Point,320800
+Sustainment Points : Logistics Release Point,320900
+Sustainment Points : Maintenance Collection Point (MCP),321000
+Sustainment Points : Medical Evacuation (MEDEVAC) Pick-up Point,321100
+Sustainment Points : Rearm-Refuel and Resupply Point (R3P),321200
+Sustainment Points : Refuel on the Move (ROM) Point,321300
+Sustainment Points : Traffic Control Post (TCP),321400
+Sustainment Points : Trailer Transfer Point (TTP),321500
+Sustainment Points : Unit Maintenance Collection Point (UMCP),321600
+Sustainment Points : General Supply,321700
+Sustainment Points : General Supply : NATO Class I Supply Point,321701
+Sustainment Points : General Supply : NATO Class II Supply Point,321702
+Sustainment Points : General Supply : NATO Class III Supply Point,321703
+Sustainment Points : General Supply : NATO Class IV Supply Point,321704
+Sustainment Points : General Supply : NATO Class V Supply Point,321705
+Sustainment Points : General Supply : NATO Multiple Class Supply Point,321706
+Sustainment Points : General Supply : US Class I Supply Point,321707
+Sustainment Points : General Supply : US Class II Supply Point,321708
+Sustainment Points : General Supply : US Class III Supply Point,321709
+Sustainment Points : General Supply : US Class IV Supply Point,321710
+Sustainment Points : General Supply : US Class V Supply Point,321711
+Sustainment Points : General Supply : US Class VI Supply Point,321712
+Sustainment Points : General Supply : US Class VII Supply Point,321713
+Sustainment Points : General Supply : US Class VIII Supply Point,321714
+Sustainment Points : General Supply : US Class IX Supply Point,321715
+Sustainment Points : General Supply : US Class X Supply Point,321716
+Sustainment Points : Medical Supply Point,321800
+Mission Tasks : Destroy,340900
+Mission Tasks : Interdict,341400
+Mission Tasks : Neutralize,341600

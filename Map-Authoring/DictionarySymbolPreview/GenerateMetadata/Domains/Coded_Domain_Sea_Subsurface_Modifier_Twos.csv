@@ -1,0 +1,18 @@
+Name,Value
+Unspecified,00
+Ship Propulsion : Air Independent Propulsion,01
+Ship Propulsion : Diesel Electric General,02
+Ship Propulsion : Diesel - Type 1,03
+Ship Propulsion : Diesel - Type 2,04
+Ship Propulsion : Diesel - Type 3,05
+Ship Propulsion : Nuclear Powered General,06
+Ship Propulsion : Nuclear - Type 1,07
+Ship Propulsion : Nuclear - Type 2,08
+Ship Propulsion : Nuclear - Type 3,09
+Ship Propulsion : Nuclear - Type 4,10
+Ship Propulsion : Nuclear - Type 5,11
+Ship Propulsion : Nuclear - Type 6,12
+Ship Propulsion : Nuclear - Type 7,13
+UUV Control : Autonomous Control,14
+UUV Control : Remotely Piloted,15
+UUV Control : Expendable,16

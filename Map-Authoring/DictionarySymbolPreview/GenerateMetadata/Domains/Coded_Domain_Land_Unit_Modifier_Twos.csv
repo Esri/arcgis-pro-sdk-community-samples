@@ -1,0 +1,59 @@
+Name,Value
+Unspecified,00
+Mobility : Airborne,01
+Mobility : Arctic,02
+Capability : Battle Damage Repair,03
+Mobility : Bicycle Equipped,04
+Close Range and Support : Casualty Staging,05
+Capability : Clearing,06
+Capability : Close Range,07
+Capability : Control,08
+Capability : Decontamination 2,09
+Capability : Demolition,10
+Capability : Dental,11
+Capability : Digital,12
+Capability : Enhanced Position Location Reporting System (EPLRS),13
+Capability : Equipment,14
+Capability : Heavy,15
+Capability : High Altitude,16
+Capability : Intermodal,17
+Capability : Intensive Care,18
+Capability : Light,19
+Capability : Laboratory,20
+Capability : Launcher,21
+Capability : Long Range,22
+Capability : Low Altitude,23
+Capability : Medium,24
+Capability : Medium Altitude,25
+Capability : Medium Range,26
+Capability : Mountain,27
+Capability : High to Medium Altitude,28
+Capability : Multi-Channel,29
+Capability : Optical (Flash),30
+Capability : Pack Animal,31
+Capability : Patient Evacuation Coordination,32
+Capability : Preventive Maintenance,33
+Capability : Psychological,34
+Capability : Radio Relay Line of Sight,35
+Mobility : Railroad,36
+Capability : Recovery (Unmanned Systems),37
+Capability : Recovery (Maintenance),38
+Capability : Rescue Coordination Center,39
+Mobility : Riverine,40
+Capability : Single Channel,41
+Mobility : Ski,42
+Capability : Short Range,43
+Capability : Strategic,44
+Capability : Support 2,45
+Capability : Tactical,46
+Mobility : Towed,47
+Capability : Troop,48
+Mobility : Vertical or Short Take-Off and Landing (VTOL/VSTOL),49
+Capability : Veterinary,50
+Mobility : Wheeled,51
+Capability : High to Low Altitude,52
+Capability : Medium to Low Altitude,53
+Capability : Attack 2,54
+Capability : Refuel,55
+Capability : Utility 2,56
+Capability : Combat Search and Rescue,57

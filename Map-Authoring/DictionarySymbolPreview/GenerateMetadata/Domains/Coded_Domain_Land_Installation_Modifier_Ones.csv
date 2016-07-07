@@ -1,0 +1,15 @@
+Name,Value
+Unspecified,00
+CBRN Type : Biological,01
+CBRN Type : Chemical,02
+CBRN Type : Nuclear,03
+CBRN Type : Radiological,04
+CBRN Type : Decontamination,05
+Electric Power Type : Coal,06
+Electric Power Type : Geothermal,07
+Electric Power Type : Hydroelectric,08
+Electric Power Type : Natural Gas,09
+Electric Power Type : Petroleum,10
+Operation : Civilian (Land Installation),11
+Civilian Telecommunications Type : Civilian Telephone,12
+Civilian Telecommunications Type : Civilian Television,13

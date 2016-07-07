@@ -1,0 +1,22 @@
+Name,Value
+Unspecified,000000
+Military (Sea Subsurface),110000
+Military (Sea Subsurface) : Submarine,110100
+Military (Sea Subsurface) : Submarine : Submarine-Surfaced,110101
+Military (Sea Subsurface) : Submarine : Submarine-Snorkeling,110102
+Military (Sea Subsurface) : Submarine : Submarine-Bottomed,110103
+Military (Sea Subsurface) : Other Submersible,110200
+Military (Sea Subsurface) : Nonsubmarine,110300
+Military (Sea Subsurface) : Autonomous Underwater Vehicle (AUV),110400
+Military (Sea Subsurface) : Diver,110500
+Civilian (Sea Subsurface),120000
+Civilian (Sea Subsurface) : Submersible,120100
+Civilian (Sea Subsurface) : Autonomous Underwater Vehicle (AUV),120200
+Civilian (Sea Subsurface) : Diver,120300
+Weapon (Sea Subsurface),130000
+Weapon (Sea Subsurface) : Torpedo,130100
+Weapon (Sea Subsurface) : Improvised Explosive Device (IED),130200
+Weapon (Sea Subsurface) : Decoy,130300
+Echo Tracker Classifier (ETC) / Possible Contact (POSCON),140000
+Fused Track (Sea Subsurface),150000
+Manual Track (Sea Subsurface),160000

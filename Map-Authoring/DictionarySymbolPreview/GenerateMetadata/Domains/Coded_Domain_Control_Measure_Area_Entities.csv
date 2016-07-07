@@ -1,0 +1,145 @@
+Name,Value
+Unspecified,000000
+Command and Control Areas : Area of Operations,120100
+Command and Control Areas : Named Area of Interest,120200
+Command and Control Areas : Targeted Area of Interest,120300
+Command and Control Areas : Airfield Zone,120400
+Maneuver Lines : Airhead Line,141300
+Maneuver Areas : Area : Friendly,150101
+Maneuver Areas : Area : Friendly Planned or On Order,150102
+Maneuver Areas : Area : Enemy Known or Confirmed,150103
+Maneuver Areas : Area : Enemy Suspected,150104
+Maneuver Areas : Assembly Area,150200
+Maneuver Areas : Occupied Assembly Area,150300
+Maneuver Areas : Proposed or On Order Assembly Area,150400
+Maneuver Areas : Action Area : Joint Tactical Action Area (JTAA),150501
+Maneuver Areas : Action Area : Submarine Action Area (SAA),150502
+Maneuver Areas : Action Area : Submarine-Generated Action Area (SGAA),150503
+Maneuver Areas : Drop Zone,150600
+Maneuver Areas : Extraction Zone,150700
+Maneuver Areas : Landing Zone,150800
+Maneuver Areas : Pick-Up Zone,150900
+Maneuver Areas : Fortified Area,151000
+Maneuver Areas : Limited Access Area,151100
+Maneuver Areas : Battle Position,151200
+Maneuver Areas : Battle Position : Battle Position - Planned,151201
+Maneuver Areas : Battle Position : Battle Position - Prepared (P) but not Occupied,151202
+Maneuver Areas : Battle Position : Strong Point,151203
+Maneuver Areas : Engagement Area (EA),151300
+Maneuver Areas : Assault Position,151500
+Maneuver Areas : Attack Position,151600
+Maneuver Areas : Objective,151700
+Maneuver Areas : Encirclement : Friendly,151801
+Maneuver Areas : Encirclement : Enemy,151802
+Maneuver Areas : Penetration Box,151900
+Air Corridors : Base Defense Zone,170800
+Air Corridors : High-Density Airspace Control Zone,170900
+Air Corridors : Restricted Operations Zone,171000
+Air Corridors : Air-to-Air Restricted Operating Zone,171100
+Air Corridors : Unmanned Aircraft Restricted Operating Zone,171200
+Air Corridors : Weapon Engagement Zone,171300
+Air Corridors : Fighter Engagement Zone,171400
+Air Corridors : Joint Engagement Zone,171500
+Air Corridors : Missile Engagement Zone,171600
+Air Corridors : Low Altitude Missile Engagement Zone,171700
+Air Corridors : High Altitude Missile Engagement Zone,171800
+Air Corridors : Short Range Air Defense Engagement Zone,171900
+Air Corridors : Weapons Free Zone,172000
+Maritime Areas : Launch Area : Ellipse/Circle,200101
+Maritime Areas : Defended Area : Ellipse/Circle,200201
+Maritime Areas : Defended Area : Rectangle,200202
+Maritime Areas : No Attack (NOTACK) Zone,200300
+Maritime Areas : Ship Area of Interest : Ellipse/Circle,200401
+Maritime Areas : Ship Area of Interest : Rectangle,200402
+Fires Areas : Airspace Coordination Area : Irregular,240101
+Fires Areas : Airspace Coordination Area : Rectangular,240102
+Fires Areas : Airspace Coordination Area : Circular,240103
+Fires Areas : Free Fire Area : Irregular,240201
+Fires Areas : Free Fire Area : Rectangular,240202
+Fires Areas : Free Fire Area : Circular,240203
+Fires Areas : No Fire Area : Irregular,240301
+Fires Areas : No Fire Area : Rectangular,240302
+Fires Areas : No Fire Area : Circular,240303
+Fires Areas : Restricted Fire Area : Irregular,240401
+Fires Areas : Restricted Fire Area : Rectangular,240402
+Fires Areas : Restricted Fire Area : Circular,240403
+Fires Areas : Position Area For Artillery (PAA) : Rectangular,240501
+Fires Areas : Position Area For Artillery (PAA) : Circular,240502
+Fires Areas : Area Targets : Area Target,240801
+Fires Areas : Area Targets : Rectangular Target,240802
+Fires Areas : Area Targets : Circular Target,240803
+Fires Areas : Area Targets : Rectangular Target - Single Target,240804
+Fires Areas : Area Targets : Series of Targets,240805
+Fires Areas : Area Targets : Smoke Target,240806
+Fires Areas : Area Targets : Smoke Planned or On Order,240807
+Fires Areas : Area Targets : Bomb Area,240808
+Fires Areas : Fire Support Area : Irregular,241001
+Fires Areas : Fire Support Area : Rectangular,241002
+Fires Areas : Fire Support Area : Circular,241003
+Fires Areas : Artillery Target Intelligence Zone : Irregular,241101
+Fires Areas : Artillery Target Intelligence Zone : Rectangular,241102
+Fires Areas : Artillery Target Intelligence Zone : Circular,241103
+Fires Areas : Call for Fire Zone (CFFZ) : Irregular,241201
+Fires Areas : Call for Fire Zone (CFFZ) : Rectangular,241202
+Fires Areas : Call for Fire Zone (CFFZ) : Circular,241203
+Fires Areas : Censor Zone : Irregular,241301
+Fires Areas : Censor Zone : Rectangular,241302
+Fires Areas : Censor Zone : Circular,241303
+Fires Areas : Critical Friendly Zone : Irregular,241401
+Fires Areas : Critical Friendly Zone : Rectangular,241402
+Fires Areas : Critical Friendly Zone : Circular,241403
+Fires Areas : Dead Space Area : Irregular,241501
+Fires Areas : Dead Space Area : Rectangular,241502
+Fires Areas : Dead Space Area : Circular,241503
+Fires Areas : Sensor Zone : Irregular,241601
+Fires Areas : Sensor Zone : Rectangular,241602
+Fires Areas : Sensor Zone : Circular,241603
+Fires Areas : Target Build-up Area : Irregular,241701
+Fires Areas : Target Build-up Area : Rectangular,241702
+Fires Areas : Target Build-up Area : Circular,241703
+Fires Areas : Target Value Area : Irregular,241801
+Fires Areas : Target Value Area : Rectangular,241802
+Fires Areas : Target Value Area : Circular,241803
+Fires Areas : Zone of Responsibility : Irregular,241901
+Fires Areas : Zone of Responsibility : Rectangular,241902
+Fires Areas : Zone of Responsibility : Circular,241903
+Fires Areas : Terminally Guided Munition Footprint (TGMF),242000
+Fires Areas : Weapon/Sensor Range fan-Circular,242100
+Fires Areas : Weapon/Sensor Range fan-Sector,242200
+Fires Areas : Kill Box : Irregular-Blue,242301
+Fires Areas : Kill Box : Rectangular-Blue,242302
+Fires Areas : Kill Box : Circular-Blue,242303
+Fires Areas : Kill Box : Irregular-Purple,242304
+Fires Areas : Kill Box : Rectangular-Purple,242305
+Fires Areas : Kill Box : Circular-Purple,242306
+Protection Areas : Obstacle Belt,270100
+Protection Areas : Obstacle Zone,270200
+Protection Areas : Obstacle Free Zone,270300
+Protection Areas : Obstacle Restricted Zone,270400
+Protection Areas : Minefield : Completed,270701
+Protection Areas : Minefield : Planned,270702
+Protection Areas : Minefield : Known Enemy,270703
+Protection Areas : Minefield : Suspected or Templated Enemy,270704
+Protection Areas : Minefield : Dummy Minefield- Dymanic,270706
+Protection Areas : Minefield : Dynamic Depiction,270707
+Protection Areas : Mined Area,270800
+Protection Areas : Decoy Mined Area,270900
+Protection Areas : Decoy Mined Area : Fenced,270901
+Protection Areas : Unexploded Explosive Ordnance (UXO) Area,271000
+Protection Areas : Assault Crossing,271300
+Protection Areas : Biological Contaminated Area,271700
+Protection Areas : Biological Contaminated Area : Toxic Industrial Material,271701
+Protection Areas : Chemical Contaminated Area,271800
+Protection Areas : Chemical Contaminated Area : Toxic Industrial Material,271801
+Protection Areas : Nuclear Contaminated Area,271900
+Protection Areas : Radiological Contaminated Area,272000
+Protection Areas : Radiological Contaminated Area : Toxic Industrial Material,272001
+Protection Areas : Minimum Safe Distance Zone,272100
+Protection Areas : Radiation Dose Rate Contour Lines,272200
+Sustainment Areas : Detainee Holding Area,310100
+Sustainment Areas : Enemy Prisoner of War Holding Area,310200
+Sustainment Areas : Forward Arming and Refueling Point,310300
+Sustainment Areas : Refugee Holding Area,310400
+Sustainment Areas : Regimental Support Area,310500
+Sustainment Areas : Brigade Support Area,310600
+Sustainment Areas : Division Support Area,310700

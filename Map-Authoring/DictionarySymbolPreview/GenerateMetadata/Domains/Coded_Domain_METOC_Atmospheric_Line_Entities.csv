@@ -1,0 +1,35 @@
+Name,Value
+Unspecified,000000
+Pressure Systems : Frontal Systems : Cold Front,110301
+Pressure Systems : Frontal Systems : Upper Cold Front,110302
+Pressure Systems : Frontal Systems : Cold Frontogenesis,110303
+Pressure Systems : Frontal Systems : Cold Frontolysis,110304
+Pressure Systems : Frontal Systems : Warm Front,110305
+Pressure Systems : Frontal Systems : Upper Warm Front,110306
+Pressure Systems : Frontal Systems : Warm Frontogenesis,110307
+Pressure Systems : Frontal Systems : Warm Frontolysis,110308
+Pressure Systems : Frontal Systems : Occluded Front,110309
+Pressure Systems : Frontal Systems : Upper Occluded Front,110310
+Pressure Systems : Frontal Systems : Occluded Frontolysis,110311
+Pressure Systems : Frontal Systems : Stationary Front,110312
+Pressure Systems : Frontal Systems : Upper Stationary Front,110313
+Pressure Systems : Frontal Systems : Stationary Frontogenesis,110314
+Pressure Systems : Frontal Systems : Stationary Frontolysis,110315
+Pressure Systems : Lines : Trough Axis,110401
+Pressure Systems : Lines : Upper Trough Axis,110402
+Pressure Systems : Lines : Ridge Axis,110403
+Pressure Systems : Lines : Severe Squall Line,110404
+Pressure Systems : Lines : Instability Line,110405
+Pressure Systems : Lines : Shear Line,110406
+Pressure Systems : Lines : Inter-Tropical Convergence Zone,110407
+Pressure Systems : Lines : Convergence Line,110408
+Pressure Systems : Lines : Inter-Tropical Discontinuity,110409
+Winds : Jet Stream,140300
+Winds : Stream Line,140400
+Isopleths : Isobar - Surface,180100
+Isopleths : Contour - Upper Air,180200
+Isopleths : Isotherm,180300
+Isopleths : Isotach,180400
+Isopleths : Isodrosotherm,180500
+Isopleths : Thickness,180600
+Isopleths : Operator-Defined Freeform,180700

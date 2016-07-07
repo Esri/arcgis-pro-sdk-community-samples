@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DockpaneSimple</RootNamespace>
     <AssemblyName>DockpaneSimple</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -113,7 +113,9 @@
   <ItemGroup>
     <AddInContent Include="Images\GenericButtonPurple32.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="ReadMe.md" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Screenshots\Screen.png" />
   </ItemGroup>

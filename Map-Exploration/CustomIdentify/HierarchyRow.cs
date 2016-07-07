@@ -23,9 +23,18 @@ namespace CustomIdentify
     /// </summary>
     public class HierarchyRow
     {
+        /// <summary>
+        /// Name to display
+        /// </summary>
         public string name { get; set; }
+        /// <summary>
+        /// Type for group by
+        /// </summary>
         public string type { get; set; }
 
+        /// <summary>
+        /// Related child rows
+        /// </summary>
         public List<HierarchyRow> children = new List<HierarchyRow>();
     }
 }

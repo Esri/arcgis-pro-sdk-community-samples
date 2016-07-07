@@ -1,0 +1,54 @@
+Name,Value
+Unspecified,00
+Radar : Anti-Aircraft Fire Control (Land),01
+Radar : Air Traffic Control (Land),06
+Radar : Beacon Transponder (not IFF) (Land),07
+Radar : Battlefield Surveillance (Land),08
+Radar : Controlled Approach (Land),09
+Radar : Controlled Intercept (Land),10
+Communications : Cellular/Mobile (Land),11
+Jammer : Decoy/Mimic (Land),13
+Radar : Data Transmission (Land),14
+Radar : Early Warning (Land),16
+Radar : Fire Control (Land),17
+Radar : Height Finding (Land),19
+Radar : Harbor Surveillance,20
+Radar : Identification Friend or Foe (Interrogator) (Land),21
+Radar : Instrument Landing System (Land),22
+Radar : Ionospheric Sounding (Land),23
+Radar : Identification Friend or Foe (Transponder) (Land),24
+Jammer : Barrage Jammer (Land),25
+Jammer : Click Jammer (Land),26
+Jammer : Deceptive Jammer (Land),27
+Jammer : Frequency Swept Jammer (Land),28
+Jammer : Jammer (General) (Land),29
+Jammer : Noise Jammer (Land),30
+Jammer : Pulsed Jammer (Land),31
+Jammer : Repeater Jammer (Land),32
+Jammer : Spot Noise Jammer (Land),33
+Jammer : Transponder Jammer (Land),34
+Radar : Missile Acquisition (Land),35
+Jammer : Missile Control (Land),36
+Radar : Meteorological (Land),38
+Jammer : Multi-Function (Land),39
+Radar : Missile Guidance (Land),40
+Jammer : Missile Tracking (Land),42
+Jammer : Navigational/General (Land),43
+Jammer : Navigational/Distance Measuring Equipment (Land),44
+Jammer : Navigation/Terrain Following (Land),45
+Jammer : Navigational/Weather Avoidance (Land),46
+Communications : Omni-Line of Sight (LOS) (Land),47
+Communications : Point-to-Point Line of Sight (LOS) (Land),49
+Radar : Instrumentation (Land),50
+Radar : Range Only (Land),51
+Radar : Space (Land),54
+Radar : Surface Search (Land),55
+Radar : Shell Tracking,56
+Communications : Satellite Uplink (Land),57
+Jammer : Target Acquisition (Land),58
+Radar : Target Illumination (Land),59
+Communications : Tropospheric Scatter,60
+Radar : Target Tracking (Land),61
+Radar : Unknown (Land),62
+Radar : Video Remoting (Land),63
+Radar : Experimental (Land),64

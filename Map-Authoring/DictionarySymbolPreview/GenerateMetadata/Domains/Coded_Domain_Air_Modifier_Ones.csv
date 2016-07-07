@@ -1,0 +1,41 @@
+Name,Value
+Not Applicable,00
+Military Aircraft Type : Attack/Strike,01
+Military Aircraft Type : Bomber,02
+Aircraft Type : Cargo,03
+Military Aircraft Type : Fighter,04
+Military Aircraft Type : Interceptor,05
+Aircraft Type : Tanker,06
+Aircraft Type : Utility,07
+Aircraft Type : VSTOL/VTOL,08
+Aircraft Type : Passenger,09
+Aircraft Type : Ultra Light,10
+Military Aircraft Type : Airborne Command Post (ACP),11
+Military Aircraft Type : Airborne Early Warning (AEW),12
+Aircraft Type : Government,13
+Mission Area : Medical Evacuation (MEDEVAC),14
+Military Mission Area : Escort,15
+Military Mission Area : Electronic Combat (EC)/Jammer,16
+Mission Area : Patrol,17
+Mission Area : Reconnaissance,18
+Mission Area : Trainer,19
+Mission Area : Photographic (Reconnaissance),20
+Mission Area : Personnel Recovery,21
+Military Mission Area : Antisubmarine Warfare,22
+Mission Area : Communications,23
+Military Mission Area : Electronic Support (ES),24
+Military Mission Area : Mine Countermeasures (MCM),25
+Mission Area : Search and Rescue,26
+Military Mission Area : Special Operations Forces,27
+Military Mission Area : Surface Warfare,28
+Mission Area : Very Important Person (VIP) Transport,29
+Military Mission Area : Combat Search and Rescue (CSAR),30
+Military Mission Area : Suppression of Enemy Air Defenses,31
+Military Mission Area : Antisurface Warfare,32
+Military Aircraft Type : Fighter/Bomber,33
+Mission Area : Intensive Care,34
+Military Mission Area : Electronic Attack (EA),35
+Mission Area : Multimission,36
+Crime : Hijacking (Air),37
+Mission Area : ASW Helo - LAMPS,38
+Mission Area : ASW Helo - SH-60R,39

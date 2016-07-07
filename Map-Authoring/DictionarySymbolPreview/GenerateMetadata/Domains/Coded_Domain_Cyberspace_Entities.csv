@@ -1,0 +1,46 @@
+Name,Value
+Unspecified,000000
+Botnet : Command and Control (C2),110100
+Botnet : Herder,110200
+Botnet : Callback Domain,110300
+Botnet : Zombie,110400
+Infection : APT,120100
+Infection : APT : APT with C2,120101
+Infection : APT : APT with Self Propagation,120102
+Infection : APT : APT with C2 and Self Propagation,120103
+Infection : APT : Other,120104
+Infection : NAPT,120200
+Infection : NAPT : NAPT with C2,120201
+Infection : NAPT : NAPT with Self Propagation,120202
+Infection : NAPT : NAPT with C2 and Self Propagation,120203
+Infection : NAPT : Other,120204
+Health and Status : Normal,130100
+Health and Status : Network Outage,130200
+Health and Status : Unknown,130300
+Health and Status : Impaired,130400
+Device Type : Core Router,140100
+Device Type : Router,140200
+Device Type : Cross Domain Solution,140300
+Device Type : Mail Server,140400
+Device Type : Web Server,140500
+Device Type : Domain Server,140600
+Device Type : File Server,140700
+Device Type : Peer-to-Peer Node,140800
+Device Type : Firewall,140900
+Device Type : Switch,141000
+Device Type : Host,141100
+Device Type : Virtual Private Network (VPN),141200
+Device Domain : Department of Defense (DoD),150100
+Device Domain : Government,150200
+Device Domain : Contractor,150300
+Device Domain : Supervisory Control and Data Acquisition (SCADA),150400
+Device Domain : Non-Government,150500
+Effect : Infection,160100
+Effect : Degradation,160200
+Effect : Data Spoofing,160300
+Effect : Data Manipulation,160400
+Effect : Exfiltration,160500
+Effect : Power Outage,160600
+Effect : Network Outage,160700
+Effect : Service Outage,160800
+Effect : Device Outage,160900

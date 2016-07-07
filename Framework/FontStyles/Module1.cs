@@ -28,17 +28,18 @@ namespace FontStyles
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 2. Click Start button to open ArcGIS Pro.
-    /// 3. ArcGIS Pro will open. 
-    /// 4. Open a map view. Click on the ADD-IN tab on the ribbon.
-    /// 5. Within this tab there is a "Show DockPane" button that when clicked will open a DockPane.
-    /// 6. The dock pane has a tabbed control with 2 tabs 'Controls' and 'Xaml'.
-    /// 7. The Controls tab shows set of textboxes, Labels and Links.
+    /// 1. This solution is using the **AvalonEdit Nuget**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package AvalonEdit".
+    /// 1. Click Start button to open ArcGIS Pro.
+    /// 1. ArcGIS Pro will open. 
+    /// 1. Open a map view. Click on the ADD-IN tab on the ribbon.
+    /// 1. Within this tab there is a "Show DockPane" button that when clicked will open a DockPane.
+    /// 1. The dock pane has a tabbed control with 2 tabs 'Controls' and 'Xaml'.
+    /// 1. The Controls tab shows set of textboxes, Labels and Links.
     /// ![Controls](Screenshots/Controls.png)
-    /// 8. Hover the mouse on any control and the style used for that control will be shown as Tooltip 
-    /// 9. The Xaml tab shows the xaml code used for creating the controls in the controls tab.
+    /// 1. Hover the mouse on any control and the style used for that control will be shown as Tooltip 
+    /// 1. The Xaml tab shows the xaml code used for creating the controls in the controls tab.
     /// ![Controls](Screenshots/XAML.png)
-    /// 10. The Xaml code can be copied for reuse.
+    /// 1. The Xaml code can be copied for reuse.
     /// </remarks>
     internal class Module1 : Module
     {

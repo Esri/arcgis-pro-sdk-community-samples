@@ -1,0 +1,33 @@
+Name,Value
+Unspecified,00
+Radar : Data Transmission (Space),14
+Radar : Earth Surveillance,15
+Radar : Identification Friend or Foe (Interrogator) (Space),21
+Radar : Identification Friend or Foe (Transponder) (Space),24
+Jammer : Barrage Jammer (Space),25
+Jammer : Click Jammer (Space),26
+Jammer : Deceptive Jammer (Space),27
+Jammer : Frequency Swept Jammer (Space),28
+Jammer : Jammer (General) (Space),29
+Jammer : Noise Jammer (Space),30
+Jammer : Pulsed Jammer (Space),31
+Jammer : Repeater Jammer (Space),32
+Jammer : Spot Noise Jammer (Space),33
+Jammer : Transponder Jammer (Space),34
+Jammer : Missile Control (Space),36
+Jammer : Multi-Function (Space),39
+Jammer : Missile Tracking (Space),42
+Jammer : Navigational/General (Space),43
+Jammer : Navigational/Distance Measuring Equipment (Space),44
+Jammer : Navigation/Terrain Following (Space),45
+Communications : Point-to-Point Line of Sight (LOS) (Space),49
+Radar : Instrumentation (Space),50
+Radar : Range Only (Space),51
+Communications : Satellite Downlink (Space),53
+Radar : Space (Space),54
+Radar : Surface Search (Space),55
+Jammer : Target Acquisition (Space),58
+Radar : Target Tracking (Space),61
+Radar : Unknown (Space),62
+Radar : Video Remoting (Space),63
+Radar : Experimental (Space),64

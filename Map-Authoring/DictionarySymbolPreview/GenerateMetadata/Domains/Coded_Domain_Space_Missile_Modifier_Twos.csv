@@ -1,0 +1,14 @@
+Name,Value
+Unspecified,00
+Missile Range : Short Range (Space Missile),01
+Missile Range : Medium Range (Space Missile),02
+Missile Range : Intermediate Range (Space Missile),03
+Missile Range : Long Range (Space Missile),04
+Missile Range : Intercontinental (Space Missile),05
+Missile Type - BMD : Arrow,06
+Missile Type - BMD : Ground-Based Interceptor (GBI),07
+Missile Type - BMD : Patriot,08
+Missile Type - BMD : Standard Missile - Terminal Phase (SM-T),09
+Missile Type - BMD : Standard Missile - 3 (SM-3),10
+Missile Type - BMD : Terminal High-Altitude Area Defense (THAAD),11
+Launch Origin : Space 2,12

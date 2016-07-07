@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LayerPopups.Helpers.BaseMediaInfo" Collapsed="true">
+    <Position X="10" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\LayerPopupInfoHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LayerPopups.Helpers.PopupDefinition">
+    <Position X="1.75" Y="1" Width="4.25" />
+    <Members>
+      <Field Name="_mediaInfos" Hidden="true" />
+      <Field Name="_title" Hidden="true" />
+      <Field Name="DefaultFormat" Hidden="true" />
+      <Field Name="DefaultTitleFormat" Hidden="true" />
+      <Field Name="DefaultURLFormat" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>IAAAIIAIAICAAEAFAEAAAAAAEAAAAQABEBAAAFBABAA=</HashCode>
+      <FileName>Helpers\LayerPopupInfoHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LayerPopups.Helpers.TableMediaInfo">
+    <Position X="9" Y="5.5" Width="2.5" />
+    <Members>
+      <Field Name="_fieldNames" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\LayerPopupInfoHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LayerPopups.Helpers.BaseTitleAndCaptionMediaInfo">
+    <Position X="12" Y="5.5" Width="2.5" />
+    <Members>
+      <Field Name="_formattedCaption" Hidden="true" />
+      <Field Name="_formattedTitle" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAEAAAAAAAAAAAAAAAAAACAQAAAAAAAA=</HashCode>
+      <FileName>Helpers\LayerPopupInfoHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LayerPopups.Helpers.AttachmentsMediaInfo">
+    <Position X="7" Y="8.75" Width="3" />
+    <Members>
+      <Field Name="_contentType" Hidden="true" />
+      <Field Name="_displayType" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAgAAAAAAAAAAAAAAAAIAAAAAAAACAAAA=</HashCode>
+      <FileName>Helpers\LayerPopupInfoHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LayerPopups.Helpers.ImageMediaInfo">
+    <Position X="10.5" Y="8.75" Width="2.75" />
+    <Members>
+      <Field Name="_linkUri" Hidden="true" />
+      <Field Name="_sourceUri" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAkAAAgAAAA=</HashCode>
+      <FileName>Helpers\LayerPopupInfoHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LayerPopups.Helpers.ChartMediaInfo">
+    <Position X="14" Y="8.75" Width="2.75" />
+    <Members>
+      <Field Name="_chartType" Hidden="true" />
+      <Field Name="_fieldNames" Hidden="true" />
+      <Field Name="_normalizeFieldName" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAQAAAAAAAAAAAAIAAAAABAAACI=</HashCode>
+      <FileName>Helpers\LayerPopupInfoHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LayerPopups.Helpers.TextMediaInfo">
+    <Position X="6.25" Y="5.5" Width="2.5" />
+    <Members>
+      <Field Name="_formattedText" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Helpers\LayerPopupInfoHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="LayerPopups.Helpers.ChartMediaType">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAABCAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Helpers\LayerPopupInfoHelper.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LayerPopups.Helpers.RelateFieldStatistic">
+    <Position X="9.25" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gAAAAACAAAAAAAAAAAAAAAQABAAAAAAEAAAAAAAAAAQ=</HashCode>
+      <FileName>Helpers\LayerPopupInfoHelper.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

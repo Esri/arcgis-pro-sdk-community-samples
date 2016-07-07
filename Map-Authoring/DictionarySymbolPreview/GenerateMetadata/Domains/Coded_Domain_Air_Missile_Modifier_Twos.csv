@@ -1,0 +1,18 @@
+Name,Value
+Unspecified,00
+Missile Destination : Air,01
+Missile Destination : Surface,02
+Missile Destination : Subsurface,03
+Missile Destination : Space,04
+Missile Status : Launched,05
+Missile Status : Missile,06
+Missile Type-BMD : Patriot,07
+Missile Type-AAW : Standard Missile-2 (SM-2),08
+Missile Type-AAW : Standard Missile-6 (SM-6),09
+Missile Type-AAW : Evolved Sea Sparrow Missile (ESSM),10
+Missile Type-AAW : Rolling Airframe Missile (RAM),11
+Missile Range : Short Range (Air Missile),12
+Missile Range : Medium Range (Air Missile),13
+Missile Range : Intermediate Range (Air Missile),14
+Missile Range : Long Range (Air Missile),15
+Missile Range : Intercontinental (Air Missile),16

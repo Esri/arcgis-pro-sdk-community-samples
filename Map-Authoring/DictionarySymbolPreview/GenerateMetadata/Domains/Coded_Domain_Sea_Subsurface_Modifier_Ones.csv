@@ -1,0 +1,22 @@
+Name,Value
+Unspecified,00
+Mission Area : Antisubmarine Warfare (Sea Subsurface),01
+Mission Area : Auxiliary,02
+Mission Area : Command and Control,03
+Mission Area : Intelligence Surveillance Reconnaissance,04
+Mission Area : Mine Countermeasures (Sea Subsurface),05
+Mission Area : Mine Warfare (Sea Subsurface),06
+Mission Area : Surface Warfare (Sea Subsurface),07
+Weapons Capability : Attack,08
+Weapons Capability : Ballistic Missile (Sea Subsurface),09
+Weapons Capability : Guided Missile (Sea Subsurface),10
+Weapons Capability : Other Guided Missile (Sea Subsurface),11
+Asset Capability : SOF (Sea Subsurface),12
+Submarine Confidence : Possible Submarine Low 1,13
+Submarine Confidence : Possible Submarine Low 2,14
+Submarine Confidence : Possible Submarine High 3,15
+Submarine Confidence : Possible Submarine High 4,16
+Submarine Confidence : Probable Submarine,17
+Submarine Confidence : Certain Submarine,18
+Weapons Capability : Anti-torpedo Torpedo,19
+Crime : Hijacking/Highjacked,20

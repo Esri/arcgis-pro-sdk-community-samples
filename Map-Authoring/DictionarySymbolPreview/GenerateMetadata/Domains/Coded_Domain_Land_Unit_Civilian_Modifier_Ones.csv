@@ -1,0 +1,26 @@
+Name,Value
+Unspecified,00
+Crime : Assassination (Land Civilian),01
+Crime : Execution (Wrongful Killing) (Land Civilian),02
+Crime : Murder Victims,03
+Crime : Hijacking (Land Civilian),04
+Crime : Kidnapping (Land Civilian),05
+Crime : Piracy (Land Civilian),06
+Crime : Rape (Land Civilian),07
+Organization : Civilian (Land Civilian),08
+Organization : Displaced Person(s)- Refugee(s) and Evacuee(s),09
+Organization : Foreign Fighter(s),10
+Organization : Gang Member or Gang,11
+Organization : Government Organization,12
+Organization : Leader or Leadership 1,13
+Organization : Nongovernmental Organization Member or Nongovernmental Organization,14
+Organization : Coerced/Impressed Recruit,15
+Organization : Willing Recruit,16
+Organization : Religious or Religious Organization,17
+Organization : Targeted Individual or Organization,18
+Organization : Terrorist or Terrorist Organization,19
+Organization : Speaker,20
+Composite Loss : Accident (Land Civilian),21
+Composite Loss : Combat,22
+Composite Loss : Other (Land Civilian),23
+Crime : Loot,24

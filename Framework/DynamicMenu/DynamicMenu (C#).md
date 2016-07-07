@@ -3,7 +3,7 @@
 <!-- TODO: Write a brief abstract explaining this sample -->
  This sample shows how to display a dynamic context menu.   
  When you select features with this tool, the oids of the feaures will be displayed in a dynamic context menu.   
- When you click one of the Oids in this context menu, that feature will flash on the Map View  
+ When you click one of the OIDs in this context menu, that feature will flash on the Map View and display a pop-up.   
    
 
 
@@ -11,13 +11,14 @@
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
-Language:      C#
-Subject:       Framework
-Contributor:   ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:  Esri, http://www.esri.com
-Date:          4/1/2016
-ArcGIS Pro:    1.2
-Visual Studio: 2013, 2015
+Language:              C#
+Subject:               Framework
+Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
+Organization:          Esri, http://www.esri.com
+Date:                  5/6/2016
+ArcGIS Pro:            1.3
+Visual Studio:         2015
+.NET Target Framework: 4.6.1
 ```
 
 ##Resources
@@ -41,9 +42,9 @@ Visual Studio: 2013, 2015
  4. Open a map view. The map should contain a few feature layers.  
  5. Click on the Add-In tab on the ribbon.  
  5. Within this tab there is a Display Dynamic Menu tool. Click it to activate the tool.  
- 6. In the map click and drag a box around the features you want to display in a dynamic menu.  
+ 6. In the map click a point around which you want to identify features and display them in a dynamic menu.  
  7. A dynamic menu with the OIds of the features selected will display.  
- 8. Click one of the items in the menu. You will see the feature flash on the map.  
+ 8. Click one of the items in the menu. You will see the feature flash on the map and their attributes will be displayed in a pop-up.  
 ![UI](Screenshots/DynamicMenu.png)  
    
 
@@ -52,6 +53,6 @@ Visual Studio: 2013, 2015
 [](Esri Language: C-Sharp)​
 
 <p align = center><img src="http://esri.github.io/arcgis-pro-sdk/images/ArcGISPro.png"  alt="pre-req" align = "top" height = "20" width = "20" >
-<b> ArcGIS Pro 1.2 SDK for Microsoft .NET Framework</b>
+<b> ArcGIS Pro 1.3 SDK for Microsoft .NET Framework</b>
 </p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Home](https://github.com/Esri/arcgis-pro-sdk/wiki) | <a href="http://pro.arcgis.com/en/pro-app/sdk" target="_blank">ArcGIS Pro SDK</a> | <a href="http://pro.arcgis.com/en/pro-app/sdk/api-reference/index.html" target="_blank">API Reference</a> | [Requirements](#requirements) | [Download](#installing-arcgis-pro-sdk-for-net) |  <a href="http://github.com/esri/arcgis-pro-sdk-community-samples" target="_blank">Samples</a>

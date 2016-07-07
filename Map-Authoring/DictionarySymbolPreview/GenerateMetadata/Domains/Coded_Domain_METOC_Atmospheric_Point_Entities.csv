@@ -1,0 +1,130 @@
+Name,Value
+Unspecified,000000
+Pressure Systems : Low Pressure Center,110100
+Pressure Systems : Low Pressure Center : Cyclone Center,110101
+Pressure Systems : Low Pressure Center : Tropopause Low,110102
+Pressure Systems : High Pressure Center,110200
+Pressure Systems : High Pressure Center : Anticyclone Center,110201
+Pressure Systems : High Pressure Center : Tropopause High,110202
+Pressure Systems : Pressure Tendency : Rise Then Fall Higher,110501
+Pressure Systems : Pressure Tendency : Rise Then Steady,110502
+Pressure Systems : Pressure Tendency : Rise,110503
+Pressure Systems : Pressure Tendency : Rise Then Rise Higher,110504
+Pressure Systems : Pressure Tendency : Steady,110505
+Pressure Systems : Pressure Tendency : Fall Then Rise Lower,110506
+Pressure Systems : Pressure Tendency : Fall Then Steady,110507
+Pressure Systems : Pressure Tendency : Fall,110508
+Pressure Systems : Pressure Tendency : Rise Then Fall Lower,110509
+Turbulence : Light,120100
+Turbulence : Moderate,120200
+Turbulence : Severe,120300
+Turbulence : Extreme,120400
+Turbulence : Mountain Waves,120500
+Icing : Clear Icing : Light,130101
+Icing : Clear Icing : Moderate,130102
+Icing : Clear Icing : Severe,130103
+Icing : Rime Icing : Light,130201
+Icing : Rime Icing : Moderate,130202
+Icing : Rime Icing : Severe,130203
+Icing : Mixed Icing : Light,130301
+Icing : Mixed Icing : Moderate,130302
+Icing : Mixed Icing : Severe,130303
+Winds : Calm Winds,140100
+Winds : Wind Plot,140200
+Cloud Cover : Cloud Coverage : Clear Sky,150101
+Cloud Cover : Cloud Coverage : Few Coverage,150102
+Cloud Cover : Cloud Coverage : Scattered Coverage,150103
+Cloud Cover : Cloud Coverage : Broken Coverage,150104
+Cloud Cover : Cloud Coverage : Overcast Coverage,150105
+Cloud Cover : Cloud Coverage : Sky Totally or Partially Obscured,150106
+Weather Symbols : Rain : Intermittent Light,160101
+Weather Symbols : Rain : Continuous Light,160102
+Weather Symbols : Rain : Intermittent Moderate,160103
+Weather Symbols : Rain : Intermittent Moderate/Continuous Moderate,160104
+Weather Symbols : Rain : Intermittent Heavy,160105
+Weather Symbols : Rain : Intermittent Heavy/Continuous Heavy,160106
+Weather Symbols : Freezing Rain : Light,160201
+Weather Symbols : Freezing Rain : Moderate/Heavy,160202
+Weather Symbols : Rain Showers : Light,160301
+Weather Symbols : Rain Showers : Moderate/Heavy,160302
+Weather Symbols : Rain Showers : Torrential,160303
+Weather Symbols : Drizzle : Intermittent Light,160401
+Weather Symbols : Drizzle : Intermittent Light/Continuous Light,160402
+Weather Symbols : Drizzle : Intermittent Moderate,160403
+Weather Symbols : Drizzle : Intermittent Moderate/Continuous Moderate,160404
+Weather Symbols : Drizzle : Intermittent Heavy,160405
+Weather Symbols : Drizzle : Intermittent Heavy/Continuous Heavy,160406
+Weather Symbols : Freezing Drizzle : Light,160501
+Weather Symbols : Freezing Drizzle : Moderate/Heavy,160502
+Weather Symbols : Rain and Snow Mixed : Rain or Drizzle and Snow - Light,160601
+Weather Symbols : Rain and Snow Mixed : Rain or Drizzle and Snow - Moderate/Heavy,160602
+Weather Symbols : Rain and Snow Mixed : Rain and Snow Showers - Light,160603
+Weather Symbols : Rain and Snow Mixed : Rain and Snow Showers - Moderate/Heavy,160604
+Weather Symbols : Snow : Intermittent Light,160701
+Weather Symbols : Snow : Intermittent Light/Continuous Light,160702
+Weather Symbols : Snow : Intermittent Moderate,160703
+Weather Symbols : Snow : Intermittent Moderate/Continuous Moderate,160704
+Weather Symbols : Snow : Intermittent Heavy,160705
+Weather Symbols : Snow : Intermittent Heavy/Continuous Heavy,160706
+Weather Symbols : Snow : Blowing Snow - Light/Moderate,160707
+Weather Symbols : Snow : Blowing Snow - Heavy,160708
+Weather Symbols : Snow Grains,160800
+Weather Symbols : Snow Showers : Light,160901
+Weather Symbols : Snow Showers : Moderate/Heavy,160902
+Weather Symbols : Hail : Light not Associated with Thunder,161001
+Weather Symbols : Hail : Moderate/Heavy not Associated with Thunder,161002
+Weather Symbols : Ice Crystals (Diamond Dust),161100
+Weather Symbols : Ice Pellets (Sleet) : Light,161201
+Weather Symbols : Ice Pellets (Sleet) : Moderate,161202
+Weather Symbols : Ice Pellets (Sleet) : Heavy,161203
+Weather Symbols : Inversion,161300
+Weather Symbols : Storms : Thunderstorm - No Precipitation,161401
+Weather Symbols : Storms : Thunderstorm Light to Moderate with Rain/Snow - No Hail,161402
+Weather Symbols : Storms : Thunderstorm Heavy with Rain/Snow - No Hail,161403
+Weather Symbols : Storms : Thunderstorm Light to Moderate - With Hail,161404
+Weather Symbols : Storms : Thunderstorm Heavy - With Hail,161405
+Weather Symbols : Storms : Funnel Cloud (Tornado/Waterspout),161406
+Weather Symbols : Storms : Squall,161407
+Weather Symbols : Storms : Lightning,161408
+Weather Symbols : Fog : Shallow Patches,161501
+Weather Symbols : Fog : Shallow Continuous,161502
+Weather Symbols : Fog : Patchy,161503
+Weather Symbols : Fog : Sky Visible,161504
+Weather Symbols : Fog : Sky Obscured,161505
+Weather Symbols : Fog : Freezing-Sky Visible,161506
+Weather Symbols : Fog : Freezing-Sky Obscured,161507
+Weather Symbols : Mist,161600
+Weather Symbols : Smoke,161700
+Weather Symbols : Haze,161800
+Weather Symbols : Dust or Sand : Light to Moderate,161901
+Weather Symbols : Dust or Sand : Severe,161902
+Weather Symbols : Dust or Sand : Dust Devil,161903
+Weather Symbols : Dust or Sand : Blowing Dust or Sand,161904
+Weather Symbols : Tropical Storm Systems : Tropical Depression,162001
+Weather Symbols : Tropical Storm Systems : Tropical Storm,162002
+Weather Symbols : Tropical Storm Systems : Hurricane/Typhoon,162003
+Weather Symbols : Volcanic Eruption,162100
+Weather Symbols : Volcanic Eruption : Volcanic Ash,162101
+Weather Symbols : Tropopause Level,162200
+Weather Symbols : Freezing Level,162300
+Weather Symbols : Precipitation of Unknown Type and Intensity,162400
+State of the Ground : Without Snow or Measurable Ice Cover : Surface Dry Without Cracks or Appreciable Dust or Loose Sand,190101
+State of the Ground : Without Snow or Measurable Ice Cover : Surface Moist,190102
+State of the Ground : Without Snow or Measurable Ice Cover : Surface Wet-Standing Water in Small or Large Pools,190103
+State of the Ground : Without Snow or Measurable Ice Cover : Surface Flooded,190104
+State of the Ground : Without Snow or Measurable Ice Cover : Surface Frozen,190105
+State of the Ground : Without Snow or Measurable Ice Cover : Glaze (Thin Ice) on Ground,190106
+State of the Ground : Without Snow or Measurable Ice Cover : Loose Dry Dust or Sand not Covering Ground Completely,190107
+State of the Ground : Without Snow or Measurable Ice Cover : Thin Loose Dry Dust or Sand Covering Ground Completely,190108
+State of the Ground : Without Snow or Measurable Ice Cover : Moderate/Thick Loose Dry Dust or Sand Covering Ground Completely,190109
+State of the Ground : Without Snow or Measurable Ice Cover : Extremely Dry with Cracks,190110
+State of the Ground : With Snow or Measurable Ice Cover : Predominately Ice Covered,190201
+State of the Ground : With Snow or Measurable Ice Cover : Compact or Wet Snow (with or without Ice) Covering Less Than One-Half of Ground,190202
+State of the Ground : With Snow or Measurable Ice Cover : Compact or Wet Snow (with or without Ice) Covering  at Least One-Half of Ground-but Ground not Completely Covered,190203
+State of the Ground : With Snow or Measurable Ice Cover : Even Layer of Compact or Wet Snow Covering Ground Completely,190204
+State of the Ground : With Snow or Measurable Ice Cover : Uneven Layer of Compact or Wet Snow Covering Ground Completely,190205
+State of the Ground : With Snow or Measurable Ice Cover : Loose Dry Snow Covering Less Than One-Half of Ground,190206
+State of the Ground : With Snow or Measurable Ice Cover : Loose Dry Snow Covering at Least One-Half of Ground-but Ground not Completely Covered,190207
+State of the Ground : With Snow or Measurable Ice Cover : Even Layer of Loose Dry Snow Covering Ground Completely,190208
+State of the Ground : With Snow or Measurable Ice Cover : Uneven Layer of Loose Dry Snow Covering Ground Completely,190209
+State of the Ground : With Snow or Measurable Ice Cover : Snow Covering Ground Completely-Deep Drifts,190210

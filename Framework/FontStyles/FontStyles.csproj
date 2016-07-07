@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FontStyles</RootNamespace>
     <AssemblyName>FontStyles</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="ReadMe.md" />
     <None Include="Screenshots\Controls.png" />
     <None Include="Screenshots\XAML.png" />
   </ItemGroup>

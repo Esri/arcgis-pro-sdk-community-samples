@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
+
+
 <!--
 
    Copyright 2016 Esri
@@ -25,7 +27,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/arcgis/bin/ArcGIS.Desktop.Framework.xsd">
 
-  <AddInInfo id="{b705ce83-52aa-453f-8095-f6ae60994ce3}" version="1.0" desktopVersion="1.1.3051">
+  <AddInInfo id="{b705ce83-52aa-453f-8095-f6ae60994ce3}" version="1.0" desktopVersion="1.3.5777">
     <Name>BackStage_PropertyPage</Name>   
     <Description>Sample illustrating how to add a custom backstage tab into the backstage, add custom property pages into the Options backstage item, and save and restore project settings</Description>
     <Image>Images\AddinDesktop32.png</Image>

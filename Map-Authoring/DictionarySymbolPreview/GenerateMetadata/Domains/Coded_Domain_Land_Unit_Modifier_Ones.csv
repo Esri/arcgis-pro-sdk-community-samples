@@ -1,0 +1,80 @@
+Name,Value
+Unspecified,00
+Mobility : Air Mobile/Air Assault (US Only),01
+Capability : Area,02
+Capability : Attack 1,03
+Capability : Biological,04
+Capability : Border,05
+Capability : Bridging,06
+Capability : Chemical,07
+Capability : Close Protection,08
+Capability : Combat,09
+Capability : Command and Control,10
+Capability : Communications Contingency Package,11
+Capability : Construction,12
+Capability : Cross Cultural Communication,13
+Capability : Crowd and Riot Control,14
+Capability : Decontamination 1,15
+Capability : Detention,16
+Capability : Direct Communications,17
+Capability : Diving,18
+Capability : Division,19
+Capability : Dog,20
+Capability : Drilling,21
+Capability : Electro-Optical,22
+Capability : Enhanced,23
+Capability : Explosive Ordnance Disposal (EOD),24
+Capability : Fire Direction Center,25
+Capability : Force,26
+Capability : Forward,27
+Capability : Ground Station Module,28
+Capability : Landing Support,29
+Capability : Large Extension Node,30
+Capability : Maintenance,31
+Capability : Meteorological,32
+Capability : Mine Countermeasure,33
+Capability : Missile,34
+Capability : Mobile Advisor and Support,35
+Capability : Mobile Subscriber Equipment,36
+Capability : Mobility Support,37
+Capability : Movement Control Center,38
+Capability : Multinational,39
+Capability : Multinational Specialized Unit,40
+Capability : Multiple Rocket Launcher,41
+Capability : NATO Medical Role 1,42
+Capability : NATO Medical Role 2,43
+Capability : NATO Medical Role 3,44
+Capability : NATO Medical Role 4,45
+Capability : Naval,46
+Capability : Node Center,47
+Capability : Nuclear,48
+Capability : Operations,49
+Capability : Radar,50
+Capability : RFID Interrogator/Sensor,51
+Capability : Radiological,52
+Capability : Search and Rescue,53
+Capability : Security,54
+Capability : Sensor,55
+Capability : Sensor Control Module (SCM),56
+Capability : Signals Intelligence,57
+Capability : Single Shelter Switch,58
+Capability : Single Rocket Launcher,59
+Capability : Smoke,60
+Capability : Sniper,61
+Capability : Sound Ranging,62
+Capability : Special Operations Forces (SOF),63
+Capability : Special Weapons and Tactics,64
+Capability : Survey,65
+Capability : Tactical Exploitation,66
+Capability : Target Acquisition,67
+Capability : Topographic,68
+Capability : Utility 1,69
+Capability : Video Imagery (Combat Camera),70
+Composite Loss : Accident (Land Units),71
+Composite Loss : Other (Land Units),72
+Operation : Civilian (Land Units),73
+Capability : Antisubmarine Warfare,74
+Capability : Medevac,75
+Capability : Ranger,76
+Capability : Support 1,77
+Capability : Aviation,78

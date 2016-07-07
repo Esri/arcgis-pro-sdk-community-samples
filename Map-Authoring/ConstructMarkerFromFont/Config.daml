@@ -1,0 +1,59 @@
+<ArcGIS defaultAssembly="ConstructMarkerFromFont.dll" defaultNamespace="ConstructMarkerFromFont" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{fd270356-f2da-4c4c-9b4d-39819ee019d6}" version="1.0" desktopVersion="1.3.5777">
+    <Name>ConstructMarkerFromFont</Name>
+    <Description>Create a marker from a Font character and apply to a point layer.</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team</Author>
+    <Company>Esri, Inc</Company>
+    <Date>5/25/2016 1:41:29 PM, 2016</Date>
+    <Subject>Map Authoring</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <conditions>
+    <insertCondition id="construct_marker_singlePointFeatureLayerSelectedCondition" caption="A feature layer with a point geometry type is selected in the TOC">
+      <state id="construct_marker_singlePointFeatureLayerSelectedState"/>
+    </insertCondition>
+  </conditions>
+  <modules>
+    <insertModule id="ConstructMarkerFromFont_Module" className="Module1" autoLoad="true" caption="Module1">
+      <!--autoLoad set to true so that the conditions are set at start up-->
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="ConstructMarkerFromFont_Tab1" caption="New Tab">
+          <group refID="ConstructMarkerFromFont_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ConstructMarkerFromFont_Group1" caption="Group 1" appearsOnAddInTab="false">
+          <!-- host controls within groups -->
+         
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ConstructMarkerFromFont_Construct_Marker_ShowButton" caption="Construct Marker from Fonts" className="Construct_Marker_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png"
+                largeImage="Images\GenericButtonPurple32.png" condition="construct_marker_singlePointFeatureLayerSelectedCondition">
+          <tooltip heading="Show Dockpane">
+            Show Dockpane<disabledText />
+          </tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="ConstructMarkerFromFont_Construct_Marker" caption="Construct Marker from Fonts" className="Construct_MarkerViewModel" dock="group"
+                  dockWith="esri_core_contentsDockPane" delayLoadMessage="Select a point layer in the contents pane">
+          <content className="Construct_MarkerView" />
+        </dockPane>
+      </dockPanes>     
+    </insertModule>
+    <updateModule refID="esri_mapping">
+      <menus>
+        <updateMenu refID="esri_mapping_layerContextMenu">
+          <insertButton refID="ConstructMarkerFromFont_Construct_Marker_ShowButton" placeWith="esri_mapping_selectedLayerSymbologyButton"/>
+        </updateMenu>
+      </menus>
+    </updateModule>
+  </modules>
+</ArcGIS>

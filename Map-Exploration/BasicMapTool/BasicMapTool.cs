@@ -74,7 +74,7 @@ namespace BasicMapTool {
                     break;
                 case Key.Up:
                     if (_zMode) {
-                        camera.Z += 20;
+                        camera.Z += dz;
                     }
                     else {
                         camera.Y += dy;
@@ -82,7 +82,7 @@ namespace BasicMapTool {
                     break;
                 case Key.Down:
                     if (_zMode) {
-                        camera.Z -= 20;
+                        camera.Z -= dz;
                     }
                     else {
                         camera.Y -= dy;

@@ -1,0 +1,6 @@
+Name,Value
+Unspecified,00
+Sensor : Optical,01
+Sensor : Infrared,02
+Sensor : Radar,03
+Sensor : Signals Intelligence (SIGINT),04

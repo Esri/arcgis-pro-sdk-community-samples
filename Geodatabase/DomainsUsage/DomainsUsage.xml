@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DomainsUsage</name>
+    </assembly>
+    <members>
+        <member name="T:DomainsUsage.DomainsComboBox">
+            <summary>
+            Represents the ComboBox
+            </summary>
+        </member>
+        <member name="M:DomainsUsage.DomainsComboBox.#ctor">
+            <summary>
+            Combo Box contructor
+            </summary>
+        </member>
+        <member name="M:DomainsUsage.DomainsComboBox.UpdateDomainList(ArcGIS.Desktop.Mapping.Events.MapViewEventArgs)">
+            <summary>
+            This method makes sure
+            1. The Mapview is Active
+            2. There is at least one Layer selected
+            3. The selected Layer is a FeatureLayer
+            4. The selected Layer is backed by an Enterprise Sql Server Geodatabase FeatureClass
+            
+            If all of these hold good, the DatabaseClient is used to execute a query which creates
+            a Database Table containing the gdb_items records corresponding to all domains. The Table is
+            then opened using the API and the domains combobox populated. Finally, the Table is deleted
+            </summary>
+            <param name="mapViewEventArgs"></param>
+        </member>
+        <member name="M:DomainsUsage.DomainsComboBox.OnSelectionChange(ArcGIS.Desktop.Framework.Contracts.ComboBoxItem)">
+            <summary>
+            The MakeQueryLayer Geoprocessing tool is used to create a Query Layer consisting of
+            all the datasets which reference the selected domain 
+            </summary>
+            <param name="item">The newly selected combo box item</param>
+        </member>
+        <member name="T:DomainsUsage.Module1">
+            <summary>
+            This addin will list all domains in the workspace corresponding to the selected layer and on selecting a domain
+            a query layer will be generated which lists the datasets which reference the selected domains
+            
+            NOTE: In order to list the domains, the owner of the GDB_ITEMS is used which is inferred using the owner of the default version
+                  It is assumed that the default version will either be dbo.DEFAULT or sde.DEFAULT
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            2. Click Start button to open ArcGIS Pro.
+            3. ArcGIS Pro will open. 
+            4. Open a map view that contains atleast one Feature Layer whose source points to a Feature Class (From either a File Geodatabase or an Enterprise Geodatabase)
+            5. Make sure the Map Pane and the corresponding Table of Contents (TOC) Pane are Open and the Map Pane is Active
+            6. Click on the Add-In Tab
+            7. Observe that the Domains Combo Box is disabled until a SQL Server FeatureClass backed Feature Layer is selected in the TOC
+            8. On selecting a SQL Server FeatureClass backed layer, the combo box is enabled
+            9. The combobox lists all domains and selecting a domain will generate a Query Layer with the name "RelatedDomains"+ the domain name selected
+            10. The Query layer will list the datasets referencing the domain selected 
+            </remarks>
+        </member>
+        <member name="P:DomainsUsage.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:DomainsUsage.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="M:DomainsUsage.Module1.ExecuteCommand(System.String)">
+            <summary>
+            Generic implementation of ExecuteCommand to allow calls to
+            <see cref="M:ArcGIS.Desktop.Framework.FrameworkApplication.ExecuteCommand(System.String)"/> to execute commands in
+            your Module.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

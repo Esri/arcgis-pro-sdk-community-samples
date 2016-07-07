@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ConstructionTool</RootNamespace>
     <AssemblyName>ConstructionTool</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -112,6 +112,7 @@
     <AddInContent Include="Images\GenericButtonBlue32.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ReadMe.md" />
     <None Include="Screenshots\ScreenAttributes2.png" />
   </ItemGroup>
   <ItemGroup>

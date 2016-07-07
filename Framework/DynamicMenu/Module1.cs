@@ -23,7 +23,7 @@ namespace FeatureDynamicMenu
 {/// <summary>
  /// This sample shows how to display a dynamic context menu. 
  /// When you select features with this tool, the oids of the feaures will be displayed in a dynamic context menu. 
- /// When you click one of the Oids in this context menu, that feature will flash on the Map View
+ /// When you click one of the OIDs in this context menu, that feature will flash on the Map View and display a pop-up. 
  /// </summary>
  /// <remarks>
  /// 1. In Visual Studio click the Build menu. Then select Build Solution.
@@ -32,9 +32,9 @@ namespace FeatureDynamicMenu
  /// 4. Open a map view. The map should contain a few feature layers.
  /// 5. Click on the Add-In tab on the ribbon.
  /// 5. Within this tab there is a Display Dynamic Menu tool. Click it to activate the tool.
- /// 6. In the map click and drag a box around the features you want to display in a dynamic menu.
+ /// 6. In the map click a point around which you want to identify features and display them in a dynamic menu.
  /// 7. A dynamic menu with the OIds of the features selected will display.
- /// 8. Click one of the items in the menu. You will see the feature flash on the map.
+ /// 8. Click one of the items in the menu. You will see the feature flash on the map and their attributes will be displayed in a pop-up.
  ///![UI](Screenshots/DynamicMenu.png)
  /// </remarks>
     internal class Module1 : Module

@@ -1,0 +1,75 @@
+Name,Value
+Unspecified,000000
+Hydrography : Depth : Depth Area,120104
+Hydrography : Coastal Hydrography : Island,120202
+Hydrography : Coastal Hydrography : Beach,120203
+Hydrography : Coastal Hydrography : Water,120204
+Hydrography : Coastal Hydrography : Foreshore - Area,120206
+Hydrography : Ports and Harbors : Anchorage - Area,120306
+Hydrography : Ports and Harbors : Fish Traps - Area,120312
+Hydrography : Ports and Harbors : Drydock,120314
+Hydrography : Ports and Harbors : Offshore Loading Facility - Area,120318
+Hydrography : Aids to Navigation : Perches/Stakes - Area,120405
+Hydrography : Dangers/Hazards : Underwater Danger/Hazard,120503
+Hydrography : Dangers/Hazards : Foul Ground - Area,120505
+Hydrography : Dangers/Hazards : Kelp/Seaweed - Area,120507
+Hydrography : Dangers/Hazards : Discolored Water,120514
+Oceanography : Bioluminescence : Visual Detection Ratio (VDR) Level 1-2,130101
+Oceanography : Bioluminescence : VDR Level 2-3,130102
+Oceanography : Bioluminescence : VDR Level 3-4,130103
+Oceanography : Bioluminescence : VDR Level 4-5,130104
+Oceanography : Bioluminescence : VDR Level 5-6,130105
+Oceanography : Bioluminescence : VDR Level 6-7,130106
+Oceanography : Bioluminescence : VDR Level 7-8,130107
+Oceanography : Bioluminescence : VDR Level 8-9,130108
+Oceanography : Bioluminescence : VDR Level 9-10,130109
+Oceanography : Beach Slope : Flat,130201
+Oceanography : Beach Slope : Gentle,130202
+Oceanography : Beach Slope : Moderate,130203
+Oceanography : Beach Slope : Steep,130204
+Geophysics/Acoustics : MIW : MIW Bottom Sediments - Solid Rock,140101
+Geophysics/Acoustics : MIW : MIW Bottom Sediments - Clay,140102
+Geophysics/Acoustics : MIW : MIW Bottom Sediments - Very Coarse Sand,140103
+Geophysics/Acoustics : MIW : MIW Bottom Sediments - Coarse Sand,140104
+Geophysics/Acoustics : MIW : MIW Bottom Sediments - Medium Sand,140105
+Geophysics/Acoustics : MIW : MIW Bottom Sediments - Fine Sand,140106
+Geophysics/Acoustics : MIW : MIW Bottom Sediments - Very Fine Sand,140107
+Geophysics/Acoustics : MIW : MIW Bottom Sediments - Very Fine Silt,140108
+Geophysics/Acoustics : MIW : MIW Bottom Sediments - Fine Silt,140109
+Geophysics/Acoustics : MIW : MIW Bottom Sediments - Medium Silt,140110
+Geophysics/Acoustics : MIW : MIW Bottom Sediments - Coarse Silt,140111
+Geophysics/Acoustics : MIW : MIW Bottom Sediments - Boulders,140112
+Geophysics/Acoustics : MIW : MIW Bottom Sediments - Cobbles-Oyster Shells,140113
+Geophysics/Acoustics : MIW : MIW Bottom Sediments - Pebbles-Shells,140114
+Geophysics/Acoustics : MIW : MIW Bottom Sediments - Sand and Shells,140115
+Geophysics/Acoustics : MIW : MIW Bottom Sediment - Land,140116
+Geophysics/Acoustics : MIW : MIW Bottom Sediment - No Data,140117
+Geophysics/Acoustics : MIW : Bottom Roughness - Smooth,140118
+Geophysics/Acoustics : MIW : Bottom Roughness - Moderate,140119
+Geophysics/Acoustics : MIW : Bottom Roughness - Rough,140120
+Geophysics/Acoustics : MIW : Clutter (Bottom) - Low,140121
+Geophysics/Acoustics : MIW : Clutter (Bottom) - Medium,140122
+Geophysics/Acoustics : MIW : Clutter (Bottom) - High,140123
+Geophysics/Acoustics : MIW : Impact Burial - 0%,140124
+Geophysics/Acoustics : MIW : Impact Burial - 0-10%,140125
+Geophysics/Acoustics : MIW : Impact Burial - 10-20%,140126
+Geophysics/Acoustics : MIW : Impact Burial - 20-75%,140127
+Geophysics/Acoustics : MIW : Impact Burial - >75%,140128
+Geophysics/Acoustics : MIW : MIW Bottom Category A,140129
+Geophysics/Acoustics : MIW : MIW Bottom Category B,140130
+Geophysics/Acoustics : MIW : MIW Bottom Category C,140131
+Geophysics/Acoustics : MIW : MIW Bottom Type A1,140132
+Geophysics/Acoustics : MIW : MIW Bottom Type A2,140133
+Geophysics/Acoustics : MIW : MIW Bottom Type A3,140134
+Geophysics/Acoustics : MIW : MIW Bottom Type B1,140135
+Geophysics/Acoustics : MIW : MIW Bottom Type B2,140136
+Geophysics/Acoustics : MIW : MIW Bottom Type B3,140137
+Geophysics/Acoustics : MIW : MIW Bottom Type C1,140138
+Geophysics/Acoustics : MIW : MIW Bottom Type C2,140139
+Geophysics/Acoustics : MIW : MIW Bottom Type C3,140140
+Limits : Maritime Area,150200
+Limits : Swept Area,150400
+Limits : Training Area,150500
+Limits : Operator-Defined,150600
+Man-Made Structures : Submerged Crib,160200
+Man-Made Structures : Oil/Gas Rig Field,160700

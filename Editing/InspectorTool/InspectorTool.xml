@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InspectorTool</name>
+    </assembly>
+    <members>
+        <member name="T:InspectorTool.AttributeControlView">
+            <summary>
+            Interaction logic for AttributeControlView.xaml
+            </summary>
+            <summary>
+            AttributeControlView
+            </summary>
+        </member>
+        <member name="M:InspectorTool.AttributeControlView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:InspectorTool.AttributeControlViewModel.AttributeInspector">
+            <summary>
+            Property containing an instance for the inspector.
+            </summary>
+        </member>
+        <member name="P:InspectorTool.AttributeControlViewModel.InspectorViewModel">
+            <summary>
+            Access to the view model of the inspector
+            </summary>
+        </member>
+        <member name="P:InspectorTool.AttributeControlViewModel.SelectedMapFeatures">
+            <summary>
+            Dictionary holding the selected features in the map to populate the tree view for 
+            layers and respective selected features.
+            </summary>
+        </member>
+        <member name="P:InspectorTool.AttributeControlViewModel.InspectorView">
+            <summary>
+            Property for the inspector UI.
+            </summary>
+        </member>
+        <member name="T:InspectorTool.InspectorToolModule">
+            <summary>
+            This sample demonstrates an Editing tool using the inspector class to modify data.
+            </summary>
+            <remarks>
+            1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+            1. Make sure that the Sample data is unzipped in c:\data 
+            1. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro will open, select the FeatureTest.aprx project
+            1. Activate the EDIT ribbon and click the modify button.
+            1. Navigate to the Pro SDK Samples node in the Modify Features pane.
+            ![UI](Screenshots/InspectorTool.PNG)
+            1. Click the 'Select Inspector Tool' and draw rectangle around point features.
+            ![UI](Screenshots/SelectionPointFeatures.PNG)
+            1. Click on an ObjectID in the tree view.
+            ![UI](Screenshots/SelectedFeaturesTreeViewAndInspector.PNG)
+            1. Change the text for the 'Description' attribute.
+            ![UI](Screenshots/ChangeDescriptionValue.PNG)
+            </remarks>
+        </member>
+        <member name="F:InspectorTool.InspectorToolModule._this">
+             <summary>
+             This tool shows how to:
+             * Use an embeddable control for sketch tools
+             * Use the inspector class to show and edit attributes
+             </summary>
+            
+        </member>
+        <member name="P:InspectorTool.InspectorToolModule.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:InspectorTool.InspectorToolModule.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="M:InspectorTool.UseInspectorTool.OnToolActivateAsync(System.Boolean)">
+            <summary>
+            Prepares the content for the embeddable control when the tool is activated.
+            </summary>
+            <param name="hasMapViewChanged"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InspectorTool.UseInspectorTool.FeatureAttributeChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Delegate for the PropertyChanged event.
+            </summary>
+            <param name="sender">Attribute who initiated the change.</param>
+            <param name="e">Provides data for the PropertyChanged event.</param>
+        </member>
+        <member name="M:InspectorTool.UseInspectorTool.OnToolDeactivateAsync(System.Boolean)">
+            <summary>
+            Clears resources when the tool is deactivated.
+            </summary>
+            <param name="hasMapViewChanged"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InspectorTool.UseInspectorTool.OnSketchCompleteAsync(ArcGIS.Core.Geometry.Geometry)">
+            <summary>
+            Occurs once the user completed the sketch and select the information for the
+            embeddable control
+            </summary>
+            <param name="geometry">Sketch geometry in map coordinates.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

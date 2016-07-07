@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentifyWindow", "IdentifyWindow\IdentifyWindow.csproj", "{D213C0AA-7D64-45E9-8A91-AC81BAB0E293}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentifyWindow", "IdentifyWindow.csproj", "{D213C0AA-7D64-45E9-8A91-AC81BAB0E293}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2016 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+
+<ArcGIS defaultAssembly="OverlayExamples.dll" defaultNamespace="OverlayExamples" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{53125852-9041-4d4b-bbd2-9aafb4aac2fe}" version="1.0" desktopVersion="1.3.5777">
+    <Name>GraphicOverlay Examples</Name>
+    <Description>This sample contains three different examples of working with Pro's graphic overlay</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>arcgisprosdk</Author>
+    <Company>Esri</Company>
+    <Date>4/20/2016 5:52:03 PM, 2016</Date>
+    <Subject>Map Exploration</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="OverlayExamples_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="OverlayExamples_Tab1" caption="New Tab">
+          <group refID="OverlayExamples_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="OverlayExamples_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="G1" >
+          <!-- host controls within groups -->
+          <tool refID="OverlayExamples_AddOverlayTool" size="large" />
+          <tool refID="OverlayExamples_AddOverlayWithSnappingTool" size="large" />
+          <tool refID="OverlayExamples_AddOverlayTrackMouseTool" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <tool id="OverlayExamples_AddOverlayTool" caption="Add Overlay" className="AddOverlayTool" loadOnClick="true" smallImage="Images\Robot16.png" largeImage="Images\Robot32.png" condition="esri_mapping_mapPane" keytip="T1">
+          <tooltip heading="Sketch Line">Sketch a line and add it to the graphics overlay<disabledText /></tooltip>
+        </tool>
+        <tool id="OverlayExamples_AddOverlayWithSnappingTool" caption="Add Overlay With Snapping" className="AddOverlayWithSnappingTool" loadOnClick="true" smallImage="Images\Spaceship16.png" largeImage="Images\Spaceship32.png" condition="esri_mapping_mapPane" keytip="T2">
+          <tooltip heading="Sketch Line with Snapping">Sketch a line snapping to any line layers and add it to the graphics overlay<disabledText /></tooltip>
+        </tool>
+        <tool id="OverlayExamples_AddOverlayTrackMouseTool" caption="Add Overlay Track Mouse" className="AddOverlayTrackMouseTool" loadOnClick="true" smallImage="Images\UFO16.png" largeImage="Images\UFO32.png" condition="esri_mapping_mapViewingMode2DCondition" keytip="T3">
+          <tooltip heading="Add and Move Point (2D Only)">Add a point graphic to any 2D line feature and drag the point along the line<disabledText /></tooltip>
+        </tool>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

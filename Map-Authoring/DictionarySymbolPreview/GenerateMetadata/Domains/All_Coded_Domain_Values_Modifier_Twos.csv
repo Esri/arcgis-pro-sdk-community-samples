@@ -1,0 +1,150 @@
+Name,Value
+Not Applicable,00
+Cargo/Transport Capacity : Heavy,01
+Cargo/Transport Capacity : Medium,02
+Cargo/Transport Capacity : Light,03
+Re-fueling Capability : Boom-Only,04
+Re-fueling Capability : Drogue-Only,05
+Re-fueling Capability : Boom and Drogue,06
+Range : Close Range,07
+Range : Short Range,08
+Range : Medium Range,09
+Range : Long Range,10
+Track Link Availability : Downlinked,11
+Unspecified,00
+Missile Destination : Air,01
+Missile Destination : Surface,02
+Missile Destination : Subsurface,03
+Missile Destination : Space,04
+Missile Status : Launched,05
+Missile Status : Missile,06
+Missile Type-BMD : Patriot,07
+Missile Type-AAW : Standard Missile-2 (SM-2),08
+Missile Type-AAW : Standard Missile-6 (SM-6),09
+Missile Type-AAW : Evolved Sea Sparrow Missile (ESSM),10
+Missile Type-AAW : Rolling Airframe Missile (RAM),11
+Missile Range : Short Range (Air Missile),12
+Missile Range : Medium Range (Air Missile),13
+Missile Range : Intermediate Range (Air Missile),14
+Missile Range : Long Range (Air Missile),15
+Missile Range : Intercontinental (Air Missile),16
+Unspecified,00
+Sensor : Optical,01
+Sensor : Infrared,02
+Sensor : Radar,03
+Sensor : Signals Intelligence (SIGINT),04
+Unspecified,00
+Missile Range : Short Range (Space Missile),01
+Missile Range : Medium Range (Space Missile),02
+Missile Range : Intermediate Range (Space Missile),03
+Missile Range : Long Range (Space Missile),04
+Missile Range : Intercontinental (Space Missile),05
+Missile Type - BMD : Arrow,06
+Missile Type - BMD : Ground-Based Interceptor (GBI),07
+Missile Type - BMD : Patriot,08
+Missile Type - BMD : Standard Missile - Terminal Phase (SM-T),09
+Missile Type - BMD : Standard Missile - 3 (SM-3),10
+Missile Type - BMD : Terminal High-Altitude Area Defense (THAAD),11
+Launch Origin : Space 2,12
+Unspecified,00
+Mobility : Airborne,01
+Mobility : Arctic,02
+Capability : Battle Damage Repair,03
+Mobility : Bicycle Equipped,04
+Close Range and Support : Casualty Staging,05
+Capability : Clearing,06
+Capability : Close Range,07
+Capability : Control,08
+Capability : Decontamination 2,09
+Capability : Demolition,10
+Capability : Dental,11
+Capability : Digital,12
+Capability : Enhanced Position Location Reporting System (EPLRS),13
+Capability : Equipment,14
+Capability : Heavy,15
+Capability : High Altitude,16
+Capability : Intermodal,17
+Capability : Intensive Care,18
+Capability : Light,19
+Capability : Laboratory,20
+Capability : Launcher,21
+Capability : Long Range,22
+Capability : Low Altitude,23
+Capability : Medium,24
+Capability : Medium Altitude,25
+Capability : Medium Range,26
+Capability : Mountain,27
+Capability : High to Medium Altitude,28
+Capability : Multi-Channel,29
+Capability : Optical (Flash),30
+Capability : Pack Animal,31
+Capability : Patient Evacuation Coordination,32
+Capability : Preventive Maintenance,33
+Capability : Psychological,34
+Capability : Radio Relay Line of Sight,35
+Mobility : Railroad,36
+Capability : Recovery (Unmanned Systems),37
+Capability : Recovery (Maintenance),38
+Capability : Rescue Coordination Center,39
+Mobility : Riverine,40
+Capability : Single Channel,41
+Mobility : Ski,42
+Capability : Short Range,43
+Capability : Strategic,44
+Capability : Support 2,45
+Capability : Tactical,46
+Mobility : Towed,47
+Capability : Troop,48
+Mobility : Vertical or Short Take-Off and Landing (VTOL/VSTOL),49
+Capability : Veterinary,50
+Mobility : Wheeled,51
+Capability : High to Low Altitude,52
+Capability : Medium to Low Altitude,53
+Capability : Attack 2,54
+Capability : Refuel,55
+Capability : Utility 2,56
+Capability : Combat Search and Rescue,57
+Unspecified,00
+Organization : Leader or Leadership 2,01
+Unspecified,00
+No Category Listed : Biological,01
+No Category Listed : Chemical,02
+No Category Listed : Nuclear,03
+No Category Listed : Radiological,04
+No Category Listed : Atomic Energy Reactor,05
+No Category Listed : Nuclear Material Production,06
+No Category Listed : Nuclear Material Storage,07
+No Category Listed : Weapons Grade,08
+Unspecified,00
+Ship Propulsion : Nuclear Powered,01
+Ship Capacity : Heavy,02
+Ship Capacity : Light,03
+Ship Capacity : Medium,04
+Cargo Capacity : Dock,05
+Cargo Capacity : Logistics,06
+Cargo Capacity : Tank,07
+Cargo Capacity : Vehicle,08
+Ship Mobility : Fast,09
+Ship Mobility : Air-Cushioned (US),10
+Ship Mobility : Air-Cushioned (NATO),11
+Ship Mobility : Hydrofoil,12
+USV Control : Autonomous Control,13
+USV Control : Remotely Piloted,14
+USV Control : Expendable,15
+Unspecified,00
+Ship Propulsion : Air Independent Propulsion,01
+Ship Propulsion : Diesel Electric General,02
+Ship Propulsion : Diesel - Type 1,03
+Ship Propulsion : Diesel - Type 2,04
+Ship Propulsion : Diesel - Type 3,05
+Ship Propulsion : Nuclear Powered General,06
+Ship Propulsion : Nuclear - Type 1,07
+Ship Propulsion : Nuclear - Type 2,08
+Ship Propulsion : Nuclear - Type 3,09
+Ship Propulsion : Nuclear - Type 4,10
+Ship Propulsion : Nuclear - Type 5,11
+Ship Propulsion : Nuclear - Type 6,12
+Ship Propulsion : Nuclear - Type 7,13
+UUV Control : Autonomous Control,14
+UUV Control : Remotely Piloted,15
+UUV Control : Expendable,16

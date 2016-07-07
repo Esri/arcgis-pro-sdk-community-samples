@@ -1,0 +1,42 @@
+<ArcGIS defaultAssembly="MapToolWithDynamicMenu.dll" defaultNamespace="MapToolWithDynamicMenu" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{2eef1def-4e72-423e-958d-0e76aa55444a}" version="1.0" desktopVersion="1.3.5777">
+    <Name>MapToolWithDynamicMenu</Name>
+    <Description>MapToolWithDynamicMenu description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>Wolfgang</Author>
+    <Company>Acme</Company>
+    <Date>5/5/2016 5:41:27 AM, 2016</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="MapToolWithDynamicMenu_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="MapToolWithDynamicMenu_Tab1" caption="New Tab">
+          <group refID="MapToolWithDynamicMenu_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="MapToolWithDynamicMenu_Group1" caption="Group 1" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <tool refID="MapToolWithDynamicMenu_MapToolShowMenu" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <dynamicMenu id="DynamicMenu_SelectPoint"
+              className="DynamicSelectPointMenu"
+              caption="Point Selection" />
+        <!-- add your controls here -->
+        <tool id="MapToolWithDynamicMenu_MapToolShowMenu" caption="Show Selection Pop-up" 
+              className="MapToolShowMenu" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" 
+              largeImage="Images\GenericButtonRed32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Show Selection Pop-up">Click on overlapping point features on this map to pop-up a feature selection menu.<disabledText /></tooltip>
+        </tool>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

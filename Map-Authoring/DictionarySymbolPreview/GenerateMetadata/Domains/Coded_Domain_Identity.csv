@@ -1,0 +1,8 @@
+Name,Value
+Pending,0
+Unknown,1
+Assumed Friend,2
+Friend,3
+Neutral,4
+Suspect/Joker,5
+Hostile/Faker,6

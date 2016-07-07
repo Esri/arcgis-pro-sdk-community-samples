@@ -1,0 +1,10 @@
+Name,Value
+Unspecified,00
+Launch Origin : Air,01
+Launch Origin : Surface,02
+Launch Origin : Subsurface,03
+Launch Origin : Space,04
+Missile Class : Anti-Ballistic,05
+Missile Class : Ballistic (Air Missile),06
+Missile Class : Cruise,07
+Missile Class : Interceptor (Air Missile),08

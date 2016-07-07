@@ -1,0 +1,78 @@
+Name,Value
+Unspecified,000000
+Ice Systems : Icebergs : Many Icebergs,110101
+Ice Systems : Icebergs : Belts and Strips,110102
+Ice Systems : Icebergs : General,110103
+Ice Systems : Icebergs : Many Icebergs - General,110104
+Ice Systems : Icebergs : Bergy Bit,110105
+Ice Systems : Icebergs : Many Bergy Bits,110106
+Ice Systems : Icebergs : Growler,110107
+Ice Systems : Icebergs : Many Growlers,110108
+Ice Systems : Icebergs : Floeberg,110109
+Ice Systems : Icebergs : Ice Island,110110
+Ice Systems : Ice Concentration : Bergy Water,110201
+Ice Systems : Ice Concentration : Water with Radar Targets,110202
+Ice Systems : Ice Concentration : Ice Free,110203
+Ice Systems : Dynamic Processes : Convergence,110301
+Ice Systems : Dynamic Processes : Divergence,110302
+Ice Systems : Dynamic Processes : Shearing or Shear Zone,110303
+Ice Systems : Dynamic Processes : Ice Drift (Direction),110304
+Ice Systems : Sea Ice,110400
+Ice Systems : Sea Ice : Ice Thickness (Observed),110401
+Ice Systems : Sea Ice : Ice Thickness (Estimated),110402
+Ice Systems : Sea Ice : Melt Puddles or Flooded Ice,110403
+Ice Systems : Snow Cover,110700
+Ice Systems : Snow Cover : Sastrugi (with Orientation),110701
+Ice Systems : Topographical Features : Ridges or Hummocks,110801
+Ice Systems : Topographical Features : Rafting,110802
+Ice Systems : Topographical Features : Jammed Brash Barrier,110803
+Hydrography : Depth : Soundings,120101
+Hydrography : Ports and Harbors : Berths (Onshore),120302
+Hydrography : Ports and Harbors : Berths (Anchor),120303
+Hydrography : Ports and Harbors : Anchorage - Point,120304
+Hydrography : Ports and Harbors : Call in Point,120307
+Hydrography : Ports and Harbors : Fishing Harbor - Point,120309
+Hydrography : Ports and Harbors : Fish Weirs - Point,120310
+Hydrography : Ports and Harbors : Fish Stakes - Point,120311
+Hydrography : Ports and Harbors : Landing Place,120315
+Hydrography : Ports and Harbors : Offshore Loading Facility - Point,120316
+Hydrography : Ports and Harbors : Landing Ring,120321
+Hydrography : Ports and Harbors : Ferry Crossing,120322
+Hydrography : Ports and Harbors : Cable Ferry Crossing,120323
+Hydrography : Ports and Harbors : Dolphin,120324
+Hydrography : Aids to Navigation : Beacon,120401
+Hydrography : Aids to Navigation : Buoy Default,120402
+Hydrography : Aids to Navigation : Marker,120403
+Hydrography : Aids to Navigation : Perches/Stakes - Point,120404
+Hydrography : Aids to Navigation : Light,120406
+Hydrography : Aids to Navigation : Light Vessel/Light Ship,120408
+Hydrography : Aids to Navigation : Lighthouse,120409
+Hydrography : Dangers/Hazards : Rock Submerged,120501
+Hydrography : Dangers/Hazards : Rock Awashed,120502
+Hydrography : Dangers/Hazards : Foul Ground - Point,120504
+Hydrography : Dangers/Hazards : Kelp/Seaweed - Point,120506
+Hydrography : Dangers/Hazards : Snags/Stumps,120508
+Hydrography : Dangers/Hazards : Wreck (Uncovers),120509
+Hydrography : Dangers/Hazards : Wreck (Submerged),120510
+Hydrography : Dangers/Hazards : Eddies/Overfalls/Tide Rips,120513
+Hydrography : Bottom Features : Bottom Characteristics - Sand,120601
+Hydrography : Bottom Features : Bottom Characteristics - Mud,120602
+Hydrography : Bottom Features : Bottom Characteristics - Clay,120603
+Hydrography : Bottom Features : Bottom Characteristics - Silt,120604
+Hydrography : Bottom Features : Bottom Characteristics - Stones,120605
+Hydrography : Bottom Features : Bottom Characteristics - Gravel,120606
+Hydrography : Bottom Features : Bottom Characteristics - Pebbles,120607
+Hydrography : Bottom Features : Bottom Characteristics - Cobbles,120608
+Hydrography : Bottom Features : Bottom Characteristics - Rock,120609
+Hydrography : Bottom Features : Bottom Characteristics - Coral,120610
+Hydrography : Bottom Features : Bottom Characteristics - Shell,120611
+Hydrography : Bottom Features : Qualifying Terms - Fine,120612
+Hydrography : Bottom Features : Qualifying Terms - Medium,120613
+Hydrography : Bottom Features : Qualifying Terms - Coarse,120614
+Hydrography : Tide and Current : Water Turbulence,120701
+Hydrography : Tide and Current : Tide Data Point,120704
+Hydrography : Tide and Current : Tide Gauge,120705
+Man-Made Structures : Ford,160400
+Man-Made Structures : Lock,160500
+Man-Made Structures : Oil/Gas Rig,160600
+Man-Made Structures : Pile/Piling/Post,160900

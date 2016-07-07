@@ -1,0 +1,38 @@
+﻿<Window x:Class="MagnifierWindow.MapControlWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mapControls="clr-namespace:ArcGIS.Desktop.Mapping.Controls;assembly=ArcGIS.Desktop.Mapping"
+        xmlns:local="clr-namespace:MagnifierWindow"
+        mc:Ignorable="d"
+        Title="MapControlWindow" Height="300" Width="300"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Topmost="True"
+    >
+    <Grid>
+        <Label Name="MoveFromHere" Grid.Row="0" FontWeight="Bold" Content="Magnifier" HorizontalContentAlignment="Center" Background="LightGray" 
+               VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="25" />
+        <mapControls:MapControl Name="mapControl" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="275"
+                                ViewContent="{Binding Path=MapContent}" 
+                                Camera="{Binding CameraProperty}" >
+
+            <mapControls:MapControl.OverlayControl>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                                        
+                    <Label Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="Red"  Background="WhiteSmoke" FontWeight="Bold" FontSize="14"
+                              Content="{Binding CurrentGeoCoordinate}">
+                    </Label>
+                    
+                </Grid>
+            </mapControls:MapControl.OverlayControl>
+            
+        </mapControls:MapControl>
+
+    </Grid>
+</Window>

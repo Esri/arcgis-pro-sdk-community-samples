@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 
+
+
 <!--Copyright 2015 Esri
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -14,7 +16,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.-->
 <ArcGIS defaultAssembly="WorkflowSample.dll" defaultNamespace="WorkflowSample" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{5058f440-a01b-4015-9144-a9ce2527af6d}" version="1.0" desktopVersion="1.1.3046">
+  <AddInInfo id="{5058f440-a01b-4015-9144-a9ce2527af6d}" version="1.0" desktopVersion="1.3.5777">
     <Name>Job Management App</Name>
     <Description>Pro Add-in for Workflow Manager</Description>
     <Image>Images\AddinDesktop32.png</Image>

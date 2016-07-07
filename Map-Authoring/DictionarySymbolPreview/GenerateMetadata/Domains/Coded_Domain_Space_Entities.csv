@@ -1,0 +1,36 @@
+Name,Value
+Unspecified,000000
+Military (Space),110000
+Military (Space) : Space Vehicle,110100
+Military (Space) : Re-Entry Vehicle,110200
+Military (Space) : Planet Lander,110300
+Military (Space) : Orbiter Shuttle,110400
+Military (Space) : Capsule,110500
+Military (Space) : Satellite- General,110600
+Military (Space) : Satellite,110700
+Military (Space) : Antisatellite Weapon,110800
+Military (Space) : Astronomical Satellite,110900
+Military (Space) : Biosatellite,111000
+Military (Space) : Communications Satellite,111100
+Military (Space) : Earth Observation Satellite,111200
+Military (Space) : Miniaturized Satellite,111300
+Military (Space) : Navigational Satellite,111400
+Military (Space) : Reconnaissance Satellite,111500
+Military (Space) : Space Station,111600
+Military (Space) : Tethered Satellite,111700
+Military (Space) : Weather Satellite,111800
+Military (Space) : Space Launched Vehicle (SLV),111900
+Civilian (Space),120000
+Civilian (Space) : Orbiter Shuttle,120100
+Civilian (Space) : Capsule,120200
+Civilian (Space) : Satellite,120300
+Civilian (Space) : Astronomical Satellite,120400
+Civilian (Space) : Biosatellite,120500
+Civilian (Space) : Communications Satellite,120600
+Civilian (Space) : Earth Observation Satellite,120700
+Civilian (Space) : Miniaturized Satellite,120800
+Civilian (Space) : Navigational Satellite,120900
+Civilian (Space) : Space Station,121000
+Civilian (Space) : Tethered Satellite,121100
+Civilian (Space) : Weather Satellite,121200
+Manual Track (Space),130000
