@@ -1,7 +1,7 @@
-##OverlayExamples
+##AddDeleteFieldToFromFeatureClass
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample contains three different examples of working with Pro's graphic overlay  
+This sample shows how to use Geo Processing to add and remove a fields from a geodatabase.  
   
 
 
@@ -10,7 +10,7 @@ This sample contains three different examples of working with Pro's graphic over
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C# 6.0
-Subject:               Map Exploration
+Subject:               Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
 Date:                  7/8/2016
@@ -36,28 +36,21 @@ Visual Studio:         2015
 
 ##How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in c:\data  
-1. Before you run the sample verify that the project C:\data\SDK\SDK 1.1.aprx"C:\Data\FeatureTest\FeatureTest.aprx" is present since this is required to run the sample.  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
-1. Open the "C:\Data\FeatureTest\FeatureTest.aprx" project.  
-1. Click on the Add-In tab on the ribbon.  
-Playing with the add-in:    
-There are 3 examples of working with the graphic overlay:    
-  
-1. "Add Overlay:" Sketch a line anywhere. Each time you sketch, the previous graphic is erased  
+1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\FeatureTest\FeatureTest.aprx" is available.  
+1. Open this solution in Visual Studio 2015.    
+1. Click the build menu and select Build Solution.  
+1. Click the Start button to open ArCGIS Pro. ArcGIS Pro will open.    
+1. Open the "C:\Data\FeatureTest\FeatureTest.aprx" project.    
+1. Click on the Add-in tab and verify that a "FeatureClass Schema" group was added.    
+1. Open the "Attribute table" for the topmost (first) layer.  This will later allow you to view the schema change in real time.  
 ![UI](Screenshots/Screen1.png)  
   
-1. "Add Overlay With Snapping:" Sketch a line anywhere but use snapping. The graphic will snap to existing line features  
-![UI](Screenshots/Screen2.png)  
+1. Note the field names in the attribute table for the first layer.  
+1. Click the "Add a new field" button and check that the field "Alias Name Added Field" was added to the attribute table.  
+![UI](Screenshots/Screen2.png  
   
-1. "Add Overlay Track Mouse:" Digitize a point on top of a line. You have to click on a line feature. (2D Only)  
-For the third example, hold the mouse down to drag the graphic back and forth along the 2D line.  
+1. Click the "Delete the new Field" button and check that the field "Alias Name Added Field" is successfully removed from the attribute table.  
 ![UI](Screenshots/Screen3.png)  
-Each mouse click will place a new graphic (and erase the previous one).  
-![UI](Screenshots/Screen4.png)  
   
 
 

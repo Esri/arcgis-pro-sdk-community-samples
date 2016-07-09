@@ -77,7 +77,7 @@ Read the [ProGuide: Installation and Upgrade](http://github.com/Esri/arcgis-pro-
 
 ##ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 82 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 83 ArcGIS Pro samples that are included in this repository.  
 
 ####Content
 
@@ -138,6 +138,7 @@ Below is the list of 82 ArcGIS Pro samples that are included in this repository.
 
 ####Geodatabase
 
+* [AddDeleteFieldToFromFeatureClass (c#)](../../tree/master/Geodatabase/AddDeleteFieldToFromFeatureClass)  
 * [DeleteFeaturesBasedOnSubtype (c#)](../../tree/master/Geodatabase/DeleteFeaturesBasedOnSubtype)  
 * [DeleteFeaturesBasedOnSubtypeVersioned (c#)](../../tree/master/Geodatabase/DeleteFeaturesBasedOnSubtypeVersioned)  
 * [DomainsUsage (c#)](../../tree/master/Geodatabase/DomainsUsage)  

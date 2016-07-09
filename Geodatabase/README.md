@@ -13,6 +13,7 @@ This repository contains ArcGIS Pro Add-In Samples for the ArcGIS Pro 1.3 SDK fo
 
 This folder contains ArcGIS Pro Add-In Samples that fall under the 'Geodatabase' topic:
 
+* [AddDeleteFieldToFromFeatureClass (c#)](../../../tree/master/Geodatabase/AddDeleteFieldToFromFeatureClass)  
 * [DeleteFeaturesBasedOnSubtype (c#)](../../../tree/master/Geodatabase/DeleteFeaturesBasedOnSubtype)  
 * [DeleteFeaturesBasedOnSubtypeVersioned (c#)](../../../tree/master/Geodatabase/DeleteFeaturesBasedOnSubtypeVersioned)  
 * [DomainsUsage (c#)](../../../tree/master/Geodatabase/DomainsUsage)  
