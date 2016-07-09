@@ -44,11 +44,9 @@ Visual Studio:         2015
 1. Click on the Add-in tab and verify that a "FeatureClass Schema" group was added.    
 1. Open the "Attribute table" for the topmost (first) layer.  This will later allow you to view the schema change in real time.  
 ![UI](Screenshots/Screen1.png)  
-  
 1. Note the field names in the attribute table for the first layer.  
 1. Click the "Add a new field" button and check that the field "Alias Name Added Field" was added to the attribute table.  
-![UI](Screenshots/Screen2.png  
-  
+![UI](Screenshots/Screen2.png)
 1. Click the "Delete the new Field" button and check that the field "Alias Name Added Field" is successfully removed from the attribute table.  
 ![UI](Screenshots/Screen3.png)  
   
