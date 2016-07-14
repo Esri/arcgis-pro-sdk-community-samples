@@ -1,0 +1,29 @@
+﻿<ArcGIS defaultAssembly="RestartSketch.dll" defaultNamespace="RestartSketch" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{d9d82b89-cc5f-4623-8013-91b09afd8d4c}" version="1.0" desktopVersion="1.3">
+    <Name>RestartSketch</Name>
+    <Description>A sketch context menu item to restart the edit sketch from the last vertex.</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team</Author>
+    <Company>Esri</Company>
+    <Date>7/14/2016</Date>
+    <Subject>Editing</Subject>
+
+  </AddInInfo>
+  <modules>
+    <insertModule id="RestartSketch_Module" className="Module1" autoLoad="false" caption="Module1">
+      <controls>
+        <!-- add your controls here -->
+        <button id="RestartSketch_RestartSketchButton" caption="Restart Sketch" className="RestartSketchButton" loadOnClick="true">
+          <tooltip heading="Restart Sketch">Restart the sketch from the last sketch point.<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+    <updateModule refID="esri_editing_EditingModule">
+      <menus>
+        <updateMenu refID="esri_editing_SketchContextMenu">
+          <insertButton refID="RestartSketch_RestartSketchButton" separator="true" insert="before" placeWith="esri_editing_ClearSketch" />
+        </updateMenu>
+      </menus>
+    </updateModule>
+  </modules>
+</ArcGIS>
