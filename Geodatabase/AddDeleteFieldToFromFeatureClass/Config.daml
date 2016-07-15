@@ -48,12 +48,21 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="AddDeleteFieldToFromFeatureClass_AddAField" caption="Add a new field" className="AddAField" loadOnClick="true" smallImage="Images\Robot16.png" largeImage="Images\Robot32.png" keytip="B1">
-          <tooltip heading="Tooltip Heading">Adds a new field called 'AddedField' to the first feature class on the mapview active layers<disabledText /></tooltip>
+        <button id="AddDeleteFieldToFromFeatureClass_AddAField" caption="Add a new field" 
+              className="AddAField" loadOnClick="true" 
+              smallImage="Images\Robot16.png" largeImage="Images\Robot32.png" keytip="B1" 
+              condition="esri_mapping_singleFeatureLayerSelectedCondition" >
+          <tooltip heading="Add Field">
+            Adds a new field called 'AddedField' to the first feature class on the mapview active layers<disabledText />
+          </tooltip>
         </button>
-        <button id="AddDeleteFieldToFromFeatureClass_DeleteTheField" caption="Delete the new Field" className="DeleteTheField" loadOnClick="true" smallImage="Images\UFO16.png" largeImage="Images\UFO32.png" keytip="B2">
-          <tooltip heading="Tooltip Heading">
-            Deletes the newly field called 'AddedField' from the first feature class on the mapview active layers<disabledText /></tooltip>
+        <button id="AddDeleteFieldToFromFeatureClass_DeleteTheField" caption="Delete the new Field" 
+              className="DeleteTheField" loadOnClick="true" smallImage="Images\UFO16.png" 
+              largeImage="Images\UFO32.png" keytip="B2" 
+              condition="esri_mapping_singleFeatureLayerSelectedCondition">
+          <tooltip heading="Delete Field">
+            Deletes the newly field called 'AddedField' from the first feature class on the mapview active layers<disabledText />
+          </tooltip>
         </button>
       </controls>
     </insertModule>

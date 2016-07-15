@@ -41,8 +41,13 @@ namespace AddDeleteFieldToFromFeatureClass
                 BasicFeatureLayer layer = null;
                 await ArcGIS.Desktop.Framework.Threading.Tasks.QueuedTask.Run(() =>
                 {
-                    //find first layer
-                    layer = MapView.Active.Map.Layers.FirstOrDefault() as BasicFeatureLayer;
+                    //find selected layer
+                    if (MapView.Active.GetSelectedLayers().Count == 0)
+                    {
+                        MessageBox.Show("Select a feature class from the Content 'Table of Content' first.");
+                        return;
+                    }
+                    layer = MapView.Active.GetSelectedLayers()[0] as BasicFeatureLayer;
 
                 });
                 if (layer == null)
@@ -71,6 +76,9 @@ namespace AddDeleteFieldToFromFeatureClass
                     var dataStore = table.GetDatastore();
                     var workspaceNameDef = dataStore.GetConnectionString();
                     var workspaceName = workspaceNameDef.Split('=')[1];
+                    
+                    var fullSpec = System.IO.Path.Combine(workspaceName, inTable);
+                    System.Diagnostics.Debug.WriteLine($@"Add {field.Key} from {fullSpec}");
 
                     var parameters = Geoprocessing.MakeValueArray(inTable, field.Key, fieldType.ToUpper(), null, null,
                         fieldLength, field.Value, isNullable ? "NULABLE" : "NON_NULLABLE");

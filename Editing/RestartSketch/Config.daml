@@ -13,7 +13,8 @@
     <insertModule id="RestartSketch_Module" className="Module1" autoLoad="false" caption="Module1">
       <controls>
         <!-- add your controls here -->
-        <button id="RestartSketch_RestartSketchButton" caption="Restart Sketch" className="RestartSketchButton" loadOnClick="true">
+        <button id="RestartSketch_RestartSketchButton" caption="Restart Sketch" 
+                className="RestartSketchButton" loadOnClick="true" keytip="B1">
           <tooltip heading="Restart Sketch">Restart the sketch from the last sketch point.<disabledText /></tooltip>
         </button>
       </controls>

@@ -25,7 +25,7 @@
     <StartAction>Program</StartAction>
     <StartProgram>C:\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe</StartProgram>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>AddDeleteFieldToFromFeatureClass.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\AddDeleteFieldToFromFeatureClass.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -99,11 +99,13 @@
     <AddInContent Include="Images\UFO16.png" />
     <AddInContent Include="Images\UFO32.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Screenshots\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="ReadMe.md" />
+    <None Include="Screenshots\Screen0.png" />
+    <None Include="Screenshots\Screen1.png" />
+    <None Include="Screenshots\Screen2.png" />
+    <None Include="Screenshots\Screen3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.PackageAddIn" />

@@ -19,6 +19,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Editing' top
 * [InspectorTool (c#)](../../../tree/master/Editing/InspectorTool)  
 * [MainConnectorManhole (c#)](../../../tree/master/Editing/MainConnectorManhole)  
 * [ReplaceSketch (c#)](../../../tree/master/Editing/ReplaceSketch)  
+* [RestartSketch (c#)](../../../tree/master/Editing/RestartSketch)  
 * [SketchToolDemo (c#)](../../../tree/master/Editing/SketchToolDemo)  
 * [UpdateAttributesWithSketch (c#)](../../../tree/master/Editing/UpdateAttributesWithSketch)  
 

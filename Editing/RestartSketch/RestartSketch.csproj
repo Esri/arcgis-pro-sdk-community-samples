@@ -97,6 +97,13 @@
   <ItemGroup>
     <AddInContent Include="Images\GenericButtonBlue32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.md" />
+    <None Include="Screenshots\Screen1.png" />
+    <None Include="Screenshots\Screen2.png" />
+    <None Include="Screenshots\Screen3.png" />
+    <None Include="Screenshots\Screen4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.PackageAddIn" />
   <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.CleanAddIn" />
