@@ -46,16 +46,17 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="ProgressDialog_RunDialogButtons_Items_Button1" caption="Simple Progress Dialog" className="RunDialogButtonsSimple" loadOnClick="true" smallImage="Images\GenericButtonBlack16.png" largeImage="Images\GenericButtonBlack32.png">
-          <tooltip heading="Shows a Simple Progress Dialog">
+        <button id="ProgressDialog_RunDialogButtons_Items_Button1" caption="Simple Progress Dialog" className="RunDialogButtonsSimple" loadOnClick="true" smallImage="Images\GenericButtonBlack16.png" largeImage="Images\GenericButtonBlack32.png" keytip="B1">
+          <tooltip heading="Simple Progress Dialog">
             Shows a Simple Progress Dialog<disabledText /></tooltip>
         </button>
-        <button id="ProgressDialog_RunDialogButtons_Items_Button2" caption="Cancelable Progress Dlg" className="RunDialogButtonsCancel" loadOnClick="true" smallImage="Images\GenericButtonBlack16.png" largeImage="Images\GenericButtonBlack32.png">
-          <tooltip heading="Shows a Simple Progress Dialog">
-            Shows a Simple Progress Dialog<disabledText /></tooltip>
+        <button id="ProgressDialog_RunDialogButtons_Items_Button2" caption="Cancelable Progress Dlg" className="RunDialogButtonsCancel" loadOnClick="true" smallImage="Images\GenericButtonBlack16.png" largeImage="Images\GenericButtonBlack32.png" keytip="B2">
+          <tooltip heading="Cancelable Progress Dialog">
+            Shows Progress Dialog iterating through 5 steps with cancel ability<disabledText /></tooltip>
         </button>
-        <button id="ProgressDialog_RunDialogButtons_Items_Button3" caption="Manual Progress Dlg" className="RunDialogButtonsManual" loadOnClick="true" smallImage="Images\GenericButtonBlack16.png" largeImage="Images\GenericButtonBlack32.png">
-          <tooltip heading="Shows a Manually managed Progress Dialog">Shows a Manually managed Progress Dialog<disabledText />
+        <button id="ProgressDialog_RunDialogButtons_Items_Button3" caption="Manual Progress Dlg" className="RunDialogButtonsManual" loadOnClick="true" smallImage="Images\GenericButtonBlack16.png" largeImage="Images\GenericButtonBlack32.png" keytip="B3">
+          <tooltip heading="Manually managed Progress Dialog">
+            Shows a Manually managed Progress Dialog<disabledText />
           </tooltip>
         </button>
       </controls>

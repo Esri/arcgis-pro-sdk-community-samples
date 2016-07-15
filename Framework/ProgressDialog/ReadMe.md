@@ -51,6 +51,9 @@ Visual Studio:         2013, 2015
 1. Click on any of the split buttons to see the respective progress dialog implementation work.  
 ![UI](Screenshots/Screen2.png)  
   
+1. If you like to see a progress dialog with a progress bar that iterates to a given number of steps you can use the "Cancelable Progress Dlg" button.  This progress dialog runs through 10 steps and updates the progress bar accordingly.  
+![UI](Screenshots/Screen3.png)  
+  
 
 
 [](Esri Tags: ArcGIS-Pro-SDK)

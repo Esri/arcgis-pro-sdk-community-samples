@@ -36,6 +36,8 @@ namespace ProgressDialog {
     /// ![UI](Screenshots/Screen.png)
     /// 1. Click on any of the split buttons to see the respective progress dialog implementation work.
     /// ![UI](Screenshots/Screen2.png)
+    /// 1. If you like to see a progress dialog with a progress bar that iterates to a given number of steps you can use the "Cancelable Progress Dlg" button.  This progress dialog runs through 10 steps and updates the progress bar accordingly.
+    /// ![UI](Screenshots/Screen3.png)
     /// </remarks>
     internal class ProgressDialogModule : Module {
         private static ProgressDialogModule _this = null;
@@ -70,7 +72,7 @@ namespace ProgressDialog {
             }), ps.Progressor);
         }
 
-        public static Task RunCancelableProgress(CancelableProgressorSource cps, int howLongInSeconds) {
+        public static Task RunCancelableProgress(CancelableProgressorSource cps, uint howLongInSeconds) {
             //simulate doing some work which can be canceled
             return QueuedTask.Run(() => {
 
@@ -78,17 +80,16 @@ namespace ProgressDialog {
                 //check every second
                 while (!cps.Progressor.CancellationToken.IsCancellationRequested) {
                     cps.Progressor.Value += 1;
-                    cps.Progressor.Status = "Status " + cps.Progressor.Value;
+                    cps.Progressor.Status = (cps.Progressor.Value*100/cps.Progressor.Max) + @" % Completed";
                     cps.Progressor.Message = "Message " + cps.Progressor.Value;
 
                     if (System.Diagnostics.Debugger.IsAttached) {
                         System.Diagnostics.Debug.WriteLine(string.Format("RunCancelableProgress Loop{0}", cps.Progressor.Value));
                     }
-                    //are we done?
-                    if (cps.Progressor.Value == cps.Progressor.Max) break;
                     //block the CIM for a second
                     Task.Delay(1000).Wait();
-
+                    //are we done?
+                    if (cps.Progressor.Value == cps.Progressor.Max) break;
                 }
                 System.Diagnostics.Debug.WriteLine(string.Format("RunCancelableProgress: Canceled {0}",
                                                     cps.Progressor.CancellationToken.IsCancellationRequested));

@@ -25,7 +25,9 @@ namespace ProgressDialog
         protected override async void OnClick()
         {
             //If you run this in the DEBUGGER you will NOT see the dialog
-            await ProgressDialogModule.RunProgress(new ProgressorSource("Doing my thing...", false), 5);
+            var ps = new ProgressorSource("Doing my thing...");
+            ps.Max = 5;
+            await ProgressDialogModule.RunProgress(ps, 5);
         }
     }
 
@@ -36,9 +38,12 @@ namespace ProgressDialog
     {
         protected override async void OnClick()
         {   //If you run this in the DEBUGGER you will NOT see the dialog
+            uint maxSteps = 10;
+            var pd = new ArcGIS.Desktop.Framework.Threading.Tasks.ProgressDialog(
+                "Doing my thing - cancelable", "Canceled", maxSteps, false);
             await
                 ProgressDialogModule.RunCancelableProgress(
-                    new CancelableProgressorSource("Doing my thing - cancelable", "Canceled"), 5);
+                    new CancelableProgressorSource(pd), maxSteps);
         }
     }
 
