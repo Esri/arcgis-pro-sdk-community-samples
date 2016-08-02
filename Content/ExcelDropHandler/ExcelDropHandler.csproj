@@ -91,6 +91,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="EarthquakeDamage.xls" />
+    <None Include="Meteorites_UK.xls" />
     <None Include="ReadMe.md" />
     <None Include="Screenshots\2dScreen.png" />
     <None Include="Screenshots\3dScreen.png" />

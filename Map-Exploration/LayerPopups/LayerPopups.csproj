@@ -100,7 +100,9 @@
     <None Include="LayerPopups.cd" />
     <None Include="ReadMe.md" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="AdvancedPopup.png" />
+  </ItemGroup>
   <ItemGroup>
     <AddInContent Include="Images\Bessy16.png" />
     <AddInContent Include="Images\Bessy32.png" />
@@ -114,6 +116,9 @@
     <Resource Include="Screenshots\Screen2.png" />
     <Resource Include="Screenshots\Screen3.png" />
     <Resource Include="Screenshots\Screen4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SimplePopup.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.PackageAddIn" />

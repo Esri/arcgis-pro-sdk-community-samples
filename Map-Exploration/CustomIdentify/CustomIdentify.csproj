@@ -103,6 +103,7 @@
     <AddInContent Include="Images\GenericButtonRed32.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="screenshots\CustomIdentify.png" />
     <Content Include="template.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
