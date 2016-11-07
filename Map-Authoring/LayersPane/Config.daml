@@ -50,7 +50,7 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="LayersPane_LayersPane_OpenButton" caption="Open LayersPane " className="LayersPane_OpenButton" loadOnClick="true" smallImage="Images\GenericButtonGreen16.png" largeImage="Images\GenericButtonGreen32.png">
+        <button id="LayersPane_LayersPane_OpenButton" caption="Open LayersPane " className="LayersPane_OpenButton" loadOnClick="true" smallImage="Images\GenericButtonGreen16.png" largeImage="Images\GenericButtonGreen32.png" keytip="ZL">
           <tooltip heading="Open Pane">Open Pane<disabledText /></tooltip>
         </button>
       </controls>
