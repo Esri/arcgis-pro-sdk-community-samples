@@ -2,6 +2,7 @@
 
 
 
+
 <!--
 //   Copyright 2014 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +19,7 @@
 -->
 
 <ArcGIS defaultAssembly="MapToolWithOverlayControl.dll" defaultNamespace="MapToolWithOverlayControl" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{3b045ea8-084c-41bf-a678-c93b6ec532cc}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{3b045ea8-084c-41bf-a678-c93b6ec532cc}" version="1.0" desktopVersion="1.4.7198">
     <Name>Map Tool With Overlay</Name>
     <Description>Adds custom map tool for ArcGIS Pro.</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -39,7 +40,7 @@
   <modules>
     <insertModule id="MapToolWithOverlayControl_Module" className="Module1" autoLoad="false" caption="Module1">
       <groups>
-        <group id="MapToolWithOverlayControl_Group1" caption="Group 1" appearsOnAddInTab="true">
+        <group id="MapToolWithOverlayControl_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="z1">
           <tool refID="MapToolWithOverlayControl_ShowCoordinatesTool" size="large" />
         </group>
       </groups>
@@ -47,7 +48,7 @@
         <tool id="MapToolWithOverlayControl_ShowCoordinatesTool" 
               caption="Show Coordinates" className="ShowCoordinatesTool" 
               loadOnClick="true" smallImage="Images\GenericButtonRed16.png" 
-              largeImage="Images\GenericButtonRed32.png" condition="esri_mapping_mapPane">
+              largeImage="Images\GenericButtonRed32.png" condition="esri_mapping_mapPane" keytip="z2">
           <tooltip heading="Show Coordinates">Tool shows Coordinates of clicked location.<disabledText /></tooltip>
         </tool>
       </controls>

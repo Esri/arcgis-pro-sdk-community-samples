@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -39,28 +39,5 @@ namespace ReplaceAttachments
             InitializeComponent();
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-            var dockpane1ViewModel = DataContext as AttachmentsDockpaneViewModel;
-            dockpane1ViewModel.Work();
-        }
-
-        private void LayersComboBox_OnDropDownOpened(object sender, EventArgs e)
-        {
-            var dockpane1ViewModel = DataContext as AttachmentsDockpaneViewModel;
-            dockpane1ViewModel.UpdateLayers();
-        }
-
-        private void RelationshipsComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var dockpane1ViewModel = DataContext as AttachmentsDockpaneViewModel;
-            dockpane1ViewModel.UpdateRelatedFeatureClass();
-        }
-
-        private void LayersComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var dockpane1ViewModel = DataContext as AttachmentsDockpaneViewModel;
-            dockpane1ViewModel.UpdateRelationshipClasses();
-        }
     }
 }

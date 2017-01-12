@@ -29,13 +29,18 @@ namespace GeometrySamples
     /// geometries and how to retrieve the outermost ring(s) of a polygon.
     /// </summary>
     /// <remarks>
-    /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 2. Click Start button to open ArcGIS Pro.
-    /// 3. ArcGIS Pro will open. 
-    /// 4. Create or open a polygon layer as the only feature layer in the current map.
-    /// 5. Digitize a polygon with multiple parts including holes.
-    /// 6. Switch to the ADDIN ribbon and click the 'Outermost Ring(s)' button in the ArcGIS Pro SDK Samples group.
-    /// 7. The button will inspect the geometries of the polygon features and store the outer most ring(s) of the existing features as new features in the same feature class.
+    /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Working with Core Geometry and Data' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Working with Core Geometry and Data" is available.
+    /// 1. In Visual Studio 2015 click the Build menu. Then select Build Solution.
+    /// 1. Click Start button to debug ArcGIS Pro.
+    /// 1. In ArcGIS Pro open the Project called "Workshop.aprx" in the "C:\Data\Working with Core Geometry and Data" folder.  This project and data is required because it contains data that is attachment enabled.
+	/// 1. Digitize a polygon with multiple parts including holes using the sdk_polygons layer.
+    /// ![UI](Screenshots/Screen1.png)
+    /// 1. Switch to the Add-in tab on the ArcGIS Pro ribbon and click the 'Outermost Ring(s)' button in the ArcGIS Pro SDK Samples group.
+    /// 1. The button will inspect the geometries of the polygon features and store the outer most ring(s) of the existing features as new features in the same feature class.
+    /// ![UI](Screenshots/Screen2.png)
+    /// 1. Use the Undo pull-down to undo the "Create outer ring" operation.
+    /// ![UI](Screenshots/Screen3.png)
+    /// 1. The create polygon feature operation is undone.
     /// </remarks>
     internal class Module1 : Module
     {

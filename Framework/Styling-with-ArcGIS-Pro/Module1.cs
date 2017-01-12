@@ -31,6 +31,8 @@ namespace ControlStyles
     /// ![Controls](screenshots/controls.png)
     /// 5. Colors button: Clicking this button launches the ArcGIS Pro Colors dockpane. Select any of the Esri colors available in the gallery. You can then click on the Copy button next to the Xaml code for that color to paste into your add-in.
     /// ![Colors](screenshots/colors.png)
+    /// 6. Make sure when working with styles that your look and feel supports the ArcGIS Pro Dark Theme as well as the Default Theme.
+    /// ![Colors](screenshots/DarkTheme.png)
     /// </remarks>
     internal class Module1 : Module
     {

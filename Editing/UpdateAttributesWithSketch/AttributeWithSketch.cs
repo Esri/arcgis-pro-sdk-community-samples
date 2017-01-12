@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -11,7 +11,6 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License. 
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,7 +29,7 @@ namespace UpdateAttributesWithSketch
 {
   internal class AttributeWithSketch : MapTool
   {
-    public AttributeWithSketch()
+    public AttributeWithSketch() : base()
     {
       IsSketchTool = true;
       SketchType = SketchGeometryType.Line;
@@ -55,11 +54,21 @@ namespace UpdateAttributesWithSketch
 
         //find feature oids under the sketch for the selected layer
         var features = MapView.Active.GetFeatures(geometry);
+        if (features.Count == 0)
+          return false;
+
         var featOids = features[featLayer];
+        if (featOids.Count == 0)
+          return false;
 
         //update the attributes of those features
         var insp = new Inspector();
         insp.Load(featLayer, featOids);
+        // make sure tha attribute exists
+        Attribute att = insp.FirstOrDefault(a => a.FieldName == "PARCEL_ID");
+        if (att == null)
+          return false;
+
         insp["PARCEL_ID"] = 42;
 
         //create and execute the edit operation

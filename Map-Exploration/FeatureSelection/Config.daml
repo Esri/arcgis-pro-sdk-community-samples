@@ -2,6 +2,7 @@
 
 
 
+
 <!--
 //   Copyright 2014 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +18,7 @@
 //   limitations under the License. 
 -->
 <ArcGIS defaultAssembly="FeatureSelection.dll" defaultNamespace="FeatureSelection" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{777f533a-b0c7-4233-b64e-7c4c2e2c8efa}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{777f533a-b0c7-4233-b64e-7c4c2e2c8efa}" version="1.0" desktopVersion="1.4.7198">
     <Name>Feature Selection</Name>
     <Description>Adds a custom tool and dock pane to manage selections in the map.</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -29,17 +30,17 @@
   <modules>
     <insertModule id="FeatureSelection_Module" className="Module1" autoLoad="false" caption="Module1">
       <groups>
-        <group id="FeatureSelection_Group1" caption="Selection" appearsOnAddInTab="true">
+        <group id="FeatureSelection_Group1" caption="Selection" appearsOnAddInTab="true" keytip="z1">
           <button refID="FeatureSelection_FeatureSelectionDockPane_ShowButton" size="large" />
         </group>
       </groups>
       <controls>
-        <tool id="FeatureSelection_FeatureSelectionTool" caption="Hit Test" className="FeatureSelection.FeatureSelectionTool" loadOnClick="false" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" />
+        <tool id="FeatureSelection_FeatureSelectionTool" caption="Hit Test" className="FeatureSelection.FeatureSelectionTool" loadOnClick="false" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" keytip='z2'/>
         <button id="FeatureSelection_FeatureSelectionDockPane_ShowButton" caption="Feature Selection" className="FeatureSelectionDockPane_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
           <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
         </button>
-        <button id="FeatureSelection_SetAsExpression" caption="Create New Expression" className="FeatureSelection_Module:SetAsExpression" smallImage="Images\SQLQueryNew16.png" loadOnClick="false"/>
-        <button id="FeatureSelection_AddToExpression" caption="Add To Expression" className="FeatureSelection_Module:AddToExpression" smallImage="Images\SQLQueryAdd16.png" loadOnClick="false"/>
+        <button id="FeatureSelection_SetAsExpression" caption="Create New Expression" className="FeatureSelection_Module:SetAsExpression" smallImage="Images\SQLQueryNew16.png" loadOnClick="false" keytip="z3"/>
+        <button id="FeatureSelection_AddToExpression" caption="Add To Expression" className="FeatureSelection_Module:AddToExpression" smallImage="Images\SQLQueryAdd16.png" loadOnClick="false" keytip="z4"/>
       </controls>
       <dockPanes>
         <dockPane id="FeatureSelection_FeatureSelectionDockPane" caption="Feature Selection" className="FeatureSelectionDockPaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">

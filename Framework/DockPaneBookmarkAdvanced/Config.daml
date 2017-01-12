@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-
-
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -20,9 +18,8 @@
    limitations under the License.
 
 -->
-
 <ArcGIS defaultAssembly="DockPaneBookmarkAdvanced.dll" defaultNamespace="DockPaneBookmarkAdvanced" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{a91e68f7-b599-47c2-bfc1-15d4b737dfce}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{a91e68f7-b599-47c2-bfc1-15d4b737dfce}" version="1.0" desktopVersion="1.4.7198">
     <Name>DockPaneBookmarkAdvanced</Name>
     <Description>Second lab working with dockpane, maps and bookmarks.  In this lab you will trap for changes to the map project items in addition to 
     adding buttons allowing you to delete and add bookmarks.  You will also style these buttons according to ArcGIS Pro style guidelines. </Description>
@@ -37,20 +34,20 @@
   <modules>
     <insertModule id="DockPaneBookmarkAdvanced_Module" className="Module1" autoLoad="false" caption="Module1">
       <groups>
-        <group id="DockPaneBookmarkAdvanced_Group1" caption="DockPane Advanced" appearsOnAddInTab="true">
+        <group id="DockPaneBookmarkAdvanced_Group1" caption="DockPane Advanced" appearsOnAddInTab="true" keytip="Z0">
           <button refID="DockPaneBookmarkAdvanced_Bookmark_ShowButton" size="large" />
         </group>
       </groups>
       <controls>
-        <button id="DockPaneBookmarkAdvanced_Bookmark_ShowButton" caption="Show Bookmarks" className="Bookmark_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+        <button id="DockPaneBookmarkAdvanced_Bookmark_ShowButton" caption="Show Bookmarks" className="Bookmark_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="Z1">
           <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
         </button>
-        <button id="DockPaneBookmarkAdvanced_Bookmark_MenuButton" caption="Burger Menu Button" className="Bookmark_MenuButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+        <button id="DockPaneBookmarkAdvanced_Bookmark_MenuButton" caption="Burger Menu Button" className="Bookmark_MenuButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="Z2">
           <tooltip heading="Burger Menu Button">ToolTip<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="DockPaneBookmarkAdvanced_Bookmark" caption="Bookmark" className="BookmarkViewModel" keytip="DockPane" initiallyVisible="true" dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="DockPaneBookmarkAdvanced_Bookmark" caption="Bookmark" className="BookmarkViewModel" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="BookmarkView" />
         </dockPane>
       </dockPanes>

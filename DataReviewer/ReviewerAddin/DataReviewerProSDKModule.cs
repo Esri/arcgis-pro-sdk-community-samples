@@ -1,4 +1,4 @@
-﻿//Copyright 2015 Esri
+//Copyright 2017 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.DataReviewer;
 using ArcGIS.Desktop.DataReviewer.Models;
+using ArcGIS.Desktop.Framework.Dialogs;
 
 namespace DataReviewerProSDKSamples
 {
@@ -34,21 +35,23 @@ namespace DataReviewerProSDKSamples
     /// The advanced example demonstrates how you can use Data Reviewer interfaces and objects with other interfaces in ArcGIS Pro
 	/// </summary>
     /// <remarks>
-    /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data containing a Reviewer workspace and Reviewer batch Jobs is packaged as part of the add-in.  Make sure that the Sample data is unzipped in c:\data and c:\data\DataReviewer is available.
+    /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a Reviewer workspace and Reviewer batch Jobs needed by the sample add-in.  Make sure that the Sample data is unzipped in c:\data and c:\data\DataReviewer is available.
     /// 2. You can modify AddReviewerResults_Basic() method to update the path of the Reviewer Workspace.
     /// 3. You can modify AddBatchJobs_Basic() to update the path of the Reviewer Batch job.
     /// 4. In Visual Studio click the Build menu. Then select Build Solution.
     /// 5. Click Start button to open ArcGIS Pro.
     /// 6. ArcGIS Pro will open. 
     /// 7. Open any project file. Click the Reviewer Sample - Basic Tab to use basic samples.
-    /// 7.a Make sure that Project pane is open.
+	/// ![UI](Screenshots/Screen.png)
+    /// 7.a Make sure that the Project pane is open.
     /// 7.b Click Add Reviewer Results button. The Reviewer Results item will be added to the Project pane.
     /// 7.c Click Add Sessions button. All the sessions that are in the Reviewer Dataset will be added to the Project pane as child items to Reviewer Results.
     /// 7.d Click Mark Default button. The first session will be marked as default and its icon will be updated with a home icon in the Project pane.
     /// 7.e Click Remove Session button. The first session will be removed from the Project pane.
     /// 7.f Click Remove Reviewer Results button. The Reviewer Results item will be removed from the Project pane.
     /// 7.g Click Add Reviewer Batch Jobs button. All Reviewer batch jobs that are in the sample data will be added to the Project pane.
-    /// 7.h Click Remove Reviewer Batch Job button. The first Batch Job will be removed from the Project pane.
+    /// 7.h Click Remove Reviewer Batch Job button. The first Batch Job will be removed from the Project pane.	
+    /// ![UI](Screenshots/Screen1.png)
     /// 8. Click the Reviewer Sample - Advanced Tab to use advanced samples.
     /// 8.a Make sure that Project pane is open.
     /// 8.b Click Add Reviewer Results button. A browse dialog will open and you can select a Reviewer workspace to add it to the Project pane.
@@ -58,7 +61,7 @@ namespace DataReviewerProSDKSamples
     /// 8.f Click Remove Reviewer Results button. The Reviewer Results item will be removed from the Project pane.
     /// 8.g Click Add Reviewer Batch Jobs button. A browse dialog will open and you can select one or more Reviewer Batch Jobs to add to the Project pane. These Batch Jobs will also be added to the Reviewer Batch Jobs gallery.
     /// 8.h Right-click a Batch Job in Reviewer Batch Jobs gallery and click Remove. This Batch Job will be removed from the Project Pane.
-    /// ![UI](Screenshots/Screen.png)
+    /// ![UI](Screenshots/Screen2.png)
     /// </remarks>
     internal class DataReviewerProSDKModule : Module
     {
@@ -105,7 +108,7 @@ namespace DataReviewerProSDKSamples
                 string strReviewerResultsWorkspacePath = System.IO.Path.Combine(dataRootPath, "ReviewerWorkspace.gdb");
                 if (!System.IO.Directory.Exists(strReviewerResultsWorkspacePath))
                 {
-                    System.Windows.MessageBox.Show("Unable to locate " + strReviewerResultsWorkspacePath + " geodatabase", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                    MessageBox.Show("Unable to locate " + strReviewerResultsWorkspacePath + " geodatabase", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
                     return;
                 }
 
@@ -120,7 +123,7 @@ namespace DataReviewerProSDKSamples
                     }
                     else
                     {
-                        System.Windows.MessageBox.Show("The geodatabase specified does not contain a current Reviewer dataset.", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                        MessageBox.Show("The geodatabase specified does not contain a current Reviewer dataset.", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
                     }
                 });
 
@@ -133,7 +136,7 @@ namespace DataReviewerProSDKSamples
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+               MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
             }
 
         }
@@ -158,7 +161,7 @@ namespace DataReviewerProSDKSamples
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
             }
         }
 
@@ -178,7 +181,7 @@ namespace DataReviewerProSDKSamples
                     resultsProjectItem = projectItems.FirstOrDefault() as ReviewerResultsProjectItem;
                 else
                 {
-                    System.Windows.MessageBox.Show(string.Format("Current project does not have a connection to the Reviewer Results.{0}Please add a connection to the Reviewer Results", Environment.NewLine), "Warning", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
+                    MessageBox.Show(string.Format("Current project does not have a connection to the Reviewer Results.{0}Please add a connection to the Reviewer Results", Environment.NewLine), "Warning", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
                     return;
                 }
                 if (null != resultsProjectItem)
@@ -204,7 +207,7 @@ namespace DataReviewerProSDKSamples
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
             }
 
         }
@@ -226,7 +229,7 @@ namespace DataReviewerProSDKSamples
                     resultsProjectItem = projectItems.FirstOrDefault() as ReviewerResultsProjectItem;
                 else
                 {
-                    System.Windows.MessageBox.Show(string.Format("Current project does not have a connection to the Reviewer Results.{0}Please add a connection to the Reviewer Results and add Reviewer Sessions.", Environment.NewLine), "Warning", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
+                    MessageBox.Show(string.Format("Current project does not have a connection to the Reviewer Results.{0}Please add a connection to the Reviewer Results and add Reviewer Sessions.", Environment.NewLine), "Warning", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
                     return;
                 }
 
@@ -240,12 +243,12 @@ namespace DataReviewerProSDKSamples
                         resultsProjectItem.DefaultSessionItem = sessionItems.FirstOrDefault();
                     }
                     else
-                        System.Windows.MessageBox.Show(string.Format("There are no Reviewer Sessions referenced in the current project.{0}Please add at least one Reviewer Session to the current project.", Environment.NewLine), "Warning", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
+                        MessageBox.Show(string.Format("There are no Reviewer Sessions referenced in the current project.{0}Please add at least one Reviewer Session to the current project.", Environment.NewLine), "Warning", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
                 }
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
             }
 
         }
@@ -281,7 +284,7 @@ namespace DataReviewerProSDKSamples
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
             }
 
         }
@@ -308,7 +311,7 @@ namespace DataReviewerProSDKSamples
 
                 if (!System.IO.File.Exists(batchJob1) || !System.IO.File.Exists(batchJob2) || !System.IO.File.Exists(batchJob3))
                 {
-                    System.Windows.MessageBox.Show("Batch Job files are not found", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                    MessageBox.Show("Batch Job files are not found", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
                     return;
                 }
 
@@ -334,7 +337,7 @@ namespace DataReviewerProSDKSamples
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
             }
         }
 
@@ -359,7 +362,7 @@ namespace DataReviewerProSDKSamples
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
             }
         }
         #endregion
@@ -393,7 +396,7 @@ namespace DataReviewerProSDKSamples
                     }
                     else
                     {
-                        System.Windows.MessageBox.Show("The geodatabase specified does not contain a current Reviewer dataset.", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                        MessageBox.Show("The geodatabase specified does not contain a current Reviewer dataset.", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
                     }
                 });
 
@@ -406,7 +409,7 @@ namespace DataReviewerProSDKSamples
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
             }
         }
 
@@ -427,7 +430,7 @@ namespace DataReviewerProSDKSamples
                     resultsProjectItem = projectItems.FirstOrDefault() as ReviewerResultsProjectItem;
                 else
                 {
-                    System.Windows.MessageBox.Show(string.Format("Current project does not have a connection to the Reviewer Results.{0}Please add a connection to the Reviewer Results", Environment.NewLine), "Warning", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
+                    MessageBox.Show(string.Format("Current project does not have a connection to the Reviewer Results.{0}Please add a connection to the Reviewer Results", Environment.NewLine), "Warning", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
                     return;
                 }
 
@@ -458,7 +461,7 @@ namespace DataReviewerProSDKSamples
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
             }
         }
 
@@ -484,7 +487,7 @@ namespace DataReviewerProSDKSamples
                     resultsProjectItem = projectItems.FirstOrDefault() as ReviewerResultsProjectItem;
                 else
                 {
-                    System.Windows.MessageBox.Show(string.Format("Current project does not have a connection to the Reviewer Results.{0}Please add a connection to the Reviewer Results and add Reviewer Sessions.", Environment.NewLine), "Warning", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
+                    MessageBox.Show(string.Format("Current project does not have a connection to the Reviewer Results.{0}Please add a connection to the Reviewer Results and add Reviewer Sessions.", Environment.NewLine), "Warning", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
                     return;
                 }
 
@@ -506,12 +509,12 @@ namespace DataReviewerProSDKSamples
                         }
                     }
                     else
-                        System.Windows.MessageBox.Show(string.Format("There are no Reviewer Sessions referenced in the current project.{0}Please add at least one Reviewer Session to the current project.", Environment.NewLine), "Warning", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
+                        MessageBox.Show(string.Format("There are no Reviewer Sessions referenced in the current project.{0}Please add at least one Reviewer Session to the current project.", Environment.NewLine), "Warning", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
                 }
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
             }
         }
 
@@ -559,7 +562,7 @@ namespace DataReviewerProSDKSamples
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
             }
         }
 
@@ -612,13 +615,13 @@ namespace DataReviewerProSDKSamples
                 //Display error message for invalid Batch Jobs
                 if (invalidRbjCount > 0)
                 {
-                    System.Windows.MessageBox.Show(string.Format("Selected Batch Jobs contain following invalid Batch Jobs :" + strInvalidBatchJobs, Environment.NewLine) + Environment.NewLine + "These Batch Jobs are not added to the project.",
+                    MessageBox.Show(string.Format("Selected Batch Jobs contain following invalid Batch Jobs :" + strInvalidBatchJobs, Environment.NewLine) + Environment.NewLine + "These Batch Jobs are not added to the project.",
                         "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
                 }
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
             }
 
         }
@@ -655,7 +658,7 @@ namespace DataReviewerProSDKSamples
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
             }
         }
         #endregion

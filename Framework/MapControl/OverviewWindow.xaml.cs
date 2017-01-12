@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -32,14 +32,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ArcGIS.Core.CIM;
-using ArcGIS.Desktop.Internal.Core;
 using ArcGIS.Desktop.Mapping.Controls;
+using ArcGIS.Desktop.Framework.Controls;
 
 namespace MapControl {
     /// <summary>
     /// Interaction logic for OverviewWindow.xaml
     /// </summary>
-    public partial class OverviewWindow : Window, INotifyPropertyChanged {
+    public partial class OverviewWindow : ProWindow, INotifyPropertyChanged {
 
         private MapControlContent _viewContent = null;
         public OverviewWindow() {

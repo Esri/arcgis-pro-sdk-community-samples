@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  7/15/2016
-ArcGIS Pro:            1.3
+Date:                  12/21/2016
+ArcGIS Pro:            1.4
 Visual Studio:         2013, 2015
 .NET Target Framework: 4.6.1
 ```
@@ -52,6 +52,6 @@ Visual Studio:         2013, 2015
 [](Esri Language: C-Sharp)​
 
 <p align = center><img src="http://esri.github.io/arcgis-pro-sdk/images/ArcGISPro.png"  alt="pre-req" align = "top" height = "20" width = "20" >
-<b> ArcGIS Pro 1.3 SDK for Microsoft .NET Framework</b>
+<b> ArcGIS Pro 1.4 SDK for Microsoft .NET Framework</b>
 </p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Home](https://github.com/Esri/arcgis-pro-sdk/wiki) | <a href="http://pro.arcgis.com/en/pro-app/sdk" target="_blank">ArcGIS Pro SDK</a> | <a href="http://pro.arcgis.com/en/pro-app/sdk/api-reference/index.html" target="_blank">API Reference</a> | [Requirements](#requirements) | [Download](#installing-arcgis-pro-sdk-for-net) |  <a href="http://github.com/esri/arcgis-pro-sdk-community-samples" target="_blank">Samples</a>

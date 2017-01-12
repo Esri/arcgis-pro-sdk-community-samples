@@ -4,9 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TimeNavigation"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
              mc:Ignorable="d" 
+             d:DataContext="{Binding Path=TimeNavigation.TimeBkmNavViewModel}"
              d:DesignHeight="66">
-    <!--
+  <!--
     //   Copyright 2014 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -21,68 +23,72 @@
 //   limitations under the License. 
 
 -->
-    <UserControl.Resources>
-        
-        <Style TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="Transparent"/>
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <Style TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Width" Value="36"/>
+        <Setter Property="Height" Value="36"/>
+        <Style.Triggers>
+          <Trigger Property="IsEnabled" Value="false">
+            <Setter Property="Opacity" Value="0.5"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="Width" Value="36"/>
-            <Setter Property="Height" Value="36"/>
-            <Style.Triggers>
-                <Trigger Property="IsEnabled" Value="false">
-                    <Setter Property="Opacity" Value="0.5"/>
-                    <Setter Property="BorderBrush" Value="Transparent"/>
-                    <Setter Property="Background" Value="Transparent"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-    </UserControl.Resources>
+            <Setter Property="Background" Value="Transparent"/>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+    </ResourceDictionary>
+  </UserControl.Resources>
 
-    <Grid Width="120" Height="66"> 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" HorizontalAlignment="Center" Orientation="Horizontal">
-            <Button Command="{Binding Path=PrevBkmCmd}">
-                <Button.Content>
-                    <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="pack://application:,,,/TimeNavigation;component/Images/BookmarkPrevious32.png"/>
-                </Button.Content>
-            </Button>
-            <Button Command="{Binding Path=PlayBkmCmd}">
-                <Grid>
-                    <Image Source="pack://application:,,,/TimeNavigation;component/Images/BookmarkPlay32.png">
-                        <Image.Style>
-                            <Style TargetType="Image">
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding RunEnabled}" Value="True">
-                                        <Setter Property="Visibility" Value="Collapsed"/>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Image.Style>
-                    </Image>
-                    <Image Source="pack://application:,,,/TimeNavigation;component/Images/BookmarkPause32.png">
-                        <Image.Style>
-                            <Style TargetType="Image">
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding RunEnabled}" Value="False">
-                                        <Setter Property="Visibility" Value="Collapsed"/>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Image.Style>
-                    </Image>
-                </Grid>
-            </Button>
-            <Button Command="{Binding Path=NextBkmCmd}">
-                <Button.Content>
-                            <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="pack://application:,,,/TimeNavigation;component/Images/BookmarkNext32.png"/>
-                </Button.Content>
-            </Button>
-        </StackPanel>
-        <Slider Grid.Row="1" Minimum="-5000" Maximum="0" 
+  <Grid Width="120" Height="66">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <StackPanel Grid.Row="0" HorizontalAlignment="Center" Orientation="Horizontal">
+      <Button Command="{Binding Path=PrevBkmCmd}">
+        <Button.Content>
+          <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="pack://application:,,,/TimeNavigation;component/Images/BookmarkPrevious32.png"/>
+        </Button.Content>
+      </Button>
+      <Button Command="{Binding Path=PlayBkmCmd}">
+        <Grid>
+          <Image Source="pack://application:,,,/TimeNavigation;component/Images/BookmarkPlay32.png">
+            <Image.Style>
+              <Style TargetType="Image">
+                <Style.Triggers>
+                  <DataTrigger Binding="{Binding RunEnabled}" Value="True">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                  </DataTrigger>
+                </Style.Triggers>
+              </Style>
+            </Image.Style>
+          </Image>
+          <Image Source="pack://application:,,,/TimeNavigation;component/Images/BookmarkPause32.png">
+            <Image.Style>
+              <Style TargetType="Image">
+                <Style.Triggers>
+                  <DataTrigger Binding="{Binding RunEnabled}" Value="False">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                  </DataTrigger>
+                </Style.Triggers>
+              </Style>
+            </Image.Style>
+          </Image>
+        </Grid>
+      </Button>
+      <Button Command="{Binding Path=NextBkmCmd}">
+        <Button.Content>
+          <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="pack://application:,,,/TimeNavigation;component/Images/BookmarkNext32.png"/>
+        </Button.Content>
+      </Button>
+    </StackPanel>
+    <Slider Grid.Row="1" Minimum="-5000" Maximum="0" 
                 Value="{Binding Path=PlaybackSpeed, Mode=TwoWay}" Height="20"
                 TickPlacement="None" IsSnapToTickEnabled="False" Margin="10,0,10,0" VerticalAlignment="Top"/>
-    </Grid>
+  </Grid>
 </UserControl>

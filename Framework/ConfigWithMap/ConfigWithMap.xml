@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ConfigWithMap</name>
+    </assembly>
+    <members>
+        <member name="T:ConfigWithMap.ConfigWithMapModule">
+            <summary>
+            “Managed Configurations” allow branding of ArcGIS Pro meaning you can customize the splash and startup screens, application icon, and modify the runtime ArcGIS Pro User Interface to best fit your user’s business needs.  This sample illustrates a configuration solution that includes those features.  
+            </summary>
+            <remarks>
+            1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Configurations\Projects' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Configurations\Projects" is available.
+            1. In Visual Studio 2015 click the Build menu. Then select Build Solution.
+            1. Click Start button to debug ArcGIS Pro.
+            1. ArcGIS Pro displays the custom splash screen.
+            ![UI](Screenshots/ManagedConfigSplash.png)
+            1. Pro will then display the startup screen showing a map, click on the county of San Diego area on the map.
+            ![UI](Screenshots/ManagedConfigStartup.png)
+            1. Pro will then open the San Diego project specifically tuned for this sample workflow.
+            1. Click on the 'Select Power Line Support' button to start a geoprocessing task that find all power line support structure further than 50 meters from the service road.
+            1. Click the 'Show Sites' button to show the geo processing task results.
+            1. Click the 'Edit' button to display the 'Edit' tab which contains existing ArcGIS Pro edit functionality.  
+            ![UI](Screenshots/ManagedConfigRunning.png)
+            </remarks>
+        </member>
+        <member name="P:ConfigWithMap.ConfigWithMapModule.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:ConfigWithMap.ConfigWithMapModule.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="P:ConfigWithMap.ConfigurationManagerWithMap.ApplicationName">
+            <summary>
+            Replaces the default ArcGIS Pro application name
+            </summary>
+        </member>
+        <member name="P:ConfigWithMap.ConfigurationManagerWithMap.Icon">
+            <summary>
+            Replaces the ArcGIS Pro Main window icon.
+            </summary>
+        </member>
+        <member name="M:ConfigWithMap.ConfigurationManagerWithMap.OnShowStartPage">
+            <summary>
+            Called before ArcGIS Pro starts up. Replaces the default Pro start-up page (Optional)
+            </summary>
+            <returns> Implemented UserControl with start-up page functionality. 
+            Return null if a custom start-up page is not needed. Default ArcGIS Pro start-up page will be displayed.</returns>
+        </member>
+        <member name="M:ConfigWithMap.ConfigurationManagerWithMap.OnShowSplashScreen">
+            <summary>
+            Called while ArcGIS Pro starts up. Replaces the default Pro splash screen. (Optional)
+            </summary>
+            <returns>Implemented Window with splash screen functionality. 
+            Return null if a custom splash screen is not needed. Default ArcGIS Pro splash screen will be displayed.</returns>
+        </member>
+        <member name="M:ConfigWithMap.ConfigurationManagerWithMap.OnShowAboutPage">
+            <summary>
+            Customized UserControl is displayed in ArcGIS Pro About property page. Allows to add information about this specific managed configuration.
+            </summary>
+            <returns>Implemented UserControl with about box information. 
+            Return null if a custom about box is not needed. Default ArcGIS Pro About box will be displayed.</returns>
+        </member>
+        <member name="T:ConfigWithMap.California">
+            <summary>
+            Interaction logic for California.xaml
+            </summary>
+            <summary>
+            California
+            </summary>
+        </member>
+        <member name="M:ConfigWithMap.California.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ConfigWithMap.CaliforniaCounties">
+            <summary>
+            Interaction logic for CaliforniaCounties.xaml
+            </summary>
+            <summary>
+            CaliforniaCounties
+            </summary>
+        </member>
+        <member name="M:ConfigWithMap.CaliforniaCounties.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ConfigWithMap.SplashScreen">
+            <summary>
+            Interaction logic for SplashScreenView.xaml
+            </summary>
+        </member>
+        <member name="M:ConfigWithMap.SplashScreen.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ConfigWithMap.LA">
+            <summary>
+            Interaction logic for LA.xaml
+            </summary>
+            <summary>
+            LA
+            </summary>
+        </member>
+        <member name="M:ConfigWithMap.LA.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ConfigWithMap.WorkOrders">
+            <summary>
+            Interaction logic for WorkOrders.xaml
+            </summary>
+            <summary>
+            WorkOrders
+            </summary>
+        </member>
+        <member name="M:ConfigWithMap.WorkOrders.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ConfigWithMap.UI.SplashScreen">
+            <summary>
+            Interaction logic for SplashScreen.xaml
+            </summary>
+            <summary>
+            SplashScreen
+            </summary>
+        </member>
+        <member name="M:ConfigWithMap.UI.SplashScreen.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ConfigWithMap.UI.AboutPage">
+            <summary>
+            Interaction logic for AboutPage.xaml
+            </summary>
+            <summary>
+            AboutPage
+            </summary>
+        </member>
+        <member name="M:ConfigWithMap.UI.AboutPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ConfigWithMap.UI.StartPage">
+            <summary>
+            Interaction logic for StartPage.xaml
+            </summary>
+            <summary>
+            StartPage
+            </summary>
+        </member>
+        <member name="M:ConfigWithMap.UI.StartPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ConfigWithMap.UI.StartPageViewModel">
+            <summary>
+            Business logic for the StartPage
+            </summary>
+        </member>
+    </members>
+</doc>

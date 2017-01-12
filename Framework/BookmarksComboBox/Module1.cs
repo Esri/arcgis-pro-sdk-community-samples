@@ -1,4 +1,4 @@
-﻿//Copyright 2015 Esri
+//Copyright 2017 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using System.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
-using ArcGIS.Desktop.Internal.Mapping; 
 
 namespace bookmark_comboBox_solution
 {    
@@ -66,9 +65,7 @@ namespace bookmark_comboBox_solution
                 return;
 
             if (MapView.Active != null)
-                return;
-
-            await MapView.Active.ZoomToAsync(bmk); //zoom to map
+                await MapView.Active.ZoomToAsync(bmk); //zoom to map
         }
        
 

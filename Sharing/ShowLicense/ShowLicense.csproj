@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{10E410CE-BE5F-4B28-8985-B12D05B3FB78}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2780}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ShowLicense</RootNamespace>
@@ -105,6 +105,16 @@
     <AddInContent Include="Images\GenericButtonBlue32.png" />
   </ItemGroup>
   <ItemGroup>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\BexDog16.png" />
+    <AddInContent Include="DarkImages\BexDog32.png" />
+    <AddInContent Include="DarkImages\Dino16.png" />
+    <AddInContent Include="DarkImages\Dino32.png" />
+    <AddInContent Include="DarkImages\GenericButtonBlue16.png" />
+    <AddInContent Include="DarkImages\GenericButtonBlue32.png" />
+    <AddInContent Include="DarkImages\MarsCat16.png" />
+    <AddInContent Include="DarkImages\MarsCat32.png" />
     <Content Include="Images\Dino16.png" />
     <Content Include="Images\Dino32.png" />
     <Content Include="Screenshots\Screen1.png" />

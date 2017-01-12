@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{77AA90EF-75EF-4E07-AD50-D79DA0CECF1B}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2725}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>InsertIntoContextMenu</RootNamespace>
@@ -105,7 +105,12 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\GenericButtonBlue16.png" />
+    <AddInContent Include="DarkImages\GenericButtonBlue32.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.md" />
     <None Include="Screenshots\Screen.png" />

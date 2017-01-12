@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B3CC59EC-6FC2-4010-8CF6-5EF1F8DE4084}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2745}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CallScriptFromNet</RootNamespace>
@@ -105,6 +105,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\GenericButtonBlue16.png" />
+    <AddInContent Include="DarkImages\GenericButtonBlue32.png" />
     <Content Include="Images\FacePage\SampleImage.png" />
   </ItemGroup>
   <ItemGroup>

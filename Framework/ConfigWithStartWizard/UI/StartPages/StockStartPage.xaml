@@ -1,0 +1,267 @@
+<!--
+
+   Copyright 2017 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<UserControl x:Class="ConfigWithStartWizard.UI.StartPages.StockStartPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="ConfigWithStartWizard.UI.StartPages"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             mc:Ignorable="d" 
+             d:DataContext="{Binding Path=vm.StockStartPageViewModel}"
+             d:DesignHeight="300" d:DesignWidth="600">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <Style x:Key="TransparentButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="{DynamicResource Esri_Gray160}"/>
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="Button">
+              <Border Background="Transparent">
+                <ContentPresenter/>
+              </Border>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style TargetType="ListBox" x:Key="ListStyle" BasedOn="{StaticResource {x:Type ListBox}}">
+        <Style.Triggers>
+          <DataTrigger Binding="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=Items.Count}" Value="0">
+            <Setter Property="Template">
+              <Setter.Value>
+                <ControlTemplate>
+                  <TextBlock FontWeight="DemiBold" TextWrapping="NoWrap" FontSize="16" Margin="10">No recent projects</TextBlock>
+                </ControlTemplate>
+              </Setter.Value>
+            </Setter>
+          </DataTrigger>
+        </Style.Triggers>
+      </Style>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
+
+    <Grid Grid.Column="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"></RowDefinition>
+        <RowDefinition Height="Auto"></RowDefinition>
+        <RowDefinition Height="*"></RowDefinition>
+      </Grid.RowDefinitions>
+
+      <TextBlock Grid.Row="0" HorizontalAlignment="Left" Text="Open a recent project" 
+                           VerticalAlignment="Center" FontSize="20" Foreground="{DynamicResource Esri_Blue}"
+                           Margin="10"/>
+
+
+      <ListBox ItemsSource="{Binding Path=RecentProjects, Mode=OneWay}" Grid.Row="1"
+                             Margin="10" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                         Background="{Binding Path=Background, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
+                         Style="{StaticResource ListStyle}"
+                         BorderBrush="{Binding Path=Background, RelativeSource={RelativeSource Mode=Self}}"
+                         SelectedIndex="{Binding Path=SelectedProjectIndex}">
+        <ListBox.ItemsPanel>
+          <ItemsPanelTemplate>
+            <WrapPanel IsItemsHost="True" Orientation="Horizontal" />
+          </ItemsPanelTemplate>
+        </ListBox.ItemsPanel>
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top"
+                                        Height="90" Width="80">
+
+              <Image HorizontalAlignment="Center" VerticalAlignment="Center"
+                                       Stretch="None"
+                                       Source="pack://application:,,,/ConfigWithStartWizard;component/Images/ArcGISProject32.png"
+                                       Margin="5,17,5,5">
+
+                <Image.ToolTip>
+                  <ToolTip>
+                    <Grid Background="White" Width="260" Height="100">
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height ="*"></RowDefinition>
+                      </Grid.RowDefinitions>
+
+                      <TextBlock Grid.Row="0" Text="{Binding Path=FileName}" Margin="4,5"
+                                                           FontSize="13" FontWeight="Bold"></TextBlock>
+
+                      <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                          <RowDefinition Height="Auto"></RowDefinition>
+                          <RowDefinition Height ="Auto"></RowDefinition>
+                          <RowDefinition Height ="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                          <ColumnDefinition Width="Auto"></ColumnDefinition>
+                          <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left"
+                                                              Margin="2,1" Text="Type:" Foreground="{DynamicResource Esri_Gray130}" FontSize="10"></TextBlock>
+                        <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left"
+                                                              Margin="2,1" Text="{Binding Path=PathType}" TextWrapping="NoWrap"
+                                                               ></TextBlock>
+                        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left"
+                                                              Margin="2,1" Text="Modified:" Foreground="{DynamicResource Esri_Gray130}" FontSize="10"></TextBlock>
+                        <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left"
+                                                              Margin="2,1" TextWrapping="NoWrap">
+                          <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0:dd/MM/yyyy} {1:hh:mm tt}">
+                              <Binding Path="LastModifiedTime" />
+                              <Binding Path="LastModifiedTime" />
+                            </MultiBinding>
+                          </TextBlock.Text>
+                        </TextBlock>
+
+                        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" FontSize="10"
+                                                              Margin="2,1" Text="Location:" Foreground="{DynamicResource Esri_Gray130}"></TextBlock>
+                        <TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left"
+                                                              Margin="2,1" Text="{Binding Path=Path}" TextWrapping="Wrap"></TextBlock>
+
+                      </Grid>
+                    </Grid>
+
+                  </ToolTip>
+                </Image.ToolTip>
+              </Image>
+
+              <TextBlock Text="{Binding Path=Name}" TextWrapping="NoWrap"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Top" MaxWidth="120"
+                                           TextTrimming="CharacterEllipsis">
+
+              </TextBlock>
+
+            </StackPanel>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+
+      <Button Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left"
+                        Margin="8,0,0,0" BorderThickness="1" Padding="0" 
+                        Style="{DynamicResource Esri_SimpleButton}"
+                        Command="{Binding CmdOpenProject}"
+                        Background="Transparent">
+        <Button.Content>
+          <StackPanel Orientation="Horizontal">
+            <Image Source="../../Images/FolderOpenState32.png" Margin="10" 
+                       HorizontalAlignment="Center"
+                       Stretch="None"></Image>
+            <TextBlock HorizontalAlignment="Center" Text="Open another project" 
+                           VerticalAlignment="Center" FontSize="14" FontWeight="SemiBold"
+                           Margin="5,5,10,5">
+              <TextBlock.Style>
+                <Style TargetType="TextBlock">
+                  <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                      <Setter Property="TextBlock.TextDecorations" Value="Underline" />
+                      <Setter Property="Cursor" Value="Hand"/>
+                      <Setter Property="Foreground" Value="{DynamicResource Esri_Gray155}" />
+                    </Trigger>
+                  </Style.Triggers>
+                </Style>
+              </TextBlock.Style>
+            </TextBlock>
+          </StackPanel>
+        </Button.Content>
+      </Button>
+    </Grid>
+
+    <Grid Grid.Column="1"></Grid>
+
+    <Border DockPanel.Dock="Right" BorderThickness="1,0,0,0" Grid.Column="2" 
+            BorderBrush="#CBCBCB" >
+      <Grid Margin="12,5">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"></RowDefinition>
+          <RowDefinition Height="Auto"></RowDefinition>
+          <RowDefinition Height="Auto"></RowDefinition>
+          <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" HorizontalAlignment="Left" Text="Create a new project" 
+                           VerticalAlignment="Center" FontSize="20" Foreground="{DynamicResource Esri_Blue}"
+                           Margin="0,0,0,5"/>
+        <TextBlock Grid.Row="1" HorizontalAlignment="Left" Text="Select a project template" 
+                           VerticalAlignment="Center" FontSize="14" Foreground="{DynamicResource Esri_Blue}"
+                           Margin="4,0,0,10"/>
+
+        <ListBox ItemsSource="{Binding Path=DefaultTemplates, Mode=OneWay}" Grid.Row="2"
+                             Margin="10" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                         Background="{Binding Path=Background, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
+                         BorderBrush="{Binding Path=Background, RelativeSource={RelativeSource Mode=Self}}"
+                         SelectedIndex="{Binding Path=SelectedTemplateIndex}">
+
+          <ListBox.ItemTemplate>
+            <DataTemplate>
+              <StackPanel Orientation="Horizontal"
+                                        Height="40" Width="200">
+                <Image Stretch="None"
+                                       Source="pack://application:,,,/ConfigWithStartWizard;component/Images/ArcGISProjectTemplate32.png"
+                                       Margin="3,5,5,5">
+                </Image>
+                <TextBlock Text="{Binding Path=FileName}" TextWrapping="NoWrap" FontSize="14"
+                                               HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
+                </TextBlock>
+              </StackPanel>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Button Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Left"
+                        Margin="8,0,0,0" BorderThickness="1" Padding="0"
+                        Background="Transparent"
+                        Command="{Binding CmdNewProject}"
+                        Style="{DynamicResource Esri_SimpleButton}" >
+          <Button.Content>
+            <StackPanel  Orientation="Horizontal">
+              <Image Source="../../Images/FolderOpenState16.png" Margin="8" 
+                     HorizontalAlignment="Center" Stretch="None"></Image>
+              <TextBlock Text="Select another project template" HorizontalAlignment="Left" 
+                         VerticalAlignment="Center" FontSize="14" FontWeight="SemiBold" 
+                         Margin="2,0,8,0">
+                <TextBlock.Style>
+                  <Style TargetType="TextBlock">
+                    <Style.Triggers>
+                      <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="TextBlock.TextDecorations" Value="Underline" />
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Setter Property="Foreground" Value="{DynamicResource Esri_Gray155}" />
+                      </Trigger>
+                    </Style.Triggers>
+                  </Style>
+                </TextBlock.Style>
+              </TextBlock>
+            </StackPanel>
+          </Button.Content>
+        </Button>
+      </Grid>
+    </Border>
+  </Grid>
+</UserControl>

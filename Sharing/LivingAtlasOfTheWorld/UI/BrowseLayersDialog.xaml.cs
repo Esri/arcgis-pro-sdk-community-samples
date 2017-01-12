@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -30,15 +30,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ArcGIS.Desktop.Framework.Controls;
 
 namespace LivingAtlasOfTheWorld.UI {
     /// <summary>
     /// Interaction logic for BrowseLayersDialog.xaml
     /// </summary>
-    public partial class BrowseLayersDialog : Window {
+    public partial class BrowseLayersDialog : ProWindow {
 
         private BrowseLayersViewModel _vm = null;
 
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public BrowseLayersDialog() {
             _vm = new BrowseLayersViewModel();
             this.DataContext = _vm;

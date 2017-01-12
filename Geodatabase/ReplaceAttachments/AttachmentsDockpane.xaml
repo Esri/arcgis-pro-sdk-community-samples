@@ -1,6 +1,6 @@
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -20,13 +20,15 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"                                             
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
              mc:Ignorable="d" 
+             d:DataContext="{Binding Path=ReplaceAttachments.AttachmentsDockpaneViewModel}"
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -38,9 +40,15 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-        <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="2" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
             <TextBlock Grid.Column="1" Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center"
                     FontSize="16" FontWeight="Light">
                 <TextBlock.ToolTip>
@@ -48,36 +56,48 @@
                         <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
                     </WrapPanel>
                 </TextBlock.ToolTip>
-      </TextBlock>
+            </TextBlock>
         </DockPanel>
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <TextBlock HorizontalAlignment="Left" Margin="10" Text="Selected Layer" VerticalAlignment="Center" Height="30" TextWrapping="Wrap"/>
-            <ComboBox HorizontalAlignment="Center" Margin="55 10 0 0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding Layers}" 
-                      Name="LayersComboBox" SelectedItem="{Binding SelectedLayer}" DropDownOpened="LayersComboBox_OnDropDownOpened"
-                      SelectionChanged="LayersComboBox_OnSelectionChanged"/>
-        </StackPanel>
-        <StackPanel Grid.Row="2" Orientation="Vertical">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock HorizontalAlignment="Left" Margin="10" Text="Feature Class Related By" VerticalAlignment="Center" Height="20" TextWrapping="Wrap"/>
-                <ComboBox HorizontalAlignment="Center" Margin="0 10 0 0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding RelationshipClasses}" 
-                          Name="RelationshipsComboBox" SelectedItem="{Binding SelectedRelationship}" SelectionChanged="RelationshipsComboBox_OnSelectionChanged"/>
-            </StackPanel>
-            <TextBlock HorizontalAlignment="Left" Text="{Binding RelatedFeatureClass}" VerticalAlignment="Center"/>
-        </StackPanel>
-        <StackPanel Grid.Row="3" Orientation="Horizontal">
-            <StackPanel>
-                <TextBlock HorizontalAlignment="Left" Margin="10 15 0 0 " Text="Name of the Attachment" VerticalAlignment="Center"/>
-                <TextBlock HorizontalAlignment="Left" Margin="10 0 0 0" Text="to be replaced" VerticalAlignment="Center"/>
-            </StackPanel>
-            <TextBox HorizontalAlignment="Center" Height="23" Margin="10 15 0 0" Text="{Binding OldAttachmentName}" VerticalAlignment="Top" Width="143"/>
-        </StackPanel>
-        <StackPanel Grid.Row="4" Orientation="Horizontal">
-            <StackPanel>
-                <TextBlock HorizontalAlignment="Center" Margin="10 10 0 0 " Text="Path of the New " VerticalAlignment="Center"/>
-                <TextBlock HorizontalAlignment="Left" Margin="10 0 0 0" Text="Attachment File" VerticalAlignment="Center"/>
-            </StackPanel>
-            <TextBox HorizontalAlignment="Center" Height="23" Margin="53 10 0 0" Text="{Binding NewAttachment}" VerticalAlignment="Top" Width="140"/>
-        </StackPanel>
-        <Button Content="Go" HorizontalAlignment="Right" Margin="10" Grid.Row="5" VerticalAlignment="Top" Width="75" Click="ButtonBase_OnClick"/>
+        <WrapPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
+            <TextBlock HorizontalAlignment="Left" Margin="5" Text="Selected Layer" TextWrapping="Wrap"/>
+        </WrapPanel>
+        <ComboBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Margin="5" ItemsSource="{Binding Layers}" 
+                      Name="LayersComboBox" SelectedItem="{Binding SelectedLayer}" />
+
+        <WrapPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical">
+            <TextBlock  HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Feature Class Related By" VerticalAlignment="Center" />
+        </WrapPanel>
+        <ComboBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Top" ItemsSource="{Binding RelationshipClasses}" 
+                          Name="RelationshipsComboBox" SelectedItem="{Binding SelectedRelationship}" />
+
+        <WrapPanel Grid.Row="3" Grid.Column="0" Orientation="Vertical">
+            <TextBlock HorizontalAlignment="Stretch" Margin="5" Text="Related Table" VerticalAlignment="Stretch"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="3" Grid.Column="1" Orientation="Vertical">
+            <TextBlock HorizontalAlignment="Stretch" Margin="5" Text="{Binding RelatedFeatureClass}" VerticalAlignment="Stretch"/>
+        </WrapPanel>
+
+        <WrapPanel Grid.Row="4" Grid.Column="0" Orientation="Vertical">
+            <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Name of the Attachment to be replaced" />
+        </WrapPanel>
+
+        <ComboBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Top" ItemsSource="{Binding AttachmentNames}" 
+                  SelectedItem="{Binding OldAttachmentName}" Name="NameComboBox"  />
+       
+        <WrapPanel Grid.Row="6" Grid.Column="0" Orientation="Vertical">
+            <TextBlock HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" Text="Path of the New Attachment File" VerticalAlignment="Center"/>
+        </WrapPanel>
+        <Grid Grid.Row="6" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="35" />
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" HorizontalAlignment="Stretch" Margin="5" Text="{Binding NewAttachment}" VerticalAlignment="Top" />
+            <Button Grid.Column="1" Content="..." Command="{Binding SelectPath}" Margin="0,5,5,5" Height="20" MinWidth="20" Width="30" HorizontalContentAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource Esri_SimpleButton}" HorizontalAlignment="Left" />
+        </Grid>
+
+        <Button Grid.Row="7" Grid.Column="1" Content="Go" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Top" Width="75" 
+                Command="{Binding GoReplaceAttachment}" Style="{DynamicResource Esri_SimpleButton}" IsEnabled="{Binding IsGoEnabled}" />
     </Grid>
+
 </UserControl>

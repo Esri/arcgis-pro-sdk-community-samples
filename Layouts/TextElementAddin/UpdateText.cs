@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -27,17 +27,20 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;  //access to QueuedTask
 namespace TextElementAddin
 {
     /// <summary>
-    /// This sample addin references a text element on a layout and changes it text and placement properties.
+    /// This sample add-in references a text element on a layout view and changes it's text and (optionally) placement properties.
     /// </summary>
     /// <remarks>
-    /// In Visual Studio:
-    /// 1. Select Build --> Build Solution.
-    /// 2. Click the Start button to fire up ArcGIS Pro.
-    /// In ArcGIS Pro
-    /// 3. Create a new project.
-    /// 4. Insert a new layout called "Layout".
-    /// 5. Insert a new text element called "Text".
-    /// 6. Click ADD-IN Tab --> UpdateText
+    /// 1. In Visual Studio click the Build menu. Then select Build Solution.
+    /// 1. Click Start button to open ArcGIS Pro.
+    /// 1. Create a new project.
+    /// 1. Insert a new layout called "Layout".
+    /// 1. Insert a new text element called "Text".
+    /// ![UI](Screenshots/Screen0.png)
+    /// ![UI](Screenshots/Screen1.png)
+    /// 1. Click on the Add-In Tab.
+    /// 1. Click the UpdateText button.
+	/// ![UI](Screenshots/Screen2.png)
+	/// 1. Note that the text of the layout text element changed
     /// </remarks>
     internal class UpdateText : Button
     {
@@ -57,8 +60,8 @@ namespace TextElementAddin
                 //Modify the text elements placement properties
                 var txtPlacement = txtElm.GetPlacement();
                 txtPlacement.Anchor = ArcGIS.Core.CIM.Anchor.CenterPoint;
-                txtPlacement.X = 4.25;
-                txtPlacement.Y = 5.5;
+                //txtPlacement.X = 4.25;
+                //txtPlacement.Y = 5.5;
                 txtElm.SetPlacement(txtPlacement);
 
                 //Modify the text properties

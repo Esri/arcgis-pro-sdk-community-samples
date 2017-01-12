@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -38,6 +38,8 @@ namespace ProgressDialog {
     /// ![UI](Screenshots/Screen2.png)
     /// 1. If you like to see a progress dialog with a progress bar that iterates to a given number of steps you can use the "Cancelable Progress Dlg" button.  This progress dialog runs through 10 steps and updates the progress bar accordingly.
     /// ![UI](Screenshots/Screen3.png)
+    /// 1. Progress dialogs support the ArcGIS Pro Dark Theme seamlessly.
+    /// ![UI](Screenshots/Screen4.png)
     /// </remarks>
     internal class ProgressDialogModule : Module {
         private static ProgressDialogModule _this = null;

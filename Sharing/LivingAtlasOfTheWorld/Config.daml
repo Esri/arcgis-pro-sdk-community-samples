@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-
-
-
 <ArcGIS defaultAssembly="LivingAtlasOfTheWorld.dll" defaultNamespace="LivingAtlasOfTheWorld" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{b500eb63-2569-41d6-91d6-41b183c7f240}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{b500eb63-2569-41d6-91d6-41b183c7f240}" version="1.0" desktopVersion="1.4.7198">
     <Name>LivingAtlasOfTheWorld</Name>
     <Description>Mimics the Browse Esri Map Layers dialog from the arcgis online webmap viewer. Shows use of EsriHttpClient and Newtonsoft.Json</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -40,30 +37,28 @@
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="LivingAtlasOfTheWorld_Group1" caption="Group 1" appearsOnAddInTab="true">
+        <group id="LivingAtlasOfTheWorld_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="z1">
           <!-- host controls within groups -->
           <splitButton refID="LivingAtlasOfTheWorld_AddLayerButton" />
         </group>
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="LivingAtlasOfTheWorld_AddLayerButton_Items_Button1" caption="Living Atlas of the World" className="AddLayerButton_button1" loadOnClick="true" smallImage="Images\EvilGenius16.png" largeImage="Images\EvilGenius32.png">
+        <button id="LivingAtlasOfTheWorld_AddLayerButton_Items_Button1" caption="Living Atlas of the World" className="AddLayerButton_button1" loadOnClick="true" smallImage="Images\EvilGenius16.png" largeImage="Images\EvilGenius32.png" keytip="z2">
           <tooltip heading="Browse Esri Map Layers">Show the 'Browse Esri Map Layers' dialog with data from ArcGIS Online<disabledText /></tooltip>
         </button>
-        <button id="LivingAtlasOfTheWorld_AddLayerButton_Items_Button2" caption="AddLayerButton 2" className="AddLayerButton_button2" loadOnClick="true" smallImage="Images\EvilGenius16.png" largeImage="Images\EvilGenius32.png">
+        <button id="LivingAtlasOfTheWorld_AddLayerButton_Items_Button2" caption="AddLayerButton 2" className="AddLayerButton_button2" loadOnClick="true" smallImage="Images\EvilGenius16.png" largeImage="Images\EvilGenius32.png" keytip="z3">
           <tooltip heading="Split Button 2">ToolTip<disabledText /></tooltip>
         </button>
-        <button id="LivingAtlasOfTheWorld_AddLayerButton_Items_Button3" caption="AddLayerButton 3" className="AddLayerButton_button3" loadOnClick="true" smallImage="Images\EvilGenius16.png" largeImage="Images\EvilGenius32.png">
+        <button id="LivingAtlasOfTheWorld_AddLayerButton_Items_Button3" caption="AddLayerButton 3" className="AddLayerButton_button3" loadOnClick="true" smallImage="Images\EvilGenius16.png" largeImage="Images\EvilGenius32.png" keytip="z4">
           <tooltip heading="Split Button 3">ToolTip<disabledText /></tooltip>
         </button>
       </controls>
       <splitButtons>
         <splitButton id="LivingAtlasOfTheWorld_AddLayerButton">
           <button refID="LivingAtlasOfTheWorld_AddLayerButton_Items_Button1" />
-          <!--
-          <button refID="LivingAtlasOfTheWorld_AddLayerButton_Items_Button2" />
-          <button refID="LivingAtlasOfTheWorld_AddLayerButton_Items_Button3" />
-          -->
+          <!--<button refID="LivingAtlasOfTheWorld_AddLayerButton_Items_Button2" />
+          <button refID="LivingAtlasOfTheWorld_AddLayerButton_Items_Button3" />-->
         </splitButton>
       </splitButtons>
     </insertModule>

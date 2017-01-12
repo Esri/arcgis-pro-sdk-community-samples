@@ -3,6 +3,7 @@
 
 
 
+
 <!--//   Copyright 2014 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -40,20 +41,20 @@
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="Localization_Group1" caption="Group 1" appearsOnAddInTab="true">
+        <group id="Localization_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="Z0" >
           <!-- host controls within groups -->
           <button refID="Localization_DockpaneLocalized_ShowButton" size="large" />
         </group>
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="Localization_DockpaneLocalized_ShowButton" caption="Andockbares Fenster zeigen" className="DockpaneLocalized_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+        <button id="Localization_DockpaneLocalized_ShowButton" caption="Andockbares Fenster zeigen" className="DockpaneLocalized_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="Z1" >
           <tooltip heading="Andockbares Fenster">
             Andockbares Fenster QuickInfo: mehr Text hier ...<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="Localization_DockpaneLocalized" caption="Andockbares Fenster" className="DockpaneLocalizedViewModel" keytip="DockPane" initiallyVisible="true" dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="Localization_DockpaneLocalized" caption="Andockbares Fenster" className="DockpaneLocalizedViewModel" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="DockpaneLocalizedView" />
         </dockPane>
       </dockPanes>

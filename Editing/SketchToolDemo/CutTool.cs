@@ -30,7 +30,7 @@ namespace SketchToolDemo
     /// </summary>
     class CutTool : MapTool
     {
-        public CutTool()
+        public CutTool() : base()
         {
             // select the type of construction tool you wish to implement.  
             // Make sure that the tool is correctly registered with the correct component category type in the daml
@@ -64,15 +64,6 @@ namespace SketchToolDemo
             if (geometry == null)
                 return Task.FromResult(false);
 
-            // create an edit operation
-            EditOperation cutOperation = new EditOperation();
-            cutOperation.Name = "Cut Elements";
-            cutOperation.ProgressMessage = "Working...";
-            cutOperation.CancelMessage = "Operation canceled.";
-            cutOperation.ErrorMessage = "Error cutting polygons";
-            cutOperation.SelectModifiedFeatures = false;
-            cutOperation.SelectNewFeatures = false;
-
             // create a collection of feature layers that can be edited
             var editableLayers = ActiveMapView.Map.GetLayersAsFlattenedList()
                 .OfType<FeatureLayer>()
@@ -82,6 +73,15 @@ namespace SketchToolDemo
             // ensure that there are target layers
             if (editableLayers.Count() == 0)
                 return Task.FromResult(false);
+
+            // create an edit operation
+            EditOperation cutOperation = new EditOperation();
+            cutOperation.Name = "Cut Elements";
+            cutOperation.ProgressMessage = "Working...";
+            cutOperation.CancelMessage = "Operation canceled.";
+            cutOperation.ErrorMessage = "Error cutting polygons";
+            cutOperation.SelectModifiedFeatures = false;
+            cutOperation.SelectNewFeatures = false;
 
             // initialize a list of ObjectIDs that need to be cut
             var cutOIDs = new List<long>();
@@ -170,7 +170,7 @@ namespace SketchToolDemo
         /// Performs a spatial query against a feature layer.
         /// </summary>
         /// <remarks>It is assumed that the feature layer and the search geometry are using the same spatial reference.</remarks>
-        /// <param name="searchTable">The feature layer to be searched.</param>
+        /// <param name="searchLayer">The feature layer to be searched.</param>
         /// <param name="searchGeometry">The geometry used to perform the spatial query.</param>
         /// <param name="spatialRelationship">The spatial relationship used by the spatial filter.</param>
         /// <returns>Cursor containing the features that satisfy the spatial search criteria.</returns>

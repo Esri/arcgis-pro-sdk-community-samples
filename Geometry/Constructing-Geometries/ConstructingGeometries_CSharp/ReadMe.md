@@ -1,7 +1,7 @@
 ##ConstructingGeometries_CSharp
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This shows how to:  
+This sample provide four buttons showing the construction of geometry types of type MapPoint, Multipoint, Polyline, and Polygon and shows how to:  
 * Construct and manipulate geometries  
 * Use GeometryEngine functionality  
 * Search and retrieve features  
@@ -16,22 +16,23 @@ Language:              C#
 Subject:               Geometry, Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  7/15/2016
-ArcGIS Pro:            1.3
+Date:                  1/11/2017
+ArcGIS Pro:            1.4
 Visual Studio:         2013, 2015
 .NET Target Framework: 4.6.1
 ```
 
 ##Resources
 
-* [API Reference online](http://pro.arcgis.com/en/pro-app/sdk/api-reference)  
-* <a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">ArcGIS Pro SDK for .NET (pro.arcgis.com)</a>  
-* [arcgis-pro-sdk-community-samples](http://github.com/Esri/arcgis-pro-sdk-community-samples)  
-* [ArcGIS Pro DAML ID Reference](http://github.com/Esri/arcgis-pro-sdk/wiki/ArcGIS Pro DAML ID Reference)  
-* [FAQ](http://github.com/Esri/arcgis-pro-sdk/wiki/FAQ)  
-* [ArcGIS Pro SDK icons](https://github.com/Esri/arcgis-pro-sdk/releases/tag/1.2.0.5023)  
-![ArcGIS Pro SDK for .NET Icons](http://esri.github.io/arcgis-pro-sdk/images/Home/Image-of-icons.png "ArcGIS Pro SDK Icons")
-* [ProConcepts: ArcGIS Pro Add in Samples](https://github.com/Esri/arcgis-pro-sdk-community-samples/wiki/ProConcepts-ArcGIS-Pro-Add-in-Samples)  
+* [API Reference online](http://pro.arcgis.com/en/pro-app/sdk/api-reference)
+* <a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">ArcGIS Pro SDK for .NET (pro.arcgis.com)</a>
+* [arcgis-pro-sdk-community-samples](http://github.com/Esri/arcgis-pro-sdk-community-samples)
+* [ArcGISPro Registry Keys](http://github.com/Esri/arcgis-pro-sdk/wiki/ArcGIS-Pro-Registry-Keys)
+* [FAQ](http://github.com/Esri/arcgis-pro-sdk/wiki/FAQ)
+* [ArcGIS Pro SDK icons](https://github.com/Esri/arcgis-pro-sdk/releases/tag/1.4.0.7198)
+* [ProConcepts: ArcGIS Pro Add in Samples](https://github.com/Esri/arcgis-pro-sdk-community-samples/wiki/ProConcepts-ArcGIS-Pro-Add-in-Samples)
+
+![ArcGIS Pro SDK for .NET Icons](https://esri.github.io/arcgis-pro-sdk/images/Home/Image-of-icons.png "ArcGIS Pro SDK Icons")
 
 ### Samples Data
 
@@ -45,23 +46,28 @@ Visual Studio:         2013, 2015
 1. In Visual Studio click the Build menu. Then select Build Solution.  
 1. Click Start button to open ArcGIS Pro.  
 1. ArcGIS Pro will open, select the FeatureTest.aprx project  
-1. Click on the ADD-IN tab and make sure that your active map contains editable point/multipoint/line/polygon features.  
+1. Click on the ADD-IN tab and make sure that your active map contains Setup/point/multipoint/line/polygon features buttons as shown below.  
 ![UI](Screenshots/ScreenPoints.png)  
   
-1. Click the createPoints button to create random points over the current extent of the map  
-1. The map extent shows the random created points  
-![UI](Screenshots/ScreenPoints1.png)  
+1. Click on Setup button to enable the create point and create multipoint buttons   
+![UI](Screenshots/ScreenPoint1.png)  
   
-1. Repeat the same with the createPolylines and the createPolygons buttons.  
-![UI](Screenshots/ScreenPoints2.png)  
-![UI](Screenshots/ScreenPoints3.png)  
+1. Click the createPoints button to create random points over the current extent of the map  
+1. The map extent shows the random created points and also enables create polylines button  
+![UI](Screenshots/ScreenPoint2.png)  
+  
+1. Click the createPolylines button to create random lines the current extent of the map  
+1. The map extent shows the random lines and also enables create polygons button  
+![UI](Screenshots/ScreenPoint3.png)  
+  
+1. Click the createPolygons button to create random polygon over the current extent of the map  
+![UI](Screenshots/ScreenPoint4.png)  
   
 
 
 [](Esri Tags: ArcGIS-Pro-SDK)
 [](Esri Language: C-Sharp)​
 
-<p align = center><img src="http://esri.github.io/arcgis-pro-sdk/images/ArcGISPro.png"  alt="pre-req" align = "top" height = "20" width = "20" >
-<b> ArcGIS Pro 1.3 SDK for Microsoft .NET Framework</b>
-</p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Home](https://github.com/Esri/arcgis-pro-sdk/wiki) | <a href="http://pro.arcgis.com/en/pro-app/sdk" target="_blank">ArcGIS Pro SDK</a> | <a href="http://pro.arcgis.com/en/pro-app/sdk/api-reference/index.html" target="_blank">API Reference</a> | [Requirements](#requirements) | [Download](#installing-arcgis-pro-sdk-for-net) |  <a href="http://github.com/esri/arcgis-pro-sdk-community-samples" target="_blank">Samples</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://esri.github.io/arcgis-pro-sdk/images/ArcGISPro.png"  alt="ArcGIS Pro SDK for Microsoft .NET Framework" height = "20" width = "20" align="top"  >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[Home](https://github.com/Esri/arcgis-pro-sdk/wiki) | <a href="http://pro.arcgis.com/en/pro-app/sdk/api-reference" target="_blank">API Reference</a> | [Requirements](https://github.com/Esri/arcgis-pro-sdk/wiki#requirements) | [Download](https://github.com/Esri/arcgis-pro-sdk/wiki#installing-arcgis-pro-sdk-for-net) | <a href="http://github.com/esri/arcgis-pro-sdk-community-samples" target="_blank">Samples</a>

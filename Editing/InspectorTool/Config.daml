@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -18,7 +19,7 @@
 
 -->
 <ArcGIS defaultAssembly="InspectorTool.dll" defaultNamespace="InspectorTool" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{44a24a2f-143e-4744-89ff-2fa134c28a03}" version="1.0" desktopVersion="1.3.5778">
+  <AddInInfo id="{44a24a2f-143e-4744-89ff-2fa134c28a03}" version="1.0" desktopVersion="1.4.7198">
     <Name>InspectorTook</Name>
     <Description>Editing tool using the inspector class.</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -32,9 +33,7 @@
       <tabs />
       <groups />
       <controls>
-        <tool id="InspectorTool_UseInspectorTool" caption="Select Inspector Tool" className="UseInspectorTool" 
-              loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" 
-              condition="esri_mapping_mapPane" categoryRefID="esri_editing_CommandList">
+        <tool id="InspectorTool_UseInspectorTool" caption="Select Inspector Tool" className="UseInspectorTool" keytip="ZI" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" condition="esri_mapping_mapPane" categoryRefID="esri_editing_CommandList">
           <tooltip heading="Inspector Tool">Select point features and explore/modify the attributes.<disabledText /></tooltip>
           <content L_group="Pro SDK Samples" gallery2d="true" gallery3d="false" />
         </tool>

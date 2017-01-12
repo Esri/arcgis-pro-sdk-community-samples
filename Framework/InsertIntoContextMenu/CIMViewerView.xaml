@@ -1,6 +1,6 @@
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -16,11 +16,12 @@
    limitations under the License.
 
 -->
-<Window x:Class="InsertIntoContextMenu.CIMViewerView"
+<controls:ProWindow x:Class="InsertIntoContextMenu.CIMViewerView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
              ShowInTaskbar="true" WindowStartupLocation="CenterOwner"             
              Title="Viewer"
              mc:Ignorable="d" 
@@ -30,4 +31,4 @@
             <TextBox Text="{Binding Xml}"  TextWrapping="Wrap"/>
         </ScrollViewer>
     </Grid>
-</Window>
+</controls:ProWindow>

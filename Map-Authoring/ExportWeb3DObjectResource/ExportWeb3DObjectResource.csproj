@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A2F43041-677D-46F3-8DD1-6C4738B2897C}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2755}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ExportWeb3DObjectResource</RootNamespace>
@@ -101,6 +101,12 @@
     <None Include="ReadMe.md" />
     <None Include="SampleOutput\Trees_0.json" />
     <None Include="Screenshots\Screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\GenericButtonBlue16.png" />
+    <AddInContent Include="DarkImages\GenericButtonBlue32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.PackageAddIn" />

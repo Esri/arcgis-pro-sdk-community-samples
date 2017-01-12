@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0D2EFF3C-D98C-4421-AC9E-44EC874E6757}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2760}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BingStreetside</RootNamespace>
@@ -119,6 +119,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BingStreetsidePage.html" />
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\Dino16.png" />
+    <AddInContent Include="DarkImages\Dino32.png" />
+    <AddInContent Include="DarkImages\Look16.png" />
+    <AddInContent Include="DarkImages\Look32.png" />
     <None Include="ReadMe.md" />
     <None Include="Screenshots\screenshot1.png" />
     <None Include="Screenshots\screenshot2.png" />

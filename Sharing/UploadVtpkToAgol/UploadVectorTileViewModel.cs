@@ -1,6 +1,6 @@
-﻿/*
+/*
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -168,32 +168,18 @@ namespace UploadVtpkToAgol
             // Upload vtpk file to the currently active portal
             var itemToUpload = ItemFactory.Create(FilePath);
             var tags = new string[] { "ArcGIS Pro", "SDK", "UploadVtpkToAgol Demo" };
+            var portalUrl = ArcGISPortalManager.Current.GetActivePortal().PortalUri.ToString();
 
-            var result = httpClient.Upload(PortalManager.GetActivePortal().ToString(), itemToUpload, string.Empty, tags);
+            var result = httpClient.Upload(
+                portalUrl, itemToUpload, string.Empty, tags);
             if (result.Item1 == false)
                 return $@"Unable to upload this item: {FilePath} to ArcGIS Online";
 
-            // Make a self call to extract the signed on username for now. 
-            // Coming soon - An API which will give you the the signed on username for a portal
-            var selfUrl = new UriBuilder(PortalManager.GetActivePortal())
-            {
-                Path = "sharing/rest/portals/self",
-                Query = "f=json"
-            };
-
-            EsriHttpResponseMessage response = httpClient.Get(selfUrl.Uri.ToString());
-
-            dynamic portalSelf = JObject.Parse(await response.Content.ReadAsStringAsync());
-            // if the response doesn't contain the user information then it is essentially
-            // an anonymous request against the portal
-            if (portalSelf.user == null)
-                return "Unable to get current user from portal";
-
-            string userName = portalSelf.user.username;
+            string userName = ArcGISPortalManager.Current.GetActivePortal().GetSignOnUsername();
             string query = $@"q=owner:{userName} tags:""UploadVtpkToAgol Demo"" ";
 
             // Once uploaded make another REST call to search for the uploaded data
-            var searchUrl = new UriBuilder(PortalManager.GetActivePortal())
+            var searchUrl = new UriBuilder(portalUrl)
             {
                 Path = "sharing/rest/search",
                 Query = $@"{query}&f=json"
@@ -235,28 +221,13 @@ namespace UploadVtpkToAgol
         {
             // Create EsriHttpClient object
             var httpClient = new EsriHttpClient();
+            var portalUrl = ArcGISPortalManager.Current.GetActivePortal().PortalUri.ToString();
 
-            // Make a self call to extract the signed on username for now. 
-            // Coming soon - An API which will give you the the signed on username for a portal
-            var selfUrl = new UriBuilder(PortalManager.GetActivePortal())
-            {
-                Path = "sharing/rest/portals/self",
-                Query = "f=json"
-            };
-
-            EsriHttpResponseMessage response = httpClient.Get(selfUrl.Uri.ToString());
-
-            dynamic portalSelf = JObject.Parse(await response.Content.ReadAsStringAsync());
-            // if the response doesn't contain the user information then it is essentially
-            // an anonymous request against the portal
-            if (portalSelf.user == null)
-                return "Unable to get current user from portal";
-
-            string userName = portalSelf.user.username;
+            string userName = ArcGISPortalManager.Current.GetActivePortal().GetSignOnUsername();
             string query = $@"q=owner:{userName} tags:""UploadVtpkToAgol Demo"" type:""Vector Tile Service"" ";
 
             // Once uploaded make another REST call to search for the uploaded data
-            var searchUrl = new UriBuilder(PortalManager.GetActivePortal())
+            var searchUrl = new UriBuilder(portalUrl)
             {
                 Path = "sharing/rest/search",
                 Query = $@"{query}&f=json"

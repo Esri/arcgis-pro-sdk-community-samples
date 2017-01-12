@@ -2,9 +2,10 @@
 
 
 
+
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -21,7 +22,7 @@
 
 -->
 <ArcGIS defaultAssembly="LayersPane.dll" defaultNamespace="LayersPane" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{b11b74cc-d119-41ff-a9fa-622a970c345e}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{b11b74cc-d119-41ff-a9fa-622a970c345e}" version="1.0" desktopVersion="1.4.7198">
     <Name>LayersPane</Name>
     <Description>LayersPane description</Description>
     <Image>Images\AddinDesktop32.png</Image>

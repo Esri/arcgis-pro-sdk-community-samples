@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2017 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+
+<ArcGIS defaultAssembly="ConditionQuery.dll" defaultNamespace="ConditionQuery" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{0a88ec38-9a78-4a51-88da-ae06835628d0}" version="1.0" desktopVersion="1.4.7198">
+    <Name>ConditionQuery</Name>
+    <Description>Queries the application state to determine which conditions are currently enabled</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>charlesm</Author>
+    <Company>Acme</Company>
+    <Date>8/22/2016 3:49:35 PM, 2016</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <conditions>
+    <insertCondition id="condition_query_Visible">
+      <not>
+        <state id="condition_query_Visible" />
+      </not>
+    </insertCondition>
+  </conditions>
+  <modules>
+    <insertModule id="ConditionQuery_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="ConditionQuery_Tab1" caption="New Tab">
+          <group refID="ConditionQuery_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ConditionQuery_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="G1">
+          <!-- host controls within groups -->
+          <button refID="ConditionQuery_UI_Conditions_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ConditionQuery_UI_Conditions_ShowButton" caption="Show Conditions" className="ConditionQuery.UI.Conditions_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\MarsCat32.png" keytip="CAT" condition="condition_query_Visible">
+          <tooltip heading="Show Dockpane">Show the Conditions Query dock pane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="ConditionQuery_UI_Conditions" caption="Conditions" className="ConditionQuery.UI.ConditionsViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="ConditionQuery.UI.ConditionsView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

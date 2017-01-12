@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -52,7 +52,8 @@ namespace AddDeleteFieldToFromFeatureClass
                     MessageBox.Show("Unable to find a feature class at the first layer of the active map");
                 else
                 {
-                    MessageBox.Show($@"{layer.Name} was found .... deleting the newly added field");
+                    var dataSource = await GetDataSource(layer);
+                    MessageBox.Show($@"{dataSource} was found .... deleting the newly added field");
                     await
                         ExecuteDeleteFieldTool(layer, "AddedField");
                 }
@@ -60,6 +61,29 @@ namespace AddDeleteFieldToFromFeatureClass
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private async Task<string> GetDataSource(BasicFeatureLayer theLayer)
+        {
+            try
+            {
+                return await ArcGIS.Desktop.Framework.Threading.Tasks.QueuedTask.Run(() =>
+                {
+                    var inTable = theLayer.Name;
+                    var table = theLayer.GetTable();
+                    var dataStore = table.GetDatastore();
+                    var workspaceNameDef = dataStore.GetConnectionString();
+                    var workspaceName = workspaceNameDef.Split('=')[1];
+
+                    var fullSpec = System.IO.Path.Combine(workspaceName, inTable);
+                    return fullSpec;
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return string.Empty;
             }
         }
 
@@ -79,9 +103,8 @@ namespace AddDeleteFieldToFromFeatureClass
                     System.Diagnostics.Debug.WriteLine($@"Delete {fieldName} from {fullSpec}");
 
                     var parameters = Geoprocessing.MakeValueArray(fullSpec, fieldName);
-                    var env = Geoprocessing.MakeEnvironmentArray(workspace: workspaceName);
                     var cts = new CancellationTokenSource();
-                    var results = Geoprocessing.ExecuteToolAsync("management.DeleteField", parameters, env, cts.Token,
+                    var results = Geoprocessing.ExecuteToolAsync("management.DeleteField", parameters, null, cts.Token,
                         (eventName, o) =>
                         {
                             System.Diagnostics.Debug.WriteLine($@"GP event: {eventName}");

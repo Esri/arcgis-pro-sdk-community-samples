@@ -1,11 +1,15 @@
-﻿<Window x:Class="Geocode.GeocodeWindow"
+<controls:ProWindow x:Class="Geocode.GeocodeWindow"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             d:DesignHeight="150" d:DesignWidth="420" Height="150" Width="420" Title="Geocode">
-    <!--//Copyright 2015 Esri
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:geocode="clr-namespace:Geocode"
+             xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
+             mc:Ignorable="d"              
+             d:DesignHeight="150" d:DesignWidth="420" 
+             Height="150" Width="420" Title="Geocode">
+
+    <!--//Copyright 2017 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -20,7 +24,7 @@
 //   limitations under the License.
     -->
     <Grid Margin="2">
-        <Border BorderBrush="LightGray" BorderThickness="2" Margin="2" Padding="2" CornerRadius="3">
+        <Border BorderThickness="2" Margin="2" Padding="2" CornerRadius="3">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -34,9 +38,9 @@
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="0" Grid.ColumnSpan="2" Content="Please enter an address or a place name:" />
                 <TextBox x:Name="SearchText" Grid.Column="0" Grid.Row="1" Margin="3" Height="25" />
-                <Button Grid.Column="1" Grid.Row="1" Content="Go" MinWidth="75" HorizontalAlignment="Center" VerticalAlignment="Center"
-                        Click="Button_Click"  Height="20" Margin="5,10,5,10" Width="75" ToolTipService.ShowOnDisabled="True" IsDefault="True"
-                         >
+                <Button Grid.Column="1" Grid.Row="1" Content="Go" 
+                        Click="Button_Click"  ToolTipService.ShowOnDisabled="True" IsDefault="True"
+                         Style="{DynamicResource Esri_SimpleButton}">
                     <Button.ToolTip>
                         <ToolTip>
                             <StackPanel>
@@ -46,9 +50,11 @@
                         </ToolTip>
                     </Button.ToolTip>
                 </Button>
-                <TextBlock Name="LastSearch" Text="Last Match:" Height="25" FontWeight="Bold" Grid.Row="2" Grid.ColumnSpan="2" Margin="3" />
+                <TextBlock Grid.Column="0" Name="LastSearch" Text="Last Match:" 
+                           Height="25" Grid.Row="2" 
+                           Grid.ColumnSpan="2" Margin="3" Style="{DynamicResource H7TextBlock}"/>
             </Grid>
         </Border>
     </Grid>
     
-</Window>
+</controls:ProWindow>

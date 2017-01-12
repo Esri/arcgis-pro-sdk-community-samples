@@ -1,4 +1,4 @@
-﻿//   Copyright 2016 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -21,7 +21,7 @@ using System.Threading.Tasks;
 
 namespace FeatureDynamicMenu
 {/// <summary>
- /// This sample shows how to display a dynamic context menu. 
+ /// This sample shows how to display a dynamic context menu. The sample also have an embeddabel control on the map that allows you pick the layer you want to select.   
  /// When you select features with this tool, the oids of the feaures will be displayed in a dynamic context menu. 
  /// When you click one of the OIDs in this context menu, that feature will flash on the Map View and display a pop-up. 
  /// </summary>

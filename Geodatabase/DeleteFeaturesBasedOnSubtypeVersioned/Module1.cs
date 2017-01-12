@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -29,7 +29,7 @@ namespace DeleteFeaturesBasedOnSubtypeVersioned
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
     /// 2. Click Start button to open ArcGIS Pro.
     /// 3. ArcGIS Pro will open. 
-    /// 4. Open a map view that contains atleast one Feature Layer whose source points to an Enterprise Feature Class
+    /// 4. Open a map view that contains at least one Feature Layer whose source points to an Enterprise Feature Class
     /// 5. Make sure the Map Pane and the corresponding Table of Contents (TOC) Pane are Open and the Map Pane is Active
     /// 6. Click on the Add-In Tab
     /// 7. Observe that when no Layer is selected in the TOC, clicking on the combobox will show an empty list. An empty list will also be shown if the Layer is not a Feature Layer i.e. if it is a standalone table.

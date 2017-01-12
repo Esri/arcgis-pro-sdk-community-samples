@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -24,14 +24,13 @@ using ArcGIS.Desktop.Editing.Attributes;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
-using ArcGIS.Desktop.Internal.Editing;
 using ArcGIS.Desktop.Mapping;
 
 namespace MainConnectorManhole
 {
   internal class mcm : MapTool
   {
-    public mcm()
+    public mcm() : base()
     {
       IsSketchTool = true;
       SketchType = SketchGeometryType.Line;
@@ -44,17 +43,28 @@ namespace MainConnectorManhole
       //Run on MCT
       return QueuedTask.Run(() =>
       {
+        //get the templates
+        var map = MapView.Active.Map;
+        IEnumerable<Layer> layers = map.GetLayersAsFlattenedList().AsEnumerable();
+        Layer mainLayer = layers.FirstOrDefault(l => l.Name == "main");
+        Layer mhLayer = layers.FirstOrDefault(l => l.Name == "Manhole");
+        Layer conLayer = layers.FirstOrDefault(l => l.Name == "Connector");
+
+        if ((mainLayer == null) || (mhLayer == null) || (conLayer == null))
+          return false;
+
+        var mainTemplate = mainLayer.GetTemplate("main");
+        var mhTemplate = mhLayer.GetTemplate("Manhole");
+        var conTemplate = conLayer.GetTemplate("Connector");
+
+        if ((mainTemplate == null) || (mhTemplate == null) || (conTemplate == null))
+          return false;
+
         var op = new EditOperation();
         op.Name = "Create main-connector-manhole";
         op.SelectModifiedFeatures = false;
         op.SelectNewFeatures = false;
-
-        //get the templates
-        var map = MapView.Active.Map;
-        var mainTemplate = map.FindLayers("main").First().GetTemplate("main");
-        var mhTemplate = map.FindLayers("Manhole").First().GetTemplate("Manhole");
-        var conTemplate = map.FindLayers("Connector").First().GetTemplate("Connector");
-
+        
         //create the main geom
         var mainGeom = GeometryEngine.Move(geometry, 0, 0, -20);
         op.Create(mainTemplate, mainGeom);

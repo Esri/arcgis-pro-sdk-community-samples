@@ -9,9 +9,29 @@
             Returns the opposite or 'Not' of the input - True for False and False for True
             </summary>
         </member>
+        <member name="M:CoordinateSystemAddin.Common.ReverseBoolConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert True to False and False to True
+            </summary>
+        </member>
+        <member name="M:CoordinateSystemAddin.Common.ReverseBoolConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not implemented
+            </summary>
+        </member>
         <member name="T:CoordinateSystemAddin.Common.BoolToVisibilityConverter">
             <summary>
             Converts the given bool to a Visibility
+            </summary>
+        </member>
+        <member name="M:CoordinateSystemAddin.Common.BoolToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert True to Visible and False to Hidden
+            </summary>
+        </member>
+        <member name="M:CoordinateSystemAddin.Common.BoolToVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not implemented
             </summary>
         </member>
         <member name="T:CoordinateSystemAddin.Module1">
@@ -61,11 +81,6 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="P:CoordinateSystemAddin.Resource1.sr_out">
-            <summary>
-              Looks up a localized string similar to Geographic Coordinate Systems/Africa/Abidjan 1987|GCS_Abidjan_1987|4143|GEOGCS[&apos;GCS_Abidjan_1987&apos;,DATUM[&apos;D_Abidjan_1987&apos;,SPHEROID[&apos;Clarke_1880_RGS&apos;,6378249.145,293.465]],PRIMEM[&apos;Greenwich&apos;,0.0],UNIT[&apos;Degree&apos;,0.0174532925199433]]Geographic Coordinate Systems/Africa/Accra|GCS_Accra|4168|GEOGCS[&apos;GCS_Accra&apos;,DATUM[&apos;D_Accra&apos;,SPHEROID[&apos;War_Office&apos;,6378300.0,296.0]],PRIMEM[&apos;Greenwich&apos;,0.0],UNIT[&apos;Degree&apos;,0.0174532925199433]]Geographic Coordinate Systems/Africa/Adindan|GCS_Adindan|4201|GEOGCS[&apos;GCS_Adindan&apos;,DATUM[&apos;D_A [rest of string was truncated]&quot;;.
-            </summary>
-        </member>
         <member name="P:CoordinateSystemAddin.Resource1.String1">
             <summary>
               Looks up a localized string similar to string1.
@@ -79,28 +94,17 @@
             CoordSysDialog
             </summary>
         </member>
+        <member name="M:CoordinateSystemAddin.UI.CoordSysDialog.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
         <member name="P:CoordinateSystemAddin.UI.CoordSysDialog.SpatialReference">
             <summary>
             The selected Spatial Reference based on the picker selection
             </summary>
         </member>
         <member name="M:CoordinateSystemAddin.UI.CoordSysDialog.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:CoordinateSystemAddin.UI.CoordSysPickerView">
-            <summary>
-            Interaction logic for CoordinateSystemPicker.xaml
-            </summary>
-            <remarks>Handy reference on how to style the TreeView:
-            <a href="http://blogs.msdn.com/b/mikehillberg/archive/2009/10/30/treeview-and-hierarchicaldatatemplate-step-by-step.aspx"/>
-            </remarks>
-            <summary>
-            CoordSysPickerView
-            </summary>
-        </member>
-        <member name="M:CoordinateSystemAddin.UI.CoordSysPickerView.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>

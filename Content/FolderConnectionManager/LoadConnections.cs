@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -51,13 +51,13 @@ namespace FolderConnections
                             }
                             else
                             {
-                                notFound += "\r\n" + line;
+                                notFound += Environment.NewLine + line;
                             }
 
                             /// Report any folder connections that could not be found
                             if (notFound != "")
                             {
-                                MessageBox.Show("The following directories were not found and could not be added to the Folder Connections: " + notFound);
+                                ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("The following directories were not found and could not be added to the Folder Connections: " + notFound);
                             }
 
                         }

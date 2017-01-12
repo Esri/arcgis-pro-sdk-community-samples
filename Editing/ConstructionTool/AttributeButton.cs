@@ -1,4 +1,4 @@
-﻿//Copyright 2015 Esri
+//Copyright 2017 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -121,7 +121,7 @@ namespace ConstructionTool
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred while updating attribute column data {0}", ex.ToString());
+                ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("An error occurred while updating attribute column data {0}", ex.ToString());
             }
             return true;
         }

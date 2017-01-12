@@ -1,4 +1,4 @@
-﻿//Copyright 2015 Esri
+//Copyright 2017 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ArcGIS.Desktop.Framework.Controls;
 using ArcGIS.Desktop.Mapping;
 
 namespace Geocode
@@ -32,7 +33,7 @@ namespace Geocode
     /// <summary>
     /// Interaction logic for GeocodeWindow.xaml
     /// </summary>
-    public partial class GeocodeWindow : Window
+    public partial class GeocodeWindow : ProWindow
     {
         public GeocodeWindow()
         {

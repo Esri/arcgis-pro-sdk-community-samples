@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -18,7 +19,7 @@
 
 -->
 <ArcGIS defaultAssembly="AddDeleteFieldToFromFeatureClass.dll" defaultNamespace="AddDeleteFieldToFromFeatureClass" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{ebcf4b1a-5683-4f03-93e0-d7d43396f00b}" version="1.0" desktopVersion="1.3.5861">
+  <AddInInfo id="{ebcf4b1a-5683-4f03-93e0-d7d43396f00b}" version="1.0" desktopVersion="1.4.7198">
     <Name>AddDeleteFieldToFromFeatureClass</Name>
     <Description>AddDeleteFieldToFromFeatureClass description</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -48,21 +49,13 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="AddDeleteFieldToFromFeatureClass_AddAField" caption="Add a new field" 
-              className="AddAField" loadOnClick="true" 
-              smallImage="Images\Robot16.png" largeImage="Images\Robot32.png" keytip="B1" 
-              condition="esri_mapping_singleFeatureLayerSelectedCondition" >
+        <button id="AddDeleteFieldToFromFeatureClass_AddAField" caption="Add a new field" className="AddAField" loadOnClick="true" smallImage="Images\Robot16.png" largeImage="Images\Robot32.png" keytip="B1" condition="esri_mapping_singleFeatureLayerSelectedCondition">
           <tooltip heading="Add Field">
-            Adds a new field called 'AddedField' to the first feature class on the mapview active layers<disabledText />
-          </tooltip>
+            Adds a new field called 'AddedField' to the first feature class on the mapview active layers<disabledText /></tooltip>
         </button>
-        <button id="AddDeleteFieldToFromFeatureClass_DeleteTheField" caption="Delete the new Field" 
-              className="DeleteTheField" loadOnClick="true" smallImage="Images\UFO16.png" 
-              largeImage="Images\UFO32.png" keytip="B2" 
-              condition="esri_mapping_singleFeatureLayerSelectedCondition">
+        <button id="AddDeleteFieldToFromFeatureClass_DeleteTheField" caption="Delete the new Field" className="DeleteTheField" loadOnClick="true" smallImage="Images\UFO16.png" largeImage="Images\UFO32.png" keytip="B2" condition="esri_mapping_singleFeatureLayerSelectedCondition">
           <tooltip heading="Delete Field">
-            Deletes the newly field called 'AddedField' from the first feature class on the mapview active layers<disabledText />
-          </tooltip>
+            Deletes the newly field called 'AddedField' from the first feature class on the mapview active layers<disabledText /></tooltip>
         </button>
       </controls>
     </insertModule>

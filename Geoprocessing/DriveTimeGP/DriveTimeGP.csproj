@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{EA13973F-1708-47BF-82A7-9E3DA660C3D3}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2746}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DriveTimeGP</RootNamespace>
@@ -107,6 +107,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\GenericButtonRed16.png" />
+    <AddInContent Include="DarkImages\GenericButtonRed32.png" />
+    <AddInContent Include="DarkImages\Rabbit16.png" />
+    <AddInContent Include="DarkImages\Rabbit32.png" />
     <Content Include="Screenshots\DriveTime.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

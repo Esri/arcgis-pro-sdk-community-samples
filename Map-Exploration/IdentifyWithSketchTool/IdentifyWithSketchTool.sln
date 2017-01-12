@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentifyWithSketchTool", "IdentifyWithSketchTool.csproj", "{8D9005ED-E3BC-46AC-B6C8-B1FFB8FB3BD2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentifyWithSketchTool", "IdentifyWithSketchTool.csproj", "{DEB9DD29-7A64-4434-B111-A5B5FDCD2767}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8D9005ED-E3BC-46AC-B6C8-B1FFB8FB3BD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D9005ED-E3BC-46AC-B6C8-B1FFB8FB3BD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D9005ED-E3BC-46AC-B6C8-B1FFB8FB3BD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D9005ED-E3BC-46AC-B6C8-B1FFB8FB3BD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEB9DD29-7A64-4434-B111-A5B5FDCD2767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEB9DD29-7A64-4434-B111-A5B5FDCD2767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEB9DD29-7A64-4434-B111-A5B5FDCD2767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEB9DD29-7A64-4434-B111-A5B5FDCD2767}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -179,6 +179,8 @@ namespace DivideLines
         var origPolyLine = feature.Shape as Polyline;
         var origLength = GeometryEngine.Length(origPolyLine);
 
+        string xml = origPolyLine.ToXML();
+
         //List of mappoint geometries for the split
         var splitPoints = new List<MapPoint>();
 
@@ -188,10 +190,26 @@ namespace DivideLines
         while (splitAtDistance < origLength)
         {
           //create a mapPoint at splitDistance and add to splitpoint list
-          splitPoints.Add(GeometryEngine.MovePointAlongLine(origPolyLine, splitAtDistance, false, 0));
+          MapPoint pt = null;
+          try
+          {
+            pt = GeometryEngine.MovePointAlongLine(origPolyLine, splitAtDistance, false, 0, GeometryEngine.SegmentExtension.NoExtension);
+          }
+          catch (GeometryObjectException)
+          {
+            // line is an arc?
+          }
+
+          if (pt != null)
+            splitPoints.Add(pt);
           splitAtDistance += enteredValue;
         }
-        
+
+        if (splitPoints.Count == 0)
+        {
+          ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Divide lines was unable to process your selected line. Please select another.", "Divide Lines");
+          return;
+        }
         //create and execute the edit operation
         var op = new EditOperation();
         op.Name = "Divide Lines";
@@ -201,7 +219,6 @@ namespace DivideLines
         op.Execute();
 
         //clear selection
-        //MapView.Active.Map.SetSelection(null);
         featLayer.ClearSelection();
       });
     }

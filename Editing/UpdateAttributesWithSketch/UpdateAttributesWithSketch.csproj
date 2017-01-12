@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{77C5AD83-8981-42A1-9AAB-2D7570B0779A}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2715}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UpdateAttributesWithSketch</RootNamespace>
@@ -112,6 +112,12 @@
     <None Include="UpdateAttributesWithSketch %28C#%29.md" />
   </ItemGroup>
   <ItemGroup>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\EditingSketchTool16.png" />
+    <AddInContent Include="DarkImages\EditingSketchTool32.png" />
+    <AddInContent Include="DarkImages\GenericButtonRed16.png" />
+    <AddInContent Include="DarkImages\GenericButtonRed32.png" />
     <Content Include="Screenshots\Screen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

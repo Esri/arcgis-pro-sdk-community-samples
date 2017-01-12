@@ -2,7 +2,7 @@
 
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@
 
 -->
 <ArcGIS defaultAssembly="UploadVtpkToAgol.dll" defaultNamespace="UploadVtpkToAgol" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{e706895b-16b0-42f2-8eb1-49020fcc8b9f}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{e706895b-16b0-42f2-8eb1-49020fcc8b9f}" version="1.0" desktopVersion="1.4.7198">
     <Name>UploadVtpkToAgol</Name>
     <Description>UploadVtpkToAgol description</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -34,21 +34,21 @@
     <insertModule id="UploadVtpkToAgol_Module" className="UploadVtpkToAgolModule" autoLoad="false" caption="UploadVtpkToAgolModule">
       <!-- uncomment to have the control hosted on a separate tab-->
       <tabs>
-        <tab id="UploadVtpkToAgol" caption="Upload to ArcGIS Online" keytip="T1">
+        <tab id="UploadVtpkToAgol" caption="Upload to ArcGIS Online" keytip="z1">
           <group refID="UploadVtpkToAgol_Group2" />
         </tab>
       </tabs>
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="UploadVtpkToAgol_Group2" caption="Upload" appearsOnAddInTab="false" keytip="G2">
+        <group id="UploadVtpkToAgol_Group2" caption="Upload" appearsOnAddInTab="false" keytip="z2">
           <!-- host controls within groups -->
           <button refID="UploadVtpkToAgol_UploadVectorTile_ShowButton" size="large" />
         </group>
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="UploadVtpkToAgol_UploadVectorTile_ShowButton" caption="Show &amp; Upload Vector Tile" className="UploadVectorTile_ShowButton" loadOnClick="true" smallImage="Images\MarsCat16.png" largeImage="Images\MarsCat32.png" keytip="B2">
+        <button id="UploadVtpkToAgol_UploadVectorTile_ShowButton" caption="Show &amp; Upload Vector Tile" className="UploadVectorTile_ShowButton" loadOnClick="true" smallImage="Images\MarsCat16.png" largeImage="Images\MarsCat32.png" keytip="z3">
           <tooltip heading="Show Dockpane">Show and upload a vector tile package to ArcGIS Online<disabledText /></tooltip>
         </button>
       </controls>

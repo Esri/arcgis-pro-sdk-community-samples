@@ -3,7 +3,8 @@
 
 
 
-<!--//Copyright 2015 Esri
+
+<!--//Copyright 2017 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -17,7 +18,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.-->
 <ArcGIS defaultAssembly="WorkingWithDAML.dll" defaultNamespace="WorkingWithDAML" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{c6226a24-d69b-46c6-b5e7-9eee4ddad45d}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{c6226a24-d69b-46c6-b5e7-9eee4ddad45d}" version="1.0" desktopVersion="1.4.7198">
     <Name>WorkingWithDAML</Name>
     <Description>WorkingWithDAML</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -47,18 +48,18 @@
       <!-- uncomment to have the control hosted on a separate tab-->
       <tabs>
         <!--These two tabs are grouped in a the Tab Group and are toggled based on the "example_state_condition" condition -->
-        <tab id="working_with_DAML_Tab1" caption="Favorites 1" tabGroupID="working_with_DAML_ExampleStateTabGroup" condition="example_state_condition">
+        <tab id="working_with_DAML_Tab1" caption="Favorites 1" tabGroupID="working_with_DAML_ExampleStateTabGroup" condition="example_state_condition" keytip="Z1">
           <group refID="working_with_DAML_Group1" />
           <group refID="working_with_DAML_Group2" />
         </tab>
-        <tab id="working_with_DAML_Tab2" caption="Favorites 2" tabGroupID="working_with_DAML_ExampleStateTabGroup" condition="example_state_condition">
+        <tab id="working_with_DAML_Tab2" caption="Favorites 2" tabGroupID="working_with_DAML_ExampleStateTabGroup" condition="example_state_condition" keytip="Z2">
           <group refID="esri_mapping_inquiryGroup" />
         </tab>
       </tabs>
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="working_with_DAML_Group1" caption="Lab group 1" appearsOnAddInTab="false">
+        <group id="working_with_DAML_Group1" caption="Lab group 1" appearsOnAddInTab="false" keytip="Z3">
           <!-- host controls within groups -->
           <!--Core Pro Commands-->
           <toolPalette refID="esri_mapping_newMapPalette" />
@@ -67,7 +68,7 @@
           <gallery refID="esri_mapping_bookmarksNavigateGallery" />
           <button refID="esri_mapping_mapContextMenu_ExportMap" />
         </group>
-        <group id="working_with_DAML_Group2" caption="Lab group 2" appearsOnAddInTab="false">
+        <group id="working_with_DAML_Group2" caption="Lab group 2" appearsOnAddInTab="false" keytip="Z4">
           <!-- host controls within groups -->
           <!--Core Pro Commands-->
           <toolPalette refID="esri_mapping_selectToolPalette" />
@@ -78,7 +79,7 @@
       </groups>
       <controls>
         <!-- Button toggles the Example_state -->
-        <button id="working_with_DAML_ToggleStateButton" caption="Toggle State" className="ToggleStateButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" condition="esri_mapping_mapPane">
+        <button id="working_with_DAML_ToggleStateButton" caption="Toggle State" className="ToggleStateButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" condition="esri_mapping_mapPane" keytip="Z5">
           <tooltip heading="Toggle State Sample">Click to toggle state used by other plug-in elements<disabledText /></tooltip>
         </button>
       </controls>

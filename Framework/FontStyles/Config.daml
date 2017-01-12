@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-
-
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -21,7 +19,7 @@
 
 -->
 <ArcGIS defaultAssembly="FontStyles.dll" defaultNamespace="FontStyles" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{b2960862-38c4-4ded-9b4a-dc308c258102}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{b2960862-38c4-4ded-9b4a-dc308c258102}" version="1.0" desktopVersion="1.4.7198">
     <Name>FontStyles</Name>
     <Description>Creates a Dockpane showing all the available font styles in ArcGIS Pro</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -43,17 +41,17 @@
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="FontStyles_Group1" caption="Font Styles" appearsOnAddInTab="true">
+        <group id="FontStyles_Group1" caption="Font Styles" appearsOnAddInTab="true" keytip="Z0">
           <!-- host controls within groups -->
           <button refID="FontStyles_Dockpane1_ShowButton" size="large" />
         </group>
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="FontStyles_Dockpane1_ShowButton" caption="Font Styles" className="Dockpane1_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+        <button id="FontStyles_Dockpane1_ShowButton" caption="Font Styles" className="Dockpane1_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="Z1">
           <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
         </button>
-        <button id="FontStyles_Dockpane1_MenuButton" caption="Burger Menu Button" className="Dockpane1_MenuButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+        <button id="FontStyles_Dockpane1_MenuButton" caption="Burger Menu Button" className="Dockpane1_MenuButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png"  keytip="Z2">
           <tooltip heading="Burger Menu Button">ToolTip<disabledText /></tooltip>
         </button>
       </controls>

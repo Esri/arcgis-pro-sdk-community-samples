@@ -12,12 +12,17 @@
             FavoritesDockpaneView
             </summary>
         </member>
+        <member name="M:FavoriteQueries.FavoritesDockpaneView.#ctor">
+            <summary>
+            Ctor
+            </summary>
+        </member>
         <member name="M:FavoriteQueries.FavoritesDockpaneView.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
         </member>
-        <member name="F:FavoriteQueries.FavoritesDockpaneViewModel.queryMap">
+        <member name="F:FavoriteQueries.FavoritesDockpaneViewModel._queryMap">
             <summary>
             This is a Map of the Name of the ArcGIS.Core.Data Table/FeatureClass backing the Layer to the List 
             if Queries are set up for the corresponding Table/FeatureClass
@@ -34,20 +39,19 @@
             Text shown near the top of the DockPane.
             </summary>
         </member>
-        <member name="M:FavoriteQueries.FavoritesDockpaneViewModel.UpdateLayers">
+        <member name="P:FavoriteQueries.FavoritesDockpaneViewModel.CmdWork">
+            <summary>
+            Based on the Query Selected, the FeatureData (bound to the DataGrid) is populated with the results of the Query
+            </summary>
+        </member>
+        <member name="P:FavoriteQueries.FavoritesDockpaneViewModel.CmdDropDownLayers">
             <summary>
             This method will populate the Layers (bound to the LayersComboBox) with all the Feature Layers present in the Active Map View
             </summary>
         </member>
-        <member name="M:FavoriteQueries.FavoritesDockpaneViewModel.UpdateQueries(System.String)">
+        <member name="P:FavoriteQueries.FavoritesDockpaneViewModel.CmdDropDownQueries">
             <summary>
             Based on the selected layer name, the query Map is used to populate the Queries Combobox
-            </summary>
-            <param name="selectedItem"></param>
-        </member>
-        <member name="M:FavoriteQueries.FavoritesDockpaneViewModel.DoWork">
-            <summary>
-            Based on the Query Selected, the FeatureData (bound to the DataGrid) is populated with the results of the Query
             </summary>
         </member>
         <member name="T:FavoriteQueries.FavoriteQuery">
@@ -63,20 +67,23 @@
         </member>
         <member name="T:FavoriteQueries.Module1">
             <summary>
-            This addin will list all subtypes for a Feature Class and allow deletion of all features which have the selected subtype
+            This addin lists all subtypes for a Feature Class and allows deleting all features which have a selected subtype
             </summary>
             <remarks>
+            1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.
             1. In Visual Studio click the Build menu. Then select Build Solution.
-            2. Click Start button to open ArcGIS Pro.
-            3. ArcGIS Pro will open. 
-            4. Open a map view that contains atleast one Feature Layer whose source points to a Feature Class (From either a File Geodatabase or an Enterprise Geodatabase)
-            5. Make sure the Map Pane and the corresponding Table of Contents (TOC) Pane are Open and the Map Pane is Active
-            6. Click on the Add-In Tab
-            7. Click the Show Favorites Dockpane Button and the DockPane opens
-            8. Select a layer from the Layers ComboBox
-            9. If there are any Queries set up for the Layer, they will show up
-            10. Select one of the Queries and click Go
-            11. The results are displayed below in the same Pane
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro opens. 
+            1. Open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project which contains the required data needed for this sample.
+            1. Make sure the Map Pane and the corresponding Table of Contents (TOC) Pane are Open and the Map Pane is Active
+            1. Click on the Add-In Tab
+            1. Click the Show Favorites Dockpane Button and the DockPane opens
+            1. Select a layer from the Layers ComboBox
+            1. If there are any Queries set up for the Layer, they will show up
+            ![UI](Screenshots/Screen1.png)
+            1. Select one of the Queries and click Go
+            1. The results are displayed below in the same Pane
+            ![UI](Screenshots/Screen2.png)
             </remarks>
         </member>
         <member name="P:FavoriteQueries.Module1.Current">

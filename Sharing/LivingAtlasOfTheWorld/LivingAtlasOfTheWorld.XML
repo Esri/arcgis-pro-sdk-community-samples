@@ -27,6 +27,11 @@
             </summary>
             <returns>The query string</returns>
         </member>
+        <member name="M:LivingAtlasOfTheWorld.Common.OnlineQueryToString.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not implemented
+            </summary>
+        </member>
         <member name="T:LivingAtlasOfTheWorld.Common.OnlineUriToString">
             <summary>
             Converts OnlineUri to string (returns the Query property)
@@ -38,9 +43,24 @@
             </summary>
             <returns>The query string</returns>
         </member>
+        <member name="M:LivingAtlasOfTheWorld.Common.OnlineUriToString.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not implemented
+            </summary>
+        </member>
         <member name="T:LivingAtlasOfTheWorld.Common.BoolToVisibilityConverter">
             <summary>
             Converts the given bool to a Visibility
+            </summary>
+        </member>
+        <member name="M:LivingAtlasOfTheWorld.Common.BoolToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert True to Visible and False to Hidden
+            </summary>
+        </member>
+        <member name="M:LivingAtlasOfTheWorld.Common.BoolToVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not implemented
             </summary>
         </member>
         <member name="T:LivingAtlasOfTheWorld.Models.OnlineQuery">
@@ -230,6 +250,8 @@
             Execute the given query and return the result
             </summary>
             <param name="query"></param>
+            <param name="results"></param>
+            <param name="maxResults"></param>
             <returns></returns>
         </member>
         <member name="M:LivingAtlasOfTheWorld.SubmitOnlineQuery.ExecWithEsriClientAsync(LivingAtlasOfTheWorld.Models.OnlineQuery,System.Collections.ObjectModel.ObservableCollection{LivingAtlasOfTheWorld.Models.OnlineResultItem},System.Int32)">
@@ -237,6 +259,8 @@
             Execute the given query and return the result
             </summary>
             <param name="query"></param>
+            <param name="results"></param>
+            <param name="maxResults"></param>
             <returns></returns>
         </member>
         <member name="T:LivingAtlasOfTheWorld.UI.BrowseLayersDialog">
@@ -245,6 +269,11 @@
             </summary>
             <summary>
             BrowseLayersDialog
+            </summary>
+        </member>
+        <member name="M:LivingAtlasOfTheWorld.UI.BrowseLayersDialog.#ctor">
+            <summary>
+            Default constructor
             </summary>
         </member>
         <member name="M:LivingAtlasOfTheWorld.UI.BrowseLayersDialog.InitializeComponent">

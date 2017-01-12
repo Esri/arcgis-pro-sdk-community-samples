@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -21,15 +21,12 @@ namespace FilterFeaturesBasedOnAttributesWithinAnExtent
     /// </summary>
     public partial class Dockpane1View : UserControl
     {
+        /// <summary>
+        /// CTor
+        /// </summary>
         public Dockpane1View()
         {
             InitializeComponent();
-        }
-
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-            var dockpane1ViewModel = DataContext as Dockpane1ViewModel;
-            dockpane1ViewModel.Work();
         }
     }
 }

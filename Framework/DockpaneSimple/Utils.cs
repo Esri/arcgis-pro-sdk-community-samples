@@ -1,4 +1,4 @@
-﻿//Copyright 2015 Esri
+//Copyright 2017 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@ using ArcGIS.Core.CIM;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
-using ArcGIS.Desktop.Internal.Mapping;
 using ArcGIS.Desktop.Mapping;
 using System;
 using System.Collections.Generic;
@@ -23,47 +22,55 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 
 namespace DockpaneSimple
 {
     internal class Utils
     {
+
         /// <summary>
-        /// Given a map project item's path (URL) this method opens a map if it has not already been opened
-        /// this method is important since some functionality like bookmarks are not accessible if the map
-        /// has not been opened and activated
+        /// utility function to open and activate a map given the map url.
         /// </summary>
-        /// <param name="url"></param>
+        /// <param name="url">unique map identifier</param>
         internal static async void OpenAndActivateMap(string url)
         {
-            Map map = MapView.Active.Map;
-
-            bool bAlreadyOpen = false;
-
-            // if not null - it may be open
-            if (map != null)
+            try
             {
-                // see if its already open
-                //IList<IMapPane> mapPanes = MappingModule.GetMapPanes(map);
-                PaneCollection mapPanes = FrameworkApplication.Panes;
-                if ((mapPanes != null) && (mapPanes.Count > 0))
+                // if active map is the correct one, we're done
+                if ((MapView.Active != null) && (MapView.Active.Map != null) && (MapView.Active.Map.URI == url))
+                    return;
+
+                // get the map from the project item
+                Map map = null;
+                await QueuedTask.Run(() =>
                 {
-                    bAlreadyOpen = true;
+                    var mapItem = Project.Current.GetItems<MapProjectItem>().FirstOrDefault(i => i.Path == url);
+                    if (mapItem != null) map = mapItem.GetMap();
+                });
 
-                    // activate the first one
-                    Pane pane = mapPanes[0] as Pane;
-                    if (pane != FrameworkApplication.Panes.ActivePane)
-                        pane.Activate();
+                // url is not a project item - oops
+                if (map == null)
+                    return;
+
+                // check the open panes to see if it's open but just needs activating
+                IEnumerable<IMapPane> mapPanes = FrameworkApplication.Panes.OfType<IMapPane>();
+                foreach (var mapPane in mapPanes)
+                {
+                    if (mapPane.MapView?.Map?.URI == null) continue;
+                    if (mapPane.MapView.Map.URI != url) continue;
+                    var pane = mapPane as Pane;
+                    pane?.Activate();
+                    return;
                 }
-            }
 
-            // if not open - open it
-            if (!bAlreadyOpen)
+                // it's not currently open... so open it
+                await FrameworkApplication.Panes.CreateMapPaneAsync(map);
+            }
+            catch (Exception ex)
             {
-                var mapItem = Project.Current.Items.FirstOrDefault(i => i.Path == url) as MapProjectItem;
-                map = mapItem.GetMap();
-                await ProApp.Panes.CreateMapPaneAsync(map);                
+                MessageBox.Show($@"Error in OpenAndActivateMap: {ex.Message}");
             }
         }
 

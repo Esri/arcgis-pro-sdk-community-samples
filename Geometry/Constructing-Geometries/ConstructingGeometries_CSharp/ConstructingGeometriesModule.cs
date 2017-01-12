@@ -1,4 +1,4 @@
-﻿//Copyright 2015 Esri
+//Copyright 2017 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ using ArcGIS.Desktop.Core;
 namespace ConstructingGeometries
 {
     /// <summary>
-    /// This shows how to:
+    /// This sample provide four buttons showing the construction of geometry types of type MapPoint, Multipoint, Polyline, and Polygon and shows how to:
     /// * Construct and manipulate geometries
     /// * Use GeometryEngine functionality
     /// * Search and retrieve features
@@ -44,14 +44,18 @@ namespace ConstructingGeometries
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
     /// 1. Click Start button to open ArcGIS Pro.
     /// 1. ArcGIS Pro will open, select the FeatureTest.aprx project
-    /// 1. Click on the ADD-IN tab and make sure that your active map contains editable point/multipoint/line/polygon features.
+    /// 1. Click on the ADD-IN tab and make sure that your active map contains Setup/point/multipoint/line/polygon features buttons as shown below.
     /// ![UI](Screenshots/ScreenPoints.png)
+    /// 1. Click on Setup button to enable the create point and create multipoint buttons 
+    /// ![UI](Screenshots/ScreenPoint1.png)
     /// 1. Click the createPoints button to create random points over the current extent of the map
-    /// 1. The map extent shows the random created points
-    /// ![UI](Screenshots/ScreenPoints1.png)
-    /// 1. Repeat the same with the createPolylines and the createPolygons buttons.
-    /// ![UI](Screenshots/ScreenPoints2.png)
-    /// ![UI](Screenshots/ScreenPoints3.png)
+    /// 1. The map extent shows the random created points and also enables create polylines button
+    /// ![UI](Screenshots/ScreenPoint2.png)
+    /// 1. Click the createPolylines button to create random lines the current extent of the map
+    /// 1. The map extent shows the random lines and also enables create polygons button
+    /// ![UI](Screenshots/ScreenPoint3.png)
+    /// 1. Click the createPolygons button to create random polygon over the current extent of the map
+    /// ![UI](Screenshots/ScreenPoint4.png)
     /// </remarks>
     internal class ConstructingGeometriesModule : Module
     {

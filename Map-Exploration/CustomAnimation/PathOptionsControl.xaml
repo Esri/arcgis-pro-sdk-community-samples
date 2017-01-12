@@ -1,5 +1,5 @@
-﻿<!--
-//   Copyright 2015 Esri
+<!--
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -18,10 +18,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:CustomAnimation"
-             mc:Ignorable="d" 
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             mc:Ignorable="d"
+             d:DataContext="{Binding Path=CustomAnimation.PathOptionsControlViewModel}"
              d:DesignHeight="300" d:DesignWidth="300">
   <UserControl.Resources>
-    <local:BooleanInverter x:Key="boolInverter" />
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <local:BooleanInverter x:Key="boolInverter" />
+    </ResourceDictionary>
   </UserControl.Resources>
   <Grid Height="68" Margin="2,0">
     <Grid.RowDefinitions>

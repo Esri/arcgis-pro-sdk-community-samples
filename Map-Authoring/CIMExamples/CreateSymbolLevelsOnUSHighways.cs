@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ using System.Text;
 using System.Threading.Tasks;
 using ArcGIS.Core;
 using ArcGIS.Core.CIM;
-using ArcGIS.Core.Internal.CIM;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Dialogs;

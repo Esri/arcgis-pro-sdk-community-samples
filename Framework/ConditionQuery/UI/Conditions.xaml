@@ -1,0 +1,109 @@
+<!--
+
+   Copyright 2017 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<UserControl x:Class="ConditionQuery.UI.ConditionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ui="clr-namespace:ConditionQuery.UI"
+             xmlns:data="clr-namespace:ConditionsQuery.Data"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             mc:Ignorable="d" 
+             d:DataContext="{Binding Path=ConditionQuery.UI.ConditionsViewModel}"
+             d:DesignHeight="600" d:DesignWidth="525">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"></RowDefinition>
+      <RowDefinition Height="*"></RowDefinition>
+      <RowDefinition Height="Auto"></RowDefinition>
+      <RowDefinition Height="Auto"></RowDefinition>
+      <RowDefinition Height="Auto"></RowDefinition>
+    </Grid.RowDefinitions>
+
+    <StackPanel Orientation="Horizontal">
+      <TextBlock HorizontalAlignment="Left" Text="Enabled Conditions" Style="{DynamicResource H3TextBlock}"
+                       Margin="10,3,20,3"></TextBlock>
+      <Button Style="{DynamicResource Esri_SimpleButton}"
+                        HorizontalAlignment="Right" VerticalAlignment="Center"
+                        Command="{Binding Path=RefreshCommand}"
+                        Content="Refresh"
+                        Margin="20,5,0,0"/>
+
+    </StackPanel>
+    <ListBox ItemsSource="{Binding Path=ConditionLoader.EnabledConditions}" Margin="10" Grid.Row="1"
+             HorizontalAlignment="Stretch"
+             VerticalAlignment="Stretch"
+             SelectedItem="{Binding Path=SelectedCondition}"
+             IsSynchronizedWithCurrentItem="True"
+             ItemContainerStyle="{DynamicResource Esri_HighlightListBoxItem}"
+             BorderBrush="{DynamicResource Esri_Gray160}" BorderThickness="1">
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <TextBlock Text="{Binding Path=ID}" FontSize="14" VerticalAlignment="Center" Foreground="{DynamicResource Esri_Green5}">
+            <TextBlock.ToolTip>
+              <ToolTip Background="{DynamicResource Esri_WindowGray}">
+                <Grid Margin="5">
+                  <TextBlock Text="{Binding Path=Caption}" Margin="5" Style="{DynamicResource RegularText}">
+                  </TextBlock>
+                </Grid>
+              </ToolTip>
+            </TextBlock.ToolTip>
+                    </TextBlock>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+
+    <GridSplitter Grid.Row="2" Width="Auto" Height="10"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                          Margin="0" Background="LightGray"></GridSplitter>
+
+    <Label Grid.Row="2" Content="····" HorizontalAlignment="Center" 
+               VerticalAlignment="Top" FontSize="22" IsHitTestVisible="False"
+               Margin="0,0,0,4"/>
+
+    <Expander  Grid.Row="3" Header="Active States" IsExpanded="False">
+      <ListBox ItemsSource="{Binding Path=ConditionLoader.ActiveStates}" Margin="10"
+               HorizontalAlignment="Stretch"
+               MinHeight="120"
+               ItemContainerStyle="{DynamicResource Esri_HighlightListBoxItem}"
+               BorderBrush="{DynamicResource Esri_Gray160}" BorderThickness="1">
+      </ListBox>
+    </Expander>
+
+    <Expander  Grid.Row="4" Header="Selected Condition Xml" IsExpanded="False">
+      <ui:AvalonEditorWrapper x:Name="AvalonXmlEditor" Grid.Row="4"
+                            Margin="10"
+                            VerticalAlignment="Stretch"
+                            HorizontalAlignment="Stretch"
+                            Text="{Binding Path=SelectedConditionXml}"
+                            ScrollViewer.CanContentScroll="True"
+                                    Height="110">
+      </ui:AvalonEditorWrapper>
+    </Expander>
+
+
+  </Grid>
+</UserControl>

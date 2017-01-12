@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E91F1AA8-8D6A-4CB8-86A3-4CF8D9C789A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConfigWithStartWizard</RootNamespace>
+    <AssemblyName>ConfigWithStartWizard</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe</StartProgram>
+    <StartArguments>/config:ConfigWithStartWizard</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <AddInContent Include="Config.daml" />
+    <AddInContent Include="Images\ConfigXDesktop16.png" />
+    <AddInContent Include="Images\ConfigXDesktop32.png" />
+    <Resource Include="Images\FolderOpenState32.png" />
+    <Resource Include="Images\favicon.ico" />
+    <Resource Include="Images\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\SubmitQuery.cs" />
+    <Compile Include="Common\ValueConverter.cs" />
+    <Compile Include="ConfigWithStartWizardModule.cs" />
+    <Compile Include="ConfigurationManagerStartWizard.cs" />
+    <Compile Include="Models\OnlineQuery.cs" />
+    <Compile Include="Models\OnlineResultItem.cs" />
+    <Compile Include="Models\PathItem.cs" />
+    <Compile Include="Models\TemplateInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Page Include="UI\Backstage\CustomNew.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Backstage\CustomOpen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\SignOnStatus.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\SplashScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="UI\Backstage\CustomNew.xaml.cs">
+      <DependentUpon>CustomNew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Backstage\CustomNewButton.cs" />
+    <Compile Include="UI\Backstage\CustomNewViewModel.cs" />
+    <Compile Include="UI\Backstage\CustomOpen.xaml.cs">
+      <DependentUpon>CustomOpen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Backstage\CustomOpenButton.cs" />
+    <Compile Include="UI\Backstage\CustomOpenViewModel.cs" />
+    <Compile Include="UI\OnMouseClick.cs" />
+    <Compile Include="UI\SignOnStatus.xaml.cs">
+      <DependentUpon>SignOnStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SignOnStatusViewModel.cs" />
+    <Compile Include="UI\SplashScreen.xaml.cs">
+      <DependentUpon>SplashScreen.xaml</DependentUpon>
+    </Compile>
+    <Page Include="UI\AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="UI\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StartPages\CaliforniaCounties.xaml.cs">
+      <DependentUpon>CaliforniaCounties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StartPages\CaliforniaStartPage.xaml.cs">
+      <DependentUpon>CaliforniaStartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StartPages\CaliforniaStartPageViewModel.cs" />
+    <Compile Include="UI\StartPages\OnlineItemStartPage.xaml.cs">
+      <DependentUpon>OnlineItemStartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StartPages\OnlineItemStartPageViewModel.cs" />
+    <Compile Include="UI\StartPages\OutofBoxStartPage.xaml.cs">
+      <DependentUpon>OutofBoxStartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StartPages\OutofBoxStartPageViewModel.cs" />
+    <Compile Include="UI\StartPages\ProjectHelper.cs" />
+    <Compile Include="UI\StartPages\StartPage.xaml.cs">
+      <DependentUpon>StartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StartPages\StartPageViewModel.cs" />
+    <Compile Include="UI\StartPages\StartPageViewModelBase.cs" />
+    <Compile Include="UI\StartPages\StockStartPage.xaml.cs">
+      <DependentUpon>StockStartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StartPages\StockStartPageViewModel.cs" />
+    <Page Include="UI\StartPages\CaliforniaCounties.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\StartPages\CaliforniaStartPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\StartPages\OnlineItemStartPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\StartPages\OutofBoxStartPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\StartPages\StartPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\StartPages\StockStartPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="ArcGIS.Desktop.Framework">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Framework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Core">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Desktop.Core">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Core\ArcGIS.Desktop.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Desktop.Mapping">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Mapping\ArcGIS.Desktop.Mapping.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Desktop.Catalog">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Catalog\ArcGIS.Desktop.Catalog.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Desktop.Editing">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Editing\ArcGIS.Desktop.Editing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Desktop.Extensions">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\DesktopExtensions\ArcGIS.Desktop.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Desktop.Layouts.dll">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Layout\ArcGIS.Desktop.Layouts.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Desktop.Shared.Wpf.dll">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Shared.Wpf.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="Images\AddInDesktop16.png" />
+    <AddInContent Include="Images\AddInDesktop32.png" />
+    <Resource Include="Images\ArcGISProject32.png" />
+    <Resource Include="Images\ArcGISProjectTemplate32.png" />
+    <Resource Include="Images\FolderOpenState16.png" />
+    <Resource Include="Images\GenericInformation16.png" />
+    <Resource Include="Images\User32.png" />
+    <Resource Include="Images\UserRed32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="ReadMe.md" />
+    <None Include="Screenshots\Startup1.png" />
+    <None Include="Screenshots\Startup2.png" />
+    <None Include="Screenshots\Startup3.png" />
+    <None Include="Screenshots\Startup4.png" />
+    <None Include="Screenshots\Startup5.png" />
+    <None Include="Screenshots\Startup6.png" />
+    <None Include="Screenshots\Startup7.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <!--
+  PackageAction can be:
+  BuildDefault: ArcGIS Pro is required. An esriConfigX package is created and copied to ArcGIS Pro Configurations folder.
+  BuildZipPostProcess: ArcGIS Pro install is NOT required to build the configuration.  An esriConfigX package is created in your output folder.
+  BuildNoPostProcess:  ArcGIS Pro install is NOT required to build the configuration.  An esriConfigX package is NOT created.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PackageAction>BuildDefault</PackageAction>
+    <DocumentationFile>ConfigWithStartWizard.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PackageAction>BuildDefault</PackageAction>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageType>Configuration</PackageType>
+  </PropertyGroup>
+  <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.PackageAddIn" />
+  <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.CleanAddIn" />
+  <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.ConvertToRelativePath" />
+  <Import Project="C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets" Condition="Exists('C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="BeforeBuild">
+    <Error Text="C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets not found." Condition="!Exists('C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets')" />
+  </Target>
+</Project>

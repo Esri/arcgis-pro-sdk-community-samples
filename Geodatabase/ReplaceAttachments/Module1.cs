@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -28,17 +28,24 @@ namespace ReplaceAttachments
     /// related to the Table/FeatureClass associated with the
     /// layer selected
     /// </summary>
-    /// <remarks>
-    /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 2. Click Start button to open ArcGIS Pro.
-    /// 3. ArcGIS Pro will open. 
-    /// 4. Open a map view that contains layers which has related Attachment-Enabled FeatureClasses/Tables
-    /// 5. Click on the "Show Replace Attachments Addin" Button to open the Addin DockPane
-    /// 6. Select the Layer you are interested in
-    /// 7. This will list all the RelationshipClasses in which the FeatureClass associated with the layer participates.
-    /// 8. Selecting the RelationshipClass updates the FeatureClass/Table which is Related to the selected Layer through the selected RelationshipClass
-    /// 9. Enter the Attachment Name of interest and the new attachment file
-    /// 10. Click Go to replace all attachments of the given name with the new attachment data.
+    /// <remarks>    
+    /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Working with Core Geometry and Data' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Working with Core Geometry and Data" is available.
+    /// 1. In Visual Studio 2015 click the Build menu. Then select Build Solution.
+    /// 1. Click Start button to debug ArcGIS Pro.
+    /// 1. In ArcGIS Pro open the Project called "Workshop.aprx" in the "C:\Data\Working with Core Geometry and Data" folder.  This project and data is required because it contains data that is attachment enabled.
+	/// 1. Use the ArcGIS Pro "Explore" button and identify the polygon overlaying part of Wyoming. 
+    /// ![UI](Screenshots/Screen1.png)
+	/// 1. Note the attachment called 'redlands.png' which is displayed below the tabular data in the identify layer popup.
+    /// 1. Click the 'Show Replace Attachments Addin' button to show the "Replace Attachments" dockpane.
+    /// ![UI](Screenshots/Screen2.png)
+    /// 1. Use the pull-downs on the "Replace Attachments" dockpane to make selections as shown on the screen below.
+	/// ![UI](Screenshots/Screen3.png)
+    /// 1. Click on the "File Selection" Button on the right of "Path of the New Attachment File" and select the image file "c:\data\Redlands.png"
+    /// ![UI](Screenshots/Screen4.png)
+    /// 1. Click the "Go" button to replace all attachments of the given name with the new attachment data.
+	/// 1. Use the ArcGIS Pro "Explore" button and identify the polygon 
+	/// 1. Note the changed attachment
+    /// ![UI](Screenshots/Screen5.png)
     /// </remarks>
     internal class Module1 : Module
     {

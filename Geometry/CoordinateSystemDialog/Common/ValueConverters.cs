@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -32,10 +32,16 @@ namespace CoordinateSystemAddin.Common {
     /// </summary>
     public class ReverseBoolConverter : IValueConverter {
 
+        /// <summary>
+        /// Convert True to False and False to True
+        /// </summary>
         public Object Convert(Object value, Type targetType, Object parameter, CultureInfo culture) {
             return !(bool)value;
         }
 
+        /// <summary>
+        /// Not implemented
+        /// </summary>
         public Object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture) {
             throw new InvalidOperationException("Converter cannot convert back.");
         }
@@ -47,6 +53,9 @@ namespace CoordinateSystemAddin.Common {
     /// </summary>
     public class BoolToVisibilityConverter : IValueConverter {
 
+        /// <summary>
+        /// Convert True to Visible and False to Hidden
+        /// </summary>
         public Object Convert(Object value, Type targetType, Object parameter, CultureInfo culture) {
             if (value == null)
                 return Visibility.Hidden;
@@ -54,6 +63,9 @@ namespace CoordinateSystemAddin.Common {
             return val ? Visibility.Visible : Visibility.Hidden;
         }
 
+        /// <summary>
+        /// Not implemented
+        /// </summary>
         public Object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture) {
             throw new InvalidOperationException("Converter cannot convert back.");
         }

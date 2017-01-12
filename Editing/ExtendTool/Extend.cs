@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -24,7 +24,7 @@ namespace ExtendTool
 {
     internal class Extend : MapTool
     {
-        public Extend()
+        public Extend() : base()
         {
             IsSketchTool = true;
             SketchType = SketchGeometryType.Point;
@@ -58,7 +58,8 @@ namespace ExtendTool
 
                 //find feature at the click
                 var clickFeatures = MapView.Active.GetFeatures(geometry);
-                insp.Load(clickFeatures.First().Key, clickFeatures.First().Value);
+                var featuresOids = clickFeatures[clickFeatures.Keys.First()]; 
+                insp.Load(clickFeatures.First().Key, featuresOids.First());
                 var clickGeom = insp.Shape as Polyline;
                 if (clickGeom == null)
                 {

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-
-
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -21,7 +19,7 @@
 
 -->
 <ArcGIS defaultAssembly="CreateFeatureService.dll" defaultNamespace="CreateFeatureService" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{d13a6156-9bc1-4996-8d93-24d68c57374a}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{d13a6156-9bc1-4996-8d93-24d68c57374a}" version="1.0" desktopVersion="1.4.7198">
     <Name>CreateFeatureService</Name>
     <Description>Create Feature Service for the csv file just uploaded</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -43,19 +41,19 @@
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="CreateFeatureService_Group1" caption="Sharing API (2)" appearsOnAddInTab="true">
+        <group id="CreateFeatureService_Group1" caption="Sharing API (2)" appearsOnAddInTab="true" keytip="z1">
           <!-- host controls within groups -->
           <button refID="CreateFeatureService_Dockpane1_ShowButton" size="large" />
         </group>
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="CreateFeatureService_Dockpane1_ShowButton" caption="Click to create service" className="Dockpane1_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+        <button id="CreateFeatureService_Dockpane1_ShowButton" caption="Click to create service" className="Dockpane1_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="z2">
           <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="CreateFeatureService_Dockpane1" caption="Create a feature service" className="Dockpane1ViewModel" keytip="DockPane" dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="CreateFeatureService_Dockpane1" caption="Create a feature service" className="Dockpane1ViewModel" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="Dockpane1View" />
         </dockPane>
       </dockPanes>

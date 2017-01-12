@@ -2,9 +2,10 @@
 
 
 
+
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -22,7 +23,7 @@
 -->
 
 <ArcGIS defaultAssembly="TasksSDK.dll" defaultNamespace="TasksSDK" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{5779636e-982b-4e38-b22a-13c80aa70272}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{5779636e-982b-4e38-b22a-13c80aa70272}" version="1.0" desktopVersion="1.4.7198">
     <Name>TasksSDK</Name>
     <Description>Illustrates the Tasks API calls.  The API allows you to open an .esriTasks file, close the current
     task item or export a task item.</Description>
@@ -35,7 +36,7 @@
   <modules>
     <insertModule id="TasksSDK_Module" className="Module1" autoLoad="false" caption="Module1">
       <groups>
-        <group id="TasksSDK_Group1" caption="Tasks" appearsOnAddInTab="true">
+        <group id="TasksSDK_Group1" caption="Tasks" appearsOnAddInTab="true" keytip="z4">
           <button refID="TasksSDK_OpenTask" size="large" />
           <button refID="TasksSDK_CloseTask" size="large" />
           <button refID="TasksSDK_ExportTask" size="large" />
@@ -43,13 +44,13 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="TasksSDK_OpenTask" caption="Open Task" className="OpenTask" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+        <button id="TasksSDK_OpenTask" caption="Open Task" className="OpenTask" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" keytip="z1">
           <tooltip heading="Open Task">Open an esri task file (.esriTasks) and add it as a task item to the project.<disabledText /></tooltip>
         </button>
-        <button id="TasksSDK_CloseTask" caption="Close Task" className="CloseTask" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" condition="esri_tasks_IsTaskFileLoadedCondition">
+        <button id="TasksSDK_CloseTask" caption="Close Task" className="CloseTask" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" condition="esri_tasks_IsTaskFileLoadedCondition" keytip="z2">
           <tooltip heading="Close Task">Closes the current task<disabledText /></tooltip>
         </button>
-        <button id="TasksSDK_ExportTask" caption="Export Task" className="ExportTask" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" condition="esri_tasks_HasProjectTasksCondition">
+        <button id="TasksSDK_ExportTask" caption="Export Task" className="ExportTask" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" condition="esri_tasks_HasProjectTasksCondition" keytip="z3">
           <tooltip heading="Export Task">Save the task item as a task file (.esriTasks).<disabledText /></tooltip>
         </button>
       </controls>

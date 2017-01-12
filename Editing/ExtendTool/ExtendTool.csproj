@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{13482B7F-26C7-49AC-8E32-0A740BAEE4F6}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2709}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ExtendTool</RootNamespace>
@@ -88,7 +88,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <AddInContent Include="Config.daml" />
+    <AddInContent Include="Config.daml">
+      <SubType>Designer</SubType>
+    </AddInContent>
     <AddInContent Include="Images\AddInDesktop16.png" />
     <AddInContent Include="Images\AddInDesktop32.png" />
   </ItemGroup>
@@ -101,7 +103,12 @@
     <AddInContent Include="Images\EditingExtendTool16.png" />
     <AddInContent Include="Images\EditingExtendTool32.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\EditingExtendTool16.png" />
+    <AddInContent Include="DarkImages\EditingExtendTool32.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.md" />
     <None Include="Screenshots\Screen1.png" />

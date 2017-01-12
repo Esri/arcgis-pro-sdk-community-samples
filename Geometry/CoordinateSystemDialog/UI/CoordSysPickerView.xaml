@@ -1,6 +1,6 @@
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -21,27 +21,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:common="clr-namespace:CoordinateSystemAddin.Common"
+             xmlns:ui="clr-namespace:CoordinateSystemAddin.UI"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
              mc:Ignorable="d" 
+             d:DataContext="{Binding Path=CoordinateSystemAddin.UI.CoordSysPickerViewModel}"
              d:DesignHeight="300" d:DesignWidth="300">
-    <DockPanel LastChildFill="True">
-        <Grid DockPanel.Dock="Top">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Grid.Resources>
-                <Style TargetType="TextBlock">
-                    <Setter Property="FontSize" Value="14" />
-                    <Setter Property="VerticalAlignment" Value="Center" />
-                    <Setter Property="HorizontalAlignment" Value="Left"></Setter>
-                </Style>
-            </Grid.Resources>
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <SolidColorBrush x:Key="UseForHighlight" Color="#284965"/>
+      <!-- default theme Color="#E1F0FB" -->
+      <!-- dark theme Color="#284965" -->
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <DockPanel LastChildFill="True" x:Name="TheDockPanel" Background="{Binding Path=Background, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ui:CoordSysPickerView}}}">
+    <Grid DockPanel.Dock="Top" Background="{DynamicResource Esri_Gray110}">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <Grid.Resources>
+        <Style TargetType="TextBlock">
+          <Setter Property="FontSize" Value="14" />
+          <Setter Property="VerticalAlignment" Value="Center" />
+          <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+          <Setter Property="Foreground" Value="{DynamicResource Esri_Gray155}"></Setter>
+        </Style>
+      </Grid.Resources>
 
-            <TextBlock Grid.Column ="0" Text="Current coordinate system:" Margin="10,5,5,5"/>
-            <TextBlock Grid.Column="1" Text="{Binding SelectedCoordinateSystemName}" TextWrapping="Wrap"/>
-            <!--
+      <TextBlock Grid.Column ="0" Text="Current coordinate system:" Margin="10,5,5,5"/>
+      <TextBlock Grid.Column="1" Text="{Binding SelectedCoordinateSystemName}" TextWrapping="Wrap"/>
+      <!--
             <TextBlock Grid.Column="2" Margin="0,5,10,5">
                 <Hyperlink Command="{Binding LaunchCSDetailsCmd}" AutomationProperties.AutomationId="details">
                     <TextBlock Text="Details" />
@@ -58,102 +71,106 @@
                 </TextBlock.Style>
             </TextBlock>
             -->
-        </Grid>
+    </Grid>
 
-        <Grid ShowGridLines="True">
-            <ContentControl x:Name="SelectedItemHelper" Content="{Binding SelectedObject, Mode=OneWayToSource}" Visibility="Collapsed"/>
-            <TreeView x:Name="CoordSystemTreeView" ItemsSource="{Binding CoordinateSystems}" 
+    <Grid>
+      <ContentControl x:Name="SelectedItemHelper" Content="{Binding SelectedObject, Mode=OneWayToSource}" Visibility="Collapsed"/>
+      <TreeView x:Name="CoordSystemTreeView" ItemsSource="{Binding CoordinateSystems}" 
                 TreeViewItem.Selected="TreeViewItem_BringIntoView"
                 TreeViewItem.Expanded="TreeViewItem_BringIntoView"
                 ScrollViewer.CanContentScroll="True"
                 ScrollViewer.VerticalScrollBarVisibility="Visible"
                       SelectedItemChanged="CoordSystemTreeView_OnSelectedItemChanged">
-                <TreeView.Resources>
-                    <Style TargetType="TextBlock">
-                        <Setter Property="FontSize" Value="14" />
-                        <Setter Property="VerticalAlignment" Value="Center" />
-                        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
-                        <Setter Property="Margin" Value="0,5,0,5"></Setter>
-                    </Style>
-                </TreeView.Resources>
-                <TreeView.ItemContainerStyle>
-                    <Style TargetType="{x:Type TreeViewItem}">
-                        <Setter Property="MinHeight" Value="20" />
-                    </Style>
-                </TreeView.ItemContainerStyle>
-                <TreeView.ItemTemplate>
-                    <!-- This is the template for the Coordinate Systems. It shows the Name
+        <TreeView.Resources>
+          <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="{Binding Source={StaticResource UseForHighlight}, Path=Color}" />
+          <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="{Binding Source={StaticResource UseForHighlight}, Path=Color}" />
+          <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+            <Setter Property="Margin" Value="0,5,0,5"></Setter>
+          </Style>
+        </TreeView.Resources>
+        <TreeView.ItemContainerStyle>
+          <Style TargetType="{x:Type TreeViewItem}">
+            <Setter Property="MinHeight" Value="20" />
+          </Style>
+        </TreeView.ItemContainerStyle>
+        <TreeView.ItemTemplate>
+          <!-- This is the template for the Coordinate Systems. It shows the Name
                          and its ItemsSource is all of the regions -->
-                    <HierarchicalDataTemplate ItemsSource="{Binding Regions}">
-                        <!-- Coord Sys Name -->
-                        <TextBlock FontWeight="Bold" Text="{Binding Name}"></TextBlock>
+          <HierarchicalDataTemplate ItemsSource="{Binding Regions}">
+            <!-- Coord Sys Name -->
+            <TextBlock FontWeight="Bold" Text="{Binding Name}" Style="{DynamicResource H5TextBlock}"></TextBlock>
 
-                        <!-- template for the Regions -->
-                        <HierarchicalDataTemplate.ItemTemplate>
-                            <!-- Regions have an ItemsSource of all the individual Coordinate
+            <!-- template for the Regions -->
+            <HierarchicalDataTemplate.ItemTemplate>
+              <!-- Regions have an ItemsSource of all the individual Coordinate
                                  Systems they contain -->
-                            <HierarchicalDataTemplate ItemsSource="{Binding CoordSystemInfos}">
-                                <!-- The name of the Region -->
-                                <TextBlock Text="{Binding Name}"></TextBlock>
-                                <!-- Finally, the Coordinate systems it Contains -->
-                                <HierarchicalDataTemplate.ItemTemplate>
-                                    <DataTemplate>
-                                        <!-- Show an Icon and Name of Each -->
-                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                                            <Image Source="pack://application:,,,/CoordinateSystemAddin;component/Images/CoordinateSystem16.png" Margin="0,3,10,3"></Image>
-                                            <TextBlock Text="{Binding Name}">
-                                                <TextBlock.ToolTip>
-                                                    <ToolTip DataContext="{Binding Path=PlacementTarget.DataContext, RelativeSource={x:Static RelativeSource.Self}}">
-                                                        <Grid>
-                                                            <Grid.Resources>
-                                                                <Style TargetType="Label">
-                                                                    <Setter Property="FontWeight" Value="Bold"></Setter>
-                                                                    <Setter Property="FontSize" Value="12"></Setter>
-                                                                    <Setter Property="HorizontalAlignment" Value="Left"></Setter>
-                                                                    <Setter Property="VerticalAlignment" Value="Center"></Setter>
-                                                                </Style>
-                                                                <Style TargetType="TextBlock">
-                                                                    <Setter Property="FontSize" Value="12"></Setter>
-                                                                    <Setter Property="HorizontalAlignment" Value="Left"></Setter>
-                                                                    <Setter Property="VerticalAlignment" Value="Center"></Setter>
-                                                                </Style>
-                                                            </Grid.Resources>
-                                                            <Grid.ColumnDefinitions>
-                                                                <ColumnDefinition Width="60"></ColumnDefinition>
-                                                                <ColumnDefinition Width="420"></ColumnDefinition>
-                                                                <ColumnDefinition Width="10"></ColumnDefinition>
-                                                            </Grid.ColumnDefinitions>
+              <HierarchicalDataTemplate ItemsSource="{Binding CoordSystemInfos}">
+                <!-- The name of the Region -->
+                <TextBlock Text="{Binding Name}" Style="{DynamicResource H5TextBlock}"></TextBlock>
+                <!-- Finally, the Coordinate systems it Contains -->
+                <HierarchicalDataTemplate.ItemTemplate>
+                  <DataTemplate>
+                    <!-- Show an Icon and Name of Each -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                      <Image Source="pack://application:,,,/CoordinateSystemAddin;component/Images/CoordinateSystem16.png" Margin="0,3,10,3"></Image>
+                      <TextBlock Text="{Binding Name}" Style="{DynamicResource H5TextBlock}">
+                        <TextBlock.ToolTip>
+                          <ToolTip DataContext="{Binding Path=PlacementTarget.DataContext, RelativeSource={x:Static RelativeSource.Self}}">
+                            <Grid Background="{DynamicResource Esri_Gray110}">
+                              <Grid.Resources>
+                                <Style TargetType="Label">
+                                  <Setter Property="FontWeight" Value="Bold"></Setter>
+                                  <Setter Property="FontSize" Value="12"></Setter>
+                                  <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+                                  <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                                  <Setter Property="Foreground" Value="{DynamicResource Esri_Gray155}"></Setter>
+                                </Style>
+                                <Style TargetType="TextBlock">
+                                  <Setter Property="FontSize" Value="12"></Setter>
+                                  <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+                                  <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                                  <Setter Property="Foreground" Value="{DynamicResource Esri_Gray155}"></Setter>
+                                </Style>
+                              </Grid.Resources>
+                              <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60"></ColumnDefinition>
+                                <ColumnDefinition Width="420"></ColumnDefinition>
+                                <ColumnDefinition Width="10"></ColumnDefinition>
+                              </Grid.ColumnDefinitions>
 
-                                                            <Grid.RowDefinitions>
-                                                                <RowDefinition Height="26"></RowDefinition>
-                                                                <RowDefinition Height="26"></RowDefinition>
-                                                                <RowDefinition Height="Auto"></RowDefinition>
-                                                                <RowDefinition Height="10"></RowDefinition>
-                                                            </Grid.RowDefinitions>
+                              <Grid.RowDefinitions>
+                                <RowDefinition Height="26"></RowDefinition>
+                                <RowDefinition Height="26"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="10"></RowDefinition>
+                              </Grid.RowDefinitions>
 
-                                                            <Label Content="Name:" Grid.Row="0" Grid.Column="0"></Label>
-                                                            <Label Content="WKID:" Grid.Row="1" Grid.Column="0"></Label>
-                                                            <Label Content="WKT:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Top"></Label>
+                              <Label Content="Name:" Grid.Row="0" Grid.Column="0"></Label>
+                              <Label Content="WKID:" Grid.Row="1" Grid.Column="0"></Label>
+                              <Label Content="WKT:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Top"></Label>
 
-                                                            <TextBlock Text="{Binding InternalName}" Grid.Row="0" Grid.Column="1"></TextBlock>
-                                                            <TextBlock Text="{Binding WKID}" Grid.Row="1" Grid.Column="1"></TextBlock>
-                                                            <TextBox Text="{Binding WKT}" Grid.Row="2" Grid.Column="1" TextAlignment="Left"
-                                                                 Height="100" VerticalAlignment="Stretch" AcceptsReturn="False" TextWrapping="Wrap" 
+                              <TextBlock Text="{Binding InternalName}" Grid.Row="0" Grid.Column="1"></TextBlock>
+                              <TextBlock Text="{Binding WKID}" Grid.Row="1" Grid.Column="1"></TextBlock>
+                              <TextBox Text="{Binding WKT}" Grid.Row="2" Grid.Column="1" TextAlignment="Left"
+                                                                 Height="100" VerticalAlignment="Stretch" AcceptsReturn="False" TextWrapping="Wrap"
                                                                  FontSize="14"/>
-                                                        </Grid>
-                                                    </ToolTip>
-                                                </TextBlock.ToolTip>
+                            </Grid>
+                          </ToolTip>
+                        </TextBlock.ToolTip>
                                             </TextBlock>
-                                        </StackPanel>
+                    </StackPanel>
 
-                                    </DataTemplate>
-                                </HierarchicalDataTemplate.ItemTemplate>
+                  </DataTemplate>
+                </HierarchicalDataTemplate.ItemTemplate>
 
-                            </HierarchicalDataTemplate>
-                        </HierarchicalDataTemplate.ItemTemplate>
-                    </HierarchicalDataTemplate>
-                </TreeView.ItemTemplate>
-            </TreeView>
-        </Grid>
-    </DockPanel>
+              </HierarchicalDataTemplate>
+            </HierarchicalDataTemplate.ItemTemplate>
+          </HierarchicalDataTemplate>
+        </TreeView.ItemTemplate>
+      </TreeView>
+    </Grid>
+  </DockPanel>
 </UserControl>

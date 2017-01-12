@@ -63,7 +63,7 @@ namespace ControlStyles
             set
             {
                 SetProperty(ref _selectedRadioBtn, value, () => SelectedRadioBtn);
-                StyleXaml = string.Format("<RadioButton Content=\"RadioButton\" IsChecked=\"True\" IsEnabled=\"True\" FontSize=\"12\" FontWeight=\"Regular\" Foreground=\"{{StaticResource Esri_Gray155}}\"></RadioButton>");
+                StyleXaml = string.Format("<RadioButton Content=\"RadioButton\" IsChecked=\"True\" IsEnabled=\"True\" FontSize=\"12\" FontWeight=\"Regular\" Foreground=\"{{DynamicResource Esri_Gray155}}\"></RadioButton>");
             }
         }
         #endregion

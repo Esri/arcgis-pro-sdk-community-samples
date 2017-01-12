@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -78,7 +78,7 @@ namespace ControlStyles.Colors
             set
             {
                 _selectedColor = value;
-                _selectedColorKey = string.Format("\"{{StaticResource {0}}}\"", _selectedColor);
+                _selectedColorKey = string.Format("\"{{DynamicResource {0}}}\"", _selectedColor);
                 SetProperty(ref _selectedColor, value, () => SelectedColor);
             }
         }
@@ -98,7 +98,7 @@ namespace ControlStyles.Colors
         {
             get
             {
-                _refDict = string.Format("<ResourceDictionary.MergedDictionaries><ResourceDictionary Source=\"pack://application:,,,/ArcGIS.Desktop.Framework;component\\Themes\\Default.xaml\"/></ResourceDictionary.MergedDictionaries>");
+                _refDict = string.Format("<ResourceDictionary.MergedDictionaries><extensions:DesignOnlyResourceDictionary Source=\"pack://application:,,,/ArcGIS.Desktop.Framework;component\\Themes\\Default.xaml\"/></ResourceDictionary.MergedDictionaries>");
                 return _refDict;
             }           
         }  

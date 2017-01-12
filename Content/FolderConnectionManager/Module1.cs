@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -35,7 +35,8 @@ namespace FolderConnections
 	/// ![UI](Screenshots/Screen1.png)  
 	/// 1. On the Add-in tab click the "Display Connections" button in the "Folder Connection Manager" Add-In group to see the list of all current folder connection path strings.
 	/// ![UI](Screenshots/FolderConnect.png)  
-    /// 1. On the Add-in tab click the "Save Connections" button in the "Folder Connection Manager" Add-In group. The current Folder Connection will be saved as list of folder paths in the output text file.
+    /// 1. On the Add-in tab click the "Save Connections" button in the "Folder Connection Manager" Add-In group.The browser pop up appears in which create a txt file on the home folder under projects to save the folderpath.
+    /// ![UI](Screenshots/RemoveFolder1.png)
     /// 1. Remove the Folder Connections you just added by right-clicking on folder name in the Project window and selecting "Remove".
     /// ![UI](Screenshots/RemoveFolder.png)
     /// 1. Load your saved Folder Connection by clicking the "Load Connection" button in the "Folder Connection Manager" Add-In group. Select the text file you saved in the previous step.

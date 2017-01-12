@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-
-
-<!--//   Copyright 2016 Esri
+<!--//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -15,7 +13,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.-->
 <ArcGIS defaultAssembly="FeatureDynamicMenu.dll" defaultNamespace="FeatureDynamicMenu" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{f5740e36-b26d-46ed-8a0c-ba46427a78d0}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{f5740e36-b26d-46ed-8a0c-ba46427a78d0}" version="1.0" desktopVersion="1.4.7198">
     <Name>DynamicMenu</Name>
     <Description>This selection tool displays a dynamic context menu for each feature selected</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -43,25 +41,24 @@
         </group>
       </groups>
       <controls>
-        <dynamicMenu id="DynamicMenu_FeatureSelection"
-                     className="DynamicFeatureSelectionMenu"
-                     caption="Feature Selection" />
+        <dynamicMenu id="DynamicMenu_FeatureSelection" className="DynamicFeatureSelectionMenu" caption="Feature Selection" />
         <!-- add your controls here -->
-        <tool id="DynamicMenu_FeatureSelectionDynamic" 
-              caption="Display Dynamic menu" 
-              className="FeatureSelectionDynamic" loadOnClick="true" 
-              smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" condition="esri_mapping_mapPane">
+        <tool id="DynamicMenu_FeatureSelectionDynamic" caption="Display Dynamic menu" className="FeatureSelectionDynamic" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Dynamic Menu tool">Draw a rectangle on the map to select feaures to display the dynamic menu for those selected features.<disabledText /></tooltip>
-        </tool>      
+        </tool>
       </controls>
-      
       <menus>
-        <menu id="DynamicMenu_DynamicFeatureSelection" 
-              caption="Select Features" 
-              smallImage="GenericButtonGreen16.png" largeImage="GenericButtonGreen32.png" contextMenu="true">
+        <menu id="DynamicMenu_DynamicFeatureSelection" caption="Select Features" smallImage="GenericButtonGreen16.png" largeImage="GenericButtonGreen32.png" contextMenu="true">
           <insertDynamicMenu refID="DynamicMenu_FeatureSelection" inline="true" />
         </menu>
       </menus>
     </insertModule>
   </modules>
+  <categories>
+    <updateCategory refID="esri_embeddableControls">
+      <insertComponent id="FeatureDynamicMenu_EmbeddedControl" className="EmbeddedControlViewModel">
+        <content className="EmbeddedControlView" />
+      </insertComponent>
+    </updateCategory>
+  </categories>
 </ArcGIS>

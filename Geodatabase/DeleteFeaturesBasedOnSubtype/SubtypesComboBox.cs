@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -21,6 +21,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
@@ -67,11 +68,12 @@ namespace DeleteFeaturesBasedOnSubtype
                             IReadOnlyList<Subtype> readOnlyList;
                             try
                             {
-                              readOnlyList = table.GetDefinition().GetSubtypes();
+                                readOnlyList = table.GetDefinition().GetSubtypes();
                             }
                             catch (Exception e)
                             {
-                              return;
+                                MessageBox.Show(string.Format("Unable to get subtypes - error: {0}", e));
+                                return;
                             }
                             foreach (var subtype in readOnlyList)
                             {
@@ -109,16 +111,25 @@ namespace DeleteFeaturesBasedOnSubtype
                     {
                         var subtypeField = table.GetDefinition().GetSubtypeField();
                         var code = table.GetDefinition().GetSubtypes().First(subtype => subtype.GetName().Equals(item.Text)).GetCode();
-                        var queryFilter = new QueryFilter{WhereClause = string.Format("{0} = {1}", subtypeField, code)};
+                        var queryFilter = new QueryFilter { WhereClause = string.Format("{0} = {1}", subtypeField, code) };
                         try
                         {
                             using (var rowCursor = table.Search(queryFilter, false))
                             {
-                                var editOperation = new EditOperation();
+                                var editOperation = new EditOperation()
+                                {
+                                    Name = string.Format(@"Deleted where {0}", queryFilter.WhereClause)
+                                };
                                 editOperation.Callback(context =>
                                 {
+                                    // Note: calling the following method: "await editOperation.ExecuteAsync();"
+                                    // within the context of the "using (var rowCursor ..." clause 
+                                    // ensures that "rowCursor" in the following while statement is stil
+                                    // defined and not disposed.  So the warning "Access to disposed closure"
+                                    // doesn't apply here
                                     while (rowCursor.MoveNext())
                                     {
+                                        Thread.Yield();
                                         using (var row = rowCursor.Current)
                                         {
                                             context.Invalidate(row);
@@ -141,7 +152,7 @@ namespace DeleteFeaturesBasedOnSubtype
                         catch (Exception e)
                         {
                             error = e.Message;
-                        }                        
+                        }
                     }
                 }
             });

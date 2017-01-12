@@ -1,4 +1,4 @@
-﻿//   Copyright 2016 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -20,12 +20,13 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Threading;
 using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
+using ArcGIS.Core.Events;
 using ArcGIS.Core.Geometry;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
-using ArcGIS.Desktop.Internal.Framework.Win32;
 using ArcGIS.Desktop.Mapping;
 
 namespace FeatureDynamicMenu
@@ -53,26 +54,33 @@ namespace FeatureDynamicMenu
         [DllImport("user32.dll")]
         public static extern bool GetCursorPos(out POINT pt);
 
-        private System.Windows.Point _clickedPoint;
+        
 
         private static readonly IDictionary<BasicFeatureLayer, List<long>> Selection = new Dictionary<BasicFeatureLayer, List<long>>();
         private static readonly object LockSelection = new object();
 
         private bool _showingContextMenu = false;
-        private double _tolerance = 3;
+
+        private System.Windows.Point _clickedPoint;
+        public System.Windows.Point MouseLocation => _clickedPoint;
+
+
 
         /// <summary>
-        /// Define the tool as a sketch tool that draws a rectangle in screen space on the view.
+        /// Define the tool as a sketch tool that draws a point in screen space on the view.
         /// </summary>
         public FeatureSelectionDynamic()
         {
             IsSketchTool = true;
-            SketchType = SketchGeometryType.Point;
-            SketchOutputMode = SketchOutputMode.Screen;
+            SketchType = SketchGeometryType.Rectangle;
+            SketchOutputMode = SketchOutputMode.Map;
 
             // binding sync: we need to lock this selection collection since it will be updated
             // asynchronously from a worker thread
             BindingOperations.EnableCollectionSynchronization(Selection, LockSelection);
+
+           OverlayControlID = "FeatureDynamicMenu_EmbeddedControl";
+
         }
        
 
@@ -80,6 +88,7 @@ namespace FeatureDynamicMenu
 
         private void ShowContextMenu()
         {
+
             var contextMenu = FrameworkApplication.CreateContextMenu("DynamicMenu_DynamicFeatureSelection", () => MouseLocation);
             contextMenu.DataContext = this;
             contextMenu.Closed += (o, e) =>
@@ -93,107 +102,73 @@ namespace FeatureDynamicMenu
             };
             contextMenu.IsOpen = true;
         }
-        public System.Windows.Point MouseLocation => _clickedPoint;
-        public double PixelTolerance => _tolerance;
 
-        private  async Task<List<long>>  GetFeaturesWithinGeometryAsync(FeatureLayer featureLayer)
+
+        private SubscriptionToken _token = null;
+        protected override Task OnToolActivateAsync(bool hasMapViewChanged)
         {
-            return await QueuedTask.Run(() =>
+            GetLayersFromActiveMap();        
+            return base.OnToolActivateAsync(hasMapViewChanged);
+        }
+
+        protected override Task OnToolDeactivateAsync(bool hasMapViewChanged)
+        {
+            return base.OnToolDeactivateAsync(hasMapViewChanged);
+        }
+
+
+        protected override Task<bool> OnSketchCompleteAsync(Geometry geometry)
+        {
+            List<long> oids = new List<long>();
+            var vm = OverlayEmbeddableControl as EmbeddedControlViewModel;
+
+            //POINT pt;
+            //GetCursorPos(out pt);
+            //_clickedPoint = new Point(pt.X, pt.Y); //Point on screen to show the context menu
+
+            return QueuedTask.Run(() =>
             {
-                List<long> oids = new List<long>();
-                //Get the client point edges
-                Point topLeft = new Point(_toolClickedPoint.X - PixelTolerance, _toolClickedPoint.Y + PixelTolerance);
-                Point bottomRight = new Point(_toolClickedPoint.X + PixelTolerance, _toolClickedPoint.Y - PixelTolerance);
-
-                //convert the client points to Map points
-                MapPoint mapTopLeft = MapView.Active.ClientToMap(topLeft);
-                MapPoint mapBottomRight = MapView.Active.ClientToMap(bottomRight);
-
-                //create a geometry using these points
-                Geometry envelopeGeometry = EnvelopeBuilder.CreateEnvelope(mapTopLeft, mapBottomRight);
-
-
-                if (envelopeGeometry == null)
-                    return null;
-
-                //Spatial query to gather the OIDs of the features within the geometry
                 SpatialQueryFilter spatialQueryFilter = new SpatialQueryFilter
                 {
-                    FilterGeometry = envelopeGeometry,
+                    FilterGeometry = geometry,
                     SpatialRelationship = SpatialRelationship.Intersects,
 
                 };
+                var selection = vm?.SelectedLayer.Select(spatialQueryFilter);
+                if (selection == null)
+                    return false;
+                oids.AddRange(selection.GetObjectIDs());
 
-                using (RowCursor rowCursor = featureLayer.Search(spatialQueryFilter))
+                lock (LockSelection)
                 {
-
-                    while (rowCursor.MoveNext())
-                    {
-                        using (Row row = rowCursor.Current)
-                        {
-                            var id = row.GetObjectID();
-                            oids.Add(id);
-
-                        }
-                    }
+                    Selection.Add(vm?.SelectedLayer, oids);
                 }
 
-                return oids;
+                Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, (Action)(() => ShowContextMenu()));
+
+                return true;
             });
         }
-        /// <summary>
-        /// Occurs when a mouse button is pressed on the view.
-        /// </summary>
-        /// <param name="e"></param>
-        protected override void OnToolMouseDown(MapViewMouseButtonEventArgs e)
-        {
-            if (e.ChangedButton == System.Windows.Input.MouseButton.Left)
-                e.Handled = true; //Handle the event args to get the call to the corresponding async method
-        }
 
-        private Point _toolClickedPoint;
-        /// <summary>
-        /// Occurs when the OnToolMouseDown event is handled.
-        /// </summary>
-        /// <param name="e"></param>
-        /// <returns></returns>
-        protected async override Task HandleMouseDownAsync(MapViewMouseButtonEventArgs e)
+        private void GetLayersFromActiveMap()
         {
+            var vm = OverlayEmbeddableControl as EmbeddedControlViewModel;
+            vm?.Layers.Clear();
+            Map map = MapView.Active.Map;
+            if (map == null)
+                return;
+            vm.MapName = map.Name;
+            var layers = map.GetLayersAsFlattenedList().OfType<BasicFeatureLayer>();
             lock (LockSelection)
             {
-                Selection.Clear();
-            }
-            POINT pt;
-            GetCursorPos(out pt);
-            _clickedPoint = new Point(pt.X, pt.Y); //Point on screen to show the context menu
-
-            await QueuedTask.Run(async () =>
-            {
-                //Convert the clicked point in client coordinates to the corresponding map coordinates.
-                _toolClickedPoint = e.ClientPoint;
-
-                var allLyrs = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>(); //get all the layers in teh TOC for that map
-
-                if (allLyrs == null)
-                    return;
-
-                List<long> oidList = new List<long>();                
-
-                foreach (var lyr in allLyrs)
+                foreach (var layer in layers)
                 {
-                    oidList = await GetFeaturesWithinGeometryAsync(lyr); //gets the oids of all the features within 3 pixels of the point clicked
-                    if (oidList != null && oidList.Count > 0)
-                    {
-                        lock (LockSelection)
-                        {
-                            Selection.Add(lyr, oidList);
-                        }
-                    }
-                }                
-            });
+                    vm.Layers.Add(layer);
+                }
 
-           // if (Selection.Count > 0)
-           ShowContextMenu();
+                if (vm.Layers.Count > 0)
+                    vm.SelectedLayer = vm.Layers[0];
+            }
         }
     }
 }

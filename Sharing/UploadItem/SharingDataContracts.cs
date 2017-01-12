@@ -2332,7 +2332,7 @@ namespace ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts
     public int nextStart { get; set; }
 
     [DataMember(Name = "results")]
-    public new List<SearchGroupItem> results { get; set; }
+    public List<SearchGroupItem> results { get; set; }
   }
 
   /// <summary>
@@ -2357,7 +2357,7 @@ namespace ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts
     public bool isFav { get; set; }
 
     [DataMember(Name = "created")]
-    public long created { get; set; }
+    public new long created { get; set; }
 
     [DataMember(Name = "modified")]
     public long modified { get; set; }

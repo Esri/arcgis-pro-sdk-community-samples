@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{90BB4471-D074-4E43-9CDB-4B23ED1E2A29}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2740}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ListGeodataContent</RootNamespace>
@@ -103,7 +103,12 @@
     <AddInContent Include="Images\UFO16.png" />
     <AddInContent Include="Images\UFO32.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\UFO16.png" />
+    <AddInContent Include="DarkImages\UFO32.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.md" />
     <None Include="Screenshots\Screen1.png" />

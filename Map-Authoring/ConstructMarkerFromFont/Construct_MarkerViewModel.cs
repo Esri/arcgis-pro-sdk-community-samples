@@ -1,6 +1,6 @@
-﻿/*
+/*
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,12 +28,12 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using ArcGIS.Core.CIM;
+using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
-using ArcGIS.Desktop.Mapping.Events;
-using MessageBox = ArcGIS.Desktop.Framework.Dialogs.MessageBox;
+
 
 namespace ConstructMarkerFromFont
 {
@@ -42,7 +44,8 @@ namespace ConstructMarkerFromFont
     {
         private const string _dockPaneID = "ConstructMarkerFromFont_Construct_Marker";
         private const string _menuID = "ConstructMarkerFromFont_Construct_Marker_Menu";
-
+        private static string _styleFilePath = $@"{Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)}\AppData\Roaming\ESRI\ArcGISPro\FontMarkers.stylx";        
+            
         /// <summary>
         /// Constructor
         /// </summary>
@@ -242,14 +245,34 @@ namespace ConstructMarkerFromFont
             }
             set { SetProperty(ref _dockpaneVisible, value, () => DockpaneVisible); }
         }
-           
+
+        private bool _isFavorites = false;
+
+        public bool IsFavorites
+        {
+            get { return _isFavorites; }
+            set { SetProperty(ref _isFavorites, value, () => _isFavorites); }
+        }
+
+        private static StyleProjectItem _styleProjectItem = null;
+
+        public static StyleProjectItem FontMarkerStyleProjectItem
+        {
+            get
+            {
+                var styleItemsContainer = Project.Current.GetItems<StyleProjectItem>(); //gets all Style Project Items in the current project
+                _styleProjectItem = styleItemsContainer.FirstOrDefault(s => s.Name.Contains("FontMarkers"));      
+                return _styleProjectItem;
+            }
+        }
+
         #endregion
 
         #region Private methods
 
-    /// <summary>
-    /// Returns the selected point layer in the TOC. 
-    /// </summary>
+        /// <summary>
+        /// Returns the selected point layer in the TOC. 
+        /// </summary>
         public void GetSelectedPointFeatureLayer()
         {
             var layers =
@@ -347,13 +370,31 @@ namespace ConstructMarkerFromFont
                 styleName, Size); //creating the marker from the Font selected
 
             var pointSymbolFromMarker = SymbolFactory.ConstructPointSymbol(cimMarker);
-                //create a symbol from the marker
+                //create a symbol from the marker            
 
             await SetFeatureLayerSymbolAsync(PointFeatureLayer, pointSymbolFromMarker);
-              
 
+            if (IsFavorites)
+            {
+                await CreateStyleItem();
+                if (FontMarkerStyleProjectItem != null && pointSymbolFromMarker != null && !FontMarkerStyleProjectItem.IsReadOnly())
+                    await AddStyleItemToStyle(FontMarkerStyleProjectItem, pointSymbolFromMarker); //selected marker is added to the FontMarker style
+            }
         }
-
+        private static async Task CreateStyleItem()
+        {
+            if (FontMarkerStyleProjectItem?.PhysicalPath == null )
+            {
+                if (File.Exists(_styleFilePath)) //check if the file is on disc. Add it to the project if it is.
+                    await Project.Current.AddStyleAsync(_styleFilePath); 
+                else //else create the style item  
+                {
+                    if (FontMarkerStyleProjectItem != null)
+                        await Project.Current.RemoveStyleAsync(FontMarkerStyleProjectItem.Name); //remove style from project                           
+                    await Project.Current.CreateStyleAsync($@"{_styleFilePath}");
+                }
+            }
+        }
         private Task SetFeatureLayerSymbolAsync(FeatureLayer ftrLayer, CIMSymbol symbolToApply)
         {
             if (ftrLayer == null || symbolToApply == null)
@@ -375,6 +416,29 @@ namespace ConstructMarkerFromFont
                 ftrLayer.SetRenderer(currentRenderer);
             });
         }
+
+        private Task AddStyleItemToStyle(StyleProjectItem styleProjectItem, CIMPointSymbol cimPointSymbol)
+        {
+            return QueuedTask.Run( () =>
+           {
+               if (styleProjectItem == null || cimPointSymbol == null)
+               {
+                   throw new System.ArgumentNullException();
+               }
+               SymbolStyleItem symbolStyleItem = new SymbolStyleItem() //define the symbol
+               {
+                   Symbol = cimPointSymbol,
+                   ItemType = StyleItemType.PointSymbol,
+                   Category = $"{SelectedFontFamily}",
+                   Name = $"{SelectedCharacter.Character.ToString()}",
+                   Key = $"{SelectedCharacter.Character.ToString()}_{SelectedFontFamily}_3",
+                   Tags = $"{SelectedFontFamily};{SelectedCharacter.Character.ToString()};point"
+               };
+
+               styleProjectItem.AddItem(symbolStyleItem);
+           });
+        }
+
         #endregion
 
         #region Commands
@@ -390,7 +454,6 @@ namespace ConstructMarkerFromFont
         }
 
         #endregion
-
         
     }
 
@@ -403,7 +466,5 @@ namespace ConstructMarkerFromFont
         {
             Construct_MarkerViewModel.Show();
         }
-    }
-
-  
+    }  
 }

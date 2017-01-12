@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -22,21 +22,25 @@ namespace FilterFeaturesBasedOnAttributesWithinAnExtent
     /// <summary>
     /// This addin will list all subtypes for a Feature Class and allow deletion of all features which have the selected subtype
     /// </summary>
-    /// <remarks>
+	/// <remarks>
+    /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 2. Click Start button to open ArcGIS Pro.
-    /// 3. ArcGIS Pro will open. 
-    /// 4. Open a map view that contains atleast one Feature Layer whose source points to a Feature Class (From either a File Geodatabase or an Enterprise Geodatabase)
-    /// 5. Make sure the Map Pane and the corresponding Table of Contents (TOC) Pane are Open and the Map Pane is Active
-    /// 6. Click on the Add-In Tab
-    /// 7. Open the Filter Selected Features Dockpane by clicking on the button
-    /// 8. Observe that when no Layer is selected in the TOC, clicking on the fields combobox will show an empty list. An empty list will also be shown if the Layer is not a Feature Layer i.e. if it is a standalone table.
-    /// 9. Select a Feature Layer which has a Feature Class as the Data Source from the TOC pane 
-    /// 10. Select a Field from the combobox and enter the field value
-    /// 11. Optionally, select features if you want the search to happen on a fixed extent
-    /// 12. Click Go and the matching object ids will be listed.
+    /// 1. Click Start button to open ArcGIS Pro.
+    /// 1. ArcGIS Pro will open. 
+    /// 1. Open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project which contains the required data needed for this sample.
+    /// 1. Make sure the Map Pane and the corresponding Table of Contents (TOC) Pane are Open and the Map Pane is Active
+    /// 1. Click on the Add-In Tab
+    /// 1. Open the Filter Selected Features Dockpane by clicking on the button
+    /// 1. Observe that when no Layer is selected in the TOC, clicking on the fields combobox will show an empty list. An empty list will also be shown if the Layer is not a Feature Layer i.e. if it is a standalone table.
+    /// ![UI](Screenshots/Screen1.png)
+    /// 1. Select the "Crimes" Feature Layer from the TOC pane, it contains fields required for the results display
+    /// 1. Select a Field from the combobox and enter the field value
+    /// 1. Optionally, select features if you want the search to happen on a fixed extent
+    /// 1. Select one of the Queries and click Go
+    /// 1. The results are displayed below in the same Pane
+	/// ![UI](Screenshots/Screen2.png)
     /// </remarks>
-    internal class Module1 : Module
+	internal class Module1 : Module
     {
         private static Module1 _this = null;
 

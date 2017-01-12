@@ -112,6 +112,15 @@
     <None Include="LayersPane %28C#%29.md" />
     <None Include="ReadMe.md" />
   </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\GenericButtonGreen16.png" />
+    <AddInContent Include="DarkImages\GenericButtonGreen32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Screenshots\Screen1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.PackageAddIn" />
   <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.CleanAddIn" />

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-
-
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -21,7 +19,7 @@
 
 -->
 <ArcGIS defaultAssembly="IdentifyWindow.dll" defaultNamespace="IdentifyWindow" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{0491aeb0-1c7c-4206-a602-8a3f64606013}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{0491aeb0-1c7c-4206-a602-8a3f64606013}" version="1.0" desktopVersion="1.4.7198">
     <Name>IdentifyWindow</Name>
     <Description>IdentifyWindow description</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -43,17 +41,16 @@
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="IdentifyWindow_Group1" caption="Group 1" appearsOnAddInTab="true">
+        <group id="IdentifyWindow_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="z1">
           <!-- host controls within groups -->
           <button refID="IdentifyWindow_AttributeDockpane_ShowButton" size="large" />
         </group>
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="IdentifyWindow_AttributeDockpane_ShowButton" caption="Show My Identify" className="AttributeDockpane_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+        <button id="IdentifyWindow_AttributeDockpane_ShowButton" caption="Show My Identify" className="AttributeDockpane_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="z2">
           <tooltip heading="Show Dockpane">
-            Show My Identify Dockpane<disabledText />
-          </tooltip>
+            Show My Identify Dockpane<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>

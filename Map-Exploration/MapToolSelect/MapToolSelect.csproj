@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6143BE8E-4642-4341-AEED-CC1EE5CB68E8}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2771}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MapToolSelect</RootNamespace>
@@ -96,7 +96,12 @@
   <ItemGroup>
     <AddInContent Include="Images\GenericButtonRed32.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\GenericButtonRed16.png" />
+    <AddInContent Include="DarkImages\GenericButtonRed32.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.md" />
     <None Include="Screenshots\1MapTool3D-2.png" />

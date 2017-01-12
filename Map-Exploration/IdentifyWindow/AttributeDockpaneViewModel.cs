@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -21,10 +21,14 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using ArcGIS.Core.Data;
+using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
+using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Events;
 using ArcGIS.Desktop.Mapping;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
@@ -35,24 +39,31 @@ namespace IdentifyWindow
 {
     internal class AttributeDockpaneViewModel : DockPane
     {
-        private const string _dockPaneID = "IdentifyWindow_AttributeDockpane";
+        #region Private Properties
 
+        private const string _dockPaneID = "IdentifyWindow_AttributeDockpane";
+        
         private FeatureLayer _selectedFeatureLayer;
 
-        private ObservableCollection<FeatureLayer> _featureLayers = new ObservableCollection<FeatureLayer>();
-        private readonly object _lockFeaturelayers = new object();
-
-        private DataTable _selectedFeaturesDataTable = new DataTable();
-        private DataRowView _selectedFeature = null;
+        /// <summary>
+        /// used to lock collections for use by multiple threads
+        /// </summary>
+        private readonly object _lockCollections = new object();
+        /// <summary>
+        /// UI lists, read-only collections, and properties
+        /// </summary>
+        private readonly ObservableCollection<FeatureLayer> _featureLayers = new ObservableCollection<FeatureLayer>();
+        private readonly ReadOnlyObservableCollection<FeatureLayer> _readOnlyFeatureLayers;
 
         private readonly object _lockSelectedFeaturesDataTable = new object();
-
+        private DataTable _selectedFeaturesDataTable = new DataTable();
+        private DataRowView _selectedFeature = null;
+        
         private KeyValuePair<string, int>[] _chartResult;
-        private readonly object _lockPieChart = new object();
 
-        // hook ArcGIS Pro Button
-        public ICommand SelectionTool { get; set; }
-        public ICommand CloseCommand { get; set; }
+        #endregion Private Properties
+
+        #region CTor
 
         protected AttributeDockpaneViewModel()
         {
@@ -66,29 +77,72 @@ namespace IdentifyWindow
             // This association allows bound collections to be updated from threads outside the main GUI thread, 
             // in a coordinated manner without generating the usual exception.  
 
-            BindingOperations.EnableCollectionSynchronization(_featureLayers, _lockFeaturelayers);
+            _readOnlyFeatureLayers = new ReadOnlyObservableCollection<FeatureLayer>(_featureLayers);
+            BindingOperations.EnableCollectionSynchronization(_readOnlyFeatureLayers, _lockCollections);
 
             // subscribe to the map view changed event... that's when we update the list of feature layers
-            ActiveMapViewChangedEvent.Subscribe(OnActiveViewChanged);
-            ActivePaneChangedEvent.Subscribe(OnActivePaneChanged);
+            ActiveMapViewChangedEvent.Subscribe(OnActiveMapViewChanged);
 
             // subscribe to the selection changed event ... that's when we refresh our features
             MapSelectionChangedEvent.Subscribe(OnMapSelectionChanged);
+        }
 
-            // hook ArcGIS Pro Button
-            var toolWrapper = FrameworkApplication.GetPlugInWrapper(DAML.Tool.esri_mapping_selectByRectangleTool);
-            var toolCmd = toolWrapper as ICommand; // tool and command(Button) supports this
-            if (toolCmd != null)
+        /// <summary>
+        /// Called when the pane is first created to give it the opportunity to initialize itself asynchronously.
+        /// </summary>
+        /// <returns>
+        /// A task that represents the work queued to execute in the ThreadPool.
+        /// </returns>
+        protected override Task InitializeAsync() {
+            GetFeatureLayers();
+            return base.InitializeAsync();
+        }
+
+        #endregion CTor
+
+        #region Public Properties
+
+        // hook existing ArcGIS Pro Button
+        /// <summary>
+        /// Command to allow selection of features on the current MapView
+        /// </summary>
+        public ICommand SelectionTool { get { return FrameworkApplication.GetPlugInWrapper("esri_mapping_selectByRectangleTool") as ICommand; } }
+
+        /// <summary>
+        /// Command to allow closing of Pro from DockPane
+        /// </summary>
+        public ICommand CloseCommand { get { return FrameworkApplication.GetPlugInWrapper("esri_core_exitApplicationButton") as ICommand; } }
+
+        /// <summary>
+        /// List of the current active map's feature layers
+        /// </summary>
+        public ReadOnlyObservableCollection<FeatureLayer> FeatureLayers
+        {
+            get { return _readOnlyFeatureLayers; }
+        }
+
+        /// <summary>
+        /// The selected feature layer
+        /// </summary>
+        public FeatureLayer SelectedFeatureLayer
+        {
+            get { return _selectedFeatureLayer; }
+            set
             {
-                SelectionTool = new RelayCommand(param => toolCmd.Execute(null),
-                                param => toolCmd.CanExecute(null));
+                SetProperty(ref _selectedFeatureLayer, value, () => SelectedFeatureLayer);
+                OnMapSelectionChanged(null);
             }
-            var closeWrapper = FrameworkApplication.GetPlugInWrapper(DAML.Button.esri_core_exitApplicationButton);
-            var closeCmd = closeWrapper as ICommand; // tool and command(Button) supports this
-            if (closeCmd != null)
+        }
+
+        /// <summary>
+        /// The selected data table (for tabular display)
+        /// </summary>
+        public DataTable SelectedFeatureDataTable
+        {
+            get { return _selectedFeaturesDataTable; }
+            set
             {
-                CloseCommand = new RelayCommand(param => closeCmd.Execute(null),
-                                param => closeCmd.CanExecute(null));
+                SetProperty(ref _selectedFeaturesDataTable, value, () => SelectedFeatureDataTable);
             }
         }
 
@@ -124,182 +178,113 @@ namespace IdentifyWindow
             }
         }
 
+        #endregion Public Properties
+
+        #region Event Handlers
+
         /// <summary>
-        /// Called when the selection o
+        /// The active map view changed therefore we refresh the feature layer drop-down
         /// </summary>
         /// <param name="args"></param>
-        private void OnMapSelectionChanged(MapSelectionChangedEventArgs args)
+        private void OnActiveMapViewChanged(ActiveMapViewChangedEventArgs args)
+        {
+            if (args.IncomingView == null) return;
+            SelectedFeatureDataTable = null;
+            ChartResult = null;
+            GetFeatureLayers();
+        }
+
+        /// <summary>
+        /// Called after the feature selection changed
+        /// </summary>
+        /// <param name="args"></param>
+        private async void OnMapSelectionChanged(MapSelectionChangedEventArgs args)
         {
             if (SelectedFeatureLayer == null) return;
-            GetSelectedFeatures(SelectedFeatureLayer);
-            ComputePieChart();
-            Zoom2Select();
+            await GetSelectedFeaturesAsync(SelectedFeatureLayer);
+            NotifyPropertyChanged(() => SelectedFeatureDataTable);
+
+            await ComputePieChartAsync();
+            NotifyPropertyChanged(() => ChartResult);
+
+            Zoom2Selection();
         }
 
-        private bool _mapViewNotInitialized = false;
+        #endregion Event Handlers
 
-        private void OnActivePaneChanged(PaneEventArgs args)
-        {
-            // get new feature layer list
-            SelectedFeatureDataTable = null;
-            ChartResult = new KeyValuePair<string, int>[0];
-            FeatureLayers.Clear();
-            var mapView = MapView.Active;
-            if (mapView == null)
-            {
-                _mapViewNotInitialized = true;
-                return;
-            }
-            GetFeatureLayers();
-        }
-
-        private void OnActiveViewChanged(ActiveMapViewChangedEventArgs args)
-        {
-            if (!_mapViewNotInitialized) return;
-            _mapViewNotInitialized = false;
-            ChartResult = new KeyValuePair<string, int>[0];
-            FeatureLayers.Clear();
-            GetFeatureLayers();
-        }
+        #region Helpers
 
         /// <summary>
         /// Zoom to selection
         /// </summary>
-        private async void Zoom2Select()
+        private void Zoom2Selection()
         {
             var mapView = MapView.Active;
             if (mapView == null) return;
-            await QueuedTask.Run(() =>
+            QueuedTask.Run(() =>
             {
                 //select features that intersect the sketch geometry
-                var selection =  mapView.Map.GetSelection()
+                var selection = mapView.Map.GetSelection()
                       .Where(kvp => kvp.Key is BasicFeatureLayer)
-                      .ToDictionary(kvp => (BasicFeatureLayer)kvp.Key, kvp => kvp.Value);
-
+                      .Select(kvp => (BasicFeatureLayer)kvp.Key);
                 //zoom to selection
-                MapView.Active.ZoomToAsync(selection.Select(kvp => kvp.Key), true);
-            }).ContinueWith(t =>
-            {
-                if (t.Exception != null)
-                {
-                    var aggException = t.Exception.Flatten();
-                    foreach (var exception in aggException.InnerExceptions)
-                        System.Diagnostics.Debug.WriteLine(exception.Message);
-                }
+                mapView.ZoomTo(selection, true);
             });
         }
 
         /// <summary>
-        /// List of the current active map's feature layers
+        /// This method is called to use the current active MapView and retrieve all 
+        /// feature layers that are part of the map layers in the current map view.
         /// </summary>
-        public ObservableCollection<FeatureLayer> FeatureLayers
-        {
-            get { return _featureLayers; }
-            set
-            {
-                SetProperty(ref _featureLayers, value, () => FeatureLayers);
-            }
-        }
-
-        /// <summary>
-        /// The selected feature layer
-        /// </summary>
-        public FeatureLayer SelectedFeatureLayer
-        {
-            get { return _selectedFeatureLayer; }
-            set
-            {
-                SetProperty(ref _selectedFeatureLayer, value, () => SelectedFeatureLayer);
-                OnMapSelectionChanged(null);
-            }
-        }
-
-        /// <summary>
-        /// The selected data table (for tabular display)
-        /// </summary>
-        public DataTable SelectedFeatureDataTable
-        {
-            get { return _selectedFeaturesDataTable; }
-            set
-            {
-                SetProperty(ref _selectedFeaturesDataTable, value, () => SelectedFeatureDataTable);
-            }
-        }
-
-        /// <summary>
-        /// Show the DockPane.
-        /// </summary>
-        internal static void Show()
-        {
-            DockPane pane = FrameworkApplication.DockPaneManager.Find(_dockPaneID);
-            if (pane == null)
-                return;
-
-            pane.Activate();
-        }
-
-        private async void ComputePieChart()
+        private Task ComputePieChartAsync()
         {
             var mapView = MapView.Active;
-            if (mapView == null) return;
-            await QueuedTask.Run(() =>
-            {
+            if (mapView == null) return Task.FromResult(0);
+            return QueuedTask.Run(() => {
                 var pieChartResult = new List<KeyValuePair<string, int>>();
                 foreach (var selection in mapView.Map.GetSelection()
-                    .Where(kvp => kvp.Key is BasicFeatureLayer))
-                {
+                    .Where(kvp => kvp.Key is BasicFeatureLayer)) {
                     pieChartResult.Add(new KeyValuePair<string, int>(selection.Key.Name, selection.Value.Count));
                 }
-                lock (_lockPieChart) _chartResult = pieChartResult.ToArray();
-                NotifyPropertyChanged(() => ChartResult);
-            }).ContinueWith(t =>
-            {
-                if (t.Exception != null)
-                {
-                    var aggException = t.Exception.Flatten();
-                    foreach (var exception in aggException.InnerExceptions)
-                        System.Diagnostics.Debug.WriteLine(exception.Message);
-                }
+                _chartResult = pieChartResult.ToArray();
             });
         }
 
-        private async void GetFeatureLayers()
+        /// <summary>
+        /// This method is called to use the current active mapview and retrieve all 
+        /// feature layers that are part of the map layers in the current map view.
+        /// </summary>
+        private void GetFeatureLayers()
         {
             //Get the active map view.
             var mapView = MapView.Active;
             if (mapView == null) return;
-            await QueuedTask.Run(() =>
-            {
-                var featureLayers = mapView.Map.Layers.OfType<FeatureLayer>();
-                lock (_lockFeaturelayers)
-                {
-                    _featureLayers.Clear();
-                    foreach (var featureLayer in featureLayers) _featureLayers.Add(featureLayer);
-                }
-            }).ContinueWith(t =>
-            {
-                if (t.Exception != null)
-                {
-                    var aggException = t.Exception.Flatten();
-                    foreach (var exception in aggException.InnerExceptions)
-                        System.Diagnostics.Debug.WriteLine(exception.Message);
-                }
-            });
+            var featureLayers = mapView.Map.Layers.OfType<FeatureLayer>();
+            lock (_lockCollections) {
+                _featureLayers.Clear();
+                foreach (var featureLayer in featureLayers) _featureLayers.Add(featureLayer);
+            }
             NotifyPropertyChanged(() => FeatureLayers);
-            //var firstFeatureLayer = FeatureLayers.FirstOrDefault();
-            //if (firstFeatureLayer != null) SelectedFeatureLayer = firstFeatureLayer;
         }
 
-        private async void GetSelectedFeatures(FeatureLayer selectedFeatureLayer)
+        /// <summary>
+        /// This method is called when the selection on the map view has changed.  Because we are only
+        /// interested in the 'selected' feature layer from our feature layer drop down we pass the 
+        /// 'selected' feature layer as a parameter.
+        /// </summary>
+        /// <param name="selectedFeatureLayer">'selected' feature layer that we need to display data in the grid view for</param>
+        private Task GetSelectedFeaturesAsync(FeatureLayer selectedFeatureLayer)
         {
             //Get the active map view.
             var mapView = MapView.Active;
-            if (mapView == null || selectedFeatureLayer == null) return;
-            await QueuedTask.Run(() =>
+            if (mapView == null || selectedFeatureLayer == null)
+                return Task.FromResult(0);
+            return QueuedTask.Run(() =>
             {
                 // Get all selected features for selectedFeatureLayer
-                // and populate a datatable with data and column headers
-                var resultTable = new DataTable();
+                // and populate a DataTable with data and column headers
+                var listColumnNames = new List<KeyValuePair<string, string>>();
+                var listValues = new List<List<string>>();
                 using (var rowCursor = selectedFeatureLayer.GetSelection().Search(null))
                 {
                     bool bDefineColumns = true;
@@ -310,44 +295,50 @@ namespace IdentifyWindow
                         {
                             foreach (var fld in anyRow.GetFields().Where(fld => fld.FieldType != FieldType.Geometry))
                             {
-                                resultTable.Columns.Add(new DataColumn(fld.Name, typeof(string)) { Caption = fld.AliasName });
+                                listColumnNames.Add(new KeyValuePair<string, string>(fld.Name, fld.AliasName));
                             }
                         }
-                        var addRow = resultTable.NewRow();
+                        var newRow = new List<string>();
                         foreach (var fld in anyRow.GetFields().Where(fld => fld.FieldType != FieldType.Geometry))
                         {
-                            addRow[fld.Name] = (anyRow[fld.Name] == null) ? string.Empty : anyRow[fld.Name].ToString();
+                            newRow.Add((anyRow[fld.Name] == null) ? string.Empty : anyRow[fld.Name].ToString());
                         }
-                        resultTable.Rows.Add(addRow);
+                        listValues.Add(newRow);
                         bDefineColumns = false;
                     }
                 }
-                lock (_lockSelectedFeaturesDataTable) _selectedFeaturesDataTable = resultTable;
-            }).ContinueWith(t =>
-            {
-                if (t.Exception != null)
-                {
-                    var aggException = t.Exception.Flatten();
-                    foreach (var exception in aggException.InnerExceptions)
-                        System.Diagnostics.Debug.WriteLine(exception.Message);
+                _selectedFeaturesDataTable = new DataTable();
+                foreach (var col in listColumnNames) {
+                    _selectedFeaturesDataTable.Columns.Add(new DataColumn(col.Key, typeof(string)) { Caption = col.Value });
+                }
+                foreach (var row in listValues) {
+                    var newRow = _selectedFeaturesDataTable.NewRow();
+                    newRow.ItemArray = row.ToArray();
+                    _selectedFeaturesDataTable.Rows.Add(newRow);
                 }
             });
-            NotifyPropertyChanged(() => SelectedFeatureDataTable);
         }
 
+        /// <summary>
+        /// Flash the selected features
+        /// </summary>
+        /// <param name="flashFeatures"></param>
         private async void FlashFeaturesAsync(IReadOnlyDictionary<BasicFeatureLayer, List<long>> flashFeatures)
         {
             //Get the active map view.
             var mapView = MapView.Active;
             if (mapView == null)
                 return;
-
             await QueuedTask.Run(() =>
             {
                 //Flash the collection of features.
                 mapView.FlashFeature(flashFeatures);
             });
         }
+
+        #endregion Helpers
+
+        #region Dock Pane management
 
         /// <summary>
         /// Text shown near the top of the DockPane.
@@ -361,7 +352,19 @@ namespace IdentifyWindow
                 SetProperty(ref _heading, value, () => Heading);
             }
         }
+        
+        /// <summary>
+        /// Show the DockPane.
+        /// </summary>
+        internal static void Show()
+        {
+            DockPane pane = FrameworkApplication.DockPaneManager.Find(_dockPaneID);
+            if (pane == null)
+                return;
+            pane.Activate();
+        }
 
+        #endregion Dock Pane management
     }
 
     /// <summary>

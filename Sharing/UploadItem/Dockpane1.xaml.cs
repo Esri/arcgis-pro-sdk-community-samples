@@ -28,6 +28,7 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Web.Script.Serialization;
 using ArcGIS.Desktop.Core;
+using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts;
 
 namespace UploadItem
@@ -48,6 +49,28 @@ namespace UploadItem
             copyToClipboard.Visibility = System.Windows.Visibility.Hidden;
         }
 
+        private Brush _errorBorderBrush
+        {
+            get
+            {
+                var colorString = FrameworkApplication.ApplicationTheme == ApplicationTheme.Default
+                    ? "#C6542D"
+                    : "#C75028";
+                return new SolidColorBrush((Color)ColorConverter.ConvertFromString(colorString));
+            }
+        }
+
+        private Brush _greenBorderBrush
+        {
+            get
+            {
+                var colorString = FrameworkApplication.ApplicationTheme == ApplicationTheme.Default
+                    ? "#5A9359"
+                    : "#58AD57";
+                return new SolidColorBrush((Color)ColorConverter.ConvertFromString(colorString));
+            }
+        }
+
         /// <summary>
         /// Check if input fields are empty or invalid
         /// </summary>
@@ -55,16 +78,19 @@ namespace UploadItem
         Tuple<bool, string> checkEmptyFields()
         {
             #region
-            BaseUrl.BorderBrush = Brushes.DarkBlue;
-            itemPath.BorderBrush = Brushes.DarkBlue;
-            thumbnailPath.BorderBrush = Brushes.DarkBlue;
-            tags.BorderBrush = Brushes.DarkBlue;
+            var brush = FrameworkApplication.ApplicationTheme == ApplicationTheme.Default
+                ? Brushes.DarkBlue
+                : Brushes.AliceBlue;
+            BaseUrl.BorderBrush = brush;
+            itemPath.BorderBrush = brush;
+            thumbnailPath.BorderBrush = brush;
+            tags.BorderBrush = brush;
             #endregion
 
             string msg = "";
             if (BaseUrl.Text.Trim() == "")
             {
-                BaseUrl.BorderBrush = Brushes.Red;
+                BaseUrl.BorderBrush =_errorBorderBrush;
                 msg += "\tPortal Url cannot be empty.\n";
             }
             else
@@ -75,25 +101,25 @@ namespace UploadItem
                                   || uriResult.Scheme == Uri.UriSchemeHttps);
                 if (!result)
                 {
-                    BaseUrl.BorderBrush = Brushes.Red;
+                    BaseUrl.BorderBrush =_errorBorderBrush;
                     msg += "\tPortal Url is invalid.\n";
                 }
             }
             if (itemPath.Text.Trim() == "" || !File.Exists(itemPath.Text.Trim()))
             {
-                itemPath.BorderBrush = Brushes.Red;
+                itemPath.BorderBrush =_errorBorderBrush;
                 msg += "\tItem Path cannot be empty or non-existent.\n";
             }
 
             if (thumbnailPath.Text.Trim() == "" || !File.Exists(thumbnailPath.Text.Trim()))
             {
-                thumbnailPath.BorderBrush = Brushes.Red;
+                thumbnailPath.BorderBrush =_errorBorderBrush;
                 msg += "\tThumbnail Path cannot be empty or non-existent.\n";
             }
 
             if (tags.Text.Trim() == "")
             {
-                tags.BorderBrush = Brushes.Red;
+                tags.BorderBrush =_errorBorderBrush;
                 msg += "\tTags cannot be empty.\n";
             }
             else
@@ -110,7 +136,7 @@ namespace UploadItem
                 tags_arr = tags_arr.Where(x => !string.IsNullOrEmpty(x)).ToArray();
                 if (tags_arr.Length == 0)
                 {
-                    tags.BorderBrush = Brushes.Red;
+                    tags.BorderBrush =_errorBorderBrush;
                     msg += "\tTag array cannot be empty.\n";
                 }
             }
@@ -130,7 +156,7 @@ namespace UploadItem
             Tuple<bool, string> tup = checkEmptyFields();
             if (!tup.Item1)
             {
-                uploadSubmit.Background = Brushes.Gray;
+
                 uploadSubmit.IsEnabled = false;
                 txt_itemLink.Text = "Portal info: " + BaseUrl.Text + " || ";
                 txt_itemLink.Text += "Item info: (Item Path) " + itemPath.Text + "; (Thumbnail Path) " + thumbnailPath.Text + "; (Tags) " + tags.Text + "\n";
@@ -138,7 +164,7 @@ namespace UploadItem
                 if (result.Item1)
                 {
                     txt_itemLink.Text = "Item uploaded successfully!";
-                    txt_itemLink.Foreground = Brushes.Green;
+                    txt_itemLink.Foreground = _greenBorderBrush;
                     itemIdLabel.Visibility = System.Windows.Visibility.Visible;
                     itemIdText.Visibility = System.Windows.Visibility.Visible;
                     itemIdText.Text = result.Item2;
@@ -147,9 +173,9 @@ namespace UploadItem
                 else
                 {
                     txt_itemLink.Text = result.Item2 + " for request - " + txt_itemLink.Text;
-                    txt_itemLink.Foreground = Brushes.Red;
+                    txt_itemLink.Foreground =_errorBorderBrush;
                 }
-                uploadSubmit.Background = Brushes.White;
+
                 uploadSubmit.IsEnabled = true;
             }
             else
@@ -163,14 +189,13 @@ namespace UploadItem
         /// <param name="e"></param>
         void OnClickClearContents(object sender, RoutedEventArgs e)
         {
-            uploadSubmit.Background = Brushes.White;
+
             uploadSubmit.IsEnabled = true;
             BaseUrl.Text = "";
             itemPath.Text = "";
             thumbnailPath.Text = "";
             tags.Text = "";
             txt_itemLink.Text = "";
-            txt_itemLink.Foreground = Brushes.White;
             itemIdLabel.Visibility = System.Windows.Visibility.Hidden;
             itemIdText.Visibility = System.Windows.Visibility.Hidden;
             copyToClipboard.Visibility = System.Windows.Visibility.Hidden;
@@ -256,7 +281,7 @@ namespace UploadItem
                         if (sr.nextStart <= 0)
                             return new Tuple<bool, SDCItem>(false, null);
 
-                        #region prepare for the enxt batch of search results
+                        #region prepare for the next batch of search results
                         queryURL = portalURL + @"sharing/rest/search?q=" + itemName + " AND type:" + itemType + "&f=json&start=" + sr.nextStart;
                         response = myClient.Get(queryURL);
                         if (response == null)
@@ -336,9 +361,8 @@ namespace UploadItem
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void GetActivePortal_Click(object sender, RoutedEventArgs e)
-        {
-            BaseUrl.Text = PortalManager.GetActivePortal().ToString();
+        void GetActivePortal_Click(object sender, RoutedEventArgs e) {
+            BaseUrl.Text = ArcGISPortalManager.Current.GetActivePortal().PortalUri.ToString();
         }
 
         /// <summary>

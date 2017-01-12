@@ -1,0 +1,114 @@
+<!--
+
+   Copyright 2017 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<Window x:Class="ConfigWithMap.UI.SplashScreen"
+	      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+        xmlns:framework="clr-namespace:ArcGIS.Desktop.Internal.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
+        xmlns:frameworkInternal="clr-namespace:ArcGIS.Desktop.Internal.Framework;assembly=ArcGIS.Desktop.Framework"
+        Title="SplashScreenView"
+        ShowInTaskbar="False"
+	      Width="688" Height="368"
+        SizeToContent="Height"
+        ResizeMode="NoResize"
+        Topmost="False"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True" FlowDirection="LeftToRight"
+        Background="Transparent">
+  <Grid x:Name="LayoutRoot" Width="648" Height="328" HorizontalAlignment="Center" VerticalAlignment="Center"  >
+    <Grid.Background>
+      <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#FFF2F2F2" Offset="0"/>
+        <GradientStop Color="#0079C1" Offset=".8"/>
+      </LinearGradientBrush>
+    </Grid.Background>
+    <StackPanel HorizontalAlignment="Center" Margin="0,75,0,0">
+      <TextBlock FontFamily="Magneto" Foreground="Red" FontSize="50">Acme Electric</TextBlock>
+      <!-- #0079C1 -->
+      <TextBlock HorizontalAlignment="Center" Foreground="#0079C1" Margin="0,8,0,0" FontSize="20">powered by:</TextBlock>
+    </StackPanel>
+
+    <Canvas HorizontalAlignment="Center" Height="308" UseLayoutRounding="False" VerticalAlignment="Center" Width="628">
+      <Canvas.RenderTransform>
+        <TranslateTransform x:Name="TransTransform" X="0" Y="0"/>
+      </Canvas.RenderTransform>
+      <Canvas.Triggers>
+        <EventTrigger RoutedEvent="Canvas.Loaded">
+          <BeginStoryboard>
+            <Storyboard>
+              <DoubleAnimation From="0" To="10" Duration="00:00:01"
+                               Storyboard.TargetName="TransTransform"
+                               Storyboard.TargetProperty="Y"
+                               AutoReverse="True">
+                <DoubleAnimation.EasingFunction>
+                  <BounceEase Bounces="1" EasingMode="EaseOut" Bounciness="2" />
+                </DoubleAnimation.EasingFunction>
+              </DoubleAnimation>
+            </Storyboard>
+          </BeginStoryboard>
+        </EventTrigger>
+      </Canvas.Triggers>
+      <Grid x:Name="ProForeground2" Height="37.202" Canvas.Left="185" Canvas.Top="185" Width="165.837">
+        <Path Data="F1M213.3013,87.8037L213.2013,87.8037L205.8503,105.2047L220.3013,105.2047z M211.4013,82.4037L215.3513,82.4037L230.4023,117.8057L225.5023,117.8057L221.9013,109.1047L204.2003,109.1047L200.5503,117.8057L195.8003,117.8057z" Fill="White" Stretch="Fill" Width="34.602" HorizontalAlignment="Left" Margin="0,0.9" d:LayoutOverrides="Width"/>
+        <Path Data="F1M234.3999,99.9546C234.3999,97.8046,234.1999,95.9546,234.1999,94.4046L237.8999,94.4046C237.8999,95.6546,237.9999,96.9546,237.9999,98.2546L238.0999,98.2546C239.1499,95.9546,242.0499,93.8046,245.8999,93.8046C246.4009,93.8046,246.9509,93.8536,247.5009,94.0546L247.2509,98.0046C246.6009,97.8046,245.8509,97.7046,245.1499,97.7046C240.3999,97.7046,238.2999,101.0546,238.2999,106.4046L238.2999,117.8056L234.3999,117.8056z" Fill="White" Stretch="Fill" Width="13.301" HorizontalAlignment="Left" Margin="38.4,12.301,0,0.9"/>
+        <Path Data="F1M267.5005,100.2544C265.8505,98.2544,263.9505,97.4044,261.6005,97.4044C256.3505,97.4044,253.6995,101.3044,253.6995,106.1054C253.6995,110.9054,256.8505,114.8054,261.6005,114.8054C264.1505,114.8054,266.1005,113.9054,267.5505,111.9054L270.4505,114.6554C268.2005,117.2554,265.0005,118.4054,261.6005,118.4054C254.3495,118.4054,249.4995,113.3054,249.4995,106.1054C249.4995,99.0044,254.3995,93.8044,261.6005,93.8044C265.0505,93.8044,268.2505,94.9544,270.6015,97.5044z" Fill="White" Stretch="Fill" Width="21.102" HorizontalAlignment="Left" Margin="53.699,12.3,0,0.301" d:LayoutOverrides="Width"/>
+        <Path Data="F1M307.0513,115.2056C302.7513,117.5056,297.8503,118.7056,292.4003,118.7056C281.4993,118.7056,273.6993,111.3056,273.6993,100.2546C273.6993,88.9036,281.4993,81.5036,292.4003,81.5036C297.8003,81.5036,302.6513,82.6536,306.3513,85.9536L301.7003,90.6536C299.4503,88.4546,296.0003,87.2036,292.4503,87.2036C285.1503,87.2036,280.2993,92.8046,280.2993,99.8546C280.2993,107.4056,285.1503,113.0056,292.4503,113.0056C295.6503,113.0056,298.5513,112.4056,300.7503,111.1556L300.7503,102.8046L293.5003,102.8046L293.5003,97.1046L307.0513,97.1046z" Fill="White" Stretch="Fill" Margin="77.899,0,54.586,0"/>
+        <Path Data="F1M313.749,82.403L320.049,82.403L320.049,117.805L313.749,117.805z" Fill="White" Stretch="Fill" Width="6.3" HorizontalAlignment="Right" Margin="0,0.899,41.588,0.901" d:LayoutOverrides="Width"/>
+        <Path Data="F1M345.1499,90.0039C343.7999,88.1039,341.3999,87.2039,338.9499,87.2039C336.0489,87.2039,333.1499,88.5039,333.1499,91.7539C333.1499,98.8549,349.9499,94.8039,349.9499,107.4049C349.9499,115.0049,343.9499,118.7059,336.9999,118.7059C332.5989,118.7059,328.2989,117.3559,325.3989,113.9049L330.1489,109.3049C331.6989,111.6549,334.3489,113.0049,337.1499,113.0049C340.0499,113.0049,343.3499,111.4049,343.3499,108.1549C343.3499,100.4049,326.5489,104.8549,326.5489,92.2039C326.5489,84.9039,333.0489,81.5039,339.5999,81.5039C343.2999,81.5039,346.9999,82.5539,349.7499,85.1539z" Fill="White" Stretch="Fill" Width="24.551" HorizontalAlignment="Right" Margin="0,0,11.687,0"/>
+        <Path Data="F1M356.1919,86.5928L357.0789,86.5928C357.7989,86.5928,358.4699,86.5568,358.4699,85.7408C358.4699,85.0218,357.8589,84.9378,357.3069,84.9378L356.1919,84.9378z M355.4719,84.2898L357.3669,84.2898C358.6029,84.2898,359.1899,84.7448,359.1899,85.7778C359.1899,86.6998,358.5899,87.0968,357.8229,87.1808L359.3099,89.4588L358.5299,89.4588L357.1149,87.2398L356.1919,87.2398L356.1919,89.4588L355.4719,89.4588z M357.1389,90.6578C359.2379,90.6578,360.9169,89.0028,360.9169,86.8208C360.9169,84.6738,359.2379,83.0298,357.1389,83.0298C355.0409,83.0298,353.3609,84.6738,353.3609,86.8678C353.3609,89.0028,355.0409,90.6578,357.1389,90.6578 M357.1389,82.3828C359.5859,82.3828,361.6369,84.3018,361.6369,86.8208C361.6369,89.3868,359.5859,91.3058,357.1389,91.3058C354.6919,91.3058,352.6419,89.3868,352.6419,86.8678C352.6419,84.3018,354.6919,82.3828,357.1389,82.3828" Fill="White" Height="8.923" Stretch="Fill" Width="8.995" HorizontalAlignment="Right" Margin="0,0.879,0,0" VerticalAlignment="Top"/>
+      </Grid>
+      <!-- Pro-->
+      <Grid x:Name="ProForeground1" Height="36.003" Canvas.Left="365" Canvas.Top="185" Width="67.35">
+        <Path Data="F1M379.9482,98.0044L387.0492,98.0044C391.2492,98.0044,394.1492,96.1044,394.1492,92.1544C394.1492,88.2044,391.2492,86.3034,387.0492,86.3034L379.9482,86.3034z M375.7482,82.4034L386.2482,82.4034C392.7492,82.4034,398.6492,84.7034,398.6492,92.1044C398.6492,99.8544,392.0492,101.9044,387.0492,101.9044L379.9482,101.9044L379.9482,117.8054L375.7482,117.8054z" Fill="White" Stretch="Fill" Width="22.901" HorizontalAlignment="Left" Margin="0,0,0,0.601" d:LayoutOverrides="Width"/>
+        <Path Data="F1M402.9473,99.9546C402.9473,97.8046,402.7473,95.9546,402.7473,94.4046L406.4473,94.4046C406.4473,95.6546,406.5473,96.9546,406.5473,98.2546L406.6473,98.2546C407.6973,95.9546,410.5973,93.8046,414.4483,93.8046C414.9483,93.8046,415.4983,93.8536,416.0483,94.0546L415.7983,98.0046C415.1483,97.8046,414.3983,97.7046,413.6973,97.7046C408.9473,97.7046,406.8473,101.0546,406.8473,106.4046L406.8473,117.8056L402.9473,117.8056z" Fill="White" Stretch="Fill" Margin="26.999,11.402,27.05,0.6"/>
+        <Path Data="F1M430.5977,114.8057C435.6477,114.8057,438.8977,111.0057,438.8977,106.1047C438.8977,101.2047,435.6477,97.4047,430.5977,97.4047C425.5477,97.4047,422.2967,101.2047,422.2967,106.1047C422.2967,111.0057,425.5477,114.8057,430.5977,114.8057 M430.5977,93.8047C437.7977,93.8047,443.0977,98.8047,443.0977,106.1047C443.0977,113.4057,437.7977,118.4057,430.5977,118.4057C423.3967,118.4057,418.0967,113.4057,418.0967,106.1047C418.0967,98.8047,423.3967,93.8047,430.5977,93.8047" Fill="White" Stretch="Fill" Width="25.001" HorizontalAlignment="Right" Margin="0,11.402,0,0" d:LayoutOverrides="Width"/>
+      </Grid>
+    </Canvas>
+
+    <Grid Width="415" Height="44" Margin="0,225,0,0">
+      <TextBlock Height="Auto"  
+                 Text="Loading" Foreground="#FF7FBBDF" 
+                 FontFamily="Segoe UI Light" 
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Top" 
+                 FontSize="16"/>
+    </Grid>
+
+    <Grid  HorizontalAlignment="Stretch">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <TextBlock x:Name="EsriLogo" Height="Auto" TextWrapping="Wrap"  Grid.Column="1"
+                   Width="Auto" Foreground="#FF7FBBDF" 
+                   FontFamily="Segoe UI Light" HorizontalAlignment="Right" 
+                   VerticalAlignment="Bottom" TextAlignment="Right" 
+                   FontSize="10.667">
+          <Run Text="© 2016 Esri. All Rights Reserved."/>
+      </TextBlock>
+    </Grid>
+  </Grid>
+</Window>
+
+
+
+
+
+

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9855ABB2-E2E2-4C50-BB63-23A3336ECD06}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2743}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CoordinateSystemAddin</RootNamespace>
@@ -40,8 +40,15 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ArcGIS.Desktop.DataGrid.Contrib.Wpf">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.DataGrid.Contrib.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ItemIndex">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ESRI.ArcGIS.ItemIndex.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,9 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <AddInContent Include="Config.daml">
-      <SubType>Designer</SubType>
-    </AddInContent>
+    <AddInContent Include="Config.daml" />
     <AddInContent Include="Images\AddInDesktop16.png" />
     <AddInContent Include="Images\AddInDesktop32.png" />
   </ItemGroup>
@@ -101,10 +106,7 @@
     <Compile Include="UI\CoordSysDialog.xaml.cs">
       <DependentUpon>CoordSysDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\CoordSysPickerView.xaml.cs">
-      <DependentUpon>CoordSysPickerView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UI\CoordSysPickerViewModel.cs" />
+    <Compile Include="UI\CoordSysViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AddInContent Include="Images\GenericButtonBlue16.png" />
@@ -121,10 +123,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\CoordSysPickerView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\CoordinateSystem16.png" />
@@ -138,12 +136,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.md" />
-    <None Include="Resources\sr_out.csv" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Python\make_sr_list.py" />
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\BexDog16.png" />
+    <AddInContent Include="DarkImages\BexDog32.png" />
+    <AddInContent Include="DarkImages\CoordinateSystem16.png" />
+    <AddInContent Include="DarkImages\GenericButtonBlue16.png" />
+    <AddInContent Include="DarkImages\GenericButtonBlue32.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Screenshots\Screen1.png" />
     <None Include="Screenshots\Screen2.png" />

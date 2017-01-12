@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-
-
-
 <!--//Copyright 2014 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.-->
 <ArcGIS defaultAssembly="DockpaneSimple.dll" defaultNamespace="DockpaneSimple" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{d1592631-bd40-4a10-a1a8-670c84f199e8}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{d1592631-bd40-4a10-a1a8-670c84f199e8}" version="1.0" desktopVersion="1.4.7198">
     <Name>DockpaneSimple</Name>
     <Description>DockpaneSimple description</Description>
     <Image>Images\AddinDesktop32.png</Image>

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{36F40055-73CA-422C-8772-E04FE412836F}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2774}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MapToolWithOverlayControl</RootNamespace>
@@ -106,6 +106,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\GenericButtonRed16.png" />
+    <AddInContent Include="DarkImages\GenericButtonRed32.png" />
     <Content Include="Screenshots\screenshot.png" />
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -27,24 +27,19 @@ namespace Licensing {
     /// Show how to make a "Configurable Extension" that can be added to the Pro Backstage Licensing Tab
     /// </summary>
     /// <remarks>
-    /// At 10.x, add-ins implemented the IExtensionConfig interface to create a "configurable extension". 
-    /// A configurable extension in 10.x is listed on the ArcMap Extensions dialog box where users can toggle its enabled state on or off. Configurable extensions can execute their own proprietary licensing logic to determine their enabled state within their respective IExtensionConfig implementations.
-    ///
-    /// In ArcGIS Pro, the configurable extension mechanism is likewise supported. Add-ins that implement  the configurable extension pattern in Pro are shown on the licensing tab on the ArcGIS Pro application backstage in the list of "External Extensions".
-    ///
-    /// When a user attempts to enable a configurable extension from backstage, the 3rd party developer can execute custom licensing code via IExtensionConfig (same as at 10x) to determine whether or not the enabling action is authorized.
-    /// 
-    /// This Add-in mimics implementation of a proprietary licensing scheme that is activated whenever the user attempts to enable the Add-in from the Pro Licensing tab. When the user clicks the "Enabled" check box (for the sample's external extension list entry on the licensing tab), a pop-up prompts the user for a valid Product ID to enable the extension. A valid Product ID will be any number that is divisible by 2. If a valid id is provided the extension is enabled. If a valid id is not provided then the Add-in remains disabled.  
-    /// The extension state (Enabled, Disabled) is propagated to the UI and functionality of the Add-in (in this case a button that does a feature select) via a custom condition. The state that controls the condition is activated and deactivated in conjunction with the Enabled, Disabled extension state of the Add-in.
-    /// 
+    /// At 10.x, add-ins implemented the IExtensionConfig interface to create a "configurable extension".
+    /// A configurable extension in 10.x is listed on the ArcMap Extensions dialog box where users can toggle its enabled state on or off. Configurable extensions can execute their own proprietary licensing logic to determine their enabled state within their respective IExtensionConfig implementations.  
+    /// In ArcGIS Pro, the configurable extension mechanism is likewise supported. Add-ins that implement  the configurable extension pattern in Pro are shown on the licensing tab on the ArcGIS Pro application backstage in the list of "External Extensions".  
+    /// - When a user attempts to enable a configurable extension from backstage, the 3rd party developer can execute custom licensing code via IExtensionConfig (same as at 10x) to determine whether or not the enabling action is authorized.
+    /// - This Add-in mimics implementation of a proprietary licensing scheme that is activated whenever the user attempts to enable the Add-in from the Pro Licensing tab. When the user clicks the "Enabled" check box (for the sample's external extension list entry on the licensing tab), a pop-up prompts the user for a valid Product ID to enable the extension. A valid Product ID will be any number that is divisible by 2. If a valid id is provided the extension is enabled. If a valid id is not provided then the Add-in remains disabled.
     /// ![UI](Screenshots/Screen1.png)
-    /// 
-    /// Please also refer to the companion ProGuide at 
-    /// <a href="https://github.com/Esri/arcgis-pro-sdk/wiki/ProGuide-License-Your-Add-in"/> for more information
+    /// - The extension state (Enabled, Disabled) is propagated to the UI and functionality of the Add-in (in this case a button that does a feature select) via a custom condition. The state that controls the condition is activated and deactivated in conjunction with the Enabled, Disabled extension state of the Add-in.
+    /// ![UI](Screenshots/Screen2.png)
+    /// - Please also refer to the companion ProGuide at [ProGuide: License Your Add-in](https://github.com/Esri/arcgis-pro-sdk/wiki/ProGuide-License-Your-Add-in) for more information
     /// </remarks>
     internal class Module1 : Module, IExtensionConfig {
         private static Module1 _this = null;
-        private static string _authorizationID = "";
+        private static string _authorizationId = "";
         private static ExtensionState _extensionState = ExtensionState.Disabled;
 
         internal Module1() {
@@ -53,7 +48,7 @@ namespace Licensing {
 
             //preset _authorizationID to a number "string" divisible by 2 to have 
             //the Add-in initially enabled
-            CheckLicensing(_authorizationID);
+            CheckLicensing(_authorizationId);
         }
         /// <summary>
         /// Retrieve the singleton instance to this module here
@@ -69,12 +64,12 @@ namespace Licensing {
         /// <summary>
         /// The current Authorization ID
         /// </summary>
-        internal static string AuthorizationID {
+        internal static string AuthorizationId {
             get {
-                return _authorizationID;
+                return _authorizationId;
             }
             set {
-                _authorizationID = value;
+                _authorizationId = value;
             }
         }
 
@@ -113,7 +108,7 @@ namespace Licensing {
                 }
                 else {
                     //check if we allow Enabling of our Add-in
-                    if (!CheckLicensing(_authorizationID)) {
+                    if (!CheckLicensing(_authorizationId)) {
                         var regWindow = new RegistrationWindow();
                         regWindow.ShowDialog();
                     }

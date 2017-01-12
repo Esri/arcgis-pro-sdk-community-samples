@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BB084CA5-C765-4F42-8639-994A02E6DE82}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2706}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DataReviewerProSDKSamples</RootNamespace>
@@ -148,7 +148,25 @@
     <None Include="ReadMe.md" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Screenshots\Screen.png" />
+    <None Include="Screenshots\Screen.png" />
+    <None Include="Screenshots\Screen1.png" />
+    <None Include="Screenshots\Screen2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="DarkImages\DataReviewerBatchChecksAdd16.png" />
+    <AddInContent Include="DarkImages\DataReviewerBatchChecksAdd32.png" />
+    <AddInContent Include="DarkImages\DataReviewerBatchJobFile16.png" />
+    <AddInContent Include="DarkImages\DataReviewerBatchJobFile32.png" />
+    <AddInContent Include="DarkImages\DataReviewerConnection16.png" />
+    <AddInContent Include="DarkImages\DataReviewerConnection32.png" />
+    <AddInContent Include="DarkImages\DataReviewerResultsAdd16.png" />
+    <AddInContent Include="DarkImages\DataReviewerResultsAdd32.png" />
+    <AddInContent Include="DarkImages\DataReviewerSession16.png" />
+    <AddInContent Include="DarkImages\DataReviewerSession32.png" />
+    <AddInContent Include="DarkImages\GenericAdd16.png" />
+    <AddInContent Include="DarkImages\GenericAdd32.png" />
+    <AddInContent Include="DarkImages\GenericDeleteRed16.png" />
+    <AddInContent Include="DarkImages\GenericDeleteRed32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.PackageAddIn" />

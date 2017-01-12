@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{53125852-9041-4D4B-BBD2-9AAFB4AAC2FE}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2776}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OverlayExamples</RootNamespace>
@@ -108,6 +108,16 @@
     <Resource Include="Screenshots\Screen2.png" />
     <Resource Include="Screenshots\Screen3.png" />
     <Resource Include="Screenshots\Screen4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\Robot16.png" />
+    <AddInContent Include="DarkImages\Robot32.png" />
+    <AddInContent Include="DarkImages\Spaceship16.png" />
+    <AddInContent Include="DarkImages\Spaceship32.png" />
+    <AddInContent Include="DarkImages\UFO16.png" />
+    <AddInContent Include="DarkImages\UFO32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.PackageAddIn" />

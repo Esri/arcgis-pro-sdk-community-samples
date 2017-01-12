@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -13,11 +13,14 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Input;
+using ArcGIS.Desktop.Catalog;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
@@ -35,8 +38,12 @@ namespace WorkwithProjects
         /// </summary>
         private readonly object _lockMxdItemCollection = new object();
         private readonly object _lockTemplatePathsCollection = new object();
+        private ObservableCollection<Item> _mxdItems = new ObservableCollection<Item>();
 
-        protected WorkWithProjectsViewModel() { }
+        protected WorkWithProjectsViewModel()
+        {
+            BindingOperations.EnableCollectionSynchronization(MxdItems, _lockMxdItemCollection);
+        }
 
         #region Properties
 
@@ -108,8 +115,7 @@ namespace WorkwithProjects
         /// <summary>
         /// collection of mxd items.  Bind to this property in the view.
         /// </summary>
-        private IEnumerable<Item> _mxdItems;
-        public IEnumerable<Item> MxdItems
+        public ObservableCollection<Item> MxdItems
         {
             get { return _mxdItems; }
         }
@@ -223,11 +229,24 @@ namespace WorkwithProjects
             {   
                 // Add a folder to the Project
                 var folderToAdd = ItemFactory.Create(addFolderPath);
-                var folder = await Project.Current.AddAsync(folderToAdd);
-                // search MXDs
+                await Project.Current.AddAsync(folderToAdd);
+                // find the folder project item
+                FolderConnectionProjectItem folder = Project.Current.GetItems<FolderConnectionProjectItem>().FirstOrDefault(f => f.Path.Equals(addFolderPath, StringComparison.CurrentCultureIgnoreCase));
+                if (folder == null)
+                    return;
 
-                _mxdItems = folder.Where(content => content.Name.EndsWith(Filter, StringComparison.CurrentCultureIgnoreCase));
-                BindingOperations.EnableCollectionSynchronization(MxdItems, _lockMxdItemCollection);
+                // do the search
+                IEnumerable<Item> folderFiles = await folder.SearchAsync(Filter);
+
+                // search MXDs
+                lock (_lockMxdItemCollection)
+                {
+                    _mxdItems.Clear();
+                    foreach (var newItem in folderFiles)
+                    {
+                        _mxdItems.Add(newItem);
+                    }
+                }
                 NotifyPropertyChanged(() => MxdItems);
             }
             catch (Exception ex)

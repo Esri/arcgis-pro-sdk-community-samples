@@ -87,7 +87,7 @@
             Project Name property
             </summary>
         </member>
-        <member name="F:WorkwithProjects.WorkWithProjectsViewModel._mxdItems">
+        <member name="P:WorkwithProjects.WorkWithProjectsViewModel.MxdItems">
             <summary>
             collection of mxd items.  Bind to this property in the view.
             </summary>

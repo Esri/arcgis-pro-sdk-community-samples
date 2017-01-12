@@ -3,8 +3,9 @@
 
 
 
+
 <!--
-Copyright 2015 Esri
+Copyright 2017 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -19,7 +20,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <ArcGIS defaultAssembly="IdentifyWithSketchTool.dll" defaultNamespace="IdentifyWithSketchTool" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{abd10622-b5f3-4132-b82e-0378ad7d2fd1}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{abd10622-b5f3-4132-b82e-0378ad7d2fd1}" version="1.0" desktopVersion="1.4.7198">
     <Name>Sketch Tool</Name>
     <Description>Adds custom sketch tool for ArcGIS Pro.</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -31,21 +32,21 @@ limitations under the License.
   <modules>
     <insertModule id="SketchTool_Module" className="Module1" autoLoad="false" caption="Module1">
       <tabs>
-        <tab id="SketchTool_Tab1" caption="Sketch">
+        <tab id="SketchTool_Tab1" caption="Sketch" keytip="y">
           <group refID="SketchTool_Group1" />
         </tab>
       </tabs>
       <groups>
-        <group id="SketchTool_Group1" caption="Tool">
+        <group id="SketchTool_Group1" caption="Tool" keytip="z1">
           <tool refID="SketchTool_SelectAndZoom" size="large" />
           <tool refID="SketchTool_CustomIdentify" size="large" />
         </group>
       </groups>
       <controls>
-        <tool id="SketchTool_SelectAndZoom" caption="Select And Zoom" className="SelectAndZoom" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" condition="esri_mapping_mapPane">
+        <tool id="SketchTool_SelectAndZoom" caption="Select And Zoom" className="SelectAndZoom" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" condition="esri_mapping_mapPane" keytip="z3">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </tool>
-        <tool id="SketchTool_CustomIdentify" caption="Custom Identify" className="CustomIdentify" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" condition="esri_mapping_mapPane">
+        <tool id="SketchTool_CustomIdentify" caption="Custom Identify" className="CustomIdentify" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" condition="esri_mapping_mapPane" keytip="z4">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </tool>
       </controls>

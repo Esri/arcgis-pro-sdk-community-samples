@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -16,11 +16,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Input;
 using ArcGIS.Core.Data;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
+using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 
@@ -33,12 +33,12 @@ namespace FavoriteQueries
         /// if Queries are set up for the corresponding Table/FeatureClass
         /// Since FavoriteQuery is an abstract class, SubClass the FavoriteQuery for the specific case
         /// </summary>
-        Dictionary<string, List<FavoriteQuery>> queryMap = new Dictionary<string, List<FavoriteQuery>>
+        readonly Dictionary<string, List<FavoriteQuery>> _queryMap = new Dictionary<string, List<FavoriteQuery>>
         {
-            {"Pool_Permits", new List<FavoriteQuery>{ new UnInspectedPoolsQuery{Name = "Uninspected Pools"}, new AboveGroundPoolsQuery{Name = "Above Ground Pools"} }}
+            {"Crimes", new List<FavoriteQuery> { new UnClassifiedCrimesQuery{Name = "Unclassified Crimes"}, new ClassifiedCrimesQuery {Name = "Classified Crimes"} }}
         }; 
 
-        private const string _dockPaneID = "FavoriteQueries_FavoritesDockpane";
+        private const string DockPaneId = "FavoriteQueries_FavoritesDockpane";
 
         protected FavoritesDockpaneViewModel() { }
 
@@ -47,11 +47,9 @@ namespace FavoriteQueries
         /// </summary>
         internal static void Show()
         {
-            DockPane pane = FrameworkApplication.DockPaneManager.Find(_dockPaneID);
-            if (pane == null)
-                return;
+            var pane = FrameworkApplication.DockPaneManager.Find(DockPaneId);
 
-            pane.Activate();
+            pane?.Activate();
         }
 
         /// <summary>
@@ -59,56 +57,70 @@ namespace FavoriteQueries
         /// </summary>
         private string _heading = "Favorite Queries";
 
-        private ObservableCollection<string> queries;
-        private ObservableCollection<string> layers;
-        private ObservableCollection<Object> featureData;
-        private string selectedQuery;
-        private string selectedLayer;
+        private ObservableCollection<string> _queries;
+        private ObservableCollection<string> _layers;
+        private ObservableCollection<object> _featureData;
+        private string _selectedQuery;
+        private string _selectedLayer;
+        private int _resultCount;
+        private ICommand _cmdWork;
+        private ICommand _cmdDropDownLayers;
+        private ICommand _cmdDropDownQueries;
 
         public ObservableCollection<string> Queries
         {
-            get { return queries; }
+            get { return _queries; }
             set
             {
-                queries = value;
+                _queries = value;
                 NotifyPropertyChanged(new PropertyChangedEventArgs("Queries"));
             }
         }
 
         public ObservableCollection<string> Layers
         {
-            get { return layers; }
+            get { return _layers; }
             set
             {
-                layers = value;
+                _layers = value;
                 NotifyPropertyChanged(new PropertyChangedEventArgs("Layers"));
             }
         }
 
-        public ObservableCollection<Object> FeatureData
+        public ObservableCollection<object> FeatureData
         {
-            get { return featureData; }
+            get { return _featureData; }
             set
             {
-                featureData = value;
+                _featureData = value;
                 NotifyPropertyChanged(new PropertyChangedEventArgs("FeatureData"));
             }
         }
 
         public string SelectedQuery
         {
-            get { return selectedQuery; }
+            get { return _selectedQuery; }
             set
             {
-                SetProperty(ref selectedQuery, value, () => SelectedQuery);
+                SetProperty(ref _selectedQuery, value, () => SelectedQuery);
             }
         }
-        public string SelectedLayer
+
+        public int ResultCount
         {
-            get { return selectedLayer; }
+            get { return _resultCount; }
             set
             {
-                SetProperty(ref selectedLayer, value, () => SelectedLayer);
+                SetProperty(ref _resultCount, value, () => ResultCount);
+            }
+        }
+
+        public string SelectedLayer
+        {
+            get { return _selectedLayer; }
+            set
+            {
+                SetProperty(ref _selectedLayer, value, () => SelectedLayer);
             }
         }
         public string Heading
@@ -120,72 +132,114 @@ namespace FavoriteQueries
             }
         }
 
+        
+        /// <summary>
+        /// Based on the Query Selected, the FeatureData (bound to the DataGrid) is populated with the results of the Query
+        /// </summary>
+        public ICommand CmdWork
+        {
+            get
+            {
+                return _cmdWork ?? (_cmdWork = new RelayCommand(() =>
+                {
+                    QueuedTask.Run(() =>
+                    {
+                        try
+                        {
+                            using (
+                                Table table =
+                                    (MapView.Active.Map.Layers.First(layer => layer.Name.Equals(SelectedLayer)) as
+                                        FeatureLayer)
+                                        .GetTable())
+                            {
+                                FeatureData = !_queryMap.ContainsKey(table.GetName())
+                                    ? new ObservableCollection<object>()
+                                    : new ObservableCollection<object>(
+                                        _queryMap[table.GetName()].First(query => query.Name.Equals(SelectedQuery))
+                                            .Execute(table));
+                            }
+                            ResultCount = FeatureData.Count;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($@"Query error: {ex}");
+                            ResultCount = 0;
+                        }
+                    });
+                }, () => SelectedQuery != null));
+            }
+        }
 
         /// <summary>
         /// This method will populate the Layers (bound to the LayersComboBox) with all the Feature Layers present in the Active Map View
         /// </summary>
-        public void UpdateLayers()
+        public ICommand CmdDropDownLayers
         {
-            Layers = new ObservableCollection<string>(MapView.Active.Map.Layers.Where(layer => layer is FeatureLayer).Select(layer => layer.Name));
+            get
+            {
+                return _cmdDropDownLayers ?? (_cmdDropDownLayers = new RelayCommand(() =>
+                {
+                    Layers =
+                        new ObservableCollection<string>(
+                            MapView.Active.Map.Layers.Where(layer => layer is FeatureLayer).Select(layer => layer.Name));
+                }, () => MapView.Active.Map.Layers != null));
+            }
         }
 
         /// <summary>
         /// Based on the selected layer name, the query Map is used to populate the Queries Combobox
         /// </summary>
-        /// <param name="selectedItem"></param>
-        public void UpdateQueries(string selectedItem)
+        public ICommand CmdDropDownQueries
         {
-            QueuedTask.Run(() =>
+            get
             {
-                using (Table table = (MapView.Active.Map.Layers.First(layer => layer.Name.Equals(selectedItem)) as FeatureLayer).GetTable())
+                return _cmdDropDownQueries ?? (_cmdDropDownQueries = new RelayCommand(() =>
                 {
-                    Queries = !queryMap.ContainsKey(selectedItem) ? new ObservableCollection<string>() : new ObservableCollection<string>(queryMap[table.GetName()].Select(query => query.Name));
-                }
-            });
+                    QueuedTask.Run(() =>
+                    {
+                        var featureLayer =
+                            MapView.Active.Map.Layers.First(layer => layer.Name.Equals(SelectedLayer)) as FeatureLayer;
+                        if (featureLayer == null) return;
+                        using (var table = featureLayer.GetTable())
+                        {
+                            Queries = !_queryMap.ContainsKey(SelectedLayer)
+                                ? new ObservableCollection<string>()
+                                : new ObservableCollection<string>(_queryMap[table.GetName()].Select(query => query.Name));
+                        }
+                    });
+                }, true));
+            }
         }
-
-        /// <summary>
-        /// Based on the Query Selected, the FeatureData (bound to the DataGrid) is populated with the results of the Query
-        /// </summary>
-        public void DoWork()
-        {
-            QueuedTask.Run(() =>
-            {
-                using (Table table = (MapView.Active.Map.Layers.First(layer => layer.Name.Equals(SelectedLayer)) as FeatureLayer).GetTable())
-                {
-                    FeatureData = !queryMap.ContainsKey(table.GetName()) ? new ObservableCollection<object>() : new ObservableCollection<object>(queryMap[table.GetName()].First(query => query.Name.Equals(SelectedQuery)).Execute(table));
-                }
-            });
-        }
+        
     }
 
-    internal class AboveGroundPoolsQuery : PoolsQuery
+    internal class ClassifiedCrimesQuery : CrimesQuery
     {
-        public override List<Object> Execute(Table table)
+        public override List<object> Execute(Table table)
         {
             var queryFilter = new QueryFilter
             {
-                WhereClause = "Has_Pool = 1 AND Pool_Type = 2",
-                PrefixClause = "DISTINCT",
-                PostfixClause = "ORDER BY Pool_Type",
-                SubFields = "Address, APN, Pool_Type"
+                WhereClause = "Offense_Type > 0",
+                //PrefixClause = "DISTINCT",
+                PostfixClause = "ORDER BY Offense_Type",
+                SubFields = "Address, Major_Offense_Type, Offense_Type"
             };
-            return PoolsQuery.PopulatePoolData(table, queryFilter);
+            return CrimesQuery.PopulateResultData(table, queryFilter);
         }
     }
 
-    internal class UnInspectedPoolsQuery : PoolsQuery
+    internal class UnClassifiedCrimesQuery : CrimesQuery
     {
-        public override List<Object> Execute(Table table)
+        public override List<object> Execute(Table table)
         {
             var queryFilter = new QueryFilter
             {
-                WhereClause = "Has_Pool = 1 AND Is_Inspected = 1",
-                PrefixClause = "DISTINCT",
-                PostfixClause = "ORDER BY Pool_Type",
-                SubFields = "Address, APN, Pool_Type"
+                WhereClause = "Offense_Type = 0",
+                //PrefixClause = "DISTINCT",
+                PostfixClause = "ORDER BY Offense_Type",
+                SubFields = "Address, Major_Offense_Type, Offense_Type"
             };
-            return PoolsQuery.PopulatePoolData(table, queryFilter);
+            return CrimesQuery.PopulateResultData(table, queryFilter);
         }
     }
 
@@ -195,15 +249,15 @@ namespace FavoriteQueries
     /// </summary>
     internal abstract class FavoriteQuery
     {
-        public abstract List<Object> Execute(Table table);
+        public abstract List<object> Execute(Table table);
         public string Name { get; set; }
     }
 
-    internal abstract class PoolsQuery : FavoriteQuery
+    internal abstract class CrimesQuery : FavoriteQuery
     {
-        protected static List<object> PopulatePoolData(Table table, QueryFilter queryFilter)
+        protected static List<object> PopulateResultData(Table table, QueryFilter queryFilter)
         {
-            var list = new List<Object>();
+            var list = new List<object>();
             IReadOnlyList<Subtype> subtypes = table.GetDefinition().GetSubtypes();
             using (RowCursor rowCursor = table.Search(queryFilter, false))
             {
@@ -211,11 +265,16 @@ namespace FavoriteQueries
                 {
                     using (Row current = rowCursor.Current)
                     {
-                        list.Add(new PoolData
+                        var subtypeValue = Convert.ToInt32(current["Offense_Type"]);
+                        var sMayorOffenseType = Convert.ToString(current["Major_Offense_Type"]);
+                        var sAddress = Convert.ToString(current["Address"]);
+                        var theSubtype = subtypes.First(subtype => (subtype.GetCode() == subtypeValue));
+                        var sOffenseType = theSubtype.GetName();
+                        list.Add(new CrimeData
                         {
-                            APN = Convert.ToString(current["APN"]),
-                            Address = Convert.ToString(current["Address"]),
-                            PoolType = subtypes.First(subtype => subtype.GetCode().Equals(current["Pool_Type"])).GetName(),
+                            MajorOffenseType = sMayorOffenseType,
+                            Address = sAddress,
+                            OffenseType = sOffenseType
                         });
                     }
                 }
@@ -235,10 +294,10 @@ namespace FavoriteQueries
         }
     }
 
-    internal class PoolData
+    internal class CrimeData
     {
         public string Address { get; set; }
-        public string APN { get; set; }
-        public string PoolType { get; set; }
+        public string MajorOffenseType { get; set; }
+        public string OffenseType { get; set; }
     }
 }

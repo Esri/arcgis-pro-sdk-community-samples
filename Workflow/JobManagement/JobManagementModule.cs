@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -23,7 +23,6 @@ using System.Windows.Input;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Controls;
 using ArcGIS.Desktop.Framework.Contracts;
-using ArcGIS.Desktop.Internal.Framework.Controls;
 using ArcGIS.Desktop.Workflow.Models;
 using ArcGIS.Desktop.Workflow.Models.ConfigItems;
 using ArcGIS.Desktop.Workflow.Models.Queries;
@@ -34,8 +33,6 @@ using ArcGIS.Core.Data;
 using System.Threading.Tasks;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
-using ArcGIS.Desktop.Internal.Core;
-using ArcGIS.Desktop.Internal.Mapping;
 using ArcGIS.Desktop.Mapping;
 using System.Runtime.InteropServices;
 using ConfigurationManager = ArcGIS.Desktop.Workflow.Models.ConfigurationManager;
@@ -94,7 +91,7 @@ namespace WorkflowSample
     {
         private static JobManagementModule _this = null;
         private string QueryName = "Jobs assigned to me";
-        private int JobTypeID = 401;
+        private int JobTypeID = 2;
         
         /// <summary>
         /// Retrieve the singleton instance to this module here

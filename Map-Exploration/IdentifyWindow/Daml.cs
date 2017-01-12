@@ -14,836 +14,6 @@ namespace ArcGIS.Desktop.Framework {
 	[global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
 	public static partial class DAML {
 		public static partial class Button {
-			///<summary>Returns the id string for &quot;Symbology&quot; (esri_analyst3D_module:OnClick_ShowSurfaceLayerSymbologyDockPane, Analyst3D)</summary>
-			public static string esri_analyst3D_surfaceLayerSymbologyDockPaneButton {
-				 get { return "esri_analyst3D_surfaceLayerSymbologyDockPaneButton"; }
-			}
-			///<summary>Returns the id string for &quot;Returns&quot; (esri_analyst3D_module:OnClick_LASDLayerReturnsFilter, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerReturnsFilterButton {
-				 get { return "esri_analyst3D_LASDLayerReturnsFilterButton"; }
-			}
-			///<summary>Returns the id string for &quot;Class Flags&quot; (esri_analyst3D_module:OnClick_LASDLayerClassFlagsFilter, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerClassFlagsFilterButton {
-				 get { return "esri_analyst3D_LASDLayerClassFlagsFilterButton"; }
-			}
-			///<summary>Returns the id string for &quot;LAS Points&quot; (esri_analyst3D_module:OnClick_LASDLayerLASPointsFilter, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerLASPointsFilterButton {
-				 get { return "esri_analyst3D_LASDLayerLASPointsFilterButton"; }
-			}
-			///<summary>Returns the id string for &quot;Surface Constraints&quot; (esri_analyst3D_module:OnClick_LASDLayerSurfaceConstraintsFilter, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerSurfaceConstraintsFilterButton {
-				 get { return "esri_analyst3D_LASDLayerSurfaceConstraintsFilterButton"; }
-			}
-			///<summary>Returns the id string for &quot;Add Files&quot; (esri_analyst3D_module:Commands.LASDLayerAddFiles, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerAddFilesButton {
-				 get { return "esri_analyst3D_LASDLayerAddFilesButton"; }
-			}
-			///<summary>Returns the id string for &quot;Remove Files&quot; (esri_analyst3D_module:Commands.LASDLayerRemoveFiles, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerRemoveFilesButton {
-				 get { return "esri_analyst3D_LASDLayerRemoveFilesButton"; }
-			}
-			///<summary>Returns the id string for &quot;Load Data&quot; (esri_analyst3D_module:Commands.TINLayerAddDataToTIN, Analyst3D)</summary>
-			public static string esri_analyst3D_TINLayerAddDataToTINButton {
-				 get { return "esri_analyst3D_TINLayerAddDataToTINButton"; }
-			}
-			///<summary>Returns the id string for &quot;Delineate Data Area&quot; (esri_analyst3D_module:Commands.TINLayerDelineateTINDataArea, Analyst3D)</summary>
-			public static string esri_analyst3D_TINLayerDelineateTINDataAreaButton {
-				 get { return "esri_analyst3D_TINLayerDelineateTINDataAreaButton"; }
-			}
-			///<summary>Returns the id string for &quot;Decimate Nodes&quot; (esri_analyst3D_module:Commands.TINLayerDecimateNodes, Analyst3D)</summary>
-			public static string esri_analyst3D_TINLayerDecimateNodesButton {
-				 get { return "esri_analyst3D_TINLayerDecimateNodesButton"; }
-			}
-			///<summary>Returns the id string for &quot;Build&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolBuildTerrain, Analyst3D)</summary>
-			public static string esri_analyst3D_TerrainLayerBuildTerrainButton {
-				 get { return "esri_analyst3D_TerrainLayerBuildTerrainButton"; }
-			}
-			///<summary>Returns the id string for &quot;Interactive Classification&quot; (esri_analyst3D_module:OnClick_LidarClassificationInteractiveClassification, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationInteractiveClassification {
-				 get { return "esri_analyst3D_LidarClassificationInteractiveClassification"; }
-			}
-			///<summary>Returns the id string for &quot;Raster&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolLasDatasetToRaster, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonConvertLasDatasetToRaster {
-				 get { return "esri_analyst3D_GPToolButtonConvertLasDatasetToRaster"; }
-			}
-			///<summary>Returns the id string for &quot;Change Class Codes&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolChangeLASClassCodes, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonChangeLASClassCodes {
-				 get { return "esri_analyst3D_GPToolButtonChangeLASClassCodes"; }
-			}
-			///<summary>Returns the id string for &quot;Classify Using Features&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolSetLASClassCodes, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonSetLASClassCodes {
-				 get { return "esri_analyst3D_GPToolButtonSetLASClassCodes"; }
-			}
-			///<summary>Returns the id string for &quot;Classify By Height&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolClassifyLASByHeight, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonClassifyLASByHeight {
-				 get { return "esri_analyst3D_GPToolButtonClassifyLASByHeight"; }
-			}
-			///<summary>Returns the id string for &quot;Classify By Proximity&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolClassifyLASByProximity, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonClassifyLASByProximity {
-				 get { return "esri_analyst3D_GPToolButtonClassifyLASByProximity"; }
-			}
-			///<summary>Returns the id string for &quot;Classify Ground&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolClassifyLASGround, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonClassifyLASGround {
-				 get { return "esri_analyst3D_GPToolButtonClassifyLASGround"; }
-			}
-			///<summary>Returns the id string for &quot;TIN&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolLasDatasetToTIN, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonConvertLasDatasetToTIN {
-				 get { return "esri_analyst3D_GPToolButtonConvertLasDatasetToTIN"; }
-			}
-			///<summary>Returns the id string for &quot;To Points&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolTerrainToPoints, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonConvertTerrainToPoints {
-				 get { return "esri_analyst3D_GPToolButtonConvertTerrainToPoints"; }
-			}
-			///<summary>Returns the id string for &quot;To Raster&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolTerrainToRaster, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonConvertTerrainToRaster {
-				 get { return "esri_analyst3D_GPToolButtonConvertTerrainToRaster"; }
-			}
-			///<summary>Returns the id string for &quot;To TIN&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolTerrainToTIN, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonConvertTerrainToTIN {
-				 get { return "esri_analyst3D_GPToolButtonConvertTerrainToTIN"; }
-			}
-			///<summary>Returns the id string for &quot;Raster&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolTINToRaster, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonConvertTINToRaster {
-				 get { return "esri_analyst3D_GPToolButtonConvertTINToRaster"; }
-			}
-			///<summary>Returns the id string for &quot;Nodes&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolTINToNodes, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonConvertTINToNodes {
-				 get { return "esri_analyst3D_GPToolButtonConvertTINToNodes"; }
-			}
-			///<summary>Returns the id string for &quot;Edges&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolTINToEdges, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonConvertTINToEdges {
-				 get { return "esri_analyst3D_GPToolButtonConvertTINToEdges"; }
-			}
-			///<summary>Returns the id string for &quot;Triangles&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolTINToTriangles, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonConvertTINToTriangles {
-				 get { return "esri_analyst3D_GPToolButtonConvertTINToTriangles"; }
-			}
-			///<summary>Returns the id string for &quot;Domain&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolTINToDomain, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonConvertTINToDomain {
-				 get { return "esri_analyst3D_GPToolButtonConvertTINToDomain"; }
-			}
-			///<summary>Returns the id string for &quot;Add New Features&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolAddFeatureClassToTerrain, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonAddFeatureClassToTerrain {
-				 get { return "esri_analyst3D_GPToolButtonAddFeatureClassToTerrain"; }
-			}
-			///<summary>Returns the id string for &quot;Remove Features&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolRemoveFeatureClassFromTerrain, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonRemoveFeatureClassFromTerrain {
-				 get { return "esri_analyst3D_GPToolButtonRemoveFeatureClassFromTerrain"; }
-			}
-			///<summary>Returns the id string for &quot;Append Points&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolAppendTerrainPoints, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonAppendTerrainPoints {
-				 get { return "esri_analyst3D_GPToolButtonAppendTerrainPoints"; }
-			}
-			///<summary>Returns the id string for &quot;Replace Points&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolReplaceTerrainPoints, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonReplaceTerrainPoints {
-				 get { return "esri_analyst3D_GPToolButtonReplaceTerrainPoints"; }
-			}
-			///<summary>Returns the id string for &quot;Delete Points&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolDeleteTerrainPoints, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonDeleteTerrainPoints {
-				 get { return "esri_analyst3D_GPToolButtonDeleteTerrainPoints"; }
-			}
-			///<summary>Returns the id string for &quot;Add Pyramids&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolAddTerrainPyramidLevel, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonAddTerrainPyramidLevel {
-				 get { return "esri_analyst3D_GPToolButtonAddTerrainPyramidLevel"; }
-			}
-			///<summary>Returns the id string for &quot;Remove Pyramids&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolRemoveTerrainPyramidLevel, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonRemoveTerrainPyramidLevel {
-				 get { return "esri_analyst3D_GPToolButtonRemoveTerrainPyramidLevel"; }
-			}
-			///<summary>Returns the id string for &quot;Change Reference Scale&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolChangeTerrainReferenceScale, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonChangeTerrainReferenceScale {
-				 get { return "esri_analyst3D_GPToolButtonChangeTerrainReferenceScale"; }
-			}
-			///<summary>Returns the id string for &quot;Change Resolution Bounds&quot; (esri_analyst3D_module:Commands.OnClickOpenGPToolChangeTerrainResolutionBounds, Analyst3D)</summary>
-			public static string esri_analyst3D_GPToolButtonChangeTerrainResolutionBounds {
-				 get { return "esri_analyst3D_GPToolButtonChangeTerrainResolutionBounds"; }
-			}
-			///<summary>Returns the id string for &quot;File Extent&quot; (ArcGIS.Desktop.Internal.Analyst3D.Symbology.EnableLasFileExtentButton, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerSymbologyFileExtentButton {
-				 get { return "esri_analyst3D_LASDLayerSymbologyFileExtentButton"; }
-			}
-			///<summary>Returns the id string for &quot;Symbology&quot; (esri_analyst3D_module:OnClick_ShowSurfaceLayerSymbologyDockPane, Analyst3D)</summary>
-			public static string esri_analyst3D_selectedLayerSymbologyButton {
-				 get { return "esri_analyst3D_selectedLayerSymbologyButton"; }
-			}
-			///<summary>Returns the id string for &quot;All Points&quot; (esri_analyst3D_module:OnClick_LASDLayerLASPointsFilterAllPoints, Analyst3D)</summary>
-			public static string esri_analyst3D_lasFilterAllPointsButton {
-				 get { return "esri_analyst3D_lasFilterAllPointsButton"; }
-			}
-			///<summary>Returns the id string for &quot;Ground&quot; (esri_analyst3D_module:OnClick_LASDLayerLASPointsFilterGroundPoints, Analyst3D)</summary>
-			public static string esri_analyst3D_lasFilterGroundPointsButton {
-				 get { return "esri_analyst3D_lasFilterGroundPointsButton"; }
-			}
-			///<summary>Returns the id string for &quot;Non-Ground&quot; (esri_analyst3D_module:OnClick_LASDLayerLASPointsFilterNonGroundPoints, Analyst3D)</summary>
-			public static string esri_analyst3D_lasFilterNonGroundPointsButton {
-				 get { return "esri_analyst3D_lasFilterNonGroundPointsButton"; }
-			}
-			///<summary>Returns the id string for &quot;1st Return&quot; (esri_analyst3D_module:OnClick_LASDLayerLASPointsFilterFirstReturnPoints, Analyst3D)</summary>
-			public static string esri_analyst3D_lasFilterFirstReturnPointsButton {
-				 get { return "esri_analyst3D_lasFilterFirstReturnPointsButton"; }
-			}
-			///<summary>Returns the id string for &quot;Zoom To Full Resolution&quot; (esri_analyst3D_module:OnClick_LASDLayerZoomToFullResolution, Analyst3D)</summary>
-			public static string esri_analyst3D_lasDatasetLayerZoomToFullResolutionButton {
-				 get { return "esri_analyst3D_lasDatasetLayerZoomToFullResolutionButton"; }
-			}
-			///<summary>Returns the id string for &quot;Reset Legend Elevation Range&quot; (esri_analyst3D_module:OnClick_SurfaceLayerResetElevationRange, Analyst3D)</summary>
-			public static string esri_analyst3D_surfaceLayerResetElevationRangeButton {
-				 get { return "esri_analyst3D_surfaceLayerResetElevationRangeButton"; }
-			}
-			///<summary>Returns the id string for &quot;Area of Interest&quot; (esri_analyst3D_module:OnClick_LidarClassificationEditingRegionAOI, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationEditingRegionAOIButton {
-				 get { return "esri_analyst3D_LidarClassificationEditingRegionAOIButton"; }
-			}
-			///<summary>Returns the id string for &quot;Profile View&quot; (esri_analyst3D_module:OnClick_LidarClassificationEditingRegionProfileView, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationEditingRegionProfileViewButton {
-				 get { return "esri_analyst3D_LidarClassificationEditingRegionProfileViewButton"; }
-			}
-			///<summary>Returns the id string for &quot;Point Limit&quot; (esri_analyst3D_module:OnClick_LidarClassificationEditingRegionPointLimit, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationEditingRegionPointLimitButton {
-				 get { return "esri_analyst3D_LidarClassificationEditingRegionPointLimitButton"; }
-			}
-			///<summary>Returns the id string for &quot;Select&quot; (esri_analyst3D_module:OnClick_LidarClassificationSelectionSelect, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationSelectionSelectButton {
-				 get { return "esri_analyst3D_LidarClassificationSelectionSelectButton"; }
-			}
-			///<summary>Returns the id string for &quot;Select By Rectangle&quot; (esri_analyst3D_module:OnClick_LidarClassificationSelectionSelectByRectangle, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationSelectionSelectByRectangleButton {
-				 get { return "esri_analyst3D_LidarClassificationSelectionSelectByRectangleButton"; }
-			}
-			///<summary>Returns the id string for &quot;Select By Polygon&quot; (esri_analyst3D_module:OnClick_LidarClassificationSelectionSelectByPolygon, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationSelectionSelectByPolygonButton {
-				 get { return "esri_analyst3D_LidarClassificationSelectionSelectByPolygonButton"; }
-			}
-			///<summary>Returns the id string for &quot;Select By Lasso&quot; (esri_analyst3D_module:OnClick_LidarClassificationSelectionSelectByLasso, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationSelectionSelectByLassoButton {
-				 get { return "esri_analyst3D_LidarClassificationSelectionSelectByLassoButton"; }
-			}
-			///<summary>Returns the id string for &quot;Select By Circle&quot; (esri_analyst3D_module:OnClick_LidarClassificationSelectionSelectByCircle, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationSelectionSelectByCircleButton {
-				 get { return "esri_analyst3D_LidarClassificationSelectionSelectByCircleButton"; }
-			}
-			///<summary>Returns the id string for &quot;Select By Line&quot; (esri_analyst3D_module:OnClick_LidarClassificationSelectionSelectByLine, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationSelectionSelectByLineButton {
-				 get { return "esri_analyst3D_LidarClassificationSelectionSelectByLineButton"; }
-			}
-			///<summary>Returns the id string for &quot;Method&quot; (esri_analyst3D_module:OnClick_LidarClassificationSelectionMethod, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationSelectionMethodButton {
-				 get { return "esri_analyst3D_LidarClassificationSelectionMethodButton"; }
-			}
-			///<summary>Returns the id string for &quot;Create New Selection&quot; (esri_analyst3D_module:OnClick_LidarClassificationSelectionMethodCreateNew, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationSelectionMethodCreateNewButton {
-				 get { return "esri_analyst3D_LidarClassificationSelectionMethodCreateNewButton"; }
-			}
-			///<summary>Returns the id string for &quot;Add To Existing Selection&quot; (esri_analyst3D_module:OnClick_LidarClassificationSelectionMethodAddToExisting, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationSelectionMethodAddToExistingButton {
-				 get { return "esri_analyst3D_LidarClassificationSelectionMethodAddToExistingButton"; }
-			}
-			///<summary>Returns the id string for &quot;Remove From Existing Selection&quot; (esri_analyst3D_module:OnClick_LidarClassificationSelectionMethodRemoveFromExisting, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationSelectionMethodRemoveFromExistingButton {
-				 get { return "esri_analyst3D_LidarClassificationSelectionMethodRemoveFromExistingButton"; }
-			}
-			///<summary>Returns the id string for &quot;Select From Current Selection&quot; (esri_analyst3D_module:OnClick_LidarClassificationSelectionMethodSelectFromCurrent, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationSelectionMethodSelectFromCurrentButton {
-				 get { return "esri_analyst3D_LidarClassificationSelectionMethodSelectFromCurrentButton"; }
-			}
-			///<summary>Returns the id string for &quot;Clear&quot; (esri_analyst3D_module:OnClick_LidarClassificationSelectionClear, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationSelectionClearButton {
-				 get { return "esri_analyst3D_LidarClassificationSelectionClearButton"; }
-			}
-			///<summary>Returns the id string for &quot;Selectable Class&quot; (esri_analyst3D_module:OnClick_LidarClassificationSelectionSelectableClass, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationSelectionSelectableClassButton {
-				 get { return "esri_analyst3D_LidarClassificationSelectionSelectableClassButton"; }
-			}
-			///<summary>Returns the id string for &quot;Class Code&quot; (esri_analyst3D_module:OnClick_LidarClassificationClassificationClassCode, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationClassCodeButton {
-				 get { return "esri_analyst3D_LidarClassificationClassificationClassCodeButton"; }
-			}
-			///<summary>Returns the id string for &quot;Model Key&quot; (esri_analyst3D_module:OnClick_LidarClassificationClassificationModelKey, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationModelKeyButton {
-				 get { return "esri_analyst3D_LidarClassificationClassificationModelKeyButton"; }
-			}
-			///<summary>Returns the id string for &quot;No Change&quot; (esri_analyst3D_module:OnClick_LidarClassificationClassificationModelKeyNoChange, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationModelKeyNoChangeButton {
-				 get { return "esri_analyst3D_LidarClassificationClassificationModelKeyNoChangeButton"; }
-			}
-			///<summary>Returns the id string for &quot;Set&quot; (esri_analyst3D_module:OnClick_LidarClassificationClassificationModelKeySet, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationModelKeySetButton {
-				 get { return "esri_analyst3D_LidarClassificationClassificationModelKeySetButton"; }
-			}
-			///<summary>Returns the id string for &quot;Clear&quot; (esri_analyst3D_module:OnClick_LidarClassificationClassificationModelKeyClear, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationModelKeyClearButton {
-				 get { return "esri_analyst3D_LidarClassificationClassificationModelKeyClearButton"; }
-			}
-			///<summary>Returns the id string for &quot;Withheld&quot; (esri_analyst3D_module:OnClick_LidarClassificationClassificationWithheld, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationWithheldButton {
-				 get { return "esri_analyst3D_LidarClassificationClassificationWithheldButton"; }
-			}
-			///<summary>Returns the id string for &quot;No Change&quot; (esri_analyst3D_module:OnClick_LidarClassificationClassificationWithheldNoChange, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationWithheldNoChangeButton {
-				 get { return "esri_analyst3D_LidarClassificationClassificationWithheldNoChangeButton"; }
-			}
-			///<summary>Returns the id string for &quot;Set&quot; (esri_analyst3D_module:OnClick_LidarClassificationClassificationWithheldSet, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationWithheldSetButton {
-				 get { return "esri_analyst3D_LidarClassificationClassificationWithheldSetButton"; }
-			}
-			///<summary>Returns the id string for &quot;Clear&quot; (esri_analyst3D_module:OnClick_LidarClassificationClassificationWithheldClear, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationWithheldClearButton {
-				 get { return "esri_analyst3D_LidarClassificationClassificationWithheldClearButton"; }
-			}
-			///<summary>Returns the id string for &quot;Synthetic&quot; (esri_analyst3D_module:OnClick_LidarClassificationClassificationSynthetic, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationSyntheticButton {
-				 get { return "esri_analyst3D_LidarClassificationClassificationSyntheticButton"; }
-			}
-			///<summary>Returns the id string for &quot;No Change&quot; (esri_analyst3D_module:OnClick_LidarClassificationClassificationSyntheticNoChange, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationSyntheticNoChangeButton {
-				 get { return "esri_analyst3D_LidarClassificationClassificationSyntheticNoChangeButton"; }
-			}
-			///<summary>Returns the id string for &quot;Set&quot; (esri_analyst3D_module:OnClick_LidarClassificationClassificationSyntheticSet, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationSyntheticSetButton {
-				 get { return "esri_analyst3D_LidarClassificationClassificationSyntheticSetButton"; }
-			}
-			///<summary>Returns the id string for &quot;Clear&quot; (esri_analyst3D_module:OnClick_LidarClassificationClassificationSyntheticClear, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationSyntheticClearButton {
-				 get { return "esri_analyst3D_LidarClassificationClassificationSyntheticClearButton"; }
-			}
-			///<summary>Returns the id string for &quot;Overlap&quot; (esri_analyst3D_module:OnClick_LidarClassificationClassificationOverlap, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationOverlapButton {
-				 get { return "esri_analyst3D_LidarClassificationClassificationOverlapButton"; }
-			}
-			///<summary>Returns the id string for &quot;No Change&quot; (esri_analyst3D_module:OnClick_LidarClassificationClassificationOverlapNoChange, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationOverlapNoChangeButton {
-				 get { return "esri_analyst3D_LidarClassificationClassificationOverlapNoChangeButton"; }
-			}
-			///<summary>Returns the id string for &quot;Set&quot; (esri_analyst3D_module:OnClick_LidarClassificationClassificationOverlapSet, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationOverlapSetButton {
-				 get { return "esri_analyst3D_LidarClassificationClassificationOverlapSetButton"; }
-			}
-			///<summary>Returns the id string for &quot;Clear&quot; (esri_analyst3D_module:OnClick_LidarClassificationClassificationOverlapClear, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationOverlapClearButton {
-				 get { return "esri_analyst3D_LidarClassificationClassificationOverlapClearButton"; }
-			}
-			///<summary>Returns the id string for &quot;Apply Changes&quot; (esri_analyst3D_module:OnClick_LidarClassificationCommitApplyChanges, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationCommitApplyChangesButton {
-				 get { return "esri_analyst3D_LidarClassificationCommitApplyChangesButton"; }
-			}
-			///<summary>Returns the id string for &quot;Undo&quot; (esri_analyst3D_module:OnClick_LidarClassificationCommitUndo, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationCommitUndoButton {
-				 get { return "esri_analyst3D_LidarClassificationCommitUndoButton"; }
-			}
-			///<summary>Returns the id string for &quot;Redo&quot; (esri_analyst3D_module:OnClick_LidarClassificationCommitRedo, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationCommitRedoButton {
-				 get { return "esri_analyst3D_LidarClassificationCommitRedoButton"; }
-			}
-			///<summary>Returns the id string for &quot;Close LAS Editing&quot; (esri_analyst3D_module:OnClick_LidarClassificationCommitCloseLASEditing, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationCommitCloseLASEditingButton {
-				 get { return "esri_analyst3D_LidarClassificationCommitCloseLASEditingButton"; }
-			}
-		}
-		public static partial class Buttonpalette {
-			///<summary>Returns the id string for &quot;Export&quot; (Buttonpalette, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerConvertButtonPalette {
-				 get { return "esri_analyst3D_LASDLayerConvertButtonPalette"; }
-			}
-			///<summary>Returns the id string for &quot;Automated&quot; (Buttonpalette, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerClassCodesActionsButtonPalette {
-				 get { return "esri_analyst3D_LASDLayerClassCodesActionsButtonPalette"; }
-			}
-			///<summary>Returns the id string for &quot;Method&quot; (Buttonpalette, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationSelectionMethodButtonPalette {
-				 get { return "esri_analyst3D_LidarClassificationSelectionMethodButtonPalette"; }
-			}
-			///<summary>Returns the id string for &quot;Model Key&quot; (Buttonpalette, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationModelKeyButtonPalette {
-				 get { return "esri_analyst3D_LidarClassificationClassificationModelKeyButtonPalette"; }
-			}
-			///<summary>Returns the id string for &quot;Withheld&quot; (Buttonpalette, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationWithheldButtonPalette {
-				 get { return "esri_analyst3D_LidarClassificationClassificationWithheldButtonPalette"; }
-			}
-			///<summary>Returns the id string for &quot;Synthetic&quot; (Buttonpalette, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationSyntheticButtonPalette {
-				 get { return "esri_analyst3D_LidarClassificationClassificationSyntheticButtonPalette"; }
-			}
-			///<summary>Returns the id string for &quot;Overlap&quot; (Buttonpalette, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationClassificationOverlapButtonPalette {
-				 get { return "esri_analyst3D_LidarClassificationClassificationOverlapButtonPalette"; }
-			}
-			///<summary>Returns the id string for &quot;Export&quot; (Buttonpalette, Analyst3D)</summary>
-			public static string esri_analyst3D_TINLayerConvertButtonPalette {
-				 get { return "esri_analyst3D_TINLayerConvertButtonPalette"; }
-			}
-			///<summary>Returns the id string for &quot;Convert&quot; (Buttonpalette, Analyst3D)</summary>
-			public static string esri_analyst3D_terrainLayerConvertButtonPalette {
-				 get { return "esri_analyst3D_terrainLayerConvertButtonPalette"; }
-			}
-			///<summary>Returns the id string for &quot;Features&quot; (Buttonpalette, Analyst3D)</summary>
-			public static string esri_analyst3D_terrainLayerFeaturesButtonPalette {
-				 get { return "esri_analyst3D_terrainLayerFeaturesButtonPalette"; }
-			}
-			///<summary>Returns the id string for &quot;Pyramids&quot; (Buttonpalette, Analyst3D)</summary>
-			public static string esri_analyst3D_terrainLayerPyramidsButtonPalette {
-				 get { return "esri_analyst3D_terrainLayerPyramidsButtonPalette"; }
-			}
-		}
-		public static partial class Checkbox {
-			///<summary>Returns the id string for &quot;Use Relative Paths&quot; (esri_analyst3D_module:Commands.LASDLayerUseRelativePaths, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerUseRelativePathsCheckBox {
-				 get { return "esri_analyst3D_LASDLayerUseRelativePathsCheckBox"; }
-			}
-		}
-		public static partial class Combobox {
-			///<summary>Returns the id string for &quot;Class Code&quot; (ArcGIS.Desktop.Internal.Analyst3D.Editing.LidarInteractiveClassificationClassCodeComboBox, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarInteractiveClassificationClassCodeComboBox {
-				 get { return "esri_analyst3D_LidarInteractiveClassificationClassCodeComboBox"; }
-			}
-		}
-		public static partial class Customcontrol {
-			///<summary>Returns the id string for &quot;File Extent Color&quot; (ArcGIS.Desktop.Internal.Analyst3D.Symbology.FileExtentColorPickerViewModel, Analyst3D)</summary>
-			public static string esri_analyst3D_fileExtentSymbol_customControl {
-				 get { return "esri_analyst3D_fileExtentSymbol_customControl"; }
-			}
-			///<summary>Returns the id string for &quot;Thinning Controls&quot; (ArcGIS.Desktop.Internal.Analyst3D.Appearance.RibbonThinningViewModel, Analyst3D)</summary>
-			public static string esri_analyst3D_RibbonThinning_CustomControl {
-				 get { return "esri_analyst3D_RibbonThinning_CustomControl"; }
-			}
-		}
-		public static partial class Editbox {
-			///<summary>Returns the id string for &quot;Point Limit&quot; (ArcGIS.Desktop.Internal.Analyst3D.Editing.LidarInteractiveClassificationPointLimitEditBox, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationEditingRegionPointLimitEditBox {
-				 get { return "esri_analyst3D_LidarClassificationEditingRegionPointLimitEditBox"; }
-			}
-			///<summary>Returns the id string for &quot;Class Code&quot; (ArcGIS.Desktop.Internal.Analyst3D.Editing.LidarInteractiveClassificationClassCodeEditBox, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarInteractiveClassificationClassCodeEditBox {
-				 get { return "esri_analyst3D_LidarInteractiveClassificationClassCodeEditBox"; }
-			}
-		}
-		public static partial class Gallery {
-			///<summary>Returns the id string for &quot;Geoprocessing gallery of surface analysis tools.&quot; (GeoprocessingToolGalleryViewModel, Analyst3D)</summary>
-			public static string esri_analyst3D_lasdLayerGeoprocessingToolGallery {
-				 get { return "esri_analyst3D_lasdLayerGeoprocessingToolGallery"; }
-			}
-			///<summary>Returns the id string for &quot;Statistics&quot; (LASDStatisticsGalleryViewModel, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerStatisticsGallery {
-				 get { return "esri_analyst3D_LASDLayerStatisticsGallery"; }
-			}
-			///<summary>Returns the id string for &quot;Symbology&quot; (SurfaceLayerSymbologyGalleryViewModel, Analyst3D)</summary>
-			public static string esri_analyst3D_SurfaceLayerSymbologyGallery {
-				 get { return "esri_analyst3D_SurfaceLayerSymbologyGallery"; }
-			}
-			///<summary>Returns the id string for &quot;Predefined&quot; (LASFilterPredefinedGalleryViewModel, Analyst3D)</summary>
-			public static string esri_analyst3D_LASFilterPredefinedGallery {
-				 get { return "esri_analyst3D_LASFilterPredefinedGallery"; }
-			}
-		}
-		public static partial class Group {
-			///<summary>Returns the id string for &quot;Drawing&quot; (Group, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerAppearanceDrawingGroup {
-				 get { return "esri_analyst3D_LASDLayerAppearanceDrawingGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Point Thinning&quot; (Group, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerAppearancePointThinningGroup {
-				 get { return "esri_analyst3D_LASDLayerAppearancePointThinningGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Filters&quot; (Group, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerAppearanceFiltersGroup {
-				 get { return "esri_analyst3D_LASDLayerAppearanceFiltersGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Management&quot; (Group, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerDataManagementGroup {
-				 get { return "esri_analyst3D_LASDLayerDataManagementGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Analysis&quot; (Group, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerDataAnalysisGroup {
-				 get { return "esri_analyst3D_LASDLayerDataAnalysisGroup"; }
-			}
-			///<summary>Returns the id string for &quot;&quot; (Group, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationAutomatedClassificationGroup {
-				 get { return "esri_analyst3D_LidarClassificationAutomatedClassificationGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Editing Region&quot; (Group, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationEditingRegionGroup {
-				 get { return "esri_analyst3D_LidarClassificationEditingRegionGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Selection&quot; (Group, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationSelectionGroup {
-				 get { return "esri_analyst3D_LidarClassificationSelectionGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Interactive&quot; (Group, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationInteractiveClassificationGroup {
-				 get { return "esri_analyst3D_LidarClassificationInteractiveClassificationGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Commit&quot; (Group, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationCommitGroup {
-				 get { return "esri_analyst3D_LidarClassificationCommitGroup"; }
-			}
-			///<summary>Returns the id string for &quot;&quot; (Group, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationCloseGroup {
-				 get { return "esri_analyst3D_LidarClassificationCloseGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Management&quot; (Group, Analyst3D)</summary>
-			public static string esri_analyst3D_terrainLayerDataManagementGroup {
-				 get { return "esri_analyst3D_terrainLayerDataManagementGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Analysis&quot; (Group, Analyst3D)</summary>
-			public static string esri_analyst3D_terrainLayerDataAnalysisGroup {
-				 get { return "esri_analyst3D_terrainLayerDataAnalysisGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Drawing&quot; (Group, Analyst3D)</summary>
-			public static string esri_analyst3D_TINLayerAppearanceDrawingGroup {
-				 get { return "esri_analyst3D_TINLayerAppearanceDrawingGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Management&quot; (Group, Analyst3D)</summary>
-			public static string esri_analyst3D_TINLayerDataManagementGroup {
-				 get { return "esri_analyst3D_TINLayerDataManagementGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Analysis&quot; (Group, Analyst3D)</summary>
-			public static string esri_analyst3D_TINLayerDataAnalysisGroup {
-				 get { return "esri_analyst3D_TINLayerDataAnalysisGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Analysis&quot; (Group, Analyst3D)</summary>
-			public static string esri_analyst3D_rasterLayerDataAnalysisGroup {
-				 get { return "esri_analyst3D_rasterLayerDataAnalysisGroup"; }
-			}
-		}
-		public static partial class Component {
-			///<summary>Returns the id string for &quot;LASDatasetLayer&quot; (LASDatasetLayer, Analyst3D)</summary>
-			public static string LASDatasetLayer {
-				 get { return "LASDatasetLayer"; }
-			}
-			///<summary>Returns the id string for &quot;TinLayer&quot; (TinLayer, Analyst3D)</summary>
-			public static string TinLayer {
-				 get { return "TinLayer"; }
-			}
-		}
-		public static partial class Condition {
-			///<summary>Returns the id string for &quot;Only LAS Dataset layers are selected&quot; (Condition, Analyst3D)</summary>
-			public static string esri_analyst3D_onlyLASDLayersSelectedCondition {
-				 get { return "esri_analyst3D_onlyLASDLayersSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Exactly one LAS Dataset layer is selected&quot; (Condition, Analyst3D)</summary>
-			public static string esri_analyst3D_singleLASDLayerSelectedCondition {
-				 get { return "esri_analyst3D_singleLASDLayerSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Only TIN layers are selected&quot; (Condition, Analyst3D)</summary>
-			public static string esri_analyst3D_onlyTINLayersSelectedCondition {
-				 get { return "esri_analyst3D_onlyTINLayersSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Exactly one TIN layer is selected&quot; (Condition, Analyst3D)</summary>
-			public static string esri_analyst3D_singleTINLayerSelectedCondition {
-				 get { return "esri_analyst3D_singleTINLayerSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Only Terrain layers are selected&quot; (Condition, Analyst3D)</summary>
-			public static string esri_analyst3D_onlyTerrainLayersSelectedCondition {
-				 get { return "esri_analyst3D_onlyTerrainLayersSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Exactly one Terrain layer is selected&quot; (Condition, Analyst3D)</summary>
-			public static string esri_analyst3D_singleTerrainLayerSelectedCondition {
-				 get { return "esri_analyst3D_singleTerrainLayerSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Only raster layers are selected&quot; (Condition, Analyst3D)</summary>
-			public static string esri_analyst3D_onlyRasterLayersSelectedCondition {
-				 get { return "esri_analyst3D_onlyRasterLayersSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Exactly one Surface layer is selected&quot; (Condition, Analyst3D)</summary>
-			public static string esri_analyst3D_singleSurfaceLayersSelectedCondition {
-				 get { return "esri_analyst3D_singleSurfaceLayersSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Exactly one raster layer is selected&quot; (Condition, Analyst3D)</summary>
-			public static string esri_analyst3D_singleRasterLayerSelectedCondition {
-				 get { return "esri_analyst3D_singleRasterLayerSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Exactly one TOC item is selected&quot; (Condition, Analyst3D)</summary>
-			public static string esri_analyst3D_singleTOCItemSelectedCondition {
-				 get { return "esri_analyst3D_singleTOCItemSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;False&quot; (Condition, Analyst3D)</summary>
-			public static string esri_analyst3D_falseCondition {
-				 get { return "esri_analyst3D_falseCondition"; }
-			}
-			///<summary>Returns the id string for &quot;The Raster layer tab group should be displayed and should include the DATA tab&quot; (Condition, Analyst3D)</summary>
-			public static string esri_analyst3D_displayRasterTabGroupWithDataTabCondition {
-				 get { return "esri_analyst3D_displayRasterTabGroupWithDataTabCondition"; }
-			}
-			///<summary>Returns the id string for &quot;The Raster layer tab group should be displayed and should not include the DATA tab&quot; (Condition, Analyst3D)</summary>
-			public static string esri_analyst3D_displayRasterTabGroupWithoutDataTabCondition {
-				 get { return "esri_analyst3D_displayRasterTabGroupWithoutDataTabCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Display the 3D Analyst group&quot; (Condition, Analyst3D)</summary>
-			public static string esri_analyst3D_display3DAnalystTabCondition {
-				 get { return "esri_analyst3D_display3DAnalystTabCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Exactly one LAS Dataset layer is selected in 2D Map&quot; (Condition, Analyst3D)</summary>
-			public static string esri_analyst3D_singleLasDatasetLayerSelectedOn2DViewCondition {
-				 get { return "esri_analyst3D_singleLasDatasetLayerSelectedOn2DViewCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Exactly one surface layer is selected in 2D Map&quot; (Condition, Analyst3D)</summary>
-			public static string esri_analyst3D_singleSurfaceLayerSelectedOn2DViewCondition {
-				 get { return "esri_analyst3D_singleSurfaceLayerSelectedOn2DViewCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Reset elevation range is enabled&quot; (Condition, Analyst3D)</summary>
-			public static string esri_analyst3D_resetElevationRangeEnabledCondition {
-				 get { return "esri_analyst3D_resetElevationRangeEnabledCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Lidar interactive classification is activated&quot; (Condition, Analyst3D)</summary>
-			public static string esri_analyst3D_lidarClassificationInteractiveClassificationActivatedCondition {
-				 get { return "esri_analyst3D_lidarClassificationInteractiveClassificationActivatedCondition"; }
-			}
-		}
-		public static partial class Module {
-			///<summary>Returns the id string for &quot;3D Analyst&quot; (Analyst3DModule, Analyst3D)</summary>
-			public static string esri_analyst3D_module {
-				 get { return "esri_analyst3D_module"; }
-			}
-		}
-		public static partial class Product {
-			///<summary>Returns the id string for &quot;3D Analyst&quot; (Product, Analyst3D)</summary>
-			public static string esri_product_3danalyst {
-				 get { return "esri_product_3danalyst"; }
-			}
-		}
-		public static partial class Sheet {
-			///<summary>Returns the id string for &quot;LAS Dataset Layer Properties&quot; (Sheet, Analyst3D)</summary>
-			public static string esri_analyst3D_lasDatasetLayerPropertySheet {
-				 get { return "esri_analyst3D_lasDatasetLayerPropertySheet"; }
-			}
-			///<summary>Returns the id string for &quot;LAS Dataset Layer Properties&quot; (Sheet, Analyst3D)</summary>
-			public static string esri_analyst3D_multiLASDatasetLayerPropertySheet {
-				 get { return "esri_analyst3D_multiLASDatasetLayerPropertySheet"; }
-			}
-		}
-		public static partial class Labelcontrol {
-			///<summary>Returns the id string for &quot;Class Code&quot; (Labelcontrol, Analyst3D)</summary>
-			public static string esri_analyst3D_lidarInteractiveClassificationClassCodeLabel {
-				 get { return "esri_analyst3D_lidarInteractiveClassificationClassCodeLabel"; }
-			}
-			///<summary>Returns the id string for &quot;Model Key&quot; (Labelcontrol, Analyst3D)</summary>
-			public static string esri_analyst3D_lidarInteractiveClassificationFlagModelKeyLabel {
-				 get { return "esri_analyst3D_lidarInteractiveClassificationFlagModelKeyLabel"; }
-			}
-			///<summary>Returns the id string for &quot;Withheld&quot; (Labelcontrol, Analyst3D)</summary>
-			public static string esri_analyst3D_lidarInteractiveClassificationFlagWithheldLabel {
-				 get { return "esri_analyst3D_lidarInteractiveClassificationFlagWithheldLabel"; }
-			}
-			///<summary>Returns the id string for &quot;Synthetic&quot; (Labelcontrol, Analyst3D)</summary>
-			public static string esri_analyst3D_lidarInteractiveClassificationFlagSyntheticLabel {
-				 get { return "esri_analyst3D_lidarInteractiveClassificationFlagSyntheticLabel"; }
-			}
-			///<summary>Returns the id string for &quot;Overlap&quot; (Labelcontrol, Analyst3D)</summary>
-			public static string esri_analyst3D_lidarInteractiveClassificationFlagOverlapLabel {
-				 get { return "esri_analyst3D_lidarInteractiveClassificationFlagOverlapLabel"; }
-			}
-			///<summary>Returns the id string for &quot;&quot; (Labelcontrol, Analyst3D)</summary>
-			public static string esri_analyst3D_spacer {
-				 get { return "esri_analyst3D_spacer"; }
-			}
-		}
-		public static partial class Menu {
-			///<summary>Returns the id string for &quot;LAS Filters&quot; (Menu, Analyst3D)</summary>
-			public static string esri_analyst3D_lasFilterSubMenu {
-				 get { return "esri_analyst3D_lasFilterSubMenu"; }
-			}
-			///<summary>Returns the id string for &quot;Select&quot; (Menu, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationSelectionSelectMenu {
-				 get { return "esri_analyst3D_LidarClassificationSelectionSelectMenu"; }
-			}
-		}
-		public static partial class Page {
-			///<summary>Returns the id string for &quot;General&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.GeneralViewModel, Analyst3D)</summary>
-			public static string esri_mapping_generalLayerPropertyPage {
-				 get { return "esri_mapping_generalLayerPropertyPage"; }
-			}
-			///<summary>Returns the id string for &quot;Source&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.SourceViewModel, Analyst3D)</summary>
-			public static string esri_mapping_layerSourcePropertyPage {
-				 get { return "esri_mapping_layerSourcePropertyPage"; }
-			}
-			///<summary>Returns the id string for &quot;Elevation&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.ElevationViewModel, Analyst3D)</summary>
-			public static string esri_mapping_layerElevationPropertyPage {
-				 get { return "esri_mapping_layerElevationPropertyPage"; }
-			}
-			///<summary>Returns the id string for &quot;Cache&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.CacheViewModel, Analyst3D)</summary>
-			public static string esri_mapping_layerCachePropertyPage {
-				 get { return "esri_mapping_layerCachePropertyPage"; }
-			}
-			///<summary>Returns the id string for &quot;LAS Filter&quot; (ArcGIS.Desktop.Internal.Analyst3D.PropertyPages.LASFilterViewModel, Analyst3D)</summary>
-			public static string esri_analyst3D_layerLASFilterPropertyPage {
-				 get { return "esri_analyst3D_layerLASFilterPropertyPage"; }
-			}
-			///<summary>Returns the id string for &quot;Surface Constraints&quot; (ArcGIS.Desktop.Internal.Analyst3D.PropertyPages.SurfaceConstraintsViewModel, Analyst3D)</summary>
-			public static string esri_analyst3D_layerSurfaceConstraintsPropertyPage {
-				 get { return "esri_analyst3D_layerSurfaceConstraintsPropertyPage"; }
-			}
-		}
-		public static partial class Spinner {
-			///<summary>Returns the id string for &quot;Class Code From&quot; (ArcGIS.Desktop.Internal.Analyst3D.Editing.LidarInteractiveClassificationClassCoadSpinner, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarInteractiveClassificationClassCoadSpinner {
-				 get { return "esri_analyst3D_LidarInteractiveClassificationClassCoadSpinner"; }
-			}
-			///<summary>Returns the id string for &quot;Class Code&quot; (ArcGIS.Desktop.Internal.Analyst3D.Editing.LidarInteractiveClassificationClassCodeSpinner, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarInteractiveClassificationClassCodeSpinner {
-				 get { return "esri_analyst3D_LidarInteractiveClassificationClassCodeSpinner"; }
-			}
-		}
-		public static partial class Splitbutton {
-			///<summary>Returns the id string for &quot;esri_analyst3D_surfaceLayerSymbologySplitButton&quot; (Splitbutton, Analyst3D)</summary>
-			public static string esri_analyst3D_surfaceLayerSymbologySplitButton {
-				 get { return "esri_analyst3D_surfaceLayerSymbologySplitButton"; }
-			}
-			///<summary>Returns the id string for &quot;esri_analyst3D_LASDLayerPointsFilterSplitButton&quot; (Splitbutton, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerPointsFilterSplitButton {
-				 get { return "esri_analyst3D_LASDLayerPointsFilterSplitButton"; }
-			}
-		}
-		public static partial class State {
-			///<summary>Returns the id string for &quot;esri_mapping_LASDLayerSelectedState&quot; (State, Analyst3D)</summary>
-			public static string esri_mapping_LASDLayerSelectedState {
-				 get { return "esri_mapping_LASDLayerSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_sameLayersSelectedState&quot; (State, Analyst3D)</summary>
-			public static string esri_mapping_sameLayersSelectedState {
-				 get { return "esri_mapping_sameLayersSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_singleTOCItemSelectedState&quot; (State, Analyst3D)</summary>
-			public static string esri_mapping_singleTOCItemSelectedState {
-				 get { return "esri_mapping_singleTOCItemSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_TINLayerSelectedState&quot; (State, Analyst3D)</summary>
-			public static string esri_mapping_TINLayerSelectedState {
-				 get { return "esri_mapping_TINLayerSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_terrainLayerSelectedState&quot; (State, Analyst3D)</summary>
-			public static string esri_mapping_terrainLayerSelectedState {
-				 get { return "esri_mapping_terrainLayerSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_rasterLayerSelectedState&quot; (State, Analyst3D)</summary>
-			public static string esri_mapping_rasterLayerSelectedState {
-				 get { return "esri_mapping_rasterLayerSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_surfaceLayerSelectedState&quot; (State, Analyst3D)</summary>
-			public static string esri_mapping_surfaceLayerSelectedState {
-				 get { return "esri_mapping_surfaceLayerSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_mapViewingMode2DState&quot; (State, Analyst3D)</summary>
-			public static string esri_mapping_mapViewingMode2DState {
-				 get { return "esri_mapping_mapViewingMode2DState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_analyst3D_surfaceLayerElevationRendererActivatedState&quot; (State, Analyst3D)</summary>
-			public static string esri_analyst3D_surfaceLayerElevationRendererActivatedState {
-				 get { return "esri_analyst3D_surfaceLayerElevationRendererActivatedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_analyst3D_lidarClassificationInteractiveClassificationActivatedState&quot; (State, Analyst3D)</summary>
-			public static string esri_analyst3D_lidarClassificationInteractiveClassificationActivatedState {
-				 get { return "esri_analyst3D_lidarClassificationInteractiveClassificationActivatedState"; }
-			}
-		}
-		public static partial class Tab {
-			///<summary>Returns the id string for &quot;APPEARANCE&quot; (Tab, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerAppearanceTab {
-				 get { return "esri_analyst3D_LASDLayerAppearanceTab"; }
-			}
-			///<summary>Returns the id string for &quot;DATA&quot; (Tab, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerDataTab {
-				 get { return "esri_analyst3D_LASDLayerDataTab"; }
-			}
-			///<summary>Returns the id string for &quot;CLASSIFICATION&quot; (Tab, Analyst3D)</summary>
-			public static string esri_analyst3D_LidarClassificationTab {
-				 get { return "esri_analyst3D_LidarClassificationTab"; }
-			}
-			///<summary>Returns the id string for &quot;APPEARANCE&quot; (Tab, Analyst3D)</summary>
-			public static string esri_analyst3D_terrainLayerAppearanceTab {
-				 get { return "esri_analyst3D_terrainLayerAppearanceTab"; }
-			}
-			///<summary>Returns the id string for &quot;DATA&quot; (Tab, Analyst3D)</summary>
-			public static string esri_analyst3D_terrainLayerDataTab {
-				 get { return "esri_analyst3D_terrainLayerDataTab"; }
-			}
-			///<summary>Returns the id string for &quot;APPEARANCE&quot; (Tab, Analyst3D)</summary>
-			public static string esri_analyst3D_TINLayerAppearanceTab {
-				 get { return "esri_analyst3D_TINLayerAppearanceTab"; }
-			}
-			///<summary>Returns the id string for &quot;DATA&quot; (Tab, Analyst3D)</summary>
-			public static string esri_analyst3D_TINLayerDataTab {
-				 get { return "esri_analyst3D_TINLayerDataTab"; }
-			}
-		}
-		public static partial class Tabgroup {
-			///<summary>Returns the id string for &quot;LAS DATASET LAYER&quot; (Tabgroup, Analyst3D)</summary>
-			public static string esri_analyst3D_LASDLayerTabGroup {
-				 get { return "esri_analyst3D_LASDLayerTabGroup"; }
-			}
-			///<summary>Returns the id string for &quot;TERRAIN LAYER&quot; (Tabgroup, Analyst3D)</summary>
-			public static string esri_analyst3D_terrainLayerTabGroup {
-				 get { return "esri_analyst3D_terrainLayerTabGroup"; }
-			}
-			///<summary>Returns the id string for &quot;TIN LAYER&quot; (Tabgroup, Analyst3D)</summary>
-			public static string esri_analyst3D_TINLayerTabGroup {
-				 get { return "esri_analyst3D_TINLayerTabGroup"; }
-			}
-			///<summary>Returns the id string for &quot;RASTER LAYER&quot; (Tabgroup, Analyst3D)</summary>
-			public static string esri_analyst3D_RasterLayerTabGroupWithDataTab {
-				 get { return "esri_analyst3D_RasterLayerTabGroupWithDataTab"; }
-			}
-			///<summary>Returns the id string for &quot;RASTER LAYER&quot; (Tabgroup, Analyst3D)</summary>
-			public static string esri_analyst3D_RasterLayerTabGroupWithoutDataTab {
-				 get { return "esri_analyst3D_RasterLayerTabGroupWithoutDataTab"; }
-			}
-		}
-		public static partial class Toolbar {
-			///<summary>Returns the id string for &quot;esri_analyst3D_lidarInteractiveClassificationCodeToolbar&quot; (Toolbar, Analyst3D)</summary>
-			public static string esri_analyst3D_lidarInteractiveClassificationCodeToolbar {
-				 get { return "esri_analyst3D_lidarInteractiveClassificationCodeToolbar"; }
-			}
-			///<summary>Returns the id string for &quot;esri_analyst3D_lidarInteractiveClassificationModelKeyFlagToolbar&quot; (Toolbar, Analyst3D)</summary>
-			public static string esri_analyst3D_lidarInteractiveClassificationModelKeyFlagToolbar {
-				 get { return "esri_analyst3D_lidarInteractiveClassificationModelKeyFlagToolbar"; }
-			}
-			///<summary>Returns the id string for &quot;esri_analyst3D_lidarInteractiveClassificationWithheldFlagToolbar&quot; (Toolbar, Analyst3D)</summary>
-			public static string esri_analyst3D_lidarInteractiveClassificationWithheldFlagToolbar {
-				 get { return "esri_analyst3D_lidarInteractiveClassificationWithheldFlagToolbar"; }
-			}
-			///<summary>Returns the id string for &quot;esri_analyst3D_lidarInteractiveClassificationOverlapFlagToolbar&quot; (Toolbar, Analyst3D)</summary>
-			public static string esri_analyst3D_lidarInteractiveClassificationOverlapFlagToolbar {
-				 get { return "esri_analyst3D_lidarInteractiveClassificationOverlapFlagToolbar"; }
-			}
-			///<summary>Returns the id string for &quot;esri_analyst3D_lidarInteractiveClassificationFlagsToolbar&quot; (Toolbar, Analyst3D)</summary>
-			public static string esri_analyst3D_lidarInteractiveClassificationFlagsToolbar {
-				 get { return "esri_analyst3D_lidarInteractiveClassificationFlagsToolbar"; }
-			}
-			///<summary>Returns the id string for &quot;esri_analyst3D_lidarInteractiveClassificationModelKeyAndOverlapLabelsToolbar&quot; (Toolbar, Analyst3D)</summary>
-			public static string esri_analyst3D_lidarInteractiveClassificationModelKeyAndOverlapLabelsToolbar {
-				 get { return "esri_analyst3D_lidarInteractiveClassificationModelKeyAndOverlapLabelsToolbar"; }
-			}
-			///<summary>Returns the id string for &quot;esri_analyst3D_lidarInteractiveClassificationModelKeyAndOverlapFlagsToolbar&quot; (Toolbar, Analyst3D)</summary>
-			public static string esri_analyst3D_lidarInteractiveClassificationModelKeyAndOverlapFlagsToolbar {
-				 get { return "esri_analyst3D_lidarInteractiveClassificationModelKeyAndOverlapFlagsToolbar"; }
-			}
-			///<summary>Returns the id string for &quot;esri_analyst3D_lidarInteractiveClassificationWithheldAndSyntheticLabelsToolbar&quot; (Toolbar, Analyst3D)</summary>
-			public static string esri_analyst3D_lidarInteractiveClassificationWithheldAndSyntheticLabelsToolbar {
-				 get { return "esri_analyst3D_lidarInteractiveClassificationWithheldAndSyntheticLabelsToolbar"; }
-			}
-			///<summary>Returns the id string for &quot;esri_analyst3D_lidarInteractiveClassificationWithheldAndSyntheticFlagsToolbar&quot; (Toolbar, Analyst3D)</summary>
-			public static string esri_analyst3D_lidarInteractiveClassificationWithheldAndSyntheticFlagsToolbar {
-				 get { return "esri_analyst3D_lidarInteractiveClassificationWithheldAndSyntheticFlagsToolbar"; }
-			}
-		}
-		public static partial class Toolpalette {
-			///<summary>Returns the id string for &quot;Select&quot; (Toolpalette, Analyst3D)</summary>
-			public static string esri_analyst3D_selectToolPalette {
-				 get { return "esri_analyst3D_selectToolPalette"; }
-			}
-		}
-		public static partial class Module {
-			///<summary>Returns the id string for &quot;esri_search_module&quot; (SearchModule, Search)</summary>
-			public static string esri_search_module {
-				 get { return "esri_search_module"; }
-			}
-		}
-		public static partial class Page {
-			///<summary>Returns the id string for &quot;Indexing&quot; (IndexingOptionsViewModel, Search)</summary>
-			public static string esri_search_indexingOptionsPropertyPage {
-				 get { return "esri_search_indexingOptionsPropertyPage"; }
-			}
-		}
-		public static partial class Button {
 			///<summary>Returns the id string for &quot;Properties&quot; (esri_propertyPage_module:ShowProjectItemProperties, Catalog)</summary>
 			public static string esri_projectItemPropertiesButton {
 				 get { return "esri_projectItemPropertiesButton"; }
@@ -1395,6 +565,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_featureClasses_layerProperties_point&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_featureClasses_layerProperties_point {
 				 get { return "esri_browseDialogFilters_featureClasses_layerProperties_point"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_featureClasses_layerProperties_pointmultipoint&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_featureClasses_layerProperties_pointmultipoint {
+				 get { return "esri_browseDialogFilters_featureClasses_layerProperties_pointmultipoint"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_featureClasses_layerProperties_polygon&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_featureClasses_layerProperties_polygon {
@@ -2040,6 +1214,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_itemInfoType_OnlineContainerServiceProjectItem {
 				 get { return "esri_itemInfoType_OnlineContainerServiceProjectItem"; }
 			}
+			///<summary>Returns the id string for &quot;esri_itemInfoType_OnlineGroupLayerProjectItem&quot; (ArcGIS.Desktop.Internal.Catalog.OnlineSubGroupLayerItem, Catalog)</summary>
+			public static string esri_itemInfoType_OnlineGroupLayerProjectItem {
+				 get { return "esri_itemInfoType_OnlineGroupLayerProjectItem"; }
+			}
 			///<summary>Returns the id string for &quot;esri_itemInfoType_LocatorsProjectItem&quot; (ArcGIS.Desktop.Internal.Catalog.LocatorsConnectionProjectItemInternal, Catalog)</summary>
 			public static string esri_itemInfoType_LocatorsProjectItem {
 				 get { return "esri_itemInfoType_LocatorsProjectItem"; }
@@ -2640,6 +1818,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_projectItem_DefaultGDBSelected {
 				 get { return "esri_projectItem_DefaultGDBSelected"; }
 			}
+			///<summary>Returns the id string for &quot;esri_license_hasStandardLicenseState&quot; (State, Catalog)</summary>
+			public static string esri_license_hasStandardLicenseState {
+				 get { return "esri_license_hasStandardLicenseState"; }
+			}
 			///<summary>Returns the id string for &quot;esri_projectItem_SelectedItemIsVersioned&quot; (State, Catalog)</summary>
 			public static string esri_projectItem_SelectedItemIsVersioned {
 				 get { return "esri_projectItem_SelectedItemIsVersioned"; }
@@ -2663,10 +1845,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_projectItem_isEnterpriseGeodatabase&quot; (State, Catalog)</summary>
 			public static string esri_projectItem_isEnterpriseGeodatabase {
 				 get { return "esri_projectItem_isEnterpriseGeodatabase"; }
-			}
-			///<summary>Returns the id string for &quot;esri_license_hasStandardLicenseState&quot; (State, Catalog)</summary>
-			public static string esri_license_hasStandardLicenseState {
-				 get { return "esri_license_hasStandardLicenseState"; }
 			}
 			///<summary>Returns the id string for &quot;esri_project_itemOnClipboard&quot; (State, Catalog)</summary>
 			public static string esri_project_itemOnClipboard {
@@ -2703,92 +1881,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_projectItem_SelectedTableIsRegisteredWithGDB&quot; (State, Catalog)</summary>
 			public static string esri_projectItem_SelectedTableIsRegisteredWithGDB {
 				 get { return "esri_projectItem_SelectedTableIsRegisteredWithGDB"; }
-			}
-		}
-		public static partial class Button {
-			///<summary>Returns the id string for &quot;Bar Chart&quot; (esri_charts:Commands.NewBarChart, Charts)</summary>
-			public static string esri_charts_CreateBarChartButton {
-				 get { return "esri_charts_CreateBarChartButton"; }
-			}
-			///<summary>Returns the id string for &quot;Line Chart&quot; (esri_charts:Commands.NewLineChart, Charts)</summary>
-			public static string esri_charts_CreateLineChartButton {
-				 get { return "esri_charts_CreateLineChartButton"; }
-			}
-			///<summary>Returns the id string for &quot;Scatter Plot&quot; (esri_charts:Commands.NewScatterChart, Charts)</summary>
-			public static string esri_charts_CreateScatterChartButton {
-				 get { return "esri_charts_CreateScatterChartButton"; }
-			}
-			///<summary>Returns the id string for &quot;Histogram&quot; (esri_charts:Commands.NewHistogramChart, Charts)</summary>
-			public static string esri_charts_CreateHistogramChartButton {
-				 get { return "esri_charts_CreateHistogramChartButton"; }
-			}
-			///<summary>Returns the id string for &quot;Open&quot; (esri_charts:Commands.OpenChart, Charts)</summary>
-			public static string esri_charts_OpenChartButton {
-				 get { return "esri_charts_OpenChartButton"; }
-			}
-			///<summary>Returns the id string for &quot;Delete&quot; (esri_charts:Commands.DeleteChart, Charts)</summary>
-			public static string esri_charts_DeleteChartButton {
-				 get { return "esri_charts_DeleteChartButton"; }
-			}
-			///<summary>Returns the id string for &quot;Charts&quot; (ArcGIS.Desktop.Charts.ChartViewButton, Charts)</summary>
-			public static string esri_charts_showChartTOC {
-				 get { return "esri_charts_showChartTOC"; }
-			}
-		}
-		public static partial class Dockpane {
-			///<summary>Returns the id string for &quot;Chart&quot; (ArcGIS.Desktop.Charts.ChartPropertiesDockPaneViewModel, Charts)</summary>
-			public static string esri_charts_ChartsDockPane {
-				 get { return "esri_charts_ChartsDockPane"; }
-			}
-		}
-		public static partial class Group {
-			///<summary>Returns the id string for &quot;Visualize&quot; (Group, Charts)</summary>
-			public static string esri_charts_visualizeGroup {
-				 get { return "esri_charts_visualizeGroup"; }
-			}
-		}
-		public static partial class Component {
-			///<summary>Returns the id string for &quot;esri_charts_ChartTOCView&quot; (ArcGIS.Desktop.Charts.ChartTOCView, Charts)</summary>
-			public static string esri_charts_ChartTOCView {
-				 get { return "esri_charts_ChartTOCView"; }
-			}
-		}
-		public static partial class Condition {
-			///<summary>Returns the id string for &quot;A feature layer is selected&quot; (Condition, Charts)</summary>
-			public static string esri_chart_tableLayerSelectedCondition {
-				 get { return "esri_chart_tableLayerSelectedCondition"; }
-			}
-		}
-		public static partial class Module {
-			///<summary>Returns the id string for &quot;Charts&quot; (ChartsModule, Charts)</summary>
-			public static string esri_charts {
-				 get { return "esri_charts"; }
-			}
-		}
-		public static partial class Menu {
-			///<summary>Returns the id string for &quot;Create Chart&quot; (Menu, Charts)</summary>
-			public static string esri_charts_createChartMenu {
-				 get { return "esri_charts_createChartMenu"; }
-			}
-			///<summary>Returns the id string for &quot;Chart Actions&quot; (Menu, Charts)</summary>
-			public static string esri_charts_chartTOCMenu {
-				 get { return "esri_charts_chartTOCMenu"; }
-			}
-		}
-		public static partial class Pane {
-			///<summary>Returns the id string for &quot;Chart&quot; (ArcGIS.Desktop.Charts.ChartPaneViewModel, Charts)</summary>
-			public static string esri_charts_chartsPane {
-				 get { return "esri_charts_chartsPane"; }
-			}
-		}
-		public static partial class State {
-			///<summary>Returns the id string for &quot;esri_mapping_featureLayerSelectedState&quot; (State, Charts)</summary>
-			public static string esri_mapping_featureLayerSelectedState {
-				 get { return "esri_mapping_featureLayerSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_standaloneTableSelectedState&quot; (State, Charts)</summary>
-			public static string esri_mapping_standaloneTableSelectedState {
-				 get { return "esri_mapping_standaloneTableSelectedState"; }
 			}
 		}
 		public static partial class Button {
@@ -3276,6 +2368,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_dataReviewer_batchJobViewDescription {
 				 get { return "esri_dataReviewer_batchJobViewDescription"; }
 			}
+			///<summary>Returns the id string for &quot;Open&quot; (esri_dataReviewer_dataReviewerModule:OpenSelectedItemMetadata, DataReviewer)</summary>
+			public static string esri_dataReviewer_OpenMetadataSelectedItems {
+				 get { return "esri_dataReviewer_OpenMetadataSelectedItems"; }
+			}
 		}
 		public static partial class Dockpane {
 			///<summary>Returns the id string for &quot;Reviewer Results&quot; (ArcGIS.Desktop.Internal.DataReviewer.ReviewerTable.ReviewerResultsPaneViewModel, DataReviewer)</summary>
@@ -3384,6 +2480,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_dataReviewer_batchJobFolderConnectionMenu {
 				 get { return "esri_dataReviewer_batchJobFolderConnectionMenu"; }
 			}
+			///<summary>Returns the id string for &quot;Selected Metadata Results Context Menu&quot; (Menu, DataReviewer)</summary>
+			public static string esri_dataReviewer_MetadataResultsContextMenu {
+				 get { return "esri_dataReviewer_MetadataResultsContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Common Context Menu for All Results Type&quot; (Menu, DataReviewer)</summary>
+			public static string esri_dataReviewer_CommonContextMenu {
+				 get { return "esri_dataReviewer_CommonContextMenu"; }
+			}
 		}
 		public static partial class State {
 			///<summary>Returns the id string for &quot;esri_datareviewer_addReviewerWorkspaceSettingState&quot; (State, DataReviewer)</summary>
@@ -3397,532 +2501,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_dataReviewer_SelectedOnlyFeatureItems&quot; (State, DataReviewer)</summary>
 			public static string esri_dataReviewer_SelectedOnlyFeatureItems {
 				 get { return "esri_dataReviewer_SelectedOnlyFeatureItems"; }
-			}
-		}
-		public static partial class Button {
-			///<summary>Returns the id string for &quot;Properties&quot; (esri_datasourcesraster:OnShowDataSourceProperties, DataSourcesRaster)</summary>
-			public static string esri_dataSourcePropertiesButton {
-				 get { return "esri_dataSourcePropertiesButton"; }
-			}
-			///<summary>Returns the id string for &quot;Calculate Statistics...&quot; (esri_geoprocessing_module:Commands.gdbRasterCalculateStatistics, DataSourcesRaster)</summary>
-			public static string esri_RasterCalculateStatistics {
-				 get { return "esri_RasterCalculateStatistics"; }
-			}
-			///<summary>Returns the id string for &quot;Export to Different Format...&quot; (esri_geoprocessing_module:Commands.gdbRasterExportToDifferentFormat, DataSourcesRaster)</summary>
-			public static string esri_RasterExportToDifferentFormat {
-				 get { return "esri_RasterExportToDifferentFormat"; }
-			}
-			///<summary>Returns the id string for &quot;Build Pyramids...&quot; (esri_geoprocessing_module:Commands.gdbRasterBuildPyramids, DataSourcesRaster)</summary>
-			public static string esri_RasterBuildPyramids {
-				 get { return "esri_RasterBuildPyramids"; }
-			}
-			///<summary>Returns the id string for &quot;Load Data...&quot; (esri_geoprocessing_module:Commands.gdbRasterLoadData, DataSourcesRaster)</summary>
-			public static string esri_RasterLoadData {
-				 get { return "esri_RasterLoadData"; }
-			}
-			///<summary>Returns the id string for &quot;Download Rasters&quot; (esri_datasourcesraster:DownloadRasters, DataSourcesRaster)</summary>
-			public static string esri_DownloadRasters {
-				 get { return "esri_DownloadRasters"; }
-			}
-			///<summary>Returns the id string for &quot;Add Rasters...&quot; (esri_geoprocessing_module:Commands.gdbMDAddRasters, DataSourcesRaster)</summary>
-			public static string esri_MDAddRastersButton {
-				 get { return "esri_MDAddRastersButton"; }
-			}
-			///<summary>Returns the id string for &quot;Build Footprints...&quot; (esri_geoprocessing_module:Commands.gdbMDBuildFootprints, DataSourcesRaster)</summary>
-			public static string esri_MDBuildFootprints {
-				 get { return "esri_MDBuildFootprints"; }
-			}
-			///<summary>Returns the id string for &quot;Build Boundary...&quot; (esri_geoprocessing_module:Commands.gdbMDBuildBoundary, DataSourcesRaster)</summary>
-			public static string esri_MDBuildBoundary {
-				 get { return "esri_MDBuildBoundary"; }
-			}
-			///<summary>Returns the id string for &quot;Calculate Item Visibility...&quot; (esri_geoprocessing_module:Commands.gdbMDCalculateItemVisibility, DataSourcesRaster)</summary>
-			public static string esri_MDCalculateItemVisibility {
-				 get { return "esri_MDCalculateItemVisibility"; }
-			}
-			///<summary>Returns the id string for &quot;Define NoData...&quot; (esri_geoprocessing_module:Commands.gdbMDDefineNodata, DataSourcesRaster)</summary>
-			public static string esri_MDDefineNodata {
-				 get { return "esri_MDDefineNodata"; }
-			}
-			///<summary>Returns the id string for &quot;Build Item Pyramids and Statistics...&quot; (esri_geoprocessing_module:Commands.gdbMDBuildPyramidsAndStats, DataSourcesRaster)</summary>
-			public static string esri_MDBuildItemPyramidsAndStatistics {
-				 get { return "esri_MDBuildItemPyramidsAndStatistics"; }
-			}
-			///<summary>Returns the id string for &quot;Import Footprints or Boundary...&quot; (esri_geoprocessing_module:Commands.gdbMDImportGeometry, DataSourcesRaster)</summary>
-			public static string esri_MDImportGeometry {
-				 get { return "esri_MDImportGeometry"; }
-			}
-			///<summary>Returns the id string for &quot;Synchronize...&quot; (esri_geoprocessing_module:Commands.gdbMDSynchronize, DataSourcesRaster)</summary>
-			public static string esri_MDSynchronize {
-				 get { return "esri_MDSynchronize"; }
-			}
-			///<summary>Returns the id string for &quot;Merge Items...&quot; (esri_geoprocessing_module:Commands.gdbMDMergeItems, DataSourcesRaster)</summary>
-			public static string esri_MDMergeItems {
-				 get { return "esri_MDMergeItems"; }
-			}
-			///<summary>Returns the id string for &quot;Split Items...&quot; (esri_geoprocessing_module:Commands.gdbMDSplitItems, DataSourcesRaster)</summary>
-			public static string esri_MDSplitItems {
-				 get { return "esri_MDSplitItems"; }
-			}
-			///<summary>Returns the id string for &quot;Color Balance...&quot; (esri_geoprocessing_module:Commands.gdbMDColorBalance, DataSourcesRaster)</summary>
-			public static string esri_MDColorBalance {
-				 get { return "esri_MDColorBalance"; }
-			}
-			///<summary>Returns the id string for &quot;Generate Seamlines...&quot; (esri_geoprocessing_module:Commands.gdbMDGenerateSeamlines, DataSourcesRaster)</summary>
-			public static string esri_MDGenerateSeamlines {
-				 get { return "esri_MDGenerateSeamlines"; }
-			}
-			///<summary>Returns the id string for &quot;Import Seamlines...&quot; (esri_geoprocessing_module:Commands.gdbMDImportGeometry, DataSourcesRaster)</summary>
-			public static string esri_MDImportSeamlines {
-				 get { return "esri_MDImportSeamlines"; }
-			}
-			///<summary>Returns the id string for &quot;Define Overviews...&quot; (esri_geoprocessing_module:Commands.gdbMDDefineOverviews, DataSourcesRaster)</summary>
-			public static string esri_MDDefineOverviews {
-				 get { return "esri_MDDefineOverviews"; }
-			}
-			///<summary>Returns the id string for &quot;Build Overviews...&quot; (esri_geoprocessing_module:Commands.gdbMDBuildOverviews, DataSourcesRaster)</summary>
-			public static string esri_MDBuildOverviews {
-				 get { return "esri_MDBuildOverviews"; }
-			}
-			///<summary>Returns the id string for &quot;Build Item Cache...&quot; (esri_geoprocessing_module:Commands.gdbMDBuildItemCache, DataSourcesRaster)</summary>
-			public static string esri_MDBuildItemCache {
-				 get { return "esri_MDBuildItemCache"; }
-			}
-			///<summary>Returns the id string for &quot;Analyze Mosaic Dataset&quot; (esri_datasourcesraster:OnAnalyzeMosaicDataset, DataSourcesRaster)</summary>
-			public static string esri_MDAnalyze {
-				 get { return "esri_MDAnalyze"; }
-			}
-			///<summary>Returns the id string for &quot;Remove Rasters...&quot; (esri_geoprocessing_module:Commands.gdbMDRemoveRasters, DataSourcesRaster)</summary>
-			public static string esri_MDRemoveRasters {
-				 get { return "esri_MDRemoveRasters"; }
-			}
-			///<summary>Returns the id string for &quot;Remove Color Balancing...&quot; (esri_geoprocessing_module:Commands.gdbMDRemoveColorBalancing, DataSourcesRaster)</summary>
-			public static string esri_MDRemoveColorBalancing {
-				 get { return "esri_MDRemoveColorBalancing"; }
-			}
-			///<summary>Returns the id string for &quot;Remove Seamlines...&quot; (esri_geoprocessing_module:Commands.gdbMDRemoveSeamlines, DataSourcesRaster)</summary>
-			public static string esri_MDRemoveSeamlines {
-				 get { return "esri_MDRemoveSeamlines"; }
-			}
-			///<summary>Returns the id string for &quot;Clear Logs...&quot; (esri_geoprocessing_module:Commands.gdbMDClearLogs, DataSourcesRaster)</summary>
-			public static string esri_MDClearLogs {
-				 get { return "esri_MDClearLogs"; }
-			}
-			///<summary>Returns the id string for &quot;Delete All...&quot; (esri_geoprocessing_module:Commands.gdbMDDeleteAll, DataSourcesRaster)</summary>
-			public static string esri_MDDeleteAll {
-				 get { return "esri_MDDeleteAll"; }
-			}
-			///<summary>Returns the id string for &quot;Create Referenced Mosaic Dataset...&quot; (esri_geoprocessing_module:Commands.gdbMDCreateReferencedMD, DataSourcesRaster)</summary>
-			public static string esri_MDCreateRefMD {
-				 get { return "esri_MDCreateRefMD"; }
-			}
-			///<summary>Returns the id string for &quot;Export Mosaic Dataset Paths...&quot; (esri_geoprocessing_module:Commands.gdbMDExportPaths, DataSourcesRaster)</summary>
-			public static string esri_MDExportPaths {
-				 get { return "esri_MDExportPaths"; }
-			}
-			///<summary>Returns the id string for &quot;Export Mosaic Dataset Items...&quot; (esri_geoprocessing_module:Commands.gdbMDExportItems, DataSourcesRaster)</summary>
-			public static string esri_MDExportItems {
-				 get { return "esri_MDExportItems"; }
-			}
-			///<summary>Returns the id string for &quot;Repair Mosaic Dataset Paths...&quot; (esri_datasourcesraster:RepairMDPaths, DataSourcesRaster)</summary>
-			public static string esri_MosaicDataset_RepairMDPathsButton {
-				 get { return "esri_MosaicDataset_RepairMDPathsButton"; }
-			}
-			///<summary>Returns the id string for &quot;Edit Mosaic Dataset Functions&quot; (esri_datasourcesraster:OpenFRDInRFxEditor, DataSourcesRaster)</summary>
-			public static string esri_MDFunctionEditorButton {
-				 get { return "esri_MDFunctionEditorButton"; }
-			}
-			///<summary>Returns the id string for &quot;Raster Functions&quot; (esri_datasourcesraster:OnShowRasterProcessDockPane, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_showRasterProcessDockPaneButton {
-				 get { return "esri_datasourcesraster_showRasterProcessDockPaneButton"; }
-			}
-			///<summary>Returns the id string for &quot;Edit Function Chain&quot; (esri_datasourcesraster:OpenInRFxEditor, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_editFunctionRasterLayerButton {
-				 get { return "esri_datasourcesraster_editFunctionRasterLayerButton"; }
-			}
-			///<summary>Returns the id string for &quot;Save Function Chain&quot; (esri_datasourcesraster:SaveFxChain, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_saveFunctionChainButton {
-				 get { return "esri_datasourcesraster_saveFunctionChainButton"; }
-			}
-			///<summary>Returns the id string for &quot;Function Editor&quot; (esri_datasourcesraster:OnOpenFxEditor, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_showFunctionEditorButton {
-				 get { return "esri_datasourcesraster_showFunctionEditorButton"; }
-			}
-			///<summary>Returns the id string for &quot;Apply Raster Function&quot; (esri_datasourcesraster:ApplyRFxFromPortal, DataSourcesRaster)</summary>
-			public static string esri_ApplyRFxFromPortal {
-				 get { return "esri_ApplyRFxFromPortal"; }
-			}
-			///<summary>Returns the id string for &quot;Manage Processing Templates&quot; (esri_datasourcesraster:OnManageMDFunctionTemplates, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_ManageMDFxTemplates {
-				 get { return "esri_datasourcesraster_ManageMDFxTemplates"; }
-			}
-			///<summary>Returns the id string for &quot;Classification Wizard&quot; (esri_datasourcesraster:LaunchClassificationWizard, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_imageClassificationWizardButton {
-				 get { return "esri_datasourcesraster_imageClassificationWizardButton"; }
-			}
-			///<summary>Returns the id string for &quot;Explore Items&quot; (esri_datasourcesraster:LaunchRasterItemExplorer, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_exploreRasterItemsButton {
-				 get { return "esri_datasourcesraster_exploreRasterItemsButton"; }
-			}
-		}
-		public static partial class Dockpane {
-			///<summary>Returns the id string for &quot;Raster Functions&quot; (RasterProcessing.RasterProcessDockPaneViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_rasterProcessDockPane {
-				 get { return "esri_datasourcesraster_rasterProcessDockPane"; }
-			}
-			///<summary>Returns the id string for &quot;Download Rasters&quot; (ArcGIS.Desktop.DataSourcesRaster.DownloadRastersViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_downloadRasters {
-				 get { return "esri_datasourcesraster_downloadRasters"; }
-			}
-			///<summary>Returns the id string for &quot;Manage Processing Templates&quot; (RasterProcessing.MDFunctionTemplatesViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_manageMDFunctionTemplates {
-				 get { return "esri_datasourcesraster_manageMDFunctionTemplates"; }
-			}
-			///<summary>Returns the id string for &quot;Analyze Mosaic Dataset&quot; (MosaicDatasetAnalyzer.AnalyzeMDDockPaneViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_analyzeMosaicDataset {
-				 get { return "esri_datasourcesraster_analyzeMosaicDataset"; }
-			}
-			///<summary>Returns the id string for &quot;Image Classification&quot; (ImageClassification.ImageClassificationDockPaneViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_imageClassification {
-				 get { return "esri_datasourcesraster_imageClassification"; }
-			}
-			///<summary>Returns the id string for &quot;Image Classification Wizard&quot; (ImageClassification.ImageClassificationWizardDockPaneViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_imageClassificationWizard {
-				 get { return "esri_datasourcesraster_imageClassificationWizard"; }
-			}
-			///<summary>Returns the id string for &quot;Raster Item Explorer&quot; (RasterDatasetPropertyPages.RasterItemExplorerDockPaneViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_rasterItemExplorer {
-				 get { return "esri_datasourcesraster_rasterItemExplorer"; }
-			}
-		}
-		public static partial class Gallery {
-			///<summary>Returns the id string for &quot;Classification Tools&quot; (ImageClassificationToolsGallery, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_imageClassificationToolsGallery {
-				 get { return "esri_datasourcesraster_imageClassificationToolsGallery"; }
-			}
-		}
-		public static partial class Group {
-			///<summary>Returns the id string for &quot;Raster&quot; (Group, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_rasterLayerTemplateGroup {
-				 get { return "esri_datasourcesraster_rasterLayerTemplateGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Processing&quot; (Group, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_rasterLayerProcessingGroup {
-				 get { return "esri_datasourcesraster_rasterLayerProcessingGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Image Classification&quot; (Group, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_imageClassificationGroup {
-				 get { return "esri_datasourcesraster_imageClassificationGroup"; }
-			}
-		}
-		public static partial class Component {
-			///<summary>Returns the id string for &quot;esri_datasourcesraster_RasterFunctionTemplateContainer&quot; (RasterFunctionTemplateContainer, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RasterFunctionTemplateContainer {
-				 get { return "esri_datasourcesraster_RasterFunctionTemplateContainer"; }
-			}
-			///<summary>Returns the id string for &quot;esri_raster_processing&quot; (RasterProcessing.RasterFunctionsGalleryEmbeddableControlViewModel, DataSourcesRaster)</summary>
-			public static string esri_raster_processing {
-				 get { return "esri_raster_processing"; }
-			}
-			///<summary>Returns the id string for &quot;esri_browseDialogFilters_clippingGeometry&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, DataSourcesRaster)</summary>
-			public static string esri_browseDialogFilters_clippingGeometry {
-				 get { return "esri_browseDialogFilters_clippingGeometry"; }
-			}
-			///<summary>Returns the id string for &quot;esri_browseDialogFilters_all_CatalogTables&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, DataSourcesRaster)</summary>
-			public static string esri_browseDialogFilters_all_CatalogTables {
-				 get { return "esri_browseDialogFilters_all_CatalogTables"; }
-			}
-			///<summary>Returns the id string for &quot;esri_browseDialogFilters_FrameCamera&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, DataSourcesRaster)</summary>
-			public static string esri_browseDialogFilters_FrameCamera {
-				 get { return "esri_browseDialogFilters_FrameCamera"; }
-			}
-		}
-		public static partial class Condition {
-			///<summary>Returns the id string for &quot;Processing tab in raster type property sheet is allowed&quot; (Condition, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTProcessingAllowedCondition {
-				 get { return "esri_datasourcesraster_RTProcessingAllowedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Table raster type selected in raster type control&quot; (Condition, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTTableSelectedCondition {
-				 get { return "esri_datasourcesraster_RTTableSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Terrain raster type selected in raster type control&quot; (Condition, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTTerrainSelectedCondition {
-				 get { return "esri_datasourcesraster_RTTerrainSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;LAS raster type selected in raster type control&quot; (Condition, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTLASSelectedCondition {
-				 get { return "esri_datasourcesraster_RTLASSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;LAS Dataset raster type selected in raster type control&quot; (Condition, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTLASDatasetSelectedCondition {
-				 get { return "esri_datasourcesraster_RTLASDatasetSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Match-AT raster type selected in raster type control&quot; (Condition, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTMatchATSelectedCondition {
-				 get { return "esri_datasourcesraster_RTMatchATSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;ISAT raster type selected in raster type control&quot; (Condition, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTISATSelectedCondition {
-				 get { return "esri_datasourcesraster_RTISATSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;WMS raster type selected in raster type control&quot; (Condition, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTWMSSelectedCondition {
-				 get { return "esri_datasourcesraster_RTWMSSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Applanix raster type selected in raster type control&quot; (Condition, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTApplanixSelectedCondition {
-				 get { return "esri_datasourcesraster_RTApplanixSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Scientific Data raster type selected in raster type control&quot; (Condition, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTScientificDataSelectedCondition {
-				 get { return "esri_datasourcesraster_RTScientificDataSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Frame Camera raster type selected in raster type control&quot; (Condition, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTFrameCameraSelectedCondition {
-				 get { return "esri_datasourcesraster_RTFrameCameraSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;RADARSAT-2 raster type selected in raster type control&quot; (Condition, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTRadarsatSelectedCondition {
-				 get { return "esri_datasourcesraster_RTRadarsatSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Show Multidimensional Info on a MD, if applicable&quot; (Condition, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_showMDInfoCondition {
-				 get { return "esri_datasourcesraster_showMDInfoCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Grib raster type selected in raster type control&quot; (Condition, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTGribSelectedCondition {
-				 get { return "esri_datasourcesraster_RTGribSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;A raster layer is selected, and classification license exists.&quot; (Condition, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_imageClassificationLicensePlusTargetLayerCondition {
-				 get { return "esri_datasourcesraster_imageClassificationLicensePlusTargetLayerCondition"; }
-			}
-		}
-		public static partial class Module {
-			///<summary>Returns the id string for &quot;DataSourcesRaster&quot; (DataSourcesRasterModule, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster {
-				 get { return "esri_datasourcesraster"; }
-			}
-		}
-		public static partial class Page {
-			///<summary>Returns the id string for &quot;Raster and Imagery&quot; (RasterOptionsViewModel, DataSourcesRaster)</summary>
-			public static string esri_raster_optionsPropertyPage {
-				 get { return "esri_raster_optionsPropertyPage"; }
-			}
-		}
-		public static partial class Sheet {
-			///<summary>Returns the id string for &quot;Raster Dataset Properties&quot; (Sheet, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_datasetproperties_PropertySheet {
-				 get { return "esri_datasourcesraster_datasetproperties_PropertySheet"; }
-			}
-			///<summary>Returns the id string for &quot;Mosaic Dataset Properties&quot; (Sheet, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_mosaicproperties_PropertySheet {
-				 get { return "esri_datasourcesraster_mosaicproperties_PropertySheet"; }
-			}
-			///<summary>Returns the id string for &quot;Raster Type Properties&quot; (Sheet, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_rasterTypeProperties_PropertySheet {
-				 get { return "esri_datasourcesraster_rasterTypeProperties_PropertySheet"; }
-			}
-		}
-		public static partial class Menu {
-			///<summary>Returns the id string for &quot;Modify&quot; (Menu, DataSourcesRaster)</summary>
-			public static string esri_MosaicDatasetModifyContextMenu {
-				 get { return "esri_MosaicDatasetModifyContextMenu"; }
-			}
-			///<summary>Returns the id string for &quot;Enhance&quot; (Menu, DataSourcesRaster)</summary>
-			public static string esri_MosaicDatasetEnhanceContextMenu {
-				 get { return "esri_MosaicDatasetEnhanceContextMenu"; }
-			}
-			///<summary>Returns the id string for &quot;Optimize&quot; (Menu, DataSourcesRaster)</summary>
-			public static string esri_MosaicDatasetOptimizContexteMenu {
-				 get { return "esri_MosaicDatasetOptimizContexteMenu"; }
-			}
-			///<summary>Returns the id string for &quot;Remove&quot; (Menu, DataSourcesRaster)</summary>
-			public static string esri_MosaicDatasetRemoveContextMenu {
-				 get { return "esri_MosaicDatasetRemoveContextMenu"; }
-			}
-			///<summary>Returns the id string for &quot;Export&quot; (Menu, DataSourcesRaster)</summary>
-			public static string esri_MosaicDatasetExportContextMenu {
-				 get { return "esri_MosaicDatasetExportContextMenu"; }
-			}
-			///<summary>Returns the id string for &quot;Data&quot; (Menu, DataSourcesRaster)</summary>
-			public static string esri_mapping_mosaicLayerDataSubMenu {
-				 get { return "esri_mapping_mosaicLayerDataSubMenu"; }
-			}
-			///<summary>Returns the id string for &quot;Data&quot; (Menu, DataSourcesRaster)</summary>
-			public static string esri_mapping_imageServiceLayerDataSubMenu {
-				 get { return "esri_mapping_imageServiceLayerDataSubMenu"; }
-			}
-			///<summary>Returns the id string for &quot;Data&quot; (Menu, DataSourcesRaster)</summary>
-			public static string esri_mapping_rasterlayerDataSubMenu {
-				 get { return "esri_mapping_rasterlayerDataSubMenu"; }
-			}
-		}
-		public static partial class Page {
-			///<summary>Returns the id string for &quot;General&quot; (RasterDatasetPropertyPages.DatasourcePropertiesViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_generalPropertyPage {
-				 get { return "esri_datasourcesraster_generalPropertyPage"; }
-			}
-			///<summary>Returns the id string for &quot;General&quot; (RasterDatasetPropertyPages.DatasourcePropertiesViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_mosaicPropertyPage {
-				 get { return "esri_datasourcesraster_mosaicPropertyPage"; }
-			}
-			///<summary>Returns the id string for &quot;Defaults&quot; (RasterDatasetPropertyPages.MosaicDatasetDefaultsViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_mosaicDefaultsPropertyPage {
-				 get { return "esri_datasourcesraster_mosaicDefaultsPropertyPage"; }
-			}
-			///<summary>Returns the id string for &quot;Multidimension&quot; (RasterDatasetPropertyPages.MosaicDatasetMDInfoViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_mosaicMDInfoPropertyPage {
-				 get { return "esri_datasourcesraster_mosaicMDInfoPropertyPage"; }
-			}
-			///<summary>Returns the id string for &quot;General&quot; (RasterTypePropertyPages.GeneralPageViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_rasterType_generalPage {
-				 get { return "esri_datasourcesraster_rasterType_generalPage"; }
-			}
-			///<summary>Returns the id string for &quot;Processing&quot; (RasterTypePropertyPages.ProcessingPageViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_rasterType_ProcessingPage {
-				 get { return "esri_datasourcesraster_rasterType_ProcessingPage"; }
-			}
-			///<summary>Returns the id string for &quot;Input Table Definition&quot; (RasterTypePropertyPages.TableViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourceraster_rasterType_tablePage {
-				 get { return "esri_datasourceraster_rasterType_tablePage"; }
-			}
-			///<summary>Returns the id string for &quot;Terrain&quot; (RasterTypePropertyPages.TerrainViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourceraster_rasterType_terrainPage {
-				 get { return "esri_datasourceraster_rasterType_terrainPage"; }
-			}
-			///<summary>Returns the id string for &quot;LAS&quot; (RasterTypePropertyPages.LASDViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourceraster_rasterType_lasPage {
-				 get { return "esri_datasourceraster_rasterType_lasPage"; }
-			}
-			///<summary>Returns the id string for &quot;LAS Dataset&quot; (RasterTypePropertyPages.LASDViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourceraster_rasterType_lasDatasetPage {
-				 get { return "esri_datasourceraster_rasterType_lasDatasetPage"; }
-			}
-			///<summary>Returns the id string for &quot;Auxiliary Inputs&quot; (RasterTypePropertyPages.MatchATViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourceraster_rasterType_matchATPage {
-				 get { return "esri_datasourceraster_rasterType_matchATPage"; }
-			}
-			///<summary>Returns the id string for &quot;Auxiliary Inputs&quot; (RasterTypePropertyPages.ISATViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourceraster_rasterType_isatPage {
-				 get { return "esri_datasourceraster_rasterType_isatPage"; }
-			}
-			///<summary>Returns the id string for &quot;Auxiliary Inputs&quot; (RasterTypePropertyPages.ApplanixAuxInputViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourceraster_rasterType_applanixAuxInputPage {
-				 get { return "esri_datasourceraster_rasterType_applanixAuxInputPage"; }
-			}
-			///<summary>Returns the id string for &quot;Camera Definition&quot; (RasterTypePropertyPages.ApplanixCameraDefinitionViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourceraster_rasterType_applanixCameraPage {
-				 get { return "esri_datasourceraster_rasterType_applanixCameraPage"; }
-			}
-			///<summary>Returns the id string for &quot;Variables&quot; (RasterTypePropertyPages.ScientificDataViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourceraster_rasterType_scientificDataPage {
-				 get { return "esri_datasourceraster_rasterType_scientificDataPage"; }
-			}
-			///<summary>Returns the id string for &quot;Frame Camera&quot; (RasterTypePropertyPages.FrameCameraViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourceraster_rasterType_frameCameraPage {
-				 get { return "esri_datasourceraster_rasterType_frameCameraPage"; }
-			}
-			///<summary>Returns the id string for &quot;Radar Processing Options&quot; (RasterTypePropertyPages.Radarsat2ViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourceraster_rasterType_radarsat2Page {
-				 get { return "esri_datasourceraster_rasterType_radarsat2Page"; }
-			}
-			///<summary>Returns the id string for &quot;GRIBTAB&quot; (RasterTypePropertyPages.GRIBTabViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourceraster_rasterType_GRIBTabPage {
-				 get { return "esri_datasourceraster_rasterType_GRIBTabPage"; }
-			}
-		}
-		public static partial class Pane {
-			///<summary>Returns the id string for &quot;Raster Function Editor&quot; (ArcGIS.Desktop.DataSourcesRaster.RasterFunctionEditor.RFxEditorPaneViewModel, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_rasterFxEditor {
-				 get { return "esri_datasourcesraster_rasterFxEditor"; }
-			}
-		}
-		public static partial class Splitbutton {
-			///<summary>Returns the id string for &quot;esri_datasourcesraster_imageClassificationSplitButton&quot; (Splitbutton, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_imageClassificationSplitButton {
-				 get { return "esri_datasourcesraster_imageClassificationSplitButton"; }
-			}
-		}
-		public static partial class State {
-			///<summary>Returns the id string for &quot;esri_datasourcesraster_RTProcessingAllowedState&quot; (State, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTProcessingAllowedState {
-				 get { return "esri_datasourcesraster_RTProcessingAllowedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_datasourcesraster_RTTableSelectedState&quot; (State, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTTableSelectedState {
-				 get { return "esri_datasourcesraster_RTTableSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_datasourcesraster_RTTerrainSelectedState&quot; (State, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTTerrainSelectedState {
-				 get { return "esri_datasourcesraster_RTTerrainSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_datasourcesraster_RTLASSelectedState&quot; (State, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTLASSelectedState {
-				 get { return "esri_datasourcesraster_RTLASSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_datasourcesraster_RTLASDatasetSelectedState&quot; (State, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTLASDatasetSelectedState {
-				 get { return "esri_datasourcesraster_RTLASDatasetSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_datasourcesraster_RTMatchATSelectedState&quot; (State, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTMatchATSelectedState {
-				 get { return "esri_datasourcesraster_RTMatchATSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_datasourcesraster_RTISATSelectedState&quot; (State, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTISATSelectedState {
-				 get { return "esri_datasourcesraster_RTISATSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_datasourcesraster_RTWMSSelectedState&quot; (State, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTWMSSelectedState {
-				 get { return "esri_datasourcesraster_RTWMSSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_datasourcesraster_RTApplanixSelectedState&quot; (State, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTApplanixSelectedState {
-				 get { return "esri_datasourcesraster_RTApplanixSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_datasourcesraster_RTScientificDataSelectedState&quot; (State, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTScientificDataSelectedState {
-				 get { return "esri_datasourcesraster_RTScientificDataSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_datasourcesraster_RTFrameCameraSelectedState&quot; (State, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTFrameCameraSelectedState {
-				 get { return "esri_datasourcesraster_RTFrameCameraSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_datasourcesraster_RTRadarsatSelectedState&quot; (State, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTRadarsatSelectedState {
-				 get { return "esri_datasourcesraster_RTRadarsatSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_datasourcesraster_showMDInfoState&quot; (State, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_showMDInfoState {
-				 get { return "esri_datasourcesraster_showMDInfoState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_datasourcesraster_RTGribSelectedState&quot; (State, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_RTGribSelectedState {
-				 get { return "esri_datasourcesraster_RTGribSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_mosaicLayerSelectedState&quot; (State, DataSourcesRaster)</summary>
-			public static string esri_mapping_mosaicLayerSelectedState {
-				 get { return "esri_mapping_mosaicLayerSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_imageServiceLayerSelectedState&quot; (State, DataSourcesRaster)</summary>
-			public static string esri_mapping_imageServiceLayerSelectedState {
-				 get { return "esri_mapping_imageServiceLayerSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_validMapMemberSelectedState&quot; (State, DataSourcesRaster)</summary>
-			public static string esri_mapping_validMapMemberSelectedState {
-				 get { return "esri_mapping_validMapMemberSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_license_hasImageClassificationLicenseState&quot; (State, DataSourcesRaster)</summary>
-			public static string esri_license_hasImageClassificationLicenseState {
-				 get { return "esri_license_hasImageClassificationLicenseState"; }
-			}
-		}
-		public static partial class Tool {
-			///<summary>Returns the id string for &quot;Generic Sketch Tool&quot; (MapTools.EventingSketchTool, DataSourcesRaster)</summary>
-			public static string esri_datasourcesraster_EventingSketchTool {
-				 get { return "esri_datasourcesraster_EventingSketchTool"; }
 			}
 		}
 		public static partial class Module {
@@ -4696,7 +3274,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_errorInspectorSwitchSelButton {
 				 get { return "esri_editing_errorInspectorSwitchSelButton"; }
 			}
-			///<summary>Returns the id string for &quot;Clar&quot; (ArcGIS.Desktop.Internal.Editing.ErrorInspector.ClearRowSelectionCommand, Editing)</summary>
+			///<summary>Returns the id string for &quot;Clear&quot; (ArcGIS.Desktop.Internal.Editing.ErrorInspector.ClearRowSelectionCommand, Editing)</summary>
 			public static string esri_editing_errorInspectorClearSelectionButton {
 				 get { return "esri_editing_errorInspectorClearSelectionButton"; }
 			}
@@ -4740,7 +3318,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_topology_fix_CreateContextMenuItem {
 				 get { return "esri_editing_topology_fix_CreateContextMenuItem"; }
 			}
-			///<summary>Returns the id string for &quot;Merge&quot; (Button, Editing)</summary>
+			///<summary>Returns the id string for &quot;Merge&quot; (TopologyDisabledCommand, Editing)</summary>
 			public static string esri_editing_topology_fix_MergeContextMenuItem {
 				 get { return "esri_editing_topology_fix_MergeContextMenuItem"; }
 			}
@@ -4764,7 +3342,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_topology_fix_TrimContextMenuItem {
 				 get { return "esri_editing_topology_fix_TrimContextMenuItem"; }
 			}
-			///<summary>Returns the id string for &quot;Snap&quot; (Button, Editing)</summary>
+			///<summary>Returns the id string for &quot;Snap&quot; (TopologyDisabledCommand, Editing)</summary>
 			public static string esri_editing_topology_fix_SnapContextMenuItem {
 				 get { return "esri_editing_topology_fix_SnapContextMenuItem"; }
 			}
@@ -4772,7 +3350,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_topology_fix_SimplifyContextMenuItem {
 				 get { return "esri_editing_topology_fix_SimplifyContextMenuItem"; }
 			}
-			///<summary>Returns the id string for &quot;Explode&quot; (Button, Editing)</summary>
+			///<summary>Returns the id string for &quot;Explode&quot; (TopologyDisabledCommand, Editing)</summary>
 			public static string esri_editing_topology_fix_ExplodeContextMenuItem {
 				 get { return "esri_editing_topology_fix_ExplodeContextMenuItem"; }
 			}
@@ -4784,7 +3362,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_topology_fix_MarkAsExceptionContextMenuItem {
 				 get { return "esri_editing_topology_fix_MarkAsExceptionContextMenuItem"; }
 			}
-			///<summary>Returns the id string for &quot;Mark as Error&quot; (TopologyMarkAsErrorCommand, Editing)</summary>
+			///<summary>Returns the id string for &quot;Clear Exception&quot; (TopologyMarkAsErrorCommand, Editing)</summary>
 			public static string esri_editing_topology_fix_MarkAsErrorContextMenuItem {
 				 get { return "esri_editing_topology_fix_MarkAsErrorContextMenuItem"; }
 			}
@@ -5203,6 +3781,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_editing_ShowTopologyComboCondition&quot; (Condition, Editing)</summary>
 			public static string esri_editing_ShowTopologyComboCondition {
 				 get { return "esri_editing_ShowTopologyComboCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_2DMapCondition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_2DMapCondition {
+				 get { return "esri_editing_2DMapCondition"; }
 			}
 			///<summary>Returns the id string for &quot;esri_editing_ShowEditFeatures&quot; (Condition, Editing)</summary>
 			public static string esri_editing_ShowEditFeatures {
@@ -5767,6 +4349,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_editing_UseTopology&quot; (State, Editing)</summary>
 			public static string esri_editing_UseTopology {
 				 get { return "esri_editing_UseTopology"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_NoGDBTopologyLayer&quot; (State, Editing)</summary>
+			public static string esri_editing_NoGDBTopologyLayer {
+				 get { return "esri_editing_NoGDBTopologyLayer"; }
 			}
 			///<summary>Returns the id string for &quot;esri_editing_UseGDBTopology&quot; (State, Editing)</summary>
 			public static string esri_editing_UseGDBTopology {
@@ -6754,7 +5340,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_modelbuilder_selectAllButton {
 				 get { return "esri_modelbuilder_selectAllButton"; }
 			}
-			///<summary>Returns the id string for &quot;Select All Items&quot; (esri_geoprocessing_module:Commands.SelectAllGroup, GeoProcessing)</summary>
+			///<summary>Returns the id string for &quot;Select All&quot; (esri_geoprocessing_module:Commands.SelectAllGroup, GeoProcessing)</summary>
 			public static string esri_modelbuilder_selectAllGroupButton {
 				 get { return "esri_modelbuilder_selectAllGroupButton"; }
 			}
@@ -6938,7 +5524,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_modelbuilder_dissolveGroup {
 				 get { return "esri_modelbuilder_dissolveGroup"; }
 			}
-			///<summary>Returns the id string for &quot;Rename Group&quot; (esri_geoprocessing_module:Commands.renameGroup, GeoProcessing)</summary>
+			///<summary>Returns the id string for &quot;Rename&quot; (esri_geoprocessing_module:Commands.renameGroup, GeoProcessing)</summary>
 			public static string esri_modelbuilder_renameGroup {
 				 get { return "esri_modelbuilder_renameGroup"; }
 			}
@@ -7376,6 +5962,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_modelbuilder_groupGroup {
 				 get { return "esri_modelbuilder_groupGroup"; }
 			}
+			///<summary>Returns the id string for &quot;Data Interoperability&quot; (Group, GeoProcessing)</summary>
+			public static string esri_geoprocessing_datainterop_group {
+				 get { return "esri_geoprocessing_datainterop_group"; }
+			}
 		}
 		public static partial class Category {
 			///<summary>Returns the id string for &quot;esri_gpGuidToControl&quot; (Category, GeoProcessing)</summary>
@@ -7749,154 +6339,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_modelbuilder_labelTextFontToolBar&quot; (Toolbar, GeoProcessing)</summary>
 			public static string esri_modelbuilder_labelTextFontToolBar {
 				 get { return "esri_modelbuilder_labelTextFontToolBar"; }
-			}
-		}
-		public static partial class Button {
-			///<summary>Returns the id string for &quot;To Points&quot; (esri_geostatistics:Commands.ExportToPoints, Geostatistics)</summary>
-			public static string esri_geostatisticsExport2PointsButton {
-				 get { return "esri_geostatisticsExport2PointsButton"; }
-			}
-			///<summary>Returns the id string for &quot;To Raster&quot; (esri_geostatistics:Commands.ExportToRaster, Geostatistics)</summary>
-			public static string esri_geostatisticsExport2RasterButton {
-				 get { return "esri_geostatisticsExport2RasterButton"; }
-			}
-			///<summary>Returns the id string for &quot;To Contours&quot; (esri_geostatistics:Commands.ExportToContours, Geostatistics)</summary>
-			public static string esri_geostatisticsExport2ContoursButton {
-				 get { return "esri_geostatisticsExport2ContoursButton"; }
-			}
-			///<summary>Returns the id string for &quot;To Polygons&quot; (esri_geostatistics:Commands.ExportToPolygons, Geostatistics)</summary>
-			public static string esri_geostatisticsExport2PolygonsButton {
-				 get { return "esri_geostatisticsExport2PolygonsButton"; }
-			}
-			///<summary>Returns the id string for &quot;Simulations&quot; (esri_geostatistics:Commands.RunSimulations, Geostatistics)</summary>
-			public static string esri_geostatisticsSimulationsButton {
-				 get { return "esri_geostatisticsSimulationsButton"; }
-			}
-			///<summary>Returns the id string for &quot;Symbology&quot; (esri_geostatistics:Commands.ShowSymbologyPane, Geostatistics)</summary>
-			public static string esri_geostatistics_ShowSymbologyPaneButton {
-				 get { return "esri_geostatistics_ShowSymbologyPaneButton"; }
-			}
-		}
-		public static partial class Checkbox {
-			///<summary>Returns the id string for &quot;Presentation&quot; (PresentationQuality, Geostatistics)</summary>
-			public static string esri_geostatistics_presentation_quality {
-				 get { return "esri_geostatistics_presentation_quality"; }
-			}
-		}
-		public static partial class Combobox {
-			///<summary>Returns the id string for &quot;Display Type&quot; (Views.RendererDisplayTypeCombo, Geostatistics)</summary>
-			public static string esri_geostatistics_renderer_display_type_cb {
-				 get { return "esri_geostatistics_renderer_display_type_cb"; }
-			}
-		}
-		public static partial class Group {
-			///<summary>Returns the id string for &quot;Export&quot; (Group, Geostatistics)</summary>
-			public static string esri_geostatistics_Geostat {
-				 get { return "esri_geostatistics_Geostat"; }
-			}
-			///<summary>Returns the id string for &quot;Quality&quot; (Group, Geostatistics)</summary>
-			public static string esri_geostatistics_Renderer {
-				 get { return "esri_geostatistics_Renderer"; }
-			}
-			///<summary>Returns the id string for &quot;Drawing&quot; (Group, Geostatistics)</summary>
-			public static string esri_geostatistics_Layer {
-				 get { return "esri_geostatistics_Layer"; }
-			}
-		}
-		public static partial class Component {
-			///<summary>Returns the id string for &quot;GeostatisticalAnalystLayer&quot; (GALayer, Geostatistics)</summary>
-			public static string GeostatisticalAnalystLayer {
-				 get { return "GeostatisticalAnalystLayer"; }
-			}
-		}
-		public static partial class Condition {
-			///<summary>Returns the id string for &quot;A geostatistical analyst layer is selected&quot; (Condition, Geostatistics)</summary>
-			public static string esri_geostatistics_gaLayerSelectedCondition {
-				 get { return "esri_geostatistics_gaLayerSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;A geostatistical analyst areal interpolation layer is selected&quot; (Condition, Geostatistics)</summary>
-			public static string esri_geostatistics_gaLayerArealSelectedCondition {
-				 get { return "esri_geostatistics_gaLayerArealSelectedCondition"; }
-			}
-		}
-		public static partial class Module {
-			///<summary>Returns the id string for &quot;Geostatistical Analyst&quot; (GAModule, Geostatistics)</summary>
-			public static string esri_geostatistics {
-				 get { return "esri_geostatistics"; }
-			}
-		}
-		public static partial class Product {
-			///<summary>Returns the id string for &quot;Geostatistical Analyst&quot; (Product, Geostatistics)</summary>
-			public static string esri_product_geostatistics {
-				 get { return "esri_product_geostatistics"; }
-			}
-		}
-		public static partial class Sheet {
-			///<summary>Returns the id string for &quot;GA Layer Properties&quot; (Sheet, Geostatistics)</summary>
-			public static string esri_geostatistics_gaLayerPropertySheet {
-				 get { return "esri_geostatistics_gaLayerPropertySheet"; }
-			}
-		}
-		public static partial class Menu {
-			///<summary>Returns the id string for &quot;Export Layer&quot; (Menu, Geostatistics)</summary>
-			public static string esri_geostatisticsExport_Menu {
-				 get { return "esri_geostatisticsExport_Menu"; }
-			}
-			///<summary>Returns the id string for &quot;esri_geostatistics_gaLayerContextMenu&quot; (Menu, Geostatistics)</summary>
-			public static string esri_geostatistics_gaLayerContextMenu {
-				 get { return "esri_geostatistics_gaLayerContextMenu"; }
-			}
-		}
-		public static partial class Page {
-			///<summary>Returns the id string for &quot;General&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.GeneralViewModel, Geostatistics)</summary>
-			public static string _esri_geostatistics_generalLayerPropertyPage {
-				 get { return "_esri_geostatistics_generalLayerPropertyPage"; }
-			}
-			///<summary>Returns the id string for &quot;Metadata&quot; (ArcGIS.Desktop.Internal.Mapping.CommonControls.DescriptionViewModel, Geostatistics)</summary>
-			public static string _mapping_descriptionPropertyPage {
-				 get { return "_mapping_descriptionPropertyPage"; }
-			}
-			///<summary>Returns the id string for &quot;Source&quot; (PropertyPages.SourceViewModel, Geostatistics)</summary>
-			public static string _geostatistics_gaLayerSourcePropertyPage {
-				 get { return "_geostatistics_gaLayerSourcePropertyPage"; }
-			}
-			///<summary>Returns the id string for &quot;Elevation&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.ElevationViewModel, Geostatistics)</summary>
-			public static string _esri_geostatistics_elevationPropertyPage {
-				 get { return "_esri_geostatistics_elevationPropertyPage"; }
-			}
-			///<summary>Returns the id string for &quot;Cache&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.CacheViewModel, Geostatistics)</summary>
-			public static string _esri_geostatistics_layerCachePropertyPage {
-				 get { return "_esri_geostatistics_layerCachePropertyPage"; }
-			}
-			///<summary>Returns the id string for &quot;Summary&quot; (PropertyPages.ReportViewModel, Geostatistics)</summary>
-			public static string _geostatistics_gaLayerSummaryPropertyPage {
-				 get { return "_geostatistics_gaLayerSummaryPropertyPage"; }
-			}
-		}
-		public static partial class State {
-			///<summary>Returns the id string for &quot;esri_geostatistics_gaLayerSelectedState&quot; (State, Geostatistics)</summary>
-			public static string esri_geostatistics_gaLayerSelectedState {
-				 get { return "esri_geostatistics_gaLayerSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_geostatistics_gaLayerArealSelectedState&quot; (State, Geostatistics)</summary>
-			public static string esri_geostatistics_gaLayerArealSelectedState {
-				 get { return "esri_geostatistics_gaLayerArealSelectedState"; }
-			}
-		}
-		public static partial class Tab {
-			///<summary>Returns the id string for &quot;APPEARANCE&quot; (Tab, Geostatistics)</summary>
-			public static string esri_geostatistics_gaLayerAppearanceTab {
-				 get { return "esri_geostatistics_gaLayerAppearanceTab"; }
-			}
-			///<summary>Returns the id string for &quot;DATA&quot; (Tab, Geostatistics)</summary>
-			public static string esri_geostatistics_gaLayerToolsTab {
-				 get { return "esri_geostatistics_gaLayerToolsTab"; }
-			}
-		}
-		public static partial class Tabgroup {
-			///<summary>Returns the id string for &quot;GEOSTATISTICAL LAYER&quot; (Tabgroup, Geostatistics)</summary>
-			public static string esri_geostatistics_gaLayerTabGroup {
-				 get { return "esri_geostatistics_gaLayerTabGroup"; }
 			}
 		}
 		public static partial class Button {
@@ -10338,10 +8780,6 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_animationTimelineButton {
 				 get { return "esri_mapping_animationTimelineButton"; }
 			}
-			///<summary>Returns the id string for &quot;Properties&quot; (esri_mapping:ShowAnimationKeyEditPane, Mapping)</summary>
-			public static string esri_mapping_animationKeyEditButton {
-				 get { return "esri_mapping_animationKeyEditButton"; }
-			}
 			///<summary>Returns the id string for &quot;Extruded Path and Keyframes&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.KeyExtrudedPathFeedbackButton, Mapping)</summary>
 			public static string esri_mapping_extrudedPathFeedbackButton {
 				 get { return "esri_mapping_extrudedPathFeedbackButton"; }
@@ -10810,7 +9248,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_infographicSettingsButton {
 				 get { return "esri_mapping_infographicSettingsButton"; }
 			}
-			///<summary>Returns the id string for &quot;Move to node&quot; (esri_mapping:LookAtKMLFeature, Mapping)</summary>
+			///<summary>Returns the id string for &quot;Go to camera position&quot; (esri_mapping:LookAtKMLFeature, Mapping)</summary>
 			public static string esri_mapping_moveToKMLNode {
 				 get { return "esri_mapping_moveToKMLNode"; }
 			}
@@ -10837,10 +9275,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Refresh&quot; (esri_mapping:RefreshKMLLayer, Mapping)</summary>
 			public static string esri_mapping_refreshKMLLayerButton {
 				 get { return "esri_mapping_refreshKMLLayerButton"; }
-			}
-			///<summary>Returns the id string for &quot;Zoom to node&quot; (esri_mapping:ZoomToSelectedLayers, Mapping)</summary>
-			public static string esri_mapping_zoomToSelectedKMLLayer {
-				 get { return "esri_mapping_zoomToSelectedKMLLayer"; }
 			}
 		}
 		public static partial class Buttonpalette {
@@ -11401,10 +9835,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Edit&quot; (Group, Mapping)</summary>
 			public static string esri_mapping_animationKeyframe {
 				 get { return "esri_mapping_animationKeyframe"; }
-			}
-			///<summary>Returns the id string for &quot;Advanced&quot; (Group, Mapping)</summary>
-			public static string esri_mapping_animationTools {
-				 get { return "esri_mapping_animationTools"; }
 			}
 			///<summary>Returns the id string for &quot;Playback&quot; (Group, Mapping)</summary>
 			public static string esri_mapping_animationPlayback {
@@ -12172,6 +10602,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_RasterHasSensorModelCondition {
 				 get { return "esri_mapping_RasterHasSensorModelCondition"; }
 			}
+			///<summary>Returns the id string for &quot;esri_mapping_imageServiceLayerDownloadEnabledCondition&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_imageServiceLayerDownloadEnabledCondition {
+				 get { return "esri_mapping_imageServiceLayerDownloadEnabledCondition"; }
+			}
 			///<summary>Returns the id string for &quot;esri_mapping_rasterLayerStretchTypeApplicableCondition&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_rasterLayerStretchTypeApplicableCondition {
 				 get { return "esri_mapping_rasterLayerStretchTypeApplicableCondition"; }
@@ -12610,11 +11044,27 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_locatecandidate_menu {
 				 get { return "esri_mapping_locatecandidate_menu"; }
 			}
+			///<summary>Returns the id string for &quot;Locate Candidate&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_layercandidate_menu {
+				 get { return "esri_mapping_layercandidate_menu"; }
+			}
 		}
 		public static partial class Page {
+			///<summary>Returns the id string for &quot;General&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.GeneralViewModel, Mapping)</summary>
+			public static string esri_mapping_generalLayerPropertyPage {
+				 get { return "esri_mapping_generalLayerPropertyPage"; }
+			}
 			///<summary>Returns the id string for &quot;Metadata&quot; (ArcGIS.Desktop.Internal.Mapping.CommonControls.DescriptionViewModel, Mapping)</summary>
 			public static string esri_mapping_descriptionPropertyPage {
 				 get { return "esri_mapping_descriptionPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Source&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.SourceViewModel, Mapping)</summary>
+			public static string esri_mapping_layerSourcePropertyPage {
+				 get { return "esri_mapping_layerSourcePropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Elevation&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.ElevationViewModel, Mapping)</summary>
+			public static string esri_mapping_layerElevationPropertyPage {
+				 get { return "esri_mapping_layerElevationPropertyPage"; }
 			}
 			///<summary>Returns the id string for &quot;Selection&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.SelectionViewModel, Mapping)</summary>
 			public static string esri_mapping_layerSelectionPropertyPage {
@@ -12623,6 +11073,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Display&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.DisplayViewModel, Mapping)</summary>
 			public static string esri_mapping_layerDisplayPropertyPage {
 				 get { return "esri_mapping_layerDisplayPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Cache&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.CacheViewModel, Mapping)</summary>
+			public static string esri_mapping_layerCachePropertyPage {
+				 get { return "esri_mapping_layerCachePropertyPage"; }
 			}
 			///<summary>Returns the id string for &quot;Definition Query&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.DefinitionQueryViewModel, Mapping)</summary>
 			public static string esri_mapping_layerDefintionQueryPage {
@@ -12908,6 +11362,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_groupLayerSelectedState {
 				 get { return "esri_mapping_groupLayerSelectedState"; }
 			}
+			///<summary>Returns the id string for &quot;esri_mapping_singleTOCItemSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_singleTOCItemSelectedState {
+				 get { return "esri_mapping_singleTOCItemSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_featureLayerSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_featureLayerSelectedState {
+				 get { return "esri_mapping_featureLayerSelectedState"; }
+			}
 			///<summary>Returns the id string for &quot;esri_mapping_annotationLayerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_annotationLayerSelectedState {
 				 get { return "esri_mapping_annotationLayerSelectedState"; }
@@ -12964,6 +11426,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_FeatureServiceTableSelectedState {
 				 get { return "esri_mapping_FeatureServiceTableSelectedState"; }
 			}
+			///<summary>Returns the id string for &quot;esri_mapping_standaloneTableSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_standaloneTableSelectedState {
+				 get { return "esri_mapping_standaloneTableSelectedState"; }
+			}
 			///<summary>Returns the id string for &quot;esri_mapping_RemoveLayerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_RemoveLayerSelectedState {
 				 get { return "esri_mapping_RemoveLayerSelectedState"; }
@@ -13000,9 +11466,17 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_allOidTablesSelectedState {
 				 get { return "esri_mapping_allOidTablesSelectedState"; }
 			}
+			///<summary>Returns the id string for &quot;esri_mapping_validMapMemberSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_validMapMemberSelectedState {
+				 get { return "esri_mapping_validMapMemberSelectedState"; }
+			}
 			///<summary>Returns the id string for &quot;esri_mapping_legendClassSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_legendClassSelectedState {
 				 get { return "esri_mapping_legendClassSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_mapViewingMode2DState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_mapViewingMode2DState {
+				 get { return "esri_mapping_mapViewingMode2DState"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_mapViewingMode3DPerspectiveState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_mapViewingMode3DPerspectiveState {
@@ -13148,6 +11622,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_mapTypeNetworkDiagramState {
 				 get { return "esri_mapping_mapTypeNetworkDiagramState"; }
 			}
+			///<summary>Returns the id string for &quot;esri_mapping_mosaicLayerSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_mosaicLayerSelectedState {
+				 get { return "esri_mapping_mosaicLayerSelectedState"; }
+			}
 			///<summary>Returns the id string for &quot;esri_mapping_imageServiceLayerWithTableSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_imageServiceLayerWithTableSelectedState {
 				 get { return "esri_mapping_imageServiceLayerWithTableSelectedState"; }
@@ -13159,6 +11637,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_mapping_KMLLayerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_KMLLayerSelectedState {
 				 get { return "esri_mapping_KMLLayerSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_sameLayersSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_sameLayersSelectedState {
+				 get { return "esri_mapping_sameLayersSelectedState"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_TOCLabelingViewSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_TOCLabelingViewSelectedState {
@@ -13192,9 +11674,17 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_netcdfRasterDataConnectionSelectedState {
 				 get { return "esri_mapping_netcdfRasterDataConnectionSelectedState"; }
 			}
+			///<summary>Returns the id string for &quot;esri_mapping_imageServiceLayerSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_imageServiceLayerSelectedState {
+				 get { return "esri_mapping_imageServiceLayerSelectedState"; }
+			}
 			///<summary>Returns the id string for &quot;esri_mapping_cachedImageServiceLayerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_cachedImageServiceLayerSelectedState {
 				 get { return "esri_mapping_cachedImageServiceLayerSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_rasterLayerSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_rasterLayerSelectedState {
+				 get { return "esri_mapping_rasterLayerSelectedState"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_rasterSymbologyPaneVisibility&quot; (State, Mapping)</summary>
 			public static string esri_mapping_rasterSymbologyPaneVisibility {
@@ -13203,6 +11693,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_mapping_rasterHasSensorModelState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_rasterHasSensorModelState {
 				 get { return "esri_mapping_rasterHasSensorModelState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_imageServiceLayerDownloadEnabledState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_imageServiceLayerDownloadEnabledState {
+				 get { return "esri_mapping_imageServiceLayerDownloadEnabledState"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_rasterLayerStretchTypeState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_rasterLayerStretchTypeState {
@@ -13227,6 +11721,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_mapping_simpleLayerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_simpleLayerSelectedState {
 				 get { return "esri_mapping_simpleLayerSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_geostatistics_gaLayerSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_geostatistics_gaLayerSelectedState {
+				 get { return "esri_geostatistics_gaLayerSelectedState"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_activeMapView_hasFeatureSelectionState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_activeMapView_hasFeatureSelectionState {
@@ -13466,7 +11964,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_selectLasPointsByRectangleTool {
 				 get { return "esri_mapping_selectLasPointsByRectangleTool"; }
 			}
-			///<summary>Returns the id string for &quot;Polygon&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.SelecLasPointstByPolygonTool, Mapping)</summary>
+			///<summary>Returns the id string for &quot;Polygon&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.SelectLasPointsByPolygonTool, Mapping)</summary>
 			public static string esri_mapping_selectLasPointsByPolygonTool {
 				 get { return "esri_mapping_selectLasPointsByPolygonTool"; }
 			}
@@ -13581,1716 +12079,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Measure&quot; (Toolpalette, Mapping)</summary>
 			public static string esri_mapping_measureToolPalette {
 				 get { return "esri_mapping_measureToolPalette"; }
-			}
-		}
-		public static partial class Button {
-			///<summary>Returns the id string for &quot;Close&quot; (esri_metadata_module:OnMetadataEditCancel, Metadata)</summary>
-			public static string esri_metadata_cancel {
-				 get { return "esri_metadata_cancel"; }
-			}
-			///<summary>Returns the id string for &quot;Save&quot; (MetadataSaveCmd, Metadata)</summary>
-			public static string esri_metadata_save {
-				 get { return "esri_metadata_save"; }
-			}
-			///<summary>Returns the id string for &quot;Apply&quot; (MetadataApplyCmd, Metadata)</summary>
-			public static string esri_metadata_apply {
-				 get { return "esri_metadata_apply"; }
-			}
-			///<summary>Returns the id string for &quot;Edit&quot; (esri_metadata_module:OnMetadataEdit, Metadata)</summary>
-			public static string esri_metadata_edit {
-				 get { return "esri_metadata_edit"; }
-			}
-		}
-		public static partial class Group {
-			///<summary>Returns the id string for &quot;&quot; (Group, Metadata)</summary>
-			public static string esri_metadata_metadataEditingGroup {
-				 get { return "esri_metadata_metadataEditingGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Clipboard&quot; (Group, Metadata)</summary>
-			public static string esri_metadata_clipboardGroup {
-				 get { return "esri_metadata_clipboardGroup"; }
-			}
-		}
-		public static partial class Condition {
-			///<summary>Returns the id string for &quot;No panes active&quot; (Condition, Metadata)</summary>
-			public static string esri_metadata_metadataEditingPane {
-				 get { return "esri_metadata_metadataEditingPane"; }
-			}
-			///<summary>Returns the id string for &quot;No panes active&quot; (Condition, Metadata)</summary>
-			public static string esri_metadata_editMetadata {
-				 get { return "esri_metadata_editMetadata"; }
-			}
-			///<summary>Returns the id string for &quot;No panes active&quot; (Condition, Metadata)</summary>
-			public static string esri_metadata_printMetadata {
-				 get { return "esri_metadata_printMetadata"; }
-			}
-		}
-		public static partial class Group {
-			///<summary>Returns the id string for &quot;Metadata&quot; (Group, Metadata)</summary>
-			public static string esri_metadata_metadataViewGroup {
-				 get { return "esri_metadata_metadataViewGroup"; }
-			}
-		}
-		public static partial class Module {
-			///<summary>Returns the id string for &quot;esri_metadata_module&quot; (MetadataModule, Metadata)</summary>
-			public static string esri_metadata_module {
-				 get { return "esri_metadata_module"; }
-			}
-		}
-		public static partial class Page {
-			///<summary>Returns the id string for &quot;Metadata&quot; (MetadataOptionsViewModel, Metadata)</summary>
-			public static string esri_metadata_MetadataOptionsPropertyPage {
-				 get { return "esri_metadata_MetadataOptionsPropertyPage"; }
-			}
-		}
-		public static partial class State {
-			///<summary>Returns the id string for &quot;esri_metadata_hasMetadata&quot; (State, Metadata)</summary>
-			public static string esri_metadata_hasMetadata {
-				 get { return "esri_metadata_hasMetadata"; }
-			}
-			///<summary>Returns the id string for &quot;esri_core_projectView_details&quot; (State, Metadata)</summary>
-			public static string esri_core_projectView_details {
-				 get { return "esri_core_projectView_details"; }
-			}
-		}
-		public static partial class Tab {
-			///<summary>Returns the id string for &quot;METADATA&quot; (Tab, Metadata)</summary>
-			public static string esri_metadata_metadataTab {
-				 get { return "esri_metadata_metadataTab"; }
-			}
-		}
-		public static partial class Button {
-			///<summary>Returns the id string for &quot;Validate&quot; (esri_networkanalysis_facility_module:BuildAsyncCurrentExtent, Facility)</summary>
-			public static string esri_networkanalysis_validate_BuildTools_Btn {
-				 get { return "esri_networkanalysis_validate_BuildTools_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Modify&quot; (esri_networkanalysis_facility_module:ShowModifyAssociationsWindow, Facility)</summary>
-			public static string esri_networkanalysis_ShowModifyAssociationsBtn {
-				 get { return "esri_networkanalysis_ShowModifyAssociationsBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Modify Source&quot; (esri_networkanalysis_facility_module:ShowModifySourceWindow, Facility)</summary>
-			public static string esri_networkanalysis_facility_ShowModifySourceBtn {
-				 get { return "esri_networkanalysis_facility_ShowModifySourceBtn"; }
-			}
-			///<summary>Returns the id string for &quot;View&quot; (ArcGIS.Desktop.NetworkAnalysis.Facility.Tools.ViewCircuitSourcesButton, Facility)</summary>
-			public static string esri_networkanalysis_facility_ViewCircuitSources_Btn {
-				 get { return "esri_networkanalysis_facility_ViewCircuitSources_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Container View&quot; (ArcGIS.Desktop.NetworkAnalysis.Facility.Tools.ContainmentViewTool, Facility)</summary>
-			public static string esri_networkanalysis_facility_Containment_Btn {
-				 get { return "esri_networkanalysis_facility_Containment_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Navigate to this feature&quot; (Tools.NavigateToNetworkElement, Facility)</summary>
-			public static string esri_networkanalysis_facility_NavigateTo_NetworkElement {
-				 get { return "esri_networkanalysis_facility_NavigateTo_NetworkElement"; }
-			}
-			///<summary>Returns the id string for &quot;Pan&quot; (Tools.PanToNetworkElement, Facility)</summary>
-			public static string esri_networkanalysis_facility_PanTo_NetworkElement {
-				 get { return "esri_networkanalysis_facility_PanTo_NetworkElement"; }
-			}
-			///<summary>Returns the id string for &quot;Zoom&quot; (Tools.ZoomToNetworkElement, Facility)</summary>
-			public static string esri_networkanalysis_facility_ZoomTo_NetworkElement {
-				 get { return "esri_networkanalysis_facility_ZoomTo_NetworkElement"; }
-			}
-			///<summary>Returns the id string for &quot;Flash feature&quot; (Tools.FlashNetworkElement, Facility)</summary>
-			public static string esri_networkanalysis_facility_Flash_NetworkElement {
-				 get { return "esri_networkanalysis_facility_Flash_NetworkElement"; }
-			}
-			///<summary>Returns the id string for &quot;Select feature&quot; (Tools.SelectNetworkElement, Facility)</summary>
-			public static string esri_networkanalysis_facility_Select_NetworkElement {
-				 get { return "esri_networkanalysis_facility_Select_NetworkElement"; }
-			}
-			///<summary>Returns the id string for &quot;Select all&quot; (Tools.SelectAllNetworkElements, Facility)</summary>
-			public static string esri_networkanalysis_facility_Select_AllNetworkElements {
-				 get { return "esri_networkanalysis_facility_Select_AllNetworkElements"; }
-			}
-			///<summary>Returns the id string for &quot;Starting Points&quot; (esri_networkanalysis_facility_module:ShowModifyStartingPointsWindow, Facility)</summary>
-			public static string esri_networkanalysis_trace_ShowSetStartingPointsBtn {
-				 get { return "esri_networkanalysis_trace_ShowSetStartingPointsBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Barriers&quot; (esri_networkanalysis_facility_module:ShowModifyBarriersWindow, Facility)</summary>
-			public static string esri_networkanalysis_trace_ShowSetBarriersBtn {
-				 get { return "esri_networkanalysis_trace_ShowSetBarriersBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Apply To Maps&quot; (Tools.PropagateSelectionButton, Facility)</summary>
-			public static string esri_networkanalysis_facility_ApplySelection_Btn {
-				 get { return "esri_networkanalysis_facility_ApplySelection_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Clear&quot; (esri_mapping:ClearSelection, Facility)</summary>
-			public static string esri_networkanalysis_facility_ClearSelectionButton {
-				 get { return "esri_networkanalysis_facility_ClearSelectionButton"; }
-			}
-			///<summary>Returns the id string for &quot;Starting Points&quot; (esri_networkanalysis_facility_module:ClearStartingPoints, Facility)</summary>
-			public static string esri_networkanalysis_facility_ClearStartingLocationsButton {
-				 get { return "esri_networkanalysis_facility_ClearStartingLocationsButton"; }
-			}
-			///<summary>Returns the id string for &quot;Barriers&quot; (esri_networkanalysis_facility_module:ClearBarriers, Facility)</summary>
-			public static string esri_networkanalysis_facility_ClearBarriersButton {
-				 get { return "esri_networkanalysis_facility_ClearBarriersButton"; }
-			}
-			///<summary>Returns the id string for &quot;All&quot; (esri_networkanalysis_facility_module:ClearAll, Facility)</summary>
-			public static string esri_networkanalysis_facility_ClearAllButton {
-				 get { return "esri_networkanalysis_facility_ClearAllButton"; }
-			}
-		}
-		public static partial class Buttonpalette {
-			///<summary>Returns the id string for &quot;Cross Section&quot; (Buttonpalette, Facility)</summary>
-			public static string esri_networkanalysis_facility_CrossSection_BtnPalette {
-				 get { return "esri_networkanalysis_facility_CrossSection_BtnPalette"; }
-			}
-		}
-		public static partial class Dockpane {
-			///<summary>Returns the id string for &quot;Feature Properties&quot; (ViewModels.ConnectivityInfoPaneViewModel, Facility)</summary>
-			public static string esri_networkanalysis_facility_ConnectivityInfo_Pane {
-				 get { return "esri_networkanalysis_facility_ConnectivityInfo_Pane"; }
-			}
-			///<summary>Returns the id string for &quot;Modify Associations&quot; (ModifyAssociationsViewModel, Facility)</summary>
-			public static string esri_networkanalysis_facility_ModifyAssociationsPane {
-				 get { return "esri_networkanalysis_facility_ModifyAssociationsPane"; }
-			}
-			///<summary>Returns the id string for &quot;Trace Locations&quot; (ModifyStartingPointsAndBarriersViewModel, Facility)</summary>
-			public static string esri_networkanalysis_facility_ModifyStartingPointsAndBarriersPane {
-				 get { return "esri_networkanalysis_facility_ModifyStartingPointsAndBarriersPane"; }
-			}
-			///<summary>Returns the id string for &quot;Modify Subnetwork Source&quot; (ModifySourceViewModel, Facility)</summary>
-			public static string esri_networkanalysis_facility_ModifySourcePane {
-				 get { return "esri_networkanalysis_facility_ModifySourcePane"; }
-			}
-		}
-		public static partial class Gallery {
-			///<summary>Returns the id string for &quot;Utility Network Tool Gallery&quot; (Ribbon.ToolsGalleryViewModel, Facility)</summary>
-			public static string esri_networkanalysis_facility_ToolsGallery {
-				 get { return "esri_networkanalysis_facility_ToolsGallery"; }
-			}
-			///<summary>Returns the id string for &quot;Propagate Selection Gallery&quot; (Ribbon.NetworkToNetworkGalleryViewModel, Facility)</summary>
-			public static string esri_networkanalysis_facility_ApplySelectionGallery {
-				 get { return "esri_networkanalysis_facility_ApplySelectionGallery"; }
-			}
-			///<summary>Returns the id string for &quot;Container View&quot; (Ribbon.ContainerViewGallery, Facility)</summary>
-			public static string esri_networkanalysis_facility_ContainmentViewGallery {
-				 get { return "esri_networkanalysis_facility_ContainmentViewGallery"; }
-			}
-		}
-		public static partial class Group {
-			///<summary>Returns the id string for &quot;Navigate&quot; (Group, Facility)</summary>
-			public static string esri_networkanalysis_facility_Navigate_Group {
-				 get { return "esri_networkanalysis_facility_Navigate_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Tools&quot; (Group, Facility)</summary>
-			public static string esri_networkanalysis_facility_Tools_Group {
-				 get { return "esri_networkanalysis_facility_Tools_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Network Topology&quot; (Group, Facility)</summary>
-			public static string esri_networkanalysis_facility_Validate_Group {
-				 get { return "esri_networkanalysis_facility_Validate_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Associations&quot; (Group, Facility)</summary>
-			public static string esri_networkanalysis_facility_Associations_Group {
-				 get { return "esri_networkanalysis_facility_Associations_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Subnetwork&quot; (Group, Facility)</summary>
-			public static string esri_networkanalysis_facility_SourceManagement_Group {
-				 get { return "esri_networkanalysis_facility_SourceManagement_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Tools&quot; (Group, Facility)</summary>
-			public static string esri_networkanalysis_trace_Create_Group {
-				 get { return "esri_networkanalysis_trace_Create_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Traces&quot; (Group, Facility)</summary>
-			public static string esri_networkanalysis_trace_Create_Gas_Group {
-				 get { return "esri_networkanalysis_trace_Create_Gas_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Traces&quot; (Group, Facility)</summary>
-			public static string esri_networkanalysis_trace_Create_Water_Group {
-				 get { return "esri_networkanalysis_trace_Create_Water_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Phase&quot; (Group, Facility)</summary>
-			public static string esri_networkanalysis_trace_Phase_Group {
-				 get { return "esri_networkanalysis_trace_Phase_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Life Cycle Status&quot; (Group, Facility)</summary>
-			public static string esri_networkanalysis_trace_LifeCycleStatus_Group {
-				 get { return "esri_networkanalysis_trace_LifeCycleStatus_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Additional Options&quot; (Group, Facility)</summary>
-			public static string esri_networkanalysis_trace_AdditionalOptions_Electric_Group {
-				 get { return "esri_networkanalysis_trace_AdditionalOptions_Electric_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Additional Options&quot; (Group, Facility)</summary>
-			public static string esri_networkanalysis_trace_AdditionalOptions_Gas_Group {
-				 get { return "esri_networkanalysis_trace_AdditionalOptions_Gas_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Additional Options&quot; (Group, Facility)</summary>
-			public static string esri_networkanalysis_trace_AdditionalOptions_Telecom_Group {
-				 get { return "esri_networkanalysis_trace_AdditionalOptions_Telecom_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Additional Options&quot; (Group, Facility)</summary>
-			public static string esri_networkanalysis_trace_AdditionalOptions_Water_Group {
-				 get { return "esri_networkanalysis_trace_AdditionalOptions_Water_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Selection&quot; (Group, Facility)</summary>
-			public static string esri_networkanalysis_facility_Selection_Group {
-				 get { return "esri_networkanalysis_facility_Selection_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Trace Locations&quot; (Group, Facility)</summary>
-			public static string esri_networkanalysis_trace_StartingLocationsAndBarriers_Group {
-				 get { return "esri_networkanalysis_trace_StartingLocationsAndBarriers_Group"; }
-			}
-		}
-		public static partial class Component {
-			///<summary>Returns the id string for &quot;esri_mapping_containmentView&quot; (ArcGIS.Desktop.NetworkAnalysis.Facility.ContainmentView, Facility)</summary>
-			public static string esri_mapping_containmentView {
-				 get { return "esri_mapping_containmentView"; }
-			}
-		}
-		public static partial class Condition {
-			///<summary>Returns the id string for &quot;Geographic map is active and fn layer is selected&quot; (Condition, Facility)</summary>
-			public static string esri_networkanalysis_facility_ModifyAssociations_Condition {
-				 get { return "esri_networkanalysis_facility_ModifyAssociations_Condition"; }
-			}
-			///<summary>Returns the id string for &quot;Geographic map is active and fn layer is selected&quot; (Condition, Facility)</summary>
-			public static string esri_networkanalysis_facility_ConnectivityInfoTool_Condition {
-				 get { return "esri_networkanalysis_facility_ConnectivityInfoTool_Condition"; }
-			}
-			///<summary>Returns the id string for &quot;Utility network layer is active and a selection exists&quot; (Condition, Facility)</summary>
-			public static string esri_networkanalysis_facility_OpenContainer_Condition {
-				 get { return "esri_networkanalysis_facility_OpenContainer_Condition"; }
-			}
-			///<summary>Returns the id string for &quot;Containment map is active and a selection exists&quot; (Condition, Facility)</summary>
-			public static string esri_networkanalysis_facility_EditContainerContent_Condition {
-				 get { return "esri_networkanalysis_facility_EditContainerContent_Condition"; }
-			}
-			///<summary>Returns the id string for &quot;Not yet implemented&quot; (Condition, Facility)</summary>
-			public static string esri_networkanalysis_facility_Implemented_Condition {
-				 get { return "esri_networkanalysis_facility_Implemented_Condition"; }
-			}
-			///<summary>Returns the id string for &quot;Utility network layer is active and a selection exists&quot; (Condition, Facility)</summary>
-			public static string esri_networkanalysis_facility_PropagateSelection_Condition {
-				 get { return "esri_networkanalysis_facility_PropagateSelection_Condition"; }
-			}
-		}
-		public static partial class Module {
-			///<summary>Returns the id string for &quot;Utility Network&quot; (NetworkAnalysisFacilityModule, Facility)</summary>
-			public static string esri_networkanalysis_facility_module {
-				 get { return "esri_networkanalysis_facility_module"; }
-			}
-		}
-		public static partial class Menu {
-			///<summary>Returns the id string for &quot;Utility Network connectivity info menu&quot; (Menu, Facility)</summary>
-			public static string esri_networkanalysis_facility_ConnectivityInfo_RootContextMenu {
-				 get { return "esri_networkanalysis_facility_ConnectivityInfo_RootContextMenu"; }
-			}
-			///<summary>Returns the id string for &quot;Utility Network connectivity info menu&quot; (Menu, Facility)</summary>
-			public static string esri_networkanalysis_facility_ConnectivityInfo_ContextMenu {
-				 get { return "esri_networkanalysis_facility_ConnectivityInfo_ContextMenu"; }
-			}
-		}
-		public static partial class Splitbutton {
-			///<summary>Returns the id string for &quot;esri_networkanalysis_facility_ApplySelectionSplitButton&quot; (Splitbutton, Facility)</summary>
-			public static string esri_networkanalysis_facility_ApplySelectionSplitButton {
-				 get { return "esri_networkanalysis_facility_ApplySelectionSplitButton"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkanalysis_facility_ContainmentViewSplitButton&quot; (Splitbutton, Facility)</summary>
-			public static string esri_networkanalysis_facility_ContainmentViewSplitButton {
-				 get { return "esri_networkanalysis_facility_ContainmentViewSplitButton"; }
-			}
-		}
-		public static partial class State {
-			///<summary>Returns the id string for &quot;esri_networkanalysis_facility_comingSoonState&quot; (State, Facility)</summary>
-			public static string esri_networkanalysis_facility_comingSoonState {
-				 get { return "esri_networkanalysis_facility_comingSoonState"; }
-			}
-		}
-		public static partial class Tab {
-			///<summary>Returns the id string for &quot;DATA&quot; (Tab, Facility)</summary>
-			public static string esri_networkanalysis_utility_Data_Tab {
-				 get { return "esri_networkanalysis_utility_Data_Tab"; }
-			}
-		}
-		public static partial class Tabgroup {
-			///<summary>Returns the id string for &quot;UTILITY NETWORK&quot; (Tabgroup, Facility)</summary>
-			public static string esri_networkanalysis_utility_TabGroup {
-				 get { return "esri_networkanalysis_utility_TabGroup"; }
-			}
-		}
-		public static partial class Tool {
-			///<summary>Returns the id string for &quot;Select junctions&quot; (Tools.SelectConnectionsTool, Facility)</summary>
-			public static string esri_networkanalysis_utility_associations_SelectConnectionsTool {
-				 get { return "esri_networkanalysis_utility_associations_SelectConnectionsTool"; }
-			}
-			///<summary>Returns the id string for &quot;Select junctions&quot; (Tools.SelectChildConnectionsTool, Facility)</summary>
-			public static string esri_networkanalysis_utility_associations_SelectChildConnectionsTool {
-				 get { return "esri_networkanalysis_utility_associations_SelectChildConnectionsTool"; }
-			}
-			///<summary>Returns the id string for &quot;Select containers&quot; (Tools.SelectContainersTool, Facility)</summary>
-			public static string esri_networkanalysis_utility_associations_SelectContainersTool {
-				 get { return "esri_networkanalysis_utility_associations_SelectContainersTool"; }
-			}
-			///<summary>Returns the id string for &quot;Select content&quot; (Tools.SelectContentTool, Facility)</summary>
-			public static string esri_networkanalysis_utility_associations_SelectContentTool {
-				 get { return "esri_networkanalysis_utility_associations_SelectContentTool"; }
-			}
-			///<summary>Returns the id string for &quot;Select structures&quot; (Tools.SelectStructuresTool, Facility)</summary>
-			public static string esri_networkanalysis_utility_associations_SelectStructuresTool {
-				 get { return "esri_networkanalysis_utility_associations_SelectStructuresTool"; }
-			}
-			///<summary>Returns the id string for &quot;Select attachments&quot; (Tools.SelectAttachmentsTool, Facility)</summary>
-			public static string esri_networkanalysis_utility_associations_SelectAttachmentsTool {
-				 get { return "esri_networkanalysis_utility_associations_SelectAttachmentsTool"; }
-			}
-			///<summary>Returns the id string for &quot;Select attachments&quot; (Tools.SelectSourceFeatureTool, Facility)</summary>
-			public static string esri_networkanalysis_utility_associations_SelectSourceFeatureTool {
-				 get { return "esri_networkanalysis_utility_associations_SelectSourceFeatureTool"; }
-			}
-			///<summary>Returns the id string for &quot;Feature Properties&quot; (Tools.ConnectivityInfoTool, Facility)</summary>
-			public static string esri_networkanalysis_utility_featurePropertiesTool {
-				 get { return "esri_networkanalysis_utility_featurePropertiesTool"; }
-			}
-			///<summary>Returns the id string for &quot;Select starting points&quot; (Tools.SelectStartingPointsTool, Facility)</summary>
-			public static string esri_networkanalysis_trace_SelectStartingPointsTool {
-				 get { return "esri_networkanalysis_trace_SelectStartingPointsTool"; }
-			}
-			///<summary>Returns the id string for &quot;Select barriers&quot; (Tools.SelectBarriersTool, Facility)</summary>
-			public static string esri_networkanalysis_trace_SelectBarriersTool {
-				 get { return "esri_networkanalysis_trace_SelectBarriersTool"; }
-			}
-			///<summary>Returns the id string for &quot;Set Starting Points&quot; (Tools.TracingStartingLocationsTool, Facility)</summary>
-			public static string esri_networkanalysis_trace_StartingLocationsTool {
-				 get { return "esri_networkanalysis_trace_StartingLocationsTool"; }
-			}
-			///<summary>Returns the id string for &quot;Point&quot; (Tools.TracingPointBarriersTool, Facility)</summary>
-			public static string esri_networkanalysis_trace_PointBarriersTool {
-				 get { return "esri_networkanalysis_trace_PointBarriersTool"; }
-			}
-			///<summary>Returns the id string for &quot;Line&quot; (Tools.TracingLineBarriersTool, Facility)</summary>
-			public static string esri_networkanalysis_trace_LineBarriersTool {
-				 get { return "esri_networkanalysis_trace_LineBarriersTool"; }
-			}
-			///<summary>Returns the id string for &quot;Polygon&quot; (Tools.TracingPolygonBarriersTool, Facility)</summary>
-			public static string esri_networkanalysis_trace_PolygonBarriersTool {
-				 get { return "esri_networkanalysis_trace_PolygonBarriersTool"; }
-			}
-		}
-		public static partial class Toolpalette {
-			///<summary>Returns the id string for &quot;esri_networkanalysis_trace_TraceTools_BtnPalette&quot; (Toolpalette, Facility)</summary>
-			public static string esri_networkanalysis_trace_TraceTools_BtnPalette {
-				 get { return "esri_networkanalysis_trace_TraceTools_BtnPalette"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkanalysis_trace_TraceTools_Gas_BtnPalette&quot; (Toolpalette, Facility)</summary>
-			public static string esri_networkanalysis_trace_TraceTools_Gas_BtnPalette {
-				 get { return "esri_networkanalysis_trace_TraceTools_Gas_BtnPalette"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkanalysis_trace_TraceTools_Water_BtnPalette&quot; (Toolpalette, Facility)</summary>
-			public static string esri_networkanalysis_trace_TraceTools_Water_BtnPalette {
-				 get { return "esri_networkanalysis_trace_TraceTools_Water_BtnPalette"; }
-			}
-			///<summary>Returns the id string for &quot;Set Barriers&quot; (Toolpalette, Facility)</summary>
-			public static string esri_networkanalysis_facility_BarriersBtnPalette {
-				 get { return "esri_networkanalysis_facility_BarriersBtnPalette"; }
-			}
-			///<summary>Returns the id string for &quot;Clear&quot; (Toolpalette, Facility)</summary>
-			public static string esri_networkanalysis_facility_ClearBtnPalette {
-				 get { return "esri_networkanalysis_facility_ClearBtnPalette"; }
-			}
-			///<summary>Returns the id string for &quot;Trace Locations&quot; (Toolpalette, Facility)</summary>
-			public static string esri_networkanalysis_facility_SetTracingLocationsBtnPalette {
-				 get { return "esri_networkanalysis_facility_SetTracingLocationsBtnPalette"; }
-			}
-		}
-		public static partial class Button {
-			///<summary>Returns the id string for &quot;Travel Mode&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.LayerNDSTravelModePageLauncherButton, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_openLayerTravelModePageButton {
-				 get { return "esri_networkanalysis_transportation_openLayerTravelModePageButton"; }
-			}
-			///<summary>Returns the id string for &quot;Results&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.SolveAnalysisTaskGroupLauncherButton, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_General_Analysis_Group_Launcher_Btn {
-				 get { return "esri_networkanalysis_transportation_General_Analysis_Group_Launcher_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Run&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.SolveAnalysisTaskGroupRunButton, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_Analysis_SolveTask_Run_Btn {
-				 get { return "esri_networkanalysis_transportation_Analysis_SolveTask_Run_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Import Point Barriers&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.LoadLocationsPointBarriersButton, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_InputData_Barriers_Point_Import_Btn {
-				 get { return "esri_networkanalysis_transportation_InputData_Barriers_Point_Import_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Import Line Barriers&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.LoadLocationsPolylineBarriersButton, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_InputData_Barriers_Polyline_Import_Btn {
-				 get { return "esri_networkanalysis_transportation_InputData_Barriers_Polyline_Import_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Import Polygon Barriers&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.LoadLocationsPolygonBarriersButton, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_InputData_Barriers_Polygon_Import_Btn {
-				 get { return "esri_networkanalysis_transportation_InputData_Barriers_Polygon_Import_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Import Facilities&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.LoadLocationsFacilitiesButton, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_InputData_Facilities_Import_Btn {
-				 get { return "esri_networkanalysis_transportation_InputData_Facilities_Import_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Import Stops&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.LoadLocationsStopsButton, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_InputData_Stops_Import_Btn {
-				 get { return "esri_networkanalysis_transportation_InputData_Stops_Import_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Import Incidents&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.LoadLocationsIncidentsButton, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_InputData_Incidents_Import_Btn {
-				 get { return "esri_networkanalysis_transportation_InputData_Incidents_Import_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Import Demand Points&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.LoadLocationsDemandPointsButton, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_InputData_DemandPoints_Import_Btn {
-				 get { return "esri_networkanalysis_transportation_InputData_DemandPoints_Import_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Import Origins&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.LoadLocationsOriginsButton, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_InputData_Origins_Import_Btn {
-				 get { return "esri_networkanalysis_transportation_InputData_Origins_Import_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Import Destinations&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.LoadLocationsDestinationsButton, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_InputData_Destinations_Import_Btn {
-				 get { return "esri_networkanalysis_transportation_InputData_Destinations_Import_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Geometry&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.ServiceArea.OutputGeometryTypeCurrentButtonViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ServiceArea_OutputGeometry_GeometryType_Current_Btn {
-				 get { return "esri_networkanalysis_transportation_ServiceArea_OutputGeometry_GeometryType_Current_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Polygons&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.ServiceArea.OutputGeometryTypePolygonButtonViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ServiceArea_OutputGeometry_GeometryType_Polygon_Btn {
-				 get { return "esri_networkanalysis_transportation_ServiceArea_OutputGeometry_GeometryType_Polygon_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Lines&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.ServiceArea.OutputGeometryTypeLineButtonViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ServiceArea_OutputGeometry_GeometryType_Line_Btn {
-				 get { return "esri_networkanalysis_transportation_ServiceArea_OutputGeometry_GeometryType_Line_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Polygons and Lines&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.ServiceArea.OutputGeometryTypePolygonAndLineButtonViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ServiceArea_OutputGeometry_GeometryType_PolygonAndLine_Btn {
-				 get { return "esri_networkanalysis_transportation_ServiceArea_OutputGeometry_GeometryType_PolygonAndLine_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Directions&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.NADirectionsShowButton, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_General_Reports_Directions_Btn {
-				 get { return "esri_networkanalysis_transportation_General_Reports_Directions_Btn"; }
-			}
-		}
-		public static partial class Buttonpalette {
-			///<summary>Returns the id string for &quot;esri_networkanalysis_transportation_InputData_Barriers_BtnPalette&quot; (Buttonpalette, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_InputData_Barriers_BtnPalette {
-				 get { return "esri_networkanalysis_transportation_InputData_Barriers_BtnPalette"; }
-			}
-		}
-		public static partial class Combobox {
-			///<summary>Returns the id string for &quot;Cost:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.TravelCostComboBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_Analysis_TravelMode_Cost_Cbo {
-				 get { return "esri_networkanalysis_transportation_Analysis_TravelMode_Cost_Cbo"; }
-			}
-			///<summary>Returns the id string for &quot;Mode:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.TravelModeComboBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_Analysis_TravelMode_Mode_Cbo {
-				 get { return "esri_networkanalysis_transportation_Analysis_TravelMode_Mode_Cbo"; }
-			}
-			///<summary>Returns the id string for &quot;Type:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.ArriveDepartTimeSynchronizeUsageTypeComboBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_General_ArriveDepartTime_UsageType_Cbo {
-				 get { return "esri_networkanalysis_transportation_General_ArriveDepartTime_UsageType_Cbo"; }
-			}
-			///<summary>Returns the id string for &quot;Lines:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.OutputLinearShapeTypeStandardViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_OutputGeometry_LinearShapeType_Standard_Cbo {
-				 get { return "esri_networkanalysis_transportation_OutputGeometry_LinearShapeType_Standard_Cbo"; }
-			}
-			///<summary>Returns the id string for &quot;Lines:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.OutputLinearShapeTypeBasicViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_OutputGeometry_LinearShapeType_Basic_Cbo {
-				 get { return "esri_networkanalysis_transportation_OutputGeometry_LinearShapeType_Basic_Cbo"; }
-			}
-			///<summary>Returns the id string for &quot;Lines:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.OutputLinearShapeTypeHeterogeneousEndpointsViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_OutputGeometry_LinearShapeType_HeterogeneousEndpoints_Cbo {
-				 get { return "esri_networkanalysis_transportation_OutputGeometry_LinearShapeType_HeterogeneousEndpoints_Cbo"; }
-			}
-			///<summary>Returns the id string for &quot;Lines:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.OutputLinearShapeTypeHeterogeneousEndpointsBasicViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_OutputGeometry_LinearShapeType_HeterogeneousEndpoints_Basic_Cbo {
-				 get { return "esri_networkanalysis_transportation_OutputGeometry_LinearShapeType_HeterogeneousEndpoints_Basic_Cbo"; }
-			}
-			///<summary>Returns the id string for &quot;Sequence:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.Route.StopReorderTypeComboBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_Route_StopReorderType_Cbo {
-				 get { return "esri_networkanalysis_transportation_Route_StopReorderType_Cbo"; }
-			}
-			///<summary>Returns the id string for &quot;Polygon Detail:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.ServiceArea.OutputGeometryQualityTypeComboBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ServiceArea_OutputGeometry_QualityType_Cbo {
-				 get { return "esri_networkanalysis_transportation_ServiceArea_OutputGeometry_QualityType_Cbo"; }
-			}
-			///<summary>Returns the id string for &quot;Boundary:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.ServiceArea.OutputGeometryBoundaryTypeComboBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ServiceArea_OutputGeometry_BoundaryType_Cbo {
-				 get { return "esri_networkanalysis_transportation_ServiceArea_OutputGeometry_BoundaryType_Cbo"; }
-			}
-			///<summary>Returns the id string for &quot;Topology:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.ServiceArea.OutputGeometryRingDiskComboBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ServiceArea_OutputGeometry_RingDisk_Cbo {
-				 get { return "esri_networkanalysis_transportation_ServiceArea_OutputGeometry_RingDisk_Cbo"; }
-			}
-			///<summary>Returns the id string for &quot;Direction:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.TravelDirectionComboBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_Analysis_FacilityTravelDirection_Cbo {
-				 get { return "esri_networkanalysis_transportation_Analysis_FacilityTravelDirection_Cbo"; }
-			}
-			///<summary>Returns the id string for &quot;f(cost, β):&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.LocationAllocation.CostTransformationFunctionTypeComboBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_LocationAllocation_ProblemType_CostTransformationFunction_Type_Cbo {
-				 get { return "esri_networkanalysis_transportation_LocationAllocation_ProblemType_CostTransformationFunction_Type_Cbo"; }
-			}
-		}
-		public static partial class Customcontrol {
-			///<summary>Returns the id string for &quot;Units&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.UnitsLabelViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_Analysis_TravelMode_Units_CustomCtrl {
-				 get { return "esri_networkanalysis_transportation_Analysis_TravelMode_Units_CustomCtrl"; }
-			}
-		}
-		public static partial class Dockpane {
-			///<summary>Returns the id string for &quot;Directions&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.NADirectionsViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_Directions_DockPane {
-				 get { return "esri_networkanalysis_transportation_Directions_DockPane"; }
-			}
-		}
-		public static partial class Editbox {
-			///<summary>Returns the id string for &quot;Time:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.ArriveDepartTimeOfDayEditBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ArriveDepartTime_Custom_Time_Edit {
-				 get { return "esri_networkanalysis_transportation_ArriveDepartTime_Custom_Time_Edit"; }
-			}
-			///<summary>Returns the id string for &quot;Date:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.ArriveDepartDateEditBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ArriveDepartTime_Custom_Date_Edit {
-				 get { return "esri_networkanalysis_transportation_ArriveDepartTime_Custom_Date_Edit"; }
-			}
-			///<summary>Returns the id string for &quot;Cutoffs:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.ServiceArea.TravelModeCostCutoffsEditBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ServiceArea_TravelMode_Cutoffs_Edit {
-				 get { return "esri_networkanalysis_transportation_ServiceArea_TravelMode_Cutoffs_Edit"; }
-			}
-			///<summary>Returns the id string for &quot;Cutoff:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.ClosestFacility.TravelModeCostCutoffEditBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ClosestFacility_TravelMode_CostCutoff_Edit {
-				 get { return "esri_networkanalysis_transportation_ClosestFacility_TravelMode_CostCutoff_Edit"; }
-			}
-			///<summary>Returns the id string for &quot;Facilities:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.ClosestFacility.FacilityCountCutoffEditBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ClosestFacility_TravelMode_Facility_CountCutoff_Edit {
-				 get { return "esri_networkanalysis_transportation_ClosestFacility_TravelMode_Facility_CountCutoff_Edit"; }
-			}
-			///<summary>Returns the id string for &quot;Cutoff:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.LocationAllocation.TravelModeCostCutoffEditBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_LocationAllocation_TravelMode_CostCutoff_Edit {
-				 get { return "esri_networkanalysis_transportation_LocationAllocation_TravelMode_CostCutoff_Edit"; }
-			}
-			///<summary>Returns the id string for &quot;Facilities:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.LocationAllocation.FacilityCountCutoffEditBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_LocationAllocation_TravelMode_Facility_CountCutoff_Edit {
-				 get { return "esri_networkanalysis_transportation_LocationAllocation_TravelMode_Facility_CountCutoff_Edit"; }
-			}
-			///<summary>Returns the id string for &quot;β:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.LocationAllocation.CostTransformationFunctionTransformationFactorEditBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_LocationAllocation_ProblemType_CostTransformationFunction_TransformationFactor_Edit {
-				 get { return "esri_networkanalysis_transportation_LocationAllocation_ProblemType_CostTransformationFunction_TransformationFactor_Edit"; }
-			}
-			///<summary>Returns the id string for &quot;Capacity:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.LocationAllocation.CapacityEditBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_LocationAllocation_ProblemType_Capacity_Edit {
-				 get { return "esri_networkanalysis_transportation_LocationAllocation_ProblemType_Capacity_Edit"; }
-			}
-			///<summary>Returns the id string for &quot;Market %:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.LocationAllocation.TargetMarketSharePercentageEditBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_LocationAllocation_ProblemType_TargetMarketSharePercentage_Edit {
-				 get { return "esri_networkanalysis_transportation_LocationAllocation_ProblemType_TargetMarketSharePercentage_Edit"; }
-			}
-			///<summary>Returns the id string for &quot;Cutoff:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.OriginDestinationCostMatrix.TravelModeCostCutoffEditBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_OriginDestinationCostMatrix_TravelMode_CostCutoff_Edit {
-				 get { return "esri_networkanalysis_transportation_OriginDestinationCostMatrix_TravelMode_CostCutoff_Edit"; }
-			}
-			///<summary>Returns the id string for &quot;Destinations:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.OriginDestinationCostMatrix.DestinationCountCutoffEditBoxViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_OriginDestinationCostMatrix_TravelMode_Destination_CountCutoff_Edit {
-				 get { return "esri_networkanalysis_transportation_OriginDestinationCostMatrix_TravelMode_Destination_CountCutoff_Edit"; }
-			}
-		}
-		public static partial class Gallery {
-			///<summary>Returns the id string for &quot;Network Analysis&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.GalleryOfNALayerFactoryAndSourceItems, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_newnetworkanalysis_Gallery {
-				 get { return "esri_networkanalysis_transportation_newnetworkanalysis_Gallery"; }
-			}
-			///<summary>Returns the id string for &quot;Type&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.LocationAllocation.GalleryOfLocationAllocationProblemTypes, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_LocationAllocation_ProblemType_Gallery {
-				 get { return "esri_networkanalysis_transportation_LocationAllocation_ProblemType_Gallery"; }
-			}
-		}
-		public static partial class Group {
-			///<summary>Returns the id string for &quot;Input Data&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ServiceArea_InputData_Group {
-				 get { return "esri_networkanalysis_transportation_ServiceArea_InputData_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Input Data&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_Route_InputData_Group {
-				 get { return "esri_networkanalysis_transportation_Route_InputData_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Input Data&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ClosestFacility_InputData_Group {
-				 get { return "esri_networkanalysis_transportation_ClosestFacility_InputData_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Input Data&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_LocationAllocation_InputData_Group {
-				 get { return "esri_networkanalysis_transportation_LocationAllocation_InputData_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Input Data&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_OriginDestinationCostMatrix_InputData_Group {
-				 get { return "esri_networkanalysis_transportation_OriginDestinationCostMatrix_InputData_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Analysis&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_General_Analysis_Group {
-				 get { return "esri_networkanalysis_transportation_General_Analysis_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Travel Settings&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_General_TravelSettings_Group {
-				 get { return "esri_networkanalysis_transportation_General_TravelSettings_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Travel Settings&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_Route_TravelSettings_Group {
-				 get { return "esri_networkanalysis_transportation_Route_TravelSettings_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Travel Settings&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ServiceArea_TravelSettings_Group {
-				 get { return "esri_networkanalysis_transportation_ServiceArea_TravelSettings_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Travel Settings&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ClosestFacility_TravelSettings_Group {
-				 get { return "esri_networkanalysis_transportation_ClosestFacility_TravelSettings_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Travel Settings&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_LocationAllocation_TravelSettings_Group {
-				 get { return "esri_networkanalysis_transportation_LocationAllocation_TravelSettings_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Travel Settings&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_OriginDestinationCostMatrix_TravelSettings_Group {
-				 get { return "esri_networkanalysis_transportation_OriginDestinationCostMatrix_TravelSettings_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Arrive/Depart Time&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_General_ArriveDepartTime_Group {
-				 get { return "esri_networkanalysis_transportation_General_ArriveDepartTime_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Problem Type&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_LocationAllocation_ProblemType_Group {
-				 get { return "esri_networkanalysis_transportation_LocationAllocation_ProblemType_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Output Geometry&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_OutputGeometry_Route_Group {
-				 get { return "esri_networkanalysis_transportation_OutputGeometry_Route_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Output Geometry&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_OutputGeometry_ClosestFacility_Group {
-				 get { return "esri_networkanalysis_transportation_OutputGeometry_ClosestFacility_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Output Geometry&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_OutputGeometry_OriginDestinationCostMatrix_Group {
-				 get { return "esri_networkanalysis_transportation_OutputGeometry_OriginDestinationCostMatrix_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Output Geometry&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_OutputGeometry_LocationAllocation_Group {
-				 get { return "esri_networkanalysis_transportation_OutputGeometry_LocationAllocation_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Output Geometry&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ServiceArea_OutputGeometry_Group {
-				 get { return "esri_networkanalysis_transportation_ServiceArea_OutputGeometry_Group"; }
-			}
-			///<summary>Returns the id string for &quot;Report&quot; (Group, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_General_Reports_Group {
-				 get { return "esri_networkanalysis_transportation_General_Reports_Group"; }
-			}
-		}
-		public static partial class Condition {
-			///<summary>Returns the id string for &quot;Custom network analyst layer is selected&quot; (Condition, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_Custom_Condition {
-				 get { return "esri_networkanalysis_transportation_SolveType_Custom_Condition"; }
-			}
-			///<summary>Returns the id string for &quot;Service Area network analyst layer is selected&quot; (Condition, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_ServiceArea_Condition {
-				 get { return "esri_networkanalysis_transportation_SolveType_ServiceArea_Condition"; }
-			}
-			///<summary>Returns the id string for &quot;Route network analyst layer is selected&quot; (Condition, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_Route_Condition {
-				 get { return "esri_networkanalysis_transportation_SolveType_Route_Condition"; }
-			}
-			///<summary>Returns the id string for &quot;Closest Facility network analyst layer is selected&quot; (Condition, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_ClosestFacility_Condition {
-				 get { return "esri_networkanalysis_transportation_SolveType_ClosestFacility_Condition"; }
-			}
-			///<summary>Returns the id string for &quot;Origin-Destination Cost Matrix network analyst layer is selected&quot; (Condition, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_OriginDestinationCostMatrix_Condition {
-				 get { return "esri_networkanalysis_transportation_SolveType_OriginDestinationCostMatrix_Condition"; }
-			}
-			///<summary>Returns the id string for &quot;Vehicle Routing Problem network analyst layer is selected&quot; (Condition, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_VehicleRoutingProblem_Condition {
-				 get { return "esri_networkanalysis_transportation_SolveType_VehicleRoutingProblem_Condition"; }
-			}
-			///<summary>Returns the id string for &quot;Location-Allocation network analyst layer is selected&quot; (Condition, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_LocationAllocation_Condition {
-				 get { return "esri_networkanalysis_transportation_SolveType_LocationAllocation_Condition"; }
-			}
-			///<summary>Returns the id string for &quot;Network analyst layers of the same solve type are selected&quot; (Condition, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_Standard_Condition {
-				 get { return "esri_networkanalysis_transportation_SolveType_Standard_Condition"; }
-			}
-			///<summary>Returns the id string for &quot;Network analyst layers of different solve types are selected&quot; (Condition, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_Mixed_Condition {
-				 get { return "esri_networkanalysis_transportation_SolveType_Mixed_Condition"; }
-			}
-			///<summary>Returns the id string for &quot;Network analyst layer type that can support directions is selected&quot; (Condition, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_Directions_Condition {
-				 get { return "esri_networkanalysis_transportation_Directions_Condition"; }
-			}
-			///<summary>Returns the id string for &quot;Facility based network analyst layer is selected&quot; (Condition, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_Facility_Condition {
-				 get { return "esri_networkanalysis_transportation_Facility_Condition"; }
-			}
-		}
-		public static partial class Module {
-			///<summary>Returns the id string for &quot;Network Analyst&quot; (NetworkAnalysisTransportationModule, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_module {
-				 get { return "esri_networkanalysis_transportation_module"; }
-			}
-		}
-		public static partial class Product {
-			///<summary>Returns the id string for &quot;Network Analyst&quot; (Product, Transportation)</summary>
-			public static string esri_product_networkanalysis {
-				 get { return "esri_product_networkanalysis"; }
-			}
-		}
-		public static partial class Labelcontrol {
-			///<summary>Returns the id string for &quot; &quot; (Labelcontrol, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_Placeholder_Label {
-				 get { return "esri_networkanalysis_transportation_Placeholder_Label"; }
-			}
-			///<summary>Returns the id string for &quot; f(cost, β):&quot; (Labelcontrol, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_LocationAllocation_ProblemType_CostTransformationFunction_Type_Label {
-				 get { return "esri_networkanalysis_transportation_LocationAllocation_ProblemType_CostTransformationFunction_Type_Label"; }
-			}
-			///<summary>Returns the id string for &quot; β:&quot; (Labelcontrol, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_LocationAllocation_ProblemType_CostTransformationFunction_TransformationFactor_Label {
-				 get { return "esri_networkanalysis_transportation_LocationAllocation_ProblemType_CostTransformationFunction_TransformationFactor_Label"; }
-			}
-			///<summary>Returns the id string for &quot; Market:&quot; (Labelcontrol, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_LocationAllocation_ProblemType_TargetMarketSharePercentage_Label {
-				 get { return "esri_networkanalysis_transportation_LocationAllocation_ProblemType_TargetMarketSharePercentage_Label"; }
-			}
-			///<summary>Returns the id string for &quot; Capacity:&quot; (Labelcontrol, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_LocationAllocation_ProblemType_Capacity_Label {
-				 get { return "esri_networkanalysis_transportation_LocationAllocation_ProblemType_Capacity_Label"; }
-			}
-		}
-		public static partial class Spinner {
-			///<summary>Returns the id string for &quot;Facilities:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.ClosestFacility.FacilityCountCutoffSpinnerViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ClosestFacility_TravelMode_Facility_CountCutoff_Spinner {
-				 get { return "esri_networkanalysis_transportation_ClosestFacility_TravelMode_Facility_CountCutoff_Spinner"; }
-			}
-			///<summary>Returns the id string for &quot;Facilities:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.LocationAllocation.FacilityCountCutoffSpinnerViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_LocationAllocation_TravelMode_Facility_CountCutoff_Spinner {
-				 get { return "esri_networkanalysis_transportation_LocationAllocation_TravelMode_Facility_CountCutoff_Spinner"; }
-			}
-			///<summary>Returns the id string for &quot;Market:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.LocationAllocation.TargetMarketSharePercentageSpinnerViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_LocationAllocation_ProblemType_TargetMarketSharePercentage_Spinner {
-				 get { return "esri_networkanalysis_transportation_LocationAllocation_ProblemType_TargetMarketSharePercentage_Spinner"; }
-			}
-			///<summary>Returns the id string for &quot;Destinations:&quot; (ArcGIS.Desktop.Internal.NetworkAnalysis.Transportation.ViewModels.Ribbon.OriginDestinationCostMatrix.DestinationCountCutoffSpinnerViewModel, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_OriginDestinationCostMatrix_TravelMode_Destination_CountCutoff_Spinner {
-				 get { return "esri_networkanalysis_transportation_OriginDestinationCostMatrix_TravelMode_Destination_CountCutoff_Spinner"; }
-			}
-		}
-		public static partial class Splitbutton {
-			///<summary>Returns the id string for &quot;Output Geometry Types&quot; (Splitbutton, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ServiceArea_OutputGeometry_GeometryType_SplitButton {
-				 get { return "esri_networkanalysis_transportation_ServiceArea_OutputGeometry_GeometryType_SplitButton"; }
-			}
-		}
-		public static partial class State {
-			///<summary>Returns the id string for &quot;esri_networkanalysis_transportation_SolveType_Custom&quot; (State, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_Custom {
-				 get { return "esri_networkanalysis_transportation_SolveType_Custom"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkanalysis_transportation_SolveType_ServiceArea&quot; (State, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_ServiceArea {
-				 get { return "esri_networkanalysis_transportation_SolveType_ServiceArea"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkanalysis_transportation_SolveType_Route&quot; (State, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_Route {
-				 get { return "esri_networkanalysis_transportation_SolveType_Route"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkanalysis_transportation_SolveType_ClosestFacility&quot; (State, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_ClosestFacility {
-				 get { return "esri_networkanalysis_transportation_SolveType_ClosestFacility"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkanalysis_transportation_SolveType_OriginDestinationCostMatrix&quot; (State, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_OriginDestinationCostMatrix {
-				 get { return "esri_networkanalysis_transportation_SolveType_OriginDestinationCostMatrix"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkanalysis_transportation_SolveType_VehicleRoutingProblem&quot; (State, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_VehicleRoutingProblem {
-				 get { return "esri_networkanalysis_transportation_SolveType_VehicleRoutingProblem"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkanalysis_transportation_SolveType_LocationAllocation&quot; (State, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_LocationAllocation {
-				 get { return "esri_networkanalysis_transportation_SolveType_LocationAllocation"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkanalysis_transportation_SolveType_Mixed&quot; (State, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_Mixed {
-				 get { return "esri_networkanalysis_transportation_SolveType_Mixed"; }
-			}
-		}
-		public static partial class Tab {
-			///<summary>Returns the id string for &quot;SERVICE AREA&quot; (Tab, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_ServiceArea_Tab {
-				 get { return "esri_networkanalysis_transportation_SolveType_ServiceArea_Tab"; }
-			}
-			///<summary>Returns the id string for &quot;ROUTE&quot; (Tab, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_Route_Tab {
-				 get { return "esri_networkanalysis_transportation_SolveType_Route_Tab"; }
-			}
-			///<summary>Returns the id string for &quot;CLOSEST FACILITY&quot; (Tab, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_ClosestFacility_Tab {
-				 get { return "esri_networkanalysis_transportation_SolveType_ClosestFacility_Tab"; }
-			}
-			///<summary>Returns the id string for &quot;OD COST MATRIX&quot; (Tab, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_OriginDestinationCostMatrix_Tab {
-				 get { return "esri_networkanalysis_transportation_SolveType_OriginDestinationCostMatrix_Tab"; }
-			}
-			///<summary>Returns the id string for &quot;LOCATION-ALLOCATION&quot; (Tab, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_LocationAllocation_Tab {
-				 get { return "esri_networkanalysis_transportation_SolveType_LocationAllocation_Tab"; }
-			}
-			///<summary>Returns the id string for &quot;VRP&quot; (Tab, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_VehicleRoutingProblem_Tab {
-				 get { return "esri_networkanalysis_transportation_SolveType_VehicleRoutingProblem_Tab"; }
-			}
-			///<summary>Returns the id string for &quot;MIXED&quot; (Tab, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_SolveType_Mixed_Tab {
-				 get { return "esri_networkanalysis_transportation_SolveType_Mixed_Tab"; }
-			}
-		}
-		public static partial class Tabgroup {
-			///<summary>Returns the id string for &quot;NETWORK ANALYST&quot; (Tabgroup, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_Route_TabGroup {
-				 get { return "esri_networkanalysis_transportation_Route_TabGroup"; }
-			}
-			///<summary>Returns the id string for &quot;NETWORK ANALYST&quot; (Tabgroup, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ServiceArea_TabGroup {
-				 get { return "esri_networkanalysis_transportation_ServiceArea_TabGroup"; }
-			}
-			///<summary>Returns the id string for &quot;NETWORK ANALYST&quot; (Tabgroup, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_ClosestFacility_TabGroup {
-				 get { return "esri_networkanalysis_transportation_ClosestFacility_TabGroup"; }
-			}
-			///<summary>Returns the id string for &quot;NETWORK ANALYST&quot; (Tabgroup, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_OriginDestinationCostMatrix_TabGroup {
-				 get { return "esri_networkanalysis_transportation_OriginDestinationCostMatrix_TabGroup"; }
-			}
-			///<summary>Returns the id string for &quot;NETWORK ANALYST&quot; (Tabgroup, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_VehicleRoutingProblem_TabGroup {
-				 get { return "esri_networkanalysis_transportation_VehicleRoutingProblem_TabGroup"; }
-			}
-			///<summary>Returns the id string for &quot;NETWORK ANALYST&quot; (Tabgroup, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_LocationAllocation_TabGroup {
-				 get { return "esri_networkanalysis_transportation_LocationAllocation_TabGroup"; }
-			}
-			///<summary>Returns the id string for &quot;NETWORK ANALYST&quot; (Tabgroup, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_Mixed_TabGroup {
-				 get { return "esri_networkanalysis_transportation_Mixed_TabGroup"; }
-			}
-		}
-		public static partial class Toolbar {
-			///<summary>Returns the id string for &quot;esri_networkanalysis_transportation_LocationAllocation_ProblemType_Toolbar&quot; (Toolbar, Transportation)</summary>
-			public static string esri_networkanalysis_transportation_LocationAllocation_ProblemType_Toolbar {
-				 get { return "esri_networkanalysis_transportation_LocationAllocation_ProblemType_Toolbar"; }
-			}
-		}
-		public static partial class Button {
-			///<summary>Returns the id string for &quot;Zoom Full Extent&quot; (Ribbon.ZoomToDiagramLayersButton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_zoomFullButton {
-				 get { return "esri_networkdiagrams_zoomFullButton"; }
-			}
-			///<summary>Returns the id string for &quot;New&quot; (Ribbon.NewDiagramButton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_newDiagramButton {
-				 get { return "esri_networkdiagrams_newDiagramButton"; }
-			}
-			///<summary>Returns the id string for &quot;Overwrite&quot; (Ribbon.FromNetworkOverwriteButton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_fromNetworkOverwriteButton {
-				 get { return "esri_networkdiagrams_fromNetworkOverwriteButton"; }
-			}
-			///<summary>Returns the id string for &quot;Overwrite&quot; (Ribbon.FromDiagramOverwriteButton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_fromDiagramOverwriteButton {
-				 get { return "esri_networkdiagrams_fromDiagramOverwriteButton"; }
-			}
-			///<summary>Returns the id string for &quot;Append&quot; (Ribbon.FromNetworkAppendToButton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_fromNetworkAppendToButton {
-				 get { return "esri_networkdiagrams_fromNetworkAppendToButton"; }
-			}
-			///<summary>Returns the id string for &quot;Append&quot; (Ribbon.FromDiagramAppendToButton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_fromDiagramAppendToButton {
-				 get { return "esri_networkdiagrams_fromDiagramAppendToButton"; }
-			}
-			///<summary>Returns the id string for &quot;Search&quot; (Ribbon.ShowSearchDiagramPane, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_showSearchDiagramsButton {
-				 get { return "esri_networkdiagrams_showSearchDiagramsButton"; }
-			}
-			///<summary>Returns the id string for &quot;Apply To Diagrams&quot; (Ribbon.PropagateNetworkToDiagramButton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_propagateNetworkToDiagramButton {
-				 get { return "esri_networkdiagrams_propagateNetworkToDiagramButton"; }
-			}
-			///<summary>Returns the id string for &quot;Update&quot; (Ribbon.UpdateDiagramButton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_updateDiagramButton {
-				 get { return "esri_networkdiagrams_updateDiagramButton"; }
-			}
-			///<summary>Returns the id string for &quot;Extend Diagram By Connectivity&quot; (Ribbon.ExtendDiagramByConnectivityButton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_extendByConnectivityButton {
-				 get { return "esri_networkdiagrams_extendByConnectivityButton"; }
-			}
-			///<summary>Returns the id string for &quot;Extend Diagram By Traversability&quot; (Ribbon.ExtendDiagramByTraversabilityButton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_extendByTraversabilityButton {
-				 get { return "esri_networkdiagrams_extendByTraversabilityButton"; }
-			}
-			///<summary>Returns the id string for &quot;Store&quot; (Ribbon.StoreDiagramButton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_storeDiagramButton {
-				 get { return "esri_networkdiagrams_storeDiagramButton"; }
-			}
-			///<summary>Returns the id string for &quot;Dynamic&quot; (Ribbon.EnableDynamicButton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_enableDynamicButton {
-				 get { return "esri_networkdiagrams_enableDynamicButton"; }
-			}
-			///<summary>Returns the id string for &quot;Consistency&quot; (Ribbon.RefreshConsistencyButton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_refreshConsistencyStatus {
-				 get { return "esri_networkdiagrams_refreshConsistencyStatus"; }
-			}
-			///<summary>Returns the id string for &quot;Apply To Maps&quot; (Ribbon.PropagateDiagramToNetworkButton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_propagateDiagramToNetworkButton {
-				 get { return "esri_networkdiagrams_propagateDiagramToNetworkButton"; }
-			}
-			///<summary>Returns the id string for &quot;Apply To Diagrams&quot; (Ribbon.PropagateDiagramToDiagramButton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_propagateDiagramToDiagramButton {
-				 get { return "esri_networkdiagrams_propagateDiagramToDiagramButton"; }
-			}
-			///<summary>Returns the id string for &quot;Network Diagrams Options&quot; (Ribbon.NetworkDiagramsOptionsButton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_propagationSettings_Btn {
-				 get { return "esri_networkdiagrams_propagationSettings_Btn"; }
-			}
-			///<summary>Returns the id string for &quot;Algorithms&quot; (Ribbon.DiagramLayoutButton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_diagramLayoutButton {
-				 get { return "esri_networkdiagrams_diagramLayoutButton"; }
-			}
-		}
-		public static partial class Dockpane {
-			///<summary>Returns the id string for &quot;Search Diagrams&quot; (SearchDiagrams.SearchDiagramsDockPaneViewModel, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_searchDiagramsPane {
-				 get { return "esri_networkdiagrams_searchDiagramsPane"; }
-			}
-		}
-		public static partial class Gallery {
-			///<summary>Returns the id string for &quot;Diagram Templates&quot; (Ribbon.NewDiagramGalleryViewModel, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_newDiagramTemplateGallery {
-				 get { return "esri_networkdiagrams_newDiagramTemplateGallery"; }
-			}
-			///<summary>Returns the id string for &quot;Diagrams Gallery&quot; (Ribbon.NetworkToDiagramGalleryViewModel, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_propagateNetworkToDiagramGallery {
-				 get { return "esri_networkdiagrams_propagateNetworkToDiagramGallery"; }
-			}
-			///<summary>Returns the id string for &quot;Networks Gallery&quot; (Ribbon.DiagramToNetworkGalleryViewModel, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_propagateDiagramToNetworkGallery {
-				 get { return "esri_networkdiagrams_propagateDiagramToNetworkGallery"; }
-			}
-			///<summary>Returns the id string for &quot;Other Diagrams Gallery&quot; (Ribbon.DiagramToDiagramGalleryViewModel, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_propagateDiagramToDiagramGallery {
-				 get { return "esri_networkdiagrams_propagateDiagramToDiagramGallery"; }
-			}
-			///<summary>Returns the id string for &quot;Diagram Layout&quot; (Ribbon.DiagramLayoutGalleryViewModel, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_diagramLayoutGallery {
-				 get { return "esri_networkdiagrams_diagramLayoutGallery"; }
-			}
-			///<summary>Returns the id string for &quot;Diagram Layers&quot; (Ribbon.FromNetworkOverwriteGalleryViewModel, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_fromNetworkOverwriteGalleryViewModel {
-				 get { return "esri_networkdiagrams_fromNetworkOverwriteGalleryViewModel"; }
-			}
-			///<summary>Returns the id string for &quot;Diagram Layers&quot; (Ribbon.FromNetworkAppendToGalleryViewModel, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_fromNetworkAppendToGalleryViewModel {
-				 get { return "esri_networkdiagrams_fromNetworkAppendToGalleryViewModel"; }
-			}
-			///<summary>Returns the id string for &quot;Diagram Layers&quot; (Ribbon.FromDiagramOverwriteGalleryViewModel, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_fromDiagramOverwriteGalleryViewModel {
-				 get { return "esri_networkdiagrams_fromDiagramOverwriteGalleryViewModel"; }
-			}
-			///<summary>Returns the id string for &quot;Diagram Layers&quot; (Ribbon.FromDiagramAppendToGalleryViewModel, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_fromDiagramkAppendToGalleryViewModel {
-				 get { return "esri_networkdiagrams_fromDiagramkAppendToGalleryViewModel"; }
-			}
-		}
-		public static partial class Group {
-			///<summary>Returns the id string for &quot;Navigate&quot; (Group, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_navigateGroup {
-				 get { return "esri_networkdiagrams_navigateGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Manage&quot; (Group, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_manageGroup {
-				 get { return "esri_networkdiagrams_manageGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Modify&quot; (Group, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_modifyGroup {
-				 get { return "esri_networkdiagrams_modifyGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Selection&quot; (Group, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_selectionGroup {
-				 get { return "esri_networkdiagrams_selectionGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Layout&quot; (Group, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_layoutGroup {
-				 get { return "esri_networkdiagrams_layoutGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Inquiry&quot; (Group, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_inquiryGroup {
-				 get { return "esri_networkdiagrams_inquiryGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Diagram&quot; (Group, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_diagramGroup {
-				 get { return "esri_networkdiagrams_diagramGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Select On Diagrams&quot; (Group, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_diagramSelectionGroup {
-				 get { return "esri_networkdiagrams_diagramSelectionGroup"; }
-			}
-		}
-		public static partial class Category {
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_layouts&quot; (Category, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_layouts {
-				 get { return "esri_networkdiagrams_layouts"; }
-			}
-		}
-		public static partial class Component {
-			///<summary>Returns the id string for &quot;esri_mapping_networkDiagramView&quot; (ArcGIS.Desktop.NetworkAnalysis.NetworkDiagrams.NetworkDiagramView, NetworkDiagrams)</summary>
-			public static string esri_mapping_networkDiagramView {
-				 get { return "esri_mapping_networkDiagramView"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_layout_angleDirected&quot; (ArcGIS.Desktop.NetworkAnalysis.NetworkDiagrams.DiagramLayout, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_layout_angleDirected {
-				 get { return "esri_networkdiagrams_layout_angleDirected"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_layout_compression&quot; (ArcGIS.Desktop.NetworkAnalysis.NetworkDiagrams.DiagramLayout, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_layout_compression {
-				 get { return "esri_networkdiagrams_layout_compression"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_layout_forceDirected&quot; (ArcGIS.Desktop.NetworkAnalysis.NetworkDiagrams.DiagramLayout, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_layout_forceDirected {
-				 get { return "esri_networkdiagrams_layout_forceDirected"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_layout_geoPositions&quot; (ArcGIS.Desktop.NetworkAnalysis.NetworkDiagrams.DiagramLayout, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_layout_geoPositions {
-				 get { return "esri_networkdiagrams_layout_geoPositions"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_layout_grid&quot; (ArcGIS.Desktop.NetworkAnalysis.NetworkDiagrams.DiagramLayout, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_layout_grid {
-				 get { return "esri_networkdiagrams_layout_grid"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_layout_linearDispatch&quot; (ArcGIS.Desktop.NetworkAnalysis.NetworkDiagrams.DiagramLayout, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_layout_linearDispatch {
-				 get { return "esri_networkdiagrams_layout_linearDispatch"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_layout_mainLineTree&quot; (ArcGIS.Desktop.NetworkAnalysis.NetworkDiagrams.DiagramLayout, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_layout_mainLineTree {
-				 get { return "esri_networkdiagrams_layout_mainLineTree"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_layout_partialOverlappingEdges&quot; (ArcGIS.Desktop.NetworkAnalysis.NetworkDiagrams.DiagramLayout, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_layout_partialOverlappingEdges {
-				 get { return "esri_networkdiagrams_layout_partialOverlappingEdges"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_layout_radialTree&quot; (ArcGIS.Desktop.NetworkAnalysis.NetworkDiagrams.DiagramLayout, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_layout_radialTree {
-				 get { return "esri_networkdiagrams_layout_radialTree"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_layout_reshapeDiagramEdges&quot; (ArcGIS.Desktop.NetworkAnalysis.NetworkDiagrams.DiagramLayout, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_layout_reshapeDiagramEdges {
-				 get { return "esri_networkdiagrams_layout_reshapeDiagramEdges"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_layout_smartTree&quot; (ArcGIS.Desktop.NetworkAnalysis.NetworkDiagrams.DiagramLayout, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_layout_smartTree {
-				 get { return "esri_networkdiagrams_layout_smartTree"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_layout_spatialDispatch&quot; (ArcGIS.Desktop.NetworkAnalysis.NetworkDiagrams.DiagramLayout, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_layout_spatialDispatch {
-				 get { return "esri_networkdiagrams_layout_spatialDispatch"; }
-			}
-		}
-		public static partial class Condition {
-			///<summary>Returns the id string for &quot;Layout algorithm parameters can be edited&quot; (Condition, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_overridableLayoutCondition {
-				 get { return "esri_networkdiagrams_overridableLayoutCondition"; }
-			}
-			///<summary>Returns the id string for &quot;A diagram layout can be applied&quot; (Condition, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_activeLayoutCondition {
-				 get { return "esri_networkdiagrams_activeLayoutCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Active layout algorithm supports root junction&quot; (Condition, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_setRootJunctionCondition {
-				 get { return "esri_networkdiagrams_setRootJunctionCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Active layout algorithm supports end junction&quot; (Condition, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_setEndJunctionCondition {
-				 get { return "esri_networkdiagrams_setEndJunctionCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Active layout algorithm supports barrier feature&quot; (Condition, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_setBarrierCondition {
-				 get { return "esri_networkdiagrams_setBarrierCondition"; }
-			}
-			///<summary>Returns the id string for &quot;A new temporary diagram can be generated from the selection&quot; (Condition, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_newDiagramCondition {
-				 get { return "esri_networkdiagrams_newDiagramCondition"; }
-			}
-			///<summary>Returns the id string for &quot;A diagram can be overwritten from the selection&quot; (Condition, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_fromNetworkOverwriteCondition {
-				 get { return "esri_networkdiagrams_fromNetworkOverwriteCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Network diagram map is active&quot; (Condition, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_networkDiagramMapCondition {
-				 get { return "esri_networkdiagrams_networkDiagramMapCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Network diagram layer is active&quot; (Condition, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_networkDiagramLayerCondition {
-				 get { return "esri_networkdiagrams_networkDiagramLayerCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Current diagram can be overwritten from the selection in a geo Map&quot; (Condition, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_fromDiagramOverwriteCondition {
-				 get { return "esri_networkdiagrams_fromDiagramOverwriteCondition"; }
-			}
-			///<summary>Returns the id string for &quot;selection in a geo Map can be appended to the current diagram&quot; (Condition, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_fromDiagramAppendToCondition {
-				 get { return "esri_networkdiagrams_fromDiagramAppendToCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Diagram can be stored&quot; (Condition, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_enableStoreCondition {
-				 get { return "esri_networkdiagrams_enableStoreCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Diagram can be dynamic&quot; (Condition, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_enableDynamicCondition {
-				 get { return "esri_networkdiagrams_enableDynamicCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Diagram layer is selected&quot; (Condition, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_diagramLayerCondition {
-				 get { return "esri_networkdiagrams_diagramLayerCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Diagram layer or Facility network layer is selected&quot; (Condition, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_searchDiagramsCondition {
-				 get { return "esri_networkdiagrams_searchDiagramsCondition"; }
-			}
-			///<summary>Returns the id string for &quot;selection can be propagated from map to diagram&quot; (Condition, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_propagateNetworkToDiagramCondition {
-				 get { return "esri_networkdiagrams_propagateNetworkToDiagramCondition"; }
-			}
-			///<summary>Returns the id string for &quot;selection can be propagated from diagram to map&quot; (Condition, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_propagateDiagramToNetworkCondition {
-				 get { return "esri_networkdiagrams_propagateDiagramToNetworkCondition"; }
-			}
-			///<summary>Returns the id string for &quot;selection can be propagated from diagram to diagram&quot; (Condition, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_propagateDiagramToDiagramCondition {
-				 get { return "esri_networkdiagrams_propagateDiagramToDiagramCondition"; }
-			}
-		}
-		public static partial class Module {
-			///<summary>Returns the id string for &quot;Network Diagrams&quot; (NetworkDiagramsModule, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_module {
-				 get { return "esri_networkdiagrams_module"; }
-			}
-		}
-		public static partial class Sheet {
-			///<summary>Returns the id string for &quot;Utility Network Options&quot; (Sheet, NetworkDiagrams)</summary>
-			public static string esri_utilityNetwork_optionsPropertySheet {
-				 get { return "esri_utilityNetwork_optionsPropertySheet"; }
-			}
-		}
-		public static partial class Page {
-			///<summary>Returns the id string for &quot;Network Diagrams&quot; (NetworkDiagramsOptionsViewModel, NetworkDiagrams)</summary>
-			public static string esri_networkDiagrams_optionsPropertyPage {
-				 get { return "esri_networkDiagrams_optionsPropertyPage"; }
-			}
-		}
-		public static partial class Splitbutton {
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_newDiagramSplitButton&quot; (Splitbutton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_newDiagramSplitButton {
-				 get { return "esri_networkdiagrams_newDiagramSplitButton"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_propagateNetworkToDiagramSplitButton&quot; (Splitbutton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_propagateNetworkToDiagramSplitButton {
-				 get { return "esri_networkdiagrams_propagateNetworkToDiagramSplitButton"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_propagateDiagramToNetworkSplitButton&quot; (Splitbutton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_propagateDiagramToNetworkSplitButton {
-				 get { return "esri_networkdiagrams_propagateDiagramToNetworkSplitButton"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_propagateDiagramToDiagramSplitButton&quot; (Splitbutton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_propagateDiagramToDiagramSplitButton {
-				 get { return "esri_networkdiagrams_propagateDiagramToDiagramSplitButton"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_diagramLayoutSplitButton&quot; (Splitbutton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_diagramLayoutSplitButton {
-				 get { return "esri_networkdiagrams_diagramLayoutSplitButton"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_fromNetworkOverwriteSplitButton&quot; (Splitbutton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_fromNetworkOverwriteSplitButton {
-				 get { return "esri_networkdiagrams_fromNetworkOverwriteSplitButton"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_fromDiagramOverwriteSplitButton&quot; (Splitbutton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_fromDiagramOverwriteSplitButton {
-				 get { return "esri_networkdiagrams_fromDiagramOverwriteSplitButton"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_fromNetworkAppendToSplitButton&quot; (Splitbutton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_fromNetworkAppendToSplitButton {
-				 get { return "esri_networkdiagrams_fromNetworkAppendToSplitButton"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_fromDiagramkAppendToSplitButton&quot; (Splitbutton, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_fromDiagramkAppendToSplitButton {
-				 get { return "esri_networkdiagrams_fromDiagramkAppendToSplitButton"; }
-			}
-		}
-		public static partial class State {
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_overridableLayoutState&quot; (State, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_overridableLayoutState {
-				 get { return "esri_networkdiagrams_overridableLayoutState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_activeLayoutState&quot; (State, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_activeLayoutState {
-				 get { return "esri_networkdiagrams_activeLayoutState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_authorizedRootJunctionState&quot; (State, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_authorizedRootJunctionState {
-				 get { return "esri_networkdiagrams_authorizedRootJunctionState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_authorizedEndJunctionState&quot; (State, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_authorizedEndJunctionState {
-				 get { return "esri_networkdiagrams_authorizedEndJunctionState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_authorizedBarrierFeatureState&quot; (State, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_authorizedBarrierFeatureState {
-				 get { return "esri_networkdiagrams_authorizedBarrierFeatureState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_enableStoreDiagramState&quot; (State, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_enableStoreDiagramState {
-				 get { return "esri_networkdiagrams_enableStoreDiagramState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_enableDynamicDiagramState&quot; (State, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_enableDynamicDiagramState {
-				 get { return "esri_networkdiagrams_enableDynamicDiagramState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_propagateNetworkToDiagramState&quot; (State, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_propagateNetworkToDiagramState {
-				 get { return "esri_networkdiagrams_propagateNetworkToDiagramState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_propagateDiagramToNetworkState&quot; (State, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_propagateDiagramToNetworkState {
-				 get { return "esri_networkdiagrams_propagateDiagramToNetworkState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_networkdiagrams_propagateDiagramToDiagramState&quot; (State, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_propagateDiagramToDiagramState {
-				 get { return "esri_networkdiagrams_propagateDiagramToDiagramState"; }
-			}
-		}
-		public static partial class Tab {
-			///<summary>Returns the id string for &quot;NETWORK DIAGRAM&quot; (Tab, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_homeTab {
-				 get { return "esri_networkdiagrams_homeTab"; }
-			}
-			///<summary>Returns the id string for &quot;Network Diagram&quot; (Tab, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_contextualTab {
-				 get { return "esri_networkdiagrams_contextualTab"; }
-			}
-		}
-		public static partial class Tool {
-			///<summary>Returns the id string for &quot;Set Root Junction&quot; (Ribbon.RootJunctionTool, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_setRootTool {
-				 get { return "esri_networkdiagrams_setRootTool"; }
-			}
-			///<summary>Returns the id string for &quot;Set End Junction&quot; (Ribbon.EndJunctionTool, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_setEndTool {
-				 get { return "esri_networkdiagrams_setEndTool"; }
-			}
-			///<summary>Returns the id string for &quot;Set Barrier&quot; (Tools.SetBarrierTool, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_setBarrierTool {
-				 get { return "esri_networkdiagrams_setBarrierTool"; }
-			}
-		}
-		public static partial class Toolpalette {
-			///<summary>Returns the id string for &quot;Extend&quot; (Toolpalette, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_extendDiagramPalette {
-				 get { return "esri_networkdiagrams_extendDiagramPalette"; }
-			}
-			///<summary>Returns the id string for &quot;Set Flags&quot; (Toolpalette, NetworkDiagrams)</summary>
-			public static string esri_networkdiagrams_diagramFlagPalette {
-				 get { return "esri_networkdiagrams_diagramFlagPalette"; }
-			}
-		}
-		public static partial class Button {
-			///<summary>Returns the id string for &quot;Web Map&quot; (ShowSharingAsMapPane, Sharing)</summary>
-			public static string esri_sharing_SharingAsWebMapPaneBtn {
-				 get { return "esri_sharing_SharingAsWebMapPaneBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Publish Web Layer&quot; (ShowSharingAsWebLayerPane, Sharing)</summary>
-			public static string esri_sharing_SharingAsWebLayerPaneBtn {
-				 get { return "esri_sharing_SharingAsWebLayerPaneBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Overwrite Web Layer&quot; (ShowOverwriteWebLayerPane, Sharing)</summary>
-			public static string esri_sharing_OverwriteWebLayerPaneBtn {
-				 get { return "esri_sharing_OverwriteWebLayerPaneBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Share As Web Layer&quot; (ShowSelectionWebLayerPane, Sharing)</summary>
-			public static string esri_sharing_SharingAsWebLayerCXMUBtn {
-				 get { return "esri_sharing_SharingAsWebLayerCXMUBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Overwrite Web Layer&quot; (ShowOverwriteSelectionWebLayerPane, Sharing)</summary>
-			public static string esri_sharing_OverwriteWebLayerCXMUBtn {
-				 get { return "esri_sharing_OverwriteWebLayerCXMUBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Share As Web Layer&quot; (ShowWebImageLayerPane, Sharing)</summary>
-			public static string esri_sharing_SharingAsWebImageLayerCXMUBtn {
-				 get { return "esri_sharing_SharingAsWebImageLayerCXMUBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Geoprocessing Package&quot; (ShowGPPackagePane, Sharing)</summary>
-			public static string esri_sharing_GPPackageBtn {
-				 get { return "esri_sharing_GPPackageBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Share As Layer Package&quot; (ShowLayerPackagePane, Sharing)</summary>
-			public static string esri_sharing_PackagingLayersCXMUBtn {
-				 get { return "esri_sharing_PackagingLayersCXMUBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Save As Layer File&quot; (SaveAsLayerFile, Sharing)</summary>
-			public static string esri_sharing_SaveAsLayerFileCXMUBtn {
-				 get { return "esri_sharing_SaveAsLayerFileCXMUBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Save As Map File&quot; (SaveAsMapFile, Sharing)</summary>
-			public static string esri_sharing_SaveAsMapFileCXMUBtn {
-				 get { return "esri_sharing_SaveAsMapFileCXMUBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Project&quot; (ShowProjectPackagePane, Sharing)</summary>
-			public static string esri_sharing_PackagingProjectPaneBtn {
-				 get { return "esri_sharing_PackagingProjectPaneBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Project Template&quot; (ShowProjectTemplatePane, Sharing)</summary>
-			public static string esri_sharing_ProjectTemplatePaneBtn {
-				 get { return "esri_sharing_ProjectTemplatePaneBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Map&quot; (ShowSharingAsPackagePane, Sharing)</summary>
-			public static string esri_sharing_PackagingMapPaneBtn {
-				 get { return "esri_sharing_PackagingMapPaneBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Web Scene&quot; (ShowSharingAsMapPane, Sharing)</summary>
-			public static string esri_sharing_SharingAsWebScenePaneBtn {
-				 get { return "esri_sharing_SharingAsWebScenePaneBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Layer&quot; (ShowLayerPackagePane, Sharing)</summary>
-			public static string esri_sharing_PackagingLayersPaneBtn {
-				 get { return "esri_sharing_PackagingLayersPaneBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Map File&quot; (SaveAsMapFile, Sharing)</summary>
-			public static string esri_sharing_SaveAsMapFileBtn {
-				 get { return "esri_sharing_SaveAsMapFileBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Layer File&quot; (SaveAsLayerFile, Sharing)</summary>
-			public static string esri_sharing_SaveAsLayerFileBtn {
-				 get { return "esri_sharing_SaveAsLayerFileBtn"; }
-			}
-			///<summary>Returns the id string for &quot;Map&quot; (esri_mapping:PrintSimpleMap, Sharing)</summary>
-			public static string esri_sharing_PrintMap {
-				 get { return "esri_sharing_PrintMap"; }
-			}
-			///<summary>Returns the id string for &quot;Map&quot; (esri_mapping:ExportSimpleMap, Sharing)</summary>
-			public static string esri_sharing_ExportMap {
-				 get { return "esri_sharing_ExportMap"; }
-			}
-			///<summary>Returns the id string for &quot;Layout&quot; (esri_layouts:OnPrintLayout, Sharing)</summary>
-			public static string esri_sharing_PrintLayout {
-				 get { return "esri_sharing_PrintLayout"; }
-			}
-			///<summary>Returns the id string for &quot;Layout&quot; (esri_layouts:OnExportLayout, Sharing)</summary>
-			public static string esri_sharing_ExportLayout {
-				 get { return "esri_sharing_ExportLayout"; }
-			}
-			///<summary>Returns the id string for &quot;Layout File&quot; (SaveAsLayoutFile, Sharing)</summary>
-			public static string esri_sharing_SaveAsPagX {
-				 get { return "esri_sharing_SaveAsPagX"; }
-			}
-			///<summary>Returns the id string for &quot;Save As Layout File&quot; (SaveAsLayoutFile, Sharing)</summary>
-			public static string esri_sharing_SaveAsLayoutFile {
-				 get { return "esri_sharing_SaveAsLayoutFile"; }
-			}
-			///<summary>Returns the id string for &quot;Jobs&quot; (ShowSharingStatusPane, Sharing)</summary>
-			public static string esri_sharing_sharingStatus {
-				 get { return "esri_sharing_sharingStatus"; }
-			}
-		}
-		public static partial class Dockpane {
-			///<summary>Returns the id string for &quot;Share&quot; (SharingPaneViewModel, Sharing)</summary>
-			public static string esri_sharing_sharingPane {
-				 get { return "esri_sharing_sharingPane"; }
-			}
-			///<summary>Returns the id string for &quot;Job Status&quot; (SharingProcessesPaneViewModel, Sharing)</summary>
-			public static string esri_sharing_sharingStatusPane {
-				 get { return "esri_sharing_sharingStatusPane"; }
-			}
-		}
-		public static partial class Dynamicmenu {
-			///<summary>Returns the id string for &quot;TestMenu&quot; (AnalyzerContextMenu, Sharing)</summary>
-			public static string esri_sharing_analyzerContextMenu {
-				 get { return "esri_sharing_analyzerContextMenu"; }
-			}
-			///<summary>Returns the id string for &quot;Geoprocessing&quot; (GPPackageTabDynamicMenu, Sharing)</summary>
-			public static string esri_sharing_gpPackageMenu {
-				 get { return "esri_sharing_gpPackageMenu"; }
-			}
-			///<summary>Returns the id string for &quot;Share As&quot; (GPPackageContextDynamicMenu, Sharing)</summary>
-			public static string esri_gpShareAsMenu {
-				 get { return "esri_gpShareAsMenu"; }
-			}
-		}
-		public static partial class Group {
-			///<summary>Returns the id string for &quot;Package&quot; (Group, Sharing)</summary>
-			public static string esri_sharing_packageGroupInShareTab {
-				 get { return "esri_sharing_packageGroupInShareTab"; }
-			}
-			///<summary>Returns the id string for &quot;Package&quot; (Group, Sharing)</summary>
-			public static string esri_sharing_packageGroupInBasemapShareTab {
-				 get { return "esri_sharing_packageGroupInBasemapShareTab"; }
-			}
-			///<summary>Returns the id string for &quot;Package&quot; (Group, Sharing)</summary>
-			public static string esri_sharing_packageGroupInDefaultShareTab {
-				 get { return "esri_sharing_packageGroupInDefaultShareTab"; }
-			}
-			///<summary>Returns the id string for &quot;Share As&quot; (Group, Sharing)</summary>
-			public static string esri_sharing_shareAsWebGroupInShareTab {
-				 get { return "esri_sharing_shareAsWebGroupInShareTab"; }
-			}
-			///<summary>Returns the id string for &quot;Share As&quot; (Group, Sharing)</summary>
-			public static string esri_sharing_shareAsWebGroupInSceneShareTab {
-				 get { return "esri_sharing_shareAsWebGroupInSceneShareTab"; }
-			}
-			///<summary>Returns the id string for &quot;Share As&quot; (Group, Sharing)</summary>
-			public static string esri_sharing_shareAsWebGroupInBasemapShareTab {
-				 get { return "esri_sharing_shareAsWebGroupInBasemapShareTab"; }
-			}
-			///<summary>Returns the id string for &quot;Save As&quot; (Group, Sharing)</summary>
-			public static string esri_sharing_saveAsGroupInShareTab {
-				 get { return "esri_sharing_saveAsGroupInShareTab"; }
-			}
-			///<summary>Returns the id string for &quot;Print&quot; (Group, Sharing)</summary>
-			public static string esri_sharing_printGroupInShareTab {
-				 get { return "esri_sharing_printGroupInShareTab"; }
-			}
-			///<summary>Returns the id string for &quot;Export&quot; (Group, Sharing)</summary>
-			public static string esri_sharing_exportGroupInShareTab {
-				 get { return "esri_sharing_exportGroupInShareTab"; }
-			}
-			///<summary>Returns the id string for &quot;Package&quot; (Group, Sharing)</summary>
-			public static string esri_sharing_packageGroupInLayoutShareTab {
-				 get { return "esri_sharing_packageGroupInLayoutShareTab"; }
-			}
-			///<summary>Returns the id string for &quot;Print&quot; (Group, Sharing)</summary>
-			public static string esri_sharing_printGroupInLayoutShareTab {
-				 get { return "esri_sharing_printGroupInLayoutShareTab"; }
-			}
-			///<summary>Returns the id string for &quot;Export&quot; (Group, Sharing)</summary>
-			public static string esri_sharing_exportGroupInLayoutShareTab {
-				 get { return "esri_sharing_exportGroupInLayoutShareTab"; }
-			}
-			///<summary>Returns the id string for &quot;Status&quot; (Group, Sharing)</summary>
-			public static string esri_sharing_sharingStatusGroup {
-				 get { return "esri_sharing_sharingStatusGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Save As&quot; (Group, Sharing)</summary>
-			public static string esri_sharing_sharingTemplateGroup {
-				 get { return "esri_sharing_sharingTemplateGroup"; }
-			}
-		}
-		public static partial class Category {
-			///<summary>Returns the id string for &quot;esri_sharing_analyzerSolutionFactories&quot; (Category, Sharing)</summary>
-			public static string esri_sharing_analyzerSolutionFactories {
-				 get { return "esri_sharing_analyzerSolutionFactories"; }
-			}
-		}
-		public static partial class Component {
-			///<summary>Returns the id string for &quot;esriAnalyzerSolutionLaunchHelp&quot; (LaunchHelpSolution, Sharing)</summary>
-			public static string esriAnalyzerSolutionLaunchHelp {
-				 get { return "esriAnalyzerSolutionLaunchHelp"; }
-			}
-			///<summary>Returns the id string for &quot;esriAnalyzerSolutionSelectInTOC&quot; (SelectInTOCSolution, Sharing)</summary>
-			public static string esriAnalyzerSolutionSelectInTOC {
-				 get { return "esriAnalyzerSolutionSelectInTOC"; }
-			}
-			///<summary>Returns the id string for &quot;esriAnalyzerSolutionRemoveLayer&quot; (RemoveLayerSolution, Sharing)</summary>
-			public static string esriAnalyzerSolutionRemoveLayer {
-				 get { return "esriAnalyzerSolutionRemoveLayer"; }
-			}
-			///<summary>Returns the id string for &quot;esriAnalyzerSolutionChangeLayerProperties&quot; (ShowLayerPropertiesSolution, Sharing)</summary>
-			public static string esriAnalyzerSolutionChangeLayerProperties {
-				 get { return "esriAnalyzerSolutionChangeLayerProperties"; }
-			}
-			///<summary>Returns the id string for &quot;esriAnalyzerSolutionChangeMapProperties&quot; (ShowMapPropertiesSoltuion, Sharing)</summary>
-			public static string esriAnalyzerSolutionChangeMapProperties {
-				 get { return "esriAnalyzerSolutionChangeMapProperties"; }
-			}
-			///<summary>Returns the id string for &quot;esriAnalyzerSolutionOpenSymbologyPane&quot; (OpenSymbologyPaneSoltuion, Sharing)</summary>
-			public static string esriAnalyzerSolutionOpenSymbologyPane {
-				 get { return "esriAnalyzerSolutionOpenSymbologyPane"; }
-			}
-			///<summary>Returns the id string for &quot;esriAnalyzerSolutionChangeStandaloneTableProperties&quot; (ShowStandaloneTablePropertiesSolution, Sharing)</summary>
-			public static string esriAnalyzerSolutionChangeStandaloneTableProperties {
-				 get { return "esriAnalyzerSolutionChangeStandaloneTableProperties"; }
-			}
-			///<summary>Returns the id string for &quot;esriAnalyzerSolutionLaunchGPTool&quot; (LaunchGPToolSolution, Sharing)</summary>
-			public static string esriAnalyzerSolutionLaunchGPTool {
-				 get { return "esriAnalyzerSolutionLaunchGPTool"; }
-			}
-			///<summary>Returns the id string for &quot;esriAnalyzerSolutionRegisterDataStore&quot; (RegisterShareDataStoreSolution, Sharing)</summary>
-			public static string esriAnalyzerSolutionRegisterDataStore {
-				 get { return "esriAnalyzerSolutionRegisterDataStore"; }
-			}
-		}
-		public static partial class Condition {
-			///<summary>Returns the id string for &quot;...&quot; (Condition, Sharing)</summary>
-			public static string esri_sharing_showAnalyzerResultWindow {
-				 get { return "esri_sharing_showAnalyzerResultWindow"; }
-			}
-			///<summary>Returns the id string for &quot;...&quot; (Condition, Sharing)</summary>
-			public static string esri_sharing_showSharingPane {
-				 get { return "esri_sharing_showSharingPane"; }
-			}
-			///<summary>Returns the id string for &quot;...&quot; (Condition, Sharing)</summary>
-			public static string esri_sharing_SharingPaneCondition {
-				 get { return "esri_sharing_SharingPaneCondition"; }
-			}
-			///<summary>Returns the id string for &quot;...&quot; (Condition, Sharing)</summary>
-			public static string esri_sharing_SharingWebLayerPaneCondition {
-				 get { return "esri_sharing_SharingWebLayerPaneCondition"; }
-			}
-			///<summary>Returns the id string for &quot;...&quot; (Condition, Sharing)</summary>
-			public static string esri_sharing_SharingWebMapPaneCondition {
-				 get { return "esri_sharing_SharingWebMapPaneCondition"; }
-			}
-			///<summary>Returns the id string for &quot;...&quot; (Condition, Sharing)</summary>
-			public static string esri_sharing_SharingBasemapPaneCondition {
-				 get { return "esri_sharing_SharingBasemapPaneCondition"; }
-			}
-			///<summary>Returns the id string for &quot;Enable &quot; (Condition, Sharing)</summary>
-			public static string esri_sharing_PackagingLayerBtnCondition {
-				 get { return "esri_sharing_PackagingLayerBtnCondition"; }
-			}
-			///<summary>Returns the id string for &quot;esri_sharing_NoValidPaneCondition&quot; (Condition, Sharing)</summary>
-			public static string esri_sharing_NoValidPaneCondition {
-				 get { return "esri_sharing_NoValidPaneCondition"; }
-			}
-			///<summary>Returns the id string for &quot;esri_sharing_2DmapPaneCondition&quot; (Condition, Sharing)</summary>
-			public static string esri_sharing_2DmapPaneCondition {
-				 get { return "esri_sharing_2DmapPaneCondition"; }
-			}
-			///<summary>Returns the id string for &quot;esri_sharing_scenePaneCondition&quot; (Condition, Sharing)</summary>
-			public static string esri_sharing_scenePaneCondition {
-				 get { return "esri_sharing_scenePaneCondition"; }
-			}
-			///<summary>Returns the id string for &quot;esri_sharing_basemapPaneCondition&quot; (Condition, Sharing)</summary>
-			public static string esri_sharing_basemapPaneCondition {
-				 get { return "esri_sharing_basemapPaneCondition"; }
-			}
-			///<summary>Returns the id string for &quot;esri_sharing_weblayerContextMenuCondition&quot; (Condition, Sharing)</summary>
-			public static string esri_sharing_weblayerContextMenuCondition {
-				 get { return "esri_sharing_weblayerContextMenuCondition"; }
-			}
-			///<summary>Returns the id string for &quot;esri_sharing_overwriteweblayerContextMenuCondition&quot; (Condition, Sharing)</summary>
-			public static string esri_sharing_overwriteweblayerContextMenuCondition {
-				 get { return "esri_sharing_overwriteweblayerContextMenuCondition"; }
-			}
-			///<summary>Returns the id string for &quot;...&quot; (Condition, Sharing)</summary>
-			public static string esri_sharing_SharingWebScenePaneCondition {
-				 get { return "esri_sharing_SharingWebScenePaneCondition"; }
-			}
-			///<summary>Returns the id string for &quot;A layer is selected and have an active map pane&quot; (Condition, Sharing)</summary>
-			public static string esri_sharing_layerSelectedCondition {
-				 get { return "esri_sharing_layerSelectedCondition"; }
-			}
-			///<summary>Returns the id string for &quot;esri_sharing_imageServiceWeblayerContextMenuCondition&quot; (Condition, Sharing)</summary>
-			public static string esri_sharing_imageServiceWeblayerContextMenuCondition {
-				 get { return "esri_sharing_imageServiceWeblayerContextMenuCondition"; }
-			}
-			///<summary>Returns the id string for &quot;esri_sharing_GPHistoryCondition&quot; (Condition, Sharing)</summary>
-			public static string esri_sharing_GPHistoryCondition {
-				 get { return "esri_sharing_GPHistoryCondition"; }
-			}
-		}
-		public static partial class Module {
-			///<summary>Returns the id string for &quot;SharingModule&quot; (SharingModule, Sharing)</summary>
-			public static string esri_sharing {
-				 get { return "esri_sharing"; }
-			}
-		}
-		public static partial class State {
-			///<summary>Returns the id string for &quot;esri_sharing_analyzerResultWindow&quot; (State, Sharing)</summary>
-			public static string esri_sharing_analyzerResultWindow {
-				 get { return "esri_sharing_analyzerResultWindow"; }
-			}
-			///<summary>Returns the id string for &quot;esri_sharing_sharingDocPaneState&quot; (State, Sharing)</summary>
-			public static string esri_sharing_sharingDocPaneState {
-				 get { return "esri_sharing_sharingDocPaneState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_core_isSignedIn&quot; (State, Sharing)</summary>
-			public static string esri_core_isSignedIn {
-				 get { return "esri_core_isSignedIn"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_mapTypeBasemapState&quot; (State, Sharing)</summary>
-			public static string esri_mapping_mapTypeBasemapState {
-				 get { return "esri_mapping_mapTypeBasemapState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_mapViewingMode2DStereoState&quot; (State, Sharing)</summary>
-			public static string esri_mapping_mapViewingMode2DStereoState {
-				 get { return "esri_mapping_mapViewingMode2DStereoState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_AllServiceLayersSelectedState&quot; (State, Sharing)</summary>
-			public static string esri_mapping_AllServiceLayersSelectedState {
-				 get { return "esri_mapping_AllServiceLayersSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_all3DMultiPatchLayersSelectedState&quot; (State, Sharing)</summary>
-			public static string esri_mapping_all3DMultiPatchLayersSelectedState {
-				 get { return "esri_mapping_all3DMultiPatchLayersSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_all3DPointLayersSelectedState&quot; (State, Sharing)</summary>
-			public static string esri_mapping_all3DPointLayersSelectedState {
-				 get { return "esri_mapping_all3DPointLayersSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_All3DLASDLayerSelectedState&quot; (State, Sharing)</summary>
-			public static string esri_mapping_All3DLASDLayerSelectedState {
-				 get { return "esri_mapping_All3DLASDLayerSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_core_supports_PLP_SceneService&quot; (State, Sharing)</summary>
-			public static string esri_core_supports_PLP_SceneService {
-				 get { return "esri_core_supports_PLP_SceneService"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_all3DLineLayersSelectedState&quot; (State, Sharing)</summary>
-			public static string esri_mapping_all3DLineLayersSelectedState {
-				 get { return "esri_mapping_all3DLineLayersSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_all3DPolygonLayersSelectedState&quot; (State, Sharing)</summary>
-			public static string esri_mapping_all3DPolygonLayersSelectedState {
-				 get { return "esri_mapping_all3DPolygonLayersSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_allMapNotesLayersSelectedState&quot; (State, Sharing)</summary>
-			public static string esri_mapping_allMapNotesLayersSelectedState {
-				 get { return "esri_mapping_allMapNotesLayersSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_AllNALayerSelectedState&quot; (State, Sharing)</summary>
-			public static string esri_mapping_AllNALayerSelectedState {
-				 get { return "esri_mapping_AllNALayerSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_geoprocessing_historyContainerState&quot; (State, Sharing)</summary>
-			public static string esri_geoprocessing_historyContainerState {
-				 get { return "esri_geoprocessing_historyContainerState"; }
-			}
-		}
-		public static partial class Tab {
-			///<summary>Returns the id string for &quot;SHARE&quot; (Tab, Sharing)</summary>
-			public static string esri_sharing_noValidPaneShareTab {
-				 get { return "esri_sharing_noValidPaneShareTab"; }
-			}
-			///<summary>Returns the id string for &quot;SHARE&quot; (Tab, Sharing)</summary>
-			public static string esri_sharing_shareTab {
-				 get { return "esri_sharing_shareTab"; }
-			}
-			///<summary>Returns the id string for &quot;SHARE&quot; (Tab, Sharing)</summary>
-			public static string esri_sharing_basemapShareTab {
-				 get { return "esri_sharing_basemapShareTab"; }
-			}
-			///<summary>Returns the id string for &quot;SHARE&quot; (Tab, Sharing)</summary>
-			public static string esri_sharing_sceneShareTab {
-				 get { return "esri_sharing_sceneShareTab"; }
-			}
-			///<summary>Returns the id string for &quot;SHARE&quot; (Tab, Sharing)</summary>
-			public static string esri_sharing_layoutShareTab {
-				 get { return "esri_sharing_layoutShareTab"; }
-			}
-		}
-		public static partial class Toolpalette {
-			///<summary>Returns the id string for &quot;Web Layer&quot; (Toolpalette, Sharing)</summary>
-			public static string esri_sharing_webLayerToolPalette {
-				 get { return "esri_sharing_webLayerToolPalette"; }
 			}
 		}
 		public static partial class Button {
@@ -15443,6 +12231,26 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_mapping_showRasterProcessDockPaneButton&quot; (Component, TaskAssistant)</summary>
 			public static string esri_mapping_showRasterProcessDockPaneButton {
 				 get { return "esri_mapping_showRasterProcessDockPaneButton"; }
+			}
+			///<summary>Returns the id string for &quot;esri_sharing_PackagingProjectPaneBtn&quot; (Component, TaskAssistant)</summary>
+			public static string esri_sharing_PackagingProjectPaneBtn {
+				 get { return "esri_sharing_PackagingProjectPaneBtn"; }
+			}
+			///<summary>Returns the id string for &quot;esri_sharing_PackagingMapPaneBtn&quot; (Component, TaskAssistant)</summary>
+			public static string esri_sharing_PackagingMapPaneBtn {
+				 get { return "esri_sharing_PackagingMapPaneBtn"; }
+			}
+			///<summary>Returns the id string for &quot;esri_sharing_PackagingLayersPaneBtn&quot; (Component, TaskAssistant)</summary>
+			public static string esri_sharing_PackagingLayersPaneBtn {
+				 get { return "esri_sharing_PackagingLayersPaneBtn"; }
+			}
+			///<summary>Returns the id string for &quot;esri_sharing_SharingAsWebMapPaneBtn&quot; (Component, TaskAssistant)</summary>
+			public static string esri_sharing_SharingAsWebMapPaneBtn {
+				 get { return "esri_sharing_SharingAsWebMapPaneBtn"; }
+			}
+			///<summary>Returns the id string for &quot;esri_sharing_SaveAsMapFileBtn&quot; (Component, TaskAssistant)</summary>
+			public static string esri_sharing_SaveAsMapFileBtn {
+				 get { return "esri_sharing_SaveAsMapFileBtn"; }
 			}
 			///<summary>Returns the id string for &quot;esri_workflow_workflowConnectionContextMenu&quot; (Component, TaskAssistant)</summary>
 			public static string esri_workflow_workflowConnectionContextMenu {

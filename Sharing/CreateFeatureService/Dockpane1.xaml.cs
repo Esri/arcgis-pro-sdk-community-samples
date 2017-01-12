@@ -31,6 +31,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.IO;
 using ArcGIS.Desktop.Core;
+using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts;
 
 namespace CreateFeatureService
@@ -51,6 +52,27 @@ namespace CreateFeatureService
             copyToClipboard.Visibility = System.Windows.Visibility.Hidden;
         }
 
+        private Brush _errorBorderBrush
+        {
+            get
+            {
+                var colorString = FrameworkApplication.ApplicationTheme == ApplicationTheme.Default
+                    ? "#C6542D"
+                    : "#C75028";
+                return new SolidColorBrush((Color)ColorConverter.ConvertFromString(colorString));
+            }
+        }
+
+        private Brush _greenBorderBrush
+        {
+            get
+            {
+                var colorString = FrameworkApplication.ApplicationTheme == ApplicationTheme.Default
+                    ? "#5A9359"
+                    : "#58AD57";
+                return new SolidColorBrush((Color)ColorConverter.ConvertFromString(colorString));
+            }
+        }
         /// <summary>
         /// Check if input fields are empty or invalid
         /// </summary>
@@ -58,17 +80,23 @@ namespace CreateFeatureService
         Tuple<bool, string> checkEmptyFields()
         {
             #region
-            BaseUrl.BorderBrush = Brushes.DarkBlue;
-            itemId.BorderBrush = Brushes.DarkBlue;
-            username.BorderBrush = Brushes.DarkBlue;
-            filetype.BorderBrush = Brushes.DarkBlue;
-            publishParameters.BorderBrush = Brushes.DarkBlue;
+
+            var brush = FrameworkApplication.ApplicationTheme == ApplicationTheme.Default
+                ? Brushes.DarkBlue
+                : Brushes.AliceBlue;
+            BaseUrl.BorderBrush = brush;
+            itemId.BorderBrush = brush;
+            username.BorderBrush = brush;
+            filetype.BorderBrush = brush;
+            publishParameters.BorderBrush = brush;
             #endregion
 
             string msg = "";
             if (BaseUrl.Text.Trim() == "")
             {
-                BaseUrl.BorderBrush = Brushes.Red;
+
+                BaseUrl.BorderBrush = _errorBorderBrush;
+                
                 msg += "\tPortal Url cannot be empty.\n";
             }
             else
@@ -79,18 +107,20 @@ namespace CreateFeatureService
                                   || uriResult.Scheme == Uri.UriSchemeHttps);
                 if (!result)
                 {
-                    BaseUrl.BorderBrush = Brushes.Red;
+                    BaseUrl.BorderBrush = _errorBorderBrush;
                     msg += "\tPortal Url is invalid.\n";
                 }
             }
             if (itemId.Text.Trim() == "")
             {
-                itemId.BorderBrush = Brushes.Red;
+                itemId.BorderBrush = _errorBorderBrush;
+
+
                 msg += "\tTtem Id cannot be empty.\n";
             }
             if (username.Text.Trim() == "")
             {
-                username.BorderBrush = Brushes.Red;
+                username.BorderBrush = _errorBorderBrush;
                 msg += "\tusername cannot be empty.\n";
             }
             else if (itemId.Text.Trim() != "")
@@ -98,20 +128,20 @@ namespace CreateFeatureService
                 Tuple<bool, string> res = getServiceName(BaseUrl.Text, username.Text, itemId.Text);
                 if (!res.Item1)
                 {
-                    itemId.BorderBrush = Brushes.Red;
+                    itemId.BorderBrush = _errorBorderBrush;
                     msg += "\tItem Id is not associated with existing data.\n";
                 }
             }
 
             if (filetype.Text.Trim() == "")
             {
-                filetype.BorderBrush = Brushes.Red;
+                filetype.BorderBrush = _errorBorderBrush;
                 msg += "\tFile type cannot be empty.\n";
             }
 
             if (publishParameters.Text.Trim() == "")
             {
-                publishParameters.BorderBrush = Brushes.Red;
+                publishParameters.BorderBrush = _errorBorderBrush;
                 msg += "\tPublish Parameters cannot be empty.\n";
             }
             if (msg.Trim() == "")
@@ -127,7 +157,6 @@ namespace CreateFeatureService
         /// <param name="e"></param>
         void OnClickClearContents(object sender, RoutedEventArgs e)
         {
-            publishSubmit.Background = Brushes.White;
             publishSubmit.IsEnabled = true;
             BaseUrl.Text = "";
             itemId.Text = "";
@@ -152,7 +181,6 @@ namespace CreateFeatureService
             Tuple<bool, string> tup = checkEmptyFields();
             if (!tup.Item1)
             {
-                publishSubmit.Background = Brushes.Gray;
                 publishSubmit.IsEnabled = false;
                 txt_serviceLink.Text = "Portal info: " + BaseUrl.Text + " || ";
                 txt_serviceLink.Text += "Item info: (Item ID) " + itemId.Text + "; (user name) " + username.Text + "; (File Type) " + filetype.Text + "; (Parameters) " + publishParameters.Text + "\n";
@@ -174,7 +202,7 @@ namespace CreateFeatureService
                             if (publishResult.Item1)
                             {
                                 txt_serviceLink.Text = "Service created successfully!";
-                                txt_serviceLink.Foreground = Brushes.Green;
+                                txt_serviceLink.Foreground = _greenBorderBrush;                                
                                 serviceLinkLabel.Visibility = System.Windows.Visibility.Visible;
                                 serviceLinkText.Visibility = System.Windows.Visibility.Visible;
                                 serviceLinkText.Text = publishResult.Item2;
@@ -183,25 +211,26 @@ namespace CreateFeatureService
                             else
                             {
                                 txt_serviceLink.Text = publishResult.Item2 + " for request - " + txt_serviceLink.Text;
-                                txt_serviceLink.Foreground = Brushes.Red;
+                                txt_serviceLink.Foreground = _errorBorderBrush;
+
                             }
                         }
                         else
                         {
                             txt_serviceLink.Text = "Service Name is not available: " + availableRes.Item2 + " for request - " + txt_serviceLink.Text;
-                            txt_serviceLink.Foreground = Brushes.Red;
+                            txt_serviceLink.Foreground = _errorBorderBrush;
                         }
                     }
                     else
                     {
                         txt_serviceLink.Text = "Call to get item name failed: " + itemNameRes.Item2 + " for request - " + txt_serviceLink.Text;
-                        txt_serviceLink.Foreground = Brushes.Red;
+                        txt_serviceLink.Foreground = _errorBorderBrush;                        
                     }
                 }
                 else
                 {
                     txt_serviceLink.Text = analyzeResult.Item2 + " for request - " + txt_serviceLink.Text;
-                    txt_serviceLink.Foreground = Brushes.Red;
+                    txt_serviceLink.Foreground = _errorBorderBrush;
                 }
             }
             else
@@ -371,9 +400,8 @@ namespace CreateFeatureService
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void GetActivePortal_Click(object sender, RoutedEventArgs e)
-        {
-            BaseUrl.Text = PortalManager.GetActivePortal().ToString();
+        void GetActivePortal_Click(object sender, RoutedEventArgs e) {
+            BaseUrl.Text = ArcGISPortalManager.Current.GetActivePortal().PortalUri.ToString();
         }
 
         /// <summary>

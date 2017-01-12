@@ -47,13 +47,13 @@
             1. In Visual Studio click the Build menu. Then select Build Solution.
             2. Click Start button to open ArcGIS Pro.
             3. ArcGIS Pro will open. 
-            4. Open a map view that contains atleast one Feature Layer whose source points to a Feature Class (From either a File Geodatabase or an Enterprise Geodatabase)
+            4. Open a map view that contains at least one Feature Layer whose source points to a Feature Class from an Enterprise Geodatabase (SQL Server)
             5. Make sure the Map Pane and the corresponding Table of Contents (TOC) Pane are Open and the Map Pane is Active
             6. Click on the Add-In Tab
             7. Observe that the Domains Combo Box is disabled until a SQL Server FeatureClass backed Feature Layer is selected in the TOC
             8. On selecting a SQL Server FeatureClass backed layer, the combo box is enabled
             9. The combobox lists all domains and selecting a domain will generate a Query Layer with the name "RelatedDomains"+ the domain name selected
-            10. The Query layer will list the datasets referencing the domain selected 
+            10. The Query layer lists the datasets referencing the domain selected 
             </remarks>
         </member>
         <member name="P:DomainsUsage.Module1.Current">

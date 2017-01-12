@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0EEF603F-5920-4433-A160-8BA7C359B6FE}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2781}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UploadItem</RootNamespace>
@@ -81,10 +81,6 @@
       <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\DesktopExtensions\ArcGIS.Desktop.Extensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="ArcGIS">
-      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <AddInContent Include="Config.daml" />
@@ -116,6 +112,10 @@
     <None Include="ReadMe.md" />
   </ItemGroup>
   <ItemGroup>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\GenericButtonPurple16.png" />
+    <AddInContent Include="DarkImages\GenericButtonPurple32.png" />
     <Content Include="Screenshots\Screen1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

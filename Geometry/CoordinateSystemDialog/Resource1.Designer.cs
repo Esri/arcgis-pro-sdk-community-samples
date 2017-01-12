@@ -61,15 +61,6 @@ namespace CoordinateSystemAddin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Geographic Coordinate Systems/Africa/Abidjan 1987|GCS_Abidjan_1987|4143|GEOGCS[&apos;GCS_Abidjan_1987&apos;,DATUM[&apos;D_Abidjan_1987&apos;,SPHEROID[&apos;Clarke_1880_RGS&apos;,6378249.145,293.465]],PRIMEM[&apos;Greenwich&apos;,0.0],UNIT[&apos;Degree&apos;,0.0174532925199433]]Geographic Coordinate Systems/Africa/Accra|GCS_Accra|4168|GEOGCS[&apos;GCS_Accra&apos;,DATUM[&apos;D_Accra&apos;,SPHEROID[&apos;War_Office&apos;,6378300.0,296.0]],PRIMEM[&apos;Greenwich&apos;,0.0],UNIT[&apos;Degree&apos;,0.0174532925199433]]Geographic Coordinate Systems/Africa/Adindan|GCS_Adindan|4201|GEOGCS[&apos;GCS_Adindan&apos;,DATUM[&apos;D_A [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string sr_out {
-            get {
-                return ResourceManager.GetString("sr_out", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to string1.
         /// </summary>
         internal static string String1 {

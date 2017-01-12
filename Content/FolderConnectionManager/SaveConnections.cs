@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -11,6 +11,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License. 
 
+using System;
 using System.Collections.Generic;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Catalog;
@@ -26,7 +27,7 @@ namespace FolderConnections
             IEnumerable<FolderConnectionProjectItem> projectFolders = Project.Current.GetItems<FolderConnectionProjectItem>();
             string folders = null;
             foreach (var item in projectFolders)
-                folders += item.Path + "\n";
+                folders += item.Path + Environment.NewLine;
 
             /// Create the log file and write the current Folder-Connection's to it
             SaveItemDialog saveDialog = new SaveItemDialog();

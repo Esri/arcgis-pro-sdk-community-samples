@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8D9005ED-E3BC-46AC-B6C8-B1FFB8FB3BD2}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2767}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IdentifyWithSketchTool</RootNamespace>
@@ -96,7 +96,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomIdentify.cs" />
-    <Compile Include="Daml.cs" />
     <Compile Include="Module1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectAndZoom.cs" />
@@ -108,6 +107,10 @@
     <AddInContent Include="Images\GenericButtonRed32.png" />
   </ItemGroup>
   <ItemGroup>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\GenericButtonRed16.png" />
+    <AddInContent Include="DarkImages\GenericButtonRed32.png" />
     <Content Include="Screenshots\2DScreen.png" />
     <Content Include="Screenshots\3DScreen.png" />
   </ItemGroup>

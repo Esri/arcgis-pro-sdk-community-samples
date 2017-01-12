@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BEA348F3-90DE-4AAA-AC9B-A1B4005F685E}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2718}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CommandFilter</RootNamespace>
@@ -36,6 +36,8 @@
     <StartAction>Program</StartAction>
     <StartProgram>C:\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe</StartProgram>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -78,10 +80,6 @@
       <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\DesktopExtensions\ArcGIS.Desktop.Extensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="ArcGIS">
-      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <AddInContent Include="Config.daml" />
@@ -122,6 +120,14 @@
   <ItemGroup>
     <None Include="ReadMe.md" />
     <None Include="Screenshots\Usage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\Dino32.png" />
+    <AddInContent Include="DarkImages\GenericButtonPurple16.png" />
+    <AddInContent Include="DarkImages\GenericButtonPurple32.png" />
+    <AddInContent Include="DarkImages\MarsCat32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.PackageAddIn" />

@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -16,6 +16,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Data;
+using System.Windows.Input;
 using ArcGIS.Core.Data;
 using ArcGIS.Core.Geometry;
 using ArcGIS.Desktop.Framework;
@@ -23,6 +26,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 using ArcGIS.Desktop.Mapping.Events;
+using ArcGIS.Desktop.Framework.Dialogs;
 
 namespace FilterFeaturesBasedOnAttributesWithinAnExtent
 {
@@ -32,8 +36,11 @@ namespace FilterFeaturesBasedOnAttributesWithinAnExtent
 
         protected Dockpane1ViewModel()
         {
-            TOCSelectionChangedEvent.Subscribe(UpdateFields);
+            BindingOperations.EnableCollectionSynchronization(FeatureData, _collectionLock);
+            BindingOperations.EnableCollectionSynchronization(Fields, _collectionLock);
 
+            TOCSelectionChangedEvent.Subscribe(UpdateFields);
+            SelectedLayer = @"Select Feature Layer in TOC";
         }
 
         /// <summary>
@@ -43,32 +50,40 @@ namespace FilterFeaturesBasedOnAttributesWithinAnExtent
         /// <param name="args"></param>
         private void UpdateFields(MapViewEventArgs args)
         {
-            if (args.MapView.GetSelectedLayers().Count == 0) return;
-            var selectedLayer = args.MapView.GetSelectedLayers()[0];
-            if (selectedLayer is FeatureLayer)
+            if (args.MapView.GetSelectedLayers().Count == 0)
             {
-                featureLayer = selectedLayer as FeatureLayer;
-                QueuedTask.Run(() =>
-                {
-                    using (var table = featureLayer.GetTable())
-                    {
-                        Fields = new ObservableCollection<string>(table.GetDefinition().GetFields().Select(field => field.Name));
-                    }
-                });
+                SelectedLayer = @"Select Feature Layer in TOC";
+                return;
             }
+            var selectedLayer = args.MapView.GetSelectedLayers()[0];
+            if (!(selectedLayer is FeatureLayer))
+            {
+                SelectedLayer = @"Select Feature Layer in TOC";
+                return;
+            }
+            SelectedLayer = MapView.Active.GetSelectedLayers()[0].Name;
+            _featureLayer = selectedLayer as FeatureLayer;
+            QueuedTask.Run(() =>
+            {
+                using (var table = _featureLayer.GetTable())
+                {
+                    var newFields = new ObservableCollection<string>(table.GetDefinition().GetFields().Select(field => field.Name));
+                    lock (_collectionLock)
+                    {
+                        Fields.Clear();
+                        foreach (var field in newFields) Fields.Add(field);
+                    }
+                }
+            });
         }
-
 
         /// <summary>
         /// Show the DockPane.
         /// </summary>
         internal static void Show()
         {
-            DockPane pane = FrameworkApplication.DockPaneManager.Find(_dockPaneID);
-            if (pane == null)
-                return;
-            
-            pane.Activate();
+            var pane = FrameworkApplication.DockPaneManager.Find(_dockPaneID);
+            pane?.Activate();
         }
 
         /// <summary>
@@ -76,47 +91,51 @@ namespace FilterFeaturesBasedOnAttributesWithinAnExtent
         /// </summary>
         private string _heading = "Highlight Features";
 
-        private FeatureLayer featureLayer;
-        private ObservableCollection<string> fields;
-        private ObservableCollection<FeatureData> featureData;
-        private string selectedField;
-        private string fieldValue;
+        private FeatureLayer _featureLayer;
+        private ObservableCollection<string> _fields = new ObservableCollection<string>();
+        private ObservableCollection<FeatureData> _featureData = new ObservableCollection<FeatureData>();
+        private readonly object _collectionLock = new object();
+        private string _selectedLayer;
+        private string _selectedField;
+        private string _fieldValue;
+        private int _resultCount = 0;
+        private ICommand _cmdWork;
 
         public ObservableCollection<string> Fields
         {
-            get { return fields; }
+            get { return _fields; }
             set
             {
-                fields = value;
+                _fields = value;
                 NotifyPropertyChanged(new PropertyChangedEventArgs("Fields"));
             }
         }
 
         public ObservableCollection<FeatureData> FeatureData
         {
-            get { return featureData; }
+            get { return _featureData; }
             set
             {
-                featureData = value;
+                _featureData = value;
                 NotifyPropertyChanged(new PropertyChangedEventArgs("FeatureData"));
             }
         }
 
         public string SelectedField
         {
-            get { return selectedField; }
+            get { return _selectedField; }
             set
             {
-                SetProperty(ref selectedField, value, () => SelectedField);
+                SetProperty(ref _selectedField, value, () => SelectedField);
             }
         }
 
         public string FieldValue
         {
-            get { return fieldValue; }
+            get { return _fieldValue; }
             set
             {
-                SetProperty(ref fieldValue, value, () => FieldValue);
+                SetProperty(ref _fieldValue, value, () => FieldValue);
             }
         }
 
@@ -129,83 +148,149 @@ namespace FilterFeaturesBasedOnAttributesWithinAnExtent
             }
         }
 
+        public int ResultCount
+        {
+            get { return _resultCount; }
+            set
+            {
+                SetProperty(ref _resultCount, value, () => ResultCount);
+            }
+        }
+
+        public string SelectedLayer
+        {
+            get { return _selectedLayer; }
+            set
+            {
+                SetProperty(ref _selectedLayer, value, () => SelectedLayer);
+            }
+        }
+
         /// <summary>
         /// Get the selected Feature Layer and the corresponding FeatureClass
         /// If there are any features selected for that layer, Zoom to the extent and use the extent for a Spatial Query
         /// If there are no feature selected, perform a normal query on all the features for that FeatureClass
         /// List the selected Object Ids in the datagrid by assigning them to FeatureData property (bound to the datagrid)
         /// </summary>
-        public async void Work()
+        public ICommand CmdWork
         {
-            var selectedLayer = MapView.Active.GetSelectedLayers()[0];
-            if (selectedLayer is FeatureLayer)
+            get
             {
-                var featureLayer = selectedLayer as FeatureLayer;
-                QueuedTask.Run(async () => {
-                    using (var table = featureLayer.GetTable())
+                return _cmdWork ?? (_cmdWork = new RelayCommand(() =>
+                {
+                    try
                     {
-                        var whereClause = String.Format("{0} = '{1}'", SelectedField, FieldValue);
-                        using (var mapSelection = featureLayer.GetSelection())
+                        if (MapView.Active.GetSelectedLayers().Count == 0) return;
+                        var selectedLayer = MapView.Active.GetSelectedLayers()[0];
+                        var theField = GetFieldByName(SelectedField).Result;
+                        if (!(selectedLayer is FeatureLayer)) return;
+                        var featureLayer = selectedLayer as FeatureLayer;
+                        QueuedTask.Run(() =>
                         {
-                            QueryFilter queryFilter;
-                            if (mapSelection.GetCount() > 0)
+                            using (var table = featureLayer.GetTable())
                             {
-                                Envelope envelope = null;
-                                using (var cursor = mapSelection.Search())
+                                var quote = theField.FieldType == FieldType.String ? "'" : "";
+                                var whereClause = $"{SelectedField} = {quote}{FieldValue}{quote}";
+                                using (var mapSelection = featureLayer.GetSelection())
                                 {
-                                    while (cursor.MoveNext())
+                                    QueryFilter queryFilter;
+                                    if (mapSelection.GetCount() > 0)
                                     {
-                                        using (var feature = cursor.Current as Feature)
+                                        Envelope envelope = null;
+                                        using (var cursor = mapSelection.Search())
                                         {
-                                            if (envelope == null)
-                                                envelope = feature.GetShape().Extent;
-                                            else
-                                                envelope = envelope.Union(feature.GetShape().Extent);
+                                            while (cursor.MoveNext())
+                                            {
+                                                using (var feature = cursor.Current as Feature)
+                                                {
+                                                    envelope = envelope == null
+                                                        ? feature.GetShape().Extent
+                                                        : envelope.Union(feature.GetShape().Extent);
+                                                }
+                                            }
                                         }
+                                        queryFilter = new SpatialQueryFilter
+                                        {
+                                            FilterGeometry = new EnvelopeBuilder(envelope).ToGeometry(),
+                                            SpatialRelationship = SpatialRelationship.Contains,
+                                            WhereClause = whereClause
+                                        };
+                                    }
+                                    else
+                                    {
+                                        queryFilter = new QueryFilter { WhereClause = whereClause };
+                                    }
+                                    try
+                                    {
+                                        lock (_collectionLock) FeatureData.Clear();
+                                        using (var rowCursor = table.Search(queryFilter, false))
+                                        {
+                                            while (rowCursor.MoveNext())
+                                            {
+                                                using (var current = rowCursor.Current)
+                                                {
+                                                    var offenseType = Convert.ToInt32(current["Offense_Type"]);
+                                                    var sMayorOffenseType =
+                                                        Convert.ToString(current["Major_Offense_Type"]);
+                                                    var sAddress = Convert.ToString(current["Address"]);
+                                                    var objectId = current.GetObjectID();
+                                                    lock (_collectionLock)
+                                                        FeatureData.Add(new FeatureData
+                                                        {
+                                                            ObjectId = objectId,
+                                                            MajorOffenseType = sMayorOffenseType,
+                                                            Address = sAddress,
+                                                            OffenseType = offenseType
+                                                        });
+                                                }
+                                            }
+                                        }
+                                        ResultCount = FeatureData.Count;
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show($@"Query error: {ex}");
+                                        ResultCount = 0;
                                     }
                                 }
-                                queryFilter = new SpatialQueryFilter
-                                {
-                                    FilterGeometry = new EnvelopeBuilder(envelope).ToGeometry(),
-                                    SpatialRelationship = SpatialRelationship.Contains,
-                                    WhereClause = whereClause
-                                };
                             }
-                            else
-                            {
-                                queryFilter = new QueryFilter {WhereClause = whereClause};
-                            }
-                            try
-                            {
-                                using (var selection = table.Select(queryFilter))
-                                {
-                                    var readOnlyList = selection.GetObjectIDs();
-                                    FeatureData =
-                                        new ObservableCollection<FeatureData>(
-                                            readOnlyList.Select(
-                                                objectId => new FeatureData {ObjectId = objectId.ToString()}));
-                                    MapView.Active.Map.SetSelection(new Dictionary<MapMember, List<long>>
-                                    {
-                                        {featureLayer, new List<long>(readOnlyList)}
-                                    });
-                                }
-
-                            }
-                            catch (Exception)
-                            {
-
-                            }
-                        }
+                        });
                     }
-                });
-                
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($@"Query error: {ex}");
+                        ResultCount = 0;
+
+                    }
+                }, true));
             }
+        }
+
+        private static Task<Field> GetFieldByName(string fieldName)
+        {
+            var selectedLayer = MapView.Active.GetSelectedLayers()[0];
+            var featureLayer = selectedLayer as FeatureLayer;
+            return QueuedTask.Run(() =>
+            {
+                Field resultField = null;
+                if (featureLayer != null)
+                {
+                    using (var table = featureLayer.GetTable())
+                    {
+                        resultField = table.GetDefinition().GetFields().FirstOrDefault(field => field.Name == fieldName);
+                    }
+                }
+                return resultField;
+            });
         }
     }
 
     internal class FeatureData
     {
-        public string ObjectId { get; set; }
+        public long ObjectId { get; set; }
+        public string MajorOffenseType { get; set; }
+        public int OffenseType { get; set; }
+        public string Address { get; set; }
     }
 
     /// <summary>

@@ -2,9 +2,10 @@
 
 
 
+
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -27,7 +28,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
 
-  <AddInInfo id="{6b211307-aaec-4c34-9679-70319fb08a2b}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{6b211307-aaec-4c34-9679-70319fb08a2b}" version="1.0" desktopVersion="1.4.7198">
     <Name>RemoveAddins</Name>   
     <Description>Customize the backstage by creating a Remove Add-in tab</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -51,7 +52,7 @@
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="RemoveAddins_Group1" caption="Group 1" appearsOnAddInTab="true">
+        <group id="RemoveAddins_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="Z1" >
           <!-- host controls within groups -->
         </group>
       </groups>
@@ -67,7 +68,7 @@
     <!--Use the insert and placeWith attributes to position the backstage tab-->
     <!--assign the viewModel class to the className attribute; assign the view class to the className attribute in the content tag-->
     <insertTab id="esri_sdk_AddBackStageTab" caption="Remove Add-ins" className="SampleBackstageTabViewModel"
-               insert="after" placeWith="esri_core_AddInsTab">
+               insert="after" placeWith="esri_core_AddInsTab" keytip="Z2" >
       <content className="SampleBackstageTabView"/>
     </insertTab>
 

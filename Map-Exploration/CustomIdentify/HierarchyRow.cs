@@ -1,4 +1,4 @@
-﻿//   Copyright 2016 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -21,8 +21,8 @@ namespace CustomIdentify
     /// <summary>
     /// Representation of the selected feature's Relationship Hierarchy
     /// </summary>
-    public class HierarchyRow
-    {
+    public class HierarchyRow {
+        private List<HierarchyRow> _children = null;
         /// <summary>
         /// Name to display
         /// </summary>
@@ -35,6 +35,19 @@ namespace CustomIdentify
         /// <summary>
         /// Related child rows
         /// </summary>
-        public List<HierarchyRow> children = new List<HierarchyRow>();
+        public List<HierarchyRow> children
+        {
+            get
+            {
+                if (_children == null)
+                    _children = new List<HierarchyRow>();
+                return _children;
+            }
+            set
+            {
+                _children = null;
+                _children = value;
+            }
+        }
     }
 }

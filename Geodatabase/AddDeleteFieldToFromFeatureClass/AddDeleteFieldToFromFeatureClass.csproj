@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{EBCF4B1A-5683-4F03-93E0-D7D43396F00B}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2734}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AddDeleteFieldToFromFeatureClass</RootNamespace>
@@ -99,7 +99,14 @@
     <AddInContent Include="Images\UFO16.png" />
     <AddInContent Include="Images\UFO32.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\Robot16.png" />
+    <AddInContent Include="DarkImages\Robot32.png" />
+    <AddInContent Include="DarkImages\UFO16.png" />
+    <AddInContent Include="DarkImages\UFO32.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.md" />
     <None Include="Screenshots\Screen0.png" />

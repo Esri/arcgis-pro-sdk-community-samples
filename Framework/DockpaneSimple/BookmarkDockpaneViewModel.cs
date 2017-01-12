@@ -1,4 +1,4 @@
-﻿//Copyright 2015 Esri
+//Copyright 2017 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -11,11 +11,11 @@
 //   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //   See the License for the specific language governing permissions and
 //   limitations under the License. 
-using System;
+
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Input;
@@ -30,34 +30,44 @@ namespace DockpaneSimple
 {
     internal class BookmarkDockpaneViewModel : DockPane
     {
-        private const string _dockPaneID = "DockpaneSimple_BookmarkDockpane";
+        #region Private Properties
+        private const string DockPaneId = "DockpaneSimple_BookmarkDockpane";
 
         /// <summary>
         /// used to lock collections for use by multiple threads
         /// </summary>
-        private static readonly object _lockMapCollection = new object();
+        private readonly object _lockBookmarkCollections = new object();
+        private readonly object _lockMapCollections = new object();
 
-        #region Properties
 
-        private ObservableCollection<Map> _listOfMaps = new ObservableCollection<Map>();
+        /// <summary>
+        /// UI lists, readonly collections, and properties
+        /// </summary>
+        private readonly ObservableCollection<Map> _listOfMaps = new ObservableCollection<Map>();
+        private readonly ObservableCollection<Bookmark> _listOfBookmarks = new ObservableCollection<Bookmark>();
+
+        private readonly ReadOnlyObservableCollection<Map> _readOnlyListOfMaps;
+        private readonly ReadOnlyObservableCollection<Bookmark> _readOnlyListOfBookmarks;
+
+        private Bookmark _selectedBookmark;
+        private Map _selectedMap;
+
+        private ICommand _retrieveMapsCommand;
+
+        #endregion
+
+        #region Public Properties
+
         /// <summary>
         /// Our List of Maps which is bound to our Dockpane XAML
         /// </summary>
-        public IReadOnlyCollection<Map> ListOfMaps
-        {
-            get { return _listOfMaps; }
-        }
+        public ReadOnlyObservableCollection<Map> ListOfMaps => _readOnlyListOfMaps;
 
-        private ReadOnlyObservableCollection<Bookmark> _listOfBookmarks = null;
         /// <summary>
         /// Our List of Bookmark which is bound to our Dockpane XAML
         /// </summary>
-        public ReadOnlyObservableCollection<Bookmark> ListOfBookmarks
-        {
-            get { return _listOfBookmarks; }
-        }
+        public ReadOnlyObservableCollection<Bookmark> ListOfBookmarks => _readOnlyListOfBookmarks;
 
-        private Bookmark _selectedBookmark;
         /// <summary>
         /// This is where we store the selected Bookmark 
         /// </summary>
@@ -67,21 +77,69 @@ namespace DockpaneSimple
             set
             {
                 SetProperty(ref _selectedBookmark, value, () => SelectedBookmark);
-
-                // zoom to it
-                MapView.Active.ZoomToAsync(_selectedBookmark);
+                System.Diagnostics.Debug.WriteLine("RetrieveMaps add maps");
+                if (_selectedBookmark != null)
+                {
+                    // GetMap needs to be on the MCT
+                    QueuedTask.Run(() =>
+                    {
+                        // zoom to it
+                        MapView.Active.ZoomTo(_selectedBookmark);
+                    });
+                }
+                System.Diagnostics.Debug.WriteLine("Selected bookmark changed");
             }
         }
 
+        /// <summary>
+        /// This is where we store the selected map 
+        /// </summary>
+        public Map SelectedMap
+        {
+            get { return _selectedMap; }
+            set
+            {
+                System.Diagnostics.Debug.WriteLine("selected map");
+                // make sure we're on the UI thread
+                Utils.RunOnUIThread(() =>
+                {
+                    SetProperty(ref _selectedMap, value, () => SelectedMap);
+                    if (_selectedMap != null)
+                    {
+                        // open /activate the map
+                        Utils.OpenAndActivateMap(_selectedMap.URI);
+                    }
+                });
+                System.Diagnostics.Debug.WriteLine("selected map opened and activated map");
+                // no need to await
+                UpdateBookmarks(_selectedMap);
+                System.Diagnostics.Debug.WriteLine("updated bookmarks");
+            }
+        }
+
+        /// <summary>
+        /// Implement a 'RelayCommand' to retrieve all maps from the current project
+        /// </summary>
+        public ICommand RetrieveMapsCommand => _retrieveMapsCommand;
+
         #endregion
 
+        #region CTor
 
         protected BookmarkDockpaneViewModel()
         {
+            // setup the lists and sync between background and UI
+            _readOnlyListOfMaps = new ReadOnlyObservableCollection<Map>(_listOfMaps);
+            _readOnlyListOfBookmarks = new ReadOnlyObservableCollection<Bookmark>(_listOfBookmarks);
+            BindingOperations.EnableCollectionSynchronization(_readOnlyListOfMaps, _lockMapCollections);
+            BindingOperations.EnableCollectionSynchronization(_readOnlyListOfBookmarks, _lockBookmarkCollections);
+
             // set up the command to retrieve the maps
             _retrieveMapsCommand = new RelayCommand(() => RetrieveMaps(), () => true);
         }
 
+        #endregion
+        
         #region Overrides
 
         /// <summary>
@@ -90,25 +148,36 @@ namespace DockpaneSimple
         /// <returns></returns>
         protected override Task InitializeAsync()
         {
-            // TODO Step 2 - make sure that AllMaps can be updated from work threads as well as the UI thread
-            BindingOperations.EnableCollectionSynchronization(_listOfMaps, _lockMapCollection);
-            // TODO Step 2 - subscribe to the ProjectItemsChangedEvent
             ProjectItemsChangedEvent.Subscribe(OnProjectCollectionChanged, false);
-
             return base.InitializeAsync();
         }
         #endregion
 
+        #region Zoom to Bookmark
+
+        /// <summary>
+        /// Zooms to the currently selected bookmark. 
+        /// </summary>
+        internal void ZoomToBookmark()
+        {
+            if (SelectedBookmark == null)
+                return;
+
+            // make sure the map is open
+            Utils.OpenAndActivateMap(SelectedBookmark.MapURI);
+            // zoom to it
+            if (MapView.Active != null) MapView.Active.ZoomToAsync(SelectedBookmark);
+        }
+        #endregion
+
+        #region Show dockpane 
         /// <summary>
         /// Show the DockPane.
         /// </summary>
         internal static void Show()
         {
-            DockPane pane = FrameworkApplication.DockPaneManager.Find(_dockPaneID);
-            if (pane == null)
-                return;
-
-            pane.Activate();
+            var pane = FrameworkApplication.DockPaneManager.Find(DockPaneId);
+            pane?.Activate();
         }
 
         /// <summary>
@@ -124,9 +193,10 @@ namespace DockpaneSimple
             }
         }
 
+        #endregion Show dockpane 
+
         #region Subscribed Events
 
-        // TODO Step 2 - add OnProjectCollectionChanged method
         /// <summary>
         /// Subscribe to Project Items Changed events which is getting called each
         /// time the project items change which happens when a new map is added or removed in ArcGIS Pro
@@ -145,14 +215,11 @@ namespace DockpaneSimple
             {
                 case System.Collections.Specialized.NotifyCollectionChangedAction.Add:
                     {
-                        lock (_lockMapCollection)
+                        var foundItem = _listOfMaps.FirstOrDefault(m => m.URI == mapItem.Path);
+                        // one cannot be found; so add it to our list
+                        if (foundItem == null)
                         {
-                            var foundItem = _listOfMaps.FirstOrDefault(m => m.URI == mapItem.Path);
-                            // one cannot be found; so add it to our list
-                            if (foundItem == null)
-                            {
-                                _listOfMaps.Add(mapItem.GetMap());
-                            }
+                            _listOfMaps.Add(mapItem.GetMap());
                         }
                     }
                     break;
@@ -164,12 +231,9 @@ namespace DockpaneSimple
                             SelectedMap = null;
 
                         // remove from the collection
-                        lock (_lockMapCollection)
+                        if (_listOfMaps.Contains(map))
                         {
-                            if (_listOfMaps.Contains(map))
-                            {
-                                _listOfMaps.Remove(map);
-                            }
+                            _listOfMaps.Remove(map);
                         }
                     }
                     break;
@@ -178,94 +242,56 @@ namespace DockpaneSimple
 
         #endregion
 
-        private ICommand _retrieveMapsCommand;
-        /// <summary>
-        /// Implement a 'RelayCommand' to retrieve all maps from the current project
-        /// </summary>
-        public ICommand RetrieveMapsCommand
-        {
-            get { return _retrieveMapsCommand; }
-        }
+        #region Private Helpers
 
         /// <summary>
         /// Method for retrieving map items in the project.
         /// </summary>
-        private void RetrieveMaps()
+        private async void RetrieveMaps()
         {
-            // reset
-            _selectedMap = null;
-            _selectedBookmark = null;
-            _listOfBookmarks = null;
-
-            lock (_lockMapCollection)
+            System.Diagnostics.Debug.WriteLine("RetrieveMaps");
+            // clear the collections
+            _listOfMaps.Clear();
+            System.Diagnostics.Debug.WriteLine("RetrieveMaps list of maps clear");
+            if (Project.Current != null)
             {
-                // create / clear the collection
-                if (_listOfMaps == null)
-                    _listOfMaps = new ObservableCollection<Map>();
-                else
-                    _listOfMaps.Clear();
-
-                if (Project.Current != null)
+                System.Diagnostics.Debug.WriteLine("RetrieveMaps add maps");
+                // GetMap needs to be on the MCT
+                await QueuedTask.Run(() =>
                 {
-                    // GetMap needs to be on the MCT
-                    QueuedTask.Run(() =>
+                    // get the map project items and add to my collection
+                    foreach (MapProjectItem item in Project.Current.GetItems<MapProjectItem>())
                     {
-                        // get the map project items and add to my collection
-                        foreach (MapProjectItem item in Project.Current.GetItems<MapProjectItem>())
-                        {
-                            _listOfMaps.Add(item.GetMap());
-                        }
-                    });
-                }
-            }
-
-            // ensure the view re-binds to both the maps and bookmarks
-            NotifyPropertyChanged(() => ListOfMaps);
-            NotifyPropertyChanged(() => ListOfBookmarks);
-            NotifyPropertyChanged(() => SelectedBookmark);
-            NotifyPropertyChanged(() => SelectedMap);
-        }
-
-        private Map _selectedMap;
-        /// <summary>
-        /// This is where we store the selected map 
-        /// </summary>
-        public Map SelectedMap
-        {
-            get { return _selectedMap; }
-            set
-            {
-                // make sure we're on the UI thread
-                Utils.RunOnUIThread(() =>
-                {
-                    SetProperty(ref _selectedMap, value, () => SelectedMap);
-                    if (_selectedMap == null)
-                    {
-                        _selectedBookmark = null;
-                        _listOfBookmarks = null;
-                        NotifyPropertyChanged(() => ListOfBookmarks);
-                        NotifyPropertyChanged(() => SelectedBookmark);
-                        return;
+                        _listOfMaps.Add(item.GetMap());
                     }
-
-                    // open /activate the map
-                    Utils.OpenAndActivateMap(_selectedMap.URI);
                 });
-
-                // no need to await
-                UpdateBookmarks();                
             }
+            System.Diagnostics.Debug.WriteLine("RetrieveMaps added maps");
         }
 
-        private async Task UpdateBookmarks()
+        private async Task UpdateBookmarks(Map map)
         {
             // get the bookmarks.  GetBookmarks needs to be on MCT but want to refresh members and properties on UI thread
-            _listOfBookmarks = await QueuedTask.Run(() => _selectedMap.GetBookmarks());
-            _selectedBookmark = null;
-            NotifyPropertyChanged(() => ListOfBookmarks);
-            NotifyPropertyChanged(() => SelectedBookmark);
-        }      
 
+            System.Diagnostics.Debug.WriteLine("UpdateBookmarks");
+            _listOfBookmarks.Clear();
+            System.Diagnostics.Debug.WriteLine("UpdateBookmarks list cleared");
+            if (map == null)
+            {
+                System.Diagnostics.Debug.WriteLine("RetrieveMaps no maps");
+                return;
+            }
+            await QueuedTask.Run(() =>
+            {
+                foreach (var bookmark in map.GetBookmarks())
+                {
+                    _listOfBookmarks.Add(bookmark);
+                }
+            });
+            System.Diagnostics.Debug.WriteLine("UpdateBookmarks new list done");
+        }
+
+        #endregion Private Helpers
     }
 
     /// <summary>

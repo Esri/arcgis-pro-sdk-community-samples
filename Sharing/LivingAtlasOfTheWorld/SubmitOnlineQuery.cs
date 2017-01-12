@@ -61,6 +61,8 @@ namespace LivingAtlasOfTheWorld {
         /// Execute the given query and return the result
         /// </summary>
         /// <param name="query"></param>
+        /// <param name="results"></param>
+        /// <param name="maxResults"></param>
         /// <returns></returns>
         public async Task<string> ExecAsync(OnlineQuery query, ObservableCollection<OnlineResultItem> results, int maxResults = 0) {
 
@@ -147,6 +149,8 @@ namespace LivingAtlasOfTheWorld {
         /// Execute the given query and return the result
         /// </summary>
         /// <param name="query"></param>
+        /// <param name="results"></param>
+        /// <param name="maxResults"></param>
         /// <returns></returns>
         public async Task<string> ExecWithEsriClientAsync(OnlineQuery query, ObservableCollection<OnlineResultItem> results, int maxResults = 0) {
 

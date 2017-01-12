@@ -1,6 +1,6 @@
-﻿/*
+/*
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ namespace ConstructMarkerFromFont
 {
     /// <summary>
     /// This sample demonstrate how to create a CIMMarker from a font file and use it to render a point feature layer.
+    /// The marker is then added to a personal style item in the current project.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution. 
@@ -44,6 +45,7 @@ namespace ConstructMarkerFromFont
     /// 7. Select the "Construct Marker from Fonts" menu item.
     /// 8. This will open the "Construct Marker from Fonts" dockpane.
     /// 9. Select a font, style and size and click Apply to render the point feature layer with the selected character.
+    /// 10. If you check the "Add selected marker to a personal FontMarker style" option, the selected marker will be added to a FontMarker style in the project.
     /// ![UI](ScreenShots/ConstructMarkerFromFonts.png)  
     /// </remarks>
     internal class Module1 : Module

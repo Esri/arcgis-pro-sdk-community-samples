@@ -1,4 +1,4 @@
-﻿//Copyright 2015 Esri
+//Copyright 2017 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ namespace HookProCommands
             // TODO: step 2 enable ArcGIS Pro command functionality 
             // get the ICommand interface from the ArcGIS Pro Button
             // using command's plug-in wrapper
-            var commandId = FrameworkApplication.GetPlugInWrapper(DAML.Button.esri_core_exitApplicationButton) as ICommand;
+            var commandId = FrameworkApplication.GetPlugInWrapper(@"esri_core_exitApplicationButton") as ICommand;
             if (commandId != null)
             {
                 // Let ArcGIS Pro do the work for us

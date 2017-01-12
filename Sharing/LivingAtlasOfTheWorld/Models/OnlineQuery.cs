@@ -27,26 +27,21 @@ namespace LivingAtlasOfTheWorld.Models {
         public static readonly int DefaultMaxResults = 100;
         public static readonly int DefaultMaxResponseLength = 2048;
         public static readonly int DefaultNumResultsPerQuery = 25;//AGS default is 10
-        public static readonly string DefaultPortal = "http://www.arcgis.com";
         public static readonly string DefaultEsriLayerContentTypes = "(type:\"Map Service\" OR type:\"Image Service\" OR type:\"Feature Service\" OR type:\"WMS\" OR type:\"KML\")";
         public static readonly string DefaultEsriWebMapContentTypes = "(type:\"Web Map\" OR type:\"Explorer Map\" OR type:\"Web Mapping Application\" OR type:\"Online Map\")";
 
         public static readonly string RestAPIReference = "http://resources.arcgis.com/en/help/arcgis-rest-api/";
         public static string EsriGroupId = "b36bd80e51f54ad698f9ae5f292d9ab1";
         public static readonly string QueryBase = "/sharing/rest/search?q=";
-        private string _portal = "";
         private string _response = "";
-        private string _content = "";
 
         /// <summary>
         /// Gets and sets the Portal URL.
         /// </summary>
         public string Portal {
-            get {
-                string portal = PortalManager.GetActivePortal().AbsoluteUri;
-                if (portal.IsEmpty())
-                    return DefaultPortal;
-                return portal;
+            get
+            {
+                return ArcGISPortalManager.Current.GetActivePortal().PortalUri.ToString();
             }
         }
 

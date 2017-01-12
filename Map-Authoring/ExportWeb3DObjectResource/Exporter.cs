@@ -155,10 +155,9 @@ namespace ExportWeb3DObjectResource
 
         public static string SetOutputFolder()
         {
-            FolderBrowserDialog browseDialog = new FolderBrowserDialog();
-            browseDialog.Description = "Select output folder for files";
-            browseDialog.ShowDialog();
-            return browseDialog.SelectedPath;
+            ArcGIS.Desktop.Framework.Dialogs.BrowseForFolder browseDialog = new ArcGIS.Desktop.Framework.Dialogs.BrowseForFolder();
+            string selectedFolder = browseDialog.SelectFolder("Select output folder for files", "", IntPtr.Zero);
+            return selectedFolder;
         }
     }
 }

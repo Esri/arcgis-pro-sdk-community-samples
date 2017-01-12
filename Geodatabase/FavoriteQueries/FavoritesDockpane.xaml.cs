@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -11,21 +11,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License. 
 
-using System;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 
 namespace FavoriteQueries
@@ -35,27 +21,12 @@ namespace FavoriteQueries
     /// </summary>
     public partial class FavoritesDockpaneView : UserControl
     {
+        /// <summary>
+        /// Ctor
+        /// </summary>
         public FavoritesDockpaneView()
         {
             InitializeComponent();
-        }
-
-        private void LayersComboBox_OnDropDownOpened(object sender, EventArgs e)
-        {
-            var favoritesDockpaneViewModel = DataContext as FavoritesDockpaneViewModel;
-            favoritesDockpaneViewModel.UpdateLayers();
-        }
-
-        private void LayersComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var favoritesDockpaneViewModel = DataContext as FavoritesDockpaneViewModel;
-            favoritesDockpaneViewModel.UpdateQueries(e.AddedItems[0] as string);
-        }
-
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-            var favoritesDockpaneViewModel = DataContext as FavoritesDockpaneViewModel;
-            favoritesDockpaneViewModel.DoWork();
         }
     }
 }

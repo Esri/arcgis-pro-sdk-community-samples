@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -30,23 +30,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ArcGIS.Core.Geometry;
+using ArcGIS.Desktop.Framework.Controls;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 
 namespace CoordinateSystemAddin.UI {
     /// <summary>
     /// Interaction logic for CoordSysDialog.xaml
     /// </summary>
-    public partial class CoordSysDialog : Window {
+    public partial class CoordSysDialog : ProWindow {
 
-        private CoordSysPickerViewModel _vm = new CoordSysPickerViewModel();
-        private SpatialReference _sr = null;
-        private bool _cancelled = false;
+        private CoordSysViewModel _vm = new CoordSysViewModel();
 
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public CoordSysDialog() {
             InitializeComponent();
             this.DataContext = _vm;
-            this.CoordinatePicker.DataContext = _vm;
+            this.CoordinateSystemsControl.SelectedSpatialReferenceChanged += (s, args) => {
+                _vm.SelectedSpatialReference = args.SpatialReference;
+            };
         }
+
         /// <summary>
         /// The selected Spatial Reference based on the picker selection
         /// </summary>
@@ -54,23 +59,11 @@ namespace CoordinateSystemAddin.UI {
         {
             get
             {
-                return _sr;
+                return _vm.SelectedSpatialReference;
             }
         }
 
-        private async void Close_OnClick(object sender, RoutedEventArgs e) {
-
-            if (((Button)sender).Name == "OK" &&_vm.SelectedCoordSystemInfo != null) {
-                //assign the Spatial Reference
-                await QueuedTask.Run(() => {
-                    try {
-                        _sr = SpatialReferenceBuilder.CreateSpatialReference(_vm.SelectedCoordSystemInfo.WKID);
-                    }
-                    catch (Exception ex) {
-                        System.Diagnostics.Debug.WriteLine(ex.ToString());
-                    }
-                });
-            }
+        private void Close_OnClick(object sender, RoutedEventArgs e) {
             Close();
         }
     }

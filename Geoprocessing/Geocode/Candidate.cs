@@ -1,4 +1,4 @@
-﻿//Copyright 2015 Esri
+//Copyright 2017 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -20,8 +20,8 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using ArcGIS.Core.Geometry;
 using ArcGIS.Core.CIM;
-using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Core.Internal.CIM;
+using ArcGIS.Desktop.Framework.Threading.Tasks;
 
 namespace Geocode
 {

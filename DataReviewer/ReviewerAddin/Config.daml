@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-
-
-
 <ArcGIS 
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   defaultAssembly="DataReviewerProSDKSamples.dll" 
@@ -11,13 +8,14 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
   xsi:schemaLocation="http://schemas.esri.com/DADF/Registry \ArcGIS\ArcGISDesktop\UIFramework\ArcGIS.Desktop.Framework.xsd">
   
-  <AddInInfo id="{78ff1a6a-a163-4d45-9cd4-3a732fa5f246}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{78ff1a6a-a163-4d45-9cd4-3a732fa5f246}" version="1.0" desktopVersion="1.4.7198">
     <Name>DataReviewerProSDKSamples</Name>
     <Description>Data Reviewer Pro SDK Sample</Description>
     <Image>Images\DataReviewerAddin32.png</Image>
     <Author>Esri</Author>
     <Company>Esri</Company>
     <Date>06/01/2015 10:20:00 AM, 2015</Date>
+    <Subject>DataReviewer</Subject>
   </AddInInfo>
   <!--
   //Copyright 2014 Esri
@@ -52,14 +50,14 @@
     <insertModule id="DataReviewerProSDKSamples_Module" className="DataReviewerProSDKModule" autoLoad="false" caption="Data Reviewer sample module">
       <tabs>
         <!--Tab for basic functionality-->
-        <tab id="DataReviewerProSDKSampleTab_Basic" caption="Reviewer Sample - Basic" extendedCaption="Data Reviewer Sample with basic functionality">
+        <tab id="DataReviewerProSDKSampleTab_Basic" caption="Reviewer Sample - Basic" extendedCaption="Data Reviewer Sample with basic functionality" keytip="W">
           <group refID="ReviewerResultsGroup_Basic" />
           <group refID="ReviewerSessionsGroup_Basic" />
           <group refID="ReviewerBatchJobsGroup_Basic" />
         </tab>
         
         <!--Tab for advanced functionality-->
-        <tab id="DataReviewerProSDKSampleTab_Advanced" caption="Reviewer Sample - Advanced" extendedCaption="Data Reviewer Sample with advanced functionality">
+        <tab id="DataReviewerProSDKSampleTab_Advanced" caption="Reviewer Sample - Advanced" extendedCaption="Data Reviewer Sample with advanced functionality" keytip="X">
           <group refID="ReviewerResultsGroup_Advanced" />
           <group refID="ReviewerSessionsGroup_Advanced" />
           <group refID="ReviewerSessionsGalleryGroup_Advanced" />
@@ -70,18 +68,18 @@
       
       <groups>
         <!--Groups for basic functionality-->
-        <group id="ReviewerResultsGroup_Basic" caption="Reviewer Results" smallImage="Images\DataReviewerResultsAdd16.png">
+        <group id="ReviewerResultsGroup_Basic" caption="Reviewer Results" smallImage="Images\DataReviewerResultsAdd16.png" keytip="Z1">
           <button refID="Add_Reviewer_Results_Basic" size="large"/>
           <button refID="Remove_Reviewer_Results_Basic" size="large"/>
         </group>
 
-        <group id="ReviewerSessionsGroup_Basic" caption="Reviewer Sessions" smallImage="Images\DataReviewerResultsAdd16.png">
+        <group id="ReviewerSessionsGroup_Basic" caption="Reviewer Sessions" smallImage="Images\DataReviewerResultsAdd16.png" keytip="Z2">
           <button refID="Add_Reviewer_Sessions_Basic" size="large"/>
           <button refID="Reviewer_Session_Mark_Default_Basic" size="large"/>
           <button refID="Remove_Reviewer_Session_Basic" size="large"/>
         </group>
 
-        <group id="ReviewerBatchJobsGroup_Basic" caption="Reviewer Batch Jobs" smallImage="Images\DataReviewerBatchJobFile16.png" >
+        <group id="ReviewerBatchJobsGroup_Basic" caption="Reviewer Batch Jobs" smallImage="Images\DataReviewerBatchJobFile16.png" keytip="Z3">
           <button refID="Add_Reviewer_BatchJob_Basic" size="large"/>
           <button refID="Remove_Reviewer_BatchJob_Basic" size="large"/>
         </group>
@@ -89,13 +87,13 @@
 
 
         <!--Groups for advanced functionality-->
-        <group id="ReviewerResultsGroup_Advanced" caption="Reviewer Results" smallImage="Images\DataReviewerResultsAdd16.png">
+        <group id="ReviewerResultsGroup_Advanced" caption="Reviewer Results" smallImage="Images\DataReviewerResultsAdd16.png" keytip="Z4">
           <button refID="Add_Reviewer_Results_Advanced" size="large"/>
           <!--This functionality is same for both advanced and basic-->
           <button refID="Remove_Reviewer_Results_Basic" size="large"/>
         </group>
         
-        <group id="ReviewerSessionsGroup_Advanced" caption="Reviewer Sessions" smallImage="Images\DataReviewerResultsAdd16.png">
+        <group id="ReviewerSessionsGroup_Advanced" caption="Reviewer Sessions" smallImage="Images\DataReviewerResultsAdd16.png" keytip="Z5">
           <button refID="Add_Reviewer_Sessions_Advanced" size="large"/>
           <gallery refID="Reviewer_Sessions_Gallery_Advanced" inline="true"/>
         </group>
@@ -104,7 +102,7 @@
           <gallery refID="Reviewer_Sessions_Gallery_Advanced" inline="true"/>
         </group>-->
         
-        <group id="ReviewerBatchJobsGroup_Advanced" caption="Reviewer Batch Jobs" smallImage="Images\DataReviewerBatchJobFile16.png" >
+        <group id="ReviewerBatchJobsGroup_Advanced" caption="Reviewer Batch Jobs" smallImage="Images\DataReviewerBatchJobFile16.png" keytip="Z6">
           <button refID="Add_Reviewer_BatchJob_Advanced" size="large"/>
           <gallery refID="Reviewer_BatchJob_Gallery_Advanced" inline="true"/>
         </group>
@@ -133,6 +131,7 @@
         
         <!-- Basic - Add Reviewer Results Button-->
         <button id="Add_Reviewer_Results_Basic" className="DataReviewerProSDKSamples_Module:AddReviewerResults_Basic" caption="Add Reviewer Reviewer Results" extendedCaption = "Basic - Add Reviewer Results project items to the current Project"
+                keytip="ZQ"
               smallImage="Images\DataReviewerResultsAdd16.png"
               largeImage="Images\DataReviewerResultsAdd32.png">
           <tooltip heading="Add Reviewer Results">
@@ -144,6 +143,7 @@
 
         <!-- Basic - Remove Reviewer Results Button-->
         <button id="Remove_Reviewer_Results_Basic" className="DataReviewerProSDKSamples_Module:RemoveReviewerResults_Basic" caption="Remove Reviewer Reviewer Results" extendedCaption = "Basic - Remove Reviewer Results project items from the current Project"
+                keytip="ZW"
               smallImage="Images\GenericDeleteRed16.png"
               largeImage="Images\GenericDeleteRed32.png">
           <tooltip heading="Remove Results Connection">
@@ -154,6 +154,7 @@
 
         <!-- Basic - Add Reviewer Sessions Button-->
         <button id="Add_Reviewer_Sessions_Basic" className="DataReviewerProSDKSamples_Module:AddSessions_Basic"  caption="Add Sessions" extendedCaption = "Basic - Add Reviewer Sessions to Project"
+                keytip="ZE"
               smallImage="Images\GenericAdd16.png"
               largeImage="Images\GenericAdd32.png">
           <tooltip heading="Remove">
@@ -164,6 +165,7 @@
 
         <!-- Basic - Mark Default Reviewer Session Button-->
         <button id="Reviewer_Session_Mark_Default_Basic" className="DataReviewerProSDKSamples_Module:MarkDefaultSession_Basic"  caption="Mark Default" extendedCaption = "Basic - Mark Default Reviewer Sessions"
+                keytip="ZR"
               smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericHome_B_16.png"
               largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericHome_B_32.png">
           <tooltip heading="Remove">
@@ -174,6 +176,7 @@
         
         <!-- Basic - Remove Reviewer Session Button-->
         <button id="Remove_Reviewer_Session_Basic" className="DataReviewerProSDKSamples_Module:RemoveSession_Basic"  caption="Remove Session" extendedCaption = "Basic - Remove Reviewer Sessions from Project"
+                keytip="ZT"
               smallImage="Images\GenericDeleteRed16.png"
               largeImage="Images\GenericDeleteRed32.png">
           <tooltip heading="Remove">
@@ -184,6 +187,7 @@
 
         <!-- Basic - Add Reviewer Batch Job Button-->
         <button id="Add_Reviewer_BatchJob_Basic" className="DataReviewerProSDKSamples_Module:AddBatchJobs_Basic" caption="Add Reviewer Batch Jobs" extendedCaption = "Basic - Add Reviewer Batch Jobs to Project"
+                keytip="ZY"
               smallImage="Images\DataReviewerBatchChecksAdd16.png"
               largeImage="Images\DataReviewerBatchChecksAdd32.png">
           <tooltip heading="Add Data Reviewer Batch Jobs">Add existing Batch Jobs to the project.</tooltip>
@@ -191,6 +195,7 @@
 
         <!-- Basic - Remove Reviewer Batch Job Button-->
         <button id="Remove_Reviewer_BatchJob_Basic" className="DataReviewerProSDKSamples_Module:RemoveBatchJob_Basic"  caption="Remove Batch Job" extendedCaption = "Basic - Remove Reviewer Batch Jobs from Project"
+                keytip="ZU"
               smallImage="Images\GenericDeleteRed16.png"
               largeImage="Images\GenericDeleteRed32.png">
           <tooltip heading="Remove">
@@ -205,6 +210,7 @@
         <!--##########################################-->
         <!-- Advanced - Add Reviewer Results Button-->
         <button id="Add_Reviewer_Results_Advanced" className="DataReviewerProSDKSamples_Module:AddReviewerResults_Advanced" caption="Add Reviewer Reviewer Results" extendedCaption = "Advanced - Add Reviewer Results project items to the current Project" 
+                keytip="ZI"
               smallImage="Images\DataReviewerResultsAdd16.png"
               largeImage="Images\DataReviewerResultsAdd32.png">
           <tooltip heading="Add Reviewer Results">
@@ -216,6 +222,7 @@
 
         <!-- Advanced - Add Reviewer Sessions Button-->
         <button id="Add_Reviewer_Sessions_Advanced" className="DataReviewerProSDKSamples_Module:AddSessions_Advanced"  caption="Add Sessions" extendedCaption = "Advanced - Add Reviewer Sessions to Project"
+                keytip="ZO"
               smallImage="Images\GenericAdd16.png"
               largeImage="Images\GenericAdd32.png">
           <tooltip heading="Remove">
@@ -226,6 +233,7 @@
 
         <!-- Advanced - Set Default Reviewer Session Button-->
         <button id="Reviewer_Session_Mark_Default_Advanced" className="DataReviewerProSDKSamples_Module:MarkDefaultSession_Advanced"  caption="Mark Default" extendedCaption = "Advanced - Mark Default Reviewer Sessions"
+                keytip="ZP"
               smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericHome_B_16.png"
               largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericHome_B_32.png">
           <tooltip heading="Remove">
@@ -236,6 +244,7 @@
 
         <!-- Advanced - Remove Reviewer Sessions Button-->
         <button id="Remove_Reviewer_Sessions_Advanced" className="DataReviewerProSDKSamples_Module:RemoveSessions_Advanced"  caption="Remove" extendedCaption = "Advanced - Remove Reviewer Sessions from Project"
+                keytip="ZA"
               smallImage="Images\GenericDeleteRed16.png"
               largeImage="Images\GenericDeleteRed32.png">
           <tooltip heading="Remove">
@@ -246,6 +255,7 @@
         
         <!-- Advanced - Add Reviewer Batch Job Button-->
         <button id="Add_Reviewer_BatchJob_Advanced" className="DataReviewerProSDKSamples_Module:AddBatchJobs_Advanced" caption="Add Reviewer Batch Jobs" extendedCaption = "Advanced - Add Reviewer Batch Jobs to Project"
+                keytip="ZB"
               smallImage="Images\DataReviewerBatchChecksAdd16.png"
               largeImage="Images\DataReviewerBatchChecksAdd32.png">
           <tooltip heading="Add Data Reviewer Batch Jobs">Add existing Batch Jobs to the project.</tooltip>
@@ -253,6 +263,7 @@
 
         <!-- Advanced - Remove Reviewer Batch Job Button-->
         <button id="Remove_Reviewer_BatchJob_Advanced" className="DataReviewerProSDKSamples_Module:RemoveBatchJob_Advanced"  caption="Remove" extendedCaption = "Advanced - Remove Reviewer Batch Jobs from Project"
+                keytip="ZC"
               smallImage="Images\GenericDeleteRed16.png"
               largeImage="Images\GenericDeleteRed32.png">
           <tooltip heading="Remove">
@@ -275,7 +286,7 @@
                  showGroup="false"
                  resizable="true"
                  largeImage="Images\DataReviewerBatchJobFile32.png"
-                 dataTemplateFile="pack://application:,,,/DataReviewerProSDKSamples;component/GalleryTemplate.xaml" templateID="GalleryItemTemplate">
+                 dataTemplateFile="pack://application:,,,/DataReviewerProSDKSamples;component/GalleryTemplate.xaml" templateID="GalleryItemTemplate" keytip="Zx">
           <tooltip heading="">
             Choose a batch job to remove from the project.<disabledText></disabledText>
           </tooltip>
@@ -290,7 +301,7 @@
                  showGroup="false"
                  resizable="true"
                  largeImage="Images\DataReviewerSession32.png"
-                 dataTemplateFile="pack://application:,,,/DataReviewerProSDKSamples;component/GalleryTemplate.xaml" templateID="GalleryItemTemplate">
+                 dataTemplateFile="pack://application:,,,/DataReviewerProSDKSamples;component/GalleryTemplate.xaml" templateID="GalleryItemTemplate" keytip="Zy">
           <tooltip heading="">
             Choose a batch job to remove from the project.<disabledText></disabledText>
           </tooltip>

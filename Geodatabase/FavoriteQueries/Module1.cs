@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -12,9 +12,6 @@
 //   limitations under the License. 
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Input;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
@@ -23,20 +20,23 @@ using System.Threading.Tasks;
 namespace FavoriteQueries
 {
     /// <summary>
-    /// This addin will list all subtypes for a Feature Class and allow deletion of all features which have the selected subtype
+    /// This addin lists all subtypes for a Feature Class and allows deleting all features which have a selected subtype
     /// </summary>
     /// <remarks>
+    /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 2. Click Start button to open ArcGIS Pro.
-    /// 3. ArcGIS Pro will open. 
-    /// 4. Open a map view that contains atleast one Feature Layer whose source points to a Feature Class (From either a File Geodatabase or an Enterprise Geodatabase)
-    /// 5. Make sure the Map Pane and the corresponding Table of Contents (TOC) Pane are Open and the Map Pane is Active
-    /// 6. Click on the Add-In Tab
-    /// 7. Click the Show Favorites Dockpane Button and the DockPane opens
-    /// 8. Select a layer from the Layers ComboBox
-    /// 9. If there are any Queries set up for the Layer, they will show up
-    /// 10. Select one of the Queries and click Go
-    /// 11. The results are displayed below in the same Pane
+    /// 1. Click Start button to open ArcGIS Pro.
+    /// 1. ArcGIS Pro opens. 
+    /// 1. Open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project which contains the required data needed for this sample.
+    /// 1. Make sure the Map Pane and the corresponding Table of Contents (TOC) Pane are Open and the Map Pane is Active
+    /// 1. Click on the Add-In Tab
+    /// 1. Click the Show Favorites Dockpane Button and the DockPane opens
+    /// 1. Select a layer from the Layers ComboBox
+    /// 1. If there are any Queries set up for the Layer, they will show up
+    /// ![UI](Screenshots/Screen1.png)
+	/// 1. Select one of the Queries and click Go
+    /// 1. The results are displayed below in the same Pane
+	/// ![UI](Screenshots/Screen2.png)
     /// </remarks>
     internal class Module1 : Module
     {

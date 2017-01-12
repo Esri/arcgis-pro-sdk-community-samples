@@ -1,4 +1,4 @@
-﻿//Copyright 2015 Esri
+//Copyright 2017 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -23,6 +23,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using ArcGIS.Desktop.Core.Events;
+using ArcGIS.Desktop.Mapping.Events;
+using MessageBox = ArcGIS.Desktop.Framework.Dialogs.MessageBox;
 
 namespace bookmark_comboBox_solution
 {
@@ -38,7 +42,22 @@ namespace bookmark_comboBox_solution
         /// </summary>
         public BookmarksComboBox()
         {
-           UpdateCombo();
+            ActiveMapViewChangedEvent.Subscribe(OnActiveMapViewChanged);
+        }
+
+        private async void OnActiveMapViewChanged(ActiveMapViewChangedEventArgs activeMapViewChangedEventArgs)
+        {
+            // remove the old bookmarks
+            this.Clear();
+            if (activeMapViewChangedEventArgs.IncomingView == null) return;
+            await UpdateCombo(activeMapViewChangedEventArgs.IncomingView);
+            Enabled = true; //enables the ComboBox
+            SelectedIndex = 0;
+        }
+
+        ~BookmarksComboBox()
+        {
+            ActiveMapViewChangedEvent.Unsubscribe(OnActiveMapViewChanged);
         }
 
         private ReadOnlyObservableCollection<Bookmark> _bmks = null; //Collection holding the bookmarks in the project
@@ -46,41 +65,38 @@ namespace bookmark_comboBox_solution
         /// <summary>
         /// Updates the combo box with all the maps in the current project.
         /// </summary>
-        /// 
-        private async Task UpdateCombo()
+        /// <param name="activeMapView">Active Mapview for which to get bookmarks</param>
+        private async Task UpdateCombo(MapView activeMapView)
         {
-            Task<ReadOnlyObservableCollection<Bookmark>> tbkmrks = GetActiveMapBookmarks(); //set task to get bookmarks
-
-            _bmks = await tbkmrks; //get all the bookmarks in the current project.
-
-            if (_bmks == null)
+            try
             {
-                Add(new ComboBoxItem(String.Empty));
-                return;
+                Task<ReadOnlyObservableCollection<Bookmark>> tbkmrks = GetActiveMapBookmarks(activeMapView);
+                //set task to get bookmarks
+                _bmks = await tbkmrks; //get all the bookmarks in the current project.
+                if (_bmks == null)
+                {
+                    Add(new ComboBoxItem("No bookmarks found"));
+                    return;
+                }
+                Add(new ComboBoxItem($@"{_bmks.Count} bookmark{(_bmks.Count > 1 ? "s" : "")} found"));
+                //iterate through the bookmark collection to get all the bookmarks, add to the combo box.
+                foreach (var bmk in _bmks)
+                {
+                    Add(bmk != null ? new ComboBoxItem(bmk.Name) : new ComboBoxItem(string.Empty));
+                }
             }
-            foreach (var bmk in _bmks) //iterate through the bookmark collection to get all the bookmarks, add to the combo box.
+            catch (Exception ex)
             {
-                if (bmk != null)
-                    Add(new ComboBoxItem(bmk.Name));
-                else
-                    Add(new ComboBoxItem(String.Empty));
+                MessageBox.Show(null, $@"Error in UpdateCombo: {ex.Message}", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
-            Enabled = true; //enables the ComboBox
-            SelectedItem = ItemCollection.FirstOrDefault(); //set the default item in the comboBox
         }
 
-        private Task<ReadOnlyObservableCollection<Bookmark>> GetActiveMapBookmarks()
+        private Task<ReadOnlyObservableCollection<Bookmark>> GetActiveMapBookmarks(MapView activeMapView)
         {
             return QueuedTask.Run(() =>
             {
-                //Get the active map view.
-                var mapView = MapView.Active;
-                if (mapView == null)
-                    return null;
-
                 //Return the collection of bookmarks for the map.
-                return mapView.Map.GetBookmarks();
+                return activeMapView?.Map.GetBookmarks();
             });
         }
 
@@ -91,9 +107,6 @@ namespace bookmark_comboBox_solution
         protected override async void OnSelectionChange(ComboBoxItem item)
         {
             if (_bmks == null)
-                return;
-
-            if (item == null)
                 return;
 
             if (string.IsNullOrEmpty(item.Text))

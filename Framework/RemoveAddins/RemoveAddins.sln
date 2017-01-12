@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveAddins", "RemoveAddins.csproj", "{45EC1B85-EFC9-4927-A437-4B7C0CC6C5AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveAddins", "RemoveAddins.csproj", "{DEB9DD29-7A64-4434-B111-A5B5FDCD2730}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{45EC1B85-EFC9-4927-A437-4B7C0CC6C5AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{45EC1B85-EFC9-4927-A437-4B7C0CC6C5AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{45EC1B85-EFC9-4927-A437-4B7C0CC6C5AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{45EC1B85-EFC9-4927-A437-4B7C0CC6C5AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEB9DD29-7A64-4434-B111-A5B5FDCD2730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEB9DD29-7A64-4434-B111-A5B5FDCD2730}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEB9DD29-7A64-4434-B111-A5B5FDCD2730}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEB9DD29-7A64-4434-B111-A5B5FDCD2730}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

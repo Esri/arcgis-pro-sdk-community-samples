@@ -24,7 +24,7 @@
             Implementation of a custom popup content class
             </summary>
         </member>
-        <member name="M:CustomIdentify.DynamicPopupContent.#ctor(ArcGIS.Desktop.Mapping.MapMember,System.Int64,System.String,CustomIdentify.RelateInfo)">
+        <member name="M:CustomIdentify.DynamicPopupContent.#ctor(ArcGIS.Desktop.Mapping.MapMember,System.Int64)">
             <summary>
             Constructor initializing the base class with the layer and object id associated with the pop-up content
             </summary>
@@ -50,7 +50,7 @@
             Type for group by
             </summary>
         </member>
-        <member name="F:CustomIdentify.HierarchyRow.children">
+        <member name="P:CustomIdentify.HierarchyRow.children">
             <summary>
             Related child rows
             </summary>
@@ -93,28 +93,10 @@
             Class to managed the related information for a given feature layer
             </summary>
         </member>
-        <member name="M:CustomIdentify.RelateInfo.#ctor(ArcGIS.Desktop.Mapping.FeatureLayer,ArcGIS.Core.Data.Selection)">
-            <summary>
-            Represents the Relationship Class information
-            </summary>
-            <param name="featureLayer"></param>
-            <param name="selection"></param>
-        </member>
-        <member name="M:CustomIdentify.RelateInfo.GetPopupContent(System.Collections.Generic.Dictionary{ArcGIS.Desktop.Mapping.BasicFeatureLayer,System.Collections.Generic.List{System.Int64}})">
-            <summary>
-            Gets the hierarcchical row that describes the selected feature
-            </summary>
-            <param name="selectedFeatures"></param>
-            <returns></returns>
-        </member>
-        <member name="M:CustomIdentify.RelateInfo.GetRelationshipChildren(System.String,System.Int64,System.String)">
+        <member name="M:CustomIdentify.RelateInfo.GetRelationshipChildren(ArcGIS.Desktop.Mapping.Layer,ArcGIS.Core.Data.Geodatabase,System.String,System.Int64,System.String)">
             <summary>
             Finds all related children
             </summary>
-            <param name="featureClassName"></param>
-            <param name="objectID"></param>
-            <param name="rcException"></param>
-            <returns></returns>
         </member>
     </members>
 </doc>

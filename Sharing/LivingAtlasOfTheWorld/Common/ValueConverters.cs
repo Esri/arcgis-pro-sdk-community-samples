@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -45,6 +45,9 @@ namespace LivingAtlasOfTheWorld.Common {
             return val.FinalUrl;
         }
 
+        /// <summary>
+        /// Not implemented
+        /// </summary>
         public Object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture) {
             throw new InvalidOperationException("Converter cannot convert back.");
         }
@@ -68,6 +71,9 @@ namespace LivingAtlasOfTheWorld.Common {
             return val.Name;
         }
 
+        /// <summary>
+        /// Not implemented
+        /// </summary>
         public Object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture) {
             throw new InvalidOperationException("Converter cannot convert back.");
         }
@@ -78,6 +84,9 @@ namespace LivingAtlasOfTheWorld.Common {
     /// </summary>
     public class BoolToVisibilityConverter : IValueConverter {
 
+        /// <summary>
+        /// Convert True to Visible and False to Hidden
+        /// </summary>
         public Object Convert(Object value, Type targetType, Object parameter, CultureInfo culture) {
             if (value == null)
                 return Visibility.Hidden;
@@ -85,6 +94,9 @@ namespace LivingAtlasOfTheWorld.Common {
             return val ? Visibility.Visible : Visibility.Hidden;
         }
 
+        /// <summary>
+        /// Not implemented
+        /// </summary>
         public Object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture) {
             throw new InvalidOperationException("Converter cannot convert back.");
         }

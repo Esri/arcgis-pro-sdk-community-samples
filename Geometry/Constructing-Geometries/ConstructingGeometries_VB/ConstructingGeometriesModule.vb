@@ -1,4 +1,4 @@
-﻿'   Copyright 2015 Esri
+'   Copyright 2017 Esri
 '   Licensed under the Apache License, Version 2.0 (the "License");
 '   you may not use this file except in compliance with the License.
 '   You may obtain a copy of the License at
@@ -26,16 +26,30 @@ Imports ArcGIS.Desktop.Core.Geoprocessing
 Imports ArcGIS.Desktop.Mapping
 
 ''' <summary>
-''' This sample provide four buttons showing the construction of geometry types of type MapPoint, Multipoint, Polyline, and Polygon.
+''' This sample provide four buttons showing the construction of geometry types of type MapPoint, Multipoint, Polyline, and Polygon and shows how to:
+''' * Construct and manipulate geometries
+''' * Use GeometryEngine functionality
+''' * Search and retrieve features
 ''' </summary>
 ''' <remarks>
+''' 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+''' 1. Make sure that the Sample data is unzipped in c:\data 
+''' 1. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'
 ''' 1. In Visual Studio click the Build menu. Then select Build Solution.
-''' 2. Click Start button to open ArcGIS Pro.
-''' 3. ArcGIS Pro will open.
-''' 4. Go to the ADD-IN tab
-''' 5. Click the Setup button to ensure that the appropriate layers are created. The setup code will ensure that we have a layer of type point,
-'''    multi-point, polyline, and polygon. Once the conditions are meet then the individual buttons will become enabled.
-''' 6. Step through the buttons to create the various geometry types.
+''' 1. Click Start button to open ArcGIS Pro.
+''' 1. ArcGIS Pro will open, select the FeatureTest.aprx project
+''' 1. Click on the ADD-IN tab and make sure that your active map contains Setup/point/multipoint/line/polygon features buttons as shown below.
+''' ![UI](Screenshots/ScreenPoints.png)
+''' 1. Click on Setup button to enable the create point and create multipoint buttons 
+''' ![UI](Screenshots/ScreenPoint1.png)
+''' 1. Click the createPoints button to create random points over the current extent of the map
+''' 1. The map extent shows the random created points and also enables create polylines button
+''' ![UI](Screenshots/ScreenPoint2.png)
+''' 1. Click the createPolylines button to create random lines the current extent of the map
+''' 1. The map extent shows the random lines and also enables create polygons button
+''' ![UI](Screenshots/ScreenPoint3.png)
+''' 1. Click the createPolygons button to create random polygon over the current extent of the map
+''' ![UI](Screenshots/ScreenPoint4.png)
 ''' </remarks>
 Friend Class ConstructingGeometriesModule
     Inherits ArcGIS.Desktop.Framework.Contracts.Module
@@ -96,7 +110,7 @@ Friend Class ConstructingGeometriesModule
     ''' <item>POLYLINE</item>
     ''' <item>POLYGON</item></list></param>
     ''' <returns></returns>
-    Private Shared Async Function CreateLayer(featureclassName As String, featureclassType As String) As Task(Of Boolean)
+    Private Shared Async Function CreateLayer(featureclassName As String, featureclassType As String) As Task(Of IGPResult)
         Dim arguments = New List(Of Object)()
         ' store the results in the default geodatabase
         arguments.Add(CoreModule.CurrentProject.DefaultGeodatabasePath)
@@ -117,7 +131,7 @@ Friend Class ConstructingGeometriesModule
                 arguments.Add(SpatialReferenceBuilder.CreateSpatialReference(3857))
             End Sub)
 
-        Dim result = Await Geoprocessing.ExecuteToolAsync("CreateFeatureclass_management", Geoprocessing.MakeValueArray(arguments.ToArray()))
+        Return Geoprocessing.ExecuteToolAsync("CreateFeatureclass_management", Geoprocessing.MakeValueArray(arguments.ToArray()))
     End Function
 
 #Region "Overrides"

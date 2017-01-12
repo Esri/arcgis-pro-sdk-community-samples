@@ -1,4 +1,4 @@
-﻿//   Copyright 2016 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -40,22 +40,19 @@ namespace CustomIdentify
         /// Constructor initializing the base class with the layer and object id associated with the pop-up content
         /// </summary>
         //public DynamicPopupContent(MapMember mapMember, long id, List<HierarchyRow> hierarchyRows) : base(mapMember, id)
-        public DynamicPopupContent(MapMember mapMember, long id, string featureClassName, RelateInfo relateInfo) : base(mapMember, id)
+        public DynamicPopupContent(MapMember mapMember, long id) : base(mapMember, id)
         {
             //Set property indicating the html content will be generated on demand when the content is viewed.
             IsDynamicContent = true;
-            _featureClassName = featureClassName;
-            _id = id;
-            _relateInfo = relateInfo;
+            _id = id;//save our id
         }
-
         /// <summary>
         /// Called the first time the pop-up content is viewed. This is good practice when you may show a pop-up for multiple items at a time. 
         /// This allows you to delay generating the html content until the item is actually viewed.
         /// </summary>
         protected override Task<string> OnCreateHtmlContent()
         {
-            return QueuedTask.Run(async () =>
+            return QueuedTask.Run(() =>
             {
                 var invalidPopup = "<p>Pop-up content could not be generated for this feature.</p>";
                 var layer = MapMember as BasicFeatureLayer;
@@ -63,7 +60,11 @@ namespace CustomIdentify
                     return invalidPopup;
 
                 List<HierarchyRow> completeHierarchyRows = new List<HierarchyRow>();
-                var newRow = await  _relateInfo.GetRelationshipChildren(_featureClassName, _id);
+                var gdb = layer.GetTable().GetDatastore() as Geodatabase;
+                var fcName = layer.GetTable().GetName();
+                if (_relateInfo == null)
+                    _relateInfo = new RelateInfo();
+                var newRow = _relateInfo.GetRelationshipChildren(layer, gdb, fcName, _id);
                 completeHierarchyRows.Add(newRow);
 
                 //Construct a new html string that we will use to update our html template.

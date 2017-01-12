@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -23,11 +23,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SampleAddIns")]
+[assembly: AssemblyTitle("MappingSampleAddIns")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Acme")]
-[assembly: AssemblyProduct("SampleAddIns")]
+[assembly: AssemblyProduct("MappingSampleAddIns")]
 [assembly: AssemblyCopyright("Copyright © Acme 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

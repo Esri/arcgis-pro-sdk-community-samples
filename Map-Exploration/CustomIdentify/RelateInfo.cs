@@ -1,4 +1,4 @@
-﻿//   Copyright 2016 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -15,8 +15,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ArcGIS.Core;
 using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
+using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Editing.Attributes;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
@@ -29,83 +31,52 @@ namespace CustomIdentify
     /// <summary>
     /// Class to managed the related information for a given feature layer
     /// </summary>
-    public class RelateInfo
-    {
-        /// <summary>
-        /// Represents the Relationship Class information
-        /// </summary>
-        /// <param name="featureLayer"></param>
-        /// <param name="selection"></param>
-        public RelateInfo(FeatureLayer featureLayer, Selection selection)
-        {
-            _featureLayer = featureLayer;
-            _selection = selection;            
-            _featureClassName = _featureLayer.GetFeatureClass().GetName();
-            
-        }
+    public class RelateInfo {
 
-        private FeatureLayer _featureLayer;
-
-        private string _featureClassName;
-
-        private Selection _selection;
-
-        private Geodatabase _geodatabase;
-
-        private Dictionary<string, FeatureClass> _layersInMapFeatureClassMap = new Dictionary<string, FeatureClass>(); 
-
-        /// <summary>
-        /// Gets the hierarcchical row that describes the selected feature
-        /// </summary>
-        /// <param name="selectedFeatures"></param>
-        /// <returns></returns>
-        public async Task<List<PopupContent>> GetPopupContent(Dictionary<BasicFeatureLayer, List<long>> selectedFeatures)
-        {
-            //_layersInMapFeatureClassMap = GetMapLayersFeatureClassMap(); //gets all the feature layers from the map and add it to the dictionary with the Feature class as its key         
-            var popupContents = new List<PopupContent>();
-            try
-            {
-                var objectIDS = _selection.GetObjectIDs();
-
-                if (_geodatabase == null)
-                    _geodatabase = await GetGDBFromLyrAsync(_featureLayer);
-
-                var kvpMapMember = selectedFeatures.FirstOrDefault(s => s.Key.GetTable().GetName().Equals(_featureClassName));
-                
-                foreach (var objectID in objectIDS)
-                {
-                    //List<HierarchyRow> hrows = new List<HierarchyRow>(); //this makes the custom popup show only one record.
-                    //var newRow = await GetRelationshipChildren(_featureClassName, objectID);
-                    //hrows.Add(newRow);
-                    popupContents.Add(new DynamicPopupContent(kvpMapMember.Key, objectID, _featureClassName, this));
-                }
-            }
-            catch (Exception)
-            {
-
-            }
-            return popupContents;
-        }
-
+        private string _displayFieldName = "";
         /// <summary>
         /// Finds all related children
         /// </summary>
-        /// <param name="featureClassName"></param>
-        /// <param name="objectID"></param>
-        /// <param name="rcException"></param>
-        /// <returns></returns>
-        public async Task<HierarchyRow> GetRelationshipChildren(string featureClassName, long objectID, string rcException = "")
-        {
-            
-            var value = await GetSelectedItemDisplayValue(featureClassName, objectID);
+        public HierarchyRow GetRelationshipChildren(Layer member, Geodatabase gdb,
+                                 string featureClassName, long objectID, string rcException = "") {
+
+            if (!QueuedTask.OnWorker) {
+                throw new CalledOnWrongThreadException();
+            }
+
+            string displayValue = "";
+            if (member != null) {
+                if (string.IsNullOrEmpty(_displayFieldName)) {
+                    CIMFeatureLayer currentCIMFeatureLayer = member.GetDefinition() as CIMFeatureLayer;
+                    _displayFieldName = currentCIMFeatureLayer?.FeatureTable.DisplayField ?? "";
+                }
+
+                if (!string.IsNullOrEmpty(_displayFieldName)) {
+                    var inspector = new Inspector();
+                    inspector.Load(member, objectID);
+                    displayValue =  $"{inspector[_displayFieldName]?.ToString() ?? ""}";
+                }
+            }
+            //Did the display value get set?
+            if (string.IsNullOrEmpty(displayValue))
+                displayValue = $"OBJECTID: {objectID.ToString()}";
 
             var newHRow = new HierarchyRow()
             {
-                name = value,
-                type = featureClassName
+                name = displayValue,
+                type = $"{featureClassName}" 
             };
 
-            var relationshipClassDefinitions = GetRelationshipClassDefinitionsFromFeatureClass(featureClassName);
+            //Check the layer for any relationships
+            var children = GetRelationshipChildrenFromLayer(member as BasicFeatureLayer, objectID);
+            if (children.Count > 0) {
+                newHRow.children = children;
+                return newHRow;//Give layer related precedence over GDB related
+            }
+
+            //If we are here we do not have any relates on the layer
+            //See if we have relates in the GDB
+            var relationshipClassDefinitions = GetRelationshipClassDefinitionsFromFeatureClass(gdb, featureClassName);
             foreach (var relationshipClassDefinition in relationshipClassDefinitions)
             {
                 var rcName = relationshipClassDefinition.GetName(); //get the name
@@ -113,7 +84,7 @@ namespace CustomIdentify
                     continue;
                 //Alternate way of getting the features classes in the relationship (new at 1.3):  
                 //IReadOnlyList<Definition> definitions = GetRelatedDefinitions(relationshipClassDefinition, DefinitionRelationshipType.DatasetsRelatedThrough);  
-                var relationshipClass = _geodatabase.OpenDataset<RelationshipClass>(rcName); //open the relationship class
+                var relationshipClass = gdb.OpenDataset<RelationshipClass>(rcName); //open the relationship class
 
                 var origin = relationshipClassDefinition.GetOriginClass(); //get the origin of the relationship class
                 var destination = relationshipClassDefinition.GetDestinationClass(); //get the destination of the relationship class
@@ -135,7 +106,7 @@ namespace CustomIdentify
                         foreach (var row in relatedRows)
                         {
 
-                            childHRow.children.Add(await GetRelationshipChildren(destination, row.GetObjectID(), rcName)); //recursive: to get the attributes of the related feature
+                            childHRow.children.Add(GetRelationshipChildren(null, gdb, destination, row.GetObjectID(), rcName)); //recursive: to get the attributes of the related feature
                         }
                         newHRow.children.Add(childHRow);
                         continue;
@@ -154,7 +125,7 @@ namespace CustomIdentify
                     foreach (var row in relatedRows)
                     {
 
-                        childHRow.children.Add(await GetRelationshipChildren(origin, row.GetObjectID(), rcName));
+                        childHRow.children.Add(GetRelationshipChildren(null, gdb, origin, row.GetObjectID(), rcName));
                     }
                     newHRow.children.Add(childHRow);
                 }
@@ -163,124 +134,113 @@ namespace CustomIdentify
             return newHRow;
         }
 
-        private async Task<Geodatabase> GetGDBFromLyrAsync(BasicFeatureLayer lyr)
-        {
-            Geodatabase geodatabase = null;
-            await QueuedTask.Run(() => geodatabase = (lyr.GetTable().GetDatastore() as Geodatabase));
-            return geodatabase;
-        }
-        
-        private IEnumerable<RelationshipClassDefinition> GetRelationshipClassDefinitionsFromFeatureClass(string featureClassName)
-        {
-            
-            return _geodatabase.GetDefinitions<RelationshipClassDefinition>().
-                    Where(defn => defn.GetOriginClass().Equals(featureClassName) || defn.GetDestinationClass().Equals(featureClassName));
-        }
+        internal List<HierarchyRow> GetRelationshipChildrenFromLayer(BasicFeatureLayer member, long objectID) {
 
-        private async Task<string> GetSelectedItemDisplayValue(string featureClassName, long objectID)
-        {
-            string value = "";
-            FeatureClass featureClass = null;
-            foreach (var kvp in CustomIdentify.LayersInMapFeatureClassMap)
-            {
-                if (kvp.Value.GetName() == featureClassName)
-                    featureClass = kvp.Value;
+            var children = new List<HierarchyRow>();
 
-            }
-            //FeatureClass featureClass = _geodatabase.OpenDataset<FeatureClass>(featureClassName);
+            CIMBasicFeatureLayer bfl = member.GetDefinition() as CIMBasicFeatureLayer;
+            var relates = bfl.FeatureTable.Relates;
+            if (relates == null || relates.Length == 0)
+                return children;
 
-            if (featureClass == null)
-                return value;
-            
-            string displayField = GetDisplayField(featureClass); //could be null if the feature class is not a layer in the map.
-            if (!string.IsNullOrEmpty(displayField))
-                value = await GetAttributeValue(featureClass, displayField, objectID);
-            else
-                value = objectID.ToString();
-            return value;
-        }
-        private string GetDisplayField(FeatureClass featureClass)
-        {
-            string displayField = "";
-            
-            Map map = MapView.Active.Map;
-            if (map == null)
-                return displayField;
+            foreach (var relate in relates) {
+                if (!(relate.DataConnection is CIMStandardDataConnection) &&
+                    !(relate.DataConnection is CIMFeatureDatasetDataConnection))
+                    continue;//Not supported in this sample
 
-            //Get flattened layers from Map. If the feature class exists in the map, get that feature Layer and its display field. If not, return null.
-            var layer = map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault(lyr => lyr.GetFeatureClass().GetName() == featureClass.GetName());
+                var sdc = relate.DataConnection as CIMStandardDataConnection;
+                var fdc = relate.DataConnection as CIMFeatureDatasetDataConnection;
+                var factory = sdc?.WorkspaceFactory ?? fdc.WorkspaceFactory;
+                var path = sdc?.WorkspaceConnectionString ?? fdc.WorkspaceConnectionString;
+                if (string.IsNullOrEmpty(path))
+                    continue;//No connection information we can use
+                path = path.Replace("DATABASE=", "");
+                var dstype = sdc?.DatasetType ?? fdc.DatasetType;
 
-            if (layer == null)
-                return "";
-            CIMFeatureLayer currentCIMFeatureLayer = layer.GetDefinition() as CIMFeatureLayer;
-            CIMFeatureTable cimFeatureTable = currentCIMFeatureLayer.FeatureTable;
-            
-            displayField = cimFeatureTable.DisplayField;               
-            
-            return displayField;
+                if (dstype != esriDatasetType.esriDTFeatureClass &&
+                    dstype != esriDatasetType.esriDTTable) {
+                    continue;//Not supported in the sample
+                }
 
-        }
+                var dsname = sdc?.Dataset ?? fdc.Dataset;
+                var featDatasetName = fdc?.FeatureDataset ?? "";
 
-        //private Dictionary<string, FeatureClass> GetMapLayersFeatureClassMap()
-        //{
-        //    Dictionary<string, FeatureClass> lyrFeatureClassMap = new Dictionary<string, FeatureClass>();
+                Geodatabase gdb = null;
+                if (factory == WorkspaceFactory.FileGDB) {
+                    gdb = new Geodatabase(new FileGeodatabaseConnectionPath(new Uri(path, UriKind.Absolute)));
+                }
+                else if (factory == WorkspaceFactory.SDE) {
+                    gdb = new Geodatabase(new DatabaseConnectionFile(new Uri(path, UriKind.Absolute)));
+                }
 
-        //    Map map = MapView.Active.Map;
-        //    if (map == null)
-        //        return null;
-        //    var layers = map.GetLayersAsFlattenedList().OfType<FeatureLayer>();
+                Table table = null;
+                //We have to open a type specific dataset - FeatureClass or Table
+                //We cannot simply use 'Table' for both
+                if (dstype == esriDatasetType.esriDTFeatureClass) {
+                    table = GetDatasetFromGeodatabase<FeatureClass>(gdb, dsname, featDatasetName);
+                }
+                else {
+                    table = GetDatasetFromGeodatabase<Table>(gdb, dsname, featDatasetName);
+                }
+                if (table == null)
+                    continue;//Related dataset not found
 
-        //    foreach (var lyr in layers)
-        //    {
-        //        string fc = lyr.GetFeatureClass().GetName();
-        //        FeatureClass featureClass = _geodatabase.OpenDataset<FeatureClass>(fc);
+                //Get any related rows
+                var qry_fld = table.GetDefinition().GetFields().FirstOrDefault(f => f.Name == relate.ForeignKey);
+                if (qry_fld == null)
+                    continue;//We cannot find the designated foreign key
 
-        //        if (featureClass != null)
-        //            lyrFeatureClassMap.Add(lyr.Name, featureClass);
+                //Load relevant values
+                var inspector = new Inspector();
+                inspector.Load(member, objectID);
 
-        //    }
+                var need_quotes = qry_fld.FieldType == FieldType.String;
+                var quote = need_quotes ? "'" : "";
+                var where = $"{relate.ForeignKey} = {quote}{inspector[relate.PrimaryKey]}{quote}";
+                var qf = new QueryFilter() {
+                    WhereClause = where,
+                    SubFields = $"{table.GetDefinition().GetObjectIDField()}, {relate.ForeignKey}" 
+                };
 
+                var childHRow = new HierarchyRow() {
+                    name = dsname,
+                    type = $"{inspector[relate.PrimaryKey]}" 
+                };
 
-        //    return lyrFeatureClassMap;
-        //}
-        private Task<string> GetAttributeValue(FeatureClass featureClass, string fieldName, long objectId)
-        {
-
-            return QueuedTask.Run(() =>
-            {
-                string value = "";
-
-                    try
-                    {
-                        var oidField = featureClass.GetDefinition().GetObjectIDField();
-                        QueryFilter queryFilter = new QueryFilter
-                        {
-                            WhereClause = string.Format("({0} in ({1}))", oidField, objectId)
-                        };
-                        using (RowCursor rowCursor = featureClass.Search(queryFilter, false))
-                        {
-                            while (rowCursor.MoveNext())
-                            {
-                                using (Row row = rowCursor.Current)
-                                {
-                                    value = Convert.ToString(row[fieldName]);
-                                    
-                                }
-                            }
+                using (var rc = table.Search(qf)) {
+                    while (rc.MoveNext()) {
+                        using (var row = rc.Current) {
+                            var id = row.GetObjectID();
+                            var HRow = new HierarchyRow() {
+                                name = $"{id}",
+                                type = relate.ForeignKey
+                            };
+                            childHRow.children.Add(HRow);
                         }
                     }
-                    catch (GeodatabaseFieldException )
-                    {
-                        // One of the fields in the where clause might not exist. There are multiple ways this can be handled:
-                        // Handle error appropriately
-                    }
-                    catch (Exception exception)
-                    {
-                        System.Diagnostics.Debug.Write(exception.Message);
-                    }               
-                return value;
-            });            
+                }
+                children.Add(childHRow);
+            }
+            return children;
         }
+
+        private T GetDatasetFromGeodatabase<T>(Geodatabase gdb, string dataset, string featureDataset) where T : Table {
+            if (!string.IsNullOrEmpty(featureDataset)) {
+                var fd = gdb.OpenDataset<FeatureDataset>(featureDataset);
+                if (fd != null) {
+                    return fd.OpenDataset<T>(dataset);
+                }
+            }
+            return gdb.OpenDataset<T>(dataset);
+        }
+
+
+        private IEnumerable<RelationshipClassDefinition> GetRelationshipClassDefinitionsFromFeatureClass(
+              Geodatabase gdb, string featureClassName) {
+            return gdb.GetDefinitions<RelationshipClassDefinition>().
+                    Where(defn => defn.GetOriginClass().Equals(featureClassName) || defn.GetDestinationClass().Equals(featureClassName));
+        }
+        
     }
 }
 

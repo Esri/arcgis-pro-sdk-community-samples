@@ -4,9 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
              xmlns:prop="clr-namespace:Localization.Properties"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
              mc:Ignorable="d" 
+             d:DataContext="{Binding Path=Localization.DockpaneLocalizedViewModel}"
              d:DesignHeight="300" d:DesignWidth="300">
-    <!--
+  <!--
     //   Copyright 2014 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -20,34 +22,42 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License. 
 -->
-    
-    <Grid Background="BurlyWood">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
-            <TextBlock Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14">
-                <TextBlock.ToolTip>
-                    <WrapPanel Orientation="Vertical" MaxWidth="300">
-                        <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
-                    </WrapPanel>
-                </TextBlock.ToolTip>
-            </TextBlock>
-        </DockPanel>
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <DataGrid Grid.Row="0" Margin="0" ItemsSource="{Binding SampleRecords}" AutoGenerateColumns="False">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="{x:Static prop:Resources.DockPaneCol1}" Binding="{Binding Name}" />
-                    <DataGridTextColumn Header="{x:Static prop:Resources.DockPaneCol2}" Binding="{Binding BirthDate, StringFormat=D}" />
-                    <DataGridTextColumn Header="{x:Static prop:Resources.DockPaneCol3}" Binding="{Binding PaymentAmount, StringFormat=C}" />
-                    <DataGridTextColumn Header="{x:Static prop:Resources.DockPaneCol4}" Binding="{Binding Location}" />
-                </DataGrid.Columns>
-            </DataGrid>
-        </Grid>
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid >
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
+      <TextBlock Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14">
+        <TextBlock.ToolTip>
+          <WrapPanel Orientation="Vertical" MaxWidth="300">
+            <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
+          </WrapPanel>
+        </TextBlock.ToolTip>
+      </TextBlock>
+    </DockPanel>
+    <Grid Grid.Row="1">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <DataGrid Grid.Row="0" Margin="0" ItemsSource="{Binding SampleRecords}" AutoGenerateColumns="False" 
+                HeadersVisibility="Column"
+                RowHeaderWidth="0"
+                Style="{DynamicResource Esri_DataGridStyle}">
+        <DataGrid.Columns>
+          <DataGridTextColumn Header="{x:Static prop:Resources.DockPaneCol1}" Binding="{Binding Name}" />
+          <DataGridTextColumn Header="{x:Static prop:Resources.DockPaneCol2}" Binding="{Binding BirthDate, StringFormat=D}" />
+          <DataGridTextColumn Header="{x:Static prop:Resources.DockPaneCol3}" Binding="{Binding PaymentAmount, StringFormat=C}" />
+          <DataGridTextColumn Header="{x:Static prop:Resources.DockPaneCol4}" Binding="{Binding Location}" />
+        </DataGrid.Columns>
+      </DataGrid>
     </Grid>
+  </Grid>
 </UserControl>

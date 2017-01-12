@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B64DD659-6F8B-4B97-9D97-64F722B8120D}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2707}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ConstructionTool</RootNamespace>
@@ -88,14 +88,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <AddInContent Include="Config.daml" />
+    <AddInContent Include="Config.daml">
+      <SubType>Designer</SubType>
+    </AddInContent>
     <AddInContent Include="Images\AddInDesktop16.png" />
     <AddInContent Include="Images\AddInDesktop32.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttributeButton.cs" />
     <Compile Include="ConstructionToolModule.cs" />
-    <Compile Include="Daml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleSketchTool.cs" />
   </ItemGroup>
@@ -131,6 +132,20 @@
   <ItemGroup>
     <None Include="Screenshots\ScreenEdit.png" />
     <None Include="Screenshots\ScreenEdit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\BexDog16.png" />
+    <AddInContent Include="DarkImages\BexDog32.png" />
+    <AddInContent Include="DarkImages\Dino16.png" />
+    <AddInContent Include="DarkImages\Dino32.png" />
+    <AddInContent Include="DarkImages\GenericButtonBlue16.png" />
+    <AddInContent Include="DarkImages\GenericButtonBlue32.png" />
+    <AddInContent Include="DarkImages\GenericButtonRed16.png" />
+    <AddInContent Include="DarkImages\GenericButtonRed32.png" />
+    <AddInContent Include="DarkImages\MarsCat16.png" />
+    <AddInContent Include="DarkImages\MarsCat32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.PackageAddIn" />

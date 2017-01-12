@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -27,7 +27,6 @@ using ArcGIS.Desktop.Core.Geoprocessing;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Dialogs;
-using ArcGIS.Desktop.Internal.Mapping;
 using ArcGIS.Desktop.Mapping;
 
 namespace AddDeleteFieldToFromFeatureClass
@@ -54,7 +53,8 @@ namespace AddDeleteFieldToFromFeatureClass
                     MessageBox.Show("Unable to find a feature class at the first layer of the active map");
                 else
                 {
-                    MessageBox.Show($@"{layer.Name} was found .... adding a new Field");
+                    var dataSource = await GetDataSource(layer);
+                    MessageBox.Show($@"{dataSource} was found ... adding a new Field");
                     await
                         ExecuteAddFieldTool(layer, new KeyValuePair<string, string>("AddedField", "Alias Name Added Field"), "Text", 50);
                 }
@@ -62,6 +62,28 @@ namespace AddDeleteFieldToFromFeatureClass
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+        private async Task<string> GetDataSource(BasicFeatureLayer theLayer)
+        {
+            try
+            {
+                return await ArcGIS.Desktop.Framework.Threading.Tasks.QueuedTask.Run(() =>
+                {
+                    var inTable = theLayer.Name;
+                    var table = theLayer.GetTable();
+                    var dataStore = table.GetDatastore();
+                    var workspaceNameDef = dataStore.GetConnectionString();
+                    var workspaceName = workspaceNameDef.Split('=')[1];
+
+                    var fullSpec = System.IO.Path.Combine(workspaceName, inTable);
+                    return fullSpec;
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return string.Empty;
             }
         }
 
@@ -80,11 +102,10 @@ namespace AddDeleteFieldToFromFeatureClass
                     var fullSpec = System.IO.Path.Combine(workspaceName, inTable);
                     System.Diagnostics.Debug.WriteLine($@"Add {field.Key} from {fullSpec}");
 
-                    var parameters = Geoprocessing.MakeValueArray(inTable, field.Key, fieldType.ToUpper(), null, null,
+                    var parameters = Geoprocessing.MakeValueArray(fullSpec, field.Key, fieldType.ToUpper(), null, null,
                         fieldLength, field.Value, isNullable ? "NULABLE" : "NON_NULLABLE");
-                    var env = Geoprocessing.MakeEnvironmentArray(workspace: workspaceName);
                     var cts = new CancellationTokenSource();
-                    var results = Geoprocessing.ExecuteToolAsync("management.AddField", parameters, env, cts.Token,
+                    var results = Geoprocessing.ExecuteToolAsync("management.AddField", parameters, null, cts.Token,
                         (eventName, o) =>
                         {
                             System.Diagnostics.Debug.WriteLine($@"GP event: {eventName}");

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-
-
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -20,9 +18,8 @@
    limitations under the License.
 
 -->
-
 <ArcGIS defaultAssembly="CIMExamples.dll" defaultNamespace="CIMExamples" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{3a5f4c65-762f-459b-96ec-24d3bf5013b4}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{3a5f4c65-762f-459b-96ec-24d3bf5013b4}" version="1.0" desktopVersion="1.4.7198">
     <Name>CIMExamples</Name>
     <Description>CIMExamples description</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -38,7 +35,7 @@
       <!-- uncomment to have the control hosted on a separate tab-->
       <tabs>
         <tab id="CIMExamples_Tab1" caption="CIM Examples" keytip="T1">
-          <group refID="CIMExamples_Group1"/>
+          <group refID="CIMExamples_Group1" />
         </tab>
       </tabs>
       <groups>
@@ -55,19 +52,19 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="CIMExamples_CreateCIMRendererFromScratch" keytip="B1" caption="Renderer From Scratch"  className="CreateCIMRendererFromScratch" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+        <button id="CIMExamples_CreateCIMRendererFromScratch" keytip="Z1" caption="Renderer From Scratch" className="CreateCIMRendererFromScratch" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
           <tooltip heading="Renderer From Scratch">Provide sample to create CIMUniqueValueRenderer from scratch<disabledText /></tooltip>
         </button>
-        <button id="CIMExamples_CreateCIMRendererWithDefinition" keytip="B2" caption="Renderer via Definition" className="CreateCIMRendererWithDefinition" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+        <button id="CIMExamples_CreateCIMRendererWithDefinition" keytip="Z2" caption="Renderer via Definition" className="CreateCIMRendererWithDefinition" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
           <tooltip heading="Renderer via Definition">Same as above but using the UniqueValueRendererDefinition class and the layer to configure the underlying Renderer<disabledText /></tooltip>
         </button>
-        <button id="CIMExamples_CreateSymbolLevelsOnUSHighways" keytip="B3" caption="Create Symbol Levels" className="CreateSymbolLevelsOnUSHighways" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+        <button id="CIMExamples_CreateSymbolLevelsOnUSHighways" keytip="Z3" caption="Create Symbol Levels" className="CreateSymbolLevelsOnUSHighways" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
           <tooltip heading="Create Symbol Levels">How to create the equivalent of symbol levels in Pro.<disabledText /></tooltip>
         </button>
-        <button id="CIMExamples_ChangeLayerDataSource" keytip="B4" caption="Layer DataSource" className="ChangeLayerDataSource" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+        <button id="CIMExamples_ChangeLayerDataSource" keytip="Z4" caption="Layer DataSource" className="ChangeLayerDataSource" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
           <tooltip heading="Layer DataSource">How to change out the Data Connection (equivalent to changing "DataSource" in ArcObjects)<disabledText /></tooltip>
         </button>
-        <button id="CIMExamples_ChangeLayerSelectionColor" keytip="B5" caption="Layer Selection Color" className="ChangeLayerSelectionColor" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+        <button id="CIMExamples_ChangeLayerSelectionColor" keytip="Z5" caption="Layer Selection Color" className="ChangeLayerSelectionColor" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
           <tooltip heading="Layer Selection Color">Change the selection color for the given feature layer<disabledText /></tooltip>
         </button>
       </controls>

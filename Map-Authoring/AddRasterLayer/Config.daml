@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-
-
 <!--
-Copyright 2015 Esri
+Copyright 2017 Esri
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -16,14 +14,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License. 
 -->
-<ArcGIS defaultAssembly="AddRasterLayer.dll"
-        defaultNamespace="AddRasterLayer"
-        xmlns="http://schemas.esri.com/DADF/Registry"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-
-  <AddInInfo id="{f6d2dec1-6de3-42bf-b607-780e33115d53}" version="1.0" desktopVersion="1.3.5777">
-    <Name>AddRasterLayer</Name>   
+<ArcGIS defaultAssembly="AddRasterLayer.dll" defaultNamespace="AddRasterLayer" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{f6d2dec1-6de3-42bf-b607-780e33115d53}" version="1.0" desktopVersion="1.4.7198">
+    <Name>AddRasterLayer</Name>
     <Description>Add a Raster layer to map.</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team</Author>
@@ -33,7 +26,6 @@ limitations under the License.
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>
-
   <modules>
     <insertModule id="ProAppRasterModule_Module" className="CustomRasterModule" autoLoad="false" caption="CustomRasterModule">
       <!-- uncomment to have the control hosted on a separate tab-->
@@ -42,26 +34,21 @@ limitations under the License.
           <group refID="ProAppRasterModule_Group1"/>
         </tab>
       </tabs>-->
-              
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
         <group id="ProAppRasterModule_Group1" caption="Custom Raster Group" appearsOnAddInTab="true">
-          <!-- host controls within groups -->
-          <button refID="ProAppRasterModule_button1" size="large"/>
+          <button refID="ProAppRasterModule_button1" size="large" />
         </group>
       </groups>
-      
       <controls>
         <!-- add your controls here -->
-        <button id="ProAppRasterModule_button1" caption="Add Raster Layer" className="AddRasterLayerButton" 
-                smallImage="Images\AddRasterLayer16.png" largeImage="Images\AddRasterLayer32.png" loadOnClick="false">
+        <button id="ProAppRasterModule_button1" caption="Add Raster Layer" className="AddRasterLayerButton" smallImage="Images\AddRasterLayer16.png" largeImage="Images\AddRasterLayer32.png" loadOnClick="false" keytip="ZR">
           <tooltip heading="Create a new raster layer and add it to the map.">
             <disabledText></disabledText>
           </tooltip>
         </button>
-      </controls> 
- 
+      </controls>
     </insertModule>
   </modules>
 </ArcGIS>

@@ -226,6 +226,10 @@
             For webmaps, webscenes, to know the contents, use WebMapLayerInfo, WebSceneLayerInfo classes.
             </summary>
         </member>
+        <member name="T:ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts.SearchGroupResult">
+            <summary>Search Group result is similar to searched item result but the results have slightly different KVP
+             Update: not inheriting SearchResult class. Not efficient but deserializer ends up with ambiguity.</summary>
+        </member>
         <member name="T:ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts.SearchGroupItem">
             <summary>
             SearchGroupItem contails all of UserGroups object and more KVPs

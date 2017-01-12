@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-
-
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -20,15 +18,9 @@
    limitations under the License.
 
 -->
-
-<ArcGIS defaultAssembly="BackStage_PropertyPage.dll"
-        defaultNamespace="BackStage_PropertyPage"
-        xmlns="http://schemas.esri.com/DADF/Registry"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/arcgis/bin/ArcGIS.Desktop.Framework.xsd">
-
-  <AddInInfo id="{b705ce83-52aa-453f-8095-f6ae60994ce3}" version="1.0" desktopVersion="1.3.5777">
-    <Name>BackStage_PropertyPage</Name>   
+<ArcGIS defaultAssembly="BackStage_PropertyPage.dll" defaultNamespace="BackStage_PropertyPage" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{b705ce83-52aa-453f-8095-f6ae60994ce3}" version="1.0" desktopVersion="1.4.7198">
+    <Name>BackStage_PropertyPage</Name>
     <Description>Sample illustrating how to add a custom backstage tab into the backstage, add custom property pages into the Options backstage item, and save and restore project settings</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK team</Author>
@@ -36,52 +28,32 @@
     <Date>4/16/2015 9:46:11 AM, 2015</Date>
     <Subject>Framework</Subject>
   </AddInInfo>
-
   <modules>
     <insertModule id="BackStage_PropertyPage_Module" className="Module1" autoLoad="true" caption="Module1">
-      
-      <!--This module does not have any ribbon / tab controls.  The daml items are found under propertySheets and backstage  --> 
-      
-      <groups>
-      </groups>
-      <controls>
-      </controls>
-
+      <!--This module does not have any ribbon / tab controls.  The daml items are found under propertySheets and backstage  -->
+      <groups></groups>
+      <controls></controls>
     </insertModule>
   </modules>
-
   <propertySheets>
     <updateSheet refID="esri_core_optionsPropertySheet">
-      
       <!--Use group=Application for the options to appear under the Application section in the settings-->
       <!--assign the viewModel class to the className attribute; assign the view class to the className attribute in the content tag-->
-      <insertPage id="esri_sdk_PropertyPageAppSettings"
-                  caption="Sample App Settings"
-                  className="ApplicationSettingsViewModel"
-                  group="Application">
+      <insertPage id="esri_sdk_PropertyPageAppSettings" caption="Sample App Settings" className="ApplicationSettingsViewModel" group="Application">
         <content className="ApplicationSettingsView" />
       </insertPage>
-
-      
       <!--Use group=Project for the options to appear under the Project section in the settings-->
       <!--assign the viewModel class to the className attribute; assign the view class to the className attribute in the content tag-->
-      <insertPage id="esri_sdk_PropertyPageProjectSettings"
-                  caption="Sample Project Settings"
-                  className="ProjectSettingsViewModel"
-                  group="Project">
+      <insertPage id="esri_sdk_PropertyPageProjectSettings" caption="Sample Project Settings" className="ProjectSettingsViewModel" group="Project">
         <content className="ProjectSettingsView" />
       </insertPage>
     </updateSheet>
   </propertySheets>
-
   <backstage>
     <!--Use the insert and placeWith attributes to position the backstage tab-->
     <!--assign the viewModel class to the className attribute; assign the view class to the className attribute in the content tag-->
-    <insertTab id="esri_sdk_AddBackStageTab" caption="Sample Tab" className="SampleBackstageTabViewModel" 
-               insert="after" placeWith="esri_core_showHelpButton">
-      <content className="SampleBackstageTabView"/>
+    <insertTab id="esri_sdk_AddBackStageTab" caption="Sample Tab" className="SampleBackstageTabViewModel" insert="after" placeWith="esri_core_showHelpButton" keytip="Z0">
+      <content className="SampleBackstageTabView" />
     </insertTab>
-
   </backstage>
-  
 </ArcGIS>

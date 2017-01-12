@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2017 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+
+<ArcGIS defaultAssembly="CustomStyling.dll" defaultNamespace="CustomStyling" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{491f63ab-303d-48bd-99af-69db5ab9b28a}" version="1.0" desktopVersion="1.4.7198">
+    <Name>CustomStyling</Name>
+    <Description>Sample showing how to apply custom styles that will work in-conjunction with Pro's Light and Dark themes</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>arcgisprosdk</Author>
+    <Company>Acme</Company>
+    <Date>12/5/2016 2:20:27 PM, 2016</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="CustomStyling_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="CustomStyling_Tab1" caption="New Tab">
+          <group refID="CustomStyling_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="CustomStyling_Group1" caption="Group 1" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="CustomStyling_UI_Dockpane1_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="CustomStyling_UI_Dockpane1_ShowButton" caption="Show Themed Dockpane" className="CustomStyling.UI.Dockpane1_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+          <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="CustomStyling_Dockpane1" caption="Dockpane 1" className="CustomStyling.UI.Dockpane1ViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="CustomStyling.UI.Dockpane1View" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

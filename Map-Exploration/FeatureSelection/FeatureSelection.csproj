@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D3FC4619-704D-4467-A71D-031912AB1597}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2765}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FeatureSelection</RootNamespace>
@@ -137,6 +137,21 @@
     <AddInContent Include="Images\SQLQueryAdd16.png" />
   </ItemGroup>
   <ItemGroup>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\GenericButtonPurple16.png" />
+    <AddInContent Include="DarkImages\GenericButtonPurple32.png" />
+    <AddInContent Include="DarkImages\GenericCheckMark16.png" />
+    <AddInContent Include="DarkImages\GenericEraser16.png" />
+    <AddInContent Include="DarkImages\GenericError16.png" />
+    <AddInContent Include="DarkImages\SelectionClearSelected16.png" />
+    <AddInContent Include="DarkImages\SelectionMethodAdd16.png" />
+    <AddInContent Include="DarkImages\SelectionMethodNew16.png" />
+    <AddInContent Include="DarkImages\SelectionMethodRemove16.png" />
+    <AddInContent Include="DarkImages\SelectionMethodSelect16.png" />
+    <AddInContent Include="DarkImages\SelectionSelectTool16.png" />
+    <AddInContent Include="DarkImages\SQLQueryAdd16.png" />
+    <AddInContent Include="DarkImages\SQLQueryNew16.png" />
     <Content Include="Screenshots\screenshot1.png" />
     <Content Include="Screenshots\screenshot2.png" />
   </ItemGroup>

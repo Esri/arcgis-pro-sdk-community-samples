@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -18,7 +19,7 @@
 
 -->
 <ArcGIS defaultAssembly="MapToolZoom.dll" defaultNamespace="MapToolZoom" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{15d20060-9859-4a20-b860-52f648da17fc}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{15d20060-9859-4a20-b860-52f648da17fc}" version="1.0" desktopVersion="1.4.7198">
     <Name>MapToolZoom</Name>
     <Description>MapToolZoom description</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -40,14 +41,14 @@
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="MapToolZoom_Group1" caption="Group 1" appearsOnAddInTab="true">
+        <group id="MapToolZoom_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="z1">
           <!-- host controls within groups -->
           <tool refID="MapToolZoom_MapToolZoomInOut" size="large" />
         </group>
       </groups>
       <controls>
         <!-- add your controls here -->
-        <tool id="MapToolZoom_MapToolZoomInOut" caption="Zoom In/Out" className="MapToolZoomInOut" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" condition="esri_mapping_mapPane">
+        <tool id="MapToolZoom_MapToolZoomInOut" caption="Zoom In/Out" className="MapToolZoomInOut" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" condition="esri_mapping_mapPane" keytip="z2">
           <tooltip heading="Zoom In/Out">Left Click on the Map to zoom in, or right click on the map to zoom out.<disabledText /></tooltip>
         </tool>
       </controls>

@@ -63,7 +63,7 @@ namespace ControlStyles
             set
             {
                 SetProperty(ref _selectedCheckBox, value, () => SelectedCheckBox);
-                StyleXaml = string.Format("<CheckBox Content=\"CheckBox\"  IsChecked=\"True\" IsEnabled=\"True\" FontSize=\"12\" FontWeight=\"Regular\" Foreground=\"{{StaticResource Esri_Gray155}}\"></CheckBox>");
+                StyleXaml = string.Format("<CheckBox Content=\"CheckBox\"  IsChecked=\"True\" IsEnabled=\"True\" FontSize=\"12\" FontWeight=\"Regular\" Foreground=\"{{DynamicResource Esri_Gray155}}\"></CheckBox>");
             }
         }
         #endregion

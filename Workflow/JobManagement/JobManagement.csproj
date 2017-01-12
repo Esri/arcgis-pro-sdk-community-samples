@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{01DA5D5F-FB4B-4339-9414-BB1AD3FFBCA3}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2784}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WorkflowSample</RootNamespace>
@@ -40,14 +40,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ArcGIS.Desktop.Ribbon.Wpf">
-      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Ribbon.Wpf.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Ribbon.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="ArcGIS.Desktop.Workflow, Version=11.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\Pro\bin\Extensions\Workflow\ArcGIS.Desktop.Workflow.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Workflow\ArcGIS.Desktop.Workflow.dll</HintPath>
     </Reference>
     <Reference Include="ArcGISPro">
-      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe</HintPath>
     </Reference>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="PresentationFramework.Aero" />
@@ -64,35 +64,35 @@
     <Reference Include="WindowsBase" />
     <Reference Include="System.Xaml" />
     <Reference Include="ArcGIS.Desktop.Framework">
-      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Framework.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Framework.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Core">
-      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\Pro\bin\ArcGIS.Core.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.Core">
-      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\Pro\bin\Extensions\Core\ArcGIS.Desktop.Core.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Core\ArcGIS.Desktop.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.Mapping">
-      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\Pro\bin\Extensions\Mapping\ArcGIS.Desktop.Mapping.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Mapping\ArcGIS.Desktop.Mapping.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.Catalog">
-      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\Pro\bin\Extensions\Catalog\ArcGIS.Desktop.Catalog.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Catalog\ArcGIS.Desktop.Catalog.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.Shared.Wpf">
-      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Shared.Wpf.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Shared.Wpf.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.Editing">
-      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\Pro\bin\Extensions\Editing\ArcGIS.Desktop.Editing.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Editing\ArcGIS.Desktop.Editing.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.Extensions">
-      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\Pro\bin\Extensions\DesktopExtensions\ArcGIS.Desktop.Extensions.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\DesktopExtensions\ArcGIS.Desktop.Extensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -136,6 +136,22 @@
     <Resource Include="Images\ItemInformation16.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\GenericButtonPurple16.png" />
+    <AddInContent Include="DarkImages\GenericButtonPurple32.png" />
+    <AddInContent Include="DarkImages\Group_B16.png" />
+    <AddInContent Include="DarkImages\Group_B32.png" />
+    <AddInContent Include="DarkImages\ItemInformation16.png" />
+    <AddInContent Include="DarkImages\ItemInformation32.png" />
+    <AddInContent Include="DarkImages\Job16.png" />
+    <AddInContent Include="DarkImages\Job32.png" />
+    <AddInContent Include="DarkImages\JobCreate16.png" />
+    <AddInContent Include="DarkImages\JobCreate32.png" />
+    <AddInContent Include="DarkImages\ServiceWorkFlow16.png" />
+    <AddInContent Include="DarkImages\ServiceWorkFlow32.png" />
+    <AddInContent Include="DarkImages\User16.png" />
+    <AddInContent Include="DarkImages\User32.png" />
     <Content Include="Images\ItemInformation32.png" />
     <Content Include="Images\Job16.png" />
     <Content Include="Images\Job32.png" />

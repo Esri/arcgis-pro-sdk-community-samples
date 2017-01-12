@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -18,7 +19,7 @@
 
 -->
 <ArcGIS defaultAssembly="SketchToolDemo.dll" defaultNamespace="SketchToolDemo" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{30c6a886-4421-4597-9171-c5f8e79e593a}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{30c6a886-4421-4597-9171-c5f8e79e593a}" version="1.0" desktopVersion="1.4.7198">
     <Name>SketchToolDemo</Name>
     <Description>SketchTool Demo for the ArcGIS Pro SDK samples.</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -32,13 +33,13 @@
       <tabs />
       <groups />
       <controls>
-<tool id="SketchToolDemo_CutTool" caption="CutTool " 
-      className="CutTool" loadOnClick="true" smallImage="Images\BexDog16.png" 
-      largeImage="Images\BexDog32.png" condition="esri_mapping_mapPane" categoryRefID="esri_editing_CommandList">
-  <tooltip heading="Pro SDK Samples">Sample sketch tool performing a cut without selected features.
-  <disabledText /></tooltip>
-  <content L_group="Pro SDK Samples" gallery2d="true" gallery3d="false" />
-</tool>
+        <tool id="SketchToolDemo_CutTool" caption="CutTool " 
+              className="CutTool" loadOnClick="true" smallImage="Images\BexDog16.png" keytipe="ZB"
+              largeImage="Images\BexDog32.png" condition="esri_mapping_mapPane" categoryRefID="esri_editing_CommandList">
+          <tooltip heading="Pro SDK Samples">Sample sketch tool performing a cut without selected features.
+          <disabledText /></tooltip>
+          <content L_group="Pro SDK Samples" gallery2d="true" gallery3d="false" />
+        </tool>
       </controls>
     </insertModule>
   </modules>

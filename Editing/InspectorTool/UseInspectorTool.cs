@@ -1,4 +1,4 @@
-﻿// Copyright 2016 Esri
+// Copyright 2017 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ namespace InspectorTool
         private AttributeControlViewModel _attributeVM = null;
         private DelayedInvoker _invoker = new DelayedInvoker(10);
 
-        public UseInspectorTool()
+        public UseInspectorTool() : base()
         {
             // indicate that you need feedback graphics
             IsSketchTool = true;
@@ -175,6 +175,10 @@ namespace InspectorTool
 
                 // gather the selection
                 var pointSelection = pointLayer.Select(spatialQuery);
+
+                List<long> oids = pointSelection.GetObjectIDs().ToList();
+                if (oids.Count == 0)
+                  return;
 
                 // set up a dictionary to store the layer and the object IDs of the selected features
                 var selectionDictionary = new Dictionary<MapMember, List<long>>();

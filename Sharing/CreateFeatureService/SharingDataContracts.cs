@@ -2308,13 +2308,13 @@ namespace ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts
 
   }
 
-  #endregion
+    #endregion
 
-  #region SearchGroup result DataContracts
-  [DataContract]
-  ///Search Group result is similar to searched item result but the results have slightly different KVP
-  ///Update: not inheriting SearchResult class. Not efficient but deserializer ends up with ambiguity.
-  public class SearchGroupResult
+    #region SearchGroup result DataContracts
+    ///<summary>Search Group result is similar to searched item result but the results have slightly different KVP
+    /// Update: not inheriting SearchResult class. Not efficient but deserializer ends up with ambiguity.</summary>
+    [DataContract]
+    public class SearchGroupResult
   {
     [DataMember(Name = "query")]
     public string query { get; set; }
@@ -2332,7 +2332,7 @@ namespace ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts
     public int nextStart { get; set; }
 
     [DataMember(Name = "results")]
-    public new List<SearchGroupItem> results { get; set; }
+    public List<SearchGroupItem> results { get; set; }
   }
 
   /// <summary>
@@ -2357,7 +2357,7 @@ namespace ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts
     public bool isFav { get; set; }
 
     [DataMember(Name = "created")]
-    public long created { get; set; }
+    public new long created { get; set; }
 
     [DataMember(Name = "modified")]
     public long modified { get; set; }

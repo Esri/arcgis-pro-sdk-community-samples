@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-
-
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -20,9 +18,8 @@
    limitations under the License.
 
 -->
-
 <ArcGIS defaultAssembly="FavoriteQueries.dll" defaultNamespace="FavoriteQueries" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{a21672a9-1988-42a6-a126-8eb1e48eb471}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{a21672a9-1988-42a6-a126-8eb1e48eb471}" version="1.0" desktopVersion="1.4.7198">
     <Name>FavoriteQueries</Name>
     <Description>An Addin which will have built in Favorite Queries to be used on specific Data</Description>
     <Image>Images\AddinDesktop32.png</Image>

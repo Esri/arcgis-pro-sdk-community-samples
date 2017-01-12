@@ -47,7 +47,7 @@ namespace ControlStyles
             set
             {                             
                 SetProperty(ref _selectedButton, value, () => SelectedButton);               
-                StyleXaml = string.Format("<Button Content=\"Button\" Style=\"{{StaticResource {0}}}\" ToolTip=\"Button\">", _selectedButton);
+                StyleXaml = string.Format("<Button Content=\"Button\" Style=\"{{DynamicResource {0}}}\" ToolTip=\"Button\">", _selectedButton);
             }
         }
 

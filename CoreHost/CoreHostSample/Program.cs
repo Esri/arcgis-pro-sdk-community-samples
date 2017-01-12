@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -47,7 +47,7 @@ namespace CoreHostSample {
         static void Main(string[] args)
         {
             // get a geodatabase path from the command line or use this default:
-            var gdbPath = @"C:\Data\SDK\GDB\LocalGovernment.gdb";
+            var gdbPath = @"E:\Data\SDK\GDB\LocalGovernment.gdb";
             if (args.Count() > 0) gdbPath = args[0];
             //Call Host.Initialize before constructing any objects from ArcGIS.Core
             try {
@@ -61,11 +61,9 @@ namespace CoreHostSample {
             try
             {
                 //if we are here, ArcGIS.Core is successfully initialized
-                using (var gdb = new Geodatabase(gdbPath))
-                {
+                using (var gdb = new Geodatabase(new FileGeodatabaseConnectionPath(new Uri(gdbPath, UriKind.Absolute)))) {
                     IReadOnlyList<TableDefinition> definitions = gdb.GetDefinitions<FeatureClassDefinition>();
-                    foreach (var fdsDef in definitions)
-                    {
+                    foreach (var fdsDef in definitions) {
                         Console.WriteLine(TableString(fdsDef as TableDefinition));
                     }
                 }
@@ -85,7 +83,7 @@ namespace CoreHostSample {
             string name = table.GetName();
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(string.Format("{0} ({1})", alias.Length > 0 ? alias : name, name));
-            sb.Append(new string('-', 80));
+            sb.AppendLine(new string('-', 80));
             foreach (var fld in table.GetFields()) {
                 sb.Append(string.Format("{0,-20}", fld.AliasName ?? fld.Name));
                 sb.Append(string.Format("{0,-14} ({1}) ", fld.FieldType.ToString(), fld.Length));

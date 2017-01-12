@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-
-
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -20,9 +18,8 @@
    limitations under the License.
 
 -->
-
 <ArcGIS defaultAssembly="CoordinateSystemAddin.dll" defaultNamespace="CoordinateSystemAddin" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{1b3c4d8c-4b75-4367-bccb-1930bb952ada}" version="1.0" desktopVersion="1.3.5777">
+  <AddInInfo id="{1b3c4d8c-4b75-4367-bccb-1930bb952ada}" version="1.0" desktopVersion="1.4.7198">
     <Name>CoordinateSystemDialog</Name>
     <Description>CoordinateSystemDialog description</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -35,12 +32,6 @@
   </AddInInfo>
   <modules>
     <insertModule id="CoordinateSystemAddin_Module" className="Module1" autoLoad="false" caption="Module1">
-      <!-- uncomment to have the control hosted on a separate tab-->
-      <tabs>
-        <tab id="CoordinateSystemAddin_Tab1" caption="New Tab">
-          <group refID="CoordinateSystemAddin_Group1"/>
-        </tab>
-      </tabs>
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->

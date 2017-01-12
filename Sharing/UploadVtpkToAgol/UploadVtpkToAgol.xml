@@ -47,6 +47,11 @@
             UploadVectorTileView
             </summary>
         </member>
+        <member name="M:UploadVtpkToAgol.UploadVectorTileView.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
         <member name="M:UploadVtpkToAgol.UploadVectorTileView.InitializeComponent">
             <summary>
             InitializeComponent

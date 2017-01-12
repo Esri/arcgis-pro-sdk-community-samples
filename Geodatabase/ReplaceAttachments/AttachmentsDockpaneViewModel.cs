@@ -1,4 +1,4 @@
-﻿//   Copyright 2015 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -14,16 +14,18 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ArcGIS.Core.Data;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
+using System.Windows.Input;
+using ArcGIS.Desktop.Catalog;
+using ArcGIS.Desktop.Core;
+using System.Windows.Data;
+using ReplaceAttachments.Util;
 
 namespace ReplaceAttachments
 {
@@ -31,7 +33,26 @@ namespace ReplaceAttachments
     {
         private const string _dockPaneID = "ReplaceAttachments_AttachmentsDockpane";
 
-        protected AttachmentsDockpaneViewModel() { }
+        private ObservableCollection<string> _layers = new ObservableCollection<string>();
+        private ObservableCollection<string> _relationshipClasses = new ObservableCollection<string>();
+        private ObservableCollection<string> _attachmentNames = new ObservableCollection<string>();
+        private object _lockCollections = new object();
+        private bool _isGoEnabled = false;
+
+        protected AttachmentsDockpaneViewModel() {
+            // when a new mapview is coming in we need to update the list of layers
+            ArcGIS.Desktop.Mapping.Events.ActiveMapViewChangedEvent.Subscribe(OnMapViewChanged);
+
+            BindingOperations.EnableCollectionSynchronization(_layers, _lockCollections);
+            BindingOperations.EnableCollectionSynchronization(_relationshipClasses, _lockCollections);
+            BindingOperations.EnableCollectionSynchronization(_attachmentNames, _lockCollections);
+        }
+
+        private void OnMapViewChanged (ArcGIS.Desktop.Mapping.Events.ActiveMapViewChangedEventArgs args)
+        {
+            if (args.IncomingView == null) return;
+            UpdateLayers();
+        }
 
         /// <summary>
         /// Show the DockPane.
@@ -58,59 +79,98 @@ namespace ReplaceAttachments
             }
         }
 
-        private ObservableCollection<String> layers;
-        private ObservableCollection<String> relationshipClasses;
-        private string selectedLayer;
-        private string selectedRelationship;
-        private string relatedFeatureClass;
+        private string _selectedLayer;
+        private string _selectedRelationship;
+        private string _relatedFeatureClass;
         private string oldAttachmentName;
         private string newAttachment;
         private Definition relatedFeatureClassDefinition;
 
         public ObservableCollection<string> Layers
         {
-            get { return layers; }
-            set
-            {
-                layers = value;
-                NotifyPropertyChanged(new PropertyChangedEventArgs("Layers"));
-            }
+            get { return _layers; }
         }
 
         public ObservableCollection<string> RelationshipClasses
         {
-            get { return relationshipClasses; }
-            set
-            {
-                relationshipClasses = value;
-                NotifyPropertyChanged(new PropertyChangedEventArgs("RelationshipClasses"));
-            }
+            get { return _relationshipClasses; }
+        }
+
+        public ObservableCollection<string> AttachmentNames
+        {
+            get { return _attachmentNames; }
         }
 
         public string SelectedRelationship
         {
-            get { return selectedRelationship; }
+            get { return _selectedRelationship; }
             set
             {
-                SetProperty(ref selectedRelationship, value, () => SelectedRelationship);
+                SetProperty(ref _selectedRelationship, value, () => SelectedRelationship);
+                UpdateRelatedFeatureClass();
+                UpdateIsGoEnabled();
             }
         }
 
         public string SelectedLayer
         {
-            get { return selectedLayer; }
+            get { return _selectedLayer; }
             set
             {
-                SetProperty(ref selectedLayer, value, () => SelectedLayer);
+                SetProperty(ref _selectedLayer, value, () => SelectedLayer);
+                UpdateRelationshipClasses();
+                UpdateIsGoEnabled();
             }
         }
 
-        public string RelatedFeatureClass
+        public bool IsGoEnabled
         {
-            get { return relatedFeatureClass; }
+            get { return _isGoEnabled; }
             set
             {
-                SetProperty(ref relatedFeatureClass, value, () => RelatedFeatureClass);
+                SetProperty(ref _isGoEnabled, value, () => IsGoEnabled);
+            }
+        }
+        public string RelatedFeatureClass
+        {
+            get { return _relatedFeatureClass; }
+            set
+            {
+                SetProperty(ref _relatedFeatureClass, value, () => RelatedFeatureClass);
+                QueuedTask.Run(() =>
+                {
+                    lock (_lockCollections) _attachmentNames.Clear();
+                    using (Table table = (MapView.Active.Map.Layers.First(layer => layer.Name.Equals(SelectedLayer)) as FeatureLayer).GetTable())
+                    {
+                        if (!table.IsAttachmentEnabled()) return;
+                        Geodatabase geodatabase = null;
+                        if (table != null && table.GetDatastore() is Geodatabase)
+                            geodatabase = table.GetDatastore() as Geodatabase;
+                        if (geodatabase == null) return;
+
+                        if (_relatedFeatureClass == null) return;
+                        Table relatedTable = geodatabase.OpenDataset<Table>(_relatedFeatureClass);
+                        if (relatedTable == null) return;
+
+                        using (RowCursor rowCursor = table.Search(null, false))
+                        {
+                            while (rowCursor.MoveNext())
+                            {
+                                using (Row row = rowCursor.Current)
+                                {
+                                    IEnumerable<Attachment> attachments = row.GetAttachments(null, true);
+                                    foreach (Attachment attachment in attachments)
+                                    {
+                                        lock (_lockCollections)
+                                        {
+                                            _attachmentNames.Add(attachment.GetName());
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
             }
         }
 
@@ -120,6 +180,7 @@ namespace ReplaceAttachments
             set
             {
                 SetProperty(ref oldAttachmentName, value, () => OldAttachmentName);
+                UpdateIsGoEnabled();
             }
         }
         public string NewAttachment
@@ -128,6 +189,45 @@ namespace ReplaceAttachments
             set
             {
                 SetProperty(ref newAttachment, value, () => NewAttachment);
+                UpdateIsGoEnabled();
+            }
+        }
+
+        private ICommand _goReplaceAttachment = null;
+        public ICommand GoReplaceAttachment
+        {
+            get
+            {
+                if (_goReplaceAttachment == null) _goReplaceAttachment = new RelayCommand(Work, () => true);
+                return _goReplaceAttachment;
+            }
+        }
+
+        private ICommand _selectPath = null;
+        public ICommand SelectPath
+        {
+            get
+            {
+                if (_selectPath == null) _selectPath = new RelayCommand(GetPath, () => true);
+                return _selectPath;
+            }
+        }
+
+        private void GetPath(object param)
+        {
+            OpenItemDialog pathDialog = new OpenItemDialog();
+            pathDialog.Title = "Select Path to attachment";
+            pathDialog.InitialLocation = @"C:\Data\";
+            pathDialog.MultiSelect = false;
+            pathDialog.Filter = ItemFilters.rasters;
+
+            bool? ok = pathDialog.ShowDialog();
+
+            if (ok == true)
+            {
+                IEnumerable<Item> selectedItems = pathDialog.Items;
+                foreach (Item selectedItem in selectedItems)
+                    NewAttachment = selectedItem.Path;
             }
         }
 
@@ -142,42 +242,71 @@ namespace ReplaceAttachments
         /// 2. Find if any row has Attachments which have the same name as the value of "OldAttachmentName"
         /// 3. Replace the Attachment Data for the matching Attachments with the Data corresponding to "NewAttachment"
         /// </summary>
-        public void Work()
+        private void Work(object param)
         {
-            QueuedTask.Run(async () =>
+             QueuedTask.Run(() =>
+             {
+                 using (Table table = (MapView.Active.Map.Layers.First(layer => layer.Name.Equals(SelectedLayer)) as FeatureLayer).GetTable())
+                 {
+                     if (!table.IsAttachmentEnabled()) return;
+
+                     Geodatabase geodatabase = null;
+                     if (table != null && table.GetDatastore() is Geodatabase)
+                         geodatabase = table.GetDatastore() as Geodatabase;
+                     if (geodatabase == null) return;
+
+                     if (_relatedFeatureClass == null) return;
+                     Table relatedTable = geodatabase.OpenDataset<Table>(_relatedFeatureClass);
+                     if (relatedTable == null) return;
+
+                     if (String.IsNullOrEmpty(OldAttachmentName)) return;
+                     if (String.IsNullOrEmpty(NewAttachment) || !File.Exists(NewAttachment)) return;
+
+                     using (MemoryStream newAttachmentMemoryStream = CreateMemoryStreamFromContentsOf(NewAttachment))
+                     {
+                         using (RowCursor rowCursor = table.Search(null, false))
+                         {
+                             while (rowCursor.MoveNext())
+                             {
+                                 using (Row row = rowCursor.Current)
+                                 {
+                                     IEnumerable<Attachment> attachments = row.GetAttachments(null, true).Where(attachment => attachment.GetName().Equals(oldAttachmentName));
+                                     foreach (Attachment attachment in attachments)
+                                     {
+                                         attachment.SetData(newAttachmentMemoryStream);
+                                         row.UpdateAttachment(attachment);
+                                     }
+                                 }
+                             }
+                         }
+                     }
+                 }
+             });
+        }
+
+        private async void UpdateIsGoEnabled()
+        {
+            IsGoEnabled = await QueuedTask.Run(() =>
             {
+                bool isGoEnabled = false;
                 using (Table table = (MapView.Active.Map.Layers.First(layer => layer.Name.Equals(SelectedLayer)) as FeatureLayer).GetTable())
                 {
+                    if (!table.IsAttachmentEnabled()) return isGoEnabled;
+
                     Geodatabase geodatabase = null;
                     if (table != null && table.GetDatastore() is Geodatabase)
                         geodatabase = table.GetDatastore() as Geodatabase;
-                    if (geodatabase == null) return;
-                    
-                    Table relatedTable = geodatabase.OpenDataset<Table>(relatedFeatureClass);
-                    if (!relatedTable.IsAttachmentEnabled()) return;
+                    if (geodatabase == null) return isGoEnabled;
 
-                    if (String.IsNullOrEmpty(OldAttachmentName)) return;
-                    if (String.IsNullOrEmpty(NewAttachment) || !File.Exists(NewAttachment)) return;
+                    if (_relatedFeatureClass == null) return isGoEnabled;
+                    Table relatedTable = geodatabase.OpenDataset<Table>(_relatedFeatureClass);
+                    if (relatedTable == null) return isGoEnabled;
 
-                    using (MemoryStream newAttachmentMemoryStream = CreateMemoryStreamFromContentsOf(NewAttachment))
-                    {
-                        using (RowCursor rowCursor = relatedTable.Search(null, false))
-                        {
-                            while (rowCursor.MoveNext())
-                            {
-                                using (Row row = rowCursor.Current)
-                                {
-                                    IEnumerable<Attachment> attachments = row.GetAttachments(null, true).Where(attachment => attachment.GetName().Equals(oldAttachmentName));
-                                    foreach (Attachment attachment in attachments)
-                                    {
-                                        attachment.SetData(newAttachmentMemoryStream);
-                                        row.UpdateAttachment(attachment);
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    if (String.IsNullOrEmpty(OldAttachmentName)) return isGoEnabled;
+                    if (String.IsNullOrEmpty(NewAttachment) || !File.Exists(NewAttachment)) return isGoEnabled;
+                    isGoEnabled = true;
                 }
+                return isGoEnabled;
             });
         }
 
@@ -186,7 +315,11 @@ namespace ReplaceAttachments
         /// </summary>
         public void UpdateLayers()
         {
-            Layers = new ObservableCollection<string>(MapView.Active.Map.Layers.Where(layer => layer is FeatureLayer).Select(layer => layer.Name));
+            lock (_lockCollections)
+            {
+                _layers.Clear();
+                _layers.AddRange(new ObservableCollection<string>(MapView.Active.Map.Layers.Where(layer => layer is FeatureLayer).Select(layer => layer.Name)));
+            }
         }
 
         /// <summary>
@@ -197,6 +330,7 @@ namespace ReplaceAttachments
         {
             QueuedTask.Run(() =>
             {
+                lock (_lockCollections) _relationshipClasses.Clear();
                 using (Table table = (MapView.Active.Map.Layers.First(layer => layer.Name.Equals(SelectedLayer)) as FeatureLayer).GetTable())
                 {
                     Geodatabase geodatabase = null;
@@ -208,7 +342,7 @@ namespace ReplaceAttachments
                                                                                                         definition.GetOriginClass().Contains(table.GetName()) ||
                                                                                                         definition.GetDestinationClass().Contains(table.GetName()));
                     IEnumerable<string> relationshipClassNames = relavantRelationshipClassDefns.Select(definition => definition.GetName());
-                    RelationshipClasses = new ObservableCollection<string>(relationshipClassNames);
+                    lock (_lockCollections) _relationshipClasses.AddRange(new ObservableCollection<string>(relationshipClassNames));
                 }
             });
         }

@@ -165,7 +165,7 @@ namespace ControlStyles
         {
             get 
             {
-                _refDict = string.Format("<ResourceDictionary.MergedDictionaries><ResourceDictionary Source=\"pack://application:,,,/ArcGIS.Desktop.Framework;component\\Themes\\Default.xaml\"/></ResourceDictionary.MergedDictionaries>");
+                _refDict = string.Format("<ResourceDictionary.MergedDictionaries><extensions:DesignOnlyResourceDictionary Source=\"pack://application:,,,/ArcGIS.Desktop.Framework;component\\Themes\\Default.xaml\"/></ResourceDictionary.MergedDictionaries>");
                 return _refDict;       
             }
 

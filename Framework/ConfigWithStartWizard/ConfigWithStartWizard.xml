@@ -1,0 +1,437 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ConfigWithStartWizard</name>
+    </assembly>
+    <members>
+        <member name="P:ConfigWithStartWizard.Common.SubmitQuery.Response">
+            <summary>
+            Gets the original response from the portal
+            </summary>
+        </member>
+        <member name="P:ConfigWithStartWizard.Common.SubmitQuery.ErrorResponse">
+            <summary>
+            Gets the error response if there was an exception
+            </summary>
+        </member>
+        <member name="P:ConfigWithStartWizard.Common.SubmitQuery.MaxResponseLength">
+            <summary>
+            Gets and sets the (approx) maximum number of characters for the DEBUG response
+            </summary>
+            <remarks>Has no effect on the length of the actual response from online</remarks>
+        </member>
+        <member name="M:ConfigWithStartWizard.Common.SubmitQuery.Exec(ConfigWithStartWizard.Models.OnlineQuery,System.Collections.ObjectModel.ObservableCollection{ConfigWithStartWizard.Models.OnlineResultItem},System.Int32)">
+            <summary>
+            Execute the given query and return the result
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ConfigWithStartWizard.Common.StringToBoolConverter">
+             <summary>
+            If the string length &gt; 0 is "true" then true is returned, otherwise false.
+             </summary>
+             <remarks>If the string value "true" is passed as the parameter the returned bool is flipped</remarks>
+        </member>
+        <member name="M:ConfigWithStartWizard.Common.StringToBoolConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts OnlineUri query string length to a bool. A query string length &gt; 0 returns true
+            </summary>
+            <returns>Pass "true" as the parameter to flip (reverse) the returned bool (i.e. !true or !false)</returns>
+        </member>
+        <member name="T:ConfigWithStartWizard.Common.BoolToVisibilityConverter">
+            <summary>
+            Converts the given bool to a Visibility
+            </summary>
+        </member>
+        <member name="T:ConfigWithStartWizard.ConfigWithStartWizardModule">
+            <summary>
+            “Managed Configurations” allow branding of ArcGIS Pro meaning you can customize the splash and startup screens, application icon, and modify the runtime ArcGIS Pro User Interface to best fit your user’s business needs.  This sample illustrates a configuration solution that shows various startup screen options in form of a wizard interface.  
+            </summary>
+            <remarks>
+            1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Configurations\Projects' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Configurations\Projects" is available.
+            1. In Visual Studio 2015 click the Build menu. Then select Build Solution.
+            1. Click Start button to debug ArcGIS Pro.
+            1. ArcGIS Pro displays first the custom splash screen.
+            1. Pro will then display the startup screen utilizing a wizard style user interface.
+            ![UI](Screenshots/Startup1.png)
+            1. The code for this startup user control can be found in OutofBoxStartPage.xaml and OutofBoxStartPageViewModel.cs.
+            ![UI](Screenshots/Startup2.png)
+            1. The code for this startup user control can be found in StockStartPage.xaml and StockStartPageViewModel.cs.
+            ![UI](Screenshots/Startup3.png)
+            1. The code for this startup user control can be found in OnlineItemStartPage.xaml and OnlineItemStartPageViewModel.cs.
+            ![UI](Screenshots/Startup4.png)
+            1. The code for this startup user control can be found in OnlineItemStartPage.xaml and OnlineItemStartPageViewModel.cs.
+            ![UI](Screenshots/Startup5.png)
+            1. The code for this startup user control can be found in OnlineItemStartPage.xaml and OnlineItemStartPageViewModel.cs.
+            ![UI](Screenshots/Startup6.png)
+            1. The code for this startup user control can be found in OnlineItemStartPage.xaml and OnlineItemStartPageViewModel.cs.
+            ![UI](Screenshots/Startup7.png)
+            1. The code for this startup user control can be found in CaliforniaStartPage.xaml and CaliforniaStartPageViewModel.cs.
+            </remarks>
+        </member>
+        <member name="P:ConfigWithStartWizard.ConfigWithStartWizardModule.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:ConfigWithStartWizard.ConfigWithStartWizardModule.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="P:ConfigWithStartWizard.ConfigurationManagerStartWizard.ApplicationName">
+            <summary>
+            Replaces the default ArcGIS Pro application name
+            </summary>
+        </member>
+        <member name="P:ConfigWithStartWizard.ConfigurationManagerStartWizard.Icon">
+            <summary>
+            Replaces the ArcGIS Pro Main window icon.
+            </summary>
+        </member>
+        <member name="M:ConfigWithStartWizard.ConfigurationManagerStartWizard.OnShowStartPage">
+            <summary>
+            Called before ArcGIS Pro starts up. Replaces the default Pro start-up page (Optional)
+            </summary>
+            <returns> Implemented UserControl with start-up page functionality. 
+            Return null if a custom start-up page is not needed. Default ArcGIS Pro start-up page will be displayed.</returns>
+        </member>
+        <member name="M:ConfigWithStartWizard.ConfigurationManagerStartWizard.OnApplicationInitializing(System.ComponentModel.CancelEventArgs)">
+            <summary>
+            During the start up this method is called after it is safe to access Portal and use ArcGIS.Desktop.Core. 
+            ArcGIS Pro Theme has already been set. 
+            </summary>
+            <param name="cancelEventArgs">
+            To cancel initialization, set the cancelEventArgs.Cancel property to true.
+            </param>
+        </member>
+        <member name="M:ConfigWithStartWizard.ConfigurationManagerStartWizard.OnApplicationReady">
+            <summary>
+            During the start up this method is called after the Application Window Start page is ready. From here on calls to ArcGIS.Desktop.Framework.Threading.Tasks.QueuedTask are safe.
+            ArcGIS Pro Extension modules can now be accessed. 
+            </summary>
+        </member>
+        <member name="M:ConfigWithStartWizard.ConfigurationManagerStartWizard.OnShowSplashScreen">
+            <summary>
+            Called while ArcGIS Pro starts up. Replaces the default Pro splash screen. (Optional)
+            </summary>
+            <returns>Implemented Window with splash screen functionality. 
+            Return null if a custom splash screen is not needed. Default ArcGIS Pro splash screen will be displayed.</returns>
+        </member>
+        <member name="M:ConfigWithStartWizard.ConfigurationManagerStartWizard.OnShowAboutPage">
+            <summary>
+            Customized UserControl is displayed in ArcGIS Pro About property page. Allows to add information about this specific managed configuration.
+            </summary>
+            <returns>Implemented UserControl with about box information. 
+            Return null if a custom about box is not needed. Default ArcGIS Pro About box will be displayed.</returns>
+        </member>
+        <member name="T:ConfigWithStartWizard.Models.OnlineQuery">
+            <summary>
+            FYI - item download: http://prosdk.maps.arcgis.com/sharing/rest/content/items/ba363ce08a0541ac98ce31cbffa6bed0/data?token=
+            Response headers:
+            Content-Disposition = attachment; filename=\"Esri.ppkx\"\r\nAccept-Ranges = bytes
+            Content-Length = 178654
+            Content-Type = application/octet-stream
+            Date = Wed, 31 Aug 2016 23:41:46 GMT
+            ETag = \"1cc185860d286627659253b73c4ce5f1-1\"
+            Last-Modified = Thu, 25 Aug 2016 20:36:11 GMT
+            Server = AmazonS3
+            </summary>
+        </member>
+        <member name="T:ConfigWithStartWizard.Models.OnlineResultItem">
+            <summary>
+            An individual result from an online query
+            </summary>
+        </member>
+        <member name="P:ConfigWithStartWizard.Models.OnlineResultItem.Id">
+            <summary>
+            Gets and sets the item id
+            </summary>
+        </member>
+        <member name="P:ConfigWithStartWizard.Models.OnlineResultItem.Title">
+            <summary>
+            Gets and sets the item title
+            </summary>
+        </member>
+        <member name="P:ConfigWithStartWizard.Models.OnlineResultItem.Name">
+            <summary>
+            Gets and sets the name
+            </summary>
+        </member>
+        <member name="P:ConfigWithStartWizard.Models.OnlineResultItem.Snippet">
+            <summary>
+            Gets and sets the item snippet
+            </summary>
+        </member>
+        <member name="P:ConfigWithStartWizard.Models.OnlineResultItem.Url">
+            <summary>
+            Gets and sets the item url
+            </summary>
+        </member>
+        <member name="P:ConfigWithStartWizard.Models.OnlineResultItem.OnlineItemType">
+            <summary>
+            Gets and sets the online item type
+            </summary>
+        </member>
+        <member name="P:ConfigWithStartWizard.Models.OnlineResultItem.ThumbnailUrl">
+            <summary>
+            Gets the Thumbnail url of the ResultItem
+            </summary>
+        </member>
+        <member name="M:ConfigWithStartWizard.Models.OnlineResultItem.SetThumbnailURL(System.String,System.String,System.String)">
+            <summary>
+            Provide the item thumbnail URL for the given item id and thumbnail url
+            </summary>
+            <param name="portal">The portal web url</param>
+            <param name="thumbnail">The thumbnail url from the online item</param>
+            <param name="id">the online item id</param>
+            <returns></returns>
+        </member>
+        <member name="M:ConfigWithStartWizard.Models.OnlineResultItem.Configure(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Configure the online item result
+            </summary>
+            <param name="portal"></param>
+            <param name="id"></param>
+            <param name="thumbnail"></param>
+            <param name="snippet"></param>
+            <param name="itemType"></param>
+            <param name="access"></param>
+        </member>
+        <member name="T:ConfigWithStartWizard.UI.Backstage.CustomNewView">
+            <summary>
+            Interaction logic for CustomNewView.xaml
+            </summary>
+            <summary>
+            CustomNewView
+            </summary>
+        </member>
+        <member name="M:ConfigWithStartWizard.UI.Backstage.CustomNewView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ConfigWithStartWizard.UI.Backstage.CustomNewViewModel.InitializeAsync">
+            <summary>
+            Called when the backstage tab is selected.
+            </summary>
+        </member>
+        <member name="M:ConfigWithStartWizard.UI.Backstage.CustomNewViewModel.UninitializeAsync">
+            <summary>
+            Called when the backstage tab is unselected.
+            </summary>
+        </member>
+        <member name="T:ConfigWithStartWizard.UI.Backstage.CustomOpenView">
+            <summary>
+            Interaction logic for CustomOpenView.xaml
+            </summary>
+            <summary>
+            CustomOpenView
+            </summary>
+        </member>
+        <member name="M:ConfigWithStartWizard.UI.Backstage.CustomOpenView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ConfigWithStartWizard.UI.Backstage.CustomOpenViewModel.InitializeAsync">
+            <summary>
+            Called when the backstage tab is selected.
+            </summary>
+        </member>
+        <member name="M:ConfigWithStartWizard.UI.Backstage.CustomOpenViewModel.UninitializeAsync">
+            <summary>
+            Called when the backstage tab is unselected.
+            </summary>
+        </member>
+        <member name="T:ConfigWithStartWizard.UI.SignOnStatus">
+            <summary>
+            Interaction logic for SignOnStatus.xaml
+            </summary>
+            <summary>
+            SignOnStatus
+            </summary>
+        </member>
+        <member name="M:ConfigWithStartWizard.UI.SignOnStatus.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ConfigWithStartWizard.UI.SplashScreen">
+            <summary>
+            Interaction logic for SplashScreen.xaml
+            </summary>
+            <summary>
+            SplashScreen
+            </summary>
+        </member>
+        <member name="M:ConfigWithStartWizard.UI.SplashScreen.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ConfigWithStartWizard.UI.AboutPage">
+            <summary>
+            Interaction logic for AboutPage.xaml
+            </summary>
+            <summary>
+            AboutPage
+            </summary>
+        </member>
+        <member name="M:ConfigWithStartWizard.UI.AboutPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ConfigWithStartWizard.UI.StartPages.CaliforniaCounties">
+            <summary>
+            Interaction logic for CaliforniaCounties.xaml
+            </summary>
+            <summary>
+            CaliforniaCounties
+            </summary>
+        </member>
+        <member name="M:ConfigWithStartWizard.UI.StartPages.CaliforniaCounties.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ConfigWithStartWizard.UI.StartPages.CaliforniaStartPage">
+            <summary>
+            Interaction logic for CaliforniaStartPage.xaml
+            </summary>
+            <summary>
+            CaliforniaStartPage
+            </summary>
+        </member>
+        <member name="M:ConfigWithStartWizard.UI.StartPages.CaliforniaStartPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ConfigWithStartWizard.UI.StartPages.OnlineItemStartPage">
+            <summary>
+            Interaction logic for OnlineItemStartPage.xaml
+            </summary>
+            <summary>
+            OnlineItemStartPage
+            </summary>
+        </member>
+        <member name="M:ConfigWithStartWizard.UI.StartPages.OnlineItemStartPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:ConfigWithStartWizard.UI.StartPages.OnlineItemStartPageViewModel.Results">
+            <summary>
+            Gets the list of results from the query
+            </summary>
+        </member>
+        <member name="T:ConfigWithStartWizard.UI.StartPages.OutofBoxStartPage">
+            <summary>
+            Interaction logic for StartPage.xaml
+            </summary>
+            <summary>
+            OutofBoxStartPage
+            </summary>
+        </member>
+        <member name="M:ConfigWithStartWizard.UI.StartPages.OutofBoxStartPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ConfigWithStartWizard.UI.StartPages.OutofBoxStartPageViewModel">
+            <summary>
+            Business logic for the StartPage
+            </summary>
+        </member>
+        <member name="P:ConfigWithStartWizard.UI.StartPages.OutofBoxStartPageViewModel.ProProjects">
+            <summary>
+            Collection of all ArcGIS Pro project files.
+            </summary>
+        </member>
+        <member name="P:ConfigWithStartWizard.UI.StartPages.OutofBoxStartPageViewModel.SelectedProjectFile">
+            <summary>
+            ArcGIS Pro project file is selected and will be opened.
+            </summary>
+        </member>
+        <member name="P:ConfigWithStartWizard.UI.StartPages.OutofBoxStartPageViewModel.OpenProjectCommand">
+            <summary>
+            Command opens the ArcGIS Pro OpenItemDialog API method to browse to a specific project file.
+            </summary>
+        </member>
+        <member name="T:ConfigWithStartWizard.UI.StartPages.ProjectHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ConfigWithStartWizard.UI.StartPages.StartPage">
+            <summary>
+            Interaction logic for StartPage.xaml
+            </summary>
+            <summary>
+            StartPage
+            </summary>
+        </member>
+        <member name="M:ConfigWithStartWizard.UI.StartPages.StartPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ConfigWithStartWizard.UI.StartPages.StockStartPage">
+            <summary>
+            Interaction logic for StockStartPage.xaml
+            </summary>
+            <summary>
+            StockStartPage
+            </summary>
+        </member>
+        <member name="M:ConfigWithStartWizard.UI.StartPages.StockStartPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:ConfigWithStartWizard.UI.StartPages.StockStartPageViewModel.CmdOpenProject">
+            <summary>
+            Command opens the ArcGIS Pro OpenItemDialog API method to browse to a specific project file.
+            </summary>
+        </member>
+        <member name="P:ConfigWithStartWizard.UI.StartPages.StockStartPageViewModel.CmdNewProject">
+            <summary>
+            Command opens the ArcGIS Pro OpenItemDialog API method to browse to a specific project template file.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>

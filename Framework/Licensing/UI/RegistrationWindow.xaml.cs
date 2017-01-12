@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -16,28 +16,20 @@
    limitations under the License.
 
 */
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using ArcGIS.Desktop.Framework;
+using ArcGIS.Desktop.Framework.Controls;
+using MessageBox = ArcGIS.Desktop.Framework.Dialogs.MessageBox;
 
-namespace Licensing.UI {
+namespace Licensing.UI
+{
     /// <summary>
     /// Interaction logic for RegistrationWindow.xaml
     /// </summary>
-    public partial class RegistrationWindow : Window, INotifyPropertyChanged {
+    public partial class RegistrationWindow : ProWindow, INotifyPropertyChanged {
 
         private ICommand _authorizeCommand = null;
         public RegistrationWindow() {
@@ -46,14 +38,14 @@ namespace Licensing.UI {
         }
 
         /// <summary>
-        /// The current Authorization ID being used to authorize the Add-in
+        /// The current Authorization Id being used to authorize the Add-in
         /// </summary>
-        public string AuthorizationID {
+        public string AuthorizationId {
             get{
-                return Module1.AuthorizationID;
+                return Module1.AuthorizationId;
             }
             set {
-                Module1.AuthorizationID = value;
+                Module1.AuthorizationId = value;
                 OnPropertyChanged();
             }
         }
@@ -64,7 +56,7 @@ namespace Licensing.UI {
         public ICommand AuthorizeCommand {
             get {
                 return _authorizeCommand ?? (_authorizeCommand = new RelayCommand(() => {
-                    if (Module1.CheckLicensing(Module1.AuthorizationID)) {
+                    if (Module1.CheckLicensing(Module1.AuthorizationId)) {
                         MessageBox.Show("Add-in authorized. Thank you", "Success!",
                             MessageBoxButton.OK, MessageBoxImage.Information);
                     }

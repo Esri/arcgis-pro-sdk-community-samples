@@ -1,6 +1,6 @@
 <!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -23,34 +23,40 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:common="clr-namespace:CoreHostGDB.Common"
              xmlns:ext="clr-namespace:CoreHostGDB.UI"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
              mc:Ignorable="d" 
+             d:DataContext="{Binding Path=GDBGridViewModel}"
              d:DesignHeight="500" d:DesignWidth="600">
-    <UserControl.Resources>
-        <common:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"></common:BoolToVisibilityConverter>
-        <Style x:Key="ListViewAlternateColors" TargetType="ListViewItem">
-            <Style.Triggers>
-                <!--
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <common:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"></common:BoolToVisibilityConverter>
+      <Style x:Key="ListViewAlternateColors" TargetType="ListViewItem">
+        <Style.Triggers>
+          <!--
                 <Trigger Property="ItemsControl.AlternationIndex" Value="0">
                     <Setter Property="Background" Value="Gray" />
                 </Trigger>
                 -->
-                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                    <Setter Property="Background" Value="#FFEAEAEA" />
-                </Trigger>
-                <!--
+          <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+            <Setter Property="Background" Value="#FFEAEAEA" />
+          </Trigger>
+          <!--
                 <Trigger Property="IsSelected" Value="True">
                     <Setter Property="Background" Value="White" />
                 </Trigger>
 -->
-            </Style.Triggers>
-        </Style>
-        <Style x:Key="lvStyle" TargetType="{x:Type ListView}">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding IsExecutingQuery}" Value="True">
-                    <Setter Property="ListView.Cursor" Value="Wait"></Setter>
-                    <Setter Property="ListView.Background" Value="LightGray"></Setter>
-                </DataTrigger>
-                <!--
+        </Style.Triggers>
+      </Style>
+      <Style x:Key="lvStyle" TargetType="{x:Type ListView}">
+        <Style.Triggers>
+          <DataTrigger Binding="{Binding IsExecutingQuery}" Value="True">
+            <Setter Property="ListView.Cursor" Value="Wait"></Setter>
+            <Setter Property="ListView.Background" Value="LightGray"></Setter>
+          </DataTrigger>
+          <!--
                 <Trigger Property="ItemsControl.AlternationIndex"  Value="0">
                     <Setter Property="Background" Value="LightBlue" />
                 </Trigger>
@@ -59,112 +65,113 @@
                     <Setter Property="Background" Value="LightGray" />
                 </Trigger>
                 -->
-                <Trigger Property="HasItems" Value="false">
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate>
-                                <TextBlock Text="{Binding Path=TableHasNoRows}" FontSize="16" Margin="20"/>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-    </UserControl.Resources>
-    <DockPanel LastChildFill="True">
-        <Grid DockPanel.Dock="Top">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30"></RowDefinition>
-                <RowDefinition Height="30"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-            </Grid.RowDefinitions>
+          <Trigger Property="HasItems" Value="false">
+            <Setter Property="Template">
+              <Setter.Value>
+                <ControlTemplate>
+                  <TextBlock Text="{Binding Path=TableHasNoRows}" FontSize="16" Margin="20"/>
+                </ControlTemplate>
+              </Setter.Value>
+            </Setter>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <DockPanel LastChildFill="True">
+    <Grid DockPanel.Dock="Top">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="30"></RowDefinition>
+        <RowDefinition Height="30"></RowDefinition>
+        <RowDefinition Height="Auto"></RowDefinition>
+      </Grid.RowDefinitions>
 
 
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+      <Grid Grid.Row="0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="100"></ColumnDefinition>
+          <ColumnDefinition Width="*"></ColumnDefinition>
+          <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
-                <TextBlock Text="Open a GDB: " Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"
+        <TextBlock Text="Open a GDB: " Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"
                        Margin="0,0,5,0"></TextBlock>
-                
-                <TextBox Text="{Binding Path=GDBPath, Mode=TwoWay}" Grid.Column="1" Height="20"></TextBox>
 
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="2"  Margin="0,0,5,0">
-                    
-                    <Button Content=" ... " Command="{Binding Path=BrowseForGDBCommand}" Margin="2" Width="26" FontWeight="ExtraBold"
+        <TextBox Text="{Binding Path=GDBPath, Mode=TwoWay}" Grid.Column="1" Height="20"></TextBox>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="2"  Margin="0,0,5,0">
+
+          <Button Content=" ... " Command="{Binding Path=BrowseForGDBCommand}" Margin="2" Width="26" FontWeight="ExtraBold"
                         VerticalAlignment="Center" Height="20">
-                        <Button.ToolTip>
-                            <ToolTip>
-                                <TextBlock Text="Browse to the File GDB folder to be opened"></TextBlock>
-                            </ToolTip>
-                        </Button.ToolTip>
-                    </Button>
-                    <Button Content=" Open " Command="{Binding Path=OpenGDBCommand}" Margin="2" Width="56" VerticalAlignment="Center"
+            <Button.ToolTip>
+              <ToolTip>
+                <TextBlock Text="Browse to the File GDB folder to be opened"></TextBlock>
+              </ToolTip>
+            </Button.ToolTip>
+          </Button>
+          <Button Content=" Open " Command="{Binding Path=OpenGDBCommand}" Margin="2" Width="56" VerticalAlignment="Center"
                         Height="20">
-                        <Button.ToolTip>
-                            <ToolTip>
-                                <TextBlock Text="Read the datasets from the selected GDB"></TextBlock>
-                            </ToolTip>
-                        </Button.ToolTip>
-                    </Button>
-                </StackPanel>
-            </Grid>
+            <Button.ToolTip>
+              <ToolTip>
+                <TextBlock Text="Read the datasets from the selected GDB"></TextBlock>
+              </ToolTip>
+            </Button.ToolTip>
+          </Button>
+        </StackPanel>
+      </Grid>
 
-            <Grid Grid.Row="1" >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+      <Grid Grid.Row="1" >
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="100"></ColumnDefinition>
+          <ColumnDefinition Width="*"></ColumnDefinition>
+          <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
-                <TextBlock Text="Open a Dataset: " Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"
+        <TextBlock Text="Open a Dataset: " Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"
                        Margin="0,0,5,0"></TextBlock>
-                <ComboBox x:Name="TableComboBox" ItemsSource="{Binding Path=Tables}" Grid.Column="1" IsReadOnly="True" 
+        <ComboBox x:Name="TableComboBox" ItemsSource="{Binding Path=Tables}" Grid.Column="1" IsReadOnly="True" 
                       SelectedItem="{Binding Path=SelectedTableName, Mode=TwoWay}" Height="22"
                       Margin="0,0,5,0" VerticalAlignment="Center"></ComboBox>
 
-                <Button Content=" Read " Command="{Binding Path=ReadTableCommand}" Margin="2" Width="56" VerticalAlignment="Center"
+        <Button Content=" Read " Command="{Binding Path=ReadTableCommand}" Margin="2" Width="56" VerticalAlignment="Center"
                         Height="20" Grid.Column="2">
-                    <Button.ToolTip>
-                        <ToolTip>
-                            <TextBlock Text="Read the rows from the selected dataset"></TextBlock>
-                        </ToolTip>
-                    </Button.ToolTip>
-                </Button>
-            </Grid>
-            
-            <Separator Grid.Row="2"></Separator>
-        </Grid>
+          <Button.ToolTip>
+            <ToolTip>
+              <TextBlock Text="Read the rows from the selected dataset"></TextBlock>
+            </ToolTip>
+          </Button.ToolTip>
+        </Button>
+      </Grid>
 
-        <Grid x:Name="ButtonRow" DockPanel.Dock="Bottom">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+      <Separator Grid.Row="2"></Separator>
+    </Grid>
 
-            <ProgressBar x:Name="ProgressBar" Maximum="{Binding Path=MaxProgressValue, Mode=OneWay}" Minimum="1" Grid.Column="0"
+    <Grid x:Name="ButtonRow" DockPanel.Dock="Bottom">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <ProgressBar x:Name="ProgressBar" Maximum="{Binding Path=MaxProgressValue, Mode=OneWay}" Minimum="1" Grid.Column="0"
                          HorizontalAlignment="Left" Width="200" Height="25" Margin="2"
                          Value="{Binding Path=ProgressValue, Mode=OneWay}"
                          Visibility="{Binding Path=IsExecutingQuery, Converter={StaticResource boolToVisibilityConverter}}" />
-            
-        </Grid>
 
-        <Grid ShowGridLines="True">
+    </Grid>
 
-            <ListView x:Name="DataListView" ItemsSource="{Binding Path=Rows}"
+    <Grid ShowGridLines="True">
+
+      <ListView x:Name="DataListView" ItemsSource="{Binding Path=Rows}"
                       ext:ExtendListView.GenerateColumns="True"
                       VirtualizingStackPanel.IsVirtualizing="True" VirtualizingStackPanel.VirtualizationMode="Recycling"
                       ScrollViewer.IsDeferredScrollingEnabled="True"
                       Style="{DynamicResource lvStyle}"
                       AlternationCount="2" ItemContainerStyle="{StaticResource ListViewAlternateColors}">
-                <ListView.View>
-                    <GridView></GridView>
-                </ListView.View>
-            </ListView>
-        </Grid>
+        <ListView.View>
+          <GridView></GridView>
+        </ListView.View>
+      </ListView>
+    </Grid>
 
-    </DockPanel>
+  </DockPanel>
 </UserControl>

@@ -16,6 +16,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using ArcGIS.Core.CIM;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Mapping;
@@ -30,14 +32,17 @@ namespace GeometrySamples
     {
         protected override void OnClick()
         {
-            var polyLayer = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().First();
-
+            var polyLayer = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault(f => f.ShapeType == esriGeometryType.esriGeometryPolygon);
+            if (polyLayer == null)
+            {
+                MessageBox.Show($@"To run this sample you need to have a polygon feature class layer.");
+                return;
+            }
             QueuedTask.Run(() =>
             {
-
                 var fc = polyLayer.GetTable() as FeatureClass;
+                if (fc == null) return;
                 var fcDefinition = fc.GetDefinition();
-                Polygon outerRings = null;
 
                 var editOperation = new EditOperation();
                 editOperation.Name = "Create outer ring";
@@ -46,14 +51,12 @@ namespace GeometrySamples
                 {
                     while (cursor.MoveNext())
                     {
-                        Feature feature = cursor.Current as Feature;
-
-                        outerRings = Module1.Current.GetOutermostRings(feature.GetShape() as Polygon);
-
+                        var feature = cursor.Current as Feature;
+                        if (feature == null) continue;
+                        var outerRings = Module1.Current.GetOutermostRings(feature.GetShape() as Polygon);
                         editOperation.Create(polyLayer, outerRings);
                     }
                 }
-
                 editOperation.Execute();
             });
         }

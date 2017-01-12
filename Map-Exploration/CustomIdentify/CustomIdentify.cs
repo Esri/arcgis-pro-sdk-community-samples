@@ -1,4 +1,4 @@
-﻿//   Copyright 2016 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -41,40 +41,24 @@ namespace CustomIdentify
         /// </summary>
         protected override async Task<bool> OnSketchCompleteAsync(Geometry geometry)
         {
-            var popupContent = await QueuedTask.Run(async () =>
+            var popupContent = await QueuedTask.Run(() =>
             {
+                var popupContents = new List<PopupContent>();
                 var mapView = MapView.Active;
-                if (mapView == null)
-                    return null;
-
-                //Get the features that intersect the sketch geometry.
-                var features = mapView.GetFeatures(geometry);
-
-                if (features.Count == 0)
-                    return null;
-                
-                var firstLyr =
-                     MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault(); //get the first layer in the map
-
-                if (firstLyr == null)
-                    return null;
-                var gdb = await GetGDBFromLyrAsync(firstLyr);
-
-                LayersInMapFeatureClassMap = Module1.GetMapLayersFeatureClassMap(gdb);
-
-                var oidList = features[firstLyr]; //gets the OIds of all the features selected.
-                var oid = firstLyr.GetTable().GetDefinition().GetObjectIDField(); //gets the OId field
-                var qf = new QueryFilter() //create the query filter
-                {
-                    WhereClause = string.Format("({0} in ({1}))", oid, string.Join(",", oidList))
-                };
-
-                //Create the new selection
-                Selection selection = firstLyr.Select(qf);
-                var relateInfo = new RelateInfo(firstLyr, selection); 
-
-                return await relateInfo.GetPopupContent(features); //passes the selection to gather the relationShip class information.
-
+                if (mapView != null) {
+                    //Get the features that intersect the sketch geometry.
+                    var features = mapView.GetFeatures(geometry);
+                    if (features.Count > 0) {
+                        foreach (var kvp in features) {
+                            var bfl = kvp.Key;
+                            var oids = kvp.Value;
+                            foreach (var objectID in oids) {
+                                popupContents.Add(new DynamicPopupContent(bfl, objectID));
+                            }
+                        }
+                    }
+                }
+                return popupContents;
             });
 
             MapView.Active.ShowCustomPopup(popupContent);
@@ -83,13 +67,11 @@ namespace CustomIdentify
 
         //private static Dictionary<string, FeatureClass> _layersInMapFeatureClassMap = new Dictionary<string, FeatureClass>();
 
-        public static Dictionary<string, FeatureClass> LayersInMapFeatureClassMap = new Dictionary<string, FeatureClass>();
+        //public static Dictionary<string, FeatureClass> LayersInMapFeatureClassMap = new Dictionary<string, FeatureClass>();
         
-        private async Task<Geodatabase> GetGDBFromLyrAsync(BasicFeatureLayer lyr)
-        {
-            Geodatabase geodatabase = null;
-            await QueuedTask.Run(() => geodatabase = (lyr.GetTable().GetDatastore() as Geodatabase));
-            return geodatabase;
-        }
+        //private Task<Geodatabase> GetGDBFromLyrAsync(BasicFeatureLayer lyr)
+        //{
+        //    return QueuedTask.Run(() =>  lyr.GetTable().GetDatastore() as Geodatabase);
+        //}
     }
 }

@@ -1,6 +1,6 @@
-﻿<!--
+<!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -23,12 +23,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
              xmlns:local="clr-namespace:BingStreetside.Utility"
              xmlns:bingStreetside="clr-namespace:BingStreetside"
-             mc:Ignorable="d" 
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             mc:Ignorable="d"
+             d:DataContext="{Binding Path=BingStreetside.BingStreetsideViewModel}"
              d:DesignHeight="300" d:DesignWidth="300">
   <UserControl.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
         <ResourceDictionary>
           <bingStreetside:ValueAngleConverter x:Key="valueAngleConverter"/>
           <bingStreetside:ValueTextConverter x:Key="valueTextConverter"/>
@@ -72,7 +74,7 @@
         <StackPanel Orientation="Vertical" Margin="0" Visibility="{Binding BingKeyVisibile}" >
           <TextBlock Text="Your Bing Maps Key" VerticalAlignment="Center" HorizontalAlignment="Center" />
           <TextBox Text="{Binding BingKey, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-          <Button Command="{Binding SetBingMapKey}" Content="Define Bing Map Key"></Button>
+          <Button Command="{Binding SetBingMapKey}" Content="Define Bing Map Key" Style="{DynamicResource Esri_SimpleButton}"></Button>
         </StackPanel>
         <Grid Visibility="{Binding BingKeyInvisible}" >
           <Grid.RowDefinitions>
@@ -89,13 +91,13 @@
             <Viewbox>
               <Canvas Width="300" Height="300">
                 <Ellipse Fill="LightGoldenrodYellow" Width="300" Height="300" Canvas.Left="0" Canvas.Top="0" 
-                Stroke="Goldenrod" StrokeThickness="6"
+                Stroke="{DynamicResource Esri_Yellow4}" StrokeThickness="6"
                 MouseLeftButtonUp="Polygon_MouseLeftButtonUp"
                 MouseMove="Polygon_MouseMove"/>
                 <Canvas>
-                  <Line Stroke="DarkGray" StrokeThickness="10" X1="150" Y1="150" X2="150" Y2="10"
+                  <Line Stroke="{DynamicResource Esri_Gray155}" StrokeThickness="10" X1="150" Y1="150" X2="150" Y2="10"
                 MouseLeftButtonUp="Polygon_MouseLeftButtonUp"/>
-                  <Polygon Fill="DarkGray" Stroke="DarkGray" Points="30,0 0,70 60,70" Canvas.Left="120" Canvas.Top="0" 
+                  <Polygon Fill="{DynamicResource Esri_Gray155}" Stroke="{DynamicResource Esri_Gray155}" Points="30,0 0,70 60,70" Canvas.Left="120" Canvas.Top="0" 
                 MouseLeftButtonDown="Polygon_MouseLeftButtonDown"
                     MouseLeftButtonUp="Polygon_MouseLeftButtonUp">
                     <Polygon.ToolTip>
@@ -117,7 +119,7 @@
                     </RotateTransform>
                   </Canvas.RenderTransform>
                 </Canvas>
-                <Ellipse Fill="DarkGray" StrokeThickness="0" Width="50" Height="50" Canvas.Left="125" Canvas.Top="125" MouseLeftButtonUp="ResetHeading"/>
+                <Ellipse Fill="{DynamicResource Esri_Gray155}" StrokeThickness="0" Width="50" Height="50" Canvas.Left="125" Canvas.Top="125" MouseLeftButtonUp="ResetHeading"/>
               </Canvas>
             </Viewbox>
             <ControlTemplate.Triggers>

@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B031F2FF-6F63-46DB-BBDC-2E08FABE8CFE}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2757}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MappingSampleAddIns</RootNamespace>
@@ -24,7 +24,7 @@
     <StartAction>Program</StartAction>
     <StartProgram>C:\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe</StartProgram>
     <PlatformTarget>x64</PlatformTarget>
-    <DocumentationFile>bin\Debug\MappingSampleAddIns.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\MappingSampleAddIns.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -36,7 +36,7 @@
     <StartAction>Program</StartAction>
     <StartProgram>C:\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe</StartProgram>
     <PlatformTarget>x64</PlatformTarget>
-    <DocumentationFile>bin\Release\MappingSampleAddIns.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\MappingSampleAddIns.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ESRI.ArcGIS.ItemIndex">
@@ -123,6 +123,16 @@
   <ItemGroup>
     <None Include="MappingSampleAddIns %28C#%29.md" />
     <None Include="ReadMe.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\GenericButtonBlue16.png" />
+    <AddInContent Include="DarkImages\GenericButtonBlue32.png" />
+    <AddInContent Include="DarkImages\Godzilla32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Screenshots\Screen1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.PackageAddIn" />

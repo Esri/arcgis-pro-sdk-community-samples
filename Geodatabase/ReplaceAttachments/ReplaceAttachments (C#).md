@@ -13,22 +13,23 @@ Language:              C#
 Subject:               Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  7/15/2016
-ArcGIS Pro:            1.3
+Date:                  1/11/2017
+ArcGIS Pro:            1.4
 Visual Studio:         2013, 2015
 .NET Target Framework: 4.6.1
 ```
 
 ##Resources
 
-* [API Reference online](http://pro.arcgis.com/en/pro-app/sdk/api-reference)  
-* <a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">ArcGIS Pro SDK for .NET (pro.arcgis.com)</a>  
-* [arcgis-pro-sdk-community-samples](http://github.com/Esri/arcgis-pro-sdk-community-samples)  
-* [ArcGIS Pro DAML ID Reference](http://github.com/Esri/arcgis-pro-sdk/wiki/ArcGIS Pro DAML ID Reference)  
-* [FAQ](http://github.com/Esri/arcgis-pro-sdk/wiki/FAQ)  
-* [ArcGIS Pro SDK icons](https://github.com/Esri/arcgis-pro-sdk/releases/tag/1.2.0.5023)  
-![ArcGIS Pro SDK for .NET Icons](http://esri.github.io/arcgis-pro-sdk/images/Home/Image-of-icons.png "ArcGIS Pro SDK Icons")
-* [ProConcepts: ArcGIS Pro Add in Samples](https://github.com/Esri/arcgis-pro-sdk-community-samples/wiki/ProConcepts-ArcGIS-Pro-Add-in-Samples)  
+* [API Reference online](http://pro.arcgis.com/en/pro-app/sdk/api-reference)
+* <a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">ArcGIS Pro SDK for .NET (pro.arcgis.com)</a>
+* [arcgis-pro-sdk-community-samples](http://github.com/Esri/arcgis-pro-sdk-community-samples)
+* [ArcGISPro Registry Keys](http://github.com/Esri/arcgis-pro-sdk/wiki/ArcGIS-Pro-Registry-Keys)
+* [FAQ](http://github.com/Esri/arcgis-pro-sdk/wiki/FAQ)
+* [ArcGIS Pro SDK icons](https://github.com/Esri/arcgis-pro-sdk/releases/tag/1.4.0.7198)
+* [ProConcepts: ArcGIS Pro Add in Samples](https://github.com/Esri/arcgis-pro-sdk-community-samples/wiki/ProConcepts-ArcGIS-Pro-Add-in-Samples)
+
+![ArcGIS Pro SDK for .NET Icons](https://esri.github.io/arcgis-pro-sdk/images/Home/Image-of-icons.png "ArcGIS Pro SDK Icons")
 
 ### Samples Data
 
@@ -36,23 +37,35 @@ Visual Studio:         2013, 2015
 
 ##How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-2. Click Start button to open ArcGIS Pro.  
-3. ArcGIS Pro will open.   
-4. Open a map view that contains layers which has related Attachment-Enabled FeatureClasses/Tables  
-5. Click on the "Show Replace Attachments Addin" Button to open the Addin DockPane  
-6. Select the Layer you are interested in  
-7. This will list all the RelationshipClasses in which the FeatureClass associated with the layer participates.  
-8. Selecting the RelationshipClass updates the FeatureClass/Table which is Related to the selected Layer through the selected RelationshipClass  
-9. Enter the Attachment Name of interest and the new attachment file  
-10. Click Go to replace all attachments of the given name with the new attachment data.  
+      
+  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Working with Core Geometry and Data' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Working with Core Geometry and Data" is available.  
+1. In Visual Studio 2015 click the Build menu. Then select Build Solution.  
+1. Click Start button to debug ArcGIS Pro.  
+1. In ArcGIS Pro open the Project called "Workshop.aprx" in the "C:\Data\Working with Core Geometry and Data" folder.  This project and data is required because it contains data that is attachment enabled.  
+1. Use the ArcGIS Pro "Explore" button and identify the polygon overlaying part of Wyoming.   
+![UI](Screenshots/Screen1.png)  
+  
+1. Note the attachment called 'redlands.png' which is displayed below the tabular data in the identify layer popup.  
+1. Click the 'Show Replace Attachments Addin' button to show the "Replace Attachments" dockpane.  
+![UI](Screenshots/Screen2.png)  
+  
+1. Use the pull-downs on the "Replace Attachments" dockpane to make selections as shown on the screen below.  
+![UI](Screenshots/Screen3.png)  
+  
+1. Click on the "File Selection" Button on the right of "Path of the New Attachment File" and select the image file "c:\data\Redlands.png"  
+![UI](Screenshots/Screen4.png)  
+  
+1. Click the "Go" button to replace all attachments of the given name with the new attachment data.  
+1. Use the ArcGIS Pro "Explore" button and identify the polygon   
+1. Note the changed attachment  
+![UI](Screenshots/Screen5.png)  
   
 
 
 [](Esri Tags: ArcGIS-Pro-SDK)
 [](Esri Language: C-Sharp)​
 
-<p align = center><img src="http://esri.github.io/arcgis-pro-sdk/images/ArcGISPro.png"  alt="pre-req" align = "top" height = "20" width = "20" >
-<b> ArcGIS Pro 1.3 SDK for Microsoft .NET Framework</b>
-</p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Home](https://github.com/Esri/arcgis-pro-sdk/wiki) | <a href="http://pro.arcgis.com/en/pro-app/sdk" target="_blank">ArcGIS Pro SDK</a> | <a href="http://pro.arcgis.com/en/pro-app/sdk/api-reference/index.html" target="_blank">API Reference</a> | [Requirements](#requirements) | [Download](#installing-arcgis-pro-sdk-for-net) |  <a href="http://github.com/esri/arcgis-pro-sdk-community-samples" target="_blank">Samples</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://esri.github.io/arcgis-pro-sdk/images/ArcGISPro.png"  alt="ArcGIS Pro SDK for Microsoft .NET Framework" height = "20" width = "20" align="top"  >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[Home](https://github.com/Esri/arcgis-pro-sdk/wiki) | <a href="http://pro.arcgis.com/en/pro-app/sdk/api-reference" target="_blank">API Reference</a> | [Requirements](https://github.com/Esri/arcgis-pro-sdk/wiki#requirements) | [Download](https://github.com/Esri/arcgis-pro-sdk/wiki#installing-arcgis-pro-sdk-for-net) | <a href="http://github.com/esri/arcgis-pro-sdk-community-samples" target="_blank">Samples</a>

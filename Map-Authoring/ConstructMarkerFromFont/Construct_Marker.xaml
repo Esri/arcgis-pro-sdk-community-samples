@@ -1,6 +1,6 @@
-﻿<!--
+<!--
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -21,55 +21,58 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:constructMarkerFromFont="clr-namespace:ConstructMarkerFromFont"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"             
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
              mc:Ignorable="d" 
+             d:DataContext="{Binding Path=ConstructMarkerFromFont.Construct_MarkerViewModel}"
              d:DesignHeight="300" d:DesignWidth="300">
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <constructMarkerFromFont:InvertVisibilityConverter x:Key="InvertVisibilityConverter"/>
-            <DataTemplate x:Key="CharacterItemTemplate" DataType="{x:Type constructMarkerFromFont:CharacterItem}">
-            <TextBlock Text="{Binding Character}" ></TextBlock>
-        </DataTemplate>
-            </ResourceDictionary>
-    </UserControl.Resources>
-
-    <Grid>
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <constructMarkerFromFont:InvertVisibilityConverter x:Key="InvertVisibilityConverter"/>
+      <DataTemplate x:Key="CharacterItemTemplate" DataType="{x:Type constructMarkerFromFont:CharacterItem}">
+        <TextBlock Text="{Binding Character}" ></TextBlock>
+      </DataTemplate>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid>
         <Grid Visibility="{Binding DockpaneVisible}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-    
-        <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30" >
-           
-            <TextBlock Grid.Column="1" Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center"
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30" >
+
+                <TextBlock Grid.Column="1" Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center"
                     FontSize="16" FontWeight="Light" >
-                <TextBlock.ToolTip>
-                    <WrapPanel Orientation="Vertical" MaxWidth="300">
-                        <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
-                    </WrapPanel>
-                </TextBlock.ToolTip>
+                    <TextBlock.ToolTip>
+                        <WrapPanel Orientation="Vertical" MaxWidth="300">
+                            <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
+                        </WrapPanel>
+                    </TextBlock.ToolTip>
             </TextBlock>
-        </DockPanel>
-        <StackPanel Grid.Row ="1" HorizontalAlignment="Stretch" >
-            <TextBlock Text="Font"></TextBlock>
-            <ComboBox ItemsSource="{Binding FontFamilyCollection}" SelectedItem="{Binding SelectedFontFamily}" ></ComboBox>
-        </StackPanel>
-        <StackPanel Grid.Row ="2"  HorizontalAlignment="Stretch" >
-            <TextBlock Text="Style"></TextBlock>
-            <ComboBox ItemsSource="{Binding TypeFaceCollection}" SelectedItem="{Binding SelectedTypeFace}" ></ComboBox>
-        </StackPanel>
-        <StackPanel Grid.Row ="3"  HorizontalAlignment="Stretch" >
-            <TextBlock Text="Size"></TextBlock>
-            <xctk:IntegerUpDown Value="{Binding Size}" Minimum="1" Maximum="200"></xctk:IntegerUpDown>
-        </StackPanel>
+            </DockPanel>
+            <StackPanel Grid.Row ="1" HorizontalAlignment="Stretch" >
+                <TextBlock Text="Font"></TextBlock>
+                <ComboBox ItemsSource="{Binding FontFamilyCollection}" SelectedItem="{Binding SelectedFontFamily}" ></ComboBox>
+            </StackPanel>
+            <StackPanel Grid.Row ="2"  HorizontalAlignment="Stretch" >
+                <TextBlock Text="Style"></TextBlock>
+                <ComboBox ItemsSource="{Binding TypeFaceCollection}" SelectedItem="{Binding SelectedTypeFace}" ></ComboBox>
+            </StackPanel>
+            <StackPanel Grid.Row ="3"  HorizontalAlignment="Stretch" >
+                <TextBlock Text="Size"></TextBlock>
+                <xctk:IntegerUpDown Value="{Binding Size}" Minimum="1" Maximum="200" Foreground="{Binding Esri_Gray155}" Background="{Binding Esri_White}" ></xctk:IntegerUpDown>
+            </StackPanel>
             <StackPanel Grid.Row="4" >
-                <ListBox ItemsSource="{Binding CharacterItemCollection}" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                <ListBox ItemContainerStyle="{DynamicResource Esri_HighlightListBoxItem}" ItemsSource="{Binding CharacterItemCollection}" ScrollViewer.VerticalScrollBarVisibility="Auto"
                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                 ItemTemplate="{StaticResource CharacterItemTemplate}"
                      SelectedItem="{Binding SelectedCharacter}"
@@ -80,15 +83,14 @@
                         </ItemsPanelTemplate>
                     </ListBox.ItemsPanel>
                 </ListBox>
-                <Button Margin="0,5,0,0"  Content="Apply" Command="{Binding ApplyFontMarkerCmd}" Style="{StaticResource Esri_SimpleButton}"></Button>
+                <CheckBox Margin="0,5,0,0" Content ="Add selected marker to a personal FontMarker style" IsChecked="{Binding IsFavorites}"></CheckBox>
+                <Button Margin="0,5,0,0"  Content="Apply" Command="{Binding ApplyFontMarkerCmd}" Style="{DynamicResource Esri_SimpleButton}"></Button>
             </StackPanel>
         </Grid>
-       <!--Message when contents are not visible-->
-     <StackPanel Visibility="{Binding DockpaneVisible, Converter={StaticResource InvertVisibilityConverter}}" Margin="0,225,0,0" HorizontalAlignment="Center">
+        <!--Message when contents are not visible-->
+        <StackPanel Visibility="{Binding DockpaneVisible, Converter={StaticResource InvertVisibilityConverter}}" Margin="0,225,0,0" HorizontalAlignment="Center">
             <TextBlock Text="Select a point layer in the contents pane"/>
-     </StackPanel>
+        </StackPanel>
 
     </Grid>
-
-
 </UserControl>

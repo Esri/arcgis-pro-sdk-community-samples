@@ -1,4 +1,4 @@
-﻿//Copyright 2015 Esri
+//Copyright 2017 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace HookProCommands
         protected override void OnClick()
         {
             // TODO: step 2 enable ArcGIS Pro command functionality 
-            var commandId = DAML.Button.esri_mapping_createBookmark;
+            var commandId = @"esri_mapping_createBookmark";
             // get the ICommand interface from the ArcGIS Pro Button
             // using command's plug-in wrapper
             var iCommand = FrameworkApplication.GetPlugInWrapper(commandId) as ICommand;

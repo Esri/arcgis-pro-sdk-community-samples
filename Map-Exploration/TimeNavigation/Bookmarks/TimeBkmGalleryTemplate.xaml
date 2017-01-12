@@ -23,7 +23,7 @@
              MaxHeight="48" 
              MaxWidth="48">
                 <Image.Effect>
-                    <DropShadowEffect Color="#FF565454" Opacity="0.4" />
+                    <DropShadowEffect Color="{DynamicResource Esri_Color_Gray145}" Opacity="0.4" />
                 </Image.Effect>
             </Image>
             <TextBlock Text="{Binding Text}" 

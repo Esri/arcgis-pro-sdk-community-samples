@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2016 Esri
+   Copyright 2017 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ namespace ControlStyles.Colors
             _name = EsriName;
             _hexVal = Hex;
             _brush = MakeBrush(_hexVal);
-            _colorKeyXAML = string.Format("\"{{StaticResource {0}}}\"", _name);
+            _colorKeyXAML = string.Format("\"{{DynamicResource {0}}}\"", _name);
         }
 
         #region properties

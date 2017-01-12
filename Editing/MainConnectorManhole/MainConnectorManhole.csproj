@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{938EC909-BE48-4579-9E4B-E0AEE14585A2}</ProjectGuid>
+    <ProjectGuid>{DEB9DD29-7A64-4434-B111-A5B5FDCD2711}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MainConnectorManhole</RootNamespace>
@@ -114,6 +114,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Screenshots\Screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="DarkImages\3DAnalystInterpolateLine16.png" />
+    <AddInContent Include="DarkImages\3DAnalystInterpolateLine32.png" />
+    <AddInContent Include="DarkImages\AddInDesktop16.png" />
+    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <AddInContent Include="DarkImages\GenericButtonRed16.png" />
+    <AddInContent Include="DarkImages\GenericButtonRed32.png" />
+    <AddInContent Include="DarkImages\OutputExample1.png" />
+    <AddInContent Include="DarkImages\OutputExample2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.PackageAddIn" />
