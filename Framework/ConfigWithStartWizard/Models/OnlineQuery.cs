@@ -21,17 +21,6 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace ConfigWithStartWizard.Models {
-    /// <summary>
-    /// FYI - item download: http://prosdk.maps.arcgis.com/sharing/rest/content/items/ba363ce08a0541ac98ce31cbffa6bed0/data?token=
-    /// Response headers:
-    /// Content-Disposition = attachment; filename=\"Esri.ppkx\"\r\nAccept-Ranges = bytes
-    /// Content-Length = 178654
-    /// Content-Type = application/octet-stream
-    /// Date = Wed, 31 Aug 2016 23:41:46 GMT
-    /// ETag = \"1cc185860d286627659253b73c4ce5f1-1\"
-    /// Last-Modified = Thu, 25 Aug 2016 20:36:11 GMT
-    /// Server = AmazonS3
-    /// </summary>
     internal class OnlineQuery {
 
         private static Dictionary<string, string> _onlineQueries = new Dictionary<string, string>();
@@ -47,7 +36,7 @@ namespace ConfigWithStartWizard.Models {
 
         static OnlineQuery() {
             _onlineQueries.Add("Rule packages", "/sharing/rest/search?q=type:\"Rule Package\"");
-            _onlineQueries.Add("Projects", "/sharing/rest/search?q=owner:\"cmac860\" AND type:Project Package");
+            _onlineQueries.Add("Projects", "/sharing/rest/search?q=type:Project Package");
             _onlineQueries.Add("Templates", "/sharing/rest/search?q=owner:\"esri_solutions\" AND type:\"Project Template\"");
             _onlineQueries.Add("Map Packages", "/sharing/rest/search?q=type:\"Pro Map\"");
             _onlineQueries.Add("Web Maps", "/sharing/rest/search?q=(type:\"Web Scene\" OR type:\"Web Map\")");
