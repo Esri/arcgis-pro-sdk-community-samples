@@ -127,19 +127,6 @@
             <returns>Implemented UserControl with about box information. 
             Return null if a custom about box is not needed. Default ArcGIS Pro About box will be displayed.</returns>
         </member>
-        <member name="T:ConfigWithStartWizard.Models.OnlineQuery">
-            <summary>
-            FYI - item download: http://prosdk.maps.arcgis.com/sharing/rest/content/items/ba363ce08a0541ac98ce31cbffa6bed0/data?token=
-            Response headers:
-            Content-Disposition = attachment; filename=\"Esri.ppkx\"\r\nAccept-Ranges = bytes
-            Content-Length = 178654
-            Content-Type = application/octet-stream
-            Date = Wed, 31 Aug 2016 23:41:46 GMT
-            ETag = \"1cc185860d286627659253b73c4ce5f1-1\"
-            Last-Modified = Thu, 25 Aug 2016 20:36:11 GMT
-            Server = AmazonS3
-            </summary>
-        </member>
         <member name="T:ConfigWithStartWizard.Models.OnlineResultItem">
             <summary>
             An individual result from an online query

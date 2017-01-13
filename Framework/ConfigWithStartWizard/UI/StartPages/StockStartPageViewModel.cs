@@ -25,11 +25,18 @@ namespace ConfigWithStartWizard.UI.StartPages {
     internal class StockStartPageViewModel : StartPageViewModelBase {
 
         private List<PathItem> _templates = null;
+        private List<PathItem> _recentProjects = new List<PathItem>();
+
         //private SignOnStatusViewModel _ssvm = null;
         private int _selectedProject = -1;
         private int _selectedTemplate = -1;
 
-        public StockStartPageViewModel() {
+        public StockStartPageViewModel()
+        {
+            foreach (var path in Project.GetRecentProjects())
+            {
+                _recentProjects.Add(new PathItem(path));
+            }
             Initialize();
         }
 
@@ -38,6 +45,8 @@ namespace ConfigWithStartWizard.UI.StartPages {
         }
 
         public override string Title => "Select a project:";
+
+        public IReadOnlyList<PathItem> RecentProjects => _recentProjects;
 
         public IReadOnlyList<PathItem> DefaultTemplates => _templates;
 
@@ -51,6 +60,9 @@ namespace ConfigWithStartWizard.UI.StartPages {
             {
                 _selectedProject = value;
                 NotifyPropertyChanged();
+                if (_selectedProject < 0) return;
+                var item = RecentProjects[_selectedProject];
+                Project.OpenAsync(item.Path);
             }
         }
 
@@ -64,6 +76,16 @@ namespace ConfigWithStartWizard.UI.StartPages {
             {
                 _selectedTemplate = value;
                 NotifyPropertyChanged();
+                if (_selectedTemplate < 0) return;
+                var item = DefaultTemplates[_selectedTemplate];
+
+                var ps = new CreateProjectSettings()
+                {
+                    Name = System.IO.Path.GetFileNameWithoutExtension(item.Name),
+                    LocationPath = ConfigWithStartWizardModule.DefaultFolder(),
+                    TemplatePath = item.Path
+                };
+                Project.CreateAsync(ps);
             }
         }
 

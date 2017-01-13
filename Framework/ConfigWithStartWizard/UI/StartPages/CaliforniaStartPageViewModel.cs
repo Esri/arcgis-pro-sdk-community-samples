@@ -28,16 +28,47 @@ namespace ConfigWithStartWizard.UI.StartPages {
         public override string Title => "Select a county:";
         public override string Name => "California";
 
-        private List<PathItem> _recentProjects = new List<PathItem>();
-
-        public IReadOnlyList<PathItem> RecentProjects => _recentProjects;
-
-        public CaliforniaStartPageViewModel () : base ()
+        private List<RecentProject> _recentProjects = new List<RecentProject>();
+        
+        public CaliforniaStartPageViewModel() : base()
         {
+            LoadRecentProjects();
+        }
 
+        public IReadOnlyList<RecentProject> RecentProjects => _recentProjects;
+
+        public RecentProject SelectedProject
+        {
+            get
+            { return null; }
+            set
+            {
+                RecentProject project = value;
+                project.Open();
+            }
         }
 
         #region RecentProject Handling
+        private void LoadRecentProjects()
+        {
+            // Here we can present any recent projects we want
+            // Maybe there are some canned ones in the Solution folder
+            // Or there are some in a solution folder that is per user where they have read/write access
+
+            //Assembly assembly = Assembly.GetExecutingAssembly();
+            //string location = assembly.Location;
+            //DirectoryInfo dirInfo = Directory.GetParent(location);
+            //string path = Path.Combine(dirInfo.FullName, "Projects");
+            const string path = @"C:\Configurations\Projects";
+            if (!Directory.Exists(path)) return;
+            var projects = Directory.GetFiles(path, "*.aprx");
+            foreach (var project in projects)
+            {
+                var name = Path.GetFileNameWithoutExtension(project);
+                var rp = new RecentProject { Name = name, Path = project };
+                _recentProjects.Add(rp);
+            }
+        }
 
         internal RecentProject CreateProject(string name)
         {
