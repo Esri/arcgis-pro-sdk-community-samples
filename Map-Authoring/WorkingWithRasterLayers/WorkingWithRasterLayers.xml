@@ -6,8 +6,8 @@
     <members>
         <member name="T:WorkingWithRasterLayers.AddinModule">
             <summary>
-            This sample provides a new tab and buttons on the tab to 
-            1.) Create a new image service layer and add it to the current map.
+            This sample demonstrates how to work with raster layers in ArcGIS Pro.  The samples includes these functions:
+            1.) Create a new image service layer and add the layer to the current map.
             2.) Set the compression type and quality to JPEG and 85 on the selected image service layer.
             3.) Set the processing template to Natural Color on the selected image service layer.
             4.) Set the stretch type to Percent Clip and enable DRA on the selected image service layer.
@@ -17,10 +17,10 @@
             1. In Visual Studio click the Build menu. Then select Build Solution.
             2. Click Start button to open ArcGIS Pro.
             3. ArcGIS Pro will open. 
-            4. Open a map view (using this path: "CIMPATH=map/map.xml")
+            4. Open a new map view using the Map tempalte (using this path: "CIMPATH=map/map.xml")
             5. Click on the ADD-IN tab. 
             6. Click the Add Raster Layer button to add a new image service layer to the map.
-            7. Click on the other buttons described above to set different properties in teh image service layer.
+            7. Click on the other buttons described above to set different properties in the image service layer.
             ![UI](Screenshots/Screen.png)
             </remarks>
         </member>
