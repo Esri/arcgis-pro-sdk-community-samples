@@ -12,7 +12,7 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  1/11/2017
+Date:                  3/6/2017
 ArcGIS Pro:            1.4
 Visual Studio:         2013, 2015
 .NET Target Framework: 4.6.1

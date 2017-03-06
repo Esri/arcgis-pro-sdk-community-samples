@@ -77,7 +77,7 @@ Read the [ProGuide: Installation and Upgrade](http://github.com/Esri/arcgis-pro-
 
 ##ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 90 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 91 ArcGIS Pro samples that are included in this repository.  
 
 ####Content
 
@@ -165,6 +165,7 @@ Below is the list of 90 ArcGIS Pro samples that are included in this repository.
 * [LayersPane (c#)](../../tree/master/Map-Authoring/LayersPane)  
 * [MappingAddIns (c#)](../../tree/master/Map-Authoring/MappingAddIns)  
 * [ProceduralSymbolLayersWithRulePackages (c#)](../../tree/master/Map-Authoring/ProceduralSymbolLayersWithRulePackages)  
+* [WorkingWithRasterLayers (c#)](../../tree/master/Map-Authoring/WorkingWithRasterLayers)  
 
 
 ####Map Exploration
