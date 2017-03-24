@@ -1,4 +1,4 @@
-##BackStage_PropertyPage
+## BackStage_PropertyPage
 
 <!-- TODO: Write a brief abstract explaining this sample -->
 This sample illustrates how to   
@@ -17,13 +17,13 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  3/6/2017
+Date:                  3/24/2017
 ArcGIS Pro:            1.4
 Visual Studio:         2013, 2015
 .NET Target Framework: 4.6.1
 ```
 
-##Resources
+## Resources
 
 * [API Reference online](http://pro.arcgis.com/en/pro-app/sdk/api-reference)
 * <a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">ArcGIS Pro SDK for .NET (pro.arcgis.com)</a>
@@ -39,7 +39,7 @@ Visual Studio:         2013, 2015
 
 * Sample data for ArcGIS Pro SDK Community Samples can be downloaded from the [repo releases](https://github.com/Esri/arcgis-pro-sdk-community-samples/releases) page.  
 
-##How to use the sample
+## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 Backstage items can be either a tab or a button. As per other controls they have a reference in the config.daml file.  However they are different from other controls  in that they are not children of the module tag - they are children of the backstage tag. This sample shows how to add a new tab following the MVVM pattern.   
 The tab can be positioned using the "insert" and "placeWith" attributes in the config.daml.  The SampleBackstageTabView xaml file uses ArcGIS Pro styles to  allow the custom tab to look those those in the existing application.  
@@ -67,8 +67,7 @@ Modules can write out their own set of properties when a project is saved. Corre
   
 
 
-[](Esri Tags: ArcGIS-Pro-SDK)
-[](Esri Language: C-Sharp)​
+<!-- End -->
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://esri.github.io/arcgis-pro-sdk/images/ArcGISPro.png"  alt="ArcGIS Pro SDK for Microsoft .NET Framework" height = "20" width = "20" align="top"  >
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

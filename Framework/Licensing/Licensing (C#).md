@@ -1,4 +1,4 @@
-##Licensing
+## Licensing
 
 <!-- TODO: Write a brief abstract explaining this sample -->
 Show how to make a "Configurable Extension" that can be added to the Pro Backstage Licensing Tab  
@@ -13,13 +13,13 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  3/6/2017
+Date:                  3/24/2017
 ArcGIS Pro:            1.4
 Visual Studio:         2013, 2015
 .NET Target Framework: 4.6.1
 ```
 
-##Resources
+## Resources
 
 * [API Reference online](http://pro.arcgis.com/en/pro-app/sdk/api-reference)
 * <a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">ArcGIS Pro SDK for .NET (pro.arcgis.com)</a>
@@ -35,7 +35,7 @@ Visual Studio:         2013, 2015
 
 * Sample data for ArcGIS Pro SDK Community Samples can be downloaded from the [repo releases](https://github.com/Esri/arcgis-pro-sdk-community-samples/releases) page.  
 
-##How to use the sample
+## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 At 10.x, add-ins implemented the IExtensionConfig interface to create a "configurable extension".  
 A configurable extension in 10.x is listed on the ArcMap Extensions dialog box where users can toggle its enabled state on or off. Configurable extensions can execute their own proprietary licensing logic to determine their enabled state within their respective IExtensionConfig implementations.    
@@ -49,8 +49,7 @@ In ArcGIS Pro, the configurable extension mechanism is likewise supported. Add-i
   
 
 
-[](Esri Tags: ArcGIS-Pro-SDK)
-[](Esri Language: C-Sharp)​
+<!-- End -->
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://esri.github.io/arcgis-pro-sdk/images/ArcGISPro.png"  alt="ArcGIS Pro SDK for Microsoft .NET Framework" height = "20" width = "20" align="top"  >
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

@@ -1,4 +1,4 @@
-##BingStreetside
+## BingStreetside
 
 <!-- TODO: Write a brief abstract explaining this sample -->
 This sample demonstrates the usagle of the WebBrowser control and how to interface between C# and HTML5/JavaScript and vise versa.    
@@ -14,13 +14,13 @@ Language:              C# 6.0
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  3/6/2017
+Date:                  3/24/2017
 ArcGIS Pro:            1.4
 Visual Studio:         2015
 .NET Target Framework: 4.6.1
 ```
 
-##Resources
+## Resources
 
 * [API Reference online](http://pro.arcgis.com/en/pro-app/sdk/api-reference)
 * <a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">ArcGIS Pro SDK for .NET (pro.arcgis.com)</a>
@@ -36,7 +36,7 @@ Visual Studio:         2015
 
 * Sample data for ArcGIS Pro SDK Community Samples can be downloaded from the [repo releases](https://github.com/Esri/arcgis-pro-sdk-community-samples/releases) page.  
 
-##How to use the sample
+## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 Using Bing Maps API: To use the Bing Maps APIs, you must have a (Bing Maps Key)[https://msdn.microsoft.com/en-us/library/dd877180.aspx].  
 Note: When you use the Bing Maps APIs with a Bing Maps Key, usage transactions are logged. See Understanding (Bing Maps Transactions)[https://msdn.microsoft.com/en-us/library/ff859477.aspx] for more information.  
@@ -81,8 +81,7 @@ Using the sample:
   
 
 
-[](Esri Tags: ArcGIS-Pro-SDK)
-[](Esri Language: C-Sharp)​
+<!-- End -->
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://esri.github.io/arcgis-pro-sdk/images/ArcGISPro.png"  alt="ArcGIS Pro SDK for Microsoft .NET Framework" height = "20" width = "20" align="top"  >
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

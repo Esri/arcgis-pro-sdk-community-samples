@@ -1,4 +1,4 @@
-##ProceduralSymbolLayersWithRulePackages
+## ProceduralSymbolLayersWithRulePackages
 
 <!-- TODO: Write a brief abstract explaining this sample -->
 This sample demonstrates rendering a polygon feature layer with a City Engine rule package. The procedural symbol layer that is created is then saved as an item in a personal style in the project.  
@@ -13,13 +13,13 @@ Language:              C# 6.0
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  3/6/2017
+Date:                  3/24/2017
 ArcGIS Pro:            1.4
 Visual Studio:         2015
 .NET Target Framework: 4.6.1
 ```
 
-##Resources
+## Resources
 
 * [API Reference online](http://pro.arcgis.com/en/pro-app/sdk/api-reference)
 * <a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">ArcGIS Pro SDK for .NET (pro.arcgis.com)</a>
@@ -35,7 +35,7 @@ Visual Studio:         2015
 
 * Sample data for ArcGIS Pro SDK Community Samples can be downloaded from the [repo releases](https://github.com/Esri/arcgis-pro-sdk-community-samples/releases) page.  
 
-##How to use the sample
+## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 1. This sample requires the Building Footprint layer.   
 1. Download the [ArcGISProSampleBuildings.ppkx Project package from ArcGIS Online](http://www.arcgis.com/sharing/rest/content/items/a0aa60303a39476688b599a6ce842afb/data).  
@@ -59,8 +59,7 @@ You can fix this by using the Symbology Dockpane and clicking the camera button 
   
 
 
-[](Esri Tags: ArcGIS-Pro-SDK)
-[](Esri Language: C-Sharp)​
+<!-- End -->
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://esri.github.io/arcgis-pro-sdk/images/ArcGISPro.png"  alt="ArcGIS Pro SDK for Microsoft .NET Framework" height = "20" width = "20" align="top"  >
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
