@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OverviewMapControl</name>
+    </assembly>
+    <members>
+        <member name="T:OverviewMapControl.MapControlDockpaneView">
+            <summary>
+            Interaction logic for MapControlDockpaneView.xaml
+            </summary>
+            <summary>
+            MapControlDockpaneView
+            </summary>
+        </member>
+        <member name="M:OverviewMapControl.MapControlDockpaneView.InitializeMapControl">
+            <summary>
+            Initializes the MapControl with Content and listen to events.
+            </summary>
+        </member>
+        <member name="M:OverviewMapControl.MapControlDockpaneView.OnMapViewCameraChanged(ArcGIS.Desktop.Mapping.Events.MapViewCameraChangedEventArgs)">
+            <summary>
+            When the active map view changes, update the graphic overlay on the map control
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:OverviewMapControl.MapControlDockpaneView.OnMapControlExtentChanged(System.Object,System.EventArgs)">
+            <summary>
+            Event handler modifies Active Map's Extent when MapControl's Extent changes
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OverviewMapControl.MapControlDockpaneView.OnMapControlCameraChanged(System.Object,System.EventArgs)">
+            <summary>
+            Event handler modifies Active scene's camera when MapControl's camera changes
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OverviewMapControl.MapControlDockpaneView.OnActiveMapViewChanged(ArcGIS.Desktop.Mapping.Events.ActiveMapViewChangedEventArgs)">
+            <summary>
+            Event Handler to update the MapControl when the ActiveMap changes.
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:OverviewMapControl.MapControlDockpaneView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:OverviewMapControl.MapControlDockpaneViewModel">
+            <summary>
+            Viewmodel for the dockpane that has the map control
+            </summary>
+        </member>
+        <member name="M:OverviewMapControl.MapControlDockpaneViewModel.Show">
+            <summary>
+            Show the DockPane.
+            </summary>
+        </member>
+        <member name="P:OverviewMapControl.MapControlDockpaneViewModel.ActiveMap">
+            <summary>
+            The active map
+            </summary>
+        </member>
+        <member name="F:OverviewMapControl.MapControlDockpaneViewModel._heading">
+            <summary>
+            Text shown near the top of the DockPane.
+            </summary>
+        </member>
+        <member name="T:OverviewMapControl.MapControlDockpane_ShowButton">
+            <summary>
+            Button implementation to show the DockPane.
+            </summary>
+        </member>
+        <member name="T:OverviewMapControl.Module1">
+             <summary>
+             This sample shows how to author a map control.  
+             In this example we will be creating a map control that will act as an overview window of the active map. 
+             When the view changes, the map control will display the changed view. You will also be able navigate inside the map control and see the Active map view mirror the map control's extent.
+             </summary>
+             <remarks>
+             1. In Visual Studio click the Build menu. Then select Build Solution.
+             2. Click Start button to open ArcGIS Pro.
+             3. ArcGIS Pro will open. 
+             4. Open any project with map views. Make sure a map is active.
+             5. Within the "Map Control" tab click the "Show Map Control" button.
+             6. A dockpane will open up with an embedded Map Control displaying the overview of the Active map view. A red overview rectangle is displayed inside the map control showing the extent of the active map view.
+             7. Pan or zoom inside the active map view.  Notice that the Map conrol extent changes to reflect this.
+             8. Pan or zoom inside the map control. Notice that the active map view changes to reflect this.
+            
+            ![UI](screenshots/mapcontrol.png)
+             </remarks>
+        </member>
+        <member name="P:OverviewMapControl.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+    </members>
+</doc>

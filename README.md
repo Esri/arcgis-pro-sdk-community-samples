@@ -77,7 +77,7 @@ Read the [ProGuide: Installation and Upgrade](http://github.com/Esri/arcgis-pro-
 
 ## ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 91 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 94 ArcGIS Pro samples that are included in this repository.  
 
 #### Content
 
@@ -110,9 +110,11 @@ Below is the list of 91 ArcGIS Pro samples that are included in this repository.
 * [ConfigWithStartWizard (c#)](../../tree/master/Framework/ConfigWithStartWizard)  
 * [CustomStyling (c#)](../../tree/master/Framework/CustomStyling)  
 * [DockPaneBookmarkAdvanced (c#)](../../tree/master/Framework/DockPaneBookmarkAdvanced)  
+* [DockPaneBookmarkAdvanced (c#)](../../tree/master/Framework/DockPaneBookmarkAdvanced)  
 * [DockpaneSimple (c#)](../../tree/master/Framework/DockpaneSimple)  
 * [DynamicMenu (c#)](../../tree/master/Framework/DynamicMenu)  
 * [FontStyles (c#)](../../tree/master/Framework/FontStyles)  
+* [Gallery (c#)](../../tree/master/Framework/Gallery)  
 * [HookProCommands (c#)](../../tree/master/Framework/HookProCommands)  
 * [InsertIntoContextMenu (c#)](../../tree/master/Framework/InsertIntoContextMenu)  
 * [Licensing (c#)](../../tree/master/Framework/Licensing)  
@@ -188,6 +190,7 @@ Below is the list of 91 ArcGIS Pro samples that are included in this repository.
 * [MapToolWithOverlayControl (c#)](../../tree/master/Map-Exploration/MapToolWithOverlayControl)  
 * [MapToolZoom (c#)](../../tree/master/Map-Exploration/MapToolZoom)  
 * [OverlayExamples (c#)](../../tree/master/Map-Exploration/OverlayExamples)  
+* [OverviewMapControl (c#)](../../tree/master/Map-Exploration/OverviewMapControl)  
 * [TimeNavigation (c#)](../../tree/master/Map-Exploration/TimeNavigation)  
 
 

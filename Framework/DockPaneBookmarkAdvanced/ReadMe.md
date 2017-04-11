@@ -17,7 +17,7 @@ Language:              C# 6.0
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  3/24/2017
+Date:                  4/11/2017
 ArcGIS Pro:            1.4
 Visual Studio:         2015
 .NET Target Framework: 4.6.1
@@ -51,6 +51,27 @@ Visual Studio:         2015
 1. Click on any of the 'Bookmark' thumbnails to zoom to a given bookmark.  
 1. Clock the 'New Bookmark' button.  
 ![UI](Screenshots/Screen.png)  
+###UI Controls  
+**Burger button:**  
+  
+1. Click on the burger button conrol on the top right corner of the dockpane to display the menu options.  
+1. Select the "Outline" menu option.  The bookmarks are displayed in a list view mode.  
+![UI](Screenshots/burger-button.png)  
+**Search text box:**  
+  
+1. Notice the Search box control located above the list of bookmarks in the dockpane.  
+1. Type the name of one of your bookmarks. Click the arrow next to it and notice the bookmark gets selected in the gallery of bookmarks and the map view zooms to that bookmark.  
+![UI](Screenshots/search-Text.png)     
+ **Circular Animation:**  
+  
+ 1. In the Project pane, right click the "Maps" folder and select "'New Map" from the context menu.  
+ 2. Notice the circular animation control dispayed on the bookmark dockpane while the new map is being opened.  
+ ![UI](Screenshots/circular-animation.png)  
+ ** Message label: **  
+  
+ 1. In the drop down control that lists the colelction of maps in the project, select the new map you created in the step above.  
+ 2. Since this new map has no bookmarks associated with it yet, notice how the bookmark list view is now replaced with a Message label control.  
+ ![UI](Screenshots/message-label.png)  
   
 
 

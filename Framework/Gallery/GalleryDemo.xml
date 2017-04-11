@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GalleryDemo</name>
+    </assembly>
+    <members>
+        <member name="T:GalleryDemo.Module1">
+             <summary>
+             This sample shows how to author a gallery on the ArcGIS Pro Ribbon.  
+             In this example we will be creating an inline gallery control that will host a collection of web maps downloaded from ArcGIS Online. 
+             When you click on a web map item in the gallery, it will open in a map pane in ArcGIS Pro. 
+             </summary>
+             <remarks>
+             1. In Visual Studio click the Build menu. Then select Build Solution.
+             2. This solution is using the Newtonsoft.Json Nuget. If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".
+             2. Click Start button to open ArcGIS Pro.
+             3. ArcGIS Pro will open. 
+             4. Open a blank project.
+             5. Within the "Gallery Demo" tab you will notice an in-line gallery control with a collection of 10 web maps from ArcGIS Online.
+             6. Click any one of the web map items to select it.
+             7. The map will be downloaded from ArcGIS Online and opened in a map pane in the application.    
+            
+            ![UI](screenshots/webmapgallery.png)
+             </remarks>
+        </member>
+        <member name="P:GalleryDemo.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:GalleryDemo.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="T:GalleryDemo.WebMapItem">
+            <summary>
+            Represents a web map item
+            </summary>
+        </member>
+        <member name="M:GalleryDemo.WebMapItem.SetThumbnailURL">
+            <summary>
+            Builds the thumbnail URL of a webmap item.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:GalleryDemo.WebMapsGallery">
+            <summary>
+            The Inline gallery
+            </summary>
+        </member>
+        <member name="M:GalleryDemo.WebMapsGallery.OnClick(System.Object)">
+            <summary>
+            Called when a gallery item is clicked.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:GalleryDemo.WebMapsGallery.Initialize">
+            <summary>
+            Called when the gallery is initialized on the Pro ribbon
+            </summary>
+        </member>
+        <member name="M:GalleryDemo.WebMapsGallery.GetWebMapsAsync">
+            <summary>
+            Gets a collection of web map items from ArcGIS Online
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GalleryDemo.WebMapsGallery.OpenWebMapAsync(System.Object)">
+            <summary>
+            Opens a web map item in a map pane.
+            </summary>
+            <param name="item"></param>
+        </member>
+    </members>
+</doc>

@@ -1,4 +1,4 @@
-<!--//Copyright 2017 Esri
+﻿<!--//Copyright 2017 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -12,105 +12,140 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.-->
 <UserControl x:Class="DockPaneBookmarkAdvanced.BookmarkView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"                          
-             xmlns:extensionsControls="clr-namespace:ArcGIS.Desktop.Extensions.Controls;assembly=ArcGIS.Desktop.Extensions"                       
-             xmlns:mapping="clr-namespace:ArcGIS.Desktop.Mapping;assembly=ArcGIS.Desktop.Mapping"
-             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
-             mc:Ignorable="d" 
-             d:DataContext="{Binding Path=BookmarkViewModel}"
-             d:DesignHeight="300" d:DesignWidth="300">
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"                          
+			 xmlns:extensionsControls="clr-namespace:ArcGIS.Desktop.Extensions.Controls;assembly=ArcGIS.Desktop.Extensions" 
+			 xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
+			 xmlns:mapping="clr-namespace:ArcGIS.Desktop.Mapping;assembly=ArcGIS.Desktop.Mapping"
+			 xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+			 xmlns:common="clr-namespace:DockPaneBookmarkAdvanced"
+			 mc:Ignorable="d" 
+			 d:DataContext="{Binding Path=BookmarkViewModel}"
+			 d:DesignHeight="300" d:DesignWidth="300">
 
-  <UserControl.Resources>
-    <ResourceDictionary>
-      <ResourceDictionary.MergedDictionaries>
-        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
-      </ResourceDictionary.MergedDictionaries>
-      <DataTemplate x:Key="BookmarkListItem" DataType="{x:Type mapping:Bookmark}">
-        <StackPanel Orientation="Vertical" Background="Transparent">
-          <Image Source="{Binding Thumbnail}"
-                                Width="96" Height="96" Stretch="Fill" Margin="5"
-                                DockPanel.Dock="Left" ToolTip="{Binding Name}">
-            <Image.Effect>
-              <DropShadowEffect Color="{DynamicResource Esri_Color_Gray145}" BlurRadius="14" ShadowDepth="4.5">
-              </DropShadowEffect>
-            </Image.Effect>
-          </Image>
-          <StackPanel Orientation="Horizontal" Margin="5" >
-            <TextBlock Text="{Binding Name}" Margin="5,0,0,0" Style="{DynamicResource RegularText}" />
-
-            <!--TODO Step 3 - uncomment the DeleteButton -->
-            <Button x:Name="DeleteButton" Width="16" Height="16"  Margin="0" Style="{DynamicResource Esri_SimpleBorderlessButton}" 
-                        ToolTip="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.DelBookmarkToolTip}"
-                        Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.DelBookmarkCommand}" >
-              <Image Stretch="None" Width="16" Height="16" VerticalAlignment="Top" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/BookmarkRemove16.png"/>
-            </Button>
-          </StackPanel>
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <common:InvertVisibilityConverter x:Key="InvertVisibilityConverter"></common:InvertVisibilityConverter>
+            <!--Gallery view -->
+            <DataTemplate x:Key="BookmarkGalleryTemplate" DataType="{x:Type mapping:Bookmark}">
+                <StackPanel Orientation="Vertical" Background="Transparent">
+                    <Image Source="{Binding Thumbnail}"
+								Width="96" Height="96" Stretch="Fill" Margin="5"
+								DockPanel.Dock="Left" ToolTip="{Binding Name}">
+                        <Image.Effect>
+                            <!-- TODO - Color="{DynamicResource Esri_Color_Gray145}"-->
+                            <DropShadowEffect Color="{DynamicResource Esri_Color_Gray145}" BlurRadius="14" ShadowDepth="4.5">
+                            </DropShadowEffect>
+                        </Image.Effect>
+                    </Image>
+                    <StackPanel Orientation="Horizontal" Margin="5" >
+                        <!-- TODO -Style="{DynamicResource RegularText}"  -->
+                        <TextBlock Style="{DynamicResource RegularText}" Text="{Binding Name}" Margin="5,0,0,0" />
+                        <!-- TODO -Style="{DynamicResource Esri_SimpleBorderlessButton}" -->
+                        <Button Style="{DynamicResource Esri_SimpleBorderlessButton}" x:Name="DeleteButton" Width="16" Height="16"  Margin="0" 
+						ToolTip="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.DelBookmarkToolTip}"
+						Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.DelBookmarkCommand}" >
+                            <Image Stretch="None" Width="16" Height="16" VerticalAlignment="Top" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/BookmarkRemove16.png"/>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </DataTemplate>
+            <!--List view -->
+            <DataTemplate x:Key="BookmarkListTemplate" DataType="{x:Type mapping:Bookmark}">
+                <StackPanel Orientation="Horizontal" Margin="5" >
+                    <!-- TODO -Style="{DynamicResource RegularText}"  -->
+                    <TextBlock Style="{DynamicResource RegularText}" Text="{Binding Name}" Margin="5,0,0,0" />
+                    <!-- TODO -Style="{DynamicResource Esri_SimpleBorderlessButton}" -->
+                    <Button Style="{DynamicResource Esri_SimpleBorderlessButton}" x:Name="DeleteButton" Width="16" Height="16"  Margin="0" 
+						ToolTip="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.DelBookmarkToolTip}"
+						Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.DelBookmarkCommand}" >
+                        <Image Stretch="None" Width="16" Height="16" VerticalAlignment="Top" Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/BookmarkRemove16.png"/>
+                    </Button>
+                </StackPanel>
+            </DataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
+            <!--Burger Button -->
+            <extensionsControls:BurgerButton DockPanel.Dock="Right"
+				ToolTip="{Binding BurgerButtonTooltip}"
+				PopupMenu="{Binding BurgerButtonPopupMenu}"/>
+            <!-- TODO: Style="{DynamicResource RegularText}"-->
+            <TextBlock  Style="{DynamicResource RegularText}" Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center"
+					FontSize="14" >
+                <TextBlock.ToolTip>
+                    <WrapPanel Orientation="Vertical" MaxWidth="300">
+                        <!-- TODO: Style="{DynamicResource RegularText}" -->
+                        <TextBlock Style="{DynamicResource RegularText}" Text="{Binding Heading}" TextWrapping="Wrap" />
+                    </WrapPanel>
+                </TextBlock.ToolTip>
+	         </TextBlock>
+        </DockPanel>
+        <StackPanel Grid.Row="1" Background="Transparent" >
+            <!-- TODO Style="{DynamicResource RegularText}" -->
+            <TextBlock Style="{DynamicResource RegularText}"  Margin="6,0,0,0" >Available Maps:</TextBlock>
+            <!--Circular animation control -->
+            <controls:CircularAnimationControl SpeedRatio="0.5" Visibility="{Binding IsShowCircularAnimation}"/>
+            <DockPanel Margin="6,6" LastChildFill="True">
+                <!--TODO Style="{DynamicResource Esri_SimpleButton}" -->
+                <Button Margin="6,0,0,0" Style="{DynamicResource Esri_SimpleButton}"  Content="Get Maps" DockPanel.Dock="Right" 
+				Command="{Binding RetrieveMapsCommand}"/>
+                <ComboBox ItemsSource="{Binding AllMaps}"  
+						SelectedItem="{Binding SelectedMap, Mode=TwoWay}" DisplayMemberPath="Name"
+						SelectedIndex="0" MinWidth="100"></ComboBox>
+            </DockPanel>
         </StackPanel>
-      </DataTemplate>
-    </ResourceDictionary>
-
-  </UserControl.Resources>
-
-  <Grid>
-    <Grid.RowDefinitions>
-      <RowDefinition Height="Auto"/>
-      <RowDefinition Height="Auto"/>
-      <RowDefinition Height="*"/>
-      <!-- TODO Step 4 - Add additional row for new bookmark button. Set Height to Auto-->
-      <RowDefinition Height="Auto"/>
-    </Grid.RowDefinitions>
-    <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
-      <extensionsControls:BurgerButton DockPanel.Dock="Right"
-                ToolTip="{Binding BurgerButtonTooltip}"
-                PopupMenu="{Binding BurgerButtonMenu}"/>
-      <TextBlock Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center"
-                    FontSize="14" Style="{DynamicResource RegularText}">
-        <TextBlock.ToolTip>
-          <WrapPanel Orientation="Vertical" MaxWidth="300">
-            <TextBlock Text="{Binding Heading}" TextWrapping="Wrap" Style="{DynamicResource RegularText}"/>
-          </WrapPanel>
-        </TextBlock.ToolTip>
-      </TextBlock>
-    </DockPanel>
-
-    <!--combobox of maps-->
-    <StackPanel Grid.Row="1" Background="Transparent" >
-      <TextBlock Margin="6,0,0,0" Style="{DynamicResource RegularText}">Available Maps:</TextBlock>
-      <DockPanel Margin="6,6" LastChildFill="True">
-        <!--TODO Step 5 - style the button-->
-        <Button Margin="6,0,0,0" Content="Get Maps" DockPanel.Dock="Right" Style="{DynamicResource Esri_SimpleButton}"
-                Command="{Binding RetrieveMapsCommand}"/>
-        <ComboBox ItemsSource="{Binding AllMaps}"  
-                        SelectedItem="{Binding SelectedMap, Mode=TwoWay}" DisplayMemberPath="Name"
-                        SelectedIndex="0" MinWidth="100"></ComboBox>
-      </DockPanel>
-    </StackPanel>
-
-    <!--listbox of bookmarks-->
-    <ListBox Grid.Row="2" Margin="6,0"                     
-                ScrollViewer.VerticalScrollBarVisibility="Auto"
-                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                SelectedItem="{Binding SelectedBookmark}"
-                ItemContainerStyle="{DynamicResource Esri_HighlightListBoxItem}"
-                ItemsSource="{Binding Bookmarks}"
-                ItemTemplate="{DynamicResource BookmarkListItem}">
-      <ListBox.ItemsPanel>
-        <ItemsPanelTemplate>
-          <WrapPanel Orientation="Horizontal" />
-        </ItemsPanelTemplate>
-      </ListBox.ItemsPanel>
-    </ListBox>
-
-    <!--TODO Step 5 - style the button Style="{StaticResource Esri_SimpleButton}"   -->
-    <!--TODO Step 4 - add new bookmark button. Set Grid.Row to 3, HorizontalAlignment to Right, set ToolTip and Content attributes.  
-          Bind Command attribute to a property on the viewModel -->
-    <Button Grid.Row="3" Margin="10" HorizontalAlignment="Right" Style="{DynamicResource Esri_SimpleButton}"
-              ToolTip="New Bookmark" Content="New Bookmark" 
-              Command="{Binding NewBookmarkCommand}"/>
-
-  </Grid>
+        <StackPanel Grid.Row="2">
+            <!--Search box Control -->
+            <controls:SearchTextBox InfoText="Search bookmarks" SearchMode="Auto" ShowHistory="True" Text="{Binding SearchText}"  HorizontalAlignment="Stretch" />
+        </StackPanel>
+        <StackPanel Grid.Row="3" Background="Transparent"  Visibility="{Binding IsNoBookmarkExists}">
+            <!-- Message Label control -->
+            <controls:MessageLabel MessageType="Information" Severity="High" ShowHelp="True" Content="Please open a map with bookmarks"/>
+        </StackPanel>
+        <!--listbox of bookmarks-->
+        <!-- TODO ItemContainerStyle="{DynamicResource Esri_HighlightListBoxItem}"-->
+        <Grid Grid.Row="3" Visibility="{Binding IsNoBookmarkExists, Converter={StaticResource InvertVisibilityConverter}}">
+            <ListBox Margin="6,0"                    
+				ScrollViewer.VerticalScrollBarVisibility="Auto"
+				ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+			 ItemContainerStyle="{DynamicResource Esri_HighlightListBoxItem}"
+				SelectedItem="{Binding SelectedBookmark}"
+				ItemsSource="{Binding Bookmarks}">
+                <ListBox.Style>
+                    <Style TargetType="{x:Type ListBox}">
+                        <Setter Property="ItemTemplate" Value="{StaticResource BookmarkGalleryTemplate}" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding BookmarksViewType}" Value="List">
+                                <Setter Property="ItemTemplate" Value="{StaticResource BookmarkListTemplate}" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListBox.Style>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+        </Grid>
+        <!-- Style="{DynamicResource Esri_SimpleButton}" -->
+        <Button Grid.Row="4" Margin="10" HorizontalAlignment="Right"             
+			  ToolTip="New Bookmark" Content="New Bookmark" 
+			  Command="{Binding NewBookmarkCommand}"/>
+    </Grid>
 </UserControl>
 

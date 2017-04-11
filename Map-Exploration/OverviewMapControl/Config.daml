@@ -1,0 +1,55 @@
+﻿<!--
+//   Copyright 2017 Esri
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       http://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.-->
+<ArcGIS defaultAssembly="OverviewMapControl.dll" defaultNamespace="OverviewMapControl" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{e90299db-8ce8-4ef0-8071-34f6d1e00fbe}" version="1.0" desktopVersion="1.4.7198">
+    <Name>OverviewMapControl</Name>
+    <Description>OverviewMapControl description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>uma2526</Author>
+    <Company>Acme</Company>
+    <Date>2/23/2017 12:22:22 PM, 2017</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="OverviewMapControl_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="OverviewMapControl_Tab1" caption="Map Control" keytip="z1">
+          <group refID="OverviewMapControl_Group1"/>
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="OverviewMapControl_Group1" caption="Group 1" appearsOnAddInTab="false" keytip="z2">
+          <!-- host controls within groups -->
+          <button refID="OverviewMapControl_MapControlDockpane_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="OverviewMapControl_MapControlDockpane_ShowButton" caption="Show MapControl" className="MapControlDockpane_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="z3">
+          <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="OverviewMapControl_MapControlDockpane" caption="Map Control Dockpane" className="MapControlDockpaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="MapControlDockpaneView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

@@ -101,10 +101,10 @@
 
       <!--Start-->
 <StackPanel Grid.Row="0" Margin="5,10,5,0">
-  <TextBlock Style="{DynamicResource H5TextBlock}" FontSize="14" FontWeight="SemiBold" Text="{Binding ContentHeader}" TextWrapping="Wrap" ToolTip="H3TextBlock" />
-  <TextBlock Style="{DynamicResource H5TextBlock}" FontSize="12" Text="{Binding Label1}" TextWrapping="Wrap" ToolTip="Label" HorizontalAlignment="Stretch" Width="Auto" Margin="0,5,0,0"/>
+  <TextBlock Style="{DynamicResource H3TextBlock}" FontSize="14" FontWeight="SemiBold" Text="{Binding ContentHeader}" TextWrapping="Wrap" ToolTip="H3TextBlock" />
+  <TextBlock Style="{DynamicResource H5TextBlock}" FontSize="12" Text="{Binding Label1}" TextWrapping="Wrap" ToolTip="H5TextBlock" HorizontalAlignment="Stretch" Width="Auto" Margin="0,5,0,0"/>
   <TextBox Padding="5" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding TextBox1}" FontSize="11" ToolTip="H6TextBlock" Margin="0,3,0,0"/>
-  <TextBlock Style="{DynamicResource H5TextBlock}" FontSize="12" Text="{Binding Label2}" TextWrapping="Wrap" ToolTip="Label" HorizontalAlignment="Stretch" Width="Auto" Margin="0,5,0,0"/>
+   <TextBlock Style="{DynamicResource H5TextBlock}" FontSize="12" Text="{Binding Label2}" TextWrapping="Wrap" ToolTip="H5TextBlock" HorizontalAlignment="Stretch" Width="Auto" Margin="0,5,0,0"/>
   <ComboBox HorizontalAlignment="Stretch" ToolTip="H6TextBlock"  Margin="0,5,0,0">
     <ComboBoxItem Tag="Select" IsSelected="True" >Select</ComboBoxItem>
     <ComboBoxItem Tag="Value1" >First Value</ComboBoxItem>
@@ -112,10 +112,10 @@
   </ComboBox>
 </StackPanel>
 <StackPanel Grid.Row="1" Margin="5,10,5,0">
-  <TextBlock Style="{DynamicResource H5TextBlock}" FontSize="14" FontWeight="SemiBold" Foreground="{DynamicResource Esri_Gray155}" Text="{Binding ContentHeader}" TextWrapping="Wrap" ToolTip="H3TextBlock" />
-  <TextBlock HorizontalAlignment="Stretch" Text="{Binding DefaultFont}"  FontSize="12"  Height="Auto" ToolTip="Default Font" TextWrapping="Wrap" />
-  <TextBlock Style="{DynamicResource H5TextBlock}" FontSize="13" FontWeight="SemiBold" Foreground="{DynamicResource Esri_Gray145}" Text="{Binding SubContentHeader}" TextWrapping="Wrap" ToolTip="H4TextBlock"  />
-  <TextBlock HorizontalAlignment="Stretch" Text="{Binding DefaultFont1}"  FontSize="12"  Height="Auto" ToolTip="Default Font" TextWrapping="Wrap"/>
+  <TextBlock Style="{DynamicResource H3TextBlock}" FontSize="14" FontWeight="SemiBold" Foreground="{DynamicResource Esri_Gray155}" Text="{Binding ContentHeader}" TextWrapping="Wrap" ToolTip="H3TextBlock" />
+  <TextBlock HorizontalAlignment="Stretch" Style="{DynamicResource RegularText}" Text="{Binding DefaultFont}"  FontSize="12"  Height="Auto" ToolTip="Default Font" TextWrapping="Wrap" />
+  <TextBlock Style="{DynamicResource H4TextBlock}" FontSize="13" FontWeight="SemiBold" Foreground="{DynamicResource Esri_Gray145}" Text="{Binding SubContentHeader}" TextWrapping="Wrap" ToolTip="H4TextBlock"  />
+  <TextBlock HorizontalAlignment="Stretch" Style="{DynamicResource RegularText}"  Text="{Binding DefaultFont1}"  FontSize="12"  Height="Auto" ToolTip="Default Font" TextWrapping="Wrap"/>
 </StackPanel>
 <StackPanel Grid.Row="2" Margin="5,10,5,0">
   <Expander IsExpanded="True" Header="Radio Buttons" HorizontalAlignment="Stretch" Style="{DynamicResource Esri_ExpanderNoBorder}" ToolTip="Esri_ExpanderNoBorder">
