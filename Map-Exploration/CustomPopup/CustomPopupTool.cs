@@ -13,6 +13,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -197,7 +198,7 @@ namespace CustomPopup
         foreach (var v in _values)
         {
           var percentage = (v.Value / _values.Sum(kvp => kvp.Value)) * 100;
-          sb.AppendLine(string.Format("['{0}', {{v: {1} }}, {{v: {2} }}],", v.Key.Alias, v.Value, percentage));
+          sb.AppendLine(string.Format(CultureInfo.InvariantCulture, "['{0}', {{v: {1} }}, {{v: {2} }}],", v.Key.Alias, v.Value, percentage));
         }
 
         sb.AppendLine("]);");
