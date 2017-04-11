@@ -71,7 +71,7 @@ namespace ArcGISOnlineConnect
         {
             get
             {
-                if (string.IsNullOrEmpty(_AgolUrl)) _AgolUrl = PortalManager.GetActivePortal().ToString();
+                if (string.IsNullOrEmpty(_AgolUrl)) _AgolUrl = ArcGISPortalManager.Current.GetActivePortal().ToString();
                 return _AgolUrl;
             }
             set
@@ -225,7 +225,7 @@ namespace ArcGISOnlineConnect
         {
             try
             {
-                var httpEsri = new EsriHttpClient() { BaseAddress = PortalManager.GetActivePortal() };
+                var httpEsri = new EsriHttpClient() { BaseAddress = ArcGISPortalManager.Current.GetActivePortal().PortalUri };
                 // value has the following format: url with {};Redlands,...,...;Search Query,...,...
                 // where Redlands ... are values and search query are keys
                 var parts = AgolQuery.Value.Split(";".ToCharArray());
