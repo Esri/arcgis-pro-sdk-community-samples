@@ -1,4 +1,4 @@
-## DockPaneBookmarkAdvanced
+## Advanced UI Demo
 
 <!-- TODO: Write a brief abstract explaining this sample -->
 This sample shows how to:    

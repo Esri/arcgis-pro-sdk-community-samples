@@ -21,7 +21,6 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Framework' t
 * [ConfigWithStartWizard (c#)](../../../tree/master/Framework/ConfigWithStartWizard)  
 * [CustomStyling (c#)](../../../tree/master/Framework/CustomStyling)  
 * [DockPaneBookmarkAdvanced (c#)](../../../tree/master/Framework/DockPaneBookmarkAdvanced)  
-* [DockPaneBookmarkAdvanced (c#)](../../../tree/master/Framework/DockPaneBookmarkAdvanced)  
 * [DockpaneSimple (c#)](../../../tree/master/Framework/DockpaneSimple)  
 * [DynamicMenu (c#)](../../../tree/master/Framework/DynamicMenu)  
 * [FontStyles (c#)](../../../tree/master/Framework/FontStyles)  
