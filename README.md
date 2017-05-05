@@ -77,7 +77,7 @@ Read the [ProGuide: Installation and Upgrade](http://github.com/Esri/arcgis-pro-
 
 ## ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 93 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 94 ArcGIS Pro samples that are included in this repository.  
 
 #### Content
 
@@ -90,6 +90,7 @@ Below is the list of 93 ArcGIS Pro samples that are included in this repository.
 #### Editing
 
 * [ConstructionTool (c#)](../../tree/master/Editing/ConstructionTool)  
+* [CrowdPlannerTool (c#)](../../tree/master/Editing/CrowdPlannerTool)  
 * [DivideLines (c#)](../../tree/master/Editing/DivideLines)  
 * [ExtendTool (c#)](../../tree/master/Editing/ExtendTool)  
 * [InspectorTool (c#)](../../tree/master/Editing/InspectorTool)  

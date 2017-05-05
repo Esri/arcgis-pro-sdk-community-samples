@@ -1,0 +1,46 @@
+﻿<ArcGIS defaultAssembly="CrowdPlannerTool.dll" defaultNamespace="CrowdPlannerTool" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{16f160e1-f13b-4e4c-933f-e246e406ca30}" version="1.1" desktopVersion="1.4.7198">
+    <Name>Crowd Planner Tool</Name>
+    <Description>Sample Crowd Planner Prototype</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>Pro SDK</Author>
+    <Company>Esri</Company>
+    <Date>4/28/2017 10:43:43 AM, 2017</Date>
+    <Subject>Editing</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="CrowdPlannerTool_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="CrowdPlannerTool_Tab1" caption="New Tab">
+          <group refID="CrowdPlannerTool_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="CrowdPlannerTool_Group1" caption="Crowd Planner" appearsOnAddInTab="true" keytip="G1">
+          <!-- host controls within groups -->
+          <button refID="CrowdPlannerTool_CPDockpane_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <tool id="CrowdPlannerTool_CPConstructionTool" categoryRefID="esri_editing_construction_polygon" caption="CPConstructionTool" className="CPConstructionTool" loadOnClick="true" smallImage="Images\CrowdPlanner16.png" largeImage="Images\CrowdPlanner32.png" keytip="T1">
+          <!--note: use esri_editing_construction_polyline,  esri_editing_construction_polygon for categoryRefID as needed-->
+          <tooltip heading="Tooltip Heading">Create Crowd Polygon<disabledText /></tooltip>
+        </tool>
+        <button id="CrowdPlannerTool_CPDockpane_ShowButton" caption="Crowd Planner Summary" className="CPDockpane_ShowButton" loadOnClick="true" smallImage="Images\CrowdPlanner16.png" largeImage="Images\CrowdPlanner32.png" keytip="B1">
+          <tooltip heading="Show Dockpane">Show Crowd Planner Summary Pane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="CrowdPlannerTool_CPDockpane" caption="Crowd Planner" className="CPDockpaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="CPDockpaneView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

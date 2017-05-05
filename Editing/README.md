@@ -14,6 +14,7 @@ This repository contains ArcGIS Pro Add-In Samples for the ArcGIS Pro 1.4 SDK fo
 This folder contains ArcGIS Pro Add-In Samples that fall under the 'Editing' topic:
 
 * [ConstructionTool (c#)](../../../tree/master/Editing/ConstructionTool)  
+* [CrowdPlannerTool (c#)](../../../tree/master/Editing/CrowdPlannerTool)  
 * [DivideLines (c#)](../../../tree/master/Editing/DivideLines)  
 * [ExtendTool (c#)](../../../tree/master/Editing/ExtendTool)  
 * [InspectorTool (c#)](../../../tree/master/Editing/InspectorTool)  
