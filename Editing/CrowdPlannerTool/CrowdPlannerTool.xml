@@ -31,10 +31,10 @@
         </member>
         <member name="M:CrowdPlannerTool.CPDockpaneViewModel.Show">
             <summary>
-            Show the DockPane.
+            Show the DockPane
             </summary>
         </member>
-        <member name="F:CrowdPlannerTool.CPDockpaneViewModel._heading">
+        <member name="F:CrowdPlannerTool.CPDockpaneViewModel._totalHigh">
             <summary>
             Text shown near the top of the DockPane.
             </summary>

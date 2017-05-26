@@ -77,9 +77,9 @@
             <Label x:Name="Label_Copy" Content="High Estimate:" HorizontalAlignment="Center" Height="25"  VerticalAlignment="Top" Width="113" Grid.Row="0" Grid.Column="0" FontWeight="Bold"/>
             <Label x:Name="Label_Copy1" Content="Medium Estimate:" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="113" Grid.Row="1" Grid.Column="0" FontWeight="Bold"/>
             <Label x:Name="Label_Copy2" Content="Low Estimate:" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="113" Grid.Row="2" Grid.Column="0" FontWeight="Bold"/>
-            <TextBox x:Name="textBoxHigh" HorizontalAlignment="Left" Height="31"  Grid.Row="0" TextWrapping="Wrap" Text="{Binding TotalHigh, StringFormat='#,#.'}" VerticalAlignment="Top" Width="126" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="textBoxMedium" HorizontalAlignment="Left" Height="31" Grid.Row="1" TextWrapping="Wrap" Text="{Binding TotalMedium, StringFormat='#,#.'}" VerticalAlignment="Top" Width="126" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="textBoxLow" HorizontalAlignment="Left" Height="31" Grid.Row="2" TextWrapping="Wrap" Text="{Binding TotalLow, StringFormat='#,#.'}" VerticalAlignment="Top" Width="126" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="textBoxHigh" HorizontalAlignment="Left" Height="31"  Grid.Row="0" TextWrapping="Wrap" Text="{Binding TotalHigh, StringFormat='#,#.'}" Background="{Binding ColorBrush}" VerticalAlignment="Top" Width="126" Grid.Column="1" FontSize="14" IsReadOnly="True" FontWeight="Bold"/>
+            <TextBox x:Name="textBoxMedium" HorizontalAlignment="Left" Height="31" Grid.Row="1" TextWrapping="Wrap" Text="{Binding TotalMedium, StringFormat='#,#.'}" Background="{Binding ColorBrushMedium}" VerticalAlignment="Top" Width="126" Grid.Column="1" FontSize="14" IsReadOnly="True" FontWeight="Bold"/>
+            <TextBox x:Name="textBoxLow" HorizontalAlignment="Left" Height="31" Grid.Row="2" TextWrapping="Wrap" Text="{Binding TotalLow, StringFormat='#,#.'}" Background="{Binding ColorBrushLow}" VerticalAlignment="Top" Width="126" Grid.Column="1" FontSize="14" IsReadOnly="True" FontWeight="Bold"/>
 
         </Grid>
 
@@ -144,16 +144,6 @@
                                         <Setter Property="Background" Value="#FF4F81BD"/>
                                     </Style>
                                 </ResourceDictionary>
-                                <ResourceDictionary>
-                                    <Style x:Key="DataPointStyle" TargetType="Control">
-                                        <Setter Property="Background" Value="#FF8064A2"/>
-                                    </Style>
-                                </ResourceDictionary>
-                                <ResourceDictionary>
-                                    <Style x:Key="DataPointStyle" TargetType="Control">
-                                        <Setter Property="Background" Value="#FFC0504D"/>
-                                    </Style>
-                                </ResourceDictionary>
                             </DV:ResourceDictionaryCollection>
                         </DVC:PieSeries.Palette>
                     </DVC:PieSeries>
@@ -189,16 +179,6 @@
                                         <Setter Property="Background" Value="#FF4F81BD"/>
                                     </Style>
                                 </ResourceDictionary>
-                                <ResourceDictionary>
-                                    <Style x:Key="DataPointStyle" TargetType="Control">
-                                        <Setter Property="Background" Value="#FF8064A2"/>
-                                    </Style>
-                                </ResourceDictionary>
-                                <ResourceDictionary>
-                                    <Style x:Key="DataPointStyle" TargetType="Control">
-                                        <Setter Property="Background" Value="#FFC0504D"/>
-                                    </Style>
-                                </ResourceDictionary>
                             </DV:ResourceDictionaryCollection>
                         </DVC:PieSeries.Palette>
                     </DVC:PieSeries>
@@ -232,16 +212,6 @@
                                 <ResourceDictionary>
                                     <Style x:Key="DataPointStyle" TargetType="Control">
                                         <Setter Property="Background" Value="#FF4F81BD"/>
-                                    </Style>
-                                </ResourceDictionary>
-                                <ResourceDictionary>
-                                    <Style x:Key="DataPointStyle" TargetType="Control">
-                                        <Setter Property="Background" Value="#FF8064A2"/>
-                                    </Style>
-                                </ResourceDictionary>
-                                <ResourceDictionary>
-                                    <Style x:Key="DataPointStyle" TargetType="Control">
-                                        <Setter Property="Background" Value="#FFC0504D"/>
                                     </Style>
                                 </ResourceDictionary>
                             </DV:ResourceDictionaryCollection>

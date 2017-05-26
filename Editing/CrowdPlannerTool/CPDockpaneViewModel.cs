@@ -30,9 +30,12 @@ using ArcGIS.Desktop.Mapping;
 using System.Windows.Input;
 using System.Windows;
 using ArcGIS.Desktop.Editing;
+using System.Windows.Media;
 
 namespace CrowdPlannerTool
 {
+
+        #region Showbutton
     /// <summary>
     /// Button implementation to show the DockPane.
     /// </summary>
@@ -43,25 +46,30 @@ namespace CrowdPlannerTool
             CPDockpaneViewModel.Show();
         }
     }
+        #endregion
 
+        #region DockPane Activate
     internal class CPDockpaneViewModel : DockPane
     {
         private const string _dockPaneID = "CrowdPlannerTool_CPDockpane";
         private KeyValuePair<string, int>[] _piechartResult;
         private KeyValuePair<string, int>[] _piechartResultMedium;
         private KeyValuePair<string, int>[] _piechartResultLow;
+        private string textboxBackground;
 
         /// <summary>
-        /// Show the DockPane.
+        /// Show the DockPane
         /// </summary>
         internal static void Show()
         {
-            DockPane pane = FrameworkApplication.DockPaneManager.Find(_dockPaneID);
+            CPDockpaneViewModel pane = FrameworkApplication.DockPaneManager.Find(_dockPaneID) as CPDockpaneViewModel;
             if (pane == null)
                 return;
 
             pane.Activate();
+
         }
+
 
         protected CPDockpaneViewModel()
         {
@@ -75,7 +83,19 @@ namespace CrowdPlannerTool
 
             _setDefaultSettingsCmd = new RelayCommand(() => SetDefaultSettings(), () => true);
 
+            //string textboxBackground;
+            if (FrameworkApplication.ApplicationTheme == ApplicationTheme.Dark ||
+                FrameworkApplication.ApplicationTheme == ApplicationTheme.HighContrast)
+                textboxBackground = "#323232";
+            else textboxBackground = "#FFFFFF";
+            //set background value for textboxes
+            _highBackground = textboxBackground;
+            _mediumBackground = textboxBackground;
+            _lowBackground = textboxBackground;
+
         }
+
+        #endregion
 
         #region Commands
         // ** COMMANDS **
@@ -132,15 +152,15 @@ namespace CrowdPlannerTool
         /// <summary>
         /// Text shown near the top of the DockPane.
         /// </summary>
-        private string _heading = "Crowd Estimate Summary";
-        public string Heading
-        {
-            get { return _heading; }
-            set
-            {
-                SetProperty(ref _heading, value, () => Heading);
-            }
-        }
+        //private string _heading = "Crowd Estimate Summary";
+        //public string Heading
+        //{
+        //    get { return _heading; }
+        //    set
+        //    {
+        //        SetProperty(ref _heading, value, () => Heading);
+        //    }
+        //}
 
 
         private long _totalHigh = 0;
@@ -241,6 +261,54 @@ namespace CrowdPlannerTool
             }
         }
 
+        // High total background
+        private string _highBackground;   // "#FFFFFF";
+        public string HighBackground
+        {
+            get
+            {
+                return _highBackground;
+            }
+            set
+            {
+                _highBackground = value;
+                NotifyPropertyChanged("ColorBrush");
+            }
+        }
+
+        public Brush ColorBrush => new SolidColorBrush((Color)ColorConverter.ConvertFromString(_highBackground));
+
+        // Medium total background
+        private string _mediumBackground;   // = "#FFFFFF";
+        public string MediumBackground
+        {
+            get
+            {
+                return _mediumBackground;
+            }
+            set
+            {
+                _mediumBackground = value;
+                NotifyPropertyChanged("ColorBrushMedium");
+            }
+        }
+        public Brush ColorBrushMedium => new SolidColorBrush((Color)ColorConverter.ConvertFromString(_mediumBackground));
+
+        // Low total background
+        private string _lowBackground;   // = "#FFFFFF";
+        public string LowBackground
+        {
+            get
+            {
+                return _lowBackground;
+            }
+            set
+            {
+                _lowBackground = value;
+                NotifyPropertyChanged("ColorBrushLow");
+            }
+        }
+        public Brush ColorBrushLow => new SolidColorBrush((Color)ColorConverter.ConvertFromString(_lowBackground));
 
         // High Estimate Chart
         public KeyValuePair<string, int>[] PieChartResult
@@ -318,6 +386,14 @@ namespace CrowdPlannerTool
         // Reset Settings Based on Current Settings
         public async void ResetValues(string settingsValue)
         {
+
+            // Check for CrowdPlanning layer, exit if not present in current Map.
+            var CrowdLayerTest = MapView.Active.Map.FindLayers("CrowdPlanning").FirstOrDefault() as BasicFeatureLayer;
+            if (CrowdLayerTest == null)
+            {
+                ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("CrowdPlanning Layer is not found. Please use with the Crowd Planner data project.", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                return;
+            }
 
             // ***  Check to ensure the densitysettings are set.  If not, show a warning and deactivate tool.
             if (HighSetting == 0 || MediumSetting == 0 || LowSetting == 0 || TargetSetting == 0)
@@ -432,17 +508,20 @@ namespace CrowdPlannerTool
             double lowSettingValue = 0;
             double mediumSettingValue = 0;
             double highSettingValue = 0;
+            double targetRemaining = 0;
 
+            // Check for CrowdPlanning layer, exit if not present in current Map.
+            var CrowdLayerTest = MapView.Active.Map.FindLayers("CrowdPlanning").FirstOrDefault() as BasicFeatureLayer;
+            if (CrowdLayerTest == null)
+            {
+                ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("CrowdPlanning Layer is not found. Please use with the Crowd Planner data project.", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                return;
+            }
 
             await QueuedTask.Run(() =>
             {
                 // FeatureLayer CrowdLayer = MapView.Active.Map.FindLayer("CrowdPlanning") as FeatureLayer;
-                FeatureLayer CrowdLayer = MapView.Active.Map.Layers.First(layer => layer.Name.Equals("CrowdPlanning")) as FeatureLayer;
-                if (CrowdLayer == null)
-                {
-                    ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Layer is not found");
-                    return;
-                }
+                FeatureLayer CrowdLayer = MapView.Active.Map.GetLayersAsFlattenedList().FirstOrDefault(layer => layer.Name.Equals("CrowdPlanning")) as FeatureLayer;
 
                 //CrowdLayer.Search(null)
                 ArcGIS.Core.Data.Table CrowdTable = CrowdLayer.GetTable();
@@ -485,7 +564,7 @@ namespace CrowdPlannerTool
 
             });
 
-            // Assign values to properties
+            // Assign total values
             TotalHigh = TotalValueHigh;
             TotalMedium = TotalValueMedium;
             TotalLow = TotalValueLow;
@@ -498,28 +577,67 @@ namespace CrowdPlannerTool
 
             // UPDATE PIE CHARTS
             // Chart 1 - High Estimate
+            if (TotalValueHigh > TargetSetting)
+            {
+                targetRemaining = 0;
+                _highBackground = "#9BBB59";
+                NotifyPropertyChanged(() => ColorBrush);
+
+            }
+            else
+            {
+                targetRemaining = (TargetSetting - TotalValueHigh);
+                _highBackground = textboxBackground;
+                NotifyPropertyChanged(() => ColorBrush);
+            }
             KeyValuePair<string, int>[] myKeyValuePairHigh = new KeyValuePair<string, int>[]
                     {
                     new KeyValuePair<string,int>("High Estimate Allocated", Convert.ToInt32(TotalValueHigh)),
-                    new KeyValuePair<string,int>("Remaining to Estimate", Convert.ToInt32(TargetSetting))
+                    new KeyValuePair<string,int>("Remaining to Estimate", Convert.ToInt32(targetRemaining))
                     };
             PieChartResult = myKeyValuePairHigh;
             NotifyPropertyChanged(() => PieChartResult);
 
             // Chart 2 - Medium Estimate
+            if (TotalValueMedium > TargetSetting)
+            {
+                targetRemaining = 0;
+                _mediumBackground = "#9BBB59";
+                NotifyPropertyChanged(() => ColorBrushMedium);
+            }
+            else
+            {
+                targetRemaining = (TargetSetting - TotalValueMedium);
+                _mediumBackground = textboxBackground;
+                NotifyPropertyChanged(() => ColorBrushMedium);
+            }
+
             KeyValuePair<string, int>[] myKeyValuePairMedium = new KeyValuePair<string, int>[]
                     {
                     new KeyValuePair<string,int>("Medium Estimate Allocated", Convert.ToInt32(TotalValueMedium)),
-                    new KeyValuePair<string,int>("Remaining to Estimate", Convert.ToInt32(TargetSetting))
+                    new KeyValuePair<string,int>("Remaining to Estimate", Convert.ToInt32(targetRemaining))
                     };
             PieChartResultMedium = myKeyValuePairMedium;
             NotifyPropertyChanged(() => PieChartResultMedium);
 
             // Chart 3 - Low Estimate
+            if (TotalValueLow > TargetSetting)
+            {
+                targetRemaining = 0;
+                _lowBackground = "#9BBB59";
+                NotifyPropertyChanged(() => ColorBrushLow);
+            }
+            else
+            {
+                targetRemaining = (TargetSetting - TotalValueLow);
+                _lowBackground = textboxBackground;
+                NotifyPropertyChanged(() => ColorBrushLow);
+            }
+
             KeyValuePair<string, int>[] myKeyValuePairLow = new KeyValuePair<string, int>[]
                     {
                     new KeyValuePair<string,int>("Low Estimate Allocated", Convert.ToInt32(TotalValueLow)),
-                    new KeyValuePair<string,int>("Remaining to Estimate", Convert.ToInt32(TargetSetting))
+                    new KeyValuePair<string,int>("Remaining to Estimate", Convert.ToInt32(targetRemaining))
                     };
             PieChartResultLow = myKeyValuePairLow;
             NotifyPropertyChanged(() => PieChartResultLow);

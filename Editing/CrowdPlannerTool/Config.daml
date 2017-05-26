@@ -56,7 +56,7 @@
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="CrowdPlannerTool_CPDockpane" caption="Crowd Planner" className="CPDockpaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="CrowdPlannerTool_CPDockpane" caption="Crowd Planner Summary" className="CPDockpaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="CPDockpaneView" />
         </dockPane>
       </dockPanes>
