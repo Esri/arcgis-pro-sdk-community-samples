@@ -70,7 +70,7 @@ namespace ReplaceSketch
       var screenPoint = MapView.Active.MapToScreen(mapPoint);
       var radiusScreenPoint = new System.Windows.Point((screenPoint.X + pixels), screenPoint.Y);
       var radiusMapPoint = MapView.Active.ScreenToMap(radiusScreenPoint);
-      var searchRadius = GeometryEngine.Distance(mapPoint, radiusMapPoint);
+      var searchRadius = GeometryEngine.Instance.Distance(mapPoint, radiusMapPoint);
 
       //build a search circle geometry
       var cent = new Coordinate2D(mapPoint);

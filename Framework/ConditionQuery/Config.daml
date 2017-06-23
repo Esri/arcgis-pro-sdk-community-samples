@@ -19,12 +19,12 @@
 -->
 
 <ArcGIS defaultAssembly="ConditionQuery.dll" defaultNamespace="ConditionQuery" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{0a88ec38-9a78-4a51-88da-ae06835628d0}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{0a88ec38-9a78-4a51-88da-ae06835628d0}" version="1.0" desktopVersion="2.0.0">
     <Name>ConditionQuery</Name>
     <Description>Queries the application state to determine which conditions are currently enabled</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>charlesm</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>8/22/2016 3:49:35 PM, 2016</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

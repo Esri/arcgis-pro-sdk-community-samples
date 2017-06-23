@@ -47,7 +47,7 @@ namespace DataReviewerProSDKSamples
     /// 7.b Click Add Reviewer Results button. The Reviewer Results item will be added to the Project pane.
     /// 7.c Click Add Sessions button. All the sessions that are in the Reviewer Dataset will be added to the Project pane as child items to Reviewer Results.
     /// 7.d Click Mark Default button. The first session will be marked as default and its icon will be updated with a home icon in the Project pane.
-    /// 7.e Click Remove Session button. The first session will be removed from the Project pane.
+    /// 7.e Click Remove Session button. A session that is not marked as default will be removed from the Project pane.
     /// 7.f Click Remove Reviewer Results button. The Reviewer Results item will be removed from the Project pane.
     /// 7.g Click Add Reviewer Batch Jobs button. All Reviewer batch jobs that are in the sample data will be added to the Project pane.
     /// 7.h Click Remove Reviewer Batch Job button. The first Batch Job will be removed from the Project pane.	
@@ -101,6 +101,14 @@ namespace DataReviewerProSDKSamples
         {
             try
             {
+                // You can add only one ResultsProjectItem connection to a project
+                // If FrameworkApplication contains esri_datareviewer_addReviewerWorkspaceSettingState state that means the ResultsProjectItem is already added therefore no need to do anything
+                if (FrameworkApplication.State.Contains(Constants.CanAddReviewerResultsState))
+                {
+                    MessageBox.Show("Data Reviewer results have already been added to the project.", "Warning", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
+                    return;
+                }
+
                 //Get the data folder path
                 string dataRootPath = @"C:\Data\DataReviewer";
 
@@ -112,27 +120,35 @@ namespace DataReviewerProSDKSamples
                     return;
                 }
 
-                Item reviewerResultItem = null;
+                IProjectItem reviewerResultProjectItem = null;
                 await QueuedTask.Run(() =>
                 {
                     //Step 1: First check if the Reviewer workspace contains current Reviewer dataset.
                     if (DataReviewerModule.HasValidReviewerDataset(strReviewerResultsWorkspacePath))
                     {
                         //Step 2: Create the Reviewer ResultsItem
-                        reviewerResultItem = DataReviewerModule.CreateResultsItem(strReviewerResultsWorkspacePath);
+                        reviewerResultProjectItem = DataReviewerModule.CreateResultsProjectItem(strReviewerResultsWorkspacePath);
                     }
                     else
                     {
                         MessageBox.Show("The geodatabase specified does not contain a current Reviewer dataset.", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
                     }
+
+                    //Step 3: Add ResultsItem to the current project
+                    if (null != reviewerResultProjectItem)
+                    {
+                        try
+                        {
+                        bool itemAdded = Project.Current.AddItem(reviewerResultProjectItem);
+                        }
+                        catch (Exception ex1)
+                        {
+                        MessageBox.Show(ex1.Message, "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                        }
+                      
+                    }
+                     
                 });
-
-
-                //Step 3: Add ResultsItem to the current project
-                // You can add only one ResultsItem connection to a project
-                // Project.Current.CanAdd will return false, if you already have a connection to ResultsItem in the current project
-                if (null != reviewerResultItem && Project.Current.CanAdd(reviewerResultItem))
-                    await Project.Current.AddAsync(reviewerResultItem);
             }
             catch (Exception ex)
             {
@@ -151,12 +167,16 @@ namespace DataReviewerProSDKSamples
             {
                 //Step 1: Get Reviewer Results project item
                 //A project can contain only one Reviewer Results project item
-                IEnumerable<ProjectItem> projectItems = Project.Current.GetItems<ReviewerResultsProjectItem>();
+                IEnumerable<ReviewerResultsProjectItem> projectItems = Project.Current.GetItems<ReviewerResultsProjectItem>();
                 if (projectItems.Count() > 0)
                 {
                     //Step 2: Remove Reviewer Results project item from the current project
-                    ProjectItem resultsProjectItem = projectItems.FirstOrDefault();
-                    await Project.Current.RemoveAsync(resultsProjectItem);
+                    ReviewerResultsProjectItem resultsProjectItem = projectItems.FirstOrDefault();
+
+                    await QueuedTask.Run(() =>
+                    {
+                        Project.Current.RemoveItem(resultsProjectItem as IProjectItem);
+                    });
                 }
             }
             catch (Exception ex)
@@ -175,10 +195,10 @@ namespace DataReviewerProSDKSamples
             {
                 //Step 1: Get Reviewer Results project item
                 //A project can contain only one Reviewer Results project item
-                IEnumerable<ProjectItem> projectItems = Project.Current.GetItems<ReviewerResultsProjectItem>();
+                IEnumerable<ReviewerResultsProjectItem> projectItems = Project.Current.GetItems<ReviewerResultsProjectItem>();
                 ReviewerResultsProjectItem resultsProjectItem = null;
                 if (projectItems.Count() > 0)
-                    resultsProjectItem = projectItems.FirstOrDefault() as ReviewerResultsProjectItem;
+                    resultsProjectItem = projectItems.FirstOrDefault();
                 else
                 {
                     MessageBox.Show(string.Format("Current project does not have a connection to the Reviewer Results.{0}Please add a connection to the Reviewer Results", Environment.NewLine), "Warning", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
@@ -221,30 +241,34 @@ namespace DataReviewerProSDKSamples
         {
             try
             {
-                //Step 1: Get Reviewer Results project item
-                //A project can contain only one Reviewer Results project item
-                IEnumerable<ProjectItem> projectItems = Project.Current.GetItems<ReviewerResultsProjectItem>();
-                ReviewerResultsProjectItem resultsProjectItem = null;
-                if (projectItems.Count() > 0)
-                    resultsProjectItem = projectItems.FirstOrDefault() as ReviewerResultsProjectItem;
-                else
+                await QueuedTask.Run(() =>
                 {
-                    MessageBox.Show(string.Format("Current project does not have a connection to the Reviewer Results.{0}Please add a connection to the Reviewer Results and add Reviewer Sessions.", Environment.NewLine), "Warning", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
-                    return;
-                }
-
-                if (null != resultsProjectItem)
-                {
-                    //Step 2: Get all session items that are currently referenced in the project.
-                    IEnumerable<Item> sessionItems = await resultsProjectItem.GetItemsAsync();
-                    if (null != sessionItems && sessionItems.Count() > 0)
-                    {
-                        //Step 3: Mark first session as Default
-                        resultsProjectItem.DefaultSessionItem = sessionItems.FirstOrDefault();
-                    }
+                    //Step 1: Get Reviewer Results project item
+                    //A project can contain only one Reviewer Results project item
+                    IEnumerable<ReviewerResultsProjectItem> projectItems = Project.Current.GetItems<ReviewerResultsProjectItem>();
+                    ReviewerResultsProjectItem resultsProjectItem = null;
+                    if (projectItems.Count() > 0)
+                        resultsProjectItem = projectItems.FirstOrDefault() as ReviewerResultsProjectItem;
                     else
-                        MessageBox.Show(string.Format("There are no Reviewer Sessions referenced in the current project.{0}Please add at least one Reviewer Session to the current project.", Environment.NewLine), "Warning", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
-                }
+                    {
+                        MessageBox.Show(string.Format("Current project does not have a connection to the Reviewer Results.{0}Please add a connection to the Reviewer Results and add Reviewer Sessions.", Environment.NewLine), "Warning", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
+                        return;
+                    }
+
+                    if (null != resultsProjectItem)
+                    {
+                        //Step 2: Get all session items that are currently referenced in the project.
+                        IEnumerable<Item> sessionItems = resultsProjectItem.GetItems();
+                        if (null != sessionItems && sessionItems.Count() > 0)
+                        {
+                            //Step 3: Mark first session as Default
+                            resultsProjectItem.DefaultSessionItem = sessionItems.FirstOrDefault();
+
+                        }
+                        else
+                            MessageBox.Show(string.Format("There are no Reviewer Sessions referenced in the current project.{0}Please add at least one Reviewer Session to the current project.", Environment.NewLine), "Warning", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
+                    }
+                });
             }
             catch (Exception ex)
             {
@@ -262,25 +286,41 @@ namespace DataReviewerProSDKSamples
         {
             try
             {
-                //Step 1: Get Reviewer Results project item
-                //A project can contain only one Reviewer Results project item
-                IEnumerable<ProjectItem> projectItems = Project.Current.GetItems<ReviewerResultsProjectItem>();
-                ReviewerResultsProjectItem resultsProjectItem = null;
-                if (projectItems.Count() > 0)
-                    resultsProjectItem = projectItems.FirstOrDefault() as ReviewerResultsProjectItem;
-                else
-                    return;
-
-                if (null != resultsProjectItem)
+                await QueuedTask.Run(async () =>
                 {
-                    //Step 2: Get all session items that are currently referenced in the project.
-                    IEnumerable<Item> sessionItems = await resultsProjectItem.GetItemsAsync();
-                    if (null != sessionItems && sessionItems.Count() > 0)
+                    //Step 1: Get Reviewer Results project item
+                    //A project can contain only one Reviewer Results project item
+                    IEnumerable<ReviewerResultsProjectItem> projectItems = Project.Current.GetItems<ReviewerResultsProjectItem>();
+                    ReviewerResultsProjectItem resultsProjectItem = null;
+                    if (projectItems.Count() > 0)
+                        resultsProjectItem = projectItems.FirstOrDefault() as ReviewerResultsProjectItem;
+                    else
+                        return;
+
+                    if (null != resultsProjectItem)
                     {
-                        //Step 3: Remove the first Session from Project
-                        await resultsProjectItem.RemoveSessionItemAsync(sessionItems.FirstOrDefault());
+                        //Step 2: Get all session items that are currently referenced in the project.
+                        IEnumerable<Item> sessionItems = resultsProjectItem.GetItems();
+                        if (null != sessionItems && sessionItems.Count() > 0)
+                        {
+                            //Step 3: Remove the first Session that is not default from Project
+                            if(sessionItems.Count() > 0)
+                            {
+                                var firstItem = sessionItems.ToList()[0];
+                                if (!firstItem.IsDefault)
+                                    await resultsProjectItem.RemoveSessionItemAsync(firstItem);
+                                else
+                                {
+                                    if(sessionItems.Count() > 1)
+                                    {
+                                        var secondItem = sessionItems.ToList()[1];
+                                        await resultsProjectItem.RemoveSessionItemAsync(secondItem);
+                                    }
+                                }
+                            }
+                        }
                     }
-                }
+                });
             }
             catch (Exception ex)
             {
@@ -315,25 +355,25 @@ namespace DataReviewerProSDKSamples
                     return;
                 }
 
-                Item reviewerBatchJobItem1 = null;
-                Item reviewerBatchJobItem2 = null;
-                Item reviewerBatchJobItem3 = null;
+                IProjectItem reviewerBatchJobProjectItem1 = null;
+                IProjectItem reviewerBatchJobProjectItem2 = null;
+                IProjectItem reviewerBatchJobProjectItem3 = null;
                 await QueuedTask.Run(() =>
                 {
-                    reviewerBatchJobItem1 = DataReviewerModule.CreateBatchJobItem(batchJob1);
-                    reviewerBatchJobItem2 = DataReviewerModule.CreateBatchJobItem(batchJob2);
-                    reviewerBatchJobItem3 = DataReviewerModule.CreateBatchJobItem(batchJob3);
+                    reviewerBatchJobProjectItem1 = DataReviewerModule.CreateBatchJobProjectItem(batchJob1);
+                    reviewerBatchJobProjectItem2 = DataReviewerModule.CreateBatchJobProjectItem(batchJob2);
+                    reviewerBatchJobProjectItem3 = DataReviewerModule.CreateBatchJobProjectItem(batchJob3);
+
+                    //Step 2: Add BatchJobItems to the current project
+                    if (null != reviewerBatchJobProjectItem1)
+                        Project.Current.AddItem(reviewerBatchJobProjectItem1);
+
+                    if (null != reviewerBatchJobProjectItem2)
+                        Project.Current.AddItem(reviewerBatchJobProjectItem2);
+
+                    if (null != reviewerBatchJobProjectItem3)
+                        Project.Current.AddItem(reviewerBatchJobProjectItem3);
                 });
-
-                //Step 2: Add BatchJobItems to the current project
-                if (null != reviewerBatchJobItem1 && Project.Current.CanAdd(reviewerBatchJobItem1))
-                    await Project.Current.AddAsync(reviewerBatchJobItem1);
-
-                if (null != reviewerBatchJobItem2 && Project.Current.CanAdd(reviewerBatchJobItem2))
-                    await Project.Current.AddAsync(reviewerBatchJobItem2);
-
-                if (null != reviewerBatchJobItem3 && Project.Current.CanAdd(reviewerBatchJobItem3))
-                    await Project.Current.AddAsync(reviewerBatchJobItem3);
             }
             catch (Exception ex)
             {
@@ -351,13 +391,15 @@ namespace DataReviewerProSDKSamples
             try
             {
                 //Step 1: Get all Reviewer Batch Jobs that are referenced in the current project.
-                IEnumerable<ProjectItem> projectItems = Project.Current.GetItems<ReviewerBatchJobProjectItem>();
+                IEnumerable<ReviewerBatchJobProjectItem> projectItems = Project.Current.GetItems<ReviewerBatchJobProjectItem>();
 
                 if (null != projectItems && projectItems.Count()>  0)
                 {
                     //Step 2: Remove the first batch Job that is referenced in the current project
-                    await Project.Current.RemoveAsync(projectItems.FirstOrDefault());
-
+                    await QueuedTask.Run(() =>
+                    {
+                        Project.Current.RemoveItem(projectItems.FirstOrDefault());
+                    });
                 }
             }
             catch (Exception ex)
@@ -380,32 +422,38 @@ namespace DataReviewerProSDKSamples
         {
             try
             {
+                // You can add only one ResultsProjectItem connection to a project
+                // If FrameworkApplication contains esri_datareviewer_addReviewerWorkspaceSettingState state that means the ResultsProjectItem is already added therefore no need to do anything
+                if (FrameworkApplication.State.Contains(Constants.CanAddReviewerResultsState))
+                {
+                    MessageBox.Show("Data Reviewer results have already been added to the project.", "Warning", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
+                    return;
+                }
+                    
+
                 //Step 1: Browse to a Reviewer Workspace and get its path
                 string strReviewerResultsWorkspacePath = OpenBrowseGeodatabaseDialog();
                 if (string.IsNullOrEmpty(strReviewerResultsWorkspacePath))
                     return;
 
-                Item reviewerResultItem = null;
+                IProjectItem reviewerResultProjectItem = null;
                 await QueuedTask.Run(() =>
                 {
                     //Step 2: Check if the Reviewer workspace contains current Reviewer dataset.
                     if (DataReviewerModule.HasValidReviewerDataset(strReviewerResultsWorkspacePath))
                     {
                         //Step 3: Create the Reviewer ResultsItem
-                        reviewerResultItem = DataReviewerModule.CreateResultsItem(strReviewerResultsWorkspacePath);
+                        reviewerResultProjectItem = DataReviewerModule.CreateResultsProjectItem(strReviewerResultsWorkspacePath);
                     }
                     else
                     {
                         MessageBox.Show("The geodatabase specified does not contain a current Reviewer dataset.", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
                     }
+
+                    //Step 4: Add ResultsItem to the current project
+                    if (null != reviewerResultProjectItem)
+                        Project.Current.AddItem(reviewerResultProjectItem);
                 });
-
-                //Step 4: Add ResultsItem to the current project
-                // You can add only one ResultsItem connection to a project
-                // Project.Current.CanAdd will return false, if you already have a connection to ResultsItem in the current project
-                if (null != reviewerResultItem && Project.Current.CanAdd(reviewerResultItem))
-                    await Project.Current.AddAsync(reviewerResultItem);
-
             }
             catch (Exception ex)
             {
@@ -424,7 +472,7 @@ namespace DataReviewerProSDKSamples
             {
                 //Step 1: Get Reviewer Results project item
                 //A project can contain only one Reviewer Results project item
-                IEnumerable<ProjectItem> projectItems = Project.Current.GetItems<ReviewerResultsProjectItem>();
+                IEnumerable<ReviewerResultsProjectItem> projectItems = Project.Current.GetItems<ReviewerResultsProjectItem>();
                 ReviewerResultsProjectItem resultsProjectItem = null;
                 if (projectItems.Count() > 0)
                     resultsProjectItem = projectItems.FirstOrDefault() as ReviewerResultsProjectItem;
@@ -452,7 +500,7 @@ namespace DataReviewerProSDKSamples
                                 resultsProjectItem.AddSessionItemAsync(sessionItem);
 
                                 //Step 5: Raise GalleryItemsChangedEvent to add the Reviewer session to the Gallery
-                                GalleryItemsChangedEvent.Publish(new GalleryItem(sessionItem.TypeId, sessionItem.Path, sessionItem.Name), true);
+                                GalleryItemsChangedEvent.Publish(new GalleryItem(sessionItem.TypeID, sessionItem.Path, sessionItem.Name), true);
                             }
                         });
                     }
@@ -481,7 +529,7 @@ namespace DataReviewerProSDKSamples
 
                 //Step 2: Get Reviewer Results project item
                 //A project can contain only one Reviewer Results project item
-                IEnumerable<ProjectItem> projectItems = Project.Current.GetItems<ReviewerResultsProjectItem>();
+                IEnumerable<ReviewerResultsProjectItem> projectItems = Project.Current.GetItems<ReviewerResultsProjectItem>();
                 ReviewerResultsProjectItem resultsProjectItem = null;
                 if (projectItems.Count() > 0)
                     resultsProjectItem = projectItems.FirstOrDefault() as ReviewerResultsProjectItem;
@@ -494,7 +542,7 @@ namespace DataReviewerProSDKSamples
                 if (null != resultsProjectItem)
                 {
                     //Step 3: Get all session items that are currently referenced in the project.
-                    IEnumerable<Item> sessionItems = await resultsProjectItem.GetItemsAsync();
+                    IEnumerable<Item> sessionItems = resultsProjectItem.GetItems();
                     if (null != sessionItems && sessionItems.Count() > 0)
                     {
                         //Step 4: Find the session item (in the project) that is right clicked in the gallery
@@ -537,28 +585,31 @@ namespace DataReviewerProSDKSamples
                     GalleryItemsChangedEvent.Publish(galleryItem, false);
                 }
 
-                //Step 3: Get Reviewer Results project item
-                //A project can contain only one Reviewer Results project item
-                IEnumerable<ProjectItem> projectItems = Project.Current.GetItems<ReviewerResultsProjectItem>();
-                ReviewerResultsProjectItem resultsProjectItem = null;
-                if (projectItems.Count() > 0)
-                    resultsProjectItem = projectItems.FirstOrDefault() as ReviewerResultsProjectItem;
-
-                if (null != resultsProjectItem)
+                await QueuedTask.Run(async() =>
                 {
-                    //Step 4: Get all session items that are currently referenced in the project
-                    IEnumerable<Item> sessionItems = await resultsProjectItem.GetItemsAsync();
-                    if (null != sessionItems)
+                    //Step 3: Get Reviewer Results project item
+                    //A project can contain only one Reviewer Results project item
+                    IEnumerable<ReviewerResultsProjectItem> projectItems = Project.Current.GetItems<ReviewerResultsProjectItem>();
+                    ReviewerResultsProjectItem resultsProjectItem = null;
+                    if (projectItems.Count() > 0)
+                        resultsProjectItem = projectItems.FirstOrDefault() as ReviewerResultsProjectItem;
+
+                    if (null != resultsProjectItem)
                     {
-                        //Step 5: Find the session item (in the project) that is right clicked in the gallery
-                        Item itemToRemove = sessionItems.Where(p => (p as Item).Path == galleryItem.Path).FirstOrDefault() as Item;
-                        if (null != itemToRemove)
+                        //Step 4: Get all session items that are currently referenced in the project
+                        IEnumerable<Item> sessionItems = resultsProjectItem.GetItems();
+                        if (null != sessionItems)
                         {
-                            //Step 6: Remove this Session from the current project
-                            await resultsProjectItem.RemoveSessionItemAsync(itemToRemove);
+                            //Step 5: Find the session item (in the project) that is right clicked in the gallery
+                            Item itemToRemove = sessionItems.Where(p => (p as Item).Path == galleryItem.Path).FirstOrDefault() as Item;
+                            if (null != itemToRemove)
+                            {
+                                //Step 6: Remove this Session from the current project
+                                await resultsProjectItem.RemoveSessionItemAsync(itemToRemove);
+                            }
                         }
                     }
-                }
+                });
             }
             catch (Exception ex)
             {
@@ -591,15 +642,16 @@ namespace DataReviewerProSDKSamples
                         {
                             //Step 2:  Create Reviewer BatchJobItems
                             //This is done inside a try-catch so that you can Skip invalid batch jobs and continue with valid batch jobs
-                            Item rbjItem = DataReviewerModule.CreateBatchJobItem(rbjPath);
-
+                            IProjectItem rbjItem = DataReviewerModule.CreateBatchJobProjectItem(rbjPath);
                             if (null != rbjItem)
                             {
                                 //Step 3: Add BatchJobItems to the current project
-                                Project.Current.AddAsync(rbjItem);
+                                Project.Current.AddItem(rbjItem as IProjectItem);
+                                ReviewerBatchJobProjectItem rbjProjectItem = rbjItem as ReviewerBatchJobProjectItem;
 
                                 //Step 3: Add BatchJobItems to the gallery
-                                GalleryItemsChangedEvent.Publish(new GalleryItem(rbjItem.TypeId, rbjItem.Path, rbjItem.Name), true);
+                                if (null != rbjProjectItem)
+                                    GalleryItemsChangedEvent.Publish(new GalleryItem(rbjProjectItem.TypeID, rbjProjectItem.Path, rbjProjectItem.Name), true);
                             }
                         }
                         catch(Exception e)
@@ -646,15 +698,18 @@ namespace DataReviewerProSDKSamples
                 }
 
                 //Step 3: Get all Reviewer Batch Job project items from the current project
-                IEnumerable<ProjectItem> projectItems = Project.Current.GetItems<ReviewerBatchJobProjectItem>();
+                IEnumerable<ReviewerBatchJobProjectItem> projectItems = Project.Current.GetItems<ReviewerBatchJobProjectItem>();
 
-                //Step 4: Find the Batch Job (in the current project) that is right clicked in the gallery
-                ProjectItem projectItemToRemove = projectItems.Where(p => (p as ProjectItem).Path == galleryItem.Path).FirstOrDefault() as ProjectItem;
-                if (null != projectItemToRemove)
+                await QueuedTask.Run(() =>
                 {
-                    //Step 5: Remove the Batch Job from Project
-                    await Project.Current.RemoveAsync(projectItemToRemove);
-                }
+                    //Step 4: Find the Batch Job (in the current project) that is right clicked in the gallery
+                    IProjectItem projectItemToRemove = projectItems.Where(p => (p as ReviewerBatchJobProjectItem).Path == galleryItem.Path).FirstOrDefault() as IProjectItem;
+                    if (null != projectItemToRemove)
+                    {
+                        //Step 5: Remove the Batch Job from Project
+                        Project.Current.RemoveItem(projectItemToRemove);
+                    }
+                });
             }
             catch (Exception ex)
             {

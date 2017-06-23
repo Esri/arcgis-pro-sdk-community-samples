@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
-
 <!-- //   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -18,12 +13,12 @@
 //   limitations under the License.
 -->
 <ArcGIS defaultAssembly="TextElementAddin.dll" defaultNamespace="TextElementAddin" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{bc1cbb55-3f1b-4ff8-9070-45ec6561149d}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{bc1cbb55-3f1b-4ff8-9070-45ec6561149d}" version="1.0" desktopVersion="2.0.0">
     <Name>TextElementAddin</Name>
     <Description>This sample addin references a text element on a layout and changes it text and placement properties.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>JeffB</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>4/14/2015 11:34:44 AM, 2015</Date>
     <Subject>Layouts</Subject>
     <!-- Note subject can be one or more of these topics:

@@ -33,20 +33,21 @@
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
   </UserControl.Resources>
-  <Grid Background="{DynamicResource Esri_Gray100}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+  
+  <Grid Background="{DynamicResource Esri_ControlBackgroundBrush}">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Margin="5,10,10,5" Orientation="Horizontal">
-            <TextBlock Text="Map: " FontWeight="Bold" Style="{DynamicResource ProTextStyle}"></TextBlock>
-            <TextBlock Text="{Binding MapName}" Style="{DynamicResource RegularText}"></TextBlock>
-          
-        </StackPanel>
-        <StackPanel Grid.Row="1" Margin="5,10,10,5">
-            <TextBlock Text="Select Layer:" Style="{DynamicResource ProTextStyle}"></TextBlock>
-            <ComboBox ItemsSource="{Binding Layers}" SelectedItem="{Binding SelectedLayer}"></ComboBox>
-        </StackPanel>
-    </Grid>
+    <StackPanel Grid.Row="0" Margin="5,10,10,5" Orientation="Horizontal">
+      <TextBlock Text="Map: " FontWeight="Bold" Style="{DynamicResource Esri_TextBlockRegular}"></TextBlock>
+      <TextBlock Text="{Binding MapName}" Style="{DynamicResource Esri_TextBlockRegular}"></TextBlock>
+    </StackPanel>
+    
+    <StackPanel Grid.Row="1" Margin="5,10,10,5">
+      <TextBlock Text="Select Layer:" Style="{DynamicResource Esri_TextBlockRegular}"></TextBlock>
+      <ComboBox ItemsSource="{Binding Layers}" SelectedItem="{Binding SelectedLayer}"></ComboBox>
+    </StackPanel>
+  </Grid>
 </UserControl>

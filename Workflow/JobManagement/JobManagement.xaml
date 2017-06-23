@@ -64,31 +64,32 @@
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Orientation="Horizontal">
-                    <Button Name="Create_WO"    Margin="0"  HorizontalAlignment="Left"  HorizontalContentAlignment="Left"  Height="25" Grid.Row="0"
-                        VerticalAlignment="Top" Width="140" Command="{Binding CreateWOCMD}" Style="{DynamicResource Esri_SimpleBorderlessButton}">
-                        <Image Source="pack://application:,,,/ArcGIS.Desktop.Workflow;component/Images/JobCreate16.png" />
-                    </Button>
-                    <TextBlock Text="Create Work Order" Margin="3,0,0,0" />
-                    </StackPanel>
-                <StackPanel Grid.Row="1" Orientation="Horizontal">
-                <Button Name="Open_WO"      Margin="0"  HorizontalAlignment="Left"  HorizontalContentAlignment="Left"  Height="25" Grid.Row="1"
-                        VerticalAlignment="Top" Width="140" Command="{Binding OpenWOCMD}"   Style="{DynamicResource Esri_SimpleBorderlessButton}">
-
-                        <Image Source="pack://application:,,,/ArcGIS.Desktop.Workflow;component/Images/Job16.png" />
-                    </Button>
-                    <TextBlock Text="Open Work Order" Margin="3,0,0,0"/>
-                    </StackPanel>
-                <StackPanel Grid.Row="2" Orientation="Horizontal">
-                <Button Margin="0"  HorizontalAlignment="Left"  HorizontalContentAlignment="Left"  Height="25" Grid.Row="3"
-                        VerticalAlignment="Top" Width="140" Style="{DynamicResource Esri_SimpleBorderlessButton}">
+                  <Button Name="Create_WO"    Margin="0"  HorizontalAlignment="Left"  HorizontalContentAlignment="Left"  Height="25" Grid.Row="0"
+                      VerticalAlignment="Top" Width="140" Command="{Binding CreateWOCMD}" Style="{DynamicResource Esri_ButtonBorderless}">
                     
-                        <Image Source="pack://application:,,,/ArcGIS.Desktop.Workflow;component/Images/JobClose16.png" />
-                </Button>
-                <TextBlock Text="Close Work Order" Margin="3,0,0,0"/>
-                    </StackPanel>
-                
+                      <Image Source="pack://application:,,,/ArcGIS.Desktop.Workflow;component/Images/JobCreate16.png" />
+                  </Button>
+                  <TextBlock Text="Create Work Order" Margin="3,0,0,0" />
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                  <Button Name="Open_WO"      Margin="0"  HorizontalAlignment="Left"  HorizontalContentAlignment="Left"  Height="25" Grid.Row="1"
+                      VerticalAlignment="Top" Width="140" Command="{Binding OpenWOCMD}"   Style="{DynamicResource Esri_ButtonBorderless}">
+
+                      <Image Source="pack://application:,,,/ArcGIS.Desktop.Workflow;component/Images/Job16.png" />
+                  </Button>
+                  <TextBlock Text="Open Work Order" Margin="3,0,0,0"/>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                  <Button Margin="0"  HorizontalAlignment="Left"  HorizontalContentAlignment="Left"  Height="25" Grid.Row="3"
+                      VerticalAlignment="Top" Width="140" Style="{DynamicResource Esri_ButtonBorderless}">
+                    
+                      <Image Source="pack://application:,,,/ArcGIS.Desktop.Workflow;component/Images/JobClose16.png" />
+                  </Button>
+                  <TextBlock Text="Close Work Order" Margin="3,0,0,0"/>
+                </StackPanel>               
             </Grid>
         </DockPanel>
+      
         <DockPanel Margin="0,0,0,0">
             <Grid DockPanel.Dock="Top">
                 <Grid.RowDefinitions>
@@ -102,8 +103,8 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Button Name="back_btn" Margin="2,0,0,0"  VerticalAlignment="Center" Grid.Column="0"  
-                                Command="{Binding BackCMD}"  Style="{DynamicResource Esri_BackButtonSmall}"  ToolTip="Back" ToolTipService.ShowOnDisabled="True" />
-                        <TextBlock  Grid.Column="1" Text="{Binding Heading}" TextTrimming="CharacterEllipsis" Style="{StaticResource DockPaneHeader}"
+                                Command="{Binding BackCMD}"  Style="{DynamicResource Esri_ButtonBackSmall}"  ToolTip="Back" ToolTipService.ShowOnDisabled="True" />
+                        <TextBlock  Grid.Column="1" Text="{Binding Heading}" TextTrimming="CharacterEllipsis" Style="{StaticResource Esri_TextBlockDockPaneHeader}"
                                         VerticalAlignment="Center" HorizontalAlignment="Center" >
                             <TextBlock.ToolTip>
                                 <WrapPanel Orientation="Vertical" MaxWidth="300">
@@ -144,7 +145,7 @@
                             </Grid.ColumnDefinitions>
                             <Grid Width="6" Height="14" SnapsToDevicePixels="True" Grid.Column="0" />
                             <Button Margin="0"  HorizontalAlignment="Left"  HorizontalContentAlignment="Left"  Height="27" Grid.Column="1"
-                                    VerticalAlignment="Top" Width="190" Style="{DynamicResource Esri_SimpleBorderlessButton}">
+                                    VerticalAlignment="Top" Width="190" Style="{DynamicResource Esri_BorderlessButton}">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SelectionSelectPolygonTool16.png" />
                                     <TextBlock Text="Set Work Order Polygon" Margin="3,0,0,0" />
@@ -158,7 +159,7 @@
                             </Grid.ColumnDefinitions>
                             <Grid Width="6" Height="14" SnapsToDevicePixels="True" Grid.Column="0" />
                             <Button Margin="0"  HorizontalAlignment="Left"  HorizontalContentAlignment="Left"  Height="25" Grid.Column="1"  
-                                    VerticalAlignment="Top" Width="190" Style="{DynamicResource Esri_SimpleBorderlessButton}">
+                                    VerticalAlignment="Top" Width="190" Style="{DynamicResource Esri_BorderlessButton}">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Import_Feature_Class32.png" />
                                     <TextBlock Text="Include Additional Features" Margin="3,0,0,0" />
@@ -173,7 +174,7 @@
                             <Grid Width="14" Height="14" SnapsToDevicePixels="True" Grid.Column="0" />
                             <CheckBox Name="CreateCheck" Content="Open Work Order After Creation" HorizontalAlignment="Left" Margin="0" Grid.Column="1" VerticalAlignment="Top" IsChecked="{Binding IsChecked}"/>
                         </Grid>
-                        <Border BorderThickness="0,1,0,0" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Grid.Row="6"  >
+                        <Border BorderThickness="0,1,0,0" BorderBrush="{DynamicResource Esri_BorderBrush}" Grid.Row="6"  >
                             <Button x:Name="Create" DockPanel.Dock="Right" Margin="2" Focusable="True" IsEnabled="True" Command="{Binding CreateCMD}"
                                     Height="24" MinWidth="70" Padding="10,1" HorizontalAlignment="Right" HorizontalContentAlignment="Center">
                                 <Button.Style>
@@ -183,7 +184,7 @@
                                                 <Setter Property="IsDefault" Value="True"/>
                                             </Trigger>
                                             <DataTrigger Binding="{Binding IsValid}" Value="True">
-                                                <Setter Property="Background" Value="{DynamicResource Esri_Blue6}"/>
+                                                <Setter Property="Background" Value="{DynamicResource Esri_Color_Blue}"/>
                                             </DataTrigger>
                                         </Style.Triggers>
                                     </Style>
@@ -207,14 +208,14 @@
                         </Grid.RowDefinitions>
                         <DockPanel Grid.Row="0">
                             <DataGrid Name="OpenGrid" VerticalAlignment="Top" Width="Auto" Height="auto" HorizontalAlignment="Stretch" ItemsSource="{Binding OpenRows}" mod:DataGridColumns.BindableColumns="{Binding Columns}" AutoGenerateColumns="False"
-                                      Style="{DynamicResource ResourceKey=Esri_DataGridStyleColumnHeader}" ColumnHeaderStyle="{DynamicResource ResourceKey=Esri_DataGridColumnHeaderStyle}" CellStyle="{DynamicResource ResourceKey=NoHoverCellStyle}"
+                                      Style="{DynamicResource Esri_DataGrid}" ColumnHeaderStyle="{DynamicResource Esri_DataGridColumnHeader}" CellStyle="{DynamicResource Esri_DataGridCell}"
                                       ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" SelectedItem="{Binding SelectedItem}" >
                                 <DataGrid.InputBindings>
                                     <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding OpenCMD}"/>
                                 </DataGrid.InputBindings>
                             </DataGrid>
                         </DockPanel>
-                        <Border BorderThickness="0,1,0,0" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Grid.Row="1"  >
+                        <Border BorderThickness="0,1,0,0" BorderBrush="{DynamicResource Esri_BorderBrush}" Grid.Row="1"  >
                             <Button x:Name="Open" DockPanel.Dock="Right" Margin="2" Focusable="True" IsEnabled="True" Command="{Binding OpenCMD}"
                                     Height="24" MinWidth="70" Padding="10,1" HorizontalAlignment="Right" HorizontalContentAlignment="Center">
                                 <Button.Style>
@@ -224,7 +225,7 @@
                                                 <Setter Property="IsDefault" Value="True"/>
                                             </Trigger>
                                             <DataTrigger Binding="{Binding IsValid}" Value="True">
-                                                <Setter Property="Background" Value="{DynamicResource Esri_Blue6}"/>
+                                                <Setter Property="Background" Value="{DynamicResource Esri_Color_Blue}"/>
                                             </DataTrigger>
                                         </Style.Triggers>
                                     </Style>
@@ -260,7 +261,7 @@
                                     <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
                                 <Button Name="View_Info"   Margin="0"  HorizontalAlignment="Left"  HorizontalContentAlignment="Left"  Height="25" Grid.Row="0"
-                                VerticalAlignment="Top" Width="200" Command="{Binding ViewCMD}" Style="{DynamicResource Esri_SimpleBorderlessButton}">
+                                VerticalAlignment="Top" Width="200" Command="{Binding ViewCMD}" Style="{DynamicResource Esri_BorderlessButton}">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="pack://application:,,,/WorkflowSample;component/Images/ItemInformation16.png" />
                                         <TextBlock Text="View Information" Margin="3,0,0,0" />
@@ -289,49 +290,49 @@
                                     </Grid>
                                 </DockPanel>
                                 <Button Margin="0"  HorizontalAlignment="Left"  HorizontalContentAlignment="Left"  Height="25" Grid.Row="2"
-                                    VerticalAlignment="Top" Width="190" Style="{DynamicResource Esri_SimpleBorderlessButton}">
+                                    VerticalAlignment="Top" Width="190" Style="{DynamicResource Esri_BorderlessButton}">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="pack://application:,,,/ArcGIS.Desktop.Workflow;component/Images/JobClose16.png" />
                                         <TextBlock Text="Close" Margin="3,0,0,0" />
                                     </StackPanel>
                                 </Button>
                                 <Button Margin="0"  HorizontalAlignment="Left"  HorizontalContentAlignment="Left"  Height="25" Grid.Row="3"
-                                    VerticalAlignment="Top" Width="190" Style="{DynamicResource Esri_SimpleBorderlessButton}">
+                                    VerticalAlignment="Top" Width="190" Style="{DynamicResource Esri_BorderlessButton}">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericRefresh16.png" />
                                         <TextBlock Text="Refresh" Margin="3,0,0,0" />
                                     </StackPanel>
                                 </Button>
                                 <Button Margin="0"  HorizontalAlignment="Left"  HorizontalContentAlignment="Left"  Height="25" Grid.Row="4"
-                                    VerticalAlignment="Top" Width="190" Style="{DynamicResource Esri_SimpleBorderlessButton}">
+                                    VerticalAlignment="Top" Width="190" Style="{DynamicResource Esri_BorderlessButton}">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SyncCenter16.png" />
                                         <TextBlock Text="Sync" Margin="3,0,0,0" />
                                     </StackPanel>
                                 </Button>
                                 <Button Margin="0"  HorizontalAlignment="Left"  HorizontalContentAlignment="Left"  Height="25" Grid.Row="5"
-                                    VerticalAlignment="Top" Width="190" Style="{DynamicResource Esri_SimpleBorderlessButton}">
+                                    VerticalAlignment="Top" Width="190" Style="{DynamicResource Esri_BorderlessButton}">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/AddContent16.png" />
                                         <TextBlock Text="Submit" Margin="3,0,0,0" />
                                     </StackPanel>
                                 </Button>
                                 <Button Margin="0"  HorizontalAlignment="Left"  HorizontalContentAlignment="Left"  Height="25" Grid.Row="6"
-                                    VerticalAlignment="Top" Width="190" Style="{DynamicResource Esri_SimpleBorderlessButton}">
+                                    VerticalAlignment="Top" Width="190" Style="{DynamicResource Esri_BorderlessButton}">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Analyze16.png" />
                                         <TextBlock Text="Approve" Margin="3,0,0,0" />
                                     </StackPanel>
                                 </Button>
                                 <Button Margin="0"  HorizontalAlignment="Left"  HorizontalContentAlignment="Left"  Height="25" Grid.Row="7"
-                                    VerticalAlignment="Top" Width="190" Style="{DynamicResource Esri_SimpleBorderlessButton}">
+                                    VerticalAlignment="Top" Width="190" Style="{DynamicResource Esri_BorderlessButton}">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditRedo_B_16.png" />
                                         <TextBlock Text="Reject" Margin="3,0,0,0" />
                                     </StackPanel>
                                 </Button>
                                 <Button Margin="0"  HorizontalAlignment="Left"  HorizontalContentAlignment="Left"  Height="25" Grid.Row="8"
-                                    VerticalAlignment="Top" Width="190" Style="{DynamicResource Esri_SimpleBorderlessButton}">
+                                    VerticalAlignment="Top" Width="190" Style="{DynamicResource Esri_BorderlessButton}">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRedMedium16.png" />
                                         <TextBlock Text="Delete" Margin="3,0,0,0" />

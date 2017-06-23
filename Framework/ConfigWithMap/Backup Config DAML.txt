@@ -9,7 +9,7 @@
     <Name>ConfigWithMap</Name>
     <Description>ConfigWithMap description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>Wolfgang</Author>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>"  .\*.daml
     <Company>Acme</Company>
     <Date>11/7/2016 10:32:40 AM, 2016</Date>
     <Subject>Framework</Subject>

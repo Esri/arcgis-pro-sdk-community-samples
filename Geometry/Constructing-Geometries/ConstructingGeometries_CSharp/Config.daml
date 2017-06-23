@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
-
 <!--//Copyright 2017 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,12 +15,12 @@
 
 -->
 <ArcGIS defaultAssembly="ConstructingGeometries.dll" defaultNamespace="ConstructingGeometries" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{29AD53A1-481B-4E90-AA4B-F13FA586022B}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{29AD53A1-481B-4E90-AA4B-F13FA586022B}" version="1.0" desktopVersion="2.0.0">
     <Name>ConstructingGeometries</Name>
     <Description>Samples showing how to construct geometries (using C#).</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>2/16/2015 11:21:52 AM, 2015</Date>
     <Subject>Geometry, Geodatabase</Subject>
   </AddInInfo>

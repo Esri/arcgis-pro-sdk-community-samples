@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Copyright 2017 Esri 
+    
+    
+    Licensed under the Apache License, Version 2.0 (the "License"); 
+    you may not use this file except in compliance with the License. 
+    You may obtain a copy of the License at 
+ 
+         http://www.apache.org/licenses/LICENSE-2.0 
+ 
+     Unless required by applicable law or agreed to in writing, software 
+    distributed under the License is distributed on an "AS IS" BASIS, 
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ 
+     See the License for the specific language governing permissions and 
+    limitations under the License. 
+ 
+ -->
+<ArcGIS defaultAssembly="RibbonControls.dll" defaultNamespace="RibbonControls" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{d5cb3123-7094-44ff-ae9b-8eeb3d454185}" version="1.0" desktopVersion="2.0.8111">
+    <Name>RibbonControls</Name>
+    <Description>RibbonControls description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>5/31/2017 1:27:19 PM, 2017</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="RibbonControls_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="RibbonControls_Tab1" caption="Sample Tab" keytip="X">
+          <group refID="RibbonControls_Group1" />
+          <group refID="RibbonControls_Group2" />
+          <group refID="RibbonControls_Group3" />
+          <group refID="RibbonControls_Group4" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="RibbonControls_Group1" caption="Group 1" keytip="X1">
+          <!-- host controls within groups -->
+          <toolbar refID="RibbonControls_Toolbar1" size="small" />
+          <checkBox refID="RibbonControls_CheckBox1" size="small" />
+          <editBox refID="RibbonControls_EditBox1" size="small" />
+        </group>
+        <group id="RibbonControls_Group2" caption="Group 2" keytip="X2" launcherButtonID="RibbonControls_Button3" launcherKeytip="XP">
+          <!-- host controls within groups -->
+          <button refID="RibbonControls_Button2" size="large" />
+          <tool refID="RibbonControls_MapTool1" size="large" />
+          <toolPalette refID="RibbonControls_ToolPalette1" size="large" />
+          <buttonPalette refID="RibbonControls_ButtonPalette1" />
+          <splitButton refID="RibbonControls_SplitButton1" />
+        </group>
+        <group id="RibbonControls_Group3" caption="Group 3" keytip="X3">
+          <!--host controls within groups-->
+          <toolbar refID="RibbonControls_Toolbar2" size="middle" />
+          <labelControl refID="RibbonControls_Label2" size="middle" />
+          <menu refID="RibbonControls_Menu1" size="middle" />
+        </group>
+        <group id="RibbonControls_Group4" caption="Group 4" keytip="X4">
+          <!-- host controls within groups -->
+          <gallery refID="RibbonControls_InlineGallery1" inline="true" size="large" />
+          <gallery refID="RibbonControls_Gallery1" inline="false" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <labelControl id="RibbonControls_Label1" caption="Class " hasTwoLines="false" />
+        <labelControl id="RibbonControls_Label2" caption="Another Label" hasTwoLines="false" />
+        <comboBox id="RibbonControls_ComboBox1" caption="ComboBox 1" className="ComboBox1" keytip="XA" itemWidth="140" extendedCaption="Extended Caption" isEditable="false" isReadOnly="true" resizable="true">
+          <tooltip heading="ComboBox1 Tooltip Heading">ComboBox1 Tooltip text<disabledText /></tooltip>
+        </comboBox>
+        <button id="RibbonControls_Button1" caption="Button 1" className="Button1" keytip="XB" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Button1 Tooltip Heading">Button1 Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="RibbonControls_Button2" caption="Button 2" className="Button2" keytip="XE" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Button2 Tooltip Heading">Button2 Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="RibbonControls_Button3" caption="Button 2" className="Button3" keytip="XQ" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Button3 Tooltip Heading">Button3 Tooltip text<disabledText /></tooltip>
+        </button>
+        <checkBox id="RibbonControls_CheckBox1" keytip="XC" caption="CheckBox 1" className="CheckBox1" loadOnClick="false">
+          <tooltip heading="CheckBox1 Tooltip Heading">CheckBox1 Tooltip Heading.<disabledText></disabledText></tooltip>
+        </checkBox>
+        <editBox id="RibbonControls_EditBox1" caption="Edit Box1:" extendedCaption="Extended Caption." keytip="XD" className="EditBox1" disableIfBusy="false" sizeString="1234567890123456789012" condition="esri_mapping_mapPane">
+          <tooltip heading="EditBox1 Tooltip Heading">EditBox1 Tooltip text.<disabledText></disabledText></tooltip>
+        </editBox>
+        <tool id="RibbonControls_MapTool1" caption="MapTool 1" className="MapTool1" keytip="XF" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="MapTool1 Tooltip Heading">MapTool1 Tooltip text<disabledText /></tooltip>
+        </tool>
+        <button id="RibbonControls_ButtonPalette1_Items_Button1" caption="Palette Button 1" keytip="XI" className="ButtonPalette1_button1" loadOnClick="true" smallImage="Images\GenericButtonGrey16.png" largeImage="Images\GenericButtonGrey32.png">
+          <tooltip heading="Palette Button 1">Palette Button 1 ToolTip<disabledText /></tooltip>
+        </button>
+        <button id="RibbonControls_ButtonPalette1_Items_Button2" caption="Palette Button 2" keytip="XJ" className="ButtonPalette1_button2" loadOnClick="true" smallImage="Images\GenericButtonGreen16.png" largeImage="Images\GenericButtonGreen32.png">
+          <tooltip heading="Palette Button 2">Palette Button 2 ToolTip<disabledText /></tooltip>
+        </button>
+        <button id="RibbonControls_ButtonPalette1_Items_Button3" caption="Palette Button 3" keytip="XK" className="ButtonPalette1_button3" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Palette Button 3">Palette Button 3 ToolTip<disabledText /></tooltip>
+        </button>
+        <spinner id="RibbonControls_Spinner1" keytip="XR" className="Spinner1" caption="Spinner 1" extendedCaption="extended caption" suffix="%" width="66" disableIfBusy="false" minimum="0" maximum="100" increment="1">
+          <tooltip heading="Spinner1 Tooltip Heading">Spinner1 Tooltip text.<disabledText></disabledText></tooltip>
+        </spinner>
+        <customControl id="RibbonControls_CustomControl1" caption="CustomControl 1" className="CustomControl1ViewModel" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+          <content className="CustomControl1View" />
+          <tooltip heading="CustomControl1 Tooltip Heading">CustomControl1 Tooltip text<disabledText /></tooltip>
+        </customControl>
+        <button id="RibbonControls_Menu1_Items_Button1" caption="Menu Button 1" keytip="XT" className="Menu1_button1" loadOnClick="true" smallImage="Images\GenericButtonGreen16.png" largeImage="Images\GenericButtonGreen32.png">
+          <tooltip heading="Menu Button 1">Menu Button 1 ToolTip<disabledText /></tooltip>
+        </button>
+        <button id="RibbonControls_Menu1_Items_Button2" caption="Menu Button 2" keytip="XU" className="Menu1_button2" loadOnClick="true" smallImage="Images\GenericButtonGreen16.png" largeImage="Images\GenericButtonGreen32.png">
+          <tooltip heading="Menu Button 2">Menu Button 2 ToolTip<disabledText /></tooltip>
+        </button>
+        <button id="RibbonControls_Menu1_Items_Button3" caption="Menu Button 3" keytip="XV" className="Menu1_button3" loadOnClick="true" smallImage="Images\GenericButtonGreen16.png" largeImage="Images\GenericButtonGreen32.png">
+          <tooltip heading="Menu Button 3">Menu Button 3 ToolTip<disabledText /></tooltip>
+        </button>
+        <button id="RibbonControls_SplitButton1_Items_Button1" caption="SplitButton1 1" className="SplitButton1_button1" keytip="XM" loadOnClick="true" smallImage="Images\GenericButtonBlack16.png" largeImage="Images\GenericButtonBlack32.png">
+          <tooltip heading="Split Button 1">SplitButton1 1 ToolTip<disabledText /></tooltip>
+        </button>
+        <button id="RibbonControls_SplitButton1_Items_Button2" caption="SplitButton1 2" className="SplitButton1_button2" keytip="XN" loadOnClick="true" smallImage="Images\GenericButtonBlack16.png" largeImage="Images\GenericButtonBlack32.png">
+          <tooltip heading="Split Button 2">SplitButton1 2 ToolTip<disabledText /></tooltip>
+        </button>
+        <button id="RibbonControls_SplitButton1_Items_Button3" caption="SplitButton1 3" className="SplitButton1_button3" keytip="XO" loadOnClick="true" smallImage="Images\GenericButtonBlack16.png" largeImage="Images\GenericButtonBlack32.png">
+          <tooltip heading="Split Button 3">SplitButton1 3 ToolTip<disabledText /></tooltip>
+        </button>
+      </controls>
+      <palettes>
+        <toolPalette id="RibbonControls_ToolPalette1" caption="ToolPalette1" showItemCaption="true" itemsInRow="1" keytip="XG">
+          <tool refID="esri_mapping_selectByRectangleTool" />
+          <tool refID="esri_mapping_selectByPolygonTool" />
+          <tool refID="esri_mapping_selectByLassoTool" />
+        </toolPalette>
+        <buttonPalette id="RibbonControls_ButtonPalette1" caption="Button Palette" keytip="XH" dropDown="false" menuStyle="true">
+          <button refID="RibbonControls_ButtonPalette1_Items_Button1" />
+          <button refID="RibbonControls_ButtonPalette1_Items_Button2" />
+          <button refID="RibbonControls_ButtonPalette1_Items_Button3" />
+        </buttonPalette>
+      </palettes>
+      <toolbars>
+        <toolbar id="RibbonControls_Toolbar1">
+          <group>
+            <labelControl refID="RibbonControls_Label1" size="small" />
+            <comboBox refID="RibbonControls_ComboBox1" size="small" />
+            <button refID="RibbonControls_Button1" size="small" />
+          </group>
+        </toolbar>
+        <toolbar id="RibbonControls_Toolbar2">
+          <group>
+            <customControl refID="RibbonControls_CustomControl1" size="small" />
+            <spinner refID="RibbonControls_Spinner1" size="small" />
+          </group>
+        </toolbar>
+      </toolbars>
+      <galleries>
+        <gallery id="RibbonControls_Gallery1" caption="Gallery 1" className="Gallery1" itemsInRow="3" keytip="XX" dataTemplateFile="pack://application:,,,/RibbonControls;component//Gallery1Template.xaml" templateID="Gallery1ItemTemplate" resizable="true" largeImage="Images\GenericButtonOrange32.png">
+          <tooltip heading="Gallery1 Tooltip Heading">Gallery1 Tooltip text<disabledText /></tooltip>
+        </gallery>
+        <gallery id="RibbonControls_InlineGallery1" caption="InlineGallery 1" className="InlineGallery1" itemsInRow="5" keytip="XW" dataTemplateFile="pack://application:,,,/RibbonControls;component//InlineGallery1Template.xaml" templateID="InlineGallery1ItemTemplate" resizable="true" largeImage="Images\GenericButtonYellow32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </gallery>
+      </galleries>
+      <menus>
+        <menu id="RibbonControls_Menu1" caption="Menu 1" smallImage="GenericButtonGreen16.png" largeImage="GenericButtonGreen32.png" keytip="XS">
+          <button refID="RibbonControls_Menu1_Items_Button1" />
+          <button refID="RibbonControls_Menu1_Items_Button2" />
+          <button refID="RibbonControls_Menu1_Items_Button3" />
+        </menu>
+      </menus>
+      <splitButtons>
+        <splitButton id="RibbonControls_SplitButton1" keytip="XL">
+          <button refID="RibbonControls_SplitButton1_Items_Button1" />
+          <button refID="RibbonControls_SplitButton1_Items_Button2" />
+          <button refID="RibbonControls_SplitButton1_Items_Button3" />
+        </splitButton>
+      </splitButtons>
+    </insertModule>
+  </modules>
+</ArcGIS>

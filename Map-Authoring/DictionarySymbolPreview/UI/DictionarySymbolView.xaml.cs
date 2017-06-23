@@ -113,8 +113,8 @@ namespace DictionarySymbolPreview.UI {
 
         private async void SymbolSetPropertyGrid_SelectedObjectChanged(object sender, RoutedPropertyChangedEventArgs<object> e) {
             this.CodeSource = "";
-            if (this.SymbolSetPropertyGrid.SelectedObject is Fields_Base) {
-                var fldsBase = (Fields_Base)this.SymbolSetPropertyGrid.SelectedObject;
+            if (SymbolSetPropertyGrid.SelectedObject is Fields_Base) {
+                var fldsBase = (Fields_Base)SymbolSetPropertyGrid.SelectedObject;
                 this.ImageSource = await GenerateBitmapImageAsync(fldsBase.ChangedAttributeValues);
             }
             else {
@@ -145,7 +145,7 @@ namespace DictionarySymbolPreview.UI {
 
         private Task<ImageSource> GenerateBitmapImageAsync(Dictionary<string, object> attributes) {
             return QueuedTask.Run(() => {
-                CIMSymbol symbol = ArcGIS.Desktop.Mapping.SymbolFactory.GetDictionarySymbol("mil2525d", attributes);
+                CIMSymbol symbol = ArcGIS.Desktop.Mapping.SymbolFactory.Instance.GetDictionarySymbol("mil2525d", attributes);
                 
                 //At 1.3, 64 is the max pixel size we can scale to. This will be enhanced at 1.4 to support
                 //scaling (eg up to 256, the preferred review size for military symbols)

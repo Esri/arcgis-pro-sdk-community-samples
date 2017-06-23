@@ -50,7 +50,7 @@
       <DataGrid Grid.Row="0" Margin="0" ItemsSource="{Binding SampleRecords}" AutoGenerateColumns="False" 
                 HeadersVisibility="Column"
                 RowHeaderWidth="0"
-                Style="{DynamicResource Esri_DataGridStyle}">
+                Style="{DynamicResource Esri_DataGrid}">
         <DataGrid.Columns>
           <DataGridTextColumn Header="{x:Static prop:Resources.DockPaneCol1}" Binding="{Binding Name}" />
           <DataGridTextColumn Header="{x:Static prop:Resources.DockPaneCol2}" Binding="{Binding BirthDate, StringFormat=D}" />

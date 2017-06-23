@@ -76,7 +76,7 @@ namespace AddRasterLayer
                 await QueuedTask.Run(() =>
                 {
                     // Create a layer based on the url. In this case the layer we are creating is an image service layer.
-                    rasterLayer = (ImageServiceLayer)LayerFactory.CreateLayer(new Uri(dataSoureUrl), myMap);
+                    rasterLayer = (ImageServiceLayer)LayerFactory.Instance.CreateLayer(new Uri(dataSoureUrl), myMap);
 
                     // Check if it is created.
                     if (rasterLayer == null)

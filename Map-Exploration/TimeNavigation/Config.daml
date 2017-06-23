@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
-
 <!--//   Copyright 2014 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -18,12 +13,12 @@
 //   limitations under the License. 
 -->
 <ArcGIS defaultAssembly="TimeNavigation.dll" defaultNamespace="TimeNavigation" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{57f1bfc8-4ec8-4178-9000-2a7d2b956cea}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{57f1bfc8-4ec8-4178-9000-2a7d2b956cea}" version="1.0" desktopVersion="2.0.0">
     <Name>Time Navigation</Name>
     <Description>Adds additional controls to navigate through time.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>>Esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>9/3/2014 4:45:39 PM, 2014</Date>
     <Subject>Map-Exploration</Subject>
   </AddInInfo>

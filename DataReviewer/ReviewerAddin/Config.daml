@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <ArcGIS 
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   defaultAssembly="DataReviewerProSDKSamples.dll" 
@@ -8,12 +7,12 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
   xsi:schemaLocation="http://schemas.esri.com/DADF/Registry \ArcGIS\ArcGISDesktop\UIFramework\ArcGIS.Desktop.Framework.xsd">
   
-  <AddInInfo id="{78ff1a6a-a163-4d45-9cd4-3a732fa5f246}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{78ff1a6a-a163-4d45-9cd4-3a732fa5f246}" version="1.0" desktopVersion="2.0.0">
     <Name>DataReviewerProSDKSamples</Name>
     <Description>Data Reviewer Pro SDK Sample</Description>
     <Image>Images\DataReviewerAddin32.png</Image>
-    <Author>Esri</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>06/01/2015 10:20:00 AM, 2015</Date>
     <Subject>DataReviewer</Subject>
   </AddInInfo>
@@ -279,7 +278,7 @@
 
         <!-- Batch Jobs Gallery-->
         <gallery id="Reviewer_BatchJob_Gallery_Advanced"
-                 className="GalleryItemsViewModel"
+                 className="DataReviewerProSDKSamples.GalleryItemsViewModel"
                  caption="Batch Jobs"
                  itemsInRow="5" itemWidth="60" 
                  showItemCaption="true"
@@ -294,7 +293,7 @@
 
         <!-- Sessions Gallery-->
         <gallery id="Reviewer_Sessions_Gallery_Advanced"
-                 className="GalleryItemsViewModel"
+                 className="DataReviewerProSDKSamples.GalleryItemsViewModel"
                  caption="Sessions"
                  itemsInRow="5" itemWidth="60"
                  showItemCaption="true"

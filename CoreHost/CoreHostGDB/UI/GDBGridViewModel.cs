@@ -274,8 +274,6 @@ namespace CoreHostGDB.UI {
                             ////    }
                             ////}
     
-
-                            
                         }
                     }
                     return 0;
@@ -314,7 +312,9 @@ namespace CoreHostGDB.UI {
             try {
                 //Note, we have to return something
                 await TaskUtils.StartSTATask<int>(() => {
-                    using (Geodatabase gdb = new Geodatabase(_gdbPath)) {
+                    using (Geodatabase gdb = new Geodatabase(
+                        new FileGeodatabaseConnectionPath(new Uri(_gdbPath, UriKind.Absolute))))
+                    {
                         var table = gdb.OpenDataset<Table>(tableName);
 
                         RowCursor cursor = table.Search();
@@ -370,7 +370,7 @@ namespace CoreHostGDB.UI {
         }
 
         private string GetValue(Row row, int index) {
-            return row[index] != null ? row[index].ToString() : null;
+            return row[index]?.ToString();
         }
 
         #endregion

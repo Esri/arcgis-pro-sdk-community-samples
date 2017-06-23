@@ -216,7 +216,7 @@ namespace ProceduralSymbolLayersWithRulePackages
                 var rulePkgPath =  Path.Combine(_rulePkgPath, SelectedRulePackage.Name); 
 
                 //Creating a procedural symbol using the rulepaackage
-                var symbolReference = SymbolFactory.ConstructProceduralSymbol(rulePkgPath,
+                var symbolReference = SymbolFactory.Instance.ConstructProceduralSymbol(rulePkgPath,
                     Module1.BuildingFootprintLayer, primitiveOverrides);
 
                 //CIMPolygonSymbol needed to create a style item.  
@@ -233,7 +233,7 @@ namespace ProceduralSymbolLayersWithRulePackages
                 
                 //Create a style project item.
                 await CreateStyleItem();
-                if (BuildingStyleProjectItem != null && !BuildingStyleProjectItem.IsReadOnly())                
+                if (BuildingStyleProjectItem != null && !BuildingStyleProjectItem.IsReadOnly)                
                     await AddStyleItemToStyle(BuildingStyleProjectItem, polygonSymbol); //Building footprint's procedural symbol is added to the BuildingStyle   
                                                                
             });
@@ -276,18 +276,21 @@ namespace ProceduralSymbolLayersWithRulePackages
 
         private static async Task CreateStyleItem()
         {
-            if (BuildingStyleProjectItem?.PhysicalPath == null)
-            {
-                if (File.Exists(_styleFilePath)) //check if the file is on disc. Add it to the project if it is.
-                    await Project.Current.AddStyleAsync(_styleFilePath);
-                else //else create the style item  
-                {
-                    if (BuildingStyleProjectItem != null)
-                        await Project.Current.RemoveStyleAsync(BuildingStyleProjectItem.Name); //remove style from project                           
-                    await Project.Current.CreateStyleAsync($@"{_styleFilePath}");
-                }
-            }
-        }
+      if (BuildingStyleProjectItem?.PhysicalPath == null)
+      {
+        await QueuedTask.Run(() => {
+          if (File.Exists(_styleFilePath)) //check if the file is on disc. Add it to the project if it is.
+            Project.Current.AddStyle(_styleFilePath);
+          else //else create the style item  
+          {
+            if (BuildingStyleProjectItem != null)
+              Project.Current.RemoveStyle(BuildingStyleProjectItem.Name); //remove style from project                           
+            Project.Current.CreateStyle($@"{_styleFilePath}");
+          }
+        });
+
+      }
+    }
 
 
         #endregion

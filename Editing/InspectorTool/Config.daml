@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <!--
 
    Copyright 2017 Esri
@@ -19,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="InspectorTool.dll" defaultNamespace="InspectorTool" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{44a24a2f-143e-4744-89ff-2fa134c28a03}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{44a24a2f-143e-4744-89ff-2fa134c28a03}" version="1.0" desktopVersion="2.0.0">
     <Name>InspectorTook</Name>
     <Description>Editing tool using the inspector class.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>5/18/2016 3:24:35 PM, 2016</Date>
     <Subject>Editing</Subject>
   </AddInInfo>

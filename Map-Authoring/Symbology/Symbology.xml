@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Symbology</name>
+    </assembly>
+    <members>
+        <member name="T:Symbology.CustomSymbolStyleItem">
+            <summary>
+            Represents a custom symbol style item.
+            </summary>
+            <remarks>Procedural symbol items do not have a preview image. So a custom png is used to display these symbol types in the dockpane</remarks>
+        </member>
+        <member name="M:Symbology.MeshSymbology.CreateMeshSymbol">
+            <summary>
+            Create a mesh symbol that can be applied to a multi-patch feature layer.
+            </summary>
+            <remarks>
+            A mesh symbol is a CIMMeshSymbol object.  Define an array of CIMSymbolLayers which contains a CIMMaterialSymbol layer with the specified properties such as Color, etc.
+            Assign this array of CIMSymbolLayers to the CIMMeshSybol.
+            ![MeshSymbolOrange](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/mesh-material-orange.png)
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="F:Symbology.MeshSymbology._rulePkgPath">
+            <summary>
+            Creates Mesh procedural symbol with various textures.
+            ![MeshProceduralTexture](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/mesh-procedural-texture.png)
+            </summary>
+            <remarks>Note: The rule package used in this method can be obtained from the Sample Data included in the arcgis-pro-sdk-community-samples repository.</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Symbology.MyLineSymbology.CreateMyMarkerLineSymbol">
+            <summary>
+            Create a line symbol with the markers placed at a 45 degree angle. <br/>  
+            ![LineSymbolAngleMarker](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/line-marker-angle.png)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Symbology.MyLineSymbology.CreateLineDashTwoMarkers">
+            <summary>
+            Create a line symbol with a dash and two markers.<br/>          
+            </summary>
+            <remarks>
+            This line symbol comprises three symbol layers listed below: 
+            1. A solid stroke that has dashes.
+            1. A circle marker.
+            1. A square marker.
+            ![LineSymbolTwoMarkers](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/line-dash-two-markers.png)
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Symbology.MyLineSymbology.CreateLineDashTwoMarkers2">
+            <summary>
+            Create a line symbol with a dash and two markers. <br/>
+            In this pattern of creating this symbol, a [CIMVectorMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic6176.html) object is created as a new [CIMSymbolLayer](http://prodev.arcgis.com/en/pro-app/sdk/api-reference/current/#topic5503.html).
+            The circle and square markers created by [ContructMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic12350.html) method is then assigned to the [MarkerGraphics](http://prodev.arcgis.com/en/pro-app/sdk/api-reference/current/#topic6188.html) property of the CIMVectorMarker. 
+            When using this method, the CIMVectorMarker's [Frame](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic6187.html) property needs to be set to the [CIMMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic3264.html) object's Frame. 
+            Similarly, the CIMVectorMarker's [Size](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic3284.html) property needs to be set to the CIMMarker object's size.
+            </summary>
+            <remarks>
+            This line symbol comprises three symbol layers listed below: 
+            1. A solid stroke that has dashes.
+            1. A circle marker.
+            1. A square marker.
+            ![LineSymbolTwoMarkers](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/line-dash-two-markers.png)
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="T:Symbology.Module1">
+            <summary>
+            This sample creates custom point, line and polygon symbol items that you can use to render feature layers.  
+            These symbol items are stored in a personal style file in your project that you can re-use.
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.  
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro will open. 
+            1. Open any project file. 
+            1. In Add-in tab, click the "Show Symbology pane" button.
+            1. In the Symbology pane, you can see the custom Point, Line and Polygon symbols available in this sample. Select
+            each of these items in the combo box to see the available symbols.
+            ![UI](Screenshots/SymbologyPane.png)  
+            1. In the project, access the Style project items available in the current project using the Catalog Pane.
+            1. Click the MyCustomSymbols style project item. This is a personal style file created by the sample. It comprises all the symbols you saw in the Symbology pane.
+            ![UI](Screenshots/CustomStyleProjectItem.png)  
+            1. You can now use these custom symbols to render any feature layer.
+            </remarks>
+        </member>
+        <member name="P:Symbology.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here.
+            </summary>
+        </member>
+        <member name="M:Symbology.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="M:Symbology.MyPointSymbology.CreatePointSymbol">
+            <summary>
+            Creates a point symbol with custom fill and outline          
+            ![PointSymbolMarker](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/point-fill-outline.png)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Symbology.MyPointSymbology.CreateMarkerSymbol">
+            <summary>
+            Create a point symbol from a character in a font file
+            ![PointSymbolFont](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/point-marker.png)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Symbology.MyPolygonSymbology.CreateCrossHatchPolygon">
+            <summary>
+            Create a polygon symbol with a cross hatch fill. <br/>
+            ![PolygonSymbolCrossHatch](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/polygon-crosshatch.png)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Symbology.MyPolygonSymbology.CreateDiagonalCrossPolygon">
+            <summary>
+            Create a polygon symbol with a diagonal cross hatch fill. <br/>
+            ![PolygonSymbolDiagonalCrossHatch](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/polygon-diagonal-crosshatch.png)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Symbology.MyPolygonSymbology.CreateDashDotFill">
+            <summary>
+            Create a polygon symbol with a dash dot fill. <br/>
+            ![PolygonSymbolDashDot](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/polygon-dash-dot.png)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Symbology.MyPolygonSymbology.CreateGradientFill">
+            <summary>
+            Create a polygon symbol with a gradient color fill. <br/>
+            ![PolygonSymbolGradientColor](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/polygon-gradient-color.png)
+            </summary>
+            <remarks>
+            1. Create a solid colored stroke with 50% transparency
+            1. Create a fill using gradient colors red through green
+            1. Apply both the stroke and fill as a symbol layer array to the new PolygonSymbol
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="F:Symbology.MyPolygonSymbology._rulePkgPath">
+            <summary>
+            Create a procedural symbol that can be applied to a polygon building footprint layer
+            ![ProceduralSymbol](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/polygon-procedural.png)        
+            </summary>    
+            <remarks>Note: The rule package used in this method can be obtained from the Sample Data included in the arcgis-pro-sdk-community-samples repository.</remarks>
+        </member>
+        <member name="T:Symbology.SymbologyPaneView">
+            <summary>
+            Interaction logic for SymbologyPaneView.xaml
+            </summary>
+            <summary>
+            SymbologyPaneView
+            </summary>
+        </member>
+        <member name="M:Symbology.SymbologyPaneView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Symbology.SymbologyPaneViewModel.Show">
+            <summary>
+            Show the DockPane.
+            </summary>
+        </member>
+        <member name="F:Symbology.SymbologyPaneViewModel._heading">
+            <summary>
+            Text shown near the top of the DockPane.
+            </summary>
+        </member>
+        <member name="P:Symbology.SymbologyPaneViewModel.MyCustomStyleItems">
+            <summary>
+            Collection of Symbol Items. 
+            </summary>
+        </member>
+        <member name="P:Symbology.SymbologyPaneViewModel.SymbolGeometries">
+            <summary>
+            Collection of available symbol geometries
+            </summary>
+        </member>
+        <member name="P:Symbology.SymbologyPaneViewModel.SelectedGeometry">
+            <summary>
+            The selected symbol geometry type
+            </summary>
+        </member>
+        <member name="M:Symbology.SymbologyPaneViewModel.Initialize">
+            <summary>
+            Initialize the list box with the symbol items
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Symbology.SymbologyPaneViewModel.CreateSymbolStyleItem(ArcGIS.Core.CIM.CIMSymbol,System.String)">
+            <summary>
+            Creates a SymbolStyleItem from a symbol
+            </summary>
+            <param name="symbol"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Symbology.SymbologyPaneViewModel.GetSymbolDataMapping(ArcGIS.Core.Geometry.GeometryType)">
+            <summary>
+            Gets all the symbols available for a particular geometry
+            </summary>
+            <param name="geometry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Symbology.SymbologyPaneViewModel.CreateStyleProjectItem">
+            <summary>
+            Create a styleProject item.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Symbology.SymbologyPaneViewModel.AddStyleItemToStyle(ArcGIS.Desktop.Mapping.StyleProjectItem,ArcGIS.Desktop.Mapping.SymbolStyleItem)">
+            <summary>
+            Adds a styleitem to a style.
+            </summary>
+            <param name="styleProjectItem"></param>
+            <param name="cimSymbolStyleItem"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Symbology.SymbologyPane_ShowButton">
+            <summary>
+            Button implementation to show the DockPane.
+            </summary>
+        </member>
+    </members>
+</doc>

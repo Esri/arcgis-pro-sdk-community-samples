@@ -115,7 +115,8 @@ namespace DeleteFeaturesBasedOnSubtypeVersioned
                 {
                     try
                     {
-                        enterpriseDatabaseType = (table.GetDatastore() as Geodatabase).GetEnterpriseDatabaseType();
+                        var geodatabase = table.GetDatastore() as Geodatabase;
+                        enterpriseDatabaseType = (geodatabase.GetConnector() as DatabaseConnectionProperties).DBMS;
                     }
                     catch (InvalidOperationException e)
                     {
@@ -140,7 +141,7 @@ namespace DeleteFeaturesBasedOnSubtypeVersioned
             if (versionName == null)
                 return;
             
-            await QueuedTask.Run(async () =>
+            await QueuedTask.Run(() =>
             {
                 using (Table table = featureLayer.GetTable())
                 {
@@ -150,7 +151,7 @@ namespace DeleteFeaturesBasedOnSubtypeVersioned
             });
 
 			
-            QueuedTask.Run(async () =>
+            await QueuedTask.Run(async () =>
             {
                 using (Table table = featureLayer.GetTable())
                 {

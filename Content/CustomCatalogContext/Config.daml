@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2017 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+
+<ArcGIS defaultAssembly="CustomCatalogContext.dll" defaultNamespace="CustomCatalogContext" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{a4f746a5-555b-4274-9394-266aab8ece04}" version="1.0" desktopVersion="2.0.8533">
+    <Name>CustomCatalogContext</Name>
+    <Description>CustomCatalogContext description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
+    <Date>5/30/2017 1:16:14 PM, 2017</Date>
+    <Subject>Content</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <dependencies>
+    <dependency name="ADMapping.daml" />
+    <dependency name="ADGeoDatabase.daml" />
+  </dependencies>
+  <modules>
+    <insertModule id="CustomCatalogContext_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="CustomCatalogContext_Tab1" caption="New Tab">
+          <group refID="CustomCatalogContext_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups></groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="CustomCatalogContext_CustomCatalogButton" caption="CustomCatalogButton" className="CustomCatalogButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+    <updateModule refID="esri_mapping">
+      <menus>
+        <updateMenu refID="esri_mapping_map2DContextMenu">
+          <insertButton refID="CustomCatalogContext_CustomCatalogButton" insert="after" placeWith="esri_mapping_mapContextMenuConvertToBasemapButton" />
+        </updateMenu>
+        <updateMenu refID="esri_mapping_map3DContextMenu">
+          <insertButton refID="CustomCatalogContext_CustomCatalogButton" insert="after" placeWith="esri_mapping_mapContextMenuConvertToBasemapButton" />
+        </updateMenu>
+        <updateMenu refID="esri_mapping_StyleContextMenu">
+          <insertButton refID="CustomCatalogContext_CustomCatalogButton" />
+        </updateMenu>
+      </menus>
+    </updateModule>
+    <updateModule refID="esri_geodatabase_module">
+      <menus>
+        <updateMenu refID="folderConnectionItemMenu">
+          <insertButton refID="CustomCatalogContext_CustomCatalogButton" insert="after" placeWith="esri_addProjectItemToNewProjectsButton" />
+        </updateMenu>
+        <updateMenu refID="GDBProjectItemMenu">
+          <insertButton refID="CustomCatalogContext_CustomCatalogButton" insert="after" placeWith="esri_addProjectItemToNewProjectsButton" />
+        </updateMenu>
+        <updateMenu refID="EGDBProjectItemMenu">
+          <insertButton refID="CustomCatalogContext_CustomCatalogButton" insert="after" placeWith="esri_addProjectItemToNewProjectsButton" />
+        </updateMenu>
+      </menus>
+    </updateModule>
+  </modules>
+</ArcGIS>

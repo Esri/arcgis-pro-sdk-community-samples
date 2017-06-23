@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <!--
 
    Copyright 2017 Esri
@@ -19,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="SketchToolDemo.dll" defaultNamespace="SketchToolDemo" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{30c6a886-4421-4597-9171-c5f8e79e593a}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{30c6a886-4421-4597-9171-c5f8e79e593a}" version="1.0" desktopVersion="2.0.0">
     <Name>SketchToolDemo</Name>
     <Description>SketchTool Demo for the ArcGIS Pro SDK samples.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>3/2/2016 6:14:57 PM, 2016</Date>
     <Subject>Editing</Subject>
   </AddInInfo>

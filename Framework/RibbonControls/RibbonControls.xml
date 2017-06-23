@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RibbonControls</name>
+    </assembly>
+    <members>
+        <member name="T:RibbonControls.ComboBox1">
+            <summary>
+            Represents the ComboBox
+            </summary>
+        </member>
+        <member name="M:RibbonControls.ComboBox1.#ctor">
+            <summary>
+            Combo Box constructor
+            </summary>
+        </member>
+        <member name="M:RibbonControls.ComboBox1.UpdateCombo">
+            <summary>
+            Updates the combo box with all the items.
+            </summary>
+        </member>
+        <member name="M:RibbonControls.ComboBox1.OnSelectionChange(ArcGIS.Desktop.Framework.Contracts.ComboBoxItem)">
+            <summary>
+            The on comboBox selection change event. 
+            </summary>
+            <param name="item">The newly selected combo box item</param>
+        </member>
+        <member name="T:RibbonControls.CustomControl1View">
+            <summary>
+            Interaction logic for CustomControl1View.xaml
+            </summary>
+            <summary>
+            CustomControl1View
+            </summary>
+        </member>
+        <member name="M:RibbonControls.CustomControl1View.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:RibbonControls.Module1">
+            <summary>
+            This sample illustrates every type of ribbon control currently available in ArcGIS Pro.  Ribbon controls are declared in DAML with code classes containing the control implementation.
+            </summary>
+            <remarks>
+            1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  Make sure that the Sample data is unzipped in c:\data.
+            1. Open this solution in Visual Studio 2015.  
+            1. Click the build menu and select Build Solution.
+            1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.
+            1. Open the project "FeatureTest.aprx" in the "C:\Data\FeatureTest" folder.
+            1. Click on the "Sample Tab" tab.
+            1. View the various ribbon controls.   Don't forget the keytips when defining DAML items. 
+            ![UI](Screenshots/RibbonControls.png)
+            ![UI](Screenshots/RibbonControls_KeyTips.png)
+            
+            1. Group 1 contains a toolbar (which consists of a LabelControl, CombobBox and Button), CheckBox and EditBox.
+            1. Group 2 contains a Button, MapTool, ToolPalette, ButtonPalette and SplitButton with an additional launcher button.
+            1. Group 3 contains a toolbar (which consits of a CustomControl and Spinner), LabelControl and Menu.
+            1. Group 4 contains an inline Gallery and a Gallery button.
+            
+            </remarks>
+        </member>
+        <member name="P:RibbonControls.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:RibbonControls.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+    </members>
+</doc>

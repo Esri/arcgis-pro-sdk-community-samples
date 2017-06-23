@@ -10,7 +10,14 @@
             </summary>
             <param name="execMethod">The function to be executed</param>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:CoreHostGDB.Common.RelayCommand.#ctor(System.Action,System.Func{System.Boolean})" -->
+        <member name="M:CoreHostGDB.Common.RelayCommand.#ctor(System.Action,System.Func{System.Boolean})">
+            <summary>
+            Provide a function to be executed and a canExecuteMethod to check if it is
+            valid for the button to execute...
+            </summary>
+            <param name="execMethod">The execute method</param>
+            <param name="canExecuteMethod">A function to check if the tool can be executed.</param>
+        </member>
         <member name="M:CoreHostGDB.Common.TaskUtils.StartSTATask``1(System.Func{``0})">
             <summary>
             The problem is that Core.Data must be STA. An STA thread can't be a threadpool thread 

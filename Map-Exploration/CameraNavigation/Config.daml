@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
 <!--
 
    Copyright 2017 Esri
@@ -23,12 +19,12 @@
 -->
 
 <ArcGIS defaultAssembly="CameraNavigation.dll" defaultNamespace="CameraNavigation" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{ce2d1bec-a155-4e87-8268-164f4d5787c6}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{ce2d1bec-a155-4e87-8268-164f4d5787c6}" version="1.0" desktopVersion="2.0.0">
     <Name>Navigating camera with ArcGIS Pro</Name>
     <Description>Navigating camera with ArcGIS Pro</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>Esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>11/13/2014</Date>
     <Subject>Map-Exploration</Subject>
   </AddInInfo>

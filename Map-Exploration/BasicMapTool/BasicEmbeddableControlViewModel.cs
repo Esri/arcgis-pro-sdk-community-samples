@@ -28,7 +28,8 @@ using System.Xml.Linq;
 
 namespace BasicMapTool {
     internal class BasicEmbeddableControlViewModel : EmbeddableControl {
-        public BasicEmbeddableControlViewModel(XElement options) : base(options) { }
+
+        public BasicEmbeddableControlViewModel(XElement options, bool canChangeOptions) : base(options, canChangeOptions) { }
 
         /// <summary>
         /// Text shown in the control.

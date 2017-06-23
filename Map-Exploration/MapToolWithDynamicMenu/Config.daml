@@ -18,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="MapToolWithDynamicMenu.dll" defaultNamespace="MapToolWithDynamicMenu" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{2eef1def-4e72-423e-958d-0e76aa55444a}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{2eef1def-4e72-423e-958d-0e76aa55444a}" version="1.0" desktopVersion="2.0.0">
     <Name>MapToolWithDynamicMenu</Name>
     <Description>MapToolWithDynamicMenu description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>Wolfgang</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>5/5/2016 5:41:27 AM, 2016</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

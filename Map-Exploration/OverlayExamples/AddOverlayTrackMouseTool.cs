@@ -150,7 +150,7 @@ namespace OverlayExamples {
                         graphic = _graphic;
                     }
                     //update the graphic overlay
-                    var nearest = GeometryEngine.NearestPoint(lineFeature, MapView.Active.ClientToMap(point.Value));
+                    var nearest = GeometryEngine.Instance.NearestPoint(lineFeature, MapView.Active.ClientToMap(point.Value));
                     this.UpdateOverlay(graphic, nearest.Point, symReference);
                 }
             });
@@ -164,7 +164,7 @@ namespace OverlayExamples {
                 var lineFeature = Module1.SelectLineFeature(mapPoint);
 
                 if (lineFeature != null) {
-                    var nearest = GeometryEngine.NearestPoint(lineFeature, mapPoint);
+                    var nearest = GeometryEngine.Instance.NearestPoint(lineFeature, mapPoint);
                     lock (_lock) {
                         _workingLocation = null;
                         _lineFeature = lineFeature;

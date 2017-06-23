@@ -109,21 +109,23 @@ namespace OverviewMapControl
             {
                 //Line symbol to be used to draw the overview rectangle.
                 if (_lineSymbol == null) _lineSymbol = 
-                    SymbolFactory.ConstructLineSymbol(ColorFactory.RedRGB, 2.0, SimpleLineStyle.Solid);
+                    SymbolFactory.Instance.ConstructLineSymbol(ColorFactory.Instance.RedRGB, 2.0, SimpleLineStyle.Solid);
                
                 _graphic?.Dispose();//Clear out the old overlay
                 
                 _overviewEnvelope = viewExtent; //overview envelope based on active map view
 
                 if (_overviewEnvelope == null) return;
-                //Creating the overview rectangle
-                IList<MapPoint> segments = new List<MapPoint>();
-                segments.Add(MapPointBuilder.CreateMapPoint(_overviewEnvelope.XMin, _overviewEnvelope.YMin, _overviewEnvelope.SpatialReference));
-                segments.Add(MapPointBuilder.CreateMapPoint(_overviewEnvelope.XMax, _overviewEnvelope.YMin, _overviewEnvelope.SpatialReference));
-                segments.Add(MapPointBuilder.CreateMapPoint(_overviewEnvelope.XMax, _overviewEnvelope.YMax, _overviewEnvelope.SpatialReference));
-                segments.Add(MapPointBuilder.CreateMapPoint(_overviewEnvelope.XMin, _overviewEnvelope.YMax, _overviewEnvelope.SpatialReference));
-                segments.Add(MapPointBuilder.CreateMapPoint(_overviewEnvelope.XMin, _overviewEnvelope.YMin, _overviewEnvelope.SpatialReference));
-                _polyLine = PolylineBuilder.CreatePolyline(segments, _overviewEnvelope.SpatialReference);
+              //Creating the overview rectangle
+              IList<MapPoint> segments = new List<MapPoint>
+              {
+                MapPointBuilder.CreateMapPoint(_overviewEnvelope.XMin, _overviewEnvelope.YMin, _overviewEnvelope.SpatialReference),
+                MapPointBuilder.CreateMapPoint(_overviewEnvelope.XMax, _overviewEnvelope.YMin, _overviewEnvelope.SpatialReference),
+                MapPointBuilder.CreateMapPoint(_overviewEnvelope.XMax, _overviewEnvelope.YMax, _overviewEnvelope.SpatialReference),
+                MapPointBuilder.CreateMapPoint(_overviewEnvelope.XMin, _overviewEnvelope.YMax, _overviewEnvelope.SpatialReference),
+                MapPointBuilder.CreateMapPoint(_overviewEnvelope.XMin, _overviewEnvelope.YMin, _overviewEnvelope.SpatialReference)
+              };
+              _polyLine = PolylineBuilder.CreatePolyline(segments, _overviewEnvelope.SpatialReference);
               
                 _graphic = _mapControl.AddOverlay(_polyLine, _lineSymbol.MakeSymbolReference());
             });

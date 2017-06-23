@@ -34,9 +34,9 @@ namespace ConstructionTool
     /// </summary>
     internal class AttributeButton : Button
     {
-        protected override void OnClick()
+        protected override async void OnClick()
         {
-            PerformAttributeChange();
+            await PerformAttributeChange();
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace ConstructionTool
                     // meaning if the current MapMember actually contains a field of type string
                     if (String.IsNullOrEmpty(stringFieldName))
                         continue;
-
+#if notthis
                     #region Use edit operations for attribute changes
                     // create a new edit operation to encapsulate the string field modifications
                     var modifyStringsOperation = new EditOperation
@@ -100,9 +100,9 @@ namespace ConstructionTool
                     // execute the modify operation to apply the changes
                     await modifyStringsOperation.ExecuteAsync();
                     #endregion
-
+#endif
                     #region Use the feature inspector for attribute changes
-#if OrUseThis
+//#if OrUseThis
                     // as an alternative approach
                     // use the feature inspector class
                     var featureInspector = new Inspector(true);
@@ -115,7 +115,7 @@ namespace ConstructionTool
 
                     // app. the new values
                     await featureInspector.ApplyAsync();
-#endif
+//#endif
                     #endregion
                 }
             }

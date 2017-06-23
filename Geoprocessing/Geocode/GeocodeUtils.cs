@@ -33,7 +33,8 @@ namespace Geocode
         /// <summary>
         /// Do a search for the contents of the specified URL
         /// </summary>
-        /// <param name="url"></param>
+        /// <param name="text"></param>
+        /// <param name="numResults"></param>
         /// <returns></returns>
         public static CandidateResponse SearchFor(string text, int numResults = 2)
         {
@@ -82,7 +83,7 @@ namespace Geocode
                 ArcGIS.Core.Geometry.Envelope envelope = EnvelopeBuilder.CreateEnvelope(extent.XMin, extent.YMin, extent.XMax, extent.YMax, spatialReference);
 
                 //apply extent
-                MapView.Active.ZoomTo(GeometryEngine.Expand(envelope, 3, 3, true));
+                MapView.Active.ZoomTo(GeometryEngine.Instance.Expand(envelope, 3, 3, true));
             });
         }
 
@@ -105,7 +106,7 @@ namespace Geocode
             await QueuedTask.Run(() =>
                {
                    // Construct point symbol
-                   symbol = SymbolFactory.ConstructPointSymbol(ColorFactory.Red, 10.0, SimpleMarkerStyle.Star);
+                   symbol = SymbolFactory.Instance.ConstructPointSymbol(ColorFactory.Instance.RedRGB, 10.0, SimpleMarkerStyle.Star);
                });
 
             //Get symbol reference from the symbol 
@@ -122,7 +123,7 @@ namespace Geocode
         /// All-in-one. Update the graphic on the overlay if it was previously added
         /// otherwise, make it and add it
         /// </summary>
-        /// <param name="newLocation">The new location to be added to the map</param>
+        /// <param name="point">The new location to be added to the map</param>
         /// <param name="mapView"></param>
         /// <returns></returns>
         public static void UpdateMapOverlay(ArcGIS.Core.Geometry.MapPoint point, MapView mapView)

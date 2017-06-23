@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
 <ArcGIS defaultAssembly="ArcGISOnlineConnect.dll" defaultNamespace="ArcGISOnlineConnect" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <!--//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,12 +13,12 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License. 
 -->
-  <AddInInfo id="{ef0d3f3a-7faa-4a4a-a800-fff87a824883}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{ef0d3f3a-7faa-4a4a-a800-fff87a824883}" version="1.0" desktopVersion="2.0.0">
     <Name>ArcGISOnlineConnect</Name>
     <Description>ArcGISOnlineConnect description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>Wolfgang</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>5/26/2015 12:13:44 PM, 2015</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

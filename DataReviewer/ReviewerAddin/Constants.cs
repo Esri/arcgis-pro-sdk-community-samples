@@ -27,5 +27,6 @@ namespace DataReviewerProSDKSamples
         public const string DataReviewerModuleName = "esri_dataReviewer_dataReviewerModule";
         public const string ResultsItemName = "Session Results";
         public const string ExecuteBatchJobGPToolName = "ExecuteReviewerBatchJob_Reviewer";
+        public const string CanAddReviewerResultsState = "esri_datareviewer_addReviewerWorkspaceSettingState";
     }
 }

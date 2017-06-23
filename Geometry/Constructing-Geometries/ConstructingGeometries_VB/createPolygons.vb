@@ -28,79 +28,79 @@ Imports ArcGIS.Desktop.Editing
 ''' This code sample shows how to build Polygon objects. 
 ''' The code will take line geometries from the line feature layer and construct a polygon from a convex hull for all lines.
 ''' </summary>
-Friend Class createPolygons
-    Inherits Button
+Friend Class CreatePolygons
+  Inherits Button
 
-    Protected Overrides Async Sub OnClick()
-        ' to work in the context of the active display retrieve the current map 
-        Dim activeMap = MapView.Active.Map
+  Protected Overrides Async Sub OnClick()
+    ' to work in the context of the active display retrieve the current map 
+    Dim activeMap = MapView.Active.Map
 
-        ' retrieve the first line layer in the map
-        Dim lineFeatureLayer = activeMap.GetLayersAsFlattenedList().OfType(Of FeatureLayer).Where(
+    ' retrieve the first line layer in the map
+    Dim lineFeatureLayer = activeMap.GetLayersAsFlattenedList().OfType(Of FeatureLayer).Where(
             Function(lyr) lyr.ShapeType = ArcGIS.Core.CIM.esriGeometryType.esriGeometryPolyline).FirstOrDefault()
 
-        If (IsNothing(lineFeatureLayer)) Then
-            Return
-        End If
+    If (IsNothing(lineFeatureLayer)) Then
+      Return
+    End If
 
-        ' retrieve the first polygon feature layer in the map
-        Dim polygonFeatureLayer = activeMap.GetLayersAsFlattenedList().OfType(Of FeatureLayer).Where(
+    ' retrieve the first polygon feature layer in the map
+    Dim polygonFeatureLayer = activeMap.GetLayersAsFlattenedList().OfType(Of FeatureLayer).Where(
             Function(lyr) lyr.ShapeType = ArcGIS.Core.CIM.esriGeometryType.esriGeometryPolygon).FirstOrDefault()
 
-        If (IsNothing(polygonFeatureLayer)) Then
-            Return
-        End If
+    If (IsNothing(polygonFeatureLayer)) Then
+      Return
+    End If
 
-        ' construct the polyline based of the convex hull of all polylines
-        Await constructSamplePolygon(polygonFeatureLayer, lineFeatureLayer)
-    End Sub
+    ' construct the polyline based of the convex hull of all polylines
+    Await ConstructSamplePolygon(polygonFeatureLayer, lineFeatureLayer)
+  End Sub
 
-    ''' <summary>
-    ''' Create sample polygon feature using the point geometries from the multi-point feature using the 
-    ''' ConvexHull method provided by the GeometryEngine.
-    ''' </summary>
-    ''' <param name="polygonLayer">Polygon geometry feature layer used to add the new feature.</param>
-    ''' <param name="lineLayer">The polyline feature layer containing the features used to construct the polygon.</param>
-    ''' <returns></returns>
-    Private Function constructSamplePolygon(polygonLayer As FeatureLayer, lineLayer As FeatureLayer) As Task(Of Boolean)
-        ' execute the fine grained API calls on the CIM main thread
-        Return QueuedTask.Run(
+  ''' <summary>
+  ''' Create sample polygon feature using the point geometries from the multi-point feature using the 
+  ''' ConvexHull method provided by the GeometryEngine.
+  ''' </summary>
+  ''' <param name="polygonLayer">Polygon geometry feature layer used to add the new feature.</param>
+  ''' <param name="lineLayer">The polyline feature layer containing the features used to construct the polygon.</param>
+  ''' <returns></returns>
+  Private Function ConstructSamplePolygon(polygonLayer As FeatureLayer, lineLayer As FeatureLayer) As Task(Of Boolean)
+    ' execute the fine grained API calls on the CIM main thread
+    Return QueuedTask.Run(
             Function()
-                ' get the underlying feature class for each layer
-                Dim polygonFeatureClass = DirectCast(polygonLayer.GetTable(), FeatureClass)
-                Dim polygonDefinition = DirectCast(polygonFeatureClass.GetDefinition(), FeatureClassDefinition)
-                Dim lineFeatureClass = DirectCast(lineLayer.GetTable(), FeatureClass)
+              ' get the underlying feature class for each layer
+              Dim polygonFeatureClass = DirectCast(polygonLayer.GetTable(), FeatureClass)
+              Dim polygonDefinition = DirectCast(polygonFeatureClass.GetDefinition(), FeatureClassDefinition)
+              Dim lineFeatureClass = DirectCast(lineLayer.GetTable(), FeatureClass)
 
-                ' construct a cursor to retrieve the line features
-                Dim lineCursor = lineFeatureClass.Search(Nothing, False)
+              ' construct a cursor to retrieve the line features
+              Dim lineCursor = lineFeatureClass.Search(Nothing, False)
 
-                ' set up the edit operation for the feature creation
-                Dim createOperation = New EditOperation() With
+              ' set up the edit operation for the feature creation
+              Dim createOperation = New EditOperation() With
                   {
                       .Name = "Create polygons",
                       .SelectNewFeatures = False
                   }
 
-                Dim polylineBuilder = New PolylineBuilder(polygonDefinition.GetSpatialReference())
+              Dim polylineBuilder = New PolylineBuilder(polygonDefinition.GetSpatialReference())
 
-                Do While (lineCursor.MoveNext())
-                    ' retrieve the first feature
-                    Dim lineFeature = DirectCast(lineCursor.Current, Feature)
+              Do While (lineCursor.MoveNext())
+                ' retrieve the first feature
+                Dim lineFeature = DirectCast(lineCursor.Current, Feature)
 
-                    ' add the coordinate collection of the current geometry into our overall list of collections
-                    Dim polylineGeometry = DirectCast(lineFeature.GetShape(), Polyline)
-                    polylineBuilder.AddParts(polylineGeometry.Parts)
-                Loop
+                ' add the coordinate collection of the current geometry into our overall list of collections
+                Dim polylineGeometry = DirectCast(lineFeature.GetShape(), Polyline)
+                polylineBuilder.AddParts(polylineGeometry.Parts)
+              Loop
 
-                ' use the ConvexHull method from the GeometryEngine to construct the polygon geometry
-                Dim newPolygon = DirectCast(GeometryEngine.ConvexHull(polylineBuilder.ToGeometry()), Polygon)
+              ' use the ConvexHull method from the GeometryEngine to construct the polygon geometry
+              Dim newPolygon = DirectCast(GeometryEngine.Instance.ConvexHull(polylineBuilder.ToGeometry()), Polygon)
 
-                ' queue the polygon creation
-                createOperation.Create(polygonLayer, newPolygon)
+              ' queue the polygon creation
+              createOperation.Create(polygonLayer, newPolygon)
 
-                ' execute the edit (polygon create) operation
-                Return createOperation.ExecuteAsync()
+              ' execute the edit (polygon create) operation
+              Return createOperation.ExecuteAsync()
             End Function)
-    End Function
+  End Function
 End Class
 

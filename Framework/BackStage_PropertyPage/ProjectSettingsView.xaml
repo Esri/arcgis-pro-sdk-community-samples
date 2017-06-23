@@ -39,7 +39,7 @@
     </Grid.RowDefinitions>
     <CheckBox Margin="16,8,0,0" Grid.Row="0" Content="Module Setting 1" IsChecked="{Binding ModuleSetting1}"/>
     <StackPanel Grid.Row="1" Margin="16,8,0,0" Orientation="Horizontal">
-      <TextBlock Text="Some string" VerticalAlignment="Center" Style="{DynamicResource DialogTextBlock}"/>
+      <TextBlock Text="Some string" VerticalAlignment="Center" Style="{DynamicResource Esri_TextBlockDialog}"/>
       <TextBox Margin="6,0,0,0" Text="{Binding ModuleSetting2, UpdateSourceTrigger=PropertyChanged}" Width="200"
                VerticalAlignment="Center"/>
     </StackPanel>

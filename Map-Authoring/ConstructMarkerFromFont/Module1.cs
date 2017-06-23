@@ -37,15 +37,15 @@ namespace ConstructMarkerFromFont
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution. 
-    /// 2. This solution is using the **Extended.Wpf.Toolkit Nuget**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package Extended.Wpf.Toolkit".
-    /// 3. Click Start button to open ArcGIS Pro.
-    /// 4. ArcGIS Pro will open. 
-    /// 5. Open any project file that contains a point feature layer. 
-    /// 6. Right click on the point feature layer to bring up the context menu.
-    /// 7. Select the "Construct Marker from Fonts" menu item.
-    /// 8. This will open the "Construct Marker from Fonts" dockpane.
-    /// 9. Select a font, style and size and click Apply to render the point feature layer with the selected character.
-    /// 10. If you check the "Add selected marker to a personal FontMarker style" option, the selected marker will be added to a FontMarker style in the project.
+    /// 1. This solution is using the **Extended.Wpf.Toolkit Nuget**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package Extended.Wpf.Toolkit".
+    /// 1. Click Start button to open ArcGIS Pro.
+    /// 1. ArcGIS Pro will open. 
+    /// 1. Open any project file that contains a point feature layer. 
+    /// 1. Right click on the point feature layer to bring up the context menu.
+    /// 1. Select the "Construct Marker from Fonts" menu item.
+    /// 1. This will open the "Construct Marker from Fonts" dockpane.
+    /// 1. Select a font, style and size and click Apply to render the point feature layer with the selected character.
+    /// 1. If you check the "Add selected marker to a personal FontMarker style" option, the selected marker will be added to a FontMarker style in the project.
     /// ![UI](ScreenShots/ConstructMarkerFromFonts.png)  
     /// </remarks>
     internal class Module1 : Module

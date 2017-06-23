@@ -71,7 +71,7 @@
             Default constructor
             </summary>
         </member>
-        <member name="P:Geocode.CIMPointGraphicHelper.graphicID">
+        <member name="P:Geocode.CIMPointGraphicHelper.GraphicID">
             <summary>
             Gets and sets id for this graphic relevant to the specific mapview
             overlay it has been added to
@@ -139,7 +139,8 @@
             <summary>
             Do a search for the contents of the specified URL
             </summary>
-            <param name="url"></param>
+            <param name="text"></param>
+            <param name="numResults"></param>
             <returns></returns>
         </member>
         <member name="M:Geocode.GeocodeUtils.ResponseIsError(System.String)">
@@ -170,7 +171,7 @@
             All-in-one. Update the graphic on the overlay if it was previously added
             otherwise, make it and add it
             </summary>
-            <param name="newLocation">The new location to be added to the map</param>
+            <param name="point">The new location to be added to the map</param>
             <param name="mapView"></param>
             <returns></returns>
         </member>

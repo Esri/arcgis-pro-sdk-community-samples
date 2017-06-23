@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
-
 <!--
 //   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,12 +14,12 @@
 //   limitations under the License.
 -->
 <ArcGIS defaultAssembly="FolderConnections.dll" defaultNamespace="FolderConnections" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{677aa346-e49c-44b1-be7c-dee0a76ed078}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{677aa346-e49c-44b1-be7c-dee0a76ed078}" version="1.0" desktopVersion="2.0.0">
     <Name>FolderConnectionManager</Name>
     <Description>Allows saving and loading folder connections to a Project.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>Andrew Ortego</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>9/14/2015 1:23:45 PM, 2015</Date>
     <Subject>Content</Subject>
     <!-- Note subject can be one or more of these topics:

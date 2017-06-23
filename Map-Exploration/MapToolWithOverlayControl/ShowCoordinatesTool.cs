@@ -54,7 +54,7 @@ namespace MapToolWithOverlayControl
       return QueuedTask.Run(() =>
       {
         var mapPoint = ActiveMapView.ClientToMap(e.ClientPoint);
-        var coords = GeometryEngine.Project(mapPoint, SpatialReferences.WGS84) as MapPoint;
+        var coords = GeometryEngine.Instance.Project(mapPoint, SpatialReferences.WGS84) as MapPoint;
         if (coords == null) return;
         var sb = new StringBuilder();
         sb.AppendLine($"X: {coords.X:0.000}");

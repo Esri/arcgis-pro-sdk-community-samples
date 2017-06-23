@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
 <!--
 
    Copyright 2017 Esri
@@ -23,13 +19,13 @@
 -->
 
 <ArcGIS defaultAssembly="DeleteFeaturesBasedOnSubtype.dll" defaultNamespace="DeleteFeaturesBasedOnSubtype" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{04b9287c-e236-4a43-b94f-bd8678138e6a}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{04b9287c-e236-4a43-b94f-bd8678138e6a}" version="1.0" desktopVersion="2.0.0">
     <Name>DeleteFeaturesBasedOnSubtype</Name>
     <Subject>Geodatabase</Subject>
     <Description>An Addin which will list all subtypes for a Feature Class and allow deletion of all features which have the selected subtype</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>3/3/2015 11:30:56 AM, 2015</Date>
   </AddInInfo>
   <dependencies>

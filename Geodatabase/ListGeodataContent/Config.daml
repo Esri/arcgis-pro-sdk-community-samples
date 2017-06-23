@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <!--
 
    Copyright 2017 Esri
@@ -19,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="ListGeodataContent.dll" defaultNamespace="ListGeodataContent" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{90bb4471-d074-4e43-9cdb-4b23ed1e2a29}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{90bb4471-d074-4e43-9cdb-4b23ed1e2a29}" version="1.0" desktopVersion="2.0.0">
     <Name>ListGeodataContent</Name>
     <Description>ListGeodataContent description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team &lt;arcgisprosdk@esri.com&gt;</Author>
-    <Company>Esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>6/1/2016 6:29:55 AM, 2016</Date>
     <Subject>Geodatabase</Subject>
     <!-- Note subject can be one or more of these topics:

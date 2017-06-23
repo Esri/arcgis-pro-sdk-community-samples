@@ -24,11 +24,11 @@
         <Setter Property="Height" Value="{Binding RelativeSource={RelativeSource self}, Path=ActualHeight}"/>
         <Style.Triggers>
             <DataTrigger Binding="{Binding TypeId}" Value="file_datareviewer_batchjob">
-                <Setter Property="Source" Value="pack://application:,,,/ArcGIS.Desktop.DataReviewer;component/Resources/PNG/DataReviewerBatchJobFile32.png" />
+                <Setter Property="Source" Value="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/DataReviewerBatchJobFile32.png" />
             </DataTrigger>
 
             <DataTrigger Binding="{Binding TypeId}" Value="SessionResources">
-                <Setter Property="Source" Value="pack://application:,,,/ArcGIS.Desktop.DataReviewer;component/Resources/PNG/DataReviewerSession32.png" />
+                <Setter Property="Source" Value="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/DataReviewerSession32.png" />
             </DataTrigger>
         </Style.Triggers>
     </Style>

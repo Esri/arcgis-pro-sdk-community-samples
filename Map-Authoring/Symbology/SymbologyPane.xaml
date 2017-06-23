@@ -1,0 +1,86 @@
+<!--
+
+   Copyright 2017 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<UserControl x:Class="Symbology.SymbologyPaneView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
+             xmlns:ui="clr-namespace:Symbology"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             xmlns:mapping="clr-namespace:ArcGIS.Desktop.Mapping;assembly=ArcGIS.Desktop.Mapping"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{Binding Path=ui.SymbologyPaneViewModel}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate x:Key="SymbologyTemplate" DataType="{x:Type ui:CustomSymbolStyleItem}">
+                <StackPanel Orientation="Vertical" Background="{DynamicResource Esri_GalleryItemBackgroundBrush}">
+                    <TextBlock Text="{Binding SymbolName}" Style="{DynamicResource Esri_TextBlockH6}" TextWrapping="Wrap" Foreground="{DynamicResource Esri_TextGalleryItemBrush}"/>
+                    <Image Source="{Binding SymbolImageSource}"
+								Width="48" Height="48" Stretch="Fill" Margin="5"
+								DockPanel.Dock="Left" ToolTip="{Binding SymbolName}">
+                        <Image.Effect>
+                            <DropShadowEffect Color="{DynamicResource Esri_Color_Gray145}" BlurRadius="14" ShadowDepth="4.5">
+                            </DropShadowEffect>
+                        </Image.Effect>
+                    </Image>
+                </StackPanel>
+            </DataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
+            <TextBlock Grid.Column="1" Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                    FontSize="16" FontWeight="Light">
+                <TextBlock.ToolTip>
+                    <WrapPanel Orientation="Vertical" MaxWidth="300">
+                        <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
+                    </WrapPanel>
+                </TextBlock.ToolTip>
+      </TextBlock>
+        </DockPanel>
+        <StackPanel Grid.Row="1">
+            <ComboBox ItemsSource="{Binding SymbolGeometries}" SelectedItem="{Binding SelectedGeometry}" />
+            <ListBox ItemContainerStyle="{DynamicResource Esri_ListBoxItemHighlightBrush}" ItemsSource="{Binding MyCustomStyleItems}" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                ItemTemplate="{StaticResource SymbologyTemplate}"
+                     SelectedItem="{Binding SelectedSymbolStyleItem}"
+                     Margin ="0,5,0,0" FontSize="26" >
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+            <TextBlock TextWrapping="Wrap" Margin="0,15,0,0">
+            <Hyperlink NavigateUri="https://github.com/Esri/arcgis-pro-sdk/wiki/ProSnippets-Symbology" >
+                  Code snippets to create these custom symbols.
+             </Hyperlink>
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</UserControl>

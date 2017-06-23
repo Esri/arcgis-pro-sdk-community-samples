@@ -118,13 +118,13 @@
             <DVC:Chart Name="SummaryChart1" Title="High Estimate" Margin="-1,130,1,-130" >
                 <DVC:Chart.PlotAreaStyle>
                     <Style TargetType="{x:Type Grid}">
-                        <Setter Property="Background" Value="{DynamicResource Esri_Gray110}"/>
+                        <Setter Property="Background" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"/>
                     </Style>
                 </DVC:Chart.PlotAreaStyle>
                 <DVC:Chart.LegendStyle>
                     <Style TargetType="{x:Type DV:Legend}">
-                        <Setter Property="Background" Value="{DynamicResource Esri_Gray110}"/>
-                        <Setter Property="BorderBrush" Value="{DynamicResource Esri_Gray110}"></Setter>
+                        <Setter Property="Background" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"/>
+                        <Setter Property="BorderBrush" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"></Setter>
                     </Style>
                 </DVC:Chart.LegendStyle>
                 <DVC:Chart.Series>
@@ -153,13 +153,13 @@
             <DVC:Chart Name="SummaryChart2" Title="Medium Estimate" Margin="-1,299,1,-299" >
                 <DVC:Chart.PlotAreaStyle>
                     <Style TargetType="{x:Type Grid}">
-                        <Setter Property="Background" Value="{DynamicResource Esri_Gray110}"/>
+                        <Setter Property="Background" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"/>
                     </Style>
                 </DVC:Chart.PlotAreaStyle>
                 <DVC:Chart.LegendStyle>
                     <Style TargetType="{x:Type DV:Legend}">
-                        <Setter Property="Background" Value="{DynamicResource Esri_Gray110}"/>
-                        <Setter Property="BorderBrush" Value="{DynamicResource Esri_Gray110}"></Setter>
+                        <Setter Property="Background" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"/>
+                        <Setter Property="BorderBrush" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"></Setter>
                     </Style>
                 </DVC:Chart.LegendStyle>
                 <DVC:Chart.Series>
@@ -188,13 +188,13 @@
             <DVC:Chart Name="SummaryChart3" Title="Low Estimate" Margin="-1,468,1,-468" >
                 <DVC:Chart.PlotAreaStyle>
                     <Style TargetType="{x:Type Grid}">
-                        <Setter Property="Background" Value="{DynamicResource Esri_Gray110}"/>
+                        <Setter Property="Background" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"/>
                     </Style>
                 </DVC:Chart.PlotAreaStyle>
                 <DVC:Chart.LegendStyle>
                     <Style TargetType="{x:Type DV:Legend}">
-                        <Setter Property="Background" Value="{DynamicResource Esri_Gray110}"/>
-                        <Setter Property="BorderBrush" Value="{DynamicResource Esri_Gray110}"></Setter>
+                        <Setter Property="Background" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"/>
+                        <Setter Property="BorderBrush" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"></Setter>
                     </Style>
                 </DVC:Chart.LegendStyle>
                 <DVC:Chart.Series>
@@ -221,7 +221,7 @@
             </DVC:Chart>
 
         </Grid>
-    <Button Name="UpdateSettings" Command="{Binding Path=UpdateSettingsCmd}" ToolTip="Populate Totals and Settings" Style="{DynamicResource Esri_SimpleButton}"
+    <Button Name="UpdateSettings" Command="{Binding Path=UpdateSettingsCmd}" ToolTip="Populate Totals and Settings" Style="{DynamicResource Esri_Button}"
                 Margin="3,3,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" >
           <StackPanel Orientation="Horizontal">
               <Image Source="Images\GenericCheckMark16.png" Stretch="None" Width="17"/>
@@ -244,9 +244,9 @@
                 HorizontalAlignment="Left" Height="17" Margin="255,57,0,0" VerticalAlignment="Top" Width="18" RenderTransformOrigin="-0.545,0.955" Grid.Row="1">
             <Image Source="Images\SelectionMethodRemove16.png" RenderTransformOrigin="0.357,2.923"/>
         </Button>
-        <Border BorderBrush="{DynamicResource Esri_Gray155}" BorderThickness="1" HorizontalAlignment="Left" Height="77" Margin="244,5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="44"/>
-        <Border BorderBrush="{DynamicResource Esri_Gray155}" BorderThickness="1" HorizontalAlignment="Left" Height="77" Margin="243,4,0,0" Grid.Row="2" VerticalAlignment="Top" Width="44"/>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="25" Margin="247,7,0,0" Grid.Row="1" Text="Reset Values" VerticalAlignment="Top" Width="38" FontSize="10" TextWrapping="Wrap" FontFamily="Arial"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="32" Margin="246,7,0,0" Grid.Row="2" Text="Edit Settings" VerticalAlignment="Top" Width="44" TextWrapping="Wrap" FontFamily="Arial" FontSize="10" RenderTransformOrigin="0.432,0.719"/>
+        <Border BorderBrush="{DynamicResource Esri_BorderBrush}" BorderThickness="1.5" HorizontalAlignment="Left" Height="77" Margin="244,5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="44"/>
+        <Border BorderBrush="{DynamicResource Esri_BorderBrush}" BorderThickness="1.5" HorizontalAlignment="Left" Height="80" Margin="243,4,0,0" Grid.Row="2" VerticalAlignment="Top" Width="44"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="25" Margin="247,7,0,0" Grid.Row="1" Text="Reset Values" VerticalAlignment="Top" Width="38" FontSize="10" TextWrapping="Wrap" />
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="32" Margin="246,7,0,0" Grid.Row="2" Text="Edit Settings" VerticalAlignment="Top" Width="44" TextWrapping="Wrap"  FontSize="10" RenderTransformOrigin="0.432,0.719"/>
     </Grid>
 </UserControl>

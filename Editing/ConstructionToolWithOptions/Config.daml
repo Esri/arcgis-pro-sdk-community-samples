@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Copyright 2017 Esri 
+    
+    
+    Licensed under the Apache License, Version 2.0 (the "License"); 
+    you may not use this file except in compliance with the License. 
+    You may obtain a copy of the License at 
+ 
+         http://www.apache.org/licenses/LICENSE-2.0 
+ 
+     Unless required by applicable law or agreed to in writing, software 
+    distributed under the License is distributed on an "AS IS" BASIS, 
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ 
+     See the License for the specific language governing permissions and 
+    limitations under the License. 
+ 
+ -->
+<ArcGIS defaultAssembly="ConstructionToolWithOptions.dll" defaultNamespace="ConstructionToolWithOptions" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{eccb269d-c84d-43cd-aba9-c7ded95ed0ae}" version="1.0" desktopVersion="2.0.8111">
+    <Name>ConstructionToolWithOptions</Name>
+    <Description>ConstructionToolWithOptions description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
+    <Date>5/29/2017 9:20:51 AM, 2017</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ConstructionToolWithOptions_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="ConstructionToolWithOptions_Tab1" caption="New Tab">
+          <group refID="ConstructionToolWithOptions_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ConstructionToolWithOptions_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="G0">
+          <!-- host controls within groups -->
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <tool id="ConstructionToolWithOptions_BufferedLineTool" categoryRefID="esri_editing_construction_polygon" caption="Buffered Line" className="BufferedLineTool" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" keytip="B1" >
+          <tooltip heading="Buffered Line">Create a polygon with a fixed buffer.<disabledText /></tooltip>
+          <content toolOptionsID="ConstructionToolWithOptions_BufferedLineToolOptions" />
+        </tool>
+        <tool id="ConstructionToolWithOptions_CircleTool_polyline" categoryRefID="esri_editing_construction_polyline" caption="Circle Options" className="CircleTool" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="B2" >
+          <tooltip heading="Circle with Options">Create a circle with a fixed radius.<disabledText /></tooltip>
+          <content toolOptionsID="ConstructionToolWithOptions_CircleToolOptions" />
+        </tool>
+        <tool id="ConstructionToolWithOptions_CircleTool_polygon" categoryRefID="esri_editing_construction_polygon" caption="Circle Options" className="CircleTool" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="B3" >
+          <tooltip heading="Circle with Options">Create a circle with a fixed radius.<disabledText /></tooltip>
+          <content toolOptionsID="ConstructionToolWithOptions_CircleToolOptions" />
+        </tool>
+      </controls>
+    </insertModule>
+  </modules>
+  <categories>
+    <updateCategory refID="esri_editing_tool_options">
+      <insertComponent id="ConstructionToolWithOptions_BufferedLineToolOptions" className="BufferedLineToolOptionsViewModel">
+        <content className="BufferedLineToolOptionsView" />
+      </insertComponent>
+      <insertComponent id="ConstructionToolWithOptions_CircleToolOptions" className="CircleToolOptionsViewModel">
+        <content className="CircleToolOptionsView" />
+      </insertComponent>
+    </updateCategory>
+  </categories>
+</ArcGIS>

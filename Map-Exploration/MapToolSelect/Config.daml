@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <!--
 
    Copyright 2017 Esri
@@ -19,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="MapToolSelect.dll" defaultNamespace="MapToolSelect" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{6143be8e-4642-4341-aeed-cc1ee5cb68e8}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{6143be8e-4642-4341-aeed-cc1ee5cb68e8}" version="1.0" desktopVersion="2.0.0">
     <Name>MapToolSelect</Name>
     <Description>MapToolSelect description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>Wolfgang</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>5/3/2016 5:40:45 AM, 2016</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

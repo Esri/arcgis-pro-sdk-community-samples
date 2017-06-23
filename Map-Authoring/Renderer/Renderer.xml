@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Renderer</name>
+    </assembly>
+    <members>
+        <member name="M:Renderer.ClassBreakRenderers.CBRendererGraduatedColors(ArcGIS.Desktop.Mapping.FeatureLayer)">
+            <summary>
+            Renders a feature layer using graduated colors to draw quantities.
+            ![cb-colors.png](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/cb-colors.png "Graduated colors with natural breaks renderer.")
+            </summary>
+            <param name="featureLayer"></param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:Renderer.ClassBreakRenderers.CBRendererGraduatedSymbols(ArcGIS.Desktop.Mapping.FeatureLayer)">
+            <summary>
+            Renders a feature layer using graduated symbols and natural breaks to draw quantities.
+            ![cb-symbols.png](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/cb-symbols.png "Graduated symbols with natural breaks renderer.")
+            </summary>
+            <param name="featureLayer"></param>
+            <returns>        
+            </returns>
+        </member>
+        <member name="M:Renderer.ClassBreakRenderers.UnclassedRenderer(ArcGIS.Desktop.Mapping.FeatureLayer)">
+            <summary>
+            Renders a feature layer using an unclassed color gradient.
+            ![cb-unclassed.png](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/cb-unclassed.png "Class breaks unclassed renderer.")
+            </summary>
+            <param name="featureLayer"></param>
+            <returns>        
+            </returns>
+        </member>
+        <member name="M:Renderer.ClassBreakRenderers.CBGraduatedColorsManualBreaks(ArcGIS.Desktop.Mapping.FeatureLayer)">
+            <summary>
+            Renders a feature layer using graduated colors and manual intervals to draw quantities. 
+             ![cb-colors-manual-breaks.png](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/cb-colors-manual-breaks.png "Graduated colors with manual intervals renderer.")
+            </summary>
+            <param name="featureLayer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Renderer.HeatMapRenderers.HeatMapRenderersAsync(ArcGIS.Desktop.Mapping.FeatureLayer)">
+            <summary>
+            Renders a point feature layer using a continuous color gradient to represent density of points.
+            </summary>
+            <remarks>
+            ![Heat map renderer](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/heat-map.png)
+            </remarks>
+            <param name="featureLayer"></param>
+            <returns>
+            </returns>
+        </member>
+        <member name="T:Renderer.Module1">
+            <summary>
+            This sample renders feature layers with various types of renderers. There are examples for the following types of renderers in this sample:
+              * Simple Renderers
+              * Unique Value Renderer
+              * Class breaks renderers
+                  * Graduated color to define quantities
+                  * Graduated symbols to define quantities
+                  * Unclassed color gradient to define quantities
+              * Proportional Renderer
+              * Heat map renderer
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.  
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro will open. 
+            1. Open any project file that contains points, polygon and line feature layers. 
+            1. In Add-in tab, click the "Apply Renderer" button.
+            1. The first point feature layer in your project's TOC will be rendered with an "Unique Value Renderer".
+            To experiment with the various renderers available with this sample, follow the steps below:
+            1. Stop debugging Pro.
+            1. In Visual Studio's solution explorer, open the ApplyRenderer.cs file. This is the class file for the Apply Renderer button.
+            1. The OnClick method in the ApplyRenderer.cs file gets the first point feature layer in your project and then applies the Unique Value Renderer to it.<br/>
+               **You can modify the code in the OnClick method in this file to use one of the various renderers available in this sample and/or select any feature layer in your project.**
+                ```c#  
+                protected async override void OnClick()  
+                {  
+                  //TODO: This line below gets the first point layer in the project to apply a renderer.  
+                  //You can modify it to use other layers with polygon or line geometry if needed.  
+                  var lyr = MapView.Active.Map.GetLayersAsFlattenedList().OfType&lt;FeatureLayer&gt;().FirstOrDefault(s => s.ShapeType == esriGeometryType.esriGeometryPoint);  
+                  //TODO: Modify this line below to experiment with the different renderers  
+                  await UniqueValueRenderers.UniqueValueRenderer(lyr);  
+                }  
+                ```
+            1. After modifying the OnClickMethod build the solution and click the start button to open Pro.  
+            1. Open any project and test the Apply Renderer button again.
+            ![UI](screenshots/Renderers.png)
+            </remarks>
+        </member>
+        <member name="P:Renderer.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:Renderer.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="M:Renderer.ProportionalRenderers.ProportionalRenderer(ArcGIS.Desktop.Mapping.FeatureLayer)">
+            <summary>
+            Renders a feature layer using proportional symbols to draw quantities.
+            ![Proportional Symbols renderer](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/proportional-renderer.png)
+            </summary>
+            <remarks></remarks>
+            <param name="featureLayer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Renderer.SimpleRenderers.SimpleRendererPolygon(ArcGIS.Desktop.Mapping.FeatureLayer)">
+            <summary>
+            Renders a Polygon feature layer using a single symbol.
+            </summary>
+            <remarks>
+            ![Simple Renderer for Polygon features](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/simple-polygon.png)
+            </remarks>
+            <param name="featureLayer"></param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:Renderer.SimpleRenderers.SimpleRendererPoint(ArcGIS.Desktop.Mapping.FeatureLayer)">
+            <summary>
+            Renders a Point feature layer using a single symbol.
+            </summary>
+            <remarks>
+            ![Simple Renderer for Point features](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/simple-point.png)
+            </remarks>
+            <param name="featureLayer"></param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:Renderer.SimpleRenderers.SimpleRendererLine(ArcGIS.Desktop.Mapping.FeatureLayer)">
+            <summary>
+            Renders a Line feature layer using a single symbol.
+            </summary>
+            <remarks>
+            ![Simple Renderer for Line features](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/simple-line.png)
+            </remarks>
+            <param name="featureLayer"></param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:Renderer.UniqueValueRenderers.UniqueValueRenderer(ArcGIS.Desktop.Mapping.FeatureLayer)">
+            <summary>
+            Renders a feature layer using unique values from one or multiple fields
+            </summary>
+            <remarks>
+            ![Unique Value renderer](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/unique-value.png)
+            </remarks>
+            <param name="featureLayer"></param>
+            <returns>
+            ![Unique Value renderer](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/unique-value.png)
+            </returns>
+        </member>
+    </members>
+</doc>

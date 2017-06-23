@@ -55,16 +55,16 @@
             </Grid.ColumnDefinitions>
             <ListBox Grid.Row="0" Grid.Column="0" Name="LstMaps" ItemsSource="{Binding ListOfMaps}" 
                      Margin="5" DisplayMemberPath="Name" SelectedItem="{Binding SelectedMap, Mode=TwoWay}"
-                     BorderBrush="{DynamicResource Esri_Gray160}" BorderThickness="2"
-                     ItemContainerStyle="{DynamicResource Esri_HighlightListBoxItem}">
+                     BorderBrush="{DynamicResource Esri_BorderBrush}" BorderThickness="2"
+                     ItemContainerStyle="{DynamicResource Esri_ListBoxItemHighlightBrush}">
             </ListBox>
             <Button Grid.Row="0" Grid.Column="1" Height="25" Margin="5" Command="{Binding RetrieveMapsCommand}"
-                    Style="{DynamicResource Esri_SimpleButton}">Get Maps</Button>
+                    Style="{DynamicResource Esri_Button}">Get Maps</Button>
             <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Name="LstBookmarks" 
                      ItemsSource="{Binding ListOfBookmarks}" Margin="5" 
                      DisplayMemberPath="Name" SelectedItem="{Binding SelectedBookmark, Mode=TwoWay}"
-                     BorderBrush="{DynamicResource Esri_Gray160}" BorderThickness="2"
-                     ItemContainerStyle="{DynamicResource Esri_HighlightListBoxItem}"/>
+                     BorderBrush="{DynamicResource Esri_BorderBrush}" BorderThickness="2"
+                     ItemContainerStyle="{DynamicResource Esri_ListBoxItemHighlightBrush}"/>
         </Grid>
     </Grid>
 </UserControl>

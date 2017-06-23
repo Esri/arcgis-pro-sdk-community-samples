@@ -27,17 +27,18 @@ namespace FeatureDynamicMenu
  /// </summary>
  /// <remarks>
  /// 1. In Visual Studio click the Build menu. Then select Build Solution.
- /// 2. Click Start button to open ArcGIS Pro.
- /// 3. ArcGIS Pro will open. 
- /// 4. Open a map view. The map should contain a few feature layers.
- /// 5. Click on the Add-In tab on the ribbon.
- /// 5. Within this tab there is a Display Dynamic Menu tool. Click it to activate the tool.
- /// 6. In the map click a point around which you want to identify features and display them in a dynamic menu.
- /// 7. A dynamic menu with the OIds of the features selected will display.
- /// 8. Click one of the items in the menu. You will see the feature flash on the map and their attributes will be displayed in a pop-up.
+ /// 1. This solution is using the **Extended.Wpf.Toolkit NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Extended.Wpf.Toolkit".
+ /// 1. Click Start button to open ArcGIS Pro.
+ /// 1. ArcGIS Pro will open. 
+ /// 1. Open a map view. The map should contain a few feature layers.
+ /// 1. Click on the Add-In tab on the ribbon.
+ /// 1. Within this tab there is a Display Dynamic Menu tool. Click it to activate the tool.
+ /// 1. In the map click a point around which you want to identify features and display them in a dynamic menu.
+ /// 1. A dynamic menu with the OIds of the features selected will display.
+ /// 1. Click one of the items in the menu. You will see the feature flash on the map and their attributes will be displayed in a pop-up.
  ///![UI](Screenshots/DynamicMenu.png)
  /// </remarks>
-    internal class Module1 : Module
+  internal class Module1 : Module
     {
         private static Module1 _this = null;
 

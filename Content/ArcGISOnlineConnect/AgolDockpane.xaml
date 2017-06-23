@@ -63,7 +63,7 @@
                 <RowDefinition Height="Auto" MinHeight="100" ></RowDefinition>
                 <RowDefinition Height="*" ></RowDefinition>
             </Grid.RowDefinitions>
-            <DataGrid Grid.Row="0" Margin="10,0,10,0" ItemsSource="{Binding CallParams}" AutoGenerateColumns="False" CanUserAddRows="False" HeadersVisibility="Column" Style="{DynamicResource Esri_DataGridStyle}" IsReadOnly="False" >
+            <DataGrid Grid.Row="0" Margin="10,0,10,0" ItemsSource="{Binding CallParams}" AutoGenerateColumns="False" CanUserAddRows="False" HeadersVisibility="Column" Style="{DynamicResource Esri_DataGrid}" IsReadOnly="False" >
                 <DataGrid.Resources>
                     <DataTemplate x:Key="cellTemplate">
                         <TextBlock Text="{Binding Param}" Style="{DynamicResource ProTextStyle}"/>
@@ -86,7 +86,7 @@
                 </DataGrid.Columns>
             </DataGrid>
             <Button Grid.Row="1" Command="{Binding CommandDoQuery}" Margin="10,5,10,5" Content="{Binding CommandQuery}" 
-                    Style="{DynamicResource Esri_SimpleButton}"></Button>
+                    Style="{DynamicResource Esri_Button}"></Button>
         </Grid>
         <TextBox Grid.Row="4" Text="{Binding QueryResult}" TextWrapping="Wrap" Margin="10,0,10,0" MinHeight="200" VerticalScrollBarVisibility="Auto" ></TextBox>
     </Grid>

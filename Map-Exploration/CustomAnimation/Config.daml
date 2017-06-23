@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <!--
 //   Copyright 2014 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,12 +14,12 @@
 //   limitations under the License. 
 -->
 <ArcGIS defaultAssembly="CustomAnimation.dll" defaultNamespace="CustomAnimation" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{5fc28b12-dad5-4a18-9e09-0d888cdf3a2b}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{5fc28b12-dad5-4a18-9e09-0d888cdf3a2b}" version="1.0" desktopVersion="2.0.0">
     <Name>Custom Animation</Name>
     <Description>Adds commands to the ribbon to create custom animations.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>Esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>11/30/2015 5:30:00 PM, 2015</Date>
     <Subject>Map Exploration</Subject>
   </AddInInfo>

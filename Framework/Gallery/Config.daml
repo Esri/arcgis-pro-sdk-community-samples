@@ -12,12 +12,12 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License. -->
 <ArcGIS defaultAssembly="GalleryDemo.dll" defaultNamespace="GalleryDemo" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{ae90a9fa-66a9-4f4f-91ba-bd7af0a7508a}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{ae90a9fa-66a9-4f4f-91ba-bd7af0a7508a}" version="1.0" desktopVersion="2.0.0">
     <Name>GalleryDemo</Name>
     <Description>GalleryDemo description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>uma2526</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>3/3/2017 5:45:07 AM, 2017</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:
@@ -44,7 +44,7 @@
         <!-- add your controls here -->
       </controls>
       <galleries>
-        <gallery id="GalleryDemo_WebMapsGallery" caption="Web Maps Gallery" className="WebMapsGallery" itemsInRow="5" dataTemplateFile="pack://application:,,,/GalleryDemo;component//WebMapsGalleryTemplate.xaml" templateID="WebMapsGalleryItemTemplate" resizable="true" largeImage="Images\GenericButtonOrange32.png" keytip="z3">
+        <gallery id="GalleryDemo_WebMapsGallery" showGroup="true" caption="Web Maps Gallery" className="WebMapsGallery" itemsInRow="5" dataTemplateFile="pack://application:,,,/GalleryDemo;component//WebMapsGalleryTemplate.xaml" templateID="WebMapsGalleryItemTemplate" resizable="true" largeImage="Images\GenericButtonOrange32.png" keytip="z3">
           <tooltip heading="Web Maps">Tooltip text<disabledText /></tooltip>
         </gallery>
       </galleries>

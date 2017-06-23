@@ -26,6 +26,7 @@ using ArcGIS.Desktop.Catalog;
 using ArcGIS.Desktop.Core;
 using System.Windows.Data;
 using ReplaceAttachments.Util;
+using System.Threading.Tasks;
 
 namespace ReplaceAttachments
 {
@@ -42,16 +43,23 @@ namespace ReplaceAttachments
         protected AttachmentsDockpaneViewModel() {
             // when a new mapview is coming in we need to update the list of layers
             ArcGIS.Desktop.Mapping.Events.ActiveMapViewChangedEvent.Subscribe(OnMapViewChanged);
-
+            
             BindingOperations.EnableCollectionSynchronization(_layers, _lockCollections);
             BindingOperations.EnableCollectionSynchronization(_relationshipClasses, _lockCollections);
             BindingOperations.EnableCollectionSynchronization(_attachmentNames, _lockCollections);
         }
 
+        protected override Task InitializeAsync()
+        {
+            if (MapView.Active != null) UpdateLayers(MapView.Active.Map);
+            return Task.FromResult(0);
+        }
+
+
         private void OnMapViewChanged (ArcGIS.Desktop.Mapping.Events.ActiveMapViewChangedEventArgs args)
         {
             if (args.IncomingView == null) return;
-            UpdateLayers();
+            UpdateLayers(args.IncomingView.Map);
         }
 
         /// <summary>
@@ -269,7 +277,7 @@ namespace ReplaceAttachments
                              while (rowCursor.MoveNext())
                              {
                                  using (Row row = rowCursor.Current)
-                                 {
+                                 {   
                                      IEnumerable<Attachment> attachments = row.GetAttachments(null, true).Where(attachment => attachment.GetName().Equals(oldAttachmentName));
                                      foreach (Attachment attachment in attachments)
                                      {
@@ -313,12 +321,12 @@ namespace ReplaceAttachments
         /// <summary>
         /// This method will populate the Layers (bound to the LayersComboBox) with all the Feature Layers present in the Active Map View
         /// </summary>
-        public void UpdateLayers()
+        public void UpdateLayers(Map map)
         {
             lock (_lockCollections)
             {
                 _layers.Clear();
-                _layers.AddRange(new ObservableCollection<string>(MapView.Active.Map.Layers.Where(layer => layer is FeatureLayer).Select(layer => layer.Name)));
+                _layers.AddRange(new ObservableCollection<string>(map.Layers.Where(layer => layer is FeatureLayer).Select(layer => layer.Name)));
             }
         }
 

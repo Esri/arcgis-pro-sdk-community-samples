@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
 <!--
 
    Copyright 2017 Esri
@@ -22,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="DriveTimeGP.dll" defaultNamespace="DriveTimeGP" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{02c77acd-818a-4374-87fb-d2b66e4296a1}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{02c77acd-818a-4374-87fb-d2b66e4296a1}" version="1.0" desktopVersion="2.0.0">
     <Name>DriveTimeGP</Name>
     <Description>DriveTimeGP description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>venu4461</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>6/4/2015 3:58:33 PM, 2015</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

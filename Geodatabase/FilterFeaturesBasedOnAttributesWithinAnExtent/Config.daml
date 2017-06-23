@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <!--
 
    Copyright 2017 Esri
@@ -19,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="FilterFeaturesBasedOnAttributesWithinAnExtent.dll" defaultNamespace="FilterFeaturesBasedOnAttributesWithinAnExtent" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{90708d5f-75c5-4764-8a90-3a925bc380bc}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{90708d5f-75c5-4764-8a90-3a925bc380bc}" version="1.0" desktopVersion="2.0.0">
     <Name>FilterFeaturesBasedOnAttributesWithinAnExtent</Name>
     <Description>Find all features with matching attributes within the selected extent</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>Pro SDK Team</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>4/15/2015 3:09:34 PM, 2015</Date>
     <Subject>Geodatabase</Subject>
     <!-- Note subject can be one or more of these topics:

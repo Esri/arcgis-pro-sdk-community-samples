@@ -162,8 +162,8 @@ namespace OverlayExamples
         /// <summary>Create a linesymbol with circle markers on the ends</summary>
         internal static Task<CIMLineSymbol> CreateLineSymbolAsync() {
             return QueuedTask.Run(() => {
-                var lineStroke = SymbolFactory.ConstructStroke(ColorFactory.RedRGB, 4.0);
-                var marker = SymbolFactory.ConstructMarker(ColorFactory.RedRGB, 12, SimpleMarkerStyle.Circle);
+                var lineStroke = SymbolFactory.Instance.ConstructStroke(ColorFactory.Instance.RedRGB, 4.0);
+                var marker = SymbolFactory.Instance.ConstructMarker(ColorFactory.Instance.RedRGB, 12, SimpleMarkerStyle.Circle);
                 marker.MarkerPlacement = new CIMMarkerPlacementOnVertices() {
                     AngleToLine = true,
                     PlaceOnEndPoints = true,
@@ -181,7 +181,7 @@ namespace OverlayExamples
         /// <returns></returns>
         internal static Task<CIMPointSymbol> CreatePointSymbolAsync() {
             return QueuedTask.Run(() => {
-                return SymbolFactory.ConstructPointSymbol(ColorFactory.RedRGB, 14, SimpleMarkerStyle.Circle);
+                return SymbolFactory.Instance.ConstructPointSymbol(ColorFactory.Instance.RedRGB, 14, SimpleMarkerStyle.Circle);
             });
         }
 

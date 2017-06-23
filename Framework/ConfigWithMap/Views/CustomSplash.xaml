@@ -45,9 +45,6 @@
             From="0" To="360" Duration="0:0:4"
             RepeatBehavior="Forever"/>
       </Storyboard>-->
-      <!--<ResourceDictionary.MergedDictionaries>
-        <frameworkInternal:DesignModeResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
-      </ResourceDictionary.MergedDictionaries>-->
     </ResourceDictionary>
   </Window.Resources>
 

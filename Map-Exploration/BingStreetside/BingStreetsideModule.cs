@@ -136,9 +136,9 @@ namespace BingStreetside
         {
             QueuedTask.Run(() =>
             {
-                var markerCoordPoint = SymbolFactory.ConstructMarker(ColorFactory.GreenRGB, 12,
+                var markerCoordPoint = SymbolFactory.Instance.ConstructMarker(ColorFactory.Instance.GreenRGB, 12,
                     SimpleMarkerStyle.Circle);
-                _pointCoordSymbol = SymbolFactory.ConstructPointSymbol(markerCoordPoint);
+                _pointCoordSymbol = SymbolFactory.Instance.ConstructPointSymbol(markerCoordPoint);
             });
         }
 
@@ -165,7 +165,7 @@ namespace BingStreetside
                     if (longitude.HasValue && latitude.HasValue)
                     {
                         var pt = MapPointBuilder.CreateMapPoint(longitude.Value, latitude.Value, SpatialReferences.WGS84);
-                        var center = GeometryEngine.Project(pt, activeMapView.Map.SpatialReference) as MapPoint;
+                        var center = GeometryEngine.Instance.Project(pt, activeMapView.Map.SpatialReference) as MapPoint;
                         if (center == null) return;
                         ShowCurrentBingMapCoord(center);
 
@@ -173,7 +173,7 @@ namespace BingStreetside
 
                         // check if the center is outside the map view extent
                         var env = activeMapView.Extent.Expand(0.75, 0.75, true);
-                        var bWithin = GeometryEngine.Within(center, env);
+                        var bWithin = GeometryEngine.Instance.Within(center, env);
                         if (!bWithin)
                         {
                             cam.X = center.X;

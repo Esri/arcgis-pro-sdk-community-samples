@@ -19,12 +19,12 @@
 -->
 
 <ArcGIS defaultAssembly="ConstructMarkerFromFont.dll" defaultNamespace="ConstructMarkerFromFont" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{fd270356-f2da-4c4c-9b4d-39819ee019d6}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{fd270356-f2da-4c4c-9b4d-39819ee019d6}" version="1.0" desktopVersion="2.0.0">
     <Name>ConstructMarkerFromFont</Name>
     <Description>Create a marker from a Font character and apply to a point layer.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team</Author>
-    <Company>Esri, Inc</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>5/25/2016 1:41:29 PM, 2016</Date>
     <Subject>Map Authoring</Subject>
     <!-- Note subject can be one or more of these topics:

@@ -77,7 +77,8 @@ namespace DomainsUsage
                         return;
                     try
                     {
-                        enterpriseDatabaseType = (table.GetDatastore() as Geodatabase).GetEnterpriseDatabaseType();
+                        var gdb = table.GetDatastore() as Geodatabase;
+                        enterpriseDatabaseType = (gdb.GetConnector() as DatabaseConnectionProperties).DBMS;
                     }
                     catch (InvalidOperationException e)
                     {
@@ -92,53 +93,53 @@ namespace DomainsUsage
 
             Enabled = true;
             Clear();
-            QueuedTask.Run(() =>
-            {
-                using (Table table = (mapViewEventArgs.MapView.GetSelectedLayers()[0] as FeatureLayer).GetTable())
-                {
-                    var geodatabase = table.GetDatastore() as Geodatabase;
-                    Version defaultVersion = geodatabase.GetVersionManager().GetVersions().FirstOrDefault(version =>
-                    {
-                        string name = version.GetName();
-                        return name.ToLowerInvariant().Equals("dbo.default") || name.ToLowerInvariant().Equals("sde.default");
-                    });
-                    if (defaultVersion == null)
-                        return;
+            await QueuedTask.Run(() =>
+             {
+                 using (Table table = (mapViewEventArgs.MapView.GetSelectedLayers()[0] as FeatureLayer).GetTable())
+                 {
+                     var geodatabase = table.GetDatastore() as Geodatabase;
+                     Version defaultVersion = geodatabase.GetVersionManager().GetVersions().FirstOrDefault(version =>
+                     {
+                         string name = version.GetName();
+                         return name.ToLowerInvariant().Equals("dbo.default") || name.ToLowerInvariant().Equals("sde.default");
+                     });
+                     if (defaultVersion == null)
+                         return;
 
 
-                    string tableName = String.Format("NewTable{0}{1}{2}{3}", DateTime.Now.Hour, DateTime.Now.Minute,
-                        DateTime.Now.Second, DateTime.Now.Millisecond);
-                    gdbItemsOwner = defaultVersion.GetName().Split('.')[0];
-                    string statement =
-                        String.Format(
-                            @"select {1}.GDB_ITEMTYPES.Name as Type, {1}.GDB_ITEMS.Name into {0} from {1}.GDB_ITEMS JOIN {1}.GDB_ITEMTYPES ON {1}.GDB_ITEMS.Type = {1}.GDB_ITEMTYPES.UUID where {1}.GDB_ITEMTYPES.Name = 'Domain' OR {1}.GDB_ITEMTYPES.Name = 'Coded Value Domain' OR {1}.GDB_ITEMTYPES.Name = 'Range Domain'",
-                            tableName, gdbItemsOwner);
-                    try
-                    {
-                        DatabaseClient.ExecuteStatement(geodatabase, statement);
-                    }
-                    catch (GeodatabaseTableException exception)
-                    {
-                        MessageBox.Show(exception.Message);
-                        return;
-                    }
+                     string tableName = String.Format("NewTable{0}{1}{2}{3}", DateTime.Now.Hour, DateTime.Now.Minute,
+                         DateTime.Now.Second, DateTime.Now.Millisecond);
+                     gdbItemsOwner = defaultVersion.GetName().Split('.')[0];
+                     string statement =
+                         String.Format(
+                             @"select {1}.GDB_ITEMTYPES.Name as Type, {1}.GDB_ITEMS.Name into {0} from {1}.GDB_ITEMS JOIN {1}.GDB_ITEMTYPES ON {1}.GDB_ITEMS.Type = {1}.GDB_ITEMTYPES.UUID where {1}.GDB_ITEMTYPES.Name = 'Domain' OR {1}.GDB_ITEMTYPES.Name = 'Coded Value Domain' OR {1}.GDB_ITEMTYPES.Name = 'Range Domain'",
+                             tableName, gdbItemsOwner);
+                     try
+                     {
+                         DatabaseClient.ExecuteStatement(geodatabase, statement);
+                     }
+                     catch (GeodatabaseTableException exception)
+                     {
+                         MessageBox.Show(exception.Message);
+                         return;
+                     }
 
-                    var newTable = geodatabase.OpenDataset<Table>(tableName);
+                     var newTable = geodatabase.OpenDataset<Table>(tableName);
 
-                    using (RowCursor rowCursor = newTable.Search(null, false))
-                    {
-                        while (rowCursor.MoveNext())
-                        {
-                            using (Row row = rowCursor.Current)
-                            {
-                                Add(new ComboBoxItem(row["Name"].ToString()));
-                            }
-                        }
-                    }
-                    statement = String.Format(@"DROP TABLE {0}", tableName);
-                    DatabaseClient.ExecuteStatement(geodatabase, statement);
-                }
-            });
+                     using (RowCursor rowCursor = newTable.Search(null, false))
+                     {
+                         while (rowCursor.MoveNext())
+                         {
+                             using (Row row = rowCursor.Current)
+                             {
+                                 Add(new ComboBoxItem(row["Name"].ToString()));
+                             }
+                         }
+                     }
+                     statement = String.Format(@"DROP TABLE {0}", tableName);
+                     DatabaseClient.ExecuteStatement(geodatabase, statement);
+                 }
+             });
         }
 
         /// <summary>

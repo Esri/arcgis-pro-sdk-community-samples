@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WizardSample</name>
+    </assembly>
+    <members>
+        <member name="T:WizardSample.Module1">
+            <summary>
+            This sample illustrates the usage of the ArcGIS Pro Framework's Wizard Control.  
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu then select Build Solution. 
+            1. Click Start button to debug this add-in in ArcGIS Pro.
+            1. In ArcGIS Pro open any project.  
+            1. Select the 'Add-in' tab on the ArcGIS Pro ribbon, you should see the 'Show Wizard' button  
+            1. Click the button and see the wizard dialog open.  
+            ![UI](Screenshots/Screenshot1.png)
+            </remarks>
+        </member>
+        <member name="P:WizardSample.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:WizardSample.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="T:WizardSample.UI.WizardPageContent">
+            <summary>
+            Interaction logic for WizardPageContent.xaml
+            </summary>
+            <summary>
+            WizardPageContent
+            </summary>
+        </member>
+        <member name="M:WizardSample.UI.WizardPageContent.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:WizardSample.UI.SampleWizardData">
+            <summary>
+            A custom class of your own design if you need something to
+            hold state that can be passed from page to page.
+            </summary>
+        </member>
+        <member name="M:WizardSample.UI.SampleWizardData.NotifyPropertyChanged(System.String)">
+            <summary>
+            When using a DataTemplate (as we are in our wizard page UI) the
+            templated class must support property notification or the displayed
+            content won't refresh.
+            </summary>
+        </member>
+        <member name="T:WizardSample.UI.StepBase">
+            <summary>
+            You don't necessarily need your own base class, just make sure that each
+            page of content in your wizard inherits from ArcGIS.Desktop.Framework.Contracts.WizardPage
+            </summary>
+            <remarks>Two points:<br/>
+            1. Set IsValid to true to enable "Next" if isPageListVisible="false" (in the Config.daml).<br/>
+            2. Set IsValid to true on ~all~ the pages to enable Finish.
+            </remarks>
+        </member>
+        <member name="P:WizardSample.UI.StepBase.ChangeDataCommand">
+            <summary>
+            Gets the command that will update wizard page content
+            </summary>
+        </member>
+        <member name="P:WizardSample.UI.StepBase.WizardContent">
+            <summary>
+            Gets the wizard data available to all the pages
+            </summary>
+        </member>
+        <member name="P:WizardSample.UI.StepBase.IsValid">
+            <summary>
+            Gets whether the page is valid or not.
+            </summary>
+            <remarks>Must be set to true to enable the Next button if isPageListVisible="false". 
+            Must set to true to enable the Finish button (regardless of isPageListVisible).</remarks>
+        </member>
+        <member name="M:WizardSample.UI.StepBase.NotifyPropertyChanged(System.String)">
+            <summary>
+            Raises the PropertyChanged event for the specified property.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>

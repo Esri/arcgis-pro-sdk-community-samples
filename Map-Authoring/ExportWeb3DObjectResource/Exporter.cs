@@ -31,28 +31,6 @@ namespace ExportWeb3DObjectResource
     /// </summary>
     public static class Exporter
     {
-        //Downscale factor
-        //Value should be between 0 and 1
-        //If downscale factor is 0 THEN textures are dropped
-        private static double _downscaleFactor = 1;
-        public static double DownscaleFactor
-        {
-            get { return _downscaleFactor; }
-
-            set { _downscaleFactor = value; }
-        }
-
-        //Max texture dimension
-        //Should be between 0 and 4096
-        //If max texture dimension is 0 THEN textures are dropped
-        private static int _maxTextureDimension = 512;
-        public static int MaxTextureDimension
-        {
-            get { return _maxTextureDimension; }
-
-            set { _maxTextureDimension = value; }
-        }
-
         //Exporting logic
         public static async Task Export3DMarkerSymbols()
         {
@@ -60,7 +38,7 @@ namespace ExportWeb3DObjectResource
             if (activeMapView == null)
                 return;
 
-            CIMMarker3D mrkr3D = null;
+            CIMObjectMarker3D mrkr3D = null;
             var selectedLayers = activeMapView.GetSelectedLayers();
             if (selectedLayers.Count == 0)
             {
@@ -74,82 +52,86 @@ namespace ExportWeb3DObjectResource
 
             await QueuedTask.Run(() =>
             {
-                foreach (FeatureLayer ftrLayer in selectedLayers)
+              foreach (Layer layer in selectedLayers)
+              {
+                if (layer is FeatureLayer)
                 {
-                    CIMRenderer currentRenderer = ftrLayer.GetRenderer();
+                  FeatureLayer ftrLayer = layer as FeatureLayer;
+                  CIMRenderer currentRenderer = ftrLayer.GetRenderer();
 
-                    if (currentRenderer is CIMSimpleRenderer)
+                  if (currentRenderer is CIMSimpleRenderer)
+                  {
+                    //Get simple renderer from feature layer
+                    CIMSimpleRenderer simpleRenderer = currentRenderer as CIMSimpleRenderer;
+                    CIMPointSymbol ptSymbol = simpleRenderer.Symbol.Symbol as CIMPointSymbol;
+                    if (ptSymbol != null)
                     {
-                        //Get simple renderer from feature layer
-                        CIMSimpleRenderer simpleRenderer = currentRenderer as CIMSimpleRenderer;
-                        CIMPointSymbol ptSymbol = simpleRenderer.Symbol.Symbol as CIMPointSymbol;
+                      var symbolLayers = ptSymbol.SymbolLayers;
+                      int count = 0;
+                      foreach (CIMSymbolLayer s in symbolLayers)
+                      {
+                        mrkr3D = s as CIMObjectMarker3D;
+                        if (mrkr3D != null)
+                        {
+                          string output = outputFolder + "\\" + ftrLayer.Name + "_" + count.ToString() + ".json";
+                          if (File.Exists(output))
+                          {
+                            ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Following file already exists: " + output);
+                          }
+                          else
+                          {
+                            bool success = mrkr3D.ExportWeb3DObjectResource(output);
+                            if (!success)
+                              //Export will fail if the 3D marker symbol being exported is a restricted symbol
+                              ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Export failed for: " + output);
+                          }
+                          count++;
+                        }
+                      }
+                    }
+                  }
+
+                  else if (currentRenderer is CIMUniqueValueRenderer)
+                  {
+                    //Get unique value renderer from feature layer
+                    CIMUniqueValueRenderer uniqueRenderer = currentRenderer as CIMUniqueValueRenderer;
+                    CIMUniqueValueGroup[] uv_group = uniqueRenderer.Groups;
+                    foreach (CIMUniqueValueGroup v in uv_group)
+                    {
+                      CIMUniqueValueClass[] uv_classes = v.Classes;
+                      foreach (CIMUniqueValueClass uv_class in uv_classes)
+                      {
+                        CIMPointSymbol ptSymbol = uv_class.Symbol.Symbol as CIMPointSymbol;
                         if (ptSymbol != null)
                         {
-                            var symbolLayers = ptSymbol.SymbolLayers;
-                            int count = 0;
-                            foreach (CIMSymbolLayer s in symbolLayers)
+                          var symbolLayers = ptSymbol.SymbolLayers;
+                          int count = 0;
+                          foreach (CIMSymbolLayer s in symbolLayers)
+                          {
+                            mrkr3D = s as CIMObjectMarker3D;
+                            if (mrkr3D != null)
                             {
-                                mrkr3D = s as CIMMarker3D;
-                                if (mrkr3D != null)
-                                {
-                                    string output = outputFolder + "\\" + ftrLayer.Name + "_" + count.ToString() + ".json";
-                                    if (File.Exists(output))
-                                    {
-                                        ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Following file already exists: " + output);
-                                    }
-                                    else
-                                    {
-                                        bool success = mrkr3D.ExportWeb3DObjectResource(output, DownscaleFactor, MaxTextureDimension);
-                                        if (!success)
-                                            //Export will fail if the 3D marker symbol being exported is a restricted symbol
-                                            ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Export failed for: " + output);
-                                    }
-                                    count++;
-                                }
+                              string output = outputFolder + "\\" + ftrLayer.Name + "_" + uv_class.Label + "_" + count.ToString() + ".json";
+                              if (File.Exists(output))
+                              {
+                                ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Following file already exists: " + output);
+                              }
+                              else
+                              {
+                                bool success = mrkr3D.ExportWeb3DObjectResource(output);
+                                if (!success)
+                                  //Export will fail if the 3D marker symbol being exported is a restricted symbol
+                                  ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Export failed for: " + output);
+                              }
+                              count++;
                             }
+                          }
                         }
+                      }
                     }
-
-                    else if (currentRenderer is CIMUniqueValueRenderer)
-                    {
-                        //Get unique value renderer from feature layer
-                        CIMUniqueValueRenderer uniqueRenderer = currentRenderer as CIMUniqueValueRenderer;
-                        CIMUniqueValueGroup[] uv_group = uniqueRenderer.Groups;
-                        foreach (CIMUniqueValueGroup v in uv_group)
-                        {
-                            CIMUniqueValueClass[] uv_classes = v.Classes;
-                            foreach (CIMUniqueValueClass uv_class in uv_classes)
-                            {
-                                CIMPointSymbol ptSymbol = uv_class.Symbol.Symbol as CIMPointSymbol;
-                                if (ptSymbol != null)
-                                {
-                                    var symbolLayers = ptSymbol.SymbolLayers;
-                                    int count = 0;
-                                    foreach (CIMSymbolLayer s in symbolLayers)
-                                    {
-                                        mrkr3D = s as CIMMarker3D;
-                                        if (mrkr3D != null)
-                                        {
-                                            string output = outputFolder + "\\" + ftrLayer.Name + "_" + uv_class.Label + "_" + count.ToString() + ".json";
-                                            if (File.Exists(output))
-                                            {
-                                                ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Following file already exists: " + output);
-                                            }
-                                            else
-                                            {
-                                                bool success = mrkr3D.ExportWeb3DObjectResource(output, DownscaleFactor, MaxTextureDimension);
-                                                if (!success)
-                                                    //Export will fail if the 3D marker symbol being exported is a restricted symbol
-                                                    ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Export failed for: " + output);
-                                            }
-                                            count++;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+                  }
                 }
+              }
             });
         }
 
@@ -159,5 +141,13 @@ namespace ExportWeb3DObjectResource
             string selectedFolder = browseDialog.SelectFolder("Select output folder for files", "", IntPtr.Zero);
             return selectedFolder;
         }
+    }
+
+    internal class ExportButton : ArcGIS.Desktop.Framework.Contracts.Button
+  {
+      protected async override void OnClick()
+      {
+        await Exporter.Export3DMarkerSymbols();
+      }
     }
 }

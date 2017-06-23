@@ -33,7 +33,7 @@ namespace DivideLines
 {
   class DivideLinesViewModel : EmbeddableControl
   {
-    public DivideLinesViewModel(System.Xml.Linq.XElement options) : base(options) { }
+    public DivideLinesViewModel(System.Xml.Linq.XElement options, bool canChangeOptions) : base(options, canChangeOptions) { }
 
     #region EmbeddableControl interface
     private bool _designMode;
@@ -71,7 +71,7 @@ namespace DivideLines
     {
       await base.OpenAsync();
       if (DesignMode) return;
-      
+
       // Make sure tool is active (if not already).
       await FrameworkApplication.SetCurrentToolAsync("esri_sample_divideLinesTool");
 
@@ -79,7 +79,7 @@ namespace DivideLines
       NotifyPropertyChanged(() => OKCommand);
 
       ArcGIS.Desktop.Mapping.Events.MapSelectionChangedEvent.Subscribe(OnSelectionChanged);
-      await QueuedTask.Run(async () => _cachedValue = await CheckSelectionAsync(MapView.Active.Map.GetSelection()));
+      await QueuedTask.Run(() => _cachedValue = CheckSelection(MapView.Active.Map.GetSelection()));
     }
 
     public override Task CloseAsync()
@@ -96,7 +96,7 @@ namespace DivideLines
     public bool IsNumberOfParts
     {
       get { return _isNumberOfParts; }
-      set 
+      set
       {
         if (SetProperty(ref _isNumberOfParts, value, () => IsNumberOfParts))
           NotifyPropertyChanged(() => IsDistance);
@@ -108,7 +108,7 @@ namespace DivideLines
       get { return !_isNumberOfParts; }
       set { IsNumberOfParts = !value; }
     }
-    
+
     private static double _value = 2;
     public double Value
     {
@@ -118,15 +118,15 @@ namespace DivideLines
     #endregion
 
     #region Implementation
-    private async void OnSelectionChanged(MapSelectionChangedEventArgs obj)
+    private void OnSelectionChanged(MapSelectionChangedEventArgs obj)
     {
       if (obj.Map != MapView.Active.Map) return;
 
       _cachedValue = false;
-      _cachedValue = await CheckSelectionAsync(obj.Selection);
+      _cachedValue = CheckSelection(obj.Selection);
     }
 
-    private static async Task<bool> CheckSelectionAsync(Dictionary<MapMember,List<long>> sel)
+    private static bool CheckSelection(Dictionary<MapMember, List<long>> sel)
     {
       //Enable only if we have one selected polyline feature that is editable.
       if (sel == null || sel.Values.Sum(List => List.Count) != 1) return false;
@@ -136,7 +136,7 @@ namespace DivideLines
       if (member is IDisplayTable)
       {
         var dt = member as IDisplayTable;
-        var canEdit = await dt.CanEditDataAsync();
+        var canEdit = dt.CanEditData();
         if (!canEdit) return false;
 
         var flayer = member as FeatureLayer;
@@ -166,39 +166,39 @@ namespace DivideLines
       //Run on MCT
       return QueuedTask.Run(() =>
       {
-        //get selected feature
-        var selectedFeatures = MapView.Active.Map.GetSelection();
+     //get selected feature
+     var selectedFeatures = MapView.Active.Map.GetSelection();
 
-        //get the layer of the selected feature
-        var featLayer = selectedFeatures.Keys.First() as FeatureLayer;
+     //get the layer of the selected feature
+     var featLayer = selectedFeatures.Keys.First() as FeatureLayer;
         var oid = selectedFeatures.Values.First().First();
 
         var feature = featLayer.Inspect(oid);
 
-        //get geometry and length
-        var origPolyLine = feature.Shape as Polyline;
-        var origLength = GeometryEngine.Length(origPolyLine);
+     //get geometry and length
+     var origPolyLine = feature.Shape as Polyline;
+        var origLength = GeometryEngine.Instance.Length(origPolyLine);
 
         string xml = origPolyLine.ToXML();
 
-        //List of mappoint geometries for the split
-        var splitPoints = new List<MapPoint>();
+     //List of mappoint geometries for the split
+     var splitPoints = new List<MapPoint>();
 
         var enteredValue = (numberOfParts) ? origLength / value : value;
         var splitAtDistance = 0 + enteredValue;
 
         while (splitAtDistance < origLength)
         {
-          //create a mapPoint at splitDistance and add to splitpoint list
-          MapPoint pt = null;
+       //create a mapPoint at splitDistance and add to splitpoint list
+       MapPoint pt = null;
           try
           {
-            pt = GeometryEngine.MovePointAlongLine(origPolyLine, splitAtDistance, false, 0, GeometryEngine.SegmentExtension.NoExtension);
+            pt = GeometryEngine.Instance.MovePointAlongLine(origPolyLine, splitAtDistance, false, 0, SegmentExtension.NoExtension);
           }
           catch (GeometryObjectException)
           {
-            // line is an arc?
-          }
+         // line is an arc?
+       }
 
           if (pt != null)
             splitPoints.Add(pt);
@@ -210,16 +210,18 @@ namespace DivideLines
           ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Divide lines was unable to process your selected line. Please select another.", "Divide Lines");
           return;
         }
-        //create and execute the edit operation
-        var op = new EditOperation();
-        op.Name = "Divide Lines";
-        op.SelectModifiedFeatures = false;
-        op.SelectNewFeatures = false;
+     //create and execute the edit operation
+     var op = new EditOperation()
+        {
+          Name = "Divide Lines",
+          SelectModifiedFeatures = false,
+          SelectNewFeatures = false
+        };
         op.SplitAtPoints(featLayer, oid, splitPoints);
         op.Execute();
 
-        //clear selection
-        featLayer.ClearSelection();
+     //clear selection
+     featLayer.ClearSelection();
       });
     }
     #endregion

@@ -1,4 +1,4 @@
-﻿//   Copyright 2014 Esri
+﻿//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -72,18 +72,17 @@ namespace ControlStyles
                 this.NotifyPropertyChanged(() => ListOfButtons);
             }
         }
-        private static readonly string[] ButtonStyles = { "Esri_SimpleButton",
-                                             //"Esri_SimpleToggleButton",
-                                             //"Esri_Button_24",
-                                             "Esri_BackButton",
-                                             "Esri_BackButtonSmall",
-                                             "Esri_ForwardButtonSmall",
-                                             "Esri_ForwardButtonSmall2",
-                                             "Esri_UpButtonSmall",
-                                             "Esri_DownButtonSmall",
-                                             "Esri_BorderlessUpButton",
-                                             "Esri_CloseButton",
-                                             "Esri_SimpleBorderlessButton"
-                                             };
+        private static readonly string[] ButtonStyles = {
+                                              "Esri_Button",
+                                             "Esri_ButtonBack",
+                                             "Esri_ButtonBackSmall",
+                                             "Esri_ButtonForwardSmall",
+                                             "Esri_ButtonForwardSmallBorderless",
+                                             "Esri_ButtonUpSmall",
+                                             "Esri_ButtonDownSmall",
+                                             "Esri_ButtonUpSmallBordless",
+                                             "Esri_ButtonClose",
+                                             "Esri_ButtonBorderless",
+                                              };
     }
 }

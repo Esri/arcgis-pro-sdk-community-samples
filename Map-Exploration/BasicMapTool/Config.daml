@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
 <!--
 
    Copyright 2017 Esri
@@ -22,14 +18,14 @@
 
 -->
 <ArcGIS defaultAssembly="BasicMapTool.dll" defaultNamespace="BasicMapTool" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{44226987-8efd-4d34-b606-3e731c8cd2ad}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{44226987-8efd-4d34-b606-3e731c8cd2ad}" version="1.0" desktopVersion="2.0.0">
     <Name>BasicMapTool</Name>
     <Description>Provides a basic map tool that can be Copy/Paste inherited as a starting point for more
     sophisticated tool development. It has all the basic features such as key handling, simple mouse click
   implementation, and an associated embeddable control that can be moved around the Map View.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>Esri</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>2/11/2016 2:47:23 PM, 2016</Date>
     <Subject>Map Exploration</Subject>
     <!-- Note subject can be one or more of these topics:

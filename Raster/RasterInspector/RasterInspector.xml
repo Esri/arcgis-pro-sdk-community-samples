@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RasterInspector</name>
+    </assembly>
+    <members>
+        <member name="M:RasterInspector.RasterInspectorTool.ConvertArray(System.Array)">
+            <summary>
+            Convert the array of raster values into an array of objects
+            </summary>
+            <param name="arr">Array of raster values.</param>
+            <returns>2D array of raster values cast into object types.</returns>
+        </member>
+        <member name="M:RasterInspector.RasterInspectorTool.OnToolActivateAsync(System.Boolean)">
+            <summary>
+            Happens if the tool is activated.
+            </summary>
+            <param name="active"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RasterInspector.RasterModule">
+            <summary>
+            This sample show how to:
+            * Retrieve raster values
+            </summary>
+            <remarks>
+            1. This solution is using the **Gu.Wpf.DataGrid2D**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package Gu.Wpf.DataGrid2D".
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro will open. 
+            1. Open a project containing a raster layer. Add a raster dataset if needed.
+            1. Select the raster layer in the table of contents.
+            1. Switch to th Add-In tab.
+            1. Click the pixel inspector tool and move the mouse pointer across the raster dataset.
+            ![UI](Screenshots/PixelInspector.png)
+            </remarks>
+        </member>
+        <member name="P:RasterInspector.RasterModule.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:RasterInspector.RasterModule.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="M:RasterInspector.RasterModule.RunOnUIThread(System.Action)">
+            <summary>
+            Utility function to enable an action to run on the UI thread (if not already)
+            </summary>
+            <param name="action">the action to execute</param>
+            <returns></returns>
+        </member>
+        <member name="P:RasterInspector.RasterModule.OnUIThread">
+            <summary>
+            Determines if the application is currently on the UI thread
+            </summary>
+        </member>
+        <member name="T:RasterInspector.RasterValuesPaneView">
+            <summary>
+            Interaction logic for RasterValuesPaneView.xaml
+            </summary>
+            <summary>
+            RasterValuesPaneView
+            </summary>
+        </member>
+        <member name="M:RasterInspector.RasterValuesPaneView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:RasterInspector.RasterValuesPaneViewModel">
+            <summary>
+            View model for the raster values pane.
+            </summary>
+        </member>
+        <member name="M:RasterInspector.RasterValuesPaneViewModel.Show">
+            <summary>
+            Show the DockPane.
+            </summary>
+        </member>
+        <member name="F:RasterInspector.RasterValuesPaneViewModel._heading">
+            <summary>
+            Text shown near the top of the DockPane.
+            </summary>
+        </member>
+        <member name="P:RasterInspector.RasterValuesPaneViewModel.RasterValues">
+            <summary>
+            Raster values read from a 3x3 window at the cursor location.
+            </summary>
+        </member>
+        <member name="T:RasterInspector.RasterValuesPane_ShowButton">
+            <summary>
+            Button implementation to show the DockPane.
+            </summary>
+        </member>
+    </members>
+</doc>

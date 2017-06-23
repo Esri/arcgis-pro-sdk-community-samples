@@ -74,10 +74,12 @@ namespace LivingAtlasOfTheWorld.UI {
             _selResultOption = _resultOptions[0];
             OnlineUriFactory.CreateOnlineUris();
             foreach (var uri in OnlineUriFactory.OnlineUris) {
-                //create a query
-                OnlineQuery query = new OnlineQuery();
-                query.OnlineUri = uri;
-                _browseQueries.Add(query);
+        //create a query
+        OnlineQuery query = new OnlineQuery()
+        {
+          OnlineUri = uri
+        };
+        _browseQueries.Add(query);
             }
 
             //init timer
@@ -238,7 +240,7 @@ namespace LivingAtlasOfTheWorld.UI {
             if (result == null)
                 throw new ApplicationException(string.Format("Debug: bad id {0}",id));
             if (result.Item == null)
-                result.Item = ItemFactory.Create(id, ItemFactory.ItemType.PortalItem);
+                result.Item = ItemFactory.Instance.Create(id, ItemFactory.ItemType.PortalItem);
             // Syntax can get complicated here
             // Question - do you need to await the QueuedTask.Run? If so, you need a Func<Task>
             // and not an Action.
@@ -246,10 +248,10 @@ namespace LivingAtlasOfTheWorld.UI {
             //
             //As it currently stands, this QueuedTask.Run will return to the caller on the first await
             QueuedTask.Run(action: async () => {
-                if (LayerFactory.CanCreateLayerFrom(result.Item))
-                    LayerFactory.CreateLayer(result.Item, MapView.Active.Map);
-                else if (MapFactory.CanCreateMapFrom(result.Item)) {
-                    Map newMap = await MapFactory.CreateMapAsync(result.Item);
+                if (LayerFactory.Instance.CanCreateLayerFrom(result.Item))
+                    LayerFactory.Instance.CreateLayer(result.Item, MapView.Active.Map);
+                else if (MapFactory.Instance.CanCreateMapFrom(result.Item)) {
+                    Map newMap = MapFactory.Instance.CreateMapFromItem(result.Item);
                     IMapPane newMapPane = await ProApp.Panes.CreateMapPaneAsync(newMap);
                 }
                 else {

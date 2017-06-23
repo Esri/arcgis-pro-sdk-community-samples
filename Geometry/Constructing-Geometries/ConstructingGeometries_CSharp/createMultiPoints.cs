@@ -27,80 +27,93 @@ using ArcGIS.Desktop.Mapping;
 
 namespace ConstructingGeometries
 {
-    /// <summary>
-    /// This code sample shows how to build Multipoint objects. 
-    /// 20 random points are generated in the extent of the map extent of the active view.
-    /// </summary>
-    internal class createMultiPoints : Button
+  /// <summary>
+  /// This code sample shows how to build Multipoint objects. 
+  /// 20 random points are generated in the extent of the map extent of the active view.
+  /// </summary>
+  internal class CreateMultiPoints : Button
+  {
+    protected override void OnClick()
     {
-        protected override void OnClick()
-        {
-            // to work in the context of the active display retrieve the current map 
-            Map activeMap = MapView.Active.Map;
+      // to work in the context of the active display retrieve the current map 
+      Map activeMap = MapView.Active.Map;
 
-            // retrieve the first multi-point layer in the map
-            var multiPointFeatureLayer = activeMap.GetLayersAsFlattenedList().OfType<FeatureLayer>().Where(
-                lyr => lyr.ShapeType == ArcGIS.Core.CIM.esriGeometryType.esriGeometryMultipoint).FirstOrDefault();
+      // retrieve the first multi-point layer in the map
+      var multiPointFeatureLayer = activeMap.GetLayersAsFlattenedList().OfType<FeatureLayer>().Where(
+          lyr => lyr.ShapeType == ArcGIS.Core.CIM.esriGeometryType.esriGeometryMultipoint).FirstOrDefault();
 
-            if (multiPointFeatureLayer == null)
-                return;
+      if (multiPointFeatureLayer == null)
+        return;
 
-            // construct multipoint
-            constructSampleMultiPoints(multiPointFeatureLayer);
-        }
-
-        /// <summary>
-        /// Create a single multi-point feature that is comprised of 20 points.
-        /// </summary>
-        /// <param name="multiPointLayer">Multi-point geometry feature layer used to add the multi-point feature.</param>
-        /// <returns></returns>
-        private Task constructSampleMultiPoints(FeatureLayer multiPointLayer)
-        {
-            // create a random number generator
-            var randomGenerator = new Random();
-
-            // the database and geometry interactions are considered fine-grained and need to be executed on
-            // a separate thread
-            return QueuedTask.Run(() =>
-            {
-                // get the feature class associated with the layer
-                var featureClass =  multiPointLayer.GetTable() as FeatureClass;
-                var featureClassDefinition = featureClass.GetDefinition() as FeatureClassDefinition;
-
-                // store the spatial reference as its own variable
-                var spatialReference = featureClassDefinition.GetSpatialReference();
-
-                // define an area of interest. Random points are generated in the allowed
-                // confines of the allow extent range
-                var areaOfInterest = MapView.Active.Extent;
-
-                // start an edit operation to create new (random) multi-point feature
-                var createOperation = new EditOperation();
-                createOperation.Name = "Generate multipoints";
-
-                // retrieve the class definition of the point feature class
-                var classDefinition = featureClass.GetDefinition() as FeatureClassDefinition;
-
-                // create a list to hold the 20 coordinates of the multi-point feature
-                IList<Coordinate> coordinateList = new List<Coordinate>(20);
-
-                for (int i = 0; i < 20; i++)
-                {
-                    // generate either 2D or 3D geometries
-                    if (classDefinition.HasZ())
-                        coordinateList.Add(randomGenerator.NextCoordinate(areaOfInterest, true));
-                    else
-                        coordinateList.Add(randomGenerator.NextCoordinate(areaOfInterest, false));
-                }
-
-                var newPoints = MultipointBuilder.CreateMultipoint(coordinateList, classDefinition.GetSpatialReference());
-                // create and execute the feature creation operation
-                createOperation.Create(multiPointLayer, newPoints);
-
-                return createOperation.ExecuteAsync();
-            });
-        }
-
-
+      // construct multipoint
+      ConstructSampleMultiPoints(multiPointFeatureLayer);
     }
+
+    /// <summary>
+    /// Create a single multi-point feature that is comprised of 20 points.
+    /// </summary>
+    /// <param name="multiPointLayer">Multi-point geometry feature layer used to add the multi-point feature.</param>
+    /// <returns></returns>
+    private Task ConstructSampleMultiPoints(FeatureLayer multiPointLayer)
+    {
+      // create a random number generator
+      var randomGenerator = new Random();
+
+      // the database and geometry interactions are considered fine-grained and need to be executed on
+      // a separate thread
+      return QueuedTask.Run(() =>
+      {
+              // get the feature class associated with the layer
+              var featureClass = multiPointLayer.GetTable() as FeatureClass;
+        var featureClassDefinition = featureClass.GetDefinition() as FeatureClassDefinition;
+
+              // store the spatial reference as its own variable
+              var spatialReference = featureClassDefinition.GetSpatialReference();
+
+              // define an area of interest. Random points are generated in the allowed
+              // confines of the allow extent range
+              var areaOfInterest = MapView.Active.Extent;
+
+        // start an edit operation to create new (random) multi-point feature
+        var createOperation = new EditOperation()
+        {
+          Name = "Generate multipoints"
+        };
+
+        // retrieve the class definition of the point feature class
+        var classDefinition = featureClass.GetDefinition() as FeatureClassDefinition;
+
+        Multipoint newPoints = null;
+              // generate either 2D or 3D geometries
+              if (classDefinition.HasZ())
+        {
+                // 3D
+                // create a list to hold the 20 coordinates of the multi-point feature
+                IList<Coordinate3D> coordinateList = new List<Coordinate3D>(20);
+          for (int i = 0; i < 20; i++)
+          {
+            coordinateList.Add(randomGenerator.NextCoordinate3D(areaOfInterest));
+          }
+          newPoints = MultipointBuilder.CreateMultipoint(coordinateList, classDefinition.GetSpatialReference());
+        }
+        else
+        {
+                // 2D
+                // create a list to hold the 20 coordinates of the multi-point feature
+                IList<Coordinate2D> coordinateList = new List<Coordinate2D>(20);
+          for (int i = 0; i < 20; i++)
+          {
+            coordinateList.Add(randomGenerator.NextCoordinate2D(areaOfInterest));
+          }
+          newPoints = MultipointBuilder.CreateMultipoint(coordinateList, classDefinition.GetSpatialReference());
+        }
+              // create and execute the feature creation operation
+              createOperation.Create(multiPointLayer, newPoints);
+
+        return createOperation.ExecuteAsync();
+      });
+    }
+
+
+  }
 }

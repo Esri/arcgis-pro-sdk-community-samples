@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ArcGIS.Desktop.Framework.Contracts;
 
 namespace GalleryDemo
 {
@@ -23,8 +24,9 @@ namespace GalleryDemo
     /// </summary>
     public class WebMapItem
     {
+
         public WebMapItem(string portal, string id = "", string title = "", string name = "", string thumbnail = "",
-            string snippet = "")
+            string snippet = "", string owner="Unknown")
         {
             _id = id;
             _title = title;
@@ -32,6 +34,7 @@ namespace GalleryDemo
             _thumbnail = thumbnail;
             _snippet = string.IsNullOrEmpty(snippet) ? title : snippet;
             _portal = portal;
+            _group = owner;
         }
 
         private string _id;
@@ -60,6 +63,11 @@ namespace GalleryDemo
 
         private string _portal;
 
+        private string _group;
+        public string Group
+        {
+            get { return _group; }
+        }
         /// <summary>
         /// Builds the thumbnail URL of a webmap item.
         /// </summary>

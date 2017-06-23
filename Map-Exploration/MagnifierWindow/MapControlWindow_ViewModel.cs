@@ -85,9 +85,16 @@ namespace MagnifierWindow
             _camera.Y = mapPoint.Y;
             _camera.Scale = _camera.Scale / 4;
 
-            _currentGeoCoordinate = mapPoint.ToGeoCoordinateString(new ToGeoCoordinateParameter(GeoCoordinateType.DDM));                
-            NotifyPropertyChanged(() => CameraProperty);
-            NotifyPropertyChanged(() => CurrentGeoCoordinate);    
+            try
+            {
+                _currentGeoCoordinate = mapPoint.ToGeoCoordinateString(new ToGeoCoordinateParameter(GeoCoordinateType.DDM));
+                NotifyPropertyChanged(() => CameraProperty);
+                NotifyPropertyChanged(() => CurrentGeoCoordinate);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($@"Error in UpdateMapControlCamera: {ex.ToString()}");
+            }
         }
 
     }

@@ -3,10 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ui="clr-namespace:ControlStyles.UI"
              xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-  <!--//   Copyright 2014 Esri
+    <!--//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -20,58 +22,56 @@
 //   limitations under the License. 
 
     -->
-  <UserControl.Resources>
-    <ResourceDictionary>
-      <!--<Image x:Key="CopyImage16" Source="Images/EditCopy16.png"/>
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <!--<Image x:Key="CopyImage16" Source="Images/EditCopy16.png"/>
             <Image x:Key="CopyImage32" Source="Images/EditCopy32.png"/>-->
-      <ResourceDictionary.MergedDictionaries>
-        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
-      </ResourceDictionary.MergedDictionaries>
-    </ResourceDictionary>
-  </UserControl.Resources>
-
-  <Grid>
-    <Grid.RowDefinitions>
-      <RowDefinition Height="Auto"/>
-      <RowDefinition Height="Auto"/>
-      <RowDefinition Height="Auto"/>
-      <RowDefinition Height="Auto"/>
-    </Grid.RowDefinitions>
-    <Grid.Resources>
-      <Style TargetType="Button">
-        <Setter Property="BorderBrush" Value="Transparent"></Setter>
-        <Setter Property="Background" Value="Transparent"></Setter>
-        <Style.Triggers>
-          <Trigger Property="IsMouseOver" Value="True">
-            <Setter Property="BorderBrush" Value="Blue" />
-          </Trigger>
-        </Style.Triggers>
-      </Style>
-    </Grid.Resources>
-    <StackPanel Grid.Row="1"  KeyboardNavigation.TabNavigation="Local" >
-      <TextBlock Text="Select a control to view its Esri Styles" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-      <Label Content="Control" FontWeight="Regular" HorizontalAlignment="Left" />
-      <ComboBox Margin="5,0,5,0" ItemsSource="{Binding ControlTypes, Mode=OneWay}" SelectedItem="{Binding SelectedControl, Mode=TwoWay}" MinHeight="10"/>
-      <ContentPresenter Content="{Binding EmbeddableView, Mode=OneWay}" />
-    </StackPanel>
-    <!--<StackPanel Grid.Row="2" KeyboardNavigation.TabNavigation="Local" Background="{DynamicResource Esri_Gray120}" Margin="0,50,0,0">-->
-    <StackPanel Grid.Row="2" KeyboardNavigation.TabNavigation="Local"  Margin="0,50,0,0">
-      <Separator />
-      <TextBlock Text="Code" Margin="5,10,0,0"  VerticalAlignment="Center" HorizontalAlignment="Left" />
-      <StackPanel Orientation="Horizontal">
-        <TextBlock Text="Resource Dictionary to copy into your add-in" Margin="5,10,0,0"  VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Regular"/>
-        <Button ToolTip="Copy to Clipboard" Command="{Binding CopyDictionaryCmd}" MinWidth="16" DockPanel.Dock="Right" Margin="5,10,0,0">
-          <Image Stretch="None" Width="16" Height="16" VerticalAlignment="Center" Source="/ControlStyles;component/Images/EditCopy16.png"/>
-        </Button>
-      </StackPanel>
-      <TextBox Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="True" TextWrapping="Wrap" Foreground="{DynamicResource Esri_Blue}" FontWeight="Bold" />
-      <StackPanel Orientation="Horizontal">
-        <TextBlock Text="Xaml style to copy into your add-in" Margin="5,5,0,0"  VerticalAlignment="Center" HorizontalAlignment="Left" />
-        <Button ToolTip="Copy to Clipboard" Command="{Binding CopyControlXamlCmd}" MinWidth="16" Margin="5,10,0,0" >
-          <Image Stretch="None" Width="16" Height="16" VerticalAlignment="Center" Source="/ControlStyles;component/Images/EditCopy16.png"/>
-        </Button>
-      </StackPanel>
-      <TextBox Text="{Binding ControlXaml}" Margin="5,5,5,0" IsReadOnly="True" TextWrapping="Wrap" Foreground="{DynamicResource Esri_Blue}" FontWeight="Bold" />
-    </StackPanel>
-  </Grid>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                <Setter Property="Background" Value="Transparent"></Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="BorderBrush" Value="Blue" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+        <StackPanel Grid.Row="1"  KeyboardNavigation.TabNavigation="Local" >
+            <TextBlock Text="Select a control to view its Esri Styles" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockH3}"/>
+            <TextBlock Text="Control" FontWeight="Regular" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockH3}" />
+            <ComboBox Margin="5,0,5,0" ItemsSource="{Binding ControlTypes, Mode=OneWay}" SelectedItem="{Binding SelectedControl, Mode=TwoWay}" MinHeight="10"/>
+            <ContentPresenter Content="{Binding EmbeddableView, Mode=OneWay}" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" KeyboardNavigation.TabNavigation="Local"  Margin="0,50,0,0">
+            <Separator />
+            <TextBlock Text="Code" Margin="5,10,0,0"  VerticalAlignment="Center" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockH3}"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Xaml style to copy into your add-in" Margin="5,5,0,0"  VerticalAlignment="Center" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockH3}"/>
+                <Button ToolTip="Copy to Clipboard" Command="{Binding CopyControlXamlCmd}" MinWidth="16" Margin="5,10,0,0" >
+                    <Image Stretch="None" Width="16" Height="16" VerticalAlignment="Center" Source="/ControlStyles;component/Images/EditCopy16.png"/>
+                </Button>
+            </StackPanel>
+            <ui:AvalonEditorWrapper x:Name="Style" Margin="5,5,5,0" FontFamily="Consolas"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                FontSize="10pt" 
+                 ScrollViewer.CanContentScroll="True"
+                Height="80"                                    
+                Text="{Binding Path=ControlXaml}">
+            </ui:AvalonEditorWrapper>
+        </StackPanel>
+    </Grid>
 </UserControl>

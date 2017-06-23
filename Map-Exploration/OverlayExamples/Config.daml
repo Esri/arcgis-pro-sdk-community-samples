@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <!--
 
    Copyright 2017 Esri
@@ -20,12 +19,12 @@
 -->
 
 <ArcGIS defaultAssembly="OverlayExamples.dll" defaultNamespace="OverlayExamples" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{53125852-9041-4d4b-bbd2-9aafb4aac2fe}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{53125852-9041-4d4b-bbd2-9aafb4aac2fe}" version="1.0" desktopVersion="2.0.0">
     <Name>GraphicOverlay Examples</Name>
     <Description>This sample contains three different examples of working with Pro's graphic overlay</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>arcgisprosdk</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>4/20/2016 5:52:03 PM, 2016</Date>
     <Subject>Map Exploration</Subject>
     <!-- Note subject can be one or more of these topics:

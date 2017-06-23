@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2017 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="ReusableUserControl.dll" defaultNamespace="ReusableUserControl" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{0b62d9ff-5543-45e9-bfc8-c2a75d5cfdb8}" version="1.0" desktopVersion="2.0.8910">
+    <Name>ReusableUserControl</Name>
+    <Description>ReusableUserControl description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>wlfka</Author>
+    <Company>Acme</Company>
+    <Date>6/7/2017 9:13:12 AM, 2017</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ReusableUserControl_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="ReusableUserControl_Tab1" caption="New Tab">
+          <group refID="ReusableUserControl_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ReusableUserControl_Group1" caption="Reusable User Control" appearsOnAddInTab="true" keytip="G0">
+          <!-- host controls within groups -->
+          <button refID="ReusableUserControl_DockpaneWithUserControl_ShowButton" size="large" />
+          <button refID="ReusableUserControl_ProWindowUserControl" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ReusableUserControl_DockpaneWithUserControl_ShowButton" caption="Show Dockpane With UserControl" className="ReusableUserControl.DockpaneWithUserControl_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="B0">
+          <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
+        </button>
+        <button id="ReusableUserControl_ProWindowUserControl" caption="Show ProWindow With UserControl" className="ProWindowUserControl" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" keytip="B2">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="ReusableUserControl_DockpaneWithUserControl" caption="Dockpane With UserControl" className="ReusableUserControl.DockpaneWithUserControlViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="ReusableUserControl.DockpaneWithUserControlView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

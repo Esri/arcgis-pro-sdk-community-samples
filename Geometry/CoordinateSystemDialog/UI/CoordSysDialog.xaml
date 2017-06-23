@@ -48,18 +48,18 @@
                       Margin="5" VerticalAlignment="Center" Grid.Row="0"
                   HorizontalAlignment="Left"></CheckBox>
 
-        <Border BorderBrush="{DynamicResource Esri_Black}" BorderThickness="2" Margin="2" Grid.Row="1">
+        <Border BorderBrush="{DynamicResource Esri_BorderBrush}" BorderThickness="2" Margin="2" Grid.Row="1">
             <mapping:CoordinateSystemsControl  x:Name="CoordinateSystemsControl"
                           ConfigureControl="{Binding Path=ControlProperties}"/>
         </Border>
-        <GridSplitter Grid.Row="2" Height="5" HorizontalAlignment="Stretch" Foreground="{DynamicResource Esri_Gray120}"/>
+        <GridSplitter Grid.Row="2" Height="5" HorizontalAlignment="Stretch" Foreground="{DynamicResource Esri_Color_Gray145}"/>
         <mapping:CoordinateSystemsDetailsControl Grid.Row="3" 
                    SpatialReference="{Binding ElementName=CoordinateSystemsControl, Path=SelectedSpatialReference}"
                    ShowVerticalCSDetails="{Binding Path=ShowVCS}"/>
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" 
                     HorizontalAlignment="Right"  Grid.Row="4">
-            <Button Content="OK" Click="Close_OnClick" HorizontalAlignment="Right" x:Name="OK" Style="{DynamicResource Esri_SimpleButton}"></Button>
+            <Button Content="OK" Click="Close_OnClick" HorizontalAlignment="Right" x:Name="OK" Style="{DynamicResource Esri_Button}"></Button>
         </StackPanel>
     </Grid>
 </controls:ProWindow>

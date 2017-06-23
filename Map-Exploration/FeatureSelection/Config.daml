@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
 <!--
-//   Copyright 2014 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -18,12 +14,12 @@
 //   limitations under the License. 
 -->
 <ArcGIS defaultAssembly="FeatureSelection.dll" defaultNamespace="FeatureSelection" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{777f533a-b0c7-4233-b64e-7c4c2e2c8efa}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{777f533a-b0c7-4233-b64e-7c4c2e2c8efa}" version="1.0" desktopVersion="2.0.0">
     <Name>Feature Selection</Name>
     <Description>Adds a custom tool and dock pane to manage selections in the map.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>Esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>5/11/2015 3:39:00 PM, 2015</Date>
     <Subject>Map Exploration</Subject>
   </AddInInfo>

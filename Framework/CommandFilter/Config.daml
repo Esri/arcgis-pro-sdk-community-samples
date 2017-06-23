@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <!--
 
    Copyright 2017 Esri
@@ -19,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="CommandFilter.dll" defaultNamespace="CommandFilter" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{abec1803-f5a9-431f-a72d-2e4651340eb6}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{abec1803-f5a9-431f-a72d-2e4651340eb6}" version="1.0" desktopVersion="2.0.0">
     <Name>CommandFilter</Name>
     <Description>Shows how to register a command filter. When the command filter is turned 'On' or "Off', a Notification is also popped</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>arcgisprosdk</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>6/19/2015 2:26:33 PM, 2015</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

@@ -26,7 +26,7 @@
         mc:Ignorable="d"
         Title="OverviewWindow" Height="400" Width="500">
     <Grid x:Name="ContentArea">
-        <map:MapControl x:Name="MyMapControl" BorderBrush="Gray" BorderThickness="2" Margin="2"
+        <map:MapControl x:Name="MyMapControl" BorderBrush="{DynamicResource Esri_BorderBrush}" BorderThickness="2" Margin="2"
                         ViewContent="{Binding ViewContent,Mode=TwoWay}">
         </map:MapControl>
     </Grid>

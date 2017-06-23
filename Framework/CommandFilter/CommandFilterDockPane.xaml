@@ -45,37 +45,35 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
           <StackPanel.ToolTip>
             <ToolTip>
-              <TextBlock Text="{Binding Path=IsFilteringTooltip}" 
-                               FontWeight="Regular" FontSize="12" ></TextBlock>
+              <TextBlock Text="{Binding Path=IsFilteringTooltip}" Style="{DynamicResource Esri_TextBlockRegular}"></TextBlock>
             </ToolTip>
           </StackPanel.ToolTip>
           <CheckBox IsChecked="{Binding Path=IsFiltering, Mode=TwoWay}" Margin="2,0,2,0"></CheckBox>
-          <TextBlock Text="{Binding Path=IsFilteringText}" FontWeight="Regular" FontSize="12" Foreground="{DynamicResource Esri_Gray155}"></TextBlock>
+          <TextBlock Text="{Binding Path=IsFilteringText}" Style="{DynamicResource Esri_TextBlockRegular}"></TextBlock>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
           <StackPanel.ToolTip>
             <ToolTip>
-              <TextBlock Text="{Binding Path=PopMessageBoxTooltip}" 
-                               FontWeight="Regular" FontSize="12" Foreground="{DynamicResource Esri_Gray155}"></TextBlock>
+              <TextBlock Text="{Binding Path=PopMessageBoxTooltip}" Style="{DynamicResource Esri_TextBlockRegular}"></TextBlock>
             </ToolTip>
           </StackPanel.ToolTip>
           <CheckBox IsChecked="{Binding Path=ShowMessageBox, Mode=TwoWay}" Margin="15,0,2,0"></CheckBox>
-          <TextBlock Text="Pop Message Box on Filter" FontWeight="Regular" FontSize="12" Foreground="{DynamicResource Esri_Gray155}"></TextBlock>
+          <TextBlock Text="Pop Message Box on Filter" Style="{DynamicResource Esri_TextBlockRegular}"></TextBlock>
         </StackPanel>
       </StackPanel>
     </DockPanel>
     <DockPanel LastChildFill="True" Grid.Row="1" Margin="0,10,0,0">
-      <TextBlock Text="Commands Clicked:" DockPanel.Dock="Top" Margin="5" Style="{DynamicResource H5TextBlock}"></TextBlock>
+      <TextBlock Text="Commands Clicked:" DockPanel.Dock="Top" Margin="5" Style="{DynamicResource Esri_TextBlockH5}"></TextBlock>
 
       <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto" 
                      BorderThickness="1" Margin="5"
                      ItemsSource="{Binding Path=CommandFilters}"
-                     ItemContainerStyle="{DynamicResource Esri_HighlightListBoxItem}">
+                     ItemContainerStyle="{DynamicResource Esri_ListBoxItemHighlightBrush}">
         <ListBox.ItemTemplate>
           <DataTemplate>
             <Grid VerticalAlignment="Center" HorizontalAlignment="Left">
               <Grid.ToolTip>
-                <ToolTip Background="{DynamicResource Esri_WindowGray}">
+                <ToolTip Background="{DynamicResource Esri_ControlBackgroundBrush}">
                   <ToolTip.Content>
                     <Grid>
                       <Grid.ColumnDefinitions>
@@ -91,13 +89,12 @@
                                                    Grid.Row="0" Grid.Column="0">
                       </Image>
                       <TextBlock Text="{Binding Path=Tooltip}" Margin="5,0,0,0" TextWrapping="Wrap"
-                                                           Foreground="{DynamicResource Esri_Gray155}"
                                                            TextTrimming="CharacterEllipsis" Grid.Row="0" Grid.Column="1"
-                                                       Style="{DynamicResource RegularText}"></TextBlock>
+                                                           Style="{DynamicResource Esri_TextBlockRegular}"></TextBlock>
 
                       <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
-                        <TextBlock Text="Id: " FontWeight="Regular" FontSize="12" Foreground="{DynamicResource Esri_Gray155}"></TextBlock>
-                        <TextBlock Text="{Binding Path=Id}" FontWeight="Regular" FontSize="12" Foreground="{DynamicResource Esri_Gray155}"
+                        <TextBlock Text="Id: " Style="{DynamicResource Esri_TextBlockRegular}"></TextBlock>
+                        <TextBlock Text="{Binding Path=Id}" Style="{DynamicResource Esri_TextBlockRegular}"
                                                            TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"></TextBlock>
                       </StackPanel>
                     </Grid>
@@ -109,11 +106,11 @@
                 <ColumnDefinition Width=".3*"></ColumnDefinition>
               </Grid.ColumnDefinitions>
               <TextBlock Text="{Binding Path=Caption}" Margin="3,2,15,2" Grid.Column="0" VerticalAlignment="Center"
-                                       FontWeight="Regular" FontSize="12" Foreground="{DynamicResource Esri_Gray155}"></TextBlock>
+                                       Style="{DynamicResource Esri_TextBlockRegular}"></TextBlock>
 
               <StackPanel Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Center">
-                <TextBlock Text="Count: " FontWeight="Regular" FontSize="12" Foreground="{DynamicResource Esri_Gray155}"></TextBlock>
-                <TextBlock Text="{Binding Path=ClickCount, StringFormat={}{0}}" FontWeight="Regular" FontSize="12" Foreground="{DynamicResource Esri_Gray155}"></TextBlock>
+                <TextBlock Text="Count: " Style="{DynamicResource Esri_TextBlockRegular}"></TextBlock>
+                <TextBlock Text="{Binding Path=ClickCount, StringFormat={}{0}}" Style="{DynamicResource Esri_TextBlockRegular}"></TextBlock>
               </StackPanel>
             </Grid>
           </DataTemplate>

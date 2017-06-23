@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MaskRaster</name>
+    </assembly>
+    <members>
+        <member name="T:MaskRaster.MaskRasterTool">
+            <summary>
+            A map tool that masks raster pixels based on a rectangle drawn by the user and saves the masked raster 
+            to a folder in the current project folder. The tool only works on raster layers.
+            </summary>
+        </member>
+        <member name="M:MaskRaster.MaskRasterTool.OnSketchCompleteAsync(ArcGIS.Core.Geometry.Geometry)">
+            <summary>
+            Function called when the tool has finished drawing on the map. The function then masks
+            raster pixels and saves the output masked raster to the project folder.
+            </summary>
+            <param name="geometry">The geometry object that is returned by the tool.</param>
+            <returns>Task that returns true if the function succeeds and false otherwise.</returns>
+        </member>
+        <member name="T:MaskRaster.MaskRasterVM">
+            <summary>
+            Viewmodel class that allows functions to mask raster pixels to be UI agnostic.
+            </summary>
+        </member>
+        <member name="M:MaskRaster.MaskRasterVM.MaskRaster(ArcGIS.Core.Geometry.Geometry)">
+            <summary>
+            Mask raster pixels based on the rectangle given and save the output in the 
+            current project folder.
+            </summary>
+            <param name="geometry">Rectangle to use to mask raster pixels.</param>
+        </member>
+        <member name="M:MaskRaster.MaskRasterVM.OpenRasterDataset(System.String,System.String)">
+            <summary>
+            Open a Raster Dataset given a folder and a dataset name.
+            </summary>
+            <param name="folder">Full path to the folder containing the raster dataset.</param>
+            <param name="name">Name of the raster dataset to open.</param>
+            <returns></returns>
+        </member>
+        <member name="T:MaskRaster.Module1">
+            <summary>
+            This sample shows how to author a tool that can be used to mask raster pixel values in a ractangle 
+            defined by the user. The masked output is saved as a new raster dataset in the project folder. This 
+            sample only works on a single raster layer at a time.
+            Note: You will need write access to the project folder in order to use this sample. The sample saves
+            your input image before masking it so if you use a large image the save can take a while.
+            </summary>
+            <remarks>
+            1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+            1. Make sure that the Sample data is unzipped in C:\Data 
+            1. The project used for this sample is 'C:\Data\RasterSample\RasterSample.aprx'
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro will open. 
+            1. Open the 'RasterSample.aprx' project or to use your own data open a map view and add a raster to the map.
+            1. Select the raster layer in the TOC.
+            1. Click on the Add-In tab on the ribbon.
+            ![UI](Screenshots/Screenshot1.png)
+            1. Within this tab there is a Mask Raster Tool. Click it to activate the tool.
+            1. In the map draw a rectangle around the area of the raster you want to mask.
+            ![UI](Screenshots/Screenshot2.png)
+            1. A copy of the source raster dataset of the layer you selected will be saved in your project folder, the copy will be processed to mask pixels and a new layer will be added to your map using the processed copy.
+            ![UI](Screenshots/Screenshot3.png)
+            1. You need to adjust the newly added raster layer's symbology to see the full masking effect.
+            ![UI](Screenshots/Screenshot4.png)
+            1. Press the escape key if you want to deactivate the tool.
+            </remarks>
+        </member>
+        <member name="P:MaskRaster.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:MaskRaster.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+    </members>
+</doc>

@@ -36,7 +36,7 @@ namespace FeatureDynamicMenu
     {
 
 
-        public EmbeddedControlViewModel(XElement options) : base(options)
+        public EmbeddedControlViewModel(XElement options, bool canChangeOptions) : base(options, canChangeOptions)
         {
             
         }

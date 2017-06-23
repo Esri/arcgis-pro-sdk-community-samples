@@ -25,6 +25,8 @@
             Execute the given query and return the result
             </summary>
             <param name="query"></param>
+            <param name="results"></param>
+            <param name="maxResults"></param>
             <returns></returns>
         </member>
         <member name="T:ConfigWithStartWizard.Common.StringToBoolConverter">
@@ -50,7 +52,8 @@
             </summary>
             <remarks>
             1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Configurations\Projects' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Configurations\Projects" is available.
-            1. In Visual Studio 2015 click the Build menu. Then select Build Solution.
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            1. This solution is using the **Newtonsoft.Json NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".
             1. Click Start button to debug ArcGIS Pro.
             1. ArcGIS Pro displays first the custom splash screen.
             1. Pro will then display the startup screen utilizing a wizard style user interface.

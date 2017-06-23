@@ -36,8 +36,7 @@
     </Grid.RowDefinitions>
 
     <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
-      <TextBlock Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center"
-                FontSize="14">
+      <TextBlock Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Esri_TextBlockDockPaneHeader}">
         <TextBlock.ToolTip>
           <WrapPanel Orientation="Vertical" MaxWidth="300">
             <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
@@ -48,26 +47,26 @@
 
     <DockPanel Grid.Row="1">
       <StackPanel>
-        <TextBlock  Text="Illustrates the use of undo/redo."  Margin="6,10"/>
+        <TextBlock  Text="Illustrates the use of undo/redo."  Margin="6,10" Style="{DynamicResource Esri_RegularText}"/>
         <WrapPanel Orientation="Horizontal">
-          <Button Content="Fixed Zoom in" Style="{StaticResource Esri_SimpleButton}"
+          <Button Content="Fixed Zoom in" Style="{StaticResource Esri_Button}"
                 Command="{Binding FixedZoomInCommand}"/>
-          <Button Content="Fixed Zoom out" Style="{StaticResource Esri_SimpleButton}"
+          <Button Content="Fixed Zoom out" Style="{StaticResource Esri_Button}"
                 Command="{Binding FixedZoomOutCommand}"/>
         </WrapPanel>
-        <Button Content="Composite Operation (Zoom in x3)" Style="{StaticResource Esri_SimpleButton}" Command="{Binding CompositeZoomInCommand}"/>
+        <Button Content="Composite Operation (Zoom in x3)" Style="{StaticResource Esri_Button}" Command="{Binding CompositeZoomInCommand}"/>
       </StackPanel>     
     </DockPanel>
     
     <DockPanel Grid.Row="2">
       <StackPanel Orientation="Vertical">
         <WrapPanel Orientation="Horizontal">
-          <Button Content="Undo" Style="{StaticResource Esri_SimpleButton}" Command="{Binding UndoCommand}"/>
-          <Button Content="Redo" Style="{StaticResource Esri_SimpleButton}" Command="{Binding RedoCommand}"/>
+          <Button Content="Undo" Style="{StaticResource Esri_Button}" Command="{Binding UndoCommand}"/>
+          <Button Content="Redo" Style="{StaticResource Esri_Button}" Command="{Binding RedoCommand}"/>
         </WrapPanel>
         <WrapPanel Orientation="Horizontal">
-        <Button Content="Remove Operation" Style="{StaticResource Esri_SimpleButton}" Command="{Binding RemoveOperationCommand}"/>
-          <Button Content="Clear All Operations" Style="{StaticResource Esri_SimpleButton}" Command="{Binding ClearOperationsCommand}"/>
+          <Button Content="Remove Operation" Style="{StaticResource Esri_Button}" Command="{Binding RemoveOperationCommand}"/>
+          <Button Content="Clear All Operations" Style="{StaticResource Esri_Button}" Command="{Binding ClearOperationsCommand}"/>
         </WrapPanel>
       </StackPanel>
     </DockPanel>

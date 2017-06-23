@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
-
 <!-- //   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -18,7 +13,7 @@
 //   limitations under the License.
 -->
 <ArcGIS defaultAssembly="PreRel_UndoRedo.dll" defaultNamespace="PreRel_UndoRedo" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{e6efe7e0-f371-4218-aff0-0f080375d487}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{e6efe7e0-f371-4218-aff0-0f080375d487}" version="1.0" desktopVersion="2.0.0">
     <Name>UndoRedo</Name>
     <Description>Sample illustrating the OperationManager and undo/redo operations.
       ArcGIS Pro does not contain a single undo/redo operation stack for the application. Each pane and dockpane decides how it's
@@ -34,8 +29,8 @@
       dockpane manipulate the undo/redo stack - performing undo and redo actions; remove undo actions and clearing the stacks.     
     </Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>10/22/2014 5:34:03 AM, 2014</Date>
     <Subject>Framework</Subject>
   </AddInInfo>

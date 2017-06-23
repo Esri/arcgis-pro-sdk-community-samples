@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <ArcGIS defaultAssembly="Geocode.dll" defaultNamespace="Geocode" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{98f0e9b8-740a-43eb-ba9e-8249112e1ef9}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{98f0e9b8-740a-43eb-ba9e-8249112e1ef9}" version="1.0" desktopVersion="2.0.0">
     <Name>Geocode</Name>
     <Description>This sample provides a new tab and controls that launches a Geocode dialog window.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>robe4677</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>5/29/2015 3:16:05 PM, 2015</Date>
     <Subject>Geoprocessing</Subject>
     <!-- Note subject can be one or more of these topics:

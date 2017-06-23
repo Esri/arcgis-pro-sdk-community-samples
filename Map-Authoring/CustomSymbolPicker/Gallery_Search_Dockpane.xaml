@@ -64,13 +64,14 @@
         <TextBox x:Name="searchBox" HorizontalAlignment="Stretch" Height="23" Margin="10,117,171,0" TextWrapping="Wrap" Text="{Binding SearchString, Mode=TwoWay}" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
 
         <Button Content="Search" HorizontalAlignment="Stretch" Margin="160,116,21,0" VerticalAlignment="Top" Width="120" Height="24" Grid.Row="1"
-                Command="{Binding SearchResultCommand}" Style="{DynamicResource Esri_SimpleButton}" >             
+                Command="{Binding SearchResultCommand}" Style="{DynamicResource Esri_Button}" >             
             </Button>
 
 
         <ListBox x:Name="symbolListBox" Margin="10,161,0,10" Grid.Row="1"   
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
                  ItemsSource="{Binding StyleItems}"
+                 ItemContainerStyle="{DynamicResource Esri_ListBoxItemHighlightBrush}"
                  SelectedItem="{Binding SelectedStyleItem, Mode=TwoWay}">
 
             <ListBox.ItemsPanel>

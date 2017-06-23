@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <!--
 
    Copyright 2017 Esri
@@ -19,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="UploadItem.dll" defaultNamespace="UploadItem" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{da759d83-43c1-4466-99d5-b29275ca52c4}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{da759d83-43c1-4466-99d5-b29275ca52c4}" version="1.0" desktopVersion="2.0.0">
     <Name>UploadItem</Name>
     <Description>This add-in can be used to upload an item to AGO or portal using Pro SDK upload api</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>Chunming Peng</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>7/22/2015 3:31:47 PM, 2015</Date>
     <Subject>Sharing</Subject>
     <!-- Note subject can be one or more of these topics:

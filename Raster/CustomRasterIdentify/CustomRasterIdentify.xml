@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CustomRasterIdentify</name>
+    </assembly>
+    <members>
+        <member name="T:CustomRasterIdentify.CustomRasterIdentifyTool">
+            <summary>
+            A map tool to identify raster pixel values and display the results in a custom pop-up window. The 
+            popup window will show pixel values for the rendered raster and the source raster dataset.
+            </summary>
+        </member>
+        <member name="M:CustomRasterIdentify.CustomRasterIdentifyTool.OnSketchCompleteAsync(ArcGIS.Core.Geometry.Geometry)">
+            <summary>
+            Function called when the tool has finished drawing on the map. The function then identifies pixel 
+            values and shows them using a custom popup.
+            </summary>
+            <param name="geometry">The geometry object that is returned by the tool.</param>
+            <returns>Task that returns true if the function succeeds and false otherwise.</returns>
+        </member>
+        <member name="T:CustomRasterIdentify.CustomRasterIdentifyVM">
+            <summary>
+            Viewmodel class to house functions that enable custom raster identify to be UI agnostic.
+            </summary>
+        </member>
+        <member name="M:CustomRasterIdentify.CustomRasterIdentifyVM.CustomRasterIdentify(ArcGIS.Core.Geometry.MapPoint)">
+            <summary>
+            Function to identify rendered and source dataset pixel values for one or more 
+            raster, mosaic and image service layers.
+            </summary>
+            <param name="mapPoint">Map point to identify pixel values.</param>
+        </member>
+        <member name="T:CustomRasterIdentify.Module1">
+            <summary>
+            This sample shows how to author a tool that can be used to identify raster pixel values and display 
+            the results in a custom pop-up window. The popup window will show pixel values for the 
+            rendered raster and the source raster dataset.
+            Note: The identify is authored to query any raster, mosaic or image service layer(s) in the map that 
+            are selected in the Contents pane.
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            2. Click Start button to open ArcGIS Pro.
+            3. ArcGIS Pro will open. 
+            4. Open a map view and add a raster, mosaic dataset or image service to the map. Select the layer(s) you want to identify in the Contents pane.
+            5. Click on the Add-In tab on the ribbon.
+            5. Within this tab there is a Custom Raster Identify tool. Click it to activate the tool.
+            6. In the map click a point on the raster you want to identify pixel values for.
+            7. The pop-up window should display and you should see the results of the identify.
+            8. You can click through the popup pages if you have multiple layers selected. Each page shows you the results for a selected raster, mosaic or image service layer.
+            9. Press the escape key if you want to deactivate the tool.
+            ![UI](Screenshots/Screenshot1.png)
+            </remarks>
+        </member>
+        <member name="P:CustomRasterIdentify.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:CustomRasterIdentify.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+    </members>
+</doc>

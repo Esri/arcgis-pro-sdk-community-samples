@@ -1,4 +1,4 @@
-﻿//   Copyright 2014 Esri
+﻿//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -63,7 +63,7 @@ namespace ControlStyles
             set
             {
                 SetProperty(ref _selectedCheckBox, value, () => SelectedCheckBox);
-                StyleXaml = string.Format("<CheckBox Content=\"CheckBox\"  IsChecked=\"True\" IsEnabled=\"True\" FontSize=\"12\" FontWeight=\"Regular\" Foreground=\"{{DynamicResource Esri_Gray155}}\"></CheckBox>");
+                StyleXaml = string.Format("<CheckBox Content=\"CheckBox\"  IsChecked=\"True\" IsEnabled=\"True\"></CheckBox>");
             }
         }
         #endregion

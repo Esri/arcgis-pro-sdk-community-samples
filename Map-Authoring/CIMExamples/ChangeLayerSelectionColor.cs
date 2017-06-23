@@ -47,7 +47,7 @@ namespace CIMExamples {
             await QueuedTask.Run(() => {
                 var layerDef = layer.GetDefinition() as CIMBasicFeatureLayer;
                 layerDef.UseSelectionSymbol = false;
-                layerDef.SelectionColor = ColorFactory.Red;
+                layerDef.SelectionColor = ColorFactory.Instance.RedRGB;
                 layer.SetDefinition(layerDef);
                 if (!layer.IsVisible) layer.SetVisibility(true);
                  //Do a selection

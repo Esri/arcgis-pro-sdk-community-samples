@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Layouts
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  5/5/2017
-ArcGIS Pro:            1.4
-Visual Studio:         2013, 2015
+Date:                  4/20/2017
+ArcGIS Pro:            2.0
+Visual Studio:         2015, 2017
 .NET Target Framework: 4.6.1
 ```
 

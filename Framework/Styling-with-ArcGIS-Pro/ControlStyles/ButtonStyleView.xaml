@@ -9,7 +9,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
   <UserControl.Resources>
     <!--
-        //   Copyright 2014 Esri
+        //   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -41,7 +41,7 @@
                           SelectedItem="{Binding SelectedButton, Mode=TwoWay}"></ComboBox>
       <Separator Margin="0,10,0,0"/>
       <TextBlock Text="Sample" Margin="5,10,0,0"  VerticalAlignment="Center" HorizontalAlignment="Left" />
-            <StackPanel Orientation="Horizontal" Margin="0,50,0,0" Background="Transparent" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Margin="0,50,0,0" Background="{DynamicResource Esri_ControlBackgroundBrush}" HorizontalAlignment="Center">
         <Button Content="Button" Grid.Row="0" Style="{Binding SelectedButton, Converter={StaticResource myCustomStyleConverter}}" Margin="10"
                     ToolTip="{Binding SelectedButton}" >
         </Button>

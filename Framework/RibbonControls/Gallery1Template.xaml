@@ -1,0 +1,45 @@
+﻿<!-- 
+    Copyright 2017 Esri 
+    
+    
+    Licensed under the Apache License, Version 2.0 (the "License"); 
+    you may not use this file except in compliance with the License. 
+    You may obtain a copy of the License at 
+ 
+         http://www.apache.org/licenses/LICENSE-2.0 
+ 
+     Unless required by applicable law or agreed to in writing, software 
+    distributed under the License is distributed on an "AS IS" BASIS, 
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ 
+     See the License for the specific language governing permissions and 
+    limitations under the License. 
+ 
+ -->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ribbon="http://schemas.actiprosoftware.com/winfx/xaml/ribbon"
+                    xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions">
+    <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <DataTemplate x:Key="Gallery1ItemTemplate">
+        <StackPanel Orientation="Vertical" Margin="5">
+            <Grid Margin="5">
+                <!-- The image for the gallery item-->
+                <Image MaxHeight="32" MaxWidth="32">
+                    <Image.Effect>
+                        <DropShadowEffect Color="{DynamicResource Esri_Color_Gray145}" Opacity="0.4" />
+                    </Image.Effect>
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="{Binding Icon}"/>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </Grid>
+            <TextBlock Text="{Binding Text}" HorizontalAlignment="Center" />
+        </StackPanel>
+    </DataTemplate>
+          
+</ResourceDictionary>

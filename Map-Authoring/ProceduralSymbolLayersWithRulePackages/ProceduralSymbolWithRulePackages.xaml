@@ -73,6 +73,7 @@
             ItemTemplate="{StaticResource RulePackageItemTemplate}"
             ItemsSource="{Binding RulePackageCollection}" 
             SelectedItem="{Binding SelectedRulePackage}"
+            ItemContainerStyle="{DynamicResource Esri_ListBoxItemHighlightBrush}"
             Margin ="0,5,0,0"
             ScrollViewer.VerticalScrollBarVisibility="Auto"
             ScrollViewer.HorizontalScrollBarVisibility="Disabled">

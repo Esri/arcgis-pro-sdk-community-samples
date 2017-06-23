@@ -111,27 +111,28 @@ Friend Class ConstructingGeometriesModule
     ''' <item>POLYGON</item></list></param>
     ''' <returns></returns>
     Private Shared Async Function CreateLayer(featureclassName As String, featureclassType As String) As Task(Of IGPResult)
-        Dim arguments = New List(Of Object)()
-        ' store the results in the default geodatabase
-        arguments.Add(CoreModule.CurrentProject.DefaultGeodatabasePath)
-        ' name of the feature class
-        arguments.Add(featureclassName)
-        ' type of geometry
-        arguments.Add(featureclassType)
-        ' no template
-        arguments.Add("")
-        ' no z values
-        arguments.Add("DISABLED")
-        ' no m values
-        arguments.Add("DISABLED")
+    ' store the results in the default geodatabase
+    ' name of the feature class
+    ' type of geometry
+    ' no template
+    ' no z values
+    ' no m values
+    Dim arguments = New List(Of Object) From {
+      CoreModule.CurrentProject.DefaultGeodatabasePath,
+      featureclassName,
+      featureclassType,
+      "",
+      "DISABLED",
+      "DISABLED"
+    }
 
-        Await QueuedTask.Run(
+    Await QueuedTask.Run(
             Sub()
-                ' spatial reference
-                arguments.Add(SpatialReferenceBuilder.CreateSpatialReference(3857))
+              ' spatial reference
+              arguments.Add(SpatialReferenceBuilder.CreateSpatialReference(3857))
             End Sub)
 
-        Return Geoprocessing.ExecuteToolAsync("CreateFeatureclass_management", Geoprocessing.MakeValueArray(arguments.ToArray()))
+    Return Geoprocessing.ExecuteToolAsync("CreateFeatureclass_management", Geoprocessing.MakeValueArray(arguments.ToArray()))
     End Function
 
 #Region "Overrides"
@@ -194,25 +195,27 @@ Module RandomExtension
         Return random.NextDouble() * (maxValue - minValue) + minValue
     End Function
 
-    ''' <summary>
-    ''' /Generate a random coordinate within the provided envelope.
-    ''' </summary>
-    ''' <param name="random">Instance of a random class.</param>
-    ''' <param name="withinThisExtent">Area of interest in which the random coordinate will be created.</param>
-    ''' <param name="is3D">Boolean indicator if the coordinate should be 2D (only x,y values) or 3D (containing x,y,z values).</param>
-    ''' <returns>A coordinate with random values within the extent.</returns>
-    <Extension()>
-    Public Function NextCoordinate(ByVal random As Random, withinThisExtent As Envelope, is3D As Boolean) As Coordinate
-        Dim newCoordinate As Coordinate
-
-        If (is3D) Then
-            newCoordinate = New Coordinate(random.NextDouble(withinThisExtent.XMin, withinThisExtent.XMax),
-                random.NextDouble(withinThisExtent.YMin, withinThisExtent.YMax), 0)
-        Else
-            newCoordinate = New Coordinate(random.NextDouble(withinThisExtent.XMin, withinThisExtent.XMax),
+  ''' <summary>
+  ''' /Generate a random coordinate (only x,y values) within the provided envelope.
+  ''' </summary>
+  ''' <param name="random">Instance of a random class.</param>
+  ''' <param name="withinThisExtent">Area of interest in which the random coordinate will be created.</param>
+  ''' <returns>A coordinate (only x,y values) with random values within the extent.</returns>
+  <Extension()>
+  Public Function NextCoordinate2D(ByVal random As Random, withinThisExtent As Envelope) As Coordinate2D
+    Return New Coordinate2D(random.NextDouble(withinThisExtent.XMin, withinThisExtent.XMax),
                 random.NextDouble(withinThisExtent.YMin, withinThisExtent.YMax))
-        End If
+  End Function
 
-        Return newCoordinate
-    End Function
+  ''' <summary>
+  ''' /Generate a random coordinate (containing x,y,z values) within the provided envelope.
+  ''' </summary>
+  ''' <param name="random">Instance of a random class.</param>
+  ''' <param name="withinThisExtent">Area of interest in which the random coordinate will be created.</param>
+  ''' <returns>A coordinate (containing x,y,z values) with random values within the extent.</returns>
+  <Extension()>
+  Public Function NextCoordinate3D(ByVal random As Random, withinThisExtent As Envelope) As Coordinate3D
+    Return New Coordinate3D(random.NextDouble(withinThisExtent.XMin, withinThisExtent.XMax),
+                random.NextDouble(withinThisExtent.YMin, withinThisExtent.YMax), 0)
+  End Function
 End Module

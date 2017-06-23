@@ -44,8 +44,7 @@
     </Grid.RowDefinitions>
 
     <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
-      <TextBlock Text="{Binding Heading}" VerticalAlignment="Center"
-                 HorizontalAlignment="Center" FontSize="16" FontWeight="Light">
+      <TextBlock Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Esri_TextBlockDockPaneHeader}">
         <TextBlock.ToolTip>
           <WrapPanel Orientation="Vertical" MaxWidth="300">
             <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
@@ -59,10 +58,10 @@
         <ColumnDefinition Width="Auto"></ColumnDefinition>
       </Grid.ColumnDefinitions>
       <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="5" Text="Query 'Portland Precincts'" 
-                 VerticalAlignment="Center" TextWrapping="Wrap"/>
+                 VerticalAlignment="Center" TextWrapping="Wrap" Style="{DynamicResource Esri_TextBlockRegular}"/>
       <Button Grid.Column="1" Content="Go" HorizontalAlignment="Right" Margin="10" 
               VerticalAlignment="Top" Width="75" Command="{Binding CmdSingleQuery}"
-              Style="{DynamicResource Esri_SimpleButton}"/>
+              Style="{DynamicResource Esri_Button}"/>
     </Grid>
     <Grid Grid.Row="2">
       <Grid.ColumnDefinitions>
@@ -71,10 +70,10 @@
       </Grid.ColumnDefinitions>
       <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="5" 
                  Text="Query 'Portland Precincts' and related 'Police Stations' for addresses" 
-                 VerticalAlignment="Center" TextWrapping="Wrap"/>
+                 VerticalAlignment="Center" TextWrapping="Wrap" Style="{DynamicResource Esri_TextBlockRegular}"/>
       <Button Grid.Column="1" Content="Go" HorizontalAlignment="Right" Margin="10" 
               VerticalAlignment="Top" Width="75" Command="{Binding CmdRelateQuery}"
-              Style="{DynamicResource Esri_SimpleButton}"/>
+              Style="{DynamicResource Esri_Button}"/>
     </Grid>
     <Grid Grid.Row="3">
       <Grid.ColumnDefinitions>
@@ -82,12 +81,12 @@
         <ColumnDefinition Width="Auto"></ColumnDefinition>
         <ColumnDefinition Width="*"></ColumnDefinition>
       </Grid.ColumnDefinitions>
-      <TextBlock Grid.Column="0" Margin="5" VerticalAlignment="Center" Text="No. of result records:"></TextBlock>
+      <TextBlock Grid.Column="0" Margin="5" VerticalAlignment="Center" Text="No. of result records:" Style="{DynamicResource Esri_TextBlockRegular}"/>
       <TextBox Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" IsReadOnly="True" Margin="5" Text="{Binding ResultCount}" />
     </Grid>
     <DataGrid HorizontalAlignment="Stretch" Grid.Row="4" 
               ItemsSource="{Binding ResultData}" VerticalAlignment="Top"
-              Style="{DynamicResource Esri_DataGridStyle}"
+              Style="{DynamicResource Esri_DataGrid}"
               HeadersVisibility="Column"
               AutoGenerateColumns="True"
               IsReadOnly="True"

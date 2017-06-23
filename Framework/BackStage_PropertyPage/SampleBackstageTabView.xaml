@@ -41,11 +41,9 @@
       <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
     <DockPanel Grid.Row="0">
-      <TextBlock DockPanel.Dock="Left" Style="{DynamicResource DockPaneHeader}"
+      <TextBlock DockPanel.Dock="Left" Style="{DynamicResource Esri_TextBlockBackStageTitle}"
                        Text="Sample Backstage Tab" 
-                       Margin="0,0,0,15"
-                       FontSize="42" Foreground="{DynamicResource Esri_Blue}"
-                       HorizontalAlignment="Left"></TextBlock>
+                       Margin="0,0,0,15" ></TextBlock>
     </DockPanel>
     <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,60,0,0">
       <CheckBox Content="Do something here" FontSize="16"

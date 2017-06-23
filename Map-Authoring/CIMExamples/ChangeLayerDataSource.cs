@@ -76,10 +76,10 @@ namespace CIMExamples {
                 }
 
                 string dataset = System.IO.Path.GetFileName(catalogPath);
-
+                var dbGdbConnection = new DatabaseConnectionFile(new Uri(connection, UriKind.Absolute));
                 // provide a replace data connection method
                 CIMStandardDataConnection updatedDataConnection = new CIMStandardDataConnection() {
-                    WorkspaceConnectionString = new Geodatabase(connection).GetConnectionString(),
+                    WorkspaceConnectionString = new Geodatabase(dbGdbConnection).GetConnectionString(),
                     WorkspaceFactory = wf,
                     Dataset = dataset,
                     DatasetType = esriDatasetType.esriDTFeatureClass

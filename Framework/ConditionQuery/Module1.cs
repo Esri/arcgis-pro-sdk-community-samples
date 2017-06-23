@@ -30,7 +30,7 @@ namespace ConditionQuery {
     /// This Sample queries the application state to determine which conditions are currently enabled.
     /// </summary>
     /// <remarks>
-    /// 1. In Visual Studio 2015 click the Build menu. Then select Build Solution.
+    /// 1. In Visual Studio click the Build menu. Then select Build Solution.
     /// 1. This solution is using the **AvalonEdit Nuget**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package AvalonEdit".
     /// 1. Click Start button to open ArcGIS Pro.
     /// 1. ArcGIS Pro will open.

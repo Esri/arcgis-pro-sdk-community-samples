@@ -9,13 +9,13 @@ This sample adds a tool button to Addin Tab. You click on the BufferGeometryTool
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
-Language:              C#
+Language:              C# 6.0
 Subject:               Geoprocessing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  5/5/2017
-ArcGIS Pro:            1.4
-Visual Studio:         2013, 2015
+Date:                  6/23/2017
+ArcGIS Pro:            2.0
+Visual Studio:         2015, 2017
 .NET Target Framework: 4.6.1
 ```
 
@@ -30,6 +30,10 @@ Visual Studio:         2013, 2015
 * [ProConcepts: ArcGIS Pro Add in Samples](https://github.com/Esri/arcgis-pro-sdk-community-samples/wiki/ProConcepts-ArcGIS-Pro-Add-in-Samples)
 
 ![ArcGIS Pro SDK for .NET Icons](https://esri.github.io/arcgis-pro-sdk/images/Home/Image-of-icons.png "ArcGIS Pro SDK Icons")
+
+* [ProSnippets: 2.0 Migration](http://github.com/Esri/arcgis-pro-sdk/wiki/ProSnippets-Migrating-to-2.0)  
+* [ProSnippets: 2.0 Migration Samples](http://github.com/Esri/arcgis-pro-sdk/wiki/ProSnippets-2.0-Migration-Samples)  
+* [ProConcepts: 2.0 Migration](http://github.com/Esri/arcgis-pro-sdk/wiki/ProConcepts-2.0-Migration-Guide)  
 
 ### Samples Data
 

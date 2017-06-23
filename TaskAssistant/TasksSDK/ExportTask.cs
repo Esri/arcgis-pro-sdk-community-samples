@@ -49,7 +49,7 @@ namespace TasksSDK
       // pass this guid to the ExportTaskAsync method
       try
       {
-        string fileName = await TaskAssistantModule.ExportTaskAsync(taskItem.TaskGuid, "c:\\temp");
+        string fileName = await TaskAssistantModule.ExportTaskAsync(taskItem.TaskItemGuid, "c:\\temp");
         ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Task saved to " + fileName);
       }
       catch (ExportTaskException e)

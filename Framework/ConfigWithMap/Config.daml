@@ -24,12 +24,12 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
 
-  <AddInInfo id="{43ea84e4-7b44-4d76-80ba-44095ba768b4}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{43ea84e4-7b44-4d76-80ba-44095ba768b4}" version="1.0" desktopVersion="2.0.0">
     <Name>ConfigWithMap</Name>
     <Description>ConfigWithMap description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>Wolfgang</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>11/7/2016 10:32:40 AM, 2016</Date>
     <Subject>Framework</Subject>
   </AddInInfo>

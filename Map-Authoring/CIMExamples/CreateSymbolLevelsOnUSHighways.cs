@@ -83,11 +83,13 @@ namespace CIMExamples {
             // assume the unique value renderer was created using the CreateCIMRenderer()
             CIMUniqueValueRenderer uniqueValueRenderer = geoFeatureLayer.Renderer as CIMUniqueValueRenderer;
 
-            CIMSymbolLayerDrawing symbolLayerDrawing = new CIMSymbolLayerDrawing();
+            CIMSymbolLayerDrawing symbolLayerDrawing = new CIMSymbolLayerDrawing()
+            {
 
-            // This flag controls the drawing code and forces it to use defined symbol layers.
-            //It must be set 'true'
-            symbolLayerDrawing.UseSymbolLayerDrawing = true;
+                // This flag controls the drawing code and forces it to use defined symbol layers.
+                //It must be set 'true'
+                UseSymbolLayerDrawing = true
+            };
 
             // setup the symbol layers.
             List<CIMSymbolLayerIdentifier> symbolLayers = new List<CIMSymbolLayerIdentifier>();
@@ -113,7 +115,6 @@ namespace CIMExamples {
                     //will be matched up in the renderer to a corresponding symbol (via nextClass.Symbol.SymbolName)
                     //So that each SymbolLayer is associated with a specific symbol for a specific value
                     CIMSymbolLayerIdentifier nextSymbolLayer = new CIMSymbolLayerIdentifier() {
-                        SymbolReferenceName = "symbolReferenceName",
                         SymbolLayerName = uniqueName
                     };
 
@@ -140,12 +141,13 @@ namespace CIMExamples {
             CIMICCColorSpace colorSpace = new CIMICCColorSpace() {
                 URL = "Default RGB"
             };
-            
-            CIMContinuousColorRamp continuousColorRamp = new CIMLinearContinuousColorRamp();
-            continuousColorRamp.FromColor = CIMColor.CreateRGBColor(0, 0, 255); // yellow
-            continuousColorRamp.ToColor = CIMColor.CreateRGBColor(255, 0, 0);     // red
-            continuousColorRamp.ColorSpace = colorSpace;
 
+            CIMContinuousColorRamp continuousColorRamp = new CIMLinearContinuousColorRamp()
+            {
+                FromColor = CIMColor.CreateRGBColor(0, 0, 255), // yellow
+                ToColor = CIMColor.CreateRGBColor(255, 0, 0),     // red
+                ColorSpace = colorSpace
+            };
             CIMRandomHSVColorRamp randomHSVColorRamp = new CIMRandomHSVColorRamp() {
                 ColorSpace = colorSpace,
                 MinAlpha = 100,

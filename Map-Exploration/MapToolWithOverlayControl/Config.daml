@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
 <!--
 //   Copyright 2014 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,12 +15,12 @@
 -->
 
 <ArcGIS defaultAssembly="MapToolWithOverlayControl.dll" defaultNamespace="MapToolWithOverlayControl" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{3b045ea8-084c-41bf-a678-c93b6ec532cc}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{3b045ea8-084c-41bf-a678-c93b6ec532cc}" version="1.0" desktopVersion="2.0.0">
     <Name>Map Tool With Overlay</Name>
     <Description>Adds custom map tool for ArcGIS Pro.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>Esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>6/29/2015 11:45:54 AM, 2015</Date>
     <Subject>Map Exploration</Subject>
   </AddInInfo>

@@ -39,7 +39,7 @@
         </member>
         <member name="M:ProceduralSymbolLayersWithRulePackages.Module1.CheckContext">
             <summary>
-            Checkis if the Dockpane should be made visible
+            Check if the Dockpane should be made visible
             </summary>
         </member>
         <member name="M:ProceduralSymbolLayersWithRulePackages.Module1.CanUnload">

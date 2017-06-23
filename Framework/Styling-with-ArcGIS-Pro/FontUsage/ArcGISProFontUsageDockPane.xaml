@@ -2,10 +2,19 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"                                             
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"    
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <!--//   Copyright 2014 Esri
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <!--//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -21,19 +30,133 @@
     -->
     <Grid>
         <Grid.RowDefinitions>
+
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                Style="{DynamicResource Esri_TextBlockDockPaneHeader}" Foreground="{DynamicResource Esri_TextStyleEmphasisBrush}">
+            <TextBlock.ToolTip>
+                <WrapPanel Orientation="Vertical" MaxWidth="300">
+                    <TextBlock Text="TextBlock Style: Esri_TextBlockDockPaneHeader &#x0a; Foreground Brush: Esri_TextStyleEmphasisBrush " TextWrapping="Wrap"/>
+                </WrapPanel>
+            </TextBlock.ToolTip>
+        </TextBlock>
 
-        <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
-            <TextBlock Grid.Column="1" Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center"
-                    FontSize="14">
-                <TextBlock.ToolTip>
-                    <WrapPanel Orientation="Vertical" MaxWidth="300">
-                        <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
-                    </WrapPanel>
-                </TextBlock.ToolTip>
-      </TextBlock>
-        </DockPanel>
+        <Border Grid.Row="1" Margin="2" Padding="3">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Margin="0,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.Resources>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Margin" Value="5,0,10,5"/>
+                        </Style>
+
+                        <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+                            <Setter Property="Height" Value="20"/>
+                            <Setter Property="Width" Value="120"/>
+                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        </Style>
+                    </Grid.Resources>
+                    <TextBlock Text="ID information (Esri_TextBlockH3)" Style="{DynamicResource Esri_TextBlockH3}"
+                     Grid.Row="0" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,5" ToolTip="Esri_TextBlockH3"/>
+
+                    <TextBlock Text="Parcel id (Esri_TextBlockRegular)" Grid.Row="1" Grid.Column="0" Style="{DynamicResource Esri_TextBlockRegular}" ToolTip="Esri_TextBlockRegular"/>
+
+                    <TextBox TabIndex="0" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1" ToolTip="Default style"/>
+
+                    <TextBlock Text="Lot id (Esri_TextBlockRegular)" Grid.Row="2" Grid.Column="0" Style="{DynamicResource Esri_TextBlockRegular}" ToolTip="Esri_TextBlockRegular"/>
+
+                    <TextBox TabIndex="1" HorizontalAlignment="Stretch" Grid.Row="2" Grid.Column="1" ToolTip="Default style"/>
+
+                    <TextBlock Text="Your id (Esri_TextBlockRegular) " Grid.Row="3" Grid.Column="0" Style="{DynamicResource Esri_TextBlockRegular}" ToolTip="Esri_TextBlockRegular"/>
+
+                    <TextBox TabIndex="2" HorizontalAlignment="Stretch" Grid.Row="3" Grid.Column="1" 
+                     ToolTip="Default style" />
+
+                    <TextBlock Text="Please select... etc, etc (Esri_TextBlockH4)" Grid.Row="4" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockH4}"
+                               Grid.ColumnSpan="2" Margin="0,5" ToolTip="Esri_TextBlockH4"></TextBlock>
+                </Grid>
+                <ComboBox Grid.Row="1" HorizontalAlignment="Stretch" Margin="5" IsEditable="False" IsReadOnly="True"
+                      ItemsSource="{Binding ComboBoxItems}" SelectedItem="{Binding SelectedItem}" TabIndex="3"
+                      ToolTip="Default style">
+                    <ComboBoxItem>Combobox Item 1</ComboBoxItem>
+                    <ComboBoxItem>Combobox Item 2</ComboBoxItem>
+                    <ComboBoxItem>Combobox Item 3</ComboBoxItem>
+                </ComboBox>
+                <Expander Grid.Row="2" IsExpanded="True" Header="Radio Buttons (Esri_ExpanderBorderless)" HorizontalAlignment="Stretch" 
+                          Style="{DynamicResource Esri_ExpanderBorderless}" TabIndex="4" KeyboardNavigation.TabNavigation="Local" ToolTip="Esri_ExpanderBorderless">
+                    <StackPanel KeyboardNavigation.TabNavigation="Local" Margin="15,0,0,0">
+                        <RadioButton Content="None" FontSize="12" IsChecked="True" GroupName="Options" ToolTip="Default style"/>
+                        <RadioButton Content="Simple" FontSize="12" GroupName="Options" ToolTip="Default style"/>
+                        <RadioButton Content="Advanced" FontSize="12" GroupName="Options" ToolTip="Default style"/>
+                    </StackPanel>
+                </Expander>
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Margin="0,5" Style="{DynamicResource Esri_TextBlockH3}" ToolTip="Esri_TextBlockH3">Description (Esri_TextBlockH3)</TextBlock>
+                    <TextBox Grid.Row="1" TextWrapping="Wrap"  Margin="5,5"
+                         HorizontalAlignment="Stretch" 
+                         TabIndex="5" ToolTip="Default style"></TextBox>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Style="{DynamicResource Esri_TextBlockRegular}" ToolTip="Esri_TextBlockRegular">Size (Esri_TextBlockRegular)</TextBlock>
+                        <xctk:IntegerUpDown Grid.Column="1" Margin="5,0" Background="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}" 
+                                            Foreground="{DynamicResource Esri_TextStyleDefaultBrush }" TabIndex="6"
+                                            HorizontalAlignment="Right" Value="20" Minimum="1" Maximum="200"  ToolTip="Text: Default style.&#x0a;Background: Esri_DockPaneClientAreaBackgroundBrush"></xctk:IntegerUpDown>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0"  HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockH3}" ToolTip="Esri_TextBlockH3">Options (Esri_TextBlockH3)</TextBlock>
+                    <ListBox Grid.Row="1"  Margin="5" ItemContainerStyle="{DynamicResource Esri_ListBoxItemHighlightBrush}" ToolTip="ItemContainerStyle: Esri_ListBoxItemHighlightBrush" TabIndex="7">
+                        <ListBoxItem>ListBox Item #1</ListBoxItem>
+                        <ListBoxItem>ListBox Item #2</ListBoxItem>
+                        <ListBoxItem>ListBox Item #3</ListBoxItem>
+                    </ListBox>
+                    <TextBlock Grid.Row="2" ToolTip="Default hyperlink style">
+                        <Hyperlink NavigateUri="https://github.com/eSRI/arcgis-pro-sdk/wiki/proguide-style-guide" ToolTip="Default hyperlink style">
+                              ArcGIS Pro SDK ProGuide: Styling
+                         </Hyperlink>
+                    </TextBlock>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Button Style="{DynamicResource Esri_Button}" Grid.Column="0" HorizontalAlignment="Right" ToolTip="Esri_Button" TabIndex="8">
+                        Apply
+                    </Button>
+                </Grid>
+            </Grid>
+        </Border>
     </Grid>
 </UserControl>

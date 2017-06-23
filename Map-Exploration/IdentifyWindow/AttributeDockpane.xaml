@@ -63,14 +63,14 @@
       <TextBlock Grid.Column="0" Text="Select Layer:" Margin="0,0,15,0" />
       <ComboBox Grid.Column="1" ItemsSource="{Binding FeatureLayers}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedFeatureLayer}" />
       <Button Grid.Column="2" Content="Select" Command="{Binding Path=SelectionTool}"
-              Style="{DynamicResource Esri_SimpleButton}"></Button>
+              Style="{DynamicResource Esri_Button}"></Button>
     </Grid>
 
     <DataGrid Grid.Row="2" Margin="5" Name="selectedFeatureGrid"   
                 ScrollViewer.CanContentScroll="True"      
                 ScrollViewer.VerticalScrollBarVisibility="Auto"        
                 ScrollViewer.HorizontalScrollBarVisibility="Auto"                            
-                Style="{DynamicResource Esri_DataGridStyle}"
+                Style="{DynamicResource Esri_DataGrid}"
                 AutoGenerateColumns="True"
                 HorizontalAlignment="Stretch"
                 HeadersVisibility="Column" 
@@ -86,13 +86,13 @@
                          Title="Selected Feature Count by Layer">
         <chart:Chart.PlotAreaStyle>
           <Style TargetType="{x:Type Grid}">
-            <Setter Property="Background" Value="{DynamicResource Esri_Gray110}"/>
+            <Setter Property="Background" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"/>
           </Style>
         </chart:Chart.PlotAreaStyle>
         <chart:Chart.LegendStyle>
           <Style TargetType="{x:Type visualizationToolkit:Legend}">
-            <Setter Property="Background" Value="{DynamicResource Esri_Gray110}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource Esri_Gray110}"></Setter>
+            <Setter Property="Background" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"></Setter>
           </Style>
         </chart:Chart.LegendStyle>
         <chart:Chart.Series>
@@ -134,7 +134,7 @@
         <ColumnDefinition Width="Auto"></ColumnDefinition>
       </Grid.ColumnDefinitions>
       <Button Grid.Column="1" Content="Exit ArcGIS Pro" Command="{Binding Path=CloseCommand}"
-              Style="{DynamicResource Esri_SimpleButton}"></Button>
+              Style="{DynamicResource Esri_Button}"></Button>
     </Grid>
   </Grid>
 </UserControl>

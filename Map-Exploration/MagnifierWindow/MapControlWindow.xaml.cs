@@ -31,24 +31,31 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ArcGIS.Desktop.Mapping;
 using ArcGIS.Desktop.Mapping.Controls;
-
+using ArcGIS.Desktop.Framework.Controls;
+using ArcGIS.Desktop.Framework;
 
 namespace MagnifierWindow
 {
     /// <summary>
     /// Interaction logic for MapControlWindow.xaml
     /// </summary>
-    public partial class MapControlWindow : Window
+    public partial class MapControlWindow : ProWindow
     {
         internal MapControlWindow_ViewModel viewModel = null;
         internal static MapControl _mapControl = null;
         public MapControlWindow()
         {
             InitializeComponent();
+            // parent the MapControlWindow properly so that even when 'clicks' occur
+            // MapControlWindow is not obscured behind ArcGIS Pro or other windows
+            base.Owner = FrameworkApplication.Current.MainWindow;
+
             _mapControl = this.mapControl;
+            // Create our viewmodel (MVVM)
             viewModel = new MapControlWindow_ViewModel();
             viewModel.UpdateMapControlContent();
-            DataContext = viewModel;
+            // set the datacontext to our ViewModel
+            base.DataContext = viewModel;
         }
     }
 }

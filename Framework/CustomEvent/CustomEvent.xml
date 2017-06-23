@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CustomEvent</name>
+    </assembly>
+    <members>
+        <member name="T:CustomEvent.NameChangedEventArgs">
+            <summary>
+            Create a custom event argument class to contain any information that needs
+            to be passed with your event. In this case, the old and new caption for 
+            our custom app name changed event.
+            </summary>
+            <remarks>Derive from <see cref="T:ArcGIS.Core.Events.EventBase"/></remarks>
+        </member>
+        <member name="P:CustomEvent.NameChangedEventArgs.OldName">
+            <summary>
+            Gets the old name
+            </summary>
+        </member>
+        <member name="P:CustomEvent.NameChangedEventArgs.NewName">
+            <summary>
+            Gets the new name
+            </summary>
+        </member>
+        <member name="M:CustomEvent.NameChangedEventArgs.#ctor(System.String,System.String)">
+            <summary>
+            Constructor. Create a name changed event passing in the new and old names
+            </summary>
+            <param name="oldName">The old name</param>
+            <param name="newName">The new name</param>
+        </member>
+        <member name="T:CustomEvent.NameChangedEvent">
+            <summary>
+            A custom CompositePresentationEvent to be published when we change the name
+            of Pro
+            </summary>
+        </member>
+        <member name="M:CustomEvent.NameChangedEvent.Subscribe(System.Action{CustomEvent.NameChangedEventArgs},System.Boolean)">
+            <summary>
+            Allow subscribers to register for our custom event
+            </summary>
+            <param name="action">The callback which will be used to notify the subscriber</param>
+            <param name="keepSubscriberReferenceAlive">Set to true to retain a strong reference</param>
+            <returns><see cref="T:ArcGIS.Core.Events.SubscriptionToken"/></returns>
+        </member>
+        <member name="M:CustomEvent.NameChangedEvent.Unsubscribe(System.Action{CustomEvent.NameChangedEventArgs})">
+            <summary>
+            Allow subscribers to unregister from our custom event
+            </summary>
+            <param name="subscriber">The action that will be unsubscribed</param>
+        </member>
+        <member name="M:CustomEvent.NameChangedEvent.Unsubscribe(ArcGIS.Core.Events.SubscriptionToken)">
+            <summary>
+            Allow subscribers to unregister from our custom event
+            </summary>
+            <param name="token">The token that will be used to find the subscriber to unsubscribe</param>
+        </member>
+        <member name="M:CustomEvent.NameChangedEvent.Publish(CustomEvent.NameChangedEventArgs)">
+            <summary>
+            Event owner calls publish to raise the event and notify subscribers
+            </summary>
+            <param name="payload">The associated event information</param>
+        </member>
+        <member name="T:CustomEvent.Module1">
+            <summary>
+            Create a custom event argument class to contain any information that needs
+            to be passed with your event. In this case, the old and new caption for 
+            our custom app name changed event.
+            </summary>
+            <remarks>Derive from <see cref="T:ArcGIS.Core.Events.EventBase"/></remarks>
+        </member>
+        <member name="P:CustomEvent.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:CustomEvent.Module1.#ctor">
+            <summary>
+            Internal constructor. We use it as a convenient location to subscribe to our custom event
+            </summary>
+            <remarks>The constructor will be called when the button is first clicked</remarks>
+        </member>
+        <member name="M:CustomEvent.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="T:CustomEvent.Publish">
+            <summary>
+            Toggle the application name and raise the name changed custom event
+            </summary>
+        </member>
+        <member name="M:CustomEvent.Publish.OnClick">
+            <summary>
+            Execute the button onclick action
+            </summary>
+        </member>
+    </members>
+</doc>

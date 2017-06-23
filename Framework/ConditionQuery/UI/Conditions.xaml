@@ -44,9 +44,9 @@
     </Grid.RowDefinitions>
 
     <StackPanel Orientation="Horizontal">
-      <TextBlock HorizontalAlignment="Left" Text="Enabled Conditions" Style="{DynamicResource H3TextBlock}"
+      <TextBlock HorizontalAlignment="Left" Text="Enabled Conditions" Style="{DynamicResource Esri_TextBlockH3}"
                        Margin="10,3,20,3"></TextBlock>
-      <Button Style="{DynamicResource Esri_SimpleButton}"
+      <Button Style="{DynamicResource Esri_Button}"
                         HorizontalAlignment="Right" VerticalAlignment="Center"
                         Command="{Binding Path=RefreshCommand}"
                         Content="Refresh"
@@ -58,27 +58,27 @@
              VerticalAlignment="Stretch"
              SelectedItem="{Binding Path=SelectedCondition}"
              IsSynchronizedWithCurrentItem="True"
-             ItemContainerStyle="{DynamicResource Esri_HighlightListBoxItem}"
-             BorderBrush="{DynamicResource Esri_Gray160}" BorderThickness="1">
+             ItemContainerStyle="{DynamicResource Esri_ListBoxItemHighlightBrush}"
+             BorderBrush="{DynamicResource Esri_BorderBrush}" BorderThickness="1">
       <ListBox.ItemTemplate>
         <DataTemplate>
-          <TextBlock Text="{Binding Path=ID}" FontSize="14" VerticalAlignment="Center" Foreground="{DynamicResource Esri_Green5}">
+          <TextBlock Text="{Binding Path=ID}" FontSize="14" VerticalAlignment="Center" Style="{DynamicResource Esri_TextBlockRegular}">
             <TextBlock.ToolTip>
-              <ToolTip Background="{DynamicResource Esri_WindowGray}">
+              <ToolTip Background="{DynamicResource Esri_ControlBackgroundBrush}">
                 <Grid Margin="5">
-                  <TextBlock Text="{Binding Path=Caption}" Margin="5" Style="{DynamicResource RegularText}">
+                  <TextBlock Text="{Binding Path=Caption}" Margin="5" Style="{DynamicResource Esri_TextBlockRegular}">
                   </TextBlock>
                 </Grid>
               </ToolTip>
             </TextBlock.ToolTip>
-                    </TextBlock>
+          </TextBlock>
         </DataTemplate>
       </ListBox.ItemTemplate>
     </ListBox>
 
     <GridSplitter Grid.Row="2" Width="Auto" Height="10"
                           HorizontalAlignment="Stretch" VerticalAlignment="Center"
-                          Margin="0" Background="LightGray"></GridSplitter>
+                          Margin="0" Background="{DynamicResource Esri_ControlBackgroundBrush}"></GridSplitter>
 
     <Label Grid.Row="2" Content="····" HorizontalAlignment="Center" 
                VerticalAlignment="Top" FontSize="22" IsHitTestVisible="False"
@@ -88,8 +88,8 @@
       <ListBox ItemsSource="{Binding Path=ConditionLoader.ActiveStates}" Margin="10"
                HorizontalAlignment="Stretch"
                MinHeight="120"
-               ItemContainerStyle="{DynamicResource Esri_HighlightListBoxItem}"
-               BorderBrush="{DynamicResource Esri_Gray160}" BorderThickness="1">
+               ItemContainerStyle="{DynamicResource Esri_ListBoxItemHighlightBrush}"
+               BorderBrush="{DynamicResource Esri_BorderBrush}" BorderThickness="1">
       </ListBox>
     </Expander>
 
@@ -100,7 +100,7 @@
                             HorizontalAlignment="Stretch"
                             Text="{Binding Path=SelectedConditionXml}"
                             ScrollViewer.CanContentScroll="True"
-                                    Height="110">
+                            Height="110">
       </ui:AvalonEditorWrapper>
     </Expander>
 

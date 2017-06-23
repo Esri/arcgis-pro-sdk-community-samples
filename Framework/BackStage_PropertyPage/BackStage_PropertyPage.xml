@@ -54,7 +54,12 @@
             </summary>
             <returns>A Task that represents the InitializeAsync method</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:BackStage_PropertyPage.ApplicationSettingsViewModel.CancelAsync" -->
+        <member name="M:BackStage_PropertyPage.ApplicationSettingsViewModel.CancelAsync">
+            <summary>
+            Perform special actions when the page is to be cancelled.
+            </summary>
+            <returns>A Task that represents CancelAsync</returns>
+        </member>
         <member name="M:BackStage_PropertyPage.ApplicationSettingsViewModel.CommitAsync">
             <summary>
             Perform special actions when the page is to be committed.
@@ -216,7 +221,12 @@
             </summary>
             <returns>A Task that represnets the InitializeAsync method</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:BackStage_PropertyPage.ProjectSettingsViewModel.CancelAsync" -->
+        <member name="M:BackStage_PropertyPage.ProjectSettingsViewModel.CancelAsync">
+            <summary>
+            Perform special actions when the page is to be cancelled.
+            </summary>
+            <returns>A Task that represents CancelAsync</returns>
+        </member>
         <member name="M:BackStage_PropertyPage.ProjectSettingsViewModel.CommitAsync">
             <summary>
             Perform special actions when the page is to be committed.

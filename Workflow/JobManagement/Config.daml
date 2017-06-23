@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <!--Copyright 2017 Esri
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -13,12 +12,12 @@
    See the License for the specific language governing permissions and
    limitations under the License.-->
 <ArcGIS defaultAssembly="WorkflowSample.dll" defaultNamespace="WorkflowSample" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{5058f440-a01b-4015-9144-a9ce2527af6d}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{5058f440-a01b-4015-9144-a9ce2527af6d}" version="1.0" desktopVersion="2.0.0">
     <Name>Job Management App</Name>
     <Description>Pro Add-in for Workflow Manager</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>William Moreland</Author>
-    <Company>ESRI</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>4/13/2015 2:25:10 PM, 2015</Date>
     <Subject>Framework Content</Subject>
   </AddInInfo>

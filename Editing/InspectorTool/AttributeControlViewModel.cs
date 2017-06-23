@@ -29,7 +29,7 @@ namespace InspectorTool
         private Dictionary<MapMember, List<long>> _selection = null;
         private Inspector _featureInspector = null;
 
-        public AttributeControlViewModel(XElement options) : base(options)
+        public AttributeControlViewModel(XElement options, bool canChangeOptions) : base(options, canChangeOptions)
         {
             // create a new instance for the inspector
             _featureInspector = new Inspector();

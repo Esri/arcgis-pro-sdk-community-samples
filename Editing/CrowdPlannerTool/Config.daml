@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2017 Esri
@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="CrowdPlannerTool.dll" defaultNamespace="CrowdPlannerTool" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{16f160e1-f13b-4e4c-933f-e246e406ca30}" version="1.1" desktopVersion="1.4.7198">
+  <AddInInfo id="{16f160e1-f13b-4e4c-933f-e246e406ca30}" version="1.1" desktopVersion="2.0">
     <Name>Crowd Planner Tool</Name>
     <Description>Sample Crowd Planner Prototype</Description>
     <Image>Images\AddinDesktop32.png</Image>

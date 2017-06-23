@@ -55,7 +55,7 @@ namespace BingStreetside
         {
             double lat;
             double lng;
-            var coord = GeometryEngine.Project(geometry, SpatialReferences.WGS84) as MapPoint;
+            var coord = GeometryEngine.Instance.Project(geometry, SpatialReferences.WGS84) as MapPoint;
             if (coord != null)
             {
                 lng = coord.X;

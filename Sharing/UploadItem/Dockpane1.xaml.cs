@@ -215,7 +215,7 @@ namespace UploadItem
       
             EsriHttpClient myClient = new EsriHttpClient();
             Tuple<bool, string> response = null;
-            Item itemToUpload = ItemFactory.Create(itemPathStr);
+            Item itemToUpload = ItemFactory.Instance.Create(itemPathStr);
             if (itemToUpload != null)
             {
                 response = myClient.Upload(baseURI, itemToUpload, thumbnail, tags_arr);

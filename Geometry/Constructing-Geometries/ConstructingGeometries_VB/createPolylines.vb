@@ -28,91 +28,92 @@ Imports ArcGIS.Desktop.Framework.Threading.Tasks
 ''' This code sample shows how to build Polyline objects. 
 ''' The code will take point geometries from the point feature layer and construct polylines with 5 vertices each.
 ''' </summary>
-Friend Class createPolylines
-    Inherits Button
+Friend Class CreatePolylines
+  Inherits Button
 
-    Protected Overrides Async Sub OnClick()
-        ' to work in the context of the active display retrieve the current map 
-        Dim activeMap = MapView.Active.Map
+  Protected Overrides Async Sub OnClick()
+    ' to work in the context of the active display retrieve the current map 
+    Dim activeMap = MapView.Active.Map
 
-        ' retrieve the first point layer in the map
-        Dim pointFeatureLayer = activeMap.GetLayersAsFlattenedList().OfType(Of FeatureLayer).Where(
+    ' retrieve the first point layer in the map
+    Dim pointFeatureLayer = activeMap.GetLayersAsFlattenedList().OfType(Of FeatureLayer).Where(
             Function(lyr) lyr.ShapeType = ArcGIS.Core.CIM.esriGeometryType.esriGeometryPoint).FirstOrDefault()
 
-        If (IsNothing(pointFeatureLayer)) Then
-            Return
-        End If
+    If (IsNothing(pointFeatureLayer)) Then
+      Return
+    End If
 
-        ' retrieve the first polyline feature layer in the map
-        Dim polylineFeatureLayer = activeMap.GetLayersAsFlattenedList().OfType(Of FeatureLayer).Where(
+    ' retrieve the first polyline feature layer in the map
+    Dim polylineFeatureLayer = activeMap.GetLayersAsFlattenedList().OfType(Of FeatureLayer).Where(
             Function(lyr) lyr.ShapeType = ArcGIS.Core.CIM.esriGeometryType.esriGeometryPolyline).FirstOrDefault()
 
-        If (IsNothing(polylineFeatureLayer)) Then
-            Return
-        End If
+    If (IsNothing(polylineFeatureLayer)) Then
+      Return
+    End If
 
-        ' construct polyline from points
-        Await constructSamplePolylines(polylineFeatureLayer, pointFeatureLayer)
+    ' construct polyline from points
+    Await ConstructSamplePolylines(polylineFeatureLayer, pointFeatureLayer)
 
-        ' activate the button completed state
-        FrameworkApplication.State.Activate("geometry_lines_constructed")
-    End Sub
+    ' activate the button completed state
+    FrameworkApplication.State.Activate("geometry_lines_constructed")
+  End Sub
 
-    ''' <summary>
-    ''' Create sample polyline feature using the geometries from the point feature layer.
-    ''' </summary>
-    ''' <param name="polylineLayer">Polyline geometry feature layer used to add the new features.</param>
-    ''' <param name="pointLayer">The geometries from the point layer are used as vertices for the new line features.</param>
-    ''' <returns></returns>
-    Private Function constructSamplePolylines(polylineLayer As FeatureLayer, pointLayer As FeatureLayer) As Task(Of Boolean)
-        ' execute the fine grained API calls on the CIM main thread
-        Return QueuedTask.Run(
+  ''' <summary>
+  ''' Create sample polyline feature using the geometries from the point feature layer.
+  ''' </summary>
+  ''' <param name="polylineLayer">Polyline geometry feature layer used to add the new features.</param>
+  ''' <param name="pointLayer">The geometries from the point layer are used as vertices for the new line features.</param>
+  ''' <returns></returns>
+  Private Function ConstructSamplePolylines(polylineLayer As FeatureLayer, pointLayer As FeatureLayer) As Task(Of Boolean)
+    ' execute the fine grained API calls on the CIM main thread
+    Return QueuedTask.Run(
             Function()
-                ' get the underlying feature class for each layer
-                Dim polylineFeatureClass = DirectCast(polylineLayer.GetTable(), FeatureClass)
-                Dim pointFeatureClass = DirectCast(pointLayer.GetTable(), FeatureClass)
+              ' get the underlying feature class for each layer
+              Dim polylineFeatureClass = DirectCast(polylineLayer.GetTable(), FeatureClass)
+              Dim pointFeatureClass = DirectCast(pointLayer.GetTable(), FeatureClass)
 
-                ' retrieve the feature class schema information for the feature classes
-                Dim polylineDefinition = DirectCast(polylineFeatureClass.GetDefinition(), FeatureClassDefinition)
-                Dim pointDefinition = DirectCast(pointFeatureClass.GetDefinition(), FeatureClassDefinition)
+              ' retrieve the feature class schema information for the feature classes
+              Dim polylineDefinition = DirectCast(polylineFeatureClass.GetDefinition(), FeatureClassDefinition)
+              Dim pointDefinition = DirectCast(pointFeatureClass.GetDefinition(), FeatureClassDefinition)
 
-                ' construct a cursor for all point features, since we want all feature there is no
-                ' QueryFilter required
-                Dim pointCursor = pointFeatureClass.Search(Nothing, False)
+              ' construct a cursor for all point features, since we want all feature there is no
+              ' QueryFilter required
+              Dim pointCursor = pointFeatureClass.Search(Nothing, False)
 
-                ' initialize a counter variable
-                Dim pointCounter As Integer = 0
-                ' initialize a list to hold 5 coordinates that are used as vertices for the polyline
-                Dim lineCoordinates = New List(Of Coordinate)(5)
+              ' initialize a counter variable
+              Dim pointCounter As Integer = 0
+              ' initialize a list to hold 5 coordinates that are used as vertices for the polyline
+              Dim lineMapPoints = New List(Of MapPoint)(5)
 
-                ' set up the edit operation for the feature creation
-                Dim createOperation = New EditOperation()
-                createOperation.Name = "Create polylines"
-                createOperation.SelectNewFeatures = False
+              ' set up the edit operation for the feature creation
+              Dim createOperation = New EditOperation() With {
+                .Name = "Create polylines",
+                .SelectNewFeatures = False
+              }
 
-                ' loop through the point features
-                Do While (pointCursor.MoveNext())
-                    pointCounter += 1
+              ' loop through the point features
+              Do While (pointCursor.MoveNext())
+                pointCounter += 1
 
-                    Dim pointFeature = DirectCast(pointCursor.Current, Feature)
-                    ' add the feature point geometry as a coordinate into the vertex list of the line
-                    ' - ensure that the projection of the point geometry is converted to match the spatial reference of the line
-                    lineCoordinates.Add(DirectCast(GeometryEngine.Project(pointFeature.GetShape(), polylineDefinition.GetSpatialReference()), MapPoint).Coordinate)
+                Dim pointFeature = DirectCast(pointCursor.Current, Feature)
+                ' add the feature point geometry as a coordinate into the vertex list of the line
+                ' - ensure that the projection of the point geometry is converted to match the spatial reference of the line
+                lineMapPoints.Add(DirectCast(GeometryEngine.Instance.Project(pointFeature.GetShape(), polylineDefinition.GetSpatialReference()), MapPoint))
 
-                    ' for every 5 geometries, construct a new polyline and queue a feature create
-                    If (pointCounter Mod 5 = 0) Then
-                        ' construct a new polyline by using the 5 point coordinate in the current list
-                        Dim newPolyline = PolylineBuilder.CreatePolyline(lineCoordinates, polylineDefinition.GetSpatialReference())
-                        ' queue the create operation as part of the edit operation
-                        createOperation.Create(polylineLayer, newPolyline)
-                        ' reset the list of coordinates
-                        lineCoordinates = New List(Of Coordinate)(5)
-                    End If
-                Loop
+                ' for every 5 geometries, construct a new polyline and queue a feature create
+                If (pointCounter Mod 5 = 0) Then
+                  ' construct a new polyline by using the 5 point coordinate in the current list
+                  Dim newPolyline = PolylineBuilder.CreatePolyline(lineMapPoints, polylineDefinition.GetSpatialReference())
+                  ' queue the create operation as part of the edit operation
+                  createOperation.Create(polylineLayer, newPolyline)
+                  ' reset the list of coordinates
+                  lineMapPoints = New List(Of MapPoint)(5)
+                End If
+              Loop
 
-                ' execute the edit (create) operation
-                Return createOperation.ExecuteAsync()
+              ' execute the edit (create) operation
+              Return createOperation.ExecuteAsync()
             End Function)
-    End Function
+  End Function
 End Class
 

@@ -38,7 +38,7 @@ namespace DataReviewerProSDKSamples
     /// This class is used to create GalleryItems from BatchJob and Session project items
     /// GalleryItems are added to the gallery
     /// </summary>
-    internal class GalleryItem
+    internal class GalleryItem : ViewModelBase
     {
         public GalleryItem(string typeId,string path, string name)
         {

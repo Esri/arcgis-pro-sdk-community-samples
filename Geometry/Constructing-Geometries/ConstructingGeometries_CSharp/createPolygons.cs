@@ -31,7 +31,7 @@ namespace ConstructingGeometries
     /// This code sample shows how to build Polygon objects. 
     /// The code will take line geometries from the line feature layer and construct a polygon from a convex hull for all lines.
     /// </summary>
-    internal class createPolygons : Button
+    internal class CreatePolygons : Button
     {
         protected override async void OnClick()
         {
@@ -53,7 +53,7 @@ namespace ConstructingGeometries
                 return;
 
             //construct the polyline based of the convex hull of all polylines
-            await constructSamplePolygon(polygonFeatureLayer, lineFeatureLayer);
+            await ConstructSamplePolygon(polygonFeatureLayer, lineFeatureLayer);
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace ConstructingGeometries
         /// <param name="polygonLayer">Polygon geometry feature layer used to add the new feature.</param>
         /// <param name="lineLayer">The polyline feature layer containing the features used to construct the polygon.</param>
         /// <returns></returns>
-        private Task<bool> constructSamplePolygon(FeatureLayer polygonLayer, FeatureLayer lineLayer)
+        private Task<bool> ConstructSamplePolygon(FeatureLayer polygonLayer, FeatureLayer lineLayer)
         {
 
             // execute the fine grained API calls on the CIM main thread
@@ -97,7 +97,7 @@ namespace ConstructingGeometries
                 }
 
                 // use the ConvexHull method from the GeometryEngine to construct the polygon geometry
-                var newPolygon = GeometryEngine.ConvexHull(polylineBuilder.ToGeometry()) as Polygon;
+                var newPolygon = GeometryEngine.Instance.ConvexHull(polylineBuilder.ToGeometry()) as Polygon;
 
                 // queue the polygon creation
                 createOperation.Create(polygonLayer, newPolygon);

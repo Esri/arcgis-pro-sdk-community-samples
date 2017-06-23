@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <!--
 
    Copyright 2017 Esri
@@ -19,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="DomainsUsage.dll" defaultNamespace="DomainsUsage" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{eb3122b6-dd28-4321-a62a-614c50d7b695}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{eb3122b6-dd28-4321-a62a-614c50d7b695}" version="1.0" desktopVersion="2.0.0">
     <Name>DomainsUsage</Name>
     <Description>An Addin which Lists all the domains available in the SqlServer Feature Layer selected and Creates a Query Layer using GeoProcessing which lists all the Datasets which reference the domain selected</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>Pro SDK Team</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>4/20/2015 12:35:22 PM, 2015</Date>
     <Subject>Geodatabase</Subject>
     <!-- Note subject can be one or more of these topics:

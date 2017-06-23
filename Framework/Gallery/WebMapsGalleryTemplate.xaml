@@ -36,7 +36,7 @@
                         <ToolTip Content="{Binding Path=Snippet}"></ToolTip>
                     </Image.ToolTip>
                 </Image>
-                <TextBlock Grid.Row="1" Text="{Binding Path=Title}" Style="{DynamicResource Esri_RegularText}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+        <TextBlock Grid.Row="1" Text="{Binding Path=Title}" Style="{DynamicResource Esri_TextBlockRegular}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
             </Grid>
         </Grid>
     </DataTemplate>

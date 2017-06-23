@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <!--
 
    Copyright 2017 Esri
@@ -19,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="UploadVtpkToAgol.dll" defaultNamespace="UploadVtpkToAgol" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{e706895b-16b0-42f2-8eb1-49020fcc8b9f}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{e706895b-16b0-42f2-8eb1-49020fcc8b9f}" version="1.0" desktopVersion="2.0.0">
     <Name>UploadVtpkToAgol</Name>
     <Description>UploadVtpkToAgol description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>tush6415</Author>
-    <Company>Esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>3/5/2016 11:32:50 AM, 2016</Date>
     <Subject>Sharing</Subject>
     <!-- Note subject can be one or more of these topics:

@@ -17,6 +17,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"              
              xmlns:local="clr-namespace:RemoveAddins"
+			       xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
              xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
              d:DataContext="{Binding Path=RemoveAddins.SampleBackstageTabViewModel}"
              mc:Ignorable="d" >
@@ -29,7 +30,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <Grid Style="{StaticResource BackStagePanel}" HorizontalAlignment="Left" Height="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+    <Grid HorizontalAlignment="Left" Height="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="20,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -44,12 +45,12 @@
                 </StackPanel>
             </DataTemplate>
         </Grid.Resources>
-        <DockPanel Grid.Row="0"  Style="{StaticResource BackStagePanel}">
-            <TextBlock DockPanel.Dock="Left" Style="{StaticResource BackStageTitle}"
-          Text="Sample Backstage Tab"></TextBlock>
-
+      
+        <DockPanel Grid.Row="0" >
+            <TextBlock DockPanel.Dock="Left" Style="{StaticResource Esri_TextBlockBackStageTitle}" Text="Sample Backstage Tab"></TextBlock>
         </DockPanel>
-        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,60,0,56" Style="{StaticResource BackStagePanel}" >
+      
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,60,0,56" >
             <TextBlock Text="Add-in Folder"/>
 
             <ComboBox ItemsSource="{Binding AllAddInPaths}"  
@@ -66,15 +67,13 @@
                 <ListBox.ItemContainerStyle>
                     <!-- This Style binds a ListBoxItem to a the ViewModelItem. -->
                     <Style TargetType="ListBoxItem">
-                        <Setter 
-                        Property="IsSelected"
-                        Value="{Binding IsSelected, Mode=TwoWay}" />
+                        <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
                     </Style>
                 </ListBox.ItemContainerStyle>
             </ListBox>
-            <Button Content="Delete" Style="{DynamicResource Esri_SimpleButton}" ToolTip="Esri_SimpleButton" Command="{Binding DeleteAddInsCommand}"/>
+            <Button Content="Delete" Style="{DynamicResource Esri_Button}" ToolTip="Delete selected add-ins." Command="{Binding DeleteAddInsCommand}"/>
             
-            <TextBlock Text="Adding and removing add-ins requires an application restart to take effect." Foreground="{DynamicResource Esri_Red4}" FontWeight="SemiBold" />
+            <controls:MessageLabel MessageType="Error" Severity="High" Content="Adding and removing add-ins requires an application restart to take effect." CanClose="False"/>
         </StackPanel>
 
     </Grid>

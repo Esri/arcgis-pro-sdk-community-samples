@@ -116,7 +116,7 @@ namespace GeometrySamples
 
                 foreach (var item in internalRings)
                 {
-                    if (GeometryEngine.Within(part, item))
+                    if (GeometryEngine.Instance.Within(part, item))
                         isWithin = true;
                 }
 

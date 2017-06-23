@@ -19,6 +19,7 @@ using ArcGIS.Desktop.Workflow.Models.Queries;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
 using ArcGIS.Desktop.Workflow.Models.JobModels;
+using ArcGIS.Desktop.Workflow;
 
 namespace WorkflowSample
 {
@@ -29,6 +30,7 @@ namespace WorkflowSample
         private static string JobTypeName = "Work Order";
         private static string CreatePaneHeading = "Create Work Order";
         private static string OpenPaneHeading = "Open Work Order";
+
         protected JobManagementViewModel()
         {
             _isControl = true;
@@ -266,8 +268,8 @@ namespace WorkflowSample
             }
         }
 
-        private int _infoID;
-        public int InfoID
+        private string _infoID;
+        public string InfoID
         {
             get { return _infoID; }
             set
@@ -349,9 +351,9 @@ namespace WorkflowSample
             IsHeader = true;
             IsCreate = true;
             Heading = CreatePaneHeading;
-            QueuedTask.Run(() =>
+            QueuedTask.Run(async () =>
             {
-                OwnerList = JobManagementModule.Current.GetOwnerList();
+                OwnerList = await JobManagementModule.Current.GetOwnerListAsync();
             });
         }
 
@@ -366,7 +368,7 @@ namespace WorkflowSample
             QueryResult jobs = QueuedTask.Run(() =>
             {
                 //build open job grid
-                return JobManagementModule.Current.GetJobs();
+                return JobManagementModule.Current.GetJobsAsync();
             }).Result;
             Columns = JobManagementModule.Current.BuildDataGridColumns(jobs.Fields);
             OpenRows = jobs.Rows;
@@ -381,7 +383,7 @@ namespace WorkflowSample
                 _previousOpen = true;
                  QueuedTask.Run(() =>
                  {
-                     Open_WorkOrder(selected.JobID);
+                     Open_WorkOrderAsync(selected.JobID);
                  });
             }
         }
@@ -390,12 +392,12 @@ namespace WorkflowSample
         {
             OwnerComboBoxItem Owner = SelectedItem as OwnerComboBoxItem;
             SelectedItem = null;
-            QueuedTask.Run(() => 
-            { 
-                int jobId = JobManagementModule.Current.CreateJob(Owner);
+            QueuedTask.Run(async () =>
+            {
+                var jobId = await JobManagementModule.Current.CreateJobAsync(Owner);
                 if (IsChecked == true)
                 {
-                        Open_WorkOrder(jobId);
+                    await Open_WorkOrderAsync(jobId);
                 }
             });
         }
@@ -431,7 +433,7 @@ namespace WorkflowSample
             JobOpened = false;
         }
 
-        private void Open_WorkOrder(int jobId)
+        private async System.Threading.Tasks.Task Open_WorkOrderAsync(string jobId)
         {
             clearPane();
             Caption = JobTypeName;
@@ -441,7 +443,8 @@ namespace WorkflowSample
             IsHeader = true;
 
             //fill job view grid
-            Job CurJob = JobManagementModule.Current.OpenJob(jobId);
+            
+            Job CurJob = await JobManagementModule.Current.OpenJobAsync(jobId);
             InfoCreated = CurJob.CreatedBy;
             InfoName = Heading = CurJob.Name;
             InfoID = CurJob.ID;

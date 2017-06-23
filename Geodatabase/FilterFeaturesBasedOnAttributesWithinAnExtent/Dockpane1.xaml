@@ -46,8 +46,7 @@
     </Grid.RowDefinitions>
 
     <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
-      <TextBlock Grid.Column="1" Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center"
-                    FontSize="16" FontWeight="Light">
+      <TextBlock Grid.Column="1" Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Esri_TextBlockDockPaneHeader}">
         <TextBlock.ToolTip>
           <WrapPanel Orientation="Vertical" MaxWidth="300">
             <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
@@ -60,10 +59,11 @@
         <ColumnDefinition Width="Auto"></ColumnDefinition>
         <ColumnDefinition Width="*"></ColumnDefinition>
       </Grid.ColumnDefinitions>
-      <TextBlock Grid.Column="0" Margin="5" VerticalAlignment="Center" Text="Selected Layer:"></TextBlock>
+      <TextBlock Grid.Column="0" Margin="5" VerticalAlignment="Center" Text="Selected Layer:" Style="{DynamicResource Esri_TextBlockRegular}"/>
       <TextBox Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" IsReadOnly="True" Margin="5" Text="{Binding SelectedLayer}" />
     </Grid>
-    <TextBlock Grid.Row="2" HorizontalAlignment="Left" Margin="5" Text="Show Features in the selected Extent with the given attribute query" VerticalAlignment="Center" TextWrapping="Wrap"/>
+    <TextBlock Grid.Row="2" HorizontalAlignment="Left" Margin="5" Text="Show Features in the selected Extent with the given attribute query" VerticalAlignment="Center" TextWrapping="Wrap"
+               Style="{DynamicResource Esri_TextBlockRegular}"/>
     <ComboBox Grid.Row="3" HorizontalAlignment="Stretch" Margin="5"
               VerticalAlignment="Top" ItemsSource="{Binding Fields}" 
               Name="FieldsComboBox" 
@@ -74,7 +74,7 @@
         </i:EventTrigger>
       </i:Interaction.Triggers>
     </ComboBox>
-    <TextBlock Grid.Row="4" HorizontalAlignment="Left" Margin="5" Text="Containing Value" VerticalAlignment="Center" />
+    <TextBlock Grid.Row="4" HorizontalAlignment="Left" Margin="5" Text="Containing Value" VerticalAlignment="Center" Style="{DynamicResource Esri_TextBlockRegular}"/>
     <TextBox Grid.Row="5" HorizontalAlignment="Stretch" Text="{Binding FieldValue}" VerticalAlignment="Top" />
     <Grid Grid.Row="6">
       <Grid.ColumnDefinitions>
@@ -82,15 +82,15 @@
         <ColumnDefinition Width="Auto"></ColumnDefinition>
         <ColumnDefinition Width="*"></ColumnDefinition>
       </Grid.ColumnDefinitions>
-      <TextBlock Grid.Column="0" Margin="5" VerticalAlignment="Center" Text="No. of result records:"></TextBlock>
+      <TextBlock Grid.Column="0" Margin="5" VerticalAlignment="Center" Text="No. of result records:" Style="{DynamicResource Esri_TextBlockRegular}"/>
       <TextBox Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" IsReadOnly="True" Margin="5" Text="{Binding ResultCount}" />
       <Button Grid.Column="2" Content="Go" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Top" Width="75" 
-              Style="{DynamicResource Esri_SimpleButton}"
+              Style="{DynamicResource Esri_Button}"
               Command="{Binding CmdWork}"/>
     </Grid>
     <DataGrid Grid.Row="7" HorizontalAlignment="Stretch" Height="Auto" 
               ItemsSource="{Binding FeatureData}" VerticalAlignment="Top" 
-              Style="{DynamicResource Esri_DataGridStyle}"
+              Style="{DynamicResource Esri_DataGrid}"
               HeadersVisibility="Column"
               AutoGenerateColumns="True"
               IsReadOnly="True"

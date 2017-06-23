@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OpenMapViews</name>
+    </assembly>
+    <members>
+        <member name="T:OpenMapViews.Module1">
+            <summary>
+            This sample shows how to show / hide mapview panes associated with multiple maps. 
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro will open. 
+            1. Open the "C:\Data\Admin\AdminSample.aprx" project.
+            1. Click on the Add-In tab on the ribbon.
+            1. Within this tab there is a **Show Open Mapviews Dockpane** button. Click on the button to activate the Open Mapviews Dockpane.
+            ![UI](Screenshots/Screen1.png)
+            1. On the dockpane click on one of the states to view the associated mapview pane.
+            ![UI](Screenshots/Screen2.png)
+            1. On the dockpane click on one of the states where 'Has Mapview' to hide the associated mapview pane.
+            ![UI](Screenshots/Screen3.png)
+            1. Open the catalog view to see which maps were added to your project.
+            </remarks>
+        </member>
+        <member name="P:OpenMapViews.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:OpenMapViews.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="T:OpenMapViews.OpenMapviewsDockpaneView">
+            <summary>
+            Interaction logic for OpenMapviewsDockpaneView.xaml
+            </summary>
+            <summary>
+            OpenMapviewsDockpaneView
+            </summary>
+        </member>
+        <member name="M:OpenMapViews.OpenMapviewsDockpaneView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="F:OpenMapViews.OpenMapviewsDockpaneViewModel._lockCollection">
+            <summary>
+            used to lock collections for use by multiple threads
+            </summary>
+        </member>
+        <member name="M:OpenMapViews.OpenMapviewsDockpaneViewModel.#ctor">
+            <summary>
+            CTor
+            </summary>
+        </member>
+        <member name="M:OpenMapViews.OpenMapviewsDockpaneViewModel.CreateMapviewItemsAsync">
+            <summary>
+            Because we need a type of 'index' that allows create a set of maps and 
+            corresponding mapviews.  The 'index' is then displayed in a datagrid on a dockpane.
+            Selecting an item on the datagrid will either show or hide the associated mapview pane
+            </summary>
+        </member>
+        <member name="P:OpenMapViews.OpenMapviewsDockpaneViewModel.SelectedMapview">
+            <summary>
+            a map view item was selected -> create the Map and display the map pane
+            </summary>
+        </member>
+        <member name="M:OpenMapViews.OpenMapviewsDockpaneViewModel.CreateAndViewMapPane(OpenMapViews.MapviewItem)">
+            <summary>
+            Creates a new mapviewpane (and a map as well if need-be) or closes the mapviewpane if it already exists
+            </summary>
+            <param name="selectedMapview"></param>
+        </member>
+        <member name="M:OpenMapViews.OpenMapviewsDockpaneViewModel.CreateMapThruCopy(System.String,ArcGIS.Core.Geometry.Envelope)">
+            <summary>
+            Takes a map as a template and makes a copy of that map with a given new map name and extent
+            </summary>
+            <param name="newMapName"></param>
+            <param name="newExtent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpenMapViews.OpenMapviewsDockpaneViewModel.UpdateHasMapView(System.String,System.Boolean)">
+            <summary>
+            Checks or Unchecks the "HasViewPane" checkbox.  Then clears the current selection
+            </summary>
+            <param name="MapName"></param>
+            <param name="newHasMapView"></param>
+        </member>
+        <member name="M:OpenMapViews.OpenMapviewsDockpaneViewModel.ReplaceJsonClass(System.String,System.String,System.String,System.String)">
+            <summary>
+            Replaces the class content of a given json class tag
+            </summary>
+            <param name="json"></param>
+            <param name="className"></param>
+            <param name="newClassContent"></param>
+            <param name="fileName">Used in case of exception</param>
+            <returns>updated json string</returns>
+        </member>
+        <member name="M:OpenMapViews.OpenMapviewsDockpaneViewModel.ReplaceJsonString(System.String,System.String,System.String,System.String)">
+            <summary>
+            Replaces the string content of a given json tag
+            </summary>
+            <param name="json"></param>
+            <param name="stringName"></param>
+            <param name="newStringContent"></param>
+            <param name="fileName">Used in case of exception</param>
+            <returns>updated json string</returns>
+        </member>
+        <member name="M:OpenMapViews.OpenMapviewsDockpaneViewModel.Show">
+            <summary>
+            Show the DockPane.
+            </summary>
+        </member>
+        <member name="F:OpenMapViews.OpenMapviewsDockpaneViewModel._heading">
+            <summary>
+            Text shown near the top of the DockPane.
+            </summary>
+        </member>
+        <member name="T:OpenMapViews.OpenMapviewsDockpane_ShowButton">
+            <summary>
+            Button implementation to show the DockPane.
+            </summary>
+        </member>
+    </members>
+</doc>

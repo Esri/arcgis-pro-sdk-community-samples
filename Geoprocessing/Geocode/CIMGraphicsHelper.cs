@@ -35,7 +35,7 @@ namespace Geocode
         {
             _cimHelper = new CIMHelpers();
             _graphic = _cimHelper.MakeCIMPointGraphic(point);
-            graphicID = -1;
+            GraphicID = -1;
         }
 
         ~CIMPointGraphicHelper()
@@ -46,7 +46,7 @@ namespace Geocode
         /// Gets and sets id for this graphic relevant to the specific mapview
         /// overlay it has been added to
         /// </summary>
-        public int graphicID { get; set; }
+        public int GraphicID { get; set; }
 
         /// <summary>
         /// Gets the XML representation of the CIMPointGraphic
@@ -136,19 +136,21 @@ namespace Geocode
         /// <returns></returns>
         public CIMPointGraphic MakeCIMPointGraphic(PointN point)
         {
-            CIMMarker marker = SymbolFactory.ConstructMarker(Red, 10, SimpleMarkerStyle.Star);
+            CIMMarker marker = SymbolFactory.Instance.ConstructMarker(Red, 10, SimpleMarkerStyle.Star);
 
             CIMSymbolLayer[] layers = new CIMSymbolLayer[1];
             layers[0] = marker;
 
-            CIMPointSymbol pointSymbol = new CIMPointSymbol();
-            pointSymbol.SymbolLayers = layers;
-            pointSymbol.ScaleX = 1;
-
-            CIMSymbolReference symbolRef = new CIMSymbolReference();
-            symbolRef.Symbol = pointSymbol;
-
-            CIMPointGraphic pointGraphic = new CIMPointGraphic();
+      CIMPointSymbol pointSymbol = new CIMPointSymbol()
+      {
+        SymbolLayers = layers,
+        ScaleX = 1
+      };
+      CIMSymbolReference symbolRef = new CIMSymbolReference()
+      {
+        Symbol = pointSymbol
+      };
+      CIMPointGraphic pointGraphic = new CIMPointGraphic();
             ArcGIS.Core.Geometry.SpatialReference spatialRef = SpatialReferenceBuilder.CreateSpatialReference(point.SpatialReference.WKID);
             MapPoint mapPoint = MapPointBuilder.CreateMapPoint(point.X, point.Y, spatialRef);
             pointGraphic.Location = mapPoint;
@@ -185,78 +187,82 @@ namespace Geocode
             ArcGIS.Core.Internal.CIM.SpatialReference sr = null;
             if (WKID == 104115 || WKID == 4326)
             {
-                GeographicCoordinateSystem gs = new GeographicCoordinateSystem();
-                gs.WKID = 104115;
-                gs.WKIDSpecified = true;
-                gs.LatestWKID = 104115;
-                gs.LatestVCSWKIDSpecified = true;
-                gs.LeftLongitude = -180;
-                gs.LeftLongitudeSpecified = true;
-                gs.HighPrecision = true;
-                gs.HighPrecisionSpecified = true;
-                gs.MTolerance = 0.001;
-                gs.MToleranceSpecified = true;
-                gs.ZTolerance = 0.001;
-                gs.ZToleranceSpecified = true;
-                gs.XYTolerance = 8.9831528411952133E-09;
-                gs.XYToleranceSpecified = true;
-                gs.MScale = 10000;
-                gs.MScaleSpecified = true;
-                gs.MOrigin = -100000;
-                gs.MOriginSpecified = true;
-                gs.ZScale = 10000;
-                gs.ZScaleSpecified = true;
-                gs.ZOrigin = -100000;
-                gs.ZOriginSpecified = true;
-                gs.XYScale = 999999999.99999988;
-                gs.XYScaleSpecified = true;
-                gs.XOrigin = -400;
-                gs.XOriginSpecified = true;
-                gs.YOrigin = -400;
-                gs.YOriginSpecified = true;
-                gs.WKT = "GEOGCS[\"GCS_ITRF_1988\",DATUM[\"D_ITRF_1988\",SPHEROID[\"GRS_1980\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433],AUTHORITY[\"ESRI\",104115]]";
-                sr = gs as ArcGIS.Core.Internal.CIM.SpatialReference;
+        GeographicCoordinateSystem gs = new GeographicCoordinateSystem()
+        {
+          WKID = 104115,
+          WKIDSpecified = true,
+          LatestWKID = 104115,
+          LatestVCSWKIDSpecified = true,
+          LeftLongitude = -180,
+          LeftLongitudeSpecified = true,
+          HighPrecision = true,
+          HighPrecisionSpecified = true,
+          MTolerance = 0.001,
+          MToleranceSpecified = true,
+          ZTolerance = 0.001,
+          ZToleranceSpecified = true,
+          XYTolerance = 8.9831528411952133E-09,
+          XYToleranceSpecified = true,
+          MScale = 10000,
+          MScaleSpecified = true,
+          MOrigin = -100000,
+          MOriginSpecified = true,
+          ZScale = 10000,
+          ZScaleSpecified = true,
+          ZOrigin = -100000,
+          ZOriginSpecified = true,
+          XYScale = 999999999.99999988,
+          XYScaleSpecified = true,
+          XOrigin = -400,
+          XOriginSpecified = true,
+          YOrigin = -400,
+          YOriginSpecified = true,
+          WKT = "GEOGCS[\"GCS_ITRF_1988\",DATUM[\"D_ITRF_1988\",SPHEROID[\"GRS_1980\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433],AUTHORITY[\"ESRI\",104115]]"
+        };
+        sr = gs as ArcGIS.Core.Internal.CIM.SpatialReference;
 
             }
             else if (WKID == 102100)
             {
-                //Note: In testing, I could not get Web Mercator to
-                //work on the mapview.
-                ProjectedCoordinateSystem pcs = new ProjectedCoordinateSystem();
-                pcs.HighPrecision = true;
-                pcs.HighPrecisionSpecified = true;
-                pcs.LatestVCSWKID = 0;
-                pcs.LatestVCSWKIDSpecified = false;
-                pcs.LatestWKID = 3857;
-                pcs.LatestWKIDSpecified = true;
-                pcs.LeftLongitude = 0.0;
-                pcs.LeftLongitudeSpecified = false;
-                pcs.MOrigin = -100000.0;
-                pcs.MOriginSpecified = true;
-                pcs.MScale = 10000.0;
-                pcs.MScaleSpecified = true;
-                pcs.MTolerance = 0.001;
-                pcs.MToleranceSpecified = true;
-                pcs.VCSWKID = 0;
-                pcs.VCSWKIDSpecified = false;
-                pcs.WKID = 102100;
-                pcs.WKIDSpecified = true;
-                pcs.WKT = "PROJCS[\"WGS_1984_Web_Mercator_Auxiliary_Sphere\",GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mercator_Auxiliary_Sphere\"],PARAMETER[\"false ;_Easting\",0.0],PARAMETER[\"false ;_Northing\",0.0],PARAMETER[\"Central_Meridian\",0.0],PARAMETER[\"Standard_Parallel_1\",0.0],PARAMETER[\"Auxiliary_Sphere_Type\",0.0],UNIT[\"Meter\",1.0],AUTHORITY[\"EPSG\",3857]]";
-                pcs.XOrigin = -20037700.0;
-                pcs.XOriginSpecified = true;
-                pcs.XYScale = 10000.0;
-                pcs.XYScaleSpecified = true;
-                pcs.XYTolerance = 0.001;
-                pcs.XYToleranceSpecified = true;
-                pcs.YOrigin = -30241100.0;
-                pcs.YOriginSpecified = true;
-                pcs.ZOrigin = -100000.0;
-                pcs.ZOriginSpecified = true;
-                pcs.ZScale = 10000.0;
-                pcs.ZScaleSpecified = true;
-                pcs.ZTolerance = 0.001;
-                pcs.ZToleranceSpecified = true;
-                sr = pcs as ArcGIS.Core.Internal.CIM.SpatialReference;
+        //Note: In testing, I could not get Web Mercator to
+        //work on the mapview.
+        ProjectedCoordinateSystem pcs = new ProjectedCoordinateSystem()
+        {
+          HighPrecision = true,
+          HighPrecisionSpecified = true,
+          LatestVCSWKID = 0,
+          LatestVCSWKIDSpecified = false,
+          LatestWKID = 3857,
+          LatestWKIDSpecified = true,
+          LeftLongitude = 0.0,
+          LeftLongitudeSpecified = false,
+          MOrigin = -100000.0,
+          MOriginSpecified = true,
+          MScale = 10000.0,
+          MScaleSpecified = true,
+          MTolerance = 0.001,
+          MToleranceSpecified = true,
+          VCSWKID = 0,
+          VCSWKIDSpecified = false,
+          WKID = 102100,
+          WKIDSpecified = true,
+          WKT = "PROJCS[\"WGS_1984_Web_Mercator_Auxiliary_Sphere\",GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mercator_Auxiliary_Sphere\"],PARAMETER[\"false ;_Easting\",0.0],PARAMETER[\"false ;_Northing\",0.0],PARAMETER[\"Central_Meridian\",0.0],PARAMETER[\"Standard_Parallel_1\",0.0],PARAMETER[\"Auxiliary_Sphere_Type\",0.0],UNIT[\"Meter\",1.0],AUTHORITY[\"EPSG\",3857]]",
+          XOrigin = -20037700.0,
+          XOriginSpecified = true,
+          XYScale = 10000.0,
+          XYScaleSpecified = true,
+          XYTolerance = 0.001,
+          XYToleranceSpecified = true,
+          YOrigin = -30241100.0,
+          YOriginSpecified = true,
+          ZOrigin = -100000.0,
+          ZOriginSpecified = true,
+          ZScale = 10000.0,
+          ZScaleSpecified = true,
+          ZTolerance = 0.001,
+          ZToleranceSpecified = true
+        };
+        sr = pcs as ArcGIS.Core.Internal.CIM.SpatialReference;
             }
             else
             {

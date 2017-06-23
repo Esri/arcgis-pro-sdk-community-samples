@@ -18,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="MagnifierWindow.dll" defaultNamespace="MagnifierWindow" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{56149951-737e-49ea-92e9-8c68c464dd4b}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{56149951-737e-49ea-92e9-8c68c464dd4b}" version="1.0" desktopVersion="2.0.0">
     <Name>MagnifierWindow</Name>
     <Description>MagnifierWindow for 2D map views</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>4/12/2016 12:11:52 PM, 2016</Date>
     <Subject>Map Exploration</Subject>   
   </AddInInfo>

@@ -1,4 +1,4 @@
-﻿//   Copyright 2014 Esri
+﻿//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -40,7 +40,7 @@ namespace ControlStyles.FontUsage
         /// <summary>
         /// Text shown near the top of the DockPane.
         /// </summary>
-        private string _heading = "My DockPane";
+        private string _heading = "ArcGIS Pro TextBlock Styles";
         public string Heading
         {
             get { return _heading; }

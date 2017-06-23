@@ -28,7 +28,7 @@ namespace MapToolWithOverlayControl
     /// </summary>
     internal class EmbeddedControlViewModel : EmbeddableControl
     {
-        public EmbeddedControlViewModel(XElement options) : base(options)
+        public EmbeddedControlViewModel(XElement options, bool canChangeOption) : base(options, canChangeOption)
         {
         }
 

@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
 <!--
 
    Copyright 2017 Esri
@@ -23,12 +19,12 @@
 -->
 
 <ArcGIS defaultAssembly="CustomSymbolPicker.dll" defaultNamespace="CustomSymbolPicker" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{5c34edd0-a2d6-4085-b105-edebd058a002}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{5c34edd0-a2d6-4085-b105-edebd058a002}" version="1.0" desktopVersion="2.0.0">
     <Name>CustomSymbolPicker</Name>
     <Description>Search symbols in styles, create a symbol gallery and apply symbol to a feature layer</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>deep4730</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>4/11/2015 11:38:37 AM, 2015</Date>
     <Subject>Map Authoring</Subject>
 

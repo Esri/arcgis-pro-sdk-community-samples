@@ -1,10 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
-
-<!--//   Copyright 2014 Esri
+<!--//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -18,7 +12,7 @@
 //   limitations under the License. 
 -->
 <ArcGIS defaultAssembly="ControlStyles.dll" defaultNamespace="ControlStyles" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{b985446c-1ee8-45f2-8d10-222eab8a0bde}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{b985446c-1ee8-45f2-8d10-222eab8a0bde}" version="1.0" desktopVersion="2.0.0">
     <Name>ControlStyles</Name>
     <Description>ArcGIS Pro UI Design</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -41,8 +35,9 @@
         <group id="ControlStyles_Group1" caption="ArcGIS Pro UI Design" appearsOnAddInTab="false" keytip="Z2">
           <!-- host controls within groups -->
           <button refID="ControlStyles_ArcGISProControlStylesDockPane_ShowButton" size="large" />
-          <!--<button refID="ControlStyles_FontUsage_ArcGISProFontUsageDockPane_ShowButton" size="large" />-->
-          <button refID="ControlStyles_Colors_ArcGISProColorsDockpane_ShowButton" size="large" />
+          <button refID="ControlStyles_FontUsage_ArcGISProFontUsageDockPane_ShowButton" size="large" />
+          <button refID="ControlStyles_Backstage_BackstageStyles" size="large" />
+          <button refID="ControlStyles_ProWindow_ProWindowStylesButton" size="large" />
         </group>
       </groups>
       <controls>
@@ -50,25 +45,30 @@
         <button id="ControlStyles_ArcGISProControlStylesDockPane_ShowButton" caption="Control Styles" className="ArcGISProControlStylesDockPane_ShowButton" loadOnClick="true" smallImage="Images\style-icon16.png" largeImage="Images\style-icon32.png" keytip="Z3">
           <tooltip heading="Show Dockpane">ArcGIS Pro Control Styles<disabledText /></tooltip>
         </button>
-        <button id="ControlStyles_FontUsage_ArcGISProFontUsageDockPane_ShowButton" caption="Font Usage" className="ControlStyles.FontUsage.ArcGISProFontUsageDockPane_ShowButton" loadOnClick="true" smallImage="Images\Fonts-icon16.png" largeImage="Images\Fonts-icon32.png" keytip="Z4">
+        <button id="ControlStyles_FontUsage_ArcGISProFontUsageDockPane_ShowButton" caption="TextBlock Styles" className="ControlStyles.FontUsage.ArcGISProFontUsageDockPane_ShowButton" loadOnClick="true" smallImage="Images\Fonts-icon16.png" largeImage="Images\Fonts-icon32.png" keytip="Z4">
           <tooltip heading="Show Dockpane">ArcGIS Pro Font Usage<disabledText /></tooltip>
         </button>
-        <button id="ControlStyles_Colors_ArcGISProColorsDockpane_ShowButton" caption="Colors " className="ControlStyles.Colors.ArcGISProColorsDockpane_ShowButton" loadOnClick="true" smallImage="Images\Actions-fill-color-icon16.png" largeImage="Images\Actions-fill-color-icon32.png" keytip="Z5">
-          <tooltip heading="Show Dockpane">ArcGIS Pro Colors<disabledText /></tooltip>
+        <button id="ControlStyles_Backstage_BackstageStyles" caption="Backstage Styles" className="ControlStyles.Backstage.BackstageStylesButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\Backstage.png" keytip="Z5">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="ControlStyles_ProWindow_ProWindowStylesButton" caption="ProWindow Styles" className="ControlStyles.ProWindow.ProWindowStylesButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\ProWindow.png" keytip="Z6">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="ControlStyles_ArcGISProControlStylesDockPane" caption="ArcGIS Pro Control Styles" className="ArcGISProControlStylesDockPaneViewModel" dock="group" dockWith="esri_core_contentsDockPane" >
+        <dockPane id="ControlStyles_ArcGISProControlStylesDockPane" caption="ArcGIS Pro Control Styles" className="ArcGISProControlStylesDockPaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="ArcGISProControlStylesDockPaneView" />
         </dockPane>
-        <dockPane id="ControlStyles_FontUsage_ArcGISProFontUsageDockPane" caption="ArcGIS Pro Font Usage" className="ControlStyles.FontUsage.ArcGISProFontUsageDockPaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="ControlStyles_FontUsage_ArcGISProFontUsageDockPane" caption="ArcGIS Pro TextBlock Styles" className="ControlStyles.FontUsage.ArcGISProFontUsageDockPaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="ControlStyles.FontUsage.ArcGISProFontUsageDockPaneView" />
-        </dockPane>
-        <dockPane id="ControlStyles_Colors_ArcGISProColorsDockpane" caption="ArcGIS Pro Colors" className="ControlStyles.Colors.ArcGISProColorsDockpaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
-          <content className="ControlStyles.Colors.ArcGISProColorsDockpaneView" />
         </dockPane>
       </dockPanes>
       <menus></menus>
     </insertModule>
   </modules>
+  <backstage>
+    <insertTab id="ControlStyles_Backstage_BackstageStyling" caption="BackstageStyling" className="ControlStyles.Backstage.BackstageStylingViewModel" insert="before" placeWith="esri_core_exitApplicationButton" keytip="Z7">
+      <content className="ControlStyles.Backstage.BackstageStylingView" />
+    </insertTab>
+  </backstage>
 </ArcGIS>

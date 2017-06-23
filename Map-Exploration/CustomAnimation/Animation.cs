@@ -101,19 +101,19 @@ namespace CustomAnimation
           if (mapView.Map.SpatialReference.IsGeographic)
           {
             var transformation = ProjectionTransformation.Create(line.SpatialReference, SpatialReferences.WebMercator, line.Extent);
-            line = GeometryEngine.ProjectEx(line, transformation) as Polyline;
+            line = GeometryEngine.Instance.ProjectEx(line, transformation) as Polyline;
           }    
           else
           {
             var transformation = ProjectionTransformation.Create(line.SpatialReference, mapView.Map.SpatialReference, line.Extent);
-            line = GeometryEngine.ProjectEx(line, transformation) as Polyline;
+            line = GeometryEngine.Instance.ProjectEx(line, transformation) as Polyline;
           }
         }
         
         //If the user has specified to create keyframes at additional locations than just the vertices 
         //we will densify the line by the distance the user specified. 
         if (!Animation.Settings.VerticesOnly)
-          line = GeometryEngine.DensifyByLength(line, densifyDistance / line.SpatialReference.Unit.ConversionFactor) as Polyline;
+          line = GeometryEngine.Instance.DensifyByLength(line, densifyDistance / line.SpatialReference.Unit.ConversionFactor) as Polyline;
 
         //To maintain a constant speed we need to divide the total time we want the animation to take by the length of the line.
         var duration = Animation.Settings.Duration;
@@ -131,7 +131,7 @@ namespace CustomAnimation
           if (cameraPoint.SpatialReference.Wkid != mapView.Map.SpatialReference.Wkid)
           {
             var transformation = ProjectionTransformation.Create(cameraPoint.SpatialReference, mapView.Map.SpatialReference);
-            cameraPoint = GeometryEngine.Project(cameraPoint, mapView.Map.SpatialReference) as MapPoint;
+            cameraPoint = GeometryEngine.Instance.Project(cameraPoint, mapView.Map.SpatialReference) as MapPoint;
           }       
 
           //Construct a new camera from the point.
@@ -242,7 +242,7 @@ namespace CustomAnimation
 
         //Get the distance from the current location to the point we want to rotate around to get the radius.
         var cameraPoint = MapPointBuilder.CreateMapPoint(camera.X, camera.Y, camera.SpatialReference);
-        var radius = GeometryEngine.GeodesicDistance(cameraPoint, point);
+        var radius = GeometryEngine.Instance.GeodesicDistance(cameraPoint, point);
         var radian = ((camera.Heading - 90) / 180.0) * Math.PI;
 
         //If the spatial reference of the point is projected and the unit is not in meters we need to convert the Z values to meters.
@@ -254,19 +254,21 @@ namespace CustomAnimation
         if (point.SpatialReference.Wkid != SpatialReferences.WGS84.Wkid)
         {
           var transformation = ProjectionTransformation.Create(point.SpatialReference, SpatialReferences.WGS84);
-          point = GeometryEngine.ProjectEx(point, transformation) as MapPoint;
+          point = GeometryEngine.Instance.ProjectEx(point, transformation) as MapPoint;
         }
 
         //Create an ellipse around the center point.
-        var parameter = new GeometryEngine.GeodesicEllipseParameter();
-        parameter.Center = point.Coordinate;
-        parameter.SemiAxis1Length = radius;
-        parameter.SemiAxis2Length = radius;
-        parameter.AxisDirection = radian;
-        parameter.LinearUnit = LinearUnit.Meters;
-        parameter.OutGeometryType = GeometryType.Polyline;
-        parameter.VertexCount = 36;
-        var ellipse = GeometryEngine.GeodesicEllipse(parameter, point.SpatialReference) as Polyline;
+        var parameter = new GeodesicEllipseParameter()
+        {
+          Center = point.Coordinate2D,
+          SemiAxis1Length = radius,
+          SemiAxis2Length = radius,
+          AxisDirection = radian,
+          LinearUnit = LinearUnit.Meters,
+          OutGeometryType = GeometryType.Polyline,
+          VertexCount = 36
+        };
+        var ellipse = GeometryEngine.Instance.GeodesicEllipse(parameter, point.SpatialReference) as Polyline;
 
         //For each key we will progressively rotate around the ellipse and calculate the camera position at each.
         for (int i = 0; i <= numOfKeys; i++)
@@ -317,15 +319,15 @@ namespace CustomAnimation
     {
       camera = CloneCamera(camera);
 
-      var fromPoint = GeometryEngine.MovePointAlongLine(ellipse, percentAlong, true, 0);
+      var fromPoint = GeometryEngine.Instance.MovePointAlongLine(ellipse, percentAlong, true, 0, SegmentExtension.NoExtension);
 
       var segment = LineBuilder.CreateLineSegment(new Coordinate2D(centerPoint.X, centerPoint.Y), new Coordinate2D(fromPoint.X, centerPoint.Y), centerPoint.SpatialReference);
-      var difX = GeometryEngine.GeodesicLength(PolylineBuilder.CreatePolyline(segment, segment.SpatialReference));
+      var difX = GeometryEngine.Instance.GeodesicLength(PolylineBuilder.CreatePolyline(segment, segment.SpatialReference));
       if (centerPoint.X - fromPoint.X < 0)
         difX *= -1;
 
       segment = LineBuilder.CreateLineSegment(new Coordinate2D(centerPoint.X, centerPoint.Y), new Coordinate2D(centerPoint.X, fromPoint.Y), centerPoint.SpatialReference);
-      var difY = GeometryEngine.GeodesicLength(PolylineBuilder.CreatePolyline(segment, segment.SpatialReference));
+      var difY = GeometryEngine.Instance.GeodesicLength(PolylineBuilder.CreatePolyline(segment, segment.SpatialReference));
       if (centerPoint.Y - fromPoint.Y < 0)
         difY *= -1;
 
@@ -334,7 +336,7 @@ namespace CustomAnimation
       camera.Heading = heading;
 
       var difZ = centerPoint.Z - (camera.Z * ((camera.SpatialReference.IsGeographic) ? 1.0 : camera.SpatialReference.Unit.ConversionFactor));
-      var hypotenuse = GeometryEngine.GeodesicDistance(fromPoint, centerPoint);
+      var hypotenuse = GeometryEngine.Instance.GeodesicDistance(fromPoint, centerPoint);
       radian = Math.Atan2(difZ, hypotenuse);
       var pitch = radian * 180 / Math.PI;
       camera.Pitch = pitch;
@@ -342,7 +344,7 @@ namespace CustomAnimation
       if (fromPoint.SpatialReference.Wkid != camera.SpatialReference.Wkid)
       {
         var transformation = ProjectionTransformation.Create(fromPoint.SpatialReference, camera.SpatialReference);
-        fromPoint = GeometryEngine.ProjectEx(fromPoint, transformation) as MapPoint;
+        fromPoint = GeometryEngine.Instance.ProjectEx(fromPoint, transformation) as MapPoint;
       }
 
       camera.X = fromPoint.X;

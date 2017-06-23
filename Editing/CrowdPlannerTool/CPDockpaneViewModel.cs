@@ -386,7 +386,11 @@ namespace CrowdPlannerTool
         // Reset Settings Based on Current Settings
         public async void ResetValues(string settingsValue)
         {
-
+            if (MapView.Active == null)
+            {
+                ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("CrowdPlanning Layer is not found. Please open the map view of the Crowd Planner data project.", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                return;
+            }
             // Check for CrowdPlanning layer, exit if not present in current Map.
             var CrowdLayerTest = MapView.Active.Map.FindLayers("CrowdPlanning").FirstOrDefault() as BasicFeatureLayer;
             if (CrowdLayerTest == null)
@@ -511,6 +515,11 @@ namespace CrowdPlannerTool
             double targetRemaining = 0;
 
             // Check for CrowdPlanning layer, exit if not present in current Map.
+            if (MapView.Active == null)
+            {
+                ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("CrowdPlanning Layer is not found. Please open the map view of the Crowd Planner data project.", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                return;
+            }
             var CrowdLayerTest = MapView.Active.Map.FindLayers("CrowdPlanning").FirstOrDefault() as BasicFeatureLayer;
             if (CrowdLayerTest == null)
             {

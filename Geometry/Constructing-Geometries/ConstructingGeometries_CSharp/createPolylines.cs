@@ -31,7 +31,7 @@ namespace ConstructingGeometries
     /// This code sample shows how to build Polyline objects. 
     /// The code will take point geometries from the point feature layer and construct polylines with 5 vertices each.
     /// </summary>
-    internal class createPolylines : Button
+    internal class CreatePolylines : Button
     {
         protected override async void OnClick()
         {
@@ -53,7 +53,7 @@ namespace ConstructingGeometries
                 return;
 
             // construct polyline from points
-            await constructSamplePolylines(polylineFeatureLayer, pointFeatureLayer);
+            await ConstructSamplePolylines(polylineFeatureLayer, pointFeatureLayer);
 
             // activate the button completed state
             FrameworkApplication.State.Activate("geometry_lines_constructed");
@@ -65,7 +65,7 @@ namespace ConstructingGeometries
         /// <param name="polylineLayer">Polyline geometry feature layer used to add the new features.</param>
         /// <param name="pointLayer">The geometries from the point layer are used as vertices for the new line features.</param>
         /// <returns></returns>
-        private Task<bool> constructSamplePolylines(FeatureLayer polylineLayer, FeatureLayer pointLayer)
+        private Task<bool> ConstructSamplePolylines(FeatureLayer polylineLayer, FeatureLayer pointLayer)
         {
             // execute the fine grained API calls on the CIM main thread
             return QueuedTask.Run(() =>
@@ -81,36 +81,39 @@ namespace ConstructingGeometries
                 // construct a cursor for all point features, since we want all feature there is no
                 // QueryFilter required
                 var pointCursor = pointFeatureClass.Search(null, false);
+                var is3D = pointFeatureClass.GetDefinition().HasZ();
 
                 // initialize a counter variable
                 int pointCounter = 0;
                 // initialize a list to hold 5 coordinates that are used as vertices for the polyline
-                var lineCoordinates = new List<Coordinate>(5);
+                var lineMapPoints = new List<MapPoint>(5);
 
-                // set up the edit operation for the feature creation
-                var createOperation = new EditOperation();
-                createOperation.Name = "Create polylines";
-                createOperation.SelectNewFeatures = false;
+              // set up the edit operation for the feature creation
+              var createOperation = new EditOperation()
+              {
+                Name = "Create polylines",
+                SelectNewFeatures = false
+              };
 
-                // loop through the point features
-                while (pointCursor.MoveNext())
+              // loop through the point features
+              while (pointCursor.MoveNext())
                 {
                     pointCounter++;
 
                     var pointFeature = pointCursor.Current as Feature;
                     // add the feature point geometry as a coordinate into the vertex list of the line
                     // - ensure that the projection of the point geometry is converted to match the spatial reference of the line
-                    lineCoordinates.Add(((MapPoint)GeometryEngine.Project(pointFeature.GetShape(), polylineDefinition.GetSpatialReference())).Coordinate);
+                    lineMapPoints.Add(((MapPoint)GeometryEngine.Instance.Project(pointFeature.GetShape(), polylineDefinition.GetSpatialReference())));
 
                     // for every 5 geometries, construct a new polyline and queue a feature create
                     if (pointCounter % 5 == 0)
                     {
                         // construct a new polyline by using the 5 point coordinate in the current list
-                        var newPolyline = PolylineBuilder.CreatePolyline(lineCoordinates, polylineDefinition.GetSpatialReference());
+                        var newPolyline = PolylineBuilder.CreatePolyline(lineMapPoints, polylineDefinition.GetSpatialReference());
                         // queue the create operation as part of the edit operation
                         createOperation.Create(polylineLayer, newPolyline);
                         // reset the list of coordinates
-                        lineCoordinates = new List<Coordinate>(5);
+                        lineMapPoints = new List<MapPoint>(5);
                     }
                 }
 

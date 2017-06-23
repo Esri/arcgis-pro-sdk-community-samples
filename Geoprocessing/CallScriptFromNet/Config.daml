@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
 <!--
 //Copyright 2014 Esri
 
@@ -19,12 +15,12 @@
 //   limitations under the License.
 -->
 <ArcGIS defaultAssembly="CallScriptFromNet.dll" defaultNamespace="CallScriptFromNet" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{31d7f807-1dfe-44c3-9c8b-6ffc8263159e}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{31d7f807-1dfe-44c3-9c8b-6ffc8263159e}" version="1.0" desktopVersion="2.0.0">
     <Name>CallScriptFromNet</Name>
     <Description>Calls a Python script from .Net application.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>nobi4775</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>6/29/2015 2:04:46 PM, 2015</Date>
     <Subject>Geoprocessing</Subject>
   </AddInInfo>

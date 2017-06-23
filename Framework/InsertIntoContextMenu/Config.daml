@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
 <!--
 
    Copyright 2017 Esri
@@ -22,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="InsertIntoContextMenu.dll" defaultNamespace="InsertIntoContextMenu" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{9376ec8f-364c-47ea-be87-bd2588b066a4}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{9376ec8f-364c-47ea-be87-bd2588b066a4}" version="1.0" desktopVersion="2.0.0">
     <Name>InsertIntoContextMenu</Name>
     <Description>InsertIntoContextMenu description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>Esri</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>6/12/2015 2:53:47 PM, 2015</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

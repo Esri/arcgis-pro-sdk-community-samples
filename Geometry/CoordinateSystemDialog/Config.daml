@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2017 Esri
@@ -19,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="CoordinateSystemAddin.dll" defaultNamespace="CoordinateSystemAddin" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{1b3c4d8c-4b75-4367-bccb-1930bb952ada}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{1b3c4d8c-4b75-4367-bccb-1930bb952ada}" version="1.0" desktopVersion="2.0.0">
     <Name>CoordinateSystemDialog</Name>
     <Description>CoordinateSystemDialog description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>charlesm</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>11/13/2015 10:50:36 AM, 2015</Date>
     <Subject>Geometry</Subject>
     <!-- Note subject can be one or more of these topics:

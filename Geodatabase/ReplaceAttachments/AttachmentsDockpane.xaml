@@ -49,8 +49,7 @@
         </Grid.ColumnDefinitions>
 
         <DockPanel Grid.Row="0" Grid.ColumnSpan="2" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
-            <TextBlock Grid.Column="1" Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center"
-                    FontSize="16" FontWeight="Light">
+            <TextBlock Grid.Column="1" Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Esri_TextBlockDockPaneHeader}">
                 <TextBlock.ToolTip>
                     <WrapPanel Orientation="Vertical" MaxWidth="300">
                         <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
@@ -59,33 +58,32 @@
             </TextBlock>
         </DockPanel>
         <WrapPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
-            <TextBlock HorizontalAlignment="Left" Margin="5" Text="Selected Layer" TextWrapping="Wrap"/>
+            <TextBlock HorizontalAlignment="Left" Margin="5" Text="Selected Layer" TextWrapping="Wrap" Style="{DynamicResource Esri_TextBlockRegular}"/>
         </WrapPanel>
         <ComboBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Margin="5" ItemsSource="{Binding Layers}" 
                       Name="LayersComboBox" SelectedItem="{Binding SelectedLayer}" />
 
         <WrapPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical">
-            <TextBlock  HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Feature Class Related By" VerticalAlignment="Center" />
+            <TextBlock  HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Feature Class Related By" VerticalAlignment="Center" Style="{DynamicResource Esri_TextBlockRegular}"/>
         </WrapPanel>
         <ComboBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Top" ItemsSource="{Binding RelationshipClasses}" 
                           Name="RelationshipsComboBox" SelectedItem="{Binding SelectedRelationship}" />
 
         <WrapPanel Grid.Row="3" Grid.Column="0" Orientation="Vertical">
-            <TextBlock HorizontalAlignment="Stretch" Margin="5" Text="Related Table" VerticalAlignment="Stretch"/>
+            <TextBlock HorizontalAlignment="Stretch" Margin="5" Text="Related Table" VerticalAlignment="Stretch" Style="{DynamicResource Esri_TextBlockRegular}"/>
         </WrapPanel>
         <WrapPanel Grid.Row="3" Grid.Column="1" Orientation="Vertical">
-            <TextBlock HorizontalAlignment="Stretch" Margin="5" Text="{Binding RelatedFeatureClass}" VerticalAlignment="Stretch"/>
+            <TextBlock HorizontalAlignment="Stretch" Margin="5" Text="{Binding RelatedFeatureClass}" VerticalAlignment="Stretch" Style="{DynamicResource Esri_TextBlockRegular}"/>
         </WrapPanel>
 
         <WrapPanel Grid.Row="4" Grid.Column="0" Orientation="Vertical">
-            <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Name of the Attachment to be replaced" />
+            <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Name of the Attachment to be replaced" Style="{DynamicResource Esri_TextBlockRegular}"/>
         </WrapPanel>
-
         <ComboBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Top" ItemsSource="{Binding AttachmentNames}" 
                   SelectedItem="{Binding OldAttachmentName}" Name="NameComboBox"  />
        
         <WrapPanel Grid.Row="6" Grid.Column="0" Orientation="Vertical">
-            <TextBlock HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" Text="Path of the New Attachment File" VerticalAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" Text="Path of the New Attachment File" VerticalAlignment="Center" Style="{DynamicResource Esri_TextBlockRegular}"/>
         </WrapPanel>
         <Grid Grid.Row="6" Grid.Column="1">
             <Grid.ColumnDefinitions>
@@ -93,11 +91,11 @@
                 <ColumnDefinition Width="35" />
             </Grid.ColumnDefinitions>
             <TextBox Grid.Column="0" HorizontalAlignment="Stretch" Margin="5" Text="{Binding NewAttachment}" VerticalAlignment="Top" />
-            <Button Grid.Column="1" Content="..." Command="{Binding SelectPath}" Margin="0,5,5,5" Height="20" MinWidth="20" Width="30" HorizontalContentAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource Esri_SimpleButton}" HorizontalAlignment="Left" />
+            <Button Grid.Column="1" Content="..." Command="{Binding SelectPath}" Margin="0,5,5,5" Height="20" MinWidth="20" Width="30" HorizontalContentAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource Esri_Button}" HorizontalAlignment="Left" />
         </Grid>
 
         <Button Grid.Row="7" Grid.Column="1" Content="Go" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Top" Width="75" 
-                Command="{Binding GoReplaceAttachment}" Style="{DynamicResource Esri_SimpleButton}" IsEnabled="{Binding IsGoEnabled}" />
+                Command="{Binding GoReplaceAttachment}" Style="{DynamicResource Esri_Button}" IsEnabled="{Binding IsGoEnabled}" />
     </Grid>
 
 </UserControl>

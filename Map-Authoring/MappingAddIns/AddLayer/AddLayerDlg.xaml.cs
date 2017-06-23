@@ -77,7 +77,7 @@ namespace MappingSampleAddIns.AddLayer
             return QueuedTask.Run(() =>
             {
                 Map map = MapView.Active.Map;
-                return LayerFactory.CreateLayer(new Uri(uri), map);
+                return LayerFactory.Instance.CreateLayer(new Uri(uri), map);
             });
         }
 
@@ -107,12 +107,13 @@ namespace MappingSampleAddIns.AddLayer
 
         public void btnGetLayer_Click (object sender, RoutedEventArgs e)
         {
-            OpenItemDialog pathDialog = new OpenItemDialog();
-            pathDialog.Title = "Select Layer to Add";
-            pathDialog.InitialLocation = @"C:\Data\";
-            pathDialog.MultiSelect = false;
-            pathDialog.Filter = ItemFilters.composite_addToMap;
-
+            OpenItemDialog pathDialog = new OpenItemDialog()
+            {
+              Title = "Select Layer to Add",
+              InitialLocation = @"C:\Data\",
+              MultiSelect = false,
+              Filter = ItemFilters.composite_addToMap
+            };
             bool? ok = pathDialog.ShowDialog();
 
             if (ok == true)

@@ -18,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="QueryDefDataQuery.dll" defaultNamespace="QueryDefDataQuery" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{a2c7ce67-a964-40fc-ac04-903541c6ad49}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{a2c7ce67-a964-40fc-ac04-903541c6ad49}" version="1.0" desktopVersion="2.0.0">
     <Name>QueryDefDataQuery</Name>
     <Description>QueryDefDataQuery description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>Wolfgang</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>1/11/2017 9:20:13 AM, 2017</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

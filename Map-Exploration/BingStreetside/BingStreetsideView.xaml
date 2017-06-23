@@ -27,113 +27,114 @@
              mc:Ignorable="d"
              d:DataContext="{Binding Path=BingStreetside.BingStreetsideViewModel}"
              d:DesignHeight="300" d:DesignWidth="300">
-  <UserControl.Resources>
-    <ResourceDictionary>
-      <ResourceDictionary.MergedDictionaries>
-        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+    <UserControl.Resources>
         <ResourceDictionary>
-          <bingStreetside:ValueAngleConverter x:Key="valueAngleConverter"/>
-          <bingStreetside:ValueTextConverter x:Key="valueTextConverter"/>
-
-          <Style TargetType="{x:Type RepeatButton}" BasedOn="{StaticResource {x:Type RepeatButton}}">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="Width" Value="20"/>
-            <Setter Property="Height" Value="20"/>
-            <Style.Triggers>
-              <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Opacity" Value="0.5"/>
-                <Setter Property="BorderBrush" Value="Transparent"/>
-                <Setter Property="Background" Value="Transparent"/>
-                <Setter Property="Template">
-                  <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type RepeatButton}">
-                      <ContentPresenter Margin="2" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" Content="{TemplateBinding ContentControl.Content}" />
-                    </ControlTemplate>
-                  </Setter.Value>
-                </Setter>
-              </Trigger>
-            </Style.Triggers>
-          </Style>
-        </ResourceDictionary>
-      </ResourceDictionary.MergedDictionaries>
-    </ResourceDictionary>
-  </UserControl.Resources>
-  <Grid>
-    <Grid.RowDefinitions>
-      <RowDefinition Height="Auto"/>
-      <RowDefinition Height="*"/>
-    </Grid.RowDefinitions>
-
-    <Grid Grid.Row="0"  >
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="*"></ColumnDefinition>
-        <ColumnDefinition Width="Auto"></ColumnDefinition>
-      </Grid.ColumnDefinitions>
-      <Grid Grid.Column="0" >
-        <StackPanel Orientation="Vertical" Margin="0" Visibility="{Binding BingKeyVisibile}" >
-          <TextBlock Text="Your Bing Maps Key" VerticalAlignment="Center" HorizontalAlignment="Center" />
-          <TextBox Text="{Binding BingKey, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-          <Button Command="{Binding SetBingMapKey}" Content="Define Bing Map Key" Style="{DynamicResource Esri_SimpleButton}"></Button>
-        </StackPanel>
-        <Grid Visibility="{Binding BingKeyInvisible}" >
-          <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+                <ResourceDictionary>
+                    <bingStreetside:ValueAngleConverter x:Key="valueAngleConverter"/>
+                    <bingStreetside:ValueTextConverter x:Key="valueTextConverter"/>
+                    <Style TargetType="{x:Type RepeatButton}" BasedOn="{StaticResource {x:Type RepeatButton}}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="Width" Value="20"/>
+                        <Setter Property="Height" Value="20"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" Value="0.5"/>
+                                <Setter Property="BorderBrush" Value="Transparent"/>
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type RepeatButton}">
+                                            <ContentPresenter Margin="2" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" Content="{TemplateBinding ContentControl.Content}" />
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                    <SolidColorBrush x:Key="Esri_CustomYellowBrush" Color="{StaticResource Esri_Color_Yellow}"></SolidColorBrush>
+                    <SolidColorBrush x:Key="Esri_CustomGrayBrush" Color="{StaticResource Esri_Color_Gray145}"></SolidColorBrush>
+                    <!--<SolidColorBrush x:Key="Esri_CustomBlackBrush" Color="{StaticResource Esri_Color_Black}"></SolidColorBrush>-->
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-          </Grid.RowDefinitions>
-          <TextBlock Grid.Row="1" Text="Change Streetside Heading  " VerticalAlignment="Center" HorizontalAlignment="Right" />
-        </Grid>
-      </Grid>
-      <Slider Grid.Row="0" Grid.Column="1" Height="40" Margin="5" Name="CameraHeadingControl" Value="{Binding Path=HeadingValue, Mode=TwoWay, UpdateSourceTrigger=Explicit}" Minimum="0" Maximum="360" Visibility="{Binding BingKeyInvisibile}" >
-        <Slider.Template>
-          <ControlTemplate>
-            <Viewbox>
-              <Canvas Width="300" Height="300">
-                <Ellipse Fill="LightGoldenrodYellow" Width="300" Height="300" Canvas.Left="0" Canvas.Top="0" 
-                Stroke="{DynamicResource Esri_Yellow4}" StrokeThickness="6"
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0"  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" >
+                <StackPanel Orientation="Vertical" Margin="0" Visibility="{Binding BingKeyVisibile}" >
+                    <TextBlock Text="Your Bing Maps Key" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <TextBox Text="{Binding BingKey, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                    <Button Command="{Binding SetBingMapKey}" Content="Define Bing Map Key" Style="{DynamicResource Esri_Button}"></Button>
+                </StackPanel>
+                <Grid Visibility="{Binding BingKeyInvisible}" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1" Text="Change Streetside Heading  " VerticalAlignment="Center" HorizontalAlignment="Right" />
+                </Grid>
+            </Grid>
+            <Slider Grid.Row="0" Grid.Column="1" Height="40" Margin="5" Name="CameraHeadingControl" Value="{Binding Path=HeadingValue, Mode=TwoWay, UpdateSourceTrigger=Explicit}" Minimum="0" Maximum="360" Visibility="{Binding BingKeyInvisibile}" >
+                <Slider.Template>
+                    <ControlTemplate>
+                        <Viewbox>
+                            <Canvas Width="300" Height="300">
+                                <Ellipse Fill="LightGoldenrodYellow" Width="300" Height="300" Canvas.Left="0" Canvas.Top="0" Stroke="{DynamicResource Esri_CustomYellowBrush}" StrokeThickness="6"
                 MouseLeftButtonUp="Polygon_MouseLeftButtonUp"
                 MouseMove="Polygon_MouseMove"/>
-                <Canvas>
-                  <Line Stroke="{DynamicResource Esri_Gray155}" StrokeThickness="10" X1="150" Y1="150" X2="150" Y2="10"
+                                <Canvas>
+                                    <Line Stroke="{DynamicResource Esri_CustomGrayBrush}" StrokeThickness="10" X1="150" Y1="150" X2="150" Y2="10"
                 MouseLeftButtonUp="Polygon_MouseLeftButtonUp"/>
-                  <Polygon Fill="{DynamicResource Esri_Gray155}" Stroke="{DynamicResource Esri_Gray155}" Points="30,0 0,70 60,70" Canvas.Left="120" Canvas.Top="0" 
+                                    <Polygon Fill="{DynamicResource Esri_CustomGrayBrush}" Stroke="{DynamicResource Esri_CustomGrayBrush}" Points="30,0 0,70 60,70" Canvas.Left="120" Canvas.Top="0" 
                 MouseLeftButtonDown="Polygon_MouseLeftButtonDown"
                     MouseLeftButtonUp="Polygon_MouseLeftButtonUp">
-                    <Polygon.ToolTip>
-                      <ToolTip>
-                        <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                        <Polygon.ToolTip>
+                                            <ToolTip>
+                                                <Binding RelativeSource="{RelativeSource TemplatedParent}"
                                 Path="Value" Converter="{StaticResource valueTextConverter}"/>
-                      </ToolTip>
-                    </Polygon.ToolTip>
-                  </Polygon>
-                  <Canvas.RenderTransform>
-                    <RotateTransform CenterX="150" CenterY="150">
-                      <RotateTransform.Angle>
-                        <MultiBinding Converter="{StaticResource valueAngleConverter}">
-                          <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Value"/>
-                          <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Minimum"/>
-                          <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Maximum"/>
-                        </MultiBinding>
-                      </RotateTransform.Angle>
-                    </RotateTransform>
-                  </Canvas.RenderTransform>
-                </Canvas>
-                <Ellipse Fill="{DynamicResource Esri_Gray155}" StrokeThickness="0" Width="50" Height="50" Canvas.Left="125" Canvas.Top="125" MouseLeftButtonUp="ResetHeading"/>
-              </Canvas>
-            </Viewbox>
-            <ControlTemplate.Triggers>
-              <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Opacity" Value="0.5"/>
-              </Trigger>
-            </ControlTemplate.Triggers>
-          </ControlTemplate>
-        </Slider.Template>
-      </Slider>
+                                            </ToolTip>
+                                        </Polygon.ToolTip>
+                                    </Polygon>
+                                    <Canvas.RenderTransform>
+                                        <RotateTransform CenterX="150" CenterY="150">
+                                            <RotateTransform.Angle>
+                                                <MultiBinding Converter="{StaticResource valueAngleConverter}">
+                                                    <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Value"/>
+                                                    <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Minimum"/>
+                                                    <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Maximum"/>
+                                                </MultiBinding>
+                                            </RotateTransform.Angle>
+                                        </RotateTransform>
+                                    </Canvas.RenderTransform>
+                                </Canvas>
+                                <Ellipse Fill="{DynamicResource Esri_CustomGrayBrush}" StrokeThickness="0" Width="50" Height="50" Canvas.Left="125" Canvas.Top="125" MouseLeftButtonUp="ResetHeading"/>
+                            </Canvas>
+                        </Viewbox>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Slider.Template>
+            </Slider>
 
+        </Grid>
+        <Grid Grid.Row="1" Name="GridBrowser" Margin="0">
+            <WebBrowser local:WebBrowserUtility.BindableSource="{Binding WebPage}" Margin="0" />
+        </Grid>
     </Grid>
-    <Grid Grid.Row="1" Name="GridBrowser" Margin="0">
-      <WebBrowser local:WebBrowserUtility.BindableSource="{Binding WebPage}" Margin="0" />
-    </Grid>
-  </Grid>
 </UserControl>

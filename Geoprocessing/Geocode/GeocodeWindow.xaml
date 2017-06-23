@@ -40,7 +40,7 @@
                 <TextBox x:Name="SearchText" Grid.Column="0" Grid.Row="1" Margin="3" Height="25" />
                 <Button Grid.Column="1" Grid.Row="1" Content="Go" 
                         Click="Button_Click"  ToolTipService.ShowOnDisabled="True" IsDefault="True"
-                         Style="{DynamicResource Esri_SimpleButton}">
+                         Style="{DynamicResource Esri_Button}">
                     <Button.ToolTip>
                         <ToolTip>
                             <StackPanel>
@@ -52,7 +52,7 @@
                 </Button>
                 <TextBlock Grid.Column="0" Name="LastSearch" Text="Last Match:" 
                            Height="25" Grid.Row="2" 
-                           Grid.ColumnSpan="2" Margin="3" Style="{DynamicResource H7TextBlock}"/>
+                           Grid.ColumnSpan="2" Margin="3" Style="{DynamicResource Esri_TextBlockH7}"/>
             </Grid>
         </Border>
     </Grid>

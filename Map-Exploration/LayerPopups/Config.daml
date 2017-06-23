@@ -19,14 +19,14 @@
 -->
 
 <ArcGIS defaultAssembly="LayerPopups.dll" defaultNamespace="LayerPopups" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{de0f7b68-519e-4e95-9736-41001956038e}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{de0f7b68-519e-4e95-9736-41001956038e}" version="1.0" desktopVersion="2.0.0">
     <Name>LayerPopups</Name>
     <Description>Shows how to define layer popups that will be persisted in the layer's CIM definition. The Sample
     defines a set of 'helper' classes modelled after the similar pattern ArcGIS.Desktop.Mapping implements
   for Renderer definitions. Popups can be defined that incorporate text, field values, images, charts, etc.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>arcgisprosdk</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>3/29/2016 2:42:36 PM, 2016</Date>
     <Subject>Map Exploration</Subject>
     <!-- Note subject can be one or more of these topics:

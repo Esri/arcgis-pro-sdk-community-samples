@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <!--
 
    Copyright 2017 Esri
@@ -19,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="ReplaceAttachments.dll" defaultNamespace="ReplaceAttachments" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{e0e8ab91-08d1-4280-b4d8-2062850542ed}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{e0e8ab91-08d1-4280-b4d8-2062850542ed}" version="1.0" desktopVersion="2.0.0">
     <Name>ReplaceAttachments</Name>
     <Description>Given that a layer with a FeatureClass as the Datasource is selected, for all related FeatureClasses having attachments, Replace All Attachments matching a given attachment with a new attachment</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>Pro SDK Team</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>4/16/2015 3:39:38 PM, 2015</Date>
     <Subject>Geodatabase</Subject>
     <!-- Note subject can be one or more of these topics:

@@ -13,7 +13,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +25,7 @@ using System.Reflection;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
 using ArcGIS.Desktop.Framework.Dialogs;
+using System.Globalization;
 
 namespace CustomPopup
 {
@@ -86,16 +86,16 @@ namespace CustomPopup
     /// <returns></returns>
     private List<PopupCommand> CreateCommands()
     {
-      var commands = new List<PopupCommand>();
-
-      //Add a new instance of a popup command passing in the delegate to be run when the button is clicked.
-      commands.Add(new PopupCommand(OnPopupCommand, CanExecutePopupCommand,
-        "Show statistics",
-        new BitmapImage(new Uri("pack://application:,,,/CustomPopup;component/Images/GenericButtonRed12.png")) as ImageSource)
-      {
-        IsSeparator = true
-      });
-
+      var commands = new List<PopupCommand>
+            {
+                //Add a new instance of a popup command passing in the delegate to be run when the button is clicked.
+                new PopupCommand(OnPopupCommand, CanExecutePopupCommand,
+              "Show statistics",
+              new BitmapImage(new Uri("pack://application:,,,/CustomPopup;component/Images/GenericButtonRed12.png")) as ImageSource)
+                {
+                    IsSeparator = true
+                }
+            };
       return commands;
     }
 
@@ -173,8 +173,7 @@ namespace CustomPopup
           var val = row[field.Name];
           if (val is DBNull || val == null)
             continue;
-
-          double value;
+              double value;
           if (!Double.TryParse(val.ToString(), out value))
             continue;
 
@@ -222,7 +221,7 @@ namespace CustomPopup
       var minVal = _values.Values.Min();
       var maxElements = _values.Where(v => v.Value == maxVal);
       var minElements = _values.Where(v => v.Value == minVal);
-      
+
       StringBuilder sb = new StringBuilder();
       sb.AppendLine(string.Format("Max ({0}): {1}", maxElements.First().Value, string.Join(",", maxElements.Select(x => x.Key.Alias))));
       sb.Append(string.Format("Min ({0}): {1}", minElements.First().Value, string.Join(",", minElements.Select(x => x.Key.Alias))));

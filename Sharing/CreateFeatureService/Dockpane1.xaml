@@ -43,7 +43,7 @@
       <TextBlock Text="Sign onto portal or AGO from backstage" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
       <TextBlock Text="Portal/AGO URL:" Margin="5,0,0,0" FontSize="12" FontWeight="Regular"/>
       <TextBox Name="BaseUrl" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap"/>
-      <Button Content="Use Active Portal" HorizontalAlignment="Right" Margin="5,5,5,0" Name="activePortalGet" VerticalAlignment="Center" Click="GetActivePortal_Click" Style="{DynamicResource Esri_SimpleButton}"/>
+      <Button Content="Use Active Portal" HorizontalAlignment="Right" Margin="5,5,5,0" Name="activePortalGet" VerticalAlignment="Center" Click="GetActivePortal_Click" Style="{DynamicResource Esri_Button}"/>
       <ContentPresenter Content="{Binding EmbeddableView, Mode=OneWay}" />
       <TextBlock Text="User Name:" Margin="5,0,0,0" FontSize="12"/>
       <TextBox Name="username" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap"/>
@@ -54,7 +54,7 @@
       <TextBlock Text="Item id" Margin="5,0,0,0"/>
       <TextBox Name="itemId" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap"/>
       <Button Content="Paste from clipboard" HorizontalAlignment="Right" Margin="5,5,5,0"
-                    Name="pasteFromClipboard" VerticalAlignment="Center" Width="115" Click="pasteFromClipboard_Click" Style="{DynamicResource Esri_SimpleButton}"/>
+                    Name="pasteFromClipboard" VerticalAlignment="Center" Width="115" Click="pasteFromClipboard_Click" Style="{DynamicResource Esri_Button}"/>
       <ContentPresenter Content="{Binding EmbeddableView, Mode=OneWay}" />
       <TextBlock Text="File Type:" Margin="5,0,0,0"/>
       <TextBox Name="filetype" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap"/>
@@ -64,9 +64,9 @@
       <Separator Height="10"/>
     </StackPanel>
     <StackPanel Grid.Row="3"  KeyboardNavigation.TabNavigation="Local" >
-      <Button Name="publishSubmit" Click="OnClickPublishSubmit" Style="{DynamicResource Esri_SimpleButton}">
+      <Button Name="publishSubmit" Click="OnClickPublishSubmit" Style="{DynamicResource Esri_Button}">
         Submit</Button>
-      <Button Name="clearContents" Click="OnClickClearContents" Style="{DynamicResource Esri_SimpleButton}">
+      <Button Name="clearContents" Click="OnClickClearContents" Style="{DynamicResource Esri_Button}">
         Clear</Button>
       <Separator Height="10"/>
       <Border BorderThickness="3">
@@ -75,7 +75,7 @@
       <TextBlock Name="serviceLinkLabel" Text="Service Link:" Margin="5,0,0,0"  />
       <TextBox Name="serviceLinkText" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap"/>
       <Button Content="Copy to clipboard" HorizontalAlignment="Right" Margin="5,5,5,0" 
-                    Name="copyToClipboard" VerticalAlignment="Center" Width="115" Click="copyToClipboard_Click" Style="{DynamicResource Esri_SimpleButton}"/>
+                    Name="copyToClipboard" VerticalAlignment="Center" Width="115" Click="copyToClipboard_Click" Style="{DynamicResource Esri_Button}"/>
     </StackPanel>
   </Grid>
 </UserControl>

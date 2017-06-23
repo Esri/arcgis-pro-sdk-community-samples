@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Copyright 2017 Esri
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. 
+-->
+<ArcGIS defaultAssembly="ChangeColorizerForRasterLayer.dll" defaultNamespace="ChangeColorizerForRasterLayer" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{9f5a731b-78a2-4b0e-91dc-e9451534a5a0}" version="1.0" desktopVersion="2.0.8925">
+    <Name>ChangeColorizerForRasterLayer</Name>
+    <Description>An Add-in sample shows how to change the colorizer for a raste layer using colorizar definitions.</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+      <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+      <Company>esri, http://www.esri.com</Company>
+    <Date>6/13/2017 2:54:19 PM, 2017</Date>
+    <Subject>Map Authoring</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ChangeColorizerForRasterLayer_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="ChangeColorizerForRasterLayer_Tab1" caption="New Tab">
+          <group refID="ChangeColorizerForRasterLayer_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ChangeColorizerForRasterLayer_Group1" caption="Symbology" appearsOnAddInTab="true" keytip="Symbology">
+          <!-- host controls within groups -->
+          <button refID="ChangeColorizerForRasterLayer_AddRasterLayer" size="large" />
+          <comboBox refID="ChangeColorizerForRasterLayer_ApplyColorizers" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ChangeColorizerForRasterLayer_AddRasterLayer" caption="Add Raster Layer" className="AddRasterLayer" loadOnClick="true" keytip ="Add a Raster Layer to the map view" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Tooltip:"> Add a raster layer to the Contents.<disabledText /></tooltip>
+        </button>
+        <comboBox id="ChangeColorizerForRasterLayer_ApplyColorizers" caption="Apply Colorizers:" keytip ="Show the colorizers that can be applied to the selected raster layer." className="ApplyColorizers" itemWidth="140" itemHeight="300" extendedCaption="Extended Caption" isEditable="false" isReadOnly="false" resizable="true" image="Images\GenericButtonBlue32.png">
+          <tooltip heading="Tooltip:">Show the list of colorizers that can be applied to the selected layer. Select a colorizer to apply it to the layer. If the combo box is empty, it is maybe because you do not select a single layer, or the selected layer is not a basic raster layer type. <disabledText>Do not have an active map view.</disabledText>
+          </tooltip>
+        </comboBox>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

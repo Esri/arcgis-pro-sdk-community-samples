@@ -69,10 +69,11 @@
             </StackPanel>
             <StackPanel Grid.Row ="3"  HorizontalAlignment="Stretch" >
                 <TextBlock Text="Size"></TextBlock>
-                <xctk:IntegerUpDown Value="{Binding Size}" Minimum="1" Maximum="200" Foreground="{Binding Esri_Gray155}" Background="{Binding Esri_White}" ></xctk:IntegerUpDown>
+                <xctk:IntegerUpDown Value="{Binding Size}" Minimum="1" Maximum="200" Background="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}" 
+                                            Foreground="{DynamicResource Esri_TextStyleDefaultBrush}" ></xctk:IntegerUpDown>
             </StackPanel>
             <StackPanel Grid.Row="4" >
-                <ListBox ItemContainerStyle="{DynamicResource Esri_HighlightListBoxItem}" ItemsSource="{Binding CharacterItemCollection}" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                <ListBox ItemContainerStyle="{DynamicResource Esri_ListBoxItemHighlightBrush}" ItemsSource="{Binding CharacterItemCollection}" ScrollViewer.VerticalScrollBarVisibility="Auto"
                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                 ItemTemplate="{StaticResource CharacterItemTemplate}"
                      SelectedItem="{Binding SelectedCharacter}"
@@ -84,7 +85,7 @@
                     </ListBox.ItemsPanel>
                 </ListBox>
                 <CheckBox Margin="0,5,0,0" Content ="Add selected marker to a personal FontMarker style" IsChecked="{Binding IsFavorites}"></CheckBox>
-                <Button Margin="0,5,0,0"  Content="Apply" Command="{Binding ApplyFontMarkerCmd}" Style="{DynamicResource Esri_SimpleButton}"></Button>
+                <Button Margin="0,5,0,0"  Content="Apply" Command="{Binding ApplyFontMarkerCmd}" Style="{DynamicResource Esri_Button}"></Button>
             </StackPanel>
         </Grid>
         <!--Message when contents are not visible-->

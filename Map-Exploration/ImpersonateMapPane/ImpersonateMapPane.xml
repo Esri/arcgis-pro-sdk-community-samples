@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ImpersonateMapPane</name>
+    </assembly>
+    <members>
+        <member name="T:ImpersonateMapPane.ImpersonateMapPane1View">
+            <summary>
+            Interaction logic for ImpersonateMapPane1View.xaml
+            </summary>
+            <summary>
+            ImpersonateMapPane1View
+            </summary>
+        </member>
+        <member name="M:ImpersonateMapPane.ImpersonateMapPane1View.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ImpersonateMapPane.ImpersonateMapPane1ViewModel.#ctor(ArcGIS.Core.CIM.CIMView)">
+            <summary>
+            Consume the passed in CIMView. Call the base constructor to wire up the CIMView.
+            </summary>
+        </member>
+        <member name="M:ImpersonateMapPane.ImpersonateMapPane1ViewModel.Create(ArcGIS.Desktop.Mapping.MapView)">
+            <summary>
+            Create a new instance of the pane.
+            </summary>
+        </member>
+        <member name="P:ImpersonateMapPane.ImpersonateMapPane1ViewModel.ViewState">
+            <summary>
+            Must be overridden in child classes used to persist the state of the view to the CIM.
+            </summary>
+        </member>
+        <member name="M:ImpersonateMapPane.ImpersonateMapPane1ViewModel.InitializeAsync">
+            <summary>
+            Called when the pane is initialized.
+            </summary>
+        </member>
+        <member name="M:ImpersonateMapPane.ImpersonateMapPane1ViewModel.UninitializeAsync">
+            <summary>
+            Called when the pane is uninitialized.
+            </summary>
+        </member>
+        <member name="P:ImpersonateMapPane.ImpersonateMapPane1ViewModel.ViewXML">
+            <summary>
+            Gets the underlying definition of the associated map
+            </summary>
+        </member>
+        <member name="T:ImpersonateMapPane.ImpersonateMapPane1_OpenButton">
+            <summary>
+            Button implementation to create a new instance of the pane and activate it.
+            </summary>
+        </member>
+        <member name="T:ImpersonateMapPane.Module1">
+            <summary>
+            This sample illustrates how to create a new map pane that impersonates an existing map pane. A control will be added to the new pane allowing you to view the map CIM.  A custom
+            TOC implementation will also be demonstrated.A new Visual Studio template 'ArcGIS Pro Map Pane Impersonation' has been added at ArcGIS Pro 2.0.  
+            </summary>
+            <remarks>
+            1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+            1. Make sure that the Sample data is unzipped in c:\data
+            1. The project used for this sample is 'C:\data\Interacting with Maps\Interacting with Maps.aprx'
+            1. In Visual Studio click the Build menu.Then select Build Solution. 
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro will open, select the Interacting with Maps.aprx project
+            1. Select the 'Add-in' tab on the ArcGIS Pro ribbon. See the 'Open ImpersonateMapPane1' button
+            ![UI](Screenshots/ImpersonateMapPane_2.png)
+            1. Click the button and see the Impersonate pane open.  Reposition the pane to view it side by side with the 2D map
+            ![UI](Screenshots/ImpersonateMapPane_4.png)</remarks>
+        </member>
+        <member name="P:ImpersonateMapPane.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:ImpersonateMapPane.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="T:ImpersonateMapPane.UserControl1">
+            <summary>
+            Interaction logic for UserControl1.xaml
+            </summary>
+            <summary>
+            UserControl1
+            </summary>
+        </member>
+        <member name="M:ImpersonateMapPane.UserControl1.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

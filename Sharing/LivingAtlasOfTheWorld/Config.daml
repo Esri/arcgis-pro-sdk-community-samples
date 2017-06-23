@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <ArcGIS defaultAssembly="LivingAtlasOfTheWorld.dll" defaultNamespace="LivingAtlasOfTheWorld" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{b500eb63-2569-41d6-91d6-41b183c7f240}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{b500eb63-2569-41d6-91d6-41b183c7f240}" version="1.0" desktopVersion="2.0.0">
     <Name>LivingAtlasOfTheWorld</Name>
     <Description>Mimics the Browse Esri Map Layers dialog from the arcgis online webmap viewer. Shows use of EsriHttpClient and Newtonsoft.Json</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>arcgisprosdk</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>6/15/2015 10:12:18 PM, 2015</Date>
     <Subject>Sharing, Content</Subject>
     <!-- Note subject can be one or more of these topics:

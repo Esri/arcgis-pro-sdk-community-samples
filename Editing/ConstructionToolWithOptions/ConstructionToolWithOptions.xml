@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ConstructionToolWithOptions</name>
+    </assembly>
+    <members>
+        <member name="M:ConstructionToolWithOptions.BufferedLineTool.OnSketchCompleteAsync(ArcGIS.Core.Geometry.Geometry)">
+            <summary>
+            Called when the sketch finishes. This is where we will create the sketch operation and then execute it.
+            </summary>
+            <param name="geometry">The geometry created by the sketch.</param>
+            <returns>A Task returning a Boolean indicating if the sketch complete event was successfully handled.</returns>
+        </member>
+        <member name="T:ConstructionToolWithOptions.BufferedLineToolOptionsView">
+            <summary>
+            Interaction logic for BufferedLineToolOptionsView.xaml
+            </summary>
+            <summary>
+            BufferedLineToolOptionsView
+            </summary>
+        </member>
+        <member name="M:ConstructionToolWithOptions.BufferedLineToolOptionsView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:ConstructionToolWithOptions.BufferedLineToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#ActiveTemplateSelectorIcon">
+            <summary>
+            Gets the optional icon that will appear in the active template pane as a button selector.  
+            If returning null then the Tool's small image that is defined in DAML will be used. 
+            </summary>
+        </member>
+        <member name="P:ConstructionToolWithOptions.BufferedLineToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#IsValid">
+            <summary>
+            Set this flag to indicate if too options are valid and ready for saving.
+            </summary>
+            <remarks>
+            When this IEditingCreateToolControl is being displayed in the Template Properties
+            dialog, calling code will use this property to determine if the current Template
+            Properties may be saved.
+            </remarks>
+        </member>
+        <member name="P:ConstructionToolWithOptions.BufferedLineToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#IsDirty">
+            <summary>
+            Set this flag when any tool options have been changed.
+            </summary>
+            <remaarks>
+            When this IEditingCreateToolControl is being displayed in the Template Properties
+            dialog, the calling code will use this property to determine if any changes have
+            been made.  
+            </remaarks>
+        </member>
+        <member name="M:ConstructionToolWithOptions.BufferedLineToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#AutoOpenActiveTemplatePane(System.String)">
+            <summary>
+            Gets if the contents of this control is auto-Opened in the Active Template Pane when the 
+            tool is activated.
+            </summary>
+            <param name="toolID">the ID of the current tool</param>
+            <returns>True the active template pane will be opened to the tool's options view.
+            False, nothing in the active template pane changes when the tool is selected.</returns>
+        </member>
+        <member name="M:ConstructionToolWithOptions.BufferedLineToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#InitializeForActiveTemplate(ArcGIS.Desktop.Editing.ToolOptions)">
+            <summary>
+            Called just before ArcGIS.Desktop.Framework.Controls.EmbeddableControl.OpenAsync
+            when this IEditingCreateToolControl is being used within the ActiveTemplate pane.
+            </summary>
+            <param name="options">tool options obtained from the template for the given toolID</param>
+            <returns>true if the control is to be displayed in the ActiveTemplate pane.. False otherwise</returns>
+        </member>
+        <member name="M:ConstructionToolWithOptions.BufferedLineToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#InitializeForTemplateProperties(ArcGIS.Desktop.Editing.ToolOptions)">
+            <summary>
+            Called just before ArcGIS.Desktop.Framework.Controls.EmbeddableControl.OpenAsync
+            when this IEditingCreateToolControl is being used within the Template Properties
+            dialog
+            </summary>
+            <param name="options">tool options obtained from the template for the given toolID</param>
+            <returns>true if the control is to be displayed in Template Properties. False otherwise</returns>
+        </member>
+        <member name="M:ConstructionToolWithOptions.CircleTool.OnSketchCompleteAsync(ArcGIS.Core.Geometry.Geometry)">
+            <summary>
+            Called when the sketch finishes. This is where we will create the sketch operation and then execute it.
+            </summary>
+            <param name="geometry">The geometry created by the sketch.</param>
+            <returns>A Task returning a Boolean indicating if the sketch complete event was successfully handled.</returns>
+        </member>
+        <member name="T:ConstructionToolWithOptions.CircleToolOptionsView">
+            <summary>
+            Interaction logic for CircleToolOptionsView.xaml
+            </summary>
+            <summary>
+            CircleToolOptionsView
+            </summary>
+        </member>
+        <member name="M:ConstructionToolWithOptions.CircleToolOptionsView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:ConstructionToolWithOptions.CircleToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#ActiveTemplateSelectorIcon">
+            <summary>
+            Gets the optional icon that will appear in the active template pane as a button selector.  
+            If returning null then the Tool's small image that is defined in DAML will be used. 
+            </summary>
+        </member>
+        <member name="P:ConstructionToolWithOptions.CircleToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#IsValid">
+            <summary>
+            Set this flag to indicate if too options are valid and ready for saving.
+            </summary>
+            <remarks>
+            When this IEditingCreateToolControl is being displayed in the Template Properties
+            dialog, calling code will use this property to determine if the current Template
+            Properties may be saved.
+            </remarks>
+        </member>
+        <member name="P:ConstructionToolWithOptions.CircleToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#IsDirty">
+            <summary>
+            Set this flag when any tool options have been changed.
+            </summary>
+            <remaarks>
+            When this IEditingCreateToolControl is being displayed in the Template Properties
+            dialog, the calling code will use this property to determine if any changes have
+            been made.  
+            </remaarks>
+        </member>
+        <member name="M:ConstructionToolWithOptions.CircleToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#AutoOpenActiveTemplatePane(System.String)">
+            <summary>
+            Gets if the contents of this control is auto-Opened in the Active Template Pane when the 
+            tool is activated.
+            </summary>
+            <param name="toolID">the ID of the current tool</param>
+            <returns>True the active template pane will be opened to the tool's options view.
+            False, nothing in the active template pane changes when the tool is selected.</returns>
+        </member>
+        <member name="M:ConstructionToolWithOptions.CircleToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#InitializeForActiveTemplate(ArcGIS.Desktop.Editing.ToolOptions)">
+            <summary>
+            Called just before ArcGIS.Desktop.Framework.Controls.EmbeddableControl.OpenAsync
+            when this IEditingCreateToolControl is being used within the ActiveTemplate pane.
+            </summary>
+            <param name="options">tool options obtained from the template for the given toolID</param>
+            <returns>true if the control is to be displayed in the ActiveTemplate pane.. False otherwise</returns>
+        </member>
+        <member name="M:ConstructionToolWithOptions.CircleToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#InitializeForTemplateProperties(ArcGIS.Desktop.Editing.ToolOptions)">
+            <summary>
+            Called just before ArcGIS.Desktop.Framework.Controls.EmbeddableControl.OpenAsync
+            when this IEditingCreateToolControl is being used within the Template Properties
+            dialog
+            </summary>
+            <param name="options">tool options obtained from the template for the given toolID</param>
+            <returns>true if the control is to be displayed in Template Properties. False otherwise</returns>
+        </member>
+        <member name="T:ConstructionToolWithOptions.Module1">
+            <summary>
+            This sample illustrates how to build a construction tool with options allowing users to provide parameters at run-time. This pattern is new at ArcGIS Pro 2.0.  
+            Two samples are included.
+            The first is the BufferedLineTool.  The line sketch geoemtry is buffered by a user defined distance to create a polygon feature.
+            The second sample is the CircleTool.  A user defined radius is used to create a circular arc with the point sketch geometry as the centroid.  This tool is registered with both the esri_editing_construction_polyline and esri_editing_construction_polygon categories allowing both polyline and polygon features to be created.
+            </summary>
+            <remarks>
+            1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+            1. Make sure that the Sample data is unzipped in c:\data
+            1. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'
+            1. In Visual Studio click the Build menu.Then select Build Solution.
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro will open, select the FeatureTest.aprx project
+            1. Select the 'Edit' tab on the ArcGIS Pro ribbon and 'Create' new features
+            1. On the 'Create Features' pane select the test polygon feature layer to see the 'Buffered Line' tool
+            ![UI](Screenshots/ConstructionToolOptions_1.png)      
+            1. Select the tool and see the Options page displaying the buffer distance
+            ![UI](Screenshots/ConstructionToolOptions_2.png)      
+            1. Enter a buffer distance and sketch a line.See a buffer of the sketched line used to generate a new polygon feature.
+            </remarks>
+        </member>
+        <member name="P:ConstructionToolWithOptions.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:ConstructionToolWithOptions.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+    </members>
+</doc>

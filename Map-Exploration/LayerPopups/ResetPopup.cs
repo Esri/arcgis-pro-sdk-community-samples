@@ -30,12 +30,12 @@ using ArcGIS.Desktop.Mapping;
 using LayerPopups.Helpers;
 
 namespace LayerPopups {
-    /// <summary>
-    /// Resets the popup definition for the U.S. States layer back to 'default'
-    /// </summary>
-    // <remarks>Requires the States dataset from the AdminData.gdb downloadable from:
-    /// <a href="https://github.com/Esri/arcgis-pro-sdk-community-samples/releases"/></remarks>
-    internal class ResetPopup : Button {
+  /// <summary>
+  /// Resets the popup definition for the U.S. States layer back to 'default'
+  /// </summary>
+  /// <remarks>Requires the States dataset from the AdminData.gdb downloadable from:
+  /// &lt;a href=&quot;https://github.com/Esri/arcgis-pro-sdk-community-samples/releases&quot;/&gt;</remarks>
+  internal class ResetPopup : Button {
         protected override void OnClick() {
             string layerName = "U.S. States";
             var usStatesLayer = MapView.Active.Map.GetLayersAsFlattenedList()

@@ -1,4 +1,4 @@
-﻿//   Copyright 2014 Esri
+﻿//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -18,21 +18,24 @@ using System.Windows;
 namespace ControlStyles
 {
     /// <summary>
-    /// This sample demonstrates how to create UI elements in your Add-in that have the ArcGIS Pro "look and feel". 
-    /// For example, when you load this sample you will be able to get the xaml code to create a "Esri Simple Button".  
-    /// Xaml code for buttons, check boxes, colors can be obtained from this sample. 
+    /// This sample demonstrates how to create UI elements in your Add-in that have the ArcGIS Pro "look and feel".    
+    /// Xaml code for buttons, check boxes, DataGrids, TextBlock styles can be obtained from this sample. 
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 2. Click Start button to open ArcGIS Pro.
-    /// 3. ArcGIS Pro will open. Click on the new UI Design tab created by this add-in. Two buttons are created on the ribbon in a ArcGIS Pro UI Design group - Control Styles and Colors. 
+    /// 1. This solution is using the AvalonEdit and Extended.Wpf.Toolkit Nugets. If needed, you can install the Nugets from the "Nuget Package Manager Console" by using this script: "Install-Package AvalonEdit" and "Install-Package Extended.Wpf.Toolkit".
+    /// 1. Click Start button to open ArcGIS Pro.
+    /// 1. ArcGIS Pro will open. Click on the new UI Design tab created by this add-in. Four buttons are created on the ribbon in an ArcGIS Pro UI Design group - Control Styles, TextBlock Styles, Backstage Styles and ProWindow Styles. 
     /// ![UI](screenshots/UIDesign.png)
-    /// 4. Control Styles button: Clicking this button launches the ArcGIS Pro Control Styles dockpane. Select the control you are interested in to view its available styles. You can then click on the Copy button next to the Xaml code for that style to paste into your add-in.
+    /// 1. Control Styles button: Clicking this button launches the ArcGIS Pro Control Styles dockpane. Select the control you are interested in to view its available styles. You can then click on the Copy button next to the Xaml code for that style to paste into your add-in.
     /// ![Controls](screenshots/controls.png)
-    /// 5. Colors button: Clicking this button launches the ArcGIS Pro Colors dockpane. Select any of the Esri colors available in the gallery. You can then click on the Copy button next to the Xaml code for that color to paste into your add-in.
-    /// ![Colors](screenshots/colors.png)
-    /// 6. Make sure when working with styles that your look and feel supports the ArcGIS Pro Dark Theme as well as the Default Theme.
-    /// ![Colors](screenshots/DarkTheme.png)
+    /// 1. TextBlock Styles button: Clicking this button launches the ArcGIS Pro TextBlock Styles dockpane. You can see the various TextBlock styles available with Pro.
+    /// ![TextBlock](screenshots/TextBlock.png)
+    /// 1. Backstage Styles button: Clicking this button will launch a Backstage page that lists the backstage TextBlock styles provided in Pro.
+    /// ![Backstage](screenshots/Backstage.png)
+    /// 1. ProWindow Styles button: Clicking this button will launch a ProWindow that lists the dialog TextBlock styles provided in Pro.
+    /// ![ProWindow](screenshots/ProWindow.png)
+    /// 1. Make sure when working with styles that your look and feel supports the ArcGIS Pro Dark Theme as well as the Default Theme.
     /// </remarks>
     internal class Module1 : Module
     {

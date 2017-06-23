@@ -32,7 +32,7 @@ namespace ConstructingGeometries
     /// This code sample shows how to build MapPoint objects. 
     /// 20 random points are generated in the extent of the map extent of the active view.
     /// </summary>
-    internal class createPoints : Button
+    internal class CreatePoints : Button
     {
         protected override async void OnClick()
         {
@@ -47,7 +47,7 @@ namespace ConstructingGeometries
                 return;
 
             // first generate some random points
-            await constructSamplePoints(pointFeatureLayer);
+            await ConstructSamplePoints(pointFeatureLayer);
 
             // activate the button completed state to enable the polyline button
             FrameworkApplication.State.Activate("geometry_points_constructed");
@@ -58,7 +58,7 @@ namespace ConstructingGeometries
         /// </summary>
         /// <param name="pointFeatureLayer">Point geometry feature layer used to the generate the points.</param>
         /// <returns>Task{bool}</returns>
-        private Task<bool> constructSamplePoints(FeatureLayer pointFeatureLayer)
+        private Task<bool> ConstructSamplePoints(FeatureLayer pointFeatureLayer)
         {
             // create a random number generator
             var randomGenerator = new Random();
@@ -67,13 +67,15 @@ namespace ConstructingGeometries
             // the main CIM thread
             return QueuedTask.Run(() =>
             {
-                // start an edit operation to create new (random) point features
-                var createOperation = new EditOperation();
-                createOperation.Name = "Generate points";
-                createOperation.SelectNewFeatures = false;
+              // start an edit operation to create new (random) point features
+              var createOperation = new EditOperation()
+              {
+                Name = "Generate points",
+                SelectNewFeatures = false
+              };
 
-                // get the feature class associated with the layer
-                var featureClass = pointFeatureLayer.GetTable() as FeatureClass;
+              // get the feature class associated with the layer
+              var featureClass = pointFeatureLayer.GetTable() as FeatureClass;
 
                 // define an area of interest. Random points are generated in the allowed
                 // confines of the allow extent range
@@ -92,10 +94,9 @@ namespace ConstructingGeometries
                 {
                     // generate either 2D or 3D geometries
                     if (classDefinition.HasZ())
-                        newMapPoint = MapPointBuilder.CreateMapPoint(randomGenerator.NextCoordinate(areaOfInterest, true), spatialReference);
+                        newMapPoint = MapPointBuilder.CreateMapPoint(randomGenerator.NextCoordinate3D(areaOfInterest), spatialReference);
                     else
-                        newMapPoint = MapPointBuilder.CreateMapPoint(randomGenerator.NextCoordinate(areaOfInterest, false), spatialReference);
-
+                        newMapPoint = MapPointBuilder.CreateMapPoint(randomGenerator.NextCoordinate2D(areaOfInterest), spatialReference);
                     // queue feature creation
                     createOperation.Create(pointFeatureLayer, newMapPoint);
                 }

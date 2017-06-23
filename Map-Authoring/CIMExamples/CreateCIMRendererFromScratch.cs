@@ -70,20 +70,24 @@ namespace CIMExamples {
             if (Module1.OnUIThread)
                 throw new CalledOnWrongThreadException();
 
-            //Create the Unique Value Renderer
-            CIMUniqueValueRenderer uniqueValueRenderer = new CIMUniqueValueRenderer();
+      //Create the Unique Value Renderer
+      CIMUniqueValueRenderer uniqueValueRenderer = new CIMUniqueValueRenderer()
+      {
 
-            // set the value field
-            uniqueValueRenderer.Fields = new string[] { "STATE_NAME" };
+        // set the value field
+        Fields = new string[] { "STATE_NAME" }
+      };
 
-            //Construct the list of UniqueValueClasses
-            List<CIMUniqueValueClass> classes = new List<CIMUniqueValueClass>();
+      //Construct the list of UniqueValueClasses
+      List<CIMUniqueValueClass> classes = new List<CIMUniqueValueClass>();
 
             // Alabama
             List<CIMUniqueValue> alabamaValues = new List<CIMUniqueValue>();
-            CIMUniqueValue alabamaValue = new CIMUniqueValue();
-            alabamaValue.FieldValues = new string[] { "Alabama" };
-            alabamaValues.Add(alabamaValue);
+      CIMUniqueValue alabamaValue = new CIMUniqueValue()
+      {
+        FieldValues = new string[] { "Alabama" }
+      };
+      alabamaValues.Add(alabamaValue);
 
             var alabamaColor = CIMColor.CreateRGBColor(255, 170, 0);
 
@@ -92,16 +96,18 @@ namespace CIMExamples {
                 Label = "Alabama",
                 Visible = true,
                 Editable = true,
-                Symbol = new CIMSymbolReference() {Symbol = SymbolFactory.ConstructPolygonSymbol(alabamaColor)}
+                Symbol = new CIMSymbolReference() {Symbol = SymbolFactory.Instance.ConstructPolygonSymbol(alabamaColor)}
             };
 
             classes.Add(alabama);
 
             // Alaska
             List<CIMUniqueValue> alaskaValues = new List<CIMUniqueValue>();
-            CIMUniqueValue alaskaValue = new CIMUniqueValue();
-            alaskaValue.FieldValues = new string[] { "Alaska" };
-            alaskaValues.Add(alaskaValue);
+      CIMUniqueValue alaskaValue = new CIMUniqueValue()
+      {
+        FieldValues = new string[] { "Alaska" }
+      };
+      alaskaValues.Add(alaskaValue);
 
             var alaskaColor = CIMColor.CreateRGBColor(255, 0, 0);
 
@@ -110,16 +116,18 @@ namespace CIMExamples {
                 Label = "Alaska",
                 Visible = true,
                 Editable = true,
-                Symbol = new CIMSymbolReference() { Symbol = SymbolFactory.ConstructPolygonSymbol(alaskaColor) }
+                Symbol = new CIMSymbolReference() { Symbol = SymbolFactory.Instance.ConstructPolygonSymbol(alaskaColor) }
             };
 
             classes.Add(alaska);
 
             // California
             List<CIMUniqueValue> californiaValues = new List<CIMUniqueValue>();
-            CIMUniqueValue californiaValue = new CIMUniqueValue();
-            californiaValue.FieldValues = new string[] { "California" };
-            californiaValues.Add(californiaValue);
+      CIMUniqueValue californiaValue = new CIMUniqueValue()
+      {
+        FieldValues = new string[] { "California" }
+      };
+      californiaValues.Add(californiaValue);
 
             var californiaColor = CIMColor.CreateRGBColor(85, 255, 0);
 
@@ -128,16 +136,18 @@ namespace CIMExamples {
                 Label = "California",
                 Visible = true,
                 Editable = true,
-                Symbol = new CIMSymbolReference() { Symbol = SymbolFactory.ConstructPolygonSymbol(californiaColor) }
+                Symbol = new CIMSymbolReference() { Symbol = SymbolFactory.Instance.ConstructPolygonSymbol(californiaColor) }
             };
 
             classes.Add(california);
 
             // Colorado
             List<CIMUniqueValue> coloradoValues = new List<CIMUniqueValue>();
-            CIMUniqueValue coloradoValue = new CIMUniqueValue();
-            coloradoValue.FieldValues = new string[] { "Colorado" };
-            coloradoValues.Add(coloradoValue);
+      CIMUniqueValue coloradoValue = new CIMUniqueValue()
+      {
+        FieldValues = new string[] { "Colorado" }
+      };
+      coloradoValues.Add(coloradoValue);
 
             var coloradoColor = CIMColor.CreateRGBColor(0, 92, 230);
 
@@ -146,21 +156,22 @@ namespace CIMExamples {
                 Label = "Colorado",
                 Visible = true,
                 Editable = true,
-                Symbol = new CIMSymbolReference() { Symbol = SymbolFactory.ConstructPolygonSymbol(coloradoColor) }
+                Symbol = new CIMSymbolReference() { Symbol = SymbolFactory.Instance.ConstructPolygonSymbol(coloradoColor) }
             };
 
             classes.Add(colorado);
 
-            // so on and so forth for all the 51.
-            //....
+      // so on and so forth for all the 51.
+      //....
 
-            //Add the classes to a group (by default there is only one group or "symbol level")
-            // Unique value groups
-            CIMUniqueValueGroup groupOne = new CIMUniqueValueGroup();
-            groupOne.Heading = "State Names";
-            groupOne.Classes = classes.ToArray();
-
-            uniqueValueRenderer.Groups = new CIMUniqueValueGroup[] { groupOne };
+      //Add the classes to a group (by default there is only one group or "symbol level")
+      // Unique value groups
+      CIMUniqueValueGroup groupOne = new CIMUniqueValueGroup()
+      {
+        Heading = "State Names",
+        Classes = classes.ToArray()
+      };
+      uniqueValueRenderer.Groups = new CIMUniqueValueGroup[] { groupOne };
 
             //Draw the rest with the default symbol
             uniqueValueRenderer.UseDefaultSymbol = true;
@@ -168,7 +179,7 @@ namespace CIMExamples {
 
             var defaultColor = CIMColor.CreateRGBColor(215, 215, 215);
             uniqueValueRenderer.DefaultSymbol = new CIMSymbolReference() {
-                Symbol = SymbolFactory.ConstructPolygonSymbol(defaultColor)
+                Symbol = SymbolFactory.Instance.ConstructPolygonSymbol(defaultColor)
             };
             
             return uniqueValueRenderer as CIMRenderer;

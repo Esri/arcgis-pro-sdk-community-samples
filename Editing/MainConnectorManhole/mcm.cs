@@ -28,9 +28,9 @@ using ArcGIS.Desktop.Mapping;
 
 namespace MainConnectorManhole
 {
-  internal class mcm : MapTool
+  internal class Mcm : MapTool
   {
-    public mcm() : base()
+    public Mcm() : base()
     {
       IsSketchTool = true;
       SketchType = SketchGeometryType.Line;
@@ -60,13 +60,15 @@ namespace MainConnectorManhole
         if ((mainTemplate == null) || (mhTemplate == null) || (conTemplate == null))
           return false;
 
-        var op = new EditOperation();
-        op.Name = "Create main-connector-manhole";
-        op.SelectModifiedFeatures = false;
-        op.SelectNewFeatures = false;
-        
+        var op = new EditOperation()
+        {
+          Name = "Create main-connector-manhole",
+          SelectModifiedFeatures = false,
+          SelectNewFeatures = false
+        };
+
         //create the main geom
-        var mainGeom = GeometryEngine.Move(geometry, 0, 0, -20);
+        var mainGeom = GeometryEngine.Instance.Move(geometry, 0, 0, -20);
         op.Create(mainTemplate, mainGeom);
 
         //create manhole points and connector
@@ -76,9 +78,11 @@ namespace MainConnectorManhole
           op.Create(mhTemplate, pnt);
 
           //vertical connector between mahole and main
-          var conPoints = new List<MapPoint>();
-          conPoints.Add(pnt); //top of vertical connector
-          conPoints.Add(GeometryEngine.Move(pnt, 0, 0, -20)); //bottom of vertical connector
+          var conPoints = new List<MapPoint>
+          {
+            pnt, //top of vertical connector
+            GeometryEngine.Instance.Move(pnt, 0, 0, -20) as MapPoint //bottom of vertical connector
+          };
           var conPolyLine = PolylineBuilder.CreatePolyline(conPoints);
           op.Create(conTemplate, conPolyLine);
         }

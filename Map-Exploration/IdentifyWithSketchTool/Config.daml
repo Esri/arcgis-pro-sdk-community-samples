@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
-
 <!--
 Copyright 2017 Esri
 
@@ -20,12 +15,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <ArcGIS defaultAssembly="IdentifyWithSketchTool.dll" defaultNamespace="IdentifyWithSketchTool" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{abd10622-b5f3-4132-b82e-0378ad7d2fd1}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{abd10622-b5f3-4132-b82e-0378ad7d2fd1}" version="1.0" desktopVersion="2.0.0">
     <Name>Sketch Tool</Name>
     <Description>Adds custom sketch tool for ArcGIS Pro.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>Esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>3/1/2015 2:09:23 PM, 2015</Date>
     <Subject>Map Exploration</Subject>
   </AddInInfo>

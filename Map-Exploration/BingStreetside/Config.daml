@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
 <!--
 
    Copyright 2017 Esri
@@ -20,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="BingStreetside.dll" defaultNamespace="BingStreetside" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{0d2eff3c-d98c-4421-ac9e-44ec874e6757}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{0d2eff3c-d98c-4421-ac9e-44ec874e6757}" version="1.0" desktopVersion="2.0.0">
     <Name>BingStreetside</Name>
     <Description>BingStreetside description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>Wolfgang</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>4/6/2016 12:25:20 PM, 2016</Date>
     <Subject>Map Exploration</Subject>
     <!-- Note subject can be one or more of these topics:

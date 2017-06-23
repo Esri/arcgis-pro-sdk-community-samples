@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CustomCatalogContext</name>
+    </assembly>
+    <members>
+        <member name="T:CustomCatalogContext.CustomCatalogButton">
+            <summary>
+            Access the Catalog context via the FrameworkApplication.ActiveWindow
+            </summary>
+        </member>
+        <member name="T:CustomCatalogContext.Module1">
+            <summary>
+            Shows how to modify a sampling of different Catalog context menus
+            </summary>
+            <remarks>
+            The context is retrieved from the FrameworkApplication.ActiveWindow property.
+            Cast that to IProjectWindow to access the SelectedItems enumeration. Each of the
+            selected items can be cast to its respective project item (depending on what
+            "type" of item it is (i.e. map, style, gdb, etc)</remarks>
+        </member>
+        <member name="P:CustomCatalogContext.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:CustomCatalogContext.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+    </members>
+</doc>

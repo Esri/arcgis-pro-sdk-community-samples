@@ -62,7 +62,7 @@ namespace WorkingWithRasterLayers
                 await QueuedTask.Run(() =>
                 {
                     // Create a layer based on the url. In this case the layer we are creating is an image service layer.
-                    imageServiceLayer = (ImageServiceLayer)LayerFactory.CreateLayer(new Uri(dataSoureUrl), _map);
+                    imageServiceLayer = (ImageServiceLayer)LayerFactory.Instance.CreateLayer(new Uri(dataSoureUrl), _map);
                     if (imageServiceLayer == null)
                     {
                         ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Failed to create layer for url:" + dataSoureUrl);
@@ -148,12 +148,14 @@ namespace WorkingWithRasterLayers
                     ImageServiceLayer isLayer = (ImageServiceLayer)firstSelectedLayer;
                     await QueuedTask.Run(() =>
                     {
-                        // Create a new Rendering rule
-                        CIMRenderingRule setRenderingrule = new CIMRenderingRule();
+                      // Create a new Rendering rule
+                      CIMRenderingRule setRenderingrule = new CIMRenderingRule()
+                      {
                         // Set the name of the rendering rule.
-                        setRenderingrule.Name = templateName;
-                        // Update the image service with the new mosaic rule.
-                        isLayer.SetRenderingRule(setRenderingrule);
+                        Name = templateName
+                      };
+                      // Update the image service with the new mosaic rule.
+                      isLayer.SetRenderingRule(setRenderingrule);
                     });
                 }
             }

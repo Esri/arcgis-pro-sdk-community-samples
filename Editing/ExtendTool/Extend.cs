@@ -69,7 +69,7 @@ namespace ExtendTool
 
                 //extend the line to the poly?
                 ArcGIS.Core.Geometry.Polyline extPolyline;
-                extPolyline = GeometryEngine.Extend(clickGeom, (selGeom.GeometryType == GeometryType.Polygon ? GeometryEngine.Boundary(selGeom) as Polyline : selGeom as Polyline), ExtendFlags.Default);
+                extPolyline = GeometryEngine.Instance.Extend(clickGeom, (selGeom.GeometryType == GeometryType.Polygon ? GeometryEngine.Instance.Boundary(selGeom) as Polyline : selGeom as Polyline), ExtendFlags.Default);
                 if (extPolyline == null)
                 {
                     MessageBox.Show(string.Format("Unable to extend the clicked {0} to the selected {1}",
@@ -80,12 +80,14 @@ namespace ExtendTool
                 //set the new geometry back on the feature
                 insp.Shape = extPolyline;
 
-                //create and execute the edit operation
-                var op = new EditOperation();
-                op.Name = "Extend";
-                op.SelectModifiedFeatures = false;
-                op.SelectNewFeatures = false;
-                op.Modify(insp);
+              //create and execute the edit operation
+              var op = new EditOperation()
+              {
+                Name = "Extend",
+                SelectModifiedFeatures = false,
+                SelectNewFeatures = false
+              };
+              op.Modify(insp);
                 return op.Execute();
             });
         }

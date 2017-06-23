@@ -55,40 +55,40 @@
     <StackPanel Grid.Row="1"  KeyboardNavigation.TabNavigation="Local" >
       <TextBlock Text="Sign onto portal or AGOL from backstage" FontWeight="SemiBold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
      <TextBlock Text="Portal/AGO URL:" Margin="5,0,0,0" Style="{DynamicResource RegularText}"/>
-      <TextBox Name="BaseUrl" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap"  Foreground="{DynamicResource Esri_BlueDark}" FontWeight="Bold" />
+      <TextBox Name="BaseUrl" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap" FontWeight="Bold" />
       <Button Content="Use Active Portal" HorizontalAlignment="Right" Margin="5,5,5,0"  
-                    Name="activePortalGet" VerticalAlignment="Center" Click="GetActivePortal_Click" Style="{DynamicResource Esri_SimpleButton}"/>
+                    Name="activePortalGet" VerticalAlignment="Center" Click="GetActivePortal_Click" Style="{DynamicResource Esri_Button}"/>
       <Separator Height="10"/>
     </StackPanel>
     <StackPanel Grid.Row="2"  KeyboardNavigation.TabNavigation="Local" >
       <TextBlock Text="Select an item to upload" FontWeight="SemiBold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
       <TextBlock Text="Item path" Margin="5,0,0,0" Style="{DynamicResource RegularText}" />
-      <TextBox Name="itemPath" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap"  Foreground="{DynamicResource Esri_BlueDark}" FontWeight="Bold" />
+      <TextBox Name="itemPath" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap" FontWeight="Bold" />
       <Button Content="Browse" HorizontalAlignment="Right" Margin="5,5,5,0" 
-                    Name="itemPathBrowse" VerticalAlignment="Center" Click="itemPathBrowse_Click" Style="{DynamicResource Esri_SimpleButton}"/>
+                    Name="itemPathBrowse" VerticalAlignment="Center" Click="itemPathBrowse_Click" Style="{DynamicResource Esri_Button}"/>
       <ContentPresenter Content="{Binding EmbeddableView, Mode=OneWay}" />
       <TextBlock Text="Thumbnail path" Margin="5,0,0,0" Style="{DynamicResource RegularText}"/>
-      <TextBox Name="thumbnailPath" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap"  Foreground="{DynamicResource Esri_BlueDark}" FontWeight="Bold" />
+      <TextBox Name="thumbnailPath" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap" FontWeight="Bold" />
       <Button Content="Browse" HorizontalAlignment="Right" Margin="5,5,5,0" 
-                    Name="thumbnailPathBrowse" VerticalAlignment="Center" Click="thumbnailPathBrowse_Click" Style="{DynamicResource Esri_SimpleButton}"/>
+                    Name="thumbnailPathBrowse" VerticalAlignment="Center" Click="thumbnailPathBrowse_Click" Style="{DynamicResource Esri_Button}"/>
       <ContentPresenter Content="{Binding EmbeddableView, Mode=OneWay}" />
-      <Label Content="Tags" Margin="5,0,0,0" FontSize="12" FontWeight="Regular" Foreground="{DynamicResource Esri_Gray155}" />
-      <TextBox Name="tags" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap"  Foreground="{DynamicResource Esri_BlueDark}" FontWeight="Bold" />
+      <Label Content="Tags" Margin="5,0,0,0" FontSize="12" FontWeight="Regular"/>
+      <TextBox Name="tags" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap" FontWeight="Bold" />
       <Separator Height="10"/>
     </StackPanel>
     <StackPanel Grid.Row="3"  KeyboardNavigation.TabNavigation="Local" >
-      <Button Name="uploadSubmit" Click="OnClickUploadSubmit" Style="{DynamicResource Esri_SimpleButton}" HorizontalAlignment="Center">
+      <Button Name="uploadSubmit" Click="OnClickUploadSubmit" Style="{DynamicResource Esri_Button}" HorizontalAlignment="Center">
         Submit</Button>
-      <Button Name="clearContents" Click="OnClickClearContents" Style="{DynamicResource Esri_SimpleButton}" HorizontalAlignment="Center">
+      <Button Name="clearContents" Click="OnClickClearContents" Style="{DynamicResource Esri_Button}" HorizontalAlignment="Center">
         Clear</Button>
       <Separator Height="10"/>
       <Border BorderThickness="3">
         <TextBlock Name="txt_itemLink" TextWrapping="Wrap" FontSize="14" />
       </Border>
-      <Label Name="itemIdLabel" Content="Item Id:" Margin="5,0,0,0" FontSize="12" FontWeight="Regular" Foreground="{DynamicResource Esri_Gray155}" />
-      <TextBox Name="itemIdText" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap"  Foreground="{DynamicResource Esri_BlueDark}" FontWeight="Bold" />
+      <Label Name="itemIdLabel" Content="Item Id:" Margin="5,0,0,0" FontSize="12" FontWeight="Regular" />
+      <TextBox Name="itemIdText" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap" FontWeight="Bold" />
       <Button Content="Copy to clipboard" HorizontalAlignment="Right" Margin="5,5,5,0" 
-                    Name="copyToClipboard" VerticalAlignment="Center" Click="copyToClipboard_Click" Style="{DynamicResource Esri_SimpleButton}"/>
+                    Name="copyToClipboard" VerticalAlignment="Center" Click="copyToClipboard_Click" Style="{DynamicResource Esri_Button}"/>
     </StackPanel>
   </Grid>
 </UserControl>

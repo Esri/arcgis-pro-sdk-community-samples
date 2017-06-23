@@ -51,7 +51,7 @@
     </DockPanel>
 
     <StackPanel Grid.Row="1" Margin="10,10,0,0">
-      <TextBlock Text="{Binding SelectFileLabel}" Style="{DynamicResource H3TextBlock}" />
+      <TextBlock Text="{Binding SelectFileLabel}" Style="{DynamicResource Esri_TextBlockH3}" />
 
       <Grid Margin="0,10,0,0">
         <Grid.ColumnDefinitions>
@@ -67,15 +67,15 @@
       </Grid>
 
       <StackPanel>
-        <Button x:Name="AddMapButton" Command="{Binding AddToMapCmd}" Style="{DynamicResource Esri_SimpleButton}" HorizontalAlignment="Left">
+        <Button x:Name="AddMapButton" Command="{Binding AddToMapCmd}" Style="{DynamicResource Esri_Button}" HorizontalAlignment="Left">
           <TextBlock Text="Add to Map"/>
         </Button>
 
-        <Button x:Name="UploadButton" Command="{Binding UploadCmd}" Style="{DynamicResource Esri_SimpleButton}" HorizontalAlignment="Left">
+        <Button x:Name="UploadButton" Command="{Binding UploadCmd}" Style="{DynamicResource Esri_Button}" HorizontalAlignment="Left">
           <TextBlock Text="Upload to AGOL"/>
         </Button>
 
-        <Button x:Name="QueryButton" Command="{Binding QueryCmd}" Style="{DynamicResource Esri_SimpleButton}" HorizontalAlignment="Left">
+        <Button x:Name="QueryButton" Command="{Binding QueryCmd}" Style="{DynamicResource Esri_Button}" HorizontalAlignment="Left">
           <TextBlock Text="Query AGOL"/>
         </Button>
 

@@ -33,26 +33,26 @@
         </ResourceDictionary>
     </Window.Resources>
     <StackPanel>
-        <TextBlock Foreground="{DynamicResource Esri_Gray155}" Margin="10" FontSize="24" FontWeight="Bold"><Run Text="Add Layer from ..."/></TextBlock>
+        <TextBlock Foreground="{DynamicResource Esri_TextStyleDefaultBrush}" Margin="10" FontSize="24" FontWeight="Bold"><Run Text="Add Layer from ..."/></TextBlock>
         <Grid HorizontalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Foreground="{DynamicResource Esri_Gray155}" Grid.Column="0" Margin="10" FontSize="16"><Run Text="Data Source (path or url):"/></TextBlock>
+            <TextBlock Foreground="{DynamicResource Esri_TextStyleDefaultBrush}" Grid.Column="0" Margin="10" FontSize="16"><Run Text="Data Source (path or url):"/></TextBlock>
             <TextBox x:Name="TxtUri" Grid.Column="1" Margin="5,10,10,10" FontSize="16" VerticalAlignment="Center" TextChanged="TxtUri_TextChanged">
                 <!-- http://sampleserver6.arcgisonline.com/arcgis/rest/services/NapervilleShelters/FeatureServer/0 -->
             </TextBox>
-            <Button Name="BtnGetLayer" Grid.Column="2" Margin="0,10,10,10" FontSize="16" IsEnabled="True" Content="..." MinWidth="35" IsDefault="False" Click="btnGetLayer_Click" Style="{DynamicResource Esri_SimpleButton}" HorizontalContentAlignment="Left"/>
+            <Button Name="BtnGetLayer" Grid.Column="2" Margin="0,10,10,10" FontSize="16" IsEnabled="True" Content="..." MinWidth="35" IsDefault="False" Click="btnGetLayer_Click" Style="{DynamicResource Esri_Button}" HorizontalContentAlignment="Left"/>
         </Grid>
         <Grid HorizontalAlignment="Right">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition  Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Button Name="BtnAddLayer" Grid.Column="0" Margin="10" Padding="5,1" FontSize="16" IsEnabled="False" Content="Add Layer" IsDefault="True" Click="btnAddLayer_Click" Style="{DynamicResource Esri_SimpleButton}"/>
-            <Button Name="BtnCancel" Grid.Column="1" Margin="5,10,10,10" Padding="5,1" FontSize="16" Content="Close" IsCancel="True" Style="{DynamicResource Esri_SimpleButton}"/>
+            <Button Name="BtnAddLayer" Grid.Column="0" Margin="10" Padding="5,1" FontSize="16" IsEnabled="False" Content="Add Layer" IsDefault="True" Click="btnAddLayer_Click" Style="{DynamicResource Esri_Button}"/>
+            <Button Name="BtnCancel" Grid.Column="1" Margin="5,10,10,10" Padding="5,1" FontSize="16" Content="Close" IsCancel="True" Style="{DynamicResource Esri_Button}"/>
         </Grid>
     </StackPanel>
 </controls:ProWindow>

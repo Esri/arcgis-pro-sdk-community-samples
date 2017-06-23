@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
-
-
 <!--
 //Copyright 2017 Esri
 
@@ -20,12 +14,12 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.-->
 <ArcGIS defaultAssembly="ConstructionTool.dll" defaultNamespace="ConstructionTool" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{86f5eb20-8624-4bbc-80d0-08dcf29d339f}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{86f5eb20-8624-4bbc-80d0-08dcf29d339f}" version="1.0" desktopVersion="2.0.0">
     <Name>ConstructionTool</Name>
     <Description>ConstructionTool description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>2/20/2015 11:02:04 AM, 2015</Date>
     <Subject>Editing</Subject>
     <!-- Note subject can be one or more of these topics:

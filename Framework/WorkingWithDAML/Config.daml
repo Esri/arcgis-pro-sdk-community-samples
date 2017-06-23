@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
-
 <!--//Copyright 2017 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,12 +13,12 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.-->
 <ArcGIS defaultAssembly="WorkingWithDAML.dll" defaultNamespace="WorkingWithDAML" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{c6226a24-d69b-46c6-b5e7-9eee4ddad45d}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{c6226a24-d69b-46c6-b5e7-9eee4ddad45d}" version="1.0" desktopVersion="2.0.0">
     <Name>WorkingWithDAML</Name>
     <Description>WorkingWithDAML</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>2/20/2015 10:39:32 AM, 2015</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

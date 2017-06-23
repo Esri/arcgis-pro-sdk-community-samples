@@ -40,8 +40,7 @@
     </Grid.RowDefinitions>
 
     <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
-      <TextBlock Grid.Column="1" Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center"
-                    FontSize="16" FontWeight="Light">
+      <TextBlock Grid.Column="1" Text="{Binding Heading}" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource Esri_TextBlockDockPaneHeader}">
         <TextBlock.ToolTip>
           <WrapPanel Orientation="Vertical" MaxWidth="300">
             <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
@@ -58,9 +57,9 @@
       <Grid.RowDefinitions>
         <RowDefinition></RowDefinition>
       </Grid.RowDefinitions>
-      <TextBlock Grid.Column="0" Grid.Row="0" Margin="0,0,5,0" VerticalAlignment="Center">GDB Path:</TextBlock>
+      <TextBlock Grid.Column="0" Grid.Row="0" Margin="0,0,5,0" VerticalAlignment="Center" Text="GDB Path:" Style="{DynamicResource Esri_TextBlockRegular}"/>
       <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding GdbPath, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" HorizontalAlignment="Stretch" VerticalAlignment="Center"></TextBox>
-      <Button Grid.Column="2" Grid.Row="0" Command="{Binding OpenGdbCmd}" Style="{DynamicResource Esri_SimpleButton}" VerticalAlignment="Center">Open GDB</Button>
+      <Button Grid.Column="2" Grid.Row="0" Command="{Binding OpenGdbCmd}" Style="{DynamicResource Esri_Button}" VerticalAlignment="Center">Open GDB</Button>
     </Grid>
     <DataGrid Grid.Row="2" Margin="5" 
                 ScrollViewer.CanContentScroll="True"      
@@ -69,27 +68,7 @@
                 HeadersVisibility="Column"
                 RowHeaderWidth="0"
                 ItemsSource="{Binding Path=GdbDefinitions, Mode=OneWay}"
-                Style="{DynamicResource Esri_DataGridStyle}">
-        <!--
-        <DataGrid.Style>
-            <Style TargetType="DataGrid">
-                    
-                    <Setter Property="AlternatingRowBackground" Value="{DynamicResource Esri_BlueHover}"/>
-                </Style>
-        </DataGrid.Style>
-        -->
-        <!--
-            <DataGrid.RowStyle>
-                <Style TargetType="{x:Type DataGridRow}">
-                    <Style.Triggers>
-                        <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                            <Setter Property="Background" Value="{DynamicResource Esri_BlueHover}"></Setter>
-                            <Setter Property="Foreground" Value=""></Setter>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </DataGrid.RowStyle>
-        -->
+                Style="{DynamicResource Esri_DataGrid}">
     </DataGrid>
   </Grid>
 </UserControl>

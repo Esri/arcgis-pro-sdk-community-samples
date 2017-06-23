@@ -89,7 +89,6 @@ namespace ProceduralSymbolLayersWithRulePackages
         private void OnMapClosed(MapClosedEventArgs args)
         {
             CheckContext();
-           
         }
 
         private void OnMapMemberPropertiesChanged(MapMemberPropertiesChangedEventArgs args)
@@ -100,7 +99,7 @@ namespace ProceduralSymbolLayersWithRulePackages
         }
 
         /// <summary>
-        /// Checkis if the Dockpane should be made visible
+        /// Check if the Dockpane should be made visible
         /// </summary>
         private void CheckContext()
         {

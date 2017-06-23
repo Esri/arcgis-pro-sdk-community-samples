@@ -38,8 +38,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Border Background="{DynamicResource Esri_Gray100}" 
-                BorderBrush="{DynamicResource Esri_Gray125}" 
+        <Border Background="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}" 
+                BorderBrush="{DynamicResource Esri_BorderBrush}" 
                 BorderThickness="1"
                 IsHitTestVisible="False">
             <TextBlock Text="{Binding Text}" 

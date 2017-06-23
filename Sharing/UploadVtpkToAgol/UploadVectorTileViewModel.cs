@@ -116,15 +116,17 @@ namespace UploadVtpkToAgol
 
         private void BrowseFileName()
         {
-            // Create OpenFileDialog 
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+      // Create OpenFileDialog 
+      Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog()
+      {
 
-            // Set filter for file extension and default file extension 
-            dlg.DefaultExt = ".vtpk";
-            dlg.Filter = "Vector Tile Package File (*.vtpk)|*.vtpk";
+        // Set filter for file extension and default file extension 
+        DefaultExt = ".vtpk",
+        Filter = "Vector Tile Package File (*.vtpk)|*.vtpk"
+      };
 
-            // Display OpenFileDialog by calling ShowDialog method 
-            var result = dlg.ShowDialog();
+      // Display OpenFileDialog by calling ShowDialog method 
+      var result = dlg.ShowDialog();
 
             // Get the selected file name and display in a TextBox 
             if (result != true) return;
@@ -140,13 +142,13 @@ namespace UploadVtpkToAgol
                 try
                 {
                     // first we create an 'Item' using itemfactory
-                    Item currentItem = ItemFactory.Create(FilePath);
+                    Item currentItem = ItemFactory.Instance.Create(FilePath);
 
                     // Finally add the feature service to the map
                     // if we have an item that can be turned into a layer
                     // add it to the map
-                    if (LayerFactory.CanCreateLayerFrom(currentItem))
-                        LayerFactory.CreateLayer(currentItem, MapView.Active.Map);
+                    if (LayerFactory.Instance.CanCreateLayerFrom(currentItem))
+                        LayerFactory.Instance.CreateLayer(currentItem, MapView.Active.Map);
                 }
                 catch (Exception ex)
                 {
@@ -166,7 +168,7 @@ namespace UploadVtpkToAgol
             var httpClient = new EsriHttpClient();
 
             // Upload vtpk file to the currently active portal
-            var itemToUpload = ItemFactory.Create(FilePath);
+            var itemToUpload = ItemFactory.Instance.Create(FilePath);
             var tags = new string[] { "ArcGIS Pro", "SDK", "UploadVtpkToAgol Demo" };
             var portalUrl = ArcGISPortalManager.Current.GetActivePortal().PortalUri.ToString();
 
@@ -202,13 +204,13 @@ namespace UploadVtpkToAgol
             // Create an item from the search results
 
             string itemId = item.id;
-            var currentItem = ItemFactory.Create(itemId, ItemFactory.ItemType.PortalItem);
+            var currentItem = ItemFactory.Instance.Create(itemId, ItemFactory.ItemType.PortalItem);
 
             // Finally add the feature service to the map
             // if we have an item that can be turned into a layer
             // add it to the map
-            if (LayerFactory.CanCreateLayerFrom(currentItem))
-                LayerFactory.CreateLayer(currentItem, MapView.Active.Map);
+            if (LayerFactory.Instance.CanCreateLayerFrom(currentItem))
+                LayerFactory.Instance.CreateLayer(currentItem, MapView.Active.Map);
             return $@"Uploaded this item: {FilePath} to ArcGIS Online and added the item to the Map";
         }
 
@@ -250,13 +252,13 @@ namespace UploadVtpkToAgol
             // Create an item from the search results
 
             string itemId = item.id;
-            var currentItem = ItemFactory.Create(itemId, ItemFactory.ItemType.PortalItem);
+            var currentItem = ItemFactory.Instance.Create(itemId, ItemFactory.ItemType.PortalItem);
 
             // Finally add the feature service to the map
             // if we have an item that can be turned into a layer
             // add it to the map
-            if (LayerFactory.CanCreateLayerFrom(currentItem))
-                LayerFactory.CreateLayer(currentItem, MapView.Active.Map);
+            if (LayerFactory.Instance.CanCreateLayerFrom(currentItem))
+                LayerFactory.Instance.CreateLayer(currentItem, MapView.Active.Map);
             return $@"Downloaded this item: {item.name} [Type: {item.type}] to ArcGIS Online and added the item to the Map";
         }
     }

@@ -113,10 +113,11 @@ namespace WorkflowSample
 
         //create a job based off a pre-defined job type
         //then assigned it to the specified owner
-        public int CreateJob(OwnerComboBoxItem owner)
+        public async Task<string> CreateJobAsync(OwnerComboBoxItem owner)
         {
-            JobsManager JM = WorkflowModule.GetManager<JobsManager>("");
-            var ret = JM.CreateJob(JobTypeID);
+            var wfCon = await WorkflowModule.ConnectAsync();            
+            JobsManager JM = wfCon.GetManager<JobsManager>();
+            var ret = JM.CreateNewJob(JobTypeID.ToString());
             var job = JM.GetJob(ret);
             if (owner != null)
             {
@@ -128,17 +129,19 @@ namespace WorkflowSample
         }
 
         //get job data
-        public Job OpenJob(int JobId)
+        public async Task<Job> OpenJobAsync(string JobId)
         {
-            JobsManager JM = WorkflowModule.GetManager<JobsManager>("");
+            var wfCon = await WorkflowModule.ConnectAsync();
+            JobsManager JM = wfCon.GetManager<JobsManager>();
             var ret = JM.GetJob(JobId);
             return ret;
         }
 
         //get pre-defined query
-        public QueryResult GetJobs()
+        public async Task<QueryResult> GetJobsAsync()
         {
-            JobsManager JM = WorkflowModule.GetManager<JobsManager>("");
+            var wfCon = await WorkflowModule.ConnectAsync();
+            JobsManager JM = wfCon.GetManager<JobsManager>();
             var ret = JM.ExecuteQuery(QueryName);
             return ret;
         }
@@ -175,28 +178,30 @@ namespace WorkflowSample
             return new ReadOnlyObservableCollection<DataGridColumn>(DGC);
         }
 
-        public IReadOnlyList<UserInfo> GetUsers()
+        public async Task<IReadOnlyList<UserInfo>> GetUsersAsync()
         {
-            ConfigurationManager CM = WorkflowModule.GetManager<ConfigurationManager>("");
+            var wfCon = await WorkflowModule.ConnectAsync();
+            ConfigurationManager CM = wfCon.GetManager<ConfigurationManager>();
             var ret = CM.GetAllUsers();
             return ret;
         }
 
-        public IReadOnlyList<GroupInfo> GetGroups()
+        public async Task<IReadOnlyList<GroupInfo>> GetGroupsAsync()
         {
-            ConfigurationManager CM = WorkflowModule.GetManager<ConfigurationManager>("");
+            var wfCon = await WorkflowModule.ConnectAsync();
+            ConfigurationManager CM = wfCon.GetManager<ConfigurationManager>();
             var ret = CM.GetAllGroups();
             return ret;
         }
 
         //get list of available owners, groups included
-        public IReadOnlyList<OwnerComboBoxItem> GetOwnerList()
+        public async Task<IReadOnlyList<OwnerComboBoxItem>> GetOwnerListAsync()
         {
             List<OwnerComboBoxItem> Items = new List<OwnerComboBoxItem>();
             Items.Add(new OwnerComboBoxItem("Unassigned", JobAssignmentType.Unassigned, ""));
 
-            var Users = GetUsers();
-            var Groups = GetGroups();
+            var Users = await GetUsersAsync();
+            var Groups = await GetGroupsAsync();
             foreach (var user in Users)
             {
                 Items.Add(new OwnerComboBoxItem(user.FullName, JobAssignmentType.AssignedToUser, user.UserName));

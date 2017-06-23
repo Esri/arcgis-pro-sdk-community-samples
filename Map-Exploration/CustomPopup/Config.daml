@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
-
-
 <!--
 
    Copyright 2017 Esri
@@ -22,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="CustomPopup.dll" defaultNamespace="CustomPopup" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{997969c2-c517-4481-af7e-dbdb0e20399c}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{997969c2-c517-4481-af7e-dbdb0e20399c}" version="1.0" desktopVersion="2.0.0">
     <Name>Custom Pop-up Tool</Name>
     <Description>Show a custom pop-up.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>Esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>9/28/2015</Date>
     <Subject>Map-Exploration</Subject>
   </AddInInfo>

@@ -97,6 +97,8 @@ namespace ConfigWithStartWizard.Common {
         /// Execute the given query and return the result
         /// </summary>
         /// <param name="query"></param>
+        /// <param name="results"></param>
+        /// <param name="maxResults"></param>
         /// <returns></returns>
         public string Exec(OnlineQuery query, ObservableCollection<OnlineResultItem> results,
                        int maxResults = 0) {

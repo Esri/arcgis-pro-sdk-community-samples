@@ -2,6 +2,7 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <NoWarn>1591</NoWarn>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
@@ -14,6 +15,7 @@
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <NoWarn>1591</NoWarn>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -27,6 +29,7 @@
     <DocumentationFile>Styling-with-ArcGIS-Pro.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <NoWarn>1591</NoWarn>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,6 +44,9 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ICSharpCode.AvalonEdit, Version=5.0.3.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
+      <HintPath>packages\AvalonEdit.5.0.3\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -89,6 +95,24 @@
       <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\Extended.Wpf.Toolkit.3.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\Extended.Wpf.Toolkit.3.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\Extended.Wpf.Toolkit.3.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\Extended.Wpf.Toolkit.3.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=3.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\Extended.Wpf.Toolkit.3.0\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\Extended.Wpf.Toolkit.3.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <AddInContent Include="Config.daml">
@@ -98,11 +122,11 @@
     <AddInContent Include="Images\AddInDesktop32.png" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Colors\ColorEntry.cs" />
-    <Compile Include="Colors\ArcGISProColorsDockpane.xaml.cs">
-      <DependentUpon>ArcGISProColorsDockpane.xaml</DependentUpon>
+    <Compile Include="Backstage\BackstageStylesButton.cs" />
+    <Compile Include="Backstage\BackstageStyling.xaml.cs">
+      <DependentUpon>BackstageStyling.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Colors\ArcGISProColorsDockpaneViewModel.cs" />
+    <Compile Include="Backstage\BackstageStylingViewModel.cs" />
     <Compile Include="ControlStyles\ArcGISProControlStylesDockPane.xaml.cs">
       <DependentUpon>ArcGISProControlStylesDockPane.xaml</DependentUpon>
     </Compile>
@@ -115,6 +139,19 @@
       <DependentUpon>CheckBoxStyleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ControlStyles\CheckBoxStyleViewModel.cs" />
+    <Compile Include="ControlStyles\Customers.cs" />
+    <Compile Include="ControlStyles\DataGridStyleView.xaml.cs">
+      <DependentUpon>DataGridStyleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ControlStyles\DataGridViewStyleViewModel.cs" />
+    <Compile Include="ControlStyles\ExpanderStyleView.xaml.cs">
+      <DependentUpon>ExpanderStyleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ControlStyles\ExpanderStyleViewModel.cs" />
+    <Compile Include="ControlStyles\ListBoxStyleView.xaml.cs">
+      <DependentUpon>ListBoxStyleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ControlStyles\ListBoxStyleViewModel.cs" />
     <Compile Include="converters.cs" />
     <Compile Include="FontUsage\ArcGISProFontUsageDockPane.xaml.cs">
       <DependentUpon>ArcGISProFontUsageDockPane.xaml</DependentUpon>
@@ -127,9 +164,16 @@
     </Compile>
     <Compile Include="ControlStyles\RadioButtonStyleViewModel.cs" />
     <Compile Include="ControlStyles\StyleViewModelBase.cs" />
+    <Compile Include="ProWindow\ProWindowStylesButton.cs" />
+    <Compile Include="ProWindow\ProWindowStyling.xaml.cs">
+      <DependentUpon>ProWindowStyling.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AvalonEditorWrapper.xaml.cs">
+      <DependentUpon>AvalonEditorWrapper.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Colors\ArcGISProColorsDockpane.xaml">
+    <Page Include="Backstage\BackstageStyling.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -145,11 +189,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ControlStyles\DataGridStyleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ControlStyles\ExpanderStyleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ControlStyles\ListBoxStyleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ControlStyles\RadioButtonStyleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FontUsage\ArcGISProFontUsageDockPane.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProWindow\ProWindowStyling.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\AvalonEditorWrapper.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -187,12 +251,19 @@
     <AddInContent Include="DarkImages\GenericButtonPurple32.png" />
     <AddInContent Include="DarkImages\style-icon16.png" />
     <AddInContent Include="DarkImages\style-icon32.png" />
+    <AddInContent Include="Images\GenericButtonBlue16.png" />
+    <AddInContent Include="Images\GenericButtonBlue32.png" />
+    <AddInContent Include="DarkImages\GenericButtonBlue16.png" />
+    <AddInContent Include="DarkImages\GenericButtonBlue32.png" />
+    <AddInContent Include="Images\Backstage.png" />
+    <AddInContent Include="Images\ProWindow.png" />
     <Content Include="screenshots\colors.png" />
     <Content Include="screenshots\controls.png" />
     <Content Include="screenshots\DarkTheme.png" />
     <Content Include="screenshots\UIDesign.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="ReadMe.md" />
     <None Include="Styling-with-ArcGIS-Pro %28C#%29.md" />
   </ItemGroup>

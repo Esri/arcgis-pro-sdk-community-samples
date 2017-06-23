@@ -18,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="ProceduralSymbolLayersWithRulePackages.dll" defaultNamespace="ProceduralSymbolLayersWithRulePackages" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{83ba30a4-b573-41a0-8abb-c2b3cf50c3d8}" version="1.0" desktopVersion="1.4.7198">
+  <AddInInfo id="{83ba30a4-b573-41a0-8abb-c2b3cf50c3d8}" version="1.0" desktopVersion="2.0.0">
     <Name>ProceduralSymbolLayersWithRulePackages</Name>
     <Description>Render a layer with Procedural Symbol using a City Engine RulePackage</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Company>esri, http://www.esri.com</Company>
     <Date>9/21/2016 3:10:52 PM, 2016</Date>
     <Subject>Framework</Subject>
   </AddInInfo>

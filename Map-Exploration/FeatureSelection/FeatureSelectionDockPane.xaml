@@ -8,7 +8,7 @@
              d:DataContext="{Binding Path=FeatureSelection.FeatureSelectionDockPaneViewModel}"
              d:DesignHeight="300" d:DesignWidth="300">
   <!--
-//   Copyright 2014 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -26,6 +26,8 @@
       <ResourceDictionary.MergedDictionaries>
         <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
       </ResourceDictionary.MergedDictionaries>
+        <SolidColorBrush x:Key="Esri_CustomGreenBrush" Color="{StaticResource Esri_Color_Green}" />
+        <SolidColorBrush x:Key="Esri_CustomRedBrush" Color="{StaticResource Esri_Color_Red}" />
       <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="Margin" Value="1,0"/>
         <Setter Property="Background" Value="Transparent"/>
@@ -51,7 +53,7 @@
       <Style TargetType="DataGridRow" BasedOn="{StaticResource {x:Type DataGridRow}}">
         <Style.Setters>
           <Setter Property="Background" Value="Transparent" />
-          <Setter Property="BorderBrush" Value="{DynamicResource Esri_Gray125}" />
+          <Setter Property="BorderBrush" Value="{DynamicResource Esri_BorderBrush}" />
           <Setter Property="BorderThickness" Value="1,0,0,0" />
           <Setter Property="ContextMenu" Value="{Binding DataContext.RowContextMenu, RelativeSource={RelativeSource AncestorType=DataGrid}}" />
         </Style.Setters>
@@ -64,11 +66,11 @@
         </Style.Setters>
         <Style.Triggers>
           <Trigger Property="IsSelected" Value="True" >
-            <Setter Property="Background" Value="{DynamicResource Esri_Blue1}" />
+            <Setter Property="Background" Value="{DynamicResource Esri_BackgroundSelectedBrush}" />
             <Setter Property="BorderThickness" Value="0" />
           </Trigger>
           <Trigger Property="IsMouseOver" Value="True">
-            <Setter Property="Background" Value="{DynamicResource Esri_Blue1}"/>
+            <Setter Property="Background" Value="{DynamicResource Esri_BackgroundHoverBrush}"/>
           </Trigger>
         </Style.Triggers>
       </Style>
@@ -83,11 +85,11 @@
               </Border>
               <ControlTemplate.Triggers>
                 <Trigger Property="IsSelected" Value="true">
-                  <Setter TargetName="Border" Property="Background" Value="{DynamicResource Esri_Blue1}"/>
+                  <Setter TargetName="Border" Property="Background" Value="{DynamicResource Esri_BackgroundSelectedBrush}"/>
                 </Trigger>
                 <Trigger Property="IsMouseOver" Value="true">
-                  <Setter TargetName="Border" Property="Background" Value="{DynamicResource Esri_Blue1}"/>
-                  <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource Esri_Blue}"/>
+                  <Setter TargetName="Border" Property="Background" Value="{DynamicResource Esri_BackgroundHoverBrush}"/>
+                  <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource Esri_BorderHoverBrush}"/>
                 </Trigger>
               </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -147,7 +149,7 @@
       <DockPanel Grid.Row="4" >
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
           <Image Height="16" Width="16" Margin="4,2" HorizontalAlignment="Center" VerticalAlignment="Center" Source="pack://application:,,,/FeatureSelection;component/Images/GenericError16.png"/>
-          <TextBlock Text="The SQL exression has invalid syntax." VerticalAlignment="Center" Foreground="{DynamicResource Esri_Red4}"/>
+          <TextBlock Text="The SQL exression has invalid syntax." VerticalAlignment="Center" Foreground="{DynamicResource Esri_CustomRedBrush}"/>
           <StackPanel.Style>
             <Style TargetType="StackPanel">
               <Setter Property="Visibility" Value="Collapsed"/>
@@ -161,7 +163,7 @@
         </StackPanel>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
           <Image Height="16" Width="16" Margin="4,2" HorizontalAlignment="Center" VerticalAlignment="Center" Source="pack://application:,,,/FeatureSelection;component/Images/GenericCheckMark16.png"/>
-          <TextBlock Text="The SQL exression is valid." VerticalAlignment="Center" Foreground="{DynamicResource Esri_Green5}"/>
+          <TextBlock Text="The SQL exression is valid." VerticalAlignment="Center" Foreground="{DynamicResource Esri_CustomGreenBrush}"/>
           <StackPanel.Style>
             <Style TargetType="StackPanel">
               <Setter Property="Visibility" Value="Collapsed"/>
@@ -212,9 +214,9 @@
       </StackPanel>
       <ListBox Grid.Row="1" Background="Transparent" BorderBrush="Transparent" ItemsSource="{Binding LayerSelection}" SelectedItem="{Binding SelectedOID}" />
       <GridSplitter Grid.Row="2" Height="5" HorizontalAlignment="Stretch" />
-      <Border Grid.Row="3" BorderBrush="{DynamicResource Esri_Gray125}" BorderThickness="0,1,0,0">
+      <Border Grid.Row="3" BorderBrush="{DynamicResource Esri_BorderBrush}" BorderThickness="0,1,0,0">
         <DataGrid BorderThickness="0" GridLinesVisibility="All"
-                   Style="{DynamicResource Esri_DataGridStyle}"
+                   Style="{DynamicResource Esri_DataGrid}"
                     MinRowHeight="24"
                     AutoGenerateColumns="False"
                     ItemsSource="{Binding FieldAttributes}"
@@ -246,7 +248,7 @@
               <DataGridTemplateColumn.CellTemplate>
                 <DataTemplate>
                   <TextBlock Text="{Binding FieldValue}"
-                                Foreground="{DynamicResource Esri_Gray155}" Margin="2" TextAlignment="Left"
+                                Margin="2" TextAlignment="Left"
                                 VerticalAlignment="Center" Background="Transparent"/>
                 </DataTemplate>
               </DataGridTemplateColumn.CellTemplate>

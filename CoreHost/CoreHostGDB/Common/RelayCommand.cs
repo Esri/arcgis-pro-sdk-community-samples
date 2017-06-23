@@ -37,7 +37,7 @@ namespace CoreHostGDB.Common {
         /// valid for the button to execute...
         /// </summary>
         /// <param name="execMethod">The execute method</param>
-        /// <param name="canExecuteMethod">A function to check if the tool can< be executed./param>
+        /// <param name="canExecuteMethod">A function to check if the tool can be executed.</param>
         public RelayCommand(Action execMethod, Func<bool> canExecuteMethod) {
             this._executeMethod = execMethod;
             this._canExecuteMethod = canExecuteMethod;
@@ -50,10 +50,7 @@ namespace CoreHostGDB.Common {
                 bool _result = _canExecuteMethod();
                 if (_canExecute != _result) {
                     _canExecute = _result;
-                    EventHandler handler = CanExecuteChanged;
-                    if (handler != null) {
-                        handler(parameter, EventArgs.Empty);
-                    }
+                    CanExecuteChanged?.Invoke(parameter, EventArgs.Empty);
                 }
             }
 
@@ -70,10 +67,7 @@ namespace CoreHostGDB.Common {
         }
 
         public void RaiseCanExecuteChanged() {
-            EventHandler handler = CanExecuteChanged;
-
-            if (handler != null)
-                handler(this, EventArgs.Empty);
+          CanExecuteChanged?.Invoke(this, EventArgs.Empty);
         }
 
         #endregion

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2017 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+
+<ArcGIS defaultAssembly="WizardSample.dll" defaultNamespace="WizardSample" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{6c2ad456-410f-4fe2-8df3-c9a974ef98c0}" version="1.0" desktopVersion="2.0.8533">
+    <Name>WizardSample</Name>
+    <Description>WizardSample description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>5/31/2017 9:21:19 AM, 2017</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <wizards>
+    <insertWizard id="WizardSample_Module_Wizard" caption="Sample Wizard" pageHeight="500" pageWidth="700" isPageListVisible="true" resizable="true">
+      <page id="WizardSample_Page1" caption="Step 1" className="WizardSample.UI.Step1" group="Group 1">
+        <content className="WizardSample.UI.WizardPageContent" />
+      </page>
+      <page id="WizardSample_Page2" caption="Step 2" className="WizardSample.UI.Step2" group="Group 1">
+        <content className="WizardSample.UI.WizardPageContent" />
+      </page>
+      <page id="WizardSample_Page3" caption="Step 3" className="WizardSample.UI.Step3" group="Group 1">
+        <content className="WizardSample.UI.WizardPageContent" />
+      </page>
+    </insertWizard>
+  </wizards>
+  <modules>
+    <insertModule id="WizardSample_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="WizardSample_Tab1" caption="New Tab">
+          <group refID="WizardSample_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="WizardSample_Group1" caption="Wizard sample" appearsOnAddInTab="true" keytip="G0">
+          <!-- host controls within groups -->
+          <button refID="WizardSample_ShowWizard" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="WizardSample_ShowWizard" caption="Show Wizard" className="ShowWizard" 
+                loadOnClick="true" keytip="B1"
+                smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

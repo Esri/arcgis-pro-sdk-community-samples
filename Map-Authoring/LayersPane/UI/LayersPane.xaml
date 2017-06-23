@@ -42,7 +42,7 @@
                           SelectedItem="{Binding SelectedLayer, Mode=TwoWay}"
                           SelectedIndex="0"></ComboBox>
         <TextBox Margin="3" MinWidth="200" x:Name="SearchText" VerticalAlignment="Center"></TextBox>
-        <Button Margin="1" Command="{Binding QueryRowsCommand}" CommandParameter="{Binding ElementName=SearchText,Path=Text}" Style="{DynamicResource Esri_SimpleButton}">Search</Button>
+        <Button Margin="1" Command="{Binding QueryRowsCommand}" CommandParameter="{Binding ElementName=SearchText,Path=Text}" Style="{DynamicResource Esri_Button}">Search</Button>
       </StackPanel>
       <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
         <TextBlock x:Name="StatusText" Margin="10,3,100,3" Text="{Binding Status}"/>
@@ -59,7 +59,7 @@
                 SelectionMode="Single"
                 HeadersVisibility="Column"
                 ScrollViewer.IsDeferredScrollingEnabled="True"
-                Style="{DynamicResource Esri_DataGridStyle}">
+                Style="{DynamicResource Esri_DataGrid}">
       </DataGrid>
     </DockPanel>
   </Grid>
