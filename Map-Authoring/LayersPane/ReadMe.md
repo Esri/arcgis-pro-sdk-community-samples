@@ -48,7 +48,7 @@ Visual Studio:         2015, 2017
 1. Open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project which contains the required data needed for this sample.  
 1. Click on the Add-in tab on the ribbon and then on the "Open LayersPane" button.  
 1. On the "layer pane" click the 'Search button' and the pane's grid will display the selected feature layer's columns and data.  
-1. Select "Crimes" on the layer dropdown and enter a valid SQL where clause like 'objectid &lt; 100' in the text box next to the search button and click Search again.  
+1. Select "Crimes" on the layer dropdown and enter a valid SQL where clause like 'objectid < 100' in the text box next to the search button and click Search again.  
 ![UI](Screenshots/Screen1.png)  
   
 1. The data displayed is now restricted to records that match the given where clause.  

@@ -49,7 +49,7 @@ Visual Studio:         2015, 2017
 1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.  
 1. Open the project "MilitaryOverlay.aprx" in the "C:\Data\MilitaryOverlay" folder since this project some military symbolgy sample data.  
 1. You can also add layers using the feature classes in the <i>MilitaryOverlay.gdb</i> that is distributed with the SDK sample data.  
-1. Change the 'Appearance'-&gt;'Symbology' to "Dictionary" if it is not automatically set.  
+1. Change the 'Appearance'->'Symbology' to "Dictionary" if it is not automatically set.  
 1. Click on the ADD-IN tab  
 1. Click on the "Show Mil2525d Symbol Preview" button.  
 1. The Mil2525d Symbol Preview dockpane opens.  

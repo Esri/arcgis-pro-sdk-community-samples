@@ -50,7 +50,7 @@ Visual Studio:         2015, 2017
  1. The style applied to the Dockpane custom UserControl should match the Light or Dark mode of Pro.  
 ![UI](Screenshots/Screen1.png)  
   
- 1. Toggle the Pro theme (via backstage-&gt;Options-&gt;Application-&gt;General settings). Restart Pro.  
+ 1. Toggle the Pro theme (via backstage->Options->Application->General settings). Restart Pro.  
  1. Re-start the Debugger and Re-open the Dockpane in ArcGIS Pro.  
  1. The custom style should have changed (Light to Dark or vice versa) to match the corresponding change made to Pro.  
 ![UI](Screenshots/Screen2.png)  

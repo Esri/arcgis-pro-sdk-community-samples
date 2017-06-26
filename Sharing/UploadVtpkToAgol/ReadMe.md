@@ -49,8 +49,8 @@ Visual Studio:         2015, 2017
 1. ArcGIS Pro will open.     
 1. Open a new map project.     
 1. Click on the *Upload to ArcGIS Online* tab on the ribbon.    
-1. Within this tab there is a *Show &amp; Upload Vector Tile* button.  Click the button to display the *Show &amp; Upload Vector Tile* dockpane.    
-1. On the *Show &amp; Upload Vector Tile* dockpane click the open file button and open *C:\Data\VectorTileDemos\AlaskaGeology.vtpk*.    
+1. Within this tab there is a *Show & Upload Vector Tile* button.  Click the button to display the *Show & Upload Vector Tile* dockpane.    
+1. On the *Show & Upload Vector Tile* dockpane click the open file button and open *C:\Data\VectorTileDemos\AlaskaGeology.vtpk*.    
 1. Click the *Add To Map* button to add the vector tile package to the current map.    
 ![UI](Screenshots/Screenshot1.png)    
   

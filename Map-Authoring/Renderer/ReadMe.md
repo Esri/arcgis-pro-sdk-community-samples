@@ -61,17 +61,16 @@ To experiment with the various renderers available with this sample, follow the 
 1. In Visual Studio's solution explorer, open the ApplyRenderer.cs file. This is the class file for the Apply Renderer button.  
 1. The OnClick method in the ApplyRenderer.cs file gets the first point feature layer in your project and then applies the Unique Value Renderer to it.<br />  
    **You can modify the code in the OnClick method in this file to use one of the various renderers available in this sample and/or select any feature layer in your project.**  
-    ```c#       
-    protected async override void OnClick()    
-    {    
-      //TODO: This line below gets the first point layer in the project to apply a renderer.    
-      //You can modify it to use other layers with polygon or line geometry if needed.         
-      var lyr = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault(s => s.ShapeType == esriGeometryType.esriGeometryPoint);    
-      //TODO: Modify this line below to experiment with the different renderers         
-      await UniqueValueRenderers.UniqueValueRenderer(lyr);    
-    }    
-    ```  
-  
+    ```c#  
+    protected async override void OnClick()  
+    {  
+      //TODO: This line below gets the first point layer in the project to apply a renderer.  
+      //You can modify it to use other layers with polygon or line geometry if needed.  
+      var lyr = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault(s => s.ShapeType == esriGeometryType.esriGeometryPoint);  
+      //TODO: Modify this line below to experiment with the different renderers  
+      await UniqueValueRenderers.UniqueValueRenderer(lyr);  
+    }  
+    ```
 1. After modifying the OnClickMethod build the solution and click the start button to open Pro.    
 1. Open any project and test the Apply Renderer button again.  
 ![UI](screenshots/Renderers.png)  
