@@ -78,10 +78,12 @@ namespace DomainsUsage
                     try
                     {
                         var gdb = table.GetDatastore() as Geodatabase;
-                        enterpriseDatabaseType = (gdb.GetConnector() as DatabaseConnectionProperties).DBMS;
+                        var gdbConnector = gdb.GetConnector() as DatabaseConnectionProperties;
+                        enterpriseDatabaseType = gdbConnector != null ? gdbConnector.DBMS : EnterpriseDatabaseType.Unknown;
                     }
-                    catch (InvalidOperationException e)
+                    catch 
                     {
+                        System.Diagnostics.Debug.WriteLine("Exception was thrown!");
                     }
                 }
             });

@@ -13,7 +13,7 @@ Language:              C# 6.0
 Subject:               Console
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/23/2017
+Date:                  6/28/2017
 ArcGIS Pro:            2.0
 Visual Studio:         2015, 2017
 .NET Target Framework: 4.6.1

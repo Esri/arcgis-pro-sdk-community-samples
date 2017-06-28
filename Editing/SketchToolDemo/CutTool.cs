@@ -74,19 +74,19 @@ namespace SketchToolDemo
             if (editableLayers.Count() == 0)
                 return Task.FromResult(false);
 
-      // create an edit operation
-      EditOperation cutOperation = new EditOperation()
-      {
-        Name = "Cut Elements",
-        ProgressMessage = "Working...",
-        CancelMessage = "Operation canceled.",
-        ErrorMessage = "Error cutting polygons",
-        SelectModifiedFeatures = false,
-        SelectNewFeatures = false
-      };
+            // create an edit operation
+            EditOperation cutOperation = new EditOperation()
+            {
+                Name = "Cut Elements",
+                ProgressMessage = "Working...",
+                CancelMessage = "Operation canceled.",
+                ErrorMessage = "Error cutting polygons",
+                SelectModifiedFeatures = false,
+                SelectNewFeatures = false
+            };
 
-      // initialize a list of ObjectIDs that need to be cut
-      var cutOIDs = new List<long>();
+            // initialize a list of ObjectIDs that need to be cut
+            var cutOIDs = new List<long>();
 
             // for each of the layers 
             foreach (FeatureLayer editableFeatureLayer in editableLayers)
@@ -105,10 +105,13 @@ namespace SketchToolDemo
                 while (rowCursor.MoveNext())
                 {
                     var feature = rowCursor.Current as Feature;
-                    if (feature.GetShape() != null)
+                    var geomTest = feature.GetShape();
+                    if (geomTest != null)
                     {
+                        // make sure we have the same projection for geomProjected and geomTest
+                        var geomProjected = GeometryEngine.Instance.Project(geometry, geomTest.SpatialReference);
                         // we are looking for polygons are completely intersected by the cut line
-                        if (GeometryEngine.Instance.Relate(geometry, feature.GetShape(), "TT*F*****"))
+                        if (GeometryEngine.Instance.Relate(geomProjected, geomTest, "TT*F*****"))
                         {
                             // add the current feature to the overall list of features to cut
                             cutOIDs.Add(rowCursor.Current.GetObjectID());

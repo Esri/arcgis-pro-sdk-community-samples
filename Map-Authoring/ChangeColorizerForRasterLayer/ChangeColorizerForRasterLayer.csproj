@@ -114,11 +114,14 @@
   <ItemGroup>
     <AddInContent Include="DarkImages\GenericButtonBlue32.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Screenshots\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="ReadMe.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Screenshots\Screen1.png" />
+    <None Include="Screenshots\Screen2.png" />
+    <None Include="Screenshots\Screen3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!--

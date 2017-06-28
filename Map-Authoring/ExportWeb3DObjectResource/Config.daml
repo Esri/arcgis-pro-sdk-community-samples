@@ -34,9 +34,9 @@
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="ExportWeb3DObjectResource_Group1" caption="Export Web 3D Object" appearsOnAddInTab="true">
+        <group id="ExportWeb3DObjectResource_Group1" caption="Export Web 3D Object" appearsOnAddInTab="true" keytip="G0">
           <!-- host controls within groups -->
-          <button refID="ExportWeb3DObjectResource_UI_Options" size="large" separator="true"/>
+          <button refID="ExportWeb3DObjectResource_UI_Options" size="large"/>
         </group>
       </groups>
       <controls>

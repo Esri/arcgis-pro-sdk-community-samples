@@ -18,7 +18,7 @@ Language:              C# 6.0
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/23/2017
+Date:                  6/28/2017
 ArcGIS Pro:            2.0
 Visual Studio:         2015, 2017
 .NET Target Framework: 4.6.1
@@ -53,12 +53,14 @@ Visual Studio:         2015, 2017
 5. Click on the ADD-IN tab.   
 6. Click the Add Raster Layer button to add a new image service layer to the map.  
    (Make sure the layer is selected on the Contents pane).  
+![UI](Screenshots/Screen1.png)  
 7. Click the drop down arrow on the right of the "Apply Colorizers" combo box to show the list of applicable colorizers.  
+![UI](Screenshots/Screen2.png)  
 8. Select different colorizers from the list to apply to the layer.   
    You will see the layer is rendered with different customized colorizers that you selected.    
 9. You can try the "Apply colorizers" functionality on your own layers.   
    (Be sure the selected layer is either raster layer, image service layer, or mosaic layer).  
-![UI](Screenshots/Screen.png)  
+![UI](Screenshots/Screen3.png)  
   
 
 

@@ -35,7 +35,7 @@ using System.Windows.Media;
 namespace CrowdPlannerTool
 {
 
-        #region Showbutton
+    #region Showbutton
     /// <summary>
     /// Button implementation to show the DockPane.
     /// </summary>
@@ -46,9 +46,9 @@ namespace CrowdPlannerTool
             CPDockpaneViewModel.Show();
         }
     }
-        #endregion
+    #endregion
 
-        #region DockPane Activate
+    #region DockPane Activate
     internal class CPDockpaneViewModel : DockPane
     {
         private const string _dockPaneID = "CrowdPlannerTool_CPDockpane";
@@ -436,49 +436,52 @@ namespace CrowdPlannerTool
             }
             ArcGIS.Core.Data.Table CrowdTable = await QueuedTask.Run(() => CrowdLayer.GetTable());
 
-            var editOperation = new EditOperation();
-            editOperation.Callback(context =>
+            await QueuedTask.Run(() =>
             {
 
-                QueryFilter QF = new QueryFilter
+                var editOperation = new EditOperation();
+                editOperation.Callback(context =>
                 {
 
-                    WhereClause = "LOW > 0"
-                };
-
-                RowCursor CrowdRow = CrowdTable.Search(QF, false);
-
-                while (CrowdRow.MoveNext())
-                {
-
-                    using (Row currentRow = CrowdRow.Current)
+                    QueryFilter QF = new QueryFilter
                     {
 
-                        var squarefeetValue = currentRow["Shape_Area"];
-                        long squarefeetValueLong;
-                        squarefeetValueLong = Convert.ToInt64(squarefeetValue);
+                        WhereClause = "LOW > 0"
+                    };
 
-                        if (settingsValue == "current")
-                        {
-                            currentRow["High"] = (squarefeetValueLong / HighSetting);
-                            currentRow["Medium"] = (squarefeetValueLong / MediumSetting);
-                            currentRow["Low"] = (squarefeetValueLong / LowSetting);
-                            currentRow["TargetSetting"] = TargetSetting;
-                            currentRow["HighSetting"] = HighSetting;
-                            currentRow["MediumSetting"] = MediumSetting;
-                            currentRow["LowSetting"] = LowSetting;
-                        }
+                    RowCursor CrowdRow = CrowdTable.Search(QF, false);
 
-                        else if (settingsValue == "default")
+                    while (CrowdRow.MoveNext())
+                    {
+
+                        using (Row currentRow = CrowdRow.Current)
                         {
-                            currentRow["High"] = squarefeetValueLong / 2.5;
-                            currentRow["Medium"] = squarefeetValueLong / 4.5;
-                            currentRow["Low"] = squarefeetValueLong / 10;
-                            currentRow["TargetSetting"] = TargetSetting;
-                            currentRow["HighSetting"] = 2.5;
-                            currentRow["MediumSetting"] = 4.5;
-                            currentRow["LowSetting"] = 10;
-                        }
+
+                            var squarefeetValue = currentRow["Shape_Area"];
+                            long squarefeetValueLong;
+                            squarefeetValueLong = Convert.ToInt64(squarefeetValue);
+
+                            if (settingsValue == "current")
+                            {
+                                currentRow["High"] = (squarefeetValueLong / HighSetting);
+                                currentRow["Medium"] = (squarefeetValueLong / MediumSetting);
+                                currentRow["Low"] = (squarefeetValueLong / LowSetting);
+                                currentRow["TargetSetting"] = TargetSetting;
+                                currentRow["HighSetting"] = HighSetting;
+                                currentRow["MediumSetting"] = MediumSetting;
+                                currentRow["LowSetting"] = LowSetting;
+                            }
+
+                            else if (settingsValue == "default")
+                            {
+                                currentRow["High"] = squarefeetValueLong / 2.5;
+                                currentRow["Medium"] = squarefeetValueLong / 4.5;
+                                currentRow["Low"] = squarefeetValueLong / 10;
+                                currentRow["TargetSetting"] = TargetSetting;
+                                currentRow["HighSetting"] = 2.5;
+                                currentRow["MediumSetting"] = 4.5;
+                                currentRow["LowSetting"] = 10;
+                            }
 
                         // Store the values
                         currentRow.Store();
@@ -486,13 +489,15 @@ namespace CrowdPlannerTool
                         // Has to be called after the store too.
                         context.Invalidate(currentRow);
 
+                        }
                     }
-                }
-                CrowdTable.Dispose();
+                    CrowdTable.Dispose();
                 // close the editOperation.Callback(context
             }, CrowdTable);
 
-            await editOperation.ExecuteAsync();
+                editOperation.ExecuteAsync();
+
+            }); // new closing QueuedTask
 
             GetTotalValues();
 

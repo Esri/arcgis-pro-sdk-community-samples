@@ -16,29 +16,31 @@ using ArcGIS.Desktop.Framework.Contracts;
 
 namespace ChangeColorizerForRasterLayer
 {
-  /// <summary>
-  /// This sample demonstrates how to use the raster colorizer definitions to create a specific colorizer, and apply the new colorizer to the selected raster layer.  
-  /// The sample includes these functions:
-  /// 1.) Creates a new image service layer and add the layer to the current map.
-  /// 2.) Displays a collection of colorizers in a combo box that can be applied to the selected layer.  
-  /// 3.) Sets the selected colorizer to the layer.
-  /// </summary>
-  /// <remarks>
-  /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-  /// 2. Click Start button to open ArcGIS Pro.
-  /// 3. ArcGIS Pro will open. 
-  /// 4. Open a new map view.
-  /// 5. Click on the ADD-IN tab. 
-  /// 6. Click the Add Raster Layer button to add a new image service layer to the map.
-  ///    (Make sure the layer is selected on the Contents pane).
-  /// 7. Click the drop down arrow on the right of the "Apply Colorizers" combo box to show the list of applicable colorizers.
-  /// 8. Select different colorizers from the list to apply to the layer. 
-  ///    You will see the layer is rendered with different customized colorizers that you selected.  
-  /// 9. You can try the "Apply colorizers" functionality on your own layers. 
-  ///    (Be sure the selected layer is either raster layer, image service layer, or mosaic layer).
-  /// ![UI](Screenshots/Screen.png)
-  /// </remarks>
-  internal class Module1 : Module
+    /// <summary>
+    /// This sample demonstrates how to use the raster colorizer definitions to create a specific colorizer, and apply the new colorizer to the selected raster layer.  
+    /// The sample includes these functions:
+    /// 1.) Creates a new image service layer and add the layer to the current map.
+    /// 2.) Displays a collection of colorizers in a combo box that can be applied to the selected layer.  
+    /// 3.) Sets the selected colorizer to the layer.
+    /// </summary>
+    /// <remarks>
+    /// 1. In Visual Studio click the Build menu. Then select Build Solution.
+    /// 2. Click Start button to open ArcGIS Pro.
+    /// 3. ArcGIS Pro will open. 
+    /// 4. Open a new map view.
+    /// 5. Click on the ADD-IN tab. 
+    /// 6. Click the Add Raster Layer button to add a new image service layer to the map.
+    ///    (Make sure the layer is selected on the Contents pane).
+    /// ![UI](Screenshots/Screen1.png)
+    /// 7. Click the drop down arrow on the right of the "Apply Colorizers" combo box to show the list of applicable colorizers.
+    /// ![UI](Screenshots/Screen2.png)
+    /// 8. Select different colorizers from the list to apply to the layer. 
+    ///    You will see the layer is rendered with different customized colorizers that you selected.  
+    /// 9. You can try the "Apply colorizers" functionality on your own layers. 
+    ///    (Be sure the selected layer is either raster layer, image service layer, or mosaic layer).
+    /// ![UI](Screenshots/Screen3.png)
+    /// </remarks>
+    internal class Module1 : Module
   {
     private static Module1 _this = null;
 

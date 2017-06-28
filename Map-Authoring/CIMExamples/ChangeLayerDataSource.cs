@@ -70,16 +70,23 @@ namespace CIMExamples {
                 string connection = System.IO.Path.GetDirectoryName(catalogPath);
                 string suffix = System.IO.Path.GetExtension(connection).ToLower();
 
+                var workspaceConnectionString = string.Empty;
                 WorkspaceFactory wf = WorkspaceFactory.FileGDB;
                 if (suffix == ".sde") {
                     wf = WorkspaceFactory.SDE;
+                    var dbGdbConnection = new DatabaseConnectionFile(new Uri(connection, UriKind.Absolute));
+                    workspaceConnectionString = new Geodatabase(dbGdbConnection).GetConnectionString();
+                }
+                else
+                {
+                    var dbGdbConnectionFile = new FileGeodatabaseConnectionPath (new Uri(connection, UriKind.Absolute));
+                    workspaceConnectionString = new Geodatabase(dbGdbConnectionFile).GetConnectionString();
                 }
 
                 string dataset = System.IO.Path.GetFileName(catalogPath);
-                var dbGdbConnection = new DatabaseConnectionFile(new Uri(connection, UriKind.Absolute));
                 // provide a replace data connection method
                 CIMStandardDataConnection updatedDataConnection = new CIMStandardDataConnection() {
-                    WorkspaceConnectionString = new Geodatabase(dbGdbConnection).GetConnectionString(),
+                    WorkspaceConnectionString = workspaceConnectionString,
                     WorkspaceFactory = wf,
                     Dataset = dataset,
                     DatasetType = esriDatasetType.esriDTFeatureClass

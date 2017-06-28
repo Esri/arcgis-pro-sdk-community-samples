@@ -6,11 +6,18 @@
     <members>
         <member name="T:CustomEvent.NameChangedEventArgs">
             <summary>
-            Create a custom event argument class to contain any information that needs
-            to be passed with your event. In this case, the old and new caption for 
-            our custom app name changed event.
+            Create a custom event argument class to contain any information that needs to be passed with your event. In this case, the old and new caption for our custom app name changed event.
+            Derived from &lt;see cref="ArcGIS.Core.Events.EventBase"/&gt;
             </summary>
-            <remarks>Derive from <see cref="T:ArcGIS.Core.Events.EventBase"/></remarks>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro will open. 
+            1. Open any existing project or create a blank map.
+            1. Click on the Add-in tab on the ribbon and the click on the "Change Name" button to initiate a name change.
+            1. Note that the pop-up dialog is instantiated from the event subscriber method.  
+            ![UI](Screenshots/Screen1.png)
+            </remarks>
         </member>
         <member name="P:CustomEvent.NameChangedEventArgs.OldName">
             <summary>
@@ -63,11 +70,18 @@
         </member>
         <member name="T:CustomEvent.Module1">
             <summary>
-            Create a custom event argument class to contain any information that needs
-            to be passed with your event. In this case, the old and new caption for 
-            our custom app name changed event.
+            Create a custom event argument class to contain any information that needs to be passed with your event. In this case, the old and new caption for our custom app name changed event.
+            Derived from [ArcGIS.Core.Events.EventBase](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic7815.html)
             </summary>
-            <remarks>Derive from <see cref="T:ArcGIS.Core.Events.EventBase"/></remarks>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro will open. 
+            1. Open any existing project or create a blank map.
+            1. Click on the Add-in tab on the ribbon and the click on the "Change Name" button to initiate a name change.
+            1. Note that the pop-up dialog is instantiated from the event subscriber method.  
+            ![UI](Screenshots/Screen1.png)
+            </remarks>
         </member>
         <member name="P:CustomEvent.Module1.Current">
             <summary>

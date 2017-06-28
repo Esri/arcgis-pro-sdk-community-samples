@@ -29,10 +29,9 @@ namespace ExportWeb3DObjectResource
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
     /// 1. Click Start button to open ArcGIS Pro.
     /// 1. ArcGIS Pro will open. 
-    /// 1. Either open and existing project or create a new scene that has point feature layer(s) symbolized with 3D marker symbols
-    /// 1. Select one or more point feature layers in the Contents pane
+    /// 1. Either open and existing project (for example: "Interacting with Maps.aprx" included in the sample dataset) or create a new scene that has point feature layer(s) symbolized with 3D marker symbols
+    /// 1. Select one or more point feature layers in the Contents pane.  If you used "Interacting with Maps.aprx", display the 3D map and select the Tree feature layer. 
     /// 1. EXPORT WEB 3D OBJECT tab will be shown on the ribbon
-    /// 1. Either accept the defaults or input values for Texture Downscale Factor and Max Texture Dimension
     /// 1. Click the Export button
     /// 1. In the dialog that comes up, specify the output location of JSON files that will be created by the export process
     /// 1. Once the output location is specified, each 3D marker symbol layer in the selected feature layers will be exported as a separate .json file on disk in the output location
