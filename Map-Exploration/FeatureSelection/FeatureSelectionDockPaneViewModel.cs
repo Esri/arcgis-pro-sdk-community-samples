@@ -454,7 +454,7 @@ namespace FeatureSelection
             }
           }
         }
-        catch (Exception ex)
+        catch (Exception )
         {
         }
       });

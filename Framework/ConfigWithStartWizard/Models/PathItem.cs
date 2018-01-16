@@ -20,8 +20,7 @@ using System;
 
 namespace ConfigWithStartWizard.Models {
     public class PathItem {
-
-        private DateTime _lastModifiedDate;
+        
         public PathItem() {
         }
 

@@ -35,6 +35,7 @@
       </ResourceDictionary.MergedDictionaries>
       <common:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"></common:BoolToVisibilityConverter>
       <common:OnlineUriToString x:Key="onlineUriToString"></common:OnlineUriToString>
+      <common:UriToString x:Key="uriToString"></common:UriToString>
       <Style TargetType="ListBox" x:Key="ListStyle" BasedOn="{StaticResource {x:Type ListBox}}">
         <Style.Triggers>
           <DataTrigger Binding="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=Items.Count}" Value="0">
@@ -136,13 +137,13 @@
                       <Image HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="75" Stretch="Fill">
                         <Image.Source>
                           <BitmapImage UriCachePolicy="CacheIfAvailable"
-                                                      UriSource="{Binding Path=ThumbnailUrl}">
+                                                      UriSource="{Binding Path=ThumbnailUri, Converter={StaticResource uriToString}}">
                           </BitmapImage>
                         </Image.Source>
                         <Image.ToolTip>
                           <ToolTip Background="{DynamicResource Esri_Gray100}">
                             <DockPanel Width="160" Height="100">
-                                 <TextBlock TextWrapping="Wrap" Text="{Binding Path=Snippet}" 
+                                 <TextBlock TextWrapping="Wrap" Text="{Binding Path=Summary}" 
                                             Style="{DynamicResource ProTextStyle}"
                                             ></TextBlock>
                             </DockPanel>
@@ -154,7 +155,7 @@
 
                 </Grid>
                 <TextBlock HorizontalAlignment="Center">
-                    <Hyperlink NavigateUri="{Binding Path=Id}" RequestNavigate="Hyperlink_RequestNavigate">
+                    <Hyperlink NavigateUri="{Binding Path=ID}" RequestNavigate="Hyperlink_RequestNavigate">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock Text="{Binding Path=DataContext.LinkText, 
                             RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ui:BrowseLayersDialog}}}"/>

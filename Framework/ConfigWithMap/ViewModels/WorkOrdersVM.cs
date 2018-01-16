@@ -25,8 +25,6 @@ namespace ConfigWithMap
 {
   class WorkOrdersVM : DockPane
   {
-    private List<long> _features;
-
     protected override Task InitializeAsync()
     {
       return base.InitializeAsync();

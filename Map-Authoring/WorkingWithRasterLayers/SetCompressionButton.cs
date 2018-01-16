@@ -22,59 +22,62 @@ using ArcGIS.Desktop.Mapping;
 
 namespace WorkingWithRasterLayers
 {
-    internal class SetCompressionButton : Button
+  internal class SetCompressionButton : Button
+  {
+    /// <summary>
+    /// Constructor. Make sure button is enabled if raster layer is selected and subscribe 
+    /// to the layer selection changed event.
+    /// </summary>
+    public SetCompressionButton()
     {
-        /// <summary>
-        /// Constructor. Make sure button is enabled if raster layer is selected and subscribe 
-        /// to the layer selection changed event.
-        /// </summary>
-        public SetCompressionButton()
-        {
-            SelectedLayersChanged(new ArcGIS.Desktop.Mapping.Events.MapViewEventArgs(MapView.Active));
-            ArcGIS.Desktop.Mapping.Events.TOCSelectionChangedEvent.Subscribe(SelectedLayersChanged);
-        }
-
-        /// <summary>
-        /// Destructor. Unsubscribe from the layer selection changed event.
-        /// </summary>
-        ~SetCompressionButton()
-        {
-            ArcGIS.Desktop.Mapping.Events.TOCSelectionChangedEvent.Unsubscribe(SelectedLayersChanged);
-        }
-
-        /// <summary>
-        /// Event handler for layer selection changes.
-        /// </summary>
-        private void SelectedLayersChanged(ArcGIS.Desktop.Mapping.Events.MapViewEventArgs mapViewArgs)
-        {
-            State state = (FrameworkApplication.Panes.ActivePane != null) ? FrameworkApplication.Panes.ActivePane.State : null;
-            if (state != null)
-            {
-                IReadOnlyList<Layer> selectedLayers = mapViewArgs.MapView.GetSelectedLayers();
-                if (selectedLayers.Count == 1)
-                    state.Activate("esri_custom_mutipleLayersNotSelectedState");
-                else
-                {
-                    state.Deactivate("esri_custom_mutipleLayersNotSelectedState");
-                    return;
-                }
-
-                Layer firstSelectedLayer = selectedLayers.First();
-                if (firstSelectedLayer != null)
-                {
-                    if (firstSelectedLayer is ImageServiceLayer && !(firstSelectedLayer is ImageMosaicSubLayer))
-                        state.Activate("esri_custom_imageServiceLayerSelectedState");
-                    else
-                        state.Deactivate("esri_custom_imageServiceLayerSelectedState");
-                }
-                else
-                    state.Deactivate("esri_custom_imageServiceLayerSelectedState");
-            }
-        }
-
-        protected override async void OnClick()
-        {
-            await RasterLayersVM.SetCompressionAsync("JPEG", 85);
-        }
+      if (MapView.Active != null)
+      {
+        SelectedLayersChanged(new ArcGIS.Desktop.Mapping.Events.MapViewEventArgs(MapView.Active));
+      }
+      ArcGIS.Desktop.Mapping.Events.TOCSelectionChangedEvent.Subscribe(SelectedLayersChanged);
     }
+
+    /// <summary>
+    /// Destructor. Unsubscribe from the layer selection changed event.
+    /// </summary>
+    ~SetCompressionButton()
+    {
+      ArcGIS.Desktop.Mapping.Events.TOCSelectionChangedEvent.Unsubscribe(SelectedLayersChanged);
+    }
+
+    /// <summary>
+    /// Event handler for layer selection changes.
+    /// </summary>
+    private void SelectedLayersChanged(ArcGIS.Desktop.Mapping.Events.MapViewEventArgs mapViewArgs)
+    {
+      State state = (FrameworkApplication.Panes.ActivePane != null) ? FrameworkApplication.Panes.ActivePane.State : null;
+      if (state != null)
+      {
+        IReadOnlyList<Layer> selectedLayers = mapViewArgs.MapView.GetSelectedLayers();
+        if (selectedLayers.Count == 1)
+          state.Activate("esri_custom_mutipleLayersNotSelectedState");
+        else
+        {
+          state.Deactivate("esri_custom_mutipleLayersNotSelectedState");
+          return;
+        }
+
+        Layer firstSelectedLayer = selectedLayers.First();
+        if (firstSelectedLayer != null)
+        {
+          if (firstSelectedLayer is ImageServiceLayer && !(firstSelectedLayer is ImageMosaicSubLayer))
+            state.Activate("esri_custom_imageServiceLayerSelectedState");
+          else
+            state.Deactivate("esri_custom_imageServiceLayerSelectedState");
+        }
+        else
+          state.Deactivate("esri_custom_imageServiceLayerSelectedState");
+      }
+    }
+
+    protected override async void OnClick()
+    {
+      await RasterLayersVM.SetCompressionAsync("JPEG", 85);
+    }
+  }
 }

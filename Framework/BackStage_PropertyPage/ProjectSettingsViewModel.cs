@@ -26,8 +26,8 @@ namespace BackStage_PropertyPage
   /// The viewmodel for the ProjectSettings view.  Encapsulates the sample set of project settings.
   /// </summary>
   /// <remarks>
-  /// Project settings are retrieved and stored using the <see cref="ArcGIS.Desktop.Core.Project.OnReadStateAsync"> OnReadStateAsync </see> and 
-  /// <see cref="ArcGIS.Desktop.Core.Project.OnWriteStateAsync"> OnWriteStateAsync </see> methods on the <see cref="ArcGIS.Desktop.Core.Project"> project.</see>
+  /// Project settings are retrieved and stored using the ArcGIS.Desktop.Core.Project.OnReadStateAsync OnReadStateAsync and 
+  /// ArcGIS.Desktop.Core.Project.OnWriteStateAsync  OnWriteStateAsync methods on the ArcGIS.Desktop.Core.Project project.
   /// </remarks>
   internal class ProjectSettingsViewModel : Page
   {

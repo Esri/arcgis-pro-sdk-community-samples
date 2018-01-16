@@ -1,7 +1,7 @@
 ## LivingAtlasOfTheWorld
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-Mimics the Browse Esri Map Layers dialog from the arcgis online webmap viewer. Shows use of EsriHttpClient and Newtonsoft.Json  
+Mimics the Browse Esri Map Layers dialog from the arcgis online webmap viewer.  
   
 
 
@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Sharing, Content
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  4/20/2017
-ArcGIS Pro:            2.0
+Date:                  1/16/2018
+ArcGIS Pro:            2.1
 Visual Studio:         2015, 2017
 .NET Target Framework: 4.6.1
 ```
@@ -31,6 +31,10 @@ Visual Studio:         2015, 2017
 
 ![ArcGIS Pro SDK for .NET Icons](https://esri.github.io/arcgis-pro-sdk/images/Home/Image-of-icons.png "ArcGIS Pro SDK Icons")
 
+* [ProSnippets: 2.0 Migration](http://github.com/Esri/arcgis-pro-sdk/wiki/ProSnippets-Migrating-to-2.0)  
+* [ProSnippets: 2.0 Migration Samples](http://github.com/Esri/arcgis-pro-sdk/wiki/ProSnippets-2.0-Migration-Samples)  
+* [ProConcepts: 2.0 Migration](http://github.com/Esri/arcgis-pro-sdk/wiki/ProConcepts-2.0-Migration-Guide)  
+
 ### Samples Data
 
 * Sample data for ArcGIS Pro SDK Community Samples can be downloaded from the [repo releases](https://github.com/Esri/arcgis-pro-sdk-community-samples/releases) page.  
@@ -38,7 +42,6 @@ Visual Studio:         2015, 2017
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. This solution is using the **Newtonsoft.Json Nuget**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".   
 1. Click Start button to open ArcGIS Pro.  
 1. ArcGIS Pro will open.   
 1. Open any project file. Click on the Add-in tab on the ribbon and then on the "Show the 'Browse Esri Map Layers' dialog" button.  

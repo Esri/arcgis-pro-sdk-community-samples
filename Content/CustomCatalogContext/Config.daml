@@ -45,8 +45,12 @@
       <groups></groups>
       <controls>
         <!-- add your controls here -->
-        <button id="CustomCatalogContext_CustomCatalogButton" caption="CustomCatalogButton" className="CustomCatalogButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        <button id="CustomCatalogContext_CustomCatalogButton" 
+								caption="Custom Catalog Button" keytip="B1"
+								className="CustomCatalogButton" loadOnClick="true" 
+								smallImage="Images\GenericButtonBlue16.png" 
+								largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Custom Catalog Menu Button">This menu button shows how to add a custom menu to a specific selection of Catalog menus<disabledText /></tooltip>
         </button>
       </controls>
     </insertModule>

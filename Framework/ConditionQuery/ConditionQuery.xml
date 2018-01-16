@@ -15,8 +15,6 @@
             Process the condition enabled/disabled status based on the provided
             list of active state ids
             </summary>
-            <param name="vm"></param>
-            <param name="activeStates"></param>
         </member>
         <member name="P:ConditionsQuery.Data.EvaluateCondition.ActiveStates">
             <summary>

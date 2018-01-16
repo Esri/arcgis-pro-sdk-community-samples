@@ -35,9 +35,9 @@ namespace Symbology
         {
             var lineSymbols = new Dictionary<CIMSymbol, string>
             {
-                {await CreateMyMarkerLineSymbol(), "Angled Hatch line" },
-                {await CreateLineDashTwoMarkers(), "Dash Two Markers" },
-                {await CreateLineDashTwoMarkers2(), "Dash Two Markers 2" }
+                {await CreateMyMarkerLineSymbolAsync(), "Angled Hatch line" },
+                {await CreateLineDashTwoMarkersAync(), "Dash Two Markers" },
+                {await CreateLineDashTwoMarkers2Async(), "Dash Two Markers 2" }
 
             };
             return lineSymbols;
@@ -48,9 +48,9 @@ namespace Symbology
         /// ![LineSymbolAngleMarker](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/line-marker-angle.png)
         /// </summary>
         /// <returns></returns>
-        internal static async Task<CIMLineSymbol> CreateMyMarkerLineSymbol()
+        internal static Task<CIMLineSymbol> CreateMyMarkerLineSymbolAsync()
         {
-            var lineSymbol = await QueuedTask.Run(() =>
+            return QueuedTask.Run<CIMLineSymbol>(() =>
             {
                 //Create a marker from the "|" character.  This is the marker that will be used to render the line layer.
                 var lineMarker = SymbolFactory.Instance.ConstructMarker(124, "Agency FB", "Regular", 12);
@@ -76,7 +76,6 @@ namespace Symbology
 
                 return blackSolidLineSymbol;
             });
-            return lineSymbol;
         }
         #endregion
 
@@ -92,9 +91,9 @@ namespace Symbology
         /// ![LineSymbolTwoMarkers](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/line-dash-two-markers.png)
         /// </remarks>
         /// <returns></returns>
-        internal static async Task<CIMLineSymbol> CreateLineDashTwoMarkers()
+        internal static Task<CIMLineSymbol> CreateLineDashTwoMarkersAync()
         {
-            var lineSymbol = await QueuedTask.Run(() =>
+            return QueuedTask.Run<CIMLineSymbol>(() =>
             {
 
                 var dash2MarkersLine = new CIMLineSymbol();
@@ -136,7 +135,6 @@ namespace Symbology
                 dash2MarkersLine.SymbolLayers = mySymbolLyrs;
                 return dash2MarkersLine;
             });
-            return lineSymbol;
         }
         private static CIMMarker CreateCircleMarkerPerSpecs()
         {
@@ -175,8 +173,8 @@ namespace Symbology
         #region Snippet Dash line with two markers - Method II
         /// <summary>
         /// Create a line symbol with a dash and two markers. <br/>
-        /// In this pattern of creating this symbol, a [CIMVectorMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic6176.html) object is created as a new [CIMSymbolLayer](http://prodev.arcgis.com/en/pro-app/sdk/api-reference/current/#topic5503.html).
-        /// The circle and square markers created by [ContructMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic12350.html) method is then assigned to the [MarkerGraphics](http://prodev.arcgis.com/en/pro-app/sdk/api-reference/current/#topic6188.html) property of the CIMVectorMarker. 
+        /// In this pattern of creating this symbol, a [CIMVectorMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic6176.html) object is created as a new [CIMSymbolLayer](http://prodev.arcgis.com/en/pro-app/sdk/api-reference/#topic5503.html).
+        /// The circle and square markers created by [ContructMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic12350.html) method is then assigned to the [MarkerGraphics](http://prodev.arcgis.com/en/pro-app/sdk/api-reference/#topic6188.html) property of the CIMVectorMarker. 
         /// When using this method, the CIMVectorMarker's [Frame](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic6187.html) property needs to be set to the [CIMMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic3264.html) object's Frame. 
         /// Similarly, the CIMVectorMarker's [Size](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic3284.html) property needs to be set to the CIMMarker object's size.
         /// </summary>
@@ -189,9 +187,9 @@ namespace Symbology
         /// </remarks>
         /// <returns></returns>
 
-        internal static async Task<CIMLineSymbol> CreateLineDashTwoMarkers2()
+        internal static Task<CIMLineSymbol> CreateLineDashTwoMarkers2Async()
         {
-            var lineSymbol = await QueuedTask.Run(() =>
+            return QueuedTask.Run<CIMLineSymbol>(() =>
             {
                 //default line symbol that will get modified.
                 var dash2MarkersLine = new CIMLineSymbol();
@@ -265,7 +263,6 @@ namespace Symbology
                 return dash2MarkersLine;
             });
 
-            return lineSymbol;
         }
         #endregion
 

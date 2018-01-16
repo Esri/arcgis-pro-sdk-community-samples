@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+   Copyright 2018 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="CategoriesUsage.dll" defaultNamespace="CategoriesUsage" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{d479f441-0161-4cc9-aeaf-203bd836f64c}" version="1.0" desktopVersion="2.1.10257">
+    <Name>CategoriesUsage</Name>
+    <Description>An add-in that demonstrates how to use the UtilityNetworkDefinition constellation of classes.</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>1/5/2018 3:53:50 PM, 2018</Date>
+    <Subject>UtilityNetwork</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="CategoriesUsage_Module" className="CategoriesUsage" autoLoad="false" caption="CategoriesUsage">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="SDKSamples_Tab" caption="SDK Samples" tabGroupID="esri_networkanalysis_utility_TabGroup" condition="esri_mapping_utilityNetworkLayerSelectedCondition" keytip="UNSS">
+          <group refID="General_Group"/>
+          <group refID="esri_networkanalysis_trace_StartingLocationsAndBarriers_Group" />
+          <group refID="Electric_Group" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="General_Group" caption="General" appearsOnAddInTab="false" keytip="UNSSG">
+          <!-- host controls within groups -->
+          <comboBox refID="CategoriesUsage_CategoriesComboBox" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <comboBox id="CategoriesUsage_CategoriesComboBox" caption="Category Assignments" className="CategoriesComboBox" itemWidth="140" extendedCaption="Extended Caption" isEditable="false" isReadOnly="true" resizable="true" keytip="UNSSGC">
+          <tooltip heading="Category Assignments">
+            Generate a table showing the assignments for a category in a utility network.<disabledText /></tooltip>
+        </comboBox>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

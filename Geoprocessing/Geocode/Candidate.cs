@@ -25,7 +25,7 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 
 namespace Geocode
 {
-    ///This is what the json response looks like:
+    //This is what the json response looks like:
     /*
     "locations": [
   {

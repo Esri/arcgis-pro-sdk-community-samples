@@ -13,8 +13,8 @@ Language:              C# 6.0
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/28/2017
-ArcGIS Pro:            2.0
+Date:                  11/8/2017
+ArcGIS Pro:            2.1
 Visual Studio:         2015, 2017
 .NET Target Framework: 4.6.1
 ```
@@ -46,7 +46,7 @@ Visual Studio:         2015, 2017
 1. Click the build menu and select Build Solution.  
 1. This solution is using the **System.Windows.Controls.DataVisualization.Toolkit Nuget**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package System.Windows.Controls.DataVisualization.Toolkit".  
 1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.  
-1. Open the map package located in the "CrowdPlannerProject.ppkx" in the "C:\Data\CrowdPlanner" folder since this project contains all required data.  
+1. Open the map package "CrowdPlannerProject.ppkx" located in the "C:\Data\CrowdPlanner" folder since this project contains all required data.  
 1. Click on the Add-in tab and see that a 'Crowd Planner Summary' button was added.  
 1. The 'Crowd Planner Summary' button opens the 'Crowd Planner' pane.   
 ![UI](Screenshots/Screen1.png)  

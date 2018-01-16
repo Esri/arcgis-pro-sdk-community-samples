@@ -37,14 +37,14 @@
         <group id="GalleryDemo_Group1" caption="Web Maps" appearsOnAddInTab="false" keytip="z2">
           <!-- host controls within groups -->
           <!--The inline gallery item-->
-          <gallery refID="GalleryDemo_WebMapsGallery" inline="true" size="large" />
+          <gallery refID="GalleryDemo_WebMapsGallery" inline="false" size="large" />
         </group>
       </groups>
       <controls>
         <!-- add your controls here -->
       </controls>
       <galleries>
-        <gallery id="GalleryDemo_WebMapsGallery" showGroup="true" caption="Web Maps Gallery" className="WebMapsGallery" itemsInRow="5" dataTemplateFile="pack://application:,,,/GalleryDemo;component//WebMapsGalleryTemplate.xaml" templateID="WebMapsGalleryItemTemplate" resizable="true" largeImage="Images\GenericButtonOrange32.png" keytip="z3">
+        <gallery id="GalleryDemo_WebMapsGallery" showGroup="true" itemWidth="96" caption="Web Maps Gallery" className="WebMapsGallery" itemsInRow="5" dataTemplateFile="pack://application:,,,/GalleryDemo;component//WebMapsGalleryTemplate.xaml" templateID="WebMapsGalleryItemTemplate" resizable="true" largeImage="Images\GenericButtonOrange32.png" keytip="z3">
           <tooltip heading="Web Maps">Tooltip text<disabledText /></tooltip>
         </gallery>
       </galleries>

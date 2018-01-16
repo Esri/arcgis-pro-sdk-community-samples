@@ -1,0 +1,162 @@
+<!--
+
+   Copyright 2017 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<UserControl x:Class="ScribbleControl_ArcGISPro.Scribble_ControlView"
+             x:Name="ScribbleUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
+             xmlns:ui="clr-namespace:ScribbleControl_ArcGISPro"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{Binding Path=ui.Scribble_ControlViewModel}">
+            <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+
+        <!--TextBlock Text="{Binding Text}" HorizontalAlignment="Center" VerticalAlignment="Center" /-->
+        <DockPanel HorizontalAlignment="Left" Background="Transparent"
+                    Width="{Binding ActualWidth, ElementName=ScribbleUserControl}"  
+                    Height="{Binding ActualHeight, ElementName=ScribbleUserControl}"
+                    VerticalAlignment="Top" LastChildFill="True">
+
+            <ToolBar x:Name="toolBar" DockPanel.Dock="Top" Height="35">
+
+                <Separator Height="26" Margin="5" VerticalAlignment="Top" Width="2"/>
+
+                <Label x:Name="ClrPcker_Label" FontWeight="Bold" Content="Color" Margin="0,6,6,0" />
+
+                <xctk:ColorPicker Name="ClrPcker_ScribbleControl"
+                                  SelectedColor="Tomato"
+                                  SelectedColorChanged="ClrPcker_SelectedColorChanged"
+                                  Width="60">
+                </xctk:ColorPicker>
+
+                <Separator Height="26" Margin="5" VerticalAlignment="Top" Width="2"/>
+
+                <Label x:Name="Size_Label" FontWeight="Bold" Content="Size" Margin="0,6,6,0" />
+
+                <ComboBox x:Name="Size_Combo"
+                          SelectedIndex="1"
+                          ItemsSource="{Binding Path=ScribbleControlSizeOptions, ElementName=ScribbleUserControl}"
+                          SelectionChanged="Size_Combo_SelectionChanged" />
+
+                <Separator Height="26" Margin="5" VerticalAlignment="Top" Width="2"/>
+
+
+                <DockPanel Height="30">
+
+                    <RadioButton x:Name="inkRadioBtn" FontWeight="Medium"  Click="RadioButtonClicked" IsChecked="True" Margin="0,6,6,0" ToolTip="Draw">
+                        <StackPanel Orientation ="Horizontal">
+                            <Image Source ="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ContentsWindowListByEditing24.png"/>
+                        </StackPanel>
+                    </RadioButton>
+
+
+                    <RadioButton x:Name="eraseRadioBtn" FontWeight="Medium" Click="RadioButtonClicked" Margin="0,6,6,0" ToolTip="Erase by stroke">
+                        <StackPanel Orientation ="Horizontal">
+                            <Image Source ="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed32.png"/>
+                        </StackPanel>
+                    </RadioButton>
+
+                    <RadioButton x:Name="selectRadioBtn" FontWeight="Medium" Click="RadioButtonClicked" Margin="0,6,6,0" ToolTip="Select shapes">
+                        <StackPanel Orientation ="Horizontal">
+                            <Image Source ="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SelectionSelectTool32.png"/>
+                        </StackPanel>
+                    </RadioButton>
+
+                </DockPanel>
+
+                <Separator Height="26" Margin="5" VerticalAlignment="Top" Width="2"/>
+
+                <Label x:Name="Shape_Label" FontWeight="Bold" Content="Shape:" Margin="0,6,6,0"/>
+
+                <DockPanel Height="30">
+
+                    <RadioButton x:Name ="circleShape" GroupName ="shapeSelection" IsChecked="True" Margin="0,6,6,0" >
+                        <Ellipse Fill ="{Binding Path=ShapeColor, ElementName=ScribbleUserControl}"  Height ="20" Width ="20" />
+                    </RadioButton>
+
+                    <RadioButton x:Name ="rectShape" GroupName ="shapeSelection" Margin="0,6,6,0">
+                        <Rectangle Fill ="{Binding Path=ShapeColor, ElementName=ScribbleUserControl}" Height ="20" Width ="20" RadiusY ="0" RadiusX ="0" />
+                    </RadioButton>
+
+                    <RadioButton x:Name ="lineShape" GroupName ="shapeSelection" Margin="0,6,6,0">
+                        <Line Height ="20" Width ="20" StrokeThickness ="5" Stroke ="{Binding Path=ShapeColor, ElementName=ScribbleUserControl}" 
+                              X1 ="2" Y1 ="10" Y2 ="10" X2 ="18" 
+                              StrokeStartLineCap ="Round" StrokeEndLineCap ="Round" />
+                    </RadioButton>
+
+                </DockPanel>
+
+                <Separator Height="26" Margin="5" VerticalAlignment="Top" Width="2"/>
+
+                <Button x:Name="Select_All" FontWeight="Bold" 
+                        ToolTip="Select all elements" Click="Select_All_Click" Margin="0,4,4,0">
+                    <StackPanel Orientation ="Horizontal">
+                        <Image Source ="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SelectionSelectAll32.png"/>
+                        <!--TextBlock Text="Select All" FontWeight="Bold" VerticalAlignment="Center" /-->
+                    </StackPanel>
+
+                </Button>
+
+                <Button x:Name="Clear_Canvas" ToolTip="Clear the canvas" Click="Clear_Canvas_Click" Margin="0,4,4,0">
+                    <StackPanel Orientation ="Horizontal">
+                        <Image Source ="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SelectionClearSelected32.png"/>
+                    </StackPanel>
+                </Button>
+
+                <Separator Height="26" Margin="5" VerticalAlignment="Top" Width="2"/>
+
+                <Button x:Name="Copy_Selected" ToolTip="Copy selection" Click="Copy_Selected_Click" Margin="0,4,4,0">
+                    <StackPanel Orientation ="Horizontal">
+                        <Image Source ="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditCopy32.png"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="Cut_Selected" ToolTip="Cut selection" Click="Cut_Selected_Click" Margin="0,4,4,0">
+                    <StackPanel Orientation ="Horizontal">
+                        <Image Source ="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditCut32.png"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="Paste_toCanvas" ToolTip="Paste" Click="Paste_toCanvas_Click" Margin="0,4,4,0">
+                    <StackPanel Orientation ="Horizontal">
+                        <Image Source ="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditPaste32.png"/>
+                    </StackPanel>
+                </Button>
+
+            </ToolBar>
+
+            <InkCanvas DockPanel.Dock="Bottom" x:Name="cvs" MouseRightButtonUp="cvs_MouseRightButtonUp"
+                       Background="Transparent"
+                       >
+            </InkCanvas>
+
+        </DockPanel>
+
+    </Grid>
+</UserControl>

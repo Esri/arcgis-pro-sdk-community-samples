@@ -12,12 +12,12 @@ This sample provide four buttons showing the construction of geometry types of t
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
-Language:              C# 6.0
+Language:              C#
 Subject:               Geometry, Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/28/2017
-ArcGIS Pro:            2.0
+Date:                  1/16/2018
+ArcGIS Pro:            2.1
 Visual Studio:         2015, 2017
 .NET Target Framework: 4.6.1
 ```

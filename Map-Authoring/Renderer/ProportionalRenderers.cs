@@ -39,9 +39,9 @@ namespace Renderer
         /// <remarks></remarks>
         /// <param name="featureLayer"></param>
         /// <returns></returns>
-        internal static async Task ProportionalRenderer(FeatureLayer featureLayer)
+        internal static Task ProportionalRenderer(FeatureLayer featureLayer)
         {
-            await QueuedTask.Run(() =>
+            return QueuedTask.Run(() =>
             {
                 //Gets the first numeric field of the feature layer
                 var firstNumericFieldOfFeatureLayer = SDKHelpers.GetNumericField(featureLayer);

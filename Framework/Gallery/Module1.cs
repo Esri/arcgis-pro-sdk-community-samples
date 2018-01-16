@@ -28,7 +28,6 @@ namespace GalleryDemo
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 2. This solution is using the Newtonsoft.Json Nuget. If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".
     /// 2. Click Start button to open ArcGIS Pro.
     /// 3. ArcGIS Pro will open. 
     /// 4. Open a blank project.

@@ -23,15 +23,15 @@ namespace FolderConnections
     {
         protected override void OnClick()
         {
-            /// Get an iterable object containing all the current folder connections
+            // Get an iterable object containing all the current folder connections
             IEnumerable<FolderConnectionProjectItem> projectFolders = Project.Current.GetItems<FolderConnectionProjectItem>();
 
-            /// Iterate over the list of connections and append each to a string
+            // Iterate over the list of connections and append each to a string
             string folders = null;
             foreach (var item in projectFolders)
                 folders += item.Path + "\n";
 
-            /// Show a message box listing each of the folder connections
+            // Show a message box listing each of the folder connections
             ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(folders, "Folder Connections");      
         }
     }

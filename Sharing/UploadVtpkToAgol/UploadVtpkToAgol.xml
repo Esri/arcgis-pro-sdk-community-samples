@@ -12,7 +12,6 @@
             1. Make sure that the Sample data is unzipped in c:\data     
             1. The data used for this sample is 'C:\Data\VectorTileDemos\AlaskaGeology.vtpk'    
             1. In Visual Studio click the Build menu. Then select Build Solution.  
-            1. This solution is using the **Newtonsoft.Json Nuget**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package Newtonsoft.Json". 
             1. Click Start button to open ArcGIS Pro.  
             1. ArcGIS Pro will open.   
             1. Open a new map project.   
@@ -66,6 +65,13 @@
             <summary>
             Text shown near the top of the DockPane.
             </summary>
+        </member>
+        <member name="M:UploadVtpkToAgol.UploadVectorTileViewModel.QueryUserContentImpl">
+            <summary>
+            This is an alternate method of implementing a Query. 
+            It uses the GetUserContentAsync method to return the items in the current user's content.
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:UploadVtpkToAgol.UploadVectorTile_ShowButton">
             <summary>

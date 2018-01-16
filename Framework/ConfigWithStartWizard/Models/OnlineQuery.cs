@@ -16,9 +16,11 @@
    limitations under the License.
 
 */
+using ArcGIS.Desktop.Core.Portal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace ConfigWithStartWizard.Models {
     internal class OnlineQuery {
@@ -32,13 +34,13 @@ namespace ConfigWithStartWizard.Models {
         private string _format = "";
         private string _name = "";
         private string _downloadFileName = "";
-        private long _start = 0;
+        private int _start = 0;
 
         static OnlineQuery() {
-            _onlineQueries.Add("Rule packages", "/sharing/rest/search?q=type:\"Rule Package\"");
-            _onlineQueries.Add("Projects", "/sharing/rest/search?q=type:Project Package");
-            _onlineQueries.Add("Templates", "/sharing/rest/search?q=owner:\"esri_solutions\" AND type:\"Project Template\"");
-            _onlineQueries.Add("Map Packages", "/sharing/rest/search?q=type:\"Pro Map\"");
+            _onlineQueries.Add("Rule packages", "/sharing/rest/search?q=(type:\"Rule Package\")");
+            _onlineQueries.Add("Projects", "/sharing/rest/search?q=(type:\"Project Package\")");
+            _onlineQueries.Add("Templates", "/sharing/rest/search?q=(owner:\"esri_solutions\" AND type:\"Project Template\")");
+            _onlineQueries.Add("Map Packages", "/sharing/rest/search?q=(type:\"Pro Map\")");
             _onlineQueries.Add("Web Maps", "/sharing/rest/search?q=(type:\"Web Scene\" OR type:\"Web Map\")");
             _onlineQueries.Add("Layers", "/sharing/rest/search?q=(type:\"Layer Package\" OR type:\"Feature Service\" OR type:\"Map Service\")");
             _onlineQueries.Add("Item Data", "/sharing/rest/content/items/{0}/data");
@@ -85,7 +87,7 @@ namespace ConfigWithStartWizard.Models {
         public string URL => _portalURL;
         public string Path => _path;
 
-        public long Start
+        public int Start
         {
             get
             {
@@ -128,9 +130,23 @@ namespace ConfigWithStartWizard.Models {
                 return _downloadFileName;
             }
         }
-            
 
+        private PortalQueryParameters _portalQueryParams;
+        public PortalQueryParameters PortalQueryParams
+        {
+            get
+            {
+                var types = _query.Split(new char[] { '=' });
+
+                _portalQueryParams = new PortalQueryParameters(types[1]);
+
+                _portalQueryParams.StartIndex = _start;
+                return _portalQueryParams;
+            }
+        }
 
         public Uri FinalUri => new Uri(this.FinalUrl, UriKind.Absolute);
+
+        
     }
 }

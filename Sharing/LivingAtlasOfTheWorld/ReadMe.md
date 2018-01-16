@@ -1,7 +1,7 @@
 ## LivingAtlasOfTheWorld
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-Mimics the Browse Esri Map Layers dialog from the arcgis online webmap viewer. Shows use of EsriHttpClient and Newtonsoft.Json  
+Mimics the Browse Esri Map Layers dialog from the arcgis online webmap viewer.  
   
 
 
@@ -9,12 +9,12 @@ Mimics the Browse Esri Map Layers dialog from the arcgis online webmap viewer. S
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
-Language:              C# 6.0
+Language:              C#
 Subject:               Sharing, Content
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/28/2017
-ArcGIS Pro:            2.0
+Date:                  1/16/2018
+ArcGIS Pro:            2.1
 Visual Studio:         2015, 2017
 .NET Target Framework: 4.6.1
 ```
@@ -42,7 +42,6 @@ Visual Studio:         2015, 2017
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. This solution is using the **Newtonsoft.Json Nuget**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".   
 1. Click Start button to open ArcGIS Pro.  
 1. ArcGIS Pro will open.   
 1. Open any project file. Click on the Add-in tab on the ribbon and then on the "Show the 'Browse Esri Map Layers' dialog" button.  

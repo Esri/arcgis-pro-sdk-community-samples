@@ -16,6 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ArcGIS.Desktop.Framework.Contracts;
+using ArcGIS.Desktop.Core.Portal;
 
 namespace GalleryDemo
 {
@@ -25,16 +26,14 @@ namespace GalleryDemo
     public class WebMapItem
     {
 
-        public WebMapItem(string portal, string id = "", string title = "", string name = "", string thumbnail = "",
-            string snippet = "", string owner="Unknown")
+        public WebMapItem(PortalItem portalItem) 
         {
-            _id = id;
-            _title = title;
-            _name = name;
-            _thumbnail = thumbnail;
-            _snippet = string.IsNullOrEmpty(snippet) ? title : snippet;
-            _portal = portal;
-            _group = owner;
+            _id = portalItem.ID;
+            _title = portalItem.Title;
+            _name = portalItem.Name;
+            _thumbnail = portalItem.ThumbnailPath;
+            _snippet = string.IsNullOrEmpty(portalItem.Summary) ? _title : portalItem.Summary;
+            _group = portalItem.Owner;
         }
 
         private string _id;
@@ -51,35 +50,14 @@ namespace GalleryDemo
 
         private string _snippet;
         public string Snippet => _snippet;
-
-        private string _thumbnailUrl;
         public string Text => _name;       
-
-        public string Icon => ThumbnailUrl;
-        public string ThumbnailUrl
-        {
-            get { return SetThumbnailURL(); }
-        }
-
-        private string _portal;
 
         private string _group;
         public string Group
         {
             get { return _group; }
         }
-        /// <summary>
-        /// Builds the thumbnail URL of a webmap item.
-        /// </summary>
-        /// <returns></returns>
-        private string SetThumbnailURL()
-        {
-
-            _thumbnailUrl = !string.IsNullOrEmpty(Thumbnail)
-                ? string.Format("{0}/sharing/content/items/{1}/info/{2}", _portal, ID, Thumbnail)
-                : @"http://static.arcgis.com/images/desktopapp.png";
-            return _thumbnailUrl;
-        }
+      
         public override string ToString()
         {
             return Name;

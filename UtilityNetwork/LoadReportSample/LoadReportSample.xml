@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LoadReportSample</name>
+    </assembly>
+    <members>
+        <member name="M:UtilityNetworkSamples.UtilityNetworkUtils.GetUtilityNetworkFromLayer(ArcGIS.Desktop.Mapping.Layer)">
+            <summary>
+            GetUtilityNetworkFromFeatureClass - gets a utility network from a feature class
+            </summary>
+            <remarks>
+            A feature class can belong to multiple controller datasets, but at most one of them will be a UtilityNetwork.
+            </remarks>
+            <param name="featureClass"></param>
+            <returns>a UtilityNetwork object, or null if the feature class does not belong to a utility network</returns>
+        </member>
+        <member name="M:UtilityNetworkSamples.UtilityNetworkUtils.FetchRowFromElement(ArcGIS.Core.Data.UtilityNetwork.UtilityNetwork,ArcGIS.Core.Data.UtilityNetwork.Element)">
+            <summary>
+            Fetches a Row from an Element
+            </summary>
+            <param name="utilityNetwork">The utility network to which the element belongs</param>
+            <param name="element">An element in a utility network</param>
+            <returns>The Row corresponding to the Element (if any)</returns>
+        </member>
+        <member name="T:LoadReportSample.CreateLoadReport">
+            <summary>
+            This add-in demonstrates the creation of a simple electric distribution report.  It traces downstream from a given point and adds up the count of customers and total load per phase.  This sample
+            is meant to be a demonstration on how to use the Utility Network portions of the SDK.  The report display is rudimentary.  Look elsewhere in the SDK for better examples on how to display data.
+            
+            Rather than coding special logic to pick a starting point, this sample leverages the existing Set Trace Locations tool that is included with the product.
+            That tool writes rows to a table called UN_Temp_Starting_Points, which is stored in the default project workspace.  This sample reads rows from that table and uses them as starting points
+            for our downstream trace.
+            </summary>
+            <remarks>
+            Instructions for use
+            1. Select a utility network layer or a feature layer that participates in a utility network
+            2. Click on the SDK Samples tab on the Utility Network tab group
+            3. Click on the Starting Points tool to create a starting point on the map
+            4. Click on the Create Load Report tool
+            </remarks>
+        </member>
+        <member name="M:LoadReportSample.CreateLoadReport.OnClick">
+            <summary>
+            OnClick
+            
+            This is the implementation of our button.  We pass the selected layer to GenerateReport() which does the bulk of the work.
+            We then display the results, along with error messages, in a MessageBox.
+            
+            </summary>
+        </member>
+        <member name="M:LoadReportSample.CreateLoadReport.GenerateReport(ArcGIS.Desktop.Mapping.Layer)">
+            <summary>
+            GenerateReport
+            
+            This routine takes a feature layer that references a feature class that participates in a utility network.
+            It returns a set of data to display on the UI thread.
+            
+            
+            </summary>
+        </member>
+        <member name="M:LoadReportSample.CreateLoadReport.GetStartingPointRow(ArcGIS.Core.Data.Geodatabase,LoadReportSample.LoadTraceResults@)">
+            <summary>
+            GetStartingPointRow
+            
+            This routine opens up the starting points table and tries to read a row.  This table is created in 
+            the default project workspace when the user first creates a starting point.
+            
+            If the table doesn't exist or is empty, we add an error to our results object a null row.
+            If the table contains one row, we just return the row
+            If the table contains more than one row, we return the first row, and log a warning message
+            	(this tool only works with one starting point)
+            
+            </summary>
+        </member>
+        <member name="M:LoadReportSample.CreateLoadReport.GetElementFromStartingPointRow(ArcGIS.Core.Data.Row,ArcGIS.Core.Data.UtilityNetwork.UtilityNetwork,ArcGIS.Core.Data.UtilityNetwork.UtilityNetworkDefinition)">
+            <summary>
+            GetNetworkElementFromStartingPoint
+            
+            This routine takes a row from the starting point table and converts it to a NetworkElement that we can use for tracing
+            
+            </summary>
+            
+        </member>
+        <member name="T:LoadReportSample.LoadTraceResults">
+            <summary>
+            Represents the result of the load report
+            </summary>
+            <remarks>
+            This class is used to pass back information from the worker thread back to the Button (which executes on a UI thread).  
+            The Message property is used to return error messages.
+            </remarks>
+            
+        </member>
+        <member name="T:LoadReportSample.LoadReportSample">
+            <summary>
+            This add-in demonstrates the creation of a simple electric distribution report.  It traces downstream from a given point and adds up the count of customers and total load per phase.  This sample
+            is meant to be a demonstration on how to use the Utility Network portions of the SDK.  The report display is rudimentary.  Look elsewhere in the SDK for better examples on how to display data.
+            
+            Rather than coding special logic to pick a starting point, this sample leverages the existing Set Trace Locations tool that is included with the product.
+            That tool writes rows to a table called UN_Temp_Starting_Points, which is stored in the default project workspace.  This sample reads rows from that table and uses them as starting points
+            for our downstream trace.
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu.  Then select Build Solution.
+            2. Click Start button to open ArcGIS Pro.
+            3. ArcGIS Pro will open.
+            4. Open a map view that contains at least one Feature Layer whose source points to a Feature Class that participates in a utility network.
+            5. Select a feature layer that participates in a utility network or a utility network layer
+            6. Click on the SDK Samples tab on the Utility Network tab group
+            7. Click on the Starting Points tool to create a starting point on the map
+            8. Click on the Create Load Report tool
+            </remarks>
+        </member>
+        <member name="M:LoadReportSample.LoadReportSample.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+    </members>
+</doc>

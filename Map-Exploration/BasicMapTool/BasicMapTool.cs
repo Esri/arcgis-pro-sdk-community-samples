@@ -33,6 +33,10 @@ namespace BasicMapTool {
 
         public BasicMapTool() : base() {
             this.OverlayControlID = "BasicMapTool_BasicEmbeddableControl";
+            //Embeddable control can be resized
+            OverlayControlCanResize = true;
+            //Specify ratio of 0 to 1 to place the control
+            OverlayControlPositionRatio = new System.Windows.Point(0, 0); //top left
         }
         protected override Task OnToolActivateAsync(bool active) {
             return base.OnToolActivateAsync(active);

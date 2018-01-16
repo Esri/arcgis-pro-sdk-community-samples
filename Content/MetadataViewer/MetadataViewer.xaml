@@ -1,0 +1,78 @@
+﻿<!--
+   Copyright 2017 Esri
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+       http://www.apache.org/licenses/LICENSE-2.0
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+    <UserControl x:Class="MetadataViewer.MetadataViewerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
+             xmlns:ui="clr-namespace:MetadataViewer"
+             xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{Binding Path=ui.MetadataViewerViewModel}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <ui:InvertVisibilityConverter x:Key="InvertVisibilityConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Border Background="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"
+                BorderThickness="2" Margin="5" Padding="1" Visibility="{Binding DockpaneVisible}">
+            <Border.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Esri_Color_Blue}"></SolidColorBrush>
+            </Border.BorderBrush>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" TextWrapping="Wrap" Style="{DynamicResource Esri_TextBlockRegular}" HorizontalAlignment="Stretch" Margin="10">
+                    <Run Text="&#x0a;"/>
+                    <Run Text="Name: " FontWeight="ExtraBold"/>
+                    <Run Text="{Binding ItemInformation.Name, Mode=OneWay}" />
+                    <Run Text="&#x0a;"/>
+                    <Run Text="Type: " FontWeight="ExtraBold"/>
+                    <Run Text="{Binding ItemInformation.Type, Mode=OneWay}" />
+                    <Run Text="&#x0a;"/>
+                    <Run Text="Tags: " FontWeight="ExtraBold"/>
+                    <Run Text="{Binding ItemInformation.Tags, Mode=OneWay}" />
+                    <Run Text="&#x0a;"/>
+                    <Run Text="Location: " FontWeight="ExtraBold"/>
+                    <Run Text="{Binding ItemInformation.Location, Mode=OneWay}" />
+                    <Run Text="&#x0a;"/>
+                    <Run Text="Thumbnail: " FontWeight="ExtraBold"/>
+                    </TextBlock>
+                <TextBlock Grid.Row="1" TextWrapping="Wrap" Style="{DynamicResource Esri_TextBlockRegular}" HorizontalAlignment="Center" Margin="10">
+                        <InlineUIContainer >
+                            <Image Source="{Binding Path=ItemInformation.Xml_image}" Height="130"></Image>
+                        </InlineUIContainer>
+                </TextBlock>
+                <ui:AvalonEditorWrapper x:Name="AvalonXML" 
+                            Grid.Row="2"            
+                            Margin="10"     
+                            Text="{Binding Path=ItemInformation.XML}"            
+                            BorderBrush="Green"
+                            BorderThickness="2">
+                </ui:AvalonEditorWrapper>
+            </Grid>
+        </Border>
+        <StackPanel Visibility="{Binding DockpaneVisible, Converter={StaticResource InvertVisibilityConverter}}" Margin="0,225,0,0" HorizontalAlignment="Center">
+            <TextBlock Text="Select a project item to view its Metadata. You cannot view the metadata for some items such as system styles." TextWrapping="Wrap"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

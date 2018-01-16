@@ -9,12 +9,12 @@ This sample shows how to add a vector tile package file to a map both from disk 
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
-Language:              C# 6.0
+Language:              C#
 Subject:               Sharing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/28/2017
-ArcGIS Pro:            2.0
+Date:                  1/16/2018
+ArcGIS Pro:            2.1
 Visual Studio:         2015, 2017
 .NET Target Framework: 4.6.1
 ```
@@ -44,7 +44,6 @@ Visual Studio:         2015, 2017
 1. Make sure that the Sample data is unzipped in c:\data       
 1. The data used for this sample is 'C:\Data\VectorTileDemos\AlaskaGeology.vtpk'      
 1. In Visual Studio click the Build menu. Then select Build Solution.    
-1. This solution is using the **Newtonsoft.Json Nuget**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".   
 1. Click Start button to open ArcGIS Pro.    
 1. ArcGIS Pro will open.     
 1. Open a new map project.     

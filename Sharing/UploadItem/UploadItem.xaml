@@ -1,0 +1,97 @@
+<!--
+
+   Copyright 2017 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<UserControl x:Class="UploadItem.UploadItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
+             xmlns:ui="clr-namespace:UploadItem"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{Binding Path=ui.UploadItemViewModel}">
+     <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
+            <TextBlock Grid.Column="1" Text="{Binding Heading}" Style="{DynamicResource Esri_TextBlockDockPaneHeader}">
+                <TextBlock.ToolTip>
+                    <WrapPanel Orientation="Vertical" MaxWidth="300">
+                        <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
+                    </WrapPanel>
+                </TextBlock.ToolTip>
+      </TextBlock>
+        </DockPanel>
+        <StackPanel Grid.Row="1">
+            <TextBlock Text=" Sign onto Portal or AGOL from backstage" FontWeight="SemiBold"></TextBlock>
+            <TextBlock Text="Portal/AGOL URL"></TextBlock>
+            <TextBox Text="{Binding BaseUrl}"></TextBox>
+            <Button Style="{DynamicResource Esri_Button}" Content="Use active Portal" Command="{Binding GetActivePortalCommand}"></Button>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="Select an item to upload" FontWeight="SemiBold"></TextBlock>
+            <TextBlock Text="Item Path"></TextBlock>
+            <Grid  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".90*"/>
+                    <ColumnDefinition Width=".10*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" Text="{Binding ItemPath}" Margin="0,0,0,0" HorizontalAlignment="Stretch"></TextBox>
+                <Button Grid.Column="1" Command="{Binding BrowseCommand}" CommandParameter="ItemPath" Margin="0,0,0,0" Width="20" Background="Transparent" BorderBrush="Transparent">
+                    <Image Source="images/GenericOpen16.png"
+                     Stretch="None" VerticalAlignment="Center" />
+                </Button>
+            </Grid>
+            <TextBlock Text="Thumbnail Path" Height="20"></TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".90*"/>
+                    <ColumnDefinition Width=".10*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" Text="{Binding ItemThumbnailPath}" Margin="0,0,0,0" HorizontalAlignment="Stretch"></TextBox>
+                <Button Grid.Column="1" Command="{Binding BrowseCommand}" CommandParameter="ItemThumbnailPath" Margin="0,0,0,0" Width="20" Background="Transparent" BorderBrush="Transparent" >
+                    <Image Source="images/GenericOpen16.png"
+                     Stretch="None" VerticalAlignment="Center" />
+                </Button>
+            </Grid>
+            <TextBlock Text="Tags"></TextBlock>
+            <TextBox Grid.Column="0" Text="{Binding ItemTags}" MinWidth="200"  HorizontalAlignment="Stretch" Height="20"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="3">
+            <Button Style="{DynamicResource Esri_Button}" Content="Submit" Command="{Binding SubmitItemCommand}"></Button>
+        </StackPanel>
+        <StackPanel Grid.Row="4">
+            <TextBlock Text="Uploaded item's ID"></TextBlock>
+            <TextBox Text="{Binding ItemID}"></TextBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

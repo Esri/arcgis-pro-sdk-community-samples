@@ -9,12 +9,12 @@ ArcGIS Pro based console application reading from File Geodatabase
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
-Language:              C# 6.0
+Language:              C#
 Subject:               Console
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/28/2017
-ArcGIS Pro:            2.0
+Date:                  1/16/2018
+ArcGIS Pro:            2.1
 Visual Studio:         2015, 2017
 .NET Target Framework: 4.6.1
 ```
@@ -41,6 +41,7 @@ Visual Studio:         2015, 2017
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
+1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\SDK\SDK.gdb" is available.  
 1. Open this solution in Visual Studio   
 1. Click the build menu and select Build Solution.  
 1. Specify a valid path to a file geodatabase as your debug command line parameter   

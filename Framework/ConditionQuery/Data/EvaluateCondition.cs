@@ -131,8 +131,6 @@ namespace ConditionsQuery.Data {
         /// Process the condition enabled/disabled status based on the provided
         /// list of active state ids
         /// </summary>
-        /// <param name="vm"></param>
-        /// <param name="activeStates"></param>
         public Task UpdateConditionsAndStateAsync() {
 
             //Collect all the states that are currently active

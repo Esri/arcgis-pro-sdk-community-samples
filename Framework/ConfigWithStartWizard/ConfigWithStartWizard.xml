@@ -20,12 +20,13 @@
             </summary>
             <remarks>Has no effect on the length of the actual response from online</remarks>
         </member>
-        <member name="M:ConfigWithStartWizard.Common.SubmitQuery.Exec(ConfigWithStartWizard.Models.OnlineQuery,System.Collections.ObjectModel.ObservableCollection{ConfigWithStartWizard.Models.OnlineResultItem},System.Int32)">
+        <member name="M:ConfigWithStartWizard.Common.SubmitQuery.Exec2Async(ConfigWithStartWizard.Models.OnlineQuery,System.Collections.ObjectModel.ObservableCollection{ArcGIS.Desktop.Core.Portal.PortalItem},System.String,System.Int32)">
             <summary>
             Execute the given query and return the result
             </summary>
             <param name="query"></param>
             <param name="results"></param>
+            <param name="portalUrl"></param>
             <param name="maxResults"></param>
             <returns></returns>
         </member>

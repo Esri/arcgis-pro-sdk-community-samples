@@ -24,11 +24,11 @@ using System.Windows.Data;
 using ArcGIS.Core.CIM;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Core.Geoprocessing;
+using ArcGIS.Desktop.Core.Portal;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
-using Newtonsoft.Json.Linq;
 
 namespace ProceduralSymbolLayersWithRulePackages
 {
@@ -36,6 +36,7 @@ namespace ProceduralSymbolLayersWithRulePackages
     {
         private const string _dockPaneID = "ProceduralSymbolLayersWithRulePackages_ProceduralSymbolWithRulePackages";
         private static readonly string _rulePkgPath = $"{Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"ArcGIS\Projects\RulePackages")}";
+        //private static readonly string _rulePkgPath = @"C:\Data\RulePackages";
         private static readonly string _styleFilePath = $@"{Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)}\AppData\Roaming\ESRI\ArcGISPro\BuildingStyles.stylx";
         private static string _arcgisOnline = @"http://www.arcgis.com:80/";
         protected ProceduralSymbolWithRulePackagesViewModel()
@@ -145,43 +146,17 @@ namespace ProceduralSymbolLayersWithRulePackages
             {
                 await QueuedTask.Run(async () =>
                 {
-                    //building the URL to get the ruel packages.                   
-                    UriBuilder searchURL =
-                        new UriBuilder(_arcgisOnline)
-                        {
-                            Path = "sharing/rest/search"
-                        };
+                    ArcGISPortal portal = ArcGISPortalManager.Current.GetPortal(new Uri(_arcgisOnline));
+                    var query = PortalQueryParameters.CreateForItemsOfType(PortalItemType.RulePackage, "title:\"Paris Rule package 2014\" OR title:\"Venice Rule package 2014\" OR title:\"Extrude/Color/Rooftype Rule package 2014\"");
 
-                    EsriHttpClient httpClient = new EsriHttpClient();
+                    //Execute to return a result set
+                    PortalQueryResultSet<PortalItem> results = await ArcGISPortalExtensions.SearchForContentAsync(portal, query);
 
-                    //these are the 3 rule packages we will download for this sample
-                    string rulePackage =
-                        "(type:\"Rule Package\" AND (title:\"Paris Rule package 2014\" OR title:\"Venice Rule package 2014\" OR title:\"Extrude/Color/Rooftype Rule package 2014\"))&f=json";
-                    searchURL.Query = string.Format("q={0}&f=json", rulePackage);
-
-                    var searchResponse = httpClient.Get(searchURL.Uri.ToString());
-
-                    //Parsing the JSON retrieved.
-                    dynamic resultItems = JObject.Parse(await searchResponse.Content.ReadAsStringAsync());
-
-                    long numberOfTotalItems = resultItems.total.Value;
-                    if (numberOfTotalItems == 0)
-                        return;
-
-                    List<dynamic> resultItemList = new List<dynamic>();
-                    resultItemList.AddRange(resultItems.results);
-
-                    //creating the collection of Rule packages from the parsed JSON.
-                    foreach (dynamic item in resultItemList)
+                    foreach (var item in results.Results.OfType<PortalItem>())
                     {
-                        var id = item.id.ToString();
-                        var title = item.title.ToString();
-                        var name = item.name.ToString();
-                        var snippet = item.snippet.ToString();
-                        var thumbnail = item.thumbnail.ToString();
                         lock (_rpkLock)
                         {
-                            RulePackageCollection.Add(new RulePackage(_arcgisOnline, id, title, name, thumbnail, snippet));
+                            RulePackageCollection.Add(new RulePackage(item));
                         }
                     }
                 });
@@ -197,8 +172,8 @@ namespace ProceduralSymbolLayersWithRulePackages
             await DownloadRulePackage(SelectedRulePackage);  //Download the rule package selected.
             await QueuedTask.Run(async () =>
             {
-                //Get the build footprint layer's currect renderer.
-                CIMSimpleRenderer renderer = (CIMSimpleRenderer)Module1.BuildingFootprintLayer.GetRenderer(); 
+                //Get the build footprint layer's current renderer.
+                CIMSimpleRenderer renderer = (CIMSimpleRenderer)Module1.BuildingFootprintLayer.GetRenderer();
 
                 //Get the rule package attributes and mapping to Feature layer from the dictionary
                 var attributeExpressionMapping =
@@ -206,22 +181,22 @@ namespace ProceduralSymbolLayersWithRulePackages
 
                 //Create the array of CIMPrimitiveOverrides. This is where the field\attribute mapping for the rulepackage is done.
                 var primitiveOverrides = attributeExpressionMapping.Select(kvp => new CIMPrimitiveOverride
-                    {
-                        PrimitiveName = SelectedRulePackage.Title,
-                        PropertyName = kvp.Key,
-                        Expression = kvp.Value
-                    }).ToArray();
+                {
+                    PrimitiveName = SelectedRulePackage.Title,
+                    PropertyName = kvp.Key,
+                    Expression = kvp.Value
+                }).ToArray();
 
                 //Full path of the rule package path
-                var rulePkgPath =  Path.Combine(_rulePkgPath, SelectedRulePackage.Name); 
+                var rulePkgPath = Path.Combine(_rulePkgPath, SelectedRulePackage.Name);
 
-                //Creating a procedural symbol using the rulepaackage
+                //Creating a procedural symbol using the rulepackage
                 var symbolReference = SymbolFactory.Instance.ConstructProceduralSymbol(rulePkgPath,
                     Module1.BuildingFootprintLayer, primitiveOverrides);
 
                 //CIMPolygonSymbol needed to create a style item.  
-                CIMPolygonSymbol polygonSymbol = symbolReference.Symbol as CIMPolygonSymbol;   
-                                    
+                CIMPolygonSymbol polygonSymbol = symbolReference.Symbol as CIMPolygonSymbol;
+
                 //Set symbol's real world setting to be the same as that of the feature layer
                 polygonSymbol.SetRealWorldUnits(Module1.BuildingFootprintLayer.UsesRealWorldSymbolSizes);
 
@@ -230,12 +205,13 @@ namespace ProceduralSymbolLayersWithRulePackages
 
                 //Set the Building footprint layer's render. 
                 Module1.BuildingFootprintLayer.SetRenderer(renderer);
-                
+
                 //Create a style project item.
                 await CreateStyleItem();
-                if (BuildingStyleProjectItem != null && !BuildingStyleProjectItem.IsReadOnly)                
+
+                if (BuildingStyleProjectItem != null && !BuildingStyleProjectItem.IsReadOnly)
                     await AddStyleItemToStyle(BuildingStyleProjectItem, polygonSymbol); //Building footprint's procedural symbol is added to the BuildingStyle   
-                                                               
+
             });
         }
 
@@ -244,22 +220,23 @@ namespace ProceduralSymbolLayersWithRulePackages
             if (rulePackage == null)
                 return;
 
-            var downloadUrl = $"http://www.arcgis.com/sharing/rest/content/items/{rulePackage.ID}/data";
-            var fileName = Path.Combine(_rulePkgPath, $"{rulePackage.Name}");
-            EsriHttpClient esriHttpClient = new EsriHttpClient();
-
-            await esriHttpClient.GetAsFileAsync(downloadUrl, fileName);
+            var path = System.IO.Path.Combine(_rulePkgPath, rulePackage.Portalitem.Name);
+            if (System.IO.Path.GetExtension(path) == "")
+            {
+                path = System.IO.Path.ChangeExtension(path, "tmp");
+            }
+            //Download
+            await rulePackage.Portalitem.GetItemDataAsync(path);
         }
 
         private Task AddStyleItemToStyle(StyleProjectItem styleProjectItem,  CIMPolygonSymbol cimPolygonSymbol)
         {
-            return QueuedTask.Run(() =>
+            return QueuedTask.Run( () =>
             {
                 if (styleProjectItem == null || cimPolygonSymbol == null)
                 {
                     throw new System.ArgumentNullException();
-                }              
-
+                }                
                 SymbolStyleItem symbolStyleItem = new SymbolStyleItem()//define the symbol
                 {
                     Symbol = cimPolygonSymbol,
@@ -267,32 +244,32 @@ namespace ProceduralSymbolLayersWithRulePackages
                     Category = "BuildingFacade",
                     Name = SelectedRulePackage.Name,
                     Key = SelectedRulePackage.Name,
-                    Tags = $"BuildingStyle, {SelectedRulePackage.Title}"                                        
+                    Tags = $"BuildingStyle, {SelectedRulePackage.Title}"
                 };
-
-                styleProjectItem.AddItem(symbolStyleItem);
+                //Does style already contain the styleItem?
+                SymbolStyleItem item = (SymbolStyleItem)_styleProjectItem?.LookupItem(symbolStyleItem.ItemType, symbolStyleItem.Key); 
+                if (item == null)                  
+                    styleProjectItem.AddItem(symbolStyleItem);
             });
-        }
-
+        }       
+        
         private static async Task CreateStyleItem()
         {
-      if (BuildingStyleProjectItem?.PhysicalPath == null)
-      {
-        await QueuedTask.Run(() => {
-          if (File.Exists(_styleFilePath)) //check if the file is on disc. Add it to the project if it is.
-            Project.Current.AddStyle(_styleFilePath);
-          else //else create the style item  
-          {
-            if (BuildingStyleProjectItem != null)
-              Project.Current.RemoveStyle(BuildingStyleProjectItem.Name); //remove style from project                           
-            Project.Current.CreateStyle($@"{_styleFilePath}");
-          }
-        });
-
-      }
-    }
-
-
+            if (BuildingStyleProjectItem?.PhysicalPath == null)
+            {
+                await QueuedTask.Run(() =>
+                {
+                    if (File.Exists(_styleFilePath)) //check if the file is on disc. Add it to the project if it is.
+                        Project.Current.AddStyle(_styleFilePath);
+                    else //else create the style item  
+                    {
+                        if (BuildingStyleProjectItem != null)
+                            Project.Current.RemoveStyle(BuildingStyleProjectItem.Name); //remove style from project                           
+                        Project.Current.CreateStyle($@"{_styleFilePath}");
+                    }
+                });
+            }
+        }
         #endregion
     }
 

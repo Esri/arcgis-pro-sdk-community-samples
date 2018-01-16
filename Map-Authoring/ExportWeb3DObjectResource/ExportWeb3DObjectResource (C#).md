@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  4/20/2017
-ArcGIS Pro:            2.0
+Date:                  1/16/2018
+ArcGIS Pro:            2.1
 Visual Studio:         2015, 2017
 .NET Target Framework: 4.6.1
 ```
@@ -31,6 +31,10 @@ Visual Studio:         2015, 2017
 
 ![ArcGIS Pro SDK for .NET Icons](https://esri.github.io/arcgis-pro-sdk/images/Home/Image-of-icons.png "ArcGIS Pro SDK Icons")
 
+* [ProSnippets: 2.0 Migration](http://github.com/Esri/arcgis-pro-sdk/wiki/ProSnippets-Migrating-to-2.0)  
+* [ProSnippets: 2.0 Migration Samples](http://github.com/Esri/arcgis-pro-sdk/wiki/ProSnippets-2.0-Migration-Samples)  
+* [ProConcepts: 2.0 Migration](http://github.com/Esri/arcgis-pro-sdk/wiki/ProConcepts-2.0-Migration-Guide)  
+
 ### Samples Data
 
 * Sample data for ArcGIS Pro SDK Community Samples can be downloaded from the [repo releases](https://github.com/Esri/arcgis-pro-sdk-community-samples/releases) page.  
@@ -40,10 +44,9 @@ Visual Studio:         2015, 2017
 1. In Visual Studio click the Build menu. Then select Build Solution.  
 1. Click Start button to open ArcGIS Pro.  
 1. ArcGIS Pro will open.   
-1. Either open and existing project or create a new scene that has point feature layer(s) symbolized with 3D marker symbols  
-1. Select one or more point feature layers in the Contents pane  
+1. Either open and existing project (for example: "Interacting with Maps.aprx" included in the sample dataset) or create a new scene that has point feature layer(s) symbolized with 3D marker symbols  
+1. Select one or more point feature layers in the Contents pane.  If you used "Interacting with Maps.aprx", display the 3D map and select the Tree feature layer.   
 1. EXPORT WEB 3D OBJECT tab will be shown on the ribbon  
-1. Either accept the defaults or input values for Texture Downscale Factor and Max Texture Dimension  
 1. Click the Export button  
 1. In the dialog that comes up, specify the output location of JSON files that will be created by the export process  
 1. Once the output location is specified, each 3D marker symbol layer in the selected feature layers will be exported as a separate .json file on disk in the output location  

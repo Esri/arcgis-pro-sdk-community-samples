@@ -29,7 +29,7 @@
             <summary>
             Updates the combo box with the colorizers that can be applied to the selected layer.
             </summary>
-            <param name="activeMapView">Active MapView for the selected layer.</param>
+            <param name="basicRasterLayer">the selected layer.</param>
         </member>
         <member name="M:ChangeColorizerForRasterLayer.ApplyColorizers.OnSelectionChange(ArcGIS.Desktop.Framework.Contracts.ComboBoxItem)">
             <summary>

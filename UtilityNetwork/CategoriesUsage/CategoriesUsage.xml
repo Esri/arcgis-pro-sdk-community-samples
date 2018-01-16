@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CategoriesUsage</name>
+    </assembly>
+    <members>
+        <member name="M:UtilityNetworkSamples.UtilityNetworkUtils.GetUtilityNetworkFromLayer(ArcGIS.Desktop.Mapping.Layer)">
+            <summary>
+            GetUtilityNetworkFromFeatureClass - gets a utility network from a layer
+            </summary>
+            <param name="layer"></param>
+            <returns>a UtilityNetwork object, or null if the layer does not reference a utility network</returns>
+        </member>
+        <member name="M:UtilityNetworkSamples.UtilityNetworkUtils.FetchRowFromElement(ArcGIS.Core.Data.UtilityNetwork.UtilityNetwork,ArcGIS.Core.Data.UtilityNetwork.Element)">
+            <summary>
+            Fetches a Row from an Element
+            </summary>
+            <param name="utilityNetwork">The utility network to which the element belongs</param>
+            <param name="element">An element in a utility network</param>
+            <returns>The Row corresponding to the Element (if any)</returns>
+        </member>
+        <member name="T:CategoriesUsage.CategoriesComboBox">
+            <summary>
+            Represents the ComboBox
+            </summary>
+        </member>
+        <member name="F:CategoriesUsage.CategoriesComboBox.myLayer">
+            <summary>
+            The selected utility network-based layer in the TOC
+            </summary>
+        </member>
+        <member name="M:CategoriesUsage.CategoriesComboBox.#ctor">
+            <summary>
+            Categories Combo Box constructor
+            </summary>
+        </member>
+        <member name="M:CategoriesUsage.CategoriesComboBox.UpdateCategoryList(ArcGIS.Desktop.Mapping.Events.MapViewEventArgs)">
+            <summary>
+            This method makes sure
+            1. The Mapview is Active
+            2. There is at least one layer selected
+            3. That layer is either
+              a. A utility network layer
+              b. A feature layer whose feature class belongs to a utility network
+              c. A subtype group layer whose feature class belongs to a utility network
+            
+            If all of these hold true, we populate the combo box with the list of categories that are registered with this utility network
+            </summary>
+        </member>
+        <member name="M:CategoriesUsage.CategoriesComboBox.OnSelectionChange(ArcGIS.Desktop.Framework.Contracts.ComboBoxItem)">
+            <summary>
+            The on comboBox selection change event. This creates a new table that lists the assignments for the specified category.  This table is added to the map, selected in the TOC, and opened.
+            </summary>
+            <param name="item">The newly selected combo box item</param>
+        </member>
+        <member name="P:CategoriesUsage.CategoriesUsage.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:CategoriesUsage.CategoriesUsage.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+    </members>
+</doc>

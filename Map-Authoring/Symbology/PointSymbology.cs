@@ -34,8 +34,8 @@ namespace Symbology
         {
             var PtSymbols = new Dictionary<CIMSymbol, string>
             {
-                {  await CreatePointSymbol(), "Blue_Circle"},
-                {  await CreateMarkerSymbol(), "Marker"}
+                {  await CreatePointSymbolAsync(), "Blue_Circle"},
+                {  await CreateMarkerSymbolAsync(), "Marker"}
             };
 
             return PtSymbols;
@@ -46,22 +46,22 @@ namespace Symbology
         /// ![PointSymbolMarker](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/point-fill-outline.png)
         /// </summary>
         /// <returns></returns>
-        internal static async Task<CIMPointSymbol> CreatePointSymbol()
+        internal static Task<CIMPointSymbol> CreatePointSymbolAsync()
         {
-            var circlePtSymbol = await QueuedTask.Run(() =>
+            return QueuedTask.Run<CIMPointSymbol>(() =>
             {
-                return SymbolFactory.Instance.ConstructPointSymbol(ColorFactory.Instance.BlueRGB, 6, SimpleMarkerStyle.Circle);
-                
+                 var circlePtSymbol = SymbolFactory.Instance.ConstructPointSymbol(ColorFactory.Instance.BlueRGB, 6, SimpleMarkerStyle.Circle);
+                //Modifying this point symbol with the attributes we want.
+                //getting the marker that is used to render the symbol
+                var marker = circlePtSymbol.SymbolLayers[0] as CIMVectorMarker;
+                //Getting the polygon symbol layers components in the marker
+                var polySymbol = marker.MarkerGraphics[0].Symbol as CIMPolygonSymbol;
+                //modifying the polygon's outline and width per requirements
+                polySymbol.SymbolLayers[0] = SymbolFactory.Instance.ConstructStroke(ColorFactory.Instance.BlackRGB, 2, SimpleLineStyle.Solid); //This is the outline
+                polySymbol.SymbolLayers[1] = SymbolFactory.Instance.ConstructSolidFill(ColorFactory.Instance.BlueRGB); //This is the fill
+                return circlePtSymbol;              
             });           
-            //Modifying this point symbol with the attributes we want.
-            //getting the marker that is used to render the symbol
-            var marker = circlePtSymbol.SymbolLayers[0] as CIMVectorMarker;
-            //Getting the polygon symbol layers components in the marker
-            var polySymbol = marker.MarkerGraphics[0].Symbol as CIMPolygonSymbol;
-            //modifying the polygon's outline and width per requirements
-            polySymbol.SymbolLayers[0] = SymbolFactory.Instance.ConstructStroke(ColorFactory.Instance.BlackRGB, 2, SimpleLineStyle.Solid); //This is the outline
-            polySymbol.SymbolLayers[1] = SymbolFactory.Instance.ConstructSolidFill(ColorFactory.Instance.BlueRGB); //This is the fill
-            return circlePtSymbol;
+            
         }
         #endregion
         #region Snippet Point Symbol from a font
@@ -70,15 +70,15 @@ namespace Symbology
         /// ![PointSymbolFont](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/point-marker.png)
         /// </summary>
         /// <returns></returns>
-        internal static async Task<CIMPointSymbol> CreateMarkerSymbol()
+        internal static Task<CIMPointSymbol> CreateMarkerSymbolAsync()
         {           
             //Construct point symbol from marker
-            var ptMarkerPt = await QueuedTask.Run(() => {
+            return QueuedTask.Run<CIMPointSymbol>(() => {
                 //creating the marker from the Font selected
                 var cimMarker = SymbolFactory.Instance.ConstructMarker(47, "Wingdings 3", "Regular", 12);
                 return SymbolFactory.Instance.ConstructPointSymbol(cimMarker);
             });
-            return ptMarkerPt;
+
         }
         #endregion
     }

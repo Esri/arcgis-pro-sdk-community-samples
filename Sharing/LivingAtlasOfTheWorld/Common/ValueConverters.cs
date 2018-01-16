@@ -27,32 +27,37 @@ using System.Windows.Data;
 using LivingAtlasOfTheWorld.Models;
 
 namespace LivingAtlasOfTheWorld.Common {
-    
+
+   
     /// <summary>
-    /// Converts OnlineUri to string (returns the Query property)
+    /// Converts Uri to string (returns the Thumbnail property)
     /// </summary>
-    public class OnlineQueryToString : IValueConverter {
+    public class UriToString : IValueConverter
+    {
         /// <summary>
         /// Returns the query string property or an empty string if the value is null
         /// </summary>
         /// <returns>The query string</returns>
-        public Object Convert(Object value, Type targetType, Object parameter, CultureInfo culture) {
+        public Object Convert(Object value, Type targetType, Object parameter, CultureInfo culture)
+        {
+
+           // Uri input = value as Uri;
             if (value == null)
-                return "";
-            if ((value as OnlineQuery) == null)
-                return "";
-            OnlineQuery val = value as OnlineQuery;
-            return val.FinalUrl;
+                return string.Empty;
+            else
+                return value;
         }
 
         /// <summary>
         /// Not implemented
         /// </summary>
-        public Object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture) {
+        public Object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture)
+        {
             throw new InvalidOperationException("Converter cannot convert back.");
         }
 
     }
+
 
     /// <summary>
     /// Converts OnlineUri to string (returns the Query property)

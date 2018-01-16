@@ -16,13 +16,13 @@ using System;
 using System.Text;
 using LivingAtlasOfTheWorld.Common;
 using ArcGIS.Desktop.Core;
+using ArcGIS.Desktop.Core.Portal;
 
 namespace LivingAtlasOfTheWorld.Models {
     /// <summary>
-    /// Represents the key attributes requuired to structure online search queries
+    /// Represents the key attributes required to structure online search queries
     /// </summary>
     class OnlineQuery {
-        public static string DefaultUserAgent = "ArcGIS Pro (EsriHttpClient Browse Sample)";
         public static readonly string DefaultReferer = "Browse AGS";
         public static readonly int DefaultMaxResults = 100;
         public static readonly int DefaultMaxResponseLength = 2048;
@@ -38,7 +38,8 @@ namespace LivingAtlasOfTheWorld.Models {
         /// <summary>
         /// Gets and sets the Portal URL.
         /// </summary>
-        public string Portal {
+        public string Portal
+        {
             get
             {
                 return ArcGISPortalManager.Current.GetActivePortal().PortalUri.ToString();
@@ -69,22 +70,19 @@ namespace LivingAtlasOfTheWorld.Models {
         /// <summary>
         /// Gets and Sets the starting number for the query
         /// </summary>
-        public long Start { get; set; }
+        public int Start { get; set; }
+       
         /// <summary>
         /// Gets and Sets the max number of results per query
         /// </summary>
-        public long Num { get; set; }
+        public int Num { get; set; }
         /// <summary>
         /// Gets and sets the content type for the query
         /// </summary>
-        public string Content { get; set; }
-        /// <summary>
-        /// Gets the FinalUrl given all the current query parameters
-        /// </summary>
-        public string FinalUrl {
-            get {
-                return this.MakeFinalURL();
-            }
+        //public string Content { get; set; }
+        public PortalItemType Content
+        {
+            get;  set;            
         }
 
         /// <summary>
@@ -99,39 +97,54 @@ namespace LivingAtlasOfTheWorld.Models {
             }
         }
 
-        private string MakeFinalURL() {
-            //"group:b36bd80e51f54ad698f9ae5f292d9ab1 (type:\"Map Service\" OR type:\"Image Service\" OR type:\"Feature Service\" OR type:\"WMS\" OR type:\"KML\")  AND (tags:imagery) 
+        public PortalQueryParameters PortalQuery
+        {
+            get
+            {
+                return this.MakePortalQuery();
+            }
+        }
+
+       
+        private PortalQueryParameters MakePortalQuery ()
+        {            
             StringBuilder query = new StringBuilder();
-            query.Append(Portal);
-            query.Append(QueryBase);
-            if (!this.GroupID.IsEmpty()) {
+            if (!this.GroupID.IsEmpty())
+            {
                 query.Append(String.Format("group:{0} ", this.GroupID));
             }
-            //currently just layer and web map
-            //TODO: Handle more content types
-            query.Append((string)(this.Content == "Layer" ? DefaultEsriLayerContentTypes : DefaultEsriWebMapContentTypes));
-            if (!this.Keywords.IsEmpty()) {
+            query.Append((string)(this.Content == PortalItemType.Layer ? DefaultEsriLayerContentTypes : DefaultEsriWebMapContentTypes));
+            if (!this.Keywords.IsEmpty())
+            {
                 //tokenize
-                string[] _keys = this.Keywords.Split(new char[] { ' ',',', ';', ':' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] _keys = this.Keywords.Split(new char[] { ' ', ',', ';', ':' }, StringSplitOptions.RemoveEmptyEntries);
                 query.Append(" AND (");
                 string sep = "";
-                foreach (string key in _keys) {
+                foreach (string key in _keys)
+                {
                     query.Append(String.Format("{0}\"{1}\"", sep, key));
                     sep = " OR ";
                 }
                 query.Append(")");
             }
-            if (!this.OnlineUri.Tags.IsEmpty()) {
+            if (!this.OnlineUri.Tags.IsEmpty())
+            {
                 query.Append(String.Format(" AND (tags:{0})", this.OnlineUri.Tags));
             }
+            PortalQueryParameters pq = new PortalQueryParameters(query.ToString());
+            pq.StartIndex = Start;
+           
+
             if (Start > 0)
-                query.Append(String.Format("&start={0}", this.Start));
-            if (Num <= 0 || Num > 100) {
-                Num = DefaultNumResultsPerQuery;
-            }
-            query.Append(String.Format("&num={0}", Num));
-            query.Append("&f=json");
-            return query.ToString();
+                query.Append(String.Format("&start={0}", this.Start)); 
+
+            pq.Limit = DefaultNumResultsPerQuery;
+            query.Append(String.Format("&num={0}", pq.Limit));
+
+            return pq;
+            
+
         }
+
     }
 }

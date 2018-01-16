@@ -40,9 +40,9 @@ namespace Renderer
         /// <param name="featureLayer"></param>
         /// <returns>
         /// </returns>
-        internal static async Task HeatMapRenderersAsync(FeatureLayer featureLayer)
+        internal static Task HeatMapRenderersAsync(FeatureLayer featureLayer)
         {
-            await QueuedTask.Run(() =>
+            return QueuedTask.Run(() =>
             {
                 //defining a heatmap renderer that uses values from Population field as the weights
                 HeatMapRendererDefinition heatMapDef = new HeatMapRendererDefinition()

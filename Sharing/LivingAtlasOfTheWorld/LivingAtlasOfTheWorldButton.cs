@@ -36,16 +36,4 @@ namespace LivingAtlasOfTheWorld {
             _isOpen = false;
         }
     }
-
-    internal class AddLayerButton_button2 : Button {
-        protected override void OnClick() {
-        }
-    }
-
-    internal class AddLayerButton_button3 : Button {
-        protected override void OnClick() {
-            
-        }
-    }
-
 }

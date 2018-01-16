@@ -60,8 +60,8 @@
         </Grid.ColumnDefinitions>
         <TextBox Grid.Column="0"  Text="{Binding FilePath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch"
                    Margin="0,0,6,0"/>
-        <Button Grid.Column="1" Command="{Binding BrowseFileNameCmd}" HorizontalAlignment="Center" Background="Transparent" BorderThickness="0">
-          <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/FolderOpenState16.png"
+        <Button Grid.Column="1" Command="{Binding BrowseFileNameCmd}" HorizontalAlignment="Center" Style="{DynamicResource Esri_Button}">
+                    <Image Source="images/GenericOpen16.png"
                      Stretch="None" Width="16" Height="16" VerticalAlignment="Center" />
         </Button>
       </Grid>

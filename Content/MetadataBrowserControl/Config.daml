@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2018 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+
+<ArcGIS defaultAssembly="MetadataBrowserControl.dll" defaultNamespace="MetadataBrowserControl" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{77b990e3-b28d-4759-a625-8794e2536690}" version="1.0" desktopVersion="2.1.9290">
+    <Name>MetadataBrowserControl</Name>
+    <Description>MetadataBrowserControl description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>adam9187</Author>
+    <Company>Acme</Company>
+    <Date>9/5/2017 9:34:10 AM, 2017</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="MetadataBrowserControl_Module" className="Module1" autoLoad="true" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="MetadataBrowserControl_Tab1" caption="New Tab">
+          <group refID="MetadataBrowserControl_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="MetadataBrowserControl_Group1" caption="Metadata" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="MetadataBrowserControl_Dockpane1_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="MetadataBrowserControl_Dockpane1_ShowButton" caption="Metadata Transform viewer" className="Dockpane1_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+          <tooltip heading="Metadata Transform viewer">View a project item's metadata in an embedded browser control with a transform applied to the display.<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="MetadataBrowserControl_Dockpane1" caption="Meatadata Viewer" className="MetadataBrowserViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="MetadataBrowserView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

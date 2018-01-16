@@ -2308,12 +2308,14 @@ namespace ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts
 
   }
 
-  #endregion
+    #endregion
 
-  #region SearchGroup result DataContracts
-  [DataContract]
-  ///Search Group result is similar to searched item result but the results have slightly different KVP
-  ///Update: not inheriting SearchResult class. Not efficient but deserializer ends up with ambiguity.
+    #region SearchGroup result DataContracts
+    /// <summary>
+    /// Search Group result is similar to searched item result but the results have slightly different KVP
+    /// Update: not inheriting SearchResult class. Not efficient but deserializer ends up with ambiguity.
+    /// </summary>
+    [DataContract]
   public class SearchGroupResult
   {
     [DataMember(Name = "query")]

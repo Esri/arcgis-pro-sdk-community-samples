@@ -199,7 +199,7 @@ namespace Symbology
                         Tags = data,                        
                     };
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
 
                 }                
@@ -275,8 +275,15 @@ namespace Symbology
                 {
                     return;
                 }
+                try
+                {
+                    styleProjectItem.AddItem(cimSymbolStyleItem);
+                }
+                catch(Exception ex)
+                {
 
-                styleProjectItem.AddItem(cimSymbolStyleItem);
+                }
+
             });
         }
 

@@ -13,8 +13,8 @@ Language:              C# 6.0
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/28/2017
-ArcGIS Pro:            2.0
+Date:                  11/8/2017
+ArcGIS Pro:            2.1
 Visual Studio:         2015, 2017
 .NET Target Framework: 4.6.1
 ```
@@ -41,12 +41,11 @@ Visual Studio:         2015, 2017
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. This sample requires the Building Footprint layer.   
-1. Download the [ArcGISProSampleBuildings.ppkx Project package from ArcGIS Online](http://www.arcgis.com/sharing/rest/content/items/a0aa60303a39476688b599a6ce842afb/data).  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. This solution is using the Newtonsoft.Json Nuget. If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".  
-1. Click Start button to open ArcGIS Pro.  
-1. Open the downloaded ArcGISProSampleBuildings.ppkx Project package.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a map package called 'ArcGISProSampleBuildings.ppkx' which is required for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\RulePackages" is available.  
+1. Open this solution in Visual Studio.    
+1. Click the build menu and select Build Solution.  
+1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.  
+1. Open the map package "ArcGISProSampleBuildings.ppkx" located in the "C:\Data\RulePackages" folder since this project contains all required data.  
 ![UI](Screenshots/Screen1.png)  
   
 1. Click the ADD-IN tab in ArcGIS Pro.  

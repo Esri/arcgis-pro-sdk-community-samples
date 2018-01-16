@@ -654,7 +654,7 @@ namespace DataReviewerProSDKSamples
                                     GalleryItemsChangedEvent.Publish(new GalleryItem(rbjProjectItem.TypeID, rbjProjectItem.Path, rbjProjectItem.Name), true);
                             }
                         }
-                        catch(Exception e)
+                        catch(Exception )
                         {
                             //Exception for invalid batch job
                             //Create a string to report invalid Batch Jobs
@@ -723,7 +723,6 @@ namespace DataReviewerProSDKSamples
         /// <summary>
         /// This method is used to get the path of the geodatabase that user selects by browsing
         /// </summary>
-        /// <param name="eResourceType"></param>
         /// <returns></returns>
         private static string OpenBrowseGeodatabaseDialog()
         {

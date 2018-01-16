@@ -28,12 +28,12 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Input;
 using ArcGIS.Desktop.Core;
+using ArcGIS.Desktop.Core.Portal;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
-using Newtonsoft.Json.Linq;
 using UploadVtpkToAgol;
 
 namespace UploadVtpkToAgol
@@ -116,17 +116,17 @@ namespace UploadVtpkToAgol
 
         private void BrowseFileName()
         {
-      // Create OpenFileDialog 
-      Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog()
-      {
+            // Create OpenFileDialog 
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog()
+            {
 
-        // Set filter for file extension and default file extension 
-        DefaultExt = ".vtpk",
-        Filter = "Vector Tile Package File (*.vtpk)|*.vtpk"
-      };
+                // Set filter for file extension and default file extension 
+                DefaultExt = ".vtpk",
+                Filter = "Vector Tile Package File (*.vtpk)|*.vtpk"
+            };
 
-      // Display OpenFileDialog by calling ShowDialog method 
-      var result = dlg.ShowDialog();
+            // Display OpenFileDialog by calling ShowDialog method 
+            var result = dlg.ShowDialog();
 
             // Get the selected file name and display in a TextBox 
             if (result != true) return;
@@ -172,38 +172,27 @@ namespace UploadVtpkToAgol
             var tags = new string[] { "ArcGIS Pro", "SDK", "UploadVtpkToAgol Demo" };
             var portalUrl = ArcGISPortalManager.Current.GetActivePortal().PortalUri.ToString();
 
-            var result = httpClient.Upload(
-                portalUrl, itemToUpload, string.Empty, tags);
+            var uploadDefn = new UploadDefinition(portalUrl, itemToUpload, tags);
+
+            var result = httpClient.Upload(uploadDefn);
             if (result.Item1 == false)
                 return $@"Unable to upload this item: {FilePath} to ArcGIS Online";
 
-            string userName = ArcGISPortalManager.Current.GetActivePortal().GetSignOnUsername();
-            string query = $@"q=owner:{userName} tags:""UploadVtpkToAgol Demo"" ";
-
             // Once uploaded make another REST call to search for the uploaded data
-            var searchUrl = new UriBuilder(portalUrl)
-            {
-                Path = "sharing/rest/search",
-                Query = $@"{query}&f=json"
-            };
+            var portal = ArcGISPortalManager.Current.GetActivePortal();
+            string userName = ArcGISPortalManager.Current.GetActivePortal().GetSignOnUsername();
 
-            var searchResults = httpClient.Get(searchUrl.Uri.ToString());
+            //Searching for Vector tile packages in the current user's content
+            var pqp = PortalQueryParameters.CreateForItemsOfTypeWithOwner(PortalItemType.VectorTilePackage, userName, "tags: UploadVtpkToAgol Demo");
 
-            dynamic resultItems = JObject.Parse(await searchResults.Content.ReadAsStringAsync());
+            //Execute to return a result set
+            PortalQueryResultSet<PortalItem> results = await ArcGISPortalExtensions.SearchForContentAsync(portal, pqp);
 
-            long numberOfTotalItems = resultItems.total.Value;
-
-            if (numberOfTotalItems == 0)
-                return $@"Unable to find uploaded item with query: {query}";
-
-            var resultItemList = new List<dynamic>();
-            resultItemList.AddRange(resultItems.results);
-            //get the first result
-            dynamic item = resultItemList[0];
+            if (results.Results.Count == 0)
+                return $@"Unable to find uploaded item with query: {pqp.Query}";
 
             // Create an item from the search results
-
-            string itemId = item.id;
+            string itemId = results.Results[0].ID;
             var currentItem = ItemFactory.Instance.Create(itemId, ItemFactory.ItemType.PortalItem);
 
             // Finally add the feature service to the map
@@ -211,8 +200,10 @@ namespace UploadVtpkToAgol
             // add it to the map
             if (LayerFactory.Instance.CanCreateLayerFrom(currentItem))
                 LayerFactory.Instance.CreateLayer(currentItem, MapView.Active.Map);
-            return $@"Uploaded this item: {FilePath} to ArcGIS Online and added the item to the Map";
+            return $@"Uploaded this item: {results.Results[0].Name} [Type: {results.Results[0].Type}] to ArcGIS Online and added the item to the Map";
+         
         }
+
 
         private Task<string> Query()
         {
@@ -221,37 +212,23 @@ namespace UploadVtpkToAgol
 
         private async Task<string> QueryImpl()
         {
-            // Create EsriHttpClient object
-            var httpClient = new EsriHttpClient();
-            var portalUrl = ArcGISPortalManager.Current.GetActivePortal().PortalUri.ToString();
+
+            var portal = ArcGISPortalManager.Current.GetActivePortal();
 
             string userName = ArcGISPortalManager.Current.GetActivePortal().GetSignOnUsername();
-            string query = $@"q=owner:{userName} tags:""UploadVtpkToAgol Demo"" type:""Vector Tile Service"" ";
 
-            // Once uploaded make another REST call to search for the uploaded data
-            var searchUrl = new UriBuilder(portalUrl)
-            {
-                Path = "sharing/rest/search",
-                Query = $@"{query}&f=json"
-            };
+            //Searching for Vector tile packages in the current user's content
+            var pqp = PortalQueryParameters.CreateForItemsOfTypeWithOwner(PortalItemType.VectorTilePackage, userName, "tags: UploadVtpkToAgol Demo");
 
-            var searchResults = httpClient.Get(searchUrl.Uri.ToString());
+            //Execute to return a result set
+            PortalQueryResultSet<PortalItem> results = await ArcGISPortalExtensions.SearchForContentAsync(portal, pqp);
 
-            dynamic resultItems = JObject.Parse(await searchResults.Content.ReadAsStringAsync());
 
-            long numberOfTotalItems = resultItems.total.Value;
-
-            if (numberOfTotalItems == 0)
-                return $@"Unable to find uploaded item with query: {query}";
-
-            var resultItemList = new List<dynamic>();
-            resultItemList.AddRange(resultItems.results);
-            //get the first result
-            dynamic item = resultItemList[0];
+            if (results.Results.Count == 0)
+                return $@"Unable to find uploaded item with query: {pqp.Query}";
 
             // Create an item from the search results
-
-            string itemId = item.id;
+            string itemId = results.Results[0].ID;
             var currentItem = ItemFactory.Instance.Create(itemId, ItemFactory.ItemType.PortalItem);
 
             // Finally add the feature service to the map
@@ -259,9 +236,42 @@ namespace UploadVtpkToAgol
             // add it to the map
             if (LayerFactory.Instance.CanCreateLayerFrom(currentItem))
                 LayerFactory.Instance.CreateLayer(currentItem, MapView.Active.Map);
-            return $@"Downloaded this item: {item.name} [Type: {item.type}] to ArcGIS Online and added the item to the Map";
+            return $@"Downloaded this item: {results.Results[0].Name} [Type: {results.Results[0].Type}] to ArcGIS Online and added the item to the Map";
+        }
+        /// <summary>
+        /// This is an alternate method of implementing a Query. 
+        /// It uses the GetUserContentAsync method to return the items in the current user's content.
+        /// </summary>
+        /// <returns></returns>
+
+        private async Task<string> QueryUserContentImpl()
+        {
+
+            var portal = ArcGISPortalManager.Current.GetActivePortal();
+
+            string userName = ArcGISPortalManager.Current.GetActivePortal().GetSignOnUsername();
+            //Get the content for the signed on user.  
+            //Users executing this query must be signed on or an exception will be thrown.
+            var results = await ArcGISPortalExtensions.GetUserContentAsync(portal, userName);
+            //Check if a specific item exits
+            var itemExists = results.PortalItems.Any(p => p.Tags.Contains("UploadVtpkToAgol Demo"));
+            if (!itemExists)            
+                return $@"Unable to find uploaded item with query: {portal.ToString()}sharing/rest/content/users/{userName}";
+   
+            // Create an item from the search results
+            var myItem = results.PortalItems.FirstOrDefault(i => i.Tags.Contains("UploadVtpkToAgol Demo"));
+
+            var currentItem = ItemFactory.Instance.Create(myItem.ID, ItemFactory.ItemType.PortalItem);
+
+            // Finally add the Vextor tile package to the map
+            // if we have an item that can be turned into a layer
+            // add it to the map
+            if (LayerFactory.Instance.CanCreateLayerFrom(currentItem))
+                LayerFactory.Instance.CreateLayer(currentItem, MapView.Active.Map);
+            return $@"Downloaded this item: {myItem.Name} [Type: {myItem.Type}] to ArcGIS Online and added the item to the Map";
         }
     }
+   
 
     /// <summary>
     /// Button implementation to show the DockPane.

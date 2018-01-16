@@ -10,7 +10,7 @@
             </summary>
             <remarks>Procedural symbol items do not have a preview image. So a custom png is used to display these symbol types in the dockpane</remarks>
         </member>
-        <member name="M:Symbology.MeshSymbology.CreateMeshSymbol">
+        <member name="M:Symbology.MeshSymbology.CreateMeshSymbolAsync">
             <summary>
             Create a mesh symbol that can be applied to a multi-patch feature layer.
             </summary>
@@ -29,14 +29,14 @@
             <remarks>Note: The rule package used in this method can be obtained from the Sample Data included in the arcgis-pro-sdk-community-samples repository.</remarks>
             <returns></returns>
         </member>
-        <member name="M:Symbology.MyLineSymbology.CreateMyMarkerLineSymbol">
+        <member name="M:Symbology.MyLineSymbology.CreateMyMarkerLineSymbolAsync">
             <summary>
             Create a line symbol with the markers placed at a 45 degree angle. <br/>  
             ![LineSymbolAngleMarker](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/line-marker-angle.png)
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Symbology.MyLineSymbology.CreateLineDashTwoMarkers">
+        <member name="M:Symbology.MyLineSymbology.CreateLineDashTwoMarkersAync">
             <summary>
             Create a line symbol with a dash and two markers.<br/>          
             </summary>
@@ -49,7 +49,7 @@
             </remarks>
             <returns></returns>
         </member>
-        <member name="M:Symbology.MyLineSymbology.CreateLineDashTwoMarkers2">
+        <member name="M:Symbology.MyLineSymbology.CreateLineDashTwoMarkers2Async">
             <summary>
             Create a line symbol with a dash and two markers. <br/>
             In this pattern of creating this symbol, a [CIMVectorMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic6176.html) object is created as a new [CIMSymbolLayer](http://prodev.arcgis.com/en/pro-app/sdk/api-reference/current/#topic5503.html).
@@ -97,42 +97,42 @@
             </summary>
             <returns>False to prevent Pro from closing, otherwise True</returns>
         </member>
-        <member name="M:Symbology.MyPointSymbology.CreatePointSymbol">
+        <member name="M:Symbology.MyPointSymbology.CreatePointSymbolAsync">
             <summary>
             Creates a point symbol with custom fill and outline          
             ![PointSymbolMarker](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/point-fill-outline.png)
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Symbology.MyPointSymbology.CreateMarkerSymbol">
+        <member name="M:Symbology.MyPointSymbology.CreateMarkerSymbolAsync">
             <summary>
             Create a point symbol from a character in a font file
             ![PointSymbolFont](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/point-marker.png)
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Symbology.MyPolygonSymbology.CreateCrossHatchPolygon">
+        <member name="M:Symbology.MyPolygonSymbology.CreateCrossHatchPolygonAsync">
             <summary>
             Create a polygon symbol with a cross hatch fill. <br/>
             ![PolygonSymbolCrossHatch](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/polygon-crosshatch.png)
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Symbology.MyPolygonSymbology.CreateDiagonalCrossPolygon">
+        <member name="M:Symbology.MyPolygonSymbology.CreateDiagonalCrossPolygonAsync">
             <summary>
             Create a polygon symbol with a diagonal cross hatch fill. <br/>
             ![PolygonSymbolDiagonalCrossHatch](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/polygon-diagonal-crosshatch.png)
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Symbology.MyPolygonSymbology.CreateDashDotFill">
+        <member name="M:Symbology.MyPolygonSymbology.CreateDashDotFillAsync">
             <summary>
             Create a polygon symbol with a dash dot fill. <br/>
             ![PolygonSymbolDashDot](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/polygon-dash-dot.png)
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Symbology.MyPolygonSymbology.CreateGradientFill">
+        <member name="M:Symbology.MyPolygonSymbology.CreateGradientFillAsync">
             <summary>
             Create a polygon symbol with a gradient color fill. <br/>
             ![PolygonSymbolGradientColor](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/polygon-gradient-color.png)

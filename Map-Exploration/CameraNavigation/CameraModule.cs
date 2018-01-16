@@ -30,6 +30,7 @@ namespace CameraNavigation
   /// 3. ArcGIS Pro will open. 
   /// 4. Open a map view. Click on the new Camera tab on the ribbon.
   /// 5. Within this tab there is a Camera Properties button that when clicked will open the Camera Properties dockable window.
+  /// ![UI](Screenshots/Screenshot1.png)  
   /// 6. The dock pane will show each property of the camera for the active map view and its corresponding value.
   /// 7. Change one or more of the values and use the zoom to or pan to commands to go to the new camera position. 
   /// </remarks>

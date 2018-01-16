@@ -9,12 +9,12 @@ This sample provides a new tab and controls that allow you to get the camera of 
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
-Language:              C# 6.0
+Language:              C#
 Subject:               Map-Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/28/2017
-ArcGIS Pro:            2.0
+Date:                  1/16/2018
+ArcGIS Pro:            2.1
 Visual Studio:         2015, 2017
 .NET Target Framework: 4.6.1
 ```
@@ -46,6 +46,7 @@ Visual Studio:         2015, 2017
 3. ArcGIS Pro will open.   
 4. Open a map view. Click on the new Camera tab on the ribbon.  
 5. Within this tab there is a Camera Properties button that when clicked will open the Camera Properties dockable window.  
+![UI](Screenshots/Screenshot1.png)    
 6. The dock pane will show each property of the camera for the active map view and its corresponding value.  
 7. Change one or more of the values and use the zoom to or pan to commands to go to the new camera position.   
   

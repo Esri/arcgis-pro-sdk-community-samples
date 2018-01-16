@@ -33,7 +33,6 @@ namespace CustomIdentify
         private Dictionary<FieldDescription, double> _values = new Dictionary<FieldDescription, double>();
         //private List<HierarchyRow> _hierarchyRows ;
         private long _id;
-        private string _featureClassName;
         private RelateInfo _relateInfo;
 
         /// <summary>

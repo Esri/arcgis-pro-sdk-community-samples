@@ -36,7 +36,7 @@
          to handle MouseMove if you want to move your control around -->
     <Grid Background="{x:Null}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Border Background="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}" 
                 BorderBrush="{DynamicResource Esri_BorderBrush}" 

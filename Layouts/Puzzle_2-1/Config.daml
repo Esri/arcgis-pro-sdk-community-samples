@@ -1,0 +1,49 @@
+﻿<ArcGIS defaultAssembly="Puzzle_2-1.dll" defaultNamespace="Puzzle_2_1" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{aef96892-4cae-49d7-a102-f12a6f576402}" version="1.0" desktopVersion="2.1.9719">
+    <Name>Puzzle_2_1</Name>
+    <Description>Puzzle_2_1 shows how to create and manipulate layout elements</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, http://www.esri.com</Company>
+    <Date>8/30/2017 8:24:24 AM, 2017</Date>
+    <Subject>Layouts</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="Puzzle_2_1_Module" className="Module1" autoLoad="true" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="Puzzle_2_1_Tab1" caption="Puzzle" keytip="T1">
+          <group refID="Puzzle_2_1_Group1" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="Puzzle_2_1_Group1" caption="Puzzle Game" appearsOnAddInTab="false" keytip="G1">
+          <!-- host controls within groups -->
+          <button refID="Puzzle_2_1_CreateGameBoard" size="large" />
+          <button refID="Puzzle_2_1_ScramblePieces" size="large" />
+          <button refID="Puzzle_2_1_PlayGame" size="large" />
+          <button refID="Puzzle_2_1_NewGame" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="Puzzle_2_1_CreateGameBoard" caption="Create Game Board" className="CreateGameBoard" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" keytip="B1">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="Puzzle_2_1_ScramblePieces" caption="Scramble Pieces" className="ScramblePieces" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" keytip="B2">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="Puzzle_2_1_PlayGame" caption="Play Game" className="PlayGame" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" keytip="B3">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="Puzzle_2_1_NewGame" caption="NewGame" className="NewGame" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" keytip="B4">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

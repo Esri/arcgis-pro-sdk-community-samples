@@ -27,7 +27,7 @@ namespace FolderConnections
     {
       try
       {
-        /// Read a file for line-delimited directory paths, and attempt to add them to the Project's Folder Connections
+        // Read a file for line-delimited directory paths, and attempt to add them to the Project's Folder Connections
         OpenItemDialog openDialog = new OpenItemDialog()
         {
           Title = "Select a Folder Connections file",
@@ -35,7 +35,7 @@ namespace FolderConnections
           Filter = ItemFilters.textFiles
         };
 
-        /// If the user clicks OK in the dialog, load the listed directories from the file to the Project's Folder Connections
+        // If the user clicks OK in the dialog, load the listed directories from the file to the Project's Folder Connections
         if (openDialog.ShowDialog() == true)
         {
           IEnumerable<Item> selectedItem = openDialog.Items;
@@ -45,7 +45,7 @@ namespace FolderConnections
             string line;
             while ((line = file.ReadLine()) != null)
             {
-              /// Add all folder connections to the current Project's folder connections
+              // Add all folder connections to the current Project's folder connections
               string notFound = "";
               if (Directory.Exists(line))
               {
@@ -57,7 +57,7 @@ namespace FolderConnections
                 notFound += Environment.NewLine + line;
               }
 
-              /// Report any folder connections that could not be found
+              // Report any folder connections that could not be found
               if (notFound != "")
               {
                 ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("The following directories were not found and could not be added to the Folder Connections: " + notFound);

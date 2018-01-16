@@ -53,14 +53,10 @@ namespace FeatureDynamicMenu
 
         [DllImport("user32.dll")]
         public static extern bool GetCursorPos(out POINT pt);
-
         
-
         private static readonly IDictionary<BasicFeatureLayer, List<long>> Selection = new Dictionary<BasicFeatureLayer, List<long>>();
         private static readonly object LockSelection = new object();
-
-        private bool _showingContextMenu = false;
-
+        
         private System.Windows.Point _clickedPoint;
         public System.Windows.Point MouseLocation => _clickedPoint;
 
@@ -78,8 +74,12 @@ namespace FeatureDynamicMenu
             // binding sync: we need to lock this selection collection since it will be updated
             // asynchronously from a worker thread
             BindingOperations.EnableCollectionSynchronization(Selection, LockSelection);
-
+            //Set the embeddable's control's DAML ID to show on the mapview when the tool is active.
            OverlayControlID = "FeatureDynamicMenu_EmbeddedControl";
+           //Allow the embeddable control to be re-sized.
+           OverlayControlCanResize = true;
+            //Specify a ratio of 0 to 1 to place the control
+            OverlayControlPositionRatio = new Point(0, 0);  //top left
 
         }
        
@@ -93,7 +93,6 @@ namespace FeatureDynamicMenu
             contextMenu.DataContext = this;
             contextMenu.Closed += (o, e) =>
             {
-                this._showingContextMenu = false;
                 // clear the list asynchronously
                 lock (LockSelection)
                 {
@@ -103,8 +102,7 @@ namespace FeatureDynamicMenu
             contextMenu.IsOpen = true;
         }
 
-
-        private SubscriptionToken _token = null;
+        
         protected override Task OnToolActivateAsync(bool hasMapViewChanged)
         {
             GetLayersFromActiveMap();        

@@ -23,20 +23,20 @@ namespace FolderConnections
     {
         protected override void OnClick()
         {
-            /// Create the list of Folder Connections
+            // Create the list of Folder Connections
             IEnumerable<FolderConnectionProjectItem> projectFolders = Project.Current.GetItems<FolderConnectionProjectItem>();
             string folders = null;
             foreach (var item in projectFolders)
                 folders += item.Path + Environment.NewLine;
 
-            /// Create the log file and write the current Folder-Connection's to it
+            // Create the log file and write the current Folder-Connection's to it
             SaveItemDialog saveDialog = new SaveItemDialog();
             saveDialog.Title = "Save all current of Folder Connections";
             saveDialog.OverwritePrompt = true;
             saveDialog.DefaultExt = "txt";
             saveDialog.Filter = ItemFilters.textFiles;
 
-            /// If the save dialog was not dismissed, create the file
+            // If the save dialog was not dismissed, create the file
             if (saveDialog.ShowDialog() == true)
             {
                 using (StreamWriter sw = new StreamWriter(saveDialog.FilePath))

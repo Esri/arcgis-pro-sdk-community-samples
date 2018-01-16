@@ -19,7 +19,6 @@
             <summary>
             The on comboBox selection change event. 
             </summary>
-            <param name="item">The newly selected combo box item</param>
         </member>
         <member name="M:DeleteFeaturesBasedOnSubtype.SubtypesComboBox.OnSelectionChange(ArcGIS.Desktop.Framework.Contracts.ComboBoxItem)">
             <summary>

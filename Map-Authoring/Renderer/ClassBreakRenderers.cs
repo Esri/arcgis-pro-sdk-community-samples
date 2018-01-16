@@ -40,9 +40,9 @@ namespace Renderer
         /// <param name="featureLayer"></param>
         /// <returns>
         /// </returns>
-        internal static async Task CBRendererGraduatedColors(FeatureLayer featureLayer)
+        internal static Task CBRendererGraduatedColors(FeatureLayer featureLayer)
         {
-            await QueuedTask.Run(() =>
+            return QueuedTask.Run(() =>
             {
                 GraduatedColorsRendererDefinition gcDef = new GraduatedColorsRendererDefinition()
                 {                    
@@ -65,9 +65,9 @@ namespace Renderer
         /// <param name="featureLayer"></param>
         /// <returns>        
         /// </returns>
-        internal static async Task CBRendererGraduatedSymbols(FeatureLayer featureLayer)
+        internal static Task CBRendererGraduatedSymbols(FeatureLayer featureLayer)
         {
-            await QueuedTask.Run(() =>
+            return QueuedTask.Run(() =>
             {
                 GraduatedSymbolsRendererDefinition gsDef = new GraduatedSymbolsRendererDefinition()
                 {                   
@@ -92,9 +92,9 @@ namespace Renderer
         /// <param name="featureLayer"></param>
         /// <returns>        
         /// </returns>
-        internal static async Task UnclassedRenderer(FeatureLayer featureLayer)
+        internal static Task UnclassedRenderer(FeatureLayer featureLayer)
         {
-            await QueuedTask.Run(() =>
+            return QueuedTask.Run(() =>
             {                
                 //Gets the first numeric field of the feature layer
                 var firstNumericFieldOfFeatureLayer = SDKHelpers.GetNumericField(featureLayer);
@@ -122,7 +122,7 @@ namespace Renderer
         /// </summary>
         /// <param name="featureLayer"></param>
         /// <returns></returns>
-        internal static async Task CBGraduatedColorsManualBreaks(FeatureLayer featureLayer)
+        internal static Task CBGraduatedColorsManualBreaks(FeatureLayer featureLayer)
         {
             //Change these class breaks to be appropriate for your data. These class breaks defined below apply to the US States feature class
             List<CIMClassBreak> listClassBreaks = new List<CIMClassBreak>
@@ -153,7 +153,7 @@ namespace Renderer
                     UpperBound = 576594
                 }
             };
-            await QueuedTask.Run(() =>
+            return QueuedTask.Run(() =>
             {
                 CIMClassBreaksRenderer cimClassBreakRenderer = new CIMClassBreaksRenderer
                 {

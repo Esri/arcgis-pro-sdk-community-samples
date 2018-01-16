@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+   Copyright 2017 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="LoadReportSample.dll" defaultNamespace="LoadReportSample" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{384328fa-9ff3-4ead-8f85-c32caabcd38b}" version="1.0" desktopVersion="2.1">
+    <Name>LoadReportSample</Name>
+    <Description>An Addin which demonstrates how to execute a downstream trace using the utility network</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, http://www.esri.com</Company>
+    <Date>5/31/2016 11:17:02 AM, 2016</Date>
+    <Subject>UtilityNetwork</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration, UtilityNetwork -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="LoadReportSample_Module" className="LoadReportSample" autoLoad="false" caption="LoadReportSample">
+      <tabs>
+        <!-- This section of code defines an SDK Samples tab.  We add it to the Utility Network tab group and show it when a Utility Network layer is selected -->
+        <tab id="SDKSamples_Tab" caption="SDK Samples" tabGroupID="esri_networkanalysis_utility_TabGroup" condition="esri_mapping_utilityNetworkLayerSelectedCondition" keytip="UNSS">
+          <group refID="General_Group"/>
+          <group refID="esri_networkanalysis_trace_StartingLocationsAndBarriers_Group" />
+          <group refID="Electric_Group" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- This section of code adds a group to our tab and adds the product tracing locations tool to that group -->
+        <group id="esri_networkanalysis_trace_StartingLocationsAndBarriers_Group" caption="Trace Locations" keytip="UNSSTL">
+          <tool refID="esri_networkanalysis_facility_SetTracingLocationsBtnPalette" size="large" />
+        </group>
+        <!-- This section of code creates a group for electric tools and adds our button to that group -->
+        <group id="Electric_Group" caption="Electric" appearsOnAddInTab="false" keytip="UNSSE">
+          <button refID="LoadReportSample_CreateLoadReport" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- This defines the Create Load Report button -->
+        <button id="LoadReportSample_CreateLoadReport" caption="Create Load Report " className="CreateLoadReport" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" keytip="UNSSLR">
+          <tooltip heading="Create Load Report">Calculates load and customer count per phase downstream from a given point.<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

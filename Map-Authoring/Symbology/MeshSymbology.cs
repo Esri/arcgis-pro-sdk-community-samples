@@ -34,8 +34,8 @@ namespace Symbology
         {
             var lineSymbols = new Dictionary<CIMSymbol, string>
             {
-                {await CreateMeshSymbol(), "Orange Mesh" },
-                {await CreateProceduralMeshSymbol(), "Textures procedural" }
+                {await CreateMeshSymbolAsync(), "Orange Mesh" },
+                {await CreateProceduralMeshSymbolAsync(), "Textures procedural" }
 
             };
             return lineSymbols;
@@ -50,9 +50,9 @@ namespace Symbology
         /// ![MeshSymbolOrange](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/mesh-material-orange.png)
         /// </remarks>
         /// <returns></returns>
-        public static async Task<CIMSymbol> CreateMeshSymbol()
+        public static Task<CIMMeshSymbol> CreateMeshSymbolAsync()
         {
-            var meshSymbol = await QueuedTask.Run(() =>
+            return QueuedTask.Run<CIMMeshSymbol>(() =>
            {
                CIMSymbolLayer[] materialSymbolLayer =
               {
@@ -68,7 +68,6 @@ namespace Symbology
                };
                return myMeshSymbol;
            });
-            return meshSymbol;
         }
         #endregion
 
@@ -80,9 +79,9 @@ namespace Symbology
         /// <remarks>Note: The rule package used in this method can be obtained from the Sample Data included in the arcgis-pro-sdk-community-samples repository.</remarks>
         /// <returns></returns>
         private static readonly string _rulePkgPath = @"C:\Data\RulePackages\MultipatchTextures.rpk";
-        public static async Task<CIMSymbol> CreateProceduralMeshSymbol()
+        public static Task<CIMMeshSymbol> CreateProceduralMeshSymbolAsync()
         {
-            var myProceduralSymbol = await QueuedTask.Run(() =>
+            return QueuedTask.Run<CIMMeshSymbol>(() =>
             {                  
                 CIMSymbolLayer[] proceduralSymbolLyr =
                 {
@@ -100,7 +99,6 @@ namespace Symbology
 
                 return myMeshSymbol;
             });
-            return myProceduralSymbol;
         }
         #endregion
     }

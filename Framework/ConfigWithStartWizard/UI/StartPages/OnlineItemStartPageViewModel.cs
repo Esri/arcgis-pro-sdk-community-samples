@@ -29,6 +29,7 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 using ConfigWithStartWizard.Common;
 using ConfigWithStartWizard.Models;
+using ArcGIS.Desktop.Core.Portal;
 
 namespace ConfigWithStartWizard.UI.StartPages
 {
@@ -38,11 +39,11 @@ namespace ConfigWithStartWizard.UI.StartPages
     private string _contentType = "";
     private static string _activePortalUri = "";
     private static string _token = "";
-    private ObservableCollection<OnlineResultItem> _results = new ObservableCollection<OnlineResultItem>();
+    private ObservableCollection<PortalItem> _results = new ObservableCollection<PortalItem>();
     private int _selectedItemIndex = -1;
     private static readonly object _lock = new object();
     private bool _initialized = false;
-    private OnlineResultItem _result = null;
+    private PortalItem _result = null;
     private SubscriptionToken _eventToken = null;
 
 
@@ -67,22 +68,22 @@ namespace ConfigWithStartWizard.UI.StartPages
 
     protected internal async virtual void ExecuteItemAction(string url)
     {
-      _result = _results.FirstOrDefault(ri => ri.Id == url);
+      _result = _results.FirstOrDefault(ri => ri.ID == url);
       if (_result == null) return;
 
       //Either we open a project and then create the item or
       //we download the item and then create a project from it.
       //MapPackage is a special case. We download it, create
       //a project and then add the map package to it.
-      switch (_result.OnlineItemType)
+      switch (_result.PortalItemType)
       {
-        case OnlineItemType.WebMap:
+        case PortalItemType.WebMap:
           {
             await Project.CreateAsync(new CreateProjectSettings()
             {
               Name = System.IO.Path.GetFileNameWithoutExtension(_result.Name)
             });
-            var currentItem = ItemFactory.Instance.Create(_result.Id, ItemFactory.ItemType.PortalItem);
+            var currentItem = ItemFactory.Instance.Create(_result.ID, ItemFactory.ItemType.PortalItem);
             if (MapFactory.Instance.CanCreateMapFrom(currentItem))
             {
               await QueuedTask.Run(() =>
@@ -93,7 +94,7 @@ namespace ConfigWithStartWizard.UI.StartPages
             }
           }
           break;
-        case OnlineItemType.Layer:
+        case PortalItemType.Layer:
           {
             var ps = new CreateProjectSettings()
             {
@@ -103,7 +104,7 @@ namespace ConfigWithStartWizard.UI.StartPages
             };
             _eventToken = ArcGIS.Desktop.Mapping.Events.MapViewInitializedEvent.Subscribe((args) =>
             {
-              Item currentItem = ItemFactory.Instance.Create(_result.Id, ItemFactory.ItemType.PortalItem);
+              Item currentItem = ItemFactory.Instance.Create(_result.ID, ItemFactory.ItemType.PortalItem);
               if (LayerFactory.Instance.CanCreateLayerFrom(currentItem))
               {
                 QueuedTask.Run(() => LayerFactory.Instance.CreateLayer(currentItem, args.MapView.Map));
@@ -123,17 +124,17 @@ namespace ConfigWithStartWizard.UI.StartPages
           break;
         default:
           var query = new OnlineQuery(_activePortalUri);
-          query.ConfigureData("", _result.Id, _result.Name);
+          query.ConfigureData("", _result.ID, _result.Name);
 
           await new SubmitQuery().DownloadFileAsync(query);
 
           //Project package
-          if (_result.OnlineItemType == OnlineItemType.ProjectPackage)
+          if (_result.PortalItemType == PortalItemType.ProjectPackage)
           {
             await Project.OpenAsync(query.DownloadFileName);
           }
           //Project Template
-          else if (_result.OnlineItemType == OnlineItemType.Template)
+          else if (_result.PortalItemType == PortalItemType.MapTemplate)
           {
             var ps = new CreateProjectSettings()
             {
@@ -152,7 +153,7 @@ namespace ConfigWithStartWizard.UI.StartPages
 
           }
           //Map Package
-          else if (_result.OnlineItemType == OnlineItemType.MapPackage)
+          else if (_result.PortalItemType == PortalItemType.MapPackage)
           {
             await Project.CreateAsync(new CreateProjectSettings()
             {
@@ -177,7 +178,7 @@ namespace ConfigWithStartWizard.UI.StartPages
     {
       if (_initialized)
         return Task.FromResult(0);
-      return QueuedTask.Run(() =>
+      return QueuedTask.Run( () =>
       {
         if (string.IsNullOrEmpty(_activePortalUri))
         {
@@ -189,8 +190,9 @@ namespace ConfigWithStartWizard.UI.StartPages
         {
           var query = new OnlineQuery(_activePortalUri);
           query.Configure(_contentType);
+          //This is where you decide what the Portalitem type is.
           var submitQuery = new SubmitQuery();
-          submitQuery.Exec(query, _results, 100);
+          submitQuery.Exec2Async(query, _results, _activePortalUri, 100);
         }
       });
     }
@@ -202,7 +204,7 @@ namespace ConfigWithStartWizard.UI.StartPages
     /// <summary>
     /// Gets the list of results from the query
     /// </summary>
-    public ObservableCollection<OnlineResultItem> Results
+    public ObservableCollection<PortalItem> Results
     {
       get
       {
@@ -222,7 +224,7 @@ namespace ConfigWithStartWizard.UI.StartPages
         if (_selectedItemIndex >= 0)
         {
           var item = _results[_selectedItemIndex];
-          this.ExecuteItemAction(item.Id);
+          this.ExecuteItemAction(item.ID);
         }
         NotifyPropertyChanged();
       }

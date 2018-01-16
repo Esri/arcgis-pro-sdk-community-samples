@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetadataBrowserControl", "MetadataBrowserControl.csproj", "{77B990E3-B28D-4759-A625-8794E2536690}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77B990E3-B28D-4759-A625-8794E2536690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77B990E3-B28D-4759-A625-8794E2536690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77B990E3-B28D-4759-A625-8794E2536690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77B990E3-B28D-4759-A625-8794E2536690}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {411F7C97-FDA4-4044-BBBC-B0F96B3AD955}
+	EndGlobalSection
+EndGlobal

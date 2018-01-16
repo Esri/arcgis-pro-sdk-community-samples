@@ -12,6 +12,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
+using ArcGIS.Desktop.Core.Portal;
 using LivingAtlasOfTheWorld.Common;
 
 namespace LivingAtlasOfTheWorld.Models {
@@ -19,6 +20,15 @@ namespace LivingAtlasOfTheWorld.Models {
     /// An individual result from an online query
     /// </summary>
     class OnlineResultItem {
+        public OnlineResultItem(PortalItem portalItem)
+        {
+            PortalResultItem = portalItem;
+            _thumbnailUrl = portalItem.ThumbnailPath;
+            Id = portalItem.ID;
+            Title = portalItem.Title;
+            Snippet = portalItem.Summary;
+        }
+        public PortalItem PortalResultItem { get; set; }
         //private BitmapImage _thumbnail = null;
         private string _thumbnailUrl = "";
         /// <summary>

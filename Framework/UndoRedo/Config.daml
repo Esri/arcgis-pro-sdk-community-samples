@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- //   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@
       dockpane manipulate the undo/redo stack - performing undo and redo actions; remove undo actions and clearing the stacks.     
     </Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>10/22/2014 5:34:03 AM, 2014</Date>
     <Subject>Framework</Subject>
@@ -43,10 +43,10 @@
         </group>
       </groups>
       <controls>
-        <button id="PreRel_UndoRedo_SampleDockPane_ShowButton" caption="Show Sample DockPane" className="SampleDockPane_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png"  keytip="Z1">
+        <button id="PreRel_UndoRedo_SampleDockPane_ShowButton" caption="Show Sample DockPane" className="SampleDockPane_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="Z1">
           <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
         </button>
-        <button id="PreRel_UndoRedo_AddOperation" caption="Add Operation" className="AddOperation" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png"  keytip="Z1">
+        <button id="PreRel_UndoRedo_AddOperation" caption="Add Operation" className="AddOperation" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" keytip="Z1">
           <tooltip heading="Add Operation">
             <disabledText />
           </tooltip>

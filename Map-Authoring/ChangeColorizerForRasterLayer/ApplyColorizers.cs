@@ -100,11 +100,11 @@ namespace ChangeColorizerForRasterLayer
       Clear();
     }
 
-    /// <summary>
-    /// Updates the combo box with the colorizers that can be applied to the selected layer.
-    /// </summary>
-    /// <param name="activeMapView">Active MapView for the selected layer.</param>
-    private async Task UpdateCombo(BasicRasterLayer basicRasterLayer)
+        /// <summary>
+        /// Updates the combo box with the colorizers that can be applied to the selected layer.
+        /// </summary>
+        /// <param name="basicRasterLayer">the selected layer.</param>
+        private async Task UpdateCombo(BasicRasterLayer basicRasterLayer)
     {
         try
         {
@@ -153,6 +153,9 @@ namespace ChangeColorizerForRasterLayer
 
       if (string.IsNullOrEmpty(item.Text))
         MessageBox.Show("The combo box item text is null or empty.", "Combo box Error:", MessageBoxButton.OK, MessageBoxImage.Error);
+
+      if (MapView.Active == null)
+        MessageBox.Show("There is no active MapView.", "Combo box Error:", MessageBoxButton.OK, MessageBoxImage.Error);
 
       try
       {

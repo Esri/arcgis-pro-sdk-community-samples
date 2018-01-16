@@ -26,6 +26,8 @@ using System.Threading.Tasks;
 using ArcGIS.Desktop.Core;
 using ConfigWithStartWizard.Models;
 using Newtonsoft.Json.Linq;
+using ArcGIS.Desktop.Core.Portal;
+using System.Linq;
 
 namespace ConfigWithStartWizard.Common {
     internal class SubmitQuery {
@@ -78,30 +80,78 @@ namespace ConfigWithStartWizard.Common {
             }
         }
 
-        public async Task ExecDownloadAsync2(OnlineQuery query, string fileName) {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(query.DownloadUrl);
-            req.Method = "GET";
-            req.Referer = "ProjectViewer";
-            req.UserAgent = SubmitQuery.DefaultUserAgent;
-            //submit the query
-            var response = await req.GetResponseAsync();
-
-            using (MemoryStream ms = new MemoryStream()) {
-                response.GetResponseStream().CopyTo(ms);
-                System.IO.File.WriteAllBytes(fileName, ms.ToArray());
-            }
-        }
-
+        
 
         /// <summary>
         /// Execute the given query and return the result
         /// </summary>
         /// <param name="query"></param>
         /// <param name="results"></param>
+        /// <param name="portalUrl"></param>
         /// <param name="maxResults"></param>
         /// <returns></returns>
-        public string Exec(OnlineQuery query, ObservableCollection<OnlineResultItem> results,
-                       int maxResults = 0) {
+        //public string Exec(OnlineQuery query, ObservableCollection<OnlineResultItem> results,
+        //               int maxResults = 0) {
+
+        //    if (maxResults == 0)
+        //        maxResults = DefaultMaxResults;
+        //    if (MaxResponseLength == 0)
+        //        MaxResponseLength = DefaultMaxResponseLength;
+
+        //    _response = new StringBuilder();
+        //    _errorResponse = "";
+
+        //    //slap in the initial request
+        //    _response.AppendLine(query.FinalUrl);
+        //    _response.AppendLine("");
+
+        //    results.Clear();
+
+        //    try {
+        //        Tuple<long, long> stats = new Tuple<long, long>(-1, -1);
+        //        do {
+
+        //            query.Start = stats.Item2;
+
+        //            System.Diagnostics.Debug.WriteLine("");
+        //            System.Diagnostics.Debug.WriteLine(query.FinalUrl);
+        //            System.Diagnostics.Debug.WriteLine("");
+
+        //            EsriHttpClient httpClient = new EsriHttpClient();
+
+        //            var response = httpClient.Get(query.FinalUri.ToString());
+        //            var raw = response.Content.ReadAsStringAsync().Result;//block
+        //            stats = ProcessResults(results, raw, query);
+        //        } while (stats.Item2 < maxResults && stats.Item2 > 0);
+
+        //    }
+        //    catch (WebException we) {
+        //        //bad request
+        //        _response.AppendLine("");
+        //        _response.AppendLine("WebException: " + we.Message);
+        //        _response.AppendLine(query.FinalUrl);
+        //        _response.AppendLine("");
+        //        _response.AppendLine(new Uri(query.FinalUrl).Scheme.ToUpper() + " " +
+        //                             ((int)we.Status).ToString());
+        //        try {
+        //            _errorResponse = new StreamReader(we.Response.GetResponseStream()).ReadToEnd();
+        //            _response.AppendLine(_errorResponse);
+        //        }
+        //        catch {
+        //        }
+        //    }
+        //    finally {
+        //        //content = _response.ToString()
+        //        //    .Replace("{", "{\r\n")
+        //        //    .Replace("}", "\r\n}")
+        //        //    .Replace(",\"", ",\r\n\"");
+        //    }
+        //    return _response.ToString();
+        //}
+
+        public async void Exec2Async(OnlineQuery query, ObservableCollection<PortalItem> results, string portalUrl,
+                       int maxResults = 0)
+        {
 
             if (maxResults == 0)
                 maxResults = DefaultMaxResults;
@@ -117,25 +167,31 @@ namespace ConfigWithStartWizard.Common {
 
             results.Clear();
 
-            try {
-                Tuple<long, long> stats = new Tuple<long, long>(-1, -1);
-                do {
-
-                    query.Start = stats.Item2;
+            try
+            {
+                Tuple<long, int> stats = new Tuple<long, int>(-1, -1);
+                var portal = ArcGISPortalManager.Current.GetPortal(new Uri(portalUrl));
+                int startIndex = 0;
+                do
+                {
+                    query.Start = startIndex;
 
                     System.Diagnostics.Debug.WriteLine("");
                     System.Diagnostics.Debug.WriteLine(query.FinalUrl);
                     System.Diagnostics.Debug.WriteLine("");
-
-                    EsriHttpClient httpClient = new EsriHttpClient();
                     
-                    var response = httpClient.Get(query.FinalUri.ToString());
-                    var raw = response.Content.ReadAsStringAsync().Result;//block
-                    stats = ProcessResults(results, raw, query);
-                } while (stats.Item2 < maxResults && stats.Item2 > 0);
+                    PortalQueryResultSet<PortalItem> portalResults =  await ArcGISPortalExtensions.SearchForContentAsync(portal, query.PortalQueryParams);
+                    
+                    foreach (var item in portalResults.Results.OfType<PortalItem>())
+                    {
+                        results.Add(item);
+                    }
+                    startIndex = results.Count + startIndex;
+            } while (startIndex < maxResults) ;
 
-            }
-            catch (WebException we) {
+        }
+            catch (WebException we)
+            {
                 //bad request
                 _response.AppendLine("");
                 _response.AppendLine("WebException: " + we.Message);
@@ -143,26 +199,46 @@ namespace ConfigWithStartWizard.Common {
                 _response.AppendLine("");
                 _response.AppendLine(new Uri(query.FinalUrl).Scheme.ToUpper() + " " +
                                      ((int)we.Status).ToString());
-                try {
+                try
+                {
                     _errorResponse = new StreamReader(we.Response.GetResponseStream()).ReadToEnd();
                     _response.AppendLine(_errorResponse);
                 }
-                catch {
+                catch
+                {
                 }
             }
-            finally {
-                //content = _response.ToString()
-                //    .Replace("{", "{\r\n")
-                //    .Replace("}", "\r\n}")
-                //    .Replace(",\"", ",\r\n\"");
+            finally
+            {
+               
             }
-            return _response.ToString();
+            //return _response.ToString();
+        }
+
+        private Tuple<long, int> ProcessResults2(ObservableCollection<PortalItem> results)
+        {
+            long num = -1;
+            int next = -1;
+            if ((results == null) || (results.Count == 0))
+                return new Tuple<long, int>(num, next);
+            
+
+            var numberOfTotalItems = results.Count;
+
+            if (numberOfTotalItems > 0)
+            {
+               
+                num = numberOfTotalItems;
+                next = numberOfTotalItems + 1;
+            }
+            return new Tuple<long, int>(num, next);
         }
 
         private Tuple<long, long> ProcessResults(
             ObservableCollection<OnlineResultItem> results,
             string json,
-            OnlineQuery query) {
+            OnlineQuery query)
+        {
             long num = -1;
             long next = -1;
             if (string.IsNullOrEmpty(json))
@@ -177,12 +253,14 @@ namespace ConfigWithStartWizard.Common {
             long numberOfTotalItems = queryResults.total.Value;
             int count = 0;
 
-            if (numberOfTotalItems > 0) {
+            if (numberOfTotalItems > 0)
+            {
                 //these are the results
                 List<dynamic> userItemResults = new List<dynamic>();
                 // store the results in the list
                 userItemResults.AddRange(queryResults.results);
-                foreach (dynamic item in userItemResults) {
+                foreach (dynamic item in userItemResults)
+                {
                     count++;
                     OnlineResultItem ri = new OnlineResultItem();
                     ri.Id = item.id;

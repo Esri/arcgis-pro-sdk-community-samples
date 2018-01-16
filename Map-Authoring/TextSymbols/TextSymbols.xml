@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TextSymbols</name>
+    </assembly>
+    <members>
+        <member name="T:TextSymbols.TextSymbolsGalleryView">
+            <summary>
+            Interaction logic for LabelGalleryView.xaml
+            </summary>
+            <summary>
+            TextSymbolsGalleryView
+            </summary>
+        </member>
+        <member name="M:TextSymbols.TextSymbolsGalleryView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:TextSymbols.TextSymbolsGalleryViewModel.Show">
+            <summary>
+            Show the DockPane.
+            </summary>
+        </member>
+        <member name="F:TextSymbols.TextSymbolsGalleryViewModel._heading">
+            <summary>
+            Text shown near the top of the DockPane.
+            </summary>
+        </member>
+        <member name="P:TextSymbols.TextSymbolsGalleryViewModel.ActiveMapLayers">
+            <summary>
+            Collection of feature layers in the active map
+            </summary>
+        </member>
+        <member name="P:TextSymbols.TextSymbolsGalleryViewModel.SelectedLayer">
+            <summary>
+            The selected feature layer
+            </summary>
+        </member>
+        <member name="P:TextSymbols.TextSymbolsGalleryViewModel.IsLabelVisible">
+            <summary>
+            Checks if the label visibility for the layer should be set
+            </summary>
+        </member>
+        <member name="P:TextSymbols.TextSymbolsGalleryViewModel.CustomTextStyles">
+            <summary>
+            Collection of custom text symbols
+            </summary>
+        </member>
+        <member name="P:TextSymbols.TextSymbolsGalleryViewModel.SelectedTextStyle">
+            <summary>
+            Selected Text symbol
+            </summary>
+        </member>
+        <member name="P:TextSymbols.TextSymbolsGalleryViewModel.DockpaneVisible">
+            <summary>
+            Controls the visible state of the controls on the dockpane
+            </summary>
+            <remarks>Dockpane visibility controlled from the module</remarks>
+        </member>
+        <member name="M:TextSymbols.TextSymbolsGalleryViewModel.AddStyleItemToStyle(ArcGIS.Desktop.Mapping.StyleProjectItem,ArcGIS.Desktop.Mapping.SymbolStyleItem)">
+            <summary>
+            Adds a styleitem to a style.
+            </summary>
+            <param name="styleProjectItem"></param>
+            <param name="cimSymbolStyleItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TextSymbols.TextSymbolsGalleryViewModel.CreateStyleProjectItemAsync">
+            <summary>
+            Create a styleProject item.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TextSymbols.TextSymbolsGalleryViewModel.CreateSymbolStyleItem(ArcGIS.Core.CIM.CIMSymbol,System.String)">
+            <summary>
+            Creates a SymbolStyleItem from a symbol
+            </summary>
+            <param name="symbol"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TextSymbols.LabelGallery_ShowButton">
+            <summary>
+            Button implementation to show the DockPane.
+            </summary>
+        </member>
+        <member name="T:TextSymbols.Module1">
+            <summary>
+            This sample creates custom text symbol items that you can use to label feature layers and Annotation layers.  
+            These text symbol items are stored in a personal style file in your project that you can re-use. 
+            Community Sample data (see under the "Resources" section for downloading sample data) has a TextSymbols.ppkx 
+            project package that contains Annotation and Feature layers that can be used for this sample. 
+            This project package is can be found under C:\Data\TextSymbols folder. Alternatively,
+            you can also use any Annotation and Feature layers to work with this sample.
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.  
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro will open. 
+            1. Open C:\Data\TextSymbols\TextSymbols.ppkx or any project file that has a map with feature layers and/or Annotation layers. 
+            1. Activate the map.
+            1. In the Add-in tab, click the "Text Symbols Gallery" button.
+            1. In the Text Symbols Gallery dockpane, you can see the custom text symbols available in this sample. 
+            ![UI](screenshots/LabelGalery.png) 
+            1. Select a text symbol.
+            1. Select the Layer you want to label from the collection of feature layers in the combo box.
+            1. Click the Label button to apply the lables. 
+            </remarks>
+        </member>
+        <member name="P:TextSymbols.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:TextSymbols.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="M:TextSymbols.TextSymbols.CreateSimpleTextAsync">
+            <summary>
+             Creates a simple black text symbol with a size of 8.5, Font Family "Corbel" and Font Style of "Regular".
+            ![lineCallOut](http://Esri.github.io/arcgis-pro-sdk/images/Labeling/SimpleText.png "Text symbol")
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TextSymbols.TextSymbols.CreateTextSymbolWithHaloAsync">
+            <summary>
+            Creates a text symbol with a red halo
+            ![halo](http://Esri.github.io/arcgis-pro-sdk/images/Labeling/halo.png "Text Symbol with a halo")
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TextSymbols.TextSymbols.CreateSimpleLineCalloutAsync">
+            <summary>
+            Creates a simple line callout text symbol.  The [CIMSimpleLineCallout](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic2760.html) created is a dash-dot-dash line symbol with an offset of 10 from the geometry being labeled.
+            ![lineCallOut](http://Esri.github.io/arcgis-pro-sdk/images/Labeling/line-callout.png "Line Callout text symbol")
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TextSymbols.TextSymbols.CreateBalloonCalloutAsync">
+            <summary>
+            Creates a black banner balloon callout text symbol. The [CIMBalloonCallout](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic487.html) created is a rectangular polygon with rounded corners.
+            ![lineCallOut](http://Esri.github.io/arcgis-pro-sdk/images/Labeling/banner-callout.png "Black banner text symbol")
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TextSymbols.TextSymbols.CreatePointCallOutAsync">
+            <summary>
+            Creates a highway shield callout text symbol. The [CIMPointSymbolCallout](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic4116.html) created is a highway shield point symbol from the ArcGIS 2D style.
+            ![lineCallOut](http://Esri.github.io/arcgis-pro-sdk/images/Labeling/highway-callout.png "Highway shield text symbol")
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TextSymbols.TextSymbols.CreateBackgroundCalloutAsync">
+            <summary>
+            Creates a solid fill background text symbol with an Accent bar and leader line.  The [CIMBackgroundCallout](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic474.html) created has a solid fill aqua polygon, with a black dash-dot-dash leader line and a solid accent bar.
+            ![lineCallOut](http://Esri.github.io/arcgis-pro-sdk/images/Labeling//background-callout.png "background callout symbol")
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>

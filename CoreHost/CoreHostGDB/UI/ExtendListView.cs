@@ -84,8 +84,7 @@ namespace CoreHostGDB.UI {
             gv.Columns.Clear();
             if (Columns == null)
                 return;//there are no columns
-
-            int col = 0;
+            
             foreach (var column in Columns) {
                 //foreach (var field in ((RowData)theListView.ItemsSource).Columns) {
                 string columnName = column.AliasName;

@@ -60,10 +60,10 @@ namespace DomainsUsage
         /// </summary>
         /// <param name="mapViewEventArgs"></param>
         private async void UpdateDomainList(MapViewEventArgs mapViewEventArgs)
-        {
-            if (MapView.Active == null ||
+        {     
+            if (mapViewEventArgs.MapView == null || (
                 mapViewEventArgs.MapView.GetSelectedLayers().Count < 1 ||
-                !(mapViewEventArgs.MapView.GetSelectedLayers()[0] is FeatureLayer))
+                !(mapViewEventArgs.MapView.GetSelectedLayers()[0] is FeatureLayer)))
             {
                 Enabled = false;
                 return;

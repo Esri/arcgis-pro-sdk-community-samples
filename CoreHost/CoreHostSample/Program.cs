@@ -29,25 +29,26 @@ namespace CoreHostSample {
     //There must be a reference to ArcGIS.CoreHost.dll
     using ArcGIS.Core.Hosting;
 
-    /// <summary>
-    /// ArcGIS Pro based console application reading from File Geodatabase
-    /// </summary>
-    /// <remarks>
-    /// 1. Open this solution in Visual Studio 
-    /// 1. Click the build menu and select Build Solution.
-    /// 1. Specify a valid path to a file geodatabase as your debug command line parameter 
-    /// 1. Click the Start button to run the console app.
-    /// 1. View the table definition in your file geodatabase
-    /// ![UI](Screenshots/ConsoleWindow.png)
-    /// 1. Once the output stops press any key to close the application.  
-    /// </remarks>
-    class Program {
+	/// <summary>
+	/// ArcGIS Pro based console application reading from File Geodatabase
+	/// </summary>
+	/// <remarks>
+	/// 1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\SDK\SDK.gdb" is available.
+	/// 1. Open this solution in Visual Studio 
+	/// 1. Click the build menu and select Build Solution.
+	/// 1. Specify a valid path to a file geodatabase as your debug command line parameter 
+	/// 1. Click the Start button to run the console app.
+	/// 1. View the table definition in your file geodatabase
+	/// ![UI](Screenshots/ConsoleWindow.png)
+	/// 1. Once the output stops press any key to close the application.  
+	/// </remarks>
+	class Program {
         //[STAThread] must be present on the Application entry point
         [STAThread]
         static void Main(string[] args)
         {
             // get a geodatabase path from the command line or use this default:
-            var gdbPath = @"E:\Data\SDK\GDB\LocalGovernment.gdb";
+            var gdbPath = @"C:\Data\SDK\SDK.gdb";
             if (args.Count() > 0) gdbPath = args[0];
             //Call Host.Initialize before constructing any objects from ArcGIS.Core
             try {

@@ -35,9 +35,6 @@ namespace DeleteFeaturesBasedOnSubtype
     /// </summary>
     internal class SubtypesComboBox : ComboBox
     {
-
-        private bool _isInitialized;
-
         /// <summary>
         /// Combo Box contructor
         /// </summary>
@@ -45,11 +42,9 @@ namespace DeleteFeaturesBasedOnSubtype
         {
         }
 
-
         /// <summary>
         /// The on comboBox selection change event. 
         /// </summary>
-        /// <param name="item">The newly selected combo box item</param>
         protected override void OnDropDownOpened()
         {
             if (MapView.Active.GetSelectedLayers().Count == 1)

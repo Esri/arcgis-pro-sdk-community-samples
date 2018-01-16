@@ -42,9 +42,9 @@ namespace Renderer
         /// <returns>
         /// ![Unique Value renderer](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/unique-value.png)
         /// </returns>
-        internal static async Task UniqueValueRenderer(FeatureLayer featureLayer)
+        internal static Task UniqueValueRenderer(FeatureLayer featureLayer)
         {
-            await QueuedTask.Run(() =>
+            return QueuedTask.Run(() =>
             {                
                 //construct unique value renderer definition                
                 UniqueValueRendererDefinition uvr = new

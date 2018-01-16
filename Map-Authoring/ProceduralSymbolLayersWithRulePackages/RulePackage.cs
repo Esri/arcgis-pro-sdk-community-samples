@@ -18,6 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using ArcGIS.Desktop.Core;
+using ArcGIS.Desktop.Core.Portal;
 
 namespace ProceduralSymbolLayersWithRulePackages
 {
@@ -29,22 +30,19 @@ namespace ProceduralSymbolLayersWithRulePackages
         /// <summary>
         /// Contructor
         /// </summary>
-        /// <param name="portal"></param>
-        /// <param name="id"></param>
-        /// <param name="title"></param>
-        /// <param name="name"></param>
-        /// <param name="thumbnail"></param>
-        /// <param name="snippet"></param>
-        public RulePackage(string portal, string id = "", string title = "", string name = "", string thumbnail = "", string snippet = "")
+        /// <param name="portalItem"></param>       
+        public RulePackage(PortalItem portalItem)
         {
-            _id = id;
-            _title = title;
-            _name = name;
-            _thumbnail = thumbnail;
-           _snippet = string.IsNullOrEmpty(snippet) ?  title : snippet;            
-            _portal = portal;
+            _portalItem = portalItem;
+            _id = portalItem.ID;
+            _title = portalItem.Title;
+            _name = portalItem.Name;
+            _thumbnail = portalItem.ThumbnailPath;
+            _snippet = string.IsNullOrEmpty(portalItem.Summary) ? _title : portalItem.Summary;
+            //_portal = portal;
         }
 
+        private PortalItem _portalItem;
         private string _id;
         public string ID => _id;
 
@@ -60,29 +58,17 @@ namespace ProceduralSymbolLayersWithRulePackages
         private string _snippet;
         public string Snippet => _snippet;
 
-        private string _thumbnailUrl;
+        //private string _thumbnailUrl;
 
-        public string ThumbnailUrl
-        {
-            get { return SetThumbnailURL(); }
-        }
+        public string ThumbnailUrl => _thumbnail;
 
-        private string _portal;               
-
-        private string SetThumbnailURL()
-        {
-            //var portal = new UriBuilder(ArcGISPortalManager.Current.GetActivePortal().PortalUri.ToString());
-            _thumbnailUrl = !string.IsNullOrEmpty(Thumbnail)
-                ? string.Format("{0}/sharing/content/items/{1}/info/{2}", _portal, ID, Thumbnail)
-                : @"http://static.arcgis.com/images/desktopapp.png";
-            return _thumbnailUrl;
-        }
+        public PortalItem Portalitem => _portalItem;
 
         /// <summary>
         /// Dictionary that maps the rule package's attributes to the layer's attributes.
         /// </summary>
         public readonly IDictionary<string, IDictionary<string, string>> RpkAttributeExpressionMapping = new Dictionary<string, IDictionary<string, string>>
-        {            
+        {
                { "Paris Rule package 2014", new Dictionary<string, string> { { "Level_of_Detail", "[Level_of_Detail]"}, { "Num_Floors" , "[Floors]" }, { "Year", "[Year]" } } },
                { "Venice Rule package 2014", new Dictionary<string, string> { { "Nbr_of_Floors", "[Floors]" }, { "Roof_Type", "[roof]" }} },
                { "Extrude/Color/Rooftype Rule package 2014", new Dictionary<string, string> { { "Height", "[Floors]*3"}, { "roofForm", "[roof]" }} }

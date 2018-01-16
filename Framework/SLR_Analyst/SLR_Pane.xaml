@@ -1,0 +1,260 @@
+<!--
+
+   Copyright 2018 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<UserControl x:Class="SLR_Analyst.SLR_PaneView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             xmlns:DV="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:ui="clr-namespace:SLR_Analyst"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{Binding Path=ui.SLR_PaneViewModel}">
+     <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+			<Style x:Key="HiddenChartLegendStyle" TargetType="{x:Type DVC:Chart}">
+				<Setter Property="LegendStyle">
+					<Setter.Value>
+						<Style TargetType="{x:Type DV:Legend}">
+							<Setter Property="Width" Value="0" />
+							<Setter Property="Height" Value="0" />
+						</Style>
+					</Setter.Value>
+				</Setter>
+			</Style>
+			<Style x:Key="MyColumnDataPointStyle" TargetType="{x:Type DVC:ColumnDataPoint}">
+				<Setter Property="Background" Value="{Binding Path=ChartColor}"/>
+				<Setter Property="BorderBrush" Value="Black"/>
+				<Setter Property="BorderThickness" Value="1"/>
+				<Setter Property="IsTabStop" Value="False"/>
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type DVC:ColumnDataPoint}">
+							<Border x:Name="Root" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Opacity="0">
+								<Border.ToolTip>
+									<!--<ContentControl Content="{TemplateBinding FormattedDependentValue}"/>-->
+									<!-- TOOLTIP for bar chart -->
+									<StackPanel Margin="2,2,2,2">
+										<ContentControl Content="{TemplateBinding IndependentValue}" ContentStringFormat="Code Value: {0}"/>
+										<!--<ContentControl Content="{Binding Tooltip}" ContentStringFormat="The KeyValueWithTooltip.Code: {0}"/>-->
+										<ContentControl Content="{TemplateBinding DependentValue}" ContentStringFormat="Count: {0:###,###,###}"/>
+									</StackPanel>
+								</Border.ToolTip>
+								<VisualStateManager.VisualStateGroups>
+									<VisualStateGroup x:Name="CommonStates">
+										<VisualStateGroup.Transitions>
+											<VisualTransition From="{x:Null}" GeneratedDuration="0:0:0.1" GeneratedEasingFunction="{x:Null}" Storyboard="{x:Null}" To="{x:Null}"/>
+										</VisualStateGroup.Transitions>
+										<VisualState x:Name="Normal"/>
+										<VisualState x:Name="MouseOver">
+											<Storyboard>
+												<DoubleAnimation Duration="0" To="0.6" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="MouseOverHighlight"/>
+											</Storyboard>
+										</VisualState>
+									</VisualStateGroup>
+									<VisualStateGroup x:Name="SelectionStates">
+										<VisualStateGroup.Transitions>
+											<VisualTransition From="{x:Null}" GeneratedDuration="0:0:0.1" GeneratedEasingFunction="{x:Null}" Storyboard="{x:Null}" To="{x:Null}"/>
+										</VisualStateGroup.Transitions>
+										<VisualState x:Name="Unselected"/>
+										<VisualState x:Name="Selected">
+											<Storyboard>
+												<DoubleAnimation Duration="0" To="0.6" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="SelectionHighlight"/>
+											</Storyboard>
+										</VisualState>
+									</VisualStateGroup>
+									<VisualStateGroup x:Name="RevealStates">
+										<VisualStateGroup.Transitions>
+											<VisualTransition From="{x:Null}" GeneratedDuration="0:0:0.5" GeneratedEasingFunction="{x:Null}" Storyboard="{x:Null}" To="{x:Null}"/>
+										</VisualStateGroup.Transitions>
+										<VisualState x:Name="Shown">
+											<Storyboard>
+												<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Root"/>
+											</Storyboard>
+										</VisualState>
+										<VisualState x:Name="Hidden">
+											<Storyboard>
+												<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Root"/>
+											</Storyboard>
+										</VisualState>
+									</VisualStateGroup>
+								</VisualStateManager.VisualStateGroups>
+								<Grid Background="{TemplateBinding Background}">
+									<Rectangle>
+										<Rectangle.Fill>
+											<LinearGradientBrush>
+												<GradientStop Color="#77FFFFFF" Offset="0"/>
+												<GradientStop Color="Transparent" Offset="1"/>
+											</LinearGradientBrush>
+										</Rectangle.Fill>
+									</Rectangle>
+									<Border BorderBrush="#CCFFFFFF" BorderThickness="1">
+										<Border BorderBrush="#77FFFFFF" BorderThickness="1"/>
+									</Border>
+									<Rectangle x:Name="SelectionHighlight" Fill="Red" Opacity="0"/>
+									<Rectangle x:Name="MouseOverHighlight" Fill="White" Opacity="0"/>
+								</Grid>
+							</Border>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+			<Style x:Key="MyPieDataPointStyle1" TargetType="{x:Type DVC:PieDataPoint}">
+				<Setter Property="Background" Value="{Binding Path=ChartColor}"/>
+				<Setter Property="BorderBrush" Value="White"/>
+				<Setter Property="BorderThickness" Value="1"/>
+				<Setter Property="IsTabStop" Value="False"/>
+				<Setter Property="RatioStringFormat" Value="{}{0:p2}"/>
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type DVC:PieDataPoint}">
+							<Grid x:Name="Root" Opacity="0">
+								<VisualStateManager.VisualStateGroups>
+									<VisualStateGroup x:Name="CommonStates">
+										<VisualStateGroup.Transitions>
+											<VisualTransition From="{x:Null}" GeneratedDuration="0:0:0.1" GeneratedEasingFunction="{x:Null}" Storyboard="{x:Null}" To="{x:Null}"/>
+										</VisualStateGroup.Transitions>
+										<VisualState x:Name="Normal"/>
+										<VisualState x:Name="MouseOver">
+											<Storyboard>
+												<DoubleAnimation Duration="0" To="0.6" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="MouseOverHighlight"/>
+											</Storyboard>
+										</VisualState>
+									</VisualStateGroup>
+									<VisualStateGroup x:Name="SelectionStates">
+										<VisualStateGroup.Transitions>
+											<VisualTransition From="{x:Null}" GeneratedDuration="0:0:0.1" GeneratedEasingFunction="{x:Null}" Storyboard="{x:Null}" To="{x:Null}"/>
+										</VisualStateGroup.Transitions>
+										<VisualState x:Name="Unselected"/>
+										<VisualState x:Name="Selected">
+											<Storyboard>
+												<DoubleAnimation Duration="0" To="0.6" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="SelectionHighlight"/>
+											</Storyboard>
+										</VisualState>
+									</VisualStateGroup>
+									<VisualStateGroup x:Name="RevealStates">
+										<VisualStateGroup.Transitions>
+											<VisualTransition From="{x:Null}" GeneratedDuration="0:0:0.5" GeneratedEasingFunction="{x:Null}" Storyboard="{x:Null}" To="{x:Null}"/>
+										</VisualStateGroup.Transitions>
+										<VisualState x:Name="Shown">
+											<Storyboard>
+												<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Root"/>
+											</Storyboard>
+										</VisualState>
+										<VisualState x:Name="Hidden">
+											<Storyboard>
+												<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Root"/>
+											</Storyboard>
+										</VisualState>
+									</VisualStateGroup>
+								</VisualStateManager.VisualStateGroups>
+								<Path x:Name="Slice" Data="{TemplateBinding Geometry}" Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" StrokeMiterLimit="1">
+									<Path.ToolTip>
+										<!-- TOOLTIP for Pie chart -->
+										<StackPanel Margin="2,2,2,2">
+											<ContentControl Content="{TemplateBinding IndependentValue}" ContentStringFormat="Code Value: {0}"/>
+											<!--<ContentControl Content="{Binding Tooltip}" ContentStringFormat="The KeyValueWithTooltip.Code: {0}"/>-->
+											<ContentControl Content="{TemplateBinding DependentValue}" ContentStringFormat="Count: {0:###,###,###}"/>
+											<ContentControl Content="{TemplateBinding FormattedRatio}"/>
+										</StackPanel>
+									</Path.ToolTip>
+								</Path>
+								<Path x:Name="SelectionHighlight" Data="{TemplateBinding GeometrySelection}" Fill="Red" IsHitTestVisible="False" Opacity="0" StrokeMiterLimit="1"/>
+								<Path x:Name="MouseOverHighlight" Data="{TemplateBinding GeometryHighlight}" Fill="White" IsHitTestVisible="False" Opacity="0" StrokeMiterLimit="1"/>
+							</Grid>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+		</ResourceDictionary>
+    </UserControl.Resources>
+  <Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*"></ColumnDefinition>
+			<ColumnDefinition Width="1*"></ColumnDefinition>
+			<ColumnDefinition Width="1*"></ColumnDefinition>
+			<ColumnDefinition Width="1*"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="*"></RowDefinition>
+		</Grid.RowDefinitions>
+		<StackPanel Grid.Row="0" Grid.Column="0" Margin="10" Grid.ColumnSpan="4" Orientation="Vertical" HorizontalAlignment="Stretch">
+			<TextBlock Text="{Binding PaneTitle}" Style="{DynamicResource Esri_TextBlockH1}" HorizontalAlignment="Center"></TextBlock>
+			<TextBlock Text="{Binding PaneConfiguration}" Style="{DynamicResource Esri_TextBlockH2}" HorizontalAlignment="Center"></TextBlock>
+		</StackPanel>
+
+		<Grid Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="30"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			<TextBlock Grid.Row="0" HorizontalAlignment="Left" FontSize="14" Height="24" Text="Report Results:" VerticalAlignment="Top" Margin="6,7,5,5"/>
+			<TextBox Grid.Row="1" HorizontalAlignment="Left" MinHeight="204" TextWrapping="Wrap" 
+							 Text="{Binding ReportText}"
+               VerticalScrollBarVisibility="Visible" 
+							 HorizontalScrollBarVisibility="Visible" 
+							 Margin="7" ToolTip="Selection results from each layer based on unique values results "/>
+		</Grid>
+
+		<DVC:Chart Name="SummaryChart1" Title="Land Use Affected" Grid.Row="1" Grid.Column="1" Visibility="{Binding IsVisibleLandUse}"
+								 Style="{StaticResource HiddenChartLegendStyle}">
+			<DVC:Chart.Series>
+				<DVC:ColumnSeries Name="ColumnSeriesChart" 
+                                IndependentValueBinding="{Binding Path=Key}"
+                                DependentValueBinding="{Binding Path=Value}"
+                                ItemsSource="{Binding Path=LandUseChartResult}" DataPointStyle="{DynamicResource MyColumnDataPointStyle}" >
+				</DVC:ColumnSeries>
+			</DVC:Chart.Series>
+		</DVC:Chart>
+
+		<DVC:Chart Name="SummaryChart2" Title="Parcels Affected" Grid.Row="1" Grid.Column="2" Visibility="{Binding IsVisibleParcel}"
+								 Style="{StaticResource HiddenChartLegendStyle}">
+			<DVC:Chart.Series>
+				<DVC:PieSeries Name="PieSeriesChart1"
+                                IndependentValueBinding="{Binding Path=Key}"
+                                DependentValueBinding="{Binding Path=Value}"
+                                ItemsSource="{Binding Path=ParcelChartResult}" DataPointStyle="{DynamicResource MyPieDataPointStyle1}" >
+				</DVC:PieSeries>
+			</DVC:Chart.Series>
+		</DVC:Chart>
+
+		<DVC:Chart Name="SummaryChart3" Title="Streets Affected" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" Visibility="{Binding IsVisibleStreet}"
+								 Style="{StaticResource HiddenChartLegendStyle}">
+			<DVC:Chart.PlotAreaStyle>
+				<Style TargetType="{x:Type Grid}">
+					<Setter Property="Background" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"/>
+				</Style>
+			</DVC:Chart.PlotAreaStyle>
+			<DVC:Chart.Series   >
+				<DVC:PieSeries Name="PieSeriesChart2"
+                                IndependentValueBinding="{Binding Path=Key}"
+                                DependentValueBinding="{Binding Path=Value}"
+                                ItemsSource="{Binding Path=StreetChartResult}" DataPointStyle="{DynamicResource MyPieDataPointStyle1}" >
+				</DVC:PieSeries>
+			</DVC:Chart.Series>
+		</DVC:Chart>
+
+	</Grid>
+</UserControl>

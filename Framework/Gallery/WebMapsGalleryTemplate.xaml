@@ -30,7 +30,7 @@
                         <DropShadowEffect Color="{DynamicResource Esri_Color_Gray145}" Opacity="0.4" />
                     </Image.Effect>
                     <Image.Source>
-                        <BitmapImage UriCachePolicy="CacheIfAvailable" UriSource="{Binding Path=ThumbnailUrl}"></BitmapImage>
+                        <BitmapImage UriCachePolicy="CacheIfAvailable" UriSource="{Binding Path=Thumbnail}"></BitmapImage>
                     </Image.Source>
                     <Image.ToolTip>
                         <ToolTip Content="{Binding Path=Snippet}"></ToolTip>

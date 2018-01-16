@@ -24,7 +24,7 @@
              xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
              mc:Ignorable="d"
              d:DataContext="{Binding Path=CreateFeatureService.Dockpane1ViewModel}"
-             d:DesignHeight="460" d:DesignWidth="300">
+             d:DesignHeight="600" d:DesignWidth="300">
   <UserControl.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
@@ -40,42 +40,86 @@
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
     <StackPanel Grid.Row="1"  KeyboardNavigation.TabNavigation="Local" >
-      <TextBlock Text="Sign onto portal or AGO from backstage" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-      <TextBlock Text="Portal/AGO URL:" Margin="5,0,0,0" FontSize="12" FontWeight="Regular"/>
-      <TextBox Name="BaseUrl" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap"/>
-      <Button Content="Use Active Portal" HorizontalAlignment="Right" Margin="5,5,5,0" Name="activePortalGet" VerticalAlignment="Center" Click="GetActivePortal_Click" Style="{DynamicResource Esri_Button}"/>
-      <ContentPresenter Content="{Binding EmbeddableView, Mode=OneWay}" />
-      <TextBlock Text="User Name:" Margin="5,0,0,0" FontSize="12"/>
-      <TextBox Name="username" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap"/>
+      <TextBlock Text="Sign onto portal or AGOL from backstage" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+			<StackPanel Orientation="Horizontal">
+				<Button Content="1. Use Active Portal" HorizontalAlignment="Right" Margin="5,5,5,0" VerticalAlignment="Center"
+							Command="{Binding CmdGetActivePortal}" Style="{DynamicResource Esri_Button}"/>
+				<TextBlock Text="Portal/AGOL URL &amp; User:" Margin="5,0,0,0" FontSize="12" FontWeight="Regular" VerticalAlignment="Center"/>
+			</StackPanel>
+      <TextBox Name="BaseUrl" Text="{Binding BaseUrl}" Margin="5,5,5,0" 
+							 IsReadOnly="False" TextWrapping="Wrap" BorderBrush="{Binding BaseUrlBorderBrush}"/>
+      <TextBox Name="username" Text="{Binding Username}" Margin="5,5,5,0" 
+							 IsReadOnly="False" TextWrapping="Wrap" BorderBrush="{Binding UsernameBorderBrush}"/>
       <Separator Height="10"/>
     </StackPanel>
-    <StackPanel Grid.Row="2"  KeyboardNavigation.TabNavigation="Local" >
-      <TextBlock Text="Type in the id of a portal item to publish" FontWeight="SemiBold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-      <TextBlock Text="Item id" Margin="5,0,0,0"/>
-      <TextBox Name="itemId" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap"/>
-      <Button Content="Paste from clipboard" HorizontalAlignment="Right" Margin="5,5,5,0"
-                    Name="pasteFromClipboard" VerticalAlignment="Center" Width="115" Click="pasteFromClipboard_Click" Style="{DynamicResource Esri_Button}"/>
-      <ContentPresenter Content="{Binding EmbeddableView, Mode=OneWay}" />
+    <StackPanel Grid.Row="2" KeyboardNavigation.TabNavigation="Local" >
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Button Grid.Column="0" Content="2. Get CSV Content" HorizontalAlignment="Right" 
+								Margin="5,5,5,0" VerticalAlignment="Center"
+							Command="{Binding CmdRefreshPortalContent}" Style="{DynamicResource Esri_Button}"/>
+				<TextBlock Grid.Column="1" Text="This sample will publish CSV content as a feature service, see sample instructions" FontWeight="Normal" TextWrapping="Wrap" Margin="5"/>
+			</Grid>
+			<TextBlock Text="Select a content item to publish:" Margin="5,0,0,0"/>
+			<ComboBox Name="itemId" SelectedItem="{Binding CsvPortalItem}" ItemsSource="{Binding CsvPortalItems}" Margin="5,5,5,0" 
+							 IsReadOnly="False" BorderBrush="{Binding PortalItemBorderBrush}" DisplayMemberPath="Name"/>
       <TextBlock Text="File Type:" Margin="5,0,0,0"/>
-      <TextBox Name="filetype" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap"/>
-      <ContentPresenter Content="{Binding EmbeddableView, Mode=OneWay}" />
-      <TextBlock Text="Analyze Parameters:" Margin="5,0,0,0"/>
-      <TextBox Name="publishParameters" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap"/>
+      <ComboBox Name="filetype" SelectedItem="{Binding FileType}" ItemsSource="{Binding FileTypes}" Margin="5,5,5,0" 
+							 IsReadOnly="False" BorderBrush="{Binding FileTypeBorderBrush}"/>
+			<TextBlock Text="Analyze Parameters:" Margin="5,0,0,0"/>
+			<TextBox Name="analyzeParameters" Text="{Binding AnalyzeParameters}" Margin="5,5,5,0" 
+							 ScrollViewer.HorizontalScrollBarVisibility="Auto"
+							 ScrollViewer.VerticalScrollBarVisibility="Auto"
+							 ScrollViewer.CanContentScroll="True"
+							 AcceptsReturn="True" 
+							 MinLines="4"
+							 MaxLines="4"
+							 BorderBrush="{Binding AnalyzeParametersBorderBrush}"
+							 TextWrapping="Wrap"/>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
+				<Button Name="analyzeSubmit" Grid.Column="0" Command="{Binding CmdAnalyzeSubmit}" VerticalAlignment="Center"
+								Style="{DynamicResource Esri_Button}">3. Analyze CSV Source</Button>
+				<TextBlock Grid.Column="1" Text="The analyze result will appear in the Publish Parameter field below.  See instructions on what to do next." Margin="5,0,0,0" TextWrapping="Wrap" />
+				<Button Grid.Column="2" Name="fixIt" Command="{Binding CmdFixIt}" VerticalAlignment="Center">Fix it</Button>
+			</Grid>
+			<TextBox Name="publishParameters" Text="{Binding PublishParameters}" Margin="5,5,5,0" 
+							 ScrollViewer.HorizontalScrollBarVisibility="Auto"
+							 ScrollViewer.VerticalScrollBarVisibility="Auto"
+							 ScrollViewer.CanContentScroll="True"
+							 AcceptsReturn="True" 
+							 MinLines="4"
+							 MaxLines="4"
+							 BorderBrush="{Binding PublishParametersBorderBrush}"
+							 TextWrapping="Wrap"/>
       <Separator Height="10"/>
     </StackPanel>
     <StackPanel Grid.Row="3"  KeyboardNavigation.TabNavigation="Local" >
-      <Button Name="publishSubmit" Click="OnClickPublishSubmit" Style="{DynamicResource Esri_Button}">
-        Submit</Button>
-      <Button Name="clearContents" Click="OnClickClearContents" Style="{DynamicResource Esri_Button}">
-        Clear</Button>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+				<Button Name="clearContents" Command="{Binding CmdClearContent}" Style="{DynamicResource Esri_Button}">Clear</Button>
+				<Button Name="publishSubmit" Command="{Binding CmdPublishSubmit}" Style="{DynamicResource Esri_Button}">4. Submit</Button>
+			</StackPanel>
       <Separator Height="10"/>
-      <Border BorderThickness="3">
-        <TextBlock Name="txt_serviceLink" TextWrapping="Wrap" FontSize="14" />
-      </Border>
-      <TextBlock Name="serviceLinkLabel" Text="Service Link:" Margin="5,0,0,0"  />
-      <TextBox Name="serviceLinkText" Text="{Binding ReferenceDictionary, Mode=OneWay}" Margin="5,5,5,0" IsReadOnly="False" TextWrapping="Wrap"/>
-      <Button Content="Copy to clipboard" HorizontalAlignment="Right" Margin="5,5,5,0" 
-                    Name="copyToClipboard" VerticalAlignment="Center" Width="115" Click="copyToClipboard_Click" Style="{DynamicResource Esri_Button}"/>
-    </StackPanel>
+			<StackPanel Orientation="Vertical">
+				<Border BorderThickness="3">
+					<TextBlock Name="txt_serviceLink" TextWrapping="Wrap" FontSize="14" Text="{Binding ServiceInfo}"
+								 Foreground="{Binding ServiceInfoForeground}"/>
+				</Border>
+				<TextBlock Name="serviceLinkLabel" Text="Service Link:" Margin="5,0,0,0"  />
+				<TextBox Name="serviceLinkText" Text="{Binding ServiceLinkText}" Margin="5,5,5,0" 
+							 ScrollViewer.HorizontalScrollBarVisibility="Auto"
+							 ScrollViewer.VerticalScrollBarVisibility="Auto"
+							 ScrollViewer.CanContentScroll="True"
+							 AcceptsReturn="True" MinLines="4"
+							 IsReadOnly="True" TextWrapping="Wrap"/>
+			</StackPanel>
+		</StackPanel>
   </Grid>
 </UserControl>

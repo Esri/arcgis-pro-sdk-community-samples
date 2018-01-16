@@ -71,10 +71,10 @@ namespace ConfigWithStartWizard.Models {
         /// Gets and sets the online item type
         /// </summary>
         public OnlineItemType OnlineItemType { get; set; }
-        /// <summary>
-        /// Gets and sets the underlying item for this result
-        /// </summary>
-        //public ArcGIS.Desktop.Core.Item Item { get; set; }
+        // /// <summary>
+        // /// Gets and sets the underlying item for this result
+        // /// </summary>
+        // public ArcGIS.Desktop.Core.Item Item { get; set; }
         /// <summary>
         /// Gets the Thumbnail url of the ResultItem
         /// </summary>

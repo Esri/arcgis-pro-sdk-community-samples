@@ -9,13 +9,13 @@ This sample allows uploading a desktop content item to AGOL or portal.
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
-Language:              C# 6.0
-Subject:               Sharing
+Language:              C#
+Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/28/2017
-ArcGIS Pro:            2.0
-Visual Studio:         2015, 2017
+Date:                  1/16/2018
+ArcGIS Pro:            2.1
+Visual Studio:         2017
 .NET Target Framework: 4.6.1
 ```
 
@@ -45,7 +45,7 @@ Visual Studio:         2015, 2017
 1. Click Start button to open ArcGIS Pro.  
 1. ArcGIS Pro will open.   
 1. Open any project file. Click on the Add-in tab on the ribbon and then on the "Upload AGOL item" button.  
-![UI](Screenshots/Screen1.png)    
+![UI](screenshots/UploadItem.png)    
   
 1. Fill in the required input fields and click the "Submit" button.    
   

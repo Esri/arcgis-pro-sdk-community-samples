@@ -33,8 +33,6 @@ namespace DeleteFeaturesBasedOnSubtypeVersioned
     /// </summary>
     internal class SubtypesComboBox : ComboBox
     {
-
-        private bool _isInitialized;
         private Random random;
 
         /// <summary>
@@ -118,7 +116,7 @@ namespace DeleteFeaturesBasedOnSubtypeVersioned
                         var geodatabase = table.GetDatastore() as Geodatabase;
                         enterpriseDatabaseType = (geodatabase.GetConnector() as DatabaseConnectionProperties).DBMS;
                     }
-                    catch (InvalidOperationException e)
+                    catch (InvalidOperationException)
                     {
                     }
                 }

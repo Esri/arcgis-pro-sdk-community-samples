@@ -18,19 +18,19 @@
 
 -->
 <ArcGIS defaultAssembly="UploadItem.dll" defaultNamespace="UploadItem" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{da759d83-43c1-4466-99d5-b29275ca52c4}" version="1.0" desktopVersion="2.0.0">
+  <AddInInfo id="{93883038-7f65-451c-810f-ab0edc00dccb}" version="1.0" desktopVersion="2.1.9965">
     <Name>UploadItem</Name>
-    <Description>This add-in can be used to upload an item to AGO or portal using Pro SDK upload api</Description>
+    <Description>UploadItem description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
-    <Company>esri, http://www.esri.com</Company>
-    <Date>7/22/2015 3:31:47 PM, 2015</Date>
-    <Subject>Sharing</Subject>
+    <Author>uma2526</Author>
+    <Company>Acme</Company>
+    <Date>10/19/2017 8:20:50 AM, 2017</Date>
+    <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>
   <modules>
-    <insertModule id="UploadItem_Module" className="Module1" autoLoad="false" caption="Upload API">
+    <insertModule id="UploadItem_Module" className="Module1" autoLoad="false" caption="Module1">
       <!-- uncomment to have the control hosted on a separate tab-->
       <tabs>
         <!--<tab id="UploadItem_Tab1" caption="New Tab">
@@ -40,20 +40,20 @@
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="UploadItem_Group1" caption="Sharing API (1)" appearsOnAddInTab="true" keytip="z1">
+        <group id="UploadItem_Group1" caption="Group 1" appearsOnAddInTab="true">
           <!-- host controls within groups -->
-          <button refID="UploadItem_Dockpane1_ShowButton" size="large" />
+          <button refID="UploadItem_UploadItem_ShowButton" size="large" />
         </group>
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="UploadItem_Dockpane1_ShowButton" caption="Upload AGOL item" className="Dockpane1_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="z2">
+        <button id="UploadItem_UploadItem_ShowButton" caption="Show UploadItem" className="UploadItem_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
           <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="UploadItem_Dockpane1" caption="Upload AGOL item" className="Dockpane1ViewModel" dock="group" dockWith="esri_core_contentsDockPane">
-          <content className="Dockpane1View" />
+        <dockPane id="UploadItem_UploadItem" caption="UploadItem" className="UploadItemViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="UploadItemView" />
         </dockPane>
       </dockPanes>
     </insertModule>

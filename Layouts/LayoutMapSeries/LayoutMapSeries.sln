@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutMapSeries", "LayoutMapSeries.csproj", "{E486208E-A5BB-485E-9D7C-846BE20017AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordNavigator", "RecordNavigator\RecordNavigator.csproj", "{A13A6BAB-74F8-46F1-8CA6-8F1B5540EB6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E486208E-A5BB-485E-9D7C-846BE20017AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E486208E-A5BB-485E-9D7C-846BE20017AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E486208E-A5BB-485E-9D7C-846BE20017AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E486208E-A5BB-485E-9D7C-846BE20017AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A13A6BAB-74F8-46F1-8CA6-8F1B5540EB6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A13A6BAB-74F8-46F1-8CA6-8F1B5540EB6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A13A6BAB-74F8-46F1-8CA6-8F1B5540EB6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A13A6BAB-74F8-46F1-8CA6-8F1B5540EB6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5F97DBD-B870-484B-A529-453D689A266E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5F97DBD-B870-484B-A529-453D689A266E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5F97DBD-B870-484B-A529-453D689A266E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5F97DBD-B870-484B-A529-453D689A266E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CDD95B3A-18C0-4808-AE9E-6D5842D3BA7C}
+	EndGlobalSection
+EndGlobal

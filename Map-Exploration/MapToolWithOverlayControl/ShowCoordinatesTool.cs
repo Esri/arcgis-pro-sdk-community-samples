@@ -29,11 +29,15 @@ namespace MapToolWithOverlayControl
   {
     public ShowCoordinatesTool()
     {
-      //Set the tools OverlayControlID to the DAML id of the embeddable control
-      OverlayControlID = "MapToolWithOverlayControl_EmbeddableControl";
+            //Set the tools OverlayControlID to the DAML id of the embeddable control
+            OverlayControlID = "MapToolWithOverlayControl_EmbeddableControl";
+            //Embeddable control can be resized
+            OverlayControlCanResize = true;
+            //Specify ratio of 0 to 1 to place the control
+            OverlayControlPositionRatio = new System.Windows.Point(0, 0.95); //bottom left
     }
 
-    protected override void OnToolMouseDown(MapViewMouseButtonEventArgs e)
+        protected override void OnToolMouseDown(MapViewMouseButtonEventArgs e)
     {
       //On mouse down check if the mouse button pressed is the left mouse button. If it is handle the event.
       if (e.ChangedButton == System.Windows.Input.MouseButton.Left)

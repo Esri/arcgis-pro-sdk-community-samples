@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--//   Copyright 2014 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
     <Name>Localization</Name>
     <Description>Localization description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>1/13/2015 1:31:18 PM, 2015</Date>
     <Subject>Framework</Subject>
@@ -36,14 +36,14 @@
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="Localization_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="Z0" >
+        <group id="Localization_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="Z0">
           <!-- host controls within groups -->
           <button refID="Localization_DockpaneLocalized_ShowButton" size="large" />
         </group>
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="Localization_DockpaneLocalized_ShowButton" caption="Show Localized Dockpane" className="DockpaneLocalized_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="Z1" >
+        <button id="Localization_DockpaneLocalized_ShowButton" caption="Show Localized Dockpane" className="DockpaneLocalized_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="Z1">
           <tooltip heading="Show Dockpane">Show Dockpane: More content here ...<disabledText /></tooltip>
         </button>
       </controls>

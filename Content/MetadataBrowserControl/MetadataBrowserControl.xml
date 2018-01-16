@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MetadataBrowserControl</name>
+    </assembly>
+    <members>
+        <member name="T:MetadataBrowserControl.ItemMetadata">
+            <summary>
+            Represents the metadata of the Item selected
+            </summary>
+        </member>
+        <member name="M:MetadataBrowserControl.ItemMetadata.#ctor(ArcGIS.Desktop.Core.Item,System.String)">
+            <summary>
+            Initializes the ItemMetadata
+            </summary>
+            <param name="item"></param>
+            <param name="xml"></param>
+        </member>
+        <member name="M:MetadataBrowserControl.ItemMetadata.GetXML(ArcGIS.Desktop.Core.Item)">
+            <summary>
+            Obtains the XML of the project item
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MetadataBrowserControl.ItemMetadata.TransformXML(System.String,System.String)">
+            <summary>
+            Applies the transform to view the metadata in a browser control
+            </summary>
+            <param name="xml"></param>
+            <param name="xsltPath"></param>
+            <returns></returns>
+        </member>
+        <member name="F:MetadataBrowserControl.Utility.WebBrowserUtility.BindableSourceProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MetadataBrowserControl.Utility.WebBrowserUtility.GetBindableSource(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MetadataBrowserControl.Utility.WebBrowserUtility.SetBindableSource(System.Windows.DependencyObject,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:MetadataBrowserControl.Utility.WebBrowserUtility.BindableSourcePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:MetadataBrowserControl.MetadataBrowserView">
+            <summary>
+            Interaction logic for Dockpane1View.xaml
+            </summary>
+            <summary>
+            MetadataBrowserView
+            </summary>
+        </member>
+        <member name="M:MetadataBrowserControl.MetadataBrowserView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:MetadataBrowserControl.MetadataBrowserViewModel.Show">
+            <summary>
+            Show the DockPane.
+            </summary>
+        </member>
+        <member name="F:MetadataBrowserControl.MetadataBrowserViewModel._webPage">
+            <summary>
+            The string to display in the browser control - represents the transformed XML of the project item's metadata
+            </summary>
+        </member>
+        <member name="P:MetadataBrowserControl.MetadataBrowserViewModel.ItemInformation">
+            <summary>
+            The selected project item's ItemMetadata
+            </summary>
+        </member>
+        <member name="F:MetadataBrowserControl.MetadataBrowserViewModel._dockpaneVisible">
+            <summary>
+            Visibility of dockpane
+            </summary>
+        </member>
+        <member name="P:MetadataBrowserControl.MetadataBrowserViewModel.XSLFiles">
+            <summary>
+            Collection of XSLFiles displayed in combo box
+            </summary>
+        </member>
+        <member name="P:MetadataBrowserControl.MetadataBrowserViewModel.SelectedXSL">
+            <summary>
+            The selected XSLFile to apply the transform with
+            </summary>
+        </member>
+        <member name="M:MetadataBrowserControl.MetadataBrowserViewModel.ApplyTransform">
+            <summary>
+            Applies the transform to view the metadata in a browser control
+            </summary>
+        </member>
+        <member name="T:MetadataBrowserControl.Dockpane1_ShowButton">
+            <summary>
+            Button implementation to show the DockPane.
+            </summary>
+        </member>
+        <member name="T:MetadataBrowserControl.Module1">
+            <summary>
+            This sample demonstrates how to view the Metadata of a Project item using the Pro API in a browser control with a transform applied to it.
+            Note: Metadata of certain items such as system styles cannot be viewed.
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution. 
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro will open. 
+            1. Open any project file that contains project items such as Maps, toolboxs, databases with metadata. 
+            1. In the Catalog pane, select any item that has metadata.
+            1. Select the Add-in tab and click the Metadata Transform viewer button.  The Metadata Viewer dockpane will be displayed.
+            1. The dockpane will display the metadata of the project item selected in a browser control.
+            1. Note that a default transform located in the ArcGIS Pro installation folder is applied to display the metadata.  `C:\Program Files\ArcGIS\Pro\Resources\Metadata\Stylesheets\XML.xsl`
+            ![UI](Screenshots/MetadataViewer.png)
+            </remarks>
+        </member>
+        <member name="P:MetadataBrowserControl.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:MetadataBrowserControl.Module1.Initialize">
+            <summary>
+            Initialize logic for the custom module
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MetadataBrowserControl.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="M:MetadataBrowserControl.Module1.OnProjectOpened(ArcGIS.Desktop.Core.Events.ProjectEventArgs)">
+            <summary>
+            Event handler for the Project Opened event
+            </summary>
+            <param name="arg"></param>
+        </member>
+        <member name="M:MetadataBrowserControl.Module1.OnSelectedItemChanged(ArcGIS.Desktop.Core.Events.ProjectWindowSelectedItemsChangedEventArgs)">
+            <summary>
+            Subscribes to the Selected item changed event. ItemInfo of the selected item is instantiated.
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="T:MetadataBrowserControl.XSLFile">
+            <summary>
+            Represents the stylesheet picked to apply the transform with
+            </summary>
+        </member>
+    </members>
+</doc>

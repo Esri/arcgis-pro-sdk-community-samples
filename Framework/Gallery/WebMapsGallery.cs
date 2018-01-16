@@ -19,11 +19,11 @@ using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows;
 using ArcGIS.Desktop.Core;
+using ArcGIS.Desktop.Core.Portal;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
-using Newtonsoft.Json.Linq;
 
 namespace GalleryDemo
 {
@@ -71,61 +71,43 @@ namespace GalleryDemo
     #region Get Webmaps and open it.
     private static string _arcgisOnline = @"http://www.arcgis.com:80/";
 
-    /// <summary>
-    /// Gets a collection of web map items from ArcGIS Online
-    /// </summary>
-    /// <returns></returns>
-    private async Task<List<WebMapItem>> GetWebMapsAsync()
-    {
-      var lstWebmapItems = new List<WebMapItem>();
-      try
-      {
-        await QueuedTask.Run(async () =>
+        /// <summary>
+        /// Gets a collection of web map items from ArcGIS Online
+        /// </summary>
+        /// <returns></returns>
+        private async Task<List<WebMapItem>> GetWebMapsAsync()
         {
-                  //building the URL to get the webmaps.                   
-                  UriBuilder searchURL = new UriBuilder(_arcgisOnline) { Path = "sharing/rest/search" };
-          EsriHttpClient httpClient = new EsriHttpClient();
+            var lstWebmapItems = new List<WebMapItem>();
+            try
+            {
+                await QueuedTask.Run(async () =>
+                {
+                    ArcGISPortal portal = ArcGISPortalManager.Current.GetPortal(new Uri(_arcgisOnline));
+                    PortalQueryParameters query = PortalQueryParameters.CreateForItemsOfType(PortalItemType.WebMap);
 
-                  //these are the webmaps we will download for this sample
-                  string webmaps =
-                      "(type:\"Web Map\")&f=json";
-          searchURL.Query = string.Format("q={0}&f=json", webmaps);
-          var searchResponse = httpClient.Get(searchURL.Uri.ToString());
+                    PortalQueryResultSet<PortalItem> results = await ArcGIS.Desktop.Core.ArcGISPortalExtensions.SearchForContentAsync(portal, query);
 
-                  //Parsing the JSON retrieved.
-                  dynamic resultItems = JObject.Parse(await searchResponse.Content.ReadAsStringAsync());
+                    if (results == null)
+                        return;
 
-          long numberOfTotalItems = resultItems.total.Value;
-          if (numberOfTotalItems == 0)
-            return;
+                    foreach (var item in results.Results.OfType<PortalItem>())
+                    {
+                        lstWebmapItems.Add(new WebMapItem(item));
+                    }
+                });
 
-          List<dynamic> resultItemList = new List<dynamic>();
-          resultItemList.AddRange(resultItems.results);
-
-                  //creating the collection of Rule packages from the parsed JSON.
-                  foreach (dynamic item in resultItemList)
-          {
-            var id = item.id.ToString();
-            var title = item.title.ToString();
-            var name = item.name.ToString();
-            var snippet = item.snippet.ToString();
-            var thumbnail = item.thumbnail.ToString();
-            var owner = item.owner.ToString();
-            lstWebmapItems.Add(new WebMapItem(_arcgisOnline, id, title, name, thumbnail, snippet, owner));
-          }
-        });
-      }
-      catch (Exception ex)
-      {
-        System.Diagnostics.Debug.WriteLine(ex.Message);
-      }
-      return lstWebmapItems;
-    }
-    /// <summary>
-    /// Opens a web map item in a map pane.
-    /// </summary>
-    /// <param name="item"></param>
-    private async void OpenWebMapAsync(object item)
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+            return lstWebmapItems;
+        }
+        /// <summary>
+        /// Opens a web map item in a map pane.
+        /// </summary>
+        /// <param name="item"></param>
+        private async void OpenWebMapAsync(object item)
     {
 
       if (item is WebMapItem)

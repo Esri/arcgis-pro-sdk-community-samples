@@ -10,12 +10,12 @@ This sample allows uploading a desktop content item to AGOL or portal.
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
-Subject:               Sharing
+Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  4/20/2017
-ArcGIS Pro:            2.0
-Visual Studio:         2015, 2017
+Date:                  1/16/2018
+ArcGIS Pro:            2.1
+Visual Studio:         2017
 .NET Target Framework: 4.6.1
 ```
 
@@ -31,6 +31,10 @@ Visual Studio:         2015, 2017
 
 ![ArcGIS Pro SDK for .NET Icons](https://esri.github.io/arcgis-pro-sdk/images/Home/Image-of-icons.png "ArcGIS Pro SDK Icons")
 
+* [ProSnippets: 2.0 Migration](http://github.com/Esri/arcgis-pro-sdk/wiki/ProSnippets-Migrating-to-2.0)  
+* [ProSnippets: 2.0 Migration Samples](http://github.com/Esri/arcgis-pro-sdk/wiki/ProSnippets-2.0-Migration-Samples)  
+* [ProConcepts: 2.0 Migration](http://github.com/Esri/arcgis-pro-sdk/wiki/ProConcepts-2.0-Migration-Guide)  
+
 ### Samples Data
 
 * Sample data for ArcGIS Pro SDK Community Samples can be downloaded from the [repo releases](https://github.com/Esri/arcgis-pro-sdk-community-samples/releases) page.  
@@ -41,7 +45,7 @@ Visual Studio:         2015, 2017
 1. Click Start button to open ArcGIS Pro.  
 1. ArcGIS Pro will open.   
 1. Open any project file. Click on the Add-in tab on the ribbon and then on the "Upload AGOL item" button.  
-![UI](Screenshots/Screen1.png)    
+![UI](screenshots/UploadItem.png)    
   
 1. Fill in the required input fields and click the "Submit" button.    
   

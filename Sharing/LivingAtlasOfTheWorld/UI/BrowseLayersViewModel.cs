@@ -31,6 +31,7 @@ using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
+using ArcGIS.Desktop.Core.Portal;
 
 namespace LivingAtlasOfTheWorld.UI {
     /// <summary>
@@ -42,7 +43,8 @@ namespace LivingAtlasOfTheWorld.UI {
         private List<OnlineQuery> _browseQueries = new List<OnlineQuery>();
         private OnlineQuery _selectedOnlineQuery = null;
         private string _keywords = "";
-        private ObservableCollection<OnlineResultItem> _results = new ObservableCollection<OnlineResultItem>();
+
+        private ObservableCollection<PortalItem> _results = new ObservableCollection<PortalItem>();
         private ICommand _submitQueryCommand = null;
 
         private DispatcherTimer _timer = null;
@@ -54,8 +56,8 @@ namespace LivingAtlasOfTheWorld.UI {
         private bool _isInitialized = false;
         private bool _addFailed = false;
 
-        private static List<string> _resultOptions = new List<string>() {"Layer", "Web Map"};
-        private string _selResultOption = "";
+        private static List<PortalItemType> _resultOptions = new List<PortalItemType>() {PortalItemType.Layer, PortalItemType.WebMap};
+        private PortalItemType _selResultOption;
 
         public BrowseLayersViewModel() {
             BindingOperations.CollectionRegistering += BindingOperations_CollectionRegistering;
@@ -67,34 +69,38 @@ namespace LivingAtlasOfTheWorld.UI {
                 BindingOperations.EnableCollectionSynchronization(_results, new object());
         }
 
-        private void Initialize() {
+        private void Initialize()
+        {
             if (_isInitialized)
                 return;
             _isInitialized = true;
             _selResultOption = _resultOptions[0];
             OnlineUriFactory.CreateOnlineUris();
-            foreach (var uri in OnlineUriFactory.OnlineUris) {
-        //create a query
-        OnlineQuery query = new OnlineQuery()
-        {
-          OnlineUri = uri
-        };
-        _browseQueries.Add(query);
+            foreach (var uri in OnlineUriFactory.OnlineUris)
+            {
+                //create a query
+                OnlineQuery query = new OnlineQuery()
+                {
+                    OnlineUri = uri
+                };
+                _browseQueries.Add(query);
             }
 
             //init timer
-            _timer = new DispatcherTimer() {
+            _timer = new DispatcherTimer()
+            {
                 Interval = TimeSpan.FromMilliseconds(25d),
                 IsEnabled = false
             };
-            _timer.Tick += (o, e) => {
+            _timer.Tick += (o, e) =>
+            {
                 //update the progress bar
                 _progressValue += 1.0;
                 if (_progressValue > _maxProgressValue)
                     _progressValue = 1.0;
                 FrameworkApplication.Current.Dispatcher.Invoke(() => OnPropertyChanged("ProgressValue"));
             };
-            
+
         }
         /// <summary>
         /// Gets the title
@@ -170,7 +176,7 @@ namespace LivingAtlasOfTheWorld.UI {
         /// <summary>
         /// Gets the list of results from the query
         /// </summary>
-        public ObservableCollection<OnlineResultItem> Results {
+        public ObservableCollection<PortalItem> Results {
             get {
                 return _results;
             }
@@ -179,20 +185,20 @@ namespace LivingAtlasOfTheWorld.UI {
         /// <summary>
         /// Gets the list of supported result options
         /// </summary>
-        public static IReadOnlyList<string> ResultOptions {
+        public static IReadOnlyList<PortalItemType> ResultOptions {
             get {
                 return _resultOptions;
             }
         }
-        /// <summary>
-        /// Gets and sets the current result option
-        /// </summary>
-        /// <remarks>Whether to return web maps or layers</remarks>
-        public string SelectedResultOption {
-            get {
+        public PortalItemType SelectedResultOption
+        {
+            get
+            {
+
                 return _selResultOption;
             }
-            set {
+            set
+            {
                 _selResultOption = value;
                 OnPropertyChanged();
                 SubmitQuery();
@@ -203,7 +209,7 @@ namespace LivingAtlasOfTheWorld.UI {
         /// </summary>
         public string LinkText {
             get {
-                string linkText = (SelectedResultOption == "Layer" ? "Add layer to map" : "Add web map");
+                string linkText = (SelectedResultOption == PortalItemType.Layer ? "Add layer to map" : "Add web map");
                 return linkText;
             }
         }
@@ -236,22 +242,15 @@ namespace LivingAtlasOfTheWorld.UI {
 
             string id = url;
             //get the query result
-            var result = _results.FirstOrDefault(ri => ri.Id == id);
+            var result = _results.FirstOrDefault(ri => ri.ID == id);
             if (result == null)
                 throw new ApplicationException(string.Format("Debug: bad id {0}",id));
-            if (result.Item == null)
-                result.Item = ItemFactory.Instance.Create(id, ItemFactory.ItemType.PortalItem);
-            // Syntax can get complicated here
-            // Question - do you need to await the QueuedTask.Run? If so, you need a Func<Task>
-            // and not an Action.
-            //http://stackoverflow.com/questions/20395826/explicitly-use-a-functask-for-asynchronous-lambda-function-when-action-overloa
-            //
-            //As it currently stands, this QueuedTask.Run will return to the caller on the first await
+
             QueuedTask.Run(action: async () => {
-                if (LayerFactory.Instance.CanCreateLayerFrom(result.Item))
-                    LayerFactory.Instance.CreateLayer(result.Item, MapView.Active.Map);
-                else if (MapFactory.Instance.CanCreateMapFrom(result.Item)) {
-                    Map newMap = MapFactory.Instance.CreateMapFromItem(result.Item);
+                if (LayerFactory.Instance.CanCreateLayerFrom(result) && MapView.Active?.Map != null)
+                    LayerFactory.Instance.CreateLayer(result, MapView.Active.Map);
+                else if (MapFactory.Instance.CanCreateMapFrom(result)) {
+                    Map newMap = MapFactory.Instance.CreateMapFromItem(result);
                     IMapPane newMapPane = await ProApp.Panes.CreateMapPaneAsync(newMap);
                 }
                 else {
@@ -272,18 +271,35 @@ namespace LivingAtlasOfTheWorld.UI {
             _timer.Start();
             OnPropertyChanged("IsExecutingQuery");
             OnPropertyChanged("AddStatus");
-
-            try {
-                var submitQuery = new SubmitOnlineQuery();
+            int maxResults = 0;
+            if (maxResults == 0)
+                maxResults = OnlineQuery.DefaultMaxResults;
+            try
+            {
                 this.SelectedOnlineQuery.Keywords = this.Keywords;
                 this.SelectedOnlineQuery.Content = SelectedResultOption;
-                var response = await submitQuery.ExecWithEsriClientAsync(this.SelectedOnlineQuery, _results);
+                int startIndex = 0;
+                ArcGISPortal portal = ArcGISPortalManager.Current.GetPortal(new Uri(@"http://www.arcgis.com:80/"));
+                do //Query ArcGIS Online for 25 items at a time for a max limit of 100 items.  
+                {
+                    this.SelectedOnlineQuery.Start = startIndex;
+                    PortalQueryResultSet<PortalItem> portalResults = await ArcGISPortalExtensions.SearchForContentAsync(portal, this.SelectedOnlineQuery.PortalQuery);
+
+                    if (portalResults.Results.OfType<PortalItem>().Count() == 0)
+                        return;
+
+                    foreach (var item in portalResults.Results.OfType<PortalItem>())
+                    {
+                        _results.Add(item);
+                    }
+
+                    startIndex = portalResults.Results.Count + startIndex;
+                } while (startIndex < maxResults);
             }
             finally {
                 _timer.Stop();
                 _executeQuery = false;
                 OnPropertyChanged("IsExecutingQuery");
-                //OnPropertyChanged("Results");
             } 
         }
         

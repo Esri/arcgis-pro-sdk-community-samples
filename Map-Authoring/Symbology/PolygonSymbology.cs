@@ -33,11 +33,11 @@ namespace Symbology
         {
             var PolySymbols = new Dictionary<CIMSymbol, string>
             {
-                {  await CreateCrossHatchPolygon(), "Cross Hatch"},
-                {   await CreateDiagonalCrossPolygon(), "Diagonal Hatch"},
-                {   await CreateDashDotFill(), "Dash Dot Fill"},
-                {   await CreateGradientFill(), "Gradient Fill"},
-                {await CreateProceduralPolygonSymbol(), "Venice Procedural" }
+                {  await CreateCrossHatchPolygonAsync(), "Cross Hatch"},
+                {  await CreateDiagonalCrossPolygonAsync(), "Diagonal Hatch"},
+                {  await CreateDashDotFillAsync(), "Dash Dot Fill"},
+                {  await CreateGradientFillAsync(), "Gradient Fill"},
+                {  await CreateProceduralPolygonSymbolAsync(), "Venice Procedural" }
             };
             return PolySymbols;
         }
@@ -47,9 +47,9 @@ namespace Symbology
         /// ![PolygonSymbolCrossHatch](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/polygon-crosshatch.png)
         /// </summary>
         /// <returns></returns>
-        public static async Task<CIMPolygonSymbol> CreateCrossHatchPolygon()
+        public static Task<CIMPolygonSymbol> CreateCrossHatchPolygonAsync()
         {
-            var polyCrossHatch = await QueuedTask.Run(() =>
+            return QueuedTask.Run<CIMPolygonSymbol>(() =>
             {
                 var trans = 50.0;//semi transparent
                 CIMStroke outline = SymbolFactory.Instance.ConstructStroke(CIMColor.CreateRGBColor(0, 0, 0, trans), 2.0, SimpleLineStyle.Solid);
@@ -79,7 +79,6 @@ namespace Symbology
                     symbolLayers.Add(fill);
                 return new CIMPolygonSymbol() { SymbolLayers = symbolLayers.ToArray() };
             });
-            return polyCrossHatch;
            
         }
         #endregion
@@ -90,9 +89,9 @@ namespace Symbology
         /// ![PolygonSymbolDiagonalCrossHatch](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/polygon-diagonal-crosshatch.png)
         /// </summary>
         /// <returns></returns>
-        public async static Task<CIMPolygonSymbol> CreateDiagonalCrossPolygon()
+        public static Task<CIMPolygonSymbol> CreateDiagonalCrossPolygonAsync()
         {
-            var polySym = await QueuedTask.Run(() =>
+            return QueuedTask.Run<CIMPolygonSymbol>(() =>
             {
                 var trans = 50.0;//semi transparent
                 CIMStroke outline = SymbolFactory.Instance.ConstructStroke(CIMColor.CreateRGBColor(0, 0, 0, trans), 2.0, SimpleLineStyle.Solid);
@@ -122,7 +121,6 @@ namespace Symbology
                     symbolLayers.Add(fill);
                 return new CIMPolygonSymbol() { SymbolLayers = symbolLayers.ToArray() };
             });
-            return polySym;
         }
         #endregion
         
@@ -132,9 +130,9 @@ namespace Symbology
         /// ![PolygonSymbolDashDot](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/polygon-dash-dot.png)
         /// </summary>
         /// <returns></returns>
-        public static async Task<CIMPolygonSymbol> CreateDashDotFill()
+        public static Task<CIMPolygonSymbol> CreateDashDotFillAsync()
         {
-            var polyDashDotFill = await QueuedTask.Run(() =>
+            return QueuedTask.Run<CIMPolygonSymbol>(() =>
             {
                 var trans = 50.0;//semi transparent
                 CIMStroke outline = SymbolFactory.Instance.ConstructStroke(CIMColor.CreateRGBColor(0, 0, 0, trans), 2.0, SimpleLineStyle.Solid);
@@ -163,8 +161,7 @@ namespace Symbology
                 foreach (var fill in solidColorHatch)
                     symbolLayers.Add(fill);
                 return new CIMPolygonSymbol() { SymbolLayers = symbolLayers.ToArray() };
-            });
-            return polyDashDotFill;           
+            });          
         }
         #endregion
         
@@ -179,9 +176,9 @@ namespace Symbology
         /// 1. Apply both the stroke and fill as a symbol layer array to the new PolygonSymbol
         /// </remarks>
         /// <returns></returns>
-        public static async Task<CIMPolygonSymbol> CreateGradientFill()
+        public static Task<CIMPolygonSymbol> CreateGradientFillAsync()
         {
-            var polyGradientFill = await QueuedTask.Run(() =>
+            return QueuedTask.Run<CIMPolygonSymbol>(() =>
             {
                 var trans = 50.0;//semi transparent
                 CIMStroke outline = SymbolFactory.Instance.ConstructStroke(CIMColor.CreateRGBColor(0, 0, 0, trans), 2.0, SimpleLineStyle.Solid);
@@ -197,8 +194,7 @@ namespace Symbology
                 symbolLayers.Add(solidColorHatch);
 
                 return new CIMPolygonSymbol() { SymbolLayers = symbolLayers.ToArray() };
-            });
-            return polyGradientFill;            
+            });          
         }
         #endregion
         #region Snippet Procedural Symbol
@@ -208,9 +204,9 @@ namespace Symbology
         /// </summary>    
         /// <remarks>Note: The rule package used in this method can be obtained from the Sample Data included in the arcgis-pro-sdk-community-samples repository.</remarks>
         private static readonly string _rulePkgPath = @"C:\Data\RulePackages\Venice_2014.rpk";
-        public static async Task<CIMSymbol> CreateProceduralPolygonSymbol()
+        public static Task<CIMPolygonSymbol> CreateProceduralPolygonSymbolAsync()
         {
-            var myProceduralSymbol = await QueuedTask.Run(() =>
+            return QueuedTask.Run<CIMPolygonSymbol>(() =>
             {
                 //Polygon symbol to hold the procedural layer
                 var myPolygonSymbol = SymbolFactory.Instance.ConstructPolygonSymbol(); 
@@ -228,7 +224,6 @@ namespace Symbology
                 myPolygonSymbol.SymbolLayers = proceduralSymbolLyr;
                 return myPolygonSymbol;
             });
-            return myProceduralSymbol;
         }
         #endregion
     }

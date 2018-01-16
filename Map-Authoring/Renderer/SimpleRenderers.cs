@@ -39,9 +39,9 @@ namespace Renderer
         /// <param name="featureLayer"></param>
         /// <returns>
         /// </returns>
-        internal async static Task SimpleRendererPolygon(FeatureLayer featureLayer)
+        internal static Task SimpleRendererPolygon(FeatureLayer featureLayer)
         {            
-            await QueuedTask.Run(() =>
+            return QueuedTask.Run(() =>
             {
                 //Creating a polygon with a red fill and blue outline.
                 CIMStroke outline = SymbolFactory.Instance.ConstructStroke(
@@ -70,9 +70,9 @@ namespace Renderer
         /// <param name="featureLayer"></param>
         /// <returns>
         /// </returns>
-        internal async static Task SimpleRendererPoint(FeatureLayer featureLayer)
+        internal static Task SimpleRendererPoint(FeatureLayer featureLayer)
         {            
-            await QueuedTask.Run(() =>
+            return QueuedTask.Run(() =>
             {
                 //Create a circle marker
                 var pointSymbol = SymbolFactory.Instance.ConstructPointSymbol(ColorFactory.Instance.RedRGB, 8, SimpleMarkerStyle.Circle);
@@ -99,9 +99,9 @@ namespace Renderer
         /// <param name="featureLayer"></param>
         /// <returns>
         /// </returns>
-        internal async static Task SimpleRendererLine(FeatureLayer featureLayer)
+        internal static Task SimpleRendererLine(FeatureLayer featureLayer)
         {            
-            await QueuedTask.Run(() =>
+            return QueuedTask.Run(() =>
             {
                 //Create a circle marker
                 var lineSymbol = SymbolFactory.Instance.ConstructLineSymbol(ColorFactory.Instance.RedRGB, 2, SimpleLineStyle.DashDotDot);
