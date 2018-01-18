@@ -1,7 +1,7 @@
-## JobManagement
+## WorkflowManagerConfigSample
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This Sample provides a Dockable Pane that allows the user to manipulate workflow manager databases while focusing only on one Job Type  
+This sample allows users to only interact with the Workflow Pane in ArcGIS Pro, and hides the Workflow View, the Job view and the Workflow ribbon on map from the user. This configuration allows organizations to deploy a slimmed down version of Workflow Manager for ArcGIS Pro that focusses on work completion. Users see only their jobs or jobs in their groups, and is for users who don’t have the requirement to edit job properties, search for jobs and see a workflow diagram. This creates a simpler UI   
   
 
 
@@ -15,7 +15,7 @@ Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
 Date:                  1/16/2018
 ArcGIS Pro:            2.1
-Visual Studio:         2015, 2017
+Visual Studio:         2017
 .NET Target Framework: 4.6.1
 ```
 
@@ -41,17 +41,14 @@ Visual Studio:         2015, 2017
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-      
-1  Must have a Workflow manager database set up and accessible  
-1.a. This is done with the combination of database management and our Workflow manager software.  
-1.b. please refer to setting up a Workflow manager database before using this sample.  
-2. must designate job type to focus on prior to compiling code  
-2.a. Open project in VS 2013. Locate JobManagementModule.cs. Find JobManagementModule. designate the Job Type ID.  
-2.b  Use 2 as your ID if you aren't certain and you just used the quick configuration, in your post install.  
-2.c  If you have any problems consult your workflow database administrator  
-2.d. currently configured to work with a Job Type called 'Work Order' some names maybe needed to change in the xaml and viewmodel  
-3. must have a valid workflow database connection active in project before using  
-3.a. To acquire a valid worflow database connection just use the add workflow connection under the connections menu on the project tab   
+In order to use this sample you must have a Workflow manager database set up and accessible    
+Please refer to setting up a Workflow manager database before using this sample   
+Configurations are built using the configuration project template provided in the Pro SDK templates in Visual Studio.  Once selected, the configuration template creates the necessary project components which developers can use. Please refer to ArcGIS Pro SDK Configurations for more information   
+  
+1. In Visual Studio click the Build menu. Then select Build Solution.    
+1. Click Start button to open ArcGIS Pro. You can also install the configuration  'WorkflowManagerConfigSample.proconfigx' and then deploy the sample using the following command line: C:[file location]\ArcGISPro.exe /config:[name of config]   
+1. The ArcGIS Pro Project must have a valid Workflow Manager database connection prior to using   
+1. To establish a valid Workflow Manager database connection just use the ‘Add Workflow Connection’ option under the connections menu on the project tab. Save the project and reopen it again to view all open jobs assigned to the current user or their groups. Users can then execute and finish jobs using only the workflow pane.   
   
 
 

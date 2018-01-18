@@ -13,8 +13,8 @@ This repository contains ArcGIS Pro Add-In Samples for the ArcGIS Pro 2.1 SDK fo
 
 This folder contains ArcGIS Pro Add-In Samples that fall under the 'Utility Network' topic:
 
-* [LoadReportSample (c#)](../../../tree/master/UtilityNetwork/LoadReportSample)  
 * [CategoriesUsage (c#)](../../../tree/master/UtilityNetwork/CategoriesUsage)  
+* [LoadReportSample (c#)](../../../tree/master/UtilityNetwork/LoadReportSample)  
 
 
 ## Instructions

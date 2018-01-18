@@ -14,6 +14,7 @@ This repository contains ArcGIS Pro Add-In Samples for the ArcGIS Pro 2.1 SDK fo
 This folder contains ArcGIS Pro Add-In Samples that fall under the 'Workflow' topic:
 
 * [JobManagement (c#)](../../../tree/master/Workflow/JobManagement)  
+* [WorkflowManagerConfigSample (c#)](../../../tree/master/Workflow/WorkflowManagerConfigSample)  
 
 
 ## Instructions

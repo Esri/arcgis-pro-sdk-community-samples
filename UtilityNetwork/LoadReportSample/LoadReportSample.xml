@@ -6,13 +6,10 @@
     <members>
         <member name="M:UtilityNetworkSamples.UtilityNetworkUtils.GetUtilityNetworkFromLayer(ArcGIS.Desktop.Mapping.Layer)">
             <summary>
-            GetUtilityNetworkFromFeatureClass - gets a utility network from a feature class
+            GetUtilityNetworkFromFeatureClass - gets a utility network from a layer
             </summary>
-            <remarks>
-            A feature class can belong to multiple controller datasets, but at most one of them will be a UtilityNetwork.
-            </remarks>
-            <param name="featureClass"></param>
-            <returns>a UtilityNetwork object, or null if the feature class does not belong to a utility network</returns>
+            <param name="layer"></param>
+            <returns>a UtilityNetwork object, or null if the layer does not reference a utility network</returns>
         </member>
         <member name="M:UtilityNetworkSamples.UtilityNetworkUtils.FetchRowFromElement(ArcGIS.Core.Data.UtilityNetwork.UtilityNetwork,ArcGIS.Core.Data.UtilityNetwork.Element)">
             <summary>

@@ -40,11 +40,7 @@ Visual Studio:         2015, 2017
 
 ### Samples Data
 
-Utility network SDK samples require a utility network service to run.  For the Load Report sample, you will need to do the following:
-* Configure a utility network database and service using the ArcGIS for Electric data model.  Instructions for setting up and configuring this data are located on the [ArcGIS for Electric website](http://solutions.arcgis.com/electric/help/electric-utility-network-configuration/).
-* Run the ConfigureLoadReportData.py python script to complete the configuration for this sample.
-
-Of course, the constants inside the source files can be changed to accomodate different data models.
+* Sample data for ArcGIS Pro SDK Community Samples can be downloaded from the [repo releases](https://github.com/Esri/arcgis-pro-sdk-community-samples/releases) page.  
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
@@ -52,7 +48,7 @@ Of course, the constants inside the source files can be changed to accomodate di
 2. Click Start button to open ArcGIS Pro.  
 3. ArcGIS Pro will open.  
 4. Open a map view that contains at least one Feature Layer whose source points to a Feature Class that participates in a utility network.  
-5. Select a feature layer or subtype group layer that participates in a utility network or a utility network layer  
+5. Select a feature layer that participates in a utility network or a utility network layer  
 6. Click on the SDK Samples tab on the Utility Network tab group  
 7. Click on the Starting Points tool to create a starting point on the map  
 8. Click on the Create Load Report tool  

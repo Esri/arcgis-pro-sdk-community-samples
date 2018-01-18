@@ -19,7 +19,7 @@
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
     <Company>esri, http://www.esri.com</Company>
     <Date>4/13/2015 2:25:10 PM, 2015</Date>
-    <Subject>Framework Content</Subject>
+    <Subject>Workflow</Subject>
   </AddInInfo>
   <modules>
     <insertModule id="WorkflowSample_Module" className="JobManagementModule" autoLoad="false" caption="Job Management Module">

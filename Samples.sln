@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcGISOnlineConnect", "Content\ArcGISOnlineConnect\ArcGISOnlineConnect.csproj", "{DEB9DD29-7A64-4434-B111-A5B5FDCD2700}"
 EndProject
@@ -246,6 +246,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetadataBrowserControl", "Content\MetadataBrowserControl\MetadataBrowserControl.csproj", "{77B990E3-B28D-4759-A625-8794E2536690}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Puzzle_2-1", "Layouts\Puzzle_2-1\Puzzle_2-1.csproj", "{AEF96892-4CAE-49D7-A102-F12A6F576402}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowManagerConfigSample", "Workflow\WorkflowManagerConfigSample\WorkflowManagerConfigSample.csproj", "{216CD3DC-BBBE-4E04-95A4-FEFF96AA7424}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CategoriesUsage", "UtilityNetwork\CategoriesUsage\CategoriesUsage.csproj", "{D479F441-0161-4CC9-AEAF-203BD836F64C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -741,6 +745,14 @@ Global
 		{AEF96892-4CAE-49D7-A102-F12A6F576402}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEF96892-4CAE-49D7-A102-F12A6F576402}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEF96892-4CAE-49D7-A102-F12A6F576402}.Release|Any CPU.Build.0 = Release|Any CPU
+		{216CD3DC-BBBE-4E04-95A4-FEFF96AA7424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{216CD3DC-BBBE-4E04-95A4-FEFF96AA7424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{216CD3DC-BBBE-4E04-95A4-FEFF96AA7424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{216CD3DC-BBBE-4E04-95A4-FEFF96AA7424}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D479F441-0161-4CC9-AEAF-203BD836F64C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D479F441-0161-4CC9-AEAF-203BD836F64C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D479F441-0161-4CC9-AEAF-203BD836F64C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D479F441-0161-4CC9-AEAF-203BD836F64C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

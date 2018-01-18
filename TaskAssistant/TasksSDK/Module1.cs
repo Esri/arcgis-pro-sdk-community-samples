@@ -29,7 +29,7 @@ namespace TasksSDK
   ///   3. Export a specified task item to an .esriTasks file
   /// </summary>
   /// <remarks>
-  ///1. Open this solution in Visual Studio 2013.  
+  ///1. Open this solution in Visual Studio  
   ///2. Save the Project Exploration Tasks.esriTasks file in this solution to a location on your disk.
   ///3. Open the OpenTask.cs file and change the parameter of the TaskAssistantModule.OpenTaskAsync method to be the 
   ///location where you saved the esriTasks file. 

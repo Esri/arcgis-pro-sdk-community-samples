@@ -10,7 +10,7 @@ This Sample provides a Dockable Pane that allows the user to manipulate workflow
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
-Subject:               Framework Content
+Subject:               Workflow
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
 Date:                  1/16/2018

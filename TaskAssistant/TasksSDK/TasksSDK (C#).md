@@ -45,7 +45,7 @@ Visual Studio:         2015, 2017
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Open this solution in Visual Studio 2013.    
+1. Open this solution in Visual Studio    
 2. Save the Project Exploration Tasks.esriTasks file in this solution to a location on your disk.  
 3. Open the OpenTask.cs file and change the parameter of the TaskAssistantModule.OpenTaskAsync method to be the  location where you saved the esriTasks file.   
 4. Open the ExportTask.cs file and modify the path parameter in the TaskAssistantModule.ExportTaskAsync method  if you wish the task item to be exported to a different location.  
