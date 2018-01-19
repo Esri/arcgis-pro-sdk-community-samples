@@ -63,7 +63,7 @@ namespace LoadReportSample
     private const string ElectricDomainNetwork = "ElectricDistribution";
     private const string MediumVoltageTier = "Medium Voltage Radial";
     private const string ServicePointCategory = "ServicePoint";
-    private const string DeviceStatusAttributeName = "Device Status";
+    private const string DeviceStatusAttributeName = "Operational Device Status";
 
     private const short DeviceStatusOpened = 1;
     private const short DeviceStatusClosed = 2;
@@ -196,7 +196,7 @@ namespace LoadReportSample
             catch
             {
               results.Success = false;
-              results.Message = "This add-in requires the following network attributes: Phases Current, Customer Load, DeviceStatus.\n";
+              results.Message = "This add-in requires the following network attributes: Phases Current, Customer Load, Operational Device Status.\n";
               return results;
             }
 
