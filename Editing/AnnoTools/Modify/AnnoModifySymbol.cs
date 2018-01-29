@@ -108,9 +108,10 @@ namespace AnnoTools
                       {
                         // change the text 
                         textGraphic.Text = "Hello World";
-                                                 
+
                         // get the symbol reference
                         var cimSymbolReference = textGraphic.Symbol;
+                        string symbolName = cimSymbolReference.SymbolName;
                         // get the symbol
                         var cimSymbol = cimSymbolReference.Symbol;
 
@@ -121,24 +122,31 @@ namespace AnnoTools
                         //var cimTextSymbol = cimSymbol as CIMTextSymbol;
                         //cimTextSymbol.HorizontalAlignment = HorizontalAlignment.Center;
 
-                        // update the symbol
-                        textGraphic.Symbol = cimSymbol.MakeSymbolReference();
+                        try
+                        {
+                          // update the graphic
+                          annoFeature.SetGraphic(textGraphic);
+                          // store
+                          annoFeature.Store();
 
-                        // update the graphic
-                        annoFeature.SetGraphic(textGraphic);
+                          // refresh the cache
+                          context.Invalidate(annoFeature);
+                        }
 
-                        // store
-                        annoFeature.Store();
-
-                        // refresh the cache
-                        context.Invalidate(annoFeature);
+                        // SetGraphic can throw a GeodatabaseException if the AnnotationFeatureClassDefinition AreSymbolOverridesAllowed = false
+                        //  or if IsSymbolIDRequired = true and the symbol edit you're making causes the symbol to be disconnected from the symbol collection.
+                        //   see http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic17424.html
+                        //   and http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic17432.html
+                        catch (GeodatabaseException ex)
+                        {
+                        }
                       }
                     }
                   }
                 }
               }
             }, annoLayer.GetTable());
-             
+
           }
         }
 
