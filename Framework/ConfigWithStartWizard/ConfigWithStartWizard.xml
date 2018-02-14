@@ -20,7 +20,7 @@
             </summary>
             <remarks>Has no effect on the length of the actual response from online</remarks>
         </member>
-        <member name="M:ConfigWithStartWizard.Common.SubmitQuery.Exec2Async(ConfigWithStartWizard.Models.OnlineQuery,System.Collections.ObjectModel.ObservableCollection{ArcGIS.Desktop.Core.Portal.PortalItem},System.String,System.Int32)">
+        <member name="M:ConfigWithStartWizard.Common.SubmitQuery.Exec2Async(ConfigWithStartWizard.Models.OnlineQuery,System.Collections.ObjectModel.ObservableCollection{ConfigWithStartWizard.Models.OnlinePortalItem},System.String,System.Int32)">
             <summary>
             Execute the given query and return the result
             </summary>
@@ -131,47 +131,47 @@
             <returns>Implemented UserControl with about box information. 
             Return null if a custom about box is not needed. Default ArcGIS Pro About box will be displayed.</returns>
         </member>
-        <member name="T:ConfigWithStartWizard.Models.OnlineResultItem">
+        <member name="T:ConfigWithStartWizard.Models.OnlinePortalItem">
             <summary>
             An individual result from an online query
             </summary>
         </member>
-        <member name="P:ConfigWithStartWizard.Models.OnlineResultItem.Id">
+        <member name="P:ConfigWithStartWizard.Models.OnlinePortalItem.Id">
             <summary>
             Gets and sets the item id
             </summary>
         </member>
-        <member name="P:ConfigWithStartWizard.Models.OnlineResultItem.Title">
+        <member name="P:ConfigWithStartWizard.Models.OnlinePortalItem.Title">
             <summary>
             Gets and sets the item title
             </summary>
         </member>
-        <member name="P:ConfigWithStartWizard.Models.OnlineResultItem.Name">
+        <member name="P:ConfigWithStartWizard.Models.OnlinePortalItem.Name">
             <summary>
             Gets and sets the name
             </summary>
         </member>
-        <member name="P:ConfigWithStartWizard.Models.OnlineResultItem.Snippet">
+        <member name="P:ConfigWithStartWizard.Models.OnlinePortalItem.Snippet">
             <summary>
             Gets and sets the item snippet
             </summary>
         </member>
-        <member name="P:ConfigWithStartWizard.Models.OnlineResultItem.Url">
+        <member name="P:ConfigWithStartWizard.Models.OnlinePortalItem.Url">
             <summary>
             Gets and sets the item url
             </summary>
         </member>
-        <member name="P:ConfigWithStartWizard.Models.OnlineResultItem.OnlineItemType">
+        <member name="P:ConfigWithStartWizard.Models.OnlinePortalItem.PortalItemType">
             <summary>
             Gets and sets the online item type
             </summary>
         </member>
-        <member name="P:ConfigWithStartWizard.Models.OnlineResultItem.ThumbnailUrl">
+        <member name="P:ConfigWithStartWizard.Models.OnlinePortalItem.ThumbnailUrl">
             <summary>
             Gets the Thumbnail url of the ResultItem
             </summary>
         </member>
-        <member name="M:ConfigWithStartWizard.Models.OnlineResultItem.SetThumbnailURL(System.String,System.String,System.String)">
+        <member name="M:ConfigWithStartWizard.Models.OnlinePortalItem.SetThumbnailURL(System.String,System.String,System.String)">
             <summary>
             Provide the item thumbnail URL for the given item id and thumbnail url
             </summary>
@@ -180,7 +180,7 @@
             <param name="id">the online item id</param>
             <returns></returns>
         </member>
-        <member name="M:ConfigWithStartWizard.Models.OnlineResultItem.Configure(System.String,System.String,System.String,System.String,System.String,System.String)">
+        <member name="M:ConfigWithStartWizard.Models.OnlinePortalItem.Configure(System.String,System.String,System.String,System.String,ArcGIS.Desktop.Core.Portal.PortalItemType,System.String)">
             <summary>
             Configure the online item result
             </summary>
@@ -188,7 +188,7 @@
             <param name="id"></param>
             <param name="thumbnail"></param>
             <param name="snippet"></param>
-            <param name="itemType"></param>
+            <param name="portalItemType"></param>
             <param name="access"></param>
         </member>
         <member name="T:ConfigWithStartWizard.UI.Backstage.CustomNewView">
