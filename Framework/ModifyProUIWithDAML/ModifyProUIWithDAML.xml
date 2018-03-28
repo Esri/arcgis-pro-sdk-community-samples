@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ModifyProUIWithDAML</name>
+    </assembly>
+    <members>
+        <member name="T:ModifyProUIWithDAML.Backstage.GeocodeBackstageTabView">
+            <summary>
+            Interaction logic for GeocodeBackstageTabView.xaml
+            </summary>
+            <summary>
+            GeocodeBackstageTabView
+            </summary>
+        </member>
+        <member name="M:ModifyProUIWithDAML.Backstage.GeocodeBackstageTabView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ModifyProUIWithDAML.Backstage.GeocodeBackstageTabViewModel.InitializeAsync">
+            <summary>
+            Called when the backstage tab is selected.
+            </summary>
+        </member>
+        <member name="M:ModifyProUIWithDAML.Backstage.GeocodeBackstageTabViewModel.UninitializeAsync">
+            <summary>
+            Called when the backstage tab is unselected.
+            </summary>
+        </member>
+        <member name="T:ModifyProUIWithDAML.Module1">
+            <summary>
+            This sample demonstrates how to modify the Pro UI using DAML
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.  
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro will open.
+            1. Open any project with at least one feature layer.
+            1. Notice the following customizations made to the Pro UI:
+            * The Bookmarks button has been removed in the Navigate group on the Map tab
+            ![RemoveButton](screenshots/DeleteCoreButton.png) 
+            * A new button has been inserted into the Navigate group on the Map Tab
+            ![NewButton](screenshots/NewButtonCoreGroup.png) 
+            * With any Map view active, right click on a feature layer in the TOC. Notice the New Button context menu item added.
+            ![New Menu](screenshots/NewMenuItemInContextMenu.png)
+            * Click the Project tab to access Pro's backstage.  Notice the missing Open and New project tabs.  A new tab called "Geocode" has been inserted above the Save project button.
+            ![New Backstage tab](screenshots/BackstageDeleteExistingTabsInsertNewTabs.png)
+            * Click the Project tab to access Pro's backstage. Click the Options tab to display the Options Property Sheet.  Notice the new "Sample Project Settings" property page inserted within the Project group.
+            ![New Backstage tab](screenshots/PropertySheetOptionsDialog.png)
+            </remarks>
+        </member>
+        <member name="P:ModifyProUIWithDAML.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:ModifyProUIWithDAML.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="T:ModifyProUIWithDAML.OptionsPropertySheet.OptionsDialogPropertyPageView">
+            <summary>
+            Interaction logic for OptionsDialogPropertyPageView.xaml
+            </summary>
+            <summary>
+            OptionsDialogPropertyPageView
+            </summary>
+        </member>
+        <member name="M:ModifyProUIWithDAML.OptionsPropertySheet.OptionsDialogPropertyPageView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ModifyProUIWithDAML.OptionsPropertySheet.OptionsDialogPropertyPageViewModel.CommitAsync">
+            <summary>
+            Invoked when the OK or apply button on the property sheet has been clicked.
+            </summary>
+            <returns>A task that represents the work queued to execute in the ThreadPool.</returns>
+            <remarks>This function is only called if the page has set its IsModified flag to true.</remarks>
+        </member>
+        <member name="M:ModifyProUIWithDAML.OptionsPropertySheet.OptionsDialogPropertyPageViewModel.InitializeAsync">
+            <summary>
+            Called when the page loads because to has become visible.
+            </summary>
+            <returns>A task that represents the work queued to execute in the ThreadPool.</returns>
+        </member>
+        <member name="M:ModifyProUIWithDAML.OptionsPropertySheet.OptionsDialogPropertyPageViewModel.Uninitialize">
+            <summary>
+            Called when the page is destroyed.
+            </summary>
+        </member>
+        <member name="P:ModifyProUIWithDAML.OptionsPropertySheet.OptionsDialogPropertyPageViewModel.DataUIContent">
+            <summary>
+            Text shown inside the page hosted by the property sheet
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -19,6 +19,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Content' top
 * [FolderConnectionManager (c#)](../../../tree/master/Content/FolderConnectionManager)  
 * [MetadataBrowserControl (c#)](../../../tree/master/Content/MetadataBrowserControl)  
 * [MetadataViewer (c#)](../../../tree/master/Content/MetadataViewer)  
+* [PortalInfoListAllFedServers (c#)](../../../tree/master/Content/PortalInfoListAllFedServers)  
 * [WorkwithProjects (c#)](../../../tree/master/Content/WorkwithProjects)  
 
 

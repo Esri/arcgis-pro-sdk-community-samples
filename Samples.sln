@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcGISOnlineConnect", "Content\ArcGISOnlineConnect\ArcGISOnlineConnect.csproj", "{DEB9DD29-7A64-4434-B111-A5B5FDCD2700}"
 EndProject
@@ -250,6 +250,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowManagerConfigSample", "Workflow\WorkflowManagerConfigSample\WorkflowManagerConfigSample.csproj", "{216CD3DC-BBBE-4E04-95A4-FEFF96AA7424}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CategoriesUsage", "UtilityNetwork\CategoriesUsage\CategoriesUsage.csproj", "{D479F441-0161-4CC9-AEAF-203BD836F64C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalInfoListAllFedServers", "Content\PortalInfoListAllFedServers\PortalInfoListAllFedServers.csproj", "{E75AF4C9-A8AD-4C12-A785-7B2885C5BC4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModifyProUIWithDAML", "Framework\ModifyProUIWithDAML\ModifyProUIWithDAML.csproj", "{CD50C9B8-2E13-41D4-B41F-234497E96D01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LockToSelectedRasters", "Raster\LockToSelectedRasters\LockToSelectedRasters.csproj", "{4D669203-BF8B-4693-A992-66D193E4F890}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScientificDataStatisticalAnalysis", "Raster\ScientificDataStatisticalAnalysis\ScientificDataStatisticalAnalysis.csproj", "{1F8075FF-A552-4A43-A3B1-08F5E8029F19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -753,6 +761,22 @@ Global
 		{D479F441-0161-4CC9-AEAF-203BD836F64C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D479F441-0161-4CC9-AEAF-203BD836F64C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D479F441-0161-4CC9-AEAF-203BD836F64C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E75AF4C9-A8AD-4C12-A785-7B2885C5BC4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E75AF4C9-A8AD-4C12-A785-7B2885C5BC4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E75AF4C9-A8AD-4C12-A785-7B2885C5BC4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E75AF4C9-A8AD-4C12-A785-7B2885C5BC4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD50C9B8-2E13-41D4-B41F-234497E96D01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD50C9B8-2E13-41D4-B41F-234497E96D01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD50C9B8-2E13-41D4-B41F-234497E96D01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD50C9B8-2E13-41D4-B41F-234497E96D01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D669203-BF8B-4693-A992-66D193E4F890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D669203-BF8B-4693-A992-66D193E4F890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D669203-BF8B-4693-A992-66D193E4F890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D669203-BF8B-4693-A992-66D193E4F890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F8075FF-A552-4A43-A3B1-08F5E8029F19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F8075FF-A552-4A43-A3B1-08F5E8029F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F8075FF-A552-4A43-A3B1-08F5E8029F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F8075FF-A552-4A43-A3B1-08F5E8029F19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

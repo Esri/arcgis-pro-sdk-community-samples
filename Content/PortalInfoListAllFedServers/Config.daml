@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2018 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="ListAllFedServers.dll" defaultNamespace="ListAllFedServers" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{e75af4c9-a8ad-4c12-a785-7b2885c5bc4d}" version="1.0" desktopVersion="2.1.10257">
+    <Name>ListAllFedServers</Name>
+    <Description>ListAllFedServers description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, http://www.esri.com</Company>
+    <Date>1/29/2018 3:51:22 PM, 2018</Date>
+    <Subject>Content</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ListAllFedServers_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="ListAllFedServers_Tab1" caption="New Tab">
+          <group refID="ListAllFedServers_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ListAllFedServers_Group1" caption="Sharing team"
+							 appearsOnAddInTab="true" keytip="G1">
+          <!-- host controls within groups -->
+          <button refID="ListAllFedServers_Button1" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ListAllFedServers_Button1" caption="Show Portal Info" className="Button1" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" keytip="B1">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="PortalInfo_Dockpane" caption="PortalInfo Dockpane" 
+									className="PortalInfoDockpaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="PortalInfoDockpane" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

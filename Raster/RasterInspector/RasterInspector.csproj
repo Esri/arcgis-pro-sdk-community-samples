@@ -41,8 +41,8 @@
     <Reference Include="ArcGIS.Desktop.DataSourcesRaster">
       <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\DataSourcesRaster\ArcGIS.Desktop.DataSourcesRaster.dll</HintPath>
     </Reference>
-    <Reference Include="Gu.Wpf.DataGrid2D, Version=0.2.1.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Gu.Wpf.DataGrid2D.0.2.1.1\lib\net45\Gu.Wpf.DataGrid2D.dll</HintPath>
+    <Reference Include="Gu.Wpf.DataGrid2D, Version=0.2.1.4, Culture=neutral, PublicKeyToken=34988ea4e73235be, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Gu.Wpf.DataGrid2D.0.2.1.4\lib\net45\Gu.Wpf.DataGrid2D.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

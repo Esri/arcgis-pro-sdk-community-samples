@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Copyright 2018 Esri
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. 
+-->
+<ArcGIS defaultAssembly="LockToSelectedRasters.dll" defaultNamespace="LockToSelectedRasters" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{4d669203-bf8b-4693-a992-66d193e4f890}" version="1.0" desktopVersion="2.1.10257">
+    <Name>LockToSelectedRasters</Name>
+    <Description>LockToSelectedRasters description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, http://www.esri.com</Company>
+    <Date>2/16/2018 3:19:59 PM, 2018</Date>
+    <Subject>Raster</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="LockToSelectedRasters_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="LockToSelectedRasters_Tab1" caption="New Tab">
+          <group refID="LockToSelectedRasters_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="LockToSelectedRasters_Group1" caption="Selection" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="LockToSelectedRasters_LockToSelectedRasterButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="LockToSelectedRasters_LockToSelectedRasterButton" caption="Lock To Selected Rasters" className="LockToSelectedRasterButton" loadOnClick="false" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Lock to Selected Rasters">Lock to to any item when it is selected in the selected mosaic layer.<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

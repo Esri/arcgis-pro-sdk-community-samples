@@ -221,7 +221,7 @@ namespace LayoutMapSeries
               var title = @"<dyn type = ""page"" property = ""name"" />";
               Coordinate2D llTitle = new Coordinate2D(SelectedPageLayout.XOffsetMapMarginalia, SelectedPageLayout.Height - 2 * SelectedPageLayout.MarginLayout);
               var titleGraphics = LayoutElementFactory.Instance.CreatePointTextGraphicElement(layout, llTitle, null) as TextElement;
-              titleGraphics.SetTextProperties(new TextProperties(title, "Arial", 24, "Bold"));
+              titleGraphics.SetTextProperties(new TextProperties(title, "Arial", 16, "Bold"));
 
               // Table 1
               AddTableToLayout(layout, theMap, mfElm, "Inspection Locations", SelectedPageLayout, 3 * SelectedPageLayout.HeightPartsMarginalia);
@@ -234,28 +234,29 @@ namespace LayoutMapSeries
               Coordinate2D urLegend = new Coordinate2D(SelectedPageLayout.XOffsetMapMarginalia + SelectedPageLayout.XWidthMapMarginalia, SelectedPageLayout.HeightPartsMarginalia);
               System.Diagnostics.Debug.WriteLine(mfElm);
               LayoutElementFactory.Instance.CreateLegend(layout, EnvelopeBuilder.CreateEnvelope(llLegend, urLegend), mfElm);
+							
+							// Defince the CIM MapSeries
+							var CimSpatialMapSeries = new CIMSpatialMapSeries()
+							{
+								Enabled = true,
+								MapFrameName = SelectedPageLayout.MapFrameName,
+								StartingPageNumber = 1,
+								CurrentPageID = 1,
+								IndexLayerURI = "CIMPATH=map/railroadmaps.xml",
+								NameField = "ServiceAreaName",
+								SortField = "SeqId",
+								RotationField = "Angle",
+								SortAscending = true,
+								ScaleRounding = 1000,
+								ExtentOptions = ExtentFitType.BestFit,
+								MarginType = ArcGIS.Core.CIM.UnitType.Percent,
+								Margin = 2
+							};
+							CIMLayout layCIM = layout.GetDefinition();
+							layCIM.MapSeries = CimSpatialMapSeries;
+							layout.SetDefinition(layCIM);
 
-              //CIM MapSeries changes
-              CIMLayout layCIM = layout.GetDefinition();
-              layCIM.MapSeries = new CIMSpatialMapSeries();
-              CIMSpatialMapSeries ms = layCIM.MapSeries as CIMSpatialMapSeries;
-              ms.Enabled = true;
-              ms.MapFrameName = SelectedPageLayout.MapFrameName;
-              ms.StartingPageNumber = 1;
-              ms.CurrentPageID = 1;
-              ms.IndexLayerURI = "CIMPATH=map/railroadmaps.xml";
-              ms.NameField = "ServiceAreaName";
-              ms.SortField = "SeqId";
-              ms.RotationField = "Angle";
-              ms.SortAscending = true;
-              ms.ScaleRounding = 1000;
-              ms.ExtentOptions = ExtentFitType.BestFit;
-              ms.MarginType = ArcGIS.Core.CIM.UnitType.Percent;
-              ms.Margin = 2;
-
-              layout.SetDefinition(layCIM);
-
-              return layout;
+							return layout;
             });
 
             //CREATE, OPEN LAYOUT VIEW (must be in the GUI thread)

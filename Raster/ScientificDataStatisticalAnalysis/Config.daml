@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Copyright 2018 Esri
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. 
+-->
+<ArcGIS defaultAssembly="ScientificDataStatisticalAnalysis.dll"
+        defaultNamespace="ScientificDataStatisticalAnalysis"
+        xmlns="http://schemas.esri.com/DADF/Registry"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+
+  <AddInInfo id="{1f8075ff-a552-4a43-a3b1-08f5e8029f19}" version="1.0" desktopVersion="2.1.10257">
+    <Name>ScientificDataStatisticalAnalysis</Name>   
+    <Description>An Add-in sample shows how to leverage the raster functions to simplify the statistial analysis of scientific data. </Description>
+    <Image>Images\AddInDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>12/20/2017 4:51:16 PM, 2017</Date>
+    <Subject>Raster</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+
+  <modules>
+    <insertModule id="ScientificDataStatisticalAnalysis_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->              
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ScientificDataStatisticalAnalysis_Group1" caption="Scientific data statistical analysis" keytip="S" appearsOnAddInTab="true">
+          <editBox refID="ScientificDataStatisticalAnalysis_DefQueryEditBox" size="large" />          
+          <comboBox refID="ScientificDataStatisticalAnalysis_CellStatisticsComboBox" size="large" />
+          <!-- host controls within groups -->
+        </group>
+      </groups>
+      
+      <controls>
+        <!-- add your controls here -->
+        <editBox id="ScientificDataStatisticalAnalysis_DefQueryEditBox" caption="Definition Query:" keytip="D" className="DefQueryEditBox" disableIfBusy="false"
+                  smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Filter16.png"  dataType="string"
+                 extendedCaption="Extended Caption" sizeString = "01234567890123456789012345678901234567890123456789012345678901234567890123456789">
+          <tooltip heading="">
+            Build your query or write your SQL expression through the Definition Query in the Layer Properties.
+            Examples: StdTime between date '2014-04-22 12:00:00 am' and date '2014-04-25 12:00:00 pm'<disabledText></disabledText>
+          </tooltip>
+        </editBox>
+
+
+        <comboBox id="ScientificDataStatisticalAnalysis_CellStatisticsComboBox" caption="Operations:" keytip ="O"
+          className="CellStatisticsComboBox" itemWidth="140" itemHeight="300" extendedCaption="Extended Caption" isEditable="false" isReadOnly="false" resizable="true"
+          image= "Images\AddInDesktop16.png">
+          <tooltip heading="Tip:">Select operation for statistical analysis. <disabledText>Do not have an active map view.</disabledText>
+          </tooltip>
+        </comboBox>
+
+      </controls> 
+      
+    </insertModule>
+  </modules>
+</ArcGIS>

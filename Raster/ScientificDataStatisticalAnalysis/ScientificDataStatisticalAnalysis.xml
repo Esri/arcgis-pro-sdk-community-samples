@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ScientificDataStatisticalAnalysis</name>
+    </assembly>
+    <members>
+        <member name="T:ScientificDataStatisticalAnalysis.CellStatisticsComboBox.CellStatistics_Operations">
+            <summary>
+            Enumeration of the operations provided in the combo box. 
+            </summary>
+        </member>
+        <member name="M:ScientificDataStatisticalAnalysis.CellStatisticsComboBox.#ctor">
+            <summary>
+            Constructor of the combo box. 
+            Subscribes to the SelectedLayersChanges event.
+            </summary>
+        </member>
+        <member name="M:ScientificDataStatisticalAnalysis.CellStatisticsComboBox.InitializeComboBox">
+            <summary>
+            Initializes the combo box items. 
+            </summary>
+        </member>
+        <member name="M:ScientificDataStatisticalAnalysis.CellStatisticsComboBox.SelectedLayersChanged(ArcGIS.Desktop.Mapping.Events.MapViewEventArgs)">
+            <summary>
+            Event handler for layer selection change.
+            </summary>
+            <param name="mapViewArgs">An instance of the MapViewEventArgs.</param>
+        </member>
+        <member name="M:ScientificDataStatisticalAnalysis.CellStatisticsComboBox.OnSelectionChange(ArcGIS.Desktop.Framework.Contracts.ComboBoxItem)">
+            <summary>
+            Called when the combo box item selection changed.
+            </summary>
+            <param name="item"> The selected combo box item. </param>
+        </member>
+        <member name="M:ScientificDataStatisticalAnalysis.CellStatisticsComboBox.onEditBoxChanged(System.Object,ScientificDataStatisticalAnalysis.TextEventArgs)">
+            <summary>
+            Called if the text is changed in Definition query edit box.  
+            </summary>
+            <param name="source"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ScientificDataStatisticalAnalysis.DefQueryEditBox.#ctor">
+            <summary>
+            Definition query editbox constructor. 
+            Note: You can write your query or build it using the Definition Query builder in Layer Properties to verify its correctness.
+            </summary>
+        </member>
+        <member name="M:ScientificDataStatisticalAnalysis.DefQueryEditBox.OnEnter">
+            <summary>
+            Called when the 'Enter' key is pressed inside this control or when the control loses keyboard focus.
+            </summary>
+        </member>
+        <member name="T:ScientificDataStatisticalAnalysis.Module1">
+            <summary>
+            This sample demonstrates how to leverage the raster function template to simplify the statistical analysis workflows for multidimensional data.
+            The sample includes these functions:
+            1. Group raster items in an image service layer using a SQL expression.
+            2. Perform statistical calculations on the grouped items from a list of operations.
+            Supported operations: Majority, Maximum, Mean, Median, Minimum, Minority, Range, StandardDeviation, Sum, and Variety.
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            2. Create a new ArcGIS Pro project. Insert a new map if one does not exist.
+            3. Import the Scientific_data_calculation template to the Project category's Project1 sub-category on Raster Functions pane.
+               (Note: The Scientific_data_calculation template is provided with the add-in located in the Visual Studio project folder.) 
+               1) Click Raster Functions button on Imagery tab to open the Raster Functions pane. 
+               2) On Raster Functions pane, click the Project category. 
+               3) Click the Import functions button on the right of the Project1 sub-cagetory (the down arrow button), browse to the template file and add it. 
+               4) Save ArcGIS Pro project.
+            4. Click on the Add-In tab.
+            5. Add a scientific multidimensional image service to the map view. 
+               By default, the Scientific_data_calculation template performs calculation on selected variable within a certain time period, 
+               therefore Variable and time (i.e.,StdTime) fields in the attribute table are required.   
+               Edit the template properties to fit your own data format.
+            6. Enter your definition query SQL expression, then click "Enter" on the key board to confirm your editing.
+               Note: You can build your query or write a SQL expression through the layer properties definition query tab, 
+               then copy the SQL expression and paste it to the definition query textbox. 
+               Example: Variable = 'Water Temperature' And StdZ = 0 And StdTime between date '2018-1-1 0:0:0' And date '2018-3-6 0:0:0'.
+            7. Click the drop down arrow on the right of the "Operations" combo box to show the list of supported operations.
+            8. Select an operation from the list. This will apply the operation on the image service layer.
+            9. To visualize the results better, make sure the image service layer is selected in the Contents pane.
+            10. Click the DRA (Dynamic range adjustment) button on the Appearance tab.
+            11. Selecting different operations in the dropdown will apply those operations on the image service layer.
+            12. To change your query, edit your definition query SQL expression in the textbox, and click "Enter", 
+                this will apply the new definition query and selected operation to the layer.
+            </remarks>  
+        </member>
+        <member name="P:ScientificDataStatisticalAnalysis.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:ScientificDataStatisticalAnalysis.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="M:ScientificDataStatisticalAnalysis.Process.CustomRFTXmlFile(System.String,System.Enum,System.String)">
+            <summary>
+            This function is used to replace the user defined query and statistical operation in the raster function template XML file.
+            </summary>
+            <param name="xmlPath">The path of the raster function template XML file.</param>
+            <param name="operation">An Enum type represents the user selected operation.</param>
+            <param name="definitionQuery">A string representing the definition query.</param>
+            <returns>A string representing the path to the updated xml.</returns>
+        </member>
+        <member name="M:ScientificDataStatisticalAnalysis.Process.ApplyRFTXmlFile(ArcGIS.Desktop.Mapping.ImageServiceLayer,System.Enum,System.String)">
+            <summary>
+            This function is used to apply a raster function template onto an image service layer.
+            </summary>
+            <param name="selectedLayer">The selected image service layer. </param>
+            <param name="operation">An Enum type represents the user selected operation. </param>
+            <param name="xmlFilePath">The XML file path.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

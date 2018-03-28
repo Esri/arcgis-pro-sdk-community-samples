@@ -52,8 +52,8 @@
         <member name="M:Symbology.MyLineSymbology.CreateLineDashTwoMarkers2Async">
             <summary>
             Create a line symbol with a dash and two markers. <br/>
-            In this pattern of creating this symbol, a [CIMVectorMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic6176.html) object is created as a new [CIMSymbolLayer](http://prodev.arcgis.com/en/pro-app/sdk/api-reference/current/#topic5503.html).
-            The circle and square markers created by [ContructMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic12350.html) method is then assigned to the [MarkerGraphics](http://prodev.arcgis.com/en/pro-app/sdk/api-reference/current/#topic6188.html) property of the CIMVectorMarker. 
+            In this pattern of creating this symbol, a [CIMVectorMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic6176.html) object is created as a new [CIMSymbolLayer](http://prodev.arcgis.com/en/pro-app/sdk/api-reference/#topic5503.html).
+            The circle and square markers created by [ContructMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic12350.html) method is then assigned to the [MarkerGraphics](http://prodev.arcgis.com/en/pro-app/sdk/api-reference/#topic6188.html) property of the CIMVectorMarker. 
             When using this method, the CIMVectorMarker's [Frame](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic6187.html) property needs to be set to the [CIMMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic3264.html) object's Frame. 
             Similarly, the CIMVectorMarker's [Size](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic3284.html) property needs to be set to the CIMMarker object's size.
             </summary>

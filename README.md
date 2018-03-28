@@ -81,7 +81,7 @@ Read the [ProGuide: Installation and Upgrade](http://github.com/Esri/arcgis-pro-
 
 ## ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 123 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 127 ArcGIS Pro samples that are included in this repository.  
 
 #### Content
 
@@ -91,6 +91,7 @@ Below is the list of 123 ArcGIS Pro samples that are included in this repository
 * [FolderConnectionManager (c#)](../../tree/master/Content/FolderConnectionManager)  
 * [MetadataBrowserControl (c#)](../../tree/master/Content/MetadataBrowserControl)  
 * [MetadataViewer (c#)](../../tree/master/Content/MetadataViewer)  
+* [PortalInfoListAllFedServers (c#)](../../tree/master/Content/PortalInfoListAllFedServers)  
 * [WorkwithProjects (c#)](../../tree/master/Content/WorkwithProjects)  
 
 
@@ -129,6 +130,7 @@ Below is the list of 123 ArcGIS Pro samples that are included in this repository
 * [Licensing (c#)](../../tree/master/Framework/Licensing)  
 * [Localization (c#)](../../tree/master/Framework/Localization)  
 * [MapControl (c#)](../../tree/master/Framework/MapControl)  
+* [ModifyProUIWithDAML (c#)](../../tree/master/Framework/ModifyProUIWithDAML)  
 * [Notifications (c#)](../../tree/master/Framework/Notifications)  
 * [OpenMapViews (c#)](../../tree/master/Framework/OpenMapViews)  
 * [ProgressDialog (c#)](../../tree/master/Framework/ProgressDialog)  
@@ -223,8 +225,10 @@ Below is the list of 123 ArcGIS Pro samples that are included in this repository
 #### Raster
 
 * [CustomRasterIdentify (c#)](../../tree/master/Raster/CustomRasterIdentify)  
+* [LockToSelectedRasters (c#)](../../tree/master/Raster/LockToSelectedRasters)  
 * [MaskRaster (c#)](../../tree/master/Raster/MaskRaster)  
 * [RasterInspector (c#)](../../tree/master/Raster/RasterInspector)  
+* [ScientificDataStatisticalAnalysis (c#)](../../tree/master/Raster/ScientificDataStatisticalAnalysis)  
 
 
 #### Layouts

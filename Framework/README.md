@@ -30,6 +30,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Framework' t
 * [Licensing (c#)](../../../tree/master/Framework/Licensing)  
 * [Localization (c#)](../../../tree/master/Framework/Localization)  
 * [MapControl (c#)](../../../tree/master/Framework/MapControl)  
+* [ModifyProUIWithDAML (c#)](../../../tree/master/Framework/ModifyProUIWithDAML)  
 * [Notifications (c#)](../../../tree/master/Framework/Notifications)  
 * [OpenMapViews (c#)](../../../tree/master/Framework/OpenMapViews)  
 * [ProgressDialog (c#)](../../../tree/master/Framework/ProgressDialog)  

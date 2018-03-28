@@ -14,8 +14,10 @@ This repository contains ArcGIS Pro Add-In Samples for the ArcGIS Pro 2.1 SDK fo
 This folder contains ArcGIS Pro Add-In Samples that fall under the 'Raster' topic:
 
 * [CustomRasterIdentify (c#)](../../../tree/master/Raster/CustomRasterIdentify)  
+* [LockToSelectedRasters (c#)](../../../tree/master/Raster/LockToSelectedRasters)  
 * [MaskRaster (c#)](../../../tree/master/Raster/MaskRaster)  
 * [RasterInspector (c#)](../../../tree/master/Raster/RasterInspector)  
+* [ScientificDataStatisticalAnalysis (c#)](../../../tree/master/Raster/ScientificDataStatisticalAnalysis)  
 
 
 ## Instructions
