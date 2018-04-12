@@ -81,7 +81,7 @@ Read the [ProGuide: Installation and Upgrade](http://github.com/Esri/arcgis-pro-
 
 ## ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 127 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 128 ArcGIS Pro samples that are included in this repository.  
 
 #### Content
 
@@ -134,6 +134,7 @@ Below is the list of 127 ArcGIS Pro samples that are included in this repository
 * [Notifications (c#)](../../tree/master/Framework/Notifications)  
 * [OpenMapViews (c#)](../../tree/master/Framework/OpenMapViews)  
 * [ProgressDialog (c#)](../../tree/master/Framework/ProgressDialog)  
+* [QAReviewTool (c#)](../../tree/master/Framework/QAReviewTool)  
 * [RemoveAddins (c#)](../../tree/master/Framework/RemoveAddins)  
 * [ReusableUserControl (c#)](../../tree/master/Framework/ReusableUserControl)  
 * [RibbonControls (c#)](../../tree/master/Framework/RibbonControls)  
