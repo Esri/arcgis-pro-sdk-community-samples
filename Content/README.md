@@ -14,6 +14,7 @@ This repository contains ArcGIS Pro Add-In Samples for the ArcGIS Pro 2.1 SDK fo
 This folder contains ArcGIS Pro Add-In Samples that fall under the 'Content' topic:
 
 * [ArcGISOnlineConnect (c#)](../../../tree/master/Content/ArcGISOnlineConnect)  
+* [ContentFileExplorer (c#)](../../../tree/master/Content/ContentFileExplorer)  
 * [CustomCatalogContext (c#)](../../../tree/master/Content/CustomCatalogContext)  
 * [ExcelDropHandler (c#)](../../../tree/master/Content/ExcelDropHandler)  
 * [FolderConnectionManager (c#)](../../../tree/master/Content/FolderConnectionManager)  

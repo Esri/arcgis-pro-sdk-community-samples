@@ -121,3 +121,4 @@ UpgradeLog*.XML
 /Sharing/LivingAtlasOfTheWorld/.vs/LivingAtlasOfTheWorld/v15/Server/sqlite3
 /Sharing/UploadItem/.vs/UploadItem/v15/Server/sqlite3
 /Framework/QAReviewTool/.vs
+/Content/ContentFileExplorer/.vs/ContentFileExplorer/v15/Server/sqlite3

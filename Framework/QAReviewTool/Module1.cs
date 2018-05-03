@@ -248,6 +248,7 @@ namespace QAReviewTool
 			}
 		}
 
+		private Selection QALayerSelection;
 		public void RefreshLayerFieldComboBox()
 		{
 			try
@@ -277,11 +278,18 @@ namespace QAReviewTool
 
 									// Zoom to either the selected features, or the extent of all layers in the map
 									var featureLayers = MapView.Active.Map.Layers.OfType<FeatureLayer>().Where((featurelayer) => featurelayer.Name == LayerComboBox.SelectedItem.ToString());
-									//MapView.Active.SelectLayers(featureLayers.ToList());
+					if (QALayer.SelectionCount == 0)
+					{
+						QALayerSelection = QALayer.Select(); // select all features
+					}
+					else
+					{
+						QALayerSelection = QALayer.GetSelection(); // get current selection
+					}
+					//Selection QASelection = QALayer.GetSelection();
 
-									Selection QASelection = QALayer.GetSelection();
-					var selectionSet = QASelection.GetObjectIDs();
-					if (QASelection.GetCount() > 0)
+					var selectionSet = QALayerSelection.GetObjectIDs();
+					if (QALayerSelection.GetCount() > 0)
 					{
 						MapView.Active.ZoomTo(QALayer, selectionSet, TimeSpan.FromSeconds(0));
 						MapView.Active.ZoomOutFixed(TimeSpan.FromSeconds(0));
@@ -318,14 +326,11 @@ namespace QAReviewTool
 
 					if (QALayer == null) return;
 
-					QALayer.ClearSelection();
-					Selection QALayerSelection = QALayer.Select();
-
-									// Determine field type for adding values and sorting
+					RowCursor QARowCursor = QALayerSelection.Search();  // if there are already selected records, they will be in the RowCursor
 
 									List<object> QALayerCodeList = new List<object> { };
 
-					using (RowCursor QARowCursor = QALayerSelection.Search(null, false))
+					using (QARowCursor)
 					{
 						while (QARowCursor.MoveNext())
 						{
@@ -347,13 +352,9 @@ namespace QAReviewTool
 						}
 					}
 
-									// Dispose of data classes
-									QALayer.ClearSelection();
-					QALayerSelection.Dispose();
 
-									// FieldValueComboBox.ItemCollection.FirstOrDefault();
-									FieldValueComboBox.Enabled = true;
 					FieldValueComboBox.SelectedItem = FieldValueComboBox.ItemCollection.FirstOrDefault();
+					FieldValueComboBox.Text = FieldValueComboBox.ItemCollection.FirstOrDefault().ToString();
 
 									// Select the recordset by this first value in the list 
 									object selectionvalue = FieldValueComboBox.SelectedItem;
@@ -378,22 +379,10 @@ namespace QAReviewTool
 					return;
 				}
 				// Get the layer and create a list from all the values
-				//var QALayer = MapView.Active.Map.FindLayers((LayerComboBox.SelectedItem).ToString()).FirstOrDefault() as FeatureLayer;
-				//if (QALayer == null) return;
+				var QALayer = MapView.Active.Map.FindLayers((LayerComboBox.SelectedItem).ToString()).FirstOrDefault() as FeatureLayer;
+				if (QALayer == null) return;
 
-				// MapView.Active.SelectLayers();
-				//Zoom to the selected layers in the TOC
-				var featureLayers = MapView.Active.Map.Layers.OfType<FeatureLayer>().Where((featurelayer) => featurelayer.Name == LayerComboBox.SelectedItem.ToString());
-				MapView.Active.SelectLayers(featureLayers.ToList());
-
-				var cmdOpenAttributeTable = FrameworkApplication.GetPlugInWrapper("esri_editing_table_openTablePaneButton") as ICommand;
-				if (cmdOpenAttributeTable != null)
-				{
-					if (cmdOpenAttributeTable.CanExecute(null))
-					{
-						cmdOpenAttributeTable.Execute(null);
-					}
-				}
+				FrameworkExtender.OpenTablePane(FrameworkApplication.Panes, QALayer, TableViewMode.eAllRecords);
 
 			}
 			catch (Exception ex)
@@ -429,21 +418,33 @@ namespace QAReviewTool
 
 					if (QALayer == null) return;
 
-					QALayer.ClearSelection();
-									// Select by the selectionvalue
 									string fieldname = LayerFieldComboBox.SelectedItem.ToString();
-					string clause = fieldname + " = " + selectionvalue;
+					// var field = QALayer.GetTable().GetDefinition().GetFields().find
+					int qaFieldIndex = QALayer.GetTable().GetDefinition().FindField(fieldname);
+					var fieldtype = QALayer.GetTable().GetDefinition().GetFields()[qaFieldIndex].FieldType;
+
+					string clause;
+					if (fieldtype.ToString() == "String")
+					{
+						clause = fieldname + " = '" + selectionvalue + "'";
+					}
+					else
+					{
+						clause = fieldname + " = " + selectionvalue;
+					}
+
 					var qf = new QueryFilter
 					{
 						WhereClause = clause
 					};
-					QALayer.Select(qf);
 
-					Selection QASelection = QALayer.GetSelection();
-					var selectionSet = QASelection.GetObjectIDs();
-					if (QASelection.GetCount() > 0)
+					if (QALayerSelection == null || QALayerSelection.GetCount() == 0) { return; }
+					Selection subselection = QALayerSelection.Select(qf, SelectionOption.Normal);
+					var subselectionIDs = subselection.GetObjectIDs();
+					QALayer.SetSelection(subselection);
+					if (subselection.GetCount() > 0)
 					{
-						MapView.Active.ZoomTo(QALayer, selectionSet, TimeSpan.FromSeconds(0));
+						MapView.Active.ZoomTo(QALayer, subselectionIDs, TimeSpan.FromSeconds(0));
 						MapView.Active.ZoomOutFixed(TimeSpan.FromSeconds(0));
 					}
 
@@ -528,7 +529,7 @@ namespace QAReviewTool
 											if (Project.Current.HasEdits)
 							{
 												// Prompt for confirmation, and if answer is no, return.
-												result = ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Edits must be saved before proceeding. Save edits?", "Save All Edits", System.Windows.MessageBoxButton.OKCancel, System.Windows.MessageBoxImage.Asterisk);
+								result = MessageBox.Show("Edits must be saved before proceeding. Save edits?", "Save All Edits", System.Windows.MessageBoxButton.OKCancel, System.Windows.MessageBoxImage.Asterisk);
 												// Return if cancel value is chosen
 												if (Convert.ToString(result) == "OK")
 								{
@@ -567,7 +568,7 @@ namespace QAReviewTool
 					else  // field is found
 									{
 										// Prompt for confirmation, and if answer is no, return.
-										var result = ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("The QA Field, " + QAfieldname + " exists.  Use it?", "USE QA FIELD", System.Windows.MessageBoxButton.OKCancel, System.Windows.MessageBoxImage.Asterisk);
+						var result = MessageBox.Show("The QA Field, " + QAfieldname + " exists.  Use it?", "USE QA FIELD", System.Windows.MessageBoxButton.OKCancel, System.Windows.MessageBoxImage.Asterisk);
 										// Return if cancel value is chosen
 										if (Convert.ToString(result) == "Cancel")
 						{
@@ -587,7 +588,7 @@ namespace QAReviewTool
 
 			catch (Exception ex)
 			{
-				ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Error in AddQAFieldToLayer:  " + ex.ToString(), "Error");
+				MessageBox.Show("Error in AddQAFieldToLayer:  " + ex.ToString(), "Error");
 			}
 
 		}
@@ -682,14 +683,6 @@ namespace QAReviewTool
 									// Update value of EditNoteComboBox
 									var qaNoteValue = EditNoteComboBox.Text;
 					if (qaNoteValue == null) { return; }
-
-									//// Build the path to the settings file under My Documents
-									//string MyDocs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-									//string PathCombination = System.IO.Path.Combine(MyDocs, "ArcGIS", "QAToolSettings"); // "QANoteValues.txt");
-									//if (!System.IO.Directory.Exists(PathCombination))
-									//{
-									//    System.IO.Directory.CreateDirectory(PathCombination);
-									//}
 
 									// Don't add duplicates to the list
 									string selectedNotevalue;
@@ -908,6 +901,23 @@ namespace QAReviewTool
 			return true;
 		}
 
+
+
+		protected override Func<Task> ExecuteCommand(string id)
+		{
+
+			var command = FrameworkApplication.GetPlugInWrapper(id) as ICommand;
+			if (command == null)
+				return () => Task.FromResult(0);
+			if (!command.CanExecute(null))
+				return () => Task.FromResult(0);
+
+			return () =>
+			{
+				command.Execute(null); // if it is a tool, execute will set current tool
+							return Task.FromResult(0);
+			};
+		}
 
 		#endregion Overrides
 

@@ -259,6 +259,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LockToSelectedRasters", "Ra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScientificDataStatisticalAnalysis", "Raster\ScientificDataStatisticalAnalysis\ScientificDataStatisticalAnalysis.csproj", "{1F8075FF-A552-4A43-A3B1-08F5E8029F19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentFileExplorer", "Content\ContentFileExplorer\ContentFileExplorer.csproj", "{E8C45273-6A7D-4528-B137-C719CB710AB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -777,6 +779,10 @@ Global
 		{1F8075FF-A552-4A43-A3B1-08F5E8029F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F8075FF-A552-4A43-A3B1-08F5E8029F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F8075FF-A552-4A43-A3B1-08F5E8029F19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8C45273-6A7D-4528-B137-C719CB710AB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8C45273-6A7D-4528-B137-C719CB710AB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8C45273-6A7D-4528-B137-C719CB710AB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8C45273-6A7D-4528-B137-C719CB710AB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

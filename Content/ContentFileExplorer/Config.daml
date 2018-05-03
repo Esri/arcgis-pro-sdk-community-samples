@@ -1,0 +1,45 @@
+﻿<ArcGIS defaultAssembly="ContentFileExplorer.dll" defaultNamespace="ContentFileExplorer" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{e8c45273-6a7d-4528-b137-c719cb710ab8}" version="1.0" desktopVersion="2.1.10257">
+    <Name>ContentFileExplorer</Name>
+    <Description>ContentFileExplorer description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>wlfka</Author>
+    <Company>Acme</Company>
+    <Date>5/2/2018 9:08:28 AM, 2018</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ContentFileExplorer_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="ContentFileExplorer_Tab1" caption="New Tab">
+          <group refID="ContentFileExplorer_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ContentFileExplorer_Group1" caption="Group 1" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="ContentFileExplorer_FileExplorer_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ContentFileExplorer_FileExplorer_ShowButton" 
+								caption="Show FileExplorer" className="FileExplorer_ShowButton" 
+								loadOnClick="true" 
+								smallImage="Images\LayerAdd16.png" largeImage="Images\LayerAdd32.png">
+          <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="ContentFileExplorer_FileExplorer" caption="FileExplorer" className="FileExplorerViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="FileExplorerView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>
