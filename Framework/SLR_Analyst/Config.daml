@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2018 Esri
@@ -22,7 +22,7 @@
     <Name>SLR Analyst</Name>
     <Description>SLR Analyst Demo Add-in</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>10/24/2017 3:15:11 PM, 2017</Date>
     <Subject>Framework</Subject>
@@ -48,9 +48,7 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="SLR_Analyst_SLR_Dockpane_ShowButton" caption="Show SLR Tools" className="SLR_Dockpane_ShowButton" loadOnClick="true" 
-								keytip="B1" 
-								smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+        <button id="SLR_Analyst_SLR_Dockpane_ShowButton" caption="Show SLR Tools" className="SLR_Dockpane_ShowButton" loadOnClick="true" keytip="B1" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
           <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
         </button>
         <!--<button id="SLR_Analyst_SLR_Pane_OpenButton" caption="Open SLR _Pane" className="SLR_Pane_OpenButton" loadOnClick="true" 

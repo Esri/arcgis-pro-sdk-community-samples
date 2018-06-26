@@ -1,4 +1,4 @@
-﻿//   Copyright 2017 Esri
+﻿//   Copyright 2018 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -43,13 +43,10 @@ namespace AnnoTools
 	/// from the annotation schema in ArcGIS 10x where all fields existed and were unable to be deleted. In ArcGIS Pro, these text formatting 
 	/// fields are able to be deleted by the user if they exist; they are no longer designated as protected or system fields. If you are writing 
 	/// or porting tools that create or modify annotation features, it is essential to take this important concept into account.
-	/// (See AnnoModifyText and AnnoModifySymbol for examples of how to modify the TextString field when it exists in the schema and when it does not.)
 	/// 4. Construction tools - Set the categoryRefID in the daml file to be "esri_editing_construction_annotation".  Also note that the geometry
 	/// being passed to the EditOperation.Crreate method is the CIMTextGraphic geometry.
-	/// 5. Editing tools - Use the EditOperation.Callback method in conjunction with a non-recycling cursor via Table.Search and the GetGraphic and 
-	/// SetGraphic methods on the AnnotationFeature class to get and set the CIMTextGraphic of an annotation feature.  (see AnnoModifySymbol.cs).
-	/// The CIMTextGraphic has attributes for settings color, font family, text justification, font size, text sring and the text baseline geometry.
-	/// There is no other way in ArcGIS Pro 2.1) to directly modify the CIMTextSymbol.
+	/// 5. Editing tools - Use the GetAnnotationProperties and SetAnnotationPropertes methods on the Inspector object to modify the text formatting
+  /// attributes.  (see AnnoModifySymbol.cs).  Any custom attributes in your schema can continue to be referenced via the inspector[fieldName] methodology.  
 	/// </summary>
 	/// <remarks>
 	/// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
@@ -58,7 +55,7 @@ namespace AnnoTools
 	/// 1. In Visual studio click the Build menu. Then select Build Solution.
 	/// 1. Click Start button to open ArcGIS Pro.
 	/// 1. ArcGIS Pro will open, select the SampleAnno.aprx project
-	/// 1. Activate an annotation template and see the two additional construction tools - Simple Anno Tool (Template) and Advanced Anno Tool (Dictionary).
+	/// 1. Activate an annotation template and see the two additional construction tools - Simple Anno Tool (Template) and Advanced Anno Tool.
 	/// ![UI](Screenshots/Screen1.png)
 	/// 1. Select the Simple Anno Tool and digitize a point.  An annotation feature will be created. 
 	/// ![UI](Screenshots/Screen2.png)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--
-//   Copyright 2017 Esri
+//   Copyright 2018 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -28,12 +28,16 @@
   <modules>
     <insertModule id="AnnoTools_Module" className="Module1" autoLoad="false" caption="Module1">
       <groups>
-        <group id="AnnoTools_Group1" caption="Annotation Tools" appearsOnAddInTab="true">
+        <group id="AnnoTools_Group1" caption="Annotation Editing Tools" appearsOnAddInTab="true">
+          <tool refID="AnnoTools_AnnoModifyText" size="large" />
           <tool refID="AnnoTools_AnnoModifyGeometry" size="large" />
           <tool refID="AnnoTools_AnnoModifySymbol" size="large" />
-          <tool refID="AnnoTools_AnnoModifyText" size="large" />
           <tool refID="AnnoTools_Modify_BalloonCallout" size="large" />
           <tool refID="AnnoTools_Modify_SimpleLineCallout" size="large" />
+        </group>
+        <group id="AnnoTools_Group2" caption="Annotation Template Tools" appearsOnAddInTab="true">
+          <button refID="AnnoTools_AnnoNewTemplate" size="large" />
+          <button refID="AnnoTools_AnnoNewTemplateFromExistingTemplate" size="large" />
         </group>
       </groups>
       <controls>
@@ -44,7 +48,7 @@
         </tool>
         <tool id="AnnoTools_AnnoAdvancedConstructionTool" caption="Advanced Anno Tool" categoryRefID="esri_editing_construction_annotation" className="AnnoAdvancedConstructionTool" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png">
           <!--note: use esri_editing_construction_polyline,  esri_editing_construction_polygon for categoryRefID as needed-->
-          <tooltip heading="Advanced Anno Tool (Dictionary)">Advanced Anno Construction Tool<disabledText /></tooltip>
+          <tooltip heading="Advanced Anno Tool">Advanced Anno Construction Tool<disabledText /></tooltip>
         </tool>
         <tool id="AnnoTools_AnnoModifyGeometry" caption="Modify Geometry" className="AnnoModifyGeometry" loadOnClick="true" condition="esri_mapping_mapPane" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png">
           <tooltip heading="Modify Anno Geometry">Click and drag over annotation features to modify their geometry.<disabledText /></tooltip>
@@ -61,6 +65,12 @@
         <tool id="AnnoTools_Modify_SimpleLineCallout" caption="Simple Line Callout" className="SimpleLineCallout" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Change Symbol to Line Callout">Click and drag over annotation features to modify their symbol to a line callout.<disabledText /></tooltip>
         </tool>
+        <button id="AnnoTools_AnnoNewTemplate" caption="AnnoNewTemplate" className="AnnoNewTemplate" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Create new template">Create a new annotation template.<disabledText /></tooltip>
+        </button>
+        <button id="AnnoTools_AnnoNewTemplateFromExistingTemplate" caption="AnnoNewTemplateFromExistingTemplate" className="AnnoNewTemplateFromExistingTemplate" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Create a new template from an existing template">Create a new annotation template from an existing annotation template.<disabledText /></tooltip>
+        </button>
       </controls>
     </insertModule>
   </modules>

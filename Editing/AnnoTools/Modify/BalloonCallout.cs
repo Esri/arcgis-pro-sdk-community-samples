@@ -1,4 +1,4 @@
-﻿//   Copyright 2017 Esri
+﻿//   Copyright 2018 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -25,18 +25,19 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Editing;
 using ArcGIS.Core.Data;
 using ArcGIS.Core.CIM;
+using ArcGIS.Desktop.Editing.Attributes;
 
 namespace AnnoTools
 {
   /// <summary>
-  /// Illustrates how to add a balloon callout with a leader line to an annotation feature. 
+  /// Illustrates how to add a balloon callout with a leader line to an annotation feature.  This involves interacting with the CIMTextGraphic of the 
+  /// annotation feature directly. 
   /// </summary>
   /// <remarks>
-  /// Use the GetGraphic and SetGraphic methods on the AnnotationFeature object to get and set the CIMTextSymbol of an annotation feature. 
-  /// Use these methods in conjunction with the EditOperation.Callback method to wrap the edit in an edit operation. You must also ensure
-  /// that you're using a non-recycling cursor when updating the annotation feature (via Table.Search). 
-  /// <para></para>
-  /// There is no other way (in ArcGIS Pro 2.1) to modify the CIMTextSymbol.
+  /// First use the <see cref="Inspector.GetAnnotationProperties"/> method to obtain the AnnotationProperties object.  Obtain the CIMTextGraphic via the 
+  /// <see cref="AnnotationProperties.TextGraphic"/> property.  Add leader lines and callouts to the CIMTextGraphic then call 
+  /// <see cref="AnnotationProperties.LoadFromTextGraphic(CIMTextGraphic)"/> to set the new CIMTextGraphic onto the annotation properties. Finally call
+  /// <see cref="Inspector.SetAnnotationProperties(AnnotationProperties)"/> to update the Inspector object.
   /// <para></para>
   /// </remarks>
   internal class BalloonCallout : MapTool
@@ -53,6 +54,11 @@ namespace AnnoTools
       return base.OnToolActivateAsync(active);
     }
 
+    /// <summary>
+    /// Called when the sketch finishes. This is where we will create the edit operation and then execute it.
+    /// </summary>
+    /// <param name="geometry">The geometry created by the sketch.</param>
+    /// <returns>A Task returning a Boolean indicating if the sketch complete event was successfully handled.</returns>
     protected override Task<bool> OnSketchCompleteAsync(Geometry geometry)
     {
       // execute on the MCT
@@ -64,57 +70,33 @@ namespace AnnoTools
           return false;
 
         EditOperation op = null;
-        foreach (var layerKey in features.Keys)
+        var insp = new Inspector();
+        foreach (var annoLayer in features.Keys.OfType<AnnotationLayer>())
         {
-          // is it an anno layer?
-          if (!(layerKey is AnnotationLayer))
-            continue;
-
           // are there features?
-          var featOids = features[layerKey];
+          var featOids = features[annoLayer];
           if (featOids.Count == 0)
             continue;
 
           // for each feature
           foreach (var oid in featOids)
           {
-            // create the edit operation
-            if (op == null)
-            {
-              op = new EditOperation();
-              op.Name = "Alter symbol to balloon callout";
-              op.SelectModifiedFeatures = true;
-              op.SelectNewFeatures = false;
-            }
+            // load an inspector
+            insp.Load(annoLayer, oid);
 
-            // use the callback method
-            op.Callback(context =>
-            {
-              // find the feature
-              QueryFilter qf = new QueryFilter();
-              qf.WhereClause = "OBJECTID = " + oid.ToString();
+            // get the annotation properties
+            var annoProperties = insp.GetAnnotationProperties();
 
-              // make sure you use a non-recycling cursor
-              using (var rowCursor = layerKey.GetTable().Search(qf, false))
-              {
-                rowCursor.MoveNext();
-                if (rowCursor.Current != null)
-                {
-                  ArcGIS.Core.Data.Mapping.AnnotationFeature annoFeature = rowCursor.Current as ArcGIS.Core.Data.Mapping.AnnotationFeature;
-                  if (annoFeature != null)
-                  {
-                    // get the CIMTextGraphic
-                    var textGraphic = annoFeature.GetGraphic() as CIMTextGraphic;
-
-                    if (textGraphic != null)
+            // get the text graphic
+            var cimTextGraphic = annoProperties.TextGraphic;
+            if (cimTextGraphic != null)
                     {
                       //
                       // add a leader point to the text graphic
                       //
 
                       // get the feature shape
-                      var feature = annoFeature as Feature;
-                      var textExtent = feature.GetShape();
+              var textExtent = insp.Shape;
 
                       // find the lower left of the text extent
                       var extent = textExtent.Extent;
@@ -131,7 +113,7 @@ namespace AnnoTools
                       leaderArray.Add(leaderPt);
 
                       // assign to the textGraphic
-                      textGraphic.Leaders = leaderArray.ToArray();
+              cimTextGraphic.Leaders = leaderArray.ToArray();
 
 
                       //
@@ -149,35 +131,29 @@ namespace AnnoTools
                       balloon.Margin = textMargin;
 
                       // asign it to the textSymbol
-                      var symbol = textGraphic.Symbol.Symbol;
+              var symbol = cimTextGraphic.Symbol.Symbol;
                       var textSymbol = symbol as CIMTextSymbol;
 
                       textSymbol.Callout = balloon;
 
-                      try
-                      {
-                        // update the graphic
-                        annoFeature.SetGraphic(textGraphic);
-                        // store
-                        annoFeature.Store();
+              // assign the text graphic back to the annotation properties
+              annoProperties.LoadFromTextGraphic(cimTextGraphic);
 
-                        // refresh the cache
-                        context.Invalidate(annoFeature);
+              // assign the annotation properties back to the inspector
+              insp.SetAnnotationProperties(annoProperties);
                       }
 
-                      // SetGraphic can throw a GeodatabaseException if the AnnotationFeatureClassDefinition AreSymbolOverridesAllowed = false
-                      //  or if IsSymbolIDRequired = true and the symbol edit you're making causes the symbol to be disconnected from the symbol collection.
-                      //   see http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic17424.html
-                      //   and http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic17432.html
-                      catch (GeodatabaseException ex)
+            // create the edit operation
+            if (op == null)
                       {
+              op = new EditOperation();
+              op.Name = "Alter symbol to balloon callout";
+              op.SelectModifiedFeatures = true;
+              op.SelectNewFeatures = false;
                       }
 
-                    }
-                  }
-                }
-              }
-            }, layerKey.GetTable());
+            // modify the feature
+            op.Modify(insp);
           }
         }
 

@@ -1,4 +1,4 @@
-﻿//   Copyright 2017 Esri
+﻿//   Copyright 2018 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -19,11 +19,14 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Editing;
 using ArcGIS.Core.Data;
 using ArcGIS.Core.CIM;
+using System.Linq;
+using ArcGIS.Desktop.Editing.Attributes;
 
 namespace AnnoTools
 {
   /// <summary>
-  /// Illustrates how to modify the baseline geometry of an annotation feature using the EditOperation.Modify method.
+  /// Illustrates how to modify the baseline geometry of an annotation feature using the 
+  /// GetAnnotationProperties and SetAnnotationProperties methods on the inspector. Then use the EditOperation.Modify method. 
   /// <para></para>
   /// Annotation feature classes store polygon geometry.  This polygon is the bounding box of the text of an annotation feature. The bounding box 
   /// is calculated from the text string, font, font size, angle orientation and other text formatting attributes of the feature. It is automatically 
@@ -37,12 +40,12 @@ namespace AnnoTools
   /// <para></para>
   /// </summary>
   /// <remarks>
-  /// Using the <see cref="ArcGIS.Desktop.Editing.Attributes.Inspector.Shape"/> method on an annotation feature will return the polygon shape.  At 
-  /// ArcGIS Pro 2.1 the only way to retrieve the text graphic (and it's geometry) is with the GetGraphic method on the AnnotationFeature object.
-  /// This tool illustrates this pattern.
-  /// <para></para>
-  /// At ArGIS Pro 2.1 do not use the Inspector methodology with the EditOperation.Modify method to update the baseline geometry of an annotation 
-  /// feature.  Accessing or updating the Shape of the Inspector object will always reference the annotation polygon geometry.
+  /// Using the <see cref="ArcGIS.Desktop.Editing.Attributes.Inspector.Shape"/> method on an annotation feature will return the polygon shape.  Use the 
+  /// GetAnnotationProperties method on the <see cref="ArcGIS.Desktop.Editing.Attributes.Inspector"/> object to retrieve the 
+  /// AnnotationProperties class which allows you to directly access and set the majority of the CIMTextGraphic properties including it's geometry.  
+  /// If you need to access the CIMTextGraphic itself use the TextGraphic property.  Use the LoadFromTextGraphic to set a new CIMTextGraphic.  After modifying the 
+  /// annotation properties, don't forget to use the SetAnnotationProperties method on the inspector to write the properties. Then pass the inspector to 
+  /// EditOperation.Modify.  This tool illustrates this pattern.
   /// </remarks>
   internal class AnnoModifyGeometry : MapTool
   {
@@ -58,6 +61,11 @@ namespace AnnoTools
       return base.OnToolActivateAsync(active);
     }
 
+    /// <summary>
+    /// Called when the sketch finishes. This is where we will create the edit operation and then execute it.
+    /// </summary>
+    /// <param name="geometry">The geometry created by the sketch.</param>
+    /// <returns>A Task returning a Boolean indicating if the sketch complete event was successfully handled.</returns>
     protected override Task<bool> OnSketchCompleteAsync(Geometry geometry)
     {
       // execute on the MCT
@@ -70,14 +78,10 @@ namespace AnnoTools
 
         EditOperation op = null;
         // for each layer in the features retrieved
-        foreach (var layer in features.Keys)
+        foreach (var annoLayer in features.Keys.OfType<AnnotationLayer>())
         {
-          // is it an anno layer?
-          if (!(layer is AnnotationLayer))
-            continue;
-
           // are there features?
-          var featOids = features[layer];
+          var featOids = features[annoLayer];
           if (featOids.Count == 0)
             continue;
 
@@ -85,29 +89,16 @@ namespace AnnoTools
           foreach (var oid in featOids)
           {
             // Remember - the shape of an annotation feature is a polygon - the bounding box of the annotation text. 
-            // We need to update the cimTextGraphic geometry.  Use the GetGraphic method from the AnnotationFeature to obtain the geometry. 
+            // We need to update the cimTextGraphic geometry. 
 
-            Geometry textGraphicGeometry = null;
+            // load the inspector with the feature
+            var insp = new Inspector();
+            insp.Load(annoLayer, oid);
 
-            // query for each feature
-            QueryFilter qf = new QueryFilter();
-            qf.WhereClause = "OBJECTID = " + oid.ToString();
-            using (var rowCursor = layer.Search(qf))
-            {
-              rowCursor.MoveNext();
-              if (rowCursor.Current != null)
-              {
-                ArcGIS.Core.Data.Mapping.AnnotationFeature annoFeature = rowCursor.Current as ArcGIS.Core.Data.Mapping.AnnotationFeature;
-                if (annoFeature != null)
-                {                  
-                  var graphic = annoFeature.GetGraphic();
-                  // cast to a CIMTextGraphic
-                  var textGraphic = graphic as CIMTextGraphic;
-                  // get the shape
-                  textGraphicGeometry = textGraphic.Shape;
-                }
-              }
-            }
+            // get the annotation properties
+            var annoProperties = insp.GetAnnotationProperties();
+            // get the cimTextGraphic geometry
+            Geometry textGraphicGeometry = annoProperties.Shape;
 
             // if cimTextGraphic geometry is not a polyline, ignore
             Polyline baseLine = textGraphicGeometry as Polyline;
@@ -118,6 +109,11 @@ namespace AnnoTools
             var origin = GeometryEngine.Instance.Centroid(baseLine);
             Geometry rotatedBaseline = GeometryEngine.Instance.Rotate(baseLine, origin, System.Math.PI / 2);
 
+            // set the updated geometry back to the annotation properties
+            annoProperties.Shape = rotatedBaseline;
+            // assign the annotation properties back to the inspector
+            insp.SetAnnotationProperties(annoProperties);
+
             // create the edit operation
             if (op == null)
             {
@@ -127,7 +123,11 @@ namespace AnnoTools
               op.SelectNewFeatures = false;
             }
 
-            op.Modify(layer, oid, rotatedBaseline);
+            op.Modify(insp);
+
+            // OR 
+            // pass the updated geometry directly
+            // op.Modify(layerKey, oid, rotatedBaseline);
 
             // OR 
             // use the Dictionary methodology
@@ -135,9 +135,6 @@ namespace AnnoTools
             //Dictionary<string, object> newAtts = new Dictionary<string, object>();
             //newAtts.Add("SHAPE", rotatedBaseline);
             //op.Modify(layer, oid, newAtts);
-
-            // OR
-            // use the pattern in AnnoModifySymbol (EditOperation.Callback) to update the textGraphic geometry 
 
           }
         }

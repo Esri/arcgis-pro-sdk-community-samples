@@ -1,0 +1,224 @@
+<!--
+
+   Copyright 2018 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="DAML.dll" defaultNamespace="DAML" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{cd50c9b8-2e13-41d4-b41f-234497e96d01}" version="1.0" desktopVersion="2.1.10257">
+    <Name>DAML</Name>
+    <Description>Show DAML Customizations to the Pro UI</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team</Author>
+    <Company>Esri</Company>
+    <Date>3/20/2018 3:48:15 PM, 2018</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ModifyProUIWithDAML_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="ModifyProUIWithDAML_Tab1" caption="New Tab">
+          <group refID="ModifyProUIWithDAML_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ModifyProUIWithDAML_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="z2">
+          <!-- host controls within groups -->
+          <button refID="New_Menu_Item_Button" size="large" />
+          <menu refID="DAML_Menu_New_Menu" size="middle" />
+          <button refID="DAML_Menu_Custom_menus_AddDataButton" size="large" />
+          <button refID="DAML_Menu_Custom_menus_ContextButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="New_Menu_Item_Button" caption="New Button" className="New_Menu_Item_Button" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" keytip="z1">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="DAML_Menu_New_Menu_Items_Button1" caption="Menu Button 1" className="DAML.Menu.New_Menu_button1" loadOnClick="true" smallImage="Images\GenericButtonGreen16.png" largeImage="Images\GenericButtonGreen32.png">
+          <tooltip heading="Menu Button 1">ToolTip<disabledText /></tooltip>
+        </button>
+        <button id="DAML_Menu_New_Menu_Items_Button2" caption="Menu Button 2" className="DAML.Menu.New_Menu_button2" loadOnClick="true" smallImage="Images\GenericButtonGreen16.png" largeImage="Images\GenericButtonGreen32.png">
+          <tooltip heading="Menu Button 2">ToolTip<disabledText /></tooltip>
+        </button>
+        <button id="DAML_Menu_New_Menu_Items_Button3" caption="Menu Button 3" className="DAML.Menu.New_Menu_button3" loadOnClick="true" smallImage="Images\GenericButtonGreen16.png" largeImage="Images\GenericButtonGreen32.png">
+          <tooltip heading="Menu Button 3">ToolTip<disabledText /></tooltip>
+        </button>
+        <button id="DAML_Menu_Custom_menus_AddDataButton" caption="Add other Data" className="DAML.Menu.Custom_menus_AddDataButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="DAML_Menu_Custom_menus_ContextButton" caption="Custom context button" className="DAML.Menu.Custom_menus_ContextButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+      <menus>
+        <menu id="DAML_Menu_New_Menu" caption="New Menu" smallImage="GenericButtonGreen16.png" largeImage="GenericButtonGreen32.png">
+          <button refID="DAML_Menu_New_Menu_Items_Button1" />
+          <button refID="DAML_Menu_New_Menu_Items_Button2" />
+          <button refID="DAML_Menu_New_Menu_Items_Button3" />
+        </menu>
+      </menus>
+    </insertModule>
+    <!--ProSnippet: Button: Removing a core button from the ribbon-->
+    <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/DeleteCoreButton.png" width="40%">-->
+    <!--Note: "updateModule" tag should be within the "modules" tag-->
+    <updateModule refID="esri_mapping">
+      <groups>
+        <updateGroup refID="esri_mapping_navigateGroup">
+          <deleteButton refID="esri_mapping_bookmarksNavigateGallery"></deleteButton>
+        </updateGroup>
+      </groups>
+    </updateModule>
+    <!--End ProSnippet-->
+    <!--ProSnippet: Button: Insert new button into an existing group on the ribbon-->
+    <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/NewButtonCoreGroup.png" width="40%">-->
+    <!--Note: "updateModule" tag should be within the "modules" tag-->
+    <updateModule refID="esri_mapping">
+      <groups>
+        <updateGroup refID="esri_mapping_navigateGroup">
+          <insertButton refID="New_Menu_Item_Button" />
+        </updateGroup>
+      </groups>
+    </updateModule>
+    <!--End ProSnippet-->
+    <!--ProSnippet: Menu: Insert a new button to the Layer context menu-->
+    <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/NewMenuItemInContextMenu.png" width="40%">-->
+    <!--Note: "updateModule" tag should be within the "modules" tag-->
+    <updateModule refID="esri_mapping">
+      <menus>
+        <updateMenu refID="esri_mapping_layerContextMenu">
+          <!--Note: New_Menu_Item_Button is a button control that must exist within the controls tag-->
+          <insertButton refID="New_Menu_Item_Button" placeWith="esri_mapping_selectedLayerSymbologyButton" />
+        </updateMenu>
+      </menus>
+    </updateModule>
+    <!--End ProSnippet-->
+    <!--ProSnippet: Menu: Insert a new Menu to the Map Container context menu -->
+    <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/MapContainerContextMenu.png" width="40%">-->
+    <!--Note: "updateModule" tag should be within the "modules" tag-->
+    <updateModule refID="esri_mapping">
+      <menus>
+        <updateMenu refID="esri_mapping_mapContainerContextMenu">
+          <!--Note: New_Menu_Item_Button is a button control that must exist within the controls tag-->
+          <insertMenu refID="DAML_Menu_New_Menu" placeWith="esri_core_editPasteButton" />
+        </updateMenu>
+      </menus>
+    </updateModule>
+    <!--End ProSnippet-->
+    <!--ProSnippet: Menu: Insert a new button to the 2D Map context menu -->
+    <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/2DMapContextMenu.png" width="40%">-->
+    <!--Note: "updateModule" tag should be within the "modules" tag-->
+    <updateModule refID="esri_mapping">
+      <menus>
+        <updateMenu refID="esri_mapping_mapContextMenu">
+          <!--Note: New_Menu_Item_Button is a button control that must exist within the controls tag-->
+          <insertButton refID="New_Menu_Item_Button" placeWith="esri_mapping_addDataButton" />
+        </updateMenu>
+      </menus>
+    </updateModule>
+    <!--End ProSnippet-->
+    <!--ProSnippet: Menu: Insert a new button to the Scene context menu -->
+    <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/SceneContextMenu.png" width="40%">-->
+    <!--Note: "updateModule" tag should be within the "modules" tag-->
+    <updateModule refID="esri_mapping">
+      <menus>
+        <updateMenu refID="esri_mapping_3d_mapContextMenu">
+          <!--Note: New_Menu_Item_Button is a button control that must exist within the controls tag-->
+          <insertButton refID="New_Menu_Item_Button" placeWith="esri_mapping_addDataButton" separator="true" />
+        </updateMenu>
+      </menus>
+    </updateModule>
+    <!--End ProSnippet-->
+    <!--ProSnippet: Menu: Insert a new button to the Map Content context menu -->
+    <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/MapContentContextMenu.png" width="40%">-->
+    <!--Note: "updateModule" tag should be within the "modules" tag-->
+    <updateModule refID="esri_mapping">
+      <menus>
+        <updateMenu refID="esri_mapping_map2DContextMenu">
+          <!--Note: New_Menu_Item_Button is a button control that must exist within the controls tag-->
+          <insertButton refID="New_Menu_Item_Button" placeWith="esri_core_rename" />
+        </updateMenu>
+      </menus>
+    </updateModule>
+    <!--End ProSnippet-->
+    <!--ProSnippet: Menu: Insert a new button to the Scene Content context menu -->
+    <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/SceneContentContextMenu.png" width="40%">-->
+    <!--Note: "updateModule" tag should be within the "modules" tag-->
+    <updateModule refID="esri_mapping">
+      <menus>
+        <updateMenu refID="esri_mapping_map3DContextMenu">
+          <!--Note: New_Menu_Item_Button is a button control that must exist within the controls tag-->
+          <insertButton refID="New_Menu_Item_Button" placeWith="esri_core_rename" separator="true" />
+        </updateMenu>
+      </menus>
+    </updateModule>
+    <!--End ProSnippet-->
+    <!--ProSnippet: Menu: Inserts a new button to the context menu for a group layer. -->
+    <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/Add-button-to-Group-layer-context-menu.png" width="40%">-->
+    <!--Note: "updateModule" tag should be within the "modules" tag-->
+    <updateModule refID="esri_mapping">
+      <menus>
+        <updateMenu refID="esri_mapping_groupLayerContextMenu">
+          <insertButton refID="DAML_Menu_Custom_menus_ContextButton" placeWith="esri_mapping_selectedLayerPropertiesButton" insert="after" />
+        </updateMenu>
+      </menus>
+    </updateModule>
+    <!--End ProSnippet-->
+    <!--ProSnippet: Gallery:Inserts a new button to the Add Data gallery, which can be seen from the Add Data split button. -->
+    <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/Add-button-to-Add-Data-Split-Button-Gallery.png" width="40%">-->
+    <!--Note: "updateModule" tag should be within the "modules" tag-->
+    <updateModule refID="esri_mapping">
+      <galleries>
+        <updateGallery refID="esri_mapping_addDataGallery">
+          <insertButton refID="DAML_Menu_Custom_menus_AddDataButton" />
+        </updateGallery>
+      </galleries>
+    </updateModule>
+    <!--End ProSnippet-->
+  </modules>
+  <!--ProSnippet: Backstage tab: Delete Pro's tabs and insert your own tab-->
+  <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/BackstageDeleteExistingTabsInsertNewTabs.png" width="40%">-->
+  <!--Note: The "backstage" tag comes after the closing "modules" tag-->
+  <backstage>
+    <!--Deletes the New Project tab in Pro's backstage-->
+    <deleteTab refID="esri_core_newProjectBackStageTab" />
+    <!--Deletes the Open Project tab in Pro's backstage-->
+    <deleteTab refID="esri_core_openProjectBackStageTab" />
+    <!--Inserts a new tab into Pro's backstage, placed before the Save Project tab-->
+    <insertTab id="GeocodeBackstageTab" caption="Geocode" className="DAML.Backstage.GeocodeBackstageTabViewModel" insert="before" placeWith="esri_core_saveProjectButton" keytip="Z7">
+      <content className="DAML.Backstage.GeocodeBackstageTabView" />
+    </insertTab>
+  </backstage>
+  <!--End ProSnippet-->
+  <!--ProSnippet: PropertySheet: Insert Property Page into the Options Dialog Property sheet-->
+  <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/PropertySheetOptionsDialog.png" width="40%">-->
+  <!--Note: The "propertySheets" tag comes after the closing "modules" tag.-->
+  <propertySheets>
+    <!--refID is set to the DAML Id of Pro's Options property sheet-->
+    <updateSheet refID="esri_core_optionsPropertySheet">
+      <insertPage id="ModifyProUIWithDAML_OptionsPropertySheet_OptionsDialogPropertyPage" caption="Sample Project Settings" className="DAML.OptionsPropertySheet.OptionsDialogPropertyPageViewModel" group="Project">
+        <!--Setting "groups" attribute to "Project" will add 
+                  page to the Project group on the Pro options dialog.-->
+        <content className="DAML.OptionsPropertySheet.OptionsDialogPropertyPageView" />
+      </insertPage>
+    </updateSheet>
+  </propertySheets>
+  <!--End ProSnippet-->
+</ArcGIS>

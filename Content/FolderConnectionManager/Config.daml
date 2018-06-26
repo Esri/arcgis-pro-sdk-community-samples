@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
-//   Copyright 2017 Esri
+//   Copyright 2018 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -18,7 +18,7 @@
     <Name>FolderConnectionManager</Name>
     <Description>Allows saving and loading folder connections to a Project.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>9/14/2015 1:23:45 PM, 2015</Date>
     <Subject>Content</Subject>
@@ -45,18 +45,15 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="FolderConnections_ShowFolders" caption="Display Connections" className="DisplayConnections" loadOnClick="true" keytip="ZA"
-                          smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+        <button id="FolderConnections_ShowFolders" caption="Display Connections" className="DisplayConnections" loadOnClick="true" keytip="ZA" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
           <tooltip heading="Display Connections">Display all folder connections in the current Project<disabledText /></tooltip>
         </button>
-        <button id="FolderConnections_SaveConnections" caption="Save Connections" className="SaveConnections" loadOnClick="true" keytip="ZB"
-                          smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+        <button id="FolderConnections_SaveConnections" caption="Save Connections" className="SaveConnections" loadOnClick="true" keytip="ZB" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
           <tooltip heading="Save Connections">Save the current Project's folder connections into a text file<disabledText /></tooltip>
         </button>
-        <button id="FolderConnections_LoadConnections" caption="Load Connections" className="LoadConnections" loadOnClick="true" keytip="ZC"
-                          smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+        <button id="FolderConnections_LoadConnections" caption="Load Connections" className="LoadConnections" loadOnClick="true" keytip="ZC" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
           <tooltip heading="Load Connections">Load a text file containing directories to be used as folder connections<disabledText /></tooltip>
-        </button>        
+        </button>
       </controls>
     </insertModule>
   </modules>

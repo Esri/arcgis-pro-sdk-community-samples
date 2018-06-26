@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2018 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="DatastoresDefinitionsAndDatasets.dll" defaultNamespace="DatastoresDefinitionsAndDatasets" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{52f505f1-745f-4745-8d54-fc50b1084424}" version="1.0" desktopVersion="2.0.8357">
+    <Name>DatastoresDefinitionsAndDatasets</Name>
+    <Description>DatastoresDefinitionsAndDatasets description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, http://www.esri.com</Company>
+    <Date>3/7/2018 11:15:55 PM, 2017</Date>
+    <Subject>Geodatabase</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="DatastoresDefinitionsAndDatasets_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="DatastoresDefinitionsAndDatasets_Tab1" caption="New Tab">
+          <group refID="DatastoresDefinitionsAndDatasets_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="DatastoresDefinitionsAndDatasets_Group1" caption="Datastore"
+							 appearsOnAddInTab="true" keytip="G1">
+          <!-- host controls within groups -->
+          <button refID="DatastoresDefinitionsAndDatasets_Dockpane_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="DatastoresDefinitionsAndDatasets_Dockpane_ShowButton" 
+								caption="Datastore Datasets and Definitions" 
+								className="Dockpane_ShowButton" loadOnClick="true" 
+								smallImage="Images\KauaiOld16.png" 
+								largeImage="Images\KauaiOld32.png" keytip="B1">
+          <tooltip heading="Show Datastore Explore Dockpane">
+						Show Datastore Datasets and Definitions Exploration Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="DatastoresDefinitionsAndDatasets_Dockpane" caption="Datastores" 
+									className="DockpaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="DockpaneView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

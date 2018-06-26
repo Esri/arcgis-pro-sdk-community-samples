@@ -1,4 +1,4 @@
-﻿//   Copyright 2014 Esri
+﻿//   Copyright 2018 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -24,23 +24,25 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 
 namespace TimeNavigation
 {
-    /// <summary>
-    /// This sample provides a new tab and controls that allow you to set the time in the map view, step through time, and navigate between time enabled bookmarks in the map.
-    /// </summary>
-    /// <remarks>
-    /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 2. Click Start button to open ArcGIS Pro.
-    /// 3. ArcGIS Pro will open. 
-    /// 4. Open a map view that contains time aware data. Click on the new Navigation tab within the Time tab group on the ribbon.  
-    /// ![UI](screenshots/UICommands.png)  
-    /// 5. Within this tab there are 3 groups that provide functionality to navigate through time.
-    /// 6. The Map Time group provides two date picker controls to set the start and end time in the map.
-    /// 7. The Time Step group provides two combo boxes to set the time step interval. The previous and next button can be used to offset the map time forward or back by the specified time step interval.
-    /// 8. The Bookmarks group provides a gallery of time enabled bookmarks for the map. Clicking a bookmark in the gallery will zoom the map to that location and time. 
-    /// It also provides play, previous and next buttons that can be used to navigate between the time enabled bookmarks. 
-    /// These commands are only enabled when there are at least 2 bookmarks in the map. Finally it provides a slider that can be used to set how quickly to move between bookmarks during playback.
-    /// </remarks>
-  internal class TimeModule : Module
+	/// <summary>
+	/// This sample provides a new tab and controls that allow you to set the time in the map view, step through time, and navigate between time enabled bookmarks in the map.
+	/// </summary>
+	/// <remarks>
+	/// 1. Download the Community Sample data(see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.
+	/// 1. In Visual Studio click the Build menu.Then select Build Solution.  
+	/// 1. Click Start button to open ArcGIS Pro.
+	/// 1. ArcGIS Pro will open.  
+	/// 1. Open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project which contains the required data needed for this sample.
+	/// 1. Click on the new Navigation tab within the Time tab group on the ribbon.  
+	/// ![UI](screenshots/UICommands.png)  
+	/// 1. Within this tab there are 3 groups that provide functionality to navigate through time.
+	/// 1. The Map Time group provides two date picker controls to set the start and end time in the map.
+	/// 1. The Time Step group provides two combo boxes to set the time step interval. The previous and next button can be used to offset the map time forward or back by the specified time step interval.
+	/// 1. The Bookmarks group provides a gallery of time enabled bookmarks for the map. Clicking a bookmark in the gallery will zoom the map to that location and time. 
+	/// It also provides play, previous and next buttons that can be used to navigate between the time enabled bookmarks. 
+	/// These commands are only enabled when there are at least 2 bookmarks in the map. Finally it provides a slider that can be used to set how quickly to move between bookmarks during playback.
+	/// </remarks>
+	internal class TimeModule : Module
   {
     private static TimeModule _this = null;
     private static Settings _settings = Settings.Default;

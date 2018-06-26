@@ -152,8 +152,13 @@
     <None Include="packages.config" />
     <None Include="ReadMe.md" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Screenshots\" />
+    <None Include="Screenshots\Screen1.png" />
+    <None Include="Screenshots\Screen2.png" />
+    <None Include="Screenshots\Screen3.png" />
+    <None Include="Screenshots\Screen4.png" />
+    <None Include="Screenshots\Screen5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!--

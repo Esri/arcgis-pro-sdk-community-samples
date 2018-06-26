@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2017 Esri
+   Copyright 2018 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -234,10 +234,9 @@ namespace LayoutMapSeries
               Coordinate2D urLegend = new Coordinate2D(SelectedPageLayout.XOffsetMapMarginalia + SelectedPageLayout.XWidthMapMarginalia, SelectedPageLayout.HeightPartsMarginalia);
               System.Diagnostics.Debug.WriteLine(mfElm);
               LayoutElementFactory.Instance.CreateLegend(layout, EnvelopeBuilder.CreateEnvelope(llLegend, urLegend), mfElm);
-							
-							// Defince the CIM MapSeries
-							var CimSpatialMapSeries = new CIMSpatialMapSeries()
-							{
+
+              // Defince the CIM MapSeries
+              var CimSpatialMapSeries = new CIMSpatialMapSeries() {
 								Enabled = true,
 								MapFrameName = SelectedPageLayout.MapFrameName,
 								StartingPageNumber = 1,
@@ -254,9 +253,9 @@ namespace LayoutMapSeries
 							};
 							CIMLayout layCIM = layout.GetDefinition();
 							layCIM.MapSeries = CimSpatialMapSeries;
-							layout.SetDefinition(layCIM);
+              layout.SetDefinition(layCIM);
 
-							return layout;
+              return layout;
             });
 
             //CREATE, OPEN LAYOUT VIEW (must be in the GUI thread)

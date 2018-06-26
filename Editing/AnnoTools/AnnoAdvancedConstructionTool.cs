@@ -1,4 +1,4 @@
-﻿//   Copyright 2017 Esri
+﻿//   Copyright 2018 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -34,19 +34,19 @@ namespace AnnoTools
   /// <para></para>
   /// The text attributes of an annotation feature are represented by a CIMTextGraphic. The CIMTextGraphic consists of the text string, text attributes 
   /// (such as verticalAlignment, horizontalAlignment, fontFamily, fontSize etc), callouts, leader lines and the CIMTextGraphic geometry. This geometry 
-  /// can be a point, straight line, bezier curve or multipoint geometry and represents the baseline geometry that the text string sits upon. 
+  /// can be a point, straight line, bezier curve, multipoint geometry or GeometryBag and represents the baseline geometry that the text string sits upon. 
   /// <para></para>
-  /// When creating an annotation feature the geometry passed to the Create method is the cimTextGraphic geometry.  
+  /// When creating an annotation feature the geometry passed to the Create method is the CIMTextGraphic geometry.  
   /// <para></para>
   /// <para></para>
   /// Another annotation consideration is the annotation schema.  The only guaranteed fields to exist are AnnotationClassID, SymbolID, Status, Element, Shape. 
   /// All other fields (such as textString, FontName,  VerticalAlignment etc) are optional and may not exist in the physical schema. 
   ///
-  /// If the fields you wish to set exist in the schema then you can use the Create method with the dictionary as illustrated below
-  /// otherwise you should use the Create method using the template and shape parameters (illustrated in AnnoSimpleConstructionTool.cs)
-  ///
-  /// At 2.1 there is currently no way in the API to preset the textString of a newly created feature if the textString field does not physically exist 
-  /// in the feature class schema.  This is also true for other optional annotation attribute fields.
+  /// If you are wishing to alter attributes from the template defaults, the recommended way is to use the AnnotationProperties object on the template's inspector obtained 
+  /// via the GetAnnotationProperties method.  The AnnotationProperties object allows you to directly access and set the majority of the CIMTextGraphic properties.  
+  /// If you need to access the CIMTextGraphic itself use the TextGraphic property.  Use the LoadFromTextGraphic to set a new CIMTextGraphic.  After modifying the 
+  /// annotation properties, don't forget to use the SetAnnotationProperties method on the inspector to write the properties. Then pass the inspector to 
+  /// EditOperation.Create.  This construction tool illustrates this methodology.
   /// </remarks>
   internal class AnnoAdvancedConstructionTool : MapTool
   {
@@ -58,6 +58,10 @@ namespace AnnoTools
       SketchType = SketchGeometryType.Line;
     }
 
+    /// <summary>
+    /// Restrict the sketch to a two point line
+    /// </summary>
+    /// <returns></returns>
     protected override async Task<bool> OnSketchModifiedAsync()
     {
       // restrict the sketch to a 2 point line
@@ -65,7 +69,7 @@ namespace AnnoTools
       {
         // get the current sketch
         var geometry = await base.GetCurrentSketchAsync();
-        // cast to a polyline
+        // cast to a polyline - the geometry will always be a polyline because the SketchType (set in the constructor) is set to Line.
         var geom = geometry as ArcGIS.Core.Geometry.Polyline;
         // check the point count
         return geom?.PointCount >= 2;
@@ -148,34 +152,39 @@ namespace AnnoTools
         if (symbolID == -1)
           return false;
 
-        // use a dictionary to set values
-        Dictionary<string, object> values = new Dictionary<string, object>();
+
+        // use the template's inspector object
+        var inspector = CurrentTemplate.Inspector;
+        // get the annotation properties
+        var annoProperties = inspector.GetAnnotationProperties();
 
         // AnnotationClassID, SymbolID and Shape are the bare minimum for an annotation feature
 
-        // set the SymbolID 
-        values.Add("SymbolID", symbolID);
-        // set the AnnotationClassID
-        values.Add("AnnotationClassID", label.ID);   
+        // use the inspector[fieldName] to set the annotationClassid - this is allowed since annotationClassID is a guaranteed field in the annotation schema
+        inspector["AnnotationClassID"] = label.ID;
+        // set the symbolID too
+        inspector["SymbolID"] = symbolID;
                                               
-        // you can also add text (if the field exists)
-        // if you don't set text then the feature has the default value of 'Text'
-        int idxField = cimDefinition.FindField("TextString");
-        if (idxField != -1)
-          values.Add("TextString", "My annotation feature");
+        // use the annotation properties to set the other attributes
+        annoProperties.TextString = "My annotation feature";
+        annoProperties.Color = ColorFactory.Instance.GreenRGB;
+        annoProperties.VerticalAlignment = ArcGIS.Core.CIM.VerticalAlignment.Top;
+        annoProperties.Underline = true;
 
         // set the geometry to be the sketched line
         // when creating annotation features the shape to be passed in the create operation is the CIMTextGraphic shape
-        values["SHAPE"] = geometry;
+        annoProperties.Shape = geometry;
 
+        // set the annotation properties back on the inspector
+        inspector.SetAnnotationProperties(annoProperties);
 
         // Create an edit operation
         var createOperation = new EditOperation();
         createOperation.Name = string.Format("Create {0}", CurrentTemplate.Layer.Name);
         createOperation.SelectNewFeatures = true;
 
-        // create and execute
-        createOperation.Create(CurrentTemplate.Layer, values);
+        // create and execute using the inspector
+        createOperation.Create(CurrentTemplate.Layer, inspector);
         return createOperation.Execute();
       });
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ArcGIS defaultAssembly="ArcGISOnlineConnect.dll" defaultNamespace="ArcGISOnlineConnect" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <!--//   Copyright 2017 Esri
+  <!--//   Copyright 2018 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -20,7 +20,7 @@
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
     <Company>esri, http://www.esri.com</Company>
     <Date>5/26/2015 12:13:44 PM, 2015</Date>
-    <Subject>Framework</Subject>
+    <Subject>Content</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>
@@ -35,7 +35,7 @@
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="ArcGISOnlineConnect_Group1" caption="Group 1" appearsOnAddInTab="true">
+        <group id="ArcGISOnlineConnect_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="G1">
           <!-- host controls within groups -->
           <button refID="ArcGISOnlineConnect_AgolDockpane_ShowButton" size="large" />
         </group>
@@ -48,7 +48,7 @@
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="ArcGISOnlineConnect_AgolDockpane" caption="AgolDockpane " className="AgolDockpaneViewModel" keytip="DockPane" dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="ArcGISOnlineConnect_AgolDockpane" caption="AgolDockpane " className="AgolDockpaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="AgolDockpaneView" />
         </dockPane>
       </dockPanes>

@@ -98,6 +98,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnnoAdvancedConstructionTool.cs" />
+    <Compile Include="Templates\AnnoNewTemplate.cs" />
+    <Compile Include="Templates\AnnoNewTemplateFromExistingTemplate.cs" />
     <Compile Include="Modify\AnnoModifySymbol.cs" />
     <Compile Include="Modify\AnnoModifyGeometry.cs" />
     <Compile Include="Modify\AnnoModifyText.cs" />
@@ -119,13 +121,24 @@
   <ItemGroup>
     <AddInContent Include="DarkImages\GenericButtonRed32.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AddInContent Include="Images\GenericButtonBlue16.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.md" />
     <None Include="Screenshots\Screen1.png" />
     <None Include="Screenshots\Screen2.png" />
     <None Include="Screenshots\Screen3.png" />
     <None Include="Screenshots\Screen4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="Images\GenericButtonBlue32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="DarkImages\GenericButtonBlue16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="DarkImages\GenericButtonBlue32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!--
