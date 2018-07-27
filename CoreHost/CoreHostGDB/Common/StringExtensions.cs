@@ -20,8 +20,13 @@ using System.Threading.Tasks;
 
 namespace CoreHostGDB.Common {
     public static class StringExtensions {
+		/// <summary>
+		/// Check is a string is null or empty
+		/// </summary>
+		/// <param name="theString"></param>
+		/// <returns></returns>
         public static bool IsEmpty(this string theString) {
-            return (theString == null || theString.Length == 0);
+            return string.IsNullOrEmpty(theString);
         }
     }
 }
