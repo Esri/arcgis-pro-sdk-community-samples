@@ -277,6 +277,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicJoins", "Geodatabase
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditEvents", "Editing\EditEvents\EditEvents.csproj", "{5294EC63-C9D8-4DD0-8BDD-51B8B9735BC3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModifyNewlyAddedFeatures", "Editing\ModifyNewlyAddedFeatures\ModifyNewlyAddedFeatures.csproj", "{D599ABEC-1930-426B-A71E-425BFF94213A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -831,6 +833,10 @@ Global
 		{5294EC63-C9D8-4DD0-8BDD-51B8B9735BC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5294EC63-C9D8-4DD0-8BDD-51B8B9735BC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5294EC63-C9D8-4DD0-8BDD-51B8B9735BC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D599ABEC-1930-426B-A71E-425BFF94213A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D599ABEC-1930-426B-A71E-425BFF94213A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D599ABEC-1930-426B-A71E-425BFF94213A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D599ABEC-1930-426B-A71E-425BFF94213A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

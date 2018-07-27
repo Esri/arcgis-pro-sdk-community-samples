@@ -18,6 +18,13 @@
             <param name="execMethod">The execute method</param>
             <param name="canExecuteMethod">A function to check if the tool can be executed.</param>
         </member>
+        <member name="M:CoreHostGDB.Common.StringExtensions.IsEmpty(System.String)">
+            <summary>
+            Check is a string is null or empty
+            </summary>
+            <param name="theString"></param>
+            <returns></returns>
+        </member>
         <member name="M:CoreHostGDB.Common.TaskUtils.StartSTATask``1(System.Func{``0})">
             <summary>
             The problem is that Core.Data must be STA. An STA thread can't be a threadpool thread 

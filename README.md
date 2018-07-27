@@ -50,7 +50,7 @@ The requirements for the machine on which you develop your ArcGIS Pro add-ins ar
 
 #### ArcGIS Pro
 
-* ArcGIS Pro 2.2
+* ArcGIS Pro 2.2 
 
 #### Supported platforms
 
@@ -75,10 +75,9 @@ ArcGIS Pro SDK for .NET can be downloaded and installed from within Visual Studi
 
 Read the [ProGuide: Installation and Upgrade](http://github.com/Esri/arcgis-pro-sdk/wiki/ProGuide-Installation-and-Upgrade) for detailed installation instructions.
 
-
 ## ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 135 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 136 ArcGIS Pro samples that are included in this repository.  
 
 #### Content
 
@@ -105,6 +104,7 @@ Below is the list of 135 ArcGIS Pro samples that are included in this repository
 * [ExtendTool (c#)](../../tree/master/Editing/ExtendTool)  
 * [InspectorTool (c#)](../../tree/master/Editing/InspectorTool)  
 * [MainConnectorManhole (c#)](../../tree/master/Editing/MainConnectorManhole)  
+* [ModifyNewlyAddedFeatures (c#)](../../tree/master/Editing/ModifyNewlyAddedFeatures)  
 * [ReplaceSketch (c#)](../../tree/master/Editing/ReplaceSketch)  
 * [RestartSketch (c#)](../../tree/master/Editing/RestartSketch)  
 * [SketchToolDemo (c#)](../../tree/master/Editing/SketchToolDemo)  
