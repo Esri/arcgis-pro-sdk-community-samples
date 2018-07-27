@@ -1,4 +1,4 @@
-﻿//   Copyright 2017 Esri
+﻿//   Copyright 2018 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace AnnoTools
   /// <para></para>
   /// The text attributes of an annotation feature are represented by a CIMTextGraphic. The CIMTextGraphic consists of the text string, text attributes 
   /// (such as verticalAlignment, horizontalAlignment, fontFamily, fontSize etc), callouts, leader lines and the CIMTextGraphic geometry. This geometry 
-  /// can be a point, straight line, bezier curve or multipoint geometry and represents the baseline geometry that the text string sits upon. 
+  /// can be a point, straight line, bezier curve, multipoint geometry or GeometryBag and represents the baseline geometry that the text string sits upon. 
   /// <para></para>
-  /// When creating an annotation feature the geometry passed to the Create method is the cimTextGraphic geometry. 
+  /// When creating an annotation feature the geometry passed to the Create method is the CIMTextGraphic geometry. 
   /// </remarks>
   internal class AnnoSimpleConstructionTool : MapTool
   {

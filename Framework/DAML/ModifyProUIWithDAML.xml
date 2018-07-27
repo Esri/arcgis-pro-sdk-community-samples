@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DAML</name>
+    </assembly>
+    <members>
+        <member name="T:DAML.Backstage.GeocodeBackstageTabView">
+            <summary>
+            Interaction logic for GeocodeBackstageTabView.xaml
+            </summary>
+            <summary>
+            GeocodeBackstageTabView
+            </summary>
+        </member>
+        <member name="M:DAML.Backstage.GeocodeBackstageTabView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:DAML.Backstage.GeocodeBackstageTabViewModel.InitializeAsync">
+            <summary>
+            Called when the backstage tab is selected.
+            </summary>
+        </member>
+        <member name="M:DAML.Backstage.GeocodeBackstageTabViewModel.UninitializeAsync">
+            <summary>
+            Called when the backstage tab is unselected.
+            </summary>
+        </member>
+        <member name="T:DAML.Module1">
+            <summary>
+            This sample demonstrates how to modify the Pro UI using DAML
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.  
+            1. Click Start button to open ArcGIS Pro.
+            1. ArcGIS Pro will open.
+            1. Open any project with at least one feature layer.
+            1. Notice the following customizations made to the Pro UI:
+            * The Bookmarks button has been removed in the Navigate group on the Map tab
+            &lt;img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/DeleteCoreButton.png" width="40%"&gt;
+            * A new button has been inserted into the Navigate group on the Map Tab
+            &lt;img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/NewButtonCoreGroup.png" width="40%"&gt;
+            * With any Map view active, right click on a feature layer in the TOC. Notice the New Button context menu item added.
+            &lt;img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/NewMenuItemInContextMenu.png" width="40%"&gt;
+            * Click the Project tab to access Pro's backstage.  Notice the missing Open and New project tabs.  A new tab called "Geocode" has been inserted above the Save project button.
+            &lt;img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/BackstageDeleteExistingTabsInsertNewTabs.png" width="40%"&gt;
+            * Click the Project tab to access Pro's backstage. Click the Options tab to display the Options Property Sheet.  Notice the new "Sample Project Settings" property page inserted within the Project group.
+            &lt;img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/PropertySheetOptionsDialog.png" width="40%"&gt;
+            * With any Map active, right click on the Map in the Contents pane to access the context menu. Notice the new button inserted into the context menu.
+            &lt;img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/2DMapContextMenu.png" width="40%"&gt;
+            * With any Scene active, right click on the Scene in the Contents pane to access the context menu. Notice the new button inserted into the context menu.
+            &lt;img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/SceneContextMenu.png" width="40%"&gt;
+            * In the Catalog pane, right click on the Map Container to access its context menu. Notice a new Menu inserted into the context menu.
+            &lt;img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/MapContainerContextMenu.png" width="40%"&gt;
+            * In the Catalog pane, right click on any Map item to access its context menu. Notice a new button inserted into the context menu.
+            &lt;img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/MapContentContextMenu.png" width="40%"&gt;
+            * In the Catalog pane, right click on any Local Scene to access its context menu. Notice a new button inserted into the context menu.
+            &lt;img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/SceneContentContextMenu.png" width="40%"&gt;
+            </remarks>
+        </member>
+        <member name="P:DAML.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:DAML.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="T:DAML.OptionsPropertySheet.OptionsDialogPropertyPageView">
+            <summary>
+            Interaction logic for OptionsDialogPropertyPageView.xaml
+            </summary>
+            <summary>
+            OptionsDialogPropertyPageView
+            </summary>
+        </member>
+        <member name="M:DAML.OptionsPropertySheet.OptionsDialogPropertyPageView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:DAML.OptionsPropertySheet.OptionsDialogPropertyPageViewModel.CommitAsync">
+            <summary>
+            Invoked when the OK or apply button on the property sheet has been clicked.
+            </summary>
+            <returns>A task that represents the work queued to execute in the ThreadPool.</returns>
+            <remarks>This function is only called if the page has set its IsModified flag to true.</remarks>
+        </member>
+        <member name="M:DAML.OptionsPropertySheet.OptionsDialogPropertyPageViewModel.InitializeAsync">
+            <summary>
+            Called when the page loads because to has become visible.
+            </summary>
+            <returns>A task that represents the work queued to execute in the ThreadPool.</returns>
+        </member>
+        <member name="M:DAML.OptionsPropertySheet.OptionsDialogPropertyPageViewModel.Uninitialize">
+            <summary>
+            Called when the page is destroyed.
+            </summary>
+        </member>
+        <member name="P:DAML.OptionsPropertySheet.OptionsDialogPropertyPageViewModel.DataUIContent">
+            <summary>
+            Text shown inside the page hosted by the property sheet
+            </summary>
+        </member>
+    </members>
+</doc>

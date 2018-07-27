@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- 
-    Copyright 2017 Esri 
+    Copyright 2018 Esri 
     
     
     Licensed under the Apache License, Version 2.0 (the "License"); 
@@ -44,15 +44,15 @@
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
         <group id="RibbonControls_Group1" caption="Group 1" keytip="X1">
-          <!-- host controls within groups -->
+          <!-- host controls within groups -->          
           <toolbar refID="RibbonControls_Toolbar1" size="small" />
           <checkBox refID="RibbonControls_CheckBox1" size="small" />
           <editBox refID="RibbonControls_EditBox1" size="small" />
         </group>
         <group id="RibbonControls_Group2" caption="Group 2" keytip="X2" launcherButtonID="RibbonControls_Button3" launcherKeytip="XP">
           <!-- host controls within groups -->
-          <button refID="RibbonControls_Button2" size="large" />
-          <tool refID="RibbonControls_MapTool1" size="large" />
+          <!--Use subgroups to better control ribbon resizing-->
+          <subgroup refID="RibbonControls_Subgroup1"/>
           <toolPalette refID="RibbonControls_ToolPalette1" size="large" />
           <buttonPalette refID="RibbonControls_ButtonPalette1" />
           <splitButton refID="RibbonControls_SplitButton1" />
@@ -69,6 +69,12 @@
           <gallery refID="RibbonControls_Gallery1" inline="false" size="large" />
         </group>
       </groups>
+      <subgroups>
+        <subgroup id="RibbonControls_Subgroup1" verticalAlignment='Center' horizontalAlignment='Left' size='MediumThenSmallWhenSmall'>
+          <button refID="RibbonControls_Button2" size="large" />
+          <tool refID="RibbonControls_MapTool1" size="large" />
+        </subgroup>        
+      </subgroups>
       <controls>
         <!-- add your controls here -->
         <labelControl id="RibbonControls_Label1" caption="Class " hasTwoLines="false" />

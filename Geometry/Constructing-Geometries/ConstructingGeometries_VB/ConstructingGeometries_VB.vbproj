@@ -3,10 +3,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
-    <SchemaVersion>
-    </SchemaVersion>
+    <ProductVersion></ProductVersion>
+    <SchemaVersion></SchemaVersion>
     <ProjectGuid>{2782CDB7-A9B7-4387-9B0F-C102CC95EEA9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>ConstructingGeometries_VB</RootNamespace>

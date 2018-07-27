@@ -10,14 +10,14 @@
   <AddInInfo id="{78ff1a6a-a163-4d45-9cd4-3a732fa5f246}" version="1.0" desktopVersion="2.0.0">
     <Name>DataReviewerProSDKSamples</Name>
     <Description>Data Reviewer Pro SDK Sample</Description>
-    <Image>Images\DataReviewerAddin32.png</Image>
+    <Image>Images\DataReviewerBatchChecksAdd32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
     <Company>esri, http://www.esri.com</Company>
     <Date>06/01/2015 10:20:00 AM, 2015</Date>
     <Subject>DataReviewer</Subject>
   </AddInInfo>
   <!--
-  //Copyright 2014 Esri
+  //Copyright 2018 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.

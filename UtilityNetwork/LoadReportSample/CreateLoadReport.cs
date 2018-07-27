@@ -1,4 +1,4 @@
-﻿//   Copyright 2017 Esri
+﻿//   Copyright 2018 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -63,13 +63,16 @@ namespace LoadReportSample
     private const string ElectricDomainNetwork = "ElectricDistribution";
     private const string MediumVoltageTier = "Medium Voltage Radial";
     private const string ServicePointCategory = "ServicePoint";
-    private const string DeviceStatusAttributeName = "Operational Device Status";
 
     private const short DeviceStatusOpened = 1;
     private const short DeviceStatusClosed = 2;
 
-    private const string PhasesAttributeName = "Phases Current";
-    private const string LoadAttributeName = "Customer Load";
+    // Network Attributes - there are a number of different sample databases with
+    // different attribute names.  The sample tries to be flexible about which names it
+    // will use
+    private static readonly string[] PhaseAttributeNames = { "Phases Current", "Distribution Phases Current" };
+    private static readonly string[] LoadAttributeNames = { "Customer Load", "Service Load", "Power Rating" };
+    private static readonly string[] DeviceStatusAttributeNames = { "Operational Device Status", "Electric Device Status" };
 
     private const short APhase = 4;
     private const short BPhase = 2;
@@ -133,6 +136,24 @@ namespace LoadReportSample
       MessageBox.Show(traceResultsString, "Create Load Report");
     }
 
+    private NetworkAttribute GetAttribute(UtilityNetworkDefinition utilityNetworkDefinition, string[] nameCandidates)
+    {
+      // Returns a Network Attribute that matches one of the names passed in as the nameCandidates argument
+
+      IReadOnlyList<NetworkAttribute> networkAttributes = utilityNetworkDefinition.GetNetworkAttributes();
+      foreach(NetworkAttribute networkAttribute in networkAttributes)
+      {
+        if (nameCandidates.Any(x => x == networkAttribute.Name))
+        {
+          return networkAttribute;
+        }
+        else
+        {
+          networkAttribute.Dispose();
+        }
+      }
+      return null;
+    }
 
     /// <summary>
     /// GenerateReport
@@ -183,146 +204,156 @@ namespace LoadReportSample
 
             // Get the network attributes that we will use in our trace
 
-            NetworkAttribute phasesNetworkAttribute = null;
-            NetworkAttribute loadNetworkAttribute = null;
-            NetworkAttribute deviceStatusNetworkAttribute = null;
-
-            try
+            using (NetworkAttribute phasesNetworkAttribute = GetAttribute(utilityNetworkDefinition, PhaseAttributeNames))
+            using (NetworkAttribute loadNetworkAttribute = GetAttribute(utilityNetworkDefinition, LoadAttributeNames))
+            using (NetworkAttribute deviceStatusNetworkAttribute = GetAttribute(utilityNetworkDefinition, DeviceStatusAttributeNames))
             {
-              phasesNetworkAttribute = utilityNetworkDefinition.GetNetworkAttribute(PhasesAttributeName);
-              loadNetworkAttribute = utilityNetworkDefinition.GetNetworkAttribute(LoadAttributeName);
-              deviceStatusNetworkAttribute = utilityNetworkDefinition.GetNetworkAttribute(DeviceStatusAttributeName);
-            }
-            catch
-            {
-              results.Success = false;
-              results.Message = "This add-in requires the following network attributes: Phases Current, Customer Load, Operational Device Status.\n";
-              return results;
-            }
-
-
-            // Get the Tier for Medium Voltage Radial
-            DomainNetwork electricDomainNetwork = utilityNetworkDefinition.GetDomainNetwork(ElectricDomainNetwork);
-            Tier mediumVoltageTier = electricDomainNetwork.GetTier(MediumVoltageTier);
-
-
-            // Set up the trace configuration
-            TraceConfiguration traceConfiguration = new TraceConfiguration();
-
-            // Configure the trace to use the electric domain network
-            traceConfiguration.DomainNetwork = electricDomainNetwork;
-            
-            // Take the default TraceConfiguration from the Tier for Traversability
-            Traversability tierTraceTraversability = mediumVoltageTier.TraceConfiguration.Traversability;
-            traceConfiguration.Traversability.FunctionBarriers = tierTraceTraversability.FunctionBarriers;
-            traceConfiguration.IncludeBarriersWithResults = mediumVoltageTier.TraceConfiguration.IncludeBarriersWithResults;
-            traceConfiguration.Traversability.Scope = tierTraceTraversability.Scope;
-            ConditionalExpression baseCondition = tierTraceTraversability.Barriers as ConditionalExpression;
-
-            // Create function to sum loads on service points where phase = A
-            ConditionalExpression aPhaseCondition = new NetworkAttributeComparison(phasesNetworkAttribute, Operator.DoesNotIncludeTheValues, APhase);
-            Function aPhaseLoad = new Add(loadNetworkAttribute);
-
-            // Create function to sum loads on service points where phase = B
-            ConditionalExpression bPhaseCondition = new NetworkAttributeComparison(phasesNetworkAttribute, Operator.DoesNotIncludeTheValues, BPhase);
-            Function bPhaseLoad = new Add(loadNetworkAttribute);
-
-            // Create function to sum loads on service points where phase = C
-            ConditionalExpression cPhaseCondition = new NetworkAttributeComparison(phasesNetworkAttribute, Operator.DoesNotIncludeTheValues, CPhase);
-            Function cPhaseLoad = new Add(loadNetworkAttribute);
-
-            // Set the output condition to only return features that have the service point category
-            traceConfiguration.OutputCondition = new CategoryComparison(CategoryOperator.IsEqual, ServicePointCategory);
-
-            // Create starting point list and trace argument object
-            List<Element> startingPointList = new List<Element>() { startingPointElement };
-            TraceArgument traceArgument = new TraceArgument(startingPointList);
-            traceArgument.Configuration = traceConfiguration;
-
-            // Trace on the A phase
-            traceConfiguration.Traversability.Barriers = new Or(baseCondition, aPhaseCondition);
-            traceConfiguration.Functions = new List<Function>() { aPhaseLoad };
-            traceArgument.Configuration = traceConfiguration;
-
-            try
-            {
-              IReadOnlyList<Result> resultsA = downstreamTracer.Trace(traceArgument);
-
-              ElementResult elementResult = resultsA.OfType<ElementResult>().First();
-              results.NumberServicePointsA = elementResult.Elements.Count;
-
-              FunctionOutputResult functionOutputResult = resultsA.OfType<FunctionOutputResult>().First();
-              results.TotalLoadA = (double)functionOutputResult.FunctionOutputs.First().Value;
-            }
-            catch (ArcGIS.Core.Data.GeodatabaseUtilityNetworkException e)
-            {
-              //No A phase connectivity to source
-              if (!e.Message.Equals("No subnetwork source was discovered."))
+              if (phasesNetworkAttribute == null || loadNetworkAttribute == null || deviceStatusNetworkAttribute == null)
               {
                 results.Success = false;
-                results.Message += e.Message;
+                results.Message = "This add-in requires network attributes for phase, service load, and device status.\n";
+                return results;
+              }
+
+
+              // Get the Tier for Medium Voltage Radial
+
+              DomainNetwork electricDomainNetwork = utilityNetworkDefinition.GetDomainNetwork(ElectricDomainNetwork);
+              Tier mediumVoltageTier = electricDomainNetwork.GetTier(MediumVoltageTier);
+
+
+              // Set up the trace configuration
+
+              TraceConfiguration traceConfiguration = new TraceConfiguration();
+
+              // Configure the trace to use the electric domain network
+
+              traceConfiguration.DomainNetwork = electricDomainNetwork;
+
+              // Take the default TraceConfiguration from the Tier for Traversability
+
+              Traversability tierTraceTraversability = mediumVoltageTier.TraceConfiguration.Traversability;
+              traceConfiguration.Traversability.FunctionBarriers = tierTraceTraversability.FunctionBarriers;
+              traceConfiguration.IncludeBarriersWithResults = mediumVoltageTier.TraceConfiguration.IncludeBarriersWithResults;
+              traceConfiguration.Traversability.Scope = tierTraceTraversability.Scope;
+              ConditionalExpression baseCondition = tierTraceTraversability.Barriers as ConditionalExpression;
+
+              // Create a condition to only return features that have the service point category
+
+              ConditionalExpression servicePointCategoryCondition = new CategoryComparison(CategoryOperator.IsEqual, ServicePointCategory);
+
+              // Create function to sum loads on service points where phase = A
+
+              ConditionalExpression aPhaseCondition = new NetworkAttributeComparison(phasesNetworkAttribute, Operator.DoesNotIncludeTheValues, APhase);
+             Function aPhaseLoad = new Add(loadNetworkAttribute, servicePointCategoryCondition);
+
+
+              // Create function to sum loads on service points where phase = B
+
+              ConditionalExpression bPhaseCondition = new NetworkAttributeComparison(phasesNetworkAttribute, Operator.DoesNotIncludeTheValues, BPhase);
+              Function bPhaseLoad = new Add(loadNetworkAttribute, servicePointCategoryCondition);
+
+              // Create function to sum loads on service points where phase = C
+
+              ConditionalExpression cPhaseCondition = new NetworkAttributeComparison(phasesNetworkAttribute, Operator.DoesNotIncludeTheValues, CPhase);
+              Function cPhaseLoad = new Add(loadNetworkAttribute, servicePointCategoryCondition);
+
+              // Set the output condition to only return features that have the service point category
+
+              traceConfiguration.OutputCondition = servicePointCategoryCondition;
+
+              // Create starting point list and trace argument object
+
+              List<Element> startingPointList = new List<Element>() { startingPointElement };
+              TraceArgument traceArgument = new TraceArgument(startingPointList);
+              traceArgument.Configuration = traceConfiguration;
+
+              // Trace on the A phase
+
+              traceConfiguration.Traversability.Barriers = new Or(baseCondition, aPhaseCondition);
+              traceConfiguration.Functions = new List<Function>() { aPhaseLoad };
+              traceArgument.Configuration = traceConfiguration;
+
+              try
+              {
+                IReadOnlyList<Result> resultsA = downstreamTracer.Trace(traceArgument);
+
+                ElementResult elementResult = resultsA.OfType<ElementResult>().First();
+                results.NumberServicePointsA = elementResult.Elements.Count;
+
+                FunctionOutputResult functionOutputResult = resultsA.OfType<FunctionOutputResult>().First();
+                results.TotalLoadA = (double)functionOutputResult.FunctionOutputs.First().Value;
+              }
+              catch (ArcGIS.Core.Data.GeodatabaseUtilityNetworkException e)
+              {
+                //No A phase connectivity to source
+                if (!e.Message.Equals("No subnetwork source was discovered."))
+                {
+                  results.Success = false;
+                  results.Message += e.Message;
+                }
+              }
+
+              // Trace on the B phase
+
+              traceConfiguration.Traversability.Barriers = new Or(baseCondition, bPhaseCondition);
+              traceConfiguration.Functions = new List<Function>() { bPhaseLoad };
+              traceArgument.Configuration = traceConfiguration;
+
+              try
+              {
+                IReadOnlyList<Result> resultsB = downstreamTracer.Trace(traceArgument);
+
+                ElementResult elementResult = resultsB.OfType<ElementResult>().First();
+                results.NumberServicePointsB = elementResult.Elements.Count;
+
+                FunctionOutputResult functionOutputResult = resultsB.OfType<FunctionOutputResult>().First();
+                results.TotalLoadB = (double)functionOutputResult.FunctionOutputs.First().Value;
+              }
+              catch (ArcGIS.Core.Data.GeodatabaseUtilityNetworkException e)
+              {
+                // No B phase connectivity to source
+                if (!e.Message.Equals("No subnetwork source was discovered."))
+                {
+                  results.Success = false;
+                  results.Message += e.Message;
+                }
+              }
+
+              // Trace on the C phase
+              traceConfiguration.Traversability.Barriers = new Or(baseCondition, cPhaseCondition);
+              traceConfiguration.Functions = new List<Function>() { cPhaseLoad };
+              traceArgument.Configuration = traceConfiguration;
+
+              try
+              {
+                IReadOnlyList<Result> resultsC = downstreamTracer.Trace(traceArgument);
+
+                ElementResult elementResult = resultsC.OfType<ElementResult>().First();
+                results.NumberServicePointsC = elementResult.Elements.Count;
+
+                FunctionOutputResult functionOutputResult = resultsC.OfType<FunctionOutputResult>().First();
+                results.TotalLoadC = (double)functionOutputResult.FunctionOutputs.First().Value;
+              }
+              catch (ArcGIS.Core.Data.GeodatabaseUtilityNetworkException e)
+              {
+                // No C phase connectivity to source
+                if (!e.Message.Equals("No subnetwork source was discovered."))
+                {
+                  results.Success = false;
+                  results.Message += e.Message;
+                }
               }
             }
 
-            // Trace on the B phase
-            traceConfiguration.Traversability.Barriers = new Or(baseCondition, bPhaseCondition);
-            traceConfiguration.Functions = new List<Function>() { bPhaseLoad };
-            traceArgument.Configuration = traceConfiguration;
+            // append success message to the output string
 
-            try
-            {
-              IReadOnlyList<Result> resultsB = downstreamTracer.Trace(traceArgument);
-
-              ElementResult elementResult = resultsB.OfType<ElementResult>().First();
-              results.NumberServicePointsB = elementResult.Elements.Count;
-
-              FunctionOutputResult functionOutputResult = resultsB.OfType<FunctionOutputResult>().First();
-              results.TotalLoadB = (double)functionOutputResult.FunctionOutputs.First().Value;
-            }
-            catch (ArcGIS.Core.Data.GeodatabaseUtilityNetworkException e)
-            {
-              // No B phase connectivity to source
-              if (!e.Message.Equals("No subnetwork source was discovered."))
-              {
-                results.Success = false;
-                results.Message += e.Message;
-              }
-            }
-
-            // Trace on the C phase
-            traceConfiguration.Traversability.Barriers = new Or(baseCondition, cPhaseCondition);
-            traceConfiguration.Functions = new List<Function>() { cPhaseLoad };
-            traceArgument.Configuration = traceConfiguration;
-
-            try
-            {
-              IReadOnlyList<Result> resultsC = downstreamTracer.Trace(traceArgument);
-
-              ElementResult elementResult = resultsC.OfType<ElementResult>().First();
-              results.NumberServicePointsC = elementResult.Elements.Count;
-
-              FunctionOutputResult functionOutputResult = resultsC.OfType<FunctionOutputResult>().First();
-              results.TotalLoadC = (double) functionOutputResult.FunctionOutputs.First().Value;
-            }
-            catch (ArcGIS.Core.Data.GeodatabaseUtilityNetworkException e)
-            {
-              // No C phase connectivity to source
-              if (!e.Message.Equals("No subnetwork source was discovered."))
-              {
-                results.Success = false;
-                results.Message += e.Message;
-              }
-            }
+            results.Message += "Trace successful.";
+            results.Success = true;
           }
-
-          // append success message to the output string
-
-          results.Message += "Trace successful.";
-          results.Success = true;
         }
       }
       return results;
-
     }
 
 

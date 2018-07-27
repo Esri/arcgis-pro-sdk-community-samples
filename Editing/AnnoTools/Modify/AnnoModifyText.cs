@@ -1,4 +1,4 @@
-﻿//   Copyright 2017 Esri
+﻿//   Copyright 2018 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -23,11 +23,8 @@ using ArcGIS.Desktop.Editing;
 namespace AnnoTools
 {
   /// <summary>
-  /// Illustrates two ways in which you can modify the text of an annotation feature using the EditOperation.Modify method.  Note that 
-  /// the TextString field needs to exist in the feature class schema in order for you to use EditOperation.Modify.  If the TextString field
-  /// does not physically exist in the feature class schema then the only way to modify annotation text at ArcGIS Pro 2.1 is to use the 
-  /// GetGraphic and SetGraphic methods on the AnnotationFeature to modify the CIMTextGraphic in conjunction with the EditOperation.Callback
-  /// method (see AnnoModifySymbol.cs for an example of this). 
+  /// Illustrates the recommended way to modify the text of an annotation feature at ArcGIS Pro 2.2 using the 
+  /// GetAnnotationProperties and SetAnnotationProperties methods on the inspector, followed by the EditOperation.Modify method. 
   /// </summary>
   /// <remarks>
   /// The only guaranteed fields in an annotation feature class schema are AnnotationClassID, SymbolID, Element, FeatureID, ZOrder, 
@@ -37,6 +34,8 @@ namespace AnnoTools
   /// they are no longer designated as protected or system fields. 
   /// <para></para>
   /// Take care when writing  or porting tools that create or modify annotation features, it is essential to take this important concept into account. 
+  /// Do not use the inspector[fieldName] methodology for text formatting attributes as the field may not exist.  Use the GetAnnotationProperties 
+  /// and SetAnnotationProperties methods on the inspector. 
   /// <para></para>
   /// </remarks>
   internal class AnnoModifyText : MapTool
@@ -53,6 +52,11 @@ namespace AnnoTools
       return base.OnToolActivateAsync(active);
     }
 
+    /// <summary>
+    /// Called when the sketch finishes. This is where we will create the edit operation and then execute it.
+    /// </summary>
+    /// <param name="geometry">The geometry created by the sketch.</param>
+    /// <returns>A Task returning a Boolean indicating if the sketch complete event was successfully handled.</returns>
     protected override Task<bool> OnSketchCompleteAsync(Geometry geometry)
     {
       // execute on the MCT
@@ -64,26 +68,26 @@ namespace AnnoTools
           return false;
 
         EditOperation op = null;
-        foreach (var layerKey in features.Keys)
+        foreach (var annoLayer in features.Keys.OfType<AnnotationLayer>())
         {
-          // is it an anno layer?
-          if (!(layerKey is AnnotationLayer))
-            continue;
-
           // are there features?
-          var featOids = features[layerKey];
+          var featOids = features[annoLayer];
           if (featOids.Count == 0)
             continue;
 
           // use the inspector methodology - load multiple features at once
-          var insp = new Inspector();
-          insp.Load(layerKey, featOids);
+          var insp = new Inspector(true);
+          insp.Load(annoLayer, featOids);
 
-          // make sure tha attribute exists - remember TextString is not guaranteed in the schema
-          Attribute att = insp.FirstOrDefault(a => a.FieldName.ToUpper() == "TEXTSTRING");
-          if (att == null)
-            continue;
-          insp["TEXTSTRING"] = "Hello World";
+          // get the annotation proeprties
+          var annoProperties = insp.GetAnnotationProperties();
+          // assign the text string
+          annoProperties.TextString = "Hello World";
+          // you could also assign a text string such as the following which incorporates formatting tags
+          // annoProperties.TextString = "My <CLR red = \"255\" green = \"0\" blue = \"0\" >Special</CLR> Text";
+
+          // set the annotation propertes back on the inspector
+          insp.SetAnnotationProperties(annoProperties);
 
           // create the edit operation
           if (op == null)
@@ -95,14 +99,6 @@ namespace AnnoTools
           }
 
           op.Modify(insp);
-
-          // OR 
-          // rather than using the inspector you can use the Dictionary methodology - again TextString has to exist in the schema for the attributes to be applied.
-
-          //Dictionary<string, object> newAtts = new Dictionary<string, object>();
-          //newAtts.Add("TEXTSTRING", "Hello World");
-          //foreach (var oid in featOids)
-          //  op.Modify(layerKey, oid, newAtts);
         }
 
         // execute the operation

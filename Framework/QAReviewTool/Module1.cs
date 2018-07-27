@@ -136,8 +136,11 @@ namespace QAReviewTool
 		public ValueListComboBox FieldValueComboBox { get; set; }
 		public EditNoteComboBox EditNoteComboBox { get; set; }
 
-		public bool DeferredRefreshOfLayerList { get => _deferredRefreshOfLayerList; set => _deferredRefreshOfLayerList = value; }
-
+		public bool DeferredRefreshOfLayerList
+		{
+			get { return _deferredRefreshOfLayerList; }
+			set { _deferredRefreshOfLayerList = value; }
+		}
 		public void ResetTab()
 		{
 
@@ -196,8 +199,8 @@ namespace QAReviewTool
 					if (hasItems)
 					{
 						LayerComboBox.Text = "Choose...";
-										// LayerComboBox.Text = LayerComboBox.ItemCollection.FirstOrDefault().ToString();
-									}
+						// LayerComboBox.Text = LayerComboBox.ItemCollection.FirstOrDefault().ToString();
+					}
 				});
 
 			}
@@ -258,14 +261,14 @@ namespace QAReviewTool
 				QueuedTask.Run(() =>
 				{
 					var LayerName = LayerComboBox.SelectedItem.ToString();
-									// Get all the fields from the selected item in LayerComboBox
-									// Get the layer in the ComboBox selection
-									var QALayer = MapView.Active.Map.FindLayers(LayerName).FirstOrDefault() as FeatureLayer;
+					// Get all the fields from the selected item in LayerComboBox
+					// Get the layer in the ComboBox selection
+					var QALayer = MapView.Active.Map.FindLayers(LayerName).FirstOrDefault() as FeatureLayer;
 					if (QALayer == null) return;
 					var FieldsList = QALayer.GetTable().GetDefinition().GetFields();  // as string
 
-									// bool hasItems = false;  // Keep empty, as selection of an item populates the values combobox
-									foreach (var fld in FieldsList)
+					// bool hasItems = false;  // Keep empty, as selection of an item populates the values combobox
+					foreach (var fld in FieldsList)
 					{
 						var fldNameString = fld.Name;
 						if (fldNameString != "Shape")
@@ -276,8 +279,8 @@ namespace QAReviewTool
 
 					LayerFieldComboBox.Text = "Choose...";
 
-									// Zoom to either the selected features, or the extent of all layers in the map
-									var featureLayers = MapView.Active.Map.Layers.OfType<FeatureLayer>().Where((featurelayer) => featurelayer.Name == LayerComboBox.SelectedItem.ToString());
+					// Zoom to either the selected features, or the extent of all layers in the map
+					var featureLayers = MapView.Active.Map.Layers.OfType<FeatureLayer>().Where((featurelayer) => featurelayer.Name == LayerComboBox.SelectedItem.ToString());
 					if (QALayer.SelectionCount == 0)
 					{
 						QALayerSelection = QALayer.Select(); // select all features
@@ -321,14 +324,14 @@ namespace QAReviewTool
 				FieldValueComboBox.ClearItems();
 				QueuedTask.Run(() =>
 				{
-									// Get the layer and create a list from all the values
-									var QALayer = MapView.Active.Map.FindLayers((LayerComboBox.SelectedItem).ToString()).FirstOrDefault() as FeatureLayer;
+					// Get the layer and create a list from all the values
+					var QALayer = MapView.Active.Map.FindLayers((LayerComboBox.SelectedItem).ToString()).FirstOrDefault() as FeatureLayer;
 
 					if (QALayer == null) return;
 
 					RowCursor QARowCursor = QALayerSelection.Search();  // if there are already selected records, they will be in the RowCursor
 
-									List<object> QALayerCodeList = new List<object> { };
+					List<object> QALayerCodeList = new List<object> { };
 
 					using (QARowCursor)
 					{
@@ -336,19 +339,19 @@ namespace QAReviewTool
 						{
 							using (Row currentRow = QARowCursor.Current)
 							{
-												// QALayerCodeList.Add(Convert.ToString(currentRow[fieldName]));
-												QALayerCodeList.Add(currentRow[fieldName]);
+								// QALayerCodeList.Add(Convert.ToString(currentRow[fieldName]));
+								QALayerCodeList.Add(currentRow[fieldName]);
 							}
 						}
 					}
 					QALayerCodeList.Sort();
-									// Get unique values and counts in the list
-									foreach (object item in QALayerCodeList.Distinct())
+					// Get unique values and counts in the list
+					foreach (object item in QALayerCodeList.Distinct())
 					{
 						if ((item != null) && (item.ToString() != ""))
 						{
-											// add to combobox
-											FieldValueComboBox.AddItem(new ComboBoxItem((item.ToString())));
+							// add to combobox
+							FieldValueComboBox.AddItem(new ComboBoxItem((item.ToString())));
 						}
 					}
 
@@ -356,8 +359,8 @@ namespace QAReviewTool
 					FieldValueComboBox.SelectedItem = FieldValueComboBox.ItemCollection.FirstOrDefault();
 					FieldValueComboBox.Text = FieldValueComboBox.ItemCollection.FirstOrDefault().ToString();
 
-									// Select the recordset by this first value in the list 
-									object selectionvalue = FieldValueComboBox.SelectedItem;
+					// Select the recordset by this first value in the list 
+					object selectionvalue = FieldValueComboBox.SelectedItem;
 					SelectByValue(selectionvalue);
 				});
 			}
@@ -412,13 +415,13 @@ namespace QAReviewTool
 			{
 				QueuedTask.Run(() =>
 				{
-									// Get the layer and create a list from all the values
+					// Get the layer and create a list from all the values
 
-									var QALayer = MapView.Active.Map.FindLayers((LayerComboBox.SelectedItem).ToString()).FirstOrDefault() as FeatureLayer;
+					var QALayer = MapView.Active.Map.FindLayers((LayerComboBox.SelectedItem).ToString()).FirstOrDefault() as FeatureLayer;
 
 					if (QALayer == null) return;
 
-									string fieldname = LayerFieldComboBox.SelectedItem.ToString();
+					string fieldname = LayerFieldComboBox.SelectedItem.ToString();
 					// var field = QALayer.GetTable().GetDefinition().GetFields().find
 					int qaFieldIndex = QALayer.GetTable().GetDefinition().FindField(fieldname);
 					var fieldtype = QALayer.GetTable().GetDefinition().GetFields()[qaFieldIndex].FieldType;
@@ -504,19 +507,19 @@ namespace QAReviewTool
 
 					if (QAFieldComboBox.Text == null) { return; }
 					string QAfieldname = QAFieldComboBox.Text.ToString();
-									// search the layer for the field, if exists, then confirm use, if not, confirm addition
-									var LayerName = LayerComboBox.Text.ToString();
+					// search the layer for the field, if exists, then confirm use, if not, confirm addition
+					var LayerName = LayerComboBox.Text.ToString();
 					var QALayer = MapView.Active.Map.FindLayers(LayerName).FirstOrDefault() as FeatureLayer;
 					if (QALayer == null) return;
 					int qaFieldIndex = QALayer.GetTable().GetDefinition().FindField(QAfieldname);
 
 					if (qaFieldIndex == -1) // field not found
-									{
+					{
 
-										// Prompt for confirmation, and if answer is no, return.
-										var result = ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Create new field: " + QAfieldname + "?", "CREATE QA FIELD", System.Windows.MessageBoxButton.OKCancel, System.Windows.MessageBoxImage.Asterisk);
-										// Return if cancel value is chosen
-										if (Convert.ToString(result) == "Cancel")
+						// Prompt for confirmation, and if answer is no, return.
+						var result = ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Create new field: " + QAfieldname + "?", "CREATE QA FIELD", System.Windows.MessageBoxButton.OKCancel, System.Windows.MessageBoxImage.Asterisk);
+						// Return if cancel value is chosen
+						if (Convert.ToString(result) == "Cancel")
 						{
 							QAFieldComboBox.Text = "Choose...";
 							FrameworkApplication.State.Deactivate("active_state_3");
@@ -525,18 +528,18 @@ namespace QAReviewTool
 						else
 						{
 
-											// Check for edits, and if they exist prompt for saving - essential for attribute creation
-											if (Project.Current.HasEdits)
+							// Check for edits, and if they exist prompt for saving - essential for attribute creation
+							if (Project.Current.HasEdits)
 							{
-												// Prompt for confirmation, and if answer is no, return.
+								// Prompt for confirmation, and if answer is no, return.
 								result = MessageBox.Show("Edits must be saved before proceeding. Save edits?", "Save All Edits", System.Windows.MessageBoxButton.OKCancel, System.Windows.MessageBoxImage.Asterisk);
-												// Return if cancel value is chosen
-												if (Convert.ToString(result) == "OK")
+								// Return if cancel value is chosen
+								if (Convert.ToString(result) == "OK")
 								{
 									await Project.Current.SaveEditsAsync();
 								}
 								else // operation cancelled
-												{
+								{
 									MessageBox.Show("Add field cancelled.");
 									QAFieldComboBox.Text = "Choose...";
 									return;
@@ -544,19 +547,19 @@ namespace QAReviewTool
 
 							}
 
-											// Add the field
-											// AddField_management(in_table, field_name, field_type, { field_precision}, { field_scale}, { field_length}, { field_alias}, { field_is_nullable}, { field_is_required}, { field_domain})
-											var parameters = Geoprocessing.MakeValueArray(QALayer.GetTable(), QAfieldname, "TEXT");
+							// Add the field
+							// AddField_management(in_table, field_name, field_type, { field_precision}, { field_scale}, { field_length}, { field_alias}, { field_is_nullable}, { field_is_required}, { field_domain})
+							var parameters = Geoprocessing.MakeValueArray(QALayer.GetTable(), QAfieldname, "TEXT");
 							var gpResult = await Geoprocessing.ExecuteToolAsync("Management.AddField", parameters);
-											//Geoprocessing.ShowMessageBox(gpResult.Messages, "GP Messages",
-											//gpResult.IsFailed ? GPMessageBoxStyle.Error : GPMessageBoxStyle.Default);
-											if (gpResult.IsFailed == true)
+							//Geoprocessing.ShowMessageBox(gpResult.Messages, "GP Messages",
+							//gpResult.IsFailed ? GPMessageBoxStyle.Error : GPMessageBoxStyle.Default);
+							if (gpResult.IsFailed == true)
 							{
 								MessageBox.Show("New attribute operation failed.", "ERROR");
 							}
 
-											// Activate controls
-											FrameworkApplication.State.Activate("active_state_3");
+							// Activate controls
+							FrameworkApplication.State.Activate("active_state_3");
 							if (EditNoteComboBox.ItemCollection.FirstOrDefault() == null || EditNoteComboBox.ItemCollection.FirstOrDefault().ToString() == "")
 							{
 								EditNoteComboBox.Text = "Load or add...";
@@ -566,19 +569,19 @@ namespace QAReviewTool
 						}
 					}
 					else  // field is found
-									{
-										// Prompt for confirmation, and if answer is no, return.
+					{
+						// Prompt for confirmation, and if answer is no, return.
 						var result = MessageBox.Show("The QA Field, " + QAfieldname + " exists.  Use it?", "USE QA FIELD", System.Windows.MessageBoxButton.OKCancel, System.Windows.MessageBoxImage.Asterisk);
-										// Return if cancel value is chosen
-										if (Convert.ToString(result) == "Cancel")
+						// Return if cancel value is chosen
+						if (Convert.ToString(result) == "Cancel")
 						{
 							QAFieldComboBox.Text = "Choose...";
 							return;
 						}
 						else
 						{
-											// Leave the field name in the box, and activate controls
-											FrameworkApplication.State.Activate("active_state_3");
+							// Leave the field name in the box, and activate controls
+							FrameworkApplication.State.Activate("active_state_3");
 							EditNoteComboBox.Text = "Load or add...";
 						}
 					}
@@ -610,53 +613,53 @@ namespace QAReviewTool
 				{
 					if (NoteValue == "QANoteCombo")
 					{
-										// Update value of EditNoteComboBox
-										var qaNoteValue = EditNoteComboBox.Text;
+						// Update value of EditNoteComboBox
+						var qaNoteValue = EditNoteComboBox.Text;
 						if (qaNoteValue == "Load or add...") { return; }
 						if (qaNoteValue == null) { NoteValue = ""; }
 						else { NoteValue = qaNoteValue.ToString(); }
 					}
 
-									// Get the chosen QA field and set the selected records to the NoteValue
-									// if selection is empty, present error dialog box
-									var LayerName = LayerComboBox.Text;
+					// Get the chosen QA field and set the selected records to the NoteValue
+					// if selection is empty, present error dialog box
+					var LayerName = LayerComboBox.Text;
 					var QANoteFieldName = QAFieldComboBox.Text;
-									// Get all the fields from the selected item in LayerComboBox
-									// Get the layer in the ComboBox selection
-									var QALayer = MapView.Active.Map.FindLayers(LayerName).FirstOrDefault() as FeatureLayer;
+					// Get all the fields from the selected item in LayerComboBox
+					// Get the layer in the ComboBox selection
+					var QALayer = MapView.Active.Map.FindLayers(LayerName).FirstOrDefault() as FeatureLayer;
 					if (QALayer == null) { return; }
 
-									// check to make sure that the QA note field exists
-									string QAfieldname = QAFieldComboBox.Text.ToString();
+					// check to make sure that the QA note field exists
+					string QAfieldname = QAFieldComboBox.Text.ToString();
 					if (QAfieldname == "Choose...")
 					{
 						MessageBox.Show("Choose a valid note field.", "Choose Note Field");
 						return;
 					}
-									// check if field exists
-									int qaFieldIndex = QALayer.GetTable().GetDefinition().FindField(QAfieldname);
+					// check if field exists
+					int qaFieldIndex = QALayer.GetTable().GetDefinition().FindField(QAfieldname);
 					if (qaFieldIndex == -1) // field not found
-									{
+					{
 						MessageBox.Show("The field: " + QAfieldname + ", does not exist. Update your note field choice.", "Error");
 						QAFieldComboBox.Text = "Choose...";
 						return;
 					}
 
-									// Get the selection
-									Selection QASelection = QALayer.GetSelection();
+					// Get the selection
+					Selection QASelection = QALayer.GetSelection();
 					var selectionSet = QASelection.GetObjectIDs();
 					if (QASelection.GetCount() == 0)
 					{
 						MessageBox.Show("No selection available for operation.", "Edit Note");
 						return;
 					}
-									// create an instance of the inspector class
-									var inspector = new Inspector();
-									// load the selected features into the inspector using a list of object IDs
-									inspector.Load(QALayer, selectionSet);
+					// create an instance of the inspector class
+					var inspector = new Inspector();
+					// load the selected features into the inspector using a list of object IDs
+					inspector.Load(QALayer, selectionSet);
 					inspector[QANoteFieldName] = NoteValue;
-									// apply the changes as an edit operation
-									var editOp = new EditOperation();
+					// apply the changes as an edit operation
+					var editOp = new EditOperation();
 					editOp.Name = "Edit: " + NoteValue;
 					editOp.Modify(inspector);
 					bool result = editOp.Execute();
@@ -679,13 +682,13 @@ namespace QAReviewTool
 			{
 				QueuedTask.Run(() =>
 				{
-									// Get current custom Note value and save to new settings file
-									// Update value of EditNoteComboBox
-									var qaNoteValue = EditNoteComboBox.Text;
+					// Get current custom Note value and save to new settings file
+					// Update value of EditNoteComboBox
+					var qaNoteValue = EditNoteComboBox.Text;
 					if (qaNoteValue == null) { return; }
 
-									// Don't add duplicates to the list
-									string selectedNotevalue;
+					// Don't add duplicates to the list
+					string selectedNotevalue;
 					bool duplicateFound = false;
 
 					for (int i = 0; i < EditNoteComboBox.ItemCollection.Count; i++)

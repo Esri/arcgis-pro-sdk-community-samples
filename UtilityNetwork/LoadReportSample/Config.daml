@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
-   Copyright 2017 Esri
+   Copyright 2018 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@
       <groups>
         <!-- This section of code adds a group to our tab and adds the product tracing locations tool to that group -->
         <group id="esri_networkanalysis_trace_StartingLocationsAndBarriers_Group" caption="Trace Locations" keytip="UNSSTL">
-          <tool refID="esri_networkanalysis_facility_SetTracingLocationsBtnPalette" size="large" />
+          <tool refID="esri_networkanalysis_utility_SetTracingLocationsBtnPalette" size="large" />
         </group>
         <!-- This section of code creates a group for electric tools and adds our button to that group -->
         <group id="Electric_Group" caption="Electric" appearsOnAddInTab="false" keytip="UNSSE">

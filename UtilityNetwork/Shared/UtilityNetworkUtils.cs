@@ -1,4 +1,4 @@
-﻿//   Copyright 2016 Esri
+﻿//   Copyright 2018 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -34,16 +34,18 @@ namespace UtilityNetworkSamples
     public static UtilityNetwork GetUtilityNetworkFromLayer(Layer layer)
     {
 
+      UtilityNetwork utilityNetwork = null;
+
       if (layer is UtilityNetworkLayer)
       {
         UtilityNetworkLayer utilityNetworkLayer = layer as UtilityNetworkLayer;
-        return utilityNetworkLayer.GetUtilityNetwork();
+        utilityNetwork = utilityNetworkLayer.GetUtilityNetwork();
       }
 
       else if (layer is SubtypeGroupLayer)
       {
         CompositeLayer compositeLayer = layer as CompositeLayer;
-        return GetUtilityNetworkFromLayer(compositeLayer.Layers.First());
+        utilityNetwork = GetUtilityNetworkFromLayer(compositeLayer.Layers.First());
       }
 
       else if (layer is FeatureLayer)
@@ -53,18 +55,23 @@ namespace UtilityNetworkSamples
         {
           if (featureClass.IsControllerDatasetSupported())
           {
-            IReadOnlyList<Dataset> controllerDatasets = featureClass.GetControllerDatasets();
+            IReadOnlyList<Dataset> controllerDatasets = new List<Dataset>();
+            controllerDatasets = featureClass.GetControllerDatasets();
             foreach (Dataset controllerDataset in controllerDatasets)
             {
               if (controllerDataset is UtilityNetwork)
               {
-                return controllerDataset as UtilityNetwork;
+                utilityNetwork = controllerDataset as UtilityNetwork;
+              }
+              else
+              {
+                controllerDataset.Dispose();
               }
             }
           }
         }
       }
-      return null;
+      return utilityNetwork;
     }
 
     /// <summary>

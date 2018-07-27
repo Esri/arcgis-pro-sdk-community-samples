@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!--//Copyright 2017 Esri
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--//Copyright 2018 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@
     <Name>ConstructingGeometries</Name>
     <Description>Samples showing how to construct geometries (using C#).</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>2/16/2015 11:21:52 AM, 2015</Date>
     <Subject>Geometry, Geodatabase</Subject>
@@ -59,8 +59,8 @@
   <conditions>
     <insertCondition id="environment_ready_for_sample" caption="Pre-requisites to run the sample are met.">
       <and>
-        <state id="layers_exists"/>
-        <state id="esri_mapping_mapPane"/>
+        <state id="layers_exists" />
+        <state id="esri_mapping_mapPane" />
       </and>
     </insertCondition>
     <insertCondition id="geometry_points_constructed_condition" caption="Sample points construction completed and map view visible.">

@@ -1,12 +1,31 @@
-﻿<ArcGIS defaultAssembly="ContentFileExplorer.dll" defaultNamespace="ContentFileExplorer" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+   Copyright 2018 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="ContentFileExplorer.dll" defaultNamespace="ContentFileExplorer" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{e8c45273-6a7d-4528-b137-c719cb710ab8}" version="1.0" desktopVersion="2.1.10257">
     <Name>ContentFileExplorer</Name>
     <Description>ContentFileExplorer description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>wlfka</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>5/2/2018 9:08:28 AM, 2018</Date>
-    <Subject>Framework</Subject>
+    <Subject>Content</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>
@@ -28,10 +47,7 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="ContentFileExplorer_FileExplorer_ShowButton" 
-								caption="Show FileExplorer" className="FileExplorer_ShowButton" 
-								loadOnClick="true" 
-								smallImage="Images\LayerAdd16.png" largeImage="Images\LayerAdd32.png">
+        <button id="ContentFileExplorer_FileExplorer_ShowButton" caption="Show FileExplorer" className="FileExplorer_ShowButton" loadOnClick="true" smallImage="Images\LayerAdd16.png" largeImage="Images\LayerAdd32.png">
           <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
         </button>
       </controls>

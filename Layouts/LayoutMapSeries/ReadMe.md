@@ -10,11 +10,11 @@ LayoutMapSeries exercises a collection of programmatic interactions with the lay
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
-Subject:               Framework
+Subject:               Layouts
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  1/16/2018
-ArcGIS Pro:            2.1
+Date:                  6/11/2018
+ArcGIS Pro:            2.2
 Visual Studio:         2017
 .NET Target Framework: 4.6.1
 ```

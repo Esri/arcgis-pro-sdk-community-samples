@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--
 
-   Copyright 2017 Esri
+   Copyright 2018 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -22,10 +22,10 @@
     <Name>LayoutMapSeries</Name>
     <Description>LayoutMapSeries description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>wlfka</Author>
-    <Company>Acme</Company>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, http://www.esri.com</Company>
     <Date>9/26/2017 12:57:29 PM, 2017</Date>
-    <Subject>Framework</Subject>
+    <Subject>Layouts</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>
