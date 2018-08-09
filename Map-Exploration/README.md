@@ -22,6 +22,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Map-Explorat
 * [CustomPaneWithContents (c#)](../../../tree/master/Map-Exploration/CustomPaneWithContents)  
 * [CustomPopup (c#)](../../../tree/master/Map-Exploration/CustomPopup)  
 * [FeatureSelection (c#)](../../../tree/master/Map-Exploration/FeatureSelection)  
+* [GetSymbolSwatch (c#)](../../../tree/master/Map-Exploration/GetSymbolSwatch)  
 * [IdentifyWindow (c#)](../../../tree/master/Map-Exploration/IdentifyWindow)  
 * [IdentifyWithSketchTool (c#)](../../../tree/master/Map-Exploration/IdentifyWithSketchTool)  
 * [ImpersonateMapPane (c#)](../../../tree/master/Map-Exploration/ImpersonateMapPane)  

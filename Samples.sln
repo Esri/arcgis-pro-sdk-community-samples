@@ -279,6 +279,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditEvents", "Editing\EditE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModifyNewlyAddedFeatures", "Editing\ModifyNewlyAddedFeatures\ModifyNewlyAddedFeatures.csproj", "{D599ABEC-1930-426B-A71E-425BFF94213A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetSymbolSwatch", "Map-Exploration\GetSymbolSwatch\GetSymbolSwatch.csproj", "{760BE61A-9142-4215-A7F7-F20BB73E8D44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -837,6 +839,10 @@ Global
 		{D599ABEC-1930-426B-A71E-425BFF94213A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D599ABEC-1930-426B-A71E-425BFF94213A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D599ABEC-1930-426B-A71E-425BFF94213A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{760BE61A-9142-4215-A7F7-F20BB73E8D44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{760BE61A-9142-4215-A7F7-F20BB73E8D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{760BE61A-9142-4215-A7F7-F20BB73E8D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{760BE61A-9142-4215-A7F7-F20BB73E8D44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

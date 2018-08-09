@@ -77,7 +77,7 @@ Read the [ProGuide: Installation and Upgrade](http://github.com/Esri/arcgis-pro-
 
 ## ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 136 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 137 ArcGIS Pro samples that are included in this repository.  
 
 #### Content
 
@@ -208,6 +208,7 @@ Below is the list of 136 ArcGIS Pro samples that are included in this repository
 * [CustomPaneWithContents (c#)](../../tree/master/Map-Exploration/CustomPaneWithContents)  
 * [CustomPopup (c#)](../../tree/master/Map-Exploration/CustomPopup)  
 * [FeatureSelection (c#)](../../tree/master/Map-Exploration/FeatureSelection)  
+* [GetSymbolSwatch (c#)](../../tree/master/Map-Exploration/GetSymbolSwatch)  
 * [IdentifyWindow (c#)](../../tree/master/Map-Exploration/IdentifyWindow)  
 * [IdentifyWithSketchTool (c#)](../../tree/master/Map-Exploration/IdentifyWithSketchTool)  
 * [ImpersonateMapPane (c#)](../../tree/master/Map-Exploration/ImpersonateMapPane)  
