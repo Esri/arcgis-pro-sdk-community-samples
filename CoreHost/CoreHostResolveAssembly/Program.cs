@@ -12,8 +12,9 @@ using System.Threading.Tasks;
 namespace CoreHostResolveAssembly
 {
   /// <summary>
-  /// This sample illustrates how to deploy a standalone CoreHost application that will be able to resolve the ArcGIS Pro location in order to load the dependent assemblies such as ArcGIS.Core.dll and ArcGIS.CoreHost.dll. 
-  /// The references to ArcGIS.Core.dll and ArcGIS.CoreHost.dll in Visual Studio will have the "Copy Local" property set to "true". 
+  /// This sample illustrates how to deploy a standalone CoreHost application that resolves the ArcGIS Pro location in order to load the dependent assemblies such as ArcGIS.Core.dll and ArcGIS.CoreHost.dll from the ArcGIS Pro install location.
+  /// Except for the dynamic assembly loading logic this sample is identical to the "CoreHostSample". 
+  /// The references to ArcGIS.Core.dll and ArcGIS.CoreHost.dll in Visual Studio have the "Copy Local" property set to "false". 
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\SDK\SDK.gdb" is available.
@@ -21,6 +22,7 @@ namespace CoreHostResolveAssembly
   /// 1. Click the build menu and select Build Solution.
   /// 1. Specify a valid path to a file geodatabase as your debug command line parameter 
   /// 1. Click the Start button to run the console app.
+  /// 1. Note that the AppDomain is modified on startup to resolve the Assembly Paths for ArcGIS.Core.dll and ArcGIS.CoreHost.dll by using the ArcGIS Pro installation location.
   /// 1. View the table definition in your file geodatabase
   /// ![UI](Screenshots/ConsoleWindow.png)
   /// 1. Once the output stops press any key to close the application.  
