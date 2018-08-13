@@ -14,6 +14,7 @@ This repository contains ArcGIS Pro Add-In Samples for the ArcGIS Pro 2.2 SDK fo
 This folder contains ArcGIS Pro Add-In Samples that fall under the 'Core Host' topic:
 
 * [CoreHostGDB (c#)](../../../tree/master/CoreHost/CoreHostGDB)  
+* [CoreHostResolveAssembly (c#)](../../../tree/master/CoreHost/CoreHostResolveAssembly)  
 * [CoreHostSample (c#)](../../../tree/master/CoreHost/CoreHostSample)  
 
 

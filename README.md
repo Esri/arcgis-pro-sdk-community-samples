@@ -77,7 +77,7 @@ Read the [ProGuide: Installation and Upgrade](http://github.com/Esri/arcgis-pro-
 
 ## ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 137 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 138 ArcGIS Pro samples that are included in this repository.  
 
 #### Content
 
@@ -267,6 +267,7 @@ Below is the list of 137 ArcGIS Pro samples that are included in this repository
 #### Core Host
 
 * [CoreHostGDB (c#)](../../tree/master/CoreHost/CoreHostGDB)  
+* [CoreHostResolveAssembly (c#)](../../tree/master/CoreHost/CoreHostResolveAssembly)  
 * [CoreHostSample (c#)](../../tree/master/CoreHost/CoreHostSample)  
 
 

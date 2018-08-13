@@ -147,6 +147,9 @@
   <ItemGroup>
     <None Include="Screenshots\Screenshot1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Screenshots\Screenshot7.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!--
   PackageAction can be:

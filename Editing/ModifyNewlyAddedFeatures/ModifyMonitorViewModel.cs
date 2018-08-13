@@ -34,7 +34,9 @@ namespace ModifyNewlyAddedFeatures
     private SubscriptionToken _activeMapViewChangedEvent = null;
     private SubscriptionToken _onRowChangedEvent = null;
     private SubscriptionToken _onRowCreatedEvent = null;
+    private SubscriptionToken _onRowPointCreatedEvent = null;
     private FeatureLayer _workedOnPolygonLayer = null;
+    private FeatureLayer _workedOnPointLayer = null;
 
     protected ModifyMonitorViewModel() { }
 
@@ -49,19 +51,24 @@ namespace ModifyNewlyAddedFeatures
         _activeMapViewChangedEvent = ActiveMapViewChangedEvent.Subscribe(OnActiveMapViewChangedEvent);
         return;
       }
-      SetUpRowEventListener(activeMapView, PolygonLayerName);
+      SetUpRowEventListener(activeMapView, PolygonLayerName, PointLayerName);
     }
 
     private void DeActivateModification()
     {
-      if (_activeMapViewChangedEvent != null || _onRowChangedEvent != null || _onRowCreatedEvent != null)
+      if (_activeMapViewChangedEvent != null || _onRowChangedEvent != null || _onRowCreatedEvent != null || _onRowPointCreatedEvent != null)
       {
         UpdateStatusText($@"DeActivate Modification");
         if (_activeMapViewChangedEvent != null) ActiveMapViewChangedEvent.Unsubscribe(_activeMapViewChangedEvent);
-        if (_onRowChangedEvent != null) RowChangedEvent.Unsubscribe(_onRowChangedEvent);
-        if (_onRowCreatedEvent != null) RowChangedEvent.Unsubscribe(_onRowCreatedEvent);
+        QueuedTask.Run(() =>
+        {
+          if (_onRowChangedEvent != null) RowChangedEvent.Unsubscribe(_onRowChangedEvent);
+          if (_onRowCreatedEvent != null) RowChangedEvent.Unsubscribe(_onRowCreatedEvent);
+          if (_onRowPointCreatedEvent != null) RowChangedEvent.Unsubscribe(_onRowPointCreatedEvent);
+        });
         _onRowChangedEvent = null;
         _onRowCreatedEvent = null;
+        _onRowPointCreatedEvent = null;
         _activeMapViewChangedEvent = null;
       }
     }
@@ -70,20 +77,29 @@ namespace ModifyNewlyAddedFeatures
     /// setup event listeners for a given featurelayer (with featurelayer name)
     /// </summary>
     /// <param name="activeMapView"></param>
-    /// <param name="featureLayerName"></param>
-    private void SetUpRowEventListener(MapView activeMapView, string featureLayerName)
+    /// <param name="polygonFeatureLayerName"></param>
+    /// <param name="pointFeatureLayerName"></param>
+    private void SetUpRowEventListener(MapView activeMapView, string polygonFeatureLayerName, string pointFeatureLayerName)
     {
       // Find our polygon feature layer
-      _workedOnPolygonLayer = activeMapView.Map.GetLayersAsFlattenedList().FirstOrDefault((fl) => fl.Name == featureLayerName) as FeatureLayer;
+      _workedOnPolygonLayer = activeMapView.Map.GetLayersAsFlattenedList().FirstOrDefault((fl) => fl.Name == polygonFeatureLayerName) as FeatureLayer;
       UpdateStatusText((_workedOnPolygonLayer == null)
-                  ? $@"{featureLayerName} NOT found"
-                  : $@"Listening to {featureLayerName} changes");
+                  ? $@"{polygonFeatureLayerName} NOT found"
+                  : $@"Listening to {polygonFeatureLayerName} changes");
+      _workedOnPointLayer = activeMapView.Map.GetLayersAsFlattenedList().FirstOrDefault((fl) => fl.Name == pointFeatureLayerName) as FeatureLayer;
+      UpdateStatusText((_workedOnPolygonLayer == null)
+                  ? $@"{pointFeatureLayerName} NOT found"
+                  : $@"Listening to {pointFeatureLayerName} changes");
       // setup event listening ...
-      QueuedTask.Run(() =>
+      if (_workedOnPointLayer != null && _workedOnPolygonLayer != null)
       {
-        _onRowChangedEvent = RowChangedEvent.Subscribe(OnRowChangedEvent, _workedOnPolygonLayer.GetTable());
-        _onRowCreatedEvent = RowCreatedEvent.Subscribe(OnRowCreatedEvent, _workedOnPolygonLayer.GetTable());
-      });
+        QueuedTask.Run(() =>
+        {
+          _onRowChangedEvent = RowChangedEvent.Subscribe(OnRowChangedEvent, _workedOnPolygonLayer.GetTable());
+          _onRowCreatedEvent = RowCreatedEvent.Subscribe(OnRowCreatedEvent, _workedOnPolygonLayer.GetTable());
+          _onRowPointCreatedEvent = RowCreatedEvent.Subscribe(OnPointRowCreatedEvent, _workedOnPointLayer.GetTable());
+        });
+      }
     }
 
     /// <summary>
@@ -104,6 +120,11 @@ namespace ModifyNewlyAddedFeatures
     {
       UpdateStatusText($@"Row created: {args.EditType}");
       UpdateRowIfNeeded(args);
+    }
+
+    private void OnPointRowCreatedEvent(RowChangedEventArgs args)
+    {
+      UpdateStatusText($@"Point Row created: {args.EditType}");
     }
 
     private Guid _currentRowChangedGuid = Guid.Empty;
@@ -130,18 +151,23 @@ namespace ModifyNewlyAddedFeatures
         var row = args.Row;
         var rowDefinition = (row.GetTable() as FeatureClass).GetDefinition();
         var geom = row[rowDefinition.GetShapeField()] as Geometry;
-        MapPoint pntLogging = MapView.Active.Extent.Center;
+        MapPoint pntLogging = null;
 
         var rowCursorOverlayPoly = _workedOnPolygonLayer.Search(geom, SpatialRelationship.Intersects);
         Geometry geomOverlap = null;
+        Geometry geomChangedPolygon = null;
         while (rowCursorOverlayPoly.MoveNext())
         {
           var feature = rowCursorOverlayPoly.Current as Feature;
-          // exclude the search polygon
-          if (row.GetObjectID() == feature.GetObjectID()) continue;
-
           var geomOverlayPoly = feature.GetShape();
           if (geomOverlayPoly == null) continue;
+
+          // exclude the search polygon
+          if (row.GetObjectID() == feature.GetObjectID())
+          {
+            geomChangedPolygon = geomOverlayPoly.Clone();
+            continue;
+          }
           if (geomOverlap == null)
           {
             geomOverlap = geomOverlayPoly.Clone();
@@ -154,14 +180,21 @@ namespace ModifyNewlyAddedFeatures
         {
           var correctedGeom = GeometryEngine.Instance.Difference(geom, geomOverlap);
           row["Shape"] = correctedGeom;
-          if (!correctedGeom.IsNullOrEmpty()) {
+          if (!correctedGeom.IsNullOrEmpty())
+          {
             // use the centerpoint of the polygon as the point for the logging entry
             pntLogging = GeometryEngine.Instance.LabelPoint(correctedGeom);
-              }
+          }
           description = correctedGeom.IsEmpty ? "Polygon can't be inside existing polygon" : "Corrected input polygon";
         }
         else
+        {
           description = "No overlapping polygons found";
+          if (!geomChangedPolygon.IsNullOrEmpty())
+          {
+            pntLogging = GeometryEngine.Instance.LabelPoint(geomChangedPolygon);
+          }
+        }
         row["Description"] = description;
         UpdateStatusText($@"Row: {description}");
         if (_isStoreInOnRowEventEnabled)
@@ -175,15 +208,18 @@ namespace ModifyNewlyAddedFeatures
         }
 
         // update logging feature class with centerpoint of polygon
-        var geoDatabase = new Geodatabase(new FileGeodatabaseConnectionPath(new Uri(Project.Current.DefaultGeodatabasePath)));
-        var loggingFeatureClass = geoDatabase.OpenDataset<FeatureClass>(_pointLayerName);
-        var loggingFCDefinition = loggingFeatureClass.GetDefinition();
-        using (var rowbuff = loggingFeatureClass.CreateRowBuffer())
+        if (!pntLogging.IsNullOrEmpty())
         {
-          // needs a 3D point
-          rowbuff[loggingFCDefinition.GetShapeField()] = MapPointBuilder.CreateMapPoint (pntLogging.X, pntLogging.Y, 0, pntLogging.SpatialReference);
-          rowbuff["Description"] = "OID: " + row.GetObjectID().ToString() + " " + DateTime.Now.ToShortTimeString();
-          loggingFeatureClass.CreateRow(rowbuff);
+          var geoDatabase = new Geodatabase(new FileGeodatabaseConnectionPath(new Uri(Project.Current.DefaultGeodatabasePath)));
+          var loggingFeatureClass = geoDatabase.OpenDataset<FeatureClass>(_pointLayerName);
+          var loggingFCDefinition = loggingFeatureClass.GetDefinition();
+          using (var rowbuff = loggingFeatureClass.CreateRowBuffer())
+          {
+            // needs a 3D point
+            rowbuff[loggingFCDefinition.GetShapeField()] = MapPointBuilder.CreateMapPoint(pntLogging.X, pntLogging.Y, 0, pntLogging.SpatialReference);
+            rowbuff["Description"] = "OID: " + row.GetObjectID().ToString() + " " + DateTime.Now.ToShortTimeString();
+            loggingFeatureClass.CreateRow(rowbuff);
+          }
         }
       }
       catch (Exception e)
@@ -200,7 +236,7 @@ namespace ModifyNewlyAddedFeatures
     {
       if (args.IncomingView != null)
       {
-        SetUpRowEventListener(args.IncomingView, PolygonLayerName);
+        SetUpRowEventListener(args.IncomingView, PolygonLayerName, PointLayerName);
         ActiveMapViewChangedEvent.Unsubscribe(_activeMapViewChangedEvent);
         _activeMapViewChangedEvent = null;
       }

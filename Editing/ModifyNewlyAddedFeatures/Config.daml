@@ -3,10 +3,10 @@
     <Name>ModifyNewlyAddedFeatures</Name>
     <Description>ModifyNewlyAddedFeatures description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>Wolf</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>7/24/2018 7:18:59 AM, 2018</Date>
-    <Subject>Framework</Subject>
+    <Subject>Editing</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>

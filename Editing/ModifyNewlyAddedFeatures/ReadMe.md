@@ -15,7 +15,7 @@ The corresponding ProConcept document can be found here: [ProConcepts Editing / 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
-Subject:               Framework
+Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
 Date:                  6/11/2018
