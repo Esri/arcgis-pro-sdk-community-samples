@@ -1,0 +1,41 @@
+﻿<ArcGIS defaultAssembly="AddFeatureTest.dll" defaultNamespace="AddFeatureTest" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{34d21811-b3e1-47fc-b9b0-f74f590849c9}" version="1.0" desktopVersion="2.2.0">
+    <Name>AddFeatureTest</Name>
+    <Description>AddFeatureTest description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>Wolf</Author>
+    <Company>Acme</Company>
+    <Date>10/8/2018 9:44:23 AM, 2018</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="AddFeatureTest_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="AddFeatureTest_Tab1" caption="New Tab">
+          <group refID="AddFeatureTest_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="AddFeatureTest_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="G1">
+          <!-- host controls within groups -->
+          <button refID="AddFeatureTest_CreateFc" size="large" />
+          <button refID="AddFeatureTest_AddFeatures" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="AddFeatureTest_CreateFc" caption="Create Featureclasses" className="CreateFc" loadOnClick="true" keytip="B1" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">1. Create the Feature classes<disabledText /></tooltip>
+        </button>
+        <button id="AddFeatureTest_AddFeatures" caption="Add Features" className="AddFeatures" loadOnClick="true" keytip="B2" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">2. Add Features<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

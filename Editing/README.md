@@ -13,6 +13,7 @@ This repository contains ArcGIS Pro Add-In Samples for the ArcGIS Pro 2.2 SDK fo
 
 This folder contains ArcGIS Pro Add-In Samples that fall under the 'Editing' topic:
 
+* [AddFeatureTest (c#)](../../../tree/master/Editing/AddFeatureTest)  
 * [AnnoTools (c#)](../../../tree/master/Editing/AnnoTools)  
 * [ConstructionTool (c#)](../../../tree/master/Editing/ConstructionTool)  
 * [ConstructionToolWithOptions (c#)](../../../tree/master/Editing/ConstructionToolWithOptions)  
