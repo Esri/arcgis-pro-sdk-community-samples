@@ -1,4 +1,4 @@
-﻿//   Copyright 2018 Esri
+//   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -14,11 +14,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ArcGIS.Core.Data;
 using ArcGIS.Core.Data.UtilityNetwork;
-using ArcGIS.Desktop.Internal.Mapping;
 using ArcGIS.Desktop.Mapping;
 
 namespace UtilityNetworkSamples
@@ -71,6 +68,18 @@ namespace UtilityNetworkSamples
           }
         }
       }
+      
+      else if (layer is GroupLayer)
+      {
+        CompositeLayer compositeLayer = layer as CompositeLayer;
+        foreach (Layer childLayer in compositeLayer.Layers)
+        {
+          utilityNetwork = GetUtilityNetworkFromLayer(childLayer);
+          // Break at the first layer inside a group layer that belongs to a utility network
+          if (utilityNetwork != null) break; 
+        }
+      }
+
       return utilityNetwork;
     }
 
@@ -84,19 +93,20 @@ namespace UtilityNetworkSamples
     {
       // Get the table from the element
       using (Table table = utilityNetwork.GetTable(element.NetworkSource))
-      using (TableDefinition tableDefinition = table.GetDefinition())
       {
         // Create a query filter to fetch the appropriate row
         QueryFilter queryFilter = new QueryFilter()
         {
-          WhereClause = tableDefinition.GetGlobalIDField() + " = {" + element.GlobalID.ToString().ToUpper() + "}"
+          ObjectIDs = new List<long>() { element.ObjectID }
         };
 
         // Fetch and return the row
-        RowCursor rowCursor = table.Search(queryFilter);
-        if (rowCursor.MoveNext())
+        using (RowCursor rowCursor = table.Search(queryFilter))
         {
-          return rowCursor.Current;
+          if (rowCursor.MoveNext())
+          {
+            return rowCursor.Current;
+          }
         }
         return null;
       }

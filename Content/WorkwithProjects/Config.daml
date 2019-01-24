@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!---
-//   Copyright 2018 Esri
+//   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -22,7 +22,7 @@
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
     <Company>esri, http://www.esri.com</Company>
     <Date>4/17/2015 8:31:35 AM, 2015</Date>
-    <Subject>Framework</Subject>
+    <Subject>Content</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>

@@ -1,4 +1,4 @@
-﻿//   Copyright 2018 Esri
+//   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -28,7 +28,7 @@ namespace LoadReportSample
 	/// Utility network SDK samples require a utility network service to run.  For the Load Report sample, you will need to do the following: 
 	/// * Configure a utility network database and service using the ArcGIS for Electric data model.  Instructions for setting up and configuring this data are located on the [ArcGIS for Electric website](http://solutions.arcgis.com/electric/help/electric-utility-network-configuration/). 
 	/// * Run the ConfigureLoadReportData.py python script to complete the configuration for this sample.
-	/// Of course, the constants inside the source files can be changed to accomodate different data models. 
+	/// Of course, the constants inside the source files can be changed to accommodate different data models. 
 	/// </summary>
 	/// <remarks>
 	/// 1. In Visual Studio click the Build menu.  Then select Build Solution.

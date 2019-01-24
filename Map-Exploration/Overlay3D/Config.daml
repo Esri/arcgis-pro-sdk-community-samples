@@ -1,0 +1,45 @@
+﻿<ArcGIS defaultAssembly="Overlay3D.dll" defaultNamespace="Overlay3D" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{154a43fc-b1a1-46dc-bedb-e4f4da4fffb3}" version="1.0" desktopVersion="2.3.15754">
+    <Name>Overlay3D</Name>
+    <Description>Overlay3D description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>1/4/2019 11:39:49 AM, 2019</Date>
+    <Subject>Map Exploration</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="Overlay3D_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="Overlay3D_Tab1" caption="New Tab">
+          <group refID="Overlay3D_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="Overlay3D_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="G1">
+          <!-- host controls within groups -->
+          <button refID="Overlay3D_Overlay3DDockpane_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="Overlay3D_Overlay3DDockpane_ShowButton" caption="Show Overlay 3D Dockpane" 
+                className="Overlay3DDockpane_ShowButton" loadOnClick="true" keytip="B1"
+                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" 
+                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+          <tooltip heading="Show Dockpane">Show Overlay 3D Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="Overlay3D_Overlay3DDockpane" caption="Overlay 3D Dockpane" className="Overlay3DDockpaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="Overlay3DDockpaneView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

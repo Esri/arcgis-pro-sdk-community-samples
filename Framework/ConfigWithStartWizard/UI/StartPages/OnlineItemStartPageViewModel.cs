@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2018 Esri
+   Copyright 2019 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -157,7 +157,7 @@ namespace ConfigWithStartWizard.UI.StartPages
             {
               Name = System.IO.Path.GetFileNameWithoutExtension(_selectedResult.Name),
               LocationPath = ConfigWithStartWizardModule.DefaultFolder(),
-              TemplatePath = ConfigWithStartWizardModule.GetDefaultTemplates()[0] //Scene
+              TemplateType = TemplateType.GlobalScene
             };
             _eventToken = ArcGIS.Desktop.Mapping.Events.MapViewInitializedEvent.Subscribe((args) =>
             {

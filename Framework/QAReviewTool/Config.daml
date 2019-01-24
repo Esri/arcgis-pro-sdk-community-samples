@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--
 
-   Copyright 2018 Esri
+   Copyright 2019 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -22,10 +22,10 @@
     <Name>QA Review Tool</Name>
     <Description>Add-in for quality review and notation of datasets.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro Team</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>April 2018</Date>
-    <Subject>Editing</Subject>
+    <Subject>Framework</Subject>
   </AddInInfo>
   <conditions>
     <!-- our custom condition -->

@@ -1,0 +1,65 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows.Input;
+using System.Threading.Tasks;
+using ArcGIS.Core.CIM;
+using ArcGIS.Core.Data;
+using ArcGIS.Core.Geometry;
+using ArcGIS.Desktop.Catalog;
+using ArcGIS.Desktop.Core;
+using ArcGIS.Desktop.Editing;
+using ArcGIS.Desktop.Extensions;
+using ArcGIS.Desktop.Framework;
+using ArcGIS.Desktop.Framework.Contracts;
+using ArcGIS.Desktop.Framework.Dialogs;
+using ArcGIS.Desktop.Framework.Threading.Tasks;
+using ArcGIS.Desktop.Mapping;
+
+namespace XamlIcons
+{
+    /// <summary>
+    /// This sample shows how to use XAML Vector based icons in Ribbon UI elements such as buttons. 
+    /// </summary>
+    /// <remarks>
+    /// 1. In Visual Studio click the Build menu. Then select Build Solution.
+    /// 1. Click Start button to open ArcGIS Pro.
+    /// 1. ArcGIS Pro will open. 
+    /// 1. Open any project.
+    /// 1. Click on the Add-In tab on the ribbon.
+    /// 1. Within this tab, in the Icons group, "XAML-Icon" button uses a vector based XAML icon file EvilGenius32.xaml\EvilGenius16.xaml.
+    /// 1. There is also the "Raster-Icon" button placed next to this which uses the raster based png icon EvilGenius32.png\EvilGenius16.png.
+    /// ![UI](screenshots/xamlicons.png)
+    /// </remarks>
+    internal class Module1 : Module
+    {
+        private static Module1 _this = null;
+
+        /// <summary>
+        /// Retrieve the singleton instance to this module here
+        /// </summary>
+        public static Module1 Current
+        {
+            get
+            {
+                return _this ?? (_this = (Module1)FrameworkApplication.FindModule("XamlIcons_Module"));
+            }
+        }
+
+        #region Overrides
+        /// <summary>
+        /// Called by Framework when ArcGIS Pro is closing
+        /// </summary>
+        /// <returns>False to prevent Pro from closing, otherwise True</returns>
+        protected override bool CanUnload()
+        {
+            //TODO - add your business logic
+            //return false to ~cancel~ Application close
+            return true;
+        }
+
+        #endregion Overrides
+
+    }
+}

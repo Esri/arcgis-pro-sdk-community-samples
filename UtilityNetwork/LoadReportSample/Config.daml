@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 
-   Copyright 2018 Esri
+   Copyright 2019 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@
     <insertModule id="LoadReportSample_Module" className="LoadReportSample" autoLoad="false" caption="LoadReportSample">
       <tabs>
         <!-- This section of code defines an SDK Samples tab.  We add it to the Utility Network tab group and show it when a Utility Network layer is selected -->
-        <tab id="SDKSamples_Tab" caption="SDK Samples" tabGroupID="esri_networkanalysis_utility_TabGroup" condition="esri_mapping_utilityNetworkLayerSelectedCondition" keytip="UNSS">
+        <tab id="SDKSamples_Tab" caption="Load Report SDK Sample" tabGroupID="esri_networkanalysis_utility_TabGroup" condition="esri_mapping_utilityNetworkCondition" keytip="UNSS">
           <group refID="General_Group"/>
           <group refID="esri_networkanalysis_trace_StartingLocationsAndBarriers_Group" />
           <group refID="Electric_Group" />

@@ -97,14 +97,19 @@
             Holds the selected mxd item
             </summary>
         </member>
-        <member name="F:WorkwithProjects.WorkWithProjectsViewModel._templatePaths">
+        <member name="F:WorkwithProjects.WorkWithProjectsViewModel._templateFiles">
             <summary>
             collection of template paths.  Bind to this property in the view.
             </summary>
         </member>
-        <member name="F:WorkwithProjects.WorkWithProjectsViewModel._templatePath">
+        <member name="F:WorkwithProjects.WorkWithProjectsViewModel._templateFile">
             <summary>
-            Holds the selected templatePath item
+            Holds the selected templateFile item
+            </summary>
+        </member>
+        <member name="P:WorkwithProjects.WorkWithProjectsViewModel.FileTemplateVisibility">
+            <summary>
+            Determines the FileTemplate entry visibility
             </summary>
         </member>
         <member name="F:WorkwithProjects.WorkWithProjectsViewModel._openProjectCommand">
@@ -117,7 +122,7 @@
             command to open a project
             </summary>
         </member>
-        <member name="M:WorkwithProjects.WorkWithProjectsViewModel.CreateProjectFromTemplate(System.String,System.String,System.String)">
+        <member name="M:WorkwithProjects.WorkWithProjectsViewModel.CreateProjectFromTemplate(System.String,System.String,ArcGIS.Desktop.Core.TemplateType,System.String)">
             <summary>
             Creates a new project using the supplied name from a project template.
             </summary>
@@ -125,6 +130,7 @@
              CreateProjectSettings class used in project creation.</remarks>
             <param name="projectName">Name to be used for the new project.</param>
             <param name="locationPath">Location for the new project</param>
+            <param name="templateType">Type of template to use for newly created project</param>
             <param name="templatePath">Template to use</param>
             <returns>A Task representing CreateProjectFromTemplate.</returns>
         </member>

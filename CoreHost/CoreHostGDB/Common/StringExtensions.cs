@@ -1,4 +1,4 @@
-//Copyright 2018 Esri
+//Copyright 2019 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -20,13 +20,8 @@ using System.Threading.Tasks;
 
 namespace CoreHostGDB.Common {
     public static class StringExtensions {
-		/// <summary>
-		/// Check is a string is null or empty
-		/// </summary>
-		/// <param name="theString"></param>
-		/// <returns></returns>
         public static bool IsEmpty(this string theString) {
-            return string.IsNullOrEmpty(theString);
+            return (theString == null || theString.Length == 0);
         }
     }
 }

@@ -7,7 +7,7 @@
              mc:Ignorable="d" d:DataContext="{Binding Path=WorkWithProjectsViewModel}"
              d:DesignHeight="600" d:DesignWidth="300">
   <!--
-    //   Copyright 2018 Esri
+    //   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -99,14 +99,33 @@
             <TextBlock VerticalAlignment="Center">New Project Path:</TextBlock>
             <TextBox Margin="6,6,6,6" Name="txtProjectPath" Text="{Binding Path=ProjectPath}" HorizontalAlignment="Stretch" Width="150"></TextBox>
           </StackPanel>
-          <TextBlock>Create a new Project by selecting a template:</TextBlock>
-          <ListBox Margin="6,6,6,6"                     
+          <GroupBox Header="Select Type of new Project">
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+              </Grid.RowDefinitions>
+              <StackPanel Grid.Row="0" Orientation="Vertical">
+                <CheckBox IsChecked="{Binding IsCatalog}">Catalog</CheckBox>
+                <CheckBox IsChecked="{Binding IsMap}">Map</CheckBox>
+                <CheckBox IsChecked="{Binding IsLocalScene}">Local Scene</CheckBox>
+                <CheckBox IsChecked="{Binding IsGlobalScene}">Global Scene</CheckBox>
+                <CheckBox IsChecked="{Binding IsFile}">Saved Template</CheckBox>
+              </StackPanel>
+              <StackPanel Grid.Row="1" Visibility="{Binding FileTemplateVisibility}">
+                <TextBlock>Selecting a saved template:</TextBlock>
+                <ListBox Margin="6,6,6,6"                     
                         ScrollViewer.VerticalScrollBarVisibility="Auto"
                         ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                        SelectedItem="{Binding TemplatePath}" MinHeight="100"
-                        ItemsSource="{Binding TemplatePaths}" 
+                        SelectedItem="{Binding TemplateFile}" MinHeight="100"
+                        ItemsSource="{Binding TemplateFiles}" 
                         ItemContainerStyle="{DynamicResource Esri_ListBoxItemHighlightBrush}">
-          </ListBox>
+                </ListBox>
+              </StackPanel>
+              <Button Grid.Row="2" Command="{Binding CmdCreateProject}">New Project</Button>
+            </Grid>
+          </GroupBox>
         </StackPanel>
       </StackPanel>
     </Grid>

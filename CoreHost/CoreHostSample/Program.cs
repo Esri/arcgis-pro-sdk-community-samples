@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2018 Esri
+   Copyright 2019 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -21,13 +21,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using ArcGIS.Core.Hosting;
+using ArcGIS.Core.Data;
+using System.Reflection;
+using System.IO;
 
 namespace CoreHostSample {
 
     #region Initializing Core Host
-    using ArcGIS.Core.Data;
+    //using ArcGIS.Core.Data;
     //There must be a reference to ArcGIS.CoreHost.dll
-    using ArcGIS.Core.Hosting;
+    //using ArcGIS.Core.Hosting;
 
 	/// <summary>
 	/// ArcGIS Pro based console application reading from File Geodatabase
@@ -41,35 +45,53 @@ namespace CoreHostSample {
 	/// 1. View the table definition in your file geodatabase
 	/// ![UI](Screenshots/ConsoleWindow.png)
 	/// 1. Once the output stops press any key to close the application.  
+    /// 1. To reuse the ArcGIS Pro assemblies from the installation path, you can change the reference settings for 
+    /// ArcGIS.Core.dll and ArcGIS.CoreHost.dll to be "Copy Local = False".
 	/// </remarks>
 	class Program {
         //[STAThread] must be present on the Application entry point
         [STAThread]
         static void Main(string[] args)
         {
-            // get a geodatabase path from the command line or use this default:
-            var gdbPath = @"C:\Data\SDK\SDK.gdb";
-            if (args.Count() > 0) gdbPath = args[0];
+
+        AppDomain currentDomain = AppDomain.CurrentDomain;
+        currentDomain.AssemblyResolve += new ResolveEventHandler(ResolveProAssemblyPath);
+            
             //Call Host.Initialize before constructing any objects from ArcGIS.Core
-            try {
-                Host.Initialize();
+            try
+            {
+                //ArcGIS.Core.Hosting.Host.Initialize();
+                PerformCoreHostTask(args);
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 // Error (missing installation, no license, 64 bit mismatch, etc.)
                 Console.WriteLine(string.Format("Initialization failed: {0}", e.Message));
                 return;
             }
+
+        }
+
+        private static void PerformCoreHostTask(string[] args)
+        {
+            Host.Initialize();
+            //if (args.Count() > 0) gdbPath = args[0];
+            var gdbPath = args[0];
             try
             {
+               
                 //if we are here, ArcGIS.Core is successfully initialized
-                using (var gdb = new Geodatabase(new FileGeodatabaseConnectionPath(new Uri(gdbPath, UriKind.Absolute)))) {
+                using (var gdb = new Geodatabase(new FileGeodatabaseConnectionPath(new Uri(gdbPath, UriKind.Absolute))))
+                {
                     IReadOnlyList<TableDefinition> definitions = gdb.GetDefinitions<FeatureClassDefinition>();
-                    foreach (var fdsDef in definitions) {
+                    foreach (var fdsDef in definitions)
+                    {
                         Console.WriteLine(TableString(fdsDef as TableDefinition));
                     }
                 }
                 Console.WriteLine("Press any key to close this app.");
                 Console.ReadKey();
+                
             }
             catch (Exception e)
             {
@@ -79,16 +101,19 @@ namespace CoreHostSample {
             }
         }
 
-        private static string TableString(TableDefinition table) {
+        private static string TableString(TableDefinition table)
+        {
             string alias = table.GetAliasName();
             string name = table.GetName();
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(string.Format("{0} ({1})", alias.Length > 0 ? alias : name, name));
             sb.AppendLine(new string('-', 80));
-            foreach (var fld in table.GetFields()) {
+            foreach (var fld in table.GetFields())
+            {
                 sb.Append(string.Format("{0,-20}", fld.AliasName ?? fld.Name));
                 sb.Append(string.Format("{0,-14} ({1}) ", fld.FieldType.ToString(), fld.Length));
-                if (fld.IsNullable || fld.IsRequired) {
+                if (fld.IsNullable || fld.IsRequired)
+                {
 
                     string sep = fld.IsNullable && fld.IsRequired ? ", " : "";
                     sb.Append(string.Format("({0}{1}{2})", fld.IsNullable ? "Null" : "", sep, fld.IsRequired ? "Required" : ""));
@@ -97,6 +122,15 @@ namespace CoreHostSample {
             }
             sb.Append("\r\n");
             return sb.ToString();
+        }
+
+        static Assembly ResolveProAssemblyPath(object sender, ResolveEventArgs args)
+        {
+            string folderPath = @"C:\Program Files\ArcGIS\Pro\bin"; //Get this from registry
+            string assemblyPath = Path.Combine(folderPath, new AssemblyName(args.Name).Name + ".dll");
+            if (!File.Exists(assemblyPath)) return null;
+            Assembly assembly = Assembly.LoadFrom(assemblyPath);
+            return assembly;
         }
 
     }

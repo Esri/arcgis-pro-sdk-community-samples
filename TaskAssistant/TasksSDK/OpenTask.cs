@@ -1,4 +1,4 @@
-//   Copyright 2018 Esri
+//   Copyright 2017 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -37,7 +37,14 @@ namespace TasksSDK
       // pass an .esriTasks File and it will be added to project and loaded in the Tasks pane
       try
       {
-        Guid guid = await TaskAssistantModule.OpenTaskAsync(@"\\sbe1\solutions\Tasks\Get Started.esriTasks");
+        string taskFile = @"c:\Tasks\Project Exploration Tasks.esriTasks";
+        if (!System.IO.File.Exists(taskFile))
+        {
+          ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Cannot find file " + taskFile + ". Check file location.");
+          return;
+        }
+
+        Guid guid = await TaskAssistantModule.OpenTaskAsync(taskFile);
 
         // keep the guid for CloseTaskAsync
         Module1.Current.taskGuid = guid;

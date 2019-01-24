@@ -1,0 +1,43 @@
+﻿<ArcGIS defaultAssembly="XamlIcons.dll" defaultNamespace="XamlIcons" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{f039eec4-cc8c-46f0-89ae-b4a71182f56e}" version="1.0" desktopVersion="2.3.15735">
+    <Name>XamlIcons</Name>
+    <Description>XamlIcons description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>12/10/2018 8:49:29 AM, 2018</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="XamlIcons_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="XamlIcons_Tab1" caption="New Tab">
+          <group refID="XamlIcons_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="XamlIcons_Group1" caption="Icons" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="XamlIcons_XAMLIcons" size="large" />
+          <button refID="XamlIcons_Raster_Icon" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <!--This button uses a vector based XAML Icon-->
+        <button id="XamlIcons_XAMLIcons" caption="XAML-Icon" className="XAMLIcon" loadOnClick="true" smallImage="Images\EvilGenius16.xaml" largeImage="Images\EvilGenius32.xaml">
+          <tooltip heading="XAML Icon">This button uses a vector based XAML Icon<disabledText /></tooltip>
+        </button>
+        <!--This button uses a raster based png Icon-->
+        <button id="XamlIcons_Raster_Icon" caption="Raster-Icon" className="Raster_Icon" loadOnClick="true" smallImage="Images\EvilGenius16.png" largeImage="Images\EvilGenius32.png">
+          <tooltip heading="PNG Icon">This button uses a raster based png Icon<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

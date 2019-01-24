@@ -1,4 +1,4 @@
-﻿//Copyright 2018 Esri
+//Copyright 2019 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -24,38 +24,38 @@ using System.Threading.Tasks;
 
 namespace DataReviewerProSDKSamples
 {
-	/// <summary>
-	/// Utility class
-	/// Contains helper methods
-	/// </summary>
-	static class Utilities
-	{
-		/// <summary>
-		/// This method returns the current item for use as a contextItem
-		/// </summary>
-		/// <typeparam name="T">Type of the object.</typeparam>
-		/// <returns>current item for use as a contextItem</returns>
-		public static IEnumerable<T> GetContext<T>() where T : class
-		{
-			var items = FrameworkApplication.ContextMenuDataContext as IEnumerable<T>;
-			if (items != null)
-				return items;
-			var singleItem = FrameworkApplication.ContextMenuDataContext as T;
-			if (singleItem != null)
-				return singleItem.Yield();
-			else
-				return Enumerable.Empty<T>();
-		}
+    /// <summary>
+    /// Utility class
+    /// Contains helper methods
+    /// </summary>
+    static class Utilities
+    {
+        /// <summary>
+        /// This method returns the current item for use as a contextItem
+        /// </summary>
+        /// <typeparam name="T">Type of the object.</typeparam>
+        /// <returns>current item for use as a contextItem</returns>
+        public static IEnumerable<T> GetContext<T>() where T : class
+        {
+            var items = FrameworkApplication.ContextMenuDataContext as IEnumerable<T>;
+            if (items != null)
+                return items;
+            var singleItem = FrameworkApplication.ContextMenuDataContext as T;
+            if (singleItem != null)
+                return singleItem.Yield();
+            else
+                return Enumerable.Empty<T>();
+        }
 
-		/// <summary>
-		/// Wraps this object instance into an IEnumerable&lt;T&gt;, consisting of a single item.
-		/// </summary>
-		/// <typeparam name="T"> Type of the object. </typeparam>
-		/// <param name="item"> The instance that will be wrapped. </param>
-		/// <returns> An IEnumerable&lt;T&gt; consisting of a single item. </returns>
-		public static IEnumerable<T> Yield<T>(this T item)
-		{
-			yield return item;
-		}
-	}
+    /// <summary>
+    /// Wraps this object instance into an IEnumerable&lt;T&gt;, consisting of a single item.
+    /// </summary>
+    /// <typeparam name="T"> Type of the object. </typeparam>
+    /// <param name="item"> The instance that will be wrapped. </param>
+    /// <returns> An IEnumerable&lt;T&gt; consisting of a single item. </returns>
+    public static IEnumerable<T> Yield<T>(this T item)
+        {
+            yield return item;
+        }
+    }
 }

@@ -13,6 +13,14 @@
             <returns>
             </returns>
         </member>
+        <member name="M:Renderer.ClassBreakRenderers.CBRendererGraduatedColorsOutline(ArcGIS.Desktop.Mapping.FeatureLayer)">
+            <summary>
+            Renders a feature layer using graduated colors to draw quantities. The outline width is varied based on attributes.
+            ![graduatedColorOutline.png](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/graduatedColorOutline.png "Graduated colors with natural breaks renderer.") 
+            </summary>
+            <param name="featureLayer"></param>
+            <returns></returns>
+        </member>
         <member name="M:Renderer.ClassBreakRenderers.CBRendererGraduatedSymbols(ArcGIS.Desktop.Mapping.FeatureLayer)">
             <summary>
             Renders a feature layer using graduated symbols and natural breaks to draw quantities.

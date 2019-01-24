@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2018 Esri
+   Copyright 2019 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -74,6 +74,7 @@ namespace CategoriesUsage
     /// </summary>
     private async void UpdateCategoryList(MapViewEventArgs mapViewEventArgs)
     {
+      Clear();
       // Verify that the map view is active and at least one layer is selected
       if (MapView.Active == null ||
         mapViewEventArgs.MapView.GetSelectedLayers().Count < 1)
@@ -105,7 +106,6 @@ namespace CategoriesUsage
 
           // Enable the combo box and clear out its contents
           Enabled = true;
-          Clear();
 
           // Fill the combo box with all of the categories in the utility network
           using (UtilityNetworkDefinition utilityNetworkDefinition = utilityNetwork.GetDefinition())

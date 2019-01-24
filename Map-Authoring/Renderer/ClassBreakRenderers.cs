@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2018 Esri
+   Copyright 2019 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -56,6 +56,62 @@ namespace Renderer
             });
         }
         #endregion
+        #region Snippet Class Breaks renderer with graduated colors and outline
+        /// <summary>
+        /// Renders a feature layer using graduated colors to draw quantities. The outline width is varied based on attributes.
+        /// ![graduatedColorOutline.png](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/graduatedColorOutline.png "Graduated colors with natural breaks renderer.") 
+        /// </summary>
+        /// <param name="featureLayer"></param>
+        /// <returns></returns>
+        internal static Task CBRendererGraduatedColorsOutline(FeatureLayer featureLayer)
+        {
+            return QueuedTask.Run(() =>
+            {
+                //Gets the first numeric field of the feature layer
+                var firstNumericFieldOfFeatureLayer = SDKHelpers.GetNumericField(featureLayer);
+                //Gets the min and max value of the field
+                var minMax = SDKHelpers.GetFieldMinMax(featureLayer, firstNumericFieldOfFeatureLayer);
+                GraduatedColorsRendererDefinition gcDef = new GraduatedColorsRendererDefinition()
+                {
+                     ClassificationField = SDKHelpers.GetNumericField(featureLayer),
+                     ClassificationMethod = ClassificationMethod.NaturalBreaks,
+                     BreakCount = 5,
+                     ColorRamp = SDKHelpers.GetColorRamp()
+                     
+                };
+                CIMClassBreaksRenderer renderer = (CIMClassBreaksRenderer)featureLayer.CreateRenderer(gcDef);
+                //Create array of CIMVisualVariables to hold the outline information.
+                var visualVariables = new CIMVisualVariable[] {
+                    new CIMSizeVisualVariable
+                    {
+                        ValueExpressionInfo = new CIMExpressionInfo
+                        {
+                           Title = "Custom",
+                           Expression = "$feature.AREA",
+                           ReturnType = ExpressionReturnType.Default
+                        },
+                        AuthoringInfo = new CIMVisualVariableAuthoringInfo
+                        {
+                            MinSliderValue = Convert.ToDouble(minMax.Item1),
+                            MaxSliderValue = Convert.ToDouble(minMax.Item2),         
+                            ShowLegend = false,
+                            Heading = firstNumericFieldOfFeatureLayer
+                        },
+                        VariableType = SizeVisualVariableType.Graduated,
+                        Target = "outline",
+                        MinSize = 1,
+                        MaxSize = 13,
+                        MinValue = Convert.ToDouble(minMax.Item1),
+                        MaxValue = Convert.ToDouble(minMax.Item2)
+                    },
+                    
+                };
+                renderer.VisualVariables = visualVariables;
+                featureLayer?.SetRenderer(renderer);
+        });
+
+        }
+#endregion
 
         #region Snippet Class Breaks renderer with graduated symbols.
         /// <summary>

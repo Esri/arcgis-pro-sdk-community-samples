@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2019 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="ReusingProCommands.dll" defaultNamespace="ReusingProCommands" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{49e952c7-3933-4db7-b6d8-fda35d822a1e}" version="1.0" desktopVersion="2.1.9973">
+    <Name>ReusingProCommands</Name>
+    <Description>ReusingProCommands description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>10/21/2017 9:27:48 AM, 2017</Date>
+    <Subject>Framework</Subject>
+  </AddInInfo>
+  <modules>
+    <insertModule id="ReusingProCommands_Module" className="Module1" autoLoad="false" caption="Module1">
+      <tabs>
+        <tab id="ReusingProCommands_Tab1" caption="Reuse Pro Cmds" keytip="T1">
+          <group refID="ReusingProCommands_Group1"/>
+        </tab>
+      </tabs>
+      <groups>
+        <group id="ReusingProCommands_Group1" caption="Reuse Pro Commands" keytip="G1">
+          <button refID="esri_mapping_bookmarksNavigateGallery" />
+          <button refID="ReusingProCommands_CreateBookmarkButton" size="large" />
+          <button refID="ReusingProCommands_ReuseDockPane_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <button id="ReusingProCommands_CreateBookmarkButton" caption="Create Bookmark" className="CreateBookmarkButton" loadOnClick="true" keytip="B1"
+                smallImage="Images\GenericButtonBlue16.png" largeImage="Images\BookmarkCreate32.png">
+          <tooltip heading="Tooltip Heading">Create Bookmark with Code-Behind reusing Pro Command<disabledText /></tooltip>
+        </button>
+        <button id="ReusingProCommands_ReuseDockPane_ShowButton" 
+                caption="Show Reuse Cmds DockPane" 
+                className="ReuseDockPane_ShowButton" loadOnClick="true" keytip="B2"
+                smallImage="Images\GenericButtonPurple16.png" largeImage="Images\MapTiled32.png">
+          <tooltip heading="Show Dockpane">Show Reuse Pro Commands Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="ReusingProCommands_ReuseDockPane" caption="Reuse Pro Cmds" 
+                  className="ReuseDockPaneViewModel" dock="group" 
+                  dockWith="esri_core_contentsDockPane">
+          <content className="ReuseDockPaneView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

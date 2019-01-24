@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2018 Esri
+   Copyright 2019 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ namespace SLR_Analyst
 {
 	/// <summary>
 	/// This demonstration illustrates custom ArcGIS Pro map exploration functionality provided through a Pro SDK add-in.  The scenario uses a sample Pro add-in, Sea Level Rise Analyst, which can assist urban planning and public safety organizations in quickly identifying areas affected by sea level rise within a study area in Miami Beach, Florida.  
-	/// The general concept of the add-in is based on the [NOAA Sea Level Rise Viewer](https://coast.noaa.gov/slr/) web application.	The add-in and dataset allow for identification and selection from three layers – land use, parcels and streets.  
+	/// The general concept of the add-in is based on the [NOAA Sea Level Rise Viewer](https://coast.noaa.gov/slr/) web application.	The add-in and dataset allow for identification and selection from three layers ï¿½ land use, parcels and streets.  
 	/// The custom add-in demonstrates three main Pro SDK capabilities:
 	/// -	Interaction with and selection of layers within the project from a custom add-in pane.
 	/// -	Dynamic creation of a temporary report pane with results in text and chart form, and charts which leverage a custom tooltip which allows for better data exploration.
@@ -38,7 +38,7 @@ namespace SLR_Analyst
 	/// DATA SOURCES AND DESCRIPTION (Refer to Data Distribution Permission statement at the end of this document)
 	/// The dataset is comprised of data clipped for the study area from the following sources:
 	/// - Land use, Parcel and Street data layers provided by [Miami-Dade County GIS Open Data site](http://gis-mdc.opendata.arcgis.com/)
-	/// - Sea Level Rise layers for 1 – 6 feet provided by [NOAA SLR data site](https://coast.noaa.gov/slrdata/)
+	/// - Sea Level Rise layers for 1 ï¿½ 6 feet provided by [NOAA SLR data site](https://coast.noaa.gov/slrdata/)
 	/// </summary>
 	/// <remarks>
 	/// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

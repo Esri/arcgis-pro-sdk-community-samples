@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 
-   Copyright 2018 Esri
+   Copyright 2019 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
-    <Date>1/5/2018 3:53:50 PM, 2018</Date>
+    <Date>10/17/2018 3:53:50 PM, 2018</Date>
     <Subject>UtilityNetwork</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
@@ -33,16 +33,14 @@
     <insertModule id="CategoriesUsage_Module" className="CategoriesUsage" autoLoad="false" caption="CategoriesUsage">
       <!-- uncomment to have the control hosted on a separate tab-->
       <tabs>
-        <tab id="SDKSamples_Tab" caption="SDK Samples" tabGroupID="esri_networkanalysis_utility_TabGroup" condition="esri_mapping_utilityNetworkLayerSelectedCondition" keytip="UNSS">
+        <!--<tab id="CategoriesUsage_Tab" caption="New Tab" tabGroupID="esri_networkanalysis_utility_TabGroup" condition="esri_mapping_utilityNetworkLayerSelectedCondition" keytip="UNSS">
           <group refID="General_Group"/>
-          <group refID="esri_networkanalysis_trace_StartingLocationsAndBarriers_Group" />
-          <group refID="Electric_Group" />
-        </tab>
+        </tab>-->
       </tabs>
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="General_Group" caption="General" appearsOnAddInTab="false" keytip="UNSSG">
+        <group id="CategoriesUsage_Group" caption="Utility Network Categories" appearsOnAddInTab="true" keytip="UNSSG" condition="esri_mapping_utilityNetworkCondition">
           <!-- host controls within groups -->
           <comboBox refID="CategoriesUsage_CategoriesComboBox" />
         </group>

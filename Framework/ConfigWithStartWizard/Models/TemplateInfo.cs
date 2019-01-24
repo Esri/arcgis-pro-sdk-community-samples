@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2018 Esri
+   Copyright 2019 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -22,31 +22,40 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ConfigWithStartWizard.Models {
-    public class TemplateInfo {
+namespace ConfigWithStartWizard.Models
+{
+  public class TemplateInfo
+  {
 
-        public static Task<List<PathItem>> GetDefaultTemplatesAsync() {
-            return Task.Run(() => {
-                return GetDefaultTemplates();
-            });
-        }
-
-        public static List<PathItem> GetDefaultTemplates() {
-
-            var templates = new List<PathItem>();
-            templates.Add(new PathItem("Blank"));
-            string templatesDir = GetDefaultTemplateFolder();
-            var defaults = Directory.GetFiles(templatesDir, "*", SearchOption.TopDirectoryOnly)
-                    .Where(f => f.EndsWith(".ppkx") || f.EndsWith(".aptx")).Select(s => new PathItem(s)).ToList();
-            foreach (var pi in defaults)
-                templates.Add(pi);
-            return templates;
-        }
-        public static string GetDefaultTemplateFolder() {
-            string dir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
-            string root = dir.Split(new string[] { @"\bin" }, StringSplitOptions.RemoveEmptyEntries)[0];
-            return System.IO.Path.Combine(root, @"Resources\ProjectTemplates");
-        }
+    public static Task<List<PathItem>> GetDefaultTemplatesAsync()
+    {
+      return Task.Run(() =>
+      {
+        return GetDefaultTemplates();
+      });
     }
+
+    public static List<PathItem> GetDefaultTemplates()
+    {
+
+      var templates = new List<PathItem>();
+      templates.Add(new PathItem("Blank"));
+      string templatesDir = GetDefaultTemplateFolder();
+      if (System.IO.Directory.Exists(templatesDir))
+      {
+        var defaults = Directory.GetFiles(templatesDir, "*", SearchOption.TopDirectoryOnly)
+                .Where(f => f.EndsWith(".ppkx") || f.EndsWith(".aptx")).Select(s => new PathItem(s)).ToList();
+        foreach (var pi in defaults)
+          templates.Add(pi);
+      }
+      return templates;
+    }
+    public static string GetDefaultTemplateFolder()
+    {
+      string dir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+      string root = dir.Split(new string[] { @"\bin" }, StringSplitOptions.RemoveEmptyEntries)[0];
+      return System.IO.Path.Combine(root, @"Resources\ProjectTemplates");
+    }
+  }
 }
 

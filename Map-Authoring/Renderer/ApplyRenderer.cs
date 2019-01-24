@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2018 Esri
+   Copyright 2019 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ namespace Renderer
             //You can modify it to use other layers with polygon or line geometry if needed.
             var lyr = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault(s => s.ShapeType == esriGeometryType.esriGeometryPolygon);
             //TODO: Modify this line below to experiment with the different renderers
-            await ClassBreakRenderers.CBGraduatedColorsManualBreaks(lyr);
+            await ClassBreakRenderers.CBRendererGraduatedColorsOutline(lyr);
         }      
     }
 }

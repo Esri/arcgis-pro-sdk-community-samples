@@ -69,14 +69,14 @@
             
             </summary>
         </member>
-        <member name="M:LoadReportSample.CreateLoadReport.GetElementFromStartingPointRow(ArcGIS.Core.Data.Row,ArcGIS.Core.Data.UtilityNetwork.UtilityNetwork,ArcGIS.Core.Data.UtilityNetwork.UtilityNetworkDefinition)">
+        <member name="M:LoadReportSample.CreateLoadReport.GetElementFromPointRow(ArcGIS.Core.Data.Row,ArcGIS.Core.Data.UtilityNetwork.UtilityNetwork,ArcGIS.Core.Data.UtilityNetwork.UtilityNetworkDefinition)">
             <summary>
-            GetNetworkElementFromStartingPoint
-            
-            This routine takes a row from the starting point table and converts it to a NetworkElement that we can use for tracing
-            
+            This routine takes a row from the starting (or barrier) point table and converts it to a [Network] Element that we can use for tracing
             </summary>
-            
+            <param name="pointRow">The Row (either starting point or barrier point)</param>
+            <param name="utilityNetwork">Utility Network to be used</param>
+            <param name="definition">Utility Network definition to be used</param>
+            <returns>newly created element</returns>
         </member>
         <member name="T:LoadReportSample.LoadTraceResults">
             <summary>
@@ -95,7 +95,7 @@
             Utility network SDK samples require a utility network service to run.  For the Load Report sample, you will need to do the following: 
             * Configure a utility network database and service using the ArcGIS for Electric data model.  Instructions for setting up and configuring this data are located on the [ArcGIS for Electric website](http://solutions.arcgis.com/electric/help/electric-utility-network-configuration/). 
             * Run the ConfigureLoadReportData.py python script to complete the configuration for this sample.
-            Of course, the constants inside the source files can be changed to accomodate different data models. 
+            Of course, the constants inside the source files can be changed to accommodate different data models. 
             </summary>
             <remarks>
             1. In Visual Studio click the Build menu.  Then select Build Solution.

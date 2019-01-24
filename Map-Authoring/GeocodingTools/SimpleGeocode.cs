@@ -1,6 +1,6 @@
-﻿/*
+/*
 
-   Copyright 2018 Esri
+   Copyright 2019 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ namespace GeocodingTools
   {
     protected override async void OnClick()
     {
-      string text = "380 New York Street Redlands";
+      string text = "380 New York St, Redlands, CA, 92373, USA";
 
       // geocode
       IEnumerable<ArcGIS.Desktop.Mapping.Geocoding.GeocodeResult> results = await MapView.Active.LocatorManager.GeocodeAsync(text, false, false);

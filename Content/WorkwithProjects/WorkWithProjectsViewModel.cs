@@ -1,4 +1,4 @@
-//   Copyright 2018 Esri
+//   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -39,11 +39,12 @@ namespace WorkwithProjects
     /// used to lock collections for use by multiple threads
     /// </summary>
     private readonly object _lockMxdItemCollection = new object();
-    private readonly object _lockTemplatePathsCollection = new object();
+    private readonly object _lockTemplateFilesCollection = new object();
     private ObservableCollection<Item> _mxdItems = new ObservableCollection<Item>();
 
     protected WorkWithProjectsViewModel()
     {
+
       BindingOperations.EnableCollectionSynchronization(MxdItems, _lockMxdItemCollection);
     }
 
@@ -101,6 +102,103 @@ namespace WorkwithProjects
       }
     }
 
+    private bool _isCatalog;
+    private bool _isMap;
+    private bool _isLocalScene;
+    private bool _isGlobalScene;
+    private bool _isFile;
+
+    public bool IsCatalog
+    {
+      get { return _isCatalog; }
+      set
+      {
+        SetProperty(ref _isCatalog, value, () => IsCatalog);
+        SelectTemplateType("Catalog");
+      }
+    }
+     public bool IsMap
+    {
+      get { return _isMap; }
+      set
+      {
+        SetProperty(ref _isMap, value, () => IsMap);
+        SelectTemplateType("Map");
+      }
+    }
+    public bool IsLocalScene
+    {
+      get { return _isLocalScene; }
+      set
+      {
+        SetProperty(ref _isLocalScene, value, () => IsLocalScene);
+        SelectTemplateType("LocalScene");
+      }
+    }
+    public bool IsGlobalScene
+    {
+      get { return _isGlobalScene; }
+      set
+      {
+        SetProperty(ref _isGlobalScene, value, () => IsGlobalScene);
+        SelectTemplateType("GlobalScene");
+      }
+    }
+    public bool IsFile
+    {
+      get { return _isFile; }
+      set
+      {
+        SetProperty(ref _isFile, value, () => IsFile);
+        SelectTemplateType("File");
+      }
+    }
+    private TemplateType _SelectedTemplateType = TemplateType.Untitled;
+    private bool _reentry = false;
+    private void SelectTemplateType (string templateType)
+    {
+      if (_reentry) return;
+      _reentry = true;
+      FileTemplateVisibility = System.Windows.Visibility.Collapsed;
+      switch (templateType)
+      {
+        case "Catalog":
+          IsMap = false; IsLocalScene = false; IsGlobalScene = false; IsFile = false;
+          _SelectedTemplateType = TemplateType.Catalog;
+          break;
+        case "Map":
+          IsCatalog = false; IsLocalScene = false; IsGlobalScene = false; IsFile = false;
+          _SelectedTemplateType = TemplateType.Map;
+          break;
+        case "LocalScene":
+          IsCatalog = false; IsMap = false; IsGlobalScene = false; IsFile = false;
+          _SelectedTemplateType = TemplateType.LocalScene;
+          break;
+        case "GlobalScene":
+          IsCatalog = false; IsMap = false; IsLocalScene = false; IsFile = false;
+          _SelectedTemplateType = TemplateType.GlobalScene;
+          break;
+        case "File":
+          IsCatalog = false; IsMap = false; IsLocalScene = false; IsGlobalScene = false;
+          _SelectedTemplateType = TemplateType.Untitled;
+          RefreshTemplates();
+          FileTemplateVisibility = System.Windows.Visibility.Visible;
+          break;
+      }
+      _reentry = false;
+    }
+
+    public ICommand CmdCreateProject
+    {
+      get
+      {
+        return new RelayCommand(async () => {
+          // Create from template
+          await CreateProjectFromTemplate(ProjectName, ProjectPath, _SelectedTemplateType, _templateFile);
+        });
+      }
+    }
+
     private string _projectName = @"";
     /// <summary>
     /// Project Name property
@@ -142,37 +240,49 @@ namespace WorkwithProjects
     /// <summary>
     /// collection of template paths.  Bind to this property in the view.
     /// </summary>
-    private IEnumerable<string> _templatePaths;
-    public IEnumerable<string> TemplatePaths
+    private IEnumerable<string> _templateFiles;
+    public IEnumerable<string> TemplateFiles
     {
-      get { return _templatePaths; }
+      get { return _templateFiles; }
+    }
+
+    private void RefreshTemplates ()
+    {
+      var templateFolder = System.IO.Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"ArcGIS\ProjectTemplates");
+      _templateFiles = Directory.GetFiles(templateFolder, "*.aptx").ToList();
+      BindingOperations.EnableCollectionSynchronization(TemplateFiles, _lockTemplateFilesCollection);
+      NotifyPropertyChanged(() => TemplateFiles);
     }
 
     /// <summary>
-    /// Holds the selected templatePath item
+    /// Holds the selected templateFile item
     /// </summary>
-    private string _templatePath = null;
-    public string TemplatePath
+    private string _templateFile = null;
+    public string TemplateFile
     {
       get
       {
-        if (_templatePath == null)
-        {
-          // get the list of templates from c:\programfiles\arcgis\pro\Resources\ProjectTemplates
-          var templateFolder = System.IO.Path.Combine(GetInstallDirFromReg(), @"Resources\ProjectTemplates");
-          _templatePaths = Directory.GetFiles(templateFolder, "*.aptx").ToList();
-          BindingOperations.EnableCollectionSynchronization(TemplatePaths, _lockTemplatePathsCollection);
-          NotifyPropertyChanged(() => TemplatePaths);
-        }
-        return _templatePath;
+        return _templateFile;
       }
       set
       {
-        SetProperty(ref _templatePath, value, () => TemplatePath);
-        if (_templatePath == null) return;
+        SetProperty(ref _templateFile, value, () => TemplateFile);
+      }
+    }
 
-        // import the map
-        CreateProjectFromTemplate(ProjectName, ProjectPath, _templatePath);
+    private System.Windows.Visibility _fileTemplateVisibility = System.Windows.Visibility.Collapsed;
+    /// <summary>
+    /// Determines the FileTemplate entry visibility
+    /// </summary>
+    public System.Windows.Visibility FileTemplateVisibility
+    {
+      get
+      {
+        return _fileTemplateVisibility;
+      }
+      set
+      {
+        SetProperty(ref _fileTemplateVisibility, value, () => FileTemplateVisibility);
       }
     }
 
@@ -228,6 +338,7 @@ namespace WorkwithProjects
 
     private async void AddFolderToProject(string addFolderPath)
     {
+      if (string.IsNullOrEmpty(addFolderPath)) return;
       try
       {
         // Add a folder to the Project
@@ -279,9 +390,10 @@ namespace WorkwithProjects
     ///  CreateProjectSettings class used in project creation.</remarks>
     /// <param name="projectName">Name to be used for the new project.</param>
     /// <param name="locationPath">Location for the new project</param>
+    /// <param name="templateType">Type of template to use for newly created project</param>
     /// <param name="templatePath">Template to use</param>
     /// <returns>A Task representing CreateProjectFromTemplate.</returns>
-    private async Task CreateProjectFromTemplate(string projectName, string locationPath, string templatePath)
+    private async Task CreateProjectFromTemplate(string projectName, string locationPath, TemplateType templateType, string templatePath)
     {
       try
       {
@@ -289,10 +401,17 @@ namespace WorkwithProjects
         var createProjectSettings = new CreateProjectSettings
         {
           Name = projectName,
-          LocationPath = locationPath,
-          TemplatePath = templatePath
+          LocationPath = locationPath         
+          
         };
-
+        if (templateType == TemplateType.Untitled)
+        {
+          createProjectSettings.TemplatePath = templatePath;
+        }
+        else
+        {
+          createProjectSettings.TemplateType = templateType;
+        }
         // Create project
         var newProject = await Project.CreateAsync(createProjectSettings);
 
