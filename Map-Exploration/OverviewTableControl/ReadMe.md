@@ -45,7 +45,7 @@ Visual Studio:         2017
 1. Within the "Add-in" tab, click the Table Control dropdown and select the control type: Dock Pane, Pane, Dialog.  
 1. A table control will open and display the current content of the selected layer or table from the active map.  
 1. Select a few records in the table control.  Notice that the current map selection changes to reflect this.  
-![UI](screenshots/tablecontrol.png)  
+![UI](Screenshots/tablecontrol.png)  
   
 
 
