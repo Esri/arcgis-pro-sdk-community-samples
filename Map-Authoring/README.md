@@ -24,6 +24,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Map-Authorin
 * [GetSymbolSwatch (c#)](../../../tree/master/Map-Authoring/GetSymbolSwatch)  
 * [LayersPane (c#)](../../../tree/master/Map-Authoring/LayersPane)  
 * [MappingAddIns (c#)](../../../tree/master/Map-Authoring/MappingAddIns)  
+* [PlaceText (c#)](../../../tree/master/Map-Authoring/PlaceText)  
 * [ProceduralSymbolLayersWithRulePackages (c#)](../../../tree/master/Map-Authoring/ProceduralSymbolLayersWithRulePackages)  
 * [QueryBuilderControl (c#)](../../../tree/master/Map-Authoring/QueryBuilderControl)  
 * [Renderer (c#)](../../../tree/master/Map-Authoring/Renderer)  
