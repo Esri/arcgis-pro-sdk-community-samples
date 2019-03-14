@@ -1,7 +1,7 @@
 ## PlaceText
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows how to place text within a circular callout.  
+This sample shows how to place point markers with text inside the point marker.  
   
 
 
@@ -39,11 +39,12 @@ Visual Studio:         2017
 1. In Visual studio rebuild the solution.  
 1. Debug the add-in by clicking the "Start" button.  
 1. ArcGIS Pro opens, select any project with a map.  
-1. Open the Add-in Tab and click on the "Place Text Tool" button to active a "Place Text" Map tool.  
+1. Open the Add-in Tab and click on the "Place Text Tool" button to active the "Place Text" Map tool.  
 ![UI](Screenshots/Screen1.png)  
   
-1. Click on the map to place text with the call-out.  
-1. Click the 'Clear' button to remove all placed 'call-out' text.  
+1. Click on the map to place a point marker with text inside.  
+1. The sample code has been hardcoded to a circle (index 40) but developers can change the index to experiment with different shapes.  
+1. Click the 'Clear' button to remove all placed 'point marker' text.  
   
 
 
