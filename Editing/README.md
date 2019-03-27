@@ -28,6 +28,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Editing' top
 * [ModifyNewlyAddedFeatures (c#)](../../../tree/master/Editing/ModifyNewlyAddedFeatures)  
 * [ReplaceSketch (c#)](../../../tree/master/Editing/ReplaceSketch)  
 * [RestartSketch (c#)](../../../tree/master/Editing/RestartSketch)  
+* [SequentialNumberTool (c#)](../../../tree/master/Editing/SequentialNumberTool)  
 * [SketchToolDemo (c#)](../../../tree/master/Editing/SketchToolDemo)  
 * [UpdateAttributesWithSketch (c#)](../../../tree/master/Editing/UpdateAttributesWithSketch)  
 

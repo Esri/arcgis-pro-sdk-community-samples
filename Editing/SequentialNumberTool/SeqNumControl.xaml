@@ -1,0 +1,41 @@
+﻿<!--
+//   Copyright 2019 Esri
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       http://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License. 
+-->
+  <UserControl x:Class="SeqNum.SeqNumControlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"                                             
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid>
+    <Label Content="Layer:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="88"/>
+    <Label Content="Field:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,37,0,0" Width="88"/>
+    <Label x:Name="label" Content="Format:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,74,0,0"/>
+    <Label Content="Start value:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.464,0.375" Margin="10,113,0,0" Width="109"/>
+    <Label Content="Increment:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.438" Margin="9,148,0,0" Width="115"/>
+    <ComboBox x:Name="cmbLayer" ItemsSource="{Binding layerList}" SelectedItem="{Binding targetLayer, Mode=TwoWay}" IsSynchronizedWithCurrentItem="True" Text="Select Option" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Margin="95,10,0,0" />
+    <ComboBox x:Name="cmbField" ItemsSource="{Binding fieldList}" SelectedItem="{Binding targetField,Mode=TwoWay}" IsSynchronizedWithCurrentItem="True" Text="Select Option" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Margin="95,37,0,0" />
+    <TextBox x:Name="txtFormat" Text="{Binding stringFormat}" IsEnabled="{Binding isStringFormatEnabled}" ToolTip="{Binding formatToolTip}" ToolTipService.ShowDuration="60000" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Margin="95,73,0,0"/>
+    <TextBox x:Name="txtStart" Text="{Binding startValue}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" Margin="95,113,0,0" PreviewTextInput="txtStart_PreviewTextInput" />
+    <TextBox x:Name="txtIncrement" Text="{Binding incValue}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" Margin="95,148,0,0" PreviewTextInput="txtIncrement_PreviewTextInput" />
+  </Grid>
+</UserControl>

@@ -75,7 +75,7 @@ Read the [ProGuide: Installation and Upgrade](https://github.com/Esri/arcgis-pro
 
 ## ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 153 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 154 ArcGIS Pro samples that are included in this repository.  
 
 #### Content
 
@@ -108,6 +108,7 @@ Below is the list of 153 ArcGIS Pro samples that are included in this repository
 * [ModifyNewlyAddedFeatures (c#)](../../tree/master/Editing/ModifyNewlyAddedFeatures)  
 * [ReplaceSketch (c#)](../../tree/master/Editing/ReplaceSketch)  
 * [RestartSketch (c#)](../../tree/master/Editing/RestartSketch)  
+* [SequentialNumberTool (c#)](../../tree/master/Editing/SequentialNumberTool)  
 * [SketchToolDemo (c#)](../../tree/master/Editing/SketchToolDemo)  
 * [UpdateAttributesWithSketch (c#)](../../tree/master/Editing/UpdateAttributesWithSketch)  
 

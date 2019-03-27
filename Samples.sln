@@ -317,6 +317,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaceText", "Map-Authoring\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreHostResolveAssembly", "CoreHost\CoreHostResolveAssembly\CoreHostResolveAssembly.csproj", "{6BEFE251-C27D-43FA-B682-01AA856E52B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeqNum", "Editing\SequentialNumberTool\SeqNum.csproj", "{2AC2DF5B-B441-4C5B-8F4C-6FDC6EA7786A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -951,6 +953,10 @@ Global
 		{6BEFE251-C27D-43FA-B682-01AA856E52B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BEFE251-C27D-43FA-B682-01AA856E52B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BEFE251-C27D-43FA-B682-01AA856E52B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AC2DF5B-B441-4C5B-8F4C-6FDC6EA7786A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AC2DF5B-B441-4C5B-8F4C-6FDC6EA7786A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AC2DF5B-B441-4C5B-8F4C-6FDC6EA7786A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AC2DF5B-B441-4C5B-8F4C-6FDC6EA7786A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
