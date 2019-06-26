@@ -38,34 +38,36 @@ using ArcGIS.Desktop.Framework.Controls;
 
 namespace CustomCategoriesExample
 {
-  /// <summary>
-  /// An example of implementing a custom category. In this case we declare
-  /// a custom category <b>AcmeCustom_Reports</b> and a contract:
-  /// <b>IAcmeCustomReport</b>
-  /// </summary>
-  /// <remarks>
-  /// CustomCategoriesExample add-in declares the category AcmeCustom_Reports.
-  /// It also provides a default component, <b>CustomCategoriesExample.Report.DefaultReport</b>
-  /// that implements it via the <b>IAcmeCustomReport</b> contract. DefaultReport registers
-  /// in the AcmeCustom_Reports category in the Config.daml.<br/>
-  /// ExtraReport1 add-in also creates a component for the AcmeCustom_Reports category
-  /// and likewise registers it in the category within ~its~ config.daml. 
-  /// ExtraReport1.ExtraReport1 class implements the IAcmeCustomReport contract (as
-  /// required by the category creator - CustomCategoriesExample add-in in this case).<br/>
-  /// When the CustomCategoriesExample Module is initialized, it reads its 
-  /// AcmeCustom_Reports category via <b>Categories.GetComponentElements</b> and tests
-  /// each one for the presence of the IAcmeCustomReport contract. Any component
-  /// that registers in the category but does not implement the contract is skipped.
-  /// The rest are instantiated and loaded into the ReportsWindow dialog for selection.
-  /// ![UI](Screenshots/screen1.png)
-  /// <br/>
-  /// Try making additional add-ins that implement the IAcmeCustomReport contract and
-  /// register their component in the AcmeCustom_Reports category. Depending on the
-  /// number of components loaded that implement the AcmeCustom_Reports category, the
-  /// list of available reports in the ReportsWindow will increase or decrease
-  /// respectively.
-  /// </remarks>
-  internal class Module1 : Module
+    /// <summary>
+    /// An example of implementing a custom category. In this case we declare
+    /// a custom category **AcmeCustom_Reports** and a contract:
+    /// **IAcmeCustomReport**
+    /// </summary>
+    /// <remarks>
+    /// CustomCategoriesExample add-in declares the category AcmeCustom_Reports.
+    /// It also provides a default component, **CustomCategoriesExample.Report.DefaultReport**
+    /// that implements it via the **IAcmeCustomReport** contract. DefaultReport registers
+    /// in the AcmeCustom_Reports category in the Config.daml.  
+    ///   
+    /// ExtraReport1 add-in also creates a component for the AcmeCustom_Reports category
+    /// and likewise registers it in the category within ~its~ config.daml. 
+    /// ExtraReport1.ExtraReport1 class implements the IAcmeCustomReport contract (as
+    /// required by the category creator - CustomCategoriesExample add-in in this case).
+    ///   
+    /// When the CustomCategoriesExample Module is initialized, it reads its 
+    /// AcmeCustom_Reports category via **Categories.GetComponentElements** and tests
+    /// each one for the presence of the IAcmeCustomReport contract. Any component
+    /// that registers in the category but does not implement the contract is skipped.
+    /// The rest are instantiated and loaded into the ReportsWindow dialog for selection.
+    /// ![UI](Screenshots/screen1.png)
+    ///   
+    /// Try making additional add-ins that implement the IAcmeCustomReport contract and
+    /// register their component in the AcmeCustom_Reports category. Depending on the
+    /// number of components loaded that implement the AcmeCustom_Reports category, the
+    /// list of available reports in the ReportsWindow will increase or decrease
+    /// respectively.
+    /// </remarks>
+    internal class Module1 : Module
   {
     private static Module1 _this = null;
 
