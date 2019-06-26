@@ -18,7 +18,7 @@
  
  -->
 <ArcGIS defaultAssembly="ConstructionToolWithOptions.dll" defaultNamespace="ConstructionToolWithOptions" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{eccb269d-c84d-43cd-aba9-c7ded95ed0ae}" version="1.0" desktopVersion="2.0.8111">
+  <AddInInfo id="{eccb269d-c84d-43cd-aba9-c7ded95ed0ae}" version="1.0" desktopVersion="2.4">
     <Name>ConstructionToolWithOptions</Name>
     <Description>ConstructionToolWithOptions description</Description>
     <Image>Images\AddinDesktop32.png</Image>

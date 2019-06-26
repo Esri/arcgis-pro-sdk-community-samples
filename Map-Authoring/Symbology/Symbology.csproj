@@ -131,14 +131,16 @@
   <ItemGroup>
     <None Include="ReadMe.md" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Screenshots\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\Venice Procedural.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Textures procedural.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Screenshots\CustomStyleProjectItem.png" />
+    <None Include="Screenshots\SymbologyPane.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!--

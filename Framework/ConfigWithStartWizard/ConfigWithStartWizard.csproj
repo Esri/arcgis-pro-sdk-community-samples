@@ -146,9 +146,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
@@ -210,9 +207,7 @@
     <Resource Include="Images\User32.png" />
     <Resource Include="Images\UserRed32.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="ReadMe.md" />
     <None Include="Screenshots\Startup1.png" />
     <None Include="Screenshots\Startup2.png" />

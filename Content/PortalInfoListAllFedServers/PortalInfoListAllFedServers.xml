@@ -4,6 +4,16 @@
         <name>ListAllFedServers</name>
     </assembly>
     <members>
+        <member name="T:ListAllFedServers.Button1">
+            <summary>
+            Basics - This is the sample for PortalManagement SDK (ArcGIS.Desktop.Core.ArcGISPortal &amp; ArcGIS.Desktop.Core.ArcGISPortalManager) and EsriHttpClient.
+            Usage -
+            PortalInfoDockPane is to be triggered after clicking on the "Button1".
+            If the Active portal is arcgis online, print basic portal info (1).
+            When the Active portal is portal, print portal info and fed servers etc. (1,2,3)
+            You can either manually sign in to the active portal, or wait till this program prompts you for user name and password.
+            </summary>
+        </member>
         <member name="T:ListAllFedServers.Module1">
             <summary>
             This sample shows how to retrieve detailed information about the connected Portal

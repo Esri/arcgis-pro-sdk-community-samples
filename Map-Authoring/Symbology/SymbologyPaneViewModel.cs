@@ -48,7 +48,9 @@ namespace Symbology
                 MyCustomStyleItems.Clear();
             }
             SelectedGeometry = SymbolGeometries.FirstOrDefault();
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
             CreateStyleProjectItem();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         }
 
         /// <summary>
@@ -127,7 +129,9 @@ namespace Symbology
             set
             {                
                 SetProperty(ref _selectedGeometry, value, () => SelectedGeometry);
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 Initialize();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
             }            
         }
 
@@ -281,7 +285,7 @@ namespace Symbology
                 }
                 catch(Exception ex)
                 {
-
+					System.Diagnostics.Debug.WriteLine($@"Error in AddStyleItemToStyle: {ex.ToString()}");
                 }
 
             });

@@ -35,10 +35,7 @@ namespace QAReviewTool
     /// </summary>
     internal class LayerFieldListComboBox : ComboBox
     {
-
-        private bool _isInitialized;
-
-        /// <summary>
+		/// <summary>
         /// Combo Box constructor
         /// </summary>
         public LayerFieldListComboBox()

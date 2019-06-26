@@ -33,7 +33,7 @@ using LayersPane.Extensions;
 
 namespace LayersPane
 {
-    internal class LayersPaneViewModel : ViewStatePane, INotifyPropertyChanged
+    internal class LayersPaneViewModel : ViewStatePane
     {
         #region Private Properties
         public const string ViewPaneID = "LayersPane_LayersPane";
@@ -86,8 +86,7 @@ namespace LayersPane
             get { return _selectedLayer; }
             set
             {
-                _selectedLayer = value;
-                RaisePropertyChanged();
+				SetProperty(ref _selectedLayer, value, () => SelectedLayer);
             }
         }
 
@@ -96,9 +95,8 @@ namespace LayersPane
             get { return _dataTable; }
             set
             {
-                _dataTable = value;
-                RaisePropertyChanged();
-            }
+				SetProperty(ref _dataTable, value, () => FeatureData);
+			}
         }
 
         public bool IsLoading
@@ -106,8 +104,7 @@ namespace LayersPane
             get { return _isLoading; }
             set
             {
-                SetProperty(ref _isLoading, value, () => IsLoading);
-                RaisePropertyChanged();
+				SetProperty(ref _isLoading, value, () => IsLoading);
             }
         }
 
@@ -117,7 +114,6 @@ namespace LayersPane
             set
             {
                 SetProperty(ref _status, value, () => Status);
-                RaisePropertyChanged();
             }
         }
 
@@ -290,13 +286,7 @@ namespace LayersPane
             return FrameworkApplication.Panes.Create(ViewPaneID, new object[] { view }) as LayersPaneViewModel;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
-
-        protected void RaisePropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-        
+      
         #endregion Private Helpers
 
         #region Pane Overrides

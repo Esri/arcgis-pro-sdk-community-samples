@@ -17,7 +17,7 @@
    limitations under the License.
 
 -->
-<ArcGIS defaultAssembly="Puzzle_2-1.dll" defaultNamespace="Puzzle_2_1" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+<ArcGIS defaultAssembly="Puzzle_2_1.dll" defaultNamespace="Puzzle_2_1" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{aef96892-4cae-49d7-a102-f12a6f576402}" version="1.0" desktopVersion="2.1.9719">
     <Name>Puzzle_2_1</Name>
     <Description>Puzzle_2_1 shows how to create and manipulate layout elements</Description>

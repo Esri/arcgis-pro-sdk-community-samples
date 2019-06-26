@@ -217,7 +217,7 @@ namespace DivideLines
           SelectModifiedFeatures = false,
           SelectNewFeatures = false
         };
-        op.SplitAtPoints(featLayer, oid, splitPoints);
+        op.Split(featLayer, oid, splitPoints);
         op.Execute();
 
      //clear selection

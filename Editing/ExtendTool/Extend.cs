@@ -48,7 +48,7 @@ namespace ExtendTool
                 var selectedFeatures = MapView.Active.Map.GetSelection();
                 var insp = new Inspector();
                 insp.Load(selectedFeatures.Keys.First(), selectedFeatures.Values.First());
-                var selGeom = insp.Shape;
+                var selGeom = GeometryEngine.Instance.Project(insp.Shape, MapView.Active.Map.SpatialReference);
                 if (!(selGeom.GeometryType == GeometryType.Polygon
                     || selGeom.GeometryType == GeometryType.Polyline))
                 {

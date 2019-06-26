@@ -52,7 +52,9 @@ namespace TimeNavigation
     {
       _bookmarks = new ReadOnlyObservableCollection<Bookmark>(new ObservableCollection<Bookmark>());
       ActiveMapViewChangedEvent.Subscribe(OnActiveMapViewChanged);     
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
       LoadBookmarks();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
     }
 
     ~TimeModule()
@@ -130,7 +132,9 @@ namespace TimeNavigation
 
     private void OnActiveMapViewChanged(ActiveMapViewChangedEventArgs obj)
     {
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
       LoadBookmarks();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
     }
 
     #endregion

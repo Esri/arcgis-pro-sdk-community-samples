@@ -16,8 +16,8 @@
     limitations under the License. 
  
  -->
-  
-  <UserControl x:Class="ConstructionToolWithOptions.CircleToolOptionsView"
+
+<UserControl x:Class="ConstructionToolWithOptions.CircleToolOptionsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -27,19 +27,47 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              d:DataContext="{Binding Path=ui.CircleToolOptionsViewModel}">
-            <UserControl.Resources>
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
+          <ui:NotBoolToVisibleConverter x:Key="notBoolToVisibilityConverter" />
+          <ui:BoolToVisibleConverter x:Key="boolToVisibilityConverter" />
         </ResourceDictionary>
-    </UserControl.Resources>
-    <Grid>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid>
     <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
       <Label Content="Circle radius:" Foreground="{StaticResource Esri_Gray155}" />
-      <TextBox x:Name="textBox" Text="{Binding Path=Radius, UpdateSourceTrigger=PropertyChanged}" Margin="6,0,0,0" Width="75"
+
+      <!--add a separate control to show 'Different Values' text if appropriate -->
+
+      <!--IsDifferentValue will be true if 
+        1. your construction tool implements IEditingCreateToolMultiple 
+        2. you choose to view template properties with multiple templates selected in Manage Templates pane
+        3. you select your construction tool in the Tools tab
+        4. You have different Radius values for each of the templates selected -->
+      <Border Margin="15,5,0,0" BorderThickness="1" BorderBrush="{DynamicResource Esri_Gray125}"
+            Visibility="{Binding Path=IsDifferentValue, Mode=OneWay, Converter={StaticResource boolToVisibilityConverter}}">
+        <TextBlock Text="{Binding Path=DifferentValuesText, Mode=OneWay}"
+                   Margin="2"
+                   Height="20"
+                   Width="160"
+                   VerticalAlignment="Center"  HorizontalAlignment="Center" TextAlignment="Center"
+                   Foreground="{DynamicResource Esri_Gray155}"
+                   Background="Transparent" 
+                   PreviewMouseLeftButtonDown="OnDifferentLabelPreviewMouseLeftButtonDown"/>
+      </Border>
+
+      <TextBox x:Name="textBox"  Margin="6,0,0,0" Width="75"
+                        Visibility="{Binding Path=IsDifferentValue, Mode=OneWay, Converter={StaticResource notBoolToVisibilityConverter}}"
+                        Text="{Binding Path=Radius, UpdateSourceTrigger=PropertyChanged}" 
                         PreviewTextInput="TextBox_PreviewTextInput"
+                        KeyUp="textBox_KeyUp"
                         DataObject.Pasting="TextBox_PastingHandler"/>
     </StackPanel>
-    </Grid>
+  </Grid>
 </UserControl>

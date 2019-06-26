@@ -36,9 +36,6 @@ namespace QAReviewTool
     /// </summary>
     internal class ValueListComboBox : ComboBox
     {
-
-        private bool _isInitialized;
-
         /// <summary>
         /// Combo Box constructor
         /// </summary>

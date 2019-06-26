@@ -29,11 +29,11 @@ namespace ProceduralSymbolLayersWithRulePackages
     /// This sample demonstrates rendering a polygon feature layer with a City Engine rule package. The procedural symbol layer that is created is then saved as an item in a personal style in the project.
     /// </summary>
     /// <remarks>
-    /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a map package called 'ArcGISProSampleBuildings.ppkx' which is required for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\RulePackages" is available.
+    /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a project package called 'ArcGISProSampleBuildings.ppkx' which is required for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\RulePackages" is available.
     /// 1. Open this solution in Visual Studio.  
     /// 1. Click the build menu and select Build Solution.
     /// 1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.
-    /// 1. Open the map package "ArcGISProSampleBuildings.ppkx" located in the "C:\Data\RulePackages" folder since this project contains all required data.
+    /// 1. Open the project package "ArcGISProSampleBuildings.ppkx" located in the "C:\Data\RulePackages" folder since this project contains all required data.
     /// ![UI](Screenshots/Screen1.png)
     /// 1. Click the ADD-IN tab in ArcGIS Pro.
     /// 1. Click the Procedural Symbol button. This will open the ProceduralSymbol dockpane.

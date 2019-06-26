@@ -123,7 +123,7 @@ namespace SketchToolDemo
                     }
                 }
                 // add the elements to cut into the edit operation
-                cutOperation.Cut(editableFeatureLayer, cutOIDs, geometry);
+                cutOperation.Split(editableFeatureLayer, cutOIDs, geometry);
             }
 
             //execute the operation

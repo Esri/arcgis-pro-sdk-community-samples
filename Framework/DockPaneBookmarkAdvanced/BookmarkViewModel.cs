@@ -72,24 +72,14 @@ namespace DockPaneBookmarkAdvanced
         BindingOperations.EnableCollectionSynchronization(_readOnlyBookmarks, _lockCollection);
       });
       ProjectItemsChangedEvent.Subscribe(OnProjectCollectionChanged, false);
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
       CheckBookmarks(_selectedMap);
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
       IsShowCircularAnimation = Visibility.Collapsed;
-    }
+			IsNoBookmarkExists = Visibility.Collapsed;
+		}
 
        
-
-    #region Overrides
-
-    /// <summary>
-    /// Override to implement custom initialization code for this dockpane
-    /// </summary>
-    /// <returns></returns>
-    protected override async Task InitializeAsync()
-    {
-        IsNoBookmarkExists = Visibility.Collapsed;
-                
-    }
-    #endregion
 
     #region Subscribed Events
 
@@ -226,7 +216,9 @@ namespace DockPaneBookmarkAdvanced
             Utils.RunOnUiThread(async () =>
                 {
                     SetProperty(ref _selectedMap, value, () => SelectedMap);
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     CheckBookmarks(_selectedMap);
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     if (_selectedMap == null)
                     {
                         _selectedBmk = null;                       

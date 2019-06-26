@@ -57,6 +57,7 @@ namespace LayoutMapSeries.Helpers
     /// </summary>
     /// <param name="layout">layout where to change current page id</param>
     /// <param name="pageObjectId">object id field for MapSeries feature class</param>
+	/// <param name="Id">current page id</param>
     /// <returns></returns>
     public Task SetCurrentPageAsync(Layout layout, long pageObjectId, int Id) {
       return QueuedTask.Run(() => {

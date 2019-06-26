@@ -31,6 +31,8 @@ namespace DynamicJoins
 	/// This sample illustrates the use of dynamic joins of tables and feature classes.
 	/// </summary>
 	/// <remarks>
+	/// 1. This solution is using the **Newtonsoft.Json NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".
+	/// 1. This solution is using the **Expression.Interaction NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Expression.Interaction".
 	/// 1. In Visual studio click the Build menu. Then select Build Solution.
 	/// 1. Click Start button to open ArcGIS Pro.
 	/// 1. ArcGIS Pro will open, select any project

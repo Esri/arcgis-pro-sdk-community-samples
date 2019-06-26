@@ -14,7 +14,7 @@ namespace ArcGIS.Desktop.Framework {
 	[global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
 	public static partial class DAML {
 		public static partial class Button {
-			///<summary>Returns the id string for &quot;Topology&quot; (esri_wizard_module:ShowCreateTopologyWizard, Catalog)</summary>
+			///<summary>Returns the id string for &quot;Topology&quot; (esri_topology_wizard_module:ShowCreateTopologyWizard, Catalog)</summary>
 			public static string esri_GDBCreateTopologyButton {
 				 get { return "esri_GDBCreateTopologyButton"; }
 			}
@@ -22,21 +22,33 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_projectItemPropertiesButton {
 				 get { return "esri_projectItemPropertiesButton"; }
 			}
-			///<summary>Returns the id string for &quot;Refresh&quot; (esri_core_module:RefreshProjectItem, Catalog)</summary>
-			public static string esri_projectItemServerConnectionRefreshItemAsync {
-				 get { return "esri_projectItemServerConnectionRefreshItemAsync"; }
-			}
 			///<summary>Returns the id string for &quot;Remove&quot; (esri_core_module:RemoveProjectItem, Catalog)</summary>
 			public static string esri_projectItemServerConnectionRemove {
 				 get { return "esri_projectItemServerConnectionRemove"; }
 			}
-			///<summary>Returns the id string for &quot;New ArcGIS Server Connection&quot; (esri_geodatabase_module:AddAGSUserConnection, Catalog)</summary>
-			public static string esri_projectItemAddAGSUserConnection {
-				 get { return "esri_projectItemAddAGSUserConnection"; }
+			///<summary>Returns the id string for &quot;Add Server&quot; (esri_geodatabase_module:AddExistingServerConnection, Catalog)</summary>
+			public static string esri_projectItemAddExistingServerConnection {
+				 get { return "esri_projectItemAddExistingServerConnection"; }
 			}
-			///<summary>Returns the id string for &quot;New ArcGIS Server Connection&quot; (esri_geodatabase_module:AddAGSUserConnectionToFavorites, Catalog)</summary>
-			public static string esri_projectItemAddAGSUserConnectionToFavorites {
-				 get { return "esri_projectItemAddAGSUserConnectionToFavorites"; }
+			///<summary>Returns the id string for &quot;Add Cloud Storage Connection&quot; (esri_geodatabase_module:AddExistingACSConnection, Catalog)</summary>
+			public static string esri_projectItemAddExistingACSConnection {
+				 get { return "esri_projectItemAddExistingACSConnection"; }
+			}
+			///<summary>Returns the id string for &quot;Add Server&quot; (esri_geodatabase_module:AddExistingServerConnectionToFavorites, Catalog)</summary>
+			public static string esri_projectItemAddExistingServerConnectionToFavorites {
+				 get { return "esri_projectItemAddExistingServerConnectionToFavorites"; }
+			}
+			///<summary>Returns the id string for &quot;New ArcGIS Server Connection&quot; (esri_geodatabase_module:AddAGSConnection, Catalog)</summary>
+			public static string esri_projectItemAddAGSConnection {
+				 get { return "esri_projectItemAddAGSConnection"; }
+			}
+			///<summary>Returns the id string for &quot;New Cloud Storage Connection&quot; (esri_geodatabase_module:AddNewACSConnection, Catalog)</summary>
+			public static string esri_projectItemAddNewACSConnection {
+				 get { return "esri_projectItemAddNewACSConnection"; }
+			}
+			///<summary>Returns the id string for &quot;New ArcGIS Server Connection&quot; (esri_geodatabase_module:AddAGSConnectionToFavorites, Catalog)</summary>
+			public static string esri_projectItemAddAGSConnectionToFavorites {
+				 get { return "esri_projectItemAddAGSConnectionToFavorites"; }
 			}
 			///<summary>Returns the id string for &quot;New WCS Server Connection&quot; (esri_geodatabase_module:AddWCSConnection, Catalog)</summary>
 			public static string esri_projectItemAddWCSConnection {
@@ -54,9 +66,25 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_projectItemAddWMTSConnection {
 				 get { return "esri_projectItemAddWMTSConnection"; }
 			}
-			///<summary>Returns the id string for &quot;Add Folder Connection&quot; (esri_geodatabase_module:AddFolderConnection, Catalog)</summary>
+			///<summary>Returns the id string for &quot;New Statistical Data Collection&quot; (esri_businessAnalyst_Module:NewSDCXOnClick, Catalog)</summary>
+			public static string esri_projectItemCreateStatisticalDataCollectionButton {
+				 get { return "esri_projectItemCreateStatisticalDataCollectionButton"; }
+			}
+			///<summary>Returns the id string for &quot;Add Statistical Data Collection&quot; (esri_businessAnalyst_Module:AddSDCXOnClick, Catalog)</summary>
+			public static string esri_projectItemAddExistingStatisticalDataCollection {
+				 get { return "esri_projectItemAddExistingStatisticalDataCollection"; }
+			}
+			///<summary>Returns the id string for &quot;Remove&quot; (esri_core_module:RemoveProjectItem, Catalog)</summary>
+			public static string esri_projectItemStatisticalDataCollectionRemove {
+				 get { return "esri_projectItemStatisticalDataCollectionRemove"; }
+			}
+			///<summary>Returns the id string for &quot;Add Folder Connection&quot; (AddFolderConnectionCmd, Catalog)</summary>
 			public static string esri_folderConnectionAddButton {
 				 get { return "esri_folderConnectionAddButton"; }
+			}
+			///<summary>Returns the id string for &quot;Create Folder Connection&quot; (AddExistingFolderConnectionCmd, Catalog)</summary>
+			public static string esri_folderConnectionAddExistingButton {
+				 get { return "esri_folderConnectionAddExistingButton"; }
 			}
 			///<summary>Returns the id string for &quot;Remove&quot; (esri_core_module:RemoveProjectItem, Catalog)</summary>
 			public static string esri_folderConnectionRemoveButton {
@@ -82,23 +110,23 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_GDBCreateFeatureDatasetButton {
 				 get { return "esri_GDBCreateFeatureDatasetButton"; }
 			}
-			///<summary>Returns the id string for &quot;Feature Class...&quot; (esri_geodatabase_module:gdbImportFeatureClassToFeatureClass, Catalog)</summary>
+			///<summary>Returns the id string for &quot;Feature Class&quot; (esri_geodatabase_module:gdbImportFeatureClassToFeatureClass, Catalog)</summary>
 			public static string esri_GDBImportFeatureClassButton {
 				 get { return "esri_GDBImportFeatureClassButton"; }
 			}
-			///<summary>Returns the id string for &quot;Feature Class(es)...&quot; (esri_geodatabase_module:gdbImportFeatureClassToFeatureClasses, Catalog)</summary>
+			///<summary>Returns the id string for &quot;Feature Class(es)&quot; (esri_geodatabase_module:gdbImportFeatureClassToFeatureClasses, Catalog)</summary>
 			public static string esri_GDBImportFeatureClassesButton {
 				 get { return "esri_GDBImportFeatureClassesButton"; }
 			}
-			///<summary>Returns the id string for &quot;Table...&quot; (esri_geodatabase_module:gdbImportTableToTable, Catalog)</summary>
+			///<summary>Returns the id string for &quot;Table&quot; (esri_geodatabase_module:gdbImportTableToTable, Catalog)</summary>
 			public static string esri_GDBImportTableButton {
 				 get { return "esri_GDBImportTableButton"; }
 			}
-			///<summary>Returns the id string for &quot;Table(s)...&quot; (esri_geodatabase_module:gdbImportTableToTables, Catalog)</summary>
+			///<summary>Returns the id string for &quot;Table(s)&quot; (esri_geodatabase_module:gdbImportTableToTables, Catalog)</summary>
 			public static string esri_GDBImportTablesButton {
 				 get { return "esri_GDBImportTablesButton"; }
 			}
-			///<summary>Returns the id string for &quot;XML Workspace Document...&quot; (esri_geodatabase_module:gdbImportXMLDocumentToGeodatabase, Catalog)</summary>
+			///<summary>Returns the id string for &quot;XML Workspace Document&quot; (esri_geodatabase_module:gdbImportXMLDocumentToGeodatabase, Catalog)</summary>
 			public static string esri_GDBImportXMLWorkspaceDocumentsButton {
 				 get { return "esri_GDBImportXMLWorkspaceDocumentsButton"; }
 			}
@@ -138,6 +166,18 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_GDBTableExportTodBASEButton {
 				 get { return "esri_GDBTableExportTodBASEButton"; }
 			}
+			///<summary>Returns the id string for &quot;Table To Point Feature Class...&quot; (esri_geodatabase_module:gdbExportXYTableToPointFeatureClass, Catalog)</summary>
+			public static string esri_GDBTableExportToPointFeatureClassButton {
+				 get { return "esri_GDBTableExportToPointFeatureClassButton"; }
+			}
+			///<summary>Returns the id string for &quot;Table To Line Feature Class...&quot; (esri_geodatabase_module:gdbExportXYTableToLineFeatureClass, Catalog)</summary>
+			public static string esri_GDBTableExportToLineFeatureClassButton {
+				 get { return "esri_GDBTableExportToLineFeatureClassButton"; }
+			}
+			///<summary>Returns the id string for &quot;Table To Ellipse Feature Class...&quot; (esri_geodatabase_module:gdbExportTableToEllipseFeatureClass, Catalog)</summary>
+			public static string esri_GDBTableExportToEllipseFeatureClassButton {
+				 get { return "esri_GDBTableExportToEllipseFeatureClassButton"; }
+			}
 			///<summary>Returns the id string for &quot;Table(s) To dBASE...&quot; (esri_geodatabase_module:gdbExportTablesTodBASEfiles, Catalog)</summary>
 			public static string esri_GDBTablesExportTodBASEButton {
 				 get { return "esri_GDBTablesExportTodBASEButton"; }
@@ -158,13 +198,25 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_GDBFeatureClassesExportToXMLWorkspaceDocumentsButton {
 				 get { return "esri_GDBFeatureClassesExportToXMLWorkspaceDocumentsButton"; }
 			}
-			///<summary>Returns the id string for &quot;Feature Class&quot; (esri_geoprocessing_module:Commands.gdbCreateFeatureClass, Catalog)</summary>
+			///<summary>Returns the id string for &quot;Load Data&quot; (esri_geodatabase_module:gdbLoadDataToFeatureClassOrTable, Catalog)</summary>
+			public static string esri_GDBFeatureClassAndTableLoadDataButton {
+				 get { return "esri_GDBFeatureClassAndTableLoadDataButton"; }
+			}
+			///<summary>Returns the id string for &quot;Feature Class&quot; (esri_geodatabase_module:gdbLaunchCreateFeatureClassWizard, Catalog)</summary>
 			public static string esri_GDBCreateFeatureClassButton {
 				 get { return "esri_GDBCreateFeatureClassButton"; }
 			}
-			///<summary>Returns the id string for &quot;Table&quot; (esri_geoprocessing_module:Commands.gdbCreateTable, Catalog)</summary>
+			///<summary>Returns the id string for &quot;Table&quot; (esri_geodatabase_module:gdbLaunchCreateStandAloneTableWizard, Catalog)</summary>
 			public static string esri_GDBCreateTableButton {
 				 get { return "esri_GDBCreateTableButton"; }
+			}
+			///<summary>Returns the id string for &quot;Shapefile&quot; (esri_geoprocessing_module:Commands.gdbCreateShapeFile, Catalog)</summary>
+			public static string esri_GDBShapeFileButton {
+				 get { return "esri_GDBShapeFileButton"; }
+			}
+			///<summary>Returns the id string for &quot;GeoPackage&quot; (esri_geoprocessing_module:Commands.gdbCreateGeoPackage, Catalog)</summary>
+			public static string esri_GDBCreateNewGeoPackageButton {
+				 get { return "esri_GDBCreateNewGeoPackageButton"; }
 			}
 			///<summary>Returns the id string for &quot;View&quot; (esri_geoprocessing_module:Commands.gdbCreateUnregisteredView, Catalog)</summary>
 			public static string esri_GDBCreateDatabaseViewButton {
@@ -173,10 +225,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Relationship Class&quot; (esri_geoprocessing_module:Commands.gdbCreateRelationshipClass, Catalog)</summary>
 			public static string esri_GDBCreateRelationshipClassButton {
 				 get { return "esri_GDBCreateRelationshipClassButton"; }
-			}
-			///<summary>Returns the id string for &quot;Annotation Feature Class&quot; (esri_mapping:CreateAnnotationFeatureClass, Catalog)</summary>
-			public static string esri_GDBCreateAnnotationFeatureClassButton {
-				 get { return "esri_GDBCreateAnnotationFeatureClassButton"; }
 			}
 			///<summary>Returns the id string for &quot;Raster Dataset&quot; (esri_geoprocessing_module:Commands.gdbCreateRasterDataset, Catalog)</summary>
 			public static string esri_GDBCreateRasterDatasetButton {
@@ -198,17 +246,25 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_GDBCreateNewToolboxButton {
 				 get { return "esri_GDBCreateNewToolboxButton"; }
 			}
+			///<summary>Returns the id string for &quot;Toolbox&quot; (esri_geoprocessing_module:Commands.NewToolboxInFolder, Catalog)</summary>
+			public static string esri_GDBCreateNewToolboxButtonInFolder {
+				 get { return "esri_GDBCreateNewToolboxButtonInFolder"; }
+			}
 			///<summary>Returns the id string for &quot;Python Toolbox&quot; (esri_geoprocessing_module:Commands.NewPythonToolbox, Catalog)</summary>
 			public static string esri_GDBCreateNewPythonToolboxButton {
 				 get { return "esri_GDBCreateNewPythonToolboxButton"; }
 			}
-			///<summary>Returns the id string for &quot;New File Geodatabase&quot; (esri_geodatabase_module:CreateFileGeodatabase, Catalog)</summary>
+			///<summary>Returns the id string for &quot;Python Toolbox&quot; (esri_geoprocessing_module:Commands.NewPythonToolboxInFolder, Catalog)</summary>
+			public static string esri_GDBCreateNewPythonToolboxButtonInFolder {
+				 get { return "esri_GDBCreateNewPythonToolboxButtonInFolder"; }
+			}
+			///<summary>Returns the id string for &quot;File Geodatabase&quot; (CreateFileGeodatabaseCmd, Catalog)</summary>
 			public static string esri_GDBCreateNewFileGeodatabaseButton {
 				 get { return "esri_GDBCreateNewFileGeodatabaseButton"; }
 			}
-			///<summary>Returns the id string for &quot;Copy&quot; (ArcGIS.Desktop.Framework.CopyCMD, Catalog)</summary>
-			public static string esri_GDBCopy {
-				 get { return "esri_GDBCopy"; }
+			///<summary>Returns the id string for &quot;LAS Dataset&quot; (CreateLasDatasetCmd, Catalog)</summary>
+			public static string esri_GDBCreateNewLasDatasetButton {
+				 get { return "esri_GDBCreateNewLasDatasetButton"; }
 			}
 			///<summary>Returns the id string for &quot;Paste&quot; (ArcGIS.Desktop.Framework.PasteCMD, Catalog)</summary>
 			public static string esri_GDBPasteToFeatureDataset {
@@ -254,7 +310,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_GDBCreateParcelFabricButton {
 				 get { return "esri_GDBCreateParcelFabricButton"; }
 			}
-			///<summary>Returns the id string for &quot;Parcel Type&quot; (esri_geoprocessing_module:Commands.gdbAddParcelType, Catalog)</summary>
+			///<summary>Returns the id string for &quot;Add Parcel Type&quot; (esri_geoprocessing_module:Commands.gdbAddParcelType, Catalog)</summary>
 			public static string esri_GDBAddParcelTypeButton {
 				 get { return "esri_GDBAddParcelTypeButton"; }
 			}
@@ -265,6 +321,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Locator Properties&quot; (esri_mapping:ShowLocatorProperties, Catalog)</summary>
 			public static string esri_mapping_LocatorProperties {
 				 get { return "esri_mapping_LocatorProperties"; }
+			}
+			///<summary>Returns the id string for &quot;Locator Properties&quot; (esri_mapping:ShowLocatorProperties, Catalog)</summary>
+			public static string esri_mapping_LocatorEagleProperties {
+				 get { return "esri_mapping_LocatorEagleProperties"; }
 			}
 			///<summary>Returns the id string for &quot;Locator Properties&quot; (esri_mapping:ShowLocatorProperties, Catalog)</summary>
 			public static string esri_mapping_compositeLocatorProperties {
@@ -282,21 +342,13 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_annotationFeatureClassProperties {
 				 get { return "esri_mapping_annotationFeatureClassProperties"; }
 			}
+			///<summary>Returns the id string for &quot;Dimension Feature Class Properties&quot; (esri_mapping:ShowAnnotationFeatureClassDockPane, Catalog)</summary>
+			public static string esri_mapping_dimensionFeatureClassProperties {
+				 get { return "esri_mapping_dimensionFeatureClassProperties"; }
+			}
 			///<summary>Returns the id string for &quot;Add To Project&quot; (esri_core_module:AddProjectItem, Catalog)</summary>
 			public static string esri_itemInfoAddPackageToProjectButton {
 				 get { return "esri_itemInfoAddPackageToProjectButton"; }
-			}
-			///<summary>Returns the id string for &quot;Refresh&quot; (esri_core_module:RefreshProjectItem, Catalog)</summary>
-			public static string esri_itemInfoRefreshButton {
-				 get { return "esri_itemInfoRefreshButton"; }
-			}
-			///<summary>Returns the id string for &quot;Add To Favorites&quot; (esri_core_module:AddFavorite, Catalog)</summary>
-			public static string esri_addFavoriteButton {
-				 get { return "esri_addFavoriteButton"; }
-			}
-			///<summary>Returns the id string for &quot;Add To New Projects&quot; (esri_core_module:AddProjectItemToNewProjects, Catalog)</summary>
-			public static string esri_addProjectItemToNewProjectsButton {
-				 get { return "esri_addProjectItemToNewProjectsButton"; }
 			}
 			///<summary>Returns the id string for &quot;Remove&quot; (esri_core_module:RemoveFavorite, Catalog)</summary>
 			public static string esri_removeFavoriteButton {
@@ -342,10 +394,6 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_projectAddParcelType {
 				 get { return "esri_projectAddParcelType"; }
 			}
-			///<summary>Returns the id string for &quot;Delete&quot; (esri_core_module:DeleteProjectItem, Catalog)</summary>
-			public static string esri_onlineItemDelete {
-				 get { return "esri_onlineItemDelete"; }
-			}
 			///<summary>Returns the id string for &quot;Import And Open&quot; (esri_core_module:AddProjectItem, Catalog)</summary>
 			public static string esri_mapItemMxdImportOpenButton {
 				 get { return "esri_mapItemMxdImportOpenButton"; }
@@ -359,6 +407,10 @@ namespace ArcGIS.Desktop.Framework {
 				 get { return "esri_layoutItemPAGXImportOpenButton"; }
 			}
 			///<summary>Returns the id string for &quot;Add And Open&quot; (esri_core_module:AddProjectItem, Catalog)</summary>
+			public static string esri_reportItemRPTXImportOpenButton {
+				 get { return "esri_reportItemRPTXImportOpenButton"; }
+			}
+			///<summary>Returns the id string for &quot;Add And Open&quot; (esri_core_module:AddProjectItem, Catalog)</summary>
 			public static string esri_taskItemTaskImportOpenButton {
 				 get { return "esri_taskItemTaskImportOpenButton"; }
 			}
@@ -369,6 +421,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Add And Open&quot; (esri_core_module:AddProjectItem, Catalog)</summary>
 			public static string esri_webMapItemAddToProjectButton {
 				 get { return "esri_webMapItemAddToProjectButton"; }
+			}
+			///<summary>Returns the id string for &quot;Add To Project&quot; (esri_core_module:AddProjectItem, Catalog)</summary>
+			public static string esri_notebookAddToProjectButton {
+				 get { return "esri_notebookAddToProjectButton"; }
 			}
 			///<summary>Returns the id string for &quot;Add To Project&quot; (esri_core_module:AddProjectItem, Catalog)</summary>
 			public static string esri_projectItemAddToProjectButton {
@@ -406,7 +462,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_geodatabase_databaseConnectionToFavoritesButton {
 				 get { return "esri_geodatabase_databaseConnectionToFavoritesButton"; }
 			}
-			///<summary>Returns the id string for &quot;Add Folder&quot; (esri_geodatabase_module:AddFolderConnection, Catalog)</summary>
+			///<summary>Returns the id string for &quot;Add Folder&quot; (AddFolderConnectionCmd, Catalog)</summary>
 			public static string esri_geodatabase_addFolderConnectionButton {
 				 get { return "esri_geodatabase_addFolderConnectionButton"; }
 			}
@@ -418,13 +474,25 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_geodatabase_addLocatorButton {
 				 get { return "esri_geodatabase_addLocatorButton"; }
 			}
-			///<summary>Returns the id string for &quot;New ArcGIS Server&quot; (esri_geodatabase_module:AddAGSUserConnection, Catalog)</summary>
-			public static string esri_mapping_AGSUserConnectionButton {
-				 get { return "esri_mapping_AGSUserConnectionButton"; }
+			///<summary>Returns the id string for &quot;Refresh Locators&quot; (esri_database_module:RefreshLocators, Catalog)</summary>
+			public static string esri_geodatabase_refreshLocatorsButton {
+				 get { return "esri_geodatabase_refreshLocatorsButton"; }
 			}
-			///<summary>Returns the id string for &quot;New ArcGIS Server&quot; (esri_geodatabase_module:AddAGSUserConnectionToFavorites, Catalog)</summary>
-			public static string esri_mapping_AGSUserConnectionToFavoritesButton {
-				 get { return "esri_mapping_AGSUserConnectionToFavoritesButton"; }
+			///<summary>Returns the id string for &quot;Add Server&quot; (esri_geodatabase_module:AddExistingServerConnection, Catalog)</summary>
+			public static string esri_mapping_AddExistingServerConnectionButton {
+				 get { return "esri_mapping_AddExistingServerConnectionButton"; }
+			}
+			///<summary>Returns the id string for &quot;Add Server&quot; (esri_geodatabase_module:AddExistingServerConnectionToFavorites, Catalog)</summary>
+			public static string esri_mapping_AddExistingServerConnectionToFavoritesButton {
+				 get { return "esri_mapping_AddExistingServerConnectionToFavoritesButton"; }
+			}
+			///<summary>Returns the id string for &quot;New ArcGIS Server&quot; (esri_geodatabase_module:AddAGSConnection, Catalog)</summary>
+			public static string esri_mapping_AGSConnectionButton {
+				 get { return "esri_mapping_AGSConnectionButton"; }
+			}
+			///<summary>Returns the id string for &quot;New ArcGIS Server&quot; (esri_geodatabase_module:AddAGSConnectionToFavorites, Catalog)</summary>
+			public static string esri_mapping_AGSConnectionToFavoritesButton {
+				 get { return "esri_mapping_AGSConnectionToFavoritesButton"; }
 			}
 			///<summary>Returns the id string for &quot;New WCS Server&quot; (esri_geodatabase_module:AddWCSConnection, Catalog)</summary>
 			public static string esri_mapping_WCSConnectionButton {
@@ -458,6 +526,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_WMTSConnectionToFavoritesButton {
 				 get { return "esri_mapping_WMTSConnectionToFavoritesButton"; }
 			}
+			///<summary>Returns the id string for &quot;Add Statistical Data Collection&quot; (esri_geodatabase_module:AddExistingStatisticalDataCollectionToFavorites, Catalog)</summary>
+			public static string esri_mapping_AddExistingStatisticalDataCollectionToFavoritesButton {
+				 get { return "esri_mapping_AddExistingStatisticalDataCollectionToFavoritesButton"; }
+			}
 			///<summary>Returns the id string for &quot;Domains&quot; (esri_geodatabase_module:openDomainsView, Catalog)</summary>
 			public static string esri_DomainsViewButton {
 				 get { return "esri_DomainsViewButton"; }
@@ -477,6 +549,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Versions&quot; (esri_geodatabase_module:openVersionsView, Catalog)</summary>
 			public static string esri_VersionsViewButton {
 				 get { return "esri_VersionsViewButton"; }
+			}
+			///<summary>Returns the id string for &quot;Attribute Rules&quot; (esri_geodatabase_module:openAttributeRulesView, Catalog)</summary>
+			public static string esri_AttributeRulesViewButton {
+				 get { return "esri_AttributeRulesViewButton"; }
+			}
+			///<summary>Returns the id string for &quot;Contingent Values&quot; (esri_geodatabase_module:openContingentValuesView, Catalog)</summary>
+			public static string esri_ContingentValueButton {
+				 get { return "esri_ContingentValueButton"; }
 			}
 			///<summary>Returns the id string for &quot;Register As Versioned...&quot; (esri_geodatabase_module:registerAsVersioned, Catalog)</summary>
 			public static string esri_RegisterAsVersionedButton {
@@ -502,6 +582,18 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_DisableEditorTrackingButton {
 				 get { return "esri_DisableEditorTrackingButton"; }
 			}
+			///<summary>Returns the id string for &quot;Enable Attachments&quot; (esri_geodatabase_module:enableAttachments, Catalog)</summary>
+			public static string esri_EnableAttachmentsButton {
+				 get { return "esri_EnableAttachmentsButton"; }
+			}
+			///<summary>Returns the id string for &quot;Disable Attachments&quot; (esri_geodatabase_module:disableAttachments, Catalog)</summary>
+			public static string esri_DisableAttachementsButton {
+				 get { return "esri_DisableAttachementsButton"; }
+			}
+			///<summary>Returns the id string for &quot;Add Global IDs&quot; (esri_geodatabase_module:addGlobalIDs, Catalog)</summary>
+			public static string esri_AddGlobalIDButton {
+				 get { return "esri_AddGlobalIDButton"; }
+			}
 			///<summary>Returns the id string for &quot;Register with Geodatabase&quot; (esri_geodatabase_module:registerWithGdb, Catalog)</summary>
 			public static string esri_RegisterWithGdbButton {
 				 get { return "esri_RegisterWithGdbButton"; }
@@ -513,6 +605,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Compress&quot; (esri_geodatabase_module:compressFileGdb, Catalog)</summary>
 			public static string esri_CompressFileGdbButton {
 				 get { return "esri_CompressFileGdbButton"; }
+			}
+			///<summary>Returns the id string for &quot;Compact&quot; (esri_database_module:CompactFileGdb, Catalog)</summary>
+			public static string esri_CompactFileGdbButton {
+				 get { return "esri_CompactFileGdbButton"; }
 			}
 			///<summary>Returns the id string for &quot;Uncompress&quot; (esri_geodatabase_module:uncompressFileGdb, Catalog)</summary>
 			public static string esri_UncompressFileGdbButton {
@@ -550,6 +646,20 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_favoriteItemRemoveFromNewProjectButton {
 				 get { return "esri_favoriteItemRemoveFromNewProjectButton"; }
 			}
+			///<summary>Returns the id string for &quot;Scene Layer Package&quot; (LaunchCreateSceneLayerWizardCmd, Catalog)</summary>
+			public static string esri_catalog_CreateSceneLayerPackageButton {
+				 get { return "esri_catalog_CreateSceneLayerPackageButton"; }
+			}
+		}
+		public static partial class Dockpane {
+			///<summary>Returns the id string for &quot;Create Feature Class&quot; (ArcGIS.Desktop.Internal.Catalog.Wizards.CreateFeatureClass.CreateFeatureClassDockPaneViewModel, Catalog)</summary>
+			public static string esri_geodatabase_createFeatureClassDockPane {
+				 get { return "esri_geodatabase_createFeatureClassDockPane"; }
+			}
+			///<summary>Returns the id string for &quot;Create Table&quot; (ArcGIS.Desktop.Internal.Catalog.Wizards.CreateTable.CreateStandAloneTableDockPaneViewModel, Catalog)</summary>
+			public static string esri_geodatabase_createTableDockPane {
+				 get { return "esri_geodatabase_createTableDockPane"; }
+			}
 		}
 		public static partial class Dynamicmenu {
 			///<summary>Returns the id string for &quot;Delete&quot; (GeoDatabaseModule+DeleteDynamicMenu, Catalog)</summary>
@@ -571,6 +681,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Subtypes View&quot; (OpenDesignViewSubtypesDynamicMenu, Catalog)</summary>
 			public static string esri_projectItemOpenDesignViewSubtypesMenu {
 				 get { return "esri_projectItemOpenDesignViewSubtypesMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Attribute Rules View&quot; (OpenDesignViewAttributeRulesDynamicMenu, Catalog)</summary>
+			public static string esri_projectItemOpenDesignViewAttributeRulesMenu {
+				 get { return "esri_projectItemOpenDesignViewAttributeRulesMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Contingent Values View&quot; (OpenDesignViewContingentValuesDynamicMenu, Catalog)</summary>
+			public static string esri_projectItemOpenDesignViewContingentValueMenu {
+				 get { return "esri_projectItemOpenDesignViewContingentValueMenu"; }
 			}
 			///<summary>Returns the id string for &quot;Locators Menu&quot; (LocatorFileDynamicMenu, Catalog)</summary>
 			public static string esri_projectItemLocatorsMenu {
@@ -596,15 +714,35 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_project_layerTemplate {
 				 get { return "esri_project_layerTemplate"; }
 			}
+			///<summary>Returns the id string for &quot;Project&quot; (Group, Catalog)</summary>
+			public static string esri_core_Folders_Project {
+				 get { return "esri_core_Folders_Project"; }
+			}
+			///<summary>Returns the id string for &quot;Create&quot; (Group, Catalog)</summary>
+			public static string esri_core_Folders_Group {
+				 get { return "esri_core_Folders_Group"; }
+			}
+			///<summary>Returns the id string for &quot;Project&quot; (Group, Catalog)</summary>
+			public static string esri_database_New {
+				 get { return "esri_database_New"; }
+			}
+			///<summary>Returns the id string for &quot;Create&quot; (Group, Catalog)</summary>
+			public static string esri_database_Create_Group {
+				 get { return "esri_database_Create_Group"; }
+			}
 		}
 		public static partial class Component {
-			///<summary>Returns the id string for &quot;esri_geodatabase_projectContainer&quot; (ArcGIS.Desktop.Internal.Catalog.GDBContainer, Catalog)</summary>
-			public static string esri_geodatabase_projectContainer {
-				 get { return "esri_geodatabase_projectContainer"; }
+			///<summary>Returns the id string for &quot;esri_geodatabase_serverConnectionContainer&quot; (ArcGIS.Desktop.Internal.Catalog.ServerConnectionContainer, Catalog)</summary>
+			public static string esri_geodatabase_serverConnectionContainer {
+				 get { return "esri_geodatabase_serverConnectionContainer"; }
 			}
-			///<summary>Returns the id string for &quot;esri_geodatabase_folderConnectionContainer&quot; (ArcGIS.Desktop.Internal.Catalog.FolderConnectionContainer, Catalog)</summary>
-			public static string esri_geodatabase_folderConnectionContainer {
-				 get { return "esri_geodatabase_folderConnectionContainer"; }
+			///<summary>Returns the id string for &quot;esri_geodatabase_cloudStorageConnectionContainer&quot; (ArcGIS.Desktop.Internal.Catalog.CloudStorageConnectionContainer, Catalog)</summary>
+			public static string esri_geodatabase_cloudStorageConnectionContainer {
+				 get { return "esri_geodatabase_cloudStorageConnectionContainer"; }
+			}
+			///<summary>Returns the id string for &quot;esri_geodatabase_statisticalDataCollectionContainer&quot; (ArcGIS.Desktop.Internal.Catalog.StatisticalDataCollectionContainer, Catalog)</summary>
+			public static string esri_geodatabase_statisticalDataCollectionContainer {
+				 get { return "esri_geodatabase_statisticalDataCollectionContainer"; }
 			}
 			///<summary>Returns the id string for &quot;esri_geodatabase_locatorsContainer&quot; (ArcGIS.Desktop.Internal.Catalog.LocatorsConnectionContainer, Catalog)</summary>
 			public static string esri_geodatabase_locatorsContainer {
@@ -613,10 +751,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_geodatabase_findProviderSettingsContainer&quot; (ArcGIS.Desktop.Internal.Catalog.FindProviderSettingsContainer, Catalog)</summary>
 			public static string esri_geodatabase_findProviderSettingsContainer {
 				 get { return "esri_geodatabase_findProviderSettingsContainer"; }
-			}
-			///<summary>Returns the id string for &quot;esri_geodatabase_serverConnectionContainer&quot; (ArcGIS.Desktop.Internal.Catalog.ServerConnectionContainer, Catalog)</summary>
-			public static string esri_geodatabase_serverConnectionContainer {
-				 get { return "esri_geodatabase_serverConnectionContainer"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browsePlaces_Online&quot; (ArcGIS.Desktop.Internal.Catalog.OnlinePlaces, Catalog)</summary>
 			public static string esri_browsePlaces_Online {
@@ -646,6 +780,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_core_itemCategory_dataStore {
 				 get { return "esri_core_itemCategory_dataStore"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_all&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_all {
+				 get { return "esri_browseDialogFilters_all"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_browseFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_browseFiles {
+				 get { return "esri_browseDialogFilters_browseFiles"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_3dsFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_3dsFiles {
 				 get { return "esri_browseDialogFilters_3dsFiles"; }
@@ -662,6 +804,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_any_addToMap {
 				 get { return "esri_browseDialogFilters_any_addToMap"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_bat_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_bat_file {
+				 get { return "esri_browseDialogFilters_bat_file"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_cad&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_cad {
 				 get { return "esri_browseDialogFilters_cad"; }
@@ -669,6 +815,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_cad_pointFeatureClasses&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_cad_pointFeatureClasses {
 				 get { return "esri_browseDialogFilters_cad_pointFeatureClasses"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_revit_workspace&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_revit_workspace {
+				 get { return "esri_browseDialogFilters_revit_workspace"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_cad_lineFeatureClasses&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_cad_lineFeatureClasses {
@@ -702,25 +852,25 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_cal_file {
 				 get { return "esri_browseDialogFilters_cal_file"; }
 			}
-			///<summary>Returns the id string for &quot;esri_browseDialogFilters_eat_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
-			public static string esri_browseDialogFilters_eat_file {
-				 get { return "esri_browseDialogFilters_eat_file"; }
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_cam_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_cam_file {
+				 get { return "esri_browseDialogFilters_cam_file"; }
 			}
-			///<summary>Returns the id string for &quot;esri_browseDialogFilters_rul_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
-			public static string esri_browseDialogFilters_rul_file {
-				 get { return "esri_browseDialogFilters_rul_file"; }
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_clr_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_clr_file {
+				 get { return "esri_browseDialogFilters_clr_file"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_cmd_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_cmd_file {
+				 get { return "esri_browseDialogFilters_cmd_file"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_com_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_com_file {
+				 get { return "esri_browseDialogFilters_com_file"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_daeFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_daeFiles {
 				 get { return "esri_browseDialogFilters_daeFiles"; }
-			}
-			///<summary>Returns the id string for &quot;esri_browseDialogFilters_dic_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
-			public static string esri_browseDialogFilters_dic_file {
-				 get { return "esri_browseDialogFilters_dic_file"; }
-			}
-			///<summary>Returns the id string for &quot;esri_browseDialogFilters_fltFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
-			public static string esri_browseDialogFilters_fltFiles {
-				 get { return "esri_browseDialogFilters_fltFiles"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_default_addToMap&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_default_addToMap {
@@ -738,9 +888,29 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_default_importSpRef {
 				 get { return "esri_browseDialogFilters_default_importSpRef"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_dic_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_dic_file {
+				 get { return "esri_browseDialogFilters_dic_file"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_eat_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_eat_file {
+				 get { return "esri_browseDialogFilters_eat_file"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_emf_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_emf_file {
+				 get { return "esri_browseDialogFilters_emf_file"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_excel_files&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_excel_files {
 				 get { return "esri_browseDialogFilters_excel_files"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_exe_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_exe_file {
+				 get { return "esri_browseDialogFilters_exe_file"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_fdp_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_fdp_file {
+				 get { return "esri_browseDialogFilters_fdp_file"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_featureClasses_portalonly&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_featureClasses_portalonly {
@@ -753,6 +923,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_featureClasses_all&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_featureClasses_all {
 				 get { return "esri_browseDialogFilters_featureClasses_all"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_featureClasses_all_withAGS&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_featureClasses_all_withAGS {
+				 get { return "esri_browseDialogFilters_featureClasses_all_withAGS"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_featureClasses_annotation&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_featureClasses_annotation {
@@ -830,9 +1004,21 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_featureClasses_layerProperties_polygon {
 				 get { return "esri_browseDialogFilters_featureClasses_layerProperties_polygon"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_fltFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_fltFiles {
+				 get { return "esri_browseDialogFilters_fltFiles"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_folders&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_folders {
 				 get { return "esri_browseDialogFilters_folders"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_folders_withCloudStorage&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_folders_withCloudStorage {
+				 get { return "esri_browseDialogFilters_folders_withCloudStorage"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_folders_portal&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_folders_portal {
+				 get { return "esri_browseDialogFilters_folders_portal"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_fmw_files&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_fmw_files {
@@ -958,6 +1144,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_geodatabases_egdb_file_project {
 				 get { return "esri_browseDialogFilters_geodatabases_egdb_file_project"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_geojson_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_geojson_file {
+				 get { return "esri_browseDialogFilters_geojson_file"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_gp_all&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_gp_all {
 				 get { return "esri_browseDialogFilters_gp_all"; }
@@ -982,6 +1172,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_gsg_file {
 				 get { return "esri_browseDialogFilters_gsg_file"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_gt_tables&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_gt_tables {
+				 get { return "esri_browseDialogFilters_gt_tables"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_glft_tables&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_glft_tables {
+				 get { return "esri_browseDialogFilters_glft_tables"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_html_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_html_file {
 				 get { return "esri_browseDialogFilters_html_file"; }
@@ -993,6 +1191,22 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_kml_files&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_kml_files {
 				 get { return "esri_browseDialogFilters_kml_files"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_kml_filesOnly&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_kml_filesOnly {
+				 get { return "esri_browseDialogFilters_kml_filesOnly"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_kmz_files&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_kmz_files {
+				 get { return "esri_browseDialogFilters_kmz_files"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_feed_localAndOnline&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_feed_localAndOnline {
+				 get { return "esri_browseDialogFilters_feed_localAndOnline"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_ipynb_localAndOnline&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_ipynb_localAndOnline {
+				 get { return "esri_browseDialogFilters_ipynb_localAndOnline"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_lxp_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_lxp_file {
@@ -1006,37 +1220,69 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_las_file {
 				 get { return "esri_browseDialogFilters_las_file"; }
 			}
-			///<summary>Returns the id string for &quot;esri_browseDialogFilters_laz_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
-			public static string esri_browseDialogFilters_laz_file {
-				 get { return "esri_browseDialogFilters_laz_file"; }
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_zlas_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_zlas_file {
+				 get { return "esri_browseDialogFilters_zlas_file"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_layers_allFileTypes&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_layers_allFileTypes {
 				 get { return "esri_browseDialogFilters_layers_allFileTypes"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_layers_lpk&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_layers_lpk {
+				 get { return "esri_browseDialogFilters_layers_lpk"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_layers_lpkx&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_layers_lpkx {
+				 get { return "esri_browseDialogFilters_layers_lpkx"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_layers_lyr&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_layers_lyr {
+				 get { return "esri_browseDialogFilters_layers_lyr"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_layers_lyrx&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_layers_lyrx {
 				 get { return "esri_browseDialogFilters_layers_lyrx"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_layers_lyrx_localAndOnline&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_layers_lyrx_localAndOnline {
+				 get { return "esri_browseDialogFilters_layers_lyrx_localAndOnline"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_layouts_pagx&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_layouts_pagx {
 				 get { return "esri_browseDialogFilters_layouts_pagx"; }
 			}
-			///<summary>Returns the id string for &quot;esri_browseDialogFilters_reports_rptx&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
-			public static string esri_browseDialogFilters_reports_rptx {
-				 get { return "esri_browseDialogFilters_reports_rptx"; }
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_local_layouts_pagx&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_local_layouts_pagx {
+				 get { return "esri_browseDialogFilters_local_layouts_pagx"; }
 			}
-			///<summary>Returns the id string for &quot;esri_browseDialogFilters_gt_tables&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
-			public static string esri_browseDialogFilters_gt_tables {
-				 get { return "esri_browseDialogFilters_gt_tables"; }
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_local_reports_rptx&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_local_reports_rptx {
+				 get { return "esri_browseDialogFilters_local_reports_rptx"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_laz_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_laz_file {
+				 get { return "esri_browseDialogFilters_laz_file"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_locators_local&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_locators_local {
+				 get { return "esri_browseDialogFilters_locators_local"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_locators_local_and_project&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_locators_local_and_project {
 				 get { return "esri_browseDialogFilters_locators_local_and_project"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_locators_local_and_project_noserver&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_locators_local_and_project_noserver {
+				 get { return "esri_browseDialogFilters_locators_local_and_project_noserver"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_locators_allTypes&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_locators_allTypes {
 				 get { return "esri_browseDialogFilters_locators_allTypes"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_locator_online&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_locator_online {
+				 get { return "esri_browseDialogFilters_locator_online"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_maps_all&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_maps_all {
@@ -1045,6 +1291,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_maps_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_maps_file {
 				 get { return "esri_browseDialogFilters_maps_file"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_maps_project&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_maps_project {
+				 get { return "esri_browseDialogFilters_maps_project"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_local_maps_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_local_maps_file {
+				 get { return "esri_browseDialogFilters_local_maps_file"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_map_webmap&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_map_webmap {
@@ -1058,13 +1312,29 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_maps_arcmap {
 				 get { return "esri_browseDialogFilters_maps_arcmap"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_maps_3dd&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_maps_3dd {
+				 get { return "esri_browseDialogFilters_maps_3dd"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_maps_mxd&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_maps_mxd {
 				 get { return "esri_browseDialogFilters_maps_mxd"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_maps_sxd&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_maps_sxd {
+				 get { return "esri_browseDialogFilters_maps_sxd"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_netcdf&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_netcdf {
 				 get { return "esri_browseDialogFilters_netcdf"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_obj_files&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_obj_files {
+				 get { return "esri_browseDialogFilters_obj_files"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_osgb_files&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_osgb_files {
+				 get { return "esri_browseDialogFilters_osgb_files"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_packages_allTypes&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_packages_allTypes {
@@ -1074,6 +1344,18 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_packages_import {
 				 get { return "esri_browseDialogFilters_packages_import"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_packages_locator&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_packages_locator {
+				 get { return "esri_browseDialogFilters_packages_locator"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_packages_map_mpk&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_packages_map_mpk {
+				 get { return "esri_browseDialogFilters_packages_map_mpk"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_packages_map_mpkx&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_packages_map_mpkx {
+				 get { return "esri_browseDialogFilters_packages_map_mpkx"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_packages_map_mpkx_local&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_packages_map_mpkx_local {
 				 get { return "esri_browseDialogFilters_packages_map_mpkx_local"; }
@@ -1082,9 +1364,9 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_packages_map_mpkx_online {
 				 get { return "esri_browseDialogFilters_packages_map_mpkx_online"; }
 			}
-			///<summary>Returns the id string for &quot;esri_browseDialogFilters_locator_online&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
-			public static string esri_browseDialogFilters_locator_online {
-				 get { return "esri_browseDialogFilters_locator_online"; }
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_packages_map_mmpk&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_packages_map_mmpk {
+				 get { return "esri_browseDialogFilters_packages_map_mmpk"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_packages_map_mmpk_local&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_packages_map_mmpk_local {
@@ -1106,6 +1388,22 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_packages_gp {
 				 get { return "esri_browseDialogFilters_packages_gp"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_packages_gp_gpk&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_packages_gp_gpk {
+				 get { return "esri_browseDialogFilters_packages_gp_gpk"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_packages_gp_gpkx&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_packages_gp_gpkx {
+				 get { return "esri_browseDialogFilters_packages_gp_gpkx"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_packages_gp_local&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_packages_gp_local {
+				 get { return "esri_browseDialogFilters_packages_gp_local"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_packages_gp_online&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_packages_gp_online {
+				 get { return "esri_browseDialogFilters_packages_gp_online"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_packages_project&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_packages_project {
 				 get { return "esri_browseDialogFilters_packages_project"; }
@@ -1121,6 +1419,22 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_packages_rule&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_packages_rule {
 				 get { return "esri_browseDialogFilters_packages_rule"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_query_expression_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_query_expression_file {
+				 get { return "esri_browseDialogFilters_query_expression_file"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_rfm_files&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_rfm_files {
+				 get { return "esri_browseDialogFilters_rfm_files"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_packages_tile&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_packages_tile {
+				 get { return "esri_browseDialogFilters_packages_tile"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_packages_vectorTile&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_packages_vectorTile {
+				 get { return "esri_browseDialogFilters_packages_vectorTile"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_pdf_files&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_pdf_files {
@@ -1138,6 +1452,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_projects {
 				 get { return "esri_browseDialogFilters_projects"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_projects_localAndOnline&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_projects_localAndOnline {
+				 get { return "esri_browseDialogFilters_projects_localAndOnline"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_projects_computerAndOnline&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_projects_computerAndOnline {
+				 get { return "esri_browseDialogFilters_projects_computerAndOnline"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_projects_online&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_projects_online {
 				 get { return "esri_browseDialogFilters_projects_online"; }
@@ -1154,6 +1476,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_project_templates_local {
 				 get { return "esri_browseDialogFilters_project_templates_local"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_project_templates_localAndOnline&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_project_templates_localAndOnline {
+				 get { return "esri_browseDialogFilters_project_templates_localAndOnline"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_project_templates_computerAndOnline&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_project_templates_computerAndOnline {
+				 get { return "esri_browseDialogFilters_project_templates_computerAndOnline"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_project_templates_online&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_project_templates_online {
 				 get { return "esri_browseDialogFilters_project_templates_online"; }
@@ -1166,6 +1496,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_pythonIDE {
 				 get { return "esri_browseDialogFilters_pythonIDE"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_r_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_r_file {
+				 get { return "esri_browseDialogFilters_r_file"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_rasters&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_rasters {
 				 get { return "esri_browseDialogFilters_rasters"; }
@@ -1174,21 +1508,101 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_rasters_GPrasterLayer {
 				 get { return "esri_browseDialogFilters_rasters_GPrasterLayer"; }
 			}
-			///<summary>Returns the id string for &quot;esri_browseDialogFilters_rasters_GPSAGeoDataWithSqlite&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
-			public static string esri_browseDialogFilters_rasters_GPSAGeoDataWithSqlite {
-				 get { return "esri_browseDialogFilters_rasters_GPSAGeoDataWithSqlite"; }
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_rasters_GPSAGeoData_Sqlite&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_rasters_GPSAGeoData_Sqlite {
+				 get { return "esri_browseDialogFilters_rasters_GPSAGeoData_Sqlite"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_rasters_GPSAGeoData&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_rasters_GPSAGeoData {
 				 get { return "esri_browseDialogFilters_rasters_GPSAGeoData"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_rasters_imageServices&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_rasters_imageServices {
+				 get { return "esri_browseDialogFilters_rasters_imageServices"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_rasterBands&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_rasterBands {
 				 get { return "esri_browseDialogFilters_rasterBands"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_rmp_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_rmp_file {
+				 get { return "esri_browseDialogFilters_rmp_file"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_reports_rptx&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_reports_rptx {
+				 get { return "esri_browseDialogFilters_reports_rptx"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_rul_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_rul_file {
+				 get { return "esri_browseDialogFilters_rul_file"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_sceneServiceLayerAndSlpkFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_sceneServiceLayerAndSlpkFiles {
+				 get { return "esri_browseDialogFilters_sceneServiceLayerAndSlpkFiles"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_sceneServiceLayer&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_sceneServiceLayer {
+				 get { return "esri_browseDialogFilters_sceneServiceLayer"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_sceneServiceLayers_3DObject&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_sceneServiceLayers_3DObject {
+				 get { return "esri_browseDialogFilters_sceneServiceLayers_3DObject"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_sceneServiceLayers_integratedMesh&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_sceneServiceLayers_integratedMesh {
+				 get { return "esri_browseDialogFilters_sceneServiceLayers_integratedMesh"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_sceneServiceLayers_line&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_sceneServiceLayers_line {
+				 get { return "esri_browseDialogFilters_sceneServiceLayers_line"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_sceneServiceLayers_point&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_sceneServiceLayers_point {
+				 get { return "esri_browseDialogFilters_sceneServiceLayers_point"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_sceneServiceLayers_pointCloud&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_sceneServiceLayers_pointCloud {
+				 get { return "esri_browseDialogFilters_sceneServiceLayers_pointCloud"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_sceneServiceLayers_polygon&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_sceneServiceLayers_polygon {
+				 get { return "esri_browseDialogFilters_sceneServiceLayers_polygon"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_sdFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_sdFiles {
 				 get { return "esri_browseDialogFilters_sdFiles"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_allServerConnectionFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_allServerConnectionFiles {
+				 get { return "esri_browseDialogFilters_allServerConnectionFiles"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_sdcxFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_sdcxFiles {
+				 get { return "esri_browseDialogFilters_sdcxFiles"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_acsFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_acsFiles {
+				 get { return "esri_browseDialogFilters_acsFiles"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_agsFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_agsFiles {
+				 get { return "esri_browseDialogFilters_agsFiles"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_wcsFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_wcsFiles {
+				 get { return "esri_browseDialogFilters_wcsFiles"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_wmsFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_wmsFiles {
+				 get { return "esri_browseDialogFilters_wmsFiles"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_wfsFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_wfsFiles {
+				 get { return "esri_browseDialogFilters_wfsFiles"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_wmtsFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_wmtsFiles {
+				 get { return "esri_browseDialogFilters_wmtsFiles"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_services_addToMap&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_services_addToMap {
@@ -1201,6 +1615,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_services_all&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_services_all {
 				 get { return "esri_browseDialogFilters_services_all"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_services_scene_sublayer&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_services_scene_sublayer {
+				 get { return "esri_browseDialogFilters_services_scene_sublayer"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_services_elevation&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_services_elevation {
@@ -1226,6 +1644,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_services_globe {
 				 get { return "esri_browseDialogFilters_services_globe"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_services_stream&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_services_stream {
+				 get { return "esri_browseDialogFilters_services_stream"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_services_hosted_features_new&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_services_hosted_features_new {
 				 get { return "esri_browseDialogFilters_services_hosted_features_new"; }
@@ -1237,10 +1659,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_services_hosted_features_hosted_tiles_map_image_all&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_services_hosted_features_hosted_tiles_map_image_all {
 				 get { return "esri_browseDialogFilters_services_hosted_features_hosted_tiles_map_image_all"; }
-			}
-			///<summary>Returns the id string for &quot;esri_browseDialogFilters_services_hosted_features_hosted_tiles_map_image&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
-			public static string esri_browseDialogFilters_services_hosted_features_hosted_tiles_map_image {
-				 get { return "esri_browseDialogFilters_services_hosted_features_hosted_tiles_map_image"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_services_hosted_scenes_new&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_services_hosted_scenes_new {
@@ -1270,6 +1688,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_services_mapimage_nosublayer {
 				 get { return "esri_browseDialogFilters_services_mapimage_nosublayer"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_services_network&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_services_network {
+				 get { return "esri_browseDialogFilters_services_network"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_services_tilingscheme&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_services_tilingscheme {
 				 get { return "esri_browseDialogFilters_services_tilingscheme"; }
@@ -1278,21 +1700,21 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_services_tilingscheme_vectortile {
 				 get { return "esri_browseDialogFilters_services_tilingscheme_vectortile"; }
 			}
-			///<summary>Returns the id string for &quot;esri_browseDialogFilters_services_network&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
-			public static string esri_browseDialogFilters_services_network {
-				 get { return "esri_browseDialogFilters_services_network"; }
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_services_tilingscheme_elevationservice&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_services_tilingscheme_elevationservice {
+				 get { return "esri_browseDialogFilters_services_tilingscheme_elevationservice"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_services_wcs&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_services_wcs {
 				 get { return "esri_browseDialogFilters_services_wcs"; }
 			}
-			///<summary>Returns the id string for &quot;esri_browseDialogFilters_services_wms&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
-			public static string esri_browseDialogFilters_services_wms {
-				 get { return "esri_browseDialogFilters_services_wms"; }
-			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_services_wfs&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_services_wfs {
 				 get { return "esri_browseDialogFilters_services_wfs"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_services_wms&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_services_wms {
+				 get { return "esri_browseDialogFilters_services_wms"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_services_wmts&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_services_wmts {
@@ -1305,6 +1727,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_skpFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_skpFiles {
 				 get { return "esri_browseDialogFilters_skpFiles"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_slpkFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_slpkFiles {
+				 get { return "esri_browseDialogFilters_slpkFiles"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_spkFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_spkFiles {
+				 get { return "esri_browseDialogFilters_spkFiles"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_spRefImportDatasets&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_spRefImportDatasets {
@@ -1362,9 +1792,17 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_tables_dbase {
 				 get { return "esri_browseDialogFilters_tables_dbase"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_tables_geocode_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_tables_geocode_file {
+				 get { return "esri_browseDialogFilters_tables_geocode_file"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_taskFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_taskFiles {
 				 get { return "esri_browseDialogFilters_taskFiles"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_oics&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_oics {
+				 get { return "esri_browseDialogFilters_oics"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_textFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_textFiles {
@@ -1373,6 +1811,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_textFiles_csv&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_textFiles_csv {
 				 get { return "esri_browseDialogFilters_textFiles_csv"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_textFiles_tab&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_textFiles_tab {
+				 get { return "esri_browseDialogFilters_textFiles_tab"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_textFiles_txt&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_textFiles_txt {
@@ -1394,13 +1836,29 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_toolboxes_pyt {
 				 get { return "esri_browseDialogFilters_toolboxes_pyt"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_toolboxes_tbxFile&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_toolboxes_tbxFile {
+				 get { return "esri_browseDialogFilters_toolboxes_tbxFile"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_tools&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_tools {
 				 get { return "esri_browseDialogFilters_tools"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_video_fullMotion&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_video_fullMotion {
+				 get { return "esri_browseDialogFilters_video_fullMotion"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_video_files&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_video_files {
 				 get { return "esri_browseDialogFilters_video_files"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_video_files_avi&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_video_files_avi {
+				 get { return "esri_browseDialogFilters_video_files_avi"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_video_files_mov&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_video_files_mov {
+				 get { return "esri_browseDialogFilters_video_files_mov"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_workspaces_all&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_workspaces_all {
@@ -1409,6 +1867,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_wldFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_wldFiles {
 				 get { return "esri_browseDialogFilters_wldFiles"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_wld3Files&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_wld3Files {
+				 get { return "esri_browseDialogFilters_wld3Files"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_wrlFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_wrlFiles {
@@ -1426,9 +1888,13 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_zip_files {
 				 get { return "esri_browseDialogFilters_zip_files"; }
 			}
-			///<summary>Returns the id string for &quot;esri_browseDialogFilters_clr_file&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
-			public static string esri_browseDialogFilters_clr_file {
-				 get { return "esri_browseDialogFilters_clr_file"; }
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_All_Supported_CreateSceneLayerPackage&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_All_Supported_CreateSceneLayerPackage {
+				 get { return "esri_browseDialogFilters_All_Supported_CreateSceneLayerPackage"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_composite_createSceneLayerPackage&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_composite_createSceneLayerPackage {
+				 get { return "esri_browseDialogFilters_composite_createSceneLayerPackage"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_composite_addToMap&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_composite_addToMap {
@@ -1454,6 +1920,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_composite_maps_import {
 				 get { return "esri_browseDialogFilters_composite_maps_import"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_composite_rasters_imageServices&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_composite_rasters_imageServices {
+				 get { return "esri_browseDialogFilters_composite_rasters_imageServices"; }
+			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_composite_spatialRefImport&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_composite_spatialRefImport {
 				 get { return "esri_browseDialogFilters_composite_spatialRefImport"; }
@@ -1465,6 +1935,22 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_composite_workspaces&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
 			public static string esri_browseDialogFilters_composite_workspaces {
 				 get { return "esri_browseDialogFilters_composite_workspaces"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_services_hosted_features_hosted_tiles_map_image&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_services_hosted_features_hosted_tiles_map_image {
+				 get { return "esri_browseDialogFilters_services_hosted_features_hosted_tiles_map_image"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_composite_serverConnections&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_composite_serverConnections {
+				 get { return "esri_browseDialogFilters_composite_serverConnections"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_composite_sdcx&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_composite_sdcx {
+				 get { return "esri_browseDialogFilters_composite_sdcx"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_composite_tableBasedItemsForFCWizard&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Catalog)</summary>
+			public static string esri_browseDialogFilters_composite_tableBasedItemsForFCWizard {
+				 get { return "esri_browseDialogFilters_composite_tableBasedItemsForFCWizard"; }
 			}
 			///<summary>Returns the id string for &quot;esri_itemInfoType_MapItem&quot; (ArcGIS.Desktop.Internal.Catalog.MapItem, Catalog)</summary>
 			public static string esri_itemInfoType_MapItem {
@@ -1510,6 +1996,18 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_itemInfoType_CadDatasetItem {
 				 get { return "esri_itemInfoType_CadDatasetItem"; }
 			}
+			///<summary>Returns the id string for &quot;esri_itemInfoType_BimFileWorkspaceItem&quot; (ArcGIS.Desktop.Internal.Catalog.GDBItem, Catalog)</summary>
+			public static string esri_itemInfoType_BimFileWorkspaceItem {
+				 get { return "esri_itemInfoType_BimFileWorkspaceItem"; }
+			}
+			///<summary>Returns the id string for &quot;esri_itemInfoType_BimFileDatasetItem&quot; (ArcGIS.Desktop.Internal.Catalog.BimFileItem, Catalog)</summary>
+			public static string esri_itemInfoType_BimFileDatasetItem {
+				 get { return "esri_itemInfoType_BimFileDatasetItem"; }
+			}
+			///<summary>Returns the id string for &quot;esri_itemInfoType_BimFileFeatureClassItem&quot; (ArcGIS.Desktop.Internal.Catalog.BimFileItem, Catalog)</summary>
+			public static string esri_itemInfoType_BimFileFeatureClassItem {
+				 get { return "esri_itemInfoType_BimFileFeatureClassItem"; }
+			}
 			///<summary>Returns the id string for &quot;esri_itemInfoType_googleEarthItem&quot; (ArcGIS.Desktop.Internal.Catalog.GoogleEarthItem, Catalog)</summary>
 			public static string esri_itemInfoType_googleEarthItem {
 				 get { return "esri_itemInfoType_googleEarthItem"; }
@@ -1542,6 +2040,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_itemInfoType_LasDatasetItem {
 				 get { return "esri_itemInfoType_LasDatasetItem"; }
 			}
+			///<summary>Returns the id string for &quot;esri_itemInfoType_VideoFileItem&quot; (ArcGIS.Desktop.Internal.Catalog.VideoFileItem, Catalog)</summary>
+			public static string esri_itemInfoType_VideoFileItem {
+				 get { return "esri_itemInfoType_VideoFileItem"; }
+			}
+			///<summary>Returns the id string for &quot;esri_itemInfoType_NotebookItem&quot; (ArcGIS.Desktop.Internal.Catalog.NotebookItem, Catalog)</summary>
+			public static string esri_itemInfoType_NotebookItem {
+				 get { return "esri_itemInfoType_NotebookItem"; }
+			}
 			///<summary>Returns the id string for &quot;esri_itemInfoType_FolderConnectionItem&quot; (ArcGIS.Desktop.Catalog.FolderConnectionProjectItem, Catalog)</summary>
 			public static string esri_itemInfoType_FolderConnectionItem {
 				 get { return "esri_itemInfoType_FolderConnectionItem"; }
@@ -1553,6 +2059,22 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_itemInfoType_ServerConnectionProjectItem&quot; (ArcGIS.Desktop.Catalog.ServerConnectionProjectItem, Catalog)</summary>
 			public static string esri_itemInfoType_ServerConnectionProjectItem {
 				 get { return "esri_itemInfoType_ServerConnectionProjectItem"; }
+			}
+			///<summary>Returns the id string for &quot;esri_itemInfoType_CloudStorageConnectionProjectItem&quot; (ArcGIS.Desktop.Internal.Catalog.CloudStorageConnectionProjectItem, Catalog)</summary>
+			public static string esri_itemInfoType_CloudStorageConnectionProjectItem {
+				 get { return "esri_itemInfoType_CloudStorageConnectionProjectItem"; }
+			}
+			///<summary>Returns the id string for &quot;esri_itemInfoType_CloudStorageFolderItem&quot; (ArcGIS.Desktop.Internal.Catalog.CloudStorageFolderItem, Catalog)</summary>
+			public static string esri_itemInfoType_CloudStorageFolderItem {
+				 get { return "esri_itemInfoType_CloudStorageFolderItem"; }
+			}
+			///<summary>Returns the id string for &quot;esri_itemInfoType_CloudStorageItem&quot; (ArcGIS.Desktop.Internal.Catalog.CloudStorageItem, Catalog)</summary>
+			public static string esri_itemInfoType_CloudStorageItem {
+				 get { return "esri_itemInfoType_CloudStorageItem"; }
+			}
+			///<summary>Returns the id string for &quot;esri_itemInfoType_StatisticalDataCollectionProjectItem&quot; (ArcGIS.Desktop.Catalog.StatisticalDataCollectionProjectItem, Catalog)</summary>
+			public static string esri_itemInfoType_StatisticalDataCollectionProjectItem {
+				 get { return "esri_itemInfoType_StatisticalDataCollectionProjectItem"; }
 			}
 			///<summary>Returns the id string for &quot;esri_itemInfoType_LocatorFileProjectItem&quot; (ArcGIS.Desktop.Internal.Catalog.LocatorFileItem, Catalog)</summary>
 			public static string esri_itemInfoType_LocatorFileProjectItem {
@@ -1628,6 +2150,18 @@ namespace ArcGIS.Desktop.Framework {
 			}
 		}
 		public static partial class Condition {
+			///<summary>Returns the id string for &quot;&quot; (Condition, Catalog)</summary>
+			public static string esri_Databases {
+				 get { return "esri_Databases"; }
+			}
+			///<summary>Returns the id string for &quot;&quot; (Condition, Catalog)</summary>
+			public static string esri_Folders {
+				 get { return "esri_Folders"; }
+			}
+			///<summary>Returns the id string for &quot;esri_projectItem_isValidAndOpenProjectCondition&quot; (Condition, Catalog)</summary>
+			public static string esri_projectItem_isValidAndOpenProjectCondition {
+				 get { return "esri_projectItem_isValidAndOpenProjectCondition"; }
+			}
 			///<summary>Returns the id string for &quot;esri_projectItem_EnterpriseGeodatabaseCondition&quot; (Condition, Catalog)</summary>
 			public static string esri_projectItem_EnterpriseGeodatabaseCondition {
 				 get { return "esri_projectItem_EnterpriseGeodatabaseCondition"; }
@@ -1636,13 +2170,13 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_projectItem_EnterpriseGeodatabaseAndStandardLicenseCondition {
 				 get { return "esri_projectItem_EnterpriseGeodatabaseAndStandardLicenseCondition"; }
 			}
-			///<summary>Returns the id string for &quot;esri_core_projectitem_can_delete&quot; (Condition, Catalog)</summary>
-			public static string esri_core_projectitem_can_delete {
-				 get { return "esri_core_projectitem_can_delete"; }
-			}
 			///<summary>Returns the id string for &quot;esri_projectItem_geoDatabaseConnectionCondition&quot; (Condition, Catalog)</summary>
 			public static string esri_projectItem_geoDatabaseConnectionCondition {
 				 get { return "esri_projectItem_geoDatabaseConnectionCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_projectItem_canAddGlobalIDCondition&quot; (Condition, Catalog)</summary>
+			public static string esri_projectItem_canAddGlobalIDCondition {
+				 get { return "esri_projectItem_canAddGlobalIDCondition"; }
 			}
 			///<summary>Returns the id string for &quot;esri_projectItem_geoDatabaseMakeDefaultCondition&quot; (Condition, Catalog)</summary>
 			public static string esri_projectItem_geoDatabaseMakeDefaultCondition {
@@ -1724,6 +2258,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_projectItem_IsLocalGDBorEnterpriseGDBWithStandardLicenseCondition {
 				 get { return "esri_projectItem_IsLocalGDBorEnterpriseGDBWithStandardLicenseCondition"; }
 			}
+			///<summary>Returns the id string for &quot;Project item is valid&quot; (Condition, Catalog)</summary>
+			public static string esri_projectItem_isValidCondition {
+				 get { return "esri_projectItem_isValidCondition"; }
+			}
 			///<summary>Returns the id string for &quot;Project item is a local geodatabase or, if the license level is standard or higher, an enterprise geodatabase&quot; (Condition, Catalog)</summary>
 			public static string esri_projectItem_IsLocalGDBorDBorEnterpriseGDBorDBWithStandardLicenseCondition {
 				 get { return "esri_projectItem_IsLocalGDBorDBorEnterpriseGDBorDBWithStandardLicenseCondition"; }
@@ -1755,6 +2293,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;&quot; (Condition, Catalog)</summary>
 			public static string esri_geodatabase_dummyConditionWhichIsAlwaysFalse {
 				 get { return "esri_geodatabase_dummyConditionWhichIsAlwaysFalse"; }
+			}
+			///<summary>Returns the id string for &quot;&quot; (Condition, Catalog)</summary>
+			public static string esri_projectItem_openWorkspaceDomainsCondition {
+				 get { return "esri_projectItem_openWorkspaceDomainsCondition"; }
 			}
 			///<summary>Returns the id string for &quot;&quot; (Condition, Catalog)</summary>
 			public static string esri_projectItem_openDomainsCondition {
@@ -1796,15 +2338,27 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_projectItem_mosaicDatasetHasLogCondition {
 				 get { return "esri_projectItem_mosaicDatasetHasLogCondition"; }
 			}
+			///<summary>Returns the id string for &quot;&quot; (Condition, Catalog)</summary>
+			public static string esri_project_canCreateAnalyst3DDatasetWithValidLicenseCondition {
+				 get { return "esri_project_canCreateAnalyst3DDatasetWithValidLicenseCondition"; }
+			}
+			///<summary>Returns the id string for &quot;&quot; (Condition, Catalog)</summary>
+			public static string esri_projectItem_gdbMosaicDatasetCondition {
+				 get { return "esri_projectItem_gdbMosaicDatasetCondition"; }
+			}
+			///<summary>Returns the id string for &quot;&quot; (Condition, Catalog)</summary>
+			public static string esri_projectItem_managedMosaicDatasetCondition {
+				 get { return "esri_projectItem_managedMosaicDatasetCondition"; }
+			}
 		}
 		public static partial class Module {
 			///<summary>Returns the id string for &quot;DatabaseModule&quot; (DatabaseModule, Catalog)</summary>
 			public static string esri_database_module {
 				 get { return "esri_database_module"; }
 			}
-			///<summary>Returns the id string for &quot;CreateTopologyWizardModule&quot; (ArcGIS.Desktop.Internal.Catalog.Wizards.CreateTopology.WizardModule, Catalog)</summary>
-			public static string esri_wizard_module {
-				 get { return "esri_wizard_module"; }
+			///<summary>Returns the id string for &quot;CreateTopologyWizardModule&quot; (ArcGIS.Desktop.Internal.Catalog.Wizards.CreateTopology.TopologyWizardModule, Catalog)</summary>
+			public static string esri_topology_wizard_module {
+				 get { return "esri_topology_wizard_module"; }
 			}
 			///<summary>Returns the id string for &quot;PropertyPageModule&quot; (ArcGIS.Desktop.Internal.Catalog.PropertyPages.PropertyPageModule, Catalog)</summary>
 			public static string esri_propertyPage_module {
@@ -1816,6 +2370,14 @@ namespace ArcGIS.Desktop.Framework {
 			}
 		}
 		public static partial class Sheet {
+			///<summary>Returns the id string for &quot;Properties&quot; (Sheet, Catalog)</summary>
+			public static string esri_catalog_agsConnectionPropertySheet {
+				 get { return "esri_catalog_agsConnectionPropertySheet"; }
+			}
+			///<summary>Returns the id string for &quot;Properties&quot; (Sheet, Catalog)</summary>
+			public static string esri_catalog_ogcConnectionPropertySheet {
+				 get { return "esri_catalog_ogcConnectionPropertySheet"; }
+			}
 			///<summary>Returns the id string for &quot;Properties&quot; (Sheet, Catalog)</summary>
 			public static string esri_catalog_featureClassPropertySheet {
 				 get { return "esri_catalog_featureClassPropertySheet"; }
@@ -1837,6 +2399,10 @@ namespace ArcGIS.Desktop.Framework {
 				 get { return "esri_catalog_databasePropertySheet"; }
 			}
 			///<summary>Returns the id string for &quot;Properties&quot; (Sheet, Catalog)</summary>
+			public static string esri_catalog_utilityNetworkPropertySheet {
+				 get { return "esri_catalog_utilityNetworkPropertySheet"; }
+			}
+			///<summary>Returns the id string for &quot;Properties&quot; (Sheet, Catalog)</summary>
 			public static string esri_catalog_networkDiagramPropertySheet {
 				 get { return "esri_catalog_networkDiagramPropertySheet"; }
 			}
@@ -1856,17 +2422,33 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_catalog_lasDatasetPropertySheet {
 				 get { return "esri_catalog_lasDatasetPropertySheet"; }
 			}
+			///<summary>Returns the id string for &quot;Properties&quot; (Sheet, Catalog)</summary>
+			public static string esri_catalog_parcelDatasetPropertySheet {
+				 get { return "esri_catalog_parcelDatasetPropertySheet"; }
+			}
 		}
 		public static partial class Wizard {
 			///<summary>Returns the id string for &quot;Create Topology Wizard&quot; (Wizard, Catalog)</summary>
 			public static string esri_catalog_createTopologyWizard {
 				 get { return "esri_catalog_createTopologyWizard"; }
 			}
+			///<summary>Returns the id string for &quot;Create Feature Class&quot; (Wizard, Catalog)</summary>
+			public static string esri_catalog_createFeatureClassFromGDB_Wizard {
+				 get { return "esri_catalog_createFeatureClassFromGDB_Wizard"; }
+			}
+			///<summary>Returns the id string for &quot;Create Table&quot; (Wizard, Catalog)</summary>
+			public static string esri_catalog_createTableFromGDB_Wizard {
+				 get { return "esri_catalog_createTableFromGDB_Wizard"; }
+			}
 		}
 		public static partial class Menu {
 			///<summary>Returns the id string for &quot;ArcGIS Pro Layout File&quot; (Menu, Catalog)</summary>
 			public static string pagxItemPAGXTypeMenu {
 				 get { return "pagxItemPAGXTypeMenu"; }
+			}
+			///<summary>Returns the id string for &quot;ArcGIS Pro Report File&quot; (Menu, Catalog)</summary>
+			public static string rptxItemRPTXTypeMenu {
+				 get { return "rptxItemRPTXTypeMenu"; }
 			}
 			///<summary>Returns the id string for &quot;Portal Item Collection&quot; (Menu, Catalog)</summary>
 			public static string esri_browsePlaces_Online_Menu {
@@ -1875,6 +2457,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Default&quot; (Menu, Catalog)</summary>
 			public static string esri_core_projectItemTypeMenu {
 				 get { return "esri_core_projectItemTypeMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Default&quot; (Menu, Catalog)</summary>
+			public static string esri_core_portalFolderMenu {
+				 get { return "esri_core_portalFolderMenu"; }
 			}
 			///<summary>Returns the id string for &quot;Folder General Item&quot; (Menu, Catalog)</summary>
 			public static string folderGeneralItemMenu {
@@ -1908,6 +2494,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string wmtsServerConnectionFileTypeMenu {
 				 get { return "wmtsServerConnectionFileTypeMenu"; }
 			}
+			///<summary>Returns the id string for &quot;Cloud Storage Connection File&quot; (Menu, Catalog)</summary>
+			public static string CloudStorageConnectionFileTypeMenu {
+				 get { return "CloudStorageConnectionFileTypeMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Cloud Storage Folder&quot; (Menu, Catalog)</summary>
+			public static string arcgisCloudStorageFolderMenu {
+				 get { return "arcgisCloudStorageFolderMenu"; }
+			}
 			///<summary>Returns the id string for &quot;Enterprise Geodatabase Connection File&quot; (Menu, Catalog)</summary>
 			public static string gdbItemSdeConnectionFileTypeMenu {
 				 get { return "gdbItemSdeConnectionFileTypeMenu"; }
@@ -1928,6 +2522,18 @@ namespace ArcGIS.Desktop.Framework {
 			public static string gdbItemExcelTypeMenu {
 				 get { return "gdbItemExcelTypeMenu"; }
 			}
+			///<summary>Returns the id string for &quot;BIMFile&quot; (Menu, Catalog)</summary>
+			public static string bimFileWorkspaceItemTypeMenu {
+				 get { return "bimFileWorkspaceItemTypeMenu"; }
+			}
+			///<summary>Returns the id string for &quot;BIMFile&quot; (Menu, Catalog)</summary>
+			public static string bimFileDatasetItemTypeMenu {
+				 get { return "bimFileDatasetItemTypeMenu"; }
+			}
+			///<summary>Returns the id string for &quot;BIMFile&quot; (Menu, Catalog)</summary>
+			public static string bimFileFeatureClassItemTypeMenu {
+				 get { return "bimFileFeatureClassItemTypeMenu"; }
+			}
 			///<summary>Returns the id string for &quot;ArcGIS for Desktop Documents&quot; (Menu, Catalog)</summary>
 			public static string mapItemMxdTypeMenu {
 				 get { return "mapItemMxdTypeMenu"; }
@@ -1943,6 +2549,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Geodatabase Feature Dataset&quot; (Menu, Catalog)</summary>
 			public static string egdbItemFeatureDatasetTypeMenu {
 				 get { return "egdbItemFeatureDatasetTypeMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Geodatabase Feature Dataset&quot; (Menu, Catalog)</summary>
+			public static string mgdbItemFeatureDatasetTypeMenu {
+				 get { return "mgdbItemFeatureDatasetTypeMenu"; }
 			}
 			///<summary>Returns the id string for &quot;Geodatabase Feature Class&quot; (Menu, Catalog)</summary>
 			public static string fgdbItemFeatureClassTypeMenu {
@@ -1992,13 +2602,33 @@ namespace ArcGIS.Desktop.Framework {
 			public static string egdbAnnotationItemFeatureClassTypeMenu {
 				 get { return "egdbAnnotationItemFeatureClassTypeMenu"; }
 			}
+			///<summary>Returns the id string for &quot;Geodatabase Feature Class&quot; (Menu, Catalog)</summary>
+			public static string fgdbDimensionItemFeatureClassTypeMenu {
+				 get { return "fgdbDimensionItemFeatureClassTypeMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Geodatabase Feature Class&quot; (Menu, Catalog)</summary>
+			public static string egdbDimensionItemFeatureClassTypeMenu {
+				 get { return "egdbDimensionItemFeatureClassTypeMenu"; }
+			}
 			///<summary>Returns the id string for &quot;Geodatabase Network Dataset&quot; (Menu, Catalog)</summary>
 			public static string fgdbItemNetworkDatasetTypeMenu {
 				 get { return "fgdbItemNetworkDatasetTypeMenu"; }
 			}
 			///<summary>Returns the id string for &quot;Geodatabase Network Dataset&quot; (Menu, Catalog)</summary>
+			public static string gdbItemNetworkGeneralTypeMenu {
+				 get { return "gdbItemNetworkGeneralTypeMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Geodatabase Network Dataset&quot; (Menu, Catalog)</summary>
 			public static string egdbItemNetworkDatasetTypeMenu {
 				 get { return "egdbItemNetworkDatasetTypeMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Geodatabase Utility Network Dataset&quot; (Menu, Catalog)</summary>
+			public static string fgdbItemFacilityNetworkTypeMenu {
+				 get { return "fgdbItemFacilityNetworkTypeMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Geodatabase Utility Network Dataset&quot; (Menu, Catalog)</summary>
+			public static string egdbItemFacilityNetworkTypeMenu {
+				 get { return "egdbItemFacilityNetworkTypeMenu"; }
 			}
 			///<summary>Returns the id string for &quot;Shapefile Network Dataset&quot; (Menu, Catalog)</summary>
 			public static string shapefileItemNetworkDatasetTypeMenu {
@@ -2039,6 +2669,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;LAS Dataset&quot; (Menu, Catalog)</summary>
 			public static string lasDatasetItemMenu {
 				 get { return "lasDatasetItemMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Notebook&quot; (Menu, Catalog)</summary>
+			public static string notebookItemMenu {
+				 get { return "notebookItemMenu"; }
 			}
 			///<summary>Returns the id string for &quot;Shapefile&quot; (Menu, Catalog)</summary>
 			public static string shapefileItemMenu {
@@ -2124,6 +2758,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string onlineTaskItemMenu {
 				 get { return "onlineTaskItemMenu"; }
 			}
+			///<summary>Returns the id string for &quot;Deep Learning Package&quot; (Menu, Catalog)</summary>
+			public static string portalDLPKPackageItemMenu {
+				 get { return "portalDLPKPackageItemMenu"; }
+			}
 			///<summary>Returns the id string for &quot;Generic Item&quot; (Menu, Catalog)</summary>
 			public static string itemInfoGenericMenu {
 				 get { return "itemInfoGenericMenu"; }
@@ -2167,6 +2805,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Folder Connection&quot; (Menu, Catalog)</summary>
 			public static string folderConnectionItemMenu {
 				 get { return "folderConnectionItemMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Deep learning Package&quot; (Menu, Catalog)</summary>
+			public static string deepLearningPackageMenu {
+				 get { return "deepLearningPackageMenu"; }
 			}
 			///<summary>Returns the id string for &quot;Raster&quot; (Menu, Catalog)</summary>
 			public static string rasterItemMenu {
@@ -2236,9 +2878,25 @@ namespace ArcGIS.Desktop.Framework {
 			public static string ServerConnectionContainerMenu {
 				 get { return "ServerConnectionContainerMenu"; }
 			}
+			///<summary>Returns the id string for &quot;Project Cloud Storage Connections Container&quot; (Menu, Catalog)</summary>
+			public static string CloudStorageConnectionContainerMenu {
+				 get { return "CloudStorageConnectionContainerMenu"; }
+			}
 			///<summary>Returns the id string for &quot;Server Connection&quot; (Menu, Catalog)</summary>
 			public static string ServerConnectionItemMenu {
 				 get { return "ServerConnectionItemMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Cloud Storage Connection&quot; (Menu, Catalog)</summary>
+			public static string CloudStorageConnectionItemMenu {
+				 get { return "CloudStorageConnectionItemMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Statistical Data Collection&quot; (Menu, Catalog)</summary>
+			public static string StatisticalDataCollectionItemMenu {
+				 get { return "StatisticalDataCollectionItemMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Project Statistica Data Collections Container&quot; (Menu, Catalog)</summary>
+			public static string StatisticalDataCollectionContainerMenu {
+				 get { return "StatisticalDataCollectionContainerMenu"; }
 			}
 			///<summary>Returns the id string for &quot;New&quot; (Menu, Catalog)</summary>
 			public static string GDBProjectNewItemMenu {
@@ -2277,6 +2935,10 @@ namespace ArcGIS.Desktop.Framework {
 				 get { return "FileGDBAndEGDBItemTableTypeExportItemMenu"; }
 			}
 			///<summary>Returns the id string for &quot;Export&quot; (Menu, Catalog)</summary>
+			public static string GeneralItemTableTypeExportItemMenu {
+				 get { return "GeneralItemTableTypeExportItemMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Export&quot; (Menu, Catalog)</summary>
 			public static string EGDBGeneralItemFeatureClassTypeExportItemMenu {
 				 get { return "EGDBGeneralItemFeatureClassTypeExportItemMenu"; }
 			}
@@ -2287,6 +2949,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;New&quot; (Menu, Catalog)</summary>
 			public static string FolderConnectionProjectNewItemMenu {
 				 get { return "FolderConnectionProjectNewItemMenu"; }
+			}
+			///<summary>Returns the id string for &quot;New&quot; (Menu, Catalog)</summary>
+			public static string FolderConnectionProjectNewItemMenu2 {
+				 get { return "FolderConnectionProjectNewItemMenu2"; }
 			}
 			///<summary>Returns the id string for &quot;New&quot; (Menu, Catalog)</summary>
 			public static string SQLiteProjectNewItemMenu {
@@ -2332,6 +2998,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_geoprocessing_subToolMenu {
 				 get { return "esri_geoprocessing_subToolMenu"; }
 			}
+			///<summary>Returns the id string for &quot;Video File&quot; (Menu, Catalog)</summary>
+			public static string videoFileItemMenu {
+				 get { return "videoFileItemMenu"; }
+			}
 		}
 		public static partial class Page {
 			///<summary>Returns the id string for &quot;Define&quot; (ArcGIS.Desktop.Internal.Catalog.Wizards.CreateTopology.WizardPages.DefineViewModel, Catalog)</summary>
@@ -2345,6 +3015,50 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Summary&quot; (ArcGIS.Desktop.Internal.Catalog.Wizards.CreateTopology.WizardPages.SummaryViewModel, Catalog)</summary>
 			public static string esri_catalog_createTopologySummaryPage {
 				 get { return "esri_catalog_createTopologySummaryPage"; }
+			}
+			///<summary>Returns the id string for &quot;Define&quot; (ArcGIS.Desktop.Internal.Catalog.Wizards.CreateFeatureClass.Pages.FeatureTypeAndGeometryViewModel, Catalog)</summary>
+			public static string esri_catalog_createFeatureClassWizardDefinitionPage {
+				 get { return "esri_catalog_createFeatureClassWizardDefinitionPage"; }
+			}
+			///<summary>Returns the id string for &quot;Fields&quot; (ArcGIS.Desktop.Internal.Catalog.Wizards.CreateFeatureClass.Pages.FieldsViewModel, Catalog)</summary>
+			public static string esri_catalog_createFeatureClassWizardFieldsPage {
+				 get { return "esri_catalog_createFeatureClassWizardFieldsPage"; }
+			}
+			///<summary>Returns the id string for &quot;Spatial Reference&quot; (ArcGIS.Desktop.Internal.Catalog.Wizards.CreateFeatureClass.Pages.SpatialReferenceViewModel, Catalog)</summary>
+			public static string esri_catalog_createFeatureClassWizardSpatialReferencePage {
+				 get { return "esri_catalog_createFeatureClassWizardSpatialReferencePage"; }
+			}
+			///<summary>Returns the id string for &quot;Tolerance&quot; (ArcGIS.Desktop.Internal.Catalog.Wizards.CreateFeatureClass.Pages.ToleranceViewModel, Catalog)</summary>
+			public static string esri_catalog_createFeatureClassWizardTolerancePage {
+				 get { return "esri_catalog_createFeatureClassWizardTolerancePage"; }
+			}
+			///<summary>Returns the id string for &quot;Resolution&quot; (ArcGIS.Desktop.Internal.Catalog.Wizards.CreateFeatureClass.Pages.ResolutionViewModel, Catalog)</summary>
+			public static string esri_catalog_createFeatureClassWizardResolutionPage {
+				 get { return "esri_catalog_createFeatureClassWizardResolutionPage"; }
+			}
+			///<summary>Returns the id string for &quot;Storage Configuration&quot; (ArcGIS.Desktop.Internal.Catalog.Wizards.CreateFeatureClass.Pages.StorageConfigurationsViewModel, Catalog)</summary>
+			public static string esri_catalog_createFeatureClassWizardStorageConfigurationPage {
+				 get { return "esri_catalog_createFeatureClassWizardStorageConfigurationPage"; }
+			}
+			///<summary>Returns the id string for &quot;Annotation Properties&quot; (ArcGIS.Desktop.Internal.Mapping.Annotation.Wizards.AnnotationPropertiesViewModel, Catalog)</summary>
+			public static string esri_catalog_createFeatureClassWizardAnnotationPropertiesPage {
+				 get { return "esri_catalog_createFeatureClassWizardAnnotationPropertiesPage"; }
+			}
+			///<summary>Returns the id string for &quot;Annotation Classes&quot; (ArcGIS.Desktop.Internal.Mapping.Annotation.Wizards.AnnotationClassesViewModel, Catalog)</summary>
+			public static string esri_catalog_createFeatureClassWizardAnnotationClassesPage {
+				 get { return "esri_catalog_createFeatureClassWizardAnnotationClassesPage"; }
+			}
+			///<summary>Returns the id string for &quot;Dimension Properties&quot; (ArcGIS.Desktop.Internal.Mapping.Dimensions.Wizards.DimensionPropertiesViewModel, Catalog)</summary>
+			public static string esri_catalog_createFeatureClassWizardDimensionPropertiesPage {
+				 get { return "esri_catalog_createFeatureClassWizardDimensionPropertiesPage"; }
+			}
+			///<summary>Returns the id string for &quot;General&quot; (ArcGIS.Desktop.Catalog.AGSConnectionViewModel, Catalog)</summary>
+			public static string esri_catalog_agsConnection_general_propertyPage {
+				 get { return "esri_catalog_agsConnection_general_propertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;General&quot; (ArcGIS.Desktop.Catalog.OGCConnectionViewModel, Catalog)</summary>
+			public static string esri_catalog_ogcConnection_general_propertyPage {
+				 get { return "esri_catalog_ogcConnection_general_propertyPage"; }
 			}
 			///<summary>Returns the id string for &quot;Source&quot; (ArcGIS.Desktop.Internal.Catalog.PropertyPages.FeatureClass.SourceViewModel, Catalog)</summary>
 			public static string esri_catalog_featureClassSourcePropertyPage {
@@ -2382,6 +3096,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_catalog_databasePropertiesPropertyPage {
 				 get { return "esri_catalog_databasePropertiesPropertyPage"; }
 			}
+			///<summary>Returns the id string for &quot;Network Properties&quot; (ArcGIS.Desktop.Internal.Catalog.PropertyPages.UtilityNetwork.UtilityNetworkViewModel, Catalog)</summary>
+			public static string esri_catalog_utilityNetworkPropertyPage {
+				 get { return "esri_catalog_utilityNetworkPropertyPage"; }
+			}
 			///<summary>Returns the id string for &quot;Diagram Properties&quot; (ArcGIS.Desktop.Internal.Catalog.PropertyPages.NetworkDiagrams.NetworkDiagramPropertiesViewModel, Catalog)</summary>
 			public static string esri_catalog_networkDiagramPropertiesPropertyPage {
 				 get { return "esri_catalog_networkDiagramPropertiesPropertyPage"; }
@@ -2390,9 +3108,17 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_catalog_featureDatasetGeneralPropertyPage {
 				 get { return "esri_catalog_featureDatasetGeneralPropertyPage"; }
 			}
-			///<summary>Returns the id string for &quot;General&quot; (ArcGIS.Desktop.Internal.Catalog.PropertyPages.NetworkDataset.GeneralViewModel, Catalog)</summary>
+			///<summary>Returns the id string for &quot;General&quot; (ArcGIS.Desktop.Internal.Catalog.PropertyPages.NetworkDataset.GeneralNetworkDatasetPropertyPage, Catalog)</summary>
 			public static string esri_catalog_networkDatasetGeneralPropertyPage {
 				 get { return "esri_catalog_networkDatasetGeneralPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Source Settings&quot; (ArcGIS.Desktop.Internal.Catalog.PropertyPages.NetworkDataset.SourceSettingsPropertyPage, Catalog)</summary>
+			public static string esri_catalog_networkDatasetSourceSettingsPropertyPage {
+				 get { return "esri_catalog_networkDatasetSourceSettingsPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Traffic&quot; (ArcGIS.Desktop.Internal.Catalog.PropertyPages.NetworkDataset.TrafficSettingsPropertyPage, Catalog)</summary>
+			public static string esri_catalog_networkDatasetTrafficSettingsPropertyPage {
+				 get { return "esri_catalog_networkDatasetTrafficSettingsPropertyPage"; }
 			}
 			///<summary>Returns the id string for &quot;Travel Attributes&quot; (ArcGIS.Desktop.Internal.Catalog.PropertyPages.NetworkDataset.TravelAttributesPropertyPage, Catalog)</summary>
 			public static string esri_catalog_networkDatasetTravelAttributesPropertyPage {
@@ -2430,8 +3156,40 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_catalog_lasDatasetSurfaceConstraintsPropertyPage {
 				 get { return "esri_catalog_lasDatasetSurfaceConstraintsPropertyPage"; }
 			}
+			///<summary>Returns the id string for &quot;Coordinate System&quot; (ArcGIS.Desktop.Internal.Catalog.PropertyPages.LASDataset.CoordinateSystemViewModel, Catalog)</summary>
+			public static string esri_catalog_lasDatasetCoordinateSystemPropertyPage {
+				 get { return "esri_catalog_lasDatasetCoordinateSystemPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;General&quot; (ArcGIS.Desktop.Internal.Catalog.PropertyPages.ParcelDataset.GeneralViewModel, Catalog)</summary>
+			public static string esri_catalog_parcelDatasetGeneralPropertyPage {
+				 get { return "esri_catalog_parcelDatasetGeneralPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Feature Class&quot; (ArcGIS.Desktop.Internal.Catalog.PropertyPages.ParcelDataset.FeatureClassesViewModel, Catalog)</summary>
+			public static string esri_catalog_parcelFeatureClassesPropertyPage {
+				 get { return "esri_catalog_parcelFeatureClassesPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Parcel Rules&quot; (ArcGIS.Desktop.Internal.Catalog.PropertyPages.ParcelDataset.RulesViewModel, Catalog)</summary>
+			public static string esri_catalog_parcelRulesPropertyPage {
+				 get { return "esri_catalog_parcelRulesPropertyPage"; }
+			}
 		}
 		public static partial class State {
+			///<summary>Returns the id string for &quot;esri_geodatabase_projectContainer&quot; (State, Catalog)</summary>
+			public static string esri_geodatabase_projectContainer {
+				 get { return "esri_geodatabase_projectContainer"; }
+			}
+			///<summary>Returns the id string for &quot;esri_geodatabase_folderConnectionContainer&quot; (State, Catalog)</summary>
+			public static string esri_geodatabase_folderConnectionContainer {
+				 get { return "esri_geodatabase_folderConnectionContainer"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_openProjectState&quot; (State, Catalog)</summary>
+			public static string esri_mapping_openProjectState {
+				 get { return "esri_mapping_openProjectState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_projectItem_isInvalid&quot; (State, Catalog)</summary>
+			public static string esri_projectItem_isInvalid {
+				 get { return "esri_projectItem_isInvalid"; }
+			}
 			///<summary>Returns the id string for &quot;esri_projectItem_isEnterpriseGeodatabase&quot; (State, Catalog)</summary>
 			public static string esri_projectItem_isEnterpriseGeodatabase {
 				 get { return "esri_projectItem_isEnterpriseGeodatabase"; }
@@ -2440,13 +3198,17 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_license_hasStandardLicenseState {
 				 get { return "esri_license_hasStandardLicenseState"; }
 			}
-			///<summary>Returns the id string for &quot;esri_core_projectitem_show_delete&quot; (State, Catalog)</summary>
-			public static string esri_core_projectitem_show_delete {
-				 get { return "esri_core_projectitem_show_delete"; }
-			}
 			///<summary>Returns the id string for &quot;esri_projectItem_geoDatabaseConnection&quot; (State, Catalog)</summary>
 			public static string esri_projectItem_geoDatabaseConnection {
 				 get { return "esri_projectItem_geoDatabaseConnection"; }
+			}
+			///<summary>Returns the id string for &quot;esri_projectItem_canAddGlobalID&quot; (State, Catalog)</summary>
+			public static string esri_projectItem_canAddGlobalID {
+				 get { return "esri_projectItem_canAddGlobalID"; }
+			}
+			///<summary>Returns the id string for &quot;esri_projectItem_SelectedTableIsRegisteredWithGDB&quot; (State, Catalog)</summary>
+			public static string esri_projectItem_SelectedTableIsRegisteredWithGDB {
+				 get { return "esri_projectItem_SelectedTableIsRegisteredWithGDB"; }
 			}
 			///<summary>Returns the id string for &quot;esri_projectItem_validFGDB&quot; (State, Catalog)</summary>
 			public static string esri_projectItem_validFGDB {
@@ -2492,33 +3254,41 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_projectItem_SelectedItemIsVersioned {
 				 get { return "esri_projectItem_SelectedItemIsVersioned"; }
 			}
-			///<summary>Returns the id string for &quot;esri_projectItem_SelectedTableIsRegisteredWithGDB&quot; (State, Catalog)</summary>
-			public static string esri_projectItem_SelectedTableIsRegisteredWithGDB {
-				 get { return "esri_projectItem_SelectedTableIsRegisteredWithGDB"; }
-			}
 			///<summary>Returns the id string for &quot;esri_projectItem_SelectedItemIsNotVersioned&quot; (State, Catalog)</summary>
 			public static string esri_projectItem_SelectedItemIsNotVersioned {
 				 get { return "esri_projectItem_SelectedItemIsNotVersioned"; }
 			}
-			///<summary>Returns the id string for &quot;esri_projectItem_SelectedItemIsArchiveEnabled&quot; (State, Catalog)</summary>
-			public static string esri_projectItem_SelectedItemIsArchiveEnabled {
-				 get { return "esri_projectItem_SelectedItemIsArchiveEnabled"; }
+			///<summary>Returns the id string for &quot;esri_projectItem_SelectedItemIsInFeatureDataset&quot; (State, Catalog)</summary>
+			public static string esri_projectItem_SelectedItemIsInFeatureDataset {
+				 get { return "esri_projectItem_SelectedItemIsInFeatureDataset"; }
+			}
+			///<summary>Returns the id string for &quot;esri_projectItem_isLocalGeodatabase&quot; (State, Catalog)</summary>
+			public static string esri_projectItem_isLocalGeodatabase {
+				 get { return "esri_projectItem_isLocalGeodatabase"; }
 			}
 			///<summary>Returns the id string for &quot;esri_projectItem_SelectedItemIsNotArchiveEnabled&quot; (State, Catalog)</summary>
 			public static string esri_projectItem_SelectedItemIsNotArchiveEnabled {
 				 get { return "esri_projectItem_SelectedItemIsNotArchiveEnabled"; }
 			}
+			///<summary>Returns the id string for &quot;esri_projectItem_SelectedItemIsArchiveEnabled&quot; (State, Catalog)</summary>
+			public static string esri_projectItem_SelectedItemIsArchiveEnabled {
+				 get { return "esri_projectItem_SelectedItemIsArchiveEnabled"; }
+			}
+			///<summary>Returns the id string for &quot;esri_projectItem_SelectedItemIsMultiBranchVersioned&quot; (State, Catalog)</summary>
+			public static string esri_projectItem_SelectedItemIsMultiBranchVersioned {
+				 get { return "esri_projectItem_SelectedItemIsMultiBranchVersioned"; }
+			}
 			///<summary>Returns the id string for &quot;esri_projectItem_SelectedItemIsEditorTrackingEnabled&quot; (State, Catalog)</summary>
 			public static string esri_projectItem_SelectedItemIsEditorTrackingEnabled {
 				 get { return "esri_projectItem_SelectedItemIsEditorTrackingEnabled"; }
 			}
-			///<summary>Returns the id string for &quot;esri_projectItem_SelectedItemIsNotEditorTrackingEnabled&quot; (State, Catalog)</summary>
-			public static string esri_projectItem_SelectedItemIsNotEditorTrackingEnabled {
-				 get { return "esri_projectItem_SelectedItemIsNotEditorTrackingEnabled"; }
-			}
 			///<summary>Returns the id string for &quot;esri_project_featureDatasetSelected&quot; (State, Catalog)</summary>
 			public static string esri_project_featureDatasetSelected {
 				 get { return "esri_project_featureDatasetSelected"; }
+			}
+			///<summary>Returns the id string for &quot;esri_projectItem_SelectedItemIsNotEditorTrackingEnabled&quot; (State, Catalog)</summary>
+			public static string esri_projectItem_SelectedItemIsNotEditorTrackingEnabled {
+				 get { return "esri_projectItem_SelectedItemIsNotEditorTrackingEnabled"; }
 			}
 			///<summary>Returns the id string for &quot;esri_projectItem_SelectedItemIsNotCompressed&quot; (State, Catalog)</summary>
 			public static string esri_projectItem_SelectedItemIsNotCompressed {
@@ -2528,17 +3298,29 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_projectItem_SelectedItemIsCompressed {
 				 get { return "esri_projectItem_SelectedItemIsCompressed"; }
 			}
+			///<summary>Returns the id string for &quot;catalog_database_fgdb&quot; (State, Catalog)</summary>
+			public static string catalog_database_fgdb {
+				 get { return "catalog_database_fgdb"; }
+			}
+			///<summary>Returns the id string for &quot;catalog_database_egdb&quot; (State, Catalog)</summary>
+			public static string catalog_database_egdb {
+				 get { return "catalog_database_egdb"; }
+			}
 			///<summary>Returns the id string for &quot;esri_projectItem_FolderSelected&quot; (State, Catalog)</summary>
 			public static string esri_projectItem_FolderSelected {
 				 get { return "esri_projectItem_FolderSelected"; }
 			}
-			///<summary>Returns the id string for &quot;esri_projectItem_isLocalGeodatabase&quot; (State, Catalog)</summary>
-			public static string esri_projectItem_isLocalGeodatabase {
-				 get { return "esri_projectItem_isLocalGeodatabase"; }
-			}
 			///<summary>Returns the id string for &quot;esri_projectItem_notGeoDatabaseConnection&quot; (State, Catalog)</summary>
 			public static string esri_projectItem_notGeoDatabaseConnection {
 				 get { return "esri_projectItem_notGeoDatabaseConnection"; }
+			}
+			///<summary>Returns the id string for &quot;catalog_dataset_fgdb&quot; (State, Catalog)</summary>
+			public static string catalog_dataset_fgdb {
+				 get { return "catalog_dataset_fgdb"; }
+			}
+			///<summary>Returns the id string for &quot;catalog_dataset_egdb&quot; (State, Catalog)</summary>
+			public static string catalog_dataset_egdb {
+				 get { return "catalog_dataset_egdb"; }
 			}
 			///<summary>Returns the id string for &quot;esri_projectItem_isSqliteDatabase&quot; (State, Catalog)</summary>
 			public static string esri_projectItem_isSqliteDatabase {
@@ -2552,9 +3334,9 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_project_featureDatasetExtensionSelected {
 				 get { return "esri_project_featureDatasetExtensionSelected"; }
 			}
-			///<summary>Returns the id string for &quot;esri_project_fileGDBSelected&quot; (State, Catalog)</summary>
-			public static string esri_project_fileGDBSelected {
-				 get { return "esri_project_fileGDBSelected"; }
+			///<summary>Returns the id string for &quot;esri_project_GDBSelected&quot; (State, Catalog)</summary>
+			public static string esri_project_GDBSelected {
+				 get { return "esri_project_GDBSelected"; }
 			}
 			///<summary>Returns the id string for &quot;esri_project_shapeFileSelected&quot; (State, Catalog)</summary>
 			public static string esri_project_shapeFileSelected {
@@ -2568,6 +3350,18 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_project_rasterFileSelected {
 				 get { return "esri_project_rasterFileSelected"; }
 			}
+			///<summary>Returns the id string for &quot;esri_project_fileGDBSelected&quot; (State, Catalog)</summary>
+			public static string esri_project_fileGDBSelected {
+				 get { return "esri_project_fileGDBSelected"; }
+			}
+			///<summary>Returns the id string for &quot;esri_project_bimFileWorkspaceSelected&quot; (State, Catalog)</summary>
+			public static string esri_project_bimFileWorkspaceSelected {
+				 get { return "esri_project_bimFileWorkspaceSelected"; }
+			}
+			///<summary>Returns the id string for &quot;esri_project_videoFileSelected&quot; (State, Catalog)</summary>
+			public static string esri_project_videoFileSelected {
+				 get { return "esri_project_videoFileSelected"; }
+			}
 			///<summary>Returns the id string for &quot;esri_project_locatorSelected&quot; (State, Catalog)</summary>
 			public static string esri_project_locatorSelected {
 				 get { return "esri_project_locatorSelected"; }
@@ -2575,10 +3369,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_geodatabase_dummyStateWhichIsAlwaysFalse&quot; (State, Catalog)</summary>
 			public static string esri_geodatabase_dummyStateWhichIsAlwaysFalse {
 				 get { return "esri_geodatabase_dummyStateWhichIsAlwaysFalse"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_openProjectState&quot; (State, Catalog)</summary>
-			public static string esri_mapping_openProjectState {
-				 get { return "esri_mapping_openProjectState"; }
 			}
 			///<summary>Returns the id string for &quot;esri_projectItem_SelectedTableIsNotRegisteredWithGDB&quot; (State, Catalog)</summary>
 			public static string esri_projectItem_SelectedTableIsNotRegisteredWithGDB {
@@ -2608,8 +3398,74 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_projectItem_mosaicDatasetHasLog {
 				 get { return "esri_projectItem_mosaicDatasetHasLog"; }
 			}
+			///<summary>Returns the id string for &quot;esri_license_has3DAnalystExtensionLicenseState&quot; (State, Catalog)</summary>
+			public static string esri_license_has3DAnalystExtensionLicenseState {
+				 get { return "esri_license_has3DAnalystExtensionLicenseState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_license_hasSpatialAnalystExtensionLicenseState&quot; (State, Catalog)</summary>
+			public static string esri_license_hasSpatialAnalystExtensionLicenseState {
+				 get { return "esri_license_hasSpatialAnalystExtensionLicenseState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_projectItem_gdbMosaicDataset&quot; (State, Catalog)</summary>
+			public static string esri_projectItem_gdbMosaicDataset {
+				 get { return "esri_projectItem_gdbMosaicDataset"; }
+			}
+			///<summary>Returns the id string for &quot;esri_projectItem_managedMosaicDataset&quot; (State, Catalog)</summary>
+			public static string esri_projectItem_managedMosaicDataset {
+				 get { return "esri_projectItem_managedMosaicDataset"; }
+			}
+		}
+		public static partial class Subgroup {
+			///<summary>Returns the id string for &quot;esri_database_NewSubgroup&quot; (Subgroup, Catalog)</summary>
+			public static string esri_database_NewSubgroup {
+				 get { return "esri_database_NewSubgroup"; }
+			}
+			///<summary>Returns the id string for &quot;esri_database_subgroup1&quot; (Subgroup, Catalog)</summary>
+			public static string esri_database_subgroup1 {
+				 get { return "esri_database_subgroup1"; }
+			}
+			///<summary>Returns the id string for &quot;esri_database_subgroup3&quot; (Subgroup, Catalog)</summary>
+			public static string esri_database_subgroup3 {
+				 get { return "esri_database_subgroup3"; }
+			}
+			///<summary>Returns the id string for &quot;esri_database_subgroup4&quot; (Subgroup, Catalog)</summary>
+			public static string esri_database_subgroup4 {
+				 get { return "esri_database_subgroup4"; }
+			}
+			///<summary>Returns the id string for &quot;esri_folder_createSubgroup1&quot; (Subgroup, Catalog)</summary>
+			public static string esri_folder_createSubgroup1 {
+				 get { return "esri_folder_createSubgroup1"; }
+			}
+			///<summary>Returns the id string for &quot;esri_folder_createSubgroup2&quot; (Subgroup, Catalog)</summary>
+			public static string esri_folder_createSubgroup2 {
+				 get { return "esri_folder_createSubgroup2"; }
+			}
+		}
+		public static partial class Tab {
+			///<summary>Returns the id string for &quot;Folders&quot; (Tab, Catalog)</summary>
+			public static string esri_Catalog_Folders_Tab {
+				 get { return "esri_Catalog_Folders_Tab"; }
+			}
+			///<summary>Returns the id string for &quot;Databases&quot; (Tab, Catalog)</summary>
+			public static string esri_Catalog_GDB_Tab {
+				 get { return "esri_Catalog_GDB_Tab"; }
+			}
+		}
+		public static partial class Tabgroup {
+			///<summary>Returns the id string for &quot;Manage&quot; (Tabgroup, Catalog)</summary>
+			public static string esri_Folders_TabGroup {
+				 get { return "esri_Folders_TabGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Manage&quot; (Tabgroup, Catalog)</summary>
+			public static string esri_Databases_TabGroup {
+				 get { return "esri_Databases_TabGroup"; }
+			}
 		}
 		public static partial class Button {
+			///<summary>Returns the id string for &quot;Refresh&quot; (RefreshCmd, Core)</summary>
+			public static string esri_itemInfoRefreshButton {
+				 get { return "esri_itemInfoRefreshButton"; }
+			}
 			///<summary>Returns the id string for &quot;Catalog Pane&quot; (esri_core_module:ShowProjectDockPane, Core)</summary>
 			public static string esri_core_showProjectDockPane {
 				 get { return "esri_core_showProjectDockPane"; }
@@ -2654,13 +3510,25 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_core_editCopyButton {
 				 get { return "esri_core_editCopyButton"; }
 			}
-			///<summary>Returns the id string for &quot;Copy Path&quot; (esri_core_module:CopyPaths, Core)</summary>
+			///<summary>Returns the id string for &quot;Copy Path&quot; (CopyPathsCmd, Core)</summary>
 			public static string esri_core_editCopyPaths {
 				 get { return "esri_core_editCopyPaths"; }
+			}
+			///<summary>Returns the id string for &quot;Remove&quot; (RemoveProjectItemCmd, Core)</summary>
+			public static string esri_core_Remove {
+				 get { return "esri_core_Remove"; }
 			}
 			///<summary>Returns the id string for &quot;Delete&quot; (ArcGIS.Desktop.Framework.DeleteCMD, Core)</summary>
 			public static string esri_core_editDeleteButton {
 				 get { return "esri_core_editDeleteButton"; }
+			}
+			///<summary>Returns the id string for &quot;Folder&quot; (CreateFolderCmd, Core)</summary>
+			public static string esri_core_newFolderButton {
+				 get { return "esri_core_newFolderButton"; }
+			}
+			///<summary>Returns the id string for &quot;Repair&quot; (RepairProjectItemCmd, Core)</summary>
+			public static string esri_core_repairProjectItem {
+				 get { return "esri_core_repairProjectItem"; }
 			}
 			///<summary>Returns the id string for &quot;Save&quot; (Project+ProjectSaveCmd, Core)</summary>
 			public static string esri_core_saveProjectButton {
@@ -2686,7 +3554,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_core_redoButton {
 				 get { return "esri_core_redoButton"; }
 			}
-			///<summary>Returns the id string for &quot;Rename&quot; (esri_core_module:RenameProjectItem, Core)</summary>
+			///<summary>Returns the id string for &quot;Rename&quot; (RenameCmd, Core)</summary>
 			public static string esri_core_rename {
 				 get { return "esri_core_rename"; }
 			}
@@ -2702,7 +3570,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_core_syncPortalItemButton {
 				 get { return "esri_core_syncPortalItemButton"; }
 			}
-			///<summary>Returns the id string for &quot;Default Sort&quot; (ArcGIS.Desktop.Internal.Core.CatalogSortButton, Core)</summary>
+			///<summary>Returns the id string for &quot;Default Sort&quot; (CatalogSortButton, Core)</summary>
 			public static string esri_core_projectViewClearSort {
 				 get { return "esri_core_projectViewClearSort"; }
 			}
@@ -2734,6 +3602,50 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_core_previewCaptureThumbnail {
 				 get { return "esri_core_previewCaptureThumbnail"; }
 			}
+			///<summary>Returns the id string for &quot;Refresh&quot; (RefreshCmd, Core)</summary>
+			public static string esri_core_refresh {
+				 get { return "esri_core_refresh"; }
+			}
+			///<summary>Returns the id string for &quot;Open&quot; (OpenCmd, Core)</summary>
+			public static string esri_core_openButton {
+				 get { return "esri_core_openButton"; }
+			}
+			///<summary>Returns the id string for &quot;Add To Project&quot; (AddToProjectCmd, Core)</summary>
+			public static string esri_core_addToProject {
+				 get { return "esri_core_addToProject"; }
+			}
+			///<summary>Returns the id string for &quot;Add To Favorites&quot; (AddToFavoritesCmd, Core)</summary>
+			public static string esri_addFavoriteButton {
+				 get { return "esri_addFavoriteButton"; }
+			}
+			///<summary>Returns the id string for &quot;Add To New Projects&quot; (AddItemToNewProjectsCmd, Core)</summary>
+			public static string esri_addProjectItemToNewProjectsButton {
+				 get { return "esri_addProjectItemToNewProjectsButton"; }
+			}
+			///<summary>Returns the id string for &quot;Clear&quot; (SortClearCmd, Core)</summary>
+			public static string esri_core_sortClear {
+				 get { return "esri_core_sortClear"; }
+			}
+			///<summary>Returns the id string for &quot;Type&quot; (SortTypeCmd, Core)</summary>
+			public static string esri_core_sortType {
+				 get { return "esri_core_sortType"; }
+			}
+			///<summary>Returns the id string for &quot;Date&quot; (SortDateCmd, Core)</summary>
+			public static string esri_core_sortDate {
+				 get { return "esri_core_sortDate"; }
+			}
+			///<summary>Returns the id string for &quot;Name&quot; (SortNameCmd, Core)</summary>
+			public static string esri_core_sortName {
+				 get { return "esri_core_sortName"; }
+			}
+			///<summary>Returns the id string for &quot;Category&quot; (SortCategoryCmd, Core)</summary>
+			public static string esri_core_sortCategory {
+				 get { return "esri_core_sortCategory"; }
+			}
+			///<summary>Returns the id string for &quot;Key&quot; (SortKeyCmd, Core)</summary>
+			public static string esri_core_sortKey {
+				 get { return "esri_core_sortKey"; }
+			}
 		}
 		public static partial class Checkbox {
 			///<summary>Returns the id string for &quot;Show Details Panel&quot; (ArcGIS.Desktop.Internal.Core.ProjectViewChangeLayoutCheckBox, Core)</summary>
@@ -2744,9 +3656,23 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_core_projectViewOptionsSearchOrg {
 				 get { return "esri_core_projectViewOptionsSearchOrg"; }
 			}
+			///<summary>Returns the id string for &quot;Show Pop-ups&quot; (ArcGIS.Desktop.Internal.Core.ProjectViewOptionsShowTooltips, Core)</summary>
+			public static string esri_core_projectViewShowTooltips {
+				 get { return "esri_core_projectViewShowTooltips"; }
+			}
+			///<summary>Returns the id string for &quot;More Detail&quot; (ArcGIS.Desktop.Internal.Core.ProjectViewBrowseDetail, Core)</summary>
+			public static string esri_core_projectViewLayoutBrowseDetail {
+				 get { return "esri_core_projectViewLayoutBrowseDetail"; }
+			}
 			///<summary>Returns the id string for &quot;Show Basemap&quot; (CorePreviewItemShowBasemapCheckBox, Core)</summary>
 			public static string esri_core_previewShowBasemap {
 				 get { return "esri_core_previewShowBasemap"; }
+			}
+		}
+		public static partial class Component {
+			///<summary>Returns the id string for &quot;esri_displayunits_projectContainer&quot; (ArcGIS.Desktop.Internal.Core.DisplayUnitEnvironmentItemContainer, Core)</summary>
+			public static string esri_displayunits_projectContainer {
+				 get { return "esri_displayunits_projectContainer"; }
 			}
 		}
 		public static partial class Customcontrol {
@@ -2781,6 +3707,28 @@ namespace ArcGIS.Desktop.Framework {
 				 get { return "esri_core_notificationDockPane"; }
 			}
 		}
+		public static partial class Dynamicmenu {
+			///<summary>Returns the id string for &quot;Reset Panes&quot; (ArcGIS.Desktop.Framework.DockPaneSetChooser, Core)</summary>
+			public static string esri_dockPaneSetDynamicMenu {
+				 get { return "esri_dockPaneSetDynamicMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Sort&quot; (SortDynamicMenu, Core)</summary>
+			public static string esri_core_sortColumns {
+				 get { return "esri_core_sortColumns"; }
+			}
+			///<summary>Returns the id string for &quot;Add&quot; (AddItemsDynamicMenu, Core)</summary>
+			public static string esri_core_addItemsDynamicMenu {
+				 get { return "esri_core_addItemsDynamicMenu"; }
+			}
+			///<summary>Returns the id string for &quot;New&quot; (NewItemsDynamicMenu, Core)</summary>
+			public static string esri_core_newItemsDynamicMenu {
+				 get { return "esri_core_newItemsDynamicMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Import&quot; (ImportItemsDynamicMenu, Core)</summary>
+			public static string esri_core_importItemsDynamicMenu {
+				 get { return "esri_core_importItemsDynamicMenu"; }
+			}
+		}
 		public static partial class Group {
 			///<summary>Returns the id string for &quot;Project&quot; (Group, Core)</summary>
 			public static string esri_core_projectData {
@@ -2797,6 +3745,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Clipboard&quot; (Group, Core)</summary>
 			public static string esri_core_clipboardGroup {
 				 get { return "esri_core_clipboardGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Organize&quot; (Group, Core)</summary>
+			public static string esri_core_organize {
+				 get { return "esri_core_organize"; }
+			}
+			///<summary>Returns the id string for &quot;Create&quot; (Group, Core)</summary>
+			public static string esri_core_create {
+				 get { return "esri_core_create"; }
 			}
 			///<summary>Returns the id string for &quot;Windows&quot; (Group, Core)</summary>
 			public static string esri_core_dockWindows {
@@ -2860,12 +3816,16 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_sharingCategory {
 				 get { return "esri_sharingCategory"; }
 			}
+			///<summary>Returns the id string for &quot;esri_customizedCommandsCategory&quot; (Category, Core)</summary>
+			public static string esri_customizedCommandsCategory {
+				 get { return "esri_customizedCommandsCategory"; }
+			}
+			///<summary>Returns the id string for &quot;esri_customItems&quot; (Category, Core)</summary>
+			public static string esri_customItems {
+				 get { return "esri_customItems"; }
+			}
 		}
 		public static partial class Component {
-			///<summary>Returns the id string for &quot;esri_displayunits_projectContainer&quot; (ArcGIS.Desktop.Internal.Core.DisplayUnitEnvironmentItemContainer, Core)</summary>
-			public static string esri_displayunits_projectContainer {
-				 get { return "esri_displayunits_projectContainer"; }
-			}
 			///<summary>Returns the id string for &quot;project_gebrowse_place_project&quot; (BrowseProjectViewModelProvider, Core)</summary>
 			public static string project_gebrowse_place_project {
 				 get { return "project_gebrowse_place_project"; }
@@ -2904,6 +3864,24 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_core_previewShowBasemapCondition {
 				 get { return "esri_core_previewShowBasemapCondition"; }
 			}
+			///<summary>Returns the id string for &quot;esri_core_ColorManagementEnabledCondition&quot; (Condition, Core)</summary>
+			public static string esri_core_ColorManagementEnabledCondition {
+				 get { return "esri_core_ColorManagementEnabledCondition"; }
+			}
+		}
+		public static partial class Dockpaneset {
+			///<summary>Returns the id string for &quot;Reset Panes for Mapping (Default)&quot; (Dockpaneset, Core)</summary>
+			public static string esri_DockPaneReset_Mapping {
+				 get { return "esri_DockPaneReset_Mapping"; }
+			}
+			///<summary>Returns the id string for &quot;Reset Panes for Editing&quot; (Dockpaneset, Core)</summary>
+			public static string esri_DockPaneReset_Editing {
+				 get { return "esri_DockPaneReset_Editing"; }
+			}
+			///<summary>Returns the id string for &quot;Reset Panes for Geoprocessing&quot; (Dockpaneset, Core)</summary>
+			public static string esri_DockPaneReset_Geoprocessing {
+				 get { return "esri_DockPaneReset_Geoprocessing"; }
+			}
 		}
 		public static partial class Module {
 			///<summary>Returns the id string for &quot;Project Module&quot; (CoreModule, Core)</summary>
@@ -2932,13 +3910,13 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_product_streetmapPremiumnMiddleEastAfrica {
 				 get { return "esri_product_streetmapPremiumnMiddleEastAfrica"; }
 			}
+			///<summary>Returns the id string for &quot;StreetMap Premium Japan&quot; (Product, Core)</summary>
+			public static string esri_product_streetmapPremiumJapan {
+				 get { return "esri_product_streetmapPremiumJapan"; }
+			}
 			///<summary>Returns the id string for &quot;Publisher&quot; (Product, Core)</summary>
 			public static string esri_product_publisher {
 				 get { return "esri_product_publisher"; }
-			}
-			///<summary>Returns the id string for &quot;Aviation Charting&quot; (Product, Core)</summary>
-			public static string esri_product_aviationCharting {
-				 get { return "esri_product_aviationCharting"; }
 			}
 			///<summary>Returns the id string for &quot;Aviation Airports&quot; (Product, Core)</summary>
 			public static string esri_product_aviationAirports {
@@ -2952,10 +3930,6 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_product_maritimeBathymetry {
 				 get { return "esri_product_maritimeBathymetry"; }
 			}
-			///<summary>Returns the id string for &quot;Production Mapping&quot; (Product, Core)</summary>
-			public static string esri_product_productionMapping {
-				 get { return "esri_product_productionMapping"; }
-			}
 			///<summary>Returns the id string for &quot;Business Analyst&quot; (Product, Core)</summary>
 			public static string esri_product_businessanalyst {
 				 get { return "esri_product_businessanalyst"; }
@@ -2963,6 +3937,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Image Analyst&quot; (Product, Core)</summary>
 			public static string esri_product_imageanalyst {
 				 get { return "esri_product_imageanalyst"; }
+			}
+			///<summary>Returns the id string for &quot;LocateXT&quot; (Product, Core)</summary>
+			public static string esri_product_locatext {
+				 get { return "esri_product_locatext"; }
 			}
 		}
 		public static partial class Sheet {
@@ -3006,15 +3984,19 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_emptyLabel1 {
 				 get { return "esri_emptyLabel1"; }
 			}
-			///<summary>Returns the id string for &quot; &quot; (Labelcontrol, Core)</summary>
-			public static string esri_emptyLabel2 {
-				 get { return "esri_emptyLabel2"; }
-			}
 		}
 		public static partial class Menu {
 			///<summary>Returns the id string for &quot;Display Type&quot; (Menu, Core)</summary>
 			public static string esri_core_projectViewDisplayType {
 				 get { return "esri_core_projectViewDisplayType"; }
+			}
+			///<summary>Returns the id string for &quot;Browse Dialog Single Rename Item&quot; (Menu, Core)</summary>
+			public static string esri_BrowseDialog_SingleItem {
+				 get { return "esri_BrowseDialog_SingleItem"; }
+			}
+			///<summary>Returns the id string for &quot;Folder General Item&quot; (Menu, Core)</summary>
+			public static string esri_BrowseDialog_FolderGeneral {
+				 get { return "esri_BrowseDialog_FolderGeneral"; }
 			}
 			///<summary>Returns the id string for &quot;-&quot; (Menu, Core)</summary>
 			public static string esri_projectDefaultContextMenu {
@@ -3034,6 +4016,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_core_ApplicationOptionsPropertyPage {
 				 get { return "esri_core_ApplicationOptionsPropertyPage"; }
 			}
+			///<summary>Returns the id string for &quot;Proofing&quot; (ArcGIS.Desktop.Framework.DictionaryViewModel, Core)</summary>
+			public static string esri_core_Proofing {
+				 get { return "esri_core_Proofing"; }
+			}
 			///<summary>Returns the id string for &quot;Language&quot; (ArcGIS.Desktop.Internal.Core.Language.LanguageVM, Core)</summary>
 			public static string esri_core_LanguagePropertyPage {
 				 get { return "esri_core_LanguagePropertyPage"; }
@@ -3041,6 +4027,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Customize the Ribbon&quot; (ArcGIS.Desktop.Framework.CustomizeViewModel, Core)</summary>
 			public static string esri_mapping_customizePropertyPage {
 				 get { return "esri_mapping_customizePropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Quick Access Toolbar&quot; (ArcGIS.Desktop.Framework.CustomizeQATViewModel, Core)</summary>
+			public static string esri_mapping_customizeQATPropertyPage {
+				 get { return "esri_mapping_customizeQATPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Share and Download&quot; (LocationOptionsViewModel, Core)</summary>
+			public static string esri_sharing_SharingPropertyPage {
+				 get { return "esri_sharing_SharingPropertyPage"; }
 			}
 		}
 		public static partial class Pane {
@@ -3100,9 +4094,35 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_core_previewCanEditBasemapState {
 				 get { return "esri_core_previewCanEditBasemapState"; }
 			}
+			///<summary>Returns the id string for &quot;esri_core_ColorManagementEnabledState&quot; (State, Core)</summary>
+			public static string esri_core_ColorManagementEnabledState {
+				 get { return "esri_core_ColorManagementEnabledState"; }
+			}
+		}
+		public static partial class Subgroup {
+			///<summary>Returns the id string for &quot;esri_core_editBtns&quot; (Subgroup, Core)</summary>
+			public static string esri_core_editBtns {
+				 get { return "esri_core_editBtns"; }
+			}
+			///<summary>Returns the id string for &quot;esri_core_organizeItems1&quot; (Subgroup, Core)</summary>
+			public static string esri_core_organizeItems1 {
+				 get { return "esri_core_organizeItems1"; }
+			}
+			///<summary>Returns the id string for &quot;esri_core_organizeItems2&quot; (Subgroup, Core)</summary>
+			public static string esri_core_organizeItems2 {
+				 get { return "esri_core_organizeItems2"; }
+			}
+			///<summary>Returns the id string for &quot;esri_core_organizeItems3&quot; (Subgroup, Core)</summary>
+			public static string esri_core_organizeItems3 {
+				 get { return "esri_core_organizeItems3"; }
+			}
+			///<summary>Returns the id string for &quot;esri_core_newItems&quot; (Subgroup, Core)</summary>
+			public static string esri_core_newItems {
+				 get { return "esri_core_newItems"; }
+			}
 		}
 		public static partial class Tab {
-			///<summary>Returns the id string for &quot;Home&quot; (Tab, Core)</summary>
+			///<summary>Returns the id string for &quot;Catalog&quot; (Tab, Core)</summary>
 			public static string esri_core_homeTab {
 				 get { return "esri_core_homeTab"; }
 			}
@@ -3124,7 +4144,7 @@ namespace ArcGIS.Desktop.Framework {
 			}
 		}
 		public static partial class Tabgroup {
-			///<summary>Returns the id string for &quot;&quot; (Tabgroup, Core)</summary>
+			///<summary>Returns the id string for &quot;Catalog View&quot; (Tabgroup, Core)</summary>
 			public static string esri_core_previewTabGroup {
 				 get { return "esri_core_previewTabGroup"; }
 			}
@@ -3138,11 +4158,11 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_dataReviewer_addBatchJobsButton {
 				 get { return "esri_dataReviewer_addBatchJobsButton"; }
 			}
-			///<summary>Returns the id string for &quot;Add Session...&quot; (esri_dataReviewer_dataReviewerModule:OnClick_AddSession, DataReviewer)</summary>
+			///<summary>Returns the id string for &quot;Add Session&quot; (esri_dataReviewer_dataReviewerModule:OnClick_AddSession, DataReviewer)</summary>
 			public static string esri_dataReviewer_ReviewResults_AddSession {
 				 get { return "esri_dataReviewer_ReviewResults_AddSession"; }
 			}
-			///<summary>Returns the id string for &quot;New Session...&quot; (esri_dataReviewer_dataReviewerModule:OnClick_NewSession, DataReviewer)</summary>
+			///<summary>Returns the id string for &quot;New Session&quot; (esri_dataReviewer_dataReviewerModule:OnClick_NewSession, DataReviewer)</summary>
 			public static string esri_dataReviewer_ReviewResults_NewSession {
 				 get { return "esri_dataReviewer_ReviewResults_NewSession"; }
 			}
@@ -3564,6 +4584,18 @@ namespace ArcGIS.Desktop.Framework {
 			}
 		}
 		public static partial class Button {
+			///<summary>Returns the id string for &quot;Start Editing&quot; (esri_editing_EditingModule:OnClick_StartEditing, Editing)</summary>
+			public static string esri_editing_StartEditingBtn {
+				 get { return "esri_editing_StartEditingBtn"; }
+			}
+			///<summary>Returns the id string for &quot;Stop Editing&quot; (esri_editing_EditingModule:OnClick_StopEditing, Editing)</summary>
+			public static string esri_editing_StopEditingBtn {
+				 get { return "esri_editing_StopEditingBtn"; }
+			}
+			///<summary>Returns the id string for &quot;Start Editing&quot; (esri_editing_EditingModule:OnClick_ToggleEditing, Editing)</summary>
+			public static string esri_editing_ToggleEditingBtn {
+				 get { return "esri_editing_ToggleEditingBtn"; }
+			}
 			///<summary>Returns the id string for &quot;Save&quot; (esri_editing_EditingModule:OnClick_SaveEdits, Editing)</summary>
 			public static string esri_editing_SaveEditsBtn {
 				 get { return "esri_editing_SaveEditsBtn"; }
@@ -3600,13 +4632,17 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_ShowStatusBtn {
 				 get { return "esri_editing_ShowStatusBtn"; }
 			}
-			///<summary>Returns the id string for &quot;More Tools...&quot; (esri_editing_EditingModule:ShowEditFeaturesWindow, Editing)</summary>
+			///<summary>Returns the id string for &quot;All Tools...&quot; (esri_editing_EditingModule:ShowEditFeaturesWindowAllTools, Editing)</summary>
 			public static string esri_editing_ShowEditFeaturesFromGallery {
 				 get { return "esri_editing_ShowEditFeaturesFromGallery"; }
 			}
 			///<summary>Returns the id string for &quot;Switch Gallery Size&quot; (esri_editing_EditingModule:ToggleEditFeaturesGalleryView, Editing)</summary>
 			public static string esri_editing_ToggleEditFeaturesGallerySize {
 				 get { return "esri_editing_ToggleEditFeaturesGallerySize"; }
+			}
+			///<summary>Returns the id string for &quot;Customize...&quot; (esri_editing_EditingModule:CustomizeGallery, Editing)</summary>
+			public static string esri_editing_CustomizeGalleryButton {
+				 get { return "esri_editing_CustomizeGalleryButton"; }
 			}
 			///<summary>Returns the id string for &quot;Editing&quot; (EditingViewButton, Editing)</summary>
 			public static string esri_editing_ShowEditablityTOC {
@@ -3636,9 +4672,17 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_StartQuickSelection {
 				 get { return "esri_editing_StartQuickSelection"; }
 			}
-			///<summary>Returns the id string for &quot;Start Quick Selection mode&quot; (esri_editing_EditingModule:OnClickStopQuickSelectMode, Editing)</summary>
+			///<summary>Returns the id string for &quot;Stop Quick Selection mode&quot; (esri_editing_EditingModule:OnClickStopQuickSelectMode, Editing)</summary>
 			public static string esri_editing_StopQuickSelection {
 				 get { return "esri_editing_StopQuickSelection"; }
+			}
+			///<summary>Returns the id string for &quot;Start Adding Vertices&quot; (esri_editing_EditingModule:OnClickStartInsertMode, Editing)</summary>
+			public static string esri_editing_beginInsertMode {
+				 get { return "esri_editing_beginInsertMode"; }
+			}
+			///<summary>Returns the id string for &quot;Stop Adding Vertices&quot; (esri_editing_EditingModule:OnClickStopInsertMode, Editing)</summary>
+			public static string esri_editing_endInsertMode {
+				 get { return "esri_editing_endInsertMode"; }
 			}
 			///<summary>Returns the id string for &quot;Start Deleting Vertices&quot; (esri_editing_EditingModule:OnClickStartDeleteMode, Editing)</summary>
 			public static string esri_editing_beginDeleteMode {
@@ -3647,6 +4691,66 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Stop Deleting Vertices&quot; (esri_editing_EditingModule:OnClickStopDeleteMode, Editing)</summary>
 			public static string esri_editing_endDeleteMode {
 				 get { return "esri_editing_endDeleteMode"; }
+			}
+			///<summary>Returns the id string for &quot;Circle Tool&quot; (CreateCircleLineCommand, Editing)</summary>
+			public static string esri_editing_SketchCircleLine {
+				 get { return "esri_editing_SketchCircleLine"; }
+			}
+			///<summary>Returns the id string for &quot;Three Point Circle Tool&quot; (CreateThreePointCircleLineCommand, Editing)</summary>
+			public static string esri_editing_SketchLineThreePointCircle {
+				 get { return "esri_editing_SketchLineThreePointCircle"; }
+			}
+			///<summary>Returns the id string for &quot;Circle Tool&quot; (CreateCirclePolygonCommand, Editing)</summary>
+			public static string esri_editing_SketchCirclePolygon {
+				 get { return "esri_editing_SketchCirclePolygon"; }
+			}
+			///<summary>Returns the id string for &quot;Three Point Circle Polygon Tool&quot; (CreateThreePointCirclePolygonCommand, Editing)</summary>
+			public static string esri_editing_SketchPolygonThreePointCircle {
+				 get { return "esri_editing_SketchPolygonThreePointCircle"; }
+			}
+			///<summary>Returns the id string for &quot;Change Parcel Type&quot; (ArcGIS.Desktop.Editing.ChangeParcelTypeCommand, Editing)</summary>
+			public static string esri_editing_changeParcelType {
+				 get { return "esri_editing_changeParcelType"; }
+			}
+			///<summary>Returns the id string for &quot;Duplicate Parcels&quot; (ArcGIS.Desktop.Editing.DuplicateParcelsCommand, Editing)</summary>
+			public static string esri_editing_duplicateParcels {
+				 get { return "esri_editing_duplicateParcels"; }
+			}
+			///<summary>Returns the id string for &quot;Set Historic&quot; (ArcGIS.Desktop.Editing.SetParcelsAsHistoricCommand, Editing)</summary>
+			public static string esri_editing_SetParcelsAsHistoric {
+				 get { return "esri_editing_SetParcelsAsHistoric"; }
+			}
+			///<summary>Returns the id string for &quot;Set Current&quot; (ArcGIS.Desktop.Editing.SetParcelsAsCurrentCommand, Editing)</summary>
+			public static string esri_editing_SetParcelsAsCurrent {
+				 get { return "esri_editing_SetParcelsAsCurrent"; }
+			}
+			///<summary>Returns the id string for &quot;Copy Lines To&quot; (ArcGIS.Desktop.Editing.CopyLinesToParcelTypeCommand, Editing)</summary>
+			public static string esri_editing_copyLinesToParcelType {
+				 get { return "esri_editing_copyLinesToParcelType"; }
+			}
+			///<summary>Returns the id string for &quot;Create Seeds&quot; (ArcGIS.Desktop.Editing.CreateParcelSeedsCommand, Editing)</summary>
+			public static string esri_editing_createParcelSeeds {
+				 get { return "esri_editing_createParcelSeeds"; }
+			}
+			///<summary>Returns the id string for &quot;Build Extent&quot; (ArcGIS.Desktop.Editing.BuildParcelsExtentCommand, Editing)</summary>
+			public static string esri_editing_parcelBuildButton {
+				 get { return "esri_editing_parcelBuildButton"; }
+			}
+			///<summary>Returns the id string for &quot;Build Active&quot; (ArcGIS.Desktop.Editing.BuildParcelsActiveRecordCommand, Editing)</summary>
+			public static string esri_editing_parcelBuildActiveRecordButton {
+				 get { return "esri_editing_parcelBuildActiveRecordButton"; }
+			}
+			///<summary>Returns the id string for &quot;Delete Parcels&quot; (ArcGIS.Desktop.Editing.DeleteParcelsCommand, Editing)</summary>
+			public static string esri_editing_deleteParcels {
+				 get { return "esri_editing_deleteParcels"; }
+			}
+			///<summary>Returns the id string for &quot;Zoom To Active Record&quot; (ArcGIS.Desktop.Editing.ZoomToActiveRecordCommand, Editing)</summary>
+			public static string esri_editing_zoomToActiveRecord {
+				 get { return "esri_editing_zoomToActiveRecord"; }
+			}
+			///<summary>Returns the id string for &quot;New Record&quot; (ArcGIS.Desktop.Editing.RecordNewCommand, Editing)</summary>
+			public static string esri_editing_createNewRecord {
+				 get { return "esri_editing_createNewRecord"; }
 			}
 			///<summary>Returns the id string for &quot;Move&quot; (EditVerticesMoveModeCommand, Editing)</summary>
 			public static string esri_editing_EditVerticesMove {
@@ -3680,6 +4784,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_ReplaceGeometry {
 				 get { return "esri_editing_ReplaceGeometry"; }
 			}
+			///<summary>Returns the id string for &quot;Multipatch Texture&quot; (TexturePushPullCommand, Editing)</summary>
+			public static string esri_editing_PushPullTextureCommand {
+				 get { return "esri_editing_PushPullTextureCommand"; }
+			}
 			///<summary>Returns the id string for &quot;Continue Feature&quot; (EditVerticesContinueModeCommand, Editing)</summary>
 			public static string esri_editing_EditVerticesContinue {
 				 get { return "esri_editing_EditVerticesContinue"; }
@@ -3688,21 +4796,13 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_ClipCommand {
 				 get { return "esri_editing_ClipCommand"; }
 			}
-			///<summary>Returns the id string for &quot;Replace MultiPatch&quot; (esri_editing_EditingModule:OnClick_ActivateReplaceMultiPatch, Editing)</summary>
+			///<summary>Returns the id string for &quot;Replace Multipatch&quot; (esri_editing_EditingModule:OnClick_ActivateReplaceMultiPatch, Editing)</summary>
 			public static string esri_editing_ReplaceMultiPatchContextCommand {
 				 get { return "esri_editing_ReplaceMultiPatchContextCommand"; }
 			}
 			///<summary>Returns the id string for &quot;Continue Feature&quot; (EditVerticesContinueModeCommand, Editing)</summary>
 			public static string esri_editing_ContinueFeature {
 				 get { return "esri_editing_ContinueFeature"; }
-			}
-			///<summary>Returns the id string for &quot;Traverse&quot; (TraverseCommand, Editing)</summary>
-			public static string esri_editing_TraverseCommand {
-				 get { return "esri_editing_TraverseCommand"; }
-			}
-			///<summary>Returns the id string for &quot;Traverse Options...&quot; (TraverseOptionsCommand, Editing)</summary>
-			public static string esri_editing_TraverseOptions {
-				 get { return "esri_editing_TraverseOptions"; }
 			}
 			///<summary>Returns the id string for &quot;Zoom To&quot; (TraverseZoomToCourseCommand, Editing)</summary>
 			public static string esri_editing_traverseZoomToButton {
@@ -3740,13 +4840,57 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_ExtendTrimFeatures {
 				 get { return "esri_editing_ExtendTrimFeatures"; }
 			}
+			///<summary>Returns the id string for &quot;Fillet&quot; (FilletCommand, Editing)</summary>
+			public static string esri_editing_Fillet {
+				 get { return "esri_editing_Fillet"; }
+			}
+			///<summary>Returns the id string for &quot;Generalize&quot; (GeneralizeCommand, Editing)</summary>
+			public static string esri_editing_GeneralizeCommand {
+				 get { return "esri_editing_GeneralizeCommand"; }
+			}
 			///<summary>Returns the id string for &quot;Buffer&quot; (BufferFeaturesCommand, Editing)</summary>
 			public static string esri_editing_BufferFeatures {
 				 get { return "esri_editing_BufferFeatures"; }
 			}
+			///<summary>Returns the id string for &quot;Copy Parallel&quot; (CopyParallelCommand, Editing)</summary>
+			public static string esri_editing_CopyParallel {
+				 get { return "esri_editing_CopyParallel"; }
+			}
 			///<summary>Returns the id string for &quot;Split&quot; (SplitCommand, Editing)</summary>
 			public static string esri_editing_SplitCommand {
 				 get { return "esri_editing_SplitCommand"; }
+			}
+			///<summary>Returns the id string for &quot;Slice Multipatch&quot; (SliceMultipatchCommand, Editing)</summary>
+			public static string esri_editing_SliceMultipatchCommand {
+				 get { return "esri_editing_SliceMultipatchCommand"; }
+			}
+			///<summary>Returns the id string for &quot;Divide&quot; (DivideCommand, Editing)</summary>
+			public static string esri_editing_DivideCommand {
+				 get { return "esri_editing_DivideCommand"; }
+			}
+			///<summary>Returns the id string for &quot;Offset&quot; (OffsetCommand, Editing)</summary>
+			public static string esri_editing_OffsetCommand {
+				 get { return "esri_editing_OffsetCommand"; }
+			}
+			///<summary>Returns the id string for &quot;Sequential Numbering&quot; (SeqNumCommand, Editing)</summary>
+			public static string esri_editing_SeqNum {
+				 get { return "esri_editing_SeqNum"; }
+			}
+			///<summary>Returns the id string for &quot;Transfer Attributes&quot; (AttributeTransferCommand, Editing)</summary>
+			public static string esri_editing_AttributeTransfer {
+				 get { return "esri_editing_AttributeTransfer"; }
+			}
+			///<summary>Returns the id string for &quot;Traverse&quot; (TraverseCommand, Editing)</summary>
+			public static string esri_editing_TraverseCommand {
+				 get { return "esri_editing_TraverseCommand"; }
+			}
+			///<summary>Returns the id string for &quot;Traverse Options...&quot; (TraverseOptionsCommand, Editing)</summary>
+			public static string esri_editing_TraverseOptions {
+				 get { return "esri_editing_TraverseOptions"; }
+			}
+			///<summary>Returns the id string for &quot;Update COGO&quot; (UpdateCOGOAttributesCommand, Editing)</summary>
+			public static string esri_editing_UpdateCogoAttributes {
+				 get { return "esri_editing_UpdateCogoAttributes"; }
 			}
 			///<summary>Returns the id string for &quot;Right Angle&quot; (RightAngleCommand, Editing)</summary>
 			public static string esri_editing_RightAngleCommand {
@@ -3780,10 +4924,6 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_ExplodeFeatures {
 				 get { return "esri_editing_ExplodeFeatures"; }
 			}
-			///<summary>Returns the id string for &quot;Explode&quot; (InteractiveExplodeCommand, Editing)</summary>
-			public static string esri_editing_InteractiveExplode {
-				 get { return "esri_editing_InteractiveExplode"; }
-			}
 			///<summary>Returns the id string for &quot;Construct Polygons&quot; (ConstructPolygonsCommand, Editing)</summary>
 			public static string esri_editing_ConstructPolygons {
 				 get { return "esri_editing_ConstructPolygons"; }
@@ -3791,18 +4931,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Merge&quot; (MergeFeaturesCommand, Editing)</summary>
 			public static string esri_editing_MergeFeatures {
 				 get { return "esri_editing_MergeFeatures"; }
-			}
-			///<summary>Returns the id string for &quot;Validate All&quot; (ArcGIS.Desktop.Editing.ParcelValidateCommand, Editing)</summary>
-			public static string esri_editing_ValidateParcel {
-				 get { return "esri_editing_ValidateParcel"; }
-			}
-			///<summary>Returns the id string for &quot;Validate Extent&quot; (ArcGIS.Desktop.Editing.ParcelValidateExtentCommand, Editing)</summary>
-			public static string esri_editing_ValidateParcelExtent {
-				 get { return "esri_editing_ValidateParcelExtent"; }
-			}
-			///<summary>Returns the id string for &quot;Build&quot; (ParcelBuildCommand, Editing)</summary>
-			public static string esri_editing_parcelBuildButton {
-				 get { return "esri_editing_parcelBuildButton"; }
 			}
 			///<summary>Returns the id string for &quot;Duplicate Vertical&quot; (DuplicateVerticalCommand, Editing)</summary>
 			public static string esri_editing_DuplicateVerticalCommand {
@@ -3815,6 +4943,22 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Line&quot; (CreateLineModeCommand, Editing)</summary>
 			public static string esri_editing_LineConstructor {
 				 get { return "esri_editing_LineConstructor"; }
+			}
+			///<summary>Returns the id string for &quot;Point&quot; (CreateLineModeCommand, Editing)</summary>
+			public static string esri_editing_PointConstructor {
+				 get { return "esri_editing_PointConstructor"; }
+			}
+			///<summary>Returns the id string for &quot;Midpoint&quot; (CreateMidpointModeCommand, Editing)</summary>
+			public static string esri_editing_MidpointConstructor {
+				 get { return "esri_editing_MidpointConstructor"; }
+			}
+			///<summary>Returns the id string for &quot;Distance Distance&quot; (CreateDistanceDistanceModeCommand, Editing)</summary>
+			public static string esri_editing_DistanceDistanceConstructor {
+				 get { return "esri_editing_DistanceDistanceConstructor"; }
+			}
+			///<summary>Returns the id string for &quot;Intersection&quot; (CreateIntersectionModeCommand, Editing)</summary>
+			public static string esri_editing_IntersectionConstructor {
+				 get { return "esri_editing_IntersectionConstructor"; }
 			}
 			///<summary>Returns the id string for &quot;Line at right angle&quot; (CreateRightAngleLineModeCommand, Editing)</summary>
 			public static string esri_editing_RightAngleLineConstructor {
@@ -3840,6 +4984,26 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_TraceConstructor {
 				 get { return "esri_editing_TraceConstructor"; }
 			}
+			///<summary>Returns the id string for &quot;Streaming&quot; (CreateStreamModeCommand, Editing)</summary>
+			public static string esri_editing_StreamConstructor {
+				 get { return "esri_editing_StreamConstructor"; }
+			}
+			///<summary>Returns the id string for &quot;Streaming&quot; (ToggleStreamModeCommand, Editing)</summary>
+			public static string esri_editing_ToggleStreaming {
+				 get { return "esri_editing_ToggleStreaming"; }
+			}
+			///<summary>Returns the id string for &quot;Show Vertices&quot; (ToggleShowVerticesCommand, Editing)</summary>
+			public static string esri_editing_ToggleShowVertices {
+				 get { return "esri_editing_ToggleShowVertices"; }
+			}
+			///<summary>Returns the id string for &quot;Show Vertices&quot; (ShowVerticesOnCommand, Editing)</summary>
+			public static string esri_editing_ShowVertices {
+				 get { return "esri_editing_ShowVertices"; }
+			}
+			///<summary>Returns the id string for &quot;Hide Vertices&quot; (ShowVerticesOffCommand, Editing)</summary>
+			public static string esri_editing_HideVertices {
+				 get { return "esri_editing_HideVertices"; }
+			}
 			///<summary>Returns the id string for &quot;Create Points Along Line&quot; (ConstructPointsAlongLineCommand, Editing)</summary>
 			public static string esri_editing_ConstructPointsAlongLineCommand {
 				 get { return "esri_editing_ConstructPointsAlongLineCommand"; }
@@ -3847,6 +5011,30 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Select all&quot; (SelectAllCommand, Editing)</summary>
 			public static string esri_editing_SelectAllText {
 				 get { return "esri_editing_SelectAllText"; }
+			}
+			///<summary>Returns the id string for &quot;Underline&quot; (UnderlineTextCommand, Editing)</summary>
+			public static string esri_editing_UnderlineText {
+				 get { return "esri_editing_UnderlineText"; }
+			}
+			///<summary>Returns the id string for &quot;All Caps&quot; (AllCapsTextCommand, Editing)</summary>
+			public static string esri_editing_AllCapsText {
+				 get { return "esri_editing_AllCapsText"; }
+			}
+			///<summary>Returns the id string for &quot;Small Caps&quot; (SmallCapsTextCommand, Editing)</summary>
+			public static string esri_editing_SmallCapsText {
+				 get { return "esri_editing_SmallCapsText"; }
+			}
+			///<summary>Returns the id string for &quot;Superscript&quot; (SuperscriptTextCommand, Editing)</summary>
+			public static string esri_editing_SuperscriptText {
+				 get { return "esri_editing_SuperscriptText"; }
+			}
+			///<summary>Returns the id string for &quot;Subscript&quot; (SubscriptTextCommand, Editing)</summary>
+			public static string esri_editing_SubscriptText {
+				 get { return "esri_editing_SubscriptText"; }
+			}
+			///<summary>Returns the id string for &quot;Find Text&quot; (FindTextContextMenuItem, Editing)</summary>
+			public static string esri_editing_FindTextContextMenuItem {
+				 get { return "esri_editing_FindTextContextMenuItem"; }
 			}
 			///<summary>Returns the id string for &quot;Cycle through&quot; (CycleThroughFindTextCommand, Editing)</summary>
 			public static string esri_editing_CycleThroughFindText {
@@ -3864,6 +5052,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_ClearSketch {
 				 get { return "esri_editing_ClearSketch"; }
 			}
+			///<summary>Returns the id string for &quot;Delete Slice&quot; (ClearSketchCommand, Editing)</summary>
+			public static string esri_editing_clearSlice {
+				 get { return "esri_editing_clearSlice"; }
+			}
 			///<summary>Returns the id string for &quot;Angle...&quot; (AngleCommand, Editing)</summary>
 			public static string esri_editing_AngleCommand {
 				 get { return "esri_editing_AngleCommand"; }
@@ -3875,6 +5067,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Trace Options...&quot; (TracingOptionsCommand, Editing)</summary>
 			public static string esri_editing_TracingOptions {
 				 get { return "esri_editing_TracingOptions"; }
+			}
+			///<summary>Returns the id string for &quot;Streaming Options...&quot; (StreamingOptionsCommand, Editing)</summary>
+			public static string esri_editing_StreamingOptions {
+				 get { return "esri_editing_StreamingOptions"; }
+			}
+			///<summary>Returns the id string for &quot;Two-Point Line Options...&quot; (TwoPointLineOptionsCommand, Editing)</summary>
+			public static string esri_editing_TwoPointLineOptions {
+				 get { return "esri_editing_TwoPointLineOptions"; }
 			}
 			///<summary>Returns the id string for &quot;Toggle Tracing Side&quot; (esri_editing_EditingModule:OnClick_TracingToggleSide, Editing)</summary>
 			public static string esri_editing_TracingToggleSide {
@@ -3904,9 +5104,21 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_DirectionDistanceContextMenuItem {
 				 get { return "esri_editing_DirectionDistanceContextMenuItem"; }
 			}
+			///<summary>Returns the id string for &quot;Circular Arc...&quot; (CircularArcCommand, Editing)</summary>
+			public static string esri_editing_CircularArcContextMenuItem {
+				 get { return "esri_editing_CircularArcContextMenuItem"; }
+			}
 			///<summary>Returns the id string for &quot;Radius...&quot; (RadiusCommand, Editing)</summary>
 			public static string esri_editing_RadiusContextMenuItem {
 				 get { return "esri_editing_RadiusContextMenuItem"; }
+			}
+			///<summary>Returns the id string for &quot;Set Radius...&quot; (RadiusCommand, Editing)</summary>
+			public static string esri_editing_FilletRadiusContextMenuItem {
+				 get { return "esri_editing_FilletRadiusContextMenuItem"; }
+			}
+			///<summary>Returns the id string for &quot;Fixed Radius&quot; (FilletSetFixedRadiusCommand, Editing)</summary>
+			public static string esri_editing_FilletSetFixedRadiusContextMenuItem {
+				 get { return "esri_editing_FilletSetFixedRadiusContextMenuItem"; }
 			}
 			///<summary>Returns the id string for &quot;Width...&quot; (RectangleWidthCommand, Editing)</summary>
 			public static string esri_editing_WidthContextMenuItem {
@@ -3915,6 +5127,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Height...&quot; (RectangleHeightCommand, Editing)</summary>
 			public static string esri_editing_HeightContextMenuItem {
 				 get { return "esri_editing_HeightContextMenuItem"; }
+			}
+			///<summary>Returns the id string for &quot;Height...&quot; (HeightFacePullCommand, Editing)</summary>
+			public static string esri_editing_HeightFacePullContextMenuItem {
+				 get { return "esri_editing_HeightFacePullContextMenuItem"; }
 			}
 			///<summary>Returns the id string for &quot;Width...&quot; (RectangleWidthCommand, Editing)</summary>
 			public static string esri_editing_EllipseWidthContextMenuItem {
@@ -3944,21 +5160,33 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_AbsoluteXYZContextMenuItem {
 				 get { return "esri_editing_AbsoluteXYZContextMenuItem"; }
 			}
-			///<summary>Returns the id string for &quot;Find Text&quot; (FindTextTool, Editing)</summary>
-			public static string esri_editing_FindTextContextMenuItem {
-				 get { return "esri_editing_FindTextContextMenuItem"; }
-			}
 			///<summary>Returns the id string for &quot;Delta X,Y,Z...&quot; (DeltaXYZCommand, Editing)</summary>
 			public static string esri_editing_DeltaXYZContextMenuItem {
 				 get { return "esri_editing_DeltaXYZContextMenuItem"; }
 			}
-			///<summary>Returns the id string for &quot;Trim to Length...&quot; (TrimToLengthCommand, Editing)</summary>
+			///<summary>Returns the id string for &quot;Switch Solution&quot; (DistanceDistanceSwitchSolutionCommand, Editing)</summary>
+			public static string esri_editing_DistanceDistanceSwitchSolution {
+				 get { return "esri_editing_DistanceDistanceSwitchSolution"; }
+			}
+			///<summary>Returns the id string for &quot;Change Length...&quot; (TrimToLengthCommand, Editing)</summary>
 			public static string esri_editing_TrimToLengthContextMenuItem {
 				 get { return "esri_editing_TrimToLengthContextMenuItem"; }
 			}
 			///<summary>Returns the id string for &quot;Reverse Direction&quot; (ReverseDirectionCommand, Editing)</summary>
 			public static string esri_editing_ReverseDirectionContextMenuItem {
 				 get { return "esri_editing_ReverseDirectionContextMenuItem"; }
+			}
+			///<summary>Returns the id string for &quot;Replace Sketch...&quot; (ReplaceSketchCommand, Editing)</summary>
+			public static string esri_editing_ReplaceSketchContextMenuItem {
+				 get { return "esri_editing_ReplaceSketchContextMenuItem"; }
+			}
+			///<summary>Returns the id string for &quot;Move Slice&quot; (ToggleMoveHandleVisibilityCommand, Editing)</summary>
+			public static string esri_editing_toggle_moveHandleVisibility {
+				 get { return "esri_editing_toggle_moveHandleVisibility"; }
+			}
+			///<summary>Returns the id string for &quot;Rotate Slice&quot; (ToggleRotateHandleVisibilityCommand, Editing)</summary>
+			public static string esri_editing_toggle_rotateHandleVisibility {
+				 get { return "esri_editing_toggle_rotateHandleVisibility"; }
 			}
 			///<summary>Returns the id string for &quot;Add Vertex&quot; (AddVertexCommand, Editing)</summary>
 			public static string esri_editing_InsertVertexContextMenuItem {
@@ -4012,6 +5240,58 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_templateDuplicate {
 				 get { return "esri_editing_templateDuplicate"; }
 			}
+			///<summary>Returns the id string for &quot;Remove&quot; (Templates.DeleteTemplateFromFolderContextCommand, Editing)</summary>
+			public static string esri_editing_templateRemoveFromFolder {
+				 get { return "esri_editing_templateRemoveFromFolder"; }
+			}
+			///<summary>Returns the id string for &quot;Remove&quot; (Templates.DeleteFolderContextCommand, Editing)</summary>
+			public static string esri_editing_templateRemoveFolder {
+				 get { return "esri_editing_templateRemoveFolder"; }
+			}
+			///<summary>Returns the id string for &quot;Add folder&quot; (Templates.AddSubfolderContextCommand, Editing)</summary>
+			public static string esri_editing_templateAddSubfolder {
+				 get { return "esri_editing_templateAddSubfolder"; }
+			}
+			///<summary>Returns the id string for &quot;Add folder&quot; (Templates.AddFolderToRootContextCommand, Editing)</summary>
+			public static string esri_editing_templateAddFolderToRoot {
+				 get { return "esri_editing_templateAddFolderToRoot"; }
+			}
+			///<summary>Returns the id string for &quot;Rename&quot; (Templates.RenameFolderContextCommand, Editing)</summary>
+			public static string esri_editing_templateRenameFolder {
+				 get { return "esri_editing_templateRenameFolder"; }
+			}
+			///<summary>Returns the id string for &quot;Follow Feature Mode&quot; (AnnotationFollowFeatureModeCommand, Editing)</summary>
+			public static string esri_editing_annotationFollowFeatureModeButton {
+				 get { return "esri_editing_annotationFollowFeatureModeButton"; }
+			}
+			///<summary>Returns the id string for &quot;Follow this Feature&quot; (AnnotationFollowThisFeatureCommand, Editing)</summary>
+			public static string esri_editing_annotationFollowThisFeatureButton {
+				 get { return "esri_editing_annotationFollowThisFeatureButton"; }
+			}
+			///<summary>Returns the id string for &quot;Flash Feature&quot; (AnnotationFlashFeatureCommand, Editing)</summary>
+			public static string esri_editing_FlashFeatureButton {
+				 get { return "esri_editing_FlashFeatureButton"; }
+			}
+			///<summary>Returns the id string for &quot;Zoom to Feature&quot; (AnnotationZoomFeatureCommand, Editing)</summary>
+			public static string esri_editing_ZoomToFeatureButton {
+				 get { return "esri_editing_ZoomToFeatureButton"; }
+			}
+			///<summary>Returns the id string for &quot;Pan to Feature&quot; (AnnotationPanFeatureCommand, Editing)</summary>
+			public static string esri_editing_PanToFeatureButton {
+				 get { return "esri_editing_PanToFeatureButton"; }
+			}
+			///<summary>Returns the id string for &quot;Follow Feature Options...&quot; (AnnotationShowOptionsCommand, Editing)</summary>
+			public static string esri_editing_FollowFeatureOptionsButton {
+				 get { return "esri_editing_FollowFeatureOptionsButton"; }
+			}
+			///<summary>Returns the id string for &quot;Add Leader&quot; (AnnotationAddLeaderCommand, Editing)</summary>
+			public static string esri_editing_annotationAddLeaderButton {
+				 get { return "esri_editing_annotationAddLeaderButton"; }
+			}
+			///<summary>Returns the id string for &quot;Delete Leader&quot; (AnnotationDeleteLeaderCommand, Editing)</summary>
+			public static string esri_editing_annotationDeleteLeaderButton {
+				 get { return "esri_editing_annotationDeleteLeaderButton"; }
+			}
 			///<summary>Returns the id string for &quot;Convert to Multiple Parts&quot; (AnnotationConvertToMultiPartCommand, Editing)</summary>
 			public static string esri_editing_annotationConvertToMultiPartButton {
 				 get { return "esri_editing_annotationConvertToMultiPartButton"; }
@@ -4032,6 +5312,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_annotationFlipAnnotationButton {
 				 get { return "esri_editing_annotationFlipAnnotationButton"; }
 			}
+			///<summary>Returns the id string for &quot;Flip Annotation&quot; (AnnotationFlipAnnotationCommand, Editing)</summary>
+			public static string esri_editing_annotationFlipAnnotationToolbarButton {
+				 get { return "esri_editing_annotationFlipAnnotationToolbarButton"; }
+			}
 			///<summary>Returns the id string for &quot;Horizontal&quot; (AnnotationMakeHorizontalCommand, Editing)</summary>
 			public static string esri_editing_annotationMakeHorizontalButton {
 				 get { return "esri_editing_annotationMakeHorizontalButton"; }
@@ -4043,6 +5327,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Curved&quot; (AnnotationMakeCurvedCommand, Editing)</summary>
 			public static string esri_editing_annotationMakeCurvedButton {
 				 get { return "esri_editing_annotationMakeCurvedButton"; }
+			}
+			///<summary>Returns the id string for &quot;Toggle Side&quot; (AnnotationToggleSideCommand, Editing)</summary>
+			public static string esri_editing_annotationToggleSide {
+				 get { return "esri_editing_annotationToggleSide"; }
+			}
+			///<summary>Returns the id string for &quot;Toggle Side&quot; (AnnotationTabToggleSideCommand, Editing)</summary>
+			public static string esri_editing_annotationTabToggleSide {
+				 get { return "esri_editing_annotationTabToggleSide"; }
 			}
 			///<summary>Returns the id string for &quot;New Group Template&quot; (Templates.NewGroupTemplateContextCommand, Editing)</summary>
 			public static string esri_editing_templateNew {
@@ -4068,17 +5360,9 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_addFavoriteCommand {
 				 get { return "esri_editing_addFavoriteCommand"; }
 			}
-			///<summary>Returns the id string for &quot;Add to Tools Gallery&quot; (AddGalleryContextCommand, Editing)</summary>
-			public static string esri_editing_addGalleryCommand {
-				 get { return "esri_editing_addGalleryCommand"; }
-			}
 			///<summary>Returns the id string for &quot;Remove from Favorites&quot; (RemoveFavoritesContextCommand, Editing)</summary>
 			public static string esri_editing_removeFavoriteCommand {
 				 get { return "esri_editing_removeFavoriteCommand"; }
-			}
-			///<summary>Returns the id string for &quot;Remove from Tools Gallery&quot; (RemoveGalleryContextCommand, Editing)</summary>
-			public static string esri_editing_removeGalleryCommand {
-				 get { return "esri_editing_removeGalleryCommand"; }
 			}
 			///<summary>Returns the id string for &quot;Properties&quot; (Templates.MpModelSelectorContextCommand, Editing)</summary>
 			public static string esri_editing_MpModelSelectorProperties {
@@ -4092,9 +5376,13 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_CreateAllTemplates {
 				 get { return "esri_editing_CreateAllTemplates"; }
 			}
-			///<summary>Returns the id string for &quot;Set Map Elevation Surface Properties&quot; (MapSurfacesPropertiesCommand, Editing)</summary>
-			public static string esri_editing_openMapSurfacesPropertiesButton {
-				 get { return "esri_editing_openMapSurfacesPropertiesButton"; }
+			///<summary>Returns the id string for &quot;Draw the ground line and the grid line&quot; (Button, Editing)</summary>
+			public static string esri_editing_GroundToGrid_DigitizeGroundAndGrid {
+				 get { return "esri_editing_GroundToGrid_DigitizeGroundAndGrid"; }
+			}
+			///<summary>Returns the id string for &quot;Enter the ground line and draw the grid line&quot; (Button, Editing)</summary>
+			public static string esri_editing_GroundToGrid_EnterGroundDigitizeGrid {
+				 get { return "esri_editing_GroundToGrid_EnterGroundDigitizeGrid"; }
 			}
 			///<summary>Returns the id string for &quot;Large Icons&quot; (LargeViewContextCommand, Editing)</summary>
 			public static string esri_editing_largeView {
@@ -4123,6 +5411,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Pan To&quot; (Attributes.PanToContextCommand, Editing)</summary>
 			public static string esri_editing_Attributes_PanToSelectionContextMenuItem {
 				 get { return "esri_editing_Attributes_PanToSelectionContextMenuItem"; }
+			}
+			///<summary>Returns the id string for &quot;Open Pop-up&quot; (Attributes.OpenPopupContextCommand, Editing)</summary>
+			public static string esri_editing_Attributes_OpenPopupSelectionContextMenuItem {
+				 get { return "esri_editing_Attributes_OpenPopupSelectionContextMenuItem"; }
+			}
+			///<summary>Returns the id string for &quot;Open New Pinned Pop-up&quot; (Attributes.OpenPinnedPopupContextCommand, Editing)</summary>
+			public static string esri_editing_Attributes_OpenPinnedPopupSelectionContextMenuItem {
+				 get { return "esri_editing_Attributes_OpenPinnedPopupSelectionContextMenuItem"; }
 			}
 			///<summary>Returns the id string for &quot;Copy Attributes&quot; (Attributes.CopyAttributesCommand, Editing)</summary>
 			public static string esri_editing_Attributes_CopyAttributesContextMenuItem {
@@ -4192,6 +5488,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_Attributes_AddToMapContextMenuItem {
 				 get { return "esri_editing_Attributes_AddToMapContextMenuItem"; }
 			}
+			///<summary>Returns the id string for &quot;Move to Target&quot; (Attributes.MoveToTargetSelectionCommand, Editing)</summary>
+			public static string esri_editing_SplitByFeature_MoveToTargetSelectionContextMenuItem {
+				 get { return "esri_editing_SplitByFeature_MoveToTargetSelectionContextMenuItem"; }
+			}
+			///<summary>Returns the id string for &quot;Move to Input&quot; (Attributes.MoveToInputSelectionCommand, Editing)</summary>
+			public static string esri_editing_SplitByFeature_MoveToInputSelectionContextMenuItem {
+				 get { return "esri_editing_SplitByFeature_MoveToInputSelectionContextMenuItem"; }
+			}
 			///<summary>Returns the id string for &quot;To Line&quot; (SegmentToLineCommand, Editing)</summary>
 			public static string esri_editing_changesegment_ToLineCommand {
 				 get { return "esri_editing_changesegment_ToLineCommand"; }
@@ -4207,6 +5511,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Set Editing Options&quot; (EditingOptionsCommand, Editing)</summary>
 			public static string esri_editing_openEditingOptionsButton {
 				 get { return "esri_editing_openEditingOptionsButton"; }
+			}
+			///<summary>Returns the id string for &quot;Set Editor Settings&quot; (EditingSettingsCommand, Editing)</summary>
+			public static string esri_editing_openEditingSettingsButton {
+				 get { return "esri_editing_openEditingSettingsButton"; }
+			}
+			///<summary>Returns the id string for &quot;Field Mapping...&quot; (FieldMappingSettingsCommand, Editing)</summary>
+			public static string esri_editing_openFieldMappingSettingsButton {
+				 get { return "esri_editing_openFieldMappingSettingsButton"; }
 			}
 			///<summary>Returns the id string for &quot;Add To Feature Class&quot; (esri_editing_EditingModule:OnClick_AddToFeatureClass, Editing)</summary>
 			public static string esri_editing_addToFeatureClass {
@@ -4256,7 +5568,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_table_tableClearSortButton {
 				 get { return "esri_editing_table_tableClearSortButton"; }
 			}
-			///<summary>Returns the id string for &quot;Copy Selected Rows&quot; (esri_editing_tablePane:CopySelectedRows, Editing)</summary>
+			///<summary>Returns the id string for &quot;Copy&quot; (esri_editing_tablePane:CopySelectedRows, Editing)</summary>
 			public static string esri_editing_table_tableCopySelectedRowsButton {
 				 get { return "esri_editing_table_tableCopySelectedRowsButton"; }
 			}
@@ -4299,6 +5611,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Calculate Field&quot; (esri_editing_tablePane:CalculateField, Editing)</summary>
 			public static string esri_editing_tableCalculateFieldButton {
 				 get { return "esri_editing_tableCalculateFieldButton"; }
+			}
+			///<summary>Returns the id string for &quot;Calculate Geometry&quot; (esri_editing_tablePane:CalculateGeometry, Editing)</summary>
+			public static string esri_editing_tableCalculateGeometryButton {
+				 get { return "esri_editing_tableCalculateGeometryButton"; }
 			}
 			///<summary>Returns the id string for &quot;Summarize&quot; (esri_editing_tablePane:SummarizeField, Editing)</summary>
 			public static string esri_editing_tableSummarizeButton {
@@ -4396,6 +5712,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_tablePopupButton {
 				 get { return "esri_editing_tablePopupButton"; }
 			}
+			///<summary>Returns the id string for &quot;Pinned Pop-up&quot; (esri_editing_tablePane:PinnedPopupRow, Editing)</summary>
+			public static string esri_editing_tablePinnedPopupButton {
+				 get { return "esri_editing_tablePinnedPopupButton"; }
+			}
 			///<summary>Returns the id string for &quot;Map All Suggestions&quot; (esri_editing_rematchAddressesDockPane:ZoomToAll_Handler, Editing)</summary>
 			public static string esri_editing_rematchMapAllSuggestions {
 				 get { return "esri_editing_rematchMapAllSuggestions"; }
@@ -4444,6 +5764,18 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_tableselectByAttributeButton {
 				 get { return "esri_editing_tableselectByAttributeButton"; }
 			}
+			///<summary>Returns the id string for &quot;Copy&quot; (esri_editing_tablePane:CopyCellValue, Editing)</summary>
+			public static string esri_editing_tableCopyCellButton {
+				 get { return "esri_editing_tableCopyCellButton"; }
+			}
+			///<summary>Returns the id string for &quot;Paste&quot; (esri_editing_tablePane:PasteCellValues, Editing)</summary>
+			public static string esri_editing_tablePasteCellButton {
+				 get { return "esri_editing_tablePasteCellButton"; }
+			}
+			///<summary>Returns the id string for &quot;Go To&quot; (esri_editing_tablePane:GoTo, Editing)</summary>
+			public static string esri_editing_tableGoTo {
+				 get { return "esri_editing_tableGoTo"; }
+			}
 			///<summary>Returns the id string for &quot;Reconcile&quot; (esri_editing_EditingModule:ShowEditorReconcileDialog, Editing)</summary>
 			public static string esri_editor_reconcileVersionButton {
 				 get { return "esri_editor_reconcileVersionButton"; }
@@ -4472,9 +5804,9 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_ShowParcelErrorInspectorBtn {
 				 get { return "esri_editing_ShowParcelErrorInspectorBtn"; }
 			}
-			///<summary>Returns the id string for &quot;Error Inspector&quot; (esri_editing_EditingModule:ShowErrorInspectorWindow, Editing)</summary>
-			public static string esri_editing_ShowErrorInspector {
-				 get { return "esri_editing_ShowErrorInspector"; }
+			///<summary>Returns the id string for &quot;Error Inspector&quot; (esri_editing_EditingModule:ShowGdbValidationErrorInspectorWindow, Editing)</summary>
+			public static string esri_editing_ShowGdbErrorsErrorInspectorBtn {
+				 get { return "esri_editing_ShowGdbErrorsErrorInspectorBtn"; }
 			}
 			///<summary>Returns the id string for &quot;Validate All&quot; (ArcGIS.Desktop.Editing.TopologyValidateCommand, Editing)</summary>
 			public static string esri_editing_ValidateTopology {
@@ -4483,6 +5815,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Validate Extent&quot; (ArcGIS.Desktop.Editing.TopologyValidateExtentCommand, Editing)</summary>
 			public static string esri_editing_ValidateTopologyExtent {
 				 get { return "esri_editing_ValidateTopologyExtent"; }
+			}
+			///<summary>Returns the id string for &quot;Error Inspector&quot; (esri_editing_EditingModule:ShowErrorInspectorWindow, Editing)</summary>
+			public static string esri_editing_ShowErrorInspectorBtn {
+				 get { return "esri_editing_ShowErrorInspectorBtn"; }
 			}
 			///<summary>Returns the id string for &quot;Flash&quot; (ArcGIS.Desktop.Internal.Editing.ErrorInspector.FlashRowCmd, Editing)</summary>
 			public static string esri_editing_errorInspectorFlashButton {
@@ -4544,11 +5880,19 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_errorInspectorToggleShapeLengthArea {
 				 get { return "esri_editing_errorInspectorToggleShapeLengthArea"; }
 			}
+			///<summary>Returns the id string for &quot;Show Editor Tracking&quot; (ArcGIS.Desktop.Internal.Editing.ErrorInspector.ToggleEditorTrackingCommand, Editing)</summary>
+			public static string esri_editing_errorInspectorToggleEditorTracking {
+				 get { return "esri_editing_errorInspectorToggleEditorTracking"; }
+			}
+			///<summary>Returns the id string for &quot;Show Status&quot; (ArcGIS.Desktop.Internal.Editing.ErrorInspector.ToggleReviewerStatusCommand, Editing)</summary>
+			public static string esri_editing_errorInspectorToggleShowStatus {
+				 get { return "esri_editing_errorInspectorToggleShowStatus"; }
+			}
 			///<summary>Returns the id string for &quot;Rules&quot; (ArcGIS.Desktop.Internal.Editing.ErrorInspector.TopologyRuleFilterCommand, Editing)</summary>
 			public static string esri_editing_errorInspectorTopologyRuleFilter {
 				 get { return "esri_editing_errorInspectorTopologyRuleFilter"; }
 			}
-			///<summary>Returns the id string for &quot;Topology Rule...&quot; (ArcGIS.Desktop.Internal.Editing.ErrorInspector.TopologyRuleInfoCommand, Editing)</summary>
+			///<summary>Returns the id string for &quot;Rule Description...&quot; (ArcGIS.Desktop.Internal.Editing.ErrorInspector.TopologyRuleInfoCommand, Editing)</summary>
 			public static string esri_editing_errorInspectorTopologyShowRuleButton {
 				 get { return "esri_editing_errorInspectorTopologyShowRuleButton"; }
 			}
@@ -4600,6 +5944,26 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_topology_fix_ExplodeContextMenuItem {
 				 get { return "esri_editing_topology_fix_ExplodeContextMenuItem"; }
 			}
+			///<summary>Returns the id string for &quot;Create Record&quot; (TopologyPRTCreateRecordCommand, Editing)</summary>
+			public static string esri_editing_topology_fix_CreateRecordContextMenuItem {
+				 get { return "esri_editing_topology_fix_CreateRecordContextMenuItem"; }
+			}
+			///<summary>Returns the id string for &quot;Build&quot; (TopologyPRTBuildCommand, Editing)</summary>
+			public static string esri_editing_topology_fix_BuildContextMenuItem {
+				 get { return "esri_editing_topology_fix_BuildContextMenuItem"; }
+			}
+			///<summary>Returns the id string for &quot;Planarize&quot; (TopologyPRTPlanarizeCommand, Editing)</summary>
+			public static string esri_editing_topology_fix_PlanarizeContextMenuItem {
+				 get { return "esri_editing_topology_fix_PlanarizeContextMenuItem"; }
+			}
+			///<summary>Returns the id string for &quot;Associate To Valid Parcel&quot; (TopologyPRTAssociateToValidParcelCommand, Editing)</summary>
+			public static string esri_editing_topology_fix_AssociateToValidParcelContextMenuItem {
+				 get { return "esri_editing_topology_fix_AssociateToValidParcelContextMenuItem"; }
+			}
+			///<summary>Returns the id string for &quot;Assign To Active Record&quot; (TopologyPRTAssignToActiveRecordCommand, Editing)</summary>
+			public static string esri_editing_topology_fix_AssignToActiveRecordContextMenuItem {
+				 get { return "esri_editing_topology_fix_AssignToActiveRecordContextMenuItem"; }
+			}
 			///<summary>Returns the id string for &quot;No Fix Available&quot; (Button, Editing)</summary>
 			public static string esri_editing_topology_fix_NoFixContextMenuItem {
 				 get { return "esri_editing_topology_fix_NoFixContextMenuItem"; }
@@ -4612,7 +5976,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_topology_fix_MarkAsErrorContextMenuItem {
 				 get { return "esri_editing_topology_fix_MarkAsErrorContextMenuItem"; }
 			}
-			///<summary>Returns the id string for &quot;Topology Rule...&quot; (ArcGIS.Desktop.Editing.TopologyFixToolRuleInfoCommand, Editing)</summary>
+			///<summary>Returns the id string for &quot;Rule Description...&quot; (ArcGIS.Desktop.Editing.TopologyFixToolRuleInfoCommand, Editing)</summary>
 			public static string esri_editing_topology_fixTool_ShowRuleButton {
 				 get { return "esri_editing_topology_fixTool_ShowRuleButton"; }
 			}
@@ -4636,7 +6000,19 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_GridCancel {
 				 get { return "esri_editing_GridCancel"; }
 			}
-			///<summary>Returns the id string for &quot;Search&quot; (esri_editing_EditingModule:ShowParcelRecordSearchWindow, Editing)</summary>
+			///<summary>Returns the id string for &quot;Show Only Active&quot; (ArcGIS.Desktop.Editing.ShowOnlyActiveRecordCommand, Editing)</summary>
+			public static string esri_editing_parcelShowOnlyActive {
+				 get { return "esri_editing_parcelShowOnlyActive"; }
+			}
+			///<summary>Returns the id string for &quot;Show Only Active On&quot; (ArcGIS.Desktop.Editing.ShowOnlyActiveRecordOnCommand, Editing)</summary>
+			public static string esri_editing_parcelShowOnlyActiveOn {
+				 get { return "esri_editing_parcelShowOnlyActiveOn"; }
+			}
+			///<summary>Returns the id string for &quot;Show Only Active Off&quot; (ArcGIS.Desktop.Editing.ShowOnlyActiveRecordOffCommand, Editing)</summary>
+			public static string esri_editing_parcelShowOnlyActiveOff {
+				 get { return "esri_editing_parcelShowOnlyActiveOff"; }
+			}
+			///<summary>Returns the id string for &quot;Manage&quot; (esri_editing_EditingModule:ShowParcelRecordSearchWindow, Editing)</summary>
 			public static string esri_editing_ShowParcelRecordSearch {
 				 get { return "esri_editing_ShowParcelRecordSearch"; }
 			}
@@ -4644,15 +6020,115 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_ShowParcelRecordNew {
 				 get { return "esri_editing_ShowParcelRecordNew"; }
 			}
-			///<summary>Returns the id string for &quot;Split&quot; (SplitFeatureCommand, Editing)</summary>
-			public static string esri_editing_SplitFeatureCommand {
-				 get { return "esri_editing_SplitFeatureCommand"; }
+			///<summary>Returns the id string for &quot;Select Features&quot; (ArcGIS.Desktop.Editing.SelectFeaturesInActiveRecordCommand, Editing)</summary>
+			public static string esri_editing_SelectFeaturesInActiveRecord {
+				 get { return "esri_editing_SelectFeaturesInActiveRecord"; }
+			}
+			///<summary>Returns the id string for &quot;Align Parcels&quot; (AlignParcelFeaturesCommand, Editing)</summary>
+			public static string esri_editing_AlignParcels {
+				 get { return "esri_editing_AlignParcels"; }
+			}
+			///<summary>Returns the id string for &quot;Switch&quot; (SwitchParcelSelectionCommand, Editing)</summary>
+			public static string esri_editing_SwitchParcelSelection {
+				 get { return "esri_editing_SwitchParcelSelection"; }
+			}
+			///<summary>Returns the id string for &quot;Align Features With Traced Path&quot; (TraceParcelFeaturesCommand, Editing)</summary>
+			public static string esri_editing_TraceParcelFeatures {
+				 get { return "esri_editing_TraceParcelFeatures"; }
+			}
+			///<summary>Returns the id string for &quot;Switch Gallery Size&quot; (esri_editing_EditingModule:ToggleParcelGalleryView, Editing)</summary>
+			public static string esri_editing_ToggleParcelGallerySize {
+				 get { return "esri_editing_ToggleParcelGallerySize"; }
+			}
+			///<summary>Returns the id string for &quot;Customize...&quot; (esri_editing_EditingModule:CustomizeParcelGallery, Editing)</summary>
+			public static string esri_editing_CustomizeParcelGalleryButton {
+				 get { return "esri_editing_CustomizeParcelGalleryButton"; }
+			}
+			///<summary>Returns the id string for &quot;Zoom To Records&quot; (ZoomToRecordsContextCommand, Editing)</summary>
+			public static string esri_editing_manage_records_ZoomToRecords {
+				 get { return "esri_editing_manage_records_ZoomToRecords"; }
+			}
+			///<summary>Returns the id string for &quot;Pan To Records&quot; (PanToRecordsContextCommand, Editing)</summary>
+			public static string esri_editing_manage_records_PanToRecords {
+				 get { return "esri_editing_manage_records_PanToRecords"; }
+			}
+			///<summary>Returns the id string for &quot;Select Records&quot; (SelectRecordsContextCommand, Editing)</summary>
+			public static string esri_editing_manage_records_SelectRecords {
+				 get { return "esri_editing_manage_records_SelectRecords"; }
+			}
+			///<summary>Returns the id string for &quot;Attribute Table Showing Selection&quot; (RecordAttributesContextCommand, Editing)</summary>
+			public static string esri_editing_manage_records_RecordAttributes {
+				 get { return "esri_editing_manage_records_RecordAttributes"; }
+			}
+			///<summary>Returns the id string for &quot;Set Active Record&quot; (ActivateRecordContextCommand, Editing)</summary>
+			public static string esri_editing_manage_records_ActivateRecord {
+				 get { return "esri_editing_manage_records_ActivateRecord"; }
+			}
+			///<summary>Returns the id string for &quot;Select Features In Records&quot; (SelectFeaturesInRecordsContextCommand, Editing)</summary>
+			public static string esri_editing_manage_records_SelectFeaturesInRecords {
+				 get { return "esri_editing_manage_records_SelectFeaturesInRecords"; }
+			}
+			///<summary>Returns the id string for &quot;Assign Selection To Record&quot; (AssignSelectionToRecordContextCommand, Editing)</summary>
+			public static string esri_editing_manage_records_AssignFeaturesToRecord {
+				 get { return "esri_editing_manage_records_AssignFeaturesToRecord"; }
+			}
+			///<summary>Returns the id string for &quot;Delete Records&quot; (DeleteRecordsContextCommand, Editing)</summary>
+			public static string esri_editing_manage_records_DeleteRecords {
+				 get { return "esri_editing_manage_records_DeleteRecords"; }
+			}
+			///<summary>Returns the id string for &quot;Properties&quot; (RecordPropertiesContextCommand, Editing)</summary>
+			public static string esri_editing_manage_records_RecordProperties {
+				 get { return "esri_editing_manage_records_RecordProperties"; }
+			}
+			///<summary>Returns the id string for &quot;Manage Records&quot; (esri_editing_EditingModule:ShowParcelRecordSearchWindow, Editing)</summary>
+			public static string esri_editing_parcel_HUD_ManageRecords {
+				 get { return "esri_editing_parcel_HUD_ManageRecords"; }
+			}
+			///<summary>Returns the id string for &quot;Zoom To Record&quot; (ArcGIS.Desktop.Editing.ZoomToActiveRecordCommand, Editing)</summary>
+			public static string esri_editing_parcel_HUD_ZoomToActiveRecord {
+				 get { return "esri_editing_parcel_HUD_ZoomToActiveRecord"; }
+			}
+			///<summary>Returns the id string for &quot;Pan To Record&quot; (ArcGIS.Desktop.Editing.PanToActiveRecordCommand, Editing)</summary>
+			public static string esri_editing_parcel_HUD_PanToActiveRecord {
+				 get { return "esri_editing_parcel_HUD_PanToActiveRecord"; }
+			}
+			///<summary>Returns the id string for &quot;Select Record&quot; (ArcGIS.Desktop.Editing.SelectActiveRecordCommand, Editing)</summary>
+			public static string esri_editing_parcel_HUD_SelectActiveRecord {
+				 get { return "esri_editing_parcel_HUD_SelectActiveRecord"; }
+			}
+			///<summary>Returns the id string for &quot;Select Features In Active Record&quot; (ArcGIS.Desktop.Editing.SelectFeaturesInActvieRecordCommand, Editing)</summary>
+			public static string esri_editing_parcel_HUD_SelectFeaturesInActvieRecord {
+				 get { return "esri_editing_parcel_HUD_SelectFeaturesInActvieRecord"; }
+			}
+			///<summary>Returns the id string for &quot;Assign Selection To Record&quot; (ArcGIS.Desktop.Editing.AssignFeaturesToActiveRecordCommand, Editing)</summary>
+			public static string esri_editing_parcel_HUD_AssignFeaturesToActiveRecord {
+				 get { return "esri_editing_parcel_HUD_AssignFeaturesToActiveRecord"; }
+			}
+			///<summary>Returns the id string for &quot;Properties&quot; (ArcGIS.Desktop.Editing.ActiveRecordPropertiesCommand, Editing)</summary>
+			public static string esri_editing_parcel_HUD_ActiveRecordProperties {
+				 get { return "esri_editing_parcel_HUD_ActiveRecordProperties"; }
+			}
+			///<summary>Returns the id string for &quot;Attribute Table Showing Selection&quot; (ArcGIS.Desktop.Editing.ActiveRecordAttributeTableCommand, Editing)</summary>
+			public static string esri_editing_parcel_HUD_ActiveRecordAttributeTable {
+				 get { return "esri_editing_parcel_HUD_ActiveRecordAttributeTable"; }
 			}
 		}
 		public static partial class Buttonpalette {
 			///<summary>Returns the id string for &quot;Arc Constructors&quot; (Buttonpalette, Editing)</summary>
 			public static string esri_editing_ArcConstructorPalette {
 				 get { return "esri_editing_ArcConstructorPalette"; }
+			}
+			///<summary>Returns the id string for &quot;Line Palette&quot; (Buttonpalette, Editing)</summary>
+			public static string esri_editing_LinePalette {
+				 get { return "esri_editing_LinePalette"; }
+			}
+			///<summary>Returns the id string for &quot;Point Palette&quot; (Buttonpalette, Editing)</summary>
+			public static string esri_editing_PointPalette {
+				 get { return "esri_editing_PointPalette"; }
+			}
+			///<summary>Returns the id string for &quot;Tracing Constructors&quot; (Buttonpalette, Editing)</summary>
+			public static string esri_editing_TraceConstructorPalette {
+				 get { return "esri_editing_TraceConstructorPalette"; }
 			}
 		}
 		public static partial class Component {
@@ -4684,6 +6160,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_construction_annotation_tools {
 				 get { return "esri_editing_construction_annotation_tools"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_construction_dimension_tools&quot; (Component, Editing)</summary>
+			public static string esri_editing_construction_dimension_tools {
+				 get { return "esri_editing_construction_dimension_tools"; }
+			}
 			///<summary>Returns the id string for &quot;esri_editing_placement_tool_options&quot; (ArcGIS.Desktop.Editing.Templates.PlacementToolOptionsViewModel, Editing)</summary>
 			public static string esri_editing_placement_tool_options {
 				 get { return "esri_editing_placement_tool_options"; }
@@ -4696,6 +6176,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_densify_tool_options {
 				 get { return "esri_editing_densify_tool_options"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_twopoint_tool_options&quot; (ArcGIS.Desktop.Editing.TwoPointLineOptionsEmbeddableControl, Editing)</summary>
+			public static string esri_editing_twopoint_tool_options {
+				 get { return "esri_editing_twopoint_tool_options"; }
+			}
 			///<summary>Returns the id string for &quot;esri_editing_gdbTopology&quot; (ArcGIS.Desktop.Internal.Editing.ErrorInspector.InspectorTopologyErrorType, Editing)</summary>
 			public static string esri_editing_gdbTopology {
 				 get { return "esri_editing_gdbTopology"; }
@@ -4703,6 +6187,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_editing_gdbParcelFabric&quot; (ArcGIS.Desktop.Internal.Editing.ErrorInspector.InspectorParcelErrorType, Editing)</summary>
 			public static string esri_editing_gdbParcelFabric {
 				 get { return "esri_editing_gdbParcelFabric"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_gdbGDBValidationErrorType&quot; (ArcGIS.Desktop.Internal.Editing.ErrorInspector.InspectorGeodatabaseFeatureValidationErrorType, Editing)</summary>
+			public static string esri_editing_gdbGDBValidationErrorType {
+				 get { return "esri_editing_gdbGDBValidationErrorType"; }
 			}
 			///<summary>Returns the id string for &quot;esri_editing_ErrorInspector_PreviewTab&quot; (ArcGIS.Desktop.Internal.Editing.ErrorInspector.PreviewErrorViewModel, Editing)</summary>
 			public static string esri_editing_ErrorInspector_PreviewTab {
@@ -4756,13 +6244,13 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_transformation_pointAtIntersectionVerticesOfLine {
 				 get { return "esri_editing_transformation_pointAtIntersectionVerticesOfLine"; }
 			}
-			///<summary>Returns the id string for &quot;esri_editing_transformation_offsetLine&quot; (Templates.OffsetLineBuilderMethod, Editing)</summary>
-			public static string esri_editing_transformation_offsetLine {
-				 get { return "esri_editing_transformation_offsetLine"; }
+			///<summary>Returns the id string for &quot;esri_editing_transformation_offsetLine_2.2&quot; (Templates.OffsetLineBuilderMethod, Editing)</summary>
+			public static string esri_editing_transformation_offsetLine_2__2 {
+				 get { return "esri_editing_transformation_offsetLine_2.2"; }
 			}
-			///<summary>Returns the id string for &quot;esri_editing_transformation_offsetPrimaryLine&quot; (Templates.OffsetPrimaryLineBuilderMethod, Editing)</summary>
-			public static string esri_editing_transformation_offsetPrimaryLine {
-				 get { return "esri_editing_transformation_offsetPrimaryLine"; }
+			///<summary>Returns the id string for &quot;esri_editing_transformation_offsetPrimaryLine_2.2&quot; (Templates.OffsetPrimaryLineBuilderMethod, Editing)</summary>
+			public static string esri_editing_transformation_offsetPrimaryLine_2__2 {
+				 get { return "esri_editing_transformation_offsetPrimaryLine_2.2"; }
 			}
 			///<summary>Returns the id string for &quot;esri_editing_transformation_bufferPointToPolygon&quot; (Templates.BufferPointToPolygonBuilderMethod, Editing)</summary>
 			public static string esri_editing_transformation_bufferPointToPolygon {
@@ -4822,6 +6310,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_TopologySelectionComboBox {
 				 get { return "esri_editing_TopologySelectionComboBox"; }
 			}
+			///<summary>Returns the id string for &quot;&quot; (ArcGIS.Desktop.Editing.StartSaveDiscardControlViewModel, Editing)</summary>
+			public static string esri_editing_StartSaveDiscard {
+				 get { return "esri_editing_StartSaveDiscard"; }
+			}
 			///<summary>Returns the id string for &quot;Choose how to add Z&quot; (ArcGIS.Desktop.Editing.CurrentZSplitViewModel, Editing)</summary>
 			public static string esri_editing_currentZSplitButton {
 				 get { return "esri_editing_currentZSplitButton"; }
@@ -4838,9 +6330,21 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_ElevationTools {
 				 get { return "esri_editing_ElevationTools"; }
 			}
+			///<summary>Returns the id string for &quot;Ground To Grid&quot; (ArcGIS.Desktop.Editing.GroundToGridSplitViewModel, Editing)</summary>
+			public static string esri_editing_GroundToGridToggleButton {
+				 get { return "esri_editing_GroundToGridToggleButton"; }
+			}
 			///<summary>Returns the id string for &quot;Active Record&quot; (ArcGIS.Desktop.Editing.ActiveRecordControlViewModel, Editing)</summary>
 			public static string esri_editing_activeParcelRecord {
 				 get { return "esri_editing_activeParcelRecord"; }
+			}
+			///<summary>Returns the id string for &quot;Parcel Record Effects&quot; (ArcGIS.Desktop.Editing.RecordEffectsViewModel, Editing)</summary>
+			public static string esri_editing_parcelParcelEffectsControl {
+				 get { return "esri_editing_parcelParcelEffectsControl"; }
+			}
+			///<summary>Returns the id string for &quot;Enter Alignment Value&quot; (AlignParcelViewModel, Editing)</summary>
+			public static string esri_editing_AlignParcelValueEntry {
+				 get { return "esri_editing_AlignParcelValueEntry"; }
 			}
 		}
 		public static partial class Dockpane {
@@ -4872,7 +6376,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_ErrorInspectorDockPane {
 				 get { return "esri_editing_ErrorInspectorDockPane"; }
 			}
-			///<summary>Returns the id string for &quot;Records&quot; (RecordSearchViewModel, Editing)</summary>
+			///<summary>Returns the id string for &quot;Manage Records&quot; (RecordSearchViewModel, Editing)</summary>
 			public static string esri_editing_RecordsDockPane {
 				 get { return "esri_editing_RecordsDockPane"; }
 			}
@@ -4885,6 +6389,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Edit Commands&quot; (EditableLayersMenu, Editing)</summary>
 			public static string esri_editing_editablityDynamicMenu {
 				 get { return "esri_editing_editablityDynamicMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Split By Feature&quot; (SplitByFeaturesMenu, Editing)</summary>
+			public static string esri_editing_SplitByFeature_DynamicMenu {
+				 get { return "esri_editing_SplitByFeature_DynamicMenu"; }
 			}
 			///<summary>Returns the id string for &quot;Topology Commands&quot; (ArcGIS.Desktop.Internal.Editing.ErrorInspector.TopologyRowDynamicMenu, Editing)</summary>
 			public static string esri_editing_topology_RowDynamicMenu {
@@ -4900,11 +6408,19 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_EditFeaturesGallery {
 				 get { return "esri_EditFeaturesGallery"; }
 			}
+			///<summary>Returns the id string for &quot;Parcel tool gallery&quot; (ParcelGalleryCommandListViewModel, Editing)</summary>
+			public static string esri_ParcelGallery {
+				 get { return "esri_ParcelGallery"; }
+			}
 		}
 		public static partial class Group {
 			///<summary>Returns the id string for &quot;Manage Edits&quot; (Group, Editing)</summary>
 			public static string esri_editing_Manage {
 				 get { return "esri_editing_Manage"; }
+			}
+			///<summary>Returns the id string for &quot;Manage Edits&quot; (Group, Editing)</summary>
+			public static string esri_editing_ManageEditSession {
+				 get { return "esri_editing_ManageEditSession"; }
 			}
 			///<summary>Returns the id string for &quot;Snapping&quot; (Group, Editing)</summary>
 			public static string esri_editing_Snapping {
@@ -4921,6 +6437,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Tools&quot; (Group, Editing)</summary>
 			public static string esri_editing_EditGallery {
 				 get { return "esri_editing_EditGallery"; }
+			}
+			///<summary>Returns the id string for &quot;Corrections&quot; (Group, Editing)</summary>
+			public static string esri_editing_correctionGroup {
+				 get { return "esri_editing_correctionGroup"; }
 			}
 			///<summary>Returns the id string for &quot;Elevation&quot; (Group, Editing)</summary>
 			public static string esri_editing_elevationGroup {
@@ -4954,21 +6474,25 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_tableFilterGroup {
 				 get { return "esri_editing_tableFilterGroup"; }
 			}
-			///<summary>Returns the id string for &quot;Active Record&quot; (Group, Editing)</summary>
+			///<summary>Returns the id string for &quot;Manage Edits&quot; (Group, Editing)</summary>
+			public static string esri_editing_parcelManageEditsGroup {
+				 get { return "esri_editing_parcelManageEditsGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Records&quot; (Group, Editing)</summary>
 			public static string esri_editing_parcelRecordGroup {
 				 get { return "esri_editing_parcelRecordGroup"; }
 			}
-			///<summary>Returns the id string for &quot;Manage Records&quot; (Group, Editing)</summary>
-			public static string esri_editing_parcelManageRecordGroup {
-				 get { return "esri_editing_parcelManageRecordGroup"; }
+			///<summary>Returns the id string for &quot;Tools&quot; (Group, Editing)</summary>
+			public static string esri_editing_parcelGallery {
+				 get { return "esri_editing_parcelGallery"; }
 			}
-			///<summary>Returns the id string for &quot;Splits and Merges&quot; (Group, Editing)</summary>
-			public static string esri_editing_parcelSplitsAndMergesGroup {
-				 get { return "esri_editing_parcelSplitsAndMergesGroup"; }
-			}
-			///<summary>Returns the id string for &quot;Construction&quot; (Group, Editing)</summary>
+			///<summary>Returns the id string for &quot;Construct&quot; (Group, Editing)</summary>
 			public static string esri_editing_parcelConstructionGroup {
 				 get { return "esri_editing_parcelConstructionGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Alignment&quot; (Group, Editing)</summary>
+			public static string esri_editing_parcelAlignment {
+				 get { return "esri_editing_parcelAlignment"; }
 			}
 		}
 		public static partial class Category {
@@ -5000,6 +6524,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_construction_annotation {
 				 get { return "esri_editing_construction_annotation"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_construction_dimension&quot; (Category, Editing)</summary>
+			public static string esri_editing_construction_dimension {
+				 get { return "esri_editing_construction_dimension"; }
+			}
 			///<summary>Returns the id string for &quot;esri_editing_tool_options&quot; (Category, Editing)</summary>
 			public static string esri_editing_tool_options {
 				 get { return "esri_editing_tool_options"; }
@@ -5019,6 +6547,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_editing_CommandList&quot; (Category, Editing)</summary>
 			public static string esri_editing_CommandList {
 				 get { return "esri_editing_CommandList"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_tableSimplifiedUI&quot; (Category, Editing)</summary>
+			public static string esri_editing_tableSimplifiedUI {
+				 get { return "esri_editing_tableSimplifiedUI"; }
 			}
 		}
 		public static partial class Component {
@@ -5066,6 +6598,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_splitToolEmbedded {
 				 get { return "esri_editing_splitToolEmbedded"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_sliceMultipatchEmbedded&quot; (SliceMultipatchEmbeddableControlViewModel, Editing)</summary>
+			public static string esri_editing_sliceMultipatchEmbedded {
+				 get { return "esri_editing_sliceMultipatchEmbedded"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_divideToolEmbedded&quot; (DivideToolEmbeddableControlViewModel, Editing)</summary>
+			public static string esri_editing_divideToolEmbedded {
+				 get { return "esri_editing_divideToolEmbedded"; }
+			}
 			///<summary>Returns the id string for &quot;esri_editing_moveEmbedded&quot; (MoveEmbeddableControlViewModel, Editing)</summary>
 			public static string esri_editing_moveEmbedded {
 				 get { return "esri_editing_moveEmbedded"; }
@@ -5098,6 +6638,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_transformEmbedded {
 				 get { return "esri_editing_transformEmbedded"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_alignParcelsEmbedded&quot; (TransformParcelsEmbeddableControlViewModel, Editing)</summary>
+			public static string esri_editing_alignParcelsEmbedded {
+				 get { return "esri_editing_alignParcelsEmbedded"; }
+			}
 			///<summary>Returns the id string for &quot;esri_editing_clipEmbedded&quot; (ClipEmbeddableControlViewModel, Editing)</summary>
 			public static string esri_editing_clipEmbedded {
 				 get { return "esri_editing_clipEmbedded"; }
@@ -5114,17 +6658,37 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_explodeEmbedded {
 				 get { return "esri_editing_explodeEmbedded"; }
 			}
-			///<summary>Returns the id string for &quot;esri_editing_interactiveExplodeEmbedded&quot; (InteractiveExplodeEmbeddableControlViewModel, Editing)</summary>
-			public static string esri_editing_interactiveExplodeEmbedded {
-				 get { return "esri_editing_interactiveExplodeEmbedded"; }
+			///<summary>Returns the id string for &quot;esri_editing_multipatchTextureEmbedded&quot; (MultipatchTextureEmbeddableControlViewModel, Editing)</summary>
+			public static string esri_editing_multipatchTextureEmbedded {
+				 get { return "esri_editing_multipatchTextureEmbedded"; }
 			}
 			///<summary>Returns the id string for &quot;esri_editing_bufferEmbedded&quot; (BufferEmbeddableControlViewModel, Editing)</summary>
 			public static string esri_editing_bufferEmbedded {
 				 get { return "esri_editing_bufferEmbedded"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_copyParallelEmbedded&quot; (CopyParallelEmbeddableControlViewModel, Editing)</summary>
+			public static string esri_editing_copyParallelEmbedded {
+				 get { return "esri_editing_copyParallelEmbedded"; }
+			}
 			///<summary>Returns the id string for &quot;esri_editing_extendEmbedded&quot; (ExtendTrimFeaturesEmbeddableControlViewModel, Editing)</summary>
 			public static string esri_editing_extendEmbedded {
 				 get { return "esri_editing_extendEmbedded"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_copyLinesToParcelTypeEmbedded&quot; (ParcelFabric.CopyLinesToParcelTypeEmbeddableControlViewModel, Editing)</summary>
+			public static string esri_editing_copyLinesToParcelTypeEmbedded {
+				 get { return "esri_editing_copyLinesToParcelTypeEmbedded"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_createNewRecordEmbedded&quot; (RecordNewEmbeddableControlViewModel, Editing)</summary>
+			public static string esri_editing_createNewRecordEmbedded {
+				 get { return "esri_editing_createNewRecordEmbedded"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_seqNumEmbedded&quot; (SeqNumEmbeddableControlViewModel, Editing)</summary>
+			public static string esri_editing_seqNumEmbedded {
+				 get { return "esri_editing_seqNumEmbedded"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_offsetEmbedded&quot; (OffsetEmbeddableControlViewModel, Editing)</summary>
+			public static string esri_editing_offsetEmbedded {
+				 get { return "esri_editing_offsetEmbedded"; }
 			}
 			///<summary>Returns the id string for &quot;esri_editing_EditingView&quot; (EditingView, Editing)</summary>
 			public static string esri_editing_EditingView {
@@ -5136,13 +6700,17 @@ namespace ArcGIS.Desktop.Framework {
 			}
 		}
 		public static partial class Condition {
-			///<summary>Returns the id string for &quot;Disabled condition&quot; (Condition, Editing)</summary>
-			public static string esri_editing_disabledCondition {
-				 get { return "esri_editing_disabledCondition"; }
+			///<summary>Returns the id string for &quot;esri_editing_EditingPossibleCondition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_EditingPossibleCondition {
+				 get { return "esri_editing_EditingPossibleCondition"; }
 			}
-			///<summary>Returns the id string for &quot;esri_editing_EditingEnabledCondition&quot; (Condition, Editing)</summary>
-			public static string esri_editing_EditingEnabledCondition {
-				 get { return "esri_editing_EditingEnabledCondition"; }
+			///<summary>Returns the id string for &quot;esri_editing_EditingDoesntRequireStartCondition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_EditingDoesntRequireStartCondition {
+				 get { return "esri_editing_EditingDoesntRequireStartCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_EditingRequiresStartCondition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_EditingRequiresStartCondition {
+				 get { return "esri_editing_EditingRequiresStartCondition"; }
 			}
 			///<summary>Returns the id string for &quot;esri_editing_EditingCondition&quot; (Condition, Editing)</summary>
 			public static string esri_editing_EditingCondition {
@@ -5184,9 +6752,41 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_ShowEditFeatures {
 				 get { return "esri_editing_ShowEditFeatures"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_activeParcelRecordCondition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_activeParcelRecordCondition {
+				 get { return "esri_editing_activeParcelRecordCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_activeRecordAndParcelPolygonsOrLinesSelectedCondition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_activeRecordAndParcelPolygonsOrLinesSelectedCondition {
+				 get { return "esri_editing_activeRecordAndParcelPolygonsOrLinesSelectedCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_parcelPolygonsSelectedCondition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_parcelPolygonsSelectedCondition {
+				 get { return "esri_editing_parcelPolygonsSelectedCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_parcelPolygonOrLinesSelectedCondition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_parcelPolygonOrLinesSelectedCondition {
+				 get { return "esri_editing_parcelPolygonOrLinesSelectedCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_parcelToolsVisibleCondition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_parcelToolsVisibleCondition {
+				 get { return "esri_editing_parcelToolsVisibleCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_isSliceVisibleCondition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_isSliceVisibleCondition {
+				 get { return "esri_editing_isSliceVisibleCondition"; }
+			}
 			///<summary>Returns the id string for &quot;esri_editing_HasEditsCondition&quot; (Condition, Editing)</summary>
 			public static string esri_editing_HasEditsCondition {
 				 get { return "esri_editing_HasEditsCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_CanSaveCondition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_CanSaveCondition {
+				 get { return "esri_editing_CanSaveCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_CanDiscardCondition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_CanDiscardCondition {
+				 get { return "esri_editing_CanDiscardCondition"; }
 			}
 			///<summary>Returns the id string for &quot;ElevationPickerEnabledCondition&quot; (Condition, Editing)</summary>
 			public static string ElevationPickerEnabledCondition {
@@ -5215,6 +6815,18 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_editing_traceConstructor_condition&quot; (Condition, Editing)</summary>
 			public static string esri_editing_traceConstructor_condition {
 				 get { return "esri_editing_traceConstructor_condition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_streamConstructor_condition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_streamConstructor_condition {
+				 get { return "esri_editing_streamConstructor_condition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_showVertices_condition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_showVertices_condition {
+				 get { return "esri_editing_showVertices_condition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_streaming_condition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_streaming_condition {
+				 get { return "esri_editing_streaming_condition"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_TOCSelectionValidForReconcile_condition&quot; (Condition, Editing)</summary>
 			public static string esri_mapping_TOCSelectionValidForReconcile_condition {
@@ -5248,6 +6860,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_templatePropertiesFeaturesPage_condition {
 				 get { return "esri_editing_templatePropertiesFeaturesPage_condition"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_templatePropertiesAssociationsPage_condition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_templatePropertiesAssociationsPage_condition {
+				 get { return "esri_editing_templatePropertiesAssociationsPage_condition"; }
+			}
 			///<summary>Returns the id string for &quot;esri_editing_templatePropertiesRelationshipsPage_condition&quot; (Condition, Editing)</summary>
 			public static string esri_editing_templatePropertiesRelationshipsPage_condition {
 				 get { return "esri_editing_templatePropertiesRelationshipsPage_condition"; }
@@ -5260,9 +6876,21 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_templatePropertiesAnnotationPage_condition {
 				 get { return "esri_editing_templatePropertiesAnnotationPage_condition"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_templatePropertiesDimensionPage_condition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_templatePropertiesDimensionPage_condition {
+				 get { return "esri_editing_templatePropertiesDimensionPage_condition"; }
+			}
 			///<summary>Returns the id string for &quot;esri_editing_SelectTopologyToolActive_condtion&quot; (Condition, Editing)</summary>
 			public static string esri_editing_SelectTopologyToolActive_condtion {
 				 get { return "esri_editing_SelectTopologyToolActive_condtion"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_slice_move_visible_condition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_slice_move_visible_condition {
+				 get { return "esri_editing_slice_move_visible_condition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_slice_rotate_visible_condition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_slice_rotate_visible_condition {
+				 get { return "esri_editing_slice_rotate_visible_condition"; }
 			}
 			///<summary>Returns the id string for &quot;The table is open.&quot; (Condition, Editing)</summary>
 			public static string esri_editing_tableOpenCondition {
@@ -5316,6 +6944,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_HasParcelFabricCondition {
 				 get { return "esri_editing_HasParcelFabricCondition"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_FalseCondition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_FalseCondition {
+				 get { return "esri_editing_FalseCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_ReviewerHasRegistryKeyCondition&quot; (Condition, Editing)</summary>
+			public static string esri_editing_ReviewerHasRegistryKeyCondition {
+				 get { return "esri_editing_ReviewerHasRegistryKeyCondition"; }
+			}
 		}
 		public static partial class Module {
 			///<summary>Returns the id string for &quot;Editing&quot; (EditingModule, Editing)</summary>
@@ -5326,10 +6962,6 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_EditingModule_loader {
 				 get { return "esri_editing_EditingModule_loader"; }
 			}
-			///<summary>Returns the id string for &quot;Parcel Fabric&quot; (EditingModule, Editing)</summary>
-			public static string esri_editing_module {
-				 get { return "esri_editing_module"; }
-			}
 		}
 		public static partial class Page {
 			///<summary>Returns the id string for &quot;Editing&quot; (OptionsViewModel, Editing)</summary>
@@ -5338,7 +6970,7 @@ namespace ArcGIS.Desktop.Framework {
 			}
 		}
 		public static partial class Sheet {
-			///<summary>Returns the id string for &quot;Editing Settings&quot; (Sheet, Editing)</summary>
+			///<summary>Returns the id string for &quot;Editor Settings&quot; (Sheet, Editing)</summary>
 			public static string esri_editing_settingsPropertySheet {
 				 get { return "esri_editing_settingsPropertySheet"; }
 			}
@@ -5376,13 +7008,45 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_shortcutList_Tracing {
 				 get { return "esri_editing_shortcutList_Tracing"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_shortcutList_Streaming&quot; (Shortcuttable, Editing)</summary>
+			public static string esri_editing_shortcutList_Streaming {
+				 get { return "esri_editing_shortcutList_Streaming"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_shortcutList_TwoPointLines&quot; (Shortcuttable, Editing)</summary>
+			public static string esri_editing_shortcutList_TwoPointLines {
+				 get { return "esri_editing_shortcutList_TwoPointLines"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_shortcutList_CanStream&quot; (Shortcuttable, Editing)</summary>
+			public static string esri_editing_shortcutList_CanStream {
+				 get { return "esri_editing_shortcutList_CanStream"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_shortcutList_CanShowVertices&quot; (Shortcuttable, Editing)</summary>
+			public static string esri_editing_shortcutList_CanShowVertices {
+				 get { return "esri_editing_shortcutList_CanShowVertices"; }
+			}
 			///<summary>Returns the id string for &quot;esri_editing_shortcutList_AnnoSketches&quot; (Shortcuttable, Editing)</summary>
 			public static string esri_editing_shortcutList_AnnoSketches {
 				 get { return "esri_editing_shortcutList_AnnoSketches"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_shortcutList_DimensionSketches&quot; (Shortcuttable, Editing)</summary>
+			public static string esri_editing_shortcutList_DimensionSketches {
+				 get { return "esri_editing_shortcutList_DimensionSketches"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_shortcutList_SliceMultipatch&quot; (Shortcuttable, Editing)</summary>
+			public static string esri_editing_shortcutList_SliceMultipatch {
+				 get { return "esri_editing_shortcutList_SliceMultipatch"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_shortcutList_AnnoTextBox&quot; (Shortcuttable, Editing)</summary>
+			public static string esri_editing_shortcutList_AnnoTextBox {
+				 get { return "esri_editing_shortcutList_AnnoTextBox"; }
+			}
 			///<summary>Returns the id string for &quot;esri_editing_shortcutList_FindTextCycle&quot; (Shortcuttable, Editing)</summary>
 			public static string esri_editing_shortcutList_FindTextCycle {
 				 get { return "esri_editing_shortcutList_FindTextCycle"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_shortcutList_FindTextAndFollowOptions&quot; (Shortcuttable, Editing)</summary>
+			public static string esri_editing_shortcutList_FindTextAndFollowOptions {
+				 get { return "esri_editing_shortcutList_FindTextAndFollowOptions"; }
 			}
 			///<summary>Returns the id string for &quot;esri_editing_shortcutList_Sketches&quot; (Shortcuttable, Editing)</summary>
 			public static string esri_editing_shortcutList_Sketches {
@@ -5392,9 +7056,21 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_shortcutList_ConstantZPlane {
 				 get { return "esri_editing_shortcutList_ConstantZPlane"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_shortcutList_QuickSelect&quot; (Shortcuttable, Editing)</summary>
+			public static string esri_editing_shortcutList_QuickSelect {
+				 get { return "esri_editing_shortcutList_QuickSelect"; }
+			}
 			///<summary>Returns the id string for &quot;esri_editing_shortcutList_PushPullTool&quot; (Shortcuttable, Editing)</summary>
 			public static string esri_editing_shortcutList_PushPullTool {
 				 get { return "esri_editing_shortcutList_PushPullTool"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_shortcuList_PushPullTool_Face&quot; (Shortcuttable, Editing)</summary>
+			public static string esri_editing_shortcuList_PushPullTool_Face {
+				 get { return "esri_editing_shortcuList_PushPullTool_Face"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_shortcutList_PushPullTool_Sketch&quot; (Shortcuttable, Editing)</summary>
+			public static string esri_editing_shortcutList_PushPullTool_Sketch {
+				 get { return "esri_editing_shortcutList_PushPullTool_Sketch"; }
 			}
 			///<summary>Returns the id string for &quot;esri_editing_shortcutList_EditVertices&quot; (Shortcuttable, Editing)</summary>
 			public static string esri_editing_shortcutList_EditVertices {
@@ -5408,11 +7084,27 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_shortcutList_Scale {
 				 get { return "esri_editing_shortcutList_Scale"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_shortcutList_Fillet&quot; (Shortcuttable, Editing)</summary>
+			public static string esri_editing_shortcutList_Fillet {
+				 get { return "esri_editing_shortcutList_Fillet"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_shortcutList_DistanceDistance&quot; (Shortcuttable, Editing)</summary>
+			public static string esri_editing_shortcutList_DistanceDistance {
+				 get { return "esri_editing_shortcutList_DistanceDistance"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_shortcutList_Intersection&quot; (Shortcuttable, Editing)</summary>
+			public static string esri_editing_shortcutList_Intersection {
+				 get { return "esri_editing_shortcutList_Intersection"; }
+			}
 		}
 		public static partial class Menu {
 			///<summary>Returns the id string for &quot;Grid&quot; (Menu, Editing)</summary>
 			public static string esri_editing_GridContextMenu {
 				 get { return "esri_editing_GridContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Associations&quot; (Menu, Editing)</summary>
+			public static string esri_editing_Attributes_AssociationContextMenu {
+				 get { return "esri_editing_Attributes_AssociationContextMenu"; }
 			}
 			///<summary>Returns the id string for &quot;Feature&quot; (Menu, Editing)</summary>
 			public static string esri_editing_Attributes_FeatureContextMenu {
@@ -5454,6 +7146,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_Attributes_SimpleSelectionContextMenu {
 				 get { return "esri_editing_Attributes_SimpleSelectionContextMenu"; }
 			}
+			///<summary>Returns the id string for &quot;Selection&quot; (Menu, Editing)</summary>
+			public static string esri_editing_SplitbyFeature_SimpleSelectionContextMenu {
+				 get { return "esri_editing_SplitbyFeature_SimpleSelectionContextMenu"; }
+			}
 			///<summary>Returns the id string for &quot;Point Sketch Context Menu&quot; (Menu, Editing)</summary>
 			public static string esri_editing_PointSketchContextMenu {
 				 get { return "esri_editing_PointSketchContextMenu"; }
@@ -5462,9 +7158,21 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_PointSketchContextMenuAnnotation {
 				 get { return "esri_editing_PointSketchContextMenuAnnotation"; }
 			}
+			///<summary>Returns the id string for &quot;Point Sketch Context Menu for AnnotationTemplate&quot; (Menu, Editing)</summary>
+			public static string esri_editing_PointSketchContextMenuAnnotationOptions {
+				 get { return "esri_editing_PointSketchContextMenuAnnotationOptions"; }
+			}
+			///<summary>Returns the id string for &quot;Point Sketch Context Menu for Fillet&quot; (Menu, Editing)</summary>
+			public static string esri_editing_PointSketchContextMenuFillet {
+				 get { return "esri_editing_PointSketchContextMenuFillet"; }
+			}
 			///<summary>Returns the id string for &quot;Multipoint Sketch Context Menu&quot; (Menu, Editing)</summary>
 			public static string esri_editing_MultipointSketchContextMenu {
 				 get { return "esri_editing_MultipointSketchContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Dimension Sketch Context Menu&quot; (Menu, Editing)</summary>
+			public static string esri_editing_DimensionSketchContextMenu {
+				 get { return "esri_editing_DimensionSketchContextMenu"; }
 			}
 			///<summary>Returns the id string for &quot;Multipatch Sketch Context Menu&quot; (Menu, Editing)</summary>
 			public static string esri_editing_MultipatchSketchContextMenu {
@@ -5474,13 +7182,25 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_SketchContextMenu {
 				 get { return "esri_editing_SketchContextMenu"; }
 			}
+			///<summary>Returns the id string for &quot;Midpoint Sketch Context Menu&quot; (Menu, Editing)</summary>
+			public static string esri_editing_MidpointSketchContextMenu {
+				 get { return "esri_editing_MidpointSketchContextMenu"; }
+			}
 			///<summary>Returns the id string for &quot;Line Sketch Context Menu for Annotation Template&quot; (Menu, Editing)</summary>
 			public static string esri_editing_SketchContextMenuAnnotation {
 				 get { return "esri_editing_SketchContextMenuAnnotation"; }
 			}
-			///<summary>Returns the id string for &quot;Sketch Context Menu&quot; (Menu, Editing)</summary>
+			///<summary>Returns the id string for &quot;Sketch Context Menu (Multiaptch)&quot; (Menu, Editing)</summary>
 			public static string esri_editing_menu_PushPullTool {
 				 get { return "esri_editing_menu_PushPullTool"; }
+			}
+			///<summary>Returns the id string for &quot;Sketch Context Menu (Sketch)&quot; (Menu, Editing)</summary>
+			public static string esri_editing_menu_PushPullTool_Sketch {
+				 get { return "esri_editing_menu_PushPullTool_Sketch"; }
+			}
+			///<summary>Returns the id string for &quot;Sketch Context Menu (Multipatch face)&quot; (Menu, Editing)</summary>
+			public static string esri_editing_menu_PushPullTool_Face {
+				 get { return "esri_editing_menu_PushPullTool_Face"; }
 			}
 			///<summary>Returns the id string for &quot;Segment Sketch Context Menu&quot; (Menu, Editing)</summary>
 			public static string esri_editing_SegmentSketchContextMenu {
@@ -5494,6 +7214,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_TracingSketchContextMenu {
 				 get { return "esri_editing_TracingSketchContextMenu"; }
 			}
+			///<summary>Returns the id string for &quot;Line/Polygon Streaming Sketch Context Menu&quot; (Menu, Editing)</summary>
+			public static string esri_editing_StreamingSketchContextMenu {
+				 get { return "esri_editing_StreamingSketchContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Follow&quot; (Menu, Editing)</summary>
+			public static string esri_editing_FollowFeatureMenu {
+				 get { return "esri_editing_FollowFeatureMenu"; }
+			}
 			///<summary>Returns the id string for &quot;Curvature&quot; (Menu, Editing)</summary>
 			public static string esri_editing_annotationCurvatureMenu {
 				 get { return "esri_editing_annotationCurvatureMenu"; }
@@ -5501,6 +7229,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Annotation Edit tool Context Menu&quot; (Menu, Editing)</summary>
 			public static string esri_editing_AnnotationEditContextMenu {
 				 get { return "esri_editing_AnnotationEditContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Dimension Edit tool Context Menu&quot; (Menu, Editing)</summary>
+			public static string esri_editing_DimensionEditContextMenu {
+				 get { return "esri_editing_DimensionEditContextMenu"; }
 			}
 			///<summary>Returns the id string for &quot;Circle Sketch Context Menu&quot; (Menu, Editing)</summary>
 			public static string esri_editing_CircleToolContextMenu {
@@ -5513,6 +7245,18 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Rectangle/Ellipse Sketch Context Menu&quot; (Menu, Editing)</summary>
 			public static string esri_editing_EllipseToolContextMenu {
 				 get { return "esri_editing_EllipseToolContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Three Point Circle Sketch Context Menu&quot; (Menu, Editing)</summary>
+			public static string esri_editing_ThreePointCircleSketchContextMenu {
+				 get { return "esri_editing_ThreePointCircleSketchContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Distance-Distance Constructor Context Menu&quot; (Menu, Editing)</summary>
+			public static string esri_editing_DistanceDistanceContextMenu {
+				 get { return "esri_editing_DistanceDistanceContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Intersection Constructor Context Menu&quot; (Menu, Editing)</summary>
+			public static string esri_editing_IntersectionContextMenu {
+				 get { return "esri_editing_IntersectionContextMenu"; }
 			}
 			///<summary>Returns the id string for &quot;Change Segment&quot; (Menu, Editing)</summary>
 			public static string esri_editing_ChangeSegmentMenu {
@@ -5533,6 +7277,18 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Properties&quot; (Menu, Editing)</summary>
 			public static string esri_editing_CFW_GroupTemplateContextMenu {
 				 get { return "esri_editing_CFW_GroupTemplateContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_CFW_TemplateFolderContextMenu&quot; (Menu, Editing)</summary>
+			public static string esri_editing_CFW_TemplateFolderContextMenu {
+				 get { return "esri_editing_CFW_TemplateFolderContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_CFW_TemplateFolderRootContextMenu&quot; (Menu, Editing)</summary>
+			public static string esri_editing_CFW_TemplateFolderRootContextMenu {
+				 get { return "esri_editing_CFW_TemplateFolderRootContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_CFW_TemplateWithinFolderContextMenu&quot; (Menu, Editing)</summary>
+			public static string esri_editing_CFW_TemplateWithinFolderContextMenu {
+				 get { return "esri_editing_CFW_TemplateWithinFolderContextMenu"; }
 			}
 			///<summary>Returns the id string for &quot;Properties&quot; (Menu, Editing)</summary>
 			public static string esri_editing_MFT_FeatureTemplateContextMenu {
@@ -5614,6 +7370,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_tableRelatesMenu {
 				 get { return "esri_editing_tableRelatesMenu"; }
 			}
+			///<summary>Returns the id string for &quot;Properties&quot; (Menu, Editing)</summary>
+			public static string esri_editing_tableCellContextMenu {
+				 get { return "esri_editing_tableCellContextMenu"; }
+			}
 			///<summary>Returns the id string for &quot;RematchAddress&quot; (Menu, Editing)</summary>
 			public static string esri_editing_rematchAddressContextMenu {
 				 get { return "esri_editing_rematchAddressContextMenu"; }
@@ -5629,6 +7389,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Data&quot; (Menu, Editing)</summary>
 			public static string esri_editing_data {
 				 get { return "esri_editing_data"; }
+			}
+			///<summary>Returns the id string for &quot;Data&quot; (Menu, Editing)</summary>
+			public static string esri_editing_standalonetable_data_menu {
+				 get { return "esri_editing_standalonetable_data_menu"; }
 			}
 			///<summary>Returns the id string for &quot;Traverse&quot; (Menu, Editing)</summary>
 			public static string esri_editing_traverseMenu {
@@ -5646,9 +7410,17 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_errorInspectorRowContextMenu_topologySource {
 				 get { return "esri_editing_errorInspectorRowContextMenu_topologySource"; }
 			}
+			///<summary>Returns the id string for &quot;Properties&quot; (Menu, Editing)</summary>
+			public static string esri_editing_errorInspectorRowContextMenu_geodatabaseFeatureValidationSource {
+				 get { return "esri_editing_errorInspectorRowContextMenu_geodatabaseFeatureValidationSource"; }
+			}
 			///<summary>Returns the id string for &quot;Topology Options&quot; (Menu, Editing)</summary>
 			public static string esri_editing_burgerMenu_topologySource_errorInspector {
 				 get { return "esri_editing_burgerMenu_topologySource_errorInspector"; }
+			}
+			///<summary>Returns the id string for &quot;Geodatabase Feature Validation Options&quot; (Menu, Editing)</summary>
+			public static string esri_editing_burgerMenu_geodatabaseFeatureValidationSource_errorInspector {
+				 get { return "esri_editing_burgerMenu_geodatabaseFeatureValidationSource_errorInspector"; }
 			}
 			///<summary>Returns the id string for &quot;Editing GDB Topology Error Must Be Larger Than Cluster Tolerance&quot; (Menu, Editing)</summary>
 			public static string esri_editing_topology_RuleFeatureLargerThanClusterToleranceContextMenu {
@@ -5790,9 +7562,29 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_topology_RulePointCoincidePointContextMenu {
 				 get { return "esri_editing_topology_RulePointCoincidePointContextMenu"; }
 			}
+			///<summary>Returns the id string for &quot;Editing GDB Topology Error Parcels Must Have A Record&quot; (Menu, Editing)</summary>
+			public static string esri_editing_topology_PRTNonEmptyRecordIdContextMenu {
+				 get { return "esri_editing_topology_PRTNonEmptyRecordIdContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Editing GDB Topology Error Parcel Must Have Non-empty Record ID&quot; (Menu, Editing)</summary>
+			public static string esri_editing_topology_PRTNonEmptyPolygonRecordIdContextMenu {
+				 get { return "esri_editing_topology_PRTNonEmptyPolygonRecordIdContextMenu"; }
+			}
 			///<summary>Returns the id string for &quot;Fix Tool&quot; (Menu, Editing)</summary>
 			public static string esri_editing_topology_FixToolContextMenu {
 				 get { return "esri_editing_topology_FixToolContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Mange Records&quot; (Menu, Editing)</summary>
+			public static string esri_editing_ParcelManageRecordsPaneContextMenu {
+				 get { return "esri_editing_ParcelManageRecordsPaneContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Parcel HUD&quot; (Menu, Editing)</summary>
+			public static string esri_editing_ParcelHUDActiveRecordContextMenu {
+				 get { return "esri_editing_ParcelHUDActiveRecordContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Attribute Transfer Menu&quot; (Menu, Editing)</summary>
+			public static string esri_editing_attributeTransferContextMenu {
+				 get { return "esri_editing_attributeTransferContextMenu"; }
 			}
 		}
 		public static partial class Minitoolbar {
@@ -5803,6 +7595,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_editing_SegmentSketchContextToolbar&quot; (Minitoolbar, Editing)</summary>
 			public static string esri_editing_SegmentSketchContextToolbar {
 				 get { return "esri_editing_SegmentSketchContextToolbar"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_StraightAnnoSketchToolbar&quot; (Minitoolbar, Editing)</summary>
+			public static string esri_editing_StraightAnnoSketchToolbar {
+				 get { return "esri_editing_StraightAnnoSketchToolbar"; }
 			}
 			///<summary>Returns the id string for &quot;esri_editing_SegmentSketchFinishClearContextToolbar&quot; (Minitoolbar, Editing)</summary>
 			public static string esri_editing_SegmentSketchFinishClearContextToolbar {
@@ -5820,9 +7616,21 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_SketchToolbar {
 				 get { return "esri_editing_SketchToolbar"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_SketchUtilityToolbar&quot; (Minitoolbar, Editing)</summary>
+			public static string esri_editing_SketchUtilityToolbar {
+				 get { return "esri_editing_SketchUtilityToolbar"; }
+			}
 			///<summary>Returns the id string for &quot;esri_editing_TextEditToolbar&quot; (Minitoolbar, Editing)</summary>
 			public static string esri_editing_TextEditToolbar {
 				 get { return "esri_editing_TextEditToolbar"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_DimensionEditToolbar&quot; (Minitoolbar, Editing)</summary>
+			public static string esri_editing_DimensionEditToolbar {
+				 get { return "esri_editing_DimensionEditToolbar"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_FollowFeatureTextEditToolbar&quot; (Minitoolbar, Editing)</summary>
+			public static string esri_editing_FollowFeatureTextEditToolbar {
+				 get { return "esri_editing_FollowFeatureTextEditToolbar"; }
 			}
 			///<summary>Returns the id string for &quot;esri_editing_ModifyEdgeSketchToolbar&quot; (Minitoolbar, Editing)</summary>
 			public static string esri_editing_ModifyEdgeSketchToolbar {
@@ -5844,11 +7652,39 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_toolbar_PushPullTool {
 				 get { return "esri_editing_toolbar_PushPullTool"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_toolbar_OffsetTool&quot; (Minitoolbar, Editing)</summary>
+			public static string esri_editing_toolbar_OffsetTool {
+				 get { return "esri_editing_toolbar_OffsetTool"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_toolbar_SliceMultipatchTool&quot; (Minitoolbar, Editing)</summary>
+			public static string esri_editing_toolbar_SliceMultipatchTool {
+				 get { return "esri_editing_toolbar_SliceMultipatchTool"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_LineCircleToolbar&quot; (Minitoolbar, Editing)</summary>
+			public static string esri_editing_LineCircleToolbar {
+				 get { return "esri_editing_LineCircleToolbar"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_PolygonCircleToolbar&quot; (Minitoolbar, Editing)</summary>
+			public static string esri_editing_PolygonCircleToolbar {
+				 get { return "esri_editing_PolygonCircleToolbar"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_CreatePointsToolbar&quot; (Minitoolbar, Editing)</summary>
+			public static string esri_editing_CreatePointsToolbar {
+				 get { return "esri_editing_CreatePointsToolbar"; }
+			}
 		}
 		public static partial class Page {
 			///<summary>Returns the id string for &quot;Grid&quot; (GridSettingsViewModel, Editing)</summary>
 			public static string esri_editing_GridPropertyPage {
 				 get { return "esri_editing_GridPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Annotation&quot; (AnnotationSettingsViewModel, Editing)</summary>
+			public static string esri_editing_AnnotationPropertyPage {
+				 get { return "esri_editing_AnnotationPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Field Mapping&quot; (FieldMappingsViewModel, Editing)</summary>
+			public static string esri_editing_FieldMappingsPropertyPage {
+				 get { return "esri_editing_FieldMappingsPropertyPage"; }
 			}
 			///<summary>Returns the id string for &quot;General&quot; (Templates.TemplatePropertiesPageViewModel, Editing)</summary>
 			public static string esri_editing_generalTemplatePropertyPage {
@@ -5866,6 +7702,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_annotationTemplatePropertyPage {
 				 get { return "esri_editing_annotationTemplatePropertyPage"; }
 			}
+			///<summary>Returns the id string for &quot;Dimension&quot; (Templates.TemplatePropertiesPageViewModel, Editing)</summary>
+			public static string esri_editing_dimensionTemplatePropertyPage {
+				 get { return "esri_editing_dimensionTemplatePropertyPage"; }
+			}
 			///<summary>Returns the id string for &quot;Builders&quot; (Templates.TemplatePropertiesPageViewModel, Editing)</summary>
 			public static string esri_editing_buildersTemplatePropertyPage {
 				 get { return "esri_editing_buildersTemplatePropertyPage"; }
@@ -5874,29 +7714,53 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_featuresTemplatePropertyPage {
 				 get { return "esri_editing_featuresTemplatePropertyPage"; }
 			}
+			///<summary>Returns the id string for &quot;Associations&quot; (Templates.TemplatePropertiesPageViewModel, Editing)</summary>
+			public static string esri_editing_associationsTemplatePropertyPage {
+				 get { return "esri_editing_associationsTemplatePropertyPage"; }
+			}
 			///<summary>Returns the id string for &quot;Relationships&quot; (Templates.TemplatePropertiesPageViewModel, Editing)</summary>
 			public static string esri_editing_relationshipsTemplatePropertyPage {
 				 get { return "esri_editing_relationshipsTemplatePropertyPage"; }
 			}
 		}
 		public static partial class Splitbutton {
-			///<summary>Returns the id string for &quot;Validate Fabric&quot; (Splitbutton, Editing)</summary>
-			public static string esri_editing_parcelValidateSplitButton {
-				 get { return "esri_editing_parcelValidateSplitButton"; }
+			///<summary>Returns the id string for &quot;History&quot; (Splitbutton, Editing)</summary>
+			public static string esri_editing_updateParcelHistorySplitButton {
+				 get { return "esri_editing_updateParcelHistorySplitButton"; }
+			}
+			///<summary>Returns the id string for &quot;Manage Record&quot; (Splitbutton, Editing)</summary>
+			public static string esri_editing_manageRecordSplitButton {
+				 get { return "esri_editing_manageRecordSplitButton"; }
+			}
+			///<summary>Returns the id string for &quot;Build&quot; (Splitbutton, Editing)</summary>
+			public static string esri_editing_parcelBuildSplitButton {
+				 get { return "esri_editing_parcelBuildSplitButton"; }
+			}
+			///<summary>Returns the id string for &quot;Align&quot; (Splitbutton, Editing)</summary>
+			public static string esri_editing_alignParcelsSplitButton {
+				 get { return "esri_editing_alignParcelsSplitButton"; }
 			}
 		}
 		public static partial class State {
-			///<summary>Returns the id string for &quot;esri_editing_disabledState&quot; (State, Editing)</summary>
-			public static string esri_editing_disabledState {
-				 get { return "esri_editing_disabledState"; }
-			}
 			///<summary>Returns the id string for &quot;esri_editing_editorDisabled&quot; (State, Editing)</summary>
 			public static string esri_editing_editorDisabled {
 				 get { return "esri_editing_editorDisabled"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_editingNotAvailable&quot; (State, Editing)</summary>
+			public static string esri_editing_editingNotAvailable {
+				 get { return "esri_editing_editingNotAvailable"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_editingRequiresStart&quot; (State, Editing)</summary>
+			public static string esri_editing_editingRequiresStart {
+				 get { return "esri_editing_editingRequiresStart"; }
+			}
 			///<summary>Returns the id string for &quot;esri_editing_tablePane&quot; (State, Editing)</summary>
 			public static string esri_editing_tablePane {
 				 get { return "esri_editing_tablePane"; }
+			}
+			///<summary>Returns the id string for &quot;esri_charts_chartsPane&quot; (State, Editing)</summary>
+			public static string esri_charts_chartsPane {
+				 get { return "esri_charts_chartsPane"; }
 			}
 			///<summary>Returns the id string for &quot;esri_editing_annoSketching&quot; (State, Editing)</summary>
 			public static string esri_editing_annoSketching {
@@ -5922,9 +7786,41 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_editFeaturePersistence {
 				 get { return "esri_editing_editFeaturePersistence"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_hasActiveParcelRecord&quot; (State, Editing)</summary>
+			public static string esri_editing_hasActiveParcelRecord {
+				 get { return "esri_editing_hasActiveParcelRecord"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_HasParcelFabric&quot; (State, Editing)</summary>
+			public static string esri_editing_HasParcelFabric {
+				 get { return "esri_editing_HasParcelFabric"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_HasParcelPolygonsSelected&quot; (State, Editing)</summary>
+			public static string esri_editing_HasParcelPolygonsSelected {
+				 get { return "esri_editing_HasParcelPolygonsSelected"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_HasParcelLinesSelected&quot; (State, Editing)</summary>
+			public static string esri_editing_HasParcelLinesSelected {
+				 get { return "esri_editing_HasParcelLinesSelected"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_isSliceAvailable&quot; (State, Editing)</summary>
+			public static string esri_editing_isSliceAvailable {
+				 get { return "esri_editing_isSliceAvailable"; }
+			}
 			///<summary>Returns the id string for &quot;esri_editing_HasEdits&quot; (State, Editing)</summary>
 			public static string esri_editing_HasEdits {
 				 get { return "esri_editing_HasEdits"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_HasUndo&quot; (State, Editing)</summary>
+			public static string esri_editing_HasUndo {
+				 get { return "esri_editing_HasUndo"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_HasReconcile&quot; (State, Editing)</summary>
+			public static string esri_editing_HasReconcile {
+				 get { return "esri_editing_HasReconcile"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_HasRedo&quot; (State, Editing)</summary>
+			public static string esri_editing_HasRedo {
+				 get { return "esri_editing_HasRedo"; }
 			}
 			///<summary>Returns the id string for &quot;esri_editing_ElevationPickerEnabled&quot; (State, Editing)</summary>
 			public static string esri_editing_ElevationPickerEnabled {
@@ -5953,6 +7849,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_editing_SplitToolActive_state&quot; (State, Editing)</summary>
 			public static string esri_editing_SplitToolActive_state {
 				 get { return "esri_editing_SplitToolActive_state"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_StereoView&quot; (State, Editing)</summary>
+			public static string esri_editing_StereoView {
+				 get { return "esri_editing_StereoView"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_Streaming_state&quot; (State, Editing)</summary>
+			public static string esri_editing_Streaming_state {
+				 get { return "esri_editing_Streaming_state"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_TOCSelectionValidForReconcileState&quot; (State, Editing)</summary>
 			public static string esri_mapping_TOCSelectionValidForReconcileState {
@@ -5998,6 +7902,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_templatePropertiesFeaturesPage_state {
 				 get { return "esri_editing_templatePropertiesFeaturesPage_state"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_templatePropertiesAssociationsPage_state&quot; (State, Editing)</summary>
+			public static string esri_editing_templatePropertiesAssociationsPage_state {
+				 get { return "esri_editing_templatePropertiesAssociationsPage_state"; }
+			}
 			///<summary>Returns the id string for &quot;esri_editing_templatePropertiesRelationshipsPage_state&quot; (State, Editing)</summary>
 			public static string esri_editing_templatePropertiesRelationshipsPage_state {
 				 get { return "esri_editing_templatePropertiesRelationshipsPage_state"; }
@@ -6010,9 +7918,21 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_templatePropertieAnnotationPage_state {
 				 get { return "esri_editing_templatePropertieAnnotationPage_state"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_templatePropertiesDimensionPage_state&quot; (State, Editing)</summary>
+			public static string esri_editing_templatePropertiesDimensionPage_state {
+				 get { return "esri_editing_templatePropertiesDimensionPage_state"; }
+			}
 			///<summary>Returns the id string for &quot;esri_editing_SelectTopologyToolActive_state&quot; (State, Editing)</summary>
 			public static string esri_editing_SelectTopologyToolActive_state {
 				 get { return "esri_editing_SelectTopologyToolActive_state"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_slice_move_visible_state&quot; (State, Editing)</summary>
+			public static string esri_editing_slice_move_visible_state {
+				 get { return "esri_editing_slice_move_visible_state"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_slice_rotate_visible_state&quot; (State, Editing)</summary>
+			public static string esri_editing_slice_rotate_visible_state {
+				 get { return "esri_editing_slice_rotate_visible_state"; }
 			}
 			///<summary>Returns the id string for &quot;esri_editing_tableOpenState&quot; (State, Editing)</summary>
 			public static string esri_editing_tableOpenState {
@@ -6054,9 +7974,51 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_FeatureLayerRematchAddressesState {
 				 get { return "esri_mapping_FeatureLayerRematchAddressesState"; }
 			}
-			///<summary>Returns the id string for &quot;esri_editing_HasParcelFabric&quot; (State, Editing)</summary>
-			public static string esri_editing_HasParcelFabric {
-				 get { return "esri_editing_HasParcelFabric"; }
+			///<summary>Returns the id string for &quot;esri_editing_FalseState_NotDefined&quot; (State, Editing)</summary>
+			public static string esri_editing_FalseState_NotDefined {
+				 get { return "esri_editing_FalseState_NotDefined"; }
+			}
+			///<summary>Returns the id string for &quot;esri_registry_ReviewerHasRegistryKeyState&quot; (State, Editing)</summary>
+			public static string esri_registry_ReviewerHasRegistryKeyState {
+				 get { return "esri_registry_ReviewerHasRegistryKeyState"; }
+			}
+		}
+		public static partial class Subgroup {
+			///<summary>Returns the id string for &quot;esri_editing_table_rowSubGroup&quot; (Subgroup, Editing)</summary>
+			public static string esri_editing_table_rowSubGroup {
+				 get { return "esri_editing_table_rowSubGroup"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_table_fieldsSubGroup1&quot; (Subgroup, Editing)</summary>
+			public static string esri_editing_table_fieldsSubGroup1 {
+				 get { return "esri_editing_table_fieldsSubGroup1"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_table_fieldsSubGroup2&quot; (Subgroup, Editing)</summary>
+			public static string esri_editing_table_fieldsSubGroup2 {
+				 get { return "esri_editing_table_fieldsSubGroup2"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_table_selectSubGroup1&quot; (Subgroup, Editing)</summary>
+			public static string esri_editing_table_selectSubGroup1 {
+				 get { return "esri_editing_table_selectSubGroup1"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_table_selectSubGroup2&quot; (Subgroup, Editing)</summary>
+			public static string esri_editing_table_selectSubGroup2 {
+				 get { return "esri_editing_table_selectSubGroup2"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_table_toolsSubGroup&quot; (Subgroup, Editing)</summary>
+			public static string esri_editing_table_toolsSubGroup {
+				 get { return "esri_editing_table_toolsSubGroup"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_table_relationshipSubGroup&quot; (Subgroup, Editing)</summary>
+			public static string esri_editing_table_relationshipSubGroup {
+				 get { return "esri_editing_table_relationshipSubGroup"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_table_exportSubGroup&quot; (Subgroup, Editing)</summary>
+			public static string esri_editing_table_exportSubGroup {
+				 get { return "esri_editing_table_exportSubGroup"; }
+			}
+			///<summary>Returns the id string for &quot;esri_editing_table_filterSubGroup&quot; (Subgroup, Editing)</summary>
+			public static string esri_editing_table_filterSubGroup {
+				 get { return "esri_editing_table_filterSubGroup"; }
 			}
 		}
 		public static partial class Tab {
@@ -6064,13 +8026,13 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_EditingTab {
 				 get { return "esri_editing_EditingTab"; }
 			}
-			///<summary>Returns the id string for &quot;Record&quot; (Tab, Editing)</summary>
+			///<summary>Returns the id string for &quot;Records&quot; (Tab, Editing)</summary>
 			public static string esri_editing_parcelTab {
 				 get { return "esri_editing_parcelTab"; }
 			}
 		}
 		public static partial class Tabgroup {
-			///<summary>Returns the id string for &quot;Parcel Manager&quot; (Tabgroup, Editing)</summary>
+			///<summary>Returns the id string for &quot;Parcels&quot; (Tabgroup, Editing)</summary>
 			public static string esri_parcelfabric_CoreTabGroup {
 				 get { return "esri_parcelfabric_CoreTabGroup"; }
 			}
@@ -6104,7 +8066,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_SketchLineTool {
 				 get { return "esri_editing_SketchLineTool"; }
 			}
-			///<summary>Returns the id string for &quot;2 Point Line Tool&quot; (SketchTwoPointLineTool, Editing)</summary>
+			///<summary>Returns the id string for &quot;Two-Point Line Tool&quot; (SketchTwoPointLineTool, Editing)</summary>
 			public static string esri_editing_SketchTwoPointLineTool {
 				 get { return "esri_editing_SketchTwoPointLineTool"; }
 			}
@@ -6119,6 +8081,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Circle Tool&quot; (SketchLineCircleTool, Editing)</summary>
 			public static string esri_editing_SketchCircleLineTool {
 				 get { return "esri_editing_SketchCircleLineTool"; }
+			}
+			///<summary>Returns the id string for &quot;Three Point Circle Tool&quot; (SketchLineThreePointCircleTool, Editing)</summary>
+			public static string esri_editing_SketchLineThreePointCircleTool {
+				 get { return "esri_editing_SketchLineThreePointCircleTool"; }
 			}
 			///<summary>Returns the id string for &quot;Rectangle Tool&quot; (SketchLineRectangleTool, Editing)</summary>
 			public static string esri_editing_SketchRectangleLineTool {
@@ -6152,6 +8118,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_SketchCirclePolygonTool {
 				 get { return "esri_editing_SketchCirclePolygonTool"; }
 			}
+			///<summary>Returns the id string for &quot;Three Point Circle Polygon Tool&quot; (SketchPolygonThreePointCircleTool, Editing)</summary>
+			public static string esri_editing_SketchPolygonThreePointCircleTool {
+				 get { return "esri_editing_SketchPolygonThreePointCircleTool"; }
+			}
 			///<summary>Returns the id string for &quot;Rectangle Polygon Tool&quot; (SketchPolygonRectangleTool, Editing)</summary>
 			public static string esri_editing_SketchRectanglePolygonTool {
 				 get { return "esri_editing_SketchRectanglePolygonTool"; }
@@ -6176,6 +8146,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_SketchAutoCompleteFreehandPolygonTool {
 				 get { return "esri_editing_SketchAutoCompleteFreehandPolygonTool"; }
 			}
+			///<summary>Returns the id string for &quot;Set snapping tolerance&quot; (SnappingCircleTool, Editing)</summary>
+			public static string esri_editing_SnappingCircleTool {
+				 get { return "esri_editing_SnappingCircleTool"; }
+			}
 			///<summary>Returns the id string for &quot;Horizontal Annotation Tool&quot; (SketchHorizontalAnnoTool, Editing)</summary>
 			public static string esri_editing_SketchHorizontalAnnoTool {
 				 get { return "esri_editing_SketchHorizontalAnnoTool"; }
@@ -6188,21 +8162,73 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_SketchCurvedAnnoTool {
 				 get { return "esri_editing_SketchCurvedAnnoTool"; }
 			}
+			///<summary>Returns the id string for &quot;Follow Feature Annotation Tool&quot; (SketchFollowFeatureAnnoTool, Editing)</summary>
+			public static string esri_editing_SketchFollowFeatureAnnoTool {
+				 get { return "esri_editing_SketchFollowFeatureAnnoTool"; }
+			}
+			///<summary>Returns the id string for &quot;Aligned&quot; (SketchAlignedDimensionTool, Editing)</summary>
+			public static string esri_editing_AlignedDimensionTool {
+				 get { return "esri_editing_AlignedDimensionTool"; }
+			}
+			///<summary>Returns the id string for &quot;Simple Aligned&quot; (SketchSimpleAlignedDimensionTool, Editing)</summary>
+			public static string esri_editing_SketchSimpleAlignedDimensionTool {
+				 get { return "esri_editing_SketchSimpleAlignedDimensionTool"; }
+			}
+			///<summary>Returns the id string for &quot;Linear&quot; (SketchLinearDimensionTool, Editing)</summary>
+			public static string esri_editing_LinearDimensionTool {
+				 get { return "esri_editing_LinearDimensionTool"; }
+			}
+			///<summary>Returns the id string for &quot;Rotated Linear&quot; (SketchRotatedLinearDimensionTool, Editing)</summary>
+			public static string esri_editing_RotatedLinearDimensionTool {
+				 get { return "esri_editing_RotatedLinearDimensionTool"; }
+			}
+			///<summary>Returns the id string for &quot;Free Linear&quot; (FreeLinearDimensionTool, Editing)</summary>
+			public static string esri_editing_FreeLinearDimensionTool {
+				 get { return "esri_editing_FreeLinearDimensionTool"; }
+			}
+			///<summary>Returns the id string for &quot;Free Aligned&quot; (FreeAlignedDimensionTool, Editing)</summary>
+			public static string esri_editing_FreeAlignedDimensionTool {
+				 get { return "esri_editing_FreeAlignedDimensionTool"; }
+			}
+			///<summary>Returns the id string for &quot;Transform&quot; (TransformTool, Editing)</summary>
+			public static string esri_editing_TransformTool {
+				 get { return "esri_editing_TransformTool"; }
+			}
 			///<summary>Returns the id string for &quot;Reshape&quot; (ReshapeFeatureTool, Editing)</summary>
 			public static string esri_editing_ReshapeFeature {
 				 get { return "esri_editing_ReshapeFeature"; }
 			}
-			///<summary>Returns the id string for &quot;Replace MultiPatch&quot; (ReplaceMultiPatchTool, Editing)</summary>
+			///<summary>Returns the id string for &quot;Replace Multipatch&quot; (ReplaceMultiPatchTool, Editing)</summary>
 			public static string esri_editing_ReplaceMultiPatchTool {
 				 get { return "esri_editing_ReplaceMultiPatchTool"; }
+			}
+			///<summary>Returns the id string for &quot;Multipatch Texture&quot; (TexturePushPullTool, Editing)</summary>
+			public static string esri_editing_PushPullTextureTool {
+				 get { return "esri_editing_PushPullTextureTool"; }
+			}
+			///<summary>Returns the id string for &quot;Clip&quot; (ClipTool, Editing)</summary>
+			public static string esri_editing_ClipTool {
+				 get { return "esri_editing_ClipTool"; }
 			}
 			///<summary>Returns the id string for &quot;Extend or Trim&quot; (ExtendTrimFeaturesTool, Editing)</summary>
 			public static string esri_editing_ExtendTrimTool {
 				 get { return "esri_editing_ExtendTrimTool"; }
 			}
+			///<summary>Returns the id string for &quot;Fillet&quot; (FilletTool, Editing)</summary>
+			public static string esri_editing_FilletTool {
+				 get { return "esri_editing_FilletTool"; }
+			}
+			///<summary>Returns the id string for &quot;Right Angle&quot; (GeneralizeTool, Editing)</summary>
+			public static string esri_editing_GeneralizeTool {
+				 get { return "esri_editing_GeneralizeTool"; }
+			}
 			///<summary>Returns the id string for &quot;Buffer&quot; (BufferFeaturesTool, Editing)</summary>
 			public static string esri_editing_BufferFeaturesTool {
 				 get { return "esri_editing_BufferFeaturesTool"; }
+			}
+			///<summary>Returns the id string for &quot;Copy Parallel&quot; (CopyParallelTool, Editing)</summary>
+			public static string esri_editing_CopyParallelTool {
+				 get { return "esri_editing_CopyParallelTool"; }
 			}
 			///<summary>Returns the id string for &quot;Split Line&quot; (SplitLineTool, Editing)</summary>
 			public static string esri_editing_SplitLineTool {
@@ -6211,6 +8237,30 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Split&quot; (SplitTool, Editing)</summary>
 			public static string esri_editing_SplitTool {
 				 get { return "esri_editing_SplitTool"; }
+			}
+			///<summary>Returns the id string for &quot;Slice Multipatch&quot; (SliceMultipatchTool, Editing)</summary>
+			public static string esri_editing_SliceMultipatchTool {
+				 get { return "esri_editing_SliceMultipatchTool"; }
+			}
+			///<summary>Returns the id string for &quot;Divide&quot; (DivideTool, Editing)</summary>
+			public static string esri_editing_DivideTool {
+				 get { return "esri_editing_DivideTool"; }
+			}
+			///<summary>Returns the id string for &quot;Offset&quot; (OffsetTool, Editing)</summary>
+			public static string esri_editing_OffsetTool {
+				 get { return "esri_editing_OffsetTool"; }
+			}
+			///<summary>Returns the id string for &quot;Sequential Numbering&quot; (SeqNumTool, Editing)</summary>
+			public static string esri_editing_SeqNumTool {
+				 get { return "esri_editing_SeqNumTool"; }
+			}
+			///<summary>Returns the id string for &quot;Transfer Attributes&quot; (AttributeTransferTool, Editing)</summary>
+			public static string esri_editing_AttributeTransferTool {
+				 get { return "esri_editing_AttributeTransferTool"; }
+			}
+			///<summary>Returns the id string for &quot;Update COGO&quot; (UpdateCOGOAttributesTool, Editing)</summary>
+			public static string esri_editing_UpdateCogoAttributesTool {
+				 get { return "esri_editing_UpdateCogoAttributesTool"; }
 			}
 			///<summary>Returns the id string for &quot;Right Angle&quot; (RightAngleTool, Editing)</summary>
 			public static string esri_editing_RightAngleTool {
@@ -6316,6 +8366,18 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_ElevationPicker {
 				 get { return "esri_editing_ElevationPicker"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_GroundToGrid_EnterGroundTool&quot; (GroundToGridEnterGroundTool, Editing)</summary>
+			public static string esri_editing_GroundToGrid_EnterGroundTool {
+				 get { return "esri_editing_GroundToGrid_EnterGroundTool"; }
+			}
+			///<summary>Returns the id string for &quot;Draw the ground line and the grid line&quot; (GroundToGridTwoPointTool, Editing)</summary>
+			public static string esri_editing_GroundToGrid_GroundTool {
+				 get { return "esri_editing_GroundToGrid_GroundTool"; }
+			}
+			///<summary>Returns the id string for &quot;Enter the ground line and draw the grid line&quot; (GroundToGridTwoPointTool, Editing)</summary>
+			public static string esri_editing_GroundToGrid_GridTool {
+				 get { return "esri_editing_GroundToGrid_GridTool"; }
+			}
 			///<summary>Returns the id string for &quot;Set Origin&quot; (GridSetOriginTool, Editing)</summary>
 			public static string esri_editing_GridSetOrigin {
 				 get { return "esri_editing_GridSetOrigin"; }
@@ -6328,320 +8390,48 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_editing_GridSetOriginAndRotation {
 				 get { return "esri_editing_GridSetOriginAndRotation"; }
 			}
+			///<summary>Returns the id string for &quot;Show&quot; (AlignParcelShowBufferCommand, Editing)</summary>
+			public static string esri_editing_AlignParcelShowBuffer {
+				 get { return "esri_editing_AlignParcelShowBuffer"; }
+			}
+			///<summary>Returns the id string for &quot;Select Parcels&quot; (SelectParcelsTool, Editing)</summary>
+			public static string esri_editing_SelectParcelsTool {
+				 get { return "esri_editing_SelectParcelsTool"; }
+			}
 		}
 		public static partial class Toolbar {
 			///<summary>Returns the id string for &quot;esri_editing_parcelRecordToolbar&quot; (Toolbar, Editing)</summary>
 			public static string esri_editing_parcelRecordToolbar {
 				 get { return "esri_editing_parcelRecordToolbar"; }
 			}
+			///<summary>Returns the id string for &quot;esri_editing_AlignParcelValueToolbar&quot; (Toolbar, Editing)</summary>
+			public static string esri_editing_AlignParcelValueToolbar {
+				 get { return "esri_editing_AlignParcelValueToolbar"; }
+			}
 		}
-		public static partial class Component {
-			///<summary>Returns the id string for &quot;CLSID_FMEDatasetCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_FMEDatasetCtrl {
-				 get { return "CLSID_FMEDatasetCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdDatasetCtrlPencil&quot; (Component, Controls)</summary>
-			public static string CLSID_MdDatasetCtrlPencil {
-				 get { return "CLSID_MdDatasetCtrlPencil"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdDatasetCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdDatasetCtrl {
-				 get { return "CLSID_MdDatasetCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdFRSCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdFRSCtrl {
-				 get { return "CLSID_MdFRSCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdRSCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdRSCtrl {
-				 get { return "CLSID_MdRSCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdFieldCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdFieldCtrl {
-				 get { return "CLSID_MdFieldCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdFieldListCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdFieldListCtrl {
-				 get { return "CLSID_MdFieldListCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdMakeQueryTableCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdMakeQueryTableCtrl {
-				 get { return "CLSID_MdMakeQueryTableCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdLinearUnitCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdLinearUnitCtrl {
-				 get { return "CLSID_MdLinearUnitCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdAreaUnitCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdAreaUnitCtrl {
-				 get { return "CLSID_MdAreaUnitCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;GPTimeUnit&quot; (Component, Controls)</summary>
-			public static string GPTimeUnit {
-				 get { return "GPTimeUnit"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdLongCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdLongCtrl {
-				 get { return "CLSID_MdLongCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdDoubleCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdDoubleCtrl {
-				 get { return "CLSID_MdDoubleCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdBooleanCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdBooleanCtrl {
-				 get { return "CLSID_MdBooleanCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdZDomainCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdZDomainCtrl {
-				 get { return "CLSID_MdZDomainCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdMDomainCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdMDomainCtrl {
-				 get { return "CLSID_MdMDomainCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdXYDomainCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdXYDomainCtrl {
-				 get { return "CLSID_MdXYDomainCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdRasterGDBEnvTileSizeCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdRasterGDBEnvTileSizeCtrl {
-				 get { return "CLSID_MdRasterGDBEnvTileSizeCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdCompositeCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdCompositeCtrl {
-				 get { return "CLSID_MdCompositeCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdListCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdListCtrl {
-				 get { return "CLSID_MdListCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdTableCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdTableCtrl {
-				 get { return "CLSID_MdTableCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdTableCtrl_Copy&quot; (Component, Controls)</summary>
-			public static string CLSID_MdTableCtrl_Copy {
-				 get { return "CLSID_MdTableCtrl_Copy"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdSimpleTableCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdSimpleTableCtrl {
-				 get { return "CLSID_MdSimpleTableCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdSimpleTableCtrl_stack_view&quot; (Component, Controls)</summary>
-			public static string CLSID_MdSimpleTableCtrl_stack_view {
-				 get { return "CLSID_MdSimpleTableCtrl_stack_view"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdAttributeMapCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdAttributeMapCtrl {
-				 get { return "CLSID_MdAttributeMapCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdMultiCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdMultiCtrl {
-				 get { return "CLSID_MdMultiCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_Md3DaMultiFFCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_Md3DaMultiFFCtrl {
-				 get { return "CLSID_Md3DaMultiFFCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdValueTableCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdValueTableCtrl {
-				 get { return "CLSID_MdValueTableCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdWhereClauseCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdWhereClauseCtrl {
-				 get { return "CLSID_MdWhereClauseCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdWhereClauseCtrl2&quot; (Component, Controls)</summary>
-			public static string CLSID_MdWhereClauseCtrl2 {
-				 get { return "CLSID_MdWhereClauseCtrl2"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdFileCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdFileCtrl {
-				 get { return "CLSID_MdFileCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdPointCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdPointCtrl {
-				 get { return "CLSID_MdPointCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdRandomDistributionCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdRandomDistributionCtrl {
-				 get { return "CLSID_MdRandomDistributionCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdExtent2Ctrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdExtent2Ctrl {
-				 get { return "CLSID_MdExtent2Ctrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdExtentCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdExtentCtrl {
-				 get { return "CLSID_MdExtentCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdEnvelopeCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdEnvelopeCtrl {
-				 get { return "CLSID_MdEnvelopeCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdRandomGeneratorCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdRandomGeneratorCtrl {
-				 get { return "CLSID_MdRandomGeneratorCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdFieldInfoCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdFieldInfoCtrl {
-				 get { return "CLSID_MdFieldInfoCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdFieldMapCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdFieldMapCtrl {
-				 get { return "CLSID_MdFieldMapCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdSlpkToolSpatialReferenceCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdSlpkToolSpatialReferenceCtrl {
-				 get { return "CLSID_MdSlpkToolSpatialReferenceCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdSpatialReferenceCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdSpatialReferenceCtrl {
-				 get { return "CLSID_MdSpatialReferenceCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdEnvSpatRefCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdEnvSpatRefCtrl {
-				 get { return "CLSID_MdEnvSpatRefCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdSaCellSizeCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdSaCellSizeCtrl {
-				 get { return "CLSID_MdSaCellSizeCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdCalculatorCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdCalculatorCtrl {
-				 get { return "CLSID_MdCalculatorCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_Python_CodeBlockCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_Python_CodeBlockCtrl {
-				 get { return "CLSID_Python_CodeBlockCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdPasswordCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdPasswordCtrl {
-				 get { return "CLSID_MdPasswordCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdStringHiddenCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdStringHiddenCtrl {
-				 get { return "CLSID_MdStringHiddenCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdDateCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdDateCtrl {
-				 get { return "CLSID_MdDateCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdTextEditorCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdTextEditorCtrl {
-				 get { return "CLSID_MdTextEditorCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MDGASearchNeighborhoodCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MDGASearchNeighborhoodCtrl {
-				 get { return "CLSID_MDGASearchNeighborhoodCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MDGAMultiDatasetCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MDGAMultiDatasetCtrl {
-				 get { return "CLSID_MDGAMultiDatasetCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdSaRadiusCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdSaRadiusCtrl {
-				 get { return "CLSID_MdSaRadiusCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdSaNeighborhoodCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdSaNeighborhoodCtrl {
-				 get { return "CLSID_MdSaNeighborhoodCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdSaHFactorCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdSaHFactorCtrl {
-				 get { return "CLSID_MdSaHFactorCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdSaVFactorCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdSaVFactorCtrl {
-				 get { return "CLSID_MdSaVFactorCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdSaFuzzyFunctionCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdSaFuzzyFunctionCtrl {
-				 get { return "CLSID_MdSaFuzzyFunctionCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdSaSemiVariogramCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdSaSemiVariogramCtrl {
-				 get { return "CLSID_MdSaSemiVariogramCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdSaWeightedOverlayCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdSaWeightedOverlayCtrl {
-				 get { return "CLSID_MdSaWeightedOverlayCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdSaReclassCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdSaReclassCtrl {
-				 get { return "CLSID_MdSaReclassCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdRasterGDBEnvPyramidCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdRasterGDBEnvPyramidCtrl {
-				 get { return "CLSID_MdRasterGDBEnvPyramidCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdRasterGDBEnvStatisticsCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdRasterGDBEnvStatisticsCtrl {
-				 get { return "CLSID_MdRasterGDBEnvStatisticsCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdRasterGDBEnvCompressionCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdRasterGDBEnvCompressionCtrl {
-				 get { return "CLSID_MdRasterGDBEnvCompressionCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdCellSizeXYCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdCellSizeXYCtrl {
-				 get { return "CLSID_MdCellSizeXYCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdRasterTypeCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdRasterTypeCtrl {
-				 get { return "CLSID_MdRasterTypeCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdRasterInputCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdRasterInputCtrl {
-				 get { return "CLSID_MdRasterInputCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdAssignFieldAlias2Ctrl &quot; (Component, Controls)</summary>
-			public static string CLSID_MdAssignFieldAlias2Ctrl  {
-				 get { return "CLSID_MdAssignFieldAlias2Ctrl "; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdAssignFieldAliasCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdAssignFieldAliasCtrl {
-				 get { return "CLSID_MdAssignFieldAliasCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdCLFieldMapCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdCLFieldMapCtrl {
-				 get { return "CLSID_MdCLFieldMapCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdCLSelectionCriteriaCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdCLSelectionCriteriaCtrl {
-				 get { return "CLSID_MdCLSelectionCriteriaCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdSaTimeConfigCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdSaTimeConfigCtrl {
-				 get { return "CLSID_MdSaTimeConfigCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_NAClassFieldMapCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_NAClassFieldMapCtrl {
-				 get { return "CLSID_NAClassFieldMapCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdSaTransformationFunctionCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdSaTransformationFunctionCtrl {
-				 get { return "CLSID_MdSaTransformationFunctionCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdSaRasterCalcCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdSaRasterCalcCtrl {
-				 get { return "CLSID_MdSaRasterCalcCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_LreEventPropertiesCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_LreEventPropertiesCtrl {
-				 get { return "CLSID_LreEventPropertiesCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_MdGeoTransformationCtrl&quot; (Component, Controls)</summary>
-			public static string CLSID_MdGeoTransformationCtrl {
-				 get { return "CLSID_MdGeoTransformationCtrl"; }
-			}
-			///<summary>Returns the id string for &quot;CLSID_GP3DAInterpolateType&quot; (Component, Controls)</summary>
-			public static string CLSID_GP3DAInterpolateType {
-				 get { return "CLSID_GP3DAInterpolateType"; }
+		public static partial class Toolpalette {
+			///<summary>Returns the id string for &quot;Sketch&quot; (Toolpalette, Editing)</summary>
+			public static string esri_editing_offsetLineToolPalette {
+				 get { return "esri_editing_offsetLineToolPalette"; }
 			}
 		}
 		public static partial class Button {
+			///<summary>Returns the id string for &quot;Bezier&quot; (esri_geoprocessing_module:Commands.SetLinkShapeBezier, GeoProcessing)</summary>
+			public static string esri_modelbuilder_bezierLinkTypeButton {
+				 get { return "esri_modelbuilder_bezierLinkTypeButton"; }
+			}
+			///<summary>Returns the id string for &quot;Cascade&quot; (esri_geoprocessing_module:Commands.SetLinkShapeCascading, GeoProcessing)</summary>
+			public static string esri_modelbuilder_cascadeLinkTypeButton {
+				 get { return "esri_modelbuilder_cascadeLinkTypeButton"; }
+			}
+			///<summary>Returns the id string for &quot;Polyline&quot; (esri_geoprocessing_module:Commands.SetLinkShapePolyline, GeoProcessing)</summary>
+			public static string esri_modelbuilder_polylineLinkTypeButton {
+				 get { return "esri_modelbuilder_polylineLinkTypeButton"; }
+			}
+			///<summary>Returns the id string for &quot;Spline&quot; (esri_geoprocessing_module:Commands.SetLinkShapeBezier, GeoProcessing)</summary>
+			public static string esri_modelbuilder_splineLinkTypeButton {
+				 get { return "esri_modelbuilder_splineLinkTypeButton"; }
+			}
 			///<summary>Returns the id string for &quot;Grow Font&quot; (esri_geoprocessing_module:Commands.FontSizeIncrementButton, GeoProcessing)</summary>
 			public static string esri_modelbuilder_labelTextIncreaseSizeButton {
 				 get { return "esri_modelbuilder_labelTextIncreaseSizeButton"; }
@@ -6678,13 +8468,13 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_geoprocessing_addToolboxButton {
 				 get { return "esri_geoprocessing_addToolboxButton"; }
 			}
-			///<summary>Returns the id string for &quot;Add To Project&quot; (esri_geoprocessing_module:Commands.AddToolboxFromFolder, GeoProcessing)</summary>
-			public static string esri_geoprocessing_addToolboxFromFolderButton {
-				 get { return "esri_geoprocessing_addToolboxFromFolderButton"; }
-			}
 			///<summary>Returns the id string for &quot;New Toolbox&quot; (esri_geoprocessing_module:Commands.NewToolbox, GeoProcessing)</summary>
 			public static string esri_geoprocessing_newToolboxButton {
 				 get { return "esri_geoprocessing_newToolboxButton"; }
+			}
+			///<summary>Returns the id string for &quot;New Toolbox&quot; (esri_geoprocessing_module:Commands.NewToolbox, GeoProcessing)</summary>
+			public static string esri_geoprocessing_newToolboxButtonNoDlg {
+				 get { return "esri_geoprocessing_newToolboxButtonNoDlg"; }
 			}
 			///<summary>Returns the id string for &quot;New Python Toolbox&quot; (esri_geoprocessing_module:Commands.NewPythonToolbox, GeoProcessing)</summary>
 			public static string esri_geoprocessing_newPythonToolboxButton {
@@ -6733,6 +8523,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Send To Python Window&quot; (esri_geoprocessing_module:Commands.OnSendSnippetPythonWindow, GeoProcessing)</summary>
 			public static string esri_geoprocessing_sendToPythonWindow {
 				 get { return "esri_geoprocessing_sendToPythonWindow"; }
+			}
+			///<summary>Returns the id string for &quot;Save As Python Script&quot; (esri_geoprocessing_module:Commands.OnMakePythonScript, GeoProcessing)</summary>
+			public static string esri_geoprocessing_makePythonScript {
+				 get { return "esri_geoprocessing_makePythonScript"; }
 			}
 			///<summary>Returns the id string for &quot;Remove&quot; (esri_geoprocessing_module:Commands.OnRemoveToolHistory, GeoProcessing)</summary>
 			public static string esri_geoprocessing_removeToolHistory {
@@ -6794,9 +8588,17 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_geoprocessing_HideMainProgressor {
 				 get { return "esri_geoprocessing_HideMainProgressor"; }
 			}
+			///<summary>Returns the id string for &quot;Locate&quot; (esri_geoprocessing_module:Commands.OnLocateTool, GeoProcessing)</summary>
+			public static string esri_geoprocessing_locateTool {
+				 get { return "esri_geoprocessing_locateTool"; }
+			}
 			///<summary>Returns the id string for &quot;Edit&quot; (esri_geoprocessing_module:Commands.OnEditTool, GeoProcessing)</summary>
 			public static string esri_geoprocessing_editTool {
 				 get { return "esri_geoprocessing_editTool"; }
+			}
+			///<summary>Returns the id string for &quot;Batch&quot; (esri_geoprocessing_module:Commands.OnBatchTool, GeoProcessing)</summary>
+			public static string esri_geoprocessing_BatchTool {
+				 get { return "esri_geoprocessing_BatchTool"; }
 			}
 			///<summary>Returns the id string for &quot;Properties&quot; (esri_geoprocessing_module:Commands.OnEditToolboxProperties, GeoProcessing)</summary>
 			public static string esri_geoprocessing_editToolboxProperties {
@@ -6930,9 +8732,17 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_modelbuilder_exportImageButton {
 				 get { return "esri_modelbuilder_exportImageButton"; }
 			}
-			///<summary>Returns the id string for &quot;Export Script&quot; (esri_geoprocessing_module:Commands.ExportModelScript, GeoProcessing)</summary>
+			///<summary>Returns the id string for &quot;Export To Python File&quot; (esri_geoprocessing_module:Commands.ExportModelScript, GeoProcessing)</summary>
 			public static string esri_modelbuilder_exportScriptButton {
 				 get { return "esri_modelbuilder_exportScriptButton"; }
+			}
+			///<summary>Returns the id string for &quot;Export&quot; (esri_geoprocessing_module:Commands.ExportModelScript, GeoProcessing)</summary>
+			public static string esri_modelbuilder_exportFromModelButton {
+				 get { return "esri_modelbuilder_exportFromModelButton"; }
+			}
+			///<summary>Returns the id string for &quot;Send To Python Window&quot; (esri_geoprocessing_module:Commands.SendModelToPythonWindow, GeoProcessing)</summary>
+			public static string esri_modelbuilder_SentModelToPythonWindowButton {
+				 get { return "esri_modelbuilder_SentModelToPythonWindowButton"; }
 			}
 			///<summary>Returns the id string for &quot;Export Report&quot; (esri_geoprocessing_module:Commands.ExportModelReport, GeoProcessing)</summary>
 			public static string esri_modelbuilder_exportReportButton {
@@ -6986,6 +8796,18 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_modelbuilder_autoLayoutButton {
 				 get { return "esri_modelbuilder_autoLayoutButton"; }
 			}
+			///<summary>Returns the id string for &quot;Auto Layout Diagram&quot; (esri_geoprocessing_module:Commands.AutoLayout, GeoProcessing)</summary>
+			public static string esri_modelbuilder_autoLayoutDiagramButton {
+				 get { return "esri_modelbuilder_autoLayoutDiagramButton"; }
+			}
+			///<summary>Returns the id string for &quot;Route Group Links&quot; (esri_geoprocessing_module:Commands.RouteAllGroupLinks, GeoProcessing)</summary>
+			public static string esri_modelbuilder_RouteAllGroupLinksButton {
+				 get { return "esri_modelbuilder_RouteAllGroupLinksButton"; }
+			}
+			///<summary>Returns the id string for &quot;Route All Links&quot; (esri_geoprocessing_module:Commands.RouteAllLinks, GeoProcessing)</summary>
+			public static string esri_modelbuilder_RouteAllLinksButton {
+				 get { return "esri_modelbuilder_RouteAllLinksButton"; }
+			}
 			///<summary>Returns the id string for &quot;Properties&quot; (esri_geoprocessing_module:Commands.OnEditModelToolProperties, GeoProcessing)</summary>
 			public static string esri_modelBuilder_editToolProperties {
 				 get { return "esri_modelBuilder_editToolProperties"; }
@@ -6994,7 +8816,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_modelbuilder_environmentsButton {
 				 get { return "esri_modelbuilder_environmentsButton"; }
 			}
-			///<summary>Returns the id string for &quot;Report View&quot; (esri_geoprocessing_module:Commands.ShowModelReportView, GeoProcessing)</summary>
+			///<summary>Returns the id string for &quot;Report&quot; (esri_geoprocessing_module:Commands.ShowModelReportView, GeoProcessing)</summary>
 			public static string esri_modelbuilder_reportViewButton {
 				 get { return "esri_modelbuilder_reportViewButton"; }
 			}
@@ -7018,7 +8840,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_modelbuilder_copyElementButton {
 				 get { return "esri_modelbuilder_copyElementButton"; }
 			}
-			///<summary>Returns the id string for &quot;Cut&quot; (esri_geoprocessing_module:Commands.CutConnection, GeoProcessing)</summary>
+			///<summary>Returns the id string for &quot;Remove&quot; (esri_geoprocessing_module:Commands.CutConnection, GeoProcessing)</summary>
 			public static string esri_modelbuilder_cutConnectionButton {
 				 get { return "esri_modelbuilder_cutConnectionButton"; }
 			}
@@ -7154,9 +8976,9 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_modelbuilder_getFieldValueButton {
 				 get { return "esri_modelbuilder_getFieldValueButton"; }
 			}
-			///<summary>Returns the id string for &quot;Parse Path&quot; (esri_geoprocessing_module:Commands.ParsePath, GeoProcessing)</summary>
-			public static string esri_modelbuilder_parsePathButton {
-				 get { return "esri_modelbuilder_parsePathButton"; }
+			///<summary>Returns the id string for &quot;Parse Path&quot; (esri_geoprocessing_module:Commands.ParsePathExt, GeoProcessing)</summary>
+			public static string esri_modelbuilder_parsePathExtButton {
+				 get { return "esri_modelbuilder_parsePathExtButton"; }
 			}
 			///<summary>Returns the id string for &quot;Select Data&quot; (esri_geoprocessing_module:Commands.SelectData, GeoProcessing)</summary>
 			public static string esri_modelbuilder_selectDataButton {
@@ -7194,23 +9016,27 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_modelbuilder_IfSelectionExistsButton {
 				 get { return "esri_modelbuilder_IfSelectionExistsButton"; }
 			}
-			///<summary>Returns the id string for &quot;If RowCount Is&quot; (esri_geoprocessing_module:Commands.IfRowCountIs, GeoProcessing)</summary>
+			///<summary>Returns the id string for &quot;If Row Count Is&quot; (esri_geoprocessing_module:Commands.IfRowCountIs, GeoProcessing)</summary>
 			public static string esri_modelbuilder_IfRowCountIsButton {
 				 get { return "esri_modelbuilder_IfRowCountIsButton"; }
 			}
-			///<summary>Returns the id string for &quot;If CoordinateSystem Is&quot; (esri_geoprocessing_module:Commands.IfCoordinationSystemIs, GeoProcessing)</summary>
+			///<summary>Returns the id string for &quot;If Coordinate System Is&quot; (esri_geoprocessing_module:Commands.IfCoordinationSystemIs, GeoProcessing)</summary>
 			public static string esri_modelbuilder_IfCoordinationSystemIsButton {
 				 get { return "esri_modelbuilder_IfCoordinationSystemIsButton"; }
 			}
-			///<summary>Returns the id string for &quot;If DataType Is&quot; (esri_geoprocessing_module:Commands.IfDataTypeIs, GeoProcessing)</summary>
+			///<summary>Returns the id string for &quot;If Data Type Is&quot; (esri_geoprocessing_module:Commands.IfDataTypeIs, GeoProcessing)</summary>
 			public static string esri_modelbuilder_IfDataTypeIsButton {
 				 get { return "esri_modelbuilder_IfDataTypeIsButton"; }
 			}
-			///<summary>Returns the id string for &quot;If FeatureType Is&quot; (esri_geoprocessing_module:Commands.IfFeatureTypeIs, GeoProcessing)</summary>
+			///<summary>Returns the id string for &quot;If Value Is&quot; (esri_geoprocessing_module:Commands.IfValueIs, GeoProcessing)</summary>
+			public static string esri_modelbuilder_IfValueIsButton {
+				 get { return "esri_modelbuilder_IfValueIsButton"; }
+			}
+			///<summary>Returns the id string for &quot;If Feature Type Is&quot; (esri_geoprocessing_module:Commands.IfFeatureTypeIs, GeoProcessing)</summary>
 			public static string esri_modelbuilder_IfFeatureTypeIsButton {
 				 get { return "esri_modelbuilder_IfFeatureTypeIsButton"; }
 			}
-			///<summary>Returns the id string for &quot;If Spatial Relationship Exists&quot; (esri_geoprocessing_module:Commands.IfSpatialRelationshipExists, GeoProcessing)</summary>
+			///<summary>Returns the id string for &quot;If Spatial Relationship Is&quot; (esri_geoprocessing_module:Commands.IfSpatialRelationshipExists, GeoProcessing)</summary>
 			public static string esri_modelbuilder_IfSpatialRelationshipExistsButton {
 				 get { return "esri_modelbuilder_IfSpatialRelationshipExistsButton"; }
 			}
@@ -7234,15 +9060,15 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_geoprocessing_saveAsToolbox104 {
 				 get { return "esri_geoprocessing_saveAsToolbox104"; }
 			}
-			///<summary>Returns the id string for &quot;10.5 Toolbox...&quot; (esri_geoprocessing_module:Commands.OnSaveAsToolbox105, GeoProcessing)</summary>
+			///<summary>Returns the id string for &quot;10.5/10.6 Toolbox...&quot; (esri_geoprocessing_module:Commands.OnSaveAsToolbox105, GeoProcessing)</summary>
 			public static string esri_geoprocessing_saveAsToolbox105 {
 				 get { return "esri_geoprocessing_saveAsToolbox105"; }
 			}
-			///<summary>Returns the id string for &quot;Copy&quot; (esri_geoprocessing_module:Commands.OnCopy, GeoProcessing)</summary>
+			///<summary>Returns the id string for &quot;Copy&quot; (ArcGIS.Desktop.Framework.CopyCMD, GeoProcessing)</summary>
 			public static string esri_geoprocessing_editCopy {
 				 get { return "esri_geoprocessing_editCopy"; }
 			}
-			///<summary>Returns the id string for &quot;Paste&quot; (esri_geoprocessing_module:Commands.OnPaste, GeoProcessing)</summary>
+			///<summary>Returns the id string for &quot;Paste&quot; (ArcGIS.Desktop.Framework.PasteCMD, GeoProcessing)</summary>
 			public static string esri_geoprocessing_pasteTool {
 				 get { return "esri_geoprocessing_pasteTool"; }
 			}
@@ -7274,7 +9100,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_modelbuilder_AddSubGroup {
 				 get { return "esri_modelbuilder_AddSubGroup"; }
 			}
-			///<summary>Returns the id string for &quot;Auto Layout&quot; (esri_geoprocessing_module:Commands.AutoLayoutGroup, GeoProcessing)</summary>
+			///<summary>Returns the id string for &quot;Auto Layout Group&quot; (esri_geoprocessing_module:Commands.AutoLayoutGroup, GeoProcessing)</summary>
 			public static string esri_modelbuilder_AutoLayoutGroup {
 				 get { return "esri_modelbuilder_AutoLayoutGroup"; }
 			}
@@ -7294,7 +9120,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_geoprocessing_decryptPyt {
 				 get { return "esri_geoprocessing_decryptPyt"; }
 			}
-			///<summary>Returns the id string for &quot;Define Projection&quot; (esri_geoprocessing_module:Commands.DefineProjection, GeoProcessing)</summary>
+			///<summary>Returns the id string for &quot;Define Projection&quot; (esri_geoprocessing_module:CadCommands.DefineProjection, GeoProcessing)</summary>
 			public static string esri_geoprocessing_cadDefineProjectionButton {
 				 get { return "esri_geoprocessing_cadDefineProjectionButton"; }
 			}
@@ -7305,7 +9131,49 @@ namespace ArcGIS.Desktop.Framework {
 				 get { return "esri_geoprocessing_selectByPalette"; }
 			}
 		}
+		public static partial class Checkbox {
+			///<summary>Returns the id string for &quot;Enforce Link Flow&quot; (MBLinkStatusEnforceLinkFlow, GeoProcessing)</summary>
+			public static string esri_modelbuilder_enforceLinkFlow {
+				 get { return "esri_modelbuilder_enforceLinkFlow"; }
+			}
+			///<summary>Returns the id string for &quot;Straighten Long Links&quot; (MBLinkStatusStraightenLongLinks, GeoProcessing)</summary>
+			public static string esri_modelbuilder_straightenLongLinks {
+				 get { return "esri_modelbuilder_straightenLongLinks"; }
+			}
+			///<summary>Returns the id string for &quot;Orthogonal Links&quot; (MBLinkStatusOrthogonalLinks, GeoProcessing)</summary>
+			public static string esri_modelbuilder_orthogonalLinks {
+				 get { return "esri_modelbuilder_orthogonalLinks"; }
+			}
+			///<summary>Returns the id string for &quot;Show Grid&quot; (MBShowGrid, GeoProcessing)</summary>
+			public static string esri_modelbuilder_showGridCheckbox {
+				 get { return "esri_modelbuilder_showGridCheckbox"; }
+			}
+			///<summary>Returns the id string for &quot;Use Grid Router&quot; (MBUseGridRouter, GeoProcessing)</summary>
+			public static string esri_modelbuilder_useGridRouter {
+				 get { return "esri_modelbuilder_useGridRouter"; }
+			}
+			///<summary>Returns the id string for &quot;Flip Orientation&quot; (MBOrientationFlipOrientation, GeoProcessing)</summary>
+			public static string esri_modelbuilder_FlipOrientation {
+				 get { return "esri_modelbuilder_FlipOrientation"; }
+			}
+			///<summary>Returns the id string for &quot;Reverse Direction&quot; (MBOrientationReverseDirection, GeoProcessing)</summary>
+			public static string esri_modelbuilder_ReverserDirection {
+				 get { return "esri_modelbuilder_ReverserDirection"; }
+			}
+			///<summary>Returns the id string for &quot;Flip Flow Direction&quot; (MBOrientationFlipTextDirection, GeoProcessing)</summary>
+			public static string esri_modelbuilder_FlipTextDirection {
+				 get { return "esri_modelbuilder_FlipTextDirection"; }
+			}
+		}
 		public static partial class Combobox {
+			///<summary>Returns the id string for &quot;esri_modelbuilder_subGraphPlacement&quot; (ArcGIS.Desktop.GeoProcessing.MBSubGraph, GeoProcessing)</summary>
+			public static string esri_modelbuilder_subGraphPlacement {
+				 get { return "esri_modelbuilder_subGraphPlacement"; }
+			}
+			///<summary>Returns the id string for &quot;esri_modelbuilder_groupGraphPlacement&quot; (ArcGIS.Desktop.GeoProcessing.MBSubGraphInGroups, GeoProcessing)</summary>
+			public static string esri_modelbuilder_groupGraphPlacement {
+				 get { return "esri_modelbuilder_groupGraphPlacement"; }
+			}
 			///<summary>Returns the id string for &quot;esri_modelbuilder_labelTextFontFamilyComboBox&quot; (Commands+FontFamilyChoices, GeoProcessing)</summary>
 			public static string esri_modelbuilder_labelTextFontFamilyComboBox {
 				 get { return "esri_modelbuilder_labelTextFontFamilyComboBox"; }
@@ -7319,6 +9187,22 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;CLSID_MdStringCtrl&quot; (Component, GeoProcessing)</summary>
 			public static string CLSID_MdStringCtrl {
 				 get { return "CLSID_MdStringCtrl"; }
+			}
+			///<summary>Returns the id string for &quot;icon_overlay_cloud_type&quot; (Component, GeoProcessing)</summary>
+			public static string icon_overlay_cloud_type {
+				 get { return "icon_overlay_cloud_type"; }
+			}
+			///<summary>Returns the id string for &quot;icon_overlay_coin_type&quot; (Component, GeoProcessing)</summary>
+			public static string icon_overlay_coin_type {
+				 get { return "icon_overlay_coin_type"; }
+			}
+			///<summary>Returns the id string for &quot;icon_overlay_gpu_leverage&quot; (Component, GeoProcessing)</summary>
+			public static string icon_overlay_gpu_leverage {
+				 get { return "icon_overlay_gpu_leverage"; }
+			}
+			///<summary>Returns the id string for &quot;icon_overlay_parallelproc_type&quot; (Component, GeoProcessing)</summary>
+			public static string icon_overlay_parallelproc_type {
+				 get { return "icon_overlay_parallelproc_type"; }
 			}
 			///<summary>Returns the id string for &quot;_consume_always&quot; (Component, GeoProcessing)</summary>
 			public static string _consume_always {
@@ -7339,6 +9223,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;DEAddressLocator&quot; (Component, GeoProcessing)</summary>
 			public static string DEAddressLocator {
 				 get { return "DEAddressLocator"; }
+			}
+			///<summary>Returns the id string for &quot;DEBimFileWorkspace&quot; (Component, GeoProcessing)</summary>
+			public static string DEBimFileWorkspace {
+				 get { return "DEBimFileWorkspace"; }
 			}
 			///<summary>Returns the id string for &quot;DECadastralFabric&quot; (Component, GeoProcessing)</summary>
 			public static string DECadastralFabric {
@@ -7427,6 +9315,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;DENetworkDataset&quot; (Component, GeoProcessing)</summary>
 			public static string DENetworkDataset {
 				 get { return "DENetworkDataset"; }
+			}
+			///<summary>Returns the id string for &quot;DEParcelDataset&quot; (Component, GeoProcessing)</summary>
+			public static string DEParcelDataset {
+				 get { return "DEParcelDataset"; }
 			}
 			///<summary>Returns the id string for &quot;DEPrjFile&quot; (Component, GeoProcessing)</summary>
 			public static string DEPrjFile {
@@ -7536,6 +9428,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string GPLayer {
 				 get { return "GPLayer"; }
 			}
+			///<summary>Returns the id string for &quot;GPLayout&quot; (Component, GeoProcessing)</summary>
+			public static string GPLayout {
+				 get { return "GPLayout"; }
+			}
 			///<summary>Returns the id string for &quot;GPMap&quot; (Component, GeoProcessing)</summary>
 			public static string GPMap {
 				 get { return "GPMap"; }
@@ -7544,9 +9440,17 @@ namespace ArcGIS.Desktop.Framework {
 			public static string GPMosaicLayer {
 				 get { return "GPMosaicLayer"; }
 			}
+			///<summary>Returns the id string for &quot;GPNALayer&quot; (Component, GeoProcessing)</summary>
+			public static string GPNALayer {
+				 get { return "GPNALayer"; }
+			}
 			///<summary>Returns the id string for &quot;GPNetworkDatasetLayer&quot; (Component, GeoProcessing)</summary>
 			public static string GPNetworkDatasetLayer {
 				 get { return "GPNetworkDatasetLayer"; }
+			}
+			///<summary>Returns the id string for &quot;GPParcelLayer&quot; (Component, GeoProcessing)</summary>
+			public static string GPParcelLayer {
+				 get { return "GPParcelLayer"; }
 			}
 			///<summary>Returns the id string for &quot;GPRasterLayer&quot; (Component, GeoProcessing)</summary>
 			public static string GPRasterLayer {
@@ -7580,6 +9484,18 @@ namespace ArcGIS.Desktop.Framework {
 			public static string GPTopologyLayer {
 				 get { return "GPTopologyLayer"; }
 			}
+			///<summary>Returns the id string for &quot;GPSceneServiceLayer&quot; (Component, GeoProcessing)</summary>
+			public static string GPSceneServiceLayer {
+				 get { return "GPSceneServiceLayer"; }
+			}
+			///<summary>Returns the id string for &quot;GPUtilityNetworkLayer&quot; (Component, GeoProcessing)</summary>
+			public static string GPUtilityNetworkLayer {
+				 get { return "GPUtilityNetworkLayer"; }
+			}
+			///<summary>Returns the id string for &quot;GPVectorLayer&quot; (Component, GeoProcessing)</summary>
+			public static string GPVectorLayer {
+				 get { return "GPVectorLayer"; }
+			}
 			///<summary>Returns the id string for &quot;_gpDefaultProjectTools&quot; (Component, GeoProcessing)</summary>
 			public static string _gpDefaultProjectTools {
 				 get { return "_gpDefaultProjectTools"; }
@@ -7592,11 +9508,35 @@ namespace ArcGIS.Desktop.Framework {
 			public static string _gpDefaultCadGalleryTools {
 				 get { return "_gpDefaultCadGalleryTools"; }
 			}
+			///<summary>Returns the id string for &quot;_gpDefaultBimGalleryTools&quot; (Component, GeoProcessing)</summary>
+			public static string _gpDefaultBimGalleryTools {
+				 get { return "_gpDefaultBimGalleryTools"; }
+			}
 		}
 		public static partial class Customcontrol {
+			///<summary>Returns the id string for &quot;Grid Size&quot; (ArcGIS.Desktop.GeoProcessing.ModelBuilder.Ribbon.GridRouterSettingsViewModel, GeoProcessing)</summary>
+			public static string esri_modelbuilder_gridRouterSettings {
+				 get { return "esri_modelbuilder_gridRouterSettings"; }
+			}
+			///<summary>Returns the id string for &quot;Element&quot; (ArcGIS.Desktop.GeoProcessing.ModelBuilder.Ribbon.ElementSlider, GeoProcessing)</summary>
+			public static string esri_modelbuilder_elementSlider {
+				 get { return "esri_modelbuilder_elementSlider"; }
+			}
+			///<summary>Returns the id string for &quot;Level&quot; (ArcGIS.Desktop.GeoProcessing.ModelBuilder.Ribbon.LevelSlider, GeoProcessing)</summary>
+			public static string esri_modelbuilder_levelSlider {
+				 get { return "esri_modelbuilder_levelSlider"; }
+			}
+			///<summary>Returns the id string for &quot;Element&quot; (ArcGIS.Desktop.GeoProcessing.ModelBuilder.Ribbon.SubGraphSlider, GeoProcessing)</summary>
+			public static string esri_modelbuilder_subGraphSlider {
+				 get { return "esri_modelbuilder_subGraphSlider"; }
+			}
 			///<summary>Returns the id string for &quot;&quot; (Commands+TextColorPickerViewModel, GeoProcessing)</summary>
 			public static string esri_modelbuilder_labelTextColorGallery {
 				 get { return "esri_modelbuilder_labelTextColorGallery"; }
+			}
+			///<summary>Returns the id string for &quot;Tools&quot; (ArcGIS.Desktop.GeoProcessing.ToolSearcherViewModel, GeoProcessing)</summary>
+			public static string esri_geoprocessing_toolsSearch {
+				 get { return "esri_geoprocessing_toolsSearch"; }
 			}
 			///<summary>Returns the id string for &quot;Tools&quot; (GPStartViewModel, GeoProcessing)</summary>
 			public static string esri_geoprocessing_Start {
@@ -7634,6 +9574,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_geoprocessing_pythonWindow {
 				 get { return "esri_geoprocessing_pythonWindow"; }
 			}
+			///<summary>Returns the id string for &quot;Suitability Modeler&quot; (SuitabilityDockPaneViewModel, GeoProcessing)</summary>
+			public static string esri_geoprocessing_suitability {
+				 get { return "esri_geoprocessing_suitability"; }
+			}
 		}
 		public static partial class Dynamicmenu {
 			///<summary>Returns the id string for &quot;Connect&quot; (ConnectElementsDynamicMenu, GeoProcessing)</summary>
@@ -7670,8 +9614,20 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_cadToolsGallery {
 				 get { return "esri_cadToolsGallery"; }
 			}
+			///<summary>Returns the id string for &quot;Building Tool Gallery&quot; (BimGalleryViewModel, GeoProcessing)</summary>
+			public static string esri_bimToolsGallery {
+				 get { return "esri_bimToolsGallery"; }
+			}
 		}
 		public static partial class Group {
+			///<summary>Returns the id string for &quot;Project&quot; (Group, GeoProcessing)</summary>
+			public static string esri_geoprocessing_container_ProjectGroup {
+				 get { return "esri_geoprocessing_container_ProjectGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Create&quot; (Group, GeoProcessing)</summary>
+			public static string esri_geoprocessing_container_CreateGroup {
+				 get { return "esri_geoprocessing_container_CreateGroup"; }
+			}
 			///<summary>Returns the id string for &quot;Text&quot; (Group, GeoProcessing)</summary>
 			public static string esri_modelbuilder_labelTextFormatGroup {
 				 get { return "esri_modelbuilder_labelTextFormatGroup"; }
@@ -7716,10 +9672,6 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_modelbuilder_insertGroup {
 				 get { return "esri_modelbuilder_insertGroup"; }
 			}
-			///<summary>Returns the id string for &quot;Export&quot; (Group, GeoProcessing)</summary>
-			public static string esri_modelbuilder_exportGroup {
-				 get { return "esri_modelbuilder_exportGroup"; }
-			}
 			///<summary>Returns the id string for &quot;Group&quot; (Group, GeoProcessing)</summary>
 			public static string esri_modelbuilder_groupGroup {
 				 get { return "esri_modelbuilder_groupGroup"; }
@@ -7728,15 +9680,43 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_geoprocessing_datainterop_group {
 				 get { return "esri_geoprocessing_datainterop_group"; }
 			}
+			///<summary>Returns the id string for &quot;Spacing&quot; (Group, GeoProcessing)</summary>
+			public static string esri_modelbuilder_spacingGroup {
+				 get { return "esri_modelbuilder_spacingGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Links&quot; (Group, GeoProcessing)</summary>
+			public static string esri_modelbuilder_linkGroup {
+				 get { return "esri_modelbuilder_linkGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Orientation&quot; (Group, GeoProcessing)</summary>
+			public static string esri_modelbuilder_orientationGroup {
+				 get { return "esri_modelbuilder_orientationGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Layout&quot; (Group, GeoProcessing)</summary>
+			public static string esri_modelbuilder_layoutGroup {
+				 get { return "esri_modelbuilder_layoutGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Routing&quot; (Group, GeoProcessing)</summary>
+			public static string esri_modelbuilder_routingGroup {
+				 get { return "esri_modelbuilder_routingGroup"; }
+			}
 			///<summary>Returns the id string for &quot;Tools&quot; (Group, GeoProcessing)</summary>
 			public static string esri_geoprocessing_cadToolsGroup {
 				 get { return "esri_geoprocessing_cadToolsGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Tools&quot; (Group, GeoProcessing)</summary>
+			public static string esri_geoprocessing_bimToolsGroup {
+				 get { return "esri_geoprocessing_bimToolsGroup"; }
 			}
 		}
 		public static partial class Category {
 			///<summary>Returns the id string for &quot;esri_gpGuidToControl&quot; (Category, GeoProcessing)</summary>
 			public static string esri_gpGuidToControl {
 				 get { return "esri_gpGuidToControl"; }
+			}
+			///<summary>Returns the id string for &quot;esri_gpToolIconOverlay&quot; (Category, GeoProcessing)</summary>
+			public static string esri_gpToolIconOverlay {
+				 get { return "esri_gpToolIconOverlay"; }
 			}
 			///<summary>Returns the id string for &quot;esri_gpToolConsumeCredit&quot; (Category, GeoProcessing)</summary>
 			public static string esri_gpToolConsumeCredit {
@@ -7758,12 +9738,12 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_gpDefaultCadGalleryTools {
 				 get { return "esri_gpDefaultCadGalleryTools"; }
 			}
+			///<summary>Returns the id string for &quot;esri_gpDefaultBimGalleryTools&quot; (Category, GeoProcessing)</summary>
+			public static string esri_gpDefaultBimGalleryTools {
+				 get { return "esri_gpDefaultBimGalleryTools"; }
+			}
 		}
 		public static partial class Component {
-			///<summary>Returns the id string for &quot;esri_geoprocessing_container&quot; (ArcGIS.Desktop.Internal.GeoProcessing.GeoprocessingContainer, GeoProcessing)</summary>
-			public static string esri_geoprocessing_container {
-				 get { return "esri_geoprocessing_container"; }
-			}
 			///<summary>Returns the id string for &quot;esri_geoprocessing_history&quot; (ArcGIS.Desktop.Internal.GeoProcessing.HistoryContainer, GeoProcessing)</summary>
 			public static string esri_geoprocessing_history {
 				 get { return "esri_geoprocessing_history"; }
@@ -7772,9 +9752,17 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_geoprocessing_history_ctrl {
 				 get { return "esri_geoprocessing_history_ctrl"; }
 			}
+			///<summary>Returns the id string for &quot;esri_customized_GPCommands&quot; (ArcGIS.Desktop.GeoProcessing.GeoprocessingToolsComponent, GeoProcessing)</summary>
+			public static string esri_customized_GPCommands {
+				 get { return "esri_customized_GPCommands"; }
+			}
 			///<summary>Returns the id string for &quot;esri_itemInfoType_GeoprocessingProjectItem&quot; (ArcGIS.Desktop.GeoProcessing.GeoprocessingProjectItem, GeoProcessing)</summary>
 			public static string esri_itemInfoType_GeoprocessingProjectItem {
 				 get { return "esri_itemInfoType_GeoprocessingProjectItem"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_modelTools&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, GeoProcessing)</summary>
+			public static string esri_browseDialogFilters_modelTools {
+				 get { return "esri_browseDialogFilters_modelTools"; }
 			}
 			///<summary>Returns the id string for &quot;esri_browseDialogFilters_gpcomposite&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, GeoProcessing)</summary>
 			public static string esri_browseDialogFilters_gpcomposite {
@@ -7796,10 +9784,6 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_browseDialogFilters_composite_rasters {
 				 get { return "esri_browseDialogFilters_composite_rasters"; }
 			}
-			///<summary>Returns the id string for &quot;esri_browseDialogFilters_cad_worldFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, GeoProcessing)</summary>
-			public static string esri_browseDialogFilters_cad_worldFiles {
-				 get { return "esri_browseDialogFilters_cad_worldFiles"; }
-			}
 		}
 		public static partial class Condition {
 			///<summary>Returns the id string for &quot;esri_geoprocessing_EditingScriptToolCondition&quot; (Condition, GeoProcessing)</summary>
@@ -7817,6 +9801,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_geoprocessing_PortalCondition&quot; (Condition, GeoProcessing)</summary>
 			public static string esri_geoprocessing_PortalCondition {
 				 get { return "esri_geoprocessing_PortalCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_geoprocessing_mb_usegridrouter&quot; (Condition, GeoProcessing)</summary>
+			public static string esri_geoprocessing_mb_usegridrouter {
+				 get { return "esri_geoprocessing_mb_usegridrouter"; }
+			}
+			///<summary>Returns the id string for &quot;esri_geoprocessing_container&quot; (Condition, GeoProcessing)</summary>
+			public static string esri_geoprocessing_container {
+				 get { return "esri_geoprocessing_container"; }
 			}
 		}
 		public static partial class Module {
@@ -7855,7 +9847,33 @@ namespace ArcGIS.Desktop.Framework {
 				 get { return "esri_geoprocessing_dataInterop_ToolPropertyEditor"; }
 			}
 		}
+		public static partial class Labelcontrol {
+			///<summary>Returns the id string for &quot;Element&quot; (Labelcontrol, GeoProcessing)</summary>
+			public static string esri_modelbuilder_elementLabel {
+				 get { return "esri_modelbuilder_elementLabel"; }
+			}
+			///<summary>Returns the id string for &quot;Level&quot; (Labelcontrol, GeoProcessing)</summary>
+			public static string esri_modelbuilder_levelLabel {
+				 get { return "esri_modelbuilder_levelLabel"; }
+			}
+			///<summary>Returns the id string for &quot;Sub-Graph&quot; (Labelcontrol, GeoProcessing)</summary>
+			public static string esri_modelbuilder_subGraphLabel {
+				 get { return "esri_modelbuilder_subGraphLabel"; }
+			}
+			///<summary>Returns the id string for &quot;Sub-Graph&quot; (Labelcontrol, GeoProcessing)</summary>
+			public static string esri_modelbuilder_subGraphPlacementLabel {
+				 get { return "esri_modelbuilder_subGraphPlacementLabel"; }
+			}
+			///<summary>Returns the id string for &quot;Group-Graph&quot; (Labelcontrol, GeoProcessing)</summary>
+			public static string esri_modelbuilder_groupGraphPlacementLabel {
+				 get { return "esri_modelbuilder_groupGraphPlacementLabel"; }
+			}
+		}
 		public static partial class Menu {
+			///<summary>Returns the id string for &quot;Grid Setting&quot; (Menu, GeoProcessing)</summary>
+			public static string esri_modelbuilder_gridSettingsPallette {
+				 get { return "esri_modelbuilder_gridSettingsPallette"; }
+			}
 			///<summary>Returns the id string for &quot;Utilities&quot; (Menu, GeoProcessing)</summary>
 			public static string esri_modelbuilder_utilitiesPalette {
 				 get { return "esri_modelbuilder_utilitiesPalette"; }
@@ -7952,10 +9970,6 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_geoprocessing_GalleryItemMenu {
 				 get { return "esri_geoprocessing_GalleryItemMenu"; }
 			}
-			///<summary>Returns the id string for &quot;Gallery Items&quot; (Menu, GeoProcessing)</summary>
-			public static string esri_geoprocessing_CadGalleryItemMenu {
-				 get { return "esri_geoprocessing_CadGalleryItemMenu"; }
-			}
 			///<summary>Returns the id string for &quot;Recent Tool Item&quot; (Menu, GeoProcessing)</summary>
 			public static string esri_geoprocessing_RecentItemMenu {
 				 get { return "esri_geoprocessing_RecentItemMenu"; }
@@ -8016,6 +10030,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_modelbuilder_variableMenuSelectedItem {
 				 get { return "esri_modelbuilder_variableMenuSelectedItem"; }
 			}
+			///<summary>Returns the id string for &quot;Variable&quot; (Menu, GeoProcessing)</summary>
+			public static string esri_modelbuilder_labelMenu {
+				 get { return "esri_modelbuilder_labelMenu"; }
+			}
 			///<summary>Returns the id string for &quot;Tool&quot; (Menu, GeoProcessing)</summary>
 			public static string esri_modelbuilder_toolMenuSelectedItem {
 				 get { return "esri_modelbuilder_toolMenuSelectedItem"; }
@@ -8064,6 +10082,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_modelbuilder_searchFilterContextMenu {
 				 get { return "esri_modelbuilder_searchFilterContextMenu"; }
 			}
+			///<summary>Returns the id string for &quot;Gallery Items&quot; (Menu, GeoProcessing)</summary>
+			public static string esri_geoprocessing_CadGalleryItemMenu {
+				 get { return "esri_geoprocessing_CadGalleryItemMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Gallery Items&quot; (Menu, GeoProcessing)</summary>
+			public static string esri_geoprocessing_BimGalleryItemMenu {
+				 get { return "esri_geoprocessing_BimGalleryItemMenu"; }
+			}
 		}
 		public static partial class Page {
 			///<summary>Returns the id string for &quot;General&quot; (ToolGeneralViewModel, GeoProcessing)</summary>
@@ -8097,6 +10123,16 @@ namespace ArcGIS.Desktop.Framework {
 				 get { return "esri_geoprocessing_MBReportPane"; }
 			}
 		}
+		public static partial class Splitbutton {
+			///<summary>Returns the id string for &quot;esri_geoprocessing_toolsSplitButton&quot; (Splitbutton, GeoProcessing)</summary>
+			public static string esri_geoprocessing_toolsSplitButton {
+				 get { return "esri_geoprocessing_toolsSplitButton"; }
+			}
+			///<summary>Returns the id string for &quot;Export&quot; (Splitbutton, GeoProcessing)</summary>
+			public static string esri_modelbuilder_exportSplitButton {
+				 get { return "esri_modelbuilder_exportSplitButton"; }
+			}
+		}
 		public static partial class State {
 			///<summary>Returns the id string for &quot;esri_geoprocessing_EditingScriptTool&quot; (State, GeoProcessing)</summary>
 			public static string esri_geoprocessing_EditingScriptTool {
@@ -8118,8 +10154,26 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_geoprocessing_ShowPortal {
 				 get { return "esri_geoprocessing_ShowPortal"; }
 			}
+			///<summary>Returns the id string for &quot;esri_geoprocessing_mb_use_gridrouter&quot; (State, GeoProcessing)</summary>
+			public static string esri_geoprocessing_mb_use_gridrouter {
+				 get { return "esri_geoprocessing_mb_use_gridrouter"; }
+			}
+		}
+		public static partial class Subgroup {
+			///<summary>Returns the id string for &quot;esri_gp_container_ProjectSubGroup&quot; (Subgroup, GeoProcessing)</summary>
+			public static string esri_gp_container_ProjectSubGroup {
+				 get { return "esri_gp_container_ProjectSubGroup"; }
+			}
 		}
 		public static partial class Tab {
+			///<summary>Returns the id string for &quot;Geoprocessing&quot; (Tab, GeoProcessing)</summary>
+			public static string esri_geoprocessing_GPContainer {
+				 get { return "esri_geoprocessing_GPContainer"; }
+			}
+			///<summary>Returns the id string for &quot;Diagram&quot; (Tab, GeoProcessing)</summary>
+			public static string esri_geoprocessing_MBDiagramTab1 {
+				 get { return "esri_geoprocessing_MBDiagramTab1"; }
+			}
 			///<summary>Returns the id string for &quot;ModelBuilder&quot; (Tab, GeoProcessing)</summary>
 			public static string esri_geoprocessing_MBHomeTab {
 				 get { return "esri_geoprocessing_MBHomeTab"; }
@@ -8137,40 +10191,40 @@ namespace ArcGIS.Desktop.Framework {
 				 get { return "esri_geoprocessing_MBViewTab"; }
 			}
 		}
+		public static partial class Tabgroup {
+			///<summary>Returns the id string for &quot;Manage&quot; (Tabgroup, GeoProcessing)</summary>
+			public static string esri_geoprocessing_GPTabGroup {
+				 get { return "esri_geoprocessing_GPTabGroup"; }
+			}
+			///<summary>Returns the id string for &quot;ModelBuilder&quot; (Tabgroup, GeoProcessing)</summary>
+			public static string esri_geoprocessing_MBTabGroup {
+				 get { return "esri_geoprocessing_MBTabGroup"; }
+			}
+		}
 		public static partial class Toolbar {
 			///<summary>Returns the id string for &quot;esri_modelbuilder_labelTextFontToolBar&quot; (Toolbar, GeoProcessing)</summary>
 			public static string esri_modelbuilder_labelTextFontToolBar {
 				 get { return "esri_modelbuilder_labelTextFontToolBar"; }
 			}
 		}
+		public static partial class Toolpalette {
+			///<summary>Returns the id string for &quot;Select&quot; (Toolpalette, GeoProcessing)</summary>
+			public static string esri_geoprocessing_bimSelectToolPalette {
+				 get { return "esri_geoprocessing_bimSelectToolPalette"; }
+			}
+			///<summary>Returns the id string for &quot;Link Shape&quot; (Toolpalette, GeoProcessing)</summary>
+			public static string esri_modelbuilder_linkShapeToolPalette {
+				 get { return "esri_modelbuilder_linkShapeToolPalette"; }
+			}
+		}
 		public static partial class Button {
-			///<summary>Returns the id string for &quot;Paste&quot; (esri_layouts:LayoutPaste, Layouts)</summary>
-			public static string esri_layouts_editPasteButton {
-				 get { return "esri_layouts_editPasteButton"; }
-			}
-			///<summary>Returns the id string for &quot;Paste Special&quot; (esri_layouts:LayoutPasteSpecial, Layouts)</summary>
-			public static string esri_layouts_editPasteSpecialButton {
-				 get { return "esri_layouts_editPasteSpecialButton"; }
-			}
-			///<summary>Returns the id string for &quot;Cut&quot; (esri_layouts:LayoutCut, Layouts)</summary>
-			public static string esri_layouts_editCutButton {
-				 get { return "esri_layouts_editCutButton"; }
-			}
-			///<summary>Returns the id string for &quot;Copy&quot; (esri_layouts:LayoutCopy, Layouts)</summary>
-			public static string esri_layouts_editCopyButton {
-				 get { return "esri_layouts_editCopyButton"; }
-			}
-			///<summary>Returns the id string for &quot;Delete&quot; (esri_layouts:LayoutDelete, Layouts)</summary>
-			public static string esri_layouts_editDeleteButton {
-				 get { return "esri_layouts_editDeleteButton"; }
+			///<summary>Returns the id string for &quot;esri_layouts_dummyButton&quot; (esri_layouts:DummyButton, Layouts)</summary>
+			public static string esri_layouts_dummyButton {
+				 get { return "esri_layouts_dummyButton"; }
 			}
 			///<summary>Returns the id string for &quot;Edit Text&quot; (esri_layouts:LayoutEditText, Layouts)</summary>
 			public static string esri_layouts_editTextButton {
 				 get { return "esri_layouts_editTextButton"; }
-			}
-			///<summary>Returns the id string for &quot;Navigate&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.LayoutNavigateButton, Layouts)</summary>
-			public static string esri_layouts_pageNavigateButton {
-				 get { return "esri_layouts_pageNavigateButton"; }
 			}
 			///<summary>Returns the id string for &quot;Fixed Zoom Out&quot; (esri_layouts:FixedZoomOut, Layouts)</summary>
 			public static string esri_layouts_pageFixedZoomOutButton {
@@ -8223,10 +10277,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Refresh&quot; (esri_layouts:RefreshMapSeries, Layouts)</summary>
 			public static string esri_layouts_mapSeriesRefreshButton {
 				 get { return "esri_layouts_mapSeriesRefreshButton"; }
-			}
-			///<summary>Returns the id string for &quot;Import a layout file...&quot; (esri_mapping:OpenImportMapDocument, Layouts)</summary>
-			public static string esri_layouts_importLayoutFile {
-				 get { return "esri_layouts_importLayoutFile"; }
 			}
 			///<summary>Returns the id string for &quot;Import web map or print web map...&quot; (esri_layouts:OpenWebMapFromFileAsync, Layouts)</summary>
 			public static string esri_layouts_openWebMapFromFileButton {
@@ -8328,6 +10378,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_selectContext {
 				 get { return "esri_layouts_selectContext"; }
 			}
+			///<summary>Returns the id string for &quot;Check Spelling&quot; (esri_layouts:ShowSpellCheckDockPane, Layouts)</summary>
+			public static string esri_layouts_showSpellCheckPane {
+				 get { return "esri_layouts_showSpellCheckPane"; }
+			}
 			///<summary>Returns the id string for &quot;Open&quot; (esri_layouts:OpenChart, Layouts)</summary>
 			public static string esri_layouts_chartOpenButton {
 				 get { return "esri_layouts_chartOpenButton"; }
@@ -8380,6 +10434,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_saveAsDefaultLegendItem {
 				 get { return "esri_layouts_saveAsDefaultLegendItem"; }
 			}
+			///<summary>Returns the id string for &quot;Save As Default&quot; (esri_layouts:SaveAsDefaultTableFrameField, Layouts)</summary>
+			public static string esri_layouts_saveAsDefaultTableFrameField {
+				 get { return "esri_layouts_saveAsDefaultTableFrameField"; }
+			}
 			///<summary>Returns the id string for &quot;Align Left&quot; (esri_layouts:AlignLeft, Layouts)</summary>
 			public static string esri_layouts_alignLeft {
 				 get { return "esri_layouts_alignLeft"; }
@@ -8416,17 +10474,9 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_alignToPage {
 				 get { return "esri_layouts_alignToPage"; }
 			}
-			///<summary>Returns the id string for &quot;Map Frame&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewMapFrameButton, Layouts)</summary>
-			public static string esri_layouts_newMapFrameButton {
-				 get { return "esri_layouts_newMapFrameButton"; }
-			}
 			///<summary>Returns the id string for &quot;Extent Indicator&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewExtentIndicatorButton, Layouts)</summary>
 			public static string esri_layouts_newExtentIndicatorButton {
 				 get { return "esri_layouts_newExtentIndicatorButton"; }
-			}
-			///<summary>Returns the id string for &quot;North Arrow&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewNorthArrowButton, Layouts)</summary>
-			public static string esri_layouts_newNorthArrowButton {
-				 get { return "esri_layouts_newNorthArrowButton"; }
 			}
 			///<summary>Returns the id string for &quot;More...&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NorthArrowStyleButton, Layouts)</summary>
 			public static string esri_layouts_northArrowStyleButton {
@@ -8435,10 +10485,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;More...&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.DefaultNorthArrowStyleButton, Layouts)</summary>
 			public static string esri_layouts_defaultNorthArrowStyleButton {
 				 get { return "esri_layouts_defaultNorthArrowStyleButton"; }
-			}
-			///<summary>Returns the id string for &quot;Scale Bar&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewScaleBarButton, Layouts)</summary>
-			public static string esri_layouts_newScaleBarButton {
-				 get { return "esri_layouts_newScaleBarButton"; }
 			}
 			///<summary>Returns the id string for &quot;More...&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.ScaleBarStyleButton, Layouts)</summary>
 			public static string esri_layouts_scaleBarStyleButton {
@@ -8472,9 +10518,9 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_reshapeMapFrameSource_Properties {
 				 get { return "esri_layouts_reshapeMapFrameSource_Properties"; }
 			}
-			///<summary>Returns the id string for &quot;Meter Reference&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewMeterReferenceGuideButton, Layouts)</summary>
-			public static string esri_layouts_newMeterReferenceButton {
-				 get { return "esri_layouts_newMeterReferenceButton"; }
+			///<summary>Returns the id string for &quot;More...&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.TopoNorthArrowStyleButton, Layouts)</summary>
+			public static string esri_layouts_topoNorthArrowStyleButton {
+				 get { return "esri_layouts_topoNorthArrowStyleButton"; }
 			}
 			///<summary>Returns the id string for &quot;More...&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.MeterReferenceStyleButton, Layouts)</summary>
 			public static string esri_layouts_meterReferenceStyleButton {
@@ -8483,6 +10529,26 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;More...&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.DefaultMeterReferenceStyleButton, Layouts)</summary>
 			public static string esri_layouts_defaultMeterReferenceStyleButton {
 				 get { return "esri_layouts_defaultMeterReferenceStyleButton"; }
+			}
+			///<summary>Returns the id string for &quot;Slope Guide&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewSlopeGuideButton, Layouts)</summary>
+			public static string esri_layouts_newSlopeGuideButton {
+				 get { return "esri_layouts_newSlopeGuideButton"; }
+			}
+			///<summary>Returns the id string for &quot;More...&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.SlopeGuideStyleButton, Layouts)</summary>
+			public static string esri_layouts_slopeGuideStyleButton {
+				 get { return "esri_layouts_slopeGuideStyleButton"; }
+			}
+			///<summary>Returns the id string for &quot;More...&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.DefaultSlopeGuideStyleButton, Layouts)</summary>
+			public static string esri_layouts_defaultSlopeGuideStyleButton {
+				 get { return "esri_layouts_defaultSlopeGuideStyleButton"; }
+			}
+			///<summary>Returns the id string for &quot;More...&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.ElevationGuideBarStyleButton, Layouts)</summary>
+			public static string esri_layouts_elevationGuideBarStyleButton {
+				 get { return "esri_layouts_elevationGuideBarStyleButton"; }
+			}
+			///<summary>Returns the id string for &quot;More...&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.DefaultElevationGuideBarStyleButton, Layouts)</summary>
+			public static string esri_layouts_defaultElevationGuideBarStyleButton {
+				 get { return "esri_layouts_defaultElevationGuideBarStyleButton"; }
 			}
 			///<summary>Returns the id string for &quot;More...&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.PolygonStyleButton, Layouts)</summary>
 			public static string esri_layouts_polygonStyleButton {
@@ -8527,18 +10593,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;More...&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.ShadowStyleButton, Layouts)</summary>
 			public static string esri_layouts_shadowStyleButton {
 				 get { return "esri_layouts_shadowStyleButton"; }
-			}
-			///<summary>Returns the id string for &quot;No Fill Color&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NullColorStyleButton, Layouts)</summary>
-			public static string esri_layouts_colorNullButton {
-				 get { return "esri_layouts_colorNullButton"; }
-			}
-			///<summary>Returns the id string for &quot;No Outline Color&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NullOutlineColorStyleButton, Layouts)</summary>
-			public static string esri_layouts_outlineColorNullButton {
-				 get { return "esri_layouts_outlineColorNullButton"; }
-			}
-			///<summary>Returns the id string for &quot;No Text Color&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NullTextColorStyleButton, Layouts)</summary>
-			public static string esri_layouts_textColorNullButton {
-				 get { return "esri_layouts_textColorNullButton"; }
 			}
 			///<summary>Returns the id string for &quot;More Colors...&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.ColorStyleButton, Layouts)</summary>
 			public static string esri_layouts_colorSelectorButton {
@@ -8596,10 +10650,6 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_showNorthArrowStyleDockPaneButton {
 				 get { return "esri_layouts_showNorthArrowStyleDockPaneButton"; }
 			}
-			///<summary>Returns the id string for &quot;Format Meter Reference Guide&quot; (esri_layouts:ShowElementStyleDockPane, Layouts)</summary>
-			public static string esri_layouts_showMeterReferenceStyleDockPaneButton {
-				 get { return "esri_layouts_showMeterReferenceStyleDockPaneButton"; }
-			}
 			///<summary>Returns the id string for &quot;Format Scale Bar&quot; (esri_layouts:ShowElementStyleDockPane, Layouts)</summary>
 			public static string esri_layouts_showScaleBarStyleDockPaneButton {
 				 get { return "esri_layouts_showScaleBarStyleDockPaneButton"; }
@@ -8608,17 +10658,53 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_showTextSymbolDockPaneButton {
 				 get { return "esri_layouts_showTextSymbolDockPaneButton"; }
 			}
+			///<summary>Returns the id string for &quot;Format North Arrow&quot; (esri_layouts:ShowElementStyleDockPane, Layouts)</summary>
+			public static string esri_layouts_showTopoNorthArrowStyleDockPaneButton {
+				 get { return "esri_layouts_showTopoNorthArrowStyleDockPaneButton"; }
+			}
+			///<summary>Returns the id string for &quot;Format Meter Reference Guide&quot; (esri_layouts:ShowElementStyleDockPane, Layouts)</summary>
+			public static string esri_layouts_showMeterReferenceStyleDockPaneButton {
+				 get { return "esri_layouts_showMeterReferenceStyleDockPaneButton"; }
+			}
+			///<summary>Returns the id string for &quot;Format Elevation Guide Bar&quot; (esri_layouts:ShowElementStyleDockPane, Layouts)</summary>
+			public static string esri_layouts_showElevationGuideBarStyleDockPaneButton {
+				 get { return "esri_layouts_showElevationGuideBarStyleDockPaneButton"; }
+			}
+			///<summary>Returns the id string for &quot;Format Slope Guide&quot; (esri_layouts:ShowElementStyleDockPane, Layouts)</summary>
+			public static string esri_layouts_slopeGuideStyleDockPaneButton {
+				 get { return "esri_layouts_slopeGuideStyleDockPaneButton"; }
+			}
+			///<summary>Returns the id string for &quot;Format Slope Guide&quot; (esri_layouts:ShowElementStyleDockPane, Layouts)</summary>
+			public static string esri_layouts_showSlopeGuideStyleDockPaneButton {
+				 get { return "esri_layouts_showSlopeGuideStyleDockPaneButton"; }
+			}
+			///<summary>Returns the id string for &quot;Proofing Options&quot; (esri_layouts:ShowProofingDialog, Layouts)</summary>
+			public static string esri_layouts_showProofingDialogButton {
+				 get { return "esri_layouts_showProofingDialogButton"; }
+			}
 			///<summary>Returns the id string for &quot;New Layout&quot; (esri_layouts:NewLayout, Layouts)</summary>
 			public static string esri_layouts_projectContainer_NewLayout {
 				 get { return "esri_layouts_projectContainer_NewLayout"; }
 			}
-			///<summary>Returns the id string for &quot;Import&quot; (esri_mapping:OpenImportMapDocument, Layouts)</summary>
-			public static string esri_layouts_projectContainer_ImportPAGX {
-				 get { return "esri_layouts_projectContainer_ImportPAGX"; }
+			///<summary>Returns the id string for &quot;Import&quot; (esri_layouts:ImportDocument, Layouts)</summary>
+			public static string esri_layouts_import {
+				 get { return "esri_layouts_import"; }
 			}
-			///<summary>Returns the id string for &quot;Open&quot; (esri_layouts:OnOpenLayoutView, Layouts)</summary>
-			public static string esri_layouts_projectItem_OpenLayoutView {
-				 get { return "esri_layouts_projectItem_OpenLayoutView"; }
+			///<summary>Returns the id string for &quot;Import Map&quot; (esri_layouts:ImportDocument, Layouts)</summary>
+			public static string esri_layouts_importMap {
+				 get { return "esri_layouts_importMap"; }
+			}
+			///<summary>Returns the id string for &quot;Import Layout&quot; (esri_layouts:ImportDocument, Layouts)</summary>
+			public static string esri_layouts_importLayout {
+				 get { return "esri_layouts_importLayout"; }
+			}
+			///<summary>Returns the id string for &quot;Import layout file...&quot; (esri_layouts:ImportDocument, Layouts)</summary>
+			public static string esri_layouts_importPAGX {
+				 get { return "esri_layouts_importPAGX"; }
+			}
+			///<summary>Returns the id string for &quot;Open&quot; (esri_layouts:OnOpenLayout, Layouts)</summary>
+			public static string esri_layouts_projectItem_OpenLayout {
+				 get { return "esri_layouts_projectItem_OpenLayout"; }
 			}
 			///<summary>Returns the id string for &quot;Delete&quot; (esri_layouts:DeleteLayout, Layouts)</summary>
 			public static string esri_layouts_projectItem_RemoveLayout {
@@ -8632,21 +10718,21 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_projectItem_LayoutProperties {
 				 get { return "esri_layouts_projectItem_LayoutProperties"; }
 			}
-			///<summary>Returns the id string for &quot;New Report&quot; (esri_reports_module:Commands.OnNewReport, Layouts)</summary>
+			///<summary>Returns the id string for &quot;New Report&quot; (esri_reports_module:Commands.OnOpenReportWizard, Layouts)</summary>
 			public static string esri_reports_projectContainer_NewReport {
 				 get { return "esri_reports_projectContainer_NewReport"; }
 			}
-			///<summary>Returns the id string for &quot;Create Report&quot; (esri_reports_module:Commands.OnNewMapMemberReport, Layouts)</summary>
+			///<summary>Returns the id string for &quot;New Report&quot; (esri_reports_module:Commands.OnOpenReportWizardForLayer, Layouts)</summary>
 			public static string esri_reports_newLayerReport {
 				 get { return "esri_reports_newLayerReport"; }
 			}
-			///<summary>Returns the id string for &quot;Create Report&quot; (esri_reports_module:Commands.OnNewMapMemberReport, Layouts)</summary>
-			public static string esri_reports_newStandaloneTableReport {
-				 get { return "esri_reports_newStandaloneTableReport"; }
-			}
-			///<summary>Returns the id string for &quot;Import a report file...&quot; (esri_reports_module:Commands.OnImportReportFile, Layouts)</summary>
+			///<summary>Returns the id string for &quot;Import&quot; (esri_mapping:OpenImportReportDocument, Layouts)</summary>
 			public static string esri_reports_importReportFile {
 				 get { return "esri_reports_importReportFile"; }
+			}
+			///<summary>Returns the id string for &quot;Import Report&quot; (esri_mapping:OpenImportReportDocument, Layouts)</summary>
+			public static string esri_reports_projectContainer_importReportFile {
+				 get { return "esri_reports_projectContainer_importReportFile"; }
 			}
 			///<summary>Returns the id string for &quot;Open&quot; (esri_reports_module:Commands.OnOpenReportView, Layouts)</summary>
 			public static string esri_reports_projectItem_OpenReportView {
@@ -8660,45 +10746,53 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_reports_projectItem_ReportProperties {
 				 get { return "esri_reports_projectItem_ReportProperties"; }
 			}
-			///<summary>Returns the id string for &quot;Watermark&quot; (esri_reports_module:Commands.OnOpenWatermarks, Layouts)</summary>
-			public static string esri_reports_openWatermarksButton {
-				 get { return "esri_reports_openWatermarksButton"; }
-			}
-			///<summary>Returns the id string for &quot;Fields&quot; (esri_reports_module:Commands.OnOpenFields, Layouts)</summary>
-			public static string esri_reports_openFieldsButton {
-				 get { return "esri_reports_openFieldsButton"; }
-			}
-			///<summary>Returns the id string for &quot;Average&quot; (esri_reports_module:Commands.OnAddAvgStatistic, Layouts)</summary>
-			public static string esri_reports_addAvgStatisticButton {
-				 get { return "esri_reports_addAvgStatisticButton"; }
-			}
-			///<summary>Returns the id string for &quot;Count&quot; (esri_reports_module:Commands.OnAddCountStatistic, Layouts)</summary>
-			public static string esri_reports_addCountStatisticButton {
-				 get { return "esri_reports_addCountStatisticButton"; }
-			}
-			///<summary>Returns the id string for &quot;Max&quot; (esri_reports_module:Commands.OnAddMaxStatistic, Layouts)</summary>
-			public static string esri_reports_addMaxStatisticButton {
-				 get { return "esri_reports_addMaxStatisticButton"; }
-			}
-			///<summary>Returns the id string for &quot;Min&quot; (esri_reports_module:Commands.OnAddMinStatistic, Layouts)</summary>
-			public static string esri_reports_addMinStatisticButton {
-				 get { return "esri_reports_addMinStatisticButton"; }
-			}
-			///<summary>Returns the id string for &quot;Standard Deviation&quot; (esri_reports_module:Commands.OnAddStdDevStatistic, Layouts)</summary>
-			public static string esri_reports_addStdDevStatisticButton {
-				 get { return "esri_reports_addStdDevStatisticButton"; }
-			}
-			///<summary>Returns the id string for &quot;Sum&quot; (esri_reports_module:Commands.OnAddSumStatistic, Layouts)</summary>
-			public static string esri_reports_addSumStatisticButton {
-				 get { return "esri_reports_addSumStatisticButton"; }
-			}
-			///<summary>Returns the id string for &quot;Insert group&quot; (esri_reports_module:Commands.OnInsertGroup, Layouts)</summary>
+			///<summary>Returns the id string for &quot;Group&quot; (esri_reports_module:Commands.OnInsertGroup, Layouts)</summary>
 			public static string esri_reports_addGroupButton {
 				 get { return "esri_reports_addGroupButton"; }
 			}
 			///<summary>Returns the id string for &quot;Remove group&quot; (esri_reports_module:Commands.OnRemoveGroup, Layouts)</summary>
 			public static string esri_reports_removeGroupButton {
 				 get { return "esri_reports_removeGroupButton"; }
+			}
+			///<summary>Returns the id string for &quot;Select All&quot; (esri_reports_module:Commands.OnSelectAll, Layouts)</summary>
+			public static string esri_reports_selectAllButton {
+				 get { return "esri_reports_selectAllButton"; }
+			}
+			///<summary>Returns the id string for &quot;Clear Selection&quot; (esri_layouts:ClearSelection, Layouts)</summary>
+			public static string esri_reports_clearSelectionButton {
+				 get { return "esri_reports_clearSelectionButton"; }
+			}
+			///<summary>Returns the id string for &quot;Zoom To Section&quot; (esri_reports_module:Commands.ZoomToActiveSection, Layouts)</summary>
+			public static string esri_reports_zoomToActiveSection {
+				 get { return "esri_reports_zoomToActiveSection"; }
+			}
+			///<summary>Returns the id string for &quot;Properties&quot; (esri_reports_module:Commands.ReportProperties, Layouts)</summary>
+			public static string esri_reports_reportPropertiesButton {
+				 get { return "esri_reports_reportPropertiesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Properties&quot; (esri_reports_module:Commands.ReportPageSetupProperties, Layouts)</summary>
+			public static string esri_reports_reportPageSetupPropertiesButton {
+				 get { return "esri_reports_reportPageSetupPropertiesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Custom page size...&quot; (esri_reports_module:Commands.ReportPageSetupProperties, Layouts)</summary>
+			public static string esri_reports_customPageSizeButton {
+				 get { return "esri_reports_customPageSizeButton"; }
+			}
+			///<summary>Returns the id string for &quot;Select page from printer...&quot; (esri_reports_module:Commands.ReportSelectPageFromPrinter, Layouts)</summary>
+			public static string esri_reports_customPageSizeFromPrinter {
+				 get { return "esri_reports_customPageSizeFromPrinter"; }
+			}
+			///<summary>Returns the id string for &quot;Zoom to Page&quot; (esri_layouts:ZoomToWholePage, Layouts)</summary>
+			public static string esri_reports_pageZoomFullButton {
+				 get { return "esri_reports_pageZoomFullButton"; }
+			}
+			///<summary>Returns the id string for &quot;Navigate&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.LayoutNavigateCommand, Layouts)</summary>
+			public static string esri_reports_navigateContext {
+				 get { return "esri_reports_navigateContext"; }
+			}
+			///<summary>Returns the id string for &quot;Properties&quot; (esri_layouts:ShowElementDockPane, Layouts)</summary>
+			public static string esri_reports_showElementDockPaneButton {
+				 get { return "esri_reports_showElementDockPaneButton"; }
 			}
 		}
 		public static partial class Checkbox {
@@ -8798,19 +10892,34 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_reports_DrawingOrderView {
 				 get { return "esri_reports_DrawingOrderView"; }
 			}
-			///<summary>Returns the id string for &quot;esri_reports_TypeOrderView&quot; (Component, Layouts)</summary>
-			public static string esri_reports_TypeOrderView {
-				 get { return "esri_reports_TypeOrderView"; }
-			}
 		}
 		public static partial class Customcontrol {
-			///<summary>Returns the id string for &quot;Size & Position&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.SizeAndPositionControlViewModel, Layouts)</summary>
+			///<summary>Returns the id string for &quot;Size &amp; Position&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.SizeAndPositionControlViewModel, Layouts)
+			///</summary>
 			public static string esri_layouts_sizeAndPositionControl {
 				 get { return "esri_layouts_sizeAndPositionControl"; }
 			}
-			///<summary>Returns the id string for &quot;Color&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.TopographicLayoutColorPickerViewModel, Layouts)</summary>
+			///<summary>Returns the id string for &quot;Color&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.TopographicLayoutColorPickerViewModel, Layouts)
+			///</summary>
 			public static string esri_layouts_meterReferenceColorGallery {
 				 get { return "esri_layouts_meterReferenceColorGallery"; }
+			}
+			///<summary>Returns the id string for &quot;Low Band&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.ElevationGuideBarLowBandColorPickerViewModel, Layouts)
+			///</summary>
+			public static string esri_layouts_elevationGuideBarLowColorGallery {
+				 get { return "esri_layouts_elevationGuideBarLowColorGallery"; }
+			}
+			///<summary>Returns the id string for &quot;Medium Band&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.ElevationGuideBarMediumBandColorPickerViewModel, Layouts)</summary>
+			public static string esri_layouts_elevationGuideBarMediumColorGallery {
+				 get { return "esri_layouts_elevationGuideBarMediumColorGallery"; }
+			}
+			///<summary>Returns the id string for &quot;High Band&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.ElevationGuideBarHighBandColorPickerViewModel, Layouts)</summary>
+			public static string esri_layouts_elevationGuideBarHighColorGallery {
+				 get { return "esri_layouts_elevationGuideBarHighColorGallery"; }
+			}
+			///<summary>Returns the id string for &quot;Highest Band&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.ElevationGuideBarHighestBandColorPickerViewModel, Layouts)</summary>
+			public static string esri_layouts_elevationGuideBarHighestColorGallery {
+				 get { return "esri_layouts_elevationGuideBarHighestColorGallery"; }
 			}
 			///<summary>Returns the id string for &quot;Fill&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.DisabledLayoutColorPickerViewModel, Layouts)</summary>
 			public static string esri_layouts_disabledColorGallery {
@@ -8832,15 +10941,39 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_textSymbolFontControl {
 				 get { return "esri_layouts_textSymbolFontControl"; }
 			}
+			///<summary>Returns the id string for &quot;Design General&quot; (ArcGIS.Desktop.Internal.Reports.Ribbon.ReportFormatGeneralViewModel, Layouts)</summary>
+			public static string esri_reports_generalControl {
+				 get { return "esri_reports_generalControl"; }
+			}
+			///<summary>Returns the id string for &quot;Design Size&quot; (ArcGIS.Desktop.Internal.Reports.Ribbon.ReportFormatSizeViewModel, Layouts)</summary>
+			public static string esri_reports_sizeControl {
+				 get { return "esri_reports_sizeControl"; }
+			}
+			///<summary>Returns the id string for &quot;Design Exclusion&quot; (ArcGIS.Desktop.Internal.Reports.Ribbon.ReportFormatExclusionViewModel, Layouts)</summary>
+			public static string esri_reports_exclusionControl {
+				 get { return "esri_reports_exclusionControl"; }
+			}
+			///<summary>Returns the id string for &quot;Design Color&quot; (ArcGIS.Desktop.Internal.Reports.Ribbon.ReportFormatColorViewModel, Layouts)</summary>
+			public static string esri_reports_colorControl {
+				 get { return "esri_reports_colorControl"; }
+			}
 		}
 		public static partial class Dockpane {
 			///<summary>Returns the id string for &quot;Element&quot; (ArcGIS.Desktop.Internal.Layouts.DockPanes.ElementDockPaneVM, Layouts)</summary>
 			public static string esri_layouts_elementDockPane {
 				 get { return "esri_layouts_elementDockPane"; }
 			}
+			///<summary>Returns the id string for &quot;Check Spelling&quot; (ArcGIS.Desktop.Internal.Layouts.DockPanes.LayoutSpellCheckDockPaneVM, Layouts)</summary>
+			public static string esri_layouts_spellCheckDockPane {
+				 get { return "esri_layouts_spellCheckDockPane"; }
+			}
+			///<summary>Returns the id string for &quot;Create New Report&quot; (ArcGIS.Desktop.Internal.Reports.Wizard.ReportsWizardDockPaneVM, Layouts)</summary>
+			public static string esri_reports_reportsWizardDockPane {
+				 get { return "esri_reports_reportsWizardDockPane"; }
+			}
 		}
 		public static partial class Dynamicmenu {
-			///<summary>Returns the id string for &quot;Add field&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.TableFrameFieldsMenu, Layouts)</summary>
+			///<summary>Returns the id string for &quot;Add Field&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.TableFrameFieldsMenu, Layouts)</summary>
 			public static string esri_layouts_addFieldToTableMenu {
 				 get { return "esri_layouts_addFieldToTableMenu"; }
 			}
@@ -8948,6 +11081,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_scaleBarStyleGalleryInLine {
 				 get { return "esri_layouts_scaleBarStyleGalleryInLine"; }
 			}
+			///<summary>Returns the id string for &quot;North Arrow&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.TopoNorthArrowStyleGalleryInLine, Layouts)</summary>
+			public static string esri_layouts_topoNorthArrowStyleGalleryInLine {
+				 get { return "esri_layouts_topoNorthArrowStyleGalleryInLine"; }
+			}
 			///<summary>Returns the id string for &quot;Meter Reference Guide&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.MeterReferenceStyleGallery, Layouts)</summary>
 			public static string esri_layouts_meterReferenceStyleGallery {
 				 get { return "esri_layouts_meterReferenceStyleGallery"; }
@@ -8955,6 +11092,18 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Meter Reference Guide&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.MeterReferenceStyleGalleryInLine, Layouts)</summary>
 			public static string esri_layouts_meterReferenceStyleGalleryInLine {
 				 get { return "esri_layouts_meterReferenceStyleGalleryInLine"; }
+			}
+			///<summary>Returns the id string for &quot;Slope Guide&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.SlopeGuideStyleGalleryInLine, Layouts)</summary>
+			public static string esri_layouts_slopeGuideStyleGalleryInLine {
+				 get { return "esri_layouts_slopeGuideStyleGalleryInLine"; }
+			}
+			///<summary>Returns the id string for &quot;Elevation Guide Bar&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.ElevationGuideBarStyleGallery, Layouts)</summary>
+			public static string esri_layouts_elevationGuideBarStyleGallery {
+				 get { return "esri_layouts_elevationGuideBarStyleGallery"; }
+			}
+			///<summary>Returns the id string for &quot;Elevation Guide Bar&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.ElevationGuideBarStyleGalleryInLine, Layouts)</summary>
+			public static string esri_layouts_elevationGuideBarStyleGalleryInLine {
+				 get { return "esri_layouts_elevationGuideBarStyleGalleryInLine"; }
 			}
 			///<summary>Returns the id string for &quot;Map Frame&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewMapFrameSourceGallery, Layouts)</summary>
 			public static string esri_layouts_newMapFrameGallery {
@@ -8980,16 +11129,28 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_newChartGallery {
 				 get { return "esri_layouts_newChartGallery"; }
 			}
-			///<summary>Returns the id string for &quot;Additional Surrounds&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.MapSurroundGalleryViewModel, Layouts)</summary>
-			public static string esri_layouts_newMapSurroundGallery {
-				 get { return "esri_layouts_newMapSurroundGallery"; }
+			///<summary>Returns the id string for &quot;Additional Surrounds&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.ProductionToolGalleryViewModel, Layouts)</summary>
+			public static string esri_layouts_newProductionToolGallery {
+				 get { return "esri_layouts_newProductionToolGallery"; }
 			}
-			///<summary>Returns the id string for &quot;New Report&quot; (ArcGIS.Desktop.Internal.Reports.Ribbon.ReportsGalleryViewModel, Layouts)</summary>
-			public static string esri_reports_gallery {
-				 get { return "esri_reports_gallery"; }
+			///<summary>Returns the id string for &quot;Dynamic Text&quot; (ArcGIS.Desktop.Internal.Reports.Ribbon.ReportDynamicTextGallery, Layouts)</summary>
+			public static string esri_reports_dynamicTextGallery {
+				 get { return "esri_reports_dynamicTextGallery"; }
+			}
+			///<summary>Returns the id string for &quot;Orientation&quot; (ArcGIS.Desktop.Internal.Reports.Ribbon.ReportPageOrientationGallery, Layouts)</summary>
+			public static string esri_reports_pageOrientationGallery {
+				 get { return "esri_reports_pageOrientationGallery"; }
+			}
+			///<summary>Returns the id string for &quot;Size&quot; (ArcGIS.Desktop.Internal.Reports.Ribbon.ReportPageSizeGallery, Layouts)</summary>
+			public static string esri_reports_pageSizeGallery {
+				 get { return "esri_reports_pageSizeGallery"; }
 			}
 		}
 		public static partial class Group {
+			///<summary>Returns the id string for &quot;Project&quot; (Group, Layouts)</summary>
+			public static string esri_project_layout {
+				 get { return "esri_project_layout"; }
+			}
 			///<summary>Returns the id string for &quot;Clipboard&quot; (Group, Layouts)</summary>
 			public static string esri_layouts_clipboardGroup {
 				 get { return "esri_layouts_clipboardGroup"; }
@@ -9021,6 +11182,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Elements&quot; (Group, Layouts)</summary>
 			public static string esri_layouts_selectionGroup {
 				 get { return "esri_layouts_selectionGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Review&quot; (Group, Layouts)</summary>
+			public static string esri_layouts_reviewGroup {
+				 get { return "esri_layouts_reviewGroup"; }
 			}
 			///<summary>Returns the id string for &quot;Map Frames&quot; (Group, Layouts)</summary>
 			public static string esri_layouts_insertMapFrameGroup {
@@ -9079,8 +11244,20 @@ namespace ArcGIS.Desktop.Framework {
 				 get { return "esri_layouts_scaleBarFormatGroup"; }
 			}
 			///<summary>Returns the id string for &quot;Symbol&quot; (Group, Layouts)</summary>
+			public static string esri_layouts_topoNorthArrowFormatGroup {
+				 get { return "esri_layouts_topoNorthArrowFormatGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Symbol&quot; (Group, Layouts)</summary>
 			public static string esri_layouts_meterReferenceFormatGroup {
 				 get { return "esri_layouts_meterReferenceFormatGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Symbol&quot; (Group, Layouts)</summary>
+			public static string esri_layouts_elevationGuideBarFormatGroup {
+				 get { return "esri_layouts_elevationGuideBarFormatGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Symbol&quot; (Group, Layouts)</summary>
+			public static string esri_layouts_slopeGuideFormatGroup {
+				 get { return "esri_layouts_slopeGuideFormatGroup"; }
 			}
 			///<summary>Returns the id string for &quot;Map Frame&quot; (Group, Layouts)</summary>
 			public static string esri_layouts_mapSurroundMapFrameGroup {
@@ -9110,21 +11287,53 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_arrangeGroup {
 				 get { return "esri_layouts_arrangeGroup"; }
 			}
-			///<summary>Returns the id string for &quot;Size & Position&quot; (Group, Layouts)</summary>
+			///<summary>Returns the id string for &quot;Size &amp; Position&quot; (Group, Layouts)</summary>
 			public static string esri_layouts_sizeAndPositionGroup {
 				 get { return "esri_layouts_sizeAndPositionGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Navigate&quot; (Group, Layouts)</summary>
+			public static string esri_reports_pageNavigateGroup {
+				 get { return "esri_reports_pageNavigateGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Elements&quot; (Group, Layouts)</summary>
+			public static string esri_reports_selectionGroup {
+				 get { return "esri_reports_selectionGroup"; }
 			}
 			///<summary>Returns the id string for &quot;Page Setup&quot; (Group, Layouts)</summary>
 			public static string esri_reports_pageDesignGroup {
 				 get { return "esri_reports_pageDesignGroup"; }
 			}
-			///<summary>Returns the id string for &quot;Background&quot; (Group, Layouts)</summary>
-			public static string esri_reports_reportBackgroundGroup {
-				 get { return "esri_reports_reportBackgroundGroup"; }
-			}
 			///<summary>Returns the id string for &quot;Data&quot; (Group, Layouts)</summary>
 			public static string esri_reports_insertDataGroup {
 				 get { return "esri_reports_insertDataGroup"; }
+			}
+			///<summary>Returns the id string for &quot;General&quot; (Group, Layouts)</summary>
+			public static string esri_reports_generalGroup {
+				 get { return "esri_reports_generalGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Size&quot; (Group, Layouts)</summary>
+			public static string esri_reports_sizeGroup {
+				 get { return "esri_reports_sizeGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Exclusion&quot; (Group, Layouts)</summary>
+			public static string esri_reports_exclusionGroup {
+				 get { return "esri_reports_exclusionGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Appearance&quot; (Group, Layouts)</summary>
+			public static string esri_reports_colorGroup {
+				 get { return "esri_reports_colorGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Text&quot; (Group, Layouts)</summary>
+			public static string esri_reports_insertTextGroup {
+				 get { return "esri_reports_insertTextGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Graphics&quot; (Group, Layouts)</summary>
+			public static string esri_reports_insertGraphicGroup {
+				 get { return "esri_reports_insertGraphicGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Project&quot; (Group, Layouts)</summary>
+			public static string esri_project_report {
+				 get { return "esri_project_report"; }
 			}
 		}
 		public static partial class Category {
@@ -9158,8 +11367,20 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layout_styleFileManagerProps {
 				 get { return "esri_layout_styleFileManagerProps"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_composite_reportSources&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Layouts)</summary>
+			public static string esri_browseDialogFilters_composite_reportSources {
+				 get { return "esri_browseDialogFilters_composite_reportSources"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_composite_reportSourcesMap&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Layouts)</summary>
+			public static string esri_browseDialogFilters_composite_reportSourcesMap {
+				 get { return "esri_browseDialogFilters_composite_reportSourcesMap"; }
+			}
 		}
 		public static partial class Condition {
+			///<summary>Returns the id string for &quot;&quot; (Condition, Layouts)</summary>
+			public static string esri_LayoutContainer {
+				 get { return "esri_LayoutContainer"; }
+			}
 			///<summary>Returns the id string for &quot;A map is activated&quot; (Condition, Layouts)</summary>
 			public static string esri_layouts_mapActivatedCondition {
 				 get { return "esri_layouts_mapActivatedCondition"; }
@@ -9212,6 +11433,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_meterReferenceDesignCondition {
 				 get { return "esri_layouts_meterReferenceDesignCondition"; }
 			}
+			///<summary>Returns the id string for &quot;esri_layouts_elevationGuideBarDesignCondition&quot; (Condition, Layouts)</summary>
+			public static string esri_layouts_elevationGuideBarDesignCondition {
+				 get { return "esri_layouts_elevationGuideBarDesignCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_slopeGuideDesignCondition&quot; (Condition, Layouts)</summary>
+			public static string esri_layouts_slopeGuideDesignCondition {
+				 get { return "esri_layouts_slopeGuideDesignCondition"; }
+			}
 			///<summary>Returns the id string for &quot;esri_layouts_scaleBarDesignCondition&quot; (Condition, Layouts)</summary>
 			public static string esri_layouts_scaleBarDesignCondition {
 				 get { return "esri_layouts_scaleBarDesignCondition"; }
@@ -9252,13 +11481,65 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_shadowGroupCondition {
 				 get { return "esri_layouts_shadowGroupCondition"; }
 			}
+			///<summary>Returns the id string for &quot;esri_reports_pageHeaderFormatCondition&quot; (Condition, Layouts)</summary>
+			public static string esri_reports_pageHeaderFormatCondition {
+				 get { return "esri_reports_pageHeaderFormatCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_reportHeaderFormatCondition&quot; (Condition, Layouts)</summary>
+			public static string esri_reports_reportHeaderFormatCondition {
+				 get { return "esri_reports_reportHeaderFormatCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_groupHeaderFormatCondition&quot; (Condition, Layouts)</summary>
+			public static string esri_reports_groupHeaderFormatCondition {
+				 get { return "esri_reports_groupHeaderFormatCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_detailsFormatCondition&quot; (Condition, Layouts)</summary>
+			public static string esri_reports_detailsFormatCondition {
+				 get { return "esri_reports_detailsFormatCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_pageFooterFormatCondition&quot; (Condition, Layouts)</summary>
+			public static string esri_reports_pageFooterFormatCondition {
+				 get { return "esri_reports_pageFooterFormatCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_reportFooterFormatCondition&quot; (Condition, Layouts)</summary>
+			public static string esri_reports_reportFooterFormatCondition {
+				 get { return "esri_reports_reportFooterFormatCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_groupFooterFormatCondition&quot; (Condition, Layouts)</summary>
+			public static string esri_reports_groupFooterFormatCondition {
+				 get { return "esri_reports_groupFooterFormatCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_reportSectionActiveCondition&quot; (Condition, Layouts)</summary>
+			public static string esri_reports_reportSectionActiveCondition {
+				 get { return "esri_reports_reportSectionActiveCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_canAddFieldElementCondition&quot; (Condition, Layouts)</summary>
+			public static string esri_reports_canAddFieldElementCondition {
+				 get { return "esri_reports_canAddFieldElementCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_canAddFieldStatisticElementCondition&quot; (Condition, Layouts)</summary>
+			public static string esri_reports_canAddFieldStatisticElementCondition {
+				 get { return "esri_reports_canAddFieldStatisticElementCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_canAddElementCondition&quot; (Condition, Layouts)</summary>
+			public static string esri_reports_canAddElementCondition {
+				 get { return "esri_reports_canAddElementCondition"; }
+			}
+			///<summary>Returns the id string for &quot;&quot; (Condition, Layouts)</summary>
+			public static string esri_ReportContainer {
+				 get { return "esri_ReportContainer"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_reportSourceConnectedCondition&quot; (Condition, Layouts)</summary>
+			public static string esri_reports_reportSourceConnectedCondition {
+				 get { return "esri_reports_reportSourceConnectedCondition"; }
+			}
 		}
 		public static partial class Module {
 			///<summary>Returns the id string for &quot;Layout&quot; (LayoutsModule, Layouts)</summary>
 			public static string esri_layouts {
 				 get { return "esri_layouts"; }
 			}
-			///<summary>Returns the id string for &quot;Reports&quot; (ArcGIS.Desktop.Internal.Reports.ReportsModule, Layouts)</summary>
+			///<summary>Returns the id string for &quot;Reports&quot; (ArcGIS.Desktop.Reports.ReportsModule, Layouts)</summary>
 			public static string esri_reports_module {
 				 get { return "esri_reports_module"; }
 			}
@@ -9285,6 +11566,16 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Map Frame Properties&quot; (Sheet, Layouts)</summary>
 			public static string esri_layouts_MapFrameMultiPropertySheet {
 				 get { return "esri_layouts_MapFrameMultiPropertySheet"; }
+			}
+			///<summary>Returns the id string for &quot;Report Properties&quot; (Sheet, Layouts)</summary>
+			public static string esri_reports_propertySheet {
+				 get { return "esri_reports_propertySheet"; }
+			}
+		}
+		public static partial class Wizard {
+			///<summary>Returns the id string for &quot;Create New Report&quot; (Wizard, Layouts)</summary>
+			public static string esri_reports_reportsWizard {
+				 get { return "esri_reports_reportsWizard"; }
 			}
 		}
 		public static partial class Menu {
@@ -9384,16 +11675,76 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_reports_projectItemMenu {
 				 get { return "esri_reports_projectItemMenu"; }
 			}
-			///<summary>Returns the id string for &quot;Statistics&quot; (Menu, Layouts)</summary>
-			public static string esri_reports_statisticsMenu {
-				 get { return "esri_reports_statisticsMenu"; }
+			///<summary>Returns the id string for &quot;Reports Menu&quot; (Menu, Layouts)</summary>
+			public static string esri_reports_reportsContextMenu {
+				 get { return "esri_reports_reportsContextMenu"; }
 			}
-			///<summary>Returns the id string for &quot;Grouping&quot; (Menu, Layouts)</summary>
-			public static string esri_reports_groupingMenu {
-				 get { return "esri_reports_groupingMenu"; }
+			///<summary>Returns the id string for &quot;esri_report_reportElementInlineMenu&quot; (Menu, Layouts)</summary>
+			public static string esri_report_reportElementInlineMenu {
+				 get { return "esri_report_reportElementInlineMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Element Menu&quot; (Menu, Layouts)</summary>
+			public static string esri_reports_elementBasicSubMenu {
+				 get { return "esri_reports_elementBasicSubMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_reportSectionContextMenu&quot; (Menu, Layouts)</summary>
+			public static string esri_reports_reportSectionContextMenu {
+				 get { return "esri_reports_reportSectionContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_reportHeaderContextMenu&quot; (Menu, Layouts)</summary>
+			public static string esri_reports_reportHeaderContextMenu {
+				 get { return "esri_reports_reportHeaderContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_reportFooterContextMenu&quot; (Menu, Layouts)</summary>
+			public static string esri_reports_reportFooterContextMenu {
+				 get { return "esri_reports_reportFooterContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_reportPageHeaderContextMenu&quot; (Menu, Layouts)</summary>
+			public static string esri_reports_reportPageHeaderContextMenu {
+				 get { return "esri_reports_reportPageHeaderContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_reportPageFooterContextMenu&quot; (Menu, Layouts)</summary>
+			public static string esri_reports_reportPageFooterContextMenu {
+				 get { return "esri_reports_reportPageFooterContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_reportGroupHeaderContextMenu&quot; (Menu, Layouts)</summary>
+			public static string esri_reports_reportGroupHeaderContextMenu {
+				 get { return "esri_reports_reportGroupHeaderContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_reportGroupFooterContextMenu&quot; (Menu, Layouts)</summary>
+			public static string esri_reports_reportGroupFooterContextMenu {
+				 get { return "esri_reports_reportGroupFooterContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_reportDetailsContextMenu&quot; (Menu, Layouts)</summary>
+			public static string esri_reports_reportDetailsContextMenu {
+				 get { return "esri_reports_reportDetailsContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Element Menu&quot; (Menu, Layouts)</summary>
+			public static string esri_reports_elementContextMenu {
+				 get { return "esri_reports_elementContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_textElementContextMenu&quot; (Menu, Layouts)</summary>
+			public static string esri_reports_textElementContextMenu {
+				 get { return "esri_reports_textElementContextMenu"; }
 			}
 		}
 		public static partial class Page {
+			///<summary>Returns the id string for &quot;Set the data source&quot; (ArcGIS.Desktop.Internal.Reports.Wizard.ReportsWizardHomePageVM, Layouts)</summary>
+			public static string esri_reports_reportsWizardHomePage {
+				 get { return "esri_reports_reportsWizardHomePage"; }
+			}
+			///<summary>Returns the id string for &quot;Filter the data&quot; (ArcGIS.Desktop.Internal.Reports.Wizard.ReportsWizardDataPageVM, Layouts)</summary>
+			public static string esri_reports_reportsWizardDataPage {
+				 get { return "esri_reports_reportsWizardDataPage"; }
+			}
+			///<summary>Returns the id string for &quot;Organize the data&quot; (ArcGIS.Desktop.Internal.Reports.Wizard.ReportsWizardOrganizePageVM, Layouts)</summary>
+			public static string esri_reports_reportsWizardOrganizePage {
+				 get { return "esri_reports_reportsWizardOrganizePage"; }
+			}
+			///<summary>Returns the id string for &quot;Design the report&quot; (ArcGIS.Desktop.Internal.Reports.Wizard.ReportsWizardDesignPageVM, Layouts)</summary>
+			public static string esri_reports_reportsWizardDesignPage {
+				 get { return "esri_reports_reportsWizardDesignPage"; }
+			}
 			///<summary>Returns the id string for &quot;General&quot; (ArcGIS.Desktop.Internal.Layouts.PropertyPages.GeneralLayoutPropertiesPageViewModel, Layouts)</summary>
 			public static string esri_layouts_layoutGeneralPage {
 				 get { return "esri_layouts_layoutGeneralPage"; }
@@ -9406,9 +11757,33 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_mapSeriesPage {
 				 get { return "esri_layouts_mapSeriesPage"; }
 			}
+			///<summary>Returns the id string for &quot;Color Management&quot; (ArcGIS.Desktop.Internal.Layouts.PropertyPages.ColorManagementViewModel, Layouts)</summary>
+			public static string esri_layouts_colorManagementPage {
+				 get { return "esri_layouts_colorManagementPage"; }
+			}
 			///<summary>Returns the id string for &quot;View&quot; (ArcGIS.Desktop.Internal.Layouts.PropertyPages.MapFrameViewPageViewModel, Layouts)</summary>
 			public static string esri_layouts_mapFrameViewPage {
 				 get { return "esri_layouts_mapFrameViewPage"; }
+			}
+			///<summary>Returns the id string for &quot;General&quot; (ArcGIS.Desktop.Internal.Reports.PropertyPages.ReportGeneralPropPageViewModel, Layouts)</summary>
+			public static string esri_reports_reportGeneralPage {
+				 get { return "esri_reports_reportGeneralPage"; }
+			}
+			///<summary>Returns the id string for &quot;Source&quot; (ArcGIS.Desktop.Internal.Reports.PropertyPages.ReportSourcePropPageViewModel, Layouts)</summary>
+			public static string esri_reports_reportSourcePage {
+				 get { return "esri_reports_reportSourcePage"; }
+			}
+			///<summary>Returns the id string for &quot;Grouping and Sorting&quot; (ArcGIS.Desktop.Internal.Reports.PropertyPages.ReportGroupSortPropPageViewModel, Layouts)</summary>
+			public static string esri_reports_reportGroupSortPage {
+				 get { return "esri_reports_reportGroupSortPage"; }
+			}
+			///<summary>Returns the id string for &quot;Page Setup&quot; (ArcGIS.Desktop.Internal.Reports.PropertyPages.ReportPageSetupPropPageViewModel, Layouts)</summary>
+			public static string esri_reports_reportPageSetupPage {
+				 get { return "esri_reports_reportPageSetupPage"; }
+			}
+			///<summary>Returns the id string for &quot;Color Management&quot; (ArcGIS.Desktop.Internal.Reports.PropertyPages.ReportColorManagementPropPageViewModel, Layouts)</summary>
+			public static string esri_reports_reportColorManagementPropPage {
+				 get { return "esri_reports_reportColorManagementPropPage"; }
 			}
 		}
 		public static partial class Pane {
@@ -9432,10 +11807,6 @@ namespace ArcGIS.Desktop.Framework {
 			}
 		}
 		public static partial class Splitbutton {
-			///<summary>Returns the id string for &quot;esri_layouts_newMapFrameSplitButton&quot; (Splitbutton, Layouts)</summary>
-			public static string esri_layouts_newMapFrameSplitButton {
-				 get { return "esri_layouts_newMapFrameSplitButton"; }
-			}
 			///<summary>Returns the id string for &quot;esri_layouts_newNorthArrowSplitButton&quot; (Splitbutton, Layouts)</summary>
 			public static string esri_layouts_newNorthArrowSplitButton {
 				 get { return "esri_layouts_newNorthArrowSplitButton"; }
@@ -9444,13 +11815,21 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_newScaleBarSplitButton {
 				 get { return "esri_layouts_newScaleBarSplitButton"; }
 			}
+			///<summary>Returns the id string for &quot;esri_layouts_newChartSplitButton&quot; (Splitbutton, Layouts)</summary>
+			public static string esri_layouts_newChartSplitButton {
+				 get { return "esri_layouts_newChartSplitButton"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_newProductionSplitButton&quot; (Splitbutton, Layouts)</summary>
+			public static string esri_layouts_newProductionSplitButton {
+				 get { return "esri_layouts_newProductionSplitButton"; }
+			}
 			///<summary>Returns the id string for &quot;esri_layouts_mapSeriesSplitButton&quot; (Splitbutton, Layouts)</summary>
 			public static string esri_layouts_mapSeriesSplitButton {
 				 get { return "esri_layouts_mapSeriesSplitButton"; }
 			}
-			///<summary>Returns the id string for &quot;esri_layouts_pasteSplitButton&quot; (Splitbutton, Layouts)</summary>
-			public static string esri_layouts_pasteSplitButton {
-				 get { return "esri_layouts_pasteSplitButton"; }
+			///<summary>Returns the id string for &quot;esri_reports_newReportSplitButton&quot; (Splitbutton, Layouts)</summary>
+			public static string esri_reports_newReportSplitButton {
+				 get { return "esri_reports_newReportSplitButton"; }
 			}
 		}
 		public static partial class State {
@@ -9525,6 +11904,90 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_layouts_meterReferenceShadowCondition&quot; (State, Layouts)</summary>
 			public static string esri_layouts_meterReferenceShadowCondition {
 				 get { return "esri_layouts_meterReferenceShadowCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_elevationGuideBarCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_elevationGuideBarCondition {
+				 get { return "esri_layouts_elevationGuideBarCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_elevationGuideBarBackgroundCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_elevationGuideBarBackgroundCondition {
+				 get { return "esri_layouts_elevationGuideBarBackgroundCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_elevationGuideBarBorderCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_elevationGuideBarBorderCondition {
+				 get { return "esri_layouts_elevationGuideBarBorderCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_elevationGuideBarShadowCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_elevationGuideBarShadowCondition {
+				 get { return "esri_layouts_elevationGuideBarShadowCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_elevationGuideBarLineCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_elevationGuideBarLineCondition {
+				 get { return "esri_layouts_elevationGuideBarLineCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_elevationGuideBarTextCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_elevationGuideBarTextCondition {
+				 get { return "esri_layouts_elevationGuideBarTextCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_elevationGuideBarHighestBandCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_elevationGuideBarHighestBandCondition {
+				 get { return "esri_layouts_elevationGuideBarHighestBandCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_elevationGuideBarHighBandCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_elevationGuideBarHighBandCondition {
+				 get { return "esri_layouts_elevationGuideBarHighBandCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_elevationGuideBarMediumBandCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_elevationGuideBarMediumBandCondition {
+				 get { return "esri_layouts_elevationGuideBarMediumBandCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_elevationGuideBarLowBandCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_elevationGuideBarLowBandCondition {
+				 get { return "esri_layouts_elevationGuideBarLowBandCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_slopeGuideCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_slopeGuideCondition {
+				 get { return "esri_layouts_slopeGuideCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_slopeGuideBackgroundCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_slopeGuideBackgroundCondition {
+				 get { return "esri_layouts_slopeGuideBackgroundCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_slopeGuideBorderCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_slopeGuideBorderCondition {
+				 get { return "esri_layouts_slopeGuideBorderCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_slopeGuideShadowCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_slopeGuideShadowCondition {
+				 get { return "esri_layouts_slopeGuideShadowCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_slopeGuideTitleTextCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_slopeGuideTitleTextCondition {
+				 get { return "esri_layouts_slopeGuideTitleTextCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_slopeGuideUnitTextCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_slopeGuideUnitTextCondition {
+				 get { return "esri_layouts_slopeGuideUnitTextCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_slopeGuideTextCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_slopeGuideTextCondition {
+				 get { return "esri_layouts_slopeGuideTextCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_slopeGuideFootnoteTextCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_slopeGuideFootnoteTextCondition {
+				 get { return "esri_layouts_slopeGuideFootnoteTextCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_slopeGuideVerticalLineCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_slopeGuideVerticalLineCondition {
+				 get { return "esri_layouts_slopeGuideVerticalLineCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_slopeGuideHorizontalLineCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_slopeGuideHorizontalLineCondition {
+				 get { return "esri_layouts_slopeGuideHorizontalLineCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_slopeGuideTickLineCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_slopeGuideTickLineCondition {
+				 get { return "esri_layouts_slopeGuideTickLineCondition"; }
 			}
 			///<summary>Returns the id string for &quot;esri_layouts_scaleBarCondition&quot; (State, Layouts)</summary>
 			public static string esri_layouts_scaleBarCondition {
@@ -9602,6 +12065,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_mapGridPointCondition {
 				 get { return "esri_layouts_mapGridPointCondition"; }
 			}
+			///<summary>Returns the id string for &quot;esri_layouts_topoNorthArrowTNCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_topoNorthArrowTNCondition {
+				 get { return "esri_layouts_topoNorthArrowTNCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_topoNorthArrowMNCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_topoNorthArrowMNCondition {
+				 get { return "esri_layouts_topoNorthArrowMNCondition"; }
+			}
 			///<summary>Returns the id string for &quot;esri_layouts_lineCondition&quot; (State, Layouts)</summary>
 			public static string esri_layouts_lineCondition {
 				 get { return "esri_layouts_lineCondition"; }
@@ -9633,6 +12104,30 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_layouts_mapGridTextCondition&quot; (State, Layouts)</summary>
 			public static string esri_layouts_mapGridTextCondition {
 				 get { return "esri_layouts_mapGridTextCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_topoNorthArrowLineCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_topoNorthArrowLineCondition {
+				 get { return "esri_layouts_topoNorthArrowLineCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_topoNorthArrowArcCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_topoNorthArrowArcCondition {
+				 get { return "esri_layouts_topoNorthArrowArcCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_meterReferenceLineCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_meterReferenceLineCondition {
+				 get { return "esri_layouts_meterReferenceLineCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_profileFrameLineCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_profileFrameLineCondition {
+				 get { return "esri_layouts_profileFrameLineCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_profileFrameOISCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_profileFrameOISCondition {
+				 get { return "esri_layouts_profileFrameOISCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_profileFrameOISLineCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_profileFrameOISLineCondition {
+				 get { return "esri_layouts_profileFrameOISLineCondition"; }
 			}
 			///<summary>Returns the id string for &quot;esri_layouts_polygonCondition&quot; (State, Layouts)</summary>
 			public static string esri_layouts_polygonCondition {
@@ -9670,6 +12165,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_extentIndicatorLeaderPolygonCondition {
 				 get { return "esri_layouts_extentIndicatorLeaderPolygonCondition"; }
 			}
+			///<summary>Returns the id string for &quot;esri_layouts_mapGridPolygonCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_mapGridPolygonCondition {
+				 get { return "esri_layouts_mapGridPolygonCondition"; }
+			}
 			///<summary>Returns the id string for &quot;esri_layouts_paragraphCondition&quot; (State, Layouts)</summary>
 			public static string esri_layouts_paragraphCondition {
 				 get { return "esri_layouts_paragraphCondition"; }
@@ -9701,6 +12200,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_layouts_tableFrameFieldPolygonCondition&quot; (State, Layouts)</summary>
 			public static string esri_layouts_tableFrameFieldPolygonCondition {
 				 get { return "esri_layouts_tableFrameFieldPolygonCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_profileFrameCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_profileFrameCondition {
+				 get { return "esri_layouts_profileFrameCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_profileFramePolygonCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_profileFramePolygonCondition {
+				 get { return "esri_layouts_profileFramePolygonCondition"; }
 			}
 			///<summary>Returns the id string for &quot;esri_layouts_paragraphBackgroundCondition&quot; (State, Layouts)</summary>
 			public static string esri_layouts_paragraphBackgroundCondition {
@@ -9774,6 +12281,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_tableFrameShadowCondition {
 				 get { return "esri_layouts_tableFrameShadowCondition"; }
 			}
+			///<summary>Returns the id string for &quot;esri_layouts_meterReferenceTextCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_meterReferenceTextCondition {
+				 get { return "esri_layouts_meterReferenceTextCondition"; }
+			}
 			///<summary>Returns the id string for &quot;esri_layouts_legendLineCondition&quot; (State, Layouts)</summary>
 			public static string esri_layouts_legendLineCondition {
 				 get { return "esri_layouts_legendLineCondition"; }
@@ -9794,8 +12305,100 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_legendShadowCondition {
 				 get { return "esri_layouts_legendShadowCondition"; }
 			}
+			///<summary>Returns the id string for &quot;esri_layouts_topoNorthArrowCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_topoNorthArrowCondition {
+				 get { return "esri_layouts_topoNorthArrowCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_topoNorthArrowTextCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_topoNorthArrowTextCondition {
+				 get { return "esri_layouts_topoNorthArrowTextCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_topoNorthArrowBackgroundCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_topoNorthArrowBackgroundCondition {
+				 get { return "esri_layouts_topoNorthArrowBackgroundCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_topoNorthArrowBorderCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_topoNorthArrowBorderCondition {
+				 get { return "esri_layouts_topoNorthArrowBorderCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_topoNorthArrowShadowCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_topoNorthArrowShadowCondition {
+				 get { return "esri_layouts_topoNorthArrowShadowCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_profileFrameBackgroundCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_profileFrameBackgroundCondition {
+				 get { return "esri_layouts_profileFrameBackgroundCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_profileFrameBorderCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_profileFrameBorderCondition {
+				 get { return "esri_layouts_profileFrameBorderCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_profileFrameShadowCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_profileFrameShadowCondition {
+				 get { return "esri_layouts_profileFrameShadowCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_layouts_profileFrameObstacleCondition&quot; (State, Layouts)</summary>
+			public static string esri_layouts_profileFrameObstacleCondition {
+				 get { return "esri_layouts_profileFrameObstacleCondition"; }
+			}
+			///<summary>Returns the id string for &quot;ArcGIS_Desktop_Internal_Reports_ReportPageHeader&quot; (State, Layouts)</summary>
+			public static string ArcGIS_Desktop_Internal_Reports_ReportPageHeader {
+				 get { return "ArcGIS_Desktop_Internal_Reports_ReportPageHeader"; }
+			}
+			///<summary>Returns the id string for &quot;ArcGIS_Desktop_Internal_Reports_ReportHeader&quot; (State, Layouts)</summary>
+			public static string ArcGIS_Desktop_Internal_Reports_ReportHeader {
+				 get { return "ArcGIS_Desktop_Internal_Reports_ReportHeader"; }
+			}
+			///<summary>Returns the id string for &quot;ArcGIS_Desktop_Internal_Reports_ReportGroupHeader&quot; (State, Layouts)</summary>
+			public static string ArcGIS_Desktop_Internal_Reports_ReportGroupHeader {
+				 get { return "ArcGIS_Desktop_Internal_Reports_ReportGroupHeader"; }
+			}
+			///<summary>Returns the id string for &quot;ArcGIS_Desktop_Internal_Reports_ReportDetails&quot; (State, Layouts)</summary>
+			public static string ArcGIS_Desktop_Internal_Reports_ReportDetails {
+				 get { return "ArcGIS_Desktop_Internal_Reports_ReportDetails"; }
+			}
+			///<summary>Returns the id string for &quot;ArcGIS_Desktop_Internal_Reports_ReportPageFooter&quot; (State, Layouts)</summary>
+			public static string ArcGIS_Desktop_Internal_Reports_ReportPageFooter {
+				 get { return "ArcGIS_Desktop_Internal_Reports_ReportPageFooter"; }
+			}
+			///<summary>Returns the id string for &quot;ArcGIS_Desktop_Internal_Reports_ReportFooter&quot; (State, Layouts)</summary>
+			public static string ArcGIS_Desktop_Internal_Reports_ReportFooter {
+				 get { return "ArcGIS_Desktop_Internal_Reports_ReportFooter"; }
+			}
+			///<summary>Returns the id string for &quot;ArcGIS_Desktop_Internal_Reports_ReportGroupFooter&quot; (State, Layouts)</summary>
+			public static string ArcGIS_Desktop_Internal_Reports_ReportGroupFooter {
+				 get { return "ArcGIS_Desktop_Internal_Reports_ReportGroupFooter"; }
+			}
+			///<summary>Returns the id string for &quot;esri_report_reportSectionActiveStateId&quot; (State, Layouts)</summary>
+			public static string esri_report_reportSectionActiveStateId {
+				 get { return "esri_report_reportSectionActiveStateId"; }
+			}
+			///<summary>Returns the id string for &quot;esri_report_groupHeaderActiveStateId&quot; (State, Layouts)</summary>
+			public static string esri_report_groupHeaderActiveStateId {
+				 get { return "esri_report_groupHeaderActiveStateId"; }
+			}
+			///<summary>Returns the id string for &quot;esri_report_groupFooterActiveStateId&quot; (State, Layouts)</summary>
+			public static string esri_report_groupFooterActiveStateId {
+				 get { return "esri_report_groupFooterActiveStateId"; }
+			}
+			///<summary>Returns the id string for &quot;esri_report_detailsActiveStateId&quot; (State, Layouts)</summary>
+			public static string esri_report_detailsActiveStateId {
+				 get { return "esri_report_detailsActiveStateId"; }
+			}
+			///<summary>Returns the id string for &quot;esri_report_reportFooterActiveStateId&quot; (State, Layouts)</summary>
+			public static string esri_report_reportFooterActiveStateId {
+				 get { return "esri_report_reportFooterActiveStateId"; }
+			}
+			///<summary>Returns the id string for &quot;esri_report_reportSourceConnectedStateId&quot; (State, Layouts)</summary>
+			public static string esri_report_reportSourceConnectedStateId {
+				 get { return "esri_report_reportSourceConnectedStateId"; }
+			}
 		}
 		public static partial class Tab {
+			///<summary>Returns the id string for &quot;Layout&quot; (Tab, Layouts)</summary>
+			public static string esri_layouts_LayoutContainer {
+				 get { return "esri_layouts_LayoutContainer"; }
+			}
 			///<summary>Returns the id string for &quot;Layout&quot; (Tab, Layouts)</summary>
 			public static string esri_layouts_homeTab {
 				 get { return "esri_layouts_homeTab"; }
@@ -9848,19 +12451,59 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_reports_viewTab {
 				 get { return "esri_reports_viewTab"; }
 			}
+			///<summary>Returns the id string for &quot;Format&quot; (Tab, Layouts)</summary>
+			public static string esri_reports_pageHeaderFormatTab {
+				 get { return "esri_reports_pageHeaderFormatTab"; }
+			}
+			///<summary>Returns the id string for &quot;Format&quot; (Tab, Layouts)</summary>
+			public static string esri_reports_reportHeaderFormatTab {
+				 get { return "esri_reports_reportHeaderFormatTab"; }
+			}
+			///<summary>Returns the id string for &quot;Format&quot; (Tab, Layouts)</summary>
+			public static string esri_reports_groupHeaderFormatTab {
+				 get { return "esri_reports_groupHeaderFormatTab"; }
+			}
+			///<summary>Returns the id string for &quot;Format&quot; (Tab, Layouts)</summary>
+			public static string esri_reports_detailsFormatTab {
+				 get { return "esri_reports_detailsFormatTab"; }
+			}
+			///<summary>Returns the id string for &quot;Format&quot; (Tab, Layouts)</summary>
+			public static string esri_reports_reportFooterFormatTab {
+				 get { return "esri_reports_reportFooterFormatTab"; }
+			}
+			///<summary>Returns the id string for &quot;Format&quot; (Tab, Layouts)</summary>
+			public static string esri_reports_groupFooterFormatTab {
+				 get { return "esri_reports_groupFooterFormatTab"; }
+			}
+			///<summary>Returns the id string for &quot;Format&quot; (Tab, Layouts)</summary>
+			public static string esri_reports_pageFooterFormatTab {
+				 get { return "esri_reports_pageFooterFormatTab"; }
+			}
+			///<summary>Returns the id string for &quot;Report&quot; (Tab, Layouts)</summary>
+			public static string esri_reports_ReportContainer {
+				 get { return "esri_reports_ReportContainer"; }
+			}
 		}
 		public static partial class Tabgroup {
+			///<summary>Returns the id string for &quot;Manage&quot; (Tabgroup, Layouts)</summary>
+			public static string esri_layouts_LayoutTabGroup {
+				 get { return "esri_layouts_LayoutTabGroup"; }
+			}
 			///<summary>Returns the id string for &quot;Activated Map Frame&quot; (Tabgroup, Layouts)</summary>
 			public static string esri_layouts_activatedMapTabGroup {
 				 get { return "esri_layouts_activatedMapTabGroup"; }
 			}
-			///<summary>Returns the id string for &quot;Layout&quot; (Tabgroup, Layouts)</summary>
-			public static string esri_layouts_layoutTabGroup {
-				 get { return "esri_layouts_layoutTabGroup"; }
-			}
 			///<summary>Returns the id string for &quot;Selection&quot; (Tabgroup, Layouts)</summary>
 			public static string esri_layouts_selectionTabGroup {
 				 get { return "esri_layouts_selectionTabGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Report Section&quot; (Tabgroup, Layouts)</summary>
+			public static string esri_reports_selectedSectionTabGroup {
+				 get { return "esri_reports_selectedSectionTabGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Manage&quot; (Tabgroup, Layouts)</summary>
+			public static string esri_reports_ReportTabGroup {
+				 get { return "esri_reports_ReportTabGroup"; }
 			}
 		}
 		public static partial class Tool {
@@ -9944,10 +12587,6 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_newSplinedTextTool {
 				 get { return "esri_layouts_newSplinedTextTool"; }
 			}
-			///<summary>Returns the id string for &quot;Dynamic Text&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewDynamicTextTool, Layouts)</summary>
-			public static string esri_layouts_newDynamicTextTool {
-				 get { return "esri_layouts_newDynamicTextTool"; }
-			}
 			///<summary>Returns the id string for &quot;Rectangle&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewRectangleParagraphTool, Layouts)</summary>
 			public static string esri_layouts_newRectangleParagraphTool {
 				 get { return "esri_layouts_newRectangleParagraphTool"; }
@@ -9964,13 +12603,45 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_newEllipseParagraphTool {
 				 get { return "esri_layouts_newEllipseParagraphTool"; }
 			}
+			///<summary>Returns the id string for &quot;North Arrow&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewNorthArrowTool, Layouts)</summary>
+			public static string esri_layouts_newNorthArrowTool {
+				 get { return "esri_layouts_newNorthArrowTool"; }
+			}
+			///<summary>Returns the id string for &quot;Scale Bar&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewScaleBarTool, Layouts)</summary>
+			public static string esri_layouts_newScaleBarTool {
+				 get { return "esri_layouts_newScaleBarTool"; }
+			}
 			///<summary>Returns the id string for &quot;Legend&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewLegendTool, Layouts)</summary>
 			public static string esri_layouts_newLegendTool {
 				 get { return "esri_layouts_newLegendTool"; }
 			}
+			///<summary>Returns the id string for &quot;Chart Frame&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewChartFrameTool, Layouts)</summary>
+			public static string esri_layouts_newChartFrameTool {
+				 get { return "esri_layouts_newChartFrameTool"; }
+			}
 			///<summary>Returns the id string for &quot;Table Frame&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewTableFrameTool, Layouts)</summary>
 			public static string esri_layouts_newTableFrameTool {
 				 get { return "esri_layouts_newTableFrameTool"; }
+			}
+			///<summary>Returns the id string for &quot;Rectangle&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewMapFrameRectangleTool, Layouts)</summary>
+			public static string esri_layouts_newMapFrameRectangleTool {
+				 get { return "esri_layouts_newMapFrameRectangleTool"; }
+			}
+			///<summary>Returns the id string for &quot;Polygon&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewMapFramePolygonTool, Layouts)</summary>
+			public static string esri_layouts_newMapFramePolygonTool {
+				 get { return "esri_layouts_newMapFramePolygonTool"; }
+			}
+			///<summary>Returns the id string for &quot;Lasso&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewMapFrameLassoTool, Layouts)</summary>
+			public static string esri_layouts_newMapFrameLassoTool {
+				 get { return "esri_layouts_newMapFrameLassoTool"; }
+			}
+			///<summary>Returns the id string for &quot;Ellipse&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewMapFrameEllipseTool, Layouts)</summary>
+			public static string esri_layouts_newMapFrameEllipseTool {
+				 get { return "esri_layouts_newMapFrameEllipseTool"; }
+			}
+			///<summary>Returns the id string for &quot;Circle&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewMapFrameCircleTool, Layouts)</summary>
+			public static string esri_layouts_newMapFrameCircleTool {
+				 get { return "esri_layouts_newMapFrameCircleTool"; }
 			}
 			///<summary>Returns the id string for &quot;Rectangle&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.ReshapeMapFrameRectangleTool, Layouts)</summary>
 			public static string esri_layouts_reshapeMapFrameRectangleTool {
@@ -9991,6 +12662,114 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Circle&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.ReshapeMapFrameCircleTool, Layouts)</summary>
 			public static string esri_layouts_reshapeMapFrameCircleTool {
 				 get { return "esri_layouts_reshapeMapFrameCircleTool"; }
+			}
+			///<summary>Returns the id string for &quot;Additional Surrounds&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewProductionToolPlaceHolder, Layouts)</summary>
+			public static string esri_layouts_newProductionToolPlaceHolder {
+				 get { return "esri_layouts_newProductionToolPlaceHolder"; }
+			}
+			///<summary>Returns the id string for &quot;TLM Meter Reference Guide&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewTLMMeterReferenceGuideTool, Layouts)</summary>
+			public static string esri_layouts_newTLMMeterReferenceGuideTool {
+				 get { return "esri_layouts_newTLMMeterReferenceGuideTool"; }
+			}
+			///<summary>Returns the id string for &quot;ICM Meter Reference Guide&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewICMMeterReferenceGuideTool, Layouts)</summary>
+			public static string esri_layouts_newICMMeterReferenceGuideTool {
+				 get { return "esri_layouts_newICMMeterReferenceGuideTool"; }
+			}
+			///<summary>Returns the id string for &quot;JOG Meter Reference Guide&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewJOGMeterReferenceGuideTool, Layouts)</summary>
+			public static string esri_layouts_newJOGMeterReferenceGuideTool {
+				 get { return "esri_layouts_newJOGMeterReferenceGuideTool"; }
+			}
+			///<summary>Returns the id string for &quot;U.S. National Grid Reference Box&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewUSNGMeterReferenceGuideTool, Layouts)</summary>
+			public static string esri_layouts_newUSNGMeterReferenceGuideTool {
+				 get { return "esri_layouts_newUSNGMeterReferenceGuideTool"; }
+			}
+			///<summary>Returns the id string for &quot;Slope Guide&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewSlopeGuideTool, Layouts)</summary>
+			public static string esri_layouts_newSlopeGuideTool {
+				 get { return "esri_layouts_newSlopeGuideTool"; }
+			}
+			///<summary>Returns the id string for &quot;Elevation Guide Bar&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewElevationGuideBarTool, Layouts)</summary>
+			public static string esri_layouts_newElevationGuideBarTool {
+				 get { return "esri_layouts_newElevationGuideBarTool"; }
+			}
+			///<summary>Returns the id string for &quot;Terrain Obstacle Profile&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewProfileFrameTool, Layouts)</summary>
+			public static string esri_layouts_newProfileFrameTool {
+				 get { return "esri_layouts_newProfileFrameTool"; }
+			}
+			///<summary>Returns the id string for &quot;Field&quot; (ArcGIS.Desktop.Internal.Reports.Ribbon.ReportNewFieldElementTool, Layouts)</summary>
+			public static string esri_reports_newFieldElementTool {
+				 get { return "esri_reports_newFieldElementTool"; }
+			}
+			///<summary>Returns the id string for &quot;Mean&quot; (ArcGIS.Desktop.Internal.Reports.Ribbon.ReportNewAvgElementTool, Layouts)</summary>
+			public static string esri_reports_addAvgStatisticTool {
+				 get { return "esri_reports_addAvgStatisticTool"; }
+			}
+			///<summary>Returns the id string for &quot;Count&quot; (ArcGIS.Desktop.Internal.Reports.Ribbon.ReportNewCountElementTool, Layouts)</summary>
+			public static string esri_reports_addCountStatisticTool {
+				 get { return "esri_reports_addCountStatisticTool"; }
+			}
+			///<summary>Returns the id string for &quot;Maximum&quot; (ArcGIS.Desktop.Internal.Reports.Ribbon.ReportNewMaxElementTool, Layouts)</summary>
+			public static string esri_reports_addMaxStatisticTool {
+				 get { return "esri_reports_addMaxStatisticTool"; }
+			}
+			///<summary>Returns the id string for &quot;Minimum&quot; (ArcGIS.Desktop.Internal.Reports.Ribbon.ReportNewMinElementTool, Layouts)</summary>
+			public static string esri_reports_addMinStatisticTool {
+				 get { return "esri_reports_addMinStatisticTool"; }
+			}
+			///<summary>Returns the id string for &quot;Standard Deviation&quot; (ArcGIS.Desktop.Internal.Reports.Ribbon.ReportNewStdDevElementTool, Layouts)</summary>
+			public static string esri_reports_addStdDevStatisticTool {
+				 get { return "esri_reports_addStdDevStatisticTool"; }
+			}
+			///<summary>Returns the id string for &quot;Sum&quot; (ArcGIS.Desktop.Internal.Reports.Ribbon.ReportNewSumElementTool, Layouts)</summary>
+			public static string esri_reports_addSumStatisticTool {
+				 get { return "esri_reports_addSumStatisticTool"; }
+			}
+			///<summary>Returns the id string for &quot;Median&quot; (ArcGIS.Desktop.Internal.Reports.Ribbon.ReportNewMedianElementTool, Layouts)</summary>
+			public static string esri_reports_addMedianStatisticTool {
+				 get { return "esri_reports_addMedianStatisticTool"; }
+			}
+			///<summary>Returns the id string for &quot;Point&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewPointTool, Layouts)</summary>
+			public static string esri_reports_newPointTool {
+				 get { return "esri_reports_newPointTool"; }
+			}
+			///<summary>Returns the id string for &quot;Line&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewLineTool, Layouts)</summary>
+			public static string esri_reports_newLineTool {
+				 get { return "esri_reports_newLineTool"; }
+			}
+			///<summary>Returns the id string for &quot;Curve&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewBezierCurveTool, Layouts)</summary>
+			public static string esri_reports_newBezierCurveTool {
+				 get { return "esri_reports_newBezierCurveTool"; }
+			}
+			///<summary>Returns the id string for &quot;Freehand&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewOpenLassoTool, Layouts)</summary>
+			public static string esri_reports_newOpenLassoTool {
+				 get { return "esri_reports_newOpenLassoTool"; }
+			}
+			///<summary>Returns the id string for &quot;Rectangle&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewRectangleTool, Layouts)</summary>
+			public static string esri_reports_newRectangleTool {
+				 get { return "esri_reports_newRectangleTool"; }
+			}
+			///<summary>Returns the id string for &quot;Polygon&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewPolygonTool, Layouts)</summary>
+			public static string esri_reports_newPolygonTool {
+				 get { return "esri_reports_newPolygonTool"; }
+			}
+			///<summary>Returns the id string for &quot;Lasso&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewLassoTool, Layouts)</summary>
+			public static string esri_reports_newLassoTool {
+				 get { return "esri_reports_newLassoTool"; }
+			}
+			///<summary>Returns the id string for &quot;Circle&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewCircleTool, Layouts)</summary>
+			public static string esri_reports_newCircleTool {
+				 get { return "esri_reports_newCircleTool"; }
+			}
+			///<summary>Returns the id string for &quot;Ellipse&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewEllipseTool, Layouts)</summary>
+			public static string esri_reports_newEllipseTool {
+				 get { return "esri_reports_newEllipseTool"; }
+			}
+			///<summary>Returns the id string for &quot;Picture&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewPictureTool, Layouts)</summary>
+			public static string esri_reports_newPictureTool {
+				 get { return "esri_reports_newPictureTool"; }
+			}
+			///<summary>Returns the id string for &quot;Rectangle&quot; (ArcGIS.Desktop.Internal.Layouts.Ribbon.NewRectangleParagraphTool, Layouts)</summary>
+			public static string esri_reports_newRectangleParagraphTool {
+				 get { return "esri_reports_newRectangleParagraphTool"; }
 			}
 		}
 		public static partial class Toolbar {
@@ -10016,9 +12795,25 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_layouts_newTextToolPalette {
 				 get { return "esri_layouts_newTextToolPalette"; }
 			}
+			///<summary>Returns the id string for &quot;esri_layouts_newMapFrameToolPalette&quot; (Toolpalette, Layouts)</summary>
+			public static string esri_layouts_newMapFrameToolPalette {
+				 get { return "esri_layouts_newMapFrameToolPalette"; }
+			}
 			///<summary>Returns the id string for &quot;Reshape&quot; (Toolpalette, Layouts)</summary>
 			public static string esri_layouts_reshapeMapFrameToolPalette {
 				 get { return "esri_layouts_reshapeMapFrameToolPalette"; }
+			}
+			///<summary>Returns the id string for &quot;Statistics&quot; (Toolpalette, Layouts)</summary>
+			public static string esri_reports_statisticToolPalette {
+				 get { return "esri_reports_statisticToolPalette"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_newPolygonGraphicToolPalette&quot; (Toolpalette, Layouts)</summary>
+			public static string esri_reports_newPolygonGraphicToolPalette {
+				 get { return "esri_reports_newPolygonGraphicToolPalette"; }
+			}
+			///<summary>Returns the id string for &quot;esri_reports_newLineGraphicToolPalette&quot; (Toolpalette, Layouts)</summary>
+			public static string esri_reports_newLineGraphicToolPalette {
+				 get { return "esri_reports_newLineGraphicToolPalette"; }
 			}
 		}
 		public static partial class Button {
@@ -10041,6 +12836,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Import&quot; (ImportStyleButton, Mapping)</summary>
 			public static string esri_mapping_importStyleButton {
 				 get { return "esri_mapping_importStyleButton"; }
+			}
+			///<summary>Returns the id string for &quot;Import Style&quot; (ImportStyleButton, Mapping)</summary>
+			public static string esri_mapping_importStyleRibbonButton {
+				 get { return "esri_mapping_importStyleRibbonButton"; }
 			}
 			///<summary>Returns the id string for &quot;Import&quot; (ImportContextFileStyleButton, Mapping)</summary>
 			public static string esri_mapping_importFileStyleButton {
@@ -10118,6 +12917,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_newTextSymbol {
 				 get { return "esri_mapping_newTextSymbol"; }
 			}
+			///<summary>Returns the id string for &quot;Dimension Style&quot; (NewDimensionStyleButton, Mapping)</summary>
+			public static string esri_mapping_newDimensionStyle {
+				 get { return "esri_mapping_newDimensionStyle"; }
+			}
 			///<summary>Returns the id string for &quot;Color&quot; (NewColorButton, Mapping)</summary>
 			public static string esri_mapping_newColor {
 				 get { return "esri_mapping_newColor"; }
@@ -10133,14 +12936,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Maplex Label Placement&quot; (AddNewMaplexLabelPlacementButton, Mapping)</summary>
 			public static string esri_mapping_newMaplexLabelPlacement {
 				 get { return "esri_mapping_newMaplexLabelPlacement"; }
-			}
-			///<summary>Returns the id string for &quot;Icon&quot; (StyleViewIconButton, Mapping)</summary>
-			public static string esri_mapping_styleViewIcon {
-				 get { return "esri_mapping_styleViewIcon"; }
-			}
-			///<summary>Returns the id string for &quot;List&quot; (StyleViewListButton, Mapping)</summary>
-			public static string esri_mapping_styleViewList {
-				 get { return "esri_mapping_styleViewList"; }
 			}
 			///<summary>Returns the id string for &quot;By ID&quot; (StyleSortByIdButton, Mapping)</summary>
 			public static string esri_mapping_styleSortByID {
@@ -10194,6 +12989,26 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_copySelectedLayersButton {
 				 get { return "esri_mapping_copySelectedLayersButton"; }
 			}
+			///<summary>Returns the id string for &quot;Copy&quot; (esri_mapping:CopySelectedElevationSurfaces, Mapping)</summary>
+			public static string esri_mapping_copySelectedElevationSurfaceButton {
+				 get { return "esri_mapping_copySelectedElevationSurfaceButton"; }
+			}
+			///<summary>Returns the id string for &quot;Copy&quot; (esri_mapping:CopySelectedElevationSources, Mapping)</summary>
+			public static string esri_mapping_copySelectedElevationSourcesButton {
+				 get { return "esri_mapping_copySelectedElevationSourcesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Paste&quot; (esri_mapping:PasteClipboardElevationSources, Mapping)</summary>
+			public static string esri_mapping_pasteSourcesIntoSurfaceButton {
+				 get { return "esri_mapping_pasteSourcesIntoSurfaceButton"; }
+			}
+			///<summary>Returns the id string for &quot;Zoom To Elevation Source&quot; (esri_mapping:ZoomToSelectedElevationSources, Mapping)</summary>
+			public static string esri_mapping_ZoomToElevationSourceButton {
+				 get { return "esri_mapping_ZoomToElevationSourceButton"; }
+			}
+			///<summary>Returns the id string for &quot;Zoom To Elevation Surface&quot; (esri_mapping:ZoomToSelectedElevationSurfaces, Mapping)</summary>
+			public static string esri_mapping_ZoomToElevationSurfaceButton {
+				 get { return "esri_mapping_ZoomToElevationSurfaceButton"; }
+			}
 			///<summary>Returns the id string for &quot;Settings&quot; (esri_core_projectDockPane:ProjectSettings, Mapping)</summary>
 			public static string esri_mapping_projectSettingsButton {
 				 get { return "esri_mapping_projectSettingsButton"; }
@@ -10202,21 +13017,17 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_showProjectDockPane {
 				 get { return "esri_mapping_showProjectDockPane"; }
 			}
-			///<summary>Returns the id string for &quot;Import&quot; (esri_mapping:OpenImportMapDocument, Mapping)</summary>
-			public static string esri_mapping_importMapLocalButton {
-				 get { return "esri_mapping_importMapLocalButton"; }
-			}
-			///<summary>Returns the id string for &quot;Import Map&quot; (esri_core_module:AddToProject, Mapping)</summary>
-			public static string esri_mapping_importMapButton {
-				 get { return "esri_mapping_importMapButton"; }
-			}
-			///<summary>Returns the id string for &quot;New Map&quot; (esri_mapping:InternalOpenCreateNewMapAsync, Mapping)</summary>
+			///<summary>Returns the id string for &quot;New Map&quot; (esri_mapping:CreateOrOpenNewMapAsync, Mapping)</summary>
 			public static string esri_mapping_newMapButton {
 				 get { return "esri_mapping_newMapButton"; }
 			}
-			///<summary>Returns the id string for &quot;New Scene&quot; (esri_mapping:OpenCreateNewGlobeAsync, Mapping)</summary>
+			///<summary>Returns the id string for &quot;New Global Scene&quot; (esri_mapping:CreateNewGlobalSceneAsync, Mapping)</summary>
 			public static string esri_mapping_newSceneButton {
 				 get { return "esri_mapping_newSceneButton"; }
+			}
+			///<summary>Returns the id string for &quot;New Local Scene&quot; (esri_mapping:CreateNewLocalSceneAsync, Mapping)</summary>
+			public static string esri_mapping_newLocalSceneButton {
+				 get { return "esri_mapping_newLocalSceneButton"; }
 			}
 			///<summary>Returns the id string for &quot;New Stereo Map&quot; (esri_mapping:OpenCreateNewStereoMapAsync, Mapping)</summary>
 			public static string esri_mapping_newStereoMapButton {
@@ -10242,30 +13053,6 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_addDataButton {
 				 get { return "esri_mapping_addDataButton"; }
 			}
-			///<summary>Returns the id string for &quot;Add From Geodatabase&quot; (esri_mapping:AddGeoDatabaseData, Mapping)</summary>
-			public static string esri_mapping_addGeoDatabaseDataButton {
-				 get { return "esri_mapping_addGeoDatabaseDataButton"; }
-			}
-			///<summary>Returns the id string for &quot;Add From File&quot; (esri_mapping:AddFileData, Mapping)</summary>
-			public static string esri_mapping_addFileDataButton {
-				 get { return "esri_mapping_addFileDataButton"; }
-			}
-			///<summary>Returns the id string for &quot;Add From Service&quot; (esri_mapping:AddServiceData, Mapping)</summary>
-			public static string esri_mapping_addServiceDataButton {
-				 get { return "esri_mapping_addServiceDataButton"; }
-			}
-			///<summary>Returns the id string for &quot;Add From Coverage&quot; (esri_mapping:AddCoverageData, Mapping)</summary>
-			public static string esri_mapping_addCoverageDataButton {
-				 get { return "esri_mapping_addCoverageDataButton"; }
-			}
-			///<summary>Returns the id string for &quot;Add From XY Coordinate Data&quot; (esri_mapping:AddXYData, Mapping)</summary>
-			public static string esri_mapping_addXYDataButton {
-				 get { return "esri_mapping_addXYDataButton"; }
-			}
-			///<summary>Returns the id string for &quot;Add From Query Layer&quot; (esri_mapping:AddQueryLayerData, Mapping)</summary>
-			public static string esri_mapping_addQueryLayerDataButton {
-				 get { return "esri_mapping_addQueryLayerDataButton"; }
-			}
 			///<summary>Returns the id string for &quot;Open&quot; (esri_mapping:ContextMenuViewMap2D, Mapping)</summary>
 			public static string esri_mapping_mapContextMenuContainmentViewButton {
 				 get { return "esri_mapping_mapContextMenuContainmentViewButton"; }
@@ -10286,23 +13073,43 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_mapContextMenuScene3DViewButton {
 				 get { return "esri_mapping_mapContextMenuScene3DViewButton"; }
 			}
-			///<summary>Returns the id string for &quot;Convert To Scene&quot; (esri_mapping:Convert, Mapping)</summary>
+			///<summary>Returns the id string for &quot;Open&quot; (esri_mapping:ContextMenuViewStereoMap, Mapping)</summary>
+			public static string esri_mapping_mapContextMenuStereoMapViewButton {
+				 get { return "esri_mapping_mapContextMenuStereoMapViewButton"; }
+			}
+			///<summary>Returns the id string for &quot;To Global Scene&quot; (esri_mapping:ConvertToGlobalSceneFromCatalog, Mapping)</summary>
 			public static string esri_mapping_mapContextMenuConvertTo3DButton {
 				 get { return "esri_mapping_mapContextMenuConvertTo3DButton"; }
 			}
-			///<summary>Returns the id string for &quot;Convert To Map&quot; (esri_mapping:Convert, Mapping)</summary>
+			///<summary>Returns the id string for &quot;To Local Scene&quot; (esri_mapping:ConvertToLocalSceneFromCatalog, Mapping)</summary>
+			public static string esri_mapping_mapContextMenuConvertToLocalSceneButton {
+				 get { return "esri_mapping_mapContextMenuConvertToLocalSceneButton"; }
+			}
+			///<summary>Returns the id string for &quot;To Map&quot; (esri_mapping:ConvertToMapFromCatalog, Mapping)</summary>
 			public static string esri_mapping_mapContextMenuConvertTo2DButton {
 				 get { return "esri_mapping_mapContextMenuConvertTo2DButton"; }
+			}
+			///<summary>Returns the id string for &quot;To Global Scene&quot; (esri_mapping:ConvertStereoMapTo3DScene, Mapping)</summary>
+			public static string esri_mapping_mapContextMenuConvertStereoMapTo3DSceneButton {
+				 get { return "esri_mapping_mapContextMenuConvertStereoMapTo3DSceneButton"; }
+			}
+			///<summary>Returns the id string for &quot;To Local Scene&quot; (esri_mapping:ConvertStereoMapTo3DLocalScene, Mapping)</summary>
+			public static string esri_mapping_mapContextMenuConvertStereoMapTo3DLocalSceneButton {
+				 get { return "esri_mapping_mapContextMenuConvertStereoMapTo3DLocalSceneButton"; }
+			}
+			///<summary>Returns the id string for &quot;To Map&quot; (esri_mapping:ConvertStereoMapTo2DMap, Mapping)</summary>
+			public static string esri_mapping_mapContextMenuConvertStereoMapTo2DMapButton {
+				 get { return "esri_mapping_mapContextMenuConvertStereoMapTo2DMapButton"; }
 			}
 			///<summary>Returns the id string for &quot;Export To File...&quot; (esri_mapping:ExportSimpleMapProjectItem, Mapping)</summary>
 			public static string esri_mapping_mapContextMenu_ExportMap {
 				 get { return "esri_mapping_mapContextMenu_ExportMap"; }
 			}
-			///<summary>Returns the id string for &quot;Convert To Map&quot; (esri_mapping:ConvertBasemap, Mapping)</summary>
+			///<summary>Returns the id string for &quot;To Map&quot; (esri_mapping:ConvertBasemapToMapFromCatalog, Mapping)</summary>
 			public static string esri_mapping_mapContextMenuConvertToMapButton {
 				 get { return "esri_mapping_mapContextMenuConvertToMapButton"; }
 			}
-			///<summary>Returns the id string for &quot;Convert To Basemap&quot; (esri_mapping:ConvertBasemap, Mapping)</summary>
+			///<summary>Returns the id string for &quot;To Basemap&quot; (esri_mapping:ConvertMapToBasemapFromCatalog, Mapping)</summary>
 			public static string esri_mapping_mapContextMenuConvertToBasemapButton {
 				 get { return "esri_mapping_mapContextMenuConvertToBasemapButton"; }
 			}
@@ -10342,13 +13149,21 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_scene3DViewButton {
 				 get { return "esri_mapping_scene3DViewButton"; }
 			}
-			///<summary>Returns the id string for &quot;Convert&quot; (esri_mapping:Convert, Mapping)</summary>
-			public static string esri_mapping_mapConvertButton {
-				 get { return "esri_mapping_mapConvertButton"; }
+			///<summary>Returns the id string for &quot;To Map&quot; (esri_mapping:ConvertToMap, Mapping)</summary>
+			public static string esri_mapping_convertToMapButton {
+				 get { return "esri_mapping_convertToMapButton"; }
 			}
-			///<summary>Returns the id string for &quot;Convert Basemap&quot; (esri_mapping:ConvertBasemap, Mapping)</summary>
-			public static string esri_mapping_basemapConvertButton {
-				 get { return "esri_mapping_basemapConvertButton"; }
+			///<summary>Returns the id string for &quot;To Global Scene&quot; (esri_mapping:ConvertToGlobalScene, Mapping)</summary>
+			public static string esri_mapping_convertToGlobalSceneButton {
+				 get { return "esri_mapping_convertToGlobalSceneButton"; }
+			}
+			///<summary>Returns the id string for &quot;To Local Scene&quot; (esri_mapping:ConvertToLocalScene, Mapping)</summary>
+			public static string esri_mapping_convertToLocalSceneButton {
+				 get { return "esri_mapping_convertToLocalSceneButton"; }
+			}
+			///<summary>Returns the id string for &quot;To Basemap&quot; (esri_mapping:ConvertToBasemap, Mapping)</summary>
+			public static string esri_mapping_convertToBasemapButton {
+				 get { return "esri_mapping_convertToBasemapButton"; }
 			}
 			///<summary>Returns the id string for &quot;Navigator&quot; (ArcGIS.Desktop.Internal.Mapping.Controls.Ribbon.NavigationControlButton, Mapping)</summary>
 			public static string esri_mapping_navigationControl {
@@ -10357,6 +13172,34 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Copy Coordinates&quot; (esri_mapping:CopyCoordinates, Mapping)</summary>
 			public static string esri_mapping_copyCoordinates {
 				 get { return "esri_mapping_copyCoordinates"; }
+			}
+			///<summary>Returns the id string for &quot;DD&quot; (esri_mapping:CopyDDCoordinates, Mapping)</summary>
+			public static string esri_mapping_copyDDButton {
+				 get { return "esri_mapping_copyDDButton"; }
+			}
+			///<summary>Returns the id string for &quot;DDM&quot; (esri_mapping:CopyDDMCoordinates, Mapping)</summary>
+			public static string esri_mapping_copyDDMButton {
+				 get { return "esri_mapping_copyDDMButton"; }
+			}
+			///<summary>Returns the id string for &quot;DMS&quot; (esri_mapping:CopyDMSCoordinates, Mapping)</summary>
+			public static string esri_mapping_copyDMSButton {
+				 get { return "esri_mapping_copyDMSButton"; }
+			}
+			///<summary>Returns the id string for &quot;MGRS&quot; (esri_mapping:CopyMGRSCoordinates, Mapping)</summary>
+			public static string esri_mapping_copyMGRSButton {
+				 get { return "esri_mapping_copyMGRSButton"; }
+			}
+			///<summary>Returns the id string for &quot;USNG&quot; (esri_mapping:CopyUSNGCoordinates, Mapping)</summary>
+			public static string esri_mapping_copyUSNGButton {
+				 get { return "esri_mapping_copyUSNGButton"; }
+			}
+			///<summary>Returns the id string for &quot;UTM&quot; (esri_mapping:CopyUTMCoordinates, Mapping)</summary>
+			public static string esri_mapping_copyUTMButton {
+				 get { return "esri_mapping_copyUTMButton"; }
+			}
+			///<summary>Returns the id string for &quot;Go To XY&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.GotoXYControlButton, Mapping)</summary>
+			public static string esri_mapping_gotoXYControl {
+				 get { return "esri_mapping_gotoXYControl"; }
 			}
 			///<summary>Returns the id string for &quot;Center And Scale&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.SyncCenterAndScaleButton, Mapping)</summary>
 			public static string esri_mapping_syncCenterAndScaleButton {
@@ -10389,10 +13232,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Zoom Full Extent&quot; (esri_mapping:ZoomToFullExtent, Mapping)</summary>
 			public static string esri_mapping_zoomFullButton {
 				 get { return "esri_mapping_zoomFullButton"; }
-			}
-			///<summary>Returns the id string for &quot;Go To XY&quot; (esri_mapping:GoToXY, Mapping)</summary>
-			public static string esri_mapping_gotoXY {
-				 get { return "esri_mapping_gotoXY"; }
 			}
 			///<summary>Returns the id string for &quot;Previous Extent&quot; (esri_mapping:PreviousNavigationPos, Mapping)</summary>
 			public static string esri_mapping_prevExtentButton {
@@ -10450,6 +13289,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_labelKeyNumberingButton {
 				 get { return "esri_mapping_labelKeyNumberingButton"; }
 			}
+			///<summary>Returns the id string for &quot;Summary...&quot; (esri_mapping:ShowLabelSummaryDialog, Mapping)</summary>
+			public static string esri_mapping_labelSummaryRankingButton {
+				 get { return "esri_mapping_labelSummaryRankingButton"; }
+			}
 			///<summary>Returns the id string for &quot;Use Maplex Label Engine&quot; (ArcGIS.Desktop.Internal.Mapping.Labeling.Ribbon.UseMaplexLabelEngineButton, Mapping)</summary>
 			public static string esri_mapping_labelEngineButton {
 				 get { return "esri_mapping_labelEngineButton"; }
@@ -10466,7 +13309,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_labelConvertLabelsToAnnoMenuButton {
 				 get { return "esri_mapping_labelConvertLabelsToAnnoMenuButton"; }
 			}
-			///<summary>Returns the id string for &quot;Add To New Map&quot; (ArcGIS.Desktop.Mapping.AddToNewMapButton, Mapping)</summary>
+			///<summary>Returns the id string for &quot;Map&quot; (ArcGIS.Desktop.Mapping.AddToNewMapButton, Mapping)</summary>
 			public static string esri_projectItemAddToNewMapButton {
 				 get { return "esri_projectItemAddToNewMapButton"; }
 			}
@@ -10474,9 +13317,13 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_projectItemAddToActiveMapButton {
 				 get { return "esri_projectItemAddToActiveMapButton"; }
 			}
-			///<summary>Returns the id string for &quot;Add To New Scene&quot; (ArcGIS.Desktop.Mapping.AddToNewSceneButton, Mapping)</summary>
+			///<summary>Returns the id string for &quot;Global Scene&quot; (ArcGIS.Desktop.Mapping.AddToNewSceneButton, Mapping)</summary>
 			public static string esri_projectItemAddToNewSceneButton {
 				 get { return "esri_projectItemAddToNewSceneButton"; }
+			}
+			///<summary>Returns the id string for &quot;Local Scene&quot; (ArcGIS.Desktop.Mapping.AddToNewLocalSceneButton, Mapping)</summary>
+			public static string esri_projectItemAddToNewLocalSceneButton {
+				 get { return "esri_projectItemAddToNewLocalSceneButton"; }
 			}
 			///<summary>Returns the id string for &quot;Add To Current Map&quot; (ArcGIS.Desktop.Mapping.OnlineItemAddToActiveMapButton, Mapping)</summary>
 			public static string esri_onlineItemAddToActiveMapButton {
@@ -10485,10 +13332,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Add To New Diagram Map&quot; (ArcGIS.Desktop.Mapping.AddToNewDiagramMapButton, Mapping)</summary>
 			public static string esri_projectItemAddToNewDiagramMapButton {
 				 get { return "esri_projectItemAddToNewDiagramMapButton"; }
-			}
-			///<summary>Returns the id string for &quot;Add As Ground Elevation&quot; (ArcGIS.Desktop.Mapping.AddAsGroundElevation, Mapping)</summary>
-			public static string esri_projectItemAddAsGroundElevation {
-				 get { return "esri_projectItemAddAsGroundElevation"; }
 			}
 			///<summary>Returns the id string for &quot;Label&quot; (ArcGIS.Desktop.Internal.Mapping.Labeling.Ribbon.LabelClassLayerEnableButton, Mapping)</summary>
 			public static string esri_mapping_labelFeatureLayerEnableButton {
@@ -10509,6 +13352,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Create Label Class...&quot; (ArcGIS.Desktop.Internal.Mapping.Labeling.Ribbon.LabelClassCreateButton, Mapping)</summary>
 			public static string esri_mapping_labelClassCreateButton {
 				 get { return "esri_mapping_labelClassCreateButton"; }
+			}
+			///<summary>Returns the id string for &quot;Create Label Classes From Symbology...&quot; (ArcGIS.Desktop.Internal.Mapping.Labeling.Ribbon.LabelClassFromSymbologyButton, Mapping)</summary>
+			public static string esri_mapping_labelClassCreateFromSymbologyButton {
+				 get { return "esri_mapping_labelClassCreateFromSymbologyButton"; }
+			}
+			///<summary>Returns the id string for &quot;Convert Labels To Annotation...&quot; (ArcGIS.Desktop.Internal.Mapping.Labeling.Ribbon.ConvertLayerLabelsToAnnotationButton, Mapping)</summary>
+			public static string esri_mapping_labelConvertLayerLabelsToAnnoMenuButton {
+				 get { return "esri_mapping_labelConvertLayerLabelsToAnnoMenuButton"; }
 			}
 			///<summary>Returns the id string for &quot;Create...&quot; (ArcGIS.Desktop.Internal.Mapping.Labeling.Ribbon.LabelClassCreateButton, Mapping)</summary>
 			public static string esri_mapping_labelClassCreateSelectedButton {
@@ -10606,13 +13457,17 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_infoSelectedTOCButton {
 				 get { return "esri_mapping_infoSelectedTOCButton"; }
 			}
+			///<summary>Returns the id string for &quot;No Pop-ups&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.InfoNoneButton, Mapping)</summary>
+			public static string esri_mapping_infoNoneButton {
+				 get { return "esri_mapping_infoNoneButton"; }
+			}
+			///<summary>Returns the id string for &quot;Planar Navigation&quot; (esri_mapping:ToggleScreenPlanePan, Mapping)</summary>
+			public static string esri_mapping_screenPlanePanButton {
+				 get { return "esri_mapping_screenPlanePanButton"; }
+			}
 			///<summary>Returns the id string for &quot;Locate&quot; (esri_mapping:ShowFindLocation, Mapping)</summary>
 			public static string esri_mapping_showLocateDockPane {
 				 get { return "esri_mapping_showLocateDockPane"; }
-			}
-			///<summary>Returns the id string for &quot;Candidate Pop-up&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.LocateCandidatePopupButton, Mapping)</summary>
-			public static string esri_mapping_locateCandidatePopup {
-				 get { return "esri_mapping_locateCandidatePopup"; }
 			}
 			///<summary>Returns the id string for &quot;What's here?&quot; (esri_mapping:ReverseGeocodePopup, Mapping)</summary>
 			public static string esri_mapping_locateReverseGeocode {
@@ -10626,13 +13481,13 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_gridOnButton {
 				 get { return "esri_mapping_gridOnButton"; }
 			}
-			///<summary>Returns the id string for &quot;Snapping&quot; (ArcGIS.Desktop.Internal.Mapping.Controls.SnappingControl.SnappingMasterButton, Mapping)</summary>
+			///<summary>Returns the id string for &quot;Ground to Grid Corrections&quot; (ArcGIS.Desktop.Internal.Mapping.Controls.GroundToGridControl.G2GControlButton, Mapping)</summary>
+			public static string esri_mapping_g2gOnButton {
+				 get { return "esri_mapping_g2gOnButton"; }
+			}
+			///<summary>Returns the id string for &quot;Snapping&quot; (Button, Mapping)</summary>
 			public static string esri_mapping_snappingOnButton {
 				 get { return "esri_mapping_snappingOnButton"; }
-			}
-			///<summary>Returns the id string for &quot;Use Snapping&quot; (ArcGIS.Desktop.Internal.Mapping.Controls.SnappingControl.SnappingMasterButton, Mapping)</summary>
-			public static string esri_mapping_snappingOnButton2 {
-				 get { return "esri_mapping_snappingOnButton2"; }
 			}
 			///<summary>Returns the id string for &quot;Point Snapping&quot; (ArcGIS.Desktop.Internal.Mapping.Controls.SnappingControl.PointSnappingButton, Mapping)</summary>
 			public static string esri_mapping_pointSnappingButton {
@@ -10682,6 +13537,22 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_browseThumbnailButton {
 				 get { return "esri_mapping_browseThumbnailButton"; }
 			}
+			///<summary>Returns the id string for &quot;Active Range&quot; (esri_mapping:EnableRange, Mapping)</summary>
+			public static string esri_mapping_enableRangeButton {
+				 get { return "esri_mapping_enableRangeButton"; }
+			}
+			///<summary>Returns the id string for &quot;Locked Ranges&quot; (esri_mapping:IgnoreLockedRanges, Mapping)</summary>
+			public static string esri_mapping_enableLockedRangesButton {
+				 get { return "esri_mapping_enableLockedRangesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Time&quot; (esri_mapping:EnableTime, Mapping)</summary>
+			public static string esri_mapping_enableTimeButton {
+				 get { return "esri_mapping_enableTimeButton"; }
+			}
+			///<summary>Returns the id string for &quot;Symbology&quot; (esri_mapping:ShowPointCloudLayerSymbologyPane, Mapping)</summary>
+			public static string esri_mapping_showPointCloudLayerSymbologyDockPane {
+				 get { return "esri_mapping_showPointCloudLayerSymbologyDockPane"; }
+			}
 			///<summary>Returns the id string for &quot;Add&quot; (esri_mapping:EnableAnimation, Mapping)</summary>
 			public static string esri_mapping_enableAnimationButton {
 				 get { return "esri_mapping_enableAnimationButton"; }
@@ -10689,6 +13560,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Remove&quot; (esri_mapping:DeleteAnimationTrack, Mapping)</summary>
 			public static string esri_mapping_animationRemoveTrack {
 				 get { return "esri_mapping_animationRemoveTrack"; }
+			}
+			///<summary>Returns the id string for &quot;Overlay Properties&quot; (esri_mapping:ShowAnimationOverlayEditPane, Mapping)</summary>
+			public static string esri_mapping_animationOverlayPropertiesButton {
+				 get { return "esri_mapping_animationOverlayPropertiesButton"; }
 			}
 			///<summary>Returns the id string for &quot;Movie&quot; (esri_mapping:ShowAnimationExportPane, Mapping)</summary>
 			public static string esri_mapping_animationExportButton {
@@ -10726,15 +13601,11 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_appendTransitionButton {
 				 get { return "esri_mapping_appendTransitionButton"; }
 			}
-			///<summary>Returns the id string for &quot;Download Map&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.TakeMapOfflineButton, Mapping)</summary>
-			public static string esri_mapping_offlineDownloadButton {
-				 get { return "esri_mapping_offlineDownloadButton"; }
-			}
 			///<summary>Returns the id string for &quot;Sync&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.SynchronizeOfflineMapButton, Mapping)</summary>
 			public static string esri_mapping_offlineSyncButton {
 				 get { return "esri_mapping_offlineSyncButton"; }
 			}
-			///<summary>Returns the id string for &quot;Reconnect&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.RemoveOfflineMapButton, Mapping)</summary>
+			///<summary>Returns the id string for &quot;Remove&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.RemoveOfflineMapButton, Mapping)</summary>
 			public static string esri_mapping_offlineRemoveButton {
 				 get { return "esri_mapping_offlineRemoveButton"; }
 			}
@@ -10758,11 +13629,11 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_steppedAppendTransitionButton {
 				 get { return "esri_mapping_steppedAppendTransitionButton"; }
 			}
-			///<summary>Returns the id string for &quot;Exploratory Analysis&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.InteractiveAnalysisButton, Mapping)</summary>
+			///<summary>Returns the id string for &quot;Interactive Analysis&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.InteractiveAnalysisButton, Mapping)</summary>
 			public static string esri_mapping_startInteractiveAnalysisButton {
 				 get { return "esri_mapping_startInteractiveAnalysisButton"; }
 			}
-			///<summary>Returns the id string for &quot;Clear&quot; (esri_mapping:ClearInteractiveAnalysis, Mapping)</summary>
+			///<summary>Returns the id string for &quot;Clear All&quot; (esri_mapping:ClearInteractiveAnalysis, Mapping)</summary>
 			public static string esri_mapping_clearInteractiveAnalysisButton {
 				 get { return "esri_mapping_clearInteractiveAnalysisButton"; }
 			}
@@ -10774,7 +13645,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_rotateToInteractiveAnalysisButton {
 				 get { return "esri_mapping_rotateToInteractiveAnalysisButton"; }
 			}
-			///<summary>Returns the id string for &quot;Move camera to&quot; (esri_mapping:MoveCameraToInteractiveAnalysis, Mapping)</summary>
+			///<summary>Returns the id string for &quot;Zoom To&quot; (esri_mapping:MoveCameraToInteractiveAnalysis, Mapping)</summary>
 			public static string esri_mapping_moveCameraToInteractiveAnalysisButton {
 				 get { return "esri_mapping_moveCameraToInteractiveAnalysisButton"; }
 			}
@@ -10794,6 +13665,86 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_viewshedPropertiesButton {
 				 get { return "esri_mapping_viewshedPropertiesButton"; }
 			}
+			///<summary>Returns the id string for &quot;Attach to Camera&quot; (esri_mapping:AttachSlicePlaneToCamera, Mapping)</summary>
+			public static string esri_mapping_attachSlicePlaneToCameraButton {
+				 get { return "esri_mapping_attachSlicePlaneToCameraButton"; }
+			}
+			///<summary>Returns the id string for &quot;Slice Properties&quot; (esri_mapping:OpenSliceRectProperties, Mapping)</summary>
+			public static string esri_mapping_sliceRectPropertiesButton {
+				 get { return "esri_mapping_sliceRectPropertiesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Slice Properties&quot; (esri_mapping:OpenSliceBoxProperties, Mapping)</summary>
+			public static string esri_mapping_sliceBoxPropertiesButton {
+				 get { return "esri_mapping_sliceBoxPropertiesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Slice Properties&quot; (esri_mapping:OpenSliceCylinderProperties, Mapping)</summary>
+			public static string esri_mapping_sliceCylinderPropertiesButton {
+				 get { return "esri_mapping_sliceCylinderPropertiesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Slice Properties&quot; (esri_mapping:OpenSliceSphereProperties, Mapping)</summary>
+			public static string esri_mapping_sliceSpherePropertiesButton {
+				 get { return "esri_mapping_sliceSpherePropertiesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Move Slice&quot; (esri_mapping:SliceMove, Mapping)</summary>
+			public static string esri_mapping_SliceMoveButton {
+				 get { return "esri_mapping_SliceMoveButton"; }
+			}
+			///<summary>Returns the id string for &quot;Rotate Slice&quot; (esri_mapping:SliceRotate, Mapping)</summary>
+			public static string esri_mapping_SliceRotateButton {
+				 get { return "esri_mapping_SliceRotateButton"; }
+			}
+			///<summary>Returns the id string for &quot;Move and Rotate Slice&quot; (esri_mapping:SliceMoveRotate, Mapping)</summary>
+			public static string esri_mapping_SliceMoveRotateButton {
+				 get { return "esri_mapping_SliceMoveRotateButton"; }
+			}
+			///<summary>Returns the id string for &quot;Scale Slice&quot; (esri_mapping:SliceScale, Mapping)</summary>
+			public static string esri_mapping_SliceScaleButton {
+				 get { return "esri_mapping_SliceScaleButton"; }
+			}
+			///<summary>Returns the id string for &quot;Accept Slice&quot; (esri_mapping:SliceOk, Mapping)</summary>
+			public static string esri_mapping_SliceOkButton {
+				 get { return "esri_mapping_SliceOkButton"; }
+			}
+			///<summary>Returns the id string for &quot;Delete Slice&quot; (esri_mapping:SliceDelete, Mapping)</summary>
+			public static string esri_mapping_SliceDeleteButton {
+				 get { return "esri_mapping_SliceDeleteButton"; }
+			}
+			///<summary>Returns the id string for &quot;Move Cut And Fill&quot; (esri_mapping:SliceMove, Mapping)</summary>
+			public static string esri_mapping_CutFillMoveButton {
+				 get { return "esri_mapping_CutFillMoveButton"; }
+			}
+			///<summary>Returns the id string for &quot;Tilt Cut And Fill&quot; (esri_mapping:SliceRotate, Mapping)</summary>
+			public static string esri_mapping_CutFillRotateButton {
+				 get { return "esri_mapping_CutFillRotateButton"; }
+			}
+			///<summary>Returns the id string for &quot;Delete Cut And Fill&quot; (esri_mapping:SliceDelete, Mapping)</summary>
+			public static string esri_mapping_CutFillDeleteButton {
+				 get { return "esri_mapping_CutFillDeleteButton"; }
+			}
+			///<summary>Returns the id string for &quot;Move and Rotate Profile&quot; (esri_mapping:ProfileMoveRotate, Mapping)</summary>
+			public static string esri_mapping_ProfileMoveRotateButton {
+				 get { return "esri_mapping_ProfileMoveRotateButton"; }
+			}
+			///<summary>Returns the id string for &quot;Scale Profile&quot; (esri_mapping:ProfileScale, Mapping)</summary>
+			public static string esri_mapping_ProfileScaleButton {
+				 get { return "esri_mapping_ProfileScaleButton"; }
+			}
+			///<summary>Returns the id string for &quot;Finish Profile&quot; (esri_mapping:ProfileFinish, Mapping)</summary>
+			public static string esri_mapping_ProfileFinishButton {
+				 get { return "esri_mapping_ProfileFinishButton"; }
+			}
+			///<summary>Returns the id string for &quot;Move Away&quot; (esri_mapping:ProfileMoveAway, Mapping)</summary>
+			public static string esri_mapping_ProfileMoveAwayButton {
+				 get { return "esri_mapping_ProfileMoveAwayButton"; }
+			}
+			///<summary>Returns the id string for &quot;Move Towards&quot; (esri_mapping:ProfileMoveTowards, Mapping)</summary>
+			public static string esri_mapping_ProfileMoveTowardsButton {
+				 get { return "esri_mapping_ProfileMoveTowardsButton"; }
+			}
+			///<summary>Returns the id string for &quot;Auto-complete&quot; (esri_mapping:ProfileAutoComplete, Mapping)</summary>
+			public static string esri_mapping_autoCompleteProfileButton {
+				 get { return "esri_mapping_autoCompleteProfileButton"; }
+			}
 			///<summary>Returns the id string for &quot;Remove&quot; (esri_mapping:RemoveSelectedLayersAsync, Mapping)</summary>
 			public static string esri_mapping_removeSelectedLayersButton {
 				 get { return "esri_mapping_removeSelectedLayersButton"; }
@@ -10806,9 +13757,17 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_selectedLayerPropertiesButton {
 				 get { return "esri_mapping_selectedLayerPropertiesButton"; }
 			}
+			///<summary>Returns the id string for &quot;Properties&quot; (esri_mapping:ShowBinningProperties, Mapping)</summary>
+			public static string esri_mapping_selectedBinningLayerPropertiesButton {
+				 get { return "esri_mapping_selectedBinningLayerPropertiesButton"; }
+			}
 			///<summary>Returns the id string for &quot;Properties&quot; (esri_mapping:ShowSelectedLayerProperties, Mapping)</summary>
 			public static string esri_mapping_singleSelectedLayerPropertiesButton {
 				 get { return "esri_mapping_singleSelectedLayerPropertiesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Properties&quot; (esri_mapping:ShowSelectedLayerProperties, Mapping)</summary>
+			public static string esri_mapping_selectedAnnotationSubLayerPropertiesButton {
+				 get { return "esri_mapping_selectedAnnotationSubLayerPropertiesButton"; }
 			}
 			///<summary>Returns the id string for &quot;New Group Layer&quot; (esri_mapping:AddGroupLayer, Mapping)</summary>
 			public static string esri_mapping_newGroupLayerButton {
@@ -10822,6 +13781,34 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_new3DGroupLayerButton {
 				 get { return "esri_mapping_new3DGroupLayerButton"; }
 			}
+			///<summary>Returns the id string for &quot;Add Elevation Surface&quot; (esri_mapping:AddCustomElevationSurface, Mapping)</summary>
+			public static string esri_mapping_newElevationSurfaceButton {
+				 get { return "esri_mapping_newElevationSurfaceButton"; }
+			}
+			///<summary>Returns the id string for &quot;Create Surfaces From Sources&quot; (esri_mapping:CreateElevationSurfacesFromSources, Mapping)</summary>
+			public static string esri_mapping_createSurfacesFromSourcesButton {
+				 get { return "esri_mapping_createSurfacesFromSourcesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Paste&quot; (esri_mapping:PasteClipboardElevationSurfaces, Mapping)</summary>
+			public static string esri_mapping_PasteElevationSurfaceButton {
+				 get { return "esri_mapping_PasteElevationSurfaceButton"; }
+			}
+			///<summary>Returns the id string for &quot;Add Elevation Source&quot; (esri_mapping:AddElevationSource, Mapping)</summary>
+			public static string esri_mapping_newElevationSourceButton {
+				 get { return "esri_mapping_newElevationSourceButton"; }
+			}
+			///<summary>Returns the id string for &quot;Remove&quot; (esri_mapping:RemoveElevationSource, Mapping)</summary>
+			public static string esri_mapping_RemoveElevationSourceButton {
+				 get { return "esri_mapping_RemoveElevationSourceButton"; }
+			}
+			///<summary>Returns the id string for &quot;Remove&quot; (esri_mapping:RemoveElevationSurface, Mapping)</summary>
+			public static string esri_mapping_RemoveElevationSurfaceButton {
+				 get { return "esri_mapping_RemoveElevationSurfaceButton"; }
+			}
+			///<summary>Returns the id string for &quot;Properties&quot; (esri_mapping:ShowSelectedElevationSourceProperties, Mapping)</summary>
+			public static string esri_mapping_selectedElevationSourcePropertiesButton {
+				 get { return "esri_mapping_selectedElevationSourcePropertiesButton"; }
+			}
 			///<summary>Returns the id string for &quot;Group&quot; (esri_mapping:GroupSelectedLayersAsync, Mapping)</summary>
 			public static string esri_mapping_groupSelectedLayersButton {
 				 get { return "esri_mapping_groupSelectedLayersButton"; }
@@ -10829,6 +13816,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Ungroup&quot; (esri_mapping:UngroupSelectedLayerAsync, Mapping)</summary>
 			public static string esri_mapping_ungroupSelectedLayerButton {
 				 get { return "esri_mapping_ungroupSelectedLayerButton"; }
+			}
+			///<summary>Returns the id string for &quot;Add Data&quot; (esri_mapping:AddDataToSelectedGroupLayer, Mapping)</summary>
+			public static string esri_mapping_addDataToGroupLayerButton {
+				 get { return "esri_mapping_addDataToGroupLayerButton"; }
 			}
 			///<summary>Returns the id string for &quot;Symbology&quot; (esri_mapping:InternalShowSymbologyPane, Mapping)</summary>
 			public static string esri_mapping_selectedLayerSymbologyButton {
@@ -10886,6 +13877,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_selectAllLayerSelectionButton {
 				 get { return "esri_mapping_selectAllLayerSelectionButton"; }
 			}
+			///<summary>Returns the id string for &quot;Select Visible Features&quot; (esri_mapping:SelectVisibleLayerSelection, Mapping)</summary>
+			public static string esri_mapping_selectVisibleLayerSelectionButton {
+				 get { return "esri_mapping_selectVisibleLayerSelectionButton"; }
+			}
 			///<summary>Returns the id string for &quot;Select All In Layer&quot; (esri_mapping:SelectAllInSelectionLayersSelection, Mapping)</summary>
 			public static string esri_editing_selectAllInLayer {
 				 get { return "esri_editing_selectAllInLayer"; }
@@ -10910,21 +13905,25 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_removeSelectedStandaloneVideosButton {
 				 get { return "esri_mapping_removeSelectedStandaloneVideosButton"; }
 			}
-			///<summary>Returns the id string for &quot;Video Metadata&quot; (esri_mapping:ShowStandaloneVideoMetadataPane, Mapping)</summary>
-			public static string esri_mapping_showStandaloneVideoMetadataPaneButton {
-				 get { return "esri_mapping_showStandaloneVideoMetadataPaneButton"; }
+			///<summary>Returns the id string for &quot;Properties&quot; (esri_mapping:ShowSelectedStandaloneVideoProperties, Mapping)</summary>
+			public static string esri_mapping_selectedVideoPropertiesButton {
+				 get { return "esri_mapping_selectedVideoPropertiesButton"; }
 			}
 			///<summary>Returns the id string for &quot;Clear Limits&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.ClearScalesButton, Mapping)</summary>
 			public static string esri_mapping_layerClearScalesButton {
 				 get { return "esri_mapping_layerClearScalesButton"; }
 			}
-			///<summary>Returns the id string for &quot;Flicker Button&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.FlickerButton, Mapping)</summary>
+			///<summary>Returns the id string for &quot;esri_mapping_layerFlickerButton&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.FlickerButton, Mapping)</summary>
 			public static string esri_mapping_layerFlickerButton {
 				 get { return "esri_mapping_layerFlickerButton"; }
 			}
 			///<summary>Returns the id string for &quot;Symbology&quot; (esri_mapping:InternalShowSymbologyPane, Mapping)</summary>
 			public static string esri_mapping_showLayerSymbologyDockPane {
 				 get { return "esri_mapping_showLayerSymbologyDockPane"; }
+			}
+			///<summary>Returns the id string for &quot;Symbology&quot; (esri_mapping:InternalShowBinsSymbologyPane, Mapping)</summary>
+			public static string esri_mapping_showLayerBinsSymbologyDockPane {
+				 get { return "esri_mapping_showLayerBinsSymbologyDockPane"; }
 			}
 			///<summary>Returns the id string for &quot;Symbol Layers&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.SymbolLayersButton, Mapping)</summary>
 			public static string esri_mapping_symbolLayersButton {
@@ -10934,11 +13933,19 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_layerDisplayFilters {
 				 get { return "esri_mapping_layerDisplayFilters"; }
 			}
+			///<summary>Returns the id string for &quot;Enable Lighting&quot; (ArcGIS.Desktop.Internal.Mapping.Controls.Ribbon.EnableLightingButton, Mapping)</summary>
+			public static string esri_mapping_enableLightingButton {
+				 get { return "esri_mapping_enableLightingButton"; }
+			}
+			///<summary>Returns the id string for &quot;Eye-Dome Lighting&quot; (ArcGIS.Desktop.Internal.Mapping.Controls.Ribbon.EnableEyeDomeLightingButton, Mapping)</summary>
+			public static string esri_mapping_enableEyeDomeLightingButton {
+				 get { return "esri_mapping_enableEyeDomeLightingButton"; }
+			}
 			///<summary>Returns the id string for &quot;Build Definition Query&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.DefinitionQueryButton, Mapping)</summary>
 			public static string esri_mapping_openDefQueryButton {
 				 get { return "esri_mapping_openDefQueryButton"; }
 			}
-			///<summary>Returns the id string for &quot;Annotate Selected&quot; (esri_mapping:AnnotateSelected, Mapping)</summary>
+			///<summary>Returns the id string for &quot;Annotate Selected Features&quot; (ArcGIS.Desktop.Internal.Mapping.Labeling.Ribbon.AnnotateSelectedFeaturesButton, Mapping)</summary>
 			public static string esri_mapping_annotateSelectedButton {
 				 get { return "esri_mapping_annotateSelectedButton"; }
 			}
@@ -10962,6 +13969,42 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_selectAllSceneLayerSelectionButton {
 				 get { return "esri_mapping_selectAllSceneLayerSelectionButton"; }
 			}
+			///<summary>Returns the id string for &quot;Create Section&quot; (esri_mapping:CreateVoxelLayerSection, Mapping)</summary>
+			public static string esri_mapping_voxelLayer_createSectionButton {
+				 get { return "esri_mapping_voxelLayer_createSectionButton"; }
+			}
+			///<summary>Returns the id string for &quot;Create Isosurface&quot; (esri_mapping:CreateVoxelLayerIsosurface, Mapping)</summary>
+			public static string esri_mapping_voxelLayer_createIsosurfaceButton {
+				 get { return "esri_mapping_voxelLayer_createIsosurfaceButton"; }
+			}
+			///<summary>Returns the id string for &quot;Remove All Isosurfaces&quot; (esri_mapping:RemoveAllIsosurfaces, Mapping)</summary>
+			public static string esri_mapping_voxelIsosurfaces_removeAllIsosurfacesButton {
+				 get { return "esri_mapping_voxelIsosurfaces_removeAllIsosurfacesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Remove All Isosurfaces&quot; (esri_mapping:RemoveAllGroupIsosurfaces, Mapping)</summary>
+			public static string esri_mapping_voxelIsosurfaces_removeAllGroupIsosurfacesButton {
+				 get { return "esri_mapping_voxelIsosurfaces_removeAllGroupIsosurfacesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Modify&quot; (esri_mapping:ModifyVoxelIsosurface, Mapping)</summary>
+			public static string esri_mapping_voxelIsosurface_modifyButton {
+				 get { return "esri_mapping_voxelIsosurface_modifyButton"; }
+			}
+			///<summary>Returns the id string for &quot;Remove&quot; (esri_mapping:RemoveSelectedIsosurfacesAsync, Mapping)</summary>
+			public static string esri_mapping_voxelIsosurface_removeButton {
+				 get { return "esri_mapping_voxelIsosurface_removeButton"; }
+			}
+			///<summary>Returns the id string for &quot;Pin&quot; (ArcGIS.Desktop.Internal.Mapping.Voxel.Ribbon.PinIsosurfaceButton, Mapping)</summary>
+			public static string esri_mapping_voxelIsosurface_pinButton {
+				 get { return "esri_mapping_voxelIsosurface_pinButton"; }
+			}
+			///<summary>Returns the id string for &quot;Reset Color&quot; (ArcGIS.Desktop.Internal.Mapping.Voxel.Ribbon.ResetIsosurfaceColorButton, Mapping)</summary>
+			public static string esri_mapping_voxelIsosurface_resetColorButton {
+				 get { return "esri_mapping_voxelIsosurface_resetColorButton"; }
+			}
+			///<summary>Returns the id string for &quot;Exclude From Slices&quot; (ArcGIS.Desktop.Internal.Mapping.Voxel.Ribbon.ExcludeIsosurfaceFromSlicesButton, Mapping)</summary>
+			public static string esri_mapping_voxelIsosurface_excludeFromSlicesButton {
+				 get { return "esri_mapping_voxelIsosurface_excludeFromSlicesButton"; }
+			}
 			///<summary>Returns the id string for &quot;Change Version&quot; (esri_mapping:ChangeVersion, Mapping)</summary>
 			public static string esri_mapping_changeVersionButton {
 				 get { return "esri_mapping_changeVersionButton"; }
@@ -10970,7 +14013,7 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_changeTimeButton {
 				 get { return "esri_mapping_changeTimeButton"; }
 			}
-			///<summary>Returns the id string for &quot;Version Manager&quot; (esri_mapping:OpenVersionViewAsync, Mapping)</summary>
+			///<summary>Returns the id string for &quot;Manage Versions&quot; (esri_mapping:OpenVersionViewAsync, Mapping)</summary>
 			public static string esri_mapping_versionViewButton {
 				 get { return "esri_mapping_versionViewButton"; }
 			}
@@ -10982,17 +14025,13 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_historicalViewButton {
 				 get { return "esri_mapping_historicalViewButton"; }
 			}
-			///<summary>Returns the id string for &quot;Disable Feature Cache&quot; (esri_mapping:DisableFeatureCache, Mapping)</summary>
-			public static string esri_mapping_DisableFeatureCacheButton {
-				 get { return "esri_mapping_DisableFeatureCacheButton"; }
+			///<summary>Returns the id string for &quot;New Filter&quot; (esri_mapping:CreateNewObject3DRenderingFilter, Mapping)</summary>
+			public static string esri_mapping_createObject3DRenderingFilter {
+				 get { return "esri_mapping_createObject3DRenderingFilter"; }
 			}
-			///<summary>Returns the id string for &quot;Enable Feature Cache&quot; (esri_mapping:EnableFeatureCache, Mapping)</summary>
-			public static string esri_mapping_EnableFeatureCacheButton {
-				 get { return "esri_mapping_EnableFeatureCacheButton"; }
-			}
-			///<summary>Returns the id string for &quot;Clear Feature Cache&quot; (esri_mapping:ClearFeatureCache, Mapping)</summary>
-			public static string esri_mapping_ClearFeatureCacheButton {
-				 get { return "esri_mapping_ClearFeatureCacheButton"; }
+			///<summary>Returns the id string for &quot;Delete All Inactive Filters&quot; (esri_mapping:DeleteAllObject3DRenderingFilters, Mapping)</summary>
+			public static string esri_mapping_deleteAllObject3DRenderingFilters {
+				 get { return "esri_mapping_deleteAllObject3DRenderingFilters"; }
 			}
 			///<summary>Returns the id string for &quot;New Bookmark...&quot; (esri_mapping:BookmarksManager.CreateBookmarkAsync, Mapping)</summary>
 			public static string esri_mapping_createBookmark {
@@ -11001,6 +14040,22 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Manage Bookmarks&quot; (esri_mapping:BookmarksManager.ShowDockingPane, Mapping)</summary>
 			public static string esri_mapping_showBookmarksWindow {
 				 get { return "esri_mapping_showBookmarksWindow"; }
+			}
+			///<summary>Returns the id string for &quot;Export Bookmarks...&quot; (esri_mapping:BookmarksManager.ExportBookMarksToFile, Mapping)</summary>
+			public static string esri_mapping_exportBookmarksToFile {
+				 get { return "esri_mapping_exportBookmarksToFile"; }
+			}
+			///<summary>Returns the id string for &quot;Import Bookmarks...&quot; (esri_mapping:BookmarksManager.ImportBookMarksFromFile, Mapping)</summary>
+			public static string esri_mapping_importBookmarksFromFile {
+				 get { return "esri_mapping_importBookmarksFromFile"; }
+			}
+			///<summary>Returns the id string for &quot;Ignore Time&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.BookmarkGalleryIgnoreTimeToggleButton, Mapping)</summary>
+			public static string esri_mapping_ignoreBookmarkTime {
+				 get { return "esri_mapping_ignoreBookmarkTime"; }
+			}
+			///<summary>Returns the id string for &quot;Ignore Range&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.BookmarkGalleryIgnoreRangeToggleButton, Mapping)</summary>
+			public static string esri_mapping_ignoreBookmarkRange {
+				 get { return "esri_mapping_ignoreBookmarkRange"; }
 			}
 			///<summary>Returns the id string for &quot;Show Descriptions&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.BookmarkGalleryDescriptionToggleButton, Mapping)</summary>
 			public static string esri_mapping_showBookmarkDescription {
@@ -11062,6 +14117,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_rasterLayerSymbologyButton {
 				 get { return "esri_mapping_rasterLayerSymbologyButton"; }
 			}
+			///<summary>Returns the id string for &quot;Stretch Type&quot; (esri_mapping:ShowRasterHistogramPage, Mapping)</summary>
+			public static string esri_mapping_rasterLayerHistogramButton {
+				 get { return "esri_mapping_rasterLayerHistogramButton"; }
+			}
 			///<summary>Returns the id string for &quot;&quot; (ArcGIS.Desktop.Internal.Mapping.Views.RasterLayer.Ribbon.MosaicRulePageLauncherButton, Mapping)</summary>
 			public static string esri_mapping_openRasterMosaicRulePageButton {
 				 get { return "esri_mapping_openRasterMosaicRulePageButton"; }
@@ -11098,21 +14157,17 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_selectedLayerDomainsViewButton {
 				 get { return "esri_mapping_selectedLayerDomainsViewButton"; }
 			}
-			///<summary>Returns the id string for &quot;Copy&quot; (esri_mapping_fieldsPane:OnCopyFields, Mapping)</summary>
-			public static string esri_fieldview_editCopyButton {
-				 get { return "esri_fieldview_editCopyButton"; }
+			///<summary>Returns the id string for &quot;Attribute Rules&quot; (esri_mapping:OpenAttributeRulesViewAsync, Mapping)</summary>
+			public static string esri_mapping_selectedLayerAttributeRulesViewButton {
+				 get { return "esri_mapping_selectedLayerAttributeRulesViewButton"; }
 			}
-			///<summary>Returns the id string for &quot;Paste&quot; (esri_mapping_fieldsPane:OnPasteFields, Mapping)</summary>
-			public static string esri_fieldview_editPasteButton {
-				 get { return "esri_fieldview_editPasteButton"; }
+			///<summary>Returns the id string for &quot;Field Groups&quot; (esri_mapping:OpenFieldGroupsDialogAsync, Mapping)</summary>
+			public static string esri_mapping_selectedLayerFieldsGroupDialogButton {
+				 get { return "esri_mapping_selectedLayerFieldsGroupDialogButton"; }
 			}
-			///<summary>Returns the id string for &quot;Cut&quot; (esri_mapping_fieldsPane:OnCutFields, Mapping)</summary>
-			public static string esri_fieldview_editCutButton {
-				 get { return "esri_fieldview_editCutButton"; }
-			}
-			///<summary>Returns the id string for &quot;Delete&quot; (esri_mapping_fieldsPane:OnDeleteFields, Mapping)</summary>
-			public static string esri_fieldview_editDeleteButton {
-				 get { return "esri_fieldview_editDeleteButton"; }
+			///<summary>Returns the id string for &quot;Contingent Values&quot; (esri_mapping:OpenContingentValuesViewAsync, Mapping)</summary>
+			public static string esri_mapping_selectedLayerContingentValuesViewButton {
+				 get { return "esri_mapping_selectedLayerContingentValuesViewButton"; }
 			}
 			///<summary>Returns the id string for &quot;Domains&quot; (esri_mapping_fieldsPane:OpenDomains, Mapping)</summary>
 			public static string esri_fieldview_domainsButton {
@@ -11122,6 +14177,18 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_fieldview_subtypesButton {
 				 get { return "esri_fieldview_subtypesButton"; }
 			}
+			///<summary>Returns the id string for &quot;Attribute Rules&quot; (esri_mapping_fieldsPane:OpenAttributeRules, Mapping)</summary>
+			public static string esri_fieldview_attributeRulesButton {
+				 get { return "esri_fieldview_attributeRulesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Contingent Values&quot; (esri_mapping_fieldsPane:OpenContingentValues, Mapping)</summary>
+			public static string esri_fieldview_contingentvaluesButton {
+				 get { return "esri_fieldview_contingentvaluesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Field Groups&quot; (esri_mapping_fieldsPane:OpenFieldGroups, Mapping)</summary>
+			public static string esri_fieldview_fieldGroupsButton {
+				 get { return "esri_fieldview_fieldGroupsButton"; }
+			}
 			///<summary>Returns the id string for &quot;New Field&quot; (esri_mapping_fieldsPane:OnCreateNewField, Mapping)</summary>
 			public static string esri_fieldsview_createnewfieldButton {
 				 get { return "esri_fieldsview_createnewfieldButton"; }
@@ -11129,22 +14196,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Save&quot; (esri_mapping_fieldsPane:CommitEdits, Mapping)</summary>
 			public static string esri_fieldsview_commitButton {
 				 get { return "esri_fieldsview_commitButton"; }
-			}
-			///<summary>Returns the id string for &quot;Copy&quot; (esri_mapping_subtypesPane:OnCopySubtypes, Mapping)</summary>
-			public static string esri_subtypeview_editCopyButton {
-				 get { return "esri_subtypeview_editCopyButton"; }
-			}
-			///<summary>Returns the id string for &quot;Paste&quot; (esri_mapping_subtypesPane:OnPasteSubtypes, Mapping)</summary>
-			public static string esri_subtypeview_editPasteButton {
-				 get { return "esri_subtypeview_editPasteButton"; }
-			}
-			///<summary>Returns the id string for &quot;Cut&quot; (esri_mapping_subtypesPane:OnCutSubtypes, Mapping)</summary>
-			public static string esri_subtypeview_editCutButton {
-				 get { return "esri_subtypeview_editCutButton"; }
-			}
-			///<summary>Returns the id string for &quot;Delete&quot; (esri_mapping_subtypesPane:OnDeleteSubtypes, Mapping)</summary>
-			public static string esri_subtypeview_editDeleteButton {
-				 get { return "esri_subtypeview_editDeleteButton"; }
 			}
 			///<summary>Returns the id string for &quot;Undo&quot; (not_implemented, Mapping)</summary>
 			public static string esri_subtypeview_editUndo {
@@ -11158,33 +14209,29 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_subtypeview_designButton {
 				 get { return "esri_subtypeview_designButton"; }
 			}
-			///<summary>Returns the id string for &quot;Domains&quot; (esri_mapping_subtypesPane:OpenDomains, Mapping)</summary>
-			public static string esri_subtypeview_domainsButton {
-				 get { return "esri_subtypeview_domainsButton"; }
-			}
 			///<summary>Returns the id string for &quot;Fields&quot; (esri_mapping_subtypesPane:OpenFields, Mapping)</summary>
 			public static string esri_subtypeview_fieldsButton {
 				 get { return "esri_subtypeview_fieldsButton"; }
 			}
+			///<summary>Returns the id string for &quot;Domains&quot; (esri_mapping_subtypesPane:OpenDomains, Mapping)</summary>
+			public static string esri_subtypeview_domainsButton {
+				 get { return "esri_subtypeview_domainsButton"; }
+			}
+			///<summary>Returns the id string for &quot;Attribute Rules&quot; (esri_mapping_subtypesPane:OpenAttributeRules, Mapping)</summary>
+			public static string esri_subtypeview_attributeRulesButton {
+				 get { return "esri_subtypeview_attributeRulesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Contingent Values&quot; (esri_mapping_subtypesPane:OpenContingentValues, Mapping)</summary>
+			public static string esri_subtypeview_contingentValuesButton {
+				 get { return "esri_subtypeview_contingentValuesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Field Groups&quot; (esri_mapping_subtypesPane:OpenFieldGroups, Mapping)</summary>
+			public static string esri_subtypeview_fieldGroupsButton {
+				 get { return "esri_subtypeview_fieldGroupsButton"; }
+			}
 			///<summary>Returns the id string for &quot;Save&quot; (esri_mapping_subtypesPane:CommitEdits, Mapping)</summary>
 			public static string esri_subtypesview_commitButton {
 				 get { return "esri_subtypesview_commitButton"; }
-			}
-			///<summary>Returns the id string for &quot;Copy&quot; (esri_mapping_domainsPane:OnCopyDomains, Mapping)</summary>
-			public static string esri_domainview_editCopyButton {
-				 get { return "esri_domainview_editCopyButton"; }
-			}
-			///<summary>Returns the id string for &quot;Paste&quot; (esri_mapping_domainsPane:OnPasteDomains, Mapping)</summary>
-			public static string esri_domainview_editPasteButton {
-				 get { return "esri_domainview_editPasteButton"; }
-			}
-			///<summary>Returns the id string for &quot;Cut&quot; (esri_mapping_domainsPane:OnCutDomains, Mapping)</summary>
-			public static string esri_domainview_editCutButton {
-				 get { return "esri_domainview_editCutButton"; }
-			}
-			///<summary>Returns the id string for &quot;Delete&quot; (esri_mapping_domainsPane:OnDeleteDomainOrCodedValues, Mapping)</summary>
-			public static string esri_domainview_editDeleteButton {
-				 get { return "esri_domainview_editDeleteButton"; }
 			}
 			///<summary>Returns the id string for &quot;New Domain&quot; (esri_mapping_domainsPane:OnCreateNewDomain, Mapping)</summary>
 			public static string esri_domainview_createnewdomainButton {
@@ -11218,6 +14265,106 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_versionview_commitButton {
 				 get { return "esri_versionview_commitButton"; }
 			}
+			///<summary>Returns the id string for &quot;Calculation Rule&quot; (esri_mapping_attributeRulesPane:AddCalculationRule, Mapping)</summary>
+			public static string esri_attributeRulesView_AddCalculationRuleButton {
+				 get { return "esri_attributeRulesView_AddCalculationRuleButton"; }
+			}
+			///<summary>Returns the id string for &quot;Constraint Rule&quot; (esri_mapping_attributeRulesPane:AddConstraintRule, Mapping)</summary>
+			public static string esri_attributeRulesView_AddConstraintRuleButton {
+				 get { return "esri_attributeRulesView_AddConstraintRuleButton"; }
+			}
+			///<summary>Returns the id string for &quot;Validation Rule&quot; (esri_mapping_attributeRulesPane:AddValidationRule, Mapping)</summary>
+			public static string esri_attributeRulesView_AddValidationRuleButton {
+				 get { return "esri_attributeRulesView_AddValidationRuleButton"; }
+			}
+			///<summary>Returns the id string for &quot;Fields&quot; (esri_mapping_attributeRulesPane:OpenFields, Mapping)</summary>
+			public static string esri_attributeRulesView_fieldsButton {
+				 get { return "esri_attributeRulesView_fieldsButton"; }
+			}
+			///<summary>Returns the id string for &quot;Subtypes&quot; (esri_mapping_attributeRulesPane:OpenSubtypes, Mapping)</summary>
+			public static string esri_attributeRulesView_subtypesButton {
+				 get { return "esri_attributeRulesView_subtypesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Domains&quot; (esri_mapping_attributeRulesPane:OpenDomains, Mapping)</summary>
+			public static string esri_attributeRulesView_domainsButton {
+				 get { return "esri_attributeRulesView_domainsButton"; }
+			}
+			///<summary>Returns the id string for &quot;Contingent Values&quot; (esri_mapping_attributeRulesPane:OpenContingentValues, Mapping)</summary>
+			public static string esri_attributeRulesView_contingentValuesButton {
+				 get { return "esri_attributeRulesView_contingentValuesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Field Groups&quot; (esri_mapping_attributeRulesPane:OpenFieldGroups, Mapping)</summary>
+			public static string esri_attributeRulesView_fieldGroupsButton {
+				 get { return "esri_attributeRulesView_fieldGroupsButton"; }
+			}
+			///<summary>Returns the id string for &quot;Delete Rule&quot; (esri_mapping_attributeRulesPane:OnDeleteRules, Mapping)</summary>
+			public static string esri_attributeRulesView_deleteRuleButton {
+				 get { return "esri_attributeRulesView_deleteRuleButton"; }
+			}
+			///<summary>Returns the id string for &quot;Import Rules&quot; (esri_mapping_attributeRulesPane:ImportRules, Mapping)</summary>
+			public static string esri_attributeRulesView_importRuleButton {
+				 get { return "esri_attributeRulesView_importRuleButton"; }
+			}
+			///<summary>Returns the id string for &quot;Export Rules&quot; (esri_mapping_attributeRulesPane:ExportRules, Mapping)</summary>
+			public static string esri_attributeRulesView_exportRuleButton {
+				 get { return "esri_attributeRulesView_exportRuleButton"; }
+			}
+			///<summary>Returns the id string for &quot;Enable Rule&quot; (esri_mapping_attributeRulesPane:EnableRule, Mapping)</summary>
+			public static string esri_attributeRulesView_enableRuleButton {
+				 get { return "esri_attributeRulesView_enableRuleButton"; }
+			}
+			///<summary>Returns the id string for &quot;Disable Rule&quot; (esri_mapping_attributeRulesPane:DisableRule, Mapping)</summary>
+			public static string esri_attributeRulesView_disableRuleButton {
+				 get { return "esri_attributeRulesView_disableRuleButton"; }
+			}
+			///<summary>Returns the id string for &quot;Save&quot; (esri_mapping_attributeRulesPane:CommitEdits, Mapping)</summary>
+			public static string esri_attributeRulesView_saveRulesButton {
+				 get { return "esri_attributeRulesView_saveRulesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Add Error Layers&quot; (esri_mapping:AddGeodatabaseErrorTablesAsync, Mapping)</summary>
+			public static string esri_mapping_addGDBErrorTablesButton {
+				 get { return "esri_mapping_addGDBErrorTablesButton"; }
+			}
+			///<summary>Returns the id string for &quot;New&quot; (esri_mapping_contingentValuesPane:CreateNewContingentValue, Mapping)</summary>
+			public static string esri_contingentValuesView_newContingentValueButton {
+				 get { return "esri_contingentValuesView_newContingentValueButton"; }
+			}
+			///<summary>Returns the id string for &quot;Toggle Value IDs&quot; (esri_mapping_contingentValuesPane:ToggleShowIDs, Mapping)</summary>
+			public static string esri_contingentValuesView_toggleIDs {
+				 get { return "esri_contingentValuesView_toggleIDs"; }
+			}
+			///<summary>Returns the id string for &quot;Retire Value&quot; (esri_mapping_contingentValuesPane:RetireContingentValues, Mapping)</summary>
+			public static string esri_contingentValuesView_retireContingentValue {
+				 get { return "esri_contingentValuesView_retireContingentValue"; }
+			}
+			///<summary>Returns the id string for &quot;Toggle Code/Description&quot; (esri_mapping_contingentValuesPane:ToggleShowCodeDescription, Mapping)</summary>
+			public static string esri_contingentValuesView_toggleCodeDescription {
+				 get { return "esri_contingentValuesView_toggleCodeDescription"; }
+			}
+			///<summary>Returns the id string for &quot;Save&quot; (esri_mapping_contingentValuesPane:CommitEdits, Mapping)</summary>
+			public static string esri_contingentValuesView_commitButton {
+				 get { return "esri_contingentValuesView_commitButton"; }
+			}
+			///<summary>Returns the id string for &quot;Fields&quot; (esri_mapping_contingentValuesPane:OpenFields, Mapping)</summary>
+			public static string esri_contingentvaluesview_fieldsButton {
+				 get { return "esri_contingentvaluesview_fieldsButton"; }
+			}
+			///<summary>Returns the id string for &quot;Subtypes&quot; (esri_mapping_contingentValuesPane:OpenSubtypes, Mapping)</summary>
+			public static string esri_contingentvaluesview_subtypesButton {
+				 get { return "esri_contingentvaluesview_subtypesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Domains&quot; (esri_mapping_contingentValuesPane:OpenDomains, Mapping)</summary>
+			public static string esri_contingentvaluesview_domainsButton {
+				 get { return "esri_contingentvaluesview_domainsButton"; }
+			}
+			///<summary>Returns the id string for &quot;Attribute Rules&quot; (esri_mapping_contingentValuesPane:OpenAttributeRules, Mapping)</summary>
+			public static string esri_contingentvaluesview_attributeRulesButton {
+				 get { return "esri_contingentvaluesview_attributeRulesButton"; }
+			}
+			///<summary>Returns the id string for &quot;Field Groups&quot; (esri_mapping_contingentValuesPane:OpenFieldGroups, Mapping)</summary>
+			public static string esri_contingentvaluesview_fieldGroupsButton {
+				 get { return "esri_contingentvaluesview_fieldGroupsButton"; }
+			}
 			///<summary>Returns the id string for &quot;Add Archive&quot; (esri_mapping:AddArchiveTableAsync, Mapping)</summary>
 			public static string esri_mapping_addArchiveTableButton {
 				 get { return "esri_mapping_addArchiveTableButton"; }
@@ -11234,6 +14381,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_disablePopupsButton {
 				 get { return "esri_mapping_disablePopupsButton"; }
 			}
+			///<summary>Returns the id string for &quot;Set Pop-up Source&quot; (esri_mapping:OnSetPopupSource, Mapping)</summary>
+			public static string esri_mapping_setPopupSourceButton {
+				 get { return "esri_mapping_setPopupSourceButton"; }
+			}
+			///<summary>Returns the id string for &quot;Remove Pop-up Source&quot; (esri_mapping:OnRemovePopupSource, Mapping)</summary>
+			public static string esri_mapping_removePopupSourceButton {
+				 get { return "esri_mapping_removePopupSourceButton"; }
+			}
 			///<summary>Returns the id string for &quot;Zoom To&quot; (esri_mapping:ZoomToCandidateLocation, Mapping)</summary>
 			public static string esri_mapping_zoomToCandidateLocation {
 				 get { return "esri_mapping_zoomToCandidateLocation"; }
@@ -11241,6 +14396,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Pan To&quot; (esri_mapping:PanToCandidateLocation, Mapping)</summary>
 			public static string esri_mapping_panToCandidateLocation {
 				 get { return "esri_mapping_panToCandidateLocation"; }
+			}
+			///<summary>Returns the id string for &quot;Add To Selection&quot; (esri_mapping:AddCandidateToSelection, Mapping)</summary>
+			public static string esri_mapping_addCandidateToSelection {
+				 get { return "esri_mapping_addCandidateToSelection"; }
+			}
+			///<summary>Returns the id string for &quot;Show Details&quot; (esri_mapping:ShowCandidateDetails, Mapping)</summary>
+			public static string esri_mapping_showCandidateDetails {
+				 get { return "esri_mapping_showCandidateDetails"; }
 			}
 			///<summary>Returns the id string for &quot;All&quot; (esri_mapping:SelectAllTableRecords, Mapping)</summary>
 			public static string esri_mapping_selectAllTableRecordsButton {
@@ -11254,11 +14417,11 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_clearTableRecordSelection {
 				 get { return "esri_mapping_clearTableRecordSelection"; }
 			}
-			///<summary>Returns the id string for &quot;Hide Selection&quot; (esri_mapping:HideSelectedFeatures, Mapping)</summary>
+			///<summary>Returns the id string for &quot;Hide Selection&quot; (esri_mapping:HideSelectedFeaturesAsync, Mapping)</summary>
 			public static string esri_mapping_hideSelectedFeaturesButton {
 				 get { return "esri_mapping_hideSelectedFeaturesButton"; }
 			}
-			///<summary>Returns the id string for &quot;Show Hidden&quot; (esri_mapping:ShowHiddenFeatures, Mapping)</summary>
+			///<summary>Returns the id string for &quot;Show Hidden&quot; (esri_mapping:ShowHiddenFeaturesAsync, Mapping)</summary>
 			public static string esri_mapping_showHiddenFeaturesButton {
 				 get { return "esri_mapping_showHiddenFeaturesButton"; }
 			}
@@ -11326,6 +14489,54 @@ namespace ArcGIS.Desktop.Framework {
 			public static string RGDBProjectItemSyncButton {
 				 get { return "RGDBProjectItemSyncButton"; }
 			}
+			///<summary>Returns the id string for &quot;Georeference&quot; (esri_mapping:Commands.StartGeorefenceSession, Mapping)</summary>
+			public static string esri_mapping_georeferenceing_StartSessionButton {
+				 get { return "esri_mapping_georeferenceing_StartSessionButton"; }
+			}
+			///<summary>Returns the id string for &quot;Import&quot; (esri_mapping:Commands.ImportControlPoints, Mapping)</summary>
+			public static string esri_mapping_georeference_LoadControlPointsButton {
+				 get { return "esri_mapping_georeference_LoadControlPointsButton"; }
+			}
+			///<summary>Returns the id string for &quot;Move To Display&quot; (esri_mapping:Commands.MoveToDisplay, Mapping)</summary>
+			public static string esri_mapping_georeference_MoveToDisplayButton {
+				 get { return "esri_mapping_georeference_MoveToDisplayButton"; }
+			}
+			///<summary>Returns the id string for &quot;Elevate To Ground&quot; (esri_mapping:Commands.ElevateToGround, Mapping)</summary>
+			public static string esri_mapping_georeference_ElevateToGroundButton {
+				 get { return "esri_mapping_georeference_ElevateToGroundButton"; }
+			}
+			///<summary>Returns the id string for &quot;Reset&quot; (esri_mapping:Commands.Reset, Mapping)</summary>
+			public static string esri_mapping_georeference_ResetButton {
+				 get { return "esri_mapping_georeference_ResetButton"; }
+			}
+			///<summary>Returns the id string for &quot;Save&quot; (esri_mapping:Commands.Save, Mapping)</summary>
+			public static string esri_mapping_georeference_SaveButton {
+				 get { return "esri_mapping_georeference_SaveButton"; }
+			}
+			///<summary>Returns the id string for &quot;Save To Workspace&quot; (esri_mapping:Commands.SaveToWorkspace, Mapping)</summary>
+			public static string esri_mapping_georeference_SaveToWorkspaceButton {
+				 get { return "esri_mapping_georeference_SaveToWorkspaceButton"; }
+			}
+			///<summary>Returns the id string for &quot;Save As New&quot; (esri_mapping:Commands.SaveAs, Mapping)</summary>
+			public static string esri_mapping_georeference_SaveAsButton {
+				 get { return "esri_mapping_georeference_SaveAsButton"; }
+			}
+			///<summary>Returns the id string for &quot;Close Georeference&quot; (esri_mapping:Commands.CloseSession, Mapping)</summary>
+			public static string esri_mapping_georeference_CloseSessionButton {
+				 get { return "esri_mapping_georeference_CloseSessionButton"; }
+			}
+			///<summary>Returns the id string for &quot;Binning&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.Binning.EnableBinningButton, Mapping)</summary>
+			public static string esri_mapping_enableBinningButton {
+				 get { return "esri_mapping_enableBinningButton"; }
+			}
+			///<summary>Returns the id string for &quot;Summary Statistics&quot; (esri_mapping:ShowBinningProperties, Mapping)</summary>
+			public static string esri_mapping_binningStatsButton {
+				 get { return "esri_mapping_binningStatsButton"; }
+			}
+			///<summary>Returns the id string for &quot;Share and Download Options&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.LocationOptionsButton, Mapping)</summary>
+			public static string esri_mapping_openLocationOptionsButton {
+				 get { return "esri_mapping_openLocationOptionsButton"; }
+			}
 		}
 		public static partial class Buttonpalette {
 			///<summary>Returns the id string for &quot;Link Views&quot; (Buttonpalette, Mapping)</summary>
@@ -11336,6 +14547,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_animationFeedbackPalette {
 				 get { return "esri_mapping_animationFeedbackPalette"; }
 			}
+			///<summary>Returns the id string for &quot;Convert&quot; (Buttonpalette, Mapping)</summary>
+			public static string esri_mapping_convertMapPalette {
+				 get { return "esri_mapping_convertMapPalette"; }
+			}
 		}
 		public static partial class Checkbox {
 			///<summary>Returns the id string for &quot;Label Features In This Class&quot; (ArcGIS.Desktop.Internal.Mapping.Labeling.Ribbon.LabelClassEnableCheckBox, Mapping)</summary>
@@ -11345,6 +14560,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Single Value&quot; (ArcGIS.Desktop.Internal.Mapping.Controls.RangeSlider.Ribbon.RangeSingleValueCheckBox, Mapping)</summary>
 			public static string esri_mapping_rangeSingleValueCheckBox {
 				 get { return "esri_mapping_rangeSingleValueCheckBox"; }
+			}
+			///<summary>Returns the id string for &quot;Show Previous Observations&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.StreamingDataShowPreviousObservationsCheckBox, Mapping)</summary>
+			public static string esri_mapping_streamLayerShowPreviousObservationsCheckBox {
+				 get { return "esri_mapping_streamLayerShowPreviousObservationsCheckBox"; }
+			}
+			///<summary>Returns the id string for &quot;Show Track Lines&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.StreamingDataShowTrackLinesCheckBox, Mapping)</summary>
+			public static string esri_mapping_streamLayerShowTrackLinesCheckBox {
+				 get { return "esri_mapping_streamLayerShowTrackLinesCheckBox"; }
 			}
 		}
 		public static partial class Combobox {
@@ -11384,6 +14607,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_versionview_versionOwnerComboBox {
 				 get { return "esri_versionview_versionOwnerComboBox"; }
 			}
+			///<summary>Returns the id string for &quot;Mode &quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.NearPlaneClippingMode, Mapping)</summary>
+			public static string esri_mapping_nearPlaneClippingMode {
+				 get { return "esri_mapping_nearPlaneClippingMode"; }
+			}
 		}
 		public static partial class Component {
 			///<summary>Returns the id string for &quot;esri_mapping_OrthoMappingView&quot; (ArcGIS.Desktop.Internal.Mapping.TOC.OrthoMappingView, Mapping)</summary>
@@ -11413,6 +14640,22 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_mapping_ImageSpaceItemsView&quot; (ArcGIS.Desktop.Internal.Mapping.TOC.ImageSpaceItemsView, Mapping)</summary>
 			public static string esri_mapping_ImageSpaceItemsView {
 				 get { return "esri_mapping_ImageSpaceItemsView"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_toc_legendLoader&quot; (ArcGIS.Desktop.Internal.Mapping.TOC.LegendLoader, Mapping)</summary>
+			public static string esri_mapping_toc_legendLoader {
+				 get { return "esri_mapping_toc_legendLoader"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_toc_kmlNodeLoader&quot; (ArcGIS.Desktop.Internal.Mapping.TOC.KMLNodeLoader, Mapping)</summary>
+			public static string esri_mapping_toc_kmlNodeLoader {
+				 get { return "esri_mapping_toc_kmlNodeLoader"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_toc_wmsStyleLoader&quot; (ArcGIS.Desktop.Internal.Mapping.TOC.WMSStyleLoader, Mapping)</summary>
+			public static string esri_mapping_toc_wmsStyleLoader {
+				 get { return "esri_mapping_toc_wmsStyleLoader"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_toc_elevationSourceLoader&quot; (ArcGIS.Desktop.Internal.Mapping.TOC.ElevationSourceLoader, Mapping)</summary>
+			public static string esri_mapping_toc_elevationSourceLoader {
+				 get { return "esri_mapping_toc_elevationSourceLoader"; }
 			}
 		}
 		public static partial class Customcontrol {
@@ -11480,6 +14723,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_timeSnappingControl {
 				 get { return "esri_mapping_timeSnappingControl"; }
 			}
+			///<summary>Returns the id string for &quot;Point Display Controls&quot; (ArcGIS.Desktop.Internal.Mapping.PointCloud.PointCloudRibbonThinningViewModel, Mapping)</summary>
+			public static string esri_mapping_PointCloudRibbonThinning_CustomControl {
+				 get { return "esri_mapping_PointCloudRibbonThinning_CustomControl"; }
+			}
 			///<summary>Returns the id string for &quot;Append Options&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.AnimationRibbonViewModel, Mapping)</summary>
 			public static string esri_mapping_animationAppendControl {
 				 get { return "esri_mapping_animationAppendControl"; }
@@ -11496,6 +14743,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_animationOverlayControl {
 				 get { return "esri_mapping_animationOverlayControl"; }
 			}
+			///<summary>Returns the id string for &quot;Manage Animations&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.AnimationRibbonViewModel, Mapping)</summary>
+			public static string esri_mapping_animationListControl {
+				 get { return "esri_mapping_animationListControl"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_profileViewControl&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.ProfileRibbonViewModel, Mapping)</summary>
+			public static string esri_mapping_profileViewControl {
+				 get { return "esri_mapping_profileViewControl"; }
+			}
 			///<summary>Returns the id string for &quot;Out Beyond&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.LayerOutBeyondComboBox, Mapping)</summary>
 			public static string esri_mapping_layerOutBeyondComboBox {
 				 get { return "esri_mapping_layerOutBeyondComboBox"; }
@@ -11503,6 +14758,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;In Beyond&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.LayerInBeyondComboBox, Mapping)</summary>
 			public static string esri_mapping_layerInBeyondComboBox {
 				 get { return "esri_mapping_layerInBeyondComboBox"; }
+			}
+			///<summary>Returns the id string for &quot;Download Map&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.DownloadMap, Mapping)</summary>
+			public static string esri_mapping_downloadMap {
+				 get { return "esri_mapping_downloadMap"; }
 			}
 			///<summary>Returns the id string for &quot;Transparency&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.TransparencySliderViewModel, Mapping)</summary>
 			public static string esri_mapping_layerTransparency {
@@ -11512,9 +14771,17 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_layerMasking {
 				 get { return "esri_mapping_layerMasking"; }
 			}
-			///<summary>Returns the id string for &quot;esri_mapping_layerExtrusionFieldAndUnit&quot; (ArcGIS.Desktop.Internal.Mapping.CommonControls.ExtrusionFieldAndUnitViewModel, Mapping)</summary>
+			///<summary>Returns the id string for &quot;Layer Extrusion&quot; (ArcGIS.Desktop.Internal.Mapping.CommonControls.ExtrusionFieldAndUnitViewModel, Mapping)</summary>
 			public static string esri_mapping_layerExtrusionFieldAndUnit {
 				 get { return "esri_mapping_layerExtrusionFieldAndUnit"; }
+			}
+			///<summary>Returns the id string for &quot;Drawing&quot; (ArcGIS.Desktop.Internal.Mapping.ElevationSurfaces.Ribbon.ElevationSurfaceDrawingViewModel, Mapping)</summary>
+			public static string esri_mapping_elevationSurfaceDrawing {
+				 get { return "esri_mapping_elevationSurfaceDrawing"; }
+			}
+			///<summary>Returns the id string for &quot;Surface&quot; (ArcGIS.Desktop.Internal.Mapping.ElevationSurfaces.Ribbon.ElevationSurfaceSurfaceViewModel, Mapping)</summary>
+			public static string esri_mapping_elevationSurfaceRibbon {
+				 get { return "esri_mapping_elevationSurfaceRibbon"; }
 			}
 			///<summary>Returns the id string for &quot;Brightness&quot; (ArcGIS.Desktop.Internal.Mapping.Views.RasterLayer.Ribbon.BrightnessSliderViewModel, Mapping)</summary>
 			public static string esri_mapping_layerBrightness {
@@ -11540,6 +14807,26 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_streamingDataCustomControl {
 				 get { return "esri_mapping_streamingDataCustomControl"; }
 			}
+			///<summary>Returns the id string for &quot;esri_mapping_binningThresholdControl&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.Binning.ThresholdViewModel, Mapping)</summary>
+			public static string esri_mapping_binningThresholdControl {
+				 get { return "esri_mapping_binningThresholdControl"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_binningSizeTweaker&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.Binning.SizeTweakerViewModel, Mapping)</summary>
+			public static string esri_mapping_binningSizeTweaker {
+				 get { return "esri_mapping_binningSizeTweaker"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_binningAppearanceCustomControl&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.Binning.BinningAppearanceRibbonCustomControl, Mapping)</summary>
+			public static string esri_mapping_binningAppearanceCustomControl {
+				 get { return "esri_mapping_binningAppearanceCustomControl"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_binningLockLevelCustomControl&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.Binning.LockLevelCustomControl, Mapping)</summary>
+			public static string esri_mapping_binningLockLevelCustomControl {
+				 get { return "esri_mapping_binningLockLevelCustomControl"; }
+			}
+			///<summary>Returns the id string for &quot;Eye-Dome lighting&quot; (ArcGIS.Desktop.Internal.Mapping.Controls.Ribbon.EyeDomeLightingSliderControlViewModel, Mapping)</summary>
+			public static string esri_mapping_EyeDomeLightingSliderControl {
+				 get { return "esri_mapping_EyeDomeLightingSliderControl"; }
+			}
 		}
 		public static partial class Dockpane {
 			///<summary>Returns the id string for &quot;Bookmarks&quot; (BookmarksDockPaneViewModel, Mapping)</summary>
@@ -11554,9 +14841,13 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_labelClassDockPane {
 				 get { return "esri_mapping_labelClassDockPane"; }
 			}
-			///<summary>Returns the id string for &quot;Pop-ups&quot; (ArcGIS.Desktop.Internal.Mapping.Popups.PopupsDockPaneViewModel, Mapping)</summary>
+			///<summary>Returns the id string for &quot;Configure Pop-ups&quot; (ArcGIS.Desktop.Internal.Mapping.Popups.PopupsDockPaneViewModel, Mapping)</summary>
 			public static string esri_mapping_popupsDockPane {
 				 get { return "esri_mapping_popupsDockPane"; }
+			}
+			///<summary>Returns the id string for &quot;Pop-up&quot; (ArcGIS.Desktop.Internal.Mapping.Identify.InfoDockPaneViewModel, Mapping)</summary>
+			public static string esri_mapping_infoDockPane {
+				 get { return "esri_mapping_infoDockPane"; }
 			}
 			///<summary>Returns the id string for &quot;Locate&quot; (ArcGIS.Desktop.Internal.Mapping.Locate.LocateDockPaneViewModel, Mapping)</summary>
 			public static string esri_mapping_locateDockPane {
@@ -11586,17 +14877,25 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_temporalViewerDockPane {
 				 get { return "esri_mapping_temporalViewerDockPane"; }
 			}
-			///<summary>Returns the id string for &quot;Annotation Feature Class Properties&quot; (ArcGIS.Desktop.Internal.Mapping.Annotation.AnnotationFeatureClassDockPaneViewModel, Mapping)</summary>
-			public static string esri_mapping_annotationDockPane {
-				 get { return "esri_mapping_annotationDockPane"; }
-			}
-			///<summary>Returns the id string for &quot;Create Annotation Feature Class&quot; (ArcGIS.Desktop.Internal.Mapping.Annotation.CreateAnnoClassDockPaneViewModel, Mapping)</summary>
-			public static string esri_mapping_annotationClassCreateDockPane {
-				 get { return "esri_mapping_annotationClassCreateDockPane"; }
+			///<summary>Returns the id string for &quot;Feature Class Properties&quot; (ArcGIS.Desktop.Internal.Mapping.Annotation.FeatureClassPropertiesDockPaneViewModel, Mapping)</summary>
+			public static string esri_mapping_featureClassDockPane {
+				 get { return "esri_mapping_featureClassDockPane"; }
 			}
 			///<summary>Returns the id string for &quot;Exploratory Analysis&quot; (InteractiveAnalysisDockPaneViewModel, Mapping)</summary>
 			public static string esri_mapping_interactiveAnalysisDockPane {
 				 get { return "esri_mapping_interactiveAnalysisDockPane"; }
+			}
+			///<summary>Returns the id string for &quot;Create Scene Layer Package&quot; (ArcGIS.Desktop.Internal.Mapping.Wizards.CreateSceneLayerPackage.CreateSceneLayerPackageDockPaneViewModel, Mapping)</summary>
+			public static string esri_mapping_createSceneLayerPackageDockPane {
+				 get { return "esri_mapping_createSceneLayerPackageDockPane"; }
+			}
+			///<summary>Returns the id string for &quot;Building Filter&quot; (ArcGIS.Desktop.Internal.Mapping.Object3DRenderingFilter.Object3DRenderingFilterDockPaneViewModel, Mapping)</summary>
+			public static string esri_mapping_buildingSceneLayerObject3DRenderingFilterDockPane {
+				 get { return "esri_mapping_buildingSceneLayerObject3DRenderingFilterDockPane"; }
+			}
+			///<summary>Returns the id string for &quot;Isosurface&quot; (ArcGIS.Desktop.Internal.Mapping.Voxel.IsosurfaceDockPaneViewModel, Mapping)</summary>
+			public static string esri_mapping_buildingSceneLayerIsosurfaceDockPane {
+				 get { return "esri_mapping_buildingSceneLayerIsosurfaceDockPane"; }
 			}
 		}
 		public static partial class Dynamicmenu {
@@ -11644,6 +14943,10 @@ namespace ArcGIS.Desktop.Framework {
 			}
 		}
 		public static partial class Gallery {
+			///<summary>Returns the id string for &quot;Symbology&quot; (ArcGIS.Desktop.Internal.Mapping.Symbology.PointCloud.PointCloudLayerSymbologyGalleryViewModel, Mapping)</summary>
+			public static string esri_mapping_pointCloudLayerSymbologyGallery {
+				 get { return "esri_mapping_pointCloudLayerSymbologyGallery"; }
+			}
 			///<summary>Returns the id string for &quot;Filter&quot; (ArcGIS.Desktop.Internal.Mapping.TOC.TOCFilterGalleryViewModel, Mapping)</summary>
 			public static string esri_mapping_tocFilterGallery {
 				 get { return "esri_mapping_tocFilterGallery"; }
@@ -11659,6 +14962,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Bookmarks&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.BookmarksNavigateGalleryViewModel, Mapping)</summary>
 			public static string esri_mapping_bookmarksNavigateGallery {
 				 get { return "esri_mapping_bookmarksNavigateGallery"; }
+			}
+			///<summary>Returns the id string for &quot;Bookmarks&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.BookmarksNavigateGalleryViewModel, Mapping)</summary>
+			public static string esri_fullmotionvideo_bookmarksNavigateGallery {
+				 get { return "esri_fullmotionvideo_bookmarksNavigateGallery"; }
 			}
 			///<summary>Returns the id string for &quot;Update&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.BookmarksUpdateGalleryViewModel, Mapping)</summary>
 			public static string esri_mapping_bookmarksUpdateGallery {
@@ -11679,6 +14986,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Symbology&quot; (ArcGIS.Desktop.Internal.Mapping.Symbology.SymbolizerTemplateGalleryViewModel, Mapping)</summary>
 			public static string esri_mapping_layerSymbologyGallery {
 				 get { return "esri_mapping_layerSymbologyGallery"; }
+			}
+			///<summary>Returns the id string for &quot;Symbology&quot; (ArcGIS.Desktop.Internal.Mapping.Symbology.BinsSymbolizerTemplateGalleryViewModel, Mapping)</summary>
+			public static string esri_mapping_layerBinsSymbologyGallery {
+				 get { return "esri_mapping_layerBinsSymbologyGallery"; }
 			}
 			///<summary>Returns the id string for &quot;Symbology&quot; (ArcGIS.Desktop.Internal.Mapping.Symbology.WMSSubLayerSymbolizerTemplateGalleryViewModel, Mapping)</summary>
 			public static string esri_mapping_wmsSubLayerSymbologyGallery {
@@ -11711,6 +15022,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Processing Templates&quot; (ArcGIS.Desktop.Internal.Mapping.Views.RasterLayer.Ribbon.RenderingRulesGalleryViewModel, Mapping)</summary>
 			public static string esri_mapping_rasterRenderingRulesGallery {
 				 get { return "esri_mapping_rasterRenderingRulesGallery"; }
+			}
+			///<summary>Returns the id string for &quot;Building Filter&quot; (ArcGIS.Desktop.Internal.Mapping.Object3DRenderingFilter.Object3DRenderingFilterGallery, Mapping)</summary>
+			public static string esri_mapping_layerObject3DRenderingFilterGallery {
+				 get { return "esri_mapping_layerObject3DRenderingFilterGallery"; }
 			}
 			///<summary>Returns the id string for &quot;Face Culling&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.FaceCullingGallery, Mapping)</summary>
 			public static string esri_mapping_layer3DFaceCullingGallery {
@@ -11752,15 +15067,51 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_sceneViewModeGallery {
 				 get { return "esri_mapping_sceneViewModeGallery"; }
 			}
+			///<summary>Returns the id string for &quot;Filter&quot; (ArcGIS.Desktop.Internal.Mapping.Locate.LocatorFilterGalleryViewModel, Mapping)</summary>
+			public static string esri_mapping_locatorFilterGallery {
+				 get { return "esri_mapping_locatorFilterGallery"; }
+			}
+			///<summary>Returns the id string for &quot;Add Rule&quot; (ArcGIS.Desktop.Internal.Mapping.DesignView.AttributeRules.Ribbon.AddRuleGallery, Mapping)</summary>
+			public static string esri_mapping_attributeRules_addRuleGallery {
+				 get { return "esri_mapping_attributeRules_addRuleGallery"; }
+			}
+			///<summary>Returns the id string for &quot;Ready to Use Rules&quot; (ArcGIS.Desktop.Internal.Mapping.DesignView.AttributeRules.Ribbon.DataReviewerRulesGalleryViewModel, Mapping)</summary>
+			public static string esri_mapping_attributeRules_datareviewerRuleGallery {
+				 get { return "esri_mapping_attributeRules_datareviewerRuleGallery"; }
+			}
 		}
 		public static partial class Group {
+			///<summary>Returns the id string for &quot;Drawing&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_pointCloudLayerAppearanceDrawingGroup {
+				 get { return "esri_mapping_pointCloudLayerAppearanceDrawingGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Point Display&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_pointCloudLayerAppearancePointThinningGroup {
+				 get { return "esri_mapping_pointCloudLayerAppearancePointThinningGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Project&quot; (Group, Mapping)</summary>
+			public static string esri_project_mapping_home {
+				 get { return "esri_project_mapping_home"; }
+			}
 			///<summary>Returns the id string for &quot;Styles&quot; (Group, Mapping)</summary>
 			public static string esri_project_styles {
 				 get { return "esri_project_styles"; }
 			}
-			///<summary>Returns the id string for &quot;Styles&quot; (Group, Mapping)</summary>
-			public static string esri_project_styles_home {
-				 get { return "esri_project_styles_home"; }
+			///<summary>Returns the id string for &quot;Create&quot; (Group, Mapping)</summary>
+			public static string esri_project_styles_create {
+				 get { return "esri_project_styles_create"; }
+			}
+			///<summary>Returns the id string for &quot;Project&quot; (Group, Mapping)</summary>
+			public static string esri_project_styles_project {
+				 get { return "esri_project_styles_project"; }
+			}
+			///<summary>Returns the id string for &quot;Manage&quot; (Group, Mapping)</summary>
+			public static string esri_project_styles_manage {
+				 get { return "esri_project_styles_manage"; }
+			}
+			///<summary>Returns the id string for &quot;Organize&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_organizeStyles {
+				 get { return "esri_mapping_organizeStyles"; }
 			}
 			///<summary>Returns the id string for &quot;Windows&quot; (Group, Mapping)</summary>
 			public static string esri_mapping_dockWindows {
@@ -11842,6 +15193,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_layerDataExclusionGroup {
 				 get { return "esri_mapping_layerDataExclusionGroup"; }
 			}
+			///<summary>Returns the id string for &quot;Filter&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_layerObject3DRenderingFilterGroup {
+				 get { return "esri_mapping_layerObject3DRenderingFilterGroup"; }
+			}
 			///<summary>Returns the id string for &quot;Table&quot; (Group, Mapping)</summary>
 			public static string esri_mapping_featureLayerAttributeGroup {
 				 get { return "esri_mapping_featureLayerAttributeGroup"; }
@@ -11869,6 +15224,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;3D Exploratory Analysis&quot; (Group, Mapping)</summary>
 			public static string esri_mapping_interactiveAnalysisGroup {
 				 get { return "esri_mapping_interactiveAnalysisGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Profile Viewing&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_profileViewGroup {
+				 get { return "esri_mapping_profileViewGroup"; }
 			}
 			///<summary>Returns the id string for &quot;Visibility Range&quot; (Group, Mapping)</summary>
 			public static string esri_mapping_layerScaleVisibilityGroup {
@@ -11906,7 +15265,11 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_layerSymbologyMixedLayers {
 				 get { return "esri_mapping_layerSymbologyMixedLayers"; }
 			}
-			///<summary>Returns the id string for &quot;3D&quot; (Group, Mapping)</summary>
+			///<summary>Returns the id string for &quot;Drawing&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_streamLayerSymbology {
+				 get { return "esri_mapping_streamLayerSymbology"; }
+			}
+			///<summary>Returns the id string for &quot;Faces&quot; (Group, Mapping)</summary>
 			public static string esri_mapping_layer3DGroup {
 				 get { return "esri_mapping_layer3DGroup"; }
 			}
@@ -11917,6 +15280,18 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Navigation&quot; (Group, Mapping)</summary>
 			public static string esri_mapping_navigation {
 				 get { return "esri_mapping_navigation"; }
+			}
+			///<summary>Returns the id string for &quot;Lighting and Shading&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_lightingAndShading_LAS_PCL {
+				 get { return "esri_mapping_lightingAndShading_LAS_PCL"; }
+			}
+			///<summary>Returns the id string for &quot;Lighting and Shading&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_lightingAndShadingGroup {
+				 get { return "esri_mapping_lightingAndShadingGroup"; }
+			}
+			///<summary>Returns the id string for &quot;View&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_range {
+				 get { return "esri_mapping_range"; }
 			}
 			///<summary>Returns the id string for &quot;Active Range&quot; (Group, Mapping)</summary>
 			public static string esri_mapping_activeRange {
@@ -11937,6 +15312,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Full Extent&quot; (Group, Mapping)</summary>
 			public static string esri_mapping_fullRange {
 				 get { return "esri_mapping_fullRange"; }
+			}
+			///<summary>Returns the id string for &quot;View&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_time {
+				 get { return "esri_mapping_time"; }
 			}
 			///<summary>Returns the id string for &quot;Current Time&quot; (Group, Mapping)</summary>
 			public static string esri_mapping_currentTime {
@@ -11990,9 +15369,29 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_animationExport {
 				 get { return "esri_mapping_animationExport"; }
 			}
+			///<summary>Returns the id string for &quot;Manage&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_animationList {
+				 get { return "esri_mapping_animationList"; }
+			}
 			///<summary>Returns the id string for &quot;Scene&quot; (Group, Mapping)</summary>
 			public static string esri_mapping_sceneGroup {
 				 get { return "esri_mapping_sceneGroup"; }
+			}
+			///<summary>Returns the id string for &quot;View Clipping&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_viewClippingGroup {
+				 get { return "esri_mapping_viewClippingGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Effects&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_elevationEffectsGroup {
+				 get { return "esri_mapping_elevationEffectsGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Drawing&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_elevationDrawingGroup {
+				 get { return "esri_mapping_elevationDrawingGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Surface&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_elevationSurfaceGroup {
+				 get { return "esri_mapping_elevationSurfaceGroup"; }
 			}
 			///<summary>Returns the id string for &quot;Enhancement&quot; (Group, Mapping)</summary>
 			public static string esri_mapping_rasterLayerEnhancementGroup {
@@ -12034,17 +15433,21 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_rasterLayerMultidimensionalGroup {
 				 get { return "esri_mapping_rasterLayerMultidimensionalGroup"; }
 			}
+			///<summary>Returns the id string for &quot;Clipboard&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_designView_clipboardGroup {
+				 get { return "esri_mapping_designView_clipboardGroup"; }
+			}
 			///<summary>Returns the id string for &quot;Design&quot; (Group, Mapping)</summary>
 			public static string esri_mapping_designViewGroup {
 				 get { return "esri_mapping_designViewGroup"; }
 			}
+			///<summary>Returns the id string for &quot;Design&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_designViewGroupOnlyFieldsView {
+				 get { return "esri_mapping_designViewGroupOnlyFieldsView"; }
+			}
 			///<summary>Returns the id string for &quot;Archiving&quot; (Group, Mapping)</summary>
 			public static string esri_mapping_archiveGroup {
 				 get { return "esri_mapping_archiveGroup"; }
-			}
-			///<summary>Returns the id string for &quot;  Clipboard  &quot; (Group, Mapping)</summary>
-			public static string esri_fieldview_clipboardGroup {
-				 get { return "esri_fieldview_clipboardGroup"; }
 			}
 			///<summary>Returns the id string for &quot;Design&quot; (Group, Mapping)</summary>
 			public static string esri_fieldview_designGroup {
@@ -12058,10 +15461,6 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_fieldview_filterGroup {
 				 get { return "esri_fieldview_filterGroup"; }
 			}
-			///<summary>Returns the id string for &quot;  Clipboard  &quot; (Group, Mapping)</summary>
-			public static string esri_subtypeview_clipboardGroup {
-				 get { return "esri_subtypeview_clipboardGroup"; }
-			}
 			///<summary>Returns the id string for &quot;Subtypes&quot; (Group, Mapping)</summary>
 			public static string esri_subtypeview_managementGroup {
 				 get { return "esri_subtypeview_managementGroup"; }
@@ -12073,10 +15472,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot; Changes &quot; (Group, Mapping)</summary>
 			public static string esri_subtypeview_changesGroup {
 				 get { return "esri_subtypeview_changesGroup"; }
-			}
-			///<summary>Returns the id string for &quot;  Clipboard  &quot; (Group, Mapping)</summary>
-			public static string esri_domainview_clipboardGroup {
-				 get { return "esri_domainview_clipboardGroup"; }
 			}
 			///<summary>Returns the id string for &quot;Filter&quot; (Group, Mapping)</summary>
 			public static string esri_domainview_filterGroup {
@@ -12110,9 +15505,81 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_VersionAdministrationGroup {
 				 get { return "esri_mapping_VersionAdministrationGroup"; }
 			}
+			///<summary>Returns the id string for &quot;Add Rules&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_AddAttributeRulesButtonGroup {
+				 get { return "esri_mapping_AddAttributeRulesButtonGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Attribute Rules&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_AttributeRulesButtonGroup {
+				 get { return "esri_mapping_AttributeRulesButtonGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Design&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_AttributeRulesDesignViewGroup {
+				 get { return "esri_mapping_AttributeRulesDesignViewGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Contingent Values&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_ContingentValuesGroup {
+				 get { return "esri_mapping_ContingentValuesGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Design&quot; (Group, Mapping)</summary>
+			public static string esri_contingentvalues_designViewGroup {
+				 get { return "esri_contingentvalues_designViewGroup"; }
+			}
 			///<summary>Returns the id string for &quot;Streaming Data&quot; (Group, Mapping)</summary>
 			public static string esri_mapping_streamingDataGroup {
 				 get { return "esri_mapping_streamingDataGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Previous Observations&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_streamLayerPreviousObservations {
+				 get { return "esri_mapping_streamLayerPreviousObservations"; }
+			}
+			///<summary>Returns the id string for &quot;Alignment&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_georeference_GeoreferenceGroup {
+				 get { return "esri_mapping_georeference_GeoreferenceGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Alignment&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_georeference_RasterGeoreferenceGroup {
+				 get { return "esri_mapping_georeference_RasterGeoreferenceGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Prepare&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_georeference_PrepareGroup {
+				 get { return "esri_mapping_georeference_PrepareGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Save&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_georeference_SaveGroup {
+				 get { return "esri_mapping_georeference_SaveGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Close&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_georeference_CloseGroup {
+				 get { return "esri_mapping_georeference_CloseGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Layer&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_binningLayerGroup {
+				 get { return "esri_mapping_binningLayerGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Binning Threshold&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_binningThresholdGroup {
+				 get { return "esri_mapping_binningThresholdGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Drawing&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_binningLayerDrawingGroup {
+				 get { return "esri_mapping_binningLayerDrawingGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Size&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_binningSizeGroup {
+				 get { return "esri_mapping_binningSizeGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Appearance&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_binningAppearanceGroup {
+				 get { return "esri_mapping_binningAppearanceGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Summary&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_binningSummaryGroup {
+				 get { return "esri_mapping_binningSummaryGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Drawing&quot; (Group, Mapping)</summary>
+			public static string esri_mapping_binningDrawingGroup {
+				 get { return "esri_mapping_binningDrawingGroup"; }
 			}
 		}
 		public static partial class Category {
@@ -12123,6 +15590,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_mapping_tocViews&quot; (Category, Mapping)</summary>
 			public static string esri_mapping_tocViews {
 				 get { return "esri_mapping_tocViews"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_toc_mapMemberChildLoaders&quot; (Category, Mapping)</summary>
+			public static string esri_mapping_toc_mapMemberChildLoaders {
+				 get { return "esri_mapping_toc_mapMemberChildLoaders"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_showSimplifiedTOC&quot; (Category, Mapping)</summary>
+			public static string esri_mapping_showSimplifiedTOC {
+				 get { return "esri_mapping_showSimplifiedTOC"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_mapViews&quot; (Category, Mapping)</summary>
 			public static string esri_mapping_mapViews {
@@ -12186,6 +15661,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string GlobeServiceLayer {
 				 get { return "GlobeServiceLayer"; }
 			}
+			///<summary>Returns the id string for &quot;BuildingSceneLayer&quot; (BuildingSceneLayer, Mapping)</summary>
+			public static string BuildingSceneLayer {
+				 get { return "BuildingSceneLayer"; }
+			}
+			///<summary>Returns the id string for &quot;BuildingDisciplineSceneLayer&quot; (BuildingDisciplineSceneLayer, Mapping)</summary>
+			public static string BuildingDisciplineSceneLayer {
+				 get { return "BuildingDisciplineSceneLayer"; }
+			}
 			///<summary>Returns the id string for &quot;SceneServiceLayer&quot; (SceneServiceLayer, Mapping)</summary>
 			public static string SceneServiceLayer {
 				 get { return "SceneServiceLayer"; }
@@ -12209,6 +15692,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;TopologyLayer&quot; (ArcGIS.Desktop.Internal.Mapping.TopologyLayer, Mapping)</summary>
 			public static string TopologyLayer {
 				 get { return "TopologyLayer"; }
+			}
+			///<summary>Returns the id string for &quot;GeodatabaseErrorLayer&quot; (ArcGIS.Desktop.Internal.Mapping.GeodatabaseErrorLayer, Mapping)</summary>
+			public static string GeodatabaseErrorLayer {
+				 get { return "GeodatabaseErrorLayer"; }
 			}
 			///<summary>Returns the id string for &quot;NetworkDatasetLayer&quot; (NetworkDatasetLayer, Mapping)</summary>
 			public static string NetworkDatasetLayer {
@@ -12253,6 +15740,22 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;ParcelLayer&quot; (ArcGIS.Desktop.Internal.Mapping.ParcelLayer, Mapping)</summary>
 			public static string ParcelLayer {
 				 get { return "ParcelLayer"; }
+			}
+			///<summary>Returns the id string for &quot;BuildingDisciplineLayer&quot; (ArcGIS.Desktop.Internal.Mapping.BuildingDisciplineLayer, Mapping)</summary>
+			public static string BuildingDisciplineLayer {
+				 get { return "BuildingDisciplineLayer"; }
+			}
+			///<summary>Returns the id string for &quot;BuildingLayer&quot; (ArcGIS.Desktop.Internal.Mapping.BuildingLayer, Mapping)</summary>
+			public static string BuildingLayer {
+				 get { return "BuildingLayer"; }
+			}
+			///<summary>Returns the id string for &quot;PointCloudLayer&quot; (ArcGIS.Desktop.Mapping.PointCloudSceneLayer, Mapping)</summary>
+			public static string PointCloudLayer {
+				 get { return "PointCloudLayer"; }
+			}
+			///<summary>Returns the id string for &quot;VoxelLayer&quot; (ArcGIS.Desktop.Internal.Mapping.VoxelLayer, Mapping)</summary>
+			public static string VoxelLayer {
+				 get { return "VoxelLayer"; }
 			}
 			///<summary>Returns the id string for &quot;StandaloneTable&quot; (StandaloneTable, Mapping)</summary>
 			public static string StandaloneTable {
@@ -12302,8 +15805,64 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_itemInfoType_PortalStylxProjectItem {
 				 get { return "esri_itemInfoType_PortalStylxProjectItem"; }
 			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_cad_worldFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Mapping)</summary>
+			public static string esri_browseDialogFilters_cad_worldFiles {
+				 get { return "esri_browseDialogFilters_cad_worldFiles"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_worldFiles3D&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Mapping)</summary>
+			public static string esri_browseDialogFilters_worldFiles3D {
+				 get { return "esri_browseDialogFilters_worldFiles3D"; }
+			}
+			///<summary>Returns the id string for &quot;esri_browseDialogFilters_worldFiles&quot; (ArcGIS.Desktop.Internal.Core.BrowseProjectFilter, Mapping)</summary>
+			public static string esri_browseDialogFilters_worldFiles {
+				 get { return "esri_browseDialogFilters_worldFiles"; }
+			}
 		}
 		public static partial class Condition {
+			///<summary>Returns the id string for &quot;&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_3DLightingAndShading {
+				 get { return "esri_mapping_3DLightingAndShading"; }
+			}
+			///<summary>Returns the id string for &quot;&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_EDLEnabledCondition {
+				 get { return "esri_mapping_EDLEnabledCondition"; }
+			}
+			///<summary>Returns the id string for &quot;Only point cloud layers are selected&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_onlyPointCloudLayersSelectedCondition {
+				 get { return "esri_mapping_onlyPointCloudLayersSelectedCondition"; }
+			}
+			///<summary>Returns the id string for &quot;Exactly one point cloud layer is selected&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_singlePointCloudLayerSelectedCondition {
+				 get { return "esri_mapping_singlePointCloudLayerSelectedCondition"; }
+			}
+			///<summary>Returns the id string for &quot;&quot; (Condition, Mapping)</summary>
+			public static string esri_StylesContainer {
+				 get { return "esri_StylesContainer"; }
+			}
+			///<summary>Returns the id string for &quot;&quot; (Condition, Mapping)</summary>
+			public static string esri_MappingContainer {
+				 get { return "esri_MappingContainer"; }
+			}
+			///<summary>Returns the id string for &quot;An elevation source is selected&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_ElevationSourceSelectedCondition {
+				 get { return "esri_mapping_ElevationSourceSelectedCondition"; }
+			}
+			///<summary>Returns the id string for &quot;An elevation surface is selected&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_ElevationSurfaceSelectedCondition {
+				 get { return "esri_mapping_ElevationSurfaceSelectedCondition"; }
+			}
+			///<summary>Returns the id string for &quot;The ground surface is selected&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_IsGroundSurfaceSelectedCondition {
+				 get { return "esri_mapping_IsGroundSurfaceSelectedCondition"; }
+			}
+			///<summary>Returns the id string for &quot;An elevation source has been copied to the clipboard&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_PasteElevationSourceSelectedCondition {
+				 get { return "esri_mapping_PasteElevationSourceSelectedCondition"; }
+			}
+			///<summary>Returns the id string for &quot;An elevation surfaces has been copied to the clipboard&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_PasteElevationSurfacesSelectedCondition {
+				 get { return "esri_mapping_PasteElevationSurfacesSelectedCondition"; }
+			}
 			///<summary>Returns the id string for &quot;No subtype value layer is selected&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_SubtypeValueLayerNotSelectedCondition {
 				 get { return "esri_mapping_SubtypeValueLayerNotSelectedCondition"; }
@@ -12313,12 +15872,16 @@ namespace ArcGIS.Desktop.Framework {
 				 get { return "esri_mapping_WfsLayerSelectedCondition"; }
 			}
 			///<summary>Returns the id string for &quot;No subtype value layer and feature layer using stream service is selected&quot; (Condition, Mapping)</summary>
-			public static string esri_mapping_SubtypeValueLayerAndStreamServiceNotSelectedCondition {
-				 get { return "esri_mapping_SubtypeValueLayerAndStreamServiceNotSelectedCondition"; }
+			public static string esri_mapping_subtypeValueLayerAndStreamServiceNotSelectedCondition {
+				 get { return "esri_mapping_subtypeValueLayerAndStreamServiceNotSelectedCondition"; }
 			}
 			///<summary>Returns the id string for &quot;A Subtype layer is selected&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_subtypeGroupLayerSelectedCondition {
 				 get { return "esri_mapping_subtypeGroupLayerSelectedCondition"; }
+			}
+			///<summary>Returns the id string for &quot;All Selected Layers are Subtype layers&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_onlySubtypeGroupLayersSelectedCondition {
+				 get { return "esri_mapping_onlySubtypeGroupLayersSelectedCondition"; }
 			}
 			///<summary>Returns the id string for &quot;No subtype layer or subtype value layer is selected&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_subtypeGroupLayerParentAndChildNotSelectedCondition {
@@ -12339,6 +15902,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_mapping_mapPaneOrLayoutPane&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_mapPaneOrLayoutPane {
 				 get { return "esri_mapping_mapPaneOrLayoutPane"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_locateProvidersReadyToUseWithMap&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_locateProvidersReadyToUseWithMap {
+				 get { return "esri_mapping_locateProvidersReadyToUseWithMap"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_locateProvidersReadyToUseNoMap&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_locateProvidersReadyToUseNoMap {
+				 get { return "esri_mapping_locateProvidersReadyToUseNoMap"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_layoutPane&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_layoutPane {
@@ -12367,6 +15938,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;A feature layer is selected and is archive enabled&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_mapMemberSelectedIsArchiveEnabledCondition {
 				 get { return "esri_mapping_mapMemberSelectedIsArchiveEnabledCondition"; }
+			}
+			///<summary>Returns the id string for &quot;A feature layer is selected and its parent datasource supports GDB validation&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_mapMemberSelectedSupportsGdbValidationCondition {
+				 get { return "esri_mapping_mapMemberSelectedSupportsGdbValidationCondition"; }
 			}
 			///<summary>Returns the id string for &quot;A data source is versionable and selected&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_dataSourceSelectedIsVersionableCondition {
@@ -12404,6 +15979,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_dataLayerSelectedCondition {
 				 get { return "esri_mapping_dataLayerSelectedCondition"; }
 			}
+			///<summary>Returns the id string for &quot;The current map is not a BaseMap&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_mapNotBaseMapCondition {
+				 get { return "esri_mapping_mapNotBaseMapCondition"; }
+			}
 			///<summary>Returns the id string for &quot;A feature layer is selected&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_annotationLayerSelectedCondition {
 				 get { return "esri_mapping_annotationLayerSelectedCondition"; }
@@ -12417,8 +15996,8 @@ namespace ArcGIS.Desktop.Framework {
 				 get { return "esri_mapping_NALayerOrSublayerSelectedCondition"; }
 			}
 			///<summary>Returns the id string for &quot;A utility network layer is selected&quot; (Condition, Mapping)</summary>
-			public static string esri_mapping_utilityNetworkLayerSelectedCondition {
-				 get { return "esri_mapping_utilityNetworkLayerSelectedCondition"; }
+			public static string esri_mapping_utilityNetworkCondition {
+				 get { return "esri_mapping_utilityNetworkCondition"; }
 			}
 			///<summary>Returns the id string for &quot;The layer elevation property page can be shown.&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_showLayerElevationCondition {
@@ -12484,6 +16063,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_CanAddGroupLayerCondition {
 				 get { return "esri_mapping_CanAddGroupLayerCondition"; }
 			}
+			///<summary>Returns the id string for &quot;A single group layer is selected&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_singleGroupLayerSelectedCondition {
+				 get { return "esri_mapping_singleGroupLayerSelectedCondition"; }
+			}
 			///<summary>Returns the id string for &quot;A single group layer, with children, is selected&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_canUngroupLayerSelectedCondition {
 				 get { return "esri_mapping_canUngroupLayerSelectedCondition"; }
@@ -12540,6 +16123,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_ViewingMode3DCondition {
 				 get { return "esri_mapping_ViewingMode3DCondition"; }
 			}
+			///<summary>Returns the id string for &quot;3D Scene or Globe or Stereo&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_ViewingMode3DOrStereoCondition {
+				 get { return "esri_mapping_ViewingMode3DOrStereoCondition"; }
+			}
 			///<summary>Returns the id string for &quot;Show the symbology pane&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_SymbologyPaneVisibleCondition {
 				 get { return "esri_mapping_SymbologyPaneVisibleCondition"; }
@@ -12547,10 +16134,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Show the labeling pane&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_LabelingPaneVisibleCondition {
 				 get { return "esri_mapping_LabelingPaneVisibleCondition"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_disabledCondition&quot; (Condition, Mapping)</summary>
-			public static string esri_mapping_disabledCondition {
-				 get { return "esri_mapping_disabledCondition"; }
 			}
 			///<summary>Returns the id string for &quot;Enable 2D-3D map converter&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_MapConvertCondition {
@@ -12568,6 +16151,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_PreviewBasemapGalleryCondition {
 				 get { return "esri_mapping_PreviewBasemapGalleryCondition"; }
 			}
+			///<summary>Returns the id string for &quot;Data source supports viewing attribute rules&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_designview_canOpenAttributeRules {
+				 get { return "esri_mapping_designview_canOpenAttributeRules"; }
+			}
 			///<summary>Returns the id string for &quot;Fields have been modified or deleted in the fields view.&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_fieldsView_hasEditsCondition {
 				 get { return "esri_mapping_fieldsView_hasEditsCondition"; }
@@ -12580,9 +16167,17 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_fieldsView_canOpenSubtypes {
 				 get { return "esri_mapping_fieldsView_canOpenSubtypes"; }
 			}
+			///<summary>Returns the id string for &quot;Data source supports adding field groups&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_fieldsView_canFieldGroups {
+				 get { return "esri_mapping_fieldsView_canFieldGroups"; }
+			}
 			///<summary>Returns the id string for &quot;Data source supports viewing domains&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_fieldsView_canOpenDomains {
 				 get { return "esri_mapping_fieldsView_canOpenDomains"; }
+			}
+			///<summary>Returns the id string for &quot;Data source supports viewing contingent values&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_fieldsView_canOpenContingentValues {
+				 get { return "esri_mapping_fieldsView_canOpenContingentValues"; }
 			}
 			///<summary>Returns the id string for &quot;Fields are selected in the fields view for copy.&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_fieldsView_selectedCondition {
@@ -12640,6 +16235,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_subtypesView_redoCondition {
 				 get { return "esri_mapping_subtypesView_redoCondition"; }
 			}
+			///<summary>Returns the id string for &quot;License is standard or datasource is file geodatabase and domains are editable.&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_domainsView_canEditDomainsCondition {
+				 get { return "esri_mapping_domainsView_canEditDomainsCondition"; }
+			}
 			///<summary>Returns the id string for &quot;Domains are selected in the domains view for copy.&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_domainsView_selectedCondition {
 				 get { return "esri_mapping_domainsView_selectedCondition"; }
@@ -12672,6 +16271,34 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_domainsView_hasEditsCondition {
 				 get { return "esri_mapping_domainsView_hasEditsCondition"; }
 			}
+			///<summary>Returns the id string for &quot;esri_mapping_selectionSupportsAttributeRulesView&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_selectionSupportsAttributeRulesView {
+				 get { return "esri_mapping_selectionSupportsAttributeRulesView"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_attributeRulesView_editable&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_attributeRulesView_editable {
+				 get { return "esri_mapping_attributeRulesView_editable"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_attributeRulesView_rulesSelected&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_attributeRulesView_rulesSelected {
+				 get { return "esri_mapping_attributeRulesView_rulesSelected"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_attributeRulesView_canExport&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_attributeRulesView_canExport {
+				 get { return "esri_mapping_attributeRulesView_canExport"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_attributeRulesView_enabled&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_attributeRulesView_enabled {
+				 get { return "esri_mapping_attributeRulesView_enabled"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_attributeRulesView_reviewer&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_attributeRulesView_reviewer {
+				 get { return "esri_mapping_attributeRulesView_reviewer"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_selectionSupportsContingentValues&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_selectionSupportsContingentValues {
+				 get { return "esri_mapping_selectionSupportsContingentValues"; }
+			}
 			///<summary>Returns the id string for &quot;Versions have been modified or deleted in the versions view&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_versionsView_hasEditsCondition {
 				 get { return "esri_mapping_versionsView_hasEditsCondition"; }
@@ -12684,9 +16311,33 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_versionsView_canAddNewAndReconcileCondition {
 				 get { return "esri_mapping_versionsView_canAddNewAndReconcileCondition"; }
 			}
+			///<summary>Returns the id string for &quot;License is standard&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_versionsView_canReconcileAndPostCondition {
+				 get { return "esri_mapping_versionsView_canReconcileAndPostCondition"; }
+			}
 			///<summary>Returns the id string for &quot;Version(s) have been selected in the versions view, and the license level is standard or higher&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_versionsView_canDeleteCondition {
 				 get { return "esri_mapping_versionsView_canDeleteCondition"; }
+			}
+			///<summary>Returns the id string for &quot;Attribute rules has valid edits&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_attributeRules_hasEditsCondition {
+				 get { return "esri_mapping_attributeRules_hasEditsCondition"; }
+			}
+			///<summary>Returns the id string for &quot;Contingent values have valid edits&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_contingentValues_hasEditsCondition {
+				 get { return "esri_mapping_contingentValues_hasEditsCondition"; }
+			}
+			///<summary>Returns the id string for &quot;Retire contingent value&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_contingentValues_canRetireValuesCondition {
+				 get { return "esri_mapping_contingentValues_canRetireValuesCondition"; }
+			}
+			///<summary>Returns the id string for &quot;Can add contingent value&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_contingentValues_canAddContingentValuesCondition {
+				 get { return "esri_mapping_contingentValues_canAddContingentValuesCondition"; }
+			}
+			///<summary>Returns the id string for &quot;Data source supports viewing subtypes&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_contingentValuesView_canOpenSubtypesCondition {
+				 get { return "esri_mapping_contingentValuesView_canOpenSubtypesCondition"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_pane_core&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_pane_core {
@@ -12695,6 +16346,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_mapping_stereoMapViewPane&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_stereoMapViewPane {
 				 get { return "esri_mapping_stereoMapViewPane"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_notStereoMapViewPane&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_notStereoMapViewPane {
+				 get { return "esri_mapping_notStereoMapViewPane"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_mapOrDesignViewPanes&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_mapOrDesignViewPanes {
@@ -12716,6 +16371,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_license_hasStandardLicenseOrDatasourceIsFileGDBCondition {
 				 get { return "esri_license_hasStandardLicenseOrDatasourceIsFileGDBCondition"; }
 			}
+			///<summary>Returns the id string for &quot;esri_mapping_singleStreamLayerSupportTrackLinesSelectedCondition&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_singleStreamLayerSupportTrackLinesSelectedCondition {
+				 get { return "esri_mapping_singleStreamLayerSupportTrackLinesSelectedCondition"; }
+			}
 			///<summary>Returns the id string for &quot;esri_mapping_singleFeatureLayerSelectedCondition&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_singleFeatureLayerSelectedCondition {
 				 get { return "esri_mapping_singleFeatureLayerSelectedCondition"; }
@@ -12731,6 +16390,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_mapping_singleFeatureLayerVersionedSelectedCondition&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_singleFeatureLayerVersionedSelectedCondition {
 				 get { return "esri_mapping_singleFeatureLayerVersionedSelectedCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_queryDefSupportedSingleLayerSelectedCondition&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_queryDefSupportedSingleLayerSelectedCondition {
+				 get { return "esri_mapping_queryDefSupportedSingleLayerSelectedCondition"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_queryDefSupportedLayersSelectedCondition&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_queryDefSupportedLayersSelectedCondition {
@@ -12760,9 +16423,21 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_EnableSwipeCondition {
 				 get { return "esri_mapping_EnableSwipeCondition"; }
 			}
+			///<summary>Returns the id string for &quot;esri_mapping_streamLayerSelectedCondition&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_streamLayerSelectedCondition {
+				 get { return "esri_mapping_streamLayerSelectedCondition"; }
+			}
 			///<summary>Returns the id string for &quot;esri_mapping_onlyStreamLayersSelectedCondition&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_onlyStreamLayersSelectedCondition {
 				 get { return "esri_mapping_onlyStreamLayersSelectedCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_streamLayerWithTrackIdSelectedCondition&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_streamLayerWithTrackIdSelectedCondition {
+				 get { return "esri_mapping_streamLayerWithTrackIdSelectedCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_streamLayerWithNoTrackIdSelectedCondition&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_streamLayerWithNoTrackIdSelectedCondition {
+				 get { return "esri_mapping_streamLayerWithNoTrackIdSelectedCondition"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_onlyFeatureLayersSelectedCondition&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_onlyFeatureLayersSelectedCondition {
@@ -12791,6 +16466,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_mapping_onlyAnnotationLayersSelectedCondition&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_onlyAnnotationLayersSelectedCondition {
 				 get { return "esri_mapping_onlyAnnotationLayersSelectedCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_onlyAnnotationSubLayersSelectedCondition&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_onlyAnnotationSubLayersSelectedCondition {
+				 get { return "esri_mapping_onlyAnnotationSubLayersSelectedCondition"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_onlyDimensionLayersSelectedCondition&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_onlyDimensionLayersSelectedCondition {
@@ -12936,6 +16615,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_queryDataSourceSelectedCondition {
 				 get { return "esri_mapping_queryDataSourceSelectedCondition"; }
 			}
+			///<summary>Returns the id string for &quot;esri_mapping_buildingSceneLayersSelectedCondition&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_buildingSceneLayersSelectedCondition {
+				 get { return "esri_mapping_buildingSceneLayersSelectedCondition"; }
+			}
 			///<summary>Returns the id string for &quot;esri_mapping_labeledSceneLayerSelectedCondition&quot; (Condition, Mapping)</summary>
 			public static string esri_mapping_labeledSceneLayerSelectedCondition {
 				 get { return "esri_mapping_labeledSceneLayerSelectedCondition"; }
@@ -12964,6 +16647,38 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_mapHasAtLeastOneSyncableLayerCondition {
 				 get { return "esri_mapping_mapHasAtLeastOneSyncableLayerCondition"; }
 			}
+			///<summary>Returns the id string for &quot;Selected Layer is not a Subtype layer and not a StreamLayer.&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_JoinsAndRelatesEnabledCondition {
+				 get { return "esri_mapping_JoinsAndRelatesEnabledCondition"; }
+			}
+			///<summary>Returns the id string for &quot;Selected map has an active georeferencing edit session.&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_SceneGeoreferenceCondition {
+				 get { return "esri_mapping_SceneGeoreferenceCondition"; }
+			}
+			///<summary>Returns the id string for &quot;Map Pane View is a 3D map&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_SceneMapCondition {
+				 get { return "esri_mapping_SceneMapCondition"; }
+			}
+			///<summary>Returns the id string for &quot;Map Pane View is a 2D map&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_MapCondition {
+				 get { return "esri_mapping_MapCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_onlyBimLayerSelectedCondition&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_onlyBimLayerSelectedCondition {
+				 get { return "esri_mapping_onlyBimLayerSelectedCondition"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_onlyBimCompositeLayerSelectedCondition&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_onlyBimCompositeLayerSelectedCondition {
+				 get { return "esri_mapping_onlyBimCompositeLayerSelectedCondition"; }
+			}
+			///<summary>Returns the id string for &quot;A single binning layer is selected&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_singleBinningLayerSelectedCondition {
+				 get { return "esri_mapping_singleBinningLayerSelectedCondition"; }
+			}
+			///<summary>Returns the id string for &quot;MapHasBookmarks&quot; (Condition, Mapping)</summary>
+			public static string esri_mapping_activeMapHasBookmarksCondition {
+				 get { return "esri_mapping_activeMapHasBookmarksCondition"; }
+			}
 		}
 		public static partial class Module {
 			///<summary>Returns the id string for &quot;Mapping&quot; (MappingModule, Mapping)</summary>
@@ -12988,6 +16703,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_applicationDisplayPropertyPage {
 				 get { return "esri_mapping_applicationDisplayPropertyPage"; }
 			}
+			///<summary>Returns the id string for &quot;Color Management&quot; (ColorManagementOptionsViewModel, Mapping)</summary>
+			public static string esri_mapping_applicatioColorManagementPropertyPage {
+				 get { return "esri_mapping_applicatioColorManagementPropertyPage"; }
+			}
 			///<summary>Returns the id string for &quot;CAD&quot; (ArcGIS.Desktop.Internal.Mapping.Cad.CadOptionsViewModel, Mapping)</summary>
 			public static string esri_mapping_CadOptionsPropertyPage {
 				 get { return "esri_mapping_CadOptionsPropertyPage"; }
@@ -12998,6 +16717,14 @@ namespace ArcGIS.Desktop.Framework {
 			}
 		}
 		public static partial class Sheet {
+			///<summary>Returns the id string for &quot;Point Cloud Layer Properties&quot; (Sheet, Mapping)</summary>
+			public static string esri_mapping_pointCloudLayerPropertySheet {
+				 get { return "esri_mapping_pointCloudLayerPropertySheet"; }
+			}
+			///<summary>Returns the id string for &quot;Binning Properties&quot; (Sheet, Mapping)</summary>
+			public static string esri_mapping_binningLayerPropertySheet {
+				 get { return "esri_mapping_binningLayerPropertySheet"; }
+			}
 			///<summary>Returns the id string for &quot;Feature Layer Properties&quot; (Sheet, Mapping)</summary>
 			public static string esri_mapping_featureLayerPropertySheet {
 				 get { return "esri_mapping_featureLayerPropertySheet"; }
@@ -13013,6 +16740,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Locator Properties&quot; (Sheet, Mapping)</summary>
 			public static string esri_mapping_locatorCompositePropertySheet {
 				 get { return "esri_mapping_locatorCompositePropertySheet"; }
+			}
+			///<summary>Returns the id string for &quot;Locator Properties&quot; (Sheet, Mapping)</summary>
+			public static string esri_mapping_locatorEaglePropertySheet {
+				 get { return "esri_mapping_locatorEaglePropertySheet"; }
 			}
 			///<summary>Returns the id string for &quot;Layer Properties&quot; (Sheet, Mapping)</summary>
 			public static string esri_mapping_layerPropertySheet {
@@ -13059,8 +16790,8 @@ namespace ArcGIS.Desktop.Framework {
 				 get { return "esri_mapping_standaloneVideoPropertySheet"; }
 			}
 			///<summary>Returns the id string for &quot;Standalone Video Properties&quot; (Sheet, Mapping)</summary>
-			public static string esri_mapping_multiStandvideoTablePropertySheet {
-				 get { return "esri_mapping_multiStandvideoTablePropertySheet"; }
+			public static string esri_mapping_multiStandvideoVideoPropertySheet {
+				 get { return "esri_mapping_multiStandvideoVideoPropertySheet"; }
 			}
 			///<summary>Returns the id string for &quot;Map Properties&quot; (Sheet, Mapping)</summary>
 			public static string esri_mapping_mapPropertySheet {
@@ -13119,15 +16850,57 @@ namespace ArcGIS.Desktop.Framework {
 				 get { return "esri_mapping_heightSettingsPropertySheet"; }
 			}
 			///<summary>Returns the id string for &quot;Layer Properties&quot; (Sheet, Mapping)</summary>
+			public static string esri_mapping_buildingSceneLayerPropertySheet {
+				 get { return "esri_mapping_buildingSceneLayerPropertySheet"; }
+			}
+			///<summary>Returns the id string for &quot;Layer Properties&quot; (Sheet, Mapping)</summary>
+			public static string esri_mapping_buildingDisciplineSceneLayerPropertySheet {
+				 get { return "esri_mapping_buildingDisciplineSceneLayerPropertySheet"; }
+			}
+			///<summary>Returns the id string for &quot;Layer Properties&quot; (Sheet, Mapping)</summary>
 			public static string esri_mapping_sceneServicelayerPropertySheet {
 				 get { return "esri_mapping_sceneServicelayerPropertySheet"; }
+			}
+			///<summary>Returns the id string for &quot;Layer Properties&quot; (Sheet, Mapping)</summary>
+			public static string esri_mapping_integratedMeshSceneServicelayerPropertySheet {
+				 get { return "esri_mapping_integratedMeshSceneServicelayerPropertySheet"; }
+			}
+			///<summary>Returns the id string for &quot;Layer Properties&quot; (Sheet, Mapping)</summary>
+			public static string esri_mapping_voxelLayerPropertySheet {
+				 get { return "esri_mapping_voxelLayerPropertySheet"; }
+			}
+			///<summary>Returns the id string for &quot;Elevation Source Properties&quot; (Sheet, Mapping)</summary>
+			public static string esri_mapping_elevationSourcePropertySheet {
+				 get { return "esri_mapping_elevationSourcePropertySheet"; }
+			}
+			///<summary>Returns the id string for &quot;Elevation Source Properties&quot; (Sheet, Mapping)</summary>
+			public static string esri_mapping_multiElevationSourcePropertySheet {
+				 get { return "esri_mapping_multiElevationSourcePropertySheet"; }
 			}
 			///<summary>Returns the id string for &quot;Annotation SubLayer Properties&quot; (Sheet, Mapping)</summary>
 			public static string esri_mapping_annotationSubLayerPropertySheet {
 				 get { return "esri_mapping_annotationSubLayerPropertySheet"; }
 			}
+			///<summary>Returns the id string for &quot;Multiple Annotation Sublayer Properties&quot; (Sheet, Mapping)</summary>
+			public static string esri_mapping_multiAnnotationSubLayerPropertySheet {
+				 get { return "esri_mapping_multiAnnotationSubLayerPropertySheet"; }
+			}
+			///<summary>Returns the id string for &quot;Parcel Fabric Layer Properties&quot; (Sheet, Mapping)</summary>
+			public static string esri_mapping_parcelLayerPropertySheet {
+				 get { return "esri_mapping_parcelLayerPropertySheet"; }
+			}
+		}
+		public static partial class Wizard {
+			///<summary>Returns the id string for &quot;Create Scene Layer Package&quot; (Wizard, Mapping)</summary>
+			public static string esri_mapping_createSceneLayerPackage_Wizard {
+				 get { return "esri_mapping_createSceneLayerPackage_Wizard"; }
+			}
 		}
 		public static partial class Labelcontrol {
+			///<summary>Returns the id string for &quot; &quot; (Labelcontrol, Mapping)</summary>
+			public static string esri_emptyLabel2 {
+				 get { return "esri_emptyLabel2"; }
+			}
 			///<summary>Returns the id string for &quot;Class &quot; (Labelcontrol, Mapping)</summary>
 			public static string esri_mapping_labelClassNameLabel {
 				 get { return "esri_mapping_labelClassNameLabel"; }
@@ -13158,6 +16931,26 @@ namespace ArcGIS.Desktop.Framework {
 			}
 		}
 		public static partial class Menu {
+			///<summary>Returns the id string for &quot;Add To New&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_addDataMenu {
+				 get { return "esri_mapping_addDataMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Convert&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_map2DConvertMenu {
+				 get { return "esri_mapping_map2DConvertMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Convert&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_map3DConvertMenu {
+				 get { return "esri_mapping_map3DConvertMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Convert&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_mapStereoConvertMenu {
+				 get { return "esri_mapping_mapStereoConvertMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Convert&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_basemapConvertMenu {
+				 get { return "esri_mapping_basemapConvertMenu"; }
+			}
 			///<summary>Returns the id string for &quot;Add&quot; (Menu, Mapping)</summary>
 			public static string esri_mapping_addStyleMenu {
 				 get { return "esri_mapping_addStyleMenu"; }
@@ -13206,10 +16999,6 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_mapContainerContextMenu {
 				 get { return "esri_mapping_mapContainerContextMenu"; }
 			}
-			///<summary>Returns the id string for &quot;Add Data&quot; (Menu, Mapping)</summary>
-			public static string esri_mapping_addDataMenu {
-				 get { return "esri_mapping_addDataMenu"; }
-			}
 			///<summary>Returns the id string for &quot;Link Views&quot; (Menu, Mapping)</summary>
 			public static string esri_mapping_syncViewExtentMenu {
 				 get { return "esri_mapping_syncViewExtentMenu"; }
@@ -13221,6 +17010,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;View&quot; (Menu, Mapping)</summary>
 			public static string esri_mapping_map2DContextMenu {
 				 get { return "esri_mapping_map2DContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;View&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_stereoMapContextMenu {
+				 get { return "esri_mapping_stereoMapContextMenu"; }
 			}
 			///<summary>Returns the id string for &quot;View&quot; (Menu, Mapping)</summary>
 			public static string esri_mapping_basemapContextMenu {
@@ -13262,6 +17055,22 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_3DCategoryContextMenu {
 				 get { return "esri_mapping_3DCategoryContextMenu"; }
 			}
+			///<summary>Returns the id string for &quot;esri_mapping_ElevationSurfaceCategoryContextMenu&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_ElevationSurfaceCategoryContextMenu {
+				 get { return "esri_mapping_ElevationSurfaceCategoryContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_ElevationSurfaceContextMenu&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_ElevationSurfaceContextMenu {
+				 get { return "esri_mapping_ElevationSurfaceContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_ElevationSourceContextMenu&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_ElevationSourceContextMenu {
+				 get { return "esri_mapping_ElevationSourceContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_binningLayerContextMenu&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_binningLayerContextMenu {
+				 get { return "esri_mapping_binningLayerContextMenu"; }
+			}
 			///<summary>Returns the id string for &quot;esri_mapping_layerContextMenu&quot; (Menu, Mapping)</summary>
 			public static string esri_mapping_layerContextMenu {
 				 get { return "esri_mapping_layerContextMenu"; }
@@ -13273,6 +17082,30 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_mapping_subtypeValueLayerContextMenu&quot; (Menu, Mapping)</summary>
 			public static string esri_mapping_subtypeValueLayerContextMenu {
 				 get { return "esri_mapping_subtypeValueLayerContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_buildingSceneLayerContextMenu&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_buildingSceneLayerContextMenu {
+				 get { return "esri_mapping_buildingSceneLayerContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_buildingDisciplineSceneLayerContextMenu&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_buildingDisciplineSceneLayerContextMenu {
+				 get { return "esri_mapping_buildingDisciplineSceneLayerContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_voxelLayerContextMenu&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_voxelLayerContextMenu {
+				 get { return "esri_mapping_voxelLayerContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_voxelIsosurfacesContainerContextMenu&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_voxelIsosurfacesContainerContextMenu {
+				 get { return "esri_mapping_voxelIsosurfacesContainerContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_voxelIsosurfaceGroupContainerContextMenu&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_voxelIsosurfaceGroupContainerContextMenu {
+				 get { return "esri_mapping_voxelIsosurfaceGroupContainerContextMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_voxelIsosurfaceContextMenu&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_voxelIsosurfaceContextMenu {
+				 get { return "esri_mapping_voxelIsosurfaceContextMenu"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_scenelayerContextMenu&quot; (Menu, Mapping)</summary>
 			public static string esri_mapping_scenelayerContextMenu {
@@ -13330,6 +17163,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_lasDatasetLayerContextMenu {
 				 get { return "esri_mapping_lasDatasetLayerContextMenu"; }
 			}
+			///<summary>Returns the id string for &quot;esri_mapping_terrainLayerContextMenu&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_terrainLayerContextMenu {
+				 get { return "esri_mapping_terrainLayerContextMenu"; }
+			}
 			///<summary>Returns the id string for &quot;esri_mapping_pointCloudLayerContextMenu&quot; (Menu, Mapping)</summary>
 			public static string esri_mapping_pointCloudLayerContextMenu {
 				 get { return "esri_mapping_pointCloudLayerContextMenu"; }
@@ -13342,6 +17179,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_standaloneVideoContextMenu {
 				 get { return "esri_mapping_standaloneVideoContextMenu"; }
 			}
+			///<summary>Returns the id string for &quot;esri_mapping_standaloneVideosCategoryContextMenu&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_standaloneVideosCategoryContextMenu {
+				 get { return "esri_mapping_standaloneVideosCategoryContextMenu"; }
+			}
 			///<summary>Returns the id string for &quot;Data Source&quot; (Menu, Mapping)</summary>
 			public static string esri_mapping_dataSourceContextMenu {
 				 get { return "esri_mapping_dataSourceContextMenu"; }
@@ -13349,6 +17190,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_mapping_tocFilterMenu&quot; (Menu, Mapping)</summary>
 			public static string esri_mapping_tocFilterMenu {
 				 get { return "esri_mapping_tocFilterMenu"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_locatorFilterMenu&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_locatorFilterMenu {
+				 get { return "esri_mapping_locatorFilterMenu"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_rasterLayerContextMenu&quot; (Menu, Mapping)</summary>
 			public static string esri_mapping_rasterLayerContextMenu {
@@ -13374,9 +17219,9 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_mosaicSeamlineSubLayerContextMenu {
 				 get { return "esri_mapping_mosaicSeamlineSubLayerContextMenu"; }
 			}
-			///<summary>Returns the id string for &quot;esri_mapping_mosaicPreviewSubLayerContextMenu&quot; (Menu, Mapping)</summary>
-			public static string esri_mapping_mosaicPreviewSubLayerContextMenu {
-				 get { return "esri_mapping_mosaicPreviewSubLayerContextMenu"; }
+			///<summary>Returns the id string for &quot;esri_mapping_mosaicImageSubLayerContextMenu&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_mosaicImageSubLayerContextMenu {
+				 get { return "esri_mapping_mosaicImageSubLayerContextMenu"; }
 			}
 			///<summary>Returns the id string for &quot;Selection&quot; (Menu, Mapping)</summary>
 			public static string esri_mapping_rasterSelectionSubMenu {
@@ -13410,6 +17255,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_popupToolContextMenu {
 				 get { return "esri_mapping_popupToolContextMenu"; }
 			}
+			///<summary>Returns the id string for &quot;Convert Coordinates&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_ConvertCoordinatesMenu {
+				 get { return "esri_mapping_ConvertCoordinatesMenu"; }
+			}
 			///<summary>Returns the id string for &quot;Band Combinations&quot; (Menu, Mapping)</summary>
 			public static string esri_mapping_bandCombinationMenu {
 				 get { return "esri_mapping_bandCombinationMenu"; }
@@ -13438,6 +17287,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_layercandidate_menu {
 				 get { return "esri_mapping_layercandidate_menu"; }
 			}
+			///<summary>Returns the id string for &quot;Locate Multiselect Candidate&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_locatecandidate_multiselection_menu {
+				 get { return "esri_mapping_locatecandidate_multiselection_menu"; }
+			}
+			///<summary>Returns the id string for &quot;Layer Multiselect Candidate&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_layercandidate_multiselection_menu {
+				 get { return "esri_mapping_layercandidate_multiselection_menu"; }
+			}
 			///<summary>Returns the id string for &quot;Geocode Table&quot; (Menu, Mapping)</summary>
 			public static string esri_mapping_geocodetable_menu {
 				 get { return "esri_mapping_geocodetable_menu"; }
@@ -13454,8 +17311,86 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_exploratoryViewshedMenu {
 				 get { return "esri_mapping_exploratoryViewshedMenu"; }
 			}
+			///<summary>Returns the id string for &quot;Slice&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_exploratorySliceRectMenu {
+				 get { return "esri_mapping_exploratorySliceRectMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Slice&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_exploratorySliceBoxMenu {
+				 get { return "esri_mapping_exploratorySliceBoxMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Slice&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_exploratorySliceCylinderMenu {
+				 get { return "esri_mapping_exploratorySliceCylinderMenu"; }
+			}
+			///<summary>Returns the id string for &quot;Slice&quot; (Menu, Mapping)</summary>
+			public static string esri_mapping_exploratorySliceSphereMenu {
+				 get { return "esri_mapping_exploratorySliceSphereMenu"; }
+			}
+		}
+		public static partial class Minitoolbar {
+			///<summary>Returns the id string for &quot;esri_mapping_slicePlaneToolbar&quot; (Minitoolbar, Mapping)</summary>
+			public static string esri_mapping_slicePlaneToolbar {
+				 get { return "esri_mapping_slicePlaneToolbar"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_sliceBoxToolbar&quot; (Minitoolbar, Mapping)</summary>
+			public static string esri_mapping_sliceBoxToolbar {
+				 get { return "esri_mapping_sliceBoxToolbar"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_sliceCylinderToolbar&quot; (Minitoolbar, Mapping)</summary>
+			public static string esri_mapping_sliceCylinderToolbar {
+				 get { return "esri_mapping_sliceCylinderToolbar"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_sliceSphereToolbar&quot; (Minitoolbar, Mapping)</summary>
+			public static string esri_mapping_sliceSphereToolbar {
+				 get { return "esri_mapping_sliceSphereToolbar"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_profileCreatingToolbar&quot; (Minitoolbar, Mapping)</summary>
+			public static string esri_mapping_profileCreatingToolbar {
+				 get { return "esri_mapping_profileCreatingToolbar"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_profileViewingToolbar&quot; (Minitoolbar, Mapping)</summary>
+			public static string esri_mapping_profileViewingToolbar {
+				 get { return "esri_mapping_profileViewingToolbar"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_cutFillPolygonToolbar&quot; (Minitoolbar, Mapping)</summary>
+			public static string esri_mapping_cutFillPolygonToolbar {
+				 get { return "esri_mapping_cutFillPolygonToolbar"; }
+			}
 		}
 		public static partial class Page {
+			///<summary>Returns the id string for &quot;Data Setup&quot; (ArcGIS.Desktop.Internal.Mapping.Wizards.CreateSceneLayerPackage.Pages.DataSetupViewModel, Mapping)</summary>
+			public static string esri_mappping_createSLPKDataSetupPage {
+				 get { return "esri_mappping_createSLPKDataSetupPage"; }
+			}
+			///<summary>Returns the id string for &quot;&quot; (ArcGIS.Desktop.Internal.Mapping.Wizards.CreateSceneLayerPackage.Pages.GPToolViewModel, Mapping)</summary>
+			public static string esri_mapping_createSLPKGPToolPage {
+				 get { return "esri_mapping_createSLPKGPToolPage"; }
+			}
+			///<summary>Returns the id string for &quot;General&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.GeneralViewModel, Mapping)</summary>
+			public static string esri_mapping_pointCloudLayerGeneralPropertyPage {
+				 get { return "esri_mapping_pointCloudLayerGeneralPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Source&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.SourceViewModel, Mapping)</summary>
+			public static string esri_mapping_pointCloudLayerSourcePropertyPage {
+				 get { return "esri_mapping_pointCloudLayerSourcePropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Elevation&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.ElevationViewModel, Mapping)</summary>
+			public static string esri_mapping_pointCloudLayerElevationPropertyPage {
+				 get { return "esri_mapping_pointCloudLayerElevationPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Cache&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.CacheViewModel, Mapping)</summary>
+			public static string esri_mapping_pointCloudLayerCachePropertyPage {
+				 get { return "esri_mapping_pointCloudLayerCachePropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Point Cloud Layer Filter&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.PointCloud.PointCloudLayerFilterViewModel, Mapping)</summary>
+			public static string esri_mapping_pointCloudLayerFilterPropertyPage {
+				 get { return "esri_mapping_pointCloudLayerFilterPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Summary Statistics&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.BinningLayerSummaryStatsViewModel, Mapping)</summary>
+			public static string esri_mapping_binningSummaryStatisticsPage {
+				 get { return "esri_mapping_binningSummaryStatisticsPage"; }
+			}
 			///<summary>Returns the id string for &quot;General&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.GeneralViewModel, Mapping)</summary>
 			public static string esri_mapping_generalLayerPropertyPage {
 				 get { return "esri_mapping_generalLayerPropertyPage"; }
@@ -13564,6 +17499,26 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_CompositeLocatorPerformancePropertyPage {
 				 get { return "esri_mapping_CompositeLocatorPerformancePropertyPage"; }
 			}
+			///<summary>Returns the id string for &quot;About the locator&quot; (ArcGIS.Desktop.Internal.Mapping.PropertyPages.LocatorEagleGeneralViewModel, Mapping)</summary>
+			public static string esri_mapping_locatorEagleGeneralPropertyPage {
+				 get { return "esri_mapping_locatorEagleGeneralPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Input fields&quot; (ArcGIS.Desktop.Internal.Mapping.PropertyPages.LocatorEagleInputFieldsViewModel, Mapping)</summary>
+			public static string esri_mapping_locatorEagleInputFieldsPropertyPage {
+				 get { return "esri_mapping_locatorEagleInputFieldsPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Output fields&quot; (ArcGIS.Desktop.Internal.Mapping.PropertyPages.LocatorEagleOutputsViewModel, Mapping)</summary>
+			public static string esri_mapping_locatorEagleOutputsPropertyPage {
+				 get { return "esri_mapping_locatorEagleOutputsPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Geocoding options&quot; (ArcGIS.Desktop.Internal.Mapping.PropertyPages.LocatorEagleGeocodingOptionsViewModel, Mapping)</summary>
+			public static string esri_mapping_locatorEagleGeocodingOptionsPropertyPage {
+				 get { return "esri_mapping_locatorEagleGeocodingOptionsPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Performance&quot; (ArcGIS.Desktop.Internal.Mapping.PropertyPages.LocatorEaglePerformanceViewModel, Mapping)</summary>
+			public static string esri_mapping_locatorEaglePerformancePropertyPage {
+				 get { return "esri_mapping_locatorEaglePerformancePropertyPage"; }
+			}
 			///<summary>Returns the id string for &quot;Subtype&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.SubtypeLayersViewModel, Mapping)</summary>
 			public static string esri_mapping_subtypeLayersPropertyPage {
 				 get { return "esri_mapping_subtypeLayersPropertyPage"; }
@@ -13616,9 +17571,13 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_multiGeneralStandaloneTablePropertyPage {
 				 get { return "esri_mapping_multiGeneralStandaloneTablePropertyPage"; }
 			}
-			///<summary>Returns the id string for &quot;esri_mapping_generalStandaloneVideoPropertyPage&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.StandaloneVideo.GeneralViewModel, Mapping)</summary>
+			///<summary>Returns the id string for &quot;General&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.StandaloneVideo.GeneralViewModel, Mapping)</summary>
 			public static string esri_mapping_generalStandaloneVideoPropertyPage {
 				 get { return "esri_mapping_generalStandaloneVideoPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Source&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.StandaloneVideo.SourceViewModel, Mapping)</summary>
+			public static string esri_mapping_standaloneVideoSourcePropertyPage {
+				 get { return "esri_mapping_standaloneVideoSourcePropertyPage"; }
 			}
 			///<summary>Returns the id string for &quot;General&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.StandaloneVideo.GeneralViewModel, Mapping)</summary>
 			public static string esri_mapping_multiGeneralStandaloneVideoPropertyPage {
@@ -13632,9 +17591,9 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_customFullExtentMapPropertyPage {
 				 get { return "esri_mapping_customFullExtentMapPropertyPage"; }
 			}
-			///<summary>Returns the id string for &quot;Elevation Surface&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Map.ElevationSurfaceViewModel, Mapping)</summary>
-			public static string esri_mapping_elevationSurfacePropertyPage {
-				 get { return "esri_mapping_elevationSurfacePropertyPage"; }
+			///<summary>Returns the id string for &quot;Clip Layers&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Map.ClipLayersViewModel, Mapping)</summary>
+			public static string esri_mapping_clipLayersPropertyPage {
+				 get { return "esri_mapping_clipLayersPropertyPage"; }
 			}
 			///<summary>Returns the id string for &quot;Coordinate Systems&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Map.CoordinateSystemViewModel, Mapping)</summary>
 			public static string esri_mapping_coordinateSystemPropertyPage {
@@ -13652,13 +17611,17 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_labelGeneralPropertyPage {
 				 get { return "esri_mapping_labelGeneralPropertyPage"; }
 			}
+			///<summary>Returns the id string for &quot;Stereo&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Map.StereoScopicViewModel, Mapping)</summary>
+			public static string esri_mapping_stereoScopicPropertyPage {
+				 get { return "esri_mapping_stereoScopicPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Color Management&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Map.ColorManagementViewModel, Mapping)</summary>
+			public static string esri_mapping_colorManagementPropertyPage {
+				 get { return "esri_mapping_colorManagementPropertyPage"; }
+			}
 			///<summary>Returns the id string for &quot;General&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Map.GeneralViewModel, Mapping)</summary>
 			public static string esri_mapping_generalMultiMapPropertyPage {
 				 get { return "esri_mapping_generalMultiMapPropertyPage"; }
-			}
-			///<summary>Returns the id string for &quot;Elevation Surface&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Map.ElevationSurfaceViewModel, Mapping)</summary>
-			public static string esri_mapping_elevationSurfaceMultiMapPropertyPage {
-				 get { return "esri_mapping_elevationSurfaceMultiMapPropertyPage"; }
 			}
 			///<summary>Returns the id string for &quot;Labels&quot; (ArcGIS.Desktop.Internal.Mapping.Labeling.LabelGeneralViewModel, Mapping)</summary>
 			public static string esri_mapping_labelGeneralMultiMapPropertyPage {
@@ -13684,6 +17647,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_layerNetworkDiagramPropertiesPage {
 				 get { return "esri_mapping_layerNetworkDiagramPropertiesPage"; }
 			}
+			///<summary>Returns the id string for &quot;Display&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.RasterDisplayViewModel, Mapping)</summary>
+			public static string esri_mapping_layerMosaicDisplayPage {
+				 get { return "esri_mapping_layerMosaicDisplayPage"; }
+			}
 			///<summary>Returns the id string for &quot;Mosaic&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.MosaicRuleViewModel, Mapping)</summary>
 			public static string esri_mapping_layerMosaicRulePage {
 				 get { return "esri_mapping_layerMosaicRulePage"; }
@@ -13691,6 +17658,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Processing Templates&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.ProcessingTemplateViewModel, Mapping)</summary>
 			public static string esri_mapping_layerProcessingTemplatePage {
 				 get { return "esri_mapping_layerProcessingTemplatePage"; }
+			}
+			///<summary>Returns the id string for &quot;Display&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.RasterDisplayViewModel, Mapping)</summary>
+			public static string esri_mapping_layerRasterDisplayPage {
+				 get { return "esri_mapping_layerRasterDisplayPage"; }
 			}
 			///<summary>Returns the id string for &quot;Display&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.ISDisplayViewModel, Mapping)</summary>
 			public static string esri_mapping_layerISDisplayPage {
@@ -13708,6 +17679,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_heightListPropertyPage {
 				 get { return "esri_mapping_heightListPropertyPage"; }
 			}
+			///<summary>Returns the id string for &quot;General&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.ElevationSurfaces.ElevationSourceGeneralViewModel, Mapping)</summary>
+			public static string esri_mapping_generalElevationSourcePropertyPage {
+				 get { return "esri_mapping_generalElevationSourcePropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Source&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.ElevationSurfaces.SourceViewModel, Mapping)</summary>
+			public static string esri_mapping_SourcePropertyPage {
+				 get { return "esri_mapping_SourcePropertyPage"; }
+			}
 			///<summary>Returns the id string for &quot;General&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.AnnotationSubLayerGeneralViewModel, Mapping)</summary>
 			public static string esri_mapping_annotationSubLayerGeneralPage {
 				 get { return "esri_mapping_annotationSubLayerGeneralPage"; }
@@ -13715,6 +17694,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Annotation Class&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.AnnotationSubLayerAnnotationClassViewModel, Mapping)</summary>
 			public static string esri_mapping_annotationSubLayerAnnotationClassPage {
 				 get { return "esri_mapping_annotationSubLayerAnnotationClassPage"; }
+			}
+			///<summary>Returns the id string for &quot;Feature Layers&quot; (ArcGIS.Desktop.Internal.Mapping.Views.PropertyPages.Layer.ParcelFeatureLayersViewModel, Mapping)</summary>
+			public static string esri_catalog_parcelFeatureLayersPropertyPage {
+				 get { return "esri_catalog_parcelFeatureLayersPropertyPage"; }
 			}
 		}
 		public static partial class Pane {
@@ -13734,19 +17717,31 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_subtypesPane {
 				 get { return "esri_mapping_subtypesPane"; }
 			}
+			///<summary>Returns the id string for &quot;Attribute Rules&quot; (ArcGIS.Desktop.Internal.Mapping.DesignView.AttributeRules.AttributeRulesPaneViewModel, Mapping)</summary>
+			public static string esri_mapping_attributeRulesPane {
+				 get { return "esri_mapping_attributeRulesPane"; }
+			}
+			///<summary>Returns the id string for &quot;Contingent Values&quot; (ArcGIS.Desktop.Internal.Mapping.DesignView.ContingentValues.ContingentValuesPaneViewModel, Mapping)</summary>
+			public static string esri_mapping_contingentValuesPane {
+				 get { return "esri_mapping_contingentValuesPane"; }
+			}
 		}
 		public static partial class Spinner {
 			///<summary>Returns the id string for &quot;Transparency spinner&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.TransparencySpinner, Mapping)</summary>
 			public static string esri_mapping_spinner_layerTransparency {
 				 get { return "esri_mapping_spinner_layerTransparency"; }
 			}
-			///<summary>Returns the id string for &quot;Flicker Spinner&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.FlickerSpinner, Mapping)</summary>
+			///<summary>Returns the id string for &quot;esri_mapping_layerFlickerSpinner&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.FlickerSpinner, Mapping)</summary>
 			public static string esri_mapping_layerFlickerSpinner {
 				 get { return "esri_mapping_layerFlickerSpinner"; }
 			}
 			///<summary>Returns the id string for &quot;Angle:&quot; (ArcGIS.Desktop.Internal.Mapping.Views.RasterLayer.Ribbon.RotationSpinner, Mapping)</summary>
 			public static string esri_mapping_rasterRotateAngleSpinner {
 				 get { return "esri_mapping_rasterRotateAngleSpinner"; }
+			}
+			///<summary>Returns the id string for &quot;Distance &quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.NearPlaneClippingDistanceViewModel, Mapping)</summary>
+			public static string esri_mapping_spinner_nearPlaneClippingDistance {
+				 get { return "esri_mapping_spinner_nearPlaneClippingDistance"; }
 			}
 		}
 		public static partial class Splitbutton {
@@ -13757,6 +17752,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_mapping_layerSymbologySplitButton&quot; (Splitbutton, Mapping)</summary>
 			public static string esri_mapping_layerSymbologySplitButton {
 				 get { return "esri_mapping_layerSymbologySplitButton"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_layerBinsSymbologySplitButton&quot; (Splitbutton, Mapping)</summary>
+			public static string esri_mapping_layerBinsSymbologySplitButton {
+				 get { return "esri_mapping_layerBinsSymbologySplitButton"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_rasterLayerStretchTypeSplitButton&quot; (Splitbutton, Mapping)</summary>
+			public static string esri_mapping_rasterLayerStretchTypeSplitButton {
+				 get { return "esri_mapping_rasterLayerStretchTypeSplitButton"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_layerSymbologyWMSSubLayerSplitButton&quot; (Splitbutton, Mapping)</summary>
 			public static string esri_mapping_layerSymbologyWMSSubLayerSplitButton {
@@ -13782,19 +17785,91 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_interactiveAnalysisSplitButton {
 				 get { return "esri_mapping_interactiveAnalysisSplitButton"; }
 			}
+			///<summary>Returns the id string for &quot;esri_attributeRulesView_newCalculationRuleSplitButton&quot; (Splitbutton, Mapping)</summary>
+			public static string esri_attributeRulesView_newCalculationRuleSplitButton {
+				 get { return "esri_attributeRulesView_newCalculationRuleSplitButton"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_pointCloudLayerSymbologySplitButton&quot; (Splitbutton, Mapping)</summary>
+			public static string esri_mapping_pointCloudLayerSymbologySplitButton {
+				 get { return "esri_mapping_pointCloudLayerSymbologySplitButton"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_profileViewSplitButton&quot; (Splitbutton, Mapping)</summary>
+			public static string esri_mapping_profileViewSplitButton {
+				 get { return "esri_mapping_profileViewSplitButton"; }
+			}
 		}
 		public static partial class State {
+			///<summary>Returns the id string for &quot;esri_mapping_scene3DObjectLayerSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_scene3DObjectLayerSelectedState {
+				 get { return "esri_mapping_scene3DObjectLayerSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_scenePointLayerSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_scenePointLayerSelectedState {
+				 get { return "esri_mapping_scenePointLayerSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_sceneIntegratedMeshLayerSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_sceneIntegratedMeshLayerSelectedState {
+				 get { return "esri_mapping_sceneIntegratedMeshLayerSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_LASDLayerSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_LASDLayerSelectedState {
+				 get { return "esri_mapping_LASDLayerSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_pointCloudLayerSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_pointCloudLayerSelectedState {
+				 get { return "esri_mapping_pointCloudLayerSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_singleTOCItemSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_singleTOCItemSelectedState {
+				 get { return "esri_mapping_singleTOCItemSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_all3DLayersSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_all3DLayersSelectedState {
+				 get { return "esri_mapping_all3DLayersSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_mapViewingMode3DPerspectiveState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_mapViewingMode3DPerspectiveState {
+				 get { return "esri_mapping_mapViewingMode3DPerspectiveState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_mapViewingMode3DGlobeState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_mapViewingMode3DGlobeState {
+				 get { return "esri_mapping_mapViewingMode3DGlobeState"; }
+			}
 			///<summary>Returns the id string for &quot;esri_mapping_subtypeValueLayerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_subtypeValueLayerSelectedState {
 				 get { return "esri_mapping_subtypeValueLayerSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_EDLEnabledState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_EDLEnabledState {
+				 get { return "esri_mapping_EDLEnabledState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_ElevationSourceSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_ElevationSourceSelectedState {
+				 get { return "esri_mapping_ElevationSourceSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_ElevationSurfaceSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_ElevationSurfaceSelectedState {
+				 get { return "esri_mapping_ElevationSurfaceSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_IsGroundSurfaceSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_IsGroundSurfaceSelectedState {
+				 get { return "esri_mapping_IsGroundSurfaceSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_PasteElevationSourceSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_PasteElevationSourceSelectedState {
+				 get { return "esri_mapping_PasteElevationSourceSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_PasteElevationSurfacesSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_PasteElevationSurfacesSelectedState {
+				 get { return "esri_mapping_PasteElevationSurfacesSelectedState"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_WfsLayerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_WfsLayerSelectedState {
 				 get { return "esri_mapping_WfsLayerSelectedState"; }
 			}
-			///<summary>Returns the id string for &quot;esri_mapping_FeatureLayerWithStreamServiceSelectedState&quot; (State, Mapping)</summary>
-			public static string esri_mapping_FeatureLayerWithStreamServiceSelectedState {
-				 get { return "esri_mapping_FeatureLayerWithStreamServiceSelectedState"; }
+			///<summary>Returns the id string for &quot;esri_mapping_streamLayerSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_streamLayerSelectedState {
+				 get { return "esri_mapping_streamLayerSelectedState"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_subtypeGroupLayerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_subtypeGroupLayerSelectedState {
@@ -13812,6 +17887,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_mapProjectItemState {
 				 get { return "esri_mapping_mapProjectItemState"; }
 			}
+			///<summary>Returns the id string for &quot;esri_mapping_findproviders_loaded&quot; (State, Mapping)</summary>
+			public static string esri_mapping_findproviders_loaded {
+				 get { return "esri_mapping_findproviders_loaded"; }
+			}
 			///<summary>Returns the id string for &quot;esri_mapping_layerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_layerSelectedState {
 				 get { return "esri_mapping_layerSelectedState"; }
@@ -13824,9 +17903,25 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_groupLayerSelectedState {
 				 get { return "esri_mapping_groupLayerSelectedState"; }
 			}
-			///<summary>Returns the id string for &quot;esri_mapping_singleTOCItemSelectedState&quot; (State, Mapping)</summary>
-			public static string esri_mapping_singleTOCItemSelectedState {
-				 get { return "esri_mapping_singleTOCItemSelectedState"; }
+			///<summary>Returns the id string for &quot;esri_mapping_annotationSubLayerSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_annotationSubLayerSelectedState {
+				 get { return "esri_mapping_annotationSubLayerSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_multipleLayersSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_multipleLayersSelectedState {
+				 get { return "esri_mapping_multipleLayersSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_rasterLayerSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_rasterLayerSelectedState {
+				 get { return "esri_mapping_rasterLayerSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_mosaicLayerSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_mosaicLayerSelectedState {
+				 get { return "esri_mapping_mosaicLayerSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_imageServiceLayerSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_imageServiceLayerSelectedState {
+				 get { return "esri_mapping_imageServiceLayerSelectedState"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_annotationLayerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_annotationLayerSelectedState {
@@ -13836,9 +17931,21 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_mapMemberSelectedIsArchiveEnabledState {
 				 get { return "esri_mapping_mapMemberSelectedIsArchiveEnabledState"; }
 			}
+			///<summary>Returns the id string for &quot;esri_mapping_mapMemberSelectedSupportsGdbValidationState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_mapMemberSelectedSupportsGdbValidationState {
+				 get { return "esri_mapping_mapMemberSelectedSupportsGdbValidationState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_mapTypeNetworkDiagramState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_mapTypeNetworkDiagramState {
+				 get { return "esri_mapping_mapTypeNetworkDiagramState"; }
+			}
 			///<summary>Returns the id string for &quot;esri_mapping_dataLayerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_dataLayerSelectedState {
 				 get { return "esri_mapping_dataLayerSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_mapTypeBasemapState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_mapTypeBasemapState {
+				 get { return "esri_mapping_mapTypeBasemapState"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_NALayerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_NALayerSelectedState {
@@ -13848,9 +17955,9 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_NALayerSublayerSelectedState {
 				 get { return "esri_mapping_NALayerSublayerSelectedState"; }
 			}
-			///<summary>Returns the id string for &quot;esri_mapping_utilityNetworkLayerSelectedState&quot; (State, Mapping)</summary>
-			public static string esri_mapping_utilityNetworkLayerSelectedState {
-				 get { return "esri_mapping_utilityNetworkLayerSelectedState"; }
+			///<summary>Returns the id string for &quot;esri_map_utilityNetwork&quot; (State, Mapping)</summary>
+			public static string esri_map_utilityNetwork {
+				 get { return "esri_map_utilityNetwork"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_mosaicSublayerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_mosaicSublayerSelectedState {
@@ -13859,6 +17966,10 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_mapping_ParcelFabricLayerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_ParcelFabricLayerSelectedState {
 				 get { return "esri_mapping_ParcelFabricLayerSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_stereoMapState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_stereoMapState {
+				 get { return "esri_mapping_stereoMapState"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_compositeSublayerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_compositeSublayerSelectedState {
@@ -13904,9 +18015,9 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_TOCSupportsGroupLayersState {
 				 get { return "esri_mapping_TOCSupportsGroupLayersState"; }
 			}
-			///<summary>Returns the id string for &quot;esri_mapping_multipleLayersSelectedState&quot; (State, Mapping)</summary>
-			public static string esri_mapping_multipleLayersSelectedState {
-				 get { return "esri_mapping_multipleLayersSelectedState"; }
+			///<summary>Returns the id string for &quot;esri_mapping_selectedLayersCanBeGroupedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_selectedLayersCanBeGroupedState {
+				 get { return "esri_mapping_selectedLayersCanBeGroupedState"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_layersWithDifferentParentsSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_layersWithDifferentParentsSelectedState {
@@ -13935,14 +18046,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_mapping_legendClassSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_legendClassSelectedState {
 				 get { return "esri_mapping_legendClassSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_mapViewingMode3DPerspectiveState&quot; (State, Mapping)</summary>
-			public static string esri_mapping_mapViewingMode3DPerspectiveState {
-				 get { return "esri_mapping_mapViewingMode3DPerspectiveState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_mapViewingMode3DGlobeState&quot; (State, Mapping)</summary>
-			public static string esri_mapping_mapViewingMode3DGlobeState {
-				 get { return "esri_mapping_mapViewingMode3DGlobeState"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_symbologyPaneVisibility&quot; (State, Mapping)</summary>
 			public static string esri_mapping_symbologyPaneVisibility {
@@ -14020,6 +18123,14 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_subtypesView_redoState {
 				 get { return "esri_mapping_subtypesView_redoState"; }
 			}
+			///<summary>Returns the id string for &quot;esri_mapping_domainsView_canEditDomains&quot; (State, Mapping)</summary>
+			public static string esri_mapping_domainsView_canEditDomains {
+				 get { return "esri_mapping_domainsView_canEditDomains"; }
+			}
+			///<summary>Returns the id string for &quot;esri_dataSource_isFileGDBState&quot; (State, Mapping)</summary>
+			public static string esri_dataSource_isFileGDBState {
+				 get { return "esri_dataSource_isFileGDBState"; }
+			}
 			///<summary>Returns the id string for &quot;esri_mapping_domainsView_selectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_domainsView_selectedState {
 				 get { return "esri_mapping_domainsView_selectedState"; }
@@ -14027,10 +18138,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_mapping_domainsView_copiedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_domainsView_copiedState {
 				 get { return "esri_mapping_domainsView_copiedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_dataSource_isFileGDBState&quot; (State, Mapping)</summary>
-			public static string esri_dataSource_isFileGDBState {
-				 get { return "esri_dataSource_isFileGDBState"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_domainsView_cutState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_domainsView_cutState {
@@ -14068,6 +18175,42 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_domainsView_hasEditsState {
 				 get { return "esri_mapping_domainsView_hasEditsState"; }
 			}
+			///<summary>Returns the id string for &quot;esri_designview_supportsattributerulesediting&quot; (State, Mapping)</summary>
+			public static string esri_designview_supportsattributerulesediting {
+				 get { return "esri_designview_supportsattributerulesediting"; }
+			}
+			///<summary>Returns the id string for &quot;esri_designview_supportsattributerulesviewing&quot; (State, Mapping)</summary>
+			public static string esri_designview_supportsattributerulesviewing {
+				 get { return "esri_designview_supportsattributerulesviewing"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_attributeRulesView_readOnly&quot; (State, Mapping)</summary>
+			public static string esri_mapping_attributeRulesView_readOnly {
+				 get { return "esri_mapping_attributeRulesView_readOnly"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_attributeRulesPane_ruleSelected&quot; (State, Mapping)</summary>
+			public static string esri_mapping_attributeRulesPane_ruleSelected {
+				 get { return "esri_mapping_attributeRulesPane_ruleSelected"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_attributeRulesPane_canExport&quot; (State, Mapping)</summary>
+			public static string esri_mapping_attributeRulesPane_canExport {
+				 get { return "esri_mapping_attributeRulesPane_canExport"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_attributeRulesView_disabled&quot; (State, Mapping)</summary>
+			public static string esri_mapping_attributeRulesView_disabled {
+				 get { return "esri_mapping_attributeRulesView_disabled"; }
+			}
+			///<summary>Returns the id string for &quot;esri_license_hasReviewerExtensionLicenseState&quot; (State, Mapping)</summary>
+			public static string esri_license_hasReviewerExtensionLicenseState {
+				 get { return "esri_license_hasReviewerExtensionLicenseState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_designview_supportscontingentvaluesediting&quot; (State, Mapping)</summary>
+			public static string esri_designview_supportscontingentvaluesediting {
+				 get { return "esri_designview_supportscontingentvaluesediting"; }
+			}
+			///<summary>Returns the id string for &quot;esri_designview_supportscontingentvaluesviewing&quot; (State, Mapping)</summary>
+			public static string esri_designview_supportscontingentvaluesviewing {
+				 get { return "esri_designview_supportscontingentvaluesviewing"; }
+			}
 			///<summary>Returns the id string for &quot;esri_mapping_versionsView_hasEditsState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_versionsView_hasEditsState {
 				 get { return "esri_mapping_versionsView_hasEditsState"; }
@@ -14084,33 +18227,37 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_versionsView_deleteState {
 				 get { return "esri_mapping_versionsView_deleteState"; }
 			}
-			///<summary>Returns the id string for &quot;esri_mapping_stereoMapState&quot; (State, Mapping)</summary>
-			public static string esri_mapping_stereoMapState {
-				 get { return "esri_mapping_stereoMapState"; }
+			///<summary>Returns the id string for &quot;esri_mapping_attributeRulesView_hasEditsState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_attributeRulesView_hasEditsState {
+				 get { return "esri_mapping_attributeRulesView_hasEditsState"; }
 			}
-			///<summary>Returns the id string for &quot;esri_mapping_mapTypeNetworkDiagramState&quot; (State, Mapping)</summary>
-			public static string esri_mapping_mapTypeNetworkDiagramState {
-				 get { return "esri_mapping_mapTypeNetworkDiagramState"; }
+			///<summary>Returns the id string for &quot;esri_mapping_contingentValuesView_hasEditsState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_contingentValuesView_hasEditsState {
+				 get { return "esri_mapping_contingentValuesView_hasEditsState"; }
 			}
-			///<summary>Returns the id string for &quot;esri_mapping_mosaicLayerSelectedState&quot; (State, Mapping)</summary>
-			public static string esri_mapping_mosaicLayerSelectedState {
-				 get { return "esri_mapping_mosaicLayerSelectedState"; }
+			///<summary>Returns the id string for &quot;esri_mapping_contingentValuesView_canRetireContingentValueState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_contingentValuesView_canRetireContingentValueState {
+				 get { return "esri_mapping_contingentValuesView_canRetireContingentValueState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_contingentValuesView_canAddContingentValueState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_contingentValuesView_canAddContingentValueState {
+				 get { return "esri_mapping_contingentValuesView_canAddContingentValueState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_contingentValuesView_canOpenSubtypes&quot; (State, Mapping)</summary>
+			public static string esri_mapping_contingentValuesView_canOpenSubtypes {
+				 get { return "esri_mapping_contingentValuesView_canOpenSubtypes"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_imageServiceLayerWithTableSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_imageServiceLayerWithTableSelectedState {
 				 get { return "esri_mapping_imageServiceLayerWithTableSelectedState"; }
 			}
+			///<summary>Returns the id string for &quot;esri_mapping_streamLayersSupportTrackLinesSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_streamLayersSupportTrackLinesSelectedState {
+				 get { return "esri_mapping_streamLayersSupportTrackLinesSelectedState"; }
+			}
 			///<summary>Returns the id string for &quot;esri_mapping_dimensionLayerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_dimensionLayerSelectedState {
 				 get { return "esri_mapping_dimensionLayerSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_scenePointLayerSelectedState&quot; (State, Mapping)</summary>
-			public static string esri_mapping_scenePointLayerSelectedState {
-				 get { return "esri_mapping_scenePointLayerSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_scene3DObjectLayerSelectedState&quot; (State, Mapping)</summary>
-			public static string esri_mapping_scene3DObjectLayerSelectedState {
-				 get { return "esri_mapping_scene3DObjectLayerSelectedState"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_KMLLayerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_KMLLayerSelectedState {
@@ -14120,9 +18267,13 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_sceneLayerSelectedState {
 				 get { return "esri_mapping_sceneLayerSelectedState"; }
 			}
-			///<summary>Returns the id string for &quot;esri_mapping_StreamLayerEnabled&quot; (State, Mapping)</summary>
-			public static string esri_mapping_StreamLayerEnabled {
-				 get { return "esri_mapping_StreamLayerEnabled"; }
+			///<summary>Returns the id string for &quot;esri_mapping_buildingSceneLayerSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_buildingSceneLayerSelectedState {
+				 get { return "esri_mapping_buildingSceneLayerSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_streamLayersWithTrackIdSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_streamLayersWithTrackIdSelectedState {
+				 get { return "esri_mapping_streamLayersWithTrackIdSelectedState"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_cadLayerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_cadLayerSelectedState {
@@ -14136,10 +18287,6 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_singleLabelClassSelectedState {
 				 get { return "esri_mapping_singleLabelClassSelectedState"; }
 			}
-			///<summary>Returns the id string for &quot;esri_mapping_all3DLayersSelectedState&quot; (State, Mapping)</summary>
-			public static string esri_mapping_all3DLayersSelectedState {
-				 get { return "esri_mapping_all3DLayersSelectedState"; }
-			}
 			///<summary>Returns the id string for &quot;esri_mapping_all2DLayersSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_all2DLayersSelectedState {
 				 get { return "esri_mapping_all2DLayersSelectedState"; }
@@ -14147,10 +18294,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_mapping_isSubtypeValueLayerIn2DCategoryState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_isSubtypeValueLayerIn2DCategoryState {
 				 get { return "esri_mapping_isSubtypeValueLayerIn2DCategoryState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_sceneIntegratedMeshLayerSelectedState&quot; (State, Mapping)</summary>
-			public static string esri_mapping_sceneIntegratedMeshLayerSelectedState {
-				 get { return "esri_mapping_sceneIntegratedMeshLayerSelectedState"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_layerExtrusionDisabled&quot; (State, Mapping)</summary>
 			public static string esri_mapping_layerExtrusionDisabled {
@@ -14164,10 +18307,6 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_netcdfRasterDataConnectionSelectedState {
 				 get { return "esri_mapping_netcdfRasterDataConnectionSelectedState"; }
 			}
-			///<summary>Returns the id string for &quot;esri_mapping_imageServiceLayerSelectedState&quot; (State, Mapping)</summary>
-			public static string esri_mapping_imageServiceLayerSelectedState {
-				 get { return "esri_mapping_imageServiceLayerSelectedState"; }
-			}
 			///<summary>Returns the id string for &quot;esri_mapping_mosaicImageSublayerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_mosaicImageSublayerSelectedState {
 				 get { return "esri_mapping_mosaicImageSublayerSelectedState"; }
@@ -14175,10 +18314,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_mapping_cachedImageServiceLayerSelectedState&quot; (State, Mapping)</summary>
 			public static string esri_mapping_cachedImageServiceLayerSelectedState {
 				 get { return "esri_mapping_cachedImageServiceLayerSelectedState"; }
-			}
-			///<summary>Returns the id string for &quot;esri_mapping_rasterLayerSelectedState&quot; (State, Mapping)</summary>
-			public static string esri_mapping_rasterLayerSelectedState {
-				 get { return "esri_mapping_rasterLayerSelectedState"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_rasterSymbologyPaneVisibility&quot; (State, Mapping)</summary>
 			public static string esri_mapping_rasterSymbologyPaneVisibility {
@@ -14248,8 +18383,50 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_mapHasAtLeastOneSyncableLayerState {
 				 get { return "esri_mapping_mapHasAtLeastOneSyncableLayerState"; }
 			}
+			///<summary>Returns the id string for &quot;esri_activeGeoreferenceSessionState&quot; (State, Mapping)</summary>
+			public static string esri_activeGeoreferenceSessionState {
+				 get { return "esri_activeGeoreferenceSessionState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_activeGeoreferenceSessionStateVisible&quot; (State, Mapping)</summary>
+			public static string esri_activeGeoreferenceSessionStateVisible {
+				 get { return "esri_activeGeoreferenceSessionStateVisible"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_bimLayerSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_bimLayerSelectedState {
+				 get { return "esri_mapping_bimLayerSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_bimCompositeLayerSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_bimCompositeLayerSelectedState {
+				 get { return "esri_mapping_bimCompositeLayerSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_binningLayerSelectedState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_binningLayerSelectedState {
+				 get { return "esri_mapping_binningLayerSelectedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_activeMapHasBookmarksState&quot; (State, Mapping)</summary>
+			public static string esri_mapping_activeMapHasBookmarksState {
+				 get { return "esri_mapping_activeMapHasBookmarksState"; }
+			}
+		}
+		public static partial class Subgroup {
+			///<summary>Returns the id string for &quot;esri_mapping_mapSubGroup&quot; (Subgroup, Mapping)</summary>
+			public static string esri_mapping_mapSubGroup {
+				 get { return "esri_mapping_mapSubGroup"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_designView_editBtns&quot; (Subgroup, Mapping)</summary>
+			public static string esri_mapping_designView_editBtns {
+				 get { return "esri_mapping_designView_editBtns"; }
+			}
 		}
 		public static partial class Tab {
+			///<summary>Returns the id string for &quot;Styles&quot; (Tab, Mapping)</summary>
+			public static string esri_mapping_StylesTab {
+				 get { return "esri_mapping_StylesTab"; }
+			}
+			///<summary>Returns the id string for &quot;Mapping&quot; (Tab, Mapping)</summary>
+			public static string esri_mapping_MapContainer {
+				 get { return "esri_mapping_MapContainer"; }
+			}
 			///<summary>Returns the id string for &quot;View&quot; (Tab, Mapping)</summary>
 			public static string esri_mapping_tableTab {
 				 get { return "esri_mapping_tableTab"; }
@@ -14269,6 +18446,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Versions&quot; (Tab, Mapping)</summary>
 			public static string esri_mapping_homeVersionManagerViewTab {
 				 get { return "esri_mapping_homeVersionManagerViewTab"; }
+			}
+			///<summary>Returns the id string for &quot;Attribute Rules&quot; (Tab, Mapping)</summary>
+			public static string esri_mapping_homeAttributeRulesViewTab {
+				 get { return "esri_mapping_homeAttributeRulesViewTab"; }
+			}
+			///<summary>Returns the id string for &quot;Contingent Values&quot; (Tab, Mapping)</summary>
+			public static string esri_mapping_homeContingentValuesViewTab {
+				 get { return "esri_mapping_homeContingentValuesViewTab"; }
 			}
 			///<summary>Returns the id string for &quot;Map&quot; (Tab, Mapping)</summary>
 			public static string esri_mapping_homeTab {
@@ -14310,6 +18495,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_streamLayerAppearanceTab {
 				 get { return "esri_mapping_streamLayerAppearanceTab"; }
 			}
+			///<summary>Returns the id string for &quot;Appearance&quot; (Tab, Mapping)</summary>
+			public static string esri_mapping_streamLayerWithTrackIdAppearanceTab {
+				 get { return "esri_mapping_streamLayerWithTrackIdAppearanceTab"; }
+			}
 			///<summary>Returns the id string for &quot;Labeling&quot; (Tab, Mapping)</summary>
 			public static string esri_mapping_streamLayerLabelingTab {
 				 get { return "esri_mapping_streamLayerLabelingTab"; }
@@ -14329,10 +18518,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Data&quot; (Tab, Mapping)</summary>
 			public static string esri_mapping_featureLayerDataTab {
 				 get { return "esri_mapping_featureLayerDataTab"; }
-			}
-			///<summary>Returns the id string for &quot;Tools&quot; (Tab, Mapping)</summary>
-			public static string esri_mapping_featureLayerCadTab {
-				 get { return "esri_mapping_featureLayerCadTab"; }
 			}
 			///<summary>Returns the id string for &quot;Data&quot; (Tab, Mapping)</summary>
 			public static string esri_mapping_dataLayerDataTab {
@@ -14383,8 +18568,8 @@ namespace ArcGIS.Desktop.Framework {
 				 get { return "esri_mapping_imageServiceLayerAppearanceTab"; }
 			}
 			///<summary>Returns the id string for &quot;Data&quot; (Tab, Mapping)</summary>
-			public static string esri_mapping_imageserviceLayerDataTab {
-				 get { return "esri_mapping_imageserviceLayerDataTab"; }
+			public static string esri_mapping_imageServiceLayerDataTab {
+				 get { return "esri_mapping_imageServiceLayerDataTab"; }
 			}
 			///<summary>Returns the id string for &quot;Appearance&quot; (Tab, Mapping)</summary>
 			public static string esri_mapping_mixedLayerAppearanceTab {
@@ -14410,6 +18595,10 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_vectorTileLayerAppearanceTab {
 				 get { return "esri_mapping_vectorTileLayerAppearanceTab"; }
 			}
+			///<summary>Returns the id string for &quot;Manage&quot; (Tab, Mapping)</summary>
+			public static string esri_mapping_buildingSceneLayerDataTab {
+				 get { return "esri_mapping_buildingSceneLayerDataTab"; }
+			}
 			///<summary>Returns the id string for &quot;Appearance&quot; (Tab, Mapping)</summary>
 			public static string esri_mapping_sceneLayerAppearanceTab {
 				 get { return "esri_mapping_sceneLayerAppearanceTab"; }
@@ -14422,8 +18611,40 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_integratedMeshLayerAppearanceTab {
 				 get { return "esri_mapping_integratedMeshLayerAppearanceTab"; }
 			}
+			///<summary>Returns the id string for &quot;Appearance&quot; (Tab, Mapping)</summary>
+			public static string esri_mapping_elevationSurfacesAppearanceTab {
+				 get { return "esri_mapping_elevationSurfacesAppearanceTab"; }
+			}
+			///<summary>Returns the id string for &quot;Georeference&quot; (Tab, Mapping)</summary>
+			public static string esri_mapping_georeference_GeoreferenceTab {
+				 get { return "esri_mapping_georeference_GeoreferenceTab"; }
+			}
+			///<summary>Returns the id string for &quot;Manage&quot; (Tab, Mapping)</summary>
+			public static string esri_mapping_featureLayerCadTab {
+				 get { return "esri_mapping_featureLayerCadTab"; }
+			}
+			///<summary>Returns the id string for &quot;Manage&quot; (Tab, Mapping)</summary>
+			public static string esri_mapping_BimContextualTab {
+				 get { return "esri_mapping_BimContextualTab"; }
+			}
+			///<summary>Returns the id string for &quot;Manage&quot; (Tab, Mapping)</summary>
+			public static string esri_mapping_BimCompositeContextualTab {
+				 get { return "esri_mapping_BimCompositeContextualTab"; }
+			}
+			///<summary>Returns the id string for &quot;Bin&quot; (Tab, Mapping)</summary>
+			public static string esri_mapping_binContextualTab {
+				 get { return "esri_mapping_binContextualTab"; }
+			}
+			///<summary>Returns the id string for &quot;Appearance&quot; (Tab, Mapping)</summary>
+			public static string esri_mapping_pointCloudLayerAppearanceTab {
+				 get { return "esri_mapping_pointCloudLayerAppearanceTab"; }
+			}
 		}
 		public static partial class Tabgroup {
+			///<summary>Returns the id string for &quot;Point Cloud Layer&quot; (Tabgroup, Mapping)</summary>
+			public static string esri_mapping_pointCloudLayerTabGroup {
+				 get { return "esri_mapping_pointCloudLayerTabGroup"; }
+			}
 			///<summary>Returns the id string for &quot;Table&quot; (Tabgroup, Mapping)</summary>
 			public static string esri_mapping_TableViewTabGroup {
 				 get { return "esri_mapping_TableViewTabGroup"; }
@@ -14443,10 +18664,6 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;Subtype Group Layer&quot; (Tabgroup, Mapping)</summary>
 			public static string esri_mapping_subtypeGroupLayerTabGroup {
 				 get { return "esri_mapping_subtypeGroupLayerTabGroup"; }
-			}
-			///<summary>Returns the id string for &quot;CAD Layer&quot; (Tabgroup, Mapping)</summary>
-			public static string esri_mapping_cadLayerTabGroup {
-				 get { return "esri_mapping_cadLayerTabGroup"; }
 			}
 			///<summary>Returns the id string for &quot;Data Source&quot; (Tabgroup, Mapping)</summary>
 			public static string esri_mapping_DataSourceTabGroup {
@@ -14500,15 +18717,47 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_vectorTileLayerTabGroup {
 				 get { return "esri_mapping_vectorTileLayerTabGroup"; }
 			}
+			///<summary>Returns the id string for &quot;Building Scene Layer&quot; (Tabgroup, Mapping)</summary>
+			public static string esri_mapping_buildingSceneLayerTabGroup {
+				 get { return "esri_mapping_buildingSceneLayerTabGroup"; }
+			}
 			///<summary>Returns the id string for &quot;Scene Layer&quot; (Tabgroup, Mapping)</summary>
 			public static string esri_mapping_sceneLayerTabGroup {
 				 get { return "esri_mapping_sceneLayerTabGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Elevation Surface&quot; (Tabgroup, Mapping)</summary>
+			public static string esri_mapping_elevationSurfaceTabGroup {
+				 get { return "esri_mapping_elevationSurfaceTabGroup"; }
+			}
+			///<summary>Returns the id string for &quot;CAD Layer&quot; (Tabgroup, Mapping)</summary>
+			public static string esri_mapping_cadLayerTabGroup {
+				 get { return "esri_mapping_cadLayerTabGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Building&quot; (Tabgroup, Mapping)</summary>
+			public static string esri_mapping_bimLayerTabGroup {
+				 get { return "esri_mapping_bimLayerTabGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Manage&quot; (Tabgroup, Mapping)</summary>
+			public static string esri_mapping_StyleTabGroup {
+				 get { return "esri_mapping_StyleTabGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Manage&quot; (Tabgroup, Mapping)</summary>
+			public static string esri_mapping_MappingTabGroup {
+				 get { return "esri_mapping_MappingTabGroup"; }
+			}
+			///<summary>Returns the id string for &quot;Binning&quot; (Tabgroup, Mapping)</summary>
+			public static string esri_mapping_BinningTabGroup {
+				 get { return "esri_mapping_BinningTabGroup"; }
 			}
 		}
 		public static partial class Tool {
 			///<summary>Returns the id string for &quot;Explore&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.ExploreTool, Mapping)</summary>
 			public static string esri_mapping_exploreTool {
 				 get { return "esri_mapping_exploreTool"; }
+			}
+			///<summary>Returns the id string for &quot;Rectangle Zoom&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.RectangleZoomTool, Mapping)</summary>
+			public static string esri_mapping_rectangleZoom {
+				 get { return "esri_mapping_rectangleZoom"; }
 			}
 			///<summary>Returns the id string for &quot;Rectangle&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.SelectTool, Mapping)</summary>
 			public static string esri_mapping_selectByRectangleTool {
@@ -14554,10 +18803,6 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_selectLasPointsByLineTool {
 				 get { return "esri_mapping_selectLasPointsByLineTool"; }
 			}
-			///<summary>Returns the id string for &quot;Graphical Select&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.GraphicalSelectTool, Mapping)</summary>
-			public static string esri_mapping_graphicalSelectTool {
-				 get { return "esri_mapping_graphicalSelectTool"; }
-			}
 			///<summary>Returns the id string for &quot;Measure Distance&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.MeasureDistanceTool, Mapping)</summary>
 			public static string esri_mapping_measureDistanceTool {
 				 get { return "esri_mapping_measureDistanceTool"; }
@@ -14598,6 +18843,30 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_threatDomeTool {
 				 get { return "esri_mapping_threatDomeTool"; }
 			}
+			///<summary>Returns the id string for &quot;Slice Rectangle&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.InteractiveSliceRectTool, Mapping)</summary>
+			public static string esri_mapping_sliceRectTool {
+				 get { return "esri_mapping_sliceRectTool"; }
+			}
+			///<summary>Returns the id string for &quot;Slice Box&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.InteractiveSliceBoxTool, Mapping)</summary>
+			public static string esri_mapping_sliceBoxTool {
+				 get { return "esri_mapping_sliceBoxTool"; }
+			}
+			///<summary>Returns the id string for &quot;Slice Cylinder&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.InteractiveSliceCylinderTool, Mapping)</summary>
+			public static string esri_mapping_sliceCylinderTool {
+				 get { return "esri_mapping_sliceCylinderTool"; }
+			}
+			///<summary>Returns the id string for &quot;Slice Sphere&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.InteractiveSliceSphereTool, Mapping)</summary>
+			public static string esri_mapping_sliceSphereTool {
+				 get { return "esri_mapping_sliceSphereTool"; }
+			}
+			///<summary>Returns the id string for &quot;Cut and Fill&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.InteractiveCutFillTool, Mapping)</summary>
+			public static string esri_mapping_cutFillTool {
+				 get { return "esri_mapping_cutFillTool"; }
+			}
+			///<summary>Returns the id string for &quot;Create&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.CreateProfileTool, Mapping)</summary>
+			public static string esri_mapping_createProfileViewTool {
+				 get { return "esri_mapping_createProfileViewTool"; }
+			}
 			///<summary>Returns the id string for &quot;Rotate&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.RotateTool, Mapping)</summary>
 			public static string esri_mapping_rasterViewRotate {
 				 get { return "esri_mapping_rasterViewRotate"; }
@@ -14610,9 +18879,25 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_layerSwipeTool {
 				 get { return "esri_mapping_layerSwipeTool"; }
 			}
+			///<summary>Returns the id string for &quot;Swipe&quot; (ArcGIS.Desktop.Internal.Mapping.FeatureLayers.Ribbon.SwipeTool, Mapping)</summary>
+			public static string esri_mapping_elevationSurfaceSwipeTool {
+				 get { return "esri_mapping_elevationSurfaceSwipeTool"; }
+			}
 			///<summary>Returns the id string for &quot;Infographics&quot; (ArcGIS.Desktop.Internal.Mapping.Ribbon.InfographicTool, Mapping)</summary>
 			public static string esri_mapping_infographicTool {
 				 get { return "esri_mapping_infographicTool"; }
+			}
+			///<summary>Returns the id string for &quot;Move&quot; (Georeference.Tools.MoveTool, Mapping)</summary>
+			public static string esri_mapping_georeference_MoveButton {
+				 get { return "esri_mapping_georeference_MoveButton"; }
+			}
+			///<summary>Returns the id string for &quot;Scale&quot; (Georeference.Tools.ScaleTool, Mapping)</summary>
+			public static string esri_mapping_georeference_ScaleButton {
+				 get { return "esri_mapping_georeference_ScaleButton"; }
+			}
+			///<summary>Returns the id string for &quot;Rotate&quot; (Georeference.Tools.RotateTool, Mapping)</summary>
+			public static string esri_mapping_georeference_RotateButton {
+				 get { return "esri_mapping_georeference_RotateButton"; }
 			}
 		}
 		public static partial class Toolbar {
@@ -14632,9 +18917,13 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_labelClassExpressionToolbar {
 				 get { return "esri_mapping_labelClassExpressionToolbar"; }
 			}
-			///<summary>Returns the id string for &quot;esri_mapping_layerEffectsToolbar&quot; (Toolbar, Mapping)</summary>
-			public static string esri_mapping_layerEffectsToolbar {
-				 get { return "esri_mapping_layerEffectsToolbar"; }
+			///<summary>Returns the id string for &quot;esri_mapping_layerTransparencyToolbar&quot; (Toolbar, Mapping)</summary>
+			public static string esri_mapping_layerTransparencyToolbar {
+				 get { return "esri_mapping_layerTransparencyToolbar"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_layerFlickerToolbar&quot; (Toolbar, Mapping)</summary>
+			public static string esri_mapping_layerFlickerToolbar {
+				 get { return "esri_mapping_layerFlickerToolbar"; }
 			}
 			///<summary>Returns the id string for &quot;esri_mapping_layerExtrusionToolbar&quot; (Toolbar, Mapping)</summary>
 			public static string esri_mapping_layerExtrusionToolbar {
@@ -14647,6 +18936,14 @@ namespace ArcGIS.Desktop.Framework {
 			///<summary>Returns the id string for &quot;esri_mapping_rangeAliasLayerSourceToolbar&quot; (Toolbar, Mapping)</summary>
 			public static string esri_mapping_rangeAliasLayerSourceToolbar {
 				 get { return "esri_mapping_rangeAliasLayerSourceToolbar"; }
+			}
+			///<summary>Returns the id string for &quot;elevationSurfaceDrawingToolbar&quot; (Toolbar, Mapping)</summary>
+			public static string elevationSurfaceDrawingToolbar {
+				 get { return "elevationSurfaceDrawingToolbar"; }
+			}
+			///<summary>Returns the id string for &quot;elevationSurfaceRibbonToolbar&quot; (Toolbar, Mapping)</summary>
+			public static string elevationSurfaceRibbonToolbar {
+				 get { return "elevationSurfaceRibbonToolbar"; }
 			}
 		}
 		public static partial class Toolpalette {
@@ -14670,17 +18967,325 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_mapping_newStyleItem {
 				 get { return "esri_mapping_newStyleItem"; }
 			}
-			///<summary>Returns the id string for &quot;View &quot; (Toolpalette, Mapping)</summary>
-			public static string esri_mapping_styleViewToolPalette {
-				 get { return "esri_mapping_styleViewToolPalette"; }
-			}
-			///<summary>Returns the id string for &quot;Sort &quot; (Toolpalette, Mapping)</summary>
-			public static string esri_mapping_styleSortToolPalette {
-				 get { return "esri_mapping_styleSortToolPalette"; }
-			}
 			///<summary>Returns the id string for &quot;Measure&quot; (Toolpalette, Mapping)</summary>
 			public static string esri_mapping_measureToolPalette {
 				 get { return "esri_mapping_measureToolPalette"; }
+			}
+		}
+		public static partial class Button {
+			///<summary>Returns the id string for &quot;Current extent&quot; (esri_networkanalysis_utility_module:BuildAsyncCurrentExtent, Facility)</summary>
+			public static string esri_networkanalysis_validate_current_BuildTools_Btn {
+				 get { return "esri_networkanalysis_validate_current_BuildTools_Btn"; }
+			}
+			///<summary>Returns the id string for &quot;Entire extent&quot; (esri_networkanalysis_utility_module:BuildAsyncFullExtent, Facility)</summary>
+			public static string esri_networkanalysis_validate_entire_BuildTools_Btn {
+				 get { return "esri_networkanalysis_validate_entire_BuildTools_Btn"; }
+			}
+			///<summary>Returns the id string for &quot;Modify&quot; (esri_networkanalysis_utility_module:ShowModifyAssociationsWindow, Facility)</summary>
+			public static string esri_networkanalysis_ShowModifyAssociationsBtn {
+				 get { return "esri_networkanalysis_ShowModifyAssociationsBtn"; }
+			}
+			///<summary>Returns the id string for &quot;Show&quot; (esri_networkanalysis_utility_module:DisableDisplayFilters, Facility)</summary>
+			public static string esri_networkanalysis_ShowContentBtn {
+				 get { return "esri_networkanalysis_ShowContentBtn"; }
+			}
+			///<summary>Returns the id string for &quot;Hide&quot; (esri_networkanalysis_utility_module:EnableDisplayFilters, Facility)</summary>
+			public static string esri_networkanalysis_HideContentBtn {
+				 get { return "esri_networkanalysis_HideContentBtn"; }
+			}
+			///<summary>Returns the id string for &quot;Customize...&quot; (Ribbon.UtilityNetworkGalleryCustomizeButton, Facility)</summary>
+			public static string esri_utilitynetwork_ShowCustomizeGallery {
+				 get { return "esri_utilitynetwork_ShowCustomizeGallery"; }
+			}
+			///<summary>Returns the id string for &quot;Find&quot; (esri_networkanalysis_utility_module:ShowFindSubnetworksWindow, Facility)</summary>
+			public static string esri_networkanalysis_utility_FindSubnetworks_Btn {
+				 get { return "esri_networkanalysis_utility_FindSubnetworks_Btn"; }
+			}
+			///<summary>Returns the id string for &quot;View&quot; (ArcGIS.Desktop.NetworkAnalysis.Facility.Tools.ViewSubnetworksButton, Facility)</summary>
+			public static string esri_networkanalysis_utility_ViewSubnetworks_Btn {
+				 get { return "esri_networkanalysis_utility_ViewSubnetworks_Btn"; }
+			}
+			///<summary>Returns the id string for &quot;Modify Controller&quot; (esri_networkanalysis_utility_module:ShowModifySourceWindow, Facility)</summary>
+			public static string esri_networkanalysis_utility_ShowModifySourceBtn {
+				 get { return "esri_networkanalysis_utility_ShowModifySourceBtn"; }
+			}
+			///<summary>Returns the id string for &quot;Exit Containment&quot; (ArcGIS.Desktop.NetworkAnalysis.Facility.EnableContainerEditModeButton, Facility)</summary>
+			public static string esri_networkanalysis_utility_Container_EditMode_Btn {
+				 get { return "esri_networkanalysis_utility_Container_EditMode_Btn"; }
+			}
+			///<summary>Returns the id string for &quot;View&quot; (ArcGIS.Desktop.NetworkAnalysis.Facility.ViewAssociationsModeButton, Facility)</summary>
+			public static string esri_networkanalysis_utility_View_Associations_Mode_Btn {
+				 get { return "esri_networkanalysis_utility_View_Associations_Mode_Btn"; }
+			}
+			///<summary>Returns the id string for &quot;View Associations Options&quot; (ArcGIS.Desktop.NetworkAnalysis.Facility.ViewAssociationsSettingsButton, Facility)</summary>
+			public static string esri_networkanalysis_utility_View_Associations_Settings_Btn {
+				 get { return "esri_networkanalysis_utility_View_Associations_Settings_Btn"; }
+			}
+			///<summary>Returns the id string for &quot;Zoom&quot; (Tools.ZoomToNetworkElement, Facility)</summary>
+			public static string esri_networkanalysis_utility_ZoomTo_NetworkElement {
+				 get { return "esri_networkanalysis_utility_ZoomTo_NetworkElement"; }
+			}
+			///<summary>Returns the id string for &quot;Starting Points&quot; (esri_networkanalysis_utility_module:ShowModifyStartingPointsWindow, Facility)</summary>
+			public static string esri_networkanalysis_trace_ShowSetStartingPointsBtn {
+				 get { return "esri_networkanalysis_trace_ShowSetStartingPointsBtn"; }
+			}
+			///<summary>Returns the id string for &quot;Barriers&quot; (esri_networkanalysis_utility_module:ShowModifyBarriersWindow, Facility)</summary>
+			public static string esri_networkanalysis_trace_ShowSetBarriersBtn {
+				 get { return "esri_networkanalysis_trace_ShowSetBarriersBtn"; }
+			}
+			///<summary>Returns the id string for &quot;Clear All&quot; (esri_networkanalysis_utility_module:ClearAllTraceLocations, Facility)</summary>
+			public static string esri_networkanalysis_trace_ClearAllBtn {
+				 get { return "esri_networkanalysis_trace_ClearAllBtn"; }
+			}
+			///<summary>Returns the id string for &quot;Apply To Maps&quot; (Tools.PropagateSelectionButton, Facility)</summary>
+			public static string esri_networkanalysis_utility_ApplySelection_Btn {
+				 get { return "esri_networkanalysis_utility_ApplySelection_Btn"; }
+			}
+			///<summary>Returns the id string for &quot;Terminal Paths&quot; (esri_networkanalysis_utility_module:ShowModifyDeviceTerminalWindow, Facility)</summary>
+			public static string esri_networkanalysis_ShowModifyDeviceBtn {
+				 get { return "esri_networkanalysis_ShowModifyDeviceBtn"; }
+			}
+			///<summary>Returns the id string for &quot;Terminal Connections&quot; (esri_networkanalysis_utility_module:ShowModifyTerminalConnectionsWindow, Facility)</summary>
+			public static string esri_networkanalysis_ShowModifyConnectionBtn {
+				 get { return "esri_networkanalysis_ShowModifyConnectionBtn"; }
+			}
+		}
+		public static partial class Buttonpalette {
+			///<summary>Returns the id string for &quot;Cross Section&quot; (Buttonpalette, Facility)</summary>
+			public static string esri_networkanalysis_utility_CrossSection_BtnPalette {
+				 get { return "esri_networkanalysis_utility_CrossSection_BtnPalette"; }
+			}
+		}
+		public static partial class Dockpane {
+			///<summary>Returns the id string for &quot;Modify Associations&quot; (ModifyAssociationsViewModel, Facility)</summary>
+			public static string esri_networkanalysis_utility_ModifyAssociationsPane {
+				 get { return "esri_networkanalysis_utility_ModifyAssociationsPane"; }
+			}
+			///<summary>Returns the id string for &quot;Trace Locations&quot; (ModifyStartingPointsAndBarriersViewModel, Facility)</summary>
+			public static string esri_networkanalysis_utility_ModifyStartingPointsAndBarriersPane {
+				 get { return "esri_networkanalysis_utility_ModifyStartingPointsAndBarriersPane"; }
+			}
+			///<summary>Returns the id string for &quot;Modify Subnetwork Controller&quot; (ModifySourceViewModel, Facility)</summary>
+			public static string esri_networkanalysis_utility_ModifySourcePane {
+				 get { return "esri_networkanalysis_utility_ModifySourcePane"; }
+			}
+			///<summary>Returns the id string for &quot;Modify Terminal Paths&quot; (ModifyDeviceTerminalViewModel, Facility)</summary>
+			public static string esri_networkanalysis_utility_ModifyDeviceTerminalPane {
+				 get { return "esri_networkanalysis_utility_ModifyDeviceTerminalPane"; }
+			}
+			///<summary>Returns the id string for &quot;Modify Terminal Connections&quot; (ModifyTerminalConnectionsViewModel, Facility)</summary>
+			public static string esri_networkanalysis_utility_ModifyTerminalConnectionsPane {
+				 get { return "esri_networkanalysis_utility_ModifyTerminalConnectionsPane"; }
+			}
+			///<summary>Returns the id string for &quot;Find Subnetworks&quot; (FindSubnetworkViewModel, Facility)</summary>
+			public static string esri_networkanalysis_utility_FindSubnetworkPane {
+				 get { return "esri_networkanalysis_utility_FindSubnetworkPane"; }
+			}
+		}
+		public static partial class Gallery {
+			///<summary>Returns the id string for &quot;Utility Network Tool Gallery&quot; (Ribbon.UtilityNetworkGalleryViewModel, Facility)</summary>
+			public static string esri_networkanalysis_utility_ToolsGallery {
+				 get { return "esri_networkanalysis_utility_ToolsGallery"; }
+			}
+			///<summary>Returns the id string for &quot;Propagate Selection Gallery&quot; (Ribbon.NetworkToNetworkGalleryViewModel, Facility)</summary>
+			public static string esri_networkanalysis_utility_ApplySelectionGallery {
+				 get { return "esri_networkanalysis_utility_ApplySelectionGallery"; }
+			}
+		}
+		public static partial class Group {
+			///<summary>Returns the id string for &quot;Tools&quot; (Group, Facility)</summary>
+			public static string esri_networkanalysis_utility_Tools_Group {
+				 get { return "esri_networkanalysis_utility_Tools_Group"; }
+			}
+			///<summary>Returns the id string for &quot;Network Topology&quot; (Group, Facility)</summary>
+			public static string esri_networkanalysis_utility_Validate_Group {
+				 get { return "esri_networkanalysis_utility_Validate_Group"; }
+			}
+			///<summary>Returns the id string for &quot;Associations&quot; (Group, Facility)</summary>
+			public static string esri_networkanalysis_utility_Associations_Group {
+				 get { return "esri_networkanalysis_utility_Associations_Group"; }
+			}
+			///<summary>Returns the id string for &quot;Subnetwork&quot; (Group, Facility)</summary>
+			public static string esri_networkanalysis_utility_SubnetworkManagement_Group {
+				 get { return "esri_networkanalysis_utility_SubnetworkManagement_Group"; }
+			}
+			///<summary>Returns the id string for &quot;Selection&quot; (Group, Facility)</summary>
+			public static string esri_networkanalysis_utility_Selection_Group {
+				 get { return "esri_networkanalysis_utility_Selection_Group"; }
+			}
+		}
+		public static partial class Component {
+			///<summary>Returns the id string for &quot;esri_mapping_containmentView&quot; (ArcGIS.Desktop.NetworkAnalysis.Facility.ContainmentView, Facility)</summary>
+			public static string esri_mapping_containmentView {
+				 get { return "esri_mapping_containmentView"; }
+			}
+		}
+		public static partial class Condition {
+			///<summary>Returns the id string for &quot;Geographic map is active and utility network layer is selected&quot; (Condition, Facility)</summary>
+			public static string esri_networkanalysis_utility_TerminalConnections_Condition {
+				 get { return "esri_networkanalysis_utility_TerminalConnections_Condition"; }
+			}
+			///<summary>Returns the id string for &quot;Geographic map is active and utility network layer is selected&quot; (Condition, Facility)</summary>
+			public static string esri_networkanalysis_utility_ModifyAssociations_Condition {
+				 get { return "esri_networkanalysis_utility_ModifyAssociations_Condition"; }
+			}
+			///<summary>Returns the id string for &quot;Geographic map is active and utility network layer is selected&quot; (Condition, Facility)</summary>
+			public static string esri_networkanalysis_utility_DisplayContent_Condition {
+				 get { return "esri_networkanalysis_utility_DisplayContent_Condition"; }
+			}
+			///<summary>Returns the id string for &quot;Geographic map is active and utility network layer is selected&quot; (Condition, Facility)</summary>
+			public static string esri_networkanalysis_utility_ConnectivityInfoTool_Condition {
+				 get { return "esri_networkanalysis_utility_ConnectivityInfoTool_Condition"; }
+			}
+			///<summary>Returns the id string for &quot;Geographic map is active and utility network layer is feature service&quot; (Condition, Facility)</summary>
+			public static string esri_networkanalysis_utility_ValidateTool_Condition {
+				 get { return "esri_networkanalysis_utility_ValidateTool_Condition"; }
+			}
+			///<summary>Returns the id string for &quot;Geographic map is active and utility network layer is feature service&quot; (Condition, Facility)</summary>
+			public static string esri_networkanalysis_utility_TraceTool_Condition {
+				 get { return "esri_networkanalysis_utility_TraceTool_Condition"; }
+			}
+			///<summary>Returns the id string for &quot;Utility network layer is active and a selection exists&quot; (Condition, Facility)</summary>
+			public static string esri_networkanalysis_utility_OpenContainer_Condition {
+				 get { return "esri_networkanalysis_utility_OpenContainer_Condition"; }
+			}
+			///<summary>Returns the id string for &quot;Utility network layer has an active container&quot; (Condition, Facility)</summary>
+			public static string esri_networkanalysis_utility_Container_Activated_Condition {
+				 get { return "esri_networkanalysis_utility_Container_Activated_Condition"; }
+			}
+			///<summary>Returns the id string for &quot;Utility network layer is active and a selection exists&quot; (Condition, Facility)</summary>
+			public static string esri_networkanalysis_utility_PropagateSelection_Condition {
+				 get { return "esri_networkanalysis_utility_PropagateSelection_Condition"; }
+			}
+			///<summary>Returns the id string for &quot;Utility network layer is active and the map scale is valid.&quot; (Condition, Facility)</summary>
+			public static string esri_networkanalysis_utility_ViewAssociations_Condition {
+				 get { return "esri_networkanalysis_utility_ViewAssociations_Condition"; }
+			}
+		}
+		public static partial class Module {
+			///<summary>Returns the id string for &quot;Utility Network&quot; (NetworkAnalysisFacilityModule, Facility)</summary>
+			public static string esri_networkanalysis_utility_module {
+				 get { return "esri_networkanalysis_utility_module"; }
+			}
+		}
+		public static partial class Sheet {
+			///<summary>Returns the id string for &quot;Utility Network Options&quot; (Sheet, Facility)</summary>
+			public static string esri_utilityNetwork_optionsPropertySheet {
+				 get { return "esri_utilityNetwork_optionsPropertySheet"; }
+			}
+		}
+		public static partial class Page {
+			///<summary>Returns the id string for &quot;Network Diagrams&quot; (ArcGIS.Desktop.NetworkAnalysis.NetworkDiagrams.NetworkDiagramsOptionsViewModel, Facility)</summary>
+			public static string esri_networkDiagrams_optionsPropertyPage {
+				 get { return "esri_networkDiagrams_optionsPropertyPage"; }
+			}
+			///<summary>Returns the id string for &quot;Associations&quot; (AssociationsViewModel, Facility)</summary>
+			public static string esri_networkanalysis_optionsPropertyPage {
+				 get { return "esri_networkanalysis_optionsPropertyPage"; }
+			}
+		}
+		public static partial class Splitbutton {
+			///<summary>Returns the id string for &quot;esri_networkanalysis_utility_ApplySelectionSplitButton&quot; (Splitbutton, Facility)</summary>
+			public static string esri_networkanalysis_utility_ApplySelectionSplitButton {
+				 get { return "esri_networkanalysis_utility_ApplySelectionSplitButton"; }
+			}
+		}
+		public static partial class State {
+			///<summary>Returns the id string for &quot;esri_map_utilityNetworkFeatureService&quot; (State, Facility)</summary>
+			public static string esri_map_utilityNetworkFeatureService {
+				 get { return "esri_map_utilityNetworkFeatureService"; }
+			}
+			///<summary>Returns the id string for &quot;esri_mapping_mapMemberSelectedIsVersionedState&quot; (State, Facility)</summary>
+			public static string esri_mapping_mapMemberSelectedIsVersionedState {
+				 get { return "esri_mapping_mapMemberSelectedIsVersionedState"; }
+			}
+			///<summary>Returns the id string for &quot;esri_networkanalysis_utility_active_container_state&quot; (State, Facility)</summary>
+			public static string esri_networkanalysis_utility_active_container_state {
+				 get { return "esri_networkanalysis_utility_active_container_state"; }
+			}
+			///<summary>Returns the id string for &quot;esri_networkanalysis_utility_comingSoonState&quot; (State, Facility)</summary>
+			public static string esri_networkanalysis_utility_comingSoonState {
+				 get { return "esri_networkanalysis_utility_comingSoonState"; }
+			}
+		}
+		public static partial class Tab {
+			///<summary>Returns the id string for &quot;Data&quot; (Tab, Facility)</summary>
+			public static string esri_networkanalysis_utility_Data_Tab {
+				 get { return "esri_networkanalysis_utility_Data_Tab"; }
+			}
+		}
+		public static partial class Tabgroup {
+			///<summary>Returns the id string for &quot;Utility Network&quot; (Tabgroup, Facility)</summary>
+			public static string esri_networkanalysis_utility_TabGroup {
+				 get { return "esri_networkanalysis_utility_TabGroup"; }
+			}
+		}
+		public static partial class Tool {
+			///<summary>Returns the id string for &quot;Select junctions&quot; (Tools.SelectConnectionsTool, Facility)</summary>
+			public static string esri_networkanalysis_utility_associations_SelectConnectionsTool {
+				 get { return "esri_networkanalysis_utility_associations_SelectConnectionsTool"; }
+			}
+			///<summary>Returns the id string for &quot;Select junctions&quot; (Tools.SelectChildConnectionsTool, Facility)</summary>
+			public static string esri_networkanalysis_utility_associations_SelectChildConnectionsTool {
+				 get { return "esri_networkanalysis_utility_associations_SelectChildConnectionsTool"; }
+			}
+			///<summary>Returns the id string for &quot;Select containers&quot; (Tools.SelectContainersTool, Facility)</summary>
+			public static string esri_networkanalysis_utility_associations_SelectContainersTool {
+				 get { return "esri_networkanalysis_utility_associations_SelectContainersTool"; }
+			}
+			///<summary>Returns the id string for &quot;Select content&quot; (Tools.SelectContentTool, Facility)</summary>
+			public static string esri_networkanalysis_utility_associations_SelectContentTool {
+				 get { return "esri_networkanalysis_utility_associations_SelectContentTool"; }
+			}
+			///<summary>Returns the id string for &quot;Select structures&quot; (Tools.SelectStructuresTool, Facility)</summary>
+			public static string esri_networkanalysis_utility_associations_SelectStructuresTool {
+				 get { return "esri_networkanalysis_utility_associations_SelectStructuresTool"; }
+			}
+			///<summary>Returns the id string for &quot;Select attachments&quot; (Tools.SelectAttachmentsTool, Facility)</summary>
+			public static string esri_networkanalysis_utility_associations_SelectAttachmentsTool {
+				 get { return "esri_networkanalysis_utility_associations_SelectAttachmentsTool"; }
+			}
+			///<summary>Returns the id string for &quot;Select source feature&quot; (Tools.SelectSourceFeatureTool, Facility)</summary>
+			public static string esri_networkanalysis_utility_associations_SelectSourceFeatureTool {
+				 get { return "esri_networkanalysis_utility_associations_SelectSourceFeatureTool"; }
+			}
+			///<summary>Returns the id string for &quot;Select Terminal&quot; (Tools.SelectTerminalFeatureTool, Facility)</summary>
+			public static string esri_networkanalysis_utility_associations_SelectTerminalFeatureTool {
+				 get { return "esri_networkanalysis_utility_associations_SelectTerminalFeatureTool"; }
+			}
+			///<summary>Returns the id string for &quot;Select Device&quot; (Tools.SelectConnectionDeviceFeatureTool, Facility)</summary>
+			public static string esri_networkanalysis_utility_associations_SelectConnectionDeviceFeatureTool {
+				 get { return "esri_networkanalysis_utility_associations_SelectConnectionDeviceFeatureTool"; }
+			}
+			///<summary>Returns the id string for &quot;Select Line&quot; (Tools.SelectConnectionLineFeatureTool, Facility)</summary>
+			public static string esri_networkanalysis_utility_associations_SelectConnectionLineFeatureTool {
+				 get { return "esri_networkanalysis_utility_associations_SelectConnectionLineFeatureTool"; }
+			}
+			///<summary>Returns the id string for &quot;Enter Containment&quot; (ArcGIS.Desktop.NetworkAnalysis.Facility.Tools.ContainmentViewTool, Facility)</summary>
+			public static string esri_networkanalysis_utility_Containment_Btn {
+				 get { return "esri_networkanalysis_utility_Containment_Btn"; }
+			}
+			///<summary>Returns the id string for &quot;Select starting points&quot; (Tools.SelectStartingPointsTool, Facility)</summary>
+			public static string esri_networkanalysis_trace_SelectStartingPointsTool {
+				 get { return "esri_networkanalysis_trace_SelectStartingPointsTool"; }
+			}
+			///<summary>Returns the id string for &quot;Select barriers&quot; (Tools.SelectBarriersTool, Facility)</summary>
+			public static string esri_networkanalysis_trace_SelectBarriersTool {
+				 get { return "esri_networkanalysis_trace_SelectBarriersTool"; }
+			}
+		}
+		public static partial class Toolpalette {
+			///<summary>Returns the id string for &quot;Trace Locations&quot; (Toolpalette, Facility)</summary>
+			public static string esri_networkanalysis_utility_SetTracingLocationsBtnPalette {
+				 get { return "esri_networkanalysis_utility_SetTracingLocationsBtnPalette"; }
+			}
+			///<summary>Returns the id string for &quot;Validate&quot; (Toolpalette, Facility)</summary>
+			public static string esri_networkanalysis_utility_ValidateBtnPalette {
+				 get { return "esri_networkanalysis_utility_ValidateBtnPalette"; }
+			}
+			///<summary>Returns the id string for &quot;Display Content&quot; (Toolpalette, Facility)</summary>
+			public static string esri_networkanalysis_utility_DisplayFilterBtnPalette {
+				 get { return "esri_networkanalysis_utility_DisplayFilterBtnPalette"; }
 			}
 		}
 		public static partial class Button {
@@ -14692,15 +19297,11 @@ namespace ArcGIS.Desktop.Framework {
 			public static string esri_tasks_SaveAsTaskFile {
 				 get { return "esri_tasks_SaveAsTaskFile"; }
 			}
-			///<summary>Returns the id string for &quot;Task Item&quot; (ArcGIS.Desktop.Internal.Sharing.ShowTaskSharingPane, TaskAssistant)</summary>
-			public static string esri_tasks_ShareTaskItem {
-				 get { return "esri_tasks_ShareTaskItem"; }
-			}
 			///<summary>Returns the id string for &quot;New Task Item&quot; (ArcGIS.Desktop.Internal.TaskAssistant.CreateNewTaskFileContextCommand, TaskAssistant)</summary>
 			public static string esri_tasks_NewProjectTaskItem {
 				 get { return "esri_tasks_NewProjectTaskItem"; }
 			}
-			///<summary>Returns the id string for &quot;Import And Open...&quot; (ArcGIS.Desktop.Internal.TaskAssistant.ImportTaskFileContextCommand, TaskAssistant)</summary>
+			///<summary>Returns the id string for &quot;Import And Open Task&quot; (ArcGIS.Desktop.Internal.TaskAssistant.ImportTaskFileContextCommand, TaskAssistant)</summary>
 			public static string esri_tasks_ImportTaskFile {
 				 get { return "esri_tasks_ImportTaskFile"; }
 			}
@@ -15024,7 +19625,7 @@ namespace ArcGIS.Desktop.Framework {
 			}
 		}
 		public static partial class Button {
-			///<summary>Returns the id string for &quot;Add Workflow Connection&quot; (workflow_module:ConnectToWorkflowAsync, Workflow)</summary>
+			///<summary>Returns the id string for &quot;New Workflow Connection&quot; (workflow_module:ConnectToWorkflowAsync, Workflow)</summary>
 			public static string esri_workflow_workflowConnectionButton {
 				 get { return "esri_workflow_workflowConnectionButton"; }
 			}

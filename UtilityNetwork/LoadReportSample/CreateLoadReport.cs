@@ -148,10 +148,6 @@ namespace LoadReportSample
         {
           return networkAttribute;
         }
-        else
-        {
-          networkAttribute.Dispose();
-        }
       }
       return null;
     }
@@ -243,9 +239,12 @@ namespace LoadReportSample
 
                   Traversability tierTraceTraversability = mediumVoltageTier.TraceConfiguration.Traversability;
                   traceConfiguration.Traversability.FunctionBarriers = tierTraceTraversability.FunctionBarriers;
-                  traceConfiguration.IncludeBarriersWithResults = mediumVoltageTier.TraceConfiguration.IncludeBarriersWithResults;
                   traceConfiguration.Traversability.Scope = tierTraceTraversability.Scope;
                   ConditionalExpression baseCondition = tierTraceTraversability.Barriers as ConditionalExpression;
+
+                  // Set to false to ensure that ServicePoints with incorrect phasing (which therefore act as barriers)
+                  // are not counted with results
+                  traceConfiguration.IncludeBarriersWithResults = false;
 
                   // Create a condition to only return features that have the service point category
 

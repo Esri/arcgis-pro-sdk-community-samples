@@ -106,7 +106,6 @@
     <Compile Include="BackwardButton.cs" />
     <Compile Include="DiscardEditsButton.cs" />
     <Compile Include="ForwardButton.cs" />
-    <Compile Include="Daml.cs" />
     <Compile Include="EditCommitQAFlag.cs" />
     <Compile Include="EditCorrectButton.cs" />
     <Compile Include="EditNoteComboBox.cs" />
@@ -163,6 +162,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PackageAction>BuildDefault</PackageAction>
     <DocumentationFile>bin\Debug\QAReviewTool.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PackageAction>BuildDefault</PackageAction>

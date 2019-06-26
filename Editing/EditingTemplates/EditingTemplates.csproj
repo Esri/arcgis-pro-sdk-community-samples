@@ -103,6 +103,7 @@
   <ItemGroup>
     <Compile Include="CreateFeatures.cs" />
     <Compile Include="CreateGroupTemplateWithCIM.cs" />
+    <Compile Include="CreateGroupTemplateWithExt.cs" />
     <Compile Include="CreateTemplateWithCIM.cs" />
     <Compile Include="CreateTemplateWithExt.cs" />
     <Compile Include="ModifyTemplateCIM.cs" />
@@ -149,6 +150,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PackageAction>BuildDefault</PackageAction>
     <DocumentationFile>bin\Debug\EditingTemplates.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PackageAction>BuildDefault</PackageAction>

@@ -39,8 +39,6 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Resources;
-using Xceed.Wpf.Toolkit.LiveExplorer.Core;
-using ThicknessConverter = Xceed.Wpf.DataGrid.Converters.ThicknessConverter;
 
 namespace Xceed.Wpf.Toolkit.LiveExplorer {
     public abstract class CodeBox : Xceed.Wpf.Toolkit.RichTextBox, INotifyPropertyChanged {

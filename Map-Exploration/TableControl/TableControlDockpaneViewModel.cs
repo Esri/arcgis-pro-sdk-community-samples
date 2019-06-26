@@ -75,8 +75,8 @@ namespace TableControl
     private TableControlContent _tableContent;
     public TableControlContent TableContent
     {
-      get => _tableContent;
-      set => SetProperty(ref _tableContent, value);
+      get { return _tableContent; } 
+      set { SetProperty(ref _tableContent, value); }
     }
 
     private MapMember _selectedMapMember = null;

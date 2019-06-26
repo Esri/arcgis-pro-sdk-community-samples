@@ -276,7 +276,10 @@ namespace DynamicJoins
               }
               relationshipClass = MakeJoin(relationshipClass, leftTable, rightTable);
             }
-            catch (Exception e) { }
+            catch (Exception ex)
+			  {
+				  System.Diagnostics.Debug.WriteLine($@"Exception in CmdGenerateJoin: {ex.ToString()}");
+			  }
             finally
             {
               leftTable?.Dispose();

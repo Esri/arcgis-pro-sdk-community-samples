@@ -26,19 +26,19 @@ using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using System.Text;
 
-/// <summary>
-/// Basics - This is the sample for PortalManagement SDK (ArcGIS.Desktop.Core.ArcGISPortal & ArcGIS.Desktop.Core.ArcGISPortalManager) and EsriHttpClient.
-/// Usage -
-/// PortalInfoDockPane is to be triggered after clicking on the "Button1".
-/// If the Active portal is arcgis online, print basic portal info (1).
-/// When the Active portal is portal, print portal info and fed servers etc. (1,2,3)
-/// You can either manually sign in to the active portal, or wait till this program prompts you for user name and password.
-/// </summary>
+
 namespace ListAllFedServers
 {
+	/// <summary>
+	/// Basics - This is the sample for PortalManagement SDK (ArcGIS.Desktop.Core.ArcGISPortal &amp; ArcGIS.Desktop.Core.ArcGISPortalManager) and EsriHttpClient.
+	/// Usage -
+	/// PortalInfoDockPane is to be triggered after clicking on the "Button1".
+	/// If the Active portal is arcgis online, print basic portal info (1).
+	/// When the Active portal is portal, print portal info and fed servers etc. (1,2,3)
+	/// You can either manually sign in to the active portal, or wait till this program prompts you for user name and password.
+	/// </summary>
 	internal class Button1 : Button
 	{
-
 		protected override void OnClick()
 		{
 			PortalInfoDockpaneViewModel.Show();

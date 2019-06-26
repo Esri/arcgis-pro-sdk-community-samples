@@ -37,7 +37,7 @@ namespace DockPaneBookmarkAdvanced
     /// 1. On the 'bookmark dockpane' click the 'Get Maps' button to fill the 'Available Maps' dropdown.
     /// 1. Select a map on the 'Available Maps' dropdown.
     /// 1. Click on any of the 'Bookmark' thumbnails to zoom to a given bookmark.
-    /// 1. Clock the 'New Bookmark' button.
+    /// 1. Click the 'New Bookmark' button.
     /// ![UI](Screenshots/Screen.png)
     /// ###UI Controls
     /// **Burger button:**

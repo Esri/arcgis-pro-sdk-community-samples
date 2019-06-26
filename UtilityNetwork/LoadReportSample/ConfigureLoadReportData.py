@@ -20,6 +20,7 @@ ServicePointCategoryName = "ServicePoint"
 LoadField = "SERVICE_LOAD"
 LoadAttribute = "Customer Load"
 LoadAttribute2 = "Power Rating"
+LoadAttribute3 = "Service Load"
 # Variables
 
 needToAddCategory = False
@@ -33,10 +34,11 @@ networkCategories = {cat.name.lower() for cat in describe.categories}
 print("Categories = {0}\n".format(networkCategories))
 
 # This sample will work with data that uses a network attribute called "Customer Load" (Pro 2.1 Naperville Electric Data)
-# 	or "Power Rating" (Pro 2.2 Naperville Electric Data)
+# 	or "Power Rating" (Pro 2.2 Naperville Electric Data) or "Service Load" (other versions)
 if LoadAttribute.lower() not in networkAttributes:
 	if LoadAttribute2.lower() not in networkAttributes:
-		needToAddNetworkAttribute = True
+		if LoadAttribute3.lower() not in networkAttributes:
+			needToAddNetworkAttribute = True
 	
 if ServicePointCategoryName.lower() not in networkCategories:
 	needToAddCategory = True

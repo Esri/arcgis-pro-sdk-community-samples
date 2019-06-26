@@ -383,7 +383,9 @@ namespace WorkflowSample
                 _previousOpen = true;
                  QueuedTask.Run(() =>
                  {
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                      Open_WorkOrderAsync(selected.JobID);
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                  });
             }
         }

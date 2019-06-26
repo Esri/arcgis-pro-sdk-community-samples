@@ -27,7 +27,9 @@ using ArcGIS.Desktop.Framework.Dialogs;
 
 namespace AnimationFromPath
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public static class CreateAnimationFromPath
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
   {
     #region Constants
 
@@ -54,7 +56,9 @@ namespace AnimationFromPath
     private static double Z_CONVERSION_FACTOR = 1;
 
     private static string _selectedMethod = "Keyframes along path";
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public static string SelectedMethod
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
       get { return _selectedMethod; }
 
@@ -62,7 +66,9 @@ namespace AnimationFromPath
     }
 
     private static string _selectedCameraView = "Top down";
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public static string SelectedCameraView
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
       get { return _selectedCameraView; }
 
@@ -71,7 +77,9 @@ namespace AnimationFromPath
 
 
     private static double _customPitch = -90;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public static double CustomPitch
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
       get { return _customPitch; }
 
@@ -79,7 +87,9 @@ namespace AnimationFromPath
     }
 
     private static double _cameraZOffset = 1000;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public static double CameraZOffset
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
       get { return _cameraZOffset; }
 
@@ -87,7 +97,9 @@ namespace AnimationFromPath
     }
 
     private static double _totalDuration = 0;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public static double TotalDuration
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
       get { return _totalDuration; }
 
@@ -95,7 +107,9 @@ namespace AnimationFromPath
     }
 
     private static double _keyEveryNSecond = 1;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public static double KeyEveryNSecond
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
       get { return _keyEveryNSecond; }
 
@@ -103,7 +117,9 @@ namespace AnimationFromPath
     }
 
     private static MapPoint _targetPoint = null;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public static MapPoint TargetPoint
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
       get { return _targetPoint; }
       set { _targetPoint = value; }
@@ -113,7 +129,9 @@ namespace AnimationFromPath
 
     #region Functions
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public static async Task CreateKeyframes()
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
       FeatureLayer ftrLayer = null;
 
@@ -254,7 +272,9 @@ namespace AnimationFromPath
     //For straight line segments, rotation is ignored at end point of each segment except for the end point of the path itself. Two keyframes with rotation
     //are created at certain distance (determined by LINE_CONSTRAINT_FACTOR) before and after the end point of each segment. This is an attempt to avoid
     //sharp turns at corners along the path.
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public static async Task CreateKeyframes_AlongPath(MapView mapView, SpatialReference layerSpatRef, ProjectionTransformation transformation,
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
                                                     CameraTrack cameraTrack, IEnumerator<ReadOnlySegmentCollection> segments,
                                                     int segmentCount, double pathLength)
     {
@@ -538,7 +558,9 @@ namespace AnimationFromPath
     }
 
     //Use this method to create a keyframe at every n-second of the specified animation duration
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public static async Task CreateKeyframes_EveryNSeconds(MapView mapView, SpatialReference layerSpatRef, ProjectionTransformation transformation,
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
                                                     CameraTrack cameraTrack, IEnumerator<ReadOnlySegmentCollection> segments,
                                                     int segmentCount, double pathLength, double keyEveryNSecond = 1)
     {
@@ -720,7 +742,9 @@ namespace AnimationFromPath
 
     //Use this method if you want keyframes ONLY at line vertices. This is good if the line is highly densified.
     //However, you will get sharp turns at corners because there is no attempt to smooth the animation
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public static async Task CreateKeyframes_AtVertices(MapView mapView, SpatialReference layerSpatRef, ProjectionTransformation transformation,
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
                                                     CameraTrack cameraTrack, Polyline lineGeom, IEnumerator<ReadOnlySegmentCollection> segments,
                                                     int segmentCount, double pathLength)
     {
@@ -849,7 +873,7 @@ namespace AnimationFromPath
       });
     }
 
-    private static async void SetPitchAndHeadingForLine(MapPoint startPt, MapPoint endPt)
+    private static void SetPitchAndHeadingForLine(MapPoint startPt, MapPoint endPt)
     {
       if (SelectedCameraView == "Top down")
       {

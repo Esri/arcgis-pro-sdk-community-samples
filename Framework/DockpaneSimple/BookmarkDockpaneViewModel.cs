@@ -112,7 +112,9 @@ namespace DockpaneSimple
                 });
                 System.Diagnostics.Debug.WriteLine("selected map opened and activated map");
                 // no need to await
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 UpdateBookmarks(_selectedMap);
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 System.Diagnostics.Debug.WriteLine("updated bookmarks");
             }
         }

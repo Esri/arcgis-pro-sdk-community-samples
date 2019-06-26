@@ -38,9 +38,6 @@ namespace QAReviewTool
     /// </summary>
     internal class QAFieldListComboBox : ComboBox
     {
-
-        private bool _isInitialized;
-
         /// <summary>
         /// Combo Box constructor
         /// </summary>

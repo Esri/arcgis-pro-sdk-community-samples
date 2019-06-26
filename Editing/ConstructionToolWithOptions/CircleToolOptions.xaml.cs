@@ -41,6 +41,7 @@ namespace ConstructionToolWithOptions
       InitializeComponent();
     }
 
+    internal CircleToolOptionsViewModel ViewModel => DataContext as CircleToolOptionsViewModel;
 
     private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
     {
@@ -106,6 +107,34 @@ namespace ConstructionToolWithOptions
       }
 
       return !needAll;
+    }
+
+    // This routine is only applicable in template properties when multiple templates are selected and you have different values in tool options
+    // for each.
+    // The user is attempting to edit to set the radius value when different values exist 
+    private void OnDifferentLabelPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+      var vm = ViewModel;
+      if (vm == null)
+        return;
+
+      // change the flag to show the textBox
+      vm.IsDifferentValue = false;
+      // initialize text box value
+      textBox.Text = "";
+      // set Valid flag on VM (dont use IsValid) to disable OK button on template properties dialog
+      vm.SetValidIfNotEditingDifferentValues(false);
+      e.Handled = true;
+    }
+
+    private void textBox_KeyUp(object sender, KeyEventArgs e)
+    {
+      string text = (sender as TextBox).Text;
+      if (double.TryParse(text, out double val))
+      {
+        // set Valid flag on VM (dont use IsValid) to enable OK button on template properties dialog
+        ViewModel.SetValidIfNotEditingDifferentValues(true);
+      }
     }
   }
 }

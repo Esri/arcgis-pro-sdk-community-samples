@@ -25,10 +25,12 @@ using System.Threading.Tasks;
 namespace ConstructionToolWithOptions
 {
   /// <summary>
-  /// This sample illustrates how to build a construction tool with options allowing users to provide parameters at run-time. This pattern is new at ArcGIS Pro 2.0.  
+  /// This sample illustrates how to build a construction tool with options allowing users to provide parameters at run-time.  
   /// Two samples are included.
   /// The first is the BufferedLineTool.  The line sketch geoemtry is buffered by a user defined distance to create a polygon feature.
   /// The second sample is the CircleTool.  A user defined radius is used to create a circular arc with the point sketch geometry as the centroid.  This tool is registered with both the esri_editing_construction_polyline and esri_editing_construction_polygon categories allowing both polyline and polygon features to be created.
+  /// The CircleTool options follows the multiple tool options pattern (implementing IEditingCreateToolMultiple) allowing the users to select multiple templates
+  /// in the manage templates dialog and change tool option values for those templates. The BufferedLineTool sample follows the single use pattern.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

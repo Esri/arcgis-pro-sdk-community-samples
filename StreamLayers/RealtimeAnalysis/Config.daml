@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2019 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="RealtimeAnalysis.dll" defaultNamespace="RealtimeAnalysis" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{5aa67467-5d95-4229-a002-90c9b824b1ce}" version="1.0" desktopVersion="2.3.15740">
+    <Name>RealtimeAnalysis</Name>
+    <Description>Realtime Analysis</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>Esri</Author>
+    <Company>Esri</Company>
+    <Date>5/3/2019 1:58:47 PM, 2019</Date>
+    <Subject>Map Authoring</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="Realtime_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="RealTime_Tab" caption="Real-time Analysis">
+          <group refID="ExploratoryAnalysis_Group" />
+          <group refID="SpatialAnalysis_Group" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ExploratoryAnalysis_Group" caption="Exploratory Analysis" appearsOnAddInTab="false">
+          <!-- host controls within groups -->
+          <button refID="BingSearch_BingSearchResult_ShowButton" size="large" />
+          <button refID="ExploratoryAnalysis_GeoFence" size="large" />
+          <button refID="ViewshedAnalysis_ViewshedAnalysis" size="large" />
+        </group>
+        <group id="SpatialAnalysis_Group" caption="Spatial Analysis" appearsOnAddInTab="false">
+          <!-- host controls within groups -->
+          <button refID="SpatialAnalysis_SelectAffectedCounties" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="BingSearch_BingSearchResult_ShowButton" caption="01. Search Nearby" className="BingSearchResult_ShowButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+          <tooltip heading="Show Dockpane">Show Search Results<disabledText /></tooltip>
+        </button>
+        <button id="ExploratoryAnalysis_GeoFence" caption="02. Geo-fence" className="GeoFence" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Create Geo-fence<disabledText /></tooltip>
+        </button>
+        <button id="ViewshedAnalysis_ViewshedAnalysis" caption="03. Viewshed Analysis" className="ViewshedAnalysis" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Show viewshed for realtime data<disabledText /></tooltip>
+        </button>
+        <button id="SpatialAnalysis_SelectAffectedCounties" caption="04. Select Affected Counties" className="SelectAffectedCounties" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Find Counties Affected by Hurricane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="BingSearch_BingSearchResult" caption="BingSearchResult" className="BingSearchResultViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="BingSearchResultView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

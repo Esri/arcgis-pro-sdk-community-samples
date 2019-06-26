@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Content
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  1/10/2019
-ArcGIS Pro:            2.3
+Date:                  6/27/2019
+ArcGIS Pro:            2.4
 Visual Studio:         2015, 2017
 .NET Target Framework: 4.6.1
 ```
@@ -26,7 +26,7 @@ Visual Studio:         2015, 2017
 * [arcgis-pro-sdk-community-samples](https://github.com/Esri/arcgis-pro-sdk-community-samples)
 * [ArcGIS Pro DAML ID Reference](https://github.com/Esri/arcgis-pro-sdk/wiki/ArcGIS-Pro-DAML-ID-Reference)
 * [FAQ](https://github.com/Esri/arcgis-pro-sdk/wiki/FAQ)
-* [ArcGIS Pro SDK icons](https://github.com/Esri/arcgis-pro-sdk/releases/tag/2.3.0.15769)
+* [ArcGIS Pro SDK icons](https://github.com/Esri/arcgis-pro-sdk/releases/tag/2.4.0.19946)
 
 ![ArcGIS Pro SDK for .NET Icons](https://Esri.github.io/arcgis-pro-sdk/images/Home/Image-of-icons.png  "ArcGIS Pro SDK Icons")
 
@@ -37,24 +37,25 @@ Visual Studio:         2015, 2017
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
    
+This sample uses Excel files in Pro.   To use Excel files in Pro, you need Microsoft Access Database Engine 2016. Refer to the [Work with Microsoft Excel files in ArcGIS Pro](https://prodev.arcgis.com/en/pro-app/help/data/excel/work-with-excel-in-arcgis-pro.htm) help topic for more information on dowloading the required driver.  
   
 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in c:\data   
-1. Before you run the sample verify that the project C:\data\SDK\SDK 1.1.aprx is present since this is required to run the sample.          
+1. Make sure that the Sample data is unzipped in c:\data       
 1. In Visual Studio click the Build menu. Then select Build Solution.  
 1. Click Start button to open ArcGIS Pro.  
 1. ArcGIS Pro will open.   
-1. Open the project 'SDK 1.1.aprx' which can now be found in the C:\Data\SDK folder.    
+1. Open a blank Map project.  
 1. ArcGIS Pro will display a map view.    
+1. Add a new Local Scene view.  
 1. Look at two eventhandler methods  
 1. OnDragOver – The Pro framework calls this method when an Excel file is dragged onto the Map holding down the left mouse button.   
 1. OnDrop – The Pro framework calls this method when the user releases the left mouse button and the Excel file is dropped on Pro.   
 1. Take a closer look at the OnDrop logic where the code for the execution of the Geoprocessing Tool can be found.    
-1. Drag and Drop Meteorites_UK.xls onto Pro.    
+1. Drag and Drop Meteorites_UK.xls onto Pro in the Map View.    
 1. View the results of the Meteorite strikes layer loaded into Pro with symbology applied    
 ![UI](Screenshots/2dScreen.png)  
   
-1. Switch to the 3D scene view    
+1. Switch to the local scene view    
 1. Drag and Drop EarthquakeDamage.xls on to ArcGIS Pro    
 1. View those results.    
 ![UI](Screenshots/3dScreen.png)  

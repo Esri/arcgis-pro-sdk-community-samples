@@ -84,11 +84,13 @@ namespace ShowLicense
             }
         }
 
+#pragma warning disable IDE1006 // Naming Styles
         /// <summary>
         /// Print the license codes and expiration dates in string
         /// </summary>
         /// <returns></returns>
         string printLicenseCodes()
+#pragma warning restore IDE1006 // Naming Styles
         {
             string printLine = "";
             foreach (LicenseCodes lc in Enum.GetValues(typeof(LicenseCodes)))

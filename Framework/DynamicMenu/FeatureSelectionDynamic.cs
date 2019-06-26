@@ -120,11 +120,11 @@ namespace FeatureDynamicMenu
             List<long> oids = new List<long>();
             var vm = OverlayEmbeddableControl as EmbeddedControlViewModel;
 
-            //POINT pt;
-            //GetCursorPos(out pt);
-            //_clickedPoint = new Point(pt.X, pt.Y); //Point on screen to show the context menu
+			POINT pt;
+			GetCursorPos(out pt);
+			_clickedPoint = new Point(pt.X, pt.Y); //Point on screen to show the context menu
 
-            return QueuedTask.Run(() =>
+			return QueuedTask.Run(() =>
             {
                 SpatialQueryFilter spatialQueryFilter = new SpatialQueryFilter
                 {

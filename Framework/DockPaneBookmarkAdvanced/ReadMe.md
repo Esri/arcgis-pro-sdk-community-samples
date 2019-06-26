@@ -17,9 +17,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  1/10/2019
-ArcGIS Pro:            2.3
-Visual Studio:         2017
+Date:                  6/27/2019
+ArcGIS Pro:            2.4
+Visual Studio:         2017, 2019
 .NET Target Framework: 4.6.1
 ```
 
@@ -30,7 +30,7 @@ Visual Studio:         2017
 * [arcgis-pro-sdk-community-samples](https://github.com/Esri/arcgis-pro-sdk-community-samples)
 * [ArcGIS Pro DAML ID Reference](https://github.com/Esri/arcgis-pro-sdk/wiki/ArcGIS-Pro-DAML-ID-Reference)
 * [FAQ](https://github.com/Esri/arcgis-pro-sdk/wiki/FAQ)
-* [ArcGIS Pro SDK icons](https://github.com/Esri/arcgis-pro-sdk/releases/tag/2.3.0.15769)
+* [ArcGIS Pro SDK icons](https://github.com/Esri/arcgis-pro-sdk/releases/tag/2.4.0.19946)
 
 ![ArcGIS Pro SDK for .NET Icons](https://Esri.github.io/arcgis-pro-sdk/images/Home/Image-of-icons.png  "ArcGIS Pro SDK Icons")
 
@@ -48,7 +48,7 @@ Visual Studio:         2017
 1. On the 'bookmark dockpane' click the 'Get Maps' button to fill the 'Available Maps' dropdown.  
 1. Select a map on the 'Available Maps' dropdown.  
 1. Click on any of the 'Bookmark' thumbnails to zoom to a given bookmark.  
-1. Clock the 'New Bookmark' button.  
+1. Click the 'New Bookmark' button.  
 ![UI](Screenshots/Screen.png)  
 ###UI Controls  
 **Burger button:**  

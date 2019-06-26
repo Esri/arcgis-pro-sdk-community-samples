@@ -1,0 +1,150 @@
+<!--
+
+   Copyright 2019 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<UserControl x:Class="CreateReport.CreateReportView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
+             xmlns:ui="clr-namespace:CreateReport"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{Binding Path=ui.CreateReportViewModel}">
+     <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
+            <TextBlock Grid.Column="1" Text="{Binding Heading}" Style="{DynamicResource Esri_TextBlockDockPaneHeader}">
+                <TextBlock.ToolTip>
+                    <WrapPanel Orientation="Vertical" MaxWidth="300">
+                        <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
+                    </WrapPanel>
+                </TextBlock.ToolTip>
+      </TextBlock>
+        </DockPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,-264">
+            <TextBlock Text="Layers in Active Map" Margin="5"></TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="A"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="A"/>
+                </Grid.ColumnDefinitions>
+                <!--Layers in Active map-->
+                <ComboBox Grid.Column="0" ItemsSource="{Binding Layers}" SelectedItem="{Binding SelectedLayer}" Margin="5"></ComboBox>
+                <!--Should selection be used for report?-->
+                <CheckBox Grid.Column="1" IsChecked="{Binding IsUseSelection}"  Margin="5">Report uses only selected features</CheckBox>
+            </Grid>
+           
+            <TextBlock Text="Report Name" Margin="5"></TextBlock>
+            <!--Name of report-->
+            <TextBox MinWidth="150" Margin="5" Text="{Binding ReportName}"></TextBox>
+            <TextBlock Text="Fields included in Report" Margin="5"></TextBlock>
+            <!-- Check box to select all fields-->
+            <CheckBox IsChecked="{Binding IsSelectAll}" Margin="5">Select All</CheckBox>
+            <!--All fields in layer-->
+            <ListBox HorizontalContentAlignment="Stretch"  
+                 ItemsSource="{Binding Path=ReportFields, Mode=OneWay}"
+                 Margin="5" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionMode="Extended">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <CheckBox IsChecked="{Binding Path=IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                            <CheckBox.Content>
+                                <TextBlock Text="{Binding Path=DisplayName}"/>
+                            </CheckBox.Content>
+                        </CheckBox>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Group report data by field" Margin="5"></TextBlock>
+                <Button Grid.Column="1" Grid.Row="0" Command="{Binding ClearGroupingCommand}" Margin="5" MaxHeight="20" MaxWidth="20" BorderBrush="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}" Background="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}" >
+                    <Image Stretch="None" Width="16" Height="16" VerticalAlignment="Center" Source="/CreateReport;component/Images/x.png">
+                        <Image.Style>
+                            <Style TargetType="Image">
+                                <Style.Triggers>
+                                    <Trigger Property="IsEnabled" Value="False">
+                                        <Setter Property="Opacity" Value="0.5" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                    <Button.ToolTip>No grouping</Button.ToolTip>
+                </Button>
+            </StackPanel>
+            <!--Fields to group by-->
+            <ComboBox ItemsSource="{Binding Path=SelectedFields, Mode=OneWay}" DisplayMemberPath="DisplayName" SelectedItem="{Binding SelectedGroupField}" Margin="5"></ComboBox>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="A"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="A"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="0" Text="Report Templates" Margin="5"></TextBlock>
+                <!--Collection of report templates-->
+                <ComboBox Grid.Column="0" Grid.Row="1" ItemsSource="{Binding Path=ReportTemplates, Mode=OneWay}" SelectedItem="{Binding SelectedReportTemplate}" Margin="5"></ComboBox>
+                <TextBlock Grid.Column="1" Grid.Row="0" Text="Report Styles" Margin="5"></TextBlock>
+                <!--Collection of report styling-->
+                <ComboBox Grid.Column="1" Grid.Row="1" ItemsSource="{Binding Path=ReportStyles, Mode=OneWay}" SelectedItem="{Binding SelectedReportStyle}" Margin="5"></ComboBox>
+            </Grid>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Statistic Field" Margin="5"></TextBlock>
+                <Button Grid.Column="1" Grid.Row="0" Command="{Binding ClearStatsFieldsCommand}" Margin="5" MaxHeight="20" MaxWidth="20" BorderBrush="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}" Background="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"  >
+                    <Image Stretch="None" Width="16" Height="16" VerticalAlignment="Center" Source="/CreateReport;component/Images/x.png">
+                        <Image.Style>
+                            <Style TargetType="Image">
+                                <Style.Triggers>
+                                    <Trigger Property="IsEnabled" Value="False">
+                                        <Setter Property="Opacity" Value="0.5" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                    <Button.ToolTip>No field</Button.ToolTip>
+                </Button>
+            </StackPanel>
+            <!--Fields used to get stats on-->
+            <ComboBox ItemsSource="{Binding Path=SelectedFields, Mode=OneWay}" SelectedItem="{Binding SelectedStatsField}" DisplayMemberPath="DisplayName" Margin="5"></ComboBox>
+            <TextBlock Text="Stats" Margin="5"></TextBlock>
+           <!--Stats options-->
+            <ComboBox ItemsSource="{Binding Path=StatsOptions}" SelectedItem="{Binding SelectedStatsOption}" Margin="5"></ComboBox>
+            <!--Create Report-->
+            <Button Style="{DynamicResource Esri_Button}" Margin="5" Command="{Binding CreateReportCommand}">Create Report</Button>
+            <!--Export Report-->
+            <Button Style="{DynamicResource Esri_Button}" Margin="5" Command="{Binding ExportReportCommand}">Export Report</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

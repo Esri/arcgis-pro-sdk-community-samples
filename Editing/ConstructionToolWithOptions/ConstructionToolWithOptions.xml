@@ -24,58 +24,6 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="P:ConstructionToolWithOptions.BufferedLineToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#ActiveTemplateSelectorIcon">
-            <summary>
-            Gets the optional icon that will appear in the active template pane as a button selector.  
-            If returning null then the Tool's small image that is defined in DAML will be used. 
-            </summary>
-        </member>
-        <member name="P:ConstructionToolWithOptions.BufferedLineToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#IsValid">
-            <summary>
-            Set this flag to indicate if too options are valid and ready for saving.
-            </summary>
-            <remarks>
-            When this IEditingCreateToolControl is being displayed in the Template Properties
-            dialog, calling code will use this property to determine if the current Template
-            Properties may be saved.
-            </remarks>
-        </member>
-        <member name="P:ConstructionToolWithOptions.BufferedLineToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#IsDirty">
-            <summary>
-            Set this flag when any tool options have been changed.
-            </summary>
-            <remaarks>
-            When this IEditingCreateToolControl is being displayed in the Template Properties
-            dialog, the calling code will use this property to determine if any changes have
-            been made.  
-            </remaarks>
-        </member>
-        <member name="M:ConstructionToolWithOptions.BufferedLineToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#AutoOpenActiveTemplatePane(System.String)">
-            <summary>
-            Gets if the contents of this control is auto-Opened in the Active Template Pane when the 
-            tool is activated.
-            </summary>
-            <param name="toolID">the ID of the current tool</param>
-            <returns>True the active template pane will be opened to the tool's options view.
-            False, nothing in the active template pane changes when the tool is selected.</returns>
-        </member>
-        <member name="M:ConstructionToolWithOptions.BufferedLineToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#InitializeForActiveTemplate(ArcGIS.Desktop.Editing.ToolOptions)">
-            <summary>
-            Called just before ArcGIS.Desktop.Framework.Controls.EmbeddableControl.OpenAsync
-            when this IEditingCreateToolControl is being used within the ActiveTemplate pane.
-            </summary>
-            <param name="options">tool options obtained from the template for the given toolID</param>
-            <returns>true if the control is to be displayed in the ActiveTemplate pane.. False otherwise</returns>
-        </member>
-        <member name="M:ConstructionToolWithOptions.BufferedLineToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#InitializeForTemplateProperties(ArcGIS.Desktop.Editing.ToolOptions)">
-            <summary>
-            Called just before ArcGIS.Desktop.Framework.Controls.EmbeddableControl.OpenAsync
-            when this IEditingCreateToolControl is being used within the Template Properties
-            dialog
-            </summary>
-            <param name="options">tool options obtained from the template for the given toolID</param>
-            <returns>true if the control is to be displayed in Template Properties. False otherwise</returns>
-        </member>
         <member name="M:ConstructionToolWithOptions.CircleTool.OnSketchCompleteAsync(ArcGIS.Core.Geometry.Geometry)">
             <summary>
             Called when the sketch finishes. This is where we will create the sketch operation and then execute it.
@@ -96,64 +44,14 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="P:ConstructionToolWithOptions.CircleToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#ActiveTemplateSelectorIcon">
-            <summary>
-            Gets the optional icon that will appear in the active template pane as a button selector.  
-            If returning null then the Tool's small image that is defined in DAML will be used. 
-            </summary>
-        </member>
-        <member name="P:ConstructionToolWithOptions.CircleToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#IsValid">
-            <summary>
-            Set this flag to indicate if too options are valid and ready for saving.
-            </summary>
-            <remarks>
-            When this IEditingCreateToolControl is being displayed in the Template Properties
-            dialog, calling code will use this property to determine if the current Template
-            Properties may be saved.
-            </remarks>
-        </member>
-        <member name="P:ConstructionToolWithOptions.CircleToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#IsDirty">
-            <summary>
-            Set this flag when any tool options have been changed.
-            </summary>
-            <remaarks>
-            When this IEditingCreateToolControl is being displayed in the Template Properties
-            dialog, the calling code will use this property to determine if any changes have
-            been made.  
-            </remaarks>
-        </member>
-        <member name="M:ConstructionToolWithOptions.CircleToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#AutoOpenActiveTemplatePane(System.String)">
-            <summary>
-            Gets if the contents of this control is auto-Opened in the Active Template Pane when the 
-            tool is activated.
-            </summary>
-            <param name="toolID">the ID of the current tool</param>
-            <returns>True the active template pane will be opened to the tool's options view.
-            False, nothing in the active template pane changes when the tool is selected.</returns>
-        </member>
-        <member name="M:ConstructionToolWithOptions.CircleToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#InitializeForActiveTemplate(ArcGIS.Desktop.Editing.ToolOptions)">
-            <summary>
-            Called just before ArcGIS.Desktop.Framework.Controls.EmbeddableControl.OpenAsync
-            when this IEditingCreateToolControl is being used within the ActiveTemplate pane.
-            </summary>
-            <param name="options">tool options obtained from the template for the given toolID</param>
-            <returns>true if the control is to be displayed in the ActiveTemplate pane.. False otherwise</returns>
-        </member>
-        <member name="M:ConstructionToolWithOptions.CircleToolOptionsViewModel.ArcGIS#Desktop#Editing#IEditingCreateToolControl#InitializeForTemplateProperties(ArcGIS.Desktop.Editing.ToolOptions)">
-            <summary>
-            Called just before ArcGIS.Desktop.Framework.Controls.EmbeddableControl.OpenAsync
-            when this IEditingCreateToolControl is being used within the Template Properties
-            dialog
-            </summary>
-            <param name="options">tool options obtained from the template for the given toolID</param>
-            <returns>true if the control is to be displayed in Template Properties. False otherwise</returns>
-        </member>
         <member name="T:ConstructionToolWithOptions.Module1">
             <summary>
-            This sample illustrates how to build a construction tool with options allowing users to provide parameters at run-time. This pattern is new at ArcGIS Pro 2.0.  
+            This sample illustrates how to build a construction tool with options allowing users to provide parameters at run-time.  
             Two samples are included.
             The first is the BufferedLineTool.  The line sketch geoemtry is buffered by a user defined distance to create a polygon feature.
             The second sample is the CircleTool.  A user defined radius is used to create a circular arc with the point sketch geometry as the centroid.  This tool is registered with both the esri_editing_construction_polyline and esri_editing_construction_polygon categories allowing both polyline and polygon features to be created.
+            The CircleTool options follows the multiple tool options pattern (implementing IEditingCreateToolMultiple) allowing the users to select multiple templates
+            in the manage templates dialog and change tool option values for those templates. The BufferedLineTool sample follows the single use pattern.
             </summary>
             <remarks>
             1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
@@ -180,6 +78,36 @@
             Called by Framework when ArcGIS Pro is closing
             </summary>
             <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
         </member>
     </members>
 </doc>

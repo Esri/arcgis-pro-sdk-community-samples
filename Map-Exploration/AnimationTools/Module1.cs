@@ -105,7 +105,7 @@ namespace AnimationTools
             try
             {
 
-                QueuedTask.Run(async () =>
+                QueuedTask.Run(() =>
                 {
 
                     if (VehicleListComboBoxValue.Text == "" || VehicleListComboBoxValue.Text == null)

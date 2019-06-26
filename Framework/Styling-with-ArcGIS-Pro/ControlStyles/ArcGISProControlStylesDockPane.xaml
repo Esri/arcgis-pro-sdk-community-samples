@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ui="clr-namespace:ControlStyles.UI"
              xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
-             xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
              mc:Ignorable="d" 
+             d:DataContext="{Binding Path=ControlStyles.ArcGISProControlStylesDockPaneViewModel}"
              d:DesignHeight="300" d:DesignWidth="300">
     <!--//   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,10 +24,8 @@
     -->
     <UserControl.Resources>
         <ResourceDictionary>
-            <!--<Image x:Key="CopyImage16" Source="Images/EditCopy16.png"/>
-            <Image x:Key="CopyImage32" Source="Images/EditCopy32.png"/>-->
             <ResourceDictionary.MergedDictionaries>
-                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+				<extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -39,7 +37,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.Resources>
-            <Style TargetType="Button">
+			<Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
                 <Setter Property="BorderBrush" Value="Transparent"></Setter>
                 <Setter Property="Background" Value="Transparent"></Setter>
                 <Style.Triggers>

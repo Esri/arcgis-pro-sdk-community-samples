@@ -43,9 +43,6 @@ namespace AnimationTools
     /// </summary>
     internal class VehicleListComboBox : ComboBox
     {
-
-        private bool _isInitialized;
-
         /// <summary>
         /// Combo Box constructor
         /// </summary>
@@ -62,8 +59,6 @@ namespace AnimationTools
         private void UpdateCombo()
         {
             // TODO – customize this method to populate the combobox with your desired items  
-            if (_isInitialized)
-                SelectedItem = ItemCollection.FirstOrDefault(); //set the default item in the comboBox
 
 
             this.Add(new ComboBoxItem("Car"));

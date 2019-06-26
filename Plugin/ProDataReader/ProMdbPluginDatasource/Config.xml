@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ESRI.Configuration xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+	<Name>ProMdbPluginDatasource</Name>
+	<AddInID>{6e6e1223-1fcc-45af-ab6f-aa65299ec84b}</AddInID>
+	<Description>ProMdb Plugin Datasource</Description>
+	<Version>1.0</Version>
+	<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+	<Company>esri, http://www.esri.com</Company>
+	<Date>4/26/2019 9:26:51 AM, 2019</Date>
+	<Targets>
+		<Target name="ArcGISPro" version="2.4" />
+	</Targets>
+	<!-- CLR should be set to the 4.7.2 set in the .csproj -->
+	<AddIn language="CLR4.7.2" library="ProMdbPluginDatasource.dll" namespace="ProMdbPluginDatasource">
+		<ArcGISPro>
+			<PluginDatasources>
+				<PluginDatasource id="ProMdbPluginDatasource" class="ProMdbPluginDatasourceTemplate" />
+			</PluginDatasources>
+		</ArcGISPro>
+	</AddIn>
+</ESRI.Configuration>

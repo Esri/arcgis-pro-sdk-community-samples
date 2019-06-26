@@ -129,7 +129,9 @@ namespace TextSymbols
                 return;
             }
             vm.DockpaneVisible = Visibility.Visible;
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
             vm.InitAsync();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         }
     }
 }
