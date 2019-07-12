@@ -317,29 +317,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenCoordsToMapPoint", "M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetAddins", "Framework\GetAddins\GetAddins.csproj", "{78680B40-94CC-40E3-8F10-9CF962AD9AE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProJpgPluginDatasource", "Plugin\ProDataReader\ProJpgPluginDatasource\ProJpgPluginDatasource.csproj", "{3DE57E08-5EF4-47E7-9C11-569061FDA3D5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProDataReader", "Plugin\ProDataReader\ProDataReader.csproj", "{E74A0802-C331-4183-806D-0757122D8733}"
-	ProjectSection(ProjectDependencies) = postProject
-		{3DE57E08-5EF4-47E7-9C11-569061FDA3D5} = {3DE57E08-5EF4-47E7-9C11-569061FDA3D5}
-		{6E6E1223-1FCC-45AF-AB6F-AA65299EC84B} = {6E6E1223-1FCC-45AF-AB6F-AA65299EC84B}
-		{98666CC8-996F-49CF-81F4-03EFB4C941FC} = {98666CC8-996F-49CF-81F4-03EFB4C941FC}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MdbAccessDb", "Plugin\ProDataReader\ProMdbAccessDb\MdbAccessDb.csproj", "{00B0AAC0-BF42-44D6-8638-15B563782CE2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageMetadata", "Plugin\ProDataReader\ImageMetadata\ImageMetadata.csproj", "{270B962C-93E5-473F-B502-D05D639CC51D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePointPlugin", "Plugin\SimplePointPluginTest\SimplePointPlugin\SimplePointPlugin.csproj", "{EB50B355-3CC8-4CAD-BA92-142FE4D9C783}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePointPluginTest", "Plugin\SimplePointPluginTest\SimplePointPluginTest.csproj", "{A42EEC68-8DA2-42AB-83E7-775F1B4BFBD7}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EB50B355-3CC8-4CAD-BA92-142FE4D9C783} = {EB50B355-3CC8-4CAD-BA92-142FE4D9C783}
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProGpxPluginDatasource", "Plugin\ProDataReader\ProGfxPluginDatasource\ProGpxPluginDatasource.csproj", "{98666CC8-996F-49CF-81F4-03EFB4C941FC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProMdbPluginDatasource", "Plugin\ProDataReader\ProMdbPluginDatasource\ProMdbPluginDatasource.csproj", "{6E6E1223-1FCC-45AF-AB6F-AA65299EC84B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SceneCalcTools", "SceneLayers\SceneCalcTools\SceneCalcTools.csproj", "{39250B85-F035-467D-A7FC-C2B072901A18}"
 EndProject

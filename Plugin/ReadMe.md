@@ -13,7 +13,6 @@ This repository contains ArcGIS Pro Add-In Samples for the ArcGIS Pro 2.4 SDK fo
 
 This folder contains ArcGIS Pro Add-In Samples that fall under the 'Plugin' topic:
 
-* [ProDataReader (c#)](../../../tree/master/Plugin/ProDataReader)  
 * [SimplePointPluginTest (c#)](../../../tree/master/Plugin/SimplePointPluginTest)  
 
 

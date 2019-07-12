@@ -274,7 +274,6 @@ Below is the list of 165 ArcGIS Pro samples that are included in this repository
 
 #### Plugins
 
-* [ProDataReader (c#)](../../tree/master/Plugin/ProDataReader)  
 * [SimplePointPluginTest (c#)](../../tree/master/Plugin/SimplePointPluginTest)  
 
 
