@@ -17,7 +17,7 @@ Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
 Date:                  6/27/2019
 ArcGIS Pro:            2.4
-Visual Studio:         2015, 2017
+Visual Studio:         2017, 2019
 .NET Target Framework: 4.6.1
 ```
 

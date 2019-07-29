@@ -228,6 +228,7 @@ Below is the list of 165 ArcGIS Pro samples that are included in this repository
 * [LayerPopups (c#)](../../tree/master/Map-Exploration/LayerPopups)  
 * [MagnifierWindow (c#)](../../tree/master/Map-Exploration/MagnifierWindow)  
 * [MapToolIdentify (c#)](../../tree/master/Map-Exploration/MapToolIdentify)  
+* [MapToolIdentifyWithDockpane (c#)](../../tree/master/Map-Exploration/MapToolIdentifyWithDockpane)  
 * [MapToolSelect (c#)](../../tree/master/Map-Exploration/MapToolSelect)  
 * [MapToolWithCustomPopup (c#)](../../tree/master/Map-Exploration/MapToolWithCustomPopup)  
 * [MapToolWithDynamicMenu (c#)](../../tree/master/Map-Exploration/MapToolWithDynamicMenu)  

@@ -29,6 +29,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Map-Explorat
 * [LayerPopups (c#)](../../../tree/master/Map-Exploration/LayerPopups)  
 * [MagnifierWindow (c#)](../../../tree/master/Map-Exploration/MagnifierWindow)  
 * [MapToolIdentify (c#)](../../../tree/master/Map-Exploration/MapToolIdentify)  
+* [MapToolIdentifyWithDockpane (c#)](../../../tree/master/Map-Exploration/MapToolIdentifyWithDockpane)  
 * [MapToolSelect (c#)](../../../tree/master/Map-Exploration/MapToolSelect)  
 * [MapToolWithCustomPopup (c#)](../../../tree/master/Map-Exploration/MapToolWithCustomPopup)  
 * [MapToolWithDynamicMenu (c#)](../../../tree/master/Map-Exploration/MapToolWithDynamicMenu)  
