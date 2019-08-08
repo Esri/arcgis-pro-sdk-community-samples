@@ -1,8 +1,8 @@
 ## ConfigureGallery
 
 <!-- TODO: Write a brief abstract explaining this sample -->
- This sample shows how to use custom categories to configure buttons and tools into a gallery on Pro's ribbon.  
-   
+This sample shows how to use custom categories to configure buttons and tools into a gallery on Pro's ribbon.  
+  
 
 
 <a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
@@ -36,34 +36,33 @@ Visual Studio:         2017, 2019
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
- 1. In Visual Studio click the Build menu. Then select Build Solution.  
- 1. Click Start button to open ArcGIS Pro.  
- 1. ArcGIS Pro will open.   
- 1. Open any project. Click on the Configure Gallery tab on the ribbon.  
- 1. Within this tab there is an inline gallery that hosts a collection of controls. Controls that are registered within the AcmeCustom_AnalysisTools custom category are displayed in this gallery.  
- Controls are registered to a category using DAML. In Config.daml, here is a code snippet that registers a control with the AcmeCustom_AnalysisTools category:  
- ```xml
-  <button id="ConfigureGallery_Buttons_AcmeCommand1" caption="Command 1" 
-            categoryRefID="AcmeCustom_AnalysisTools" 
-            className="ConfigureGallery.Buttons.AcmeCommand1" ...>
-      <tooltip heading = "Tooltip Heading" >
-       Command 1<disabledText />
-      </tooltip>
-      <content version = "1.0" group="Group A" />
-     </button>
- 
- ```
- 1. This tab also contains other controls that are placed directly on the ribbon, outside the gallery. These controls are not registered with the category.  
- 1. New custom categories are defined in DAML. Notice the following code snippet in the config.daml that defines a new category called AcmeCustom_AnalysisTools:  
- ```xml
-   <categories>
-<!--Step 1-->
-<!--Create a new category to hold new commands in a a Gallery-->
-<insertCategory id = "AcmeCustom_AnalysisTools" ></ insertCategory >
+1. In Visual Studio click the Build menu. Then select Build Solution.  
+1. Click Start button to open ArcGIS Pro.  
+1. ArcGIS Pro will open.   
+1. Open any project. Click on the Configure Gallery tab on the ribbon.  
+1. Within this tab there is an inline gallery that hosts a collection of controls. Controls that are registered within the AcmeCustom_AnalysisTools custom category are displayed in this gallery.  
+Controls are registered to a category using DAML. In Config.daml, here is a code snippet that registers a control with the AcmeCustom_AnalysisTools category:  
+```xml
+ <button id="ConfigureGallery_Buttons_AcmeCommand1" caption="Command 1" 
+           categoryRefID="AcmeCustom_AnalysisTools" 
+           className="ConfigureGallery.Buttons.AcmeCommand1" ...>
+     <tooltip heading = "Tooltip Heading" >
+      Command 1<disabledText />
+     </tooltip>
+     <content version = "1.0" group="Group A" />
+ </button>
+```
+1. This tab also contains other controls that are placed directly on the ribbon, outside the gallery. These controls are not registered with the category.  
+1. New custom categories are defined in DAML. Notice the following code snippet in the config.daml that defines a new category called AcmeCustom_AnalysisTools:  
+```xml
+<categories>
+ <!--Step 1-->
+ <!--Create a new category to hold new commands in a a Gallery-->
+ <insertCategory id = "AcmeCustom_AnalysisTools" ></ insertCategory >
 </ categories >
- ```
- ![UI](screenshots/configuregallery.png)  
-   
+```
+![UI](screenshots/configuregallery.png)  
+  
 
 
 <!-- End -->
