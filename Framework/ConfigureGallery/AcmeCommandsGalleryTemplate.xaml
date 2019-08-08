@@ -1,0 +1,71 @@
+<!--
+
+   Copyright 2019 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+                         <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ribbon="http://schemas.actiprosoftware.com/winfx/xaml/ribbon"
+                    xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions">
+    <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <DataTemplate x:Key="LargeGalleryItemTemplate">
+        <Grid x:Name="grid" SnapsToDevicePixels="True" Width="82" Height="68" UseLayoutRounding="True"  
+          ribbon:ScreenTipService.ScreenTipHeader="{Binding PlugInWrapper.TooltipHeading}"
+          ribbon:ScreenTipService.ScreenTipDescription="{Binding PlugInWrapper.Tooltip}">
+            <Grid Margin="0" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="36" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+               <Image x:Name="Image" Margin="3,0,3,2" Width="32" 
+               Height="32" HorizontalAlignment="Center" 
+               VerticalAlignment="Center" Stretch="Uniform" 
+               Source="{Binding Icon32}" SnapsToDevicePixels="True">
+                    <Image.Resources>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Opacity" Value="1.0"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding PlugInWrapper.Enabled}" Value="False">
+                                    <Setter Property="Opacity" Value="0.4"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Resources>
+                </Image>
+
+                <TextBlock Grid.Row="1" Text="{Binding Path=PlugInWrapper.Caption}"
+                           Width="76" Margin="3,0,3,0"
+                           HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource Esri_TextBlockRegular}">
+                            <Setter Property="Opacity" Value="1.0"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding PlugInWrapper.Enabled}" Value="False">
+                                    <Setter Property="Opacity" Value="0.4"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+
+            </Grid>
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

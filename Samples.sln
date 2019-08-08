@@ -344,6 +344,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapToolIdentifyWithDockpane
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextElementAddin", "Layouts\TextElementAddin\TextElementAddin.csproj", "{DEB9DD29-7A64-4434-B111-A5B5FDCD2749}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigureGallery", "Framework\ConfigureGallery\ConfigureGallery.csproj", "{6F3649FD-8377-4F1B-8E09-21596D4E6924}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1026,6 +1028,10 @@ Global
 		{DEB9DD29-7A64-4434-B111-A5B5FDCD2749}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEB9DD29-7A64-4434-B111-A5B5FDCD2749}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEB9DD29-7A64-4434-B111-A5B5FDCD2749}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F3649FD-8377-4F1B-8E09-21596D4E6924}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F3649FD-8377-4F1B-8E09-21596D4E6924}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F3649FD-8377-4F1B-8E09-21596D4E6924}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F3649FD-8377-4F1B-8E09-21596D4E6924}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

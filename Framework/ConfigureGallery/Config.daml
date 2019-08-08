@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2019 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="ConfigureGallery.dll" defaultNamespace="ConfigureGallery" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{6f3649fd-8377-4f1b-8e09-21596d4e6924}" version="1.0" desktopVersion="2.3.15769">
+    <Name>ConfigureGallery</Name>
+    <Description>ConfigureGallery description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>2/4/2019 9:52:06 AM, 2019</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <categories>
+    <!--Step 1-->
+    <!--Create a new category to hold new commands in a a Gallery-->
+    <insertCategory id="AcmeCustom_AnalysisTools"></insertCategory>
+  </categories>
+  <modules>
+    <insertModule id="ConfigureGallery_Module" className="Module1" autoLoad="false" caption="Module1">
+      <controls>
+        <!-- add your controls here -->
+        <button id="ConfigureGallery_Buttons_AcmeCommand1" caption="Command 1" 
+                categoryRefID="AcmeCustom_AnalysisTools" 
+                className="ConfigureGallery.Buttons.AcmeCommand1" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/MarsCat32.png" keytip="a1">
+          <tooltip heading="Tooltip Heading">
+            Command 1<disabledText />
+          </tooltip>
+          <content version="1.0" group="Group A" />
+        </button>
+        <button id="ConfigureGallery_Buttons_AcmeCommand2" caption="Command 2"
+                categoryRefID="AcmeCustom_AnalysisTools"
+                className="ConfigureGallery.Buttons.AcmeCommand2" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/BexDog32.png" keytip="a2">
+          <tooltip heading="Tooltip Heading">
+            Command 2<disabledText /></tooltip>
+          <content version="1.0" group="Group A" />
+        </button>
+        <button id="ConfigureGallery_Buttons_AcmeCommand3" caption="Command 3"
+                categoryRefID="AcmeCustom_AnalysisTools"
+                className="ConfigureGallery.Buttons.AcmeCommand3" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EvilGenius32.png" keytip="a3">
+          <tooltip heading="Tooltip Heading">
+            Command 3<disabledText /></tooltip>
+          <content version="1.0" group="Special" />
+        </button>
+        <button id="ConfigureGallery_Buttons_AcmeCommand4" caption="Command 4" 
+                className="ConfigureGallery.Buttons.AcmeCommand4" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Rabbit32.png" keytip="a4">
+          <tooltip heading="Tooltip Heading">
+            Command 4<disabledText /></tooltip>
+          <content version="1.0" group="Special" />
+        </button>
+        <button id="ConfigureGallery_Buttons_AcmeCommand5" caption="Command 5" 
+                className="ConfigureGallery.Buttons.AcmeCommand5" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Bessy32.png" keytip="a5">
+          <tooltip heading="Tooltip Heading">
+            Command 5<disabledText /></tooltip>
+          <content version="1.0" group="Group B" />
+        </button>
+        <button id="ConfigureGallery_Buttons_AcmeCommand6" caption="Command 6" 
+                categoryRefID="AcmeCustom_AnalysisTools"
+                className="ConfigureGallery.Buttons.AcmeCommand6" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Panda32.png" keytip="a6">
+          <tooltip heading="Tooltip Heading">
+            Command 6<disabledText /></tooltip>
+          <content version="1.0"  />
+        </button>
+        <tool id="ConfigureGallery_ConstructionTool1" categoryRefID="esri_editing_construction_point" caption="Tool 1" className="ConstructionTool1" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" keytip="at1">
+          <!--note: use esri_editing_construction_polyline,  esri_editing_construction_polygon for categoryRefID as needed-->
+          <tooltip heading="Tooltip Heading">
+            Tooltip text<disabledText />
+          </tooltip>
+        </tool>
+      </controls>
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="ConfigureGallery_Tab1" caption="Configure Gallery">
+          <group refID="MyGroup"/>
+          <group refID="ConfigureGallery_Group1"/>
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ConfigureGallery_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="g1">
+          <!--host controls within groups-->
+          <tool refID="ConfigureGallery_ConstructionTool1" size="large" />
+          <button refID="ConfigureGallery_Buttons_AcmeCommand4" size="large" />
+          <button refID="ConfigureGallery_Buttons_AcmeCommand5" size="large" />
+        </group>
+        <group id="MyGroup" caption="My Commands" appearsOnAddInTab="false" keytip="g2">
+          <gallery refID="ConfigureGallery_AcmeCommandsGallery" inline="true" size="large" />
+        </group>
+      </groups>
+      <galleries>
+        <gallery id="ConfigureGallery_AcmeCommandsGallery" caption="AcmeCommandsGallery" showGroup="true" className="AcmeCommandsGallery" itemsInRow="3" dataTemplateFile="pack://application:,,,/ConfigureGallery;component//AcmeCommandsGalleryTemplate.xaml" templateID="LargeGalleryItemTemplate" resizable="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonYellow32.png" keytip="i1">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </gallery>
+      </galleries>
+    </insertModule>
+  </modules> 
+</ArcGIS>

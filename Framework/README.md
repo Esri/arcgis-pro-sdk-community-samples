@@ -17,6 +17,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Framework' t
 * [BookmarksComboBox (c#)](../../../tree/master/Framework/BookmarksComboBox)  
 * [CommandFilter (c#)](../../../tree/master/Framework/CommandFilter)  
 * [ConditionQuery (c#)](../../../tree/master/Framework/ConditionQuery)  
+* [ConfigureGallery (c#)](../../../tree/master/Framework/ConfigureGallery)  
 * [ConfigWithMap (c#)](../../../tree/master/Framework/ConfigWithMap)  
 * [ConfigWithStartWizard (c#)](../../../tree/master/Framework/ConfigWithStartWizard)  
 * [CustomCatalog (c#)](../../../tree/master/Framework/CustomCatalog)  
