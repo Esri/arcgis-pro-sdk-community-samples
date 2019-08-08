@@ -52,8 +52,8 @@ Controls are registered to a category using DAML. In Config.daml, here is a code
      <content version = "1.0" group="Group A" />
  </button>
 ```
-1. This tab also contains other controls that are placed directly on the ribbon, outside the gallery. These controls are not registered with the category.  
-1. New custom categories are defined in DAML. Notice the following code snippet in the config.daml that defines a new category called AcmeCustom_AnalysisTools:  
+6. This tab also contains other controls that are placed directly on the ribbon, outside the gallery. These controls are not registered with the category.  
+7. New custom categories are defined in DAML. Notice the following code snippet in the config.daml that defines a new category called AcmeCustom_AnalysisTools:  
 ```xml
 <categories>
  <!--Step 1-->
