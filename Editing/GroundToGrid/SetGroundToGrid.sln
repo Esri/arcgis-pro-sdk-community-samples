@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetGroundToGrid", "SetGroundToGrid.csproj", "{12FF7A92-B04B-4A7F-960D-C9D92A49F83C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12FF7A92-B04B-4A7F-960D-C9D92A49F83C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12FF7A92-B04B-4A7F-960D-C9D92A49F83C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12FF7A92-B04B-4A7F-960D-C9D92A49F83C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12FF7A92-B04B-4A7F-960D-C9D92A49F83C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6EA7BFD7-AAEA-4A2C-B4E6-115E0FE7D22C}
+	EndGlobalSection
+EndGlobal

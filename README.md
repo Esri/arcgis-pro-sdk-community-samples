@@ -32,7 +32,7 @@ Detailed instructions can be found here: [ProGuide: Contribute Samples](https://
 * [arcgis-pro-sdk-community-samples](https://github.com/Esri/arcgis-pro-sdk-community-samples)
 * [ArcGIS Pro DAML ID Reference](https://github.com/Esri/arcgis-pro-sdk/wiki/ArcGIS-Pro-DAML-ID-Reference)
 * [FAQ](https://github.com/Esri/arcgis-pro-sdk/wiki/FAQ)
-* [ArcGIS Pro SDK icons](https://github.com/Esri/arcgis-pro-sdk/releases/tag/2.4.0.19948)
+* [ArcGIS Pro SDK icons](https://github.com/Esri/arcgis-pro-sdk/releases/tag/2.4.0.19946)
 
 ![ArcGIS Pro SDK for .NET Icons](https://Esri.github.io/arcgis-pro-sdk/images/Home/Image-of-icons.png  "ArcGIS Pro SDK Icons")
 
@@ -75,7 +75,7 @@ Read the [ProGuide: Installation and Upgrade](https://github.com/Esri/arcgis-pro
 
 ## ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 166 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 168 ArcGIS Pro samples that are included in this repository.  
 
 #### Content
 
@@ -105,6 +105,8 @@ Below is the list of 166 ArcGIS Pro samples that are included in this repository
 * [EditingTemplates (c#)](../../tree/master/Editing/EditingTemplates)  
 * [EditOperationRowEvent (c#)](../../tree/master/Editing/EditOperationRowEvent)  
 * [ExtendTool (c#)](../../tree/master/Editing/ExtendTool)  
+* [GroundToGrid (c#)](../../tree/master/Editing/GroundToGrid)  
+* [GroundToGridEvents (c#)](../../tree/master/Editing/GroundToGridEvents)  
 * [InspectorTool (c#)](../../tree/master/Editing/InspectorTool)  
 * [MainConnectorManhole (c#)](../../tree/master/Editing/MainConnectorManhole)  
 * [ModifyNewlyAddedFeatures (c#)](../../tree/master/Editing/ModifyNewlyAddedFeatures)  

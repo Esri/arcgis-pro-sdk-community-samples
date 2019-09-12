@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G2GEvents", "G2GEvents.csproj", "{91220347-CEE7-4963-8AF1-C8372DAFE747}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91220347-CEE7-4963-8AF1-C8372DAFE747}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91220347-CEE7-4963-8AF1-C8372DAFE747}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91220347-CEE7-4963-8AF1-C8372DAFE747}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91220347-CEE7-4963-8AF1-C8372DAFE747}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15529998-E865-41C7-947C-D4A8D590F74B}
+	EndGlobalSection
+EndGlobal

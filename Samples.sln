@@ -346,6 +346,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextElementAddin", "Layouts
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigureGallery", "Framework\ConfigureGallery\ConfigureGallery.csproj", "{6F3649FD-8377-4F1B-8E09-21596D4E6924}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetGroundToGrid", "Editing\GroundToGrid\SetGroundToGrid.csproj", "{12FF7A92-B04B-4A7F-960D-C9D92A49F83C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G2GEvents", "Editing\GroundToGridEvents\G2GEvents.csproj", "{91220347-CEE7-4963-8AF1-C8372DAFE747}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1032,6 +1036,14 @@ Global
 		{6F3649FD-8377-4F1B-8E09-21596D4E6924}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F3649FD-8377-4F1B-8E09-21596D4E6924}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F3649FD-8377-4F1B-8E09-21596D4E6924}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12FF7A92-B04B-4A7F-960D-C9D92A49F83C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12FF7A92-B04B-4A7F-960D-C9D92A49F83C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12FF7A92-B04B-4A7F-960D-C9D92A49F83C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12FF7A92-B04B-4A7F-960D-C9D92A49F83C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91220347-CEE7-4963-8AF1-C8372DAFE747}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91220347-CEE7-4963-8AF1-C8372DAFE747}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91220347-CEE7-4963-8AF1-C8372DAFE747}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91220347-CEE7-4963-8AF1-C8372DAFE747}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
