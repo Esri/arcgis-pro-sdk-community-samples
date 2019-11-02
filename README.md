@@ -32,7 +32,7 @@ Detailed instructions can be found here: [ProGuide: Contribute Samples](https://
 * [arcgis-pro-sdk-community-samples](https://github.com/Esri/arcgis-pro-sdk-community-samples)
 * [ArcGIS Pro DAML ID Reference](https://github.com/Esri/arcgis-pro-sdk/wiki/ArcGIS-Pro-DAML-ID-Reference)
 * [FAQ](https://github.com/Esri/arcgis-pro-sdk/wiki/FAQ)
-* [ArcGIS Pro SDK icons](https://github.com/Esri/arcgis-pro-sdk/releases/tag/2.4.0.19946)
+* [ArcGIS Pro SDK icons](https://github.com/Esri/arcgis-pro-sdk/releases/tag/2.4.0.19948)
 
 ![ArcGIS Pro SDK for .NET Icons](https://Esri.github.io/arcgis-pro-sdk/images/Home/Image-of-icons.png  "ArcGIS Pro SDK Icons")
 
@@ -75,7 +75,7 @@ Read the [ProGuide: Installation and Upgrade](https://github.com/Esri/arcgis-pro
 
 ## ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 168 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 170 ArcGIS Pro samples that are included in this repository.  
 
 #### Content
 
@@ -278,6 +278,8 @@ Below is the list of 168 ArcGIS Pro samples that are included in this repository
 
 #### Plugins
 
+* [ProDataReader (c#)](../../tree/master/Plugin/ProDataReader)  
+* [ProSqlExpressReader (c#)](../../tree/master/Plugin/ProSqlExpressReader)  
 * [SimplePointPluginTest (c#)](../../tree/master/Plugin/SimplePointPluginTest)  
 
 
