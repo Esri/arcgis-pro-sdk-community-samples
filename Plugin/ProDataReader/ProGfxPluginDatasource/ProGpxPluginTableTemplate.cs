@@ -57,17 +57,32 @@ namespace ProGpxPluginDatasource
 		private const string CreatorVersionFieldName = "CreatorVersion";
 		private const string TypeFieldName = "ActivityType";
 		private const string DateTimeFieldName = "ActivityDate";
+        private const string TrkPntTime = "Time";
+        private const string TrkPntHr = "HeartRate";
+        private const string TrkPntCad = "Cadence";
 
-		private List<PluginField> _pluginFields = null;
+        private GeometryType _geomType = GeometryType.Polyline;
 
-		/// <summary>
-		/// Ctor using path that points to the gdf file
-		/// </summary>
-		/// <param name="gpxFilePath">path to gdx file</param>
-		public ProGpxPluginTableTemplate(string gpxFilePath)
+        private List<PluginField> _pluginFields = null;
+
+        /// <summary>
+        /// Ctor using path that points to the gpx file
+        /// </summary>
+        /// <param name="gpxFilePath">path to gpx file.  The geometry type is appended to the tablename like this: "|Point" or "|Line"</param>
+        public ProGpxPluginTableTemplate(string gpxFilePath)
 		{
-			this._gpxFilePath = gpxFilePath;
-			this._tableName = System.IO.Path.GetFileNameWithoutExtension (gpxFilePath);
+            var theFilePath = gpxFilePath;
+            var theGeomType = "|Line";
+            var parts = theFilePath.Split(new[] { '|' });
+            if (parts.Length > 1)
+            {
+                theFilePath = parts[0];
+                theGeomType = $@"|{parts[1]}";
+            }
+            if (!theGeomType.EndsWith("Line", StringComparison.OrdinalIgnoreCase))
+                _geomType = GeometryType.Point;
+			this._gpxFilePath = theFilePath;
+			this._tableName = $@"{System.IO.Path.GetFileNameWithoutExtension (theFilePath)}{theGeomType}";
 			this._spatialReference = SpatialReferences.WGS84;
 			CreateTable(this._tableName, this._gpxFilePath);
 		}
@@ -141,7 +156,7 @@ namespace ProGpxPluginDatasource
 
 		public override GeometryType GetShapeType()
         {
-			return GeometryType.Polyline;
+			return _geomType;
 		}
 
 		/// <summary>
@@ -168,13 +183,21 @@ namespace ProGpxPluginDatasource
 			_dataTable.Columns.Add(new DataColumn(LongFieldName, typeof(Double)));
 			_dataTable.Columns.Add(new DataColumn(LatFieldName, typeof(Double)));
 			_dataTable.Columns.Add(new DataColumn(AltFieldName, typeof(Double)));
-			_dataTable.Columns.Add(new DataColumn(TypeFieldName, typeof(string)));
-			_dataTable.Columns.Add(new DataColumn(DateTimeFieldName, typeof(DateTime)));
-			_dataTable.Columns.Add(new DataColumn(NameFieldName, typeof(string)));
-			_dataTable.Columns.Add(new DataColumn(CreatorFieldName, typeof(string)));
-			_dataTable.Columns.Add(new DataColumn(CreatorVersionFieldName, typeof(string)));
-
-			XmlDocument xmlDoc = new XmlDocument();
+            if (_geomType == GeometryType.Polyline)
+            {
+                _dataTable.Columns.Add(new DataColumn(TypeFieldName, typeof(string)));
+                _dataTable.Columns.Add(new DataColumn(DateTimeFieldName, typeof(DateTime)));
+                _dataTable.Columns.Add(new DataColumn(NameFieldName, typeof(string)));
+                _dataTable.Columns.Add(new DataColumn(CreatorFieldName, typeof(string)));
+                _dataTable.Columns.Add(new DataColumn(CreatorVersionFieldName, typeof(string)));
+            }
+            else
+            {
+                _dataTable.Columns.Add(new DataColumn(TrkPntTime, typeof(DateTime)));
+                _dataTable.Columns.Add(new DataColumn(TrkPntHr, typeof(Int32)));
+                _dataTable.Columns.Add(new DataColumn(TrkPntCad, typeof(Int32)));
+            }
+            XmlDocument xmlDoc = new XmlDocument();
 			xmlDoc.Load(filePath);
 			string xmlns = xmlDoc.DocumentElement.NamespaceURI;
 			XmlNamespaceManager nmsp = new XmlNamespaceManager(xmlDoc.NameTable);
@@ -221,10 +244,12 @@ namespace ProGpxPluginDatasource
 			if (nodeList.Count > 0) activityType = nodeList[0].InnerText;
 
 			var newRow = _dataTable.NewRow();
-			newRow[ObjectIdFieldName] = 1;
+            var objectid = 1;
 			// let's make a 3d line shape
 			List<Coordinate3D> lst3DCoords = new List<Coordinate3D>();
 			double lng = 0.0, lat = 0.0, ele = 0.0;
+            Int32 cad = -1, hr = -1;
+            DateTime? trkTime = null;
 			nodeList = xmlDoc.DocumentElement.SelectNodes("/x:gpx/x:trk/x:trkseg/x:trkpt", nmsp);
 			foreach (XmlNode node in nodeList)
 			{
@@ -232,26 +257,72 @@ namespace ProGpxPluginDatasource
 				lat = double.Parse(node.Attributes["lat"].Value);
 				foreach (XmlNode childNode in node.ChildNodes)
 				{
-					if (childNode.Name.Equals("ele"))
-					{
-						ele = double.Parse(childNode.InnerText);
-					}
-				}
-				lst3DCoords.Add(new Coordinate3D(lng, lat, ele));
-			}
-			var pl = PolylineBuilder.CreatePolyline(lst3DCoords, _spatialReference);
-			newRow[GeometryFieldName] = pl;
-			newRow[LongFieldName] = lng;
-			newRow[LatFieldName] = lat;
-			newRow[AltFieldName] = ele;
-			newRow[DateTimeFieldName] = dateValue;
-			newRow[TypeFieldName] = activityType;
-			newRow[NameFieldName] = activityName;
-			newRow[CreatorFieldName] = creator;
-			newRow[CreatorVersionFieldName] = creatorVersion;
-			_dataTable.Rows.Add(newRow);
-			_gisExtent = _gisExtent == null
-				? pl.Extent : _gisExtent.Union(pl.Extent);
+                    switch (childNode.Name)
+                    {
+                        case "ele":
+						    ele = double.Parse(childNode.InnerText);
+                            break;
+                        case "time":
+                            trkTime = DateTime.Parse(childNode.InnerText);
+                            break;
+                        case "extensions":
+                            if (childNode.HasChildNodes)
+                            {
+                                foreach (XmlNode extNode in childNode.ChildNodes[0].ChildNodes)
+                                {
+                                    switch (extNode.LocalName)
+                                    {
+                                        case "hr":
+                                            hr = Int32.Parse(extNode.InnerText);
+                                            break;
+                                        case "cad":
+                                            cad = Int32.Parse(extNode.InnerText);
+                                            break;
+                                    }
+                                }
+                            }
+                            break;
+                    }
+                }
+
+                if (_geomType == GeometryType.Polyline)
+                {
+                    lst3DCoords.Add(new Coordinate3D(lng, lat, ele));
+                }
+                else
+                {   // for the point variety we only have many rows
+                    newRow[ObjectIdFieldName] = objectid++; 
+                    var mp = MapPointBuilder.CreateMapPoint(new Coordinate3D(lng, lat, ele), _spatialReference);
+                    newRow[GeometryFieldName] = mp;
+                    newRow[LongFieldName] = lng;
+                    newRow[LatFieldName] = lat;
+                    newRow[AltFieldName] = ele;
+                    if (trkTime.HasValue) newRow[TrkPntTime] = trkTime.Value;
+                    newRow[TrkPntHr] = hr;
+                    newRow[TrkPntCad] = cad;
+                    _dataTable.Rows.Add(newRow);
+                    _gisExtent = _gisExtent == null
+                        ? mp.Extent : _gisExtent.Union(mp.Extent);
+                    newRow = _dataTable.NewRow();
+                }
+            }
+            if (_geomType == GeometryType.Polyline)
+            {   // for the line variety we only have one row
+                newRow[ObjectIdFieldName] = objectid;
+                var pl = PolylineBuilder.CreatePolyline(lst3DCoords, _spatialReference);
+                newRow[GeometryFieldName] = pl;
+                newRow[LongFieldName] = lng;
+                newRow[LatFieldName] = lat;
+                newRow[AltFieldName] = ele;
+                newRow[TypeFieldName] = activityType;
+                newRow[DateTimeFieldName] = dateValue;
+                newRow[NameFieldName] = activityName;
+                newRow[CreatorFieldName] = creator;
+                newRow[CreatorVersionFieldName] = creatorVersion;
+                _dataTable.Rows.Add(newRow);
+                _gisExtent = _gisExtent == null
+                    ? pl.Extent : _gisExtent.Union(pl.Extent);
+            }
 		}
 
 		private PluginCursorTemplate SearchInternal(QueryFilter qf)
@@ -295,11 +366,11 @@ namespace ProGpxPluginDatasource
 			int recCount = selectRows.Length;
 			if (sqf == null)
 			{
-				result = _dataTable.AsEnumerable().Select(row => (int)row[ObjectIdFieldName]).ToList();
+				result = selectRows.AsEnumerable().Select(row => (int)row[ObjectIdFieldName]).ToList();
 			}
 			else
 			{
-				result = _dataTable.AsEnumerable().Where(Row => CheckSpatialQuery(sqf, Row[GeometryFieldName] as Geometry)).Select(row => (int)row[ObjectIdFieldName]).ToList();
+				result = selectRows.AsEnumerable().Where(Row => CheckSpatialQuery(sqf, Row[GeometryFieldName] as Geometry)).Select(row => (int)row[ObjectIdFieldName]).ToList();
 			}
 			return result;
 		}

@@ -80,9 +80,12 @@ namespace ProGpxPluginDatasource
 			var tableName = System.IO.Path.GetFileNameWithoutExtension(_filePath);
 			if (System.IO.File.Exists(_filePath))
 			{
-				// there is only one 'table' which is the one gpx file
-				_tables.Add(tableName, new ProGpxPluginTableTemplate(_filePath));
-			}
+                // there is only one 'table' which is the one gpx file
+                // but there are two representations: points and lines:
+                // the table type is appended to the tablename like this: "|Point" or "|Line"
+                _tables.Add(tableName+ "|Point", new ProGpxPluginTableTemplate(_filePath+ "|Point"));
+                _tables.Add(tableName+ "|Line", new ProGpxPluginTableTemplate(_filePath+ "|Line"));
+            }
 			return _tables.Keys.ToList();
 		}
 

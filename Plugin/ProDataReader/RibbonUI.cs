@@ -92,18 +92,24 @@ namespace ProDataReader
 							case ProDataSubItem.EnumSubItemType.GpxType:
 								var conGpx = new PluginDatasourceConnectionPath("ProGpxPluginDatasource",
 												 new Uri(item.Path, UriKind.Absolute));
-								using (var pluginGpx = new PluginDatastore(conGpx))
+                                var groupLayer = LayerFactory.Instance.CreateGroupLayer(MapView.Active.Map, 0, Path.GetFileNameWithoutExtension(item.Path));
+                                ArcGIS.Core.Geometry.Envelope zoomToEnv = null;
+                                using (var pluginGpx = new PluginDatastore(conGpx))
 								{
 									System.Diagnostics.Debug.Write($"Table: {item.Path}\r\n");
+                                    // because this is a GPX file we have both line and point variations
+                                    // we add them in a group layer
 									foreach (var tn in pluginGpx.GetTableNames())
 									{
 										using (var table = pluginGpx.OpenTable(tn))
 										{
 											//Add as a layer to the active map or scene
-											LayerFactory.Instance.CreateFeatureLayer((FeatureClass)table, MapView.Active.Map);
-										}
-									}
-								}
+											LayerFactory.Instance.CreateFeatureLayer((FeatureClass)table, groupLayer);
+                                            zoomToEnv = ((FeatureClass)table).GetExtent().Clone() as ArcGIS.Core.Geometry.Envelope;
+                                        }
+                                    }
+                                }
+                                if (zoomToEnv != null) MapView.Active.ZoomToAsync(zoomToEnv);
 								break;
 							case ProDataSubItem.EnumSubItemType.ImgDirType:
 							case ProDataSubItem.EnumSubItemType.ImgType:
