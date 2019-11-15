@@ -418,8 +418,8 @@ namespace EditEventsSample.Dockpane
         _rowevents.Clear();
 
         //Editing and Edit Completed.
-        RowDeletedEvent.Unsubscribe(_editevents[0]);
-        RowDeletedEvent.Unsubscribe(_editevents[1]);
+        EditCompletingEvent.Unsubscribe(_editevents[0]);
+        EditCompletedEvent.Unsubscribe(_editevents[1]);
         _editevents.Clear();
       });
       
