@@ -23,9 +23,8 @@ namespace CIMExamples
 
         protected override async void OnClick()
         {
-
             var rasterLayer =
-                MapView.Active.Map.GetLayersAsFlattenedList().FirstOrDefault() as RasterLayer;
+                MapView.Active.Map.GetLayersAsFlattenedList().OfType<ImageServiceLayer>().FirstOrDefault();
             if (rasterLayer == null)
             {
                 MessageBox.Show("Please add a raster as layer 0", "Cannot find layer");

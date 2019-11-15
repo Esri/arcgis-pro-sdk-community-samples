@@ -65,6 +65,7 @@ Visual Studio:         2017, 2019
 1. Click the 'Layer Selection Color' button to change the selection color for the given feature layer:  
 ![CIMExamples](Screenshots/Screenshot6.png)  
   
+1. Add a raster layer to your map.  For example: find and add 'CharlotteLAS' from the 'All Portal' connection, add the layer to your map, and then zoom to the newly added layer's extent.
 1. Click the 'Raster Stretch' button to create a CIMRasterStretchColorizer:
 ![CIMExamples](Screenshots/Screenshot7.png)  
 
