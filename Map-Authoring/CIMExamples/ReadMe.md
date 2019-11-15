@@ -65,7 +65,8 @@ Visual Studio:         2017, 2019
 1. Click the 'Layer Selection Color' button to change the selection color for the given feature layer:  
 ![CIMExamples](Screenshots/Screenshot6.png)  
   
-
+1. Click the 'Raster Stretch' button to create a CIMRasterStretchColorizer:
+![CIMExamples](Screenshots/Screenshot7.png)  
 
 <!-- End -->
 
