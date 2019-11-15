@@ -43,26 +43,35 @@ namespace DuplicateLayout
     {
         protected async override void OnClick()
         {
-
-            var layoutView = LayoutView.Active;
-            try
+            var catalogPane = Project.GetCatalogPane();
+            var items = catalogPane.SelectedItems;
+            var layoutItems = items.OfType<LayoutProjectItem>();
+            foreach (var item in layoutItems)
             {
-                if (layoutView?.Layout != null)
+                LayoutProjectItem layoutItem = Project.Current.GetItems<LayoutProjectItem>().FirstOrDefault(itm => itm.Name.Equals(item.Name));
+                try
                 {
-                    await layoutView.Layout.Duplicate();
+                    var layout = await layoutItem.GetLayoutAsync();
+                    if (layout != null)
+                    {
+                        await layout.Duplicate();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex);
                 }
             }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine(ex);
-            }
-
         }
     }
 
     public static class LayoutExtensions
     {
-
+        /// <summary>
+        /// Duplicate a layout - run from GUi Thread
+        /// </summary>
+        /// <param name="layout">Layout to duplicated</param>
+        /// <returns></returns>
         public static async Task Duplicate(this Layout layout)
         {
             if (layout == null)
@@ -75,6 +84,13 @@ namespace DuplicateLayout
         {
             return QueuedTask.Run(() => {
                 return Clone(layout);
+            });
+        }
+
+        public static Task<Layout> GetLayoutAsync(this LayoutProjectItem layout)
+        {
+            return QueuedTask.Run(() => {
+                return layout.GetLayout();
             });
         }
 
