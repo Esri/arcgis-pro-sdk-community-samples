@@ -1,13 +1,9 @@
-## CIMExamples
+## Inspector_AddAttributeAsync
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-Shows the following CIM capabilities:  
+This sample demonstrates how to use the Inspector.AddAttributeAsync method. The sample contains a single map tool which displays a grid requesting attribute values from the user. After entering values into the grid, the user sketches a rectangle to identify features.  The attributes will be applied to the features that are  identified by the tool.  
   
-1. Provide sample to create CIMUniqueValueRenderer from scratch  
-1. Same as above but using the UniqueValueRendererDefinition class and the layer to configure the underlying Renderer  
-1. How to create the equivalent of symbol levels in Pro.  
-1. How to change out the Data Connection (equivalent to changing "DataSource" in ArcObjects)  
-1. Change the selection color for the given feature layer  
+In this example we are using Inspector.AddAttributeAsync to only add a few fields from a single specific layer.  It is possible to add fields from multiple layers to  display in the grid.   
   
 
 
@@ -16,13 +12,13 @@ Shows the following CIM capabilities:
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
-Subject:               Map Authoring
+Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
 Date:                  6/27/2019
 ArcGIS Pro:            2.4
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.6.1
+Visual Studio:         2019
+.NET Target Framework: 4.7.2
 ```
 
 ## Resources
@@ -42,32 +38,30 @@ Visual Studio:         2017, 2019
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data). The sample data contains an ArcGIS Pro project and data to be used for this sample. Make sure that the Sample data is unzipped in c:\data and c:\data\Admin is available.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
+1. Make sure that the Sample data is unzipped in C:\Data  
+1. Before you run the sample verify that the project "C:\Data\Interacting with Maps\Interacting with Maps.aprx" is present since this is required to run the sample.  
 1. In Visual Studio click the Build menu. Then select Build Solution.  
 1. Click Start button to open ArcGIS Pro.  
 1. ArcGIS Pro will open.  
-1. Open the project 'C:\Data\Admin\AdminSample.aprx'.  Please note that layer names and other specific data is required for this sample, hence this specific project is required.  
-1. Click on the 'CIM Examples' TAB.  
-![CIMExamples](Screenshots/Screenshot1.png)  
+1. Open the "C:\Data\Interacting with Maps\Interacting with Maps" project.  
+1. Click on the ADD-IN TAB.  
+![UI](Screenshots/ribbon.png)  
   
-1. Click the 'Renderer From Scratch' button to create a new render for the States layer:  
-![CIMExamples](Screenshots/Screenshot2.png)  
+1. Click on the "Apply Attrributes" button.  
+1. A dockpane will be displayed showing the fields requiring user input. In this example we have chosen 2 fields from the Police Stations layer.   
+Each field is shown as invalid (outlined in a red box) indicating that validation of the values has occurred.  
+![UI](Screenshots/ApplyAttributes_1.png)  
   
-1. Click the 'Renderer via Definition' button to create a new UniqueValueRendererDefinition for States using the 'TOTPOP2010' field:  
-![CIMExamples](Screenshots/Screenshot3.png)   
+1. Enter a value into the first field.  The value is validated. A valid value is outlined with a green box.  The user can hover over the side bar of any invalid value to see any message you wish to display.  
+![UI](Screenshots/ApplyAttributes_2.png)  
   
-1. Click the 'Create Symbol Levels' button to create the equivalent of symbol levels in Pro:  
-![CIMExamples](Screenshots/Screenshot4.png)  
+1. Enter a value into the second field.  The value is validated.    
+![UI](Screenshots/ApplyAttributes_3.png)  
   
-1. Click the 'Layer DataSource' button to change out the Data Connection to 'C:\Data\Admin\AdminSample.gdb':  
-![CIMExamples](Screenshots/Screenshot5.png)  
-  
-1. Click the 'Layer Selection Color' button to change the selection color for the given feature layer:  
-![CIMExamples](Screenshots/Screenshot6.png)    
-  
-1. Add a raster layer to your map.  For example: find and add 'CharlotteLAS' from the 'All Portal' connection, add the layer to your map, and then zoom to the newly added layer's extent.  
-1. Click the 'Raster Stretch' button to create a CIMRasterStretchColorizer:  
-![CIMExamples] (Screenshots/Screenshot7.png)    
+1. Now draw a rectangle on the map around one of more Police Station features.   
+1. The values entered will be applied to the identified features.   
+![UI](Screenshots/ApplyAttributes_Results.png)  
   
 
 

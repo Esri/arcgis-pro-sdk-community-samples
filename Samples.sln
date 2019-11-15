@@ -358,7 +358,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetGroundToGrid", "Editing\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G2GEvents", "Editing\GroundToGridEvents\G2GEvents.csproj", "{91220347-CEE7-4963-8AF1-C8372DAFE747}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapToolIdentifyWithDockpane", "Map-Exploration\MapToolIdentifyWithDockpane\MapToolIdentifyWithDockpane.csproj", "{84BE358E-326F-4946-9B84-1AB41339EF74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapToolIdentifyWithDockpane", "Map-Exploration\MapToolIdentifyWithDockpane\MapToolIdentifyWithDockpane.csproj", "{2EE0856A-DCE3-4D5A-8F48-E68E35CB4F86}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigureGallery", "Framework\ConfigureGallery\ConfigureGallery.csproj", "{6F3649FD-8377-4F1B-8E09-21596D4E6924}"
 EndProject
@@ -367,6 +367,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlExpressDb", "Plugin\ProSqlExpressReader\ProSqlExpressDb\SqlExpressDb.csproj", "{00B0AAC0-BF42-44D6-8638-15B563782CE2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProSqlExpressPluginDatasource", "Plugin\ProSqlExpressReader\ProSqlExpressPluginDatasource\ProSqlExpressPluginDatasource.csproj", "{6E6E1223-1FCC-45AF-AB6F-AA65299EC84B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inspector_AddAttributeAsync", "Editing\Inspector_AddAttributeAsync\Inspector_AddAttributeAsync.csproj", "{DBF33F73-9BFC-4909-9858-86DC00E911D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1070,14 +1072,10 @@ Global
 		{91220347-CEE7-4963-8AF1-C8372DAFE747}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91220347-CEE7-4963-8AF1-C8372DAFE747}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91220347-CEE7-4963-8AF1-C8372DAFE747}.Release|Any CPU.Build.0 = Release|Any CPU
-		{84BE358E-326F-4946-9B84-1AB41339EF74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{84BE358E-326F-4946-9B84-1AB41339EF74}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{84BE358E-326F-4946-9B84-1AB41339EF74}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{84BE358E-326F-4946-9B84-1AB41339EF74}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B58617F6-BBF0-4E86-B8E3-19284ABE09F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B58617F6-BBF0-4E86-B8E3-19284ABE09F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B58617F6-BBF0-4E86-B8E3-19284ABE09F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B58617F6-BBF0-4E86-B8E3-19284ABE09F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EE0856A-DCE3-4D5A-8F48-E68E35CB4F86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EE0856A-DCE3-4D5A-8F48-E68E35CB4F86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EE0856A-DCE3-4D5A-8F48-E68E35CB4F86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EE0856A-DCE3-4D5A-8F48-E68E35CB4F86}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6F3649FD-8377-4F1B-8E09-21596D4E6924}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6F3649FD-8377-4F1B-8E09-21596D4E6924}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F3649FD-8377-4F1B-8E09-21596D4E6924}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -1094,6 +1092,10 @@ Global
 		{6E6E1223-1FCC-45AF-AB6F-AA65299EC84B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E6E1223-1FCC-45AF-AB6F-AA65299EC84B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E6E1223-1FCC-45AF-AB6F-AA65299EC84B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBF33F73-9BFC-4909-9858-86DC00E911D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBF33F73-9BFC-4909-9858-86DC00E911D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBF33F73-9BFC-4909-9858-86DC00E911D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBF33F73-9BFC-4909-9858-86DC00E911D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

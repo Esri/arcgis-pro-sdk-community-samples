@@ -75,7 +75,7 @@ Read the [ProGuide: Installation and Upgrade](https://github.com/Esri/arcgis-pro
 
 ## ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 170 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 171 ArcGIS Pro samples that are included in this repository.  
 
 #### Content
 
@@ -108,6 +108,7 @@ Below is the list of 170 ArcGIS Pro samples that are included in this repository
 * [GroundToGrid (c#)](../../tree/master/Editing/GroundToGrid)  
 * [GroundToGridEvents (c#)](../../tree/master/Editing/GroundToGridEvents)  
 * [InspectorTool (c#)](../../tree/master/Editing/InspectorTool)  
+* [Inspector_AddAttributeAsync (c#)](../../tree/master/Editing/Inspector_AddAttributeAsync)  
 * [MainConnectorManhole (c#)](../../tree/master/Editing/MainConnectorManhole)  
 * [ModifyNewlyAddedFeatures (c#)](../../tree/master/Editing/ModifyNewlyAddedFeatures)  
 * [ReplaceSketch (c#)](../../tree/master/Editing/ReplaceSketch)  

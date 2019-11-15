@@ -27,6 +27,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Editing' top
 * [GroundToGrid (c#)](../../../tree/master/Editing/GroundToGrid)  
 * [GroundToGridEvents (c#)](../../../tree/master/Editing/GroundToGridEvents)  
 * [InspectorTool (c#)](../../../tree/master/Editing/InspectorTool)  
+* [Inspector_AddAttributeAsync (c#)](../../../tree/master/Editing/Inspector_AddAttributeAsync)  
 * [MainConnectorManhole (c#)](../../../tree/master/Editing/MainConnectorManhole)  
 * [ModifyNewlyAddedFeatures (c#)](../../../tree/master/Editing/ModifyNewlyAddedFeatures)  
 * [ReplaceSketch (c#)](../../../tree/master/Editing/ReplaceSketch)  
