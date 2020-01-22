@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2020 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="LabelLineFeatures.dll" defaultNamespace="LabelLineFeatures" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{bec71f95-e526-4c14-9fcc-5cbe1fff40a9}" version="1.0" desktopVersion="2.4.0">
+    <Name>LabelLineFeatures</Name>
+    <Description>LabelLineFeatures description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>1/5/2020 7:52:52 AM, 2020</Date>
+    <Subject>Map Authoring</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="LabelLineFeatures_Module" className="Module1" autoLoad="true" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="LabelLineFeatures_Tab1" caption="New Tab">
+          <group refID="LabelLineFeatures_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="LabelLineFeatures_Group1" caption="Label using OIDs" appearsOnAddInTab="true" keytip="G0">
+          <!-- host controls within groups -->
+          <tool refID="LabelLineFeatures_LabelFeatures" />
+        </group>
+        <group id="LabelLineFeatures_group2" caption="Label using attributes" appearsOnAddInTab="true" keytip="G1">
+          <tool refID="LabelLineFeatures_LabelManyFeatures" />
+          <button refID="LabelLineFeatures_ClearLabels" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <tool id="LabelLineFeatures_LabelFeatures" caption="Label using OIDs" className="LabelFeatures" 
+              loadOnClick="true" keytip="T0"
+              smallImage="Images\LabelFeatures16.png"
+              largeImage="Images\LabelFeatures32.png">
+          <tooltip heading="Select US Rivers features to label them">US Rivers feature class will be labeled using the OIDs of the selected features.<disabledText /></tooltip>
+        </tool>
+        <tool id="LabelLineFeatures_LabelManyFeatures" caption="Label using attributes" className="LabelManyFeatures" 
+              loadOnClick="true" keytip="T1" 
+              smallImage="Images\LabelFeatures16-2.png"
+              largeImage="Images\LabelFeatures32-2.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Select US Rivers features to label them">US Rivers feature class will be labeled based on the attributes of the LabelOn field. <disabledText /></tooltip>
+        </tool>
+        <button id="LabelLineFeatures_ClearLabels" caption="Reset LabelOn field" className="ClearLabels" 
+                loadOnClick="true" keytip="T2"
+                smallImage="Images\ClearLabels16.png" 
+                largeImage="Images\ClearLabels32.png">
+          <tooltip heading="Reset LabelOn field attributes">Resets all the attributes of the LabelOn field of the US Rivers features. This is clear the labels for the feature class.<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>
