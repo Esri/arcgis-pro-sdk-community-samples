@@ -32,7 +32,7 @@ namespace MapToolSelect
     /// </summary>
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a dataset called 'Interacting with Maps' with both 2D and 3D data.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.
-    /// 1. Open this solution in Visual Studio 2015.  
+    /// 1. Open this solution in Visual Studio.  
     /// 1. Click the build menu and select Build Solution.
     /// 1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.
     /// 1. Open the project "Interacting with Maps.aprx" in the "C:\Data\Interacting with Maps" folder since this project contains 2D and 3D data.

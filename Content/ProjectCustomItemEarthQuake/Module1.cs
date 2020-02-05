@@ -63,7 +63,9 @@ namespace ProjectCustomItemEarthQuake
     /// 1. Rename *earthquakes.quake* by using the rename Context Menu button or by simply clicking on the *Custom Project Item* name to enable editing of the name
     /// ![UI](Screenshots/Screen5.png)
     /// ![UI](Screenshots/Screen6.png)
-    /// </remarks>
+    /// 1. Click the "Open Quake Event" button. Browse to the 'C:\Data\CustomItem\QuakeCustomItem' folder. You will be able to see the .quake item.  Double click the .quake item to browse into it to see the quake events
+    ///![UI](Screenshots/Screen6.png)
+        /// </remarks>
     internal class Module1 : Module
   {
     private static Module1 _this = null;

@@ -22,8 +22,8 @@
     <Name>SymbolLookup</Name>
     <Description>SymbolLookup description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>uma2526</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>5/15/2019 12:04:12 PM, 2019</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

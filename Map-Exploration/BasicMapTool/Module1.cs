@@ -33,7 +33,7 @@ namespace BasicMapTool
     /// implementation, and an associated embeddable control that can be moved around the Map View.
     /// </summary>
     /// <remarks>   
-    /// 1. Open this solution in Visual Studio 2015.  
+    /// 1. Open this solution in Visual Studio.  
     /// 1. Click the build menu and select Build Solution.
     /// 1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.
     /// 1. Open any project or a blank map.

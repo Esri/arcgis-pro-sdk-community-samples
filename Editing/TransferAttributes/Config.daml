@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+   Copyright 2019 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="TransferAttributes.dll" defaultNamespace="TransferAttributes" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{46b17ba8-b2c3-4f07-8031-833a96e630c7}" version="1.0" desktopVersion="2.0.0">
+    <Name>TransferAttributes</Name>
+    <Description>TransferAttributes sample for the ArcGIS Pro SDK samples.</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>9/2/2019 10:41:56 AM, 2019</Date>
+    <Subject>Editing</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="TransferAttributes_Module" className="Module1" autoLoad="false" caption="Module1">
+      <tabs />
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="TransferAttributes_Group1" caption="Transfer Attributes" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <tool refID="TransferAttributes_TransferAttributes_Features" size="large" />
+          <tool refID="TransferAttributes_TransferAttributes_Template" size="large" />
+          <button refID="TransferAttributes_FieldMapping" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <tool id="TransferAttributes_TransferAttributes_Features" caption="Transfer Attributes between Features" className="TransferAttributes_Features" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Transfer Attributes between Features">Transfer attributes between a source and a target feature according to the Field mapping for the source and target layers.<disabledText /></tooltip>
+        </tool>
+        <tool id="TransferAttributes_TransferAttributes_Template" caption="Transfer Attributes from Template" className="TransferAttributes_Template" loadOnClick="true" categoryRefID="esri_editing_CommandList" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Transfer Attributes from Template">Transfer attributes between a source template and a target feature according to the Field mapping for the source and target layers.<disabledText /></tooltip>
+          <content L_Group="SDK Sample" />
+        </tool>
+        <button id="TransferAttributes_FieldMapping" caption="Field Mapping" className="FieldMapping" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Field Mapping">Open the Field mapping dialog.<disabledText /></tooltip>
+        </button>
+      </controls>
+      <!--menu for the burger button in ChooseTemplate.xaml-->
+      <menus>
+        <menu id="TransferAttributes_ChooseTemplate_Menu" caption="Options" contextMenu="true">
+          <button refID="TransferAttributes_FieldMapping" />
+        </menu>
+      </menus>
+    </insertModule>
+  </modules>
+  <categories>
+    <updateCategory refID="esri_embeddableControls">
+      <insertComponent id="TransferAttributes_ChooseTemplate" className="ChooseTemplateViewModel">
+        <content className="ChooseTemplateView" />
+      </insertComponent>
+    </updateCategory>
+  </categories>
+</ArcGIS>

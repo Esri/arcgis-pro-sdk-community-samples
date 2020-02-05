@@ -10,7 +10,7 @@
             </summary>
             <remarks>
             1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Configurations\Projects' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Configurations\Projects" is available.
-            1. In Visual Studio 2015 click the Build menu. Then select Build Solution.
+            1. In Visual Studio click the Build menu. Then select Build Solution.
             1. Click Start button to debug ArcGIS Pro.
             1. ArcGIS Pro displays the custom splash screen.
             ![UI](Screenshots/ManagedConfigSplash.png)

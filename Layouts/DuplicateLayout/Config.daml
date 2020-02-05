@@ -22,8 +22,8 @@
     <Name>DuplicateLayout</Name>
     <Description>DuplicateLayout description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>uma2526</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>9/27/2018 11:59:33 AM, 2018</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:
@@ -47,8 +47,9 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="DuplicateLayout_Clone" caption="Clone" className="Clone" loadOnClick="true" smallImage="Images\clone16.png" largeImage="Images\clone32.png">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        <button id="DuplicateLayout_Clone" caption="Clone" className="Clone" loadOnClick="true" 
+                smallImage="Images\clone16.png" largeImage="Images\clone32.png">
+          <tooltip heading="Tooltip Heading">Clones the selected Layout(s)<disabledText /></tooltip>
         </button>
       </controls>
     </insertModule>

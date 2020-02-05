@@ -10,13 +10,13 @@ This sample illustrates real-time analysis. Real-time API allows you to integrat
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
-Subject:               Map Authoring
+Subject:               StreamLayers
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/27/2019
-ArcGIS Pro:            2.4
+Date:                  7/17/2019
+ArcGIS Pro:            2.5
 Visual Studio:         2017, 2019
-.NET Target Framework: 4.6.1
+.NET Target Framework: 4.8
 ```
 
 ## Resources

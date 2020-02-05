@@ -22,7 +22,7 @@ using System.Threading.Tasks;
 namespace FeatureDynamicMenu
 {/// <summary>
  /// This sample shows how to display a dynamic context menu. The sample also have an embeddabel control on the map that allows you pick the layer you want to select.   
- /// When you select features with this tool, the oids of the feaures will be displayed in a dynamic context menu. 
+ /// When you select features with this tool, the oids of the features will be displayed in a dynamic context menu. 
  /// When you click one of the OIDs in this context menu, that feature will flash on the Map View and display a pop-up. 
  /// </summary>
  /// <remarks>

@@ -13,6 +13,7 @@
 using System;
 using System.Collections.Generic;
 using System.Resources;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 using ArcGIS.Core.Geometry;
@@ -22,6 +23,8 @@ using ArcGIS.Desktop.Mapping;
 
 namespace FeatureDynamicMenu
 {
+
+
     internal class DynamicFeatureSelectionMenu : DynamicMenu
     {
         public delegate void FeatureSelectedDelegate(BasicFeatureLayer layer, long oid);
@@ -89,28 +92,23 @@ namespace FeatureDynamicMenu
 
             return imageFileName;
         }
-
-       
-
-        //protected override void OnClick(int index)
-        //{
-        //    BasicFeatureLayer bfl = _selectedFeatures[index].Item1;
-        //    long oid = _selectedFeatures[index].Item2;
-        //    System.Windows.MessageBox.Show(
-        //        string.Format("You clicked on {0}: {1}", bfl.Name, oid));
-        //    base.OnClick(index);
-        //}
-
+        
         void OnFeatureSelected(BasicFeatureLayer layer, long oid)
         {
             var mapView = MapView.Active;
             mapView?.FlashFeature(layer, oid);
             Thread.Sleep(1000);
             mapView?.FlashFeature(layer, oid);
-
+            System.Windows.Point mousePnt = MouseCursorPosition.GetMouseCursorPosition();
+            var popupDef = new PopupDefinition()
+            {
+                Append = true,      // if true new record is appended to existing (if any)
+                Dockable = true,    // if true popup is dockable - if false Append is not applicable
+                Position = mousePnt,  // Position of top left corner of the popup (in pixels)
+                Size = new System.Windows.Size(200, 400)    // size of the popup (in pixels)
+            };
             //Show pop-up of feature
-            mapView?.ShowPopup(layer, oid);
-
+            mapView?.ShowPopup(layer, oid, popupDef);
         }
     }
 

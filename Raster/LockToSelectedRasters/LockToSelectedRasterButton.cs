@@ -99,16 +99,19 @@ namespace LockToSelectedRasters
                     RowCursor selectedRows = footprintLayer.GetSelection().Search();
                     if (selectedRows.MoveNext())
                     {
-                        // Get the value for the Category field.
-                        int tag = Convert.ToInt32(selectedRows.Current.GetOriginalValue(selectedRows.FindField("Category")));
-                        // For each row, if Category is not 2 (2 = overview), then add the object id to the list of items to lock to.
-                        if (tag != 2)
-                            objectIDs = selectedRows.Current.GetOriginalValue(selectedRows.FindField("OBJECTID")).ToString();
-                        while (selectedRows.MoveNext())
+                        using (var selectedRow = selectedRows.Current)
                         {
-                            tag = Convert.ToInt32(selectedRows.Current.GetOriginalValue(selectedRows.FindField("Category")));
+                            // Get the value for the Category field.
+                            int tag = Convert.ToInt32(selectedRow.GetOriginalValue(selectedRows.FindField("Category")));
+                            // For each row, if Category is not 2 (2 = overview), then add the object id to the list of items to lock to.
                             if (tag != 2)
-                                objectIDs += "," + selectedRows.Current.GetOriginalValue(selectedRows.FindField("OBJECTID")).ToString();
+                                objectIDs = selectedRow.GetOriginalValue(selectedRows.FindField("OBJECTID")).ToString();
+                            while (selectedRows.MoveNext())
+                            {
+                                tag = Convert.ToInt32(selectedRow.GetOriginalValue(selectedRows.FindField("Category")));
+                                if (tag != 2)
+                                    objectIDs += "," + selectedRow.GetOriginalValue(selectedRows.FindField("OBJECTID")).ToString();
+                            }
                         }
                     }
                 }

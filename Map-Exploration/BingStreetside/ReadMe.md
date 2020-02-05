@@ -1,7 +1,7 @@
 ## BingStreetside
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates the usagle of the WebBrowser control and how to interface between C# and HTML5/JavaScript and vise versa.    
+This sample demonstrates the usage of the WebBrowser control and how to interface between C# and HTML5/JavaScript and vise versa.    
 The sample is using a Bing Map's Streetside API to demonstrate these functions.  In order to use this sample you have to apply with Bing Maps for a Bing Maps API developer key.  You can find the instructions on how to do this below.    
   
 
@@ -14,10 +14,10 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/27/2019
-ArcGIS Pro:            2.4
+Date:                  7/17/2019
+ArcGIS Pro:            2.5
 Visual Studio:         2017, 2019
-.NET Target Framework: 4.6.1
+.NET Target Framework: 4.8
 ```
 
 ## Resources

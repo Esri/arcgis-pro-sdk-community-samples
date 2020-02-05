@@ -3,9 +3,9 @@
 <!-- TODO: Write a brief abstract explaining this sample -->
 This add-in demonstrates the creation of an electric distribution transformer bank.  It creates the bank feature, three transformer features (one per phase), three fuses, three arresters and the associations between them.  It demonstrates how to accomplish this within a single EditOperation.  
    
-Utility network SDK samples require a utility network service to run.  For the Create Transformer Bank sample, you will need to do the following:   
-* Configure a utility network database and service using the ArcGIS for Electric data model.  Instructions for setting up and configuring this data are located on the [ArcGIS for Electric website](http://solutions.arcgis.com/electric/help/electric-utility-network-configuration/).   
-* If you are not using the sample Naperville dataset, you should change the constants in the CreateTransformerBank.cs file to match your data model.  
+Community Sample data (see under the "Resources" section for downloading sample data) has a UtilityNetworkSamples.aprx  project that contains a utility network that can be used with this sample.  This project can be found under the   
+C:\Data\UtilityNetwork folder. Alternatively, you can also use any utility network data with this sample, although constant  values may need to be changed.  
+  
   
 
 
@@ -17,10 +17,10 @@ Language:              C#
 Subject:               UtilityNetwork
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/27/2019
-ArcGIS Pro:            2.4
+Date:                  7/17/2019
+ArcGIS Pro:            2.5
 Visual Studio:         2017, 2019
-.NET Target Framework: 4.6.1
+.NET Target Framework: 4.8
 ```
 
 ## Resources
@@ -43,7 +43,7 @@ Visual Studio:         2017, 2019
 1. In Visual Studio click the Build menu.  Then select Build Solution.  
 1. Click Start button to open ArcGIS Pro.  
 1. ArcGIS Pro will open.  
-1. Open a map view that contains at least one Feature Layer whose source points to a Feature Class that participates in a utility network.  
+1. Open C:\Data\UtilityNetwork\UtilityNetworkSamples.aprx or a map view that references a utility network with the correct schema  
 1. Select a feature layer or subtype group layer that participates in a utility network or a utility network layer  
 1. Click on the Add-in tab on the ribbon  
 1. Click on the Create Transformer Bank tool  

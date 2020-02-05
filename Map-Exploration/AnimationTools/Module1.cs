@@ -206,20 +206,24 @@ namespace AnimationTools
                         numPoints = pointLayer.GetTable().GetCount();
                         while (rowNumber < 3)
                         {
-                            rowNumber = rowNumber + 1;
+                            rowNumber += 1;
                             using (Row currentRow = pointsRowcursor.Current)
+                            {
+                                if (pointsRowcursor.MoveNext())
                                 {
-                                    pointsRowcursor.MoveNext();
-                                    var pointFeature = pointsRowcursor.Current as Feature;
-                                    if (rowNumber == 1)
+                                    using (var pointFeature = pointsRowcursor.Current as Feature)
                                     {
-                                        mapPoint1 = pointFeature.GetShape() as MapPoint;
-                                    }
-                                    else if (rowNumber == 2)
-                                    {
-                                        mapPoint2 = pointFeature.GetShape() as MapPoint;
+                                        if (rowNumber == 1)
+                                        {
+                                            mapPoint1 = pointFeature.GetShape().Clone() as MapPoint;
+                                        }
+                                        else if (rowNumber == 2)
+                                        {
+                                            mapPoint2 = pointFeature.GetShape().Clone() as MapPoint;
+                                        }
                                     }
                                 }
+                            }
 
                         }
 
@@ -273,38 +277,32 @@ namespace AnimationTools
                     numPoints = pointLayer.GetTable().GetCount();
                     while (pointsRowcursor.MoveNext())
                     {
-                        rowNumber = rowNumber + 1;
-                        using (Row currentRow = pointsRowcursor.Current)
+                        rowNumber += 1;
+                        using (var pointFeature = pointsRowcursor.Current as Feature)
                         {
-
-                            var pointFeature = pointsRowcursor.Current as Feature;
-                            var mapPoint = pointFeature.GetShape() as MapPoint;
-
-
+                            var mapPoint = pointFeature.GetShape().Clone() as MapPoint;
                             // if prevPoint == null, skip creation of keyframe 
                             if (prevFeature != null)
                             {
-
                                 double bearingRadians = 0;
-                                string bearingValForKeyframe = Convert.ToString(currentRow["BEARING"]);
+                                string bearingValForKeyframe = Convert.ToString(pointFeature["BEARING"]);
 
                                 if (rowNumber == 2)  // View from behind vehicle to begin animation
-
                                 {
-                                    double bearingVal = Convert.ToDouble(currentRow["BEARING"]) + 180;
+                                    double bearingVal = Convert.ToDouble(pointFeature["BEARING"]) + 180;
                                     bearingRadians = (Math.PI / 180) * bearingVal;
                                     cameraJumpVal = 12;
                                 }
-                                else if(rowNumber == numPoints)  // Last point, build keyframe with camera facing the front of the vehicle:
+                                else if (rowNumber == numPoints)  // Last point, build keyframe with camera facing the front of the vehicle:
                                 {
-                                    double bearingVal = Convert.ToDouble(currentRow["BEARING"]) + 0;
+                                    double bearingVal = Convert.ToDouble(pointFeature["BEARING"]) + 0;
                                     bearingRadians = (Math.PI / 180) * bearingVal;
                                     cameraJumpVal = 12;
 
                                 }
                                 else  // View from the side
                                 {
-                                    double bearingVal = Convert.ToDouble(currentRow["BEARING"]) + 270;
+                                    double bearingVal = Convert.ToDouble(pointFeature["BEARING"]) + 270;
                                     bearingRadians = (Math.PI / 270) * bearingVal;
 
                                 }
@@ -331,7 +329,7 @@ namespace AnimationTools
                                 newCamera.Pitch = -5;
                                 newCamera.Viewpoint = CameraViewpoint.LookAt;
 
-                                double sequenceVal = Convert.ToDouble(currentRow["Sequence"]);
+                                double sequenceVal = Convert.ToDouble(pointFeature["Sequence"]);
                                 Range newRange = new Range();
                                 newRange.Min = sequenceVal;
                                 newRange.Max = sequenceVal;
@@ -340,7 +338,6 @@ namespace AnimationTools
                                 rangeTrack.CreateKeyframe(newRange, newTimeSpan, AnimationTransition.Linear);
                                 //newTimeSpan = newTimeSpan.Add(span);
 
-
                                 if (cameraSetting == "perspective" && cameraJumpVal == 12)
                                 {
                                     // rangeTrack.CreateKeyframe(newRange, newTimeSpan, AnimationTransition.Linear);
@@ -348,18 +345,13 @@ namespace AnimationTools
                                     cameraTrack.CreateKeyframe(newCamera, newTimeSpan, AnimationTransition.Linear);
                                     cameraJumpVal = 0;
                                 }
-
                                 newTimeSpan = newTimeSpan.Add(span);
-
                             }
 
                             prevFeature = pointFeature;
                             prevPoint = prevFeature.GetShape() as MapPoint;
-
                         }
-
-
-                        cameraJumpVal = cameraJumpVal + 1;
+                        cameraJumpVal += 1;
                     }
 
 
@@ -462,10 +454,13 @@ namespace AnimationTools
                     int i = 0;
                     while (rows.MoveNext())
                     {
-                        object origVal = rows.Current.GetOriginalValue(rows.FindField(fieldName));
-                        if (!(origVal is DBNull))
-                            fieldVals[i] = System.Convert.ToDouble(origVal);
-                        i++;
+                        using (var currentRow = rows.Current)
+                        {
+                            object origVal = currentRow.GetOriginalValue(rows.FindField(fieldName));
+                            if (!(origVal is DBNull))
+                                fieldVals[i] = System.Convert.ToDouble(origVal);
+                            i++;
+                        }
                     }
                     if (fieldVals.Count() > 0)
                     {

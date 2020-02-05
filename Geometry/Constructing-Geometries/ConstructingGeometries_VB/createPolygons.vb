@@ -84,13 +84,13 @@ Friend Class CreatePolygons
               Dim polylineBuilder = New PolylineBuilder(polygonDefinition.GetSpatialReference())
 
               Do While (lineCursor.MoveNext())
-                ' retrieve the first feature
-                Dim lineFeature = DirectCast(lineCursor.Current, Feature)
-
-                ' add the coordinate collection of the current geometry into our overall list of collections
-                Dim polylineGeometry = DirectCast(lineFeature.GetShape(), Polyline)
-                polylineBuilder.AddParts(polylineGeometry.Parts)
-              Loop
+                    ' retrieve the first feature
+                    Using lineFeature = DirectCast(lineCursor.Current, Feature)
+                        ' add the coordinate collection of the current geometry into our overall list of collections
+                        Dim polylineGeometry = DirectCast(lineFeature.GetShape(), Polyline)
+                        polylineBuilder.AddParts(polylineGeometry.Parts)
+                    End Using
+                Loop
 
               ' use the ConvexHull method from the GeometryEngine to construct the polygon geometry
               Dim newPolygon = DirectCast(GeometryEngine.Instance.ConvexHull(polylineBuilder.ToGeometry()), Polygon)

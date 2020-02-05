@@ -22,8 +22,8 @@
     <Name>AddFeatureTest</Name>
     <Description>AddFeatureTest description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>Wolf</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>10/8/2018 9:44:23 AM, 2018</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

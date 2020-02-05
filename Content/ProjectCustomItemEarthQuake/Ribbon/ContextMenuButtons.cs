@@ -23,6 +23,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
+using ArcGIS.Core.Data.PluginDatastore;
 using ArcGIS.Core.Geometry;
 using ArcGIS.Desktop.Catalog;
 using ArcGIS.Desktop.Core;
@@ -37,58 +38,59 @@ using ProjectCustomItemEarthQuake.Items;
 
 namespace ProjectCustomItemEarthQuake.Ribbon
 {
-  internal class AddQuakeToProject : Button
-  {
-    protected override void OnClick()
+    internal class AddQuakeToProject : Button
     {
-      var catalog = Project.GetCatalogPane();
-      var items = catalog.SelectedItems;
-      var item = items.OfType<QuakeProjectItem>().FirstOrDefault();
-      if (item == null)
-        return;
-      QueuedTask.Run(() => Project.Current.AddItem(item));
+        protected override void OnClick()
+        {
+            var catalog = Project.GetCatalogPane();
+            var items = catalog.SelectedItems;
+            var item = items.OfType<QuakeProjectItem>().FirstOrDefault();
+            if (item == null)
+                return;
+            QueuedTask.Run(() => Project.Current.AddItem(item));
 
+        }
     }
-  }
 
-  internal class DelQuakeFromProject : Button
-  {
-    protected override void OnClick()
+    internal class DelQuakeFromProject : Button
     {
-      var catalog = Project.GetCatalogPane();
-      var items = catalog.SelectedItems;
-      var item = items.OfType<QuakeProjectItem>().FirstOrDefault();
-      if (item == null)
-        return;
-      QueuedTask.Run(() => Project.Current.RemoveItem(item));
+        protected override void OnClick()
+        {
+            var catalog = Project.GetCatalogPane();
+            var items = catalog.SelectedItems;
+            var item = items.OfType<QuakeProjectItem>().FirstOrDefault();
+            if (item == null)
+                return;
+            QueuedTask.Run(() => Project.Current.RemoveItem(item));
 
+        }
     }
-  }
 
-  internal class RenameItem : Button
-  {
-    protected override void OnClick()
+    internal class RenameItem : Button
     {
-      var catalog = Project.GetCatalogPane();
-      var items = catalog.SelectedItems;
-      var item = items.OfType<QuakeEventCustomItem>().FirstOrDefault();
-      if (item == null)
-        return;
-      item.SetNewName("Hello Test!");
+        protected override void OnClick()
+        {
+            var catalog = Project.GetCatalogPane();
+            var items = catalog.SelectedItems;
+            var item = items.OfType<QuakeEventCustomItem>().FirstOrDefault();
+            if (item == null)
+                return;
+            item.SetNewName("Hello Test!");
+        }
     }
-  }
 
-	internal class ShowCim : Button
-	{
-		protected override void OnClick()
-		{
-			var catalog = Project.GetCatalogPane();
-			var items = catalog.SelectedItems;
-			var item = items.OfType<QuakeProjectItem>().FirstOrDefault();
-			if (item == null)
-				return;
-			System.Diagnostics.Debug.WriteLine (item.GetXml());
-			//System.IO.File.WriteAllText(@"c:\data\CimProjectItem.json", item.ToJson());
-		}
-	}
+    internal class ShowCim : Button
+    {
+        protected override void OnClick()
+        {
+            var catalog = Project.GetCatalogPane();
+            var items = catalog.SelectedItems;
+            var item = items.OfType<QuakeProjectItem>().FirstOrDefault();
+            if (item == null)
+                return;
+            System.Diagnostics.Debug.WriteLine(item.GetXml());
+            //System.IO.File.WriteAllText(@"c:\data\CimProjectItem.json", item.ToJson());
+        }
+    }
+
 }

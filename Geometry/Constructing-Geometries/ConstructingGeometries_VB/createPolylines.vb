@@ -95,21 +95,22 @@ Friend Class CreatePolylines
               Do While (pointCursor.MoveNext())
                 pointCounter += 1
 
-                Dim pointFeature = DirectCast(pointCursor.Current, Feature)
-                ' add the feature point geometry as a coordinate into the vertex list of the line
-                ' - ensure that the projection of the point geometry is converted to match the spatial reference of the line
-                lineMapPoints.Add(DirectCast(GeometryEngine.Instance.Project(pointFeature.GetShape(), polylineDefinition.GetSpatialReference()), MapPoint))
+                    Using pointFeature = DirectCast(pointCursor.Current, Feature)
+                        ' add the feature point geometry as a coordinate into the vertex list of the line
+                        ' - ensure that the projection of the point geometry is converted to match the spatial reference of the line
+                        lineMapPoints.Add(DirectCast(GeometryEngine.Instance.Project(pointFeature.GetShape(), polylineDefinition.GetSpatialReference()), MapPoint))
 
-                ' for every 5 geometries, construct a new polyline and queue a feature create
-                If (pointCounter Mod 5 = 0) Then
-                  ' construct a new polyline by using the 5 point coordinate in the current list
-                  Dim newPolyline = PolylineBuilder.CreatePolyline(lineMapPoints, polylineDefinition.GetSpatialReference())
-                  ' queue the create operation as part of the edit operation
-                  createOperation.Create(polylineLayer, newPolyline)
-                  ' reset the list of coordinates
-                  lineMapPoints = New List(Of MapPoint)(5)
-                End If
-              Loop
+                        ' for every 5 geometries, construct a new polyline and queue a feature create
+                        If (pointCounter Mod 5 = 0) Then
+                            ' construct a new polyline by using the 5 point coordinate in the current list
+                            Dim newPolyline = PolylineBuilder.CreatePolyline(lineMapPoints, polylineDefinition.GetSpatialReference())
+                            ' queue the create operation as part of the edit operation
+                            createOperation.Create(polylineLayer, newPolyline)
+                            ' reset the list of coordinates
+                            lineMapPoints = New List(Of MapPoint)(5)
+                        End If
+                    End Using
+                Loop
 
               ' execute the edit (create) operation
               Return createOperation.ExecuteAsync()

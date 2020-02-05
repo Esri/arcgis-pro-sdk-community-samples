@@ -174,61 +174,64 @@ namespace LayersPane
                         }
                         if (cursor.MoveNext())
                         {
-                            var maxcols = cursor.Current.GetFields().Count() > 6
+                            using (Row currentRow = cursor.Current)
+                            {
+                                var maxcols = currentRow.GetFields().Count() > 6
                                 ? 6
-                                : cursor.Current.GetFields().Count();
-                            for (var c = 0; c < maxcols; c++)
-                            {
-                                Type colType = typeof(string);
-                                var format = string.Empty;
-                                var fldDefinition = cursor.Current.GetFields()[c];
-                                switch (fldDefinition.FieldType)
+                                : currentRow.GetFields().Count();
+                                for (var c = 0; c < maxcols; c++)
                                 {
-                                    case FieldType.Blob:
-                                        format = "Blob";
-                                        break;
-                                    case FieldType.Raster:
-                                        format = "Raster";
-                                        break;
-                                    case FieldType.Geometry:
-                                        format = "Geom";
-                                        break;
-                                    case FieldType.Date:
-                                        colType = typeof(DateTime);
-                                        format = @"mm/dd/yyyy";
-                                        break;
-                                    case FieldType.Double:
-                                        format = "0,0.0##";
-                                        break;
-                                    case FieldType.Integer:
-                                    case FieldType.OID:
-                                    case FieldType.Single:
-                                    case FieldType.SmallInteger:
-                                        format = "0,0";
-                                        break;
-                                    case FieldType.GlobalID:
-                                    case FieldType.GUID:
-                                    case FieldType.String:
-                                    case FieldType.XML:
-                                    default:
-                                        break;
+                                    Type colType = typeof(string);
+                                    var format = string.Empty;
+                                    var fldDefinition = currentRow.GetFields()[c];
+                                    switch (fldDefinition.FieldType)
+                                    {
+                                        case FieldType.Blob:
+                                            format = "Blob";
+                                            break;
+                                        case FieldType.Raster:
+                                            format = "Raster";
+                                            break;
+                                        case FieldType.Geometry:
+                                            format = "Geom";
+                                            break;
+                                        case FieldType.Date:
+                                            colType = typeof(DateTime);
+                                            format = @"mm/dd/yyyy";
+                                            break;
+                                        case FieldType.Double:
+                                            format = "0,0.0##";
+                                            break;
+                                        case FieldType.Integer:
+                                        case FieldType.OID:
+                                        case FieldType.Single:
+                                        case FieldType.SmallInteger:
+                                            format = "0,0";
+                                            break;
+                                        case FieldType.GlobalID:
+                                        case FieldType.GUID:
+                                        case FieldType.String:
+                                        case FieldType.XML:
+                                        default:
+                                            break;
+                                    }
+                                    var col = new DataColumn(fldDefinition.Name, colType)
+                                    {
+                                        Caption = fldDefinition.AliasName
+                                    };
+                                    dt.Columns.Add(col);
                                 }
-                                var col = new DataColumn(fldDefinition.Name, colType)
+                                do
                                 {
-                                    Caption = fldDefinition.AliasName
-                                };
-                                dt.Columns.Add(col);
+                                    var row = dt.NewRow();
+                                    rowCount++;
+                                    for (var colIdx = 0; colIdx < maxcols; colIdx++)
+                                    {
+                                        row[colIdx] = currentRow[colIdx];
+                                    }
+                                    dt.Rows.Add(row);
+                                } while (cursor.MoveNext());
                             }
-                            do
-                            {
-                                var row = dt.NewRow();
-                                rowCount++;
-                                for (var colIdx = 0; colIdx < maxcols; colIdx++)
-                                {
-                                    row[colIdx] = cursor.Current[colIdx];
-                                }
-                                dt.Rows.Add(row);
-                            } while (cursor.MoveNext());
                         }
                         Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal,
                             (Action)(() => UpdateDataTableOnUI(dt)));

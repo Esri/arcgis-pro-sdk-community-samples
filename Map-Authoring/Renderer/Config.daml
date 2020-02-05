@@ -22,9 +22,9 @@
     <Name>Renderer</Name>
     <Description>Renderer description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-      <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-      <Company>esri, http://www.esri.com</Company>
-      <Date>6/13/2017 12:29:15 PM, 2017</Date>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>6/13/2017 12:29:15 PM, 2017</Date>
     <Subject>Map Authoring</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
@@ -43,6 +43,7 @@
         <group id="Renderer_Group1" caption="Group 1" appearsOnAddInTab="true">
           <!-- host controls within groups -->
           <button refID="Renderer_ApplyRenderer" size="large" />
+          <button refID="Renderer_AttributeDrivenSymbology" size="large" />
         </group>
       </groups>
       <controls>
@@ -50,7 +51,10 @@
         <button id="Renderer_ApplyRenderer" caption="Apply Renderer" className="ApplyRenderer" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
-      </controls>    
+        <button id="Renderer_AttributeDrivenSymbology" caption="AttributeDrivenSymbology" className="AttributeDrivenSymbology" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
     </insertModule>
   </modules>
 </ArcGIS>

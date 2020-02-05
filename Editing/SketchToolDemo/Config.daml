@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,7 +22,7 @@
     <Name>SketchToolDemo</Name>
     <Description>SketchTool Demo for the ArcGIS Pro SDK samples.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>3/2/2016 6:14:57 PM, 2016</Date>
     <Subject>Editing</Subject>
@@ -32,9 +32,7 @@
       <tabs />
       <groups />
       <controls>
-        <tool id="SketchToolDemo_CutTool" caption="CutTool " 
-              className="CutTool" loadOnClick="true" smallImage="Images\BexDog16.png" keytipe="ZB"
-              largeImage="Images\BexDog32.png" condition="esri_mapping_mapPane" categoryRefID="esri_editing_CommandList">
+        <tool id="SketchToolDemo_CutTool" caption="CutTool " className="CutTool" loadOnClick="true" smallImage="Images\BexDog16.png" keytipe="ZB" largeImage="Images\BexDog32.png" condition="esri_mapping_mapPane" categoryRefID="esri_editing_CommandList">
           <tooltip heading="Pro SDK Samples">Sample sketch tool performing a cut without selected features.
           <disabledText /></tooltip>
           <content L_group="Pro SDK Samples" gallery2d="true" gallery3d="false" />

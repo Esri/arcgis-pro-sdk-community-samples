@@ -14,10 +14,10 @@ Language:              C#
 Subject:               Plugin
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/27/2019
-ArcGIS Pro:            2.4
+Date:                  7/17/2019
+ArcGIS Pro:            2.5
 Visual Studio:         2019
-.NET Target Framework: 4.7.2
+.NET Target Framework: 4.8
 ```
 
 ## Resources
@@ -41,12 +41,12 @@ Visual Studio:         2019
 1. Make sure that the Sample data is unzipped in c:\data   
 1. The data used in this sample is located in this folder 'C:\Data\PluginData\SQLExpressData'  
 1. In order to run this sample you have to install SQL Server Express, which can be downloaded and installed for free from Microsoft here: https://www.microsoft.com/en-us/download/details.aspx?id=13255.  The SQL Server version supported is 2017 or newer.    
-1. Once SQL Server Express is installed and runnung, use 'Microsoft SQL Server Management Studio 18' to 'attach' the following database files:  
+1. Once SQL Server Express is installed and running, use 'Microsoft SQL Server Management Studio 18' to 'attach' the following database files:  
 1. C:\Data\PluginData\SQLExpressData\TestSqlExpress.mdf and C:\Data\PluginData\SQLExpressData\FDTestSQLExpress.mdf.     
 1. In Visual Studio click the Build menu. Then select Build Solution.  
 1. Click Start button to open ArcGIS Pro.  
 1. In ArcGIS Pro open this project: 'C:\Data\PluginData\SqlExpress\SqlExpress.aprx'  
-1. Open the Catalog Dockpane and open Folder Connection to to drill down to this folder: 'SQLExpressData'  
+1. Open the Catalog Dockpane and open Folder Connection to drill down to this folder: 'SQLExpressData'  
 ![UI](Screenshots/Screen1.png)    
   
 1. The folder 'SQLExpressData' is linked to 'C:\Data\PluginData\SQLExpressData' this folder contains a file called 'SqlExpress.sqlexpress' with a file extension that triggers the 'ProDataProjectItem' Custom Project Item class. 'SqlExpress.sqlexpress' in turn contains lines of SQL Server RDMS conenction strings that are read and processed by the Custom Project Item class in order to explore the content of each database connection.  

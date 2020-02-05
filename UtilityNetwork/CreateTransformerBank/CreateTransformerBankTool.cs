@@ -19,15 +19,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using ArcGIS.Desktop.Editing;
-using ArcGIS.Desktop.Framework;
-using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Mapping;
 using ArcGIS.Core.Geometry;
-using ArcGIS.Core.Data;
 using ArcGIS.Core.Data.UtilityNetwork;
 using UtilityNetworkSamples;
 using ArcGIS.Desktop.Mapping.Events;
@@ -38,29 +34,28 @@ namespace CreateTransformerBank
   internal class CreateTransformerBankTool : MapTool
   {
     // Utility Network Constants - Change these to match your data model as needed
-    const string DomainNetworkName = "Electric Distribution Network";
 
-    const string AssemblyNetworkSourceName = "Electric Distribution Assembly";
-    const string DeviceNetworkSourceName = "Electric Distribution Device";
+    const string AssemblyNetworkSourceName = "Electric Assembly";
+    const string DeviceNetworkSourceName = "Electric Device";
 
-    const string TransformerBankAssetGroupName = "Transformer Bank";
-    const string TransformerBankAssetTypeName = "Overhead Three Phase Delta";
+    const string TransformerBankAssetGroupName = "Medium Voltage Transformer Bank";
+    const string TransformerBankAssetTypeName = "Overhead Three Phase";
 
-    const string TransformerAssetGroupName = "Transformer";
+    const string TransformerAssetGroupName = "Medium Voltage Transformer";
     const string TransformerAssetTypeName = "Overhead Single Phase";
 
-    const string FuseAssetGroupName = "Fuse";
-    const string FuseAssetTypeName = "Overhead Cutout Fuse Non Load Breaking";
+    const string FuseAssetGroupName = "Medium Voltage Fuse";
+    const string FuseAssetTypeName = "Overhead Cutout Fused Disconnect";
 
-    const string ArresterAssetGroupName = "Arrester";
-    const string ArresterAssetTypeName = "Medium Voltage Line Arrester";
+    const string ArresterAssetGroupName = "Medium Voltage Arrester";
+    const string ArresterAssetTypeName = "MV Line Arrester";
 
     const string PhaseFieldName = "phasescurrent";
     const int APhase = 4;
     const int BPhase = 2;
     const int CPhase = 1;
 
-    const string DeviceStatusFieldName = "devicestatus";
+    const string DeviceStatusFieldName = "currentdevicestatus";
     const int DeviceStatusClosed = 2;
     const int DeviceStatusOpen = 1;
 
@@ -76,8 +71,6 @@ namespace CreateTransformerBank
       // Select the type of construction tool you wish to implement.  
       // Make sure that the tool is correctly registered with the correct component category type in the daml 
       SketchType = SketchGeometryType.Point;
-       //SketchType = SketchGeometryType.Line;
-      // SketchType = SketchGeometryType.Polygon;
     }
 
     /// <summary>
@@ -90,9 +83,11 @@ namespace CreateTransformerBank
       if (geometry == null) return false;
 
       // Create an edit operation
-      var createOperation = new EditOperation();
-      createOperation.Name = "Create Transformer Bank";
-      createOperation.SelectNewFeatures = true;
+      var createOperation = new EditOperation()
+      {
+        Name = "Create Transformer Bank",
+        SelectNewFeatures = true
+      };
 
       bool success = false;
       string errorMessage = "";
@@ -109,143 +104,149 @@ namespace CreateTransformerBank
           }
           else
           {
-            using (UtilityNetworkDefinition utilityNetworkDefinition = utilityNetwork.GetDefinition())
-
-            // Get the NetworkSource, AssetGroup, and AssetTypes for all of the features we want to create
-            // If this was production code, you would want to check the return values to make sure that these asset groups and asset types existed.
-
-            // TransformerBank
-            using (NetworkSource transformerBankNetworkSource = utilityNetworkDefinition.GetNetworkSource(AssemblyNetworkSourceName))
-            using (AssetGroup transformerBankAssetGroup = transformerBankNetworkSource.GetAssetGroup(TransformerBankAssetGroupName))
-            using (AssetType transformerBankAssetType = transformerBankAssetGroup.GetAssetType(TransformerBankAssetTypeName))
-
-            // Transformer
-            using (NetworkSource deviceNetworkSource = utilityNetworkDefinition.GetNetworkSource(DeviceNetworkSourceName))
-            using (AssetGroup transformerAssetGroup = deviceNetworkSource.GetAssetGroup(TransformerAssetGroupName))
-            using (AssetType transformerAssetType = transformerAssetGroup.GetAssetType(TransformerAssetTypeName))
-
-            // Arrester
-            using (AssetGroup arresterAssetGroup = deviceNetworkSource.GetAssetGroup(ArresterAssetGroupName))
-            using (AssetType arresterAssetType = arresterAssetGroup.GetAssetType(ArresterAssetTypeName))
-
-            // Fuse
-            using (AssetGroup fuseAssetGroup = deviceNetworkSource.GetAssetGroup(FuseAssetGroupName))
-            using (AssetType fuseAssetType = fuseAssetGroup.GetAssetType(FuseAssetTypeName))
+            if (!ValidateDataModel(utilityNetwork))
             {
-              MapPoint clickPoint = geometry as MapPoint;
+              errorMessage = "This sample is designed for a different utility network data model";
+            }
+            else
+            {
+              using (UtilityNetworkDefinition utilityNetworkDefinition = utilityNetwork.GetDefinition())
+              // Get the NetworkSource, AssetGroup, and AssetTypes for all of the features we want to create
+              // The existance of these values has already been confirmed in the ValidateDataModel() routine
 
-              // Create a transformer bank
-              Layer transformerBankLayer = GetLayerForEdit(map, AssemblyNetworkSourceName, TransformerBankAssetGroupName);
-              RowToken token = createOperation.CreateEx(transformerBankLayer, CreateAttributes(transformerBankAssetGroup, transformerBankAssetType, clickPoint));
-              RowHandle transformerBankHandle = new RowHandle(token);
+              // TransformerBank
+              using (NetworkSource transformerBankNetworkSource = GetNetworkSource(utilityNetworkDefinition, AssemblyNetworkSourceName))
+              using (AssetGroup transformerBankAssetGroup = transformerBankNetworkSource.GetAssetGroup(TransformerBankAssetGroupName))
+              using (AssetType transformerBankAssetType = transformerBankAssetGroup.GetAssetType(TransformerBankAssetTypeName))
 
-              // Create three transformers, one for each phase
-              Layer transformerLayer = GetLayerForEdit(map, DeviceNetworkSourceName, TransformerAssetGroupName);
+              // Transformer
+              using (NetworkSource deviceNetworkSource = GetNetworkSource(utilityNetworkDefinition, DeviceNetworkSourceName))
+              using (AssetGroup transformerAssetGroup = deviceNetworkSource.GetAssetGroup(TransformerAssetGroupName))
+              using (AssetType transformerAssetType = transformerAssetGroup.GetAssetType(TransformerAssetTypeName))
 
-              MapPoint transformerPointA = CreateOffsetMapPoint(clickPoint, -1 * XOffset, YOffset);
-              token = createOperation.CreateEx(transformerLayer, CreateDeviceAttributes(transformerAssetGroup, transformerAssetType, transformerPointA, APhase));
-              RowHandle transformerHandleA = new RowHandle(token);
+              // Arrester
+              using (AssetGroup arresterAssetGroup = deviceNetworkSource.GetAssetGroup(ArresterAssetGroupName))
+              using (AssetType arresterAssetType = arresterAssetGroup.GetAssetType(ArresterAssetTypeName))
 
-              MapPoint transformerPointB = CreateOffsetMapPoint(clickPoint, 0, YOffset);
-              token = createOperation.CreateEx(transformerLayer, CreateDeviceAttributes(transformerAssetGroup, transformerAssetType, transformerPointB, BPhase));
-              RowHandle transformerHandleB = new RowHandle(token);
-
-              MapPoint transformerPointC = CreateOffsetMapPoint(clickPoint, XOffset, YOffset);
-              token = createOperation.CreateEx(transformerLayer, CreateDeviceAttributes(transformerAssetGroup, transformerAssetType, transformerPointC, CPhase));
-              RowHandle transformerHandleC = new RowHandle(token);
-
-              // Create containment associations between the bank and the transformers
-              ContainmentAssociationDescription containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, transformerHandleA, false);
-              createOperation.Create(containmentAssociationDescription);
-
-              containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, transformerHandleB, false);
-              createOperation.Create(containmentAssociationDescription);
-
-              containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, transformerHandleC, false);
-              createOperation.Create(containmentAssociationDescription);
-
-              // Create three arresters, one for each phase
-              Layer arresterLayer = GetLayerForEdit(map, DeviceNetworkSourceName, ArresterAssetGroupName);
-
-              MapPoint arresterPointA = CreateOffsetMapPoint(clickPoint, -1 * XOffset, 2 * YOffset);
-              token = createOperation.CreateEx(arresterLayer, CreateDeviceAttributes(arresterAssetGroup, arresterAssetType, arresterPointA, APhase));
-              RowHandle arresterHandlA = new RowHandle(token);
-
-              MapPoint arresterPointB = CreateOffsetMapPoint(clickPoint, 0, 2 * YOffset);
-              token = createOperation.CreateEx(arresterLayer, CreateDeviceAttributes(arresterAssetGroup, arresterAssetType, arresterPointB, BPhase));
-              RowHandle arresterHandleB = new RowHandle(token);
-
-              MapPoint arresterPointC = CreateOffsetMapPoint(clickPoint, XOffset, 2 * YOffset);
-              token = createOperation.CreateEx(arresterLayer, CreateDeviceAttributes(arresterAssetGroup, arresterAssetType, arresterPointC, CPhase));
-              RowHandle arresterHandleC = new RowHandle(token);
-
-              // Create containment associations between the bank and the arresters
-              containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, arresterHandlA, false);
-              createOperation.Create(containmentAssociationDescription);
-
-              containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, arresterHandleB, false);
-              createOperation.Create(containmentAssociationDescription);
-
-              containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, arresterHandleC, false);
-              createOperation.Create(containmentAssociationDescription);
-
-              // Find the high-side terminal for transformers
-              TerminalConfiguration transformerTerminalConfiguration = transformerAssetType.GetTerminalConfiguration();
-              IReadOnlyList<Terminal> terminals = transformerTerminalConfiguration.Terminals;
-              Terminal highSideTerminal = terminals.First(x => x.IsUpstreamTerminal == true);
-              long highSideTerminalID = highSideTerminal.ID;
-
-              // Connect the high-side transformer terminals to the arresters (connect the A-phase transformer to the A-phase arrester, and so on)
-              ConnectivityAssociationDescription connectivityAssociationDescription = new ConnectivityAssociationDescription(transformerHandleA, highSideTerminalID, arresterHandlA);
-              createOperation.Create(connectivityAssociationDescription);
-
-              connectivityAssociationDescription = new ConnectivityAssociationDescription(transformerHandleB, highSideTerminalID, arresterHandleB);
-              createOperation.Create(connectivityAssociationDescription);
-
-              connectivityAssociationDescription = new ConnectivityAssociationDescription(transformerHandleC, highSideTerminalID, arresterHandleC);
-              createOperation.Create(connectivityAssociationDescription);
-
-              // Create three fuses, one for each phase
-              Layer fuseLayer = GetLayerForEdit(map, DeviceNetworkSourceName, FuseAssetGroupName);
-
-              MapPoint fusePointA = CreateOffsetMapPoint(clickPoint, -1 * XOffset, 3 * YOffset);
-              token = createOperation.CreateEx(fuseLayer, CreateDeviceAttributes(fuseAssetGroup, fuseAssetType, fusePointA, APhase));
-              RowHandle fuseHandleA = new RowHandle(token);
-
-              MapPoint fusePointB = CreateOffsetMapPoint(clickPoint, 0, 3 * YOffset);
-              token = createOperation.CreateEx(fuseLayer, CreateDeviceAttributes(fuseAssetGroup, fuseAssetType, fusePointB, BPhase));
-              RowHandle fuseHandleB = new RowHandle(token);
-
-              MapPoint fusePointC = CreateOffsetMapPoint(clickPoint, XOffset, 3 * YOffset);
-              token = createOperation.CreateEx(fuseLayer, CreateDeviceAttributes(fuseAssetGroup, fuseAssetType, fusePointC, CPhase));
-              RowHandle fuseHandleC = new RowHandle(token);
-
-              // Create containment associations between the bank and the fuses
-              containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, fuseHandleA, false);
-              createOperation.Create(containmentAssociationDescription);
-
-              containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, fuseHandleB, false);
-              createOperation.Create(containmentAssociationDescription);
-
-              containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, fuseHandleC, false);
-              createOperation.Create(containmentAssociationDescription);
-
-              // Create connectivity associations between the fuses and the arresters (connect the A-phase fuse the A-phase arrester, and so on)
-              connectivityAssociationDescription = new ConnectivityAssociationDescription(fuseHandleA, arresterHandlA);
-              createOperation.Create(connectivityAssociationDescription);
-
-              connectivityAssociationDescription = new ConnectivityAssociationDescription(fuseHandleB, arresterHandleB);
-              createOperation.Create(connectivityAssociationDescription);
-
-              connectivityAssociationDescription = new ConnectivityAssociationDescription(fuseHandleC, arresterHandleC);
-              createOperation.Create(connectivityAssociationDescription);
-
-              // Execute the edit operation, which creates all of the rows and associations
-              success = createOperation.Execute();
-
-              if (!success)
+              // Fuse
+              using (AssetGroup fuseAssetGroup = deviceNetworkSource.GetAssetGroup(FuseAssetGroupName))
+              using (AssetType fuseAssetType = fuseAssetGroup.GetAssetType(FuseAssetTypeName))
               {
-                errorMessage = createOperation.ErrorMessage;
+                MapPoint clickPoint = geometry as MapPoint;
+
+                // Create a transformer bank
+                Layer transformerBankLayer = GetLayerForEdit(map, AssemblyNetworkSourceName, TransformerBankAssetGroupName);
+                RowToken token = createOperation.CreateEx(transformerBankLayer, CreateAttributes(transformerBankAssetGroup, transformerBankAssetType, clickPoint));
+                RowHandle transformerBankHandle = new RowHandle(token);
+
+                // Create three transformers, one for each phase
+                Layer transformerLayer = GetLayerForEdit(map, DeviceNetworkSourceName, TransformerAssetGroupName);
+
+                MapPoint transformerPointA = CreateOffsetMapPoint(clickPoint, -1 * XOffset, YOffset);
+                token = createOperation.CreateEx(transformerLayer, CreateDeviceAttributes(transformerAssetGroup, transformerAssetType, transformerPointA, APhase));
+                RowHandle transformerHandleA = new RowHandle(token);
+
+                MapPoint transformerPointB = CreateOffsetMapPoint(clickPoint, 0, YOffset);
+                token = createOperation.CreateEx(transformerLayer, CreateDeviceAttributes(transformerAssetGroup, transformerAssetType, transformerPointB, BPhase));
+                RowHandle transformerHandleB = new RowHandle(token);
+
+                MapPoint transformerPointC = CreateOffsetMapPoint(clickPoint, XOffset, YOffset);
+                token = createOperation.CreateEx(transformerLayer, CreateDeviceAttributes(transformerAssetGroup, transformerAssetType, transformerPointC, CPhase));
+                RowHandle transformerHandleC = new RowHandle(token);
+
+                // Create containment associations between the bank and the transformers
+                ContainmentAssociationDescription containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, transformerHandleA, false);
+                createOperation.Create(containmentAssociationDescription);
+
+                containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, transformerHandleB, false);
+                createOperation.Create(containmentAssociationDescription);
+
+                containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, transformerHandleC, false);
+                createOperation.Create(containmentAssociationDescription);
+
+                // Find the high-side terminal for transformers
+                TerminalConfiguration transformerTerminalConfiguration = transformerAssetType.GetTerminalConfiguration();
+                IReadOnlyList<Terminal> terminals = transformerTerminalConfiguration.Terminals;
+                Terminal highSideTerminal = terminals.First(x => x.IsUpstreamTerminal == true);
+                long highSideTerminalID = highSideTerminal.ID;
+
+                // Create three fuses, one for each phase
+                Layer fuseLayer = GetLayerForEdit(map, DeviceNetworkSourceName, FuseAssetGroupName);
+
+                MapPoint fusePointA = CreateOffsetMapPoint(clickPoint, -1 * XOffset, 2 * YOffset);
+                token = createOperation.CreateEx(fuseLayer, CreateDeviceAttributes(fuseAssetGroup, fuseAssetType, fusePointA, APhase));
+                RowHandle fuseHandleA = new RowHandle(token);
+
+                MapPoint fusePointB = CreateOffsetMapPoint(clickPoint, 0, 2 * YOffset);
+                token = createOperation.CreateEx(fuseLayer, CreateDeviceAttributes(fuseAssetGroup, fuseAssetType, fusePointB, BPhase));
+                RowHandle fuseHandleB = new RowHandle(token);
+
+                MapPoint fusePointC = CreateOffsetMapPoint(clickPoint, XOffset, 2 * YOffset);
+                token = createOperation.CreateEx(fuseLayer, CreateDeviceAttributes(fuseAssetGroup, fuseAssetType, fusePointC, CPhase));
+                RowHandle fuseHandleC = new RowHandle(token);
+
+               // Create containment associations between the bank and the fuses
+               containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, fuseHandleA, false);
+                createOperation.Create(containmentAssociationDescription);
+
+                containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, fuseHandleB, false);
+                createOperation.Create(containmentAssociationDescription);
+
+                containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, fuseHandleC, false);
+                createOperation.Create(containmentAssociationDescription);
+
+                // Connect the high-side transformer terminals to the fuses (connect the A-phase transformer to the A-phase fuse, and so on)
+                ConnectivityAssociationDescription connectivityAssociationDescription = new ConnectivityAssociationDescription(transformerHandleA, highSideTerminalID, fuseHandleA);
+                createOperation.Create(connectivityAssociationDescription);
+
+                connectivityAssociationDescription = new ConnectivityAssociationDescription(transformerHandleB, highSideTerminalID, fuseHandleB);
+                createOperation.Create(connectivityAssociationDescription);
+
+                connectivityAssociationDescription = new ConnectivityAssociationDescription(transformerHandleC, highSideTerminalID, fuseHandleC);
+                createOperation.Create(connectivityAssociationDescription);
+
+                // Create three arresters, one for each phase
+                Layer arresterLayer = GetLayerForEdit(map, DeviceNetworkSourceName, ArresterAssetGroupName);
+
+                MapPoint arresterPointA = CreateOffsetMapPoint(clickPoint, -1 * XOffset, 3 * YOffset);
+                token = createOperation.CreateEx(arresterLayer, CreateDeviceAttributes(arresterAssetGroup, arresterAssetType, arresterPointA, APhase));
+                RowHandle arresterHandleA = new RowHandle(token);
+
+                MapPoint arresterPointB = CreateOffsetMapPoint(clickPoint, 0, 3 * YOffset);
+                token = createOperation.CreateEx(arresterLayer, CreateDeviceAttributes(arresterAssetGroup, arresterAssetType, arresterPointB, BPhase));
+                RowHandle arresterHandleB = new RowHandle(token);
+
+                MapPoint arresterPointC = CreateOffsetMapPoint(clickPoint, XOffset, 3 * YOffset);
+                token = createOperation.CreateEx(arresterLayer, CreateDeviceAttributes(arresterAssetGroup, arresterAssetType, arresterPointC, CPhase));
+                RowHandle arresterHandleC = new RowHandle(token);
+
+                // Create containment associations between the bank and the arresters
+                containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, arresterHandleA, false);
+                createOperation.Create(containmentAssociationDescription);
+
+                containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, arresterHandleB, false);
+                createOperation.Create(containmentAssociationDescription);
+
+                containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, arresterHandleC, false);
+                createOperation.Create(containmentAssociationDescription);
+
+                // Create connectivity associations between the fuses and the arresters (connect the A-phase fuse the A-phase arrester, and so on)
+                connectivityAssociationDescription = new ConnectivityAssociationDescription(fuseHandleA, arresterHandleA);
+                createOperation.Create(connectivityAssociationDescription);
+
+                connectivityAssociationDescription = new ConnectivityAssociationDescription(fuseHandleB, arresterHandleB);
+                createOperation.Create(connectivityAssociationDescription);
+
+                connectivityAssociationDescription = new ConnectivityAssociationDescription(fuseHandleC, arresterHandleC);
+                createOperation.Create(connectivityAssociationDescription);
+
+                // Execute the edit operation, which creates all of the rows and associations
+                success = createOperation.Execute();
+
+                if (!success)
+                {
+                  errorMessage = createOperation.ErrorMessage;
+                }
               }
             }
           }
@@ -348,5 +349,119 @@ namespace CreateTransformerBank
       return attributes;
     }
 
+    // ValidateDataModel - This sample is hard-wired to a particular version of the Naperville data model.
+    // This routine checks to make sure we are using the correct one
+    private bool ValidateDataModel(UtilityNetwork utilityNetwork)
+    {
+      bool dataModelIsValid = false;
+
+      try
+      {
+        using (UtilityNetworkDefinition utilityNetworkDefinition = utilityNetwork.GetDefinition())
+
+        using (NetworkSource transformerBankNetworkSource = GetNetworkSource(utilityNetworkDefinition, AssemblyNetworkSourceName))
+        using (AssetGroup transformerBankAssetGroup = transformerBankNetworkSource.GetAssetGroup(TransformerBankAssetGroupName))
+        using (AssetType transformerBankAssetType = transformerBankAssetGroup.GetAssetType(TransformerBankAssetTypeName))
+
+        // Transformer
+        using (NetworkSource deviceNetworkSource = GetNetworkSource(utilityNetworkDefinition, DeviceNetworkSourceName))
+        using (AssetGroup transformerAssetGroup = deviceNetworkSource.GetAssetGroup(TransformerAssetGroupName))
+        using (AssetType transformerAssetType = transformerAssetGroup.GetAssetType(TransformerAssetTypeName))
+
+        // Arrester
+        using (AssetGroup arresterAssetGroup = deviceNetworkSource.GetAssetGroup(ArresterAssetGroupName))
+        using (AssetType arresterAssetType = arresterAssetGroup.GetAssetType(ArresterAssetTypeName))
+
+        // Fuse
+        using (AssetGroup fuseAssetGroup = deviceNetworkSource.GetAssetGroup(FuseAssetGroupName))
+        using (AssetType fuseAssetType = fuseAssetGroup.GetAssetType(FuseAssetTypeName))
+        {
+          // Find the upstream terminal on the transformer
+          TerminalConfiguration terminalConfiguration = transformerAssetType.GetTerminalConfiguration();
+          Terminal upstreamTerminal = null;
+          foreach(Terminal terminal in terminalConfiguration.Terminals)
+          {
+            if (terminal.IsUpstreamTerminal)
+            {
+              upstreamTerminal = terminal;
+              break;
+            }
+          }
+
+          // Find the terminal on the fuse
+          Terminal fuseTerminal = fuseAssetType.GetTerminalConfiguration().Terminals[0];
+
+          // Find the terminal on the arrester
+          Terminal arresterTerminal = arresterAssetType.GetTerminalConfiguration().Terminals[0];
+
+          // All of our asset groups and asset types exist.  Now we have to check for rules.
+
+          IReadOnlyList<Rule> rules = utilityNetworkDefinition.GetRules();
+          if (ContainmentRuleExists(rules, transformerBankAssetType, transformerAssetType) &&
+            ContainmentRuleExists(rules, transformerBankAssetType, fuseAssetType) &&
+            ContainmentRuleExists(rules, transformerBankAssetType, arresterAssetType) &&
+            ConnectivityRuleExists(rules, transformerAssetType, upstreamTerminal, fuseAssetType, fuseTerminal) &&
+            ConnectivityRuleExists(rules, fuseAssetType, fuseTerminal, arresterAssetType, arresterTerminal))
+          {
+            dataModelIsValid = true;
+          }
+        }
+      }
+      catch { }
+
+      return dataModelIsValid;
+    }
+
+    private bool ContainmentRuleExists(IReadOnlyList<Rule> rules, AssetType sourceAssetType, AssetType destinationAssetType)
+    {
+      foreach(Rule rule in rules)
+      {
+        if (RuleType.Containment == rule.Type)
+        {
+          // For containment rules, the first rule element represents the container and the second rule element 
+          // represents the content
+          // Note that AssetType objects must be compared by using their Handles.
+           if (rule.RuleElements[0].AssetType.Handle == sourceAssetType.Handle &&
+            rule.RuleElements[1].AssetType.Handle == destinationAssetType.Handle)
+          {
+            return true;
+          }
+        }
+      }
+      return false;
+    }
+
+    private bool ConnectivityRuleExists(IReadOnlyList<Rule> rules, AssetType sourceAssetType, Terminal sourceTerminal, AssetType destinationAssetType, Terminal destinationTerminal)
+    {
+      foreach (Rule rule in rules)
+      {
+        if (RuleType.JunctionJunctionConnectivity == rule.Type)
+        {
+          // Connectivity rules can exist in either direction, so you have to look for both possibilities
+          RuleElement ruleElement1 = rule.RuleElements[0];
+          RuleElement ruleElement2 = rule.RuleElements[1];
+
+          // Note that AssetType objects must be compared by using their Handles.
+          if ((ruleElement1.AssetType.Handle == sourceAssetType.Handle && ruleElement1.Terminal == sourceTerminal && ruleElement2.AssetType.Handle == destinationAssetType.Handle && ruleElement2.Terminal == destinationTerminal) 
+            ||
+            (ruleElement1.AssetType.Handle == destinationAssetType.Handle && ruleElement1.Terminal == destinationTerminal && ruleElement2.AssetType.Handle == sourceAssetType.Handle && ruleElement2.Terminal == sourceTerminal))
+          {
+            return true;
+          }
+        }
+      }
+      return false;
+    }
+
+    private NetworkSource GetNetworkSource(UtilityNetworkDefinition utilityNetworkDefinition, string networkSourceName)
+    {
+      string networkSourceNameWithoutSpaces = networkSourceName.Replace(" ", "");
+      IReadOnlyList<NetworkSource> networkSources = utilityNetworkDefinition.GetNetworkSources();
+      foreach (NetworkSource networkSource in networkSources)
+      {
+        if (networkSource.Name.Replace(" ", "") == networkSourceNameWithoutSpaces) return networkSource;
+      }
+      return null; // Not found
+    }
   }
 }

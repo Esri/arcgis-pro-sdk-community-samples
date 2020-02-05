@@ -51,10 +51,12 @@ namespace GeometrySamples
                 {
                     while (cursor.MoveNext())
                     {
-                        var feature = cursor.Current as Feature;
-                        if (feature == null) continue;
-                        var outerRings = Module1.Current.GetOutermostRings(feature.GetShape() as Polygon);
-                        editOperation.Create(polyLayer, outerRings);
+                        using (var feature = cursor.Current as Feature)
+                        {
+                            if (feature == null) continue;
+                            var outerRings = Module1.Current.GetOutermostRings(feature.GetShape() as Polygon);
+                            editOperation.Create(polyLayer, outerRings);
+                        }
                     }
                 }
                 editOperation.Execute();

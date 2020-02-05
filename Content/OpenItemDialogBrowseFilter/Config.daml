@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2020 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="OpenItemDialogBrowseFilter.dll" defaultNamespace="OpenItemDialogBrowseFilter" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{0ba71630-db98-4262-8dd0-68b4783a987a}" version="1.0" desktopVersion="2.5.21774">
+    <Name>OpenItemDialogBrowseFilter</Name>
+    <Description>OpenItemDialogBrowseFilter description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>10/28/2019 11:45:21 AM, 2019</Date>
+    <Subject>Content</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="Filters_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="Filters_Tab1" caption="Filter">
+          <group refID="Filters_Group1" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="Filters_Group1" caption="Browse Dialog Filter" appearsOnAddInTab="false">
+          <gallery refID="Filters_FilterGallery" inline="true" size="large" />
+          <button refID="Filters_ProWindowMakeProFilters" size="large"/>
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <!--Gallery filter choice buttons-->
+        <button id="Filters_Buttons_NewFilterPolygonFGDB" caption="Polygon FGDB" categoryRefID="Filter_Options_Category" className="OpenItemDialogBrowseFilter.NewFilterPolygonFGDB" loadOnClick="true" largeImage="Images\GeodatabaseFeatureClassPolygon32.png" keytip="a1">
+          <tooltip heading="Polygon File GDB">
+            Show Polygon File GDB<disabledText /></tooltip>
+          <content group="Custom Pro browse filters" />
+        </button>
+        <button id="Filters_Buttons_NewFilterForCustomItem" caption="Custom Item" categoryRefID="Filter_Options_Category" className="OpenItemDialogBrowseFilter.NewFilterForCustomItem" loadOnClick="true" largeImage="Images\customItem32.png" keytip="a1">
+          <tooltip heading="Custom Item">
+            Show customItem<disabledText /></tooltip>
+          <content group="Custom Pro browse filters" />
+        </button>
+        <button id="Filters_Buttons_NewFilterCompositeFilter" caption="Composite Filter" categoryRefID="Filter_Options_Category" className="OpenItemDialogBrowseFilter.NewFilterCompositeFilter" loadOnClick="true" largeImage="Images\Composite32.png" keytip="a1">
+          <tooltip heading="Composite Filter">
+            Show Composite Filter<disabledText /></tooltip>
+          <content group="Custom Pro browse filters" />
+        </button>
+        <button id="Filters_Buttons_NewFilterLineFGDB" caption="Line FGDB" categoryRefID="Filter_Options_Category" className="OpenItemDialogBrowseFilter.NewFilterFromDAMLDeclaration" loadOnClick="true" largeImage="Images\GeodatabaseFeatureClassLine32.png" keytip="a1">
+          <tooltip heading="Line File GDB">
+            Show Line File GDB<disabledText /></tooltip>
+          <content group="Custom Pro browse filters" />
+        </button>
+        <button id="Filters_Buttons_FilterFromDAML" caption="DAML Filter" categoryRefID="Filter_Options_Category" className="OpenItemDialogBrowseFilter.NewFilterFromDAMLDeclaration" loadOnClick="true" largeImage="Images\GeodatabaseFeatureClassLine32.png" keytip="a1">
+          <tooltip heading="DAML Filter">
+            Line File GDB filter created from DAML definition<disabledText /></tooltip>
+          <content group="Custom Pro browse filters" />
+        </button>
+        <button id="Filters_Buttons_ModifyExistingProLyrxFilter" caption="Lyrx and Lyr" categoryRefID="Filter_Options_Category" className="OpenItemDialogBrowseFilter.ModifyExistingProLyrxFilter" loadOnClick="true" largeImage="Images\Layer_LYR_File32.png" keytip="a1">
+          <tooltip heading="Modify Lyrx">
+            Show Lyrx and lyr files<disabledText /></tooltip>
+          <content group="Built-in Pro browse filters" />
+        </button>
+        <button id="Filters_Buttons_UseProFilterGeodatabases" caption="Geodatabase" categoryRefID="Filter_Options_Category" className="OpenItemDialogBrowseFilter.UseProFilterGeodatabases" loadOnClick="true" largeImage="Images\Geodatabase32.png" keytip="a1">
+          <tooltip heading="All GDB">
+            Show all Geodatabases<disabledText /></tooltip>
+          <content group="Built-in Pro browse filters" />
+        </button>
+        <button id="Filters_Buttons_AddToMapCustomItem" caption="Custom Item" categoryRefID="Filter_Options_Category" className="OpenItemDialogBrowseFilter.ModifyAddMapToDisplayCustomItem" loadOnClick="true" largeImage="pack://application:,,,/OpenItemDialogBrowseFilter;component/Images/BexDog32.png" keytip="a1">
+          <tooltip heading="Custom Item">
+            Browse custom item in Pro's Add to map dialog<disabledText /></tooltip>
+          <content group="Built-in Pro browse filters" />
+        </button>
+        <!--End Gallery filter choice buttons-->
+        <button id="Filters_ProGPXItem_ShowItemName" caption="Show item name" className="ShowItemName" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="Filters_ToggleGalleryButton" caption="Switch Gallery Size" className="OpenItemDialogBrowseFilter.ToggleGallerySizeButton" loadOnClick="true">
+          <tooltip heading="Switch Gallery Size">Switch between small and large icons<disabledText /></tooltip>
+        </button>
+        <button id="Filters_ProWindowMakeProFilters" caption="Browse Filter Spy+..." className="ShowProWindowMakeProFilters" loadOnClick="true" smallImage="Images\Spy16.png" largeImage="Images\Spy32.png">
+          <tooltip heading="Browse Filter Spy+">Display all built-in ArcGIS Pro Browse Dialog Filters, Type IDs and FilterFlags<disabledText /></tooltip>
+        </button>
+      </controls>
+      <menus>
+        <menu id="Filters_ProGPXItem_ContextMenu" caption="ProGPXItem_Menu">
+          <button refID="Filters_ProGPXItem_ShowItemName" />
+        </menu>
+      </menus>
+      <galleries>
+        <gallery id="Filters_FilterGallery" caption="FilterGallery" className="FilterGallery" showGroup="true" itemWidth="72" itemsInRow="6" resizable="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonYellow32.png">
+          <!--Datatemplate to be used is defined in code-->
+          <!--dataTemplateFile="pack://application:,,,/OpenItemDialogBrowseFilter;component//FilterGalleryTemplate.xaml" templateID="FilterGalleryItemTemplate"-->
+          <tooltip heading="Tooltip Heading">
+            <disabledText />
+          </tooltip>
+          <button refID="Filters_ToggleGalleryButton" />
+          <button refID="Filters_ProWindowMakeProFilters"/>
+        </gallery>
+      </galleries>
+    </insertModule>
+  </modules>
+  <categories>
+    <!--Create a new category to hold new commands in a a Gallery-->
+    <insertCategory id="Filter_Options_Category"></insertCategory>
+    <updateCategory refID="esri_browseFilters">
+      <insertComponent id="NewCustomItem_ProGPXItem_filter">
+        <content displayName="New Custom Item">
+          <canBeTypeIds>
+            <type id="Filters_ProGPXItem" />
+          </canBeTypeIds>
+          <dontBrowseIntoFlags>
+            <type id="DontBrowseFiles" />
+          </dontBrowseIntoFlags>
+        </content>
+      </insertComponent>
+     
+      <insertComponent id="NewLineFeatures_Filter">
+        <content displayName="Line feature class in FGDB" include="FolderConnection, GDB" exclude="esri_browsePlaces_Online">
+          <canBeTypeIds>
+            <type id="fgdb_fc_line" />
+          </canBeTypeIds>
+          <dontBrowseIntoFlags>
+            <type id="DontBrowseFiles" />
+          </dontBrowseIntoFlags>
+          <doBrowseIntoTypeIds>
+            <type id="database_fgdb" />
+          </doBrowseIntoTypeIds>
+        </content>
+      </insertComponent>
+    </updateCategory>
+   
+    <updateCategory refID="esri_customItems">
+      <!--Custom item is registered within the "esri_customItems" category -->
+      <insertComponent id="Filters_ProGPXItem" className="ProGPXItem">
+        <content displayName="ProGPXItem" fileExtension="customItem" isContainer="false" keywords="ProGPXItem" contextMenuID="Filters_ProGPXItem_ContextMenu">
+          <filterFlags>
+            <!--AddToMap flag allows custom item to participate in the AddToMap functionality-->
+            <!--For example, this will allow ProGPXItem to be displayed in the Pro's Add to Map dialog.-->
+            <type id="AddToMap" />
+          </filterFlags>
+        </content>
+      </insertComponent>
+    </updateCategory>
+  </categories>
+</ArcGIS>

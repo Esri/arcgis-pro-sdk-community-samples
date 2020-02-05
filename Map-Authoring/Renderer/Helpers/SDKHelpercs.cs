@@ -90,11 +90,14 @@ namespace Renderer.Helpers
                 long iMax = -1;
                 while (rowCursor.MoveNext())
                 {
-                    var iVal = Convert.ToInt64(rowCursor.Current[fieldName]);
-                    if ((iMin > iVal) || (iMin == -1))
-                        iMin = iVal;
-                    if ((iMax < iVal) || (iMax == -1))
-                        iMax = iVal;
+                    using (Row currentRow = rowCursor.Current)
+                    {
+                        var iVal = Convert.ToInt64(currentRow[fieldName]);
+                        if ((iMin > iVal) || (iMin == -1))
+                            iMin = iVal;
+                        if ((iMax < iVal) || (iMax == -1))
+                            iMax = iVal;
+                    }
                 }
                 return new Tuple<string, string>(iMin.ToString(), iMax.ToString());
 

@@ -22,8 +22,8 @@
     <Name>DAML</Name>
     <Description>Show DAML Customizations to the Pro UI</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>3/20/2018 3:48:15 PM, 2018</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

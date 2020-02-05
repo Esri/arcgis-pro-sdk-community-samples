@@ -45,6 +45,7 @@ namespace ProGpxPluginDatasource
 			_srout = srout;
 			CurrentId = -1;
 		}
+
 		public override PluginRow GetCurrentRow()
 		{
 			int id = -1;

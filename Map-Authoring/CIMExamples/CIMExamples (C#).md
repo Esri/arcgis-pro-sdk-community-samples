@@ -19,10 +19,10 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/27/2019
-ArcGIS Pro:            2.4
+Date:                  7/17/2019
+ArcGIS Pro:            2.5
 Visual Studio:         2017, 2019
-.NET Target Framework: 4.6.1
+.NET Target Framework: 4.8
 ```
 
 ## Resources
@@ -67,7 +67,7 @@ Visual Studio:         2017, 2019
   
 1. Add a raster layer to your map.  For example: find and add 'CharlotteLAS' from the 'All Portal' connection, add the layer to your map, and then zoom to the newly added layer's extent.  
 1. Click the 'Raster Stretch' button to create a CIMRasterStretchColorizer:  
-![CIMExamples] (Screenshots/Screenshot7.png)    
+![CIMExamples](Screenshots/Screenshot7.png)    
   
 
 

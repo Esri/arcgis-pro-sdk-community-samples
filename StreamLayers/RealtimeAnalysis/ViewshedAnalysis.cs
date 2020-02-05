@@ -74,17 +74,20 @@ namespace RealtimeAnalysis
 				while (await _rtCursor.WaitForRowsAsync())
 				{
 					while (_rtCursor.MoveNext())
-					{
-						switch (_rtCursor.Current.GetRowSource())
-						{
-							case RealtimeRowSource.EventInsert:
-								var featureId = (int)_rtCursor.Current["TrackID"];
-								searchPoint = await ShowViewshed(mapView, featureId);
-								continue;
-							case RealtimeRowSource.EventDelete:
-							default:
-								continue;
-						};
+                    {
+                        using (var rtFeature = _rtCursor.Current)
+                        {
+                            switch (rtFeature.GetRowSource())
+                            {
+                                case RealtimeRowSource.EventInsert:
+                                    var featureId = (int)rtFeature["TrackID"];
+                                    searchPoint = await ShowViewshed(mapView, featureId);
+                                    continue;
+                                case RealtimeRowSource.EventDelete:
+                                default:
+                                    continue;
+                            };
+                        }
 					}
 				}
 			});

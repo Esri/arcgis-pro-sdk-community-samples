@@ -13,10 +13,10 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/27/2019
-ArcGIS Pro:            2.4
+Date:                  7/17/2019
+ArcGIS Pro:            2.5
 Visual Studio:         2017, 2019
-.NET Target Framework: 4.6.1
+.NET Target Framework: 4.8
 ```
 
 ## Resources
@@ -37,7 +37,7 @@ Visual Studio:         2017, 2019
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Configurations\Projects' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Configurations\Projects" is available.  
-1. In Visual Studio 2015 click the Build menu. Then select Build Solution.  
+1. In Visual Studio click the Build menu. Then select Build Solution.  
 1. Click Start button to debug ArcGIS Pro.  
 1. ArcGIS Pro displays the custom splash screen.  
 ![UI](Screenshots/ManagedConfigSplash.png)  

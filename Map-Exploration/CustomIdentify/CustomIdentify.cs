@@ -60,18 +60,18 @@ namespace CustomIdentify
                 }
                 return popupContents;
             });
+            var clickPoint = MouseCursorPosition.GetMouseCursorPosition();
+            var popupDef = new PopupDefinition()
+            {
+                Append = true,      // if true new record is appended to existing (if any)
+                Dockable = true,    // if true popup is dockable - if false Append is not applicable
+                Position = clickPoint,  // Position of top left corner of the popup (in pixels)
+                Size = new System.Windows.Size(200, 400)    // size of the popup (in pixels)
+            };
 
-            MapView.Active.ShowCustomPopup(popupContent);
+            MapView.Active.ShowCustomPopup(popupContent, null, true, popupDef);
             return true;
         }
 
-        //private static Dictionary<string, FeatureClass> _layersInMapFeatureClassMap = new Dictionary<string, FeatureClass>();
-
-        //public static Dictionary<string, FeatureClass> LayersInMapFeatureClassMap = new Dictionary<string, FeatureClass>();
-        
-        //private Task<Geodatabase> GetGDBFromLyrAsync(BasicFeatureLayer lyr)
-        //{
-        //    return QueuedTask.Run(() =>  lyr.GetTable().GetDatastore() as Geodatabase);
-        //}
     }
 }

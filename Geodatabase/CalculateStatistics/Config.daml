@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2020 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="CalculateStatistics.dll" defaultNamespace="CalculateStatistics" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{e551bdce-868b-422b-954a-74561aa98b2c}" version="1.0" desktopVersion="2.5.22081">
+    <Name>CalculateStatistics</Name>
+    <Description>CalculateStatistics description</Description>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>1/22/2020 7:51:37 AM, 2020</Date>
+    <Subject>Geodatabase</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="CalculateStatistics_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="CalculateStatistics_Tab1" caption="New Tab">
+          <group refID="CalculateStatistics_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="CalculateStatistics_Group1" caption="Calculate Statistics" appearsOnAddInTab="true" keytip="G0">
+          <!-- host controls within groups -->
+          <button refID="CalculateStatistics_CalculateLength" size="large" />
+          <button refID="CalculateStatistics_CalculateArea" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="CalculateStatistics_CalculateLength" caption="Calculate Length" className="CalculateLength" 
+                loadOnClick="true" keytip="B0"
+                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" 
+                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Calculate Length">
+            Calculates the sum of all lengths using the Calculate Statistics functions<disabledText /></tooltip>
+        </button>
+        <button id="CalculateStatistics_CalculateArea" caption="Calculate Area" className="CalculateArea" 
+                loadOnClick="true" keytip="B1"
+                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" 
+                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Calculate Area">
+            Calculates the sum of all areas using the Calculate Statistics functions<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

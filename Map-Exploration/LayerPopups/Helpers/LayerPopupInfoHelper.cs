@@ -59,7 +59,7 @@ namespace LayerPopups.Helpers {
     /// they are present).
     /// Text that is added to the CIM should be formatted as XHTML. Some default format strings are
     /// provided in this class that mimic the ones Pro uses but feel free to experiment</remarks>
-    public class PopupDefinition {
+    public class CustomPopupDefinition {
 
         internal static readonly string DefaultFormat =
             "<div><p><span style=\"font-weight:normal;text-decoration:none;\">{0}</span></p></div>";

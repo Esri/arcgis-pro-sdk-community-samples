@@ -70,16 +70,19 @@ namespace RealtimeAnalysis
 				{
 					while (_rtCursor.MoveNext())
 					{
-						switch (_rtCursor.Current.GetRowSource())
-						{
-							case RealtimeRowSource.EventInsert:
-								Polygon searchGeom = ((RealtimeFeature)_rtCursor.Current).GetShape() as Polygon;
-								sf.FilterGeometry = searchGeom;
-								countiesFLyr.Select(sf);
-								continue;
-							default:
-								continue;
-						}
+                        using (var rtFeature = _rtCursor.Current as RealtimeFeature)
+                        {
+                            switch (rtFeature.GetRowSource())
+                            {
+                                case RealtimeRowSource.EventInsert:
+                                    Polygon searchGeom = rtFeature.GetShape() as Polygon;
+                                    sf.FilterGeometry = searchGeom;
+                                    countiesFLyr.Select(sf);
+                                    continue;
+                                default:
+                                    continue;
+                            }
+                        }
 					}
 				}
 			});

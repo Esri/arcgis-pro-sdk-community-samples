@@ -25,7 +25,8 @@ using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using System.Threading.Tasks;
 
-namespace CIMExamples {
+namespace CIMExamples
+{
     /// <summary>
     /// Shows the following CIM capabilities:
     /// 1. Provide sample to create CIMUniqueValueRenderer from scratch
@@ -54,7 +55,7 @@ namespace CIMExamples {
     /// ![CIMExamples](Screenshots/Screenshot6.png)  
     /// 1. Add a raster layer to your map.  For example: find and add 'CharlotteLAS' from the 'All Portal' connection, add the layer to your map, and then zoom to the newly added layer's extent.
     /// 1. Click the 'Raster Stretch' button to create a CIMRasterStretchColorizer:
-    /// ![CIMExamples] (Screenshots/Screenshot7.png)  
+    /// ![CIMExamples](Screenshots/Screenshot7.png)  
     /// </remarks>
     internal class Module1 : Module {
         private static Module1 _this = null;

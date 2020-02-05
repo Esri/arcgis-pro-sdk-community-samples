@@ -64,43 +64,43 @@ namespace LayerPopups {
             return QueuedTask.Run(() => {
                 var def = fl.GetDefinition() as CIMFeatureLayer;
                 string popupText = string.Format("{0} ({1}), population {2}",
-                    PopupDefinition.FormatFieldName("STATE_NAME"),
-                    PopupDefinition.FormatFieldName("STATE_ABBR"),
-                    PopupDefinition.FormatFieldName("TOTPOP2010"));
+                    CustomPopupDefinition.FormatFieldName("STATE_NAME"),
+                    CustomPopupDefinition.FormatFieldName("STATE_ABBR"),
+                    CustomPopupDefinition.FormatFieldName("TOTPOP2010"));
 
                 //Create a popup definition with text and table, an image and some different chart types
                 //Just add all the table fields by default like we did for the "Simple Popup"
-                PopupDefinition popup = new PopupDefinition() {
-                    Title = PopupDefinition.FormatTitle(
-                        string.Format("{0} (Advanced Popup)", PopupDefinition.FormatFieldName(def.FeatureTable.DisplayField))),
+                CustomPopupDefinition popup = new CustomPopupDefinition() {
+                    Title = CustomPopupDefinition.FormatTitle(
+                        string.Format("{0} (Advanced Popup)", CustomPopupDefinition.FormatFieldName(def.FeatureTable.DisplayField))),
                     TextMediaInfo = new TextMediaInfo() {
-                        Text = PopupDefinition.FormatText(popupText)
+                        Text = CustomPopupDefinition.FormatText(popupText)
                     },
                     TableMediaInfo = new TableMediaInfo(fl.GetFeatureClass().GetDefinition().GetFields()),
                     OtherMediaInfos = {
                         //Add an image of the US
                         new ImageMediaInfo() {
-                            SourceURL = PopupDefinition.FormatUrl(
+                            SourceURL = CustomPopupDefinition.FormatUrl(
                                 new Uri("http://www.town-usa.com/images/timezone.gif", UriKind.Absolute))
                         },
                         //Add a column chart to the popup carousel
                         new ChartMediaInfo() {
-                            Title = PopupDefinition.FormatTitle("Column Chart"),
-                            Caption = PopupDefinition.FormatCaption("1990 vs 2000 population"),
+                            Title = CustomPopupDefinition.FormatTitle("Column Chart"),
+                            Caption = CustomPopupDefinition.FormatCaption("1990 vs 2000 population"),
                             ChartMediaType = ChartMediaType.Column,
                             FieldNames = { "POP1990","POP2000" }
                         },
                         //Add a pie chart to the popup carousel
                         new ChartMediaInfo() {
-                            Title = PopupDefinition.FormatTitle("Pie Chart"),
-                            Caption = PopupDefinition.FormatCaption("2012 House Dem. vs Rep."),
+                            Title = CustomPopupDefinition.FormatTitle("Pie Chart"),
+                            Caption = CustomPopupDefinition.FormatCaption("2012 House Dem. vs Rep."),
                             ChartMediaType = ChartMediaType.Pie,
                             FieldNames = { "Y2012HOU_D","Y2012HOU_R" }
                         },
                         //Add a line chart to the popup carousel
                         new ChartMediaInfo() {
-                            Title = PopupDefinition.FormatTitle("Line Chart"),
-                            Caption = PopupDefinition.FormatCaption("Pop Change 1990 to 2000"),
+                            Title = CustomPopupDefinition.FormatTitle("Line Chart"),
+                            Caption = CustomPopupDefinition.FormatCaption("Pop Change 1990 to 2000"),
                             ChartMediaType = ChartMediaType.Line,
                             FieldNames = { "POP1990", "POP2000" }
                         }

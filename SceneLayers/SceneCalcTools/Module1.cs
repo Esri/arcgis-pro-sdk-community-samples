@@ -199,7 +199,7 @@ namespace SceneCalcTools
 					{
 						using (Row currentRow = cursorPolygons.Current)
 						{
-							refPlaneAreaValue = refPlaneAreaValue + Convert.ToDouble(currentRow["Shape_Area"]);
+							refPlaneAreaValue += Convert.ToDouble(currentRow["Shape_Area"]);
 
 							// Check if Volume attribute is null for any of the selected records
 							if (currentRow["Volume"] == null) volumeFlag = true;
@@ -437,9 +437,9 @@ namespace SceneCalcTools
 							 await inspector.ApplyAsync();
 
 							// Combine values for display of total volume and surface area values in the dockpane:
-							totalVolumeValue = totalVolumeValue + currentVolume;
-							 totalAreaValue = totalAreaValue + currentSArea;
-							 totalWeightInTons = totalWeightInTons + currentWeightInTons;
+							totalVolumeValue += currentVolume;
+							 totalAreaValue += currentSArea;
+							 totalWeightInTons += currentWeightInTons;
 						 }
 					 }
 

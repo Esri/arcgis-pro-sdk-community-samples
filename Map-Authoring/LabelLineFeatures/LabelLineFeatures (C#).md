@@ -51,7 +51,7 @@ Using the sample:
 ![UI](Screenshots/LabelSelectedFeaturesWithLength.png)  
   
 1. **Label using attributes:**  
-1. The following workflow requires a new field to be added to the "USHighways" feature class.  Right click on "USHighways" on the map's TOC and chose "Design | Fields".  Now add the 'LabelOn' field as shown below:  
+1. The following workflow requires a new field to be added to the "U.S. Rivers (Generalized)" feature class.  Right click on "U.S. Rivers (Generalized)" on the map's TOC and chose "Design | Fields".  Now add the 'LabelOn' field as shown below:  
 ![UI](Screenshots/AddLabelOnField.png)  
   
 1. Click the "Label using attributes" tool to activate it. Select River features in the map using this tool.  This will label the selected features with the River feature class' "Miles" field. The tool first edits the "LabelOn" field. The selected features will have the LabelOn attribute value changed to Yes. A new label class (LabelSelectedManyFeaturesWithLength) is created. This Label class' SQL Query queries for features with the LabelOn attribute value of "Yes".  The advantage of this method is that you can use this to label large datasets.  The SQL Query on the Label Class will not change since this method edits the attribute table. The selected features will have their LabelOn attribute set to Yes.  

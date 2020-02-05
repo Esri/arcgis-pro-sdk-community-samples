@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2020 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="DockpaneWithHelp.dll" defaultNamespace="DockpaneWithHelp" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{5c6658a4-2f0e-4c29-9ec0-e94e7b872b1e}" version="1.0" desktopVersion="2.4.21497">
+    <Name>DockpaneWithHelp</Name>
+    <Description>DockpaneWithHelp description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>uma2526</Author>
+    <Company>Acme</Company>
+    <Date>9/12/2019 11:11:26 AM, 2019</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="DockpaneWithHelp_Module" className="Module1" 
+				  autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="DockpaneWithHelp_Tab1" caption="New Tab">
+          <group refID="DockpaneWithHelp_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="DockpaneWithHelp_Group1" caption="Group 1" 
+			   appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="DockpaneWithHelp_DockpaneWithHelp_ShowButton" 
+				  size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="DockpaneWithHelp_DockpaneWithHelp_ShowButton" 
+				caption="Show Dockpane With Help" 
+				className="DockpaneWithHelp_ShowButton" loadOnClick="true" 
+				smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" 
+				largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+          <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="DockpaneWithHelp_DockpaneWithHelp" hasHelp="true" 
+				  caption="DockpaneWithHelp" className="DockpaneWithHelpViewModel" 
+				  dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="DockpaneWithHelpView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

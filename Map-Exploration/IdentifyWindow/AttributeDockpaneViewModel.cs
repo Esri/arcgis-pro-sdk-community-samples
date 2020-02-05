@@ -290,21 +290,23 @@ namespace IdentifyWindow
                     bool bDefineColumns = true;
                     while (rowCursor.MoveNext())
                     {
-                        var anyRow = rowCursor.Current;
-                        if (bDefineColumns)
+                        using (var anyRow = rowCursor.Current)
                         {
+                            if (bDefineColumns)
+                            {
+                                foreach (var fld in anyRow.GetFields().Where(fld => fld.FieldType != FieldType.Geometry))
+                                {
+                                    listColumnNames.Add(new KeyValuePair<string, string>(fld.Name, fld.AliasName));
+                                }
+                            }
+                            var newRow = new List<string>();
                             foreach (var fld in anyRow.GetFields().Where(fld => fld.FieldType != FieldType.Geometry))
                             {
-                                listColumnNames.Add(new KeyValuePair<string, string>(fld.Name, fld.AliasName));
+                                newRow.Add((anyRow[fld.Name] == null) ? string.Empty : anyRow[fld.Name].ToString());
                             }
+                            listValues.Add(newRow);
+                            bDefineColumns = false;
                         }
-                        var newRow = new List<string>();
-                        foreach (var fld in anyRow.GetFields().Where(fld => fld.FieldType != FieldType.Geometry))
-                        {
-                            newRow.Add((anyRow[fld.Name] == null) ? string.Empty : anyRow[fld.Name].ToString());
-                        }
-                        listValues.Add(newRow);
-                        bDefineColumns = false;
                     }
                 }
                 _selectedFeaturesDataTable = new DataTable();

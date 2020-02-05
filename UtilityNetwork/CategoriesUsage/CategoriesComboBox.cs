@@ -144,8 +144,10 @@ namespace CategoriesUsage
         return;
 
       //Construct the name of our table for the category assignment report
+      //Remove spaces and colons because these are not valid table names
       string baseCategoryReportTableName = "CategoryAssignments_" + item.Text;
       string categoryReportTableName = baseCategoryReportTableName.Replace(" ", "_");
+      categoryReportTableName = categoryReportTableName.Replace(":", "_");
 
       bool needToCreateTable = true;
       bool needToAddStandaloneTable = true;

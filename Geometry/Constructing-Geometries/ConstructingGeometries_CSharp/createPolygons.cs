@@ -89,11 +89,12 @@ namespace ConstructingGeometries
                 while (lineCursor.MoveNext())
                 {
                     // retrieve the first feature
-                    var lineFeature = lineCursor.Current as Feature;
-
-                    // add the coordinate collection of the current geometry into our overall list of collections
-                    var polylineGeometry = lineFeature.GetShape() as Polyline;
-                    polylineBuilder.AddParts(polylineGeometry.Parts);
+                    using (var lineFeature = lineCursor.Current as Feature)
+                    {
+                        // add the coordinate collection of the current geometry into our overall list of collections
+                        var polylineGeometry = lineFeature.GetShape() as Polyline;
+                        polylineBuilder.AddParts(polylineGeometry.Parts);
+                    }
                 }
 
                 // use the ConvexHull method from the GeometryEngine to construct the polygon geometry

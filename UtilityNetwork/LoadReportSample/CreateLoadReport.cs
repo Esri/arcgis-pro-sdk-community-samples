@@ -42,7 +42,7 @@ namespace LoadReportSample
   /// <remarks>
   /// Instructions for use
   /// 1. Select a utility network layer or a feature layer that participates in a utility network
-  /// 2. Click on the SDK Samples tab on the Utility Network tab group
+  /// 2. Click on the Load Report SDK Sample tab on the Utility Network tab group
   /// 3. Click on the Starting Points tool to create a starting point on the map
   /// 4. Click on the Create Load Report tool
   /// </remarks>
@@ -59,21 +59,14 @@ namespace LoadReportSample
     private const string PointsTerminalFieldName = "TERMINALID";
     private const string PointsPercentAlong = "PERCENTALONG";
 
-    // Constants - used with the Esri Electric Distribution Data Model
+    // Constants - used with the provided sample data
 
-    private const string ElectricDomainNetwork = "ElectricDistribution";
-    private const string MediumVoltageTier = "Medium Voltage Radial";
-    private const string ServicePointCategory = "ServicePoint";
+    private const string ElectricDomainNetwork = "Electric";
+    private const string MediumVoltageTier = "Electric Distribution";
+    private const string ServicePointCategory = "Service Point";
 
-    private const short DeviceStatusOpened = 1;
-    private const short DeviceStatusClosed = 2;
-
-    // Network Attributes - there are a number of different sample databases with
-    // different attribute names.  The sample tries to be flexible about which names it
-    // will use
-    private static readonly string[] PhaseAttributeNames = { "Phases Current", "Distribution Phases Current" };
-    private static readonly string[] LoadAttributeNames = { "Customer Load", "Service Load", "Power Rating" };
-    private static readonly string[] DeviceStatusAttributeNames = { "Operational Device Status", "Electric Device Status" };
+    private const string PhaseAttributeName = "E:Phases Current";
+    private const string LoadAttributeName = "Customer Load";
 
     private const short APhase = 4;
     private const short BPhase = 2;
@@ -86,7 +79,6 @@ namespace LoadReportSample
     /// We then display the results, along with error messages, in a MessageBox.
     /// 
     /// </summary>
-
     protected override async void OnClick()
     {
       // Start by checking to make sure we have a single feature layer selected
@@ -112,6 +104,7 @@ namespace LoadReportSample
       }
 
       // Generate our report.  The LoadTraceResults class is used to pass back results from the worker thread to the UI thread that we're currently executing.
+      
       LoadTraceResults traceResults = await QueuedTask.Run<LoadTraceResults>(() =>
       {
         return GenerateReport(selectionLayer);
@@ -137,21 +130,6 @@ namespace LoadReportSample
       MessageBox.Show(traceResultsString, "Create Load Report");
     }
 
-    private NetworkAttribute GetAttribute(UtilityNetworkDefinition utilityNetworkDefinition, string[] nameCandidates)
-    {
-      // Returns a Network Attribute that matches one of the names passed in as the nameCandidates argument
-
-      IReadOnlyList<NetworkAttribute> networkAttributes = utilityNetworkDefinition.GetNetworkAttributes();
-      foreach(NetworkAttribute networkAttribute in networkAttributes)
-      {
-        if (nameCandidates.Any(x => x == networkAttribute.Name))
-        {
-          return networkAttribute;
-        }
-      }
-      return null;
-    }
-
     /// <summary>
     /// GenerateReport
     /// 
@@ -160,7 +138,6 @@ namespace LoadReportSample
     /// 
     /// 
     /// </summary>
-
     public LoadTraceResults GenerateReport(Layer selectedLayer)
     {
       // Create a new results object.  We use this class to pass back a set of data from the worker thread to the UI thread
@@ -176,21 +153,18 @@ namespace LoadReportSample
           results.Message = "Please select a utility network layer.";
           results.Success = false;
         }
-        else
+        else if (!ValidateDataModel(utilityNetwork))
+        {
+          results.Message = "This sample is designed for a different utility network data model";
+            results.Success = false;
+        }
+        else 
         {
           using (Geodatabase utilityNetworkGeodatabase = utilityNetwork.GetDatastore() as Geodatabase)
           using (UtilityNetworkDefinition utilityNetworkDefinition = utilityNetwork.GetDefinition())
           using (Geodatabase defaultGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(new Uri(Project.Current.DefaultGeodatabasePath))))
           using (TraceManager traceManager = utilityNetwork.GetTraceManager())
           {
-            // First check to make sure we have a feature service workspace.  Utility Network functionality requires this.
-            if (utilityNetworkGeodatabase.GetGeodatabaseType() != GeodatabaseType.Service)
-            {
-              results.Message = "A feature service workspace connection is required.";
-              results.Success = false;
-              return results;
-            }
-
             // Get a row from the starting points table in the default project workspace.  This table is created the first time the user creates a starting point
             // If the table is missing or empty, a null row is returned
 
@@ -209,11 +183,10 @@ namespace LoadReportSample
 
                 // Get the network attributes that we will use in our trace
 
-                using (NetworkAttribute phasesNetworkAttribute = GetAttribute(utilityNetworkDefinition, PhaseAttributeNames))
-                using (NetworkAttribute loadNetworkAttribute = GetAttribute(utilityNetworkDefinition, LoadAttributeNames))
-                using (NetworkAttribute deviceStatusNetworkAttribute = GetAttribute(utilityNetworkDefinition, DeviceStatusAttributeNames))
+                using (NetworkAttribute phasesNetworkAttribute = utilityNetworkDefinition.GetNetworkAttribute(PhaseAttributeName))
+                using (NetworkAttribute loadNetworkAttribute = utilityNetworkDefinition.GetNetworkAttribute(LoadAttributeName))
                 {
-                  if (phasesNetworkAttribute == null || loadNetworkAttribute == null || deviceStatusNetworkAttribute == null)
+                  if (phasesNetworkAttribute == null || loadNetworkAttribute == null )
                   {
                     results.Success = false;
                     results.Message = "This add-in requires network attributes for phase, service load, and device status.\n";
@@ -221,7 +194,7 @@ namespace LoadReportSample
                   }
 
 
-                  // Get the Tier for Medium Voltage Radial
+                  // Get the Domain Network and Medium Voltage Tier
 
                   DomainNetwork electricDomainNetwork = utilityNetworkDefinition.GetDomainNetwork(ElectricDomainNetwork);
                   Tier mediumVoltageTier = electricDomainNetwork.GetTier(MediumVoltageTier);
@@ -298,7 +271,7 @@ namespace LoadReportSample
                     if (!e.Message.Equals("No subnetwork source was discovered."))
                     {
                       results.Success = false;
-                      results.Message += e.Message;
+                      results.Message += "No Subnetwork source was discovered for Phase A.\n";
                     }
                   }
 
@@ -324,7 +297,7 @@ namespace LoadReportSample
                     if (!e.Message.Equals("No subnetwork source was discovered."))
                     {
                       results.Success = false;
-                      results.Message += e.Message;
+                      results.Message += "No Subnetwork source was discovered for Phase B.\n";
                     }
                   }
 
@@ -349,7 +322,7 @@ namespace LoadReportSample
                     if (!e.Message.Equals("No subnetwork source was discovered."))
                     {
                       results.Success = false;
-                      results.Message += e.Message;
+                      results.Message += "No Subnetwork source was discovered for Phase C.\n";
                     }
                   }
                 }
@@ -379,7 +352,6 @@ namespace LoadReportSample
     ///		(this tool only works with one starting point)
     /// 
     /// </summary>
-
     private Row GetStartingPointRow(Geodatabase defaultGeodatabase, ref LoadTraceResults results)
     {
       try
@@ -463,6 +435,34 @@ namespace LoadReportSample
         Element element = utilityNetwork.CreateElement(assetType, globalID, terminal);
         return element;
       }
+    }
+
+    /// <summary>
+    /// This routine validates the utility network schema matches what we are expecting
+    /// </summary>
+    /// <param name="utilityNetwork"></param>
+    /// <returns>true if the data model has all of the correct schema</returns>
+    private bool ValidateDataModel(UtilityNetwork utilityNetwork)
+    {
+      bool dataModelIsValid = false;
+
+      using (UtilityNetworkDefinition utilityNetworkDefinition = utilityNetwork.GetDefinition())
+      {
+        try
+        {
+          DomainNetwork electricDomainNetwork = utilityNetworkDefinition.GetDomainNetwork(ElectricDomainNetwork);
+          Tier mediumVoltageTier = electricDomainNetwork.GetTier(MediumVoltageTier);
+          NetworkAttribute phaseNetworkAttribute = utilityNetworkDefinition.GetNetworkAttribute(PhaseAttributeName);
+          NetworkAttribute loadNetworkAttribute = utilityNetworkDefinition.GetNetworkAttribute(LoadAttributeName);
+          if (utilityNetworkDefinition.GetAvailableCategories().Contains(ServicePointCategory))
+          {
+            dataModelIsValid = true;
+          }
+        }
+        catch (Exception) { };
+
+      }
+      return dataModelIsValid;
     }
   }
 }

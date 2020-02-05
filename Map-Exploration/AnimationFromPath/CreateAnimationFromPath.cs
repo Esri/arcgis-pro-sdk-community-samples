@@ -188,11 +188,14 @@ namespace AnimationFromPath
         QueryFilter qf = new QueryFilter();
         qf.WhereClause = oid_fieldName + " = " + selectedFtrOID.ToString();
         RowCursor result = ftrLayer.GetFeatureClass().Search(qf);
-        if (result != null)
+        if (result != null && result.MoveNext())
         {
-          result.MoveNext();
-          Feature selectedFtr = result.Current as Feature;
-          return selectedFtr.GetShape() as Polyline;
+              Polyline plyLine = null;
+              using (Feature selectedFtr = result.Current as Feature)
+              {
+                  plyLine = selectedFtr.GetShape().Clone() as Polyline;
+              }
+              return plyLine;
         }
         return null;
       });

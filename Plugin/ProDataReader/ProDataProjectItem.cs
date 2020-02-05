@@ -28,10 +28,6 @@ using System.Windows.Media.Imaging;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Editing;
 using ESRI.ArcGIS.ItemIndex;
-using MetadataExtractor.Formats.Exif;
-using MetadataExtractor.Formats.Iptc;
-using MetadataExtractor.Formats.Jpeg;
-using MetadataExtractor;
 using ImageMetadata;
 using System.Runtime.InteropServices;
 

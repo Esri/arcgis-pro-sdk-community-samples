@@ -1,0 +1,78 @@
+﻿<!--
+
+   Copyright 2019 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="MultipatchBuilder.dll" defaultNamespace="MultipatchBuilder" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{a61e49ae-682b-4a77-9d7e-abf3a985c74d}" version="1.0" desktopVersion="2.5.21645">
+    <Name>MultipatchBuilderEx</Name>
+    <Description>MultipatchBuilderEx description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>10/25/2019 2:16:29 PM, 2019</Date>
+    <Subject>Editing</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="MultipatchBuilder_Module" className="Module1" autoLoad="false" caption="Module1">
+      <tabs>
+        <!--These two tabs are grouped in a the Tab Group and are toggled based on the "example_state_condition" condition -->
+        <tab id="Demo_Tab1" caption="MultiPatch" tabGroupID="working_MultiTab" keytip="T1">
+          <group refID="MultipatchBuilder_Group1" />
+          <group refID="Selection_Group2" />
+        </tab>
+      </tabs>
+      <groups>
+        <group id="MultipatchBuilder_Group1" caption="Multipatch Demo" appearsOnAddInTab="false" keytip="G0">
+          <!-- host controls within groups -->
+          <comboBox refID="MultipatchBuilder_MakeWalls" size="large" />
+          <button refID="MultipatchBuilder_TriangleMultipatch" size="large" />
+        </group>
+        <group id="Selection_Group2" caption="Selection" appearsOnAddInTab="false" keytip="G1">
+          <!-- host controls within groups -->
+          <!--Core Pro Commands-->
+          <toolPalette refID="esri_mapping_selectToolPalette" />
+          <button refID="esri_mapping_clearSelectionButton" size="small" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="MultipatchBuilder_TriangleMultipatch" caption="Create Multipatch Geometry" 
+                className="CreateTriangleMultipatch" loadOnClick="true" keytip="B1" 
+                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/MultipatchTexturedEditing16.png" 
+                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/MultipatchTexturedEditing32.png">
+          <tooltip heading="Create Triangle Multipatch">Create a multipatch feature using the MultipatchBuilderEx object.
+          <disabledText /></tooltip>
+        </button>
+        <comboBox id="MultipatchBuilder_MakeWalls" caption="Texture:" keytip="C1" 
+                  className="MakeWalls" itemWidth="140" itemHeight="300" 
+                  extendedCaption="Extended Caption" isEditable="false" isReadOnly="false" 
+                  resizable="true" image="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GeodatabaseFeatureClassMultipatch16.png">
+          <tooltip heading="Tip:">Shows all textures: Use this drop down to select the texture for the building
+            <disabledText /></tooltip>
+        </comboBox>
+        <button id="MultipatchBuilder_InspectMultiPatch" caption="InspectMultiPatch" 
+                className="InspectMultiPatch" loadOnClick="true" keytip="B1"
+                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingReplaceMultiPatch16.png" 
+                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingReplaceMultiPatch32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

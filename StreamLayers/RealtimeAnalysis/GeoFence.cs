@@ -63,8 +63,10 @@ namespace RealtimeAnalysis
 			{
 				RowCursor rc = flyr.Search(null);
 				rc.MoveNext();
-				Feature f = rc.Current as Feature;
-				geofence = f.GetShape() as Polygon;
+                using (Feature f = rc.Current as Feature)
+                {
+                    geofence = f.GetShape().Clone() as Polygon;
+                }
 			});
 			#endregion
 
@@ -87,20 +89,23 @@ namespace RealtimeAnalysis
 		  {
 			  while (_rtfc.MoveNext())
 			  {
-				  switch (_rtfc.Current.GetRowSource())
-				  {
-					  case RealtimeRowSource.EventInsert:
-						  RealtimeFeature rtfeat = _rtfc.Current as RealtimeFeature;
-						  int featureID = (int)rtfeat["TrackID"];
-						  if (!_featuresGeoFenced[featureID])
-						  {
-							  _featuresGeoFenced[featureID] = true;
-							  ShowAlert(featureID.ToString());
-						  }
-						  continue;
-					  default:
-						  continue;
-				  }
+                  using (var rtFeature = _rtfc.Current)
+                  {
+                      switch (rtFeature.GetRowSource())
+                      {
+                          case RealtimeRowSource.EventInsert:
+                              RealtimeFeature rtfeat = rtFeature as RealtimeFeature;
+                              int featureID = (int)rtfeat["TrackID"];
+                              if (!_featuresGeoFenced[featureID])
+                              {
+                                  _featuresGeoFenced[featureID] = true;
+                                  ShowAlert(featureID.ToString());
+                              }
+                              continue;
+                          default:
+                              continue;
+                      }
+                  }
 			  }
 		  }
 	  });

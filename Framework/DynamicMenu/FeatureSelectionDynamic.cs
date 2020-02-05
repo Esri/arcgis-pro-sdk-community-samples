@@ -32,35 +32,16 @@ using ArcGIS.Desktop.Mapping;
 namespace FeatureDynamicMenu
 {
     /// <summary>
-    /// cursor position
-    /// </summary>
-    public struct POINT
-    {
-        /// <summary>
-        /// cursor X
-        /// </summary>
-        public int X;
-        /// <summary>
-        /// cursor Y
-        /// </summary>
-        public int Y;
-    }
-    /// <summary>
     /// Implementation of custom Map tool.
     /// </summary>
     class FeatureSelectionDynamic : MapTool
     {
-
-        [DllImport("user32.dll")]
-        public static extern bool GetCursorPos(out POINT pt);
         
         private static readonly IDictionary<BasicFeatureLayer, List<long>> Selection = new Dictionary<BasicFeatureLayer, List<long>>();
         private static readonly object LockSelection = new object();
-        
-        private System.Windows.Point _clickedPoint;
-        public System.Windows.Point MouseLocation => _clickedPoint;
+        private System.Windows.Point _clickPoint;
 
-
+        public System.Windows.Point MouseLocation => _clickPoint;
 
         /// <summary>
         /// Define the tool as a sketch tool that draws a point in screen space on the view.
@@ -75,20 +56,19 @@ namespace FeatureDynamicMenu
             // asynchronously from a worker thread
             BindingOperations.EnableCollectionSynchronization(Selection, LockSelection);
             //Set the embeddable's control's DAML ID to show on the mapview when the tool is active.
-           OverlayControlID = "FeatureDynamicMenu_EmbeddedControl";
-           //Allow the embeddable control to be re-sized.
-           OverlayControlCanResize = true;
+            OverlayControlID = "FeatureDynamicMenu_EmbeddedControl";
+            //Allow the embeddable control to be re-sized.
+            OverlayControlCanResize = true;
             //Specify a ratio of 0 to 1 to place the control
             OverlayControlPositionRatio = new Point(0, 0);  //top left
-
         }
-       
 
         internal static IDictionary<BasicFeatureLayer, List<long>> FeatureSelection => Selection;
 
         private void ShowContextMenu()
         {
-
+            _clickPoint = MouseCursorPosition.GetMouseCursorPosition();
+            System.Diagnostics.Debug.WriteLine($@"MouseLocation: {_clickPoint.X} {_clickPoint.Y}");
             var contextMenu = FrameworkApplication.CreateContextMenu("DynamicMenu_DynamicFeatureSelection", () => MouseLocation);
             contextMenu.DataContext = this;
             contextMenu.Closed += (o, e) =>
@@ -101,7 +81,6 @@ namespace FeatureDynamicMenu
             };
             contextMenu.IsOpen = true;
         }
-
         
         protected override Task OnToolActivateAsync(bool hasMapViewChanged)
         {
@@ -114,15 +93,10 @@ namespace FeatureDynamicMenu
             return base.OnToolDeactivateAsync(hasMapViewChanged);
         }
 
-
         protected override Task<bool> OnSketchCompleteAsync(Geometry geometry)
         {
             List<long> oids = new List<long>();
             var vm = OverlayEmbeddableControl as EmbeddedControlViewModel;
-
-			POINT pt;
-			GetCursorPos(out pt);
-			_clickedPoint = new Point(pt.X, pt.Y); //Point on screen to show the context menu
 
 			return QueuedTask.Run(() =>
             {

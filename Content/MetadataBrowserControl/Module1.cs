@@ -120,7 +120,7 @@ namespace MetadataBrowserControl
             if (vm != null)
             {
                // ItemMetadata info = new ItemMetadata(null, "");
-                var item = Project.Current.SelectedItems?.FirstOrDefault();
+                var item = Project.Current?.SelectedItems?.FirstOrDefault();
                 if (item != null)
                 {
                     var xml = await ItemMetadata.GetXML(item);

@@ -13,10 +13,10 @@ Language:              C#
 Subject:               Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/27/2019
-ArcGIS Pro:            2.4
+Date:                  7/17/2019
+ArcGIS Pro:            2.5
 Visual Studio:         2017, 2019
-.NET Target Framework: 4.6.1
+.NET Target Framework: 4.8
 ```
 
 ## Resources
@@ -39,7 +39,7 @@ Visual Studio:         2017, 2019
       
   
 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Working with Core Geometry and Data' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Working with Core Geometry and Data" is available.  
-1. In Visual Studio 2015 click the Build menu. Then select Build Solution.  
+1. In Visual Studio click the Build menu. Then select Build Solution.  
 1. Click Start button to debug ArcGIS Pro.  
 1. In ArcGIS Pro open the Project called "Workshop.aprx" in the "C:\Data\Working with Core Geometry and Data" folder.  This project and data is required because it contains data that is attachment enabled.  
 1. Use the ArcGIS Pro "Explore" button and identify the polygon overlaying part of Wyoming.   

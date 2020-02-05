@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ChangeColorizerForRasterLayer</name>
+    </assembly>
+    <members>
+        <member name="T:ChangeColorizerForRasterLayer.ApplyColorizers">
+            <summary>
+            Represents the Apply Colorizers ComboBox.
+            </summary>
+        </member>
+        <member name="M:ChangeColorizerForRasterLayer.ApplyColorizers.#ctor">
+            <summary>
+            Combo Box constructor. Make sure the combox box is enabled if raster layer is selected
+            and subscribe to the layer selection changed event.
+            </summary>
+        </member>
+        <member name="M:ChangeColorizerForRasterLayer.ApplyColorizers.SelectedLayersChanged(ArcGIS.Desktop.Mapping.Events.MapViewEventArgs)">
+            <summary>
+            Event handler for layer selection changes.
+            </summary>
+        </member>
+        <member name="M:ChangeColorizerForRasterLayer.ApplyColorizers.Finalize">
+            <summary>
+            Destructor. Unsubscribe from the layer selection changed event.
+            </summary>
+        </member>
+        <member name="M:ChangeColorizerForRasterLayer.ApplyColorizers.UpdateCombo(ArcGIS.Desktop.Mapping.BasicRasterLayer)">
+            <summary>
+            Updates the combo box with the colorizers that can be applied to the selected layer.
+            </summary>
+            <param name="basicRasterLayer">the selected layer.</param>
+        </member>
+        <member name="M:ChangeColorizerForRasterLayer.ApplyColorizers.OnSelectionChange(ArcGIS.Desktop.Framework.Contracts.ComboBoxItem)">
+            <summary>
+            The on comboBox selection change event. 
+            </summary>
+            <param name="item">The newly selected combo box item</param>
+        </member>
+        <member name="M:ChangeColorizerForRasterLayer.ColorizerDefinitionVM.SetToRGBColorizer(ArcGIS.Desktop.Mapping.BasicRasterLayer)">
+            <summary>
+            Applies the RGB colorizer to the basic raster layer.
+            </summary>
+            <param name="basicRasterLayer">The basic raster layer is either a raster or image service layer, or the image sub-layer of the mosaic layer.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ChangeColorizerForRasterLayer.ColorizerDefinitionVM.SetToStretchColorizer(ArcGIS.Desktop.Mapping.BasicRasterLayer)">
+            <summary>
+            Applies the Stretch colorizer to the basic raster layer.
+            </summary>
+            <param name="basicRasterLayer">The basic raster layer is either a raster or image service layer, or the image sub-layer of the mosaic layer.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ChangeColorizerForRasterLayer.ColorizerDefinitionVM.SetToDiscreteColorColorizer(ArcGIS.Desktop.Mapping.BasicRasterLayer)">
+            <summary>
+            Applies the Discrete Color colorizer to the basic raster layer.
+            </summary>
+            <param name="basicRasterLayer">The basic raster layer is either a raster or image service layer, or the image sub-layer of the mosaic layer.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ChangeColorizerForRasterLayer.ColorizerDefinitionVM.SetToColorMapColorizer(ArcGIS.Desktop.Mapping.BasicRasterLayer)">
+            <summary>
+            Applies the ColorMap colorizer to the basic raster layer.
+            </summary>
+            <param name="basicRasterLayer">The basic raster layer is either a raster or image service layer, or the image sub-layer of the mosaic layer.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ChangeColorizerForRasterLayer.ColorizerDefinitionVM.SetToClassifyColorizer(ArcGIS.Desktop.Mapping.BasicRasterLayer)">
+            <summary>
+            Applies the Classify colorizer to the basic raster layer.
+            </summary>
+            <param name="basicRasterLayer">The basic raster layer is either a raster or image service layer, or the image sub-layer of the mosaic layer.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ChangeColorizerForRasterLayer.ColorizerDefinitionVM.SetToUniqueValueColorizer(ArcGIS.Desktop.Mapping.BasicRasterLayer)">
+            <summary>
+            Applies the Unique Value colorizer to the basic raster layer.
+            </summary>
+            <param name="basicRasterLayer">The basic raster layer is either a raster or image service layer, or the image sub-layer of the mosaic layer.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ChangeColorizerForRasterLayer.ColorizerDefinitionVM.SetToVectorFieldColorizer(ArcGIS.Desktop.Mapping.BasicRasterLayer)">
+            <summary>
+            Applies the Vector Field colorizer to the basic raster layer.
+            </summary>
+            <param name="basicRasterLayer">The basic raster layer is either a raster or image service layer, or the image sub-layer of the mosaic layer.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ChangeColorizerForRasterLayer.ColorizerDefinitionVM.GetColorRampsFromStyleAsync(ArcGIS.Desktop.Core.Project,System.String,System.String)">
+            <summary>
+            Gets the color ramp from the color ramp style.
+            </summary>
+            <param name="project">The current project.</param>
+            <param name="styleName">A string represents the color ramp style name. For example, "ArcGIS Colors".</param>
+            <param name="rampName">A string represents the color ramp name. For example, "Aspect".</param>
+            <returns></returns>
+        </member>
+        <member name="T:ChangeColorizerForRasterLayer.Module1">
+            <summary>
+            This sample demonstrates how to use the raster colorizer definitions to create a specific colorizer, and apply the new colorizer to the selected raster layer.  
+            The sample includes these functions:
+            1. Creates a new image service layer and adds the layer to the current map.
+            1. Displays a collection of colorizers in a combo box that can be applied to the selected layer.  
+            1. Sets the selected colorizer to the layer.
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            1. Click Start button to open ArcGIS Pro.
+            1. When ArcGIS Pro opens choose to create a new Map Project using the "Map" blank templates.  
+            1. Click on the ADD-IN tab and then click the "Add Raster Layer" button to add a new image service layer to the map from this location: http://sampleserver6.arcgisonline.com/arcgis/rest/services/CharlotteLAS/ImageServer  
+            ![UI](Screenshots/Screen1.png)
+            1. Make sure the raster layer is selected on the Map's Contents pane.
+            1. Click the drop down arrow of the "Apply Colorizers" combo box to display the list of applicable colorizers for the selected raster layer.
+            ![UI](Screenshots/Screen2.png)
+            1. Select different colorizers from the list to apply to the layer. 
+            1. Note that the raster layer is now rendered with different customized colorizers driven by the drop down selection.  
+            ![UI](Screenshots/Screen3.png)
+            1. You can try the "Apply colorizers" functionality on your own layers.  But the selected layer has to be either a raster layer, an image service layer, or a mosaic layer.
+            ![UI](Screenshots/Screen4.png)
+            </remarks>
+        </member>
+        <member name="P:ChangeColorizerForRasterLayer.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:ChangeColorizerForRasterLayer.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="M:ChangeColorizerForRasterLayer.RasterLayerVM.AddRasterLayerToMapAsync">
+            <summary>
+            Creates an image service layer and add it to the first 2D map.
+            </summary>
+            <returns>Task that contains a layer.</returns>
+        </member>
+        <member name="M:ChangeColorizerForRasterLayer.RasterLayerVM.GetMapFromProject(ArcGIS.Desktop.Core.Project,System.String)">
+            <summary>
+            Gets the map from a project that matches a map name.
+            </summary>
+            <param name="project">The project in which the map resides.</param>
+            <param name="mapName">The map name to identify the map.</param>
+            <returns>A Task representing the map.</returns>
+        </member>
+    </members>
+</doc>

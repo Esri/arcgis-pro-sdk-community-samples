@@ -22,8 +22,8 @@
     <Name>GeocodingTools</Name>
     <Description>GeocodingTools description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>Esri Pro SDK team</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>11/20/2017 9:39:34 AM, 2017</Date>
     <Subject>Map Authoring</Subject>
     <!-- Note subject can be one or more of these topics:

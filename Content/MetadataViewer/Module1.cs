@@ -107,7 +107,7 @@ namespace MetadataViewer
             if (vm != null)
             {
                 //ItemInfo info = new ItemInfo(null, "");
-                var item = Project.Current.SelectedItems?.FirstOrDefault();
+                var item = Project.Current?.SelectedItems?.FirstOrDefault();
                 if (item != null)
                 {
                     var xml = await ItemInfo.GetXML(item);

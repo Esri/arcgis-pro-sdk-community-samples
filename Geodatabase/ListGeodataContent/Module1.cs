@@ -32,7 +32,7 @@ namespace ListGeodataContent
     /// </summary>
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a geodatabase called 'ReviewerWorkspace.gdb' with both tables and feature classes.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\DataReviewer\ReviewerWorkspace.gdb" is available.
-    /// 1. Open this solution in Visual Studio 2015.  
+    /// 1. Open this solution in Visual Studio.  
     /// 1. Click the build menu and select Build Solution.
     /// 1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.
     /// 1. Open any project.

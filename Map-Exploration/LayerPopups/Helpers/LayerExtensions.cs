@@ -48,7 +48,7 @@ namespace LayerPopups.Helpers {
         /// <param name="layer"></param>
         /// <param name="popupDefinition"></param>
         /// <returns></returns>
-        public static CIMPopupInfo CreatePopupInfo(this Layer layer, PopupDefinition popupDefinition) {
+        public static CIMPopupInfo CreatePopupInfo(this Layer layer, CustomPopupDefinition popupDefinition) {
             return popupDefinition.CreatePopupInfo();
         }
     }

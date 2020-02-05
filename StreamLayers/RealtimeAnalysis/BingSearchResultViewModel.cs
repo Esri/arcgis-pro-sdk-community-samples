@@ -183,19 +183,21 @@ namespace RealtimeAnalysis
         {
           while (_rtCursor.MoveNext())
           {
-            var _rtFeature = _rtCursor.Current as RealtimeFeature;
-            switch (_rtFeature.GetRowSource())
-            {
-              case RealtimeRowSource.EventInsert:
-                var point = _rtFeature.GetShape() as MapPoint;
-                Module1.Current.Long = point.X;
-                Module1.Current.Lat = point.Y;
-                var pane = FrameworkApplication.DockPaneManager.Find(BingSearchResultViewModel._dockPaneID) as BingSearchResultViewModel;
-                pane?.DoSearch();
-                continue;
-              default:
-                continue;
-            }
+                  using (var _rtFeature = _rtCursor.Current as RealtimeFeature)
+                  {
+                      switch (_rtFeature.GetRowSource())
+                      {
+                          case RealtimeRowSource.EventInsert:
+                              var point = _rtFeature.GetShape() as MapPoint;
+                              Module1.Current.Long = point.X;
+                              Module1.Current.Lat = point.Y;
+                              var pane = FrameworkApplication.DockPaneManager.Find(BingSearchResultViewModel._dockPaneID) as BingSearchResultViewModel;
+                              pane?.DoSearch();
+                              continue;
+                          default:
+                              continue;
+                      }
+                  }
           } 
         };
       });

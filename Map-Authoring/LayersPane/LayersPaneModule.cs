@@ -27,22 +27,22 @@ using System.Threading.Tasks;
 
 namespace LayersPane
 {
-    /// <summary>
-    /// The Layers pane sample uses a docking pane to query and display feature classes and their content.  Access to feature classes is provided through the layers of the active map.
-    /// </summary>
-    /// <remarks>
-	/// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.    
-    /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 1. Click Start button to open ArcGIS Pro.
-	/// 1. ArcGIS Pro will open. 
-    /// 1. Open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project which contains the required data needed for this sample.
-    /// 1. Click on the Add-in tab on the ribbon and then on the "Open LayersPane" button.
-    /// 1. On the "layer pane" click the 'Search button' and the pane's grid will display the selected feature layer's columns and data.
-    /// 1. Select "Crimes" on the layer dropdown and enter a valid SQL where clause like 'objectid &lt; 100' in the text box next to the search button and click Search again.
-	/// ![UI](Screenshots/Screen1.png)
-    /// 1. The data displayed is now restricted to records that match the given where clause.
-    /// </remarks>
-    internal class LayersPaneModule : Module
+  /// <summary>
+  /// The Layers pane sample uses a docking pane to query and display feature classes and their content.  Access to feature classes is provided through the layers of the active map.
+  /// </summary>
+  /// <remarks>
+  /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.    
+  /// 1. In Visual Studio click the Build menu. Then select Build Solution.
+  /// 1. Click Start button to open ArcGIS Pro.
+  /// 1. ArcGIS Pro will open. 
+  /// 1. Open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project which contains the required data needed for this sample.
+  /// 1. Click on the Add-in tab on the ribbon and then on the "Open LayersPane" button.
+  /// 1. On the "layer pane" click the 'Search button' and the pane's grid will display the selected feature layer's columns and data.
+  /// 1. Select "Crimes" on the layer dropdown and enter a valid SQL where clause like 'objectid &lt; 100' in the text box next to the search button and click Search again.
+  /// ![UI](Screenshots/Screen1.png)
+  /// 1. The data displayed is now restricted to records that match the given where clause.
+  /// </remarks>
+  internal class LayersPaneModule : Module
     {
         private static LayersPaneModule _this = null;
 

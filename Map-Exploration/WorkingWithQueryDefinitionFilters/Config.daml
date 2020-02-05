@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2020 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+
+<ArcGIS defaultAssembly="WorkingWithQueryDefinitionFilters.dll" defaultNamespace="WorkingWithQueryDefinitionFilters" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{b58617f6-bbf0-4e86-b8e3-19284abe09f3}" version="1.0" desktopVersion="2.5.0">
+    <Name>WorkingWithQueryDefinitionFilters</Name>
+    <Description>WorkingWithQueryDefinitionFilters description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>8/8/2019 3:34:17 PM, 2019</Date>
+    <Subject>Map Exploration</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="WorkingWithQueryDefinitionFilters_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs></tabs>
+      <groups></groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="WorkingWithQueryDefinitionFilters_DefineQueryDefinitionFilters_ShowButton" caption="Definition Query Filters" className="DefineQueryDefinitionFilters_ShowButton" loadOnClick="true" keytip="B1" smallImage="Images\queryFilter16.png" largeImage="Images\queryFilter32.png">
+          <tooltip heading="Query Definition Filters">Define Definition Query Filters<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="WorkingWithQueryDefinitionFilters_DefineQueryDefinitionFilters" caption="Definition Query Filters" className="DefineQueryDefinitionFiltersViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="DefineQueryDefinitionFiltersView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+    <updateModule refID="esri_mapping">
+      <menus>
+        <updateMenu refID="esri_mapping_layerContextMenu">
+          <!--Note: New_Menu_Item_Button is a button control that must exist within the controls tag-->
+          <insertButton refID="WorkingWithQueryDefinitionFilters_DefineQueryDefinitionFilters_ShowButton" placeWith="esri_mapping_selectedLayerPropertiesButton" />
+        </updateMenu>
+        <updateMenu refID="esri_mapping_standaloneTableContextMenu">
+          <insertButton refID="WorkingWithQueryDefinitionFilters_DefineQueryDefinitionFilters_ShowButton" placeWith="esri_mapping_selectedTablePropertiesButton" />
+        </updateMenu>
+      </menus>
+    </updateModule>
+  </modules>
+</ArcGIS>

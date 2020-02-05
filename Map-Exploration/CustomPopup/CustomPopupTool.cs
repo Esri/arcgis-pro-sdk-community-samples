@@ -165,50 +165,52 @@ namespace CustomPopup
         if (!rows.MoveNext())
           return invalidPopup;
 
-        var row = rows.Current;
+          using (var row = rows.Current)
+          {
 
-        //Loop through the fields, extract the value for the row and add to a dictionary.
-        foreach (var field in fields)
-        {
-          var val = row[field.Name];
-          if (val is DBNull || val == null)
-            continue;
-              double value;
-          if (!Double.TryParse(val.ToString(), out value))
-            continue;
+              //Loop through the fields, extract the value for the row and add to a dictionary.
+              foreach (var field in fields)
+              {
+                  var val = row[field.Name];
+                  if (val is DBNull || val == null)
+                      continue;
+                  double value;
+                  if (!Double.TryParse(val.ToString(), out value))
+                      continue;
 
-          if (value < 0)
-            continue;
+                  if (value < 0)
+                      continue;
 
-          _values.Add(field, value);
-        }
+                  _values.Add(field, value);
+              }
 
-        if (_values.Count == 0)
-          return invalidPopup;
+              if (_values.Count == 0)
+                  return invalidPopup;
 
-        //Construct a new html string that we will use to update our html template.
-        StringBuilder sb = new StringBuilder();
-        sb.AppendLine("data.addColumn('string', 'Age')"); //Choose a label that makes sense for the numeric fields shown.
-        sb.AppendLine("data.addColumn('number', 'Number of People')"); //Choose a label that makes sense for the values shown in those fields.
-        sb.AppendLine("data.addColumn('number', 'Percentage')");
-        sb.AppendLine("data.addRows([");
+              //Construct a new html string that we will use to update our html template.
+              StringBuilder sb = new StringBuilder();
+              sb.AppendLine("data.addColumn('string', 'Age')"); //Choose a label that makes sense for the numeric fields shown.
+              sb.AppendLine("data.addColumn('number', 'Number of People')"); //Choose a label that makes sense for the values shown in those fields.
+              sb.AppendLine("data.addColumn('number', 'Percentage')");
+              sb.AppendLine("data.addRows([");
 
-        //Add each value to the html string.
-        foreach (var v in _values)
-        {
-          var percentage = (v.Value / _values.Sum(kvp => kvp.Value)) * 100;
-          sb.AppendLine(string.Format(CultureInfo.InvariantCulture, "['{0}', {{v: {1} }}, {{v: {2} }}],", v.Key.Alias, v.Value, percentage));
-        }
+              //Add each value to the html string.
+              foreach (var v in _values)
+              {
+                  var percentage = (v.Value / _values.Sum(kvp => kvp.Value)) * 100;
+                  sb.AppendLine(string.Format(CultureInfo.InvariantCulture, "['{0}', {{v: {1} }}, {{v: {2} }}],", v.Key.Alias, v.Value, percentage));
+              }
 
-        sb.AppendLine("]);");
+              sb.AppendLine("]);");
 
-        //Get the html from the template file on disk that we have packaged with our add-in.
-        var htmlPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "template.html");
-        var html = File.ReadAllText(htmlPath);
+              //Get the html from the template file on disk that we have packaged with our add-in.
+              var htmlPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "template.html");
+              var html = File.ReadAllText(htmlPath);
 
-        //Update the template with our custom html and return it to be displayed in the pop-up window.
-        html = html.Replace("//data.addColumn", sb.ToString());
-        return html;
+              //Update the template with our custom html and return it to be displayed in the pop-up window.
+              html = html.Replace("//data.addColumn", sb.ToString());
+              return html;
+          }
       });
     }
 

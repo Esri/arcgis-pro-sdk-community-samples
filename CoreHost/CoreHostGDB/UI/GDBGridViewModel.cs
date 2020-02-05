@@ -329,9 +329,12 @@ namespace CoreHostGDB.UI {
                         
                         while (cursor.MoveNext()) {
                             var row = new DynamicDataRow();
-
-                            for (int v = 0; v < flds.Count; v++) {
-                                row[GetName(flds[v])] = GetValue(cursor.Current, v);
+                            using (Row currentRow = cursor.Current)
+                            {
+                                for (int v = 0; v < flds.Count; v++)
+                                {
+                                    row[GetName(flds[v])] = GetValue(cursor.Current, v);
+                                }
                             }
                             data.Add(row);
                         }

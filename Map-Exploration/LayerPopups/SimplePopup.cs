@@ -30,6 +30,7 @@ using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 using LayerPopups.Helpers;
+using CustomPopupDefinition = LayerPopups.Helpers.CustomPopupDefinition;
 
 namespace LayerPopups {
     /// <summary>
@@ -63,16 +64,16 @@ namespace LayerPopups {
             return QueuedTask.Run(() => {
                 var def = fl.GetDefinition() as CIMFeatureLayer;
                 string popupText = string.Format("{0} ({1}), population {2}",
-                    PopupDefinition.FormatFieldName("STATE_NAME"),
-                    PopupDefinition.FormatFieldName("STATE_ABBR"),
-                    PopupDefinition.FormatFieldName("TOTPOP2010"));
+                    CustomPopupDefinition.FormatFieldName("STATE_NAME"),
+                    CustomPopupDefinition.FormatFieldName("STATE_ABBR"),
+                    CustomPopupDefinition.FormatFieldName("TOTPOP2010"));
                 //Create a popup definition with text and table
                 //Just add all the table fields by default
-                PopupDefinition popup = new PopupDefinition() {
-                    Title = PopupDefinition.FormatTitle(
-                        string.Format("{0} (Simple Popup)", PopupDefinition.FormatFieldName(def.FeatureTable.DisplayField))),
+                CustomPopupDefinition popup = new CustomPopupDefinition() {
+                    Title = CustomPopupDefinition.FormatTitle(
+                        string.Format("{0} (Simple Popup)", CustomPopupDefinition.FormatFieldName(def.FeatureTable.DisplayField))),
                     TextMediaInfo = new TextMediaInfo() {
-                        Text = PopupDefinition.FormatText(popupText)
+                        Text = CustomPopupDefinition.FormatText(popupText)
                     },
                     TableMediaInfo = new TableMediaInfo(fl.GetFeatureClass().GetDefinition().GetFields())   
                 };

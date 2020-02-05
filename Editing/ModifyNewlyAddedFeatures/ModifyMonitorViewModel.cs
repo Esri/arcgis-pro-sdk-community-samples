@@ -176,22 +176,24 @@ namespace ModifyNewlyAddedFeatures
         Geometry geomChangedPolygon = null;
         while (rowCursorOverlayPoly.MoveNext())
         {
-          var feature = rowCursorOverlayPoly.Current as Feature;
-          var geomOverlayPoly = feature.GetShape();
-          if (geomOverlayPoly == null) continue;
+                    using (var feature = rowCursorOverlayPoly.Current as Feature)
+                    {
+                        var geomOverlayPoly = feature.GetShape();
+                        if (geomOverlayPoly == null) continue;
 
-          // exclude the search polygon
-          if (row.GetObjectID() == feature.GetObjectID())
-          {
-            geomChangedPolygon = geomOverlayPoly.Clone();
-            continue;
-          }
-          if (geomOverlap == null)
-          {
-            geomOverlap = geomOverlayPoly.Clone();
-            continue;
-          }
-          geomOverlap = GeometryEngine.Instance.Union(geomOverlap, geomOverlayPoly);
+                        // exclude the search polygon
+                        if (row.GetObjectID() == feature.GetObjectID())
+                        {
+                            geomChangedPolygon = geomOverlayPoly.Clone();
+                            continue;
+                        }
+                        if (geomOverlap == null)
+                        {
+                            geomOverlap = geomOverlayPoly.Clone();
+                            continue;
+                        }
+                        geomOverlap = GeometryEngine.Instance.Union(geomOverlap, geomOverlayPoly);
+                    }
         }
         var description = string.Empty;
         if (!geomOverlap.IsNullOrEmpty())

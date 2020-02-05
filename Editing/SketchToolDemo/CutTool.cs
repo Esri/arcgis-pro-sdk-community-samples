@@ -91,39 +91,54 @@ namespace SketchToolDemo
             // for each of the layers 
             foreach (FeatureLayer editableFeatureLayer in editableLayers)
             {
-                // find the features crossed by the sketch geometry
-                var rowCursor = editableFeatureLayer.Search(geometry, SpatialRelationship.Crosses);
+              // get the feature class associated with the layer
+              Table fc = editableFeatureLayer.GetTable();
+              
+              // find the field index for the 'Description' attribute
+              int descriptionIndex = -1;
+              descriptionIndex = fc.GetDefinition().FindField("Description");
 
-                // get the feature class associated with the layer
-                Table fc = editableFeatureLayer.GetTable();
-
-                // find the field index for the 'Description' attribute
-                int descriptionIndex = -1;
-                descriptionIndex = fc.GetDefinition().FindField("Description");
+              // find the features crossed by the sketch geometry
+              //   use the featureClass to search. We need to be able to search with a recycling cursor
+              //     seeing we want to Modify the row results
+              using (var rowCursor = fc.Search(geometry, SpatialRelationship.Crosses, false))
+              {
 
                 // add the feature IDs into our prepared list
                 while (rowCursor.MoveNext())
                 {
-                    var feature = rowCursor.Current as Feature;
-                    var geomTest = feature.GetShape();
-                    if (geomTest != null)
+                    using (var feature = rowCursor.Current as Feature)
                     {
+                      var geomTest = feature.GetShape();
+                      if (geomTest != null)
+                      {
                         // make sure we have the same projection for geomProjected and geomTest
                         var geomProjected = GeometryEngine.Instance.Project(geometry, geomTest.SpatialReference);
                         // we are looking for polygons are completely intersected by the cut line
                         if (GeometryEngine.Instance.Relate(geomProjected, geomTest, "TT*F*****"))
                         {
-                            // add the current feature to the overall list of features to cut
-                            cutOIDs.Add(rowCursor.Current.GetObjectID());
+                          var oid = feature.GetObjectID();
 
-                            // adjust the attribute before the cut
-                            if (descriptionIndex != -1)
-                                cutOperation.Modify(rowCursor.Current, descriptionIndex, "Pro Sample");
+                          // add the current feature to the overall list of features to cut
+                          cutOIDs.Add(oid);
                         }
+                      }
                     }
-                }
-                // add the elements to cut into the edit operation
-                cutOperation.Split(editableFeatureLayer, cutOIDs, geometry);
+                  }
+              }
+
+              // adjust the attribute before the cut
+              if (descriptionIndex != -1)
+              {
+                var atts = new Dictionary<string, object>();
+                atts.Add("Description", "Pro Sample");
+                foreach (var oid in cutOIDs)
+                  cutOperation.Modify(editableFeatureLayer, oid, atts);
+              }
+
+              // add the elements to cut into the edit operation
+              cutOperation.Split(editableFeatureLayer, cutOIDs, geometry);
+
             }
 
             //execute the operation
@@ -169,7 +184,7 @@ namespace SketchToolDemo
     /// <summary>
     /// Extension method to search and retrieve rows
     /// </summary>
-    public static class LayerExtensions
+    public static class SketchExtensions
     {
         /// <summary>
         /// Performs a spatial query against a feature layer.
@@ -194,6 +209,34 @@ namespace SketchToolDemo
 
             // apply the spatial filter to the feature layer in question
             rowCursor = searchLayer.Search(spatialQueryFilter);
+
+            return rowCursor;
+        }
+
+        /// <summary>
+        /// Performs a spatial query against a feature class
+        /// </summary>
+        /// <remarks>It is assumed that the feature layer and the search geometry are using the same spatial reference.</remarks>
+        /// <param name="searchFC">The feature class to be searched.</param>
+        /// <param name="searchGeometry">The geometry used to perform the spatial query.</param>
+        /// <param name="spatialRelationship">The spatial relationship used by the spatial filter.</param>
+        /// <param name="useRecyclingCursor"></param>
+        /// <returns>Cursor containing the features that satisfy the spatial search criteria.</returns>
+        public static RowCursor Search(this Table searchFC, Geometry searchGeometry, SpatialRelationship spatialRelationship, bool useRecyclingCursor)
+        {
+            RowCursor rowCursor = null;
+
+            // define a spatial query filter
+            var spatialQueryFilter = new SpatialQueryFilter
+            {
+                // passing the search geometry to the spatial filter
+                FilterGeometry = searchGeometry,
+                // define the spatial relationship between search geometry and feature class
+                SpatialRelationship = spatialRelationship
+            };
+
+            // apply the spatial filter to the feature layer in question
+            rowCursor = searchFC.Search(spatialQueryFilter, useRecyclingCursor);
 
             return rowCursor;
         }

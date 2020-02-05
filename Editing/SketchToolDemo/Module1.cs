@@ -30,8 +30,8 @@ namespace SketchToolDemo
     /// </summary>
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
-    /// 1. Make sure that the Sample data is unzipped in c:\data
-    /// 1. Before you run the sample verify that the project C:\data\SDK\SDK 1.1.aprx"C:\Data\FeatureTest\FeatureTest.aprx" is present since this is required to run the sample.
+    /// 1. Make sure that the Sample data is unzipped in c:\Data
+    /// 1. Before you run the sample verify that the project C:\Data\FeatureTest\FeatureTest.aprx" is present since this is required to run the sample.
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
     /// 1. Click Start button to open ArcGIS Pro.
     /// 1. ArcGIS Pro will open. 

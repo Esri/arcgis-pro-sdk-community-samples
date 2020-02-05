@@ -21,10 +21,10 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/27/2019
-ArcGIS Pro:            2.4
+Date:                  7/17/2019
+ArcGIS Pro:            2.5
 Visual Studio:         2017, 2019
-.NET Target Framework: 4.6.1
+.NET Target Framework: 4.8
 ```
 
 ## Resources
@@ -69,6 +69,15 @@ To experiment with the various renderers available with this sample, follow the 
 1. After modifying the OnClickMethod build the solution and click the start button to open Pro.    
 1. Open any project and test the Apply Renderer button again.  
 ![UI](screenshots/Renderers.png)  
+#### Attribute Driven Symbology  
+  
+1. Create a new Local Scene. Add the c:\Data\FlightPathPoints.lyrx layer file to the scene.  This layer draws a point geometry rendered with a helicopter symbol.  The data for this layer holds the Tilt angles (X, Y and Z) for the helicopter.  
+1. Use the Navigate button to tilt the view so that you can see the helicopter to display it over the map.  
+![Tilt](screenshots/tilt.png)  
+  
+1. Click the AttributeDriverSymbology button on the Add-In tab.  
+1. Notice that the helicopter is now displayed using the Tilt fields.  
+![AttrbuteDriverSymbology](screenshots/AttrbuteDriverSymbology.png)  
   
 
 

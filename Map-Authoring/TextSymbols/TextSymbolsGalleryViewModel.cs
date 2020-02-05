@@ -332,15 +332,17 @@ namespace TextSymbols
                     }
                     while (rowCursor.MoveNext())
                     {
-                        var af = rowCursor.Current as AnnotationFeature;
-                        var graphic = af.GetGraphic() as CIMTextGraphic;
-                        graphic.Symbol = SelectedTextStyle.Symbol.MakeSymbolReference();
-                        // update the graphic
-                        af.SetGraphic(graphic);
-                        // store is required
-                        af.Store();
-                        //refresh layer cache
-                        context.Invalidate(af);
+                        using (var af = rowCursor.Current as AnnotationFeature)
+                        {
+                            var graphic = af.GetGraphic() as CIMTextGraphic;
+                            graphic.Symbol = SelectedTextStyle.Symbol.MakeSymbolReference();
+                            // update the graphic
+                            af.SetGraphic(graphic);
+                            // store is required
+                            af.Store();
+                            //refresh layer cache
+                            context.Invalidate(af);
+                        }
                     }
 
                 }, SelectedLayer.GetTable());

@@ -1,0 +1,111 @@
+<!--
+
+   Copyright 2020 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<controls:ProWindow x:Class="OpenItemDialogBrowseFilter.ProWindowMakeProFilters"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
+        xmlns:behaviors="clr-namespace:ArcGIS.Desktop.Internal.Framework.Behaviors;assembly=ArcGIS.Desktop.Framework"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+        xmlns:ui="clr-namespace:OpenItemDialogBrowseFilter"
+        xmlns:XAMLEditor="clr-namespace:OpenItemDialogBrowseFilter.UI"
+        mc:Ignorable="d"
+        d:DataContext="{Binding Path=OpenItemDialogBrowseFilter}"
+        Title="Browse Filter Spy+" Height="700" Width="600"
+        WindowStartupLocation="CenterOwner"
+    >
+    <controls:ProWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <ui:BoolToVisibleConverter x:Key="BoolToVisibleConverter"/>
+        </ResourceDictionary>
+
+    </controls:ProWindow.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <!--0.Search, radio buttons-->
+            <RowDefinition Height="Auto"></RowDefinition>
+            <!--1. DisplayItems-->
+            <RowDefinition Height=".45*"></RowDefinition>
+            <!--2. Avalon Editor for DAML-->
+            <RowDefinition Height="*"></RowDefinition>
+            <!--3. Button-->
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--Radio button Choices, Search-->
+        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="5">
+            <TextBlock Margin="20,0,0,0" Text="Search by:" Style="{DynamicResource Esri_TextBlockH3}"></TextBlock>
+            <RadioButton Margin="50,0,0,0"
+                         Content="Pro Browse Filters" 
+                         IsChecked="True" 
+                         Name="BrowseFilters"
+                         Command="{Binding Path=DisplayContentCommand}" 
+                         CommandParameter="{Binding Path=Name, RelativeSource={RelativeSource Self}}"/>
+            <RadioButton Margin="50,0,0,0"
+                         Content="Pro FilterFlags"
+                         Name="FilterFlags"
+                         Command="{Binding Path=DisplayContentCommand}" 
+                         CommandParameter="{Binding Path=Name, RelativeSource={RelativeSource Self}}"/>
+            <RadioButton Margin="50,0,0,0"
+                         Content="Pro TypeIDs"
+                         Name="TypeIDs"
+                         Command="{Binding Path=DisplayContentCommand}" 
+                         CommandParameter="{Binding Path=Name, RelativeSource={RelativeSource Self}}"/>
+            <!--Search box Control -->
+            <controls:SearchTextBox Margin="20,10,20,10" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" InfoText="Type search text here" SearchMode="Auto" ShowHistory="True" HorizontalAlignment="Stretch" />
+        </StackPanel>
+        <!--Filters, FilterFlags, TypeIDs-->
+        <DockPanel Grid.Row="1">
+            <DataGrid Margin="20,0,20,0" ItemsSource="{Binding Path=DisplayItemsDataView, Mode=OneWay}" 
+                      HeadersVisibility="Column" IsReadOnly="True"
+                      SelectionMode="Single"  SelectionUnit="FullRow" 
+                      Style="{DynamicResource Esri_DataGrid}"
+                      AutoGenerateColumns="True" SelectedItem="{Binding SelectedDisplayItem}" 
+                      HorizontalAlignment="Stretch">
+            </DataGrid>
+        </DockPanel>
+        <!--Avalon editor for XAML-->
+        <Grid Grid.Row="2" HorizontalAlignment="Stretch">
+            <!--Avalon editor for XAML-->
+            <DockPanel  Margin="20,0,20,20">
+                <TextBlock DockPanel.Dock="Top" Margin="5" Text="{Binding SelectedItemDetailLabel}" Style="{DynamicResource Esri_TextBlockH3}"></TextBlock>
+                <Border Background="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}" BorderThickness="1" Padding="1">
+                    <Border.BorderBrush>
+                        <SolidColorBrush Color="{DynamicResource Esri_Color_Blue}"></SolidColorBrush>
+                    </Border.BorderBrush>
+                    <XAMLEditor:AvalonEditorWrapper x:Name="Style" FontFamily="Consolas"
+                        VerticalAlignment="Stretch"
+                        HorizontalAlignment="Stretch"                         
+                        FontSize="10pt" 
+                        ScrollViewer.CanContentScroll="True"                                   
+                        Text="{Binding Path=SelectedItemDetails}">
+                    </XAMLEditor:AvalonEditorWrapper>
+                </Border>
+            </DockPanel>
+        </Grid>
+        <Button Grid.Row="3" Style="{DynamicResource Esri_Button}" 
+                Margin="0,0,0,20"
+                MaxWidth="90" 
+                MaxHeight="25" Command="{Binding OpenFilterCommand}"
+                Visibility="{Binding ShowOpenFilterButton}">Open Filter</Button>
+    </Grid>
+</controls:ProWindow>

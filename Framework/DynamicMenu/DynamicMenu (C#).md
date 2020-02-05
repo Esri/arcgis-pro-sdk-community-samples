@@ -2,7 +2,7 @@
 
 <!-- TODO: Write a brief abstract explaining this sample -->
  This sample shows how to display a dynamic context menu. The sample also have an embeddabel control on the map that allows you pick the layer you want to select.     
- When you select features with this tool, the oids of the feaures will be displayed in a dynamic context menu.   
+ When you select features with this tool, the oids of the features will be displayed in a dynamic context menu.   
  When you click one of the OIDs in this context menu, that feature will flash on the Map View and display a pop-up.   
    
 
@@ -15,10 +15,10 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/27/2019
-ArcGIS Pro:            2.4
+Date:                  7/17/2019
+ArcGIS Pro:            2.5
 Visual Studio:         2017, 2019
-.NET Target Framework: 4.6.1
+.NET Target Framework: 4.8
 ```
 
 ## Resources
