@@ -396,6 +396,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabelLineFeatures", "Map-Au
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultipatchBuilder", "Editing\MultipatchBuilder\MultipatchBuilder.csproj", "{EA91CBE9-0E75-420D-9C4D-B1E61FF74255}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverlayGroundSurface", "Map-Exploration\OverlayGroundSurface\OverlayGroundSurface.csproj", "{710C7EAF-FB51-4D32-8C89-5ACDF7DEDE15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1948,6 +1950,14 @@ Global
 		{EA91CBE9-0E75-420D-9C4D-B1E61FF74255}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EA91CBE9-0E75-420D-9C4D-B1E61FF74255}.Release|x64.ActiveCfg = Release|Any CPU
 		{EA91CBE9-0E75-420D-9C4D-B1E61FF74255}.Release|x64.Build.0 = Release|Any CPU
+		{710C7EAF-FB51-4D32-8C89-5ACDF7DEDE15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{710C7EAF-FB51-4D32-8C89-5ACDF7DEDE15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{710C7EAF-FB51-4D32-8C89-5ACDF7DEDE15}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{710C7EAF-FB51-4D32-8C89-5ACDF7DEDE15}.Debug|x64.Build.0 = Debug|Any CPU
+		{710C7EAF-FB51-4D32-8C89-5ACDF7DEDE15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{710C7EAF-FB51-4D32-8C89-5ACDF7DEDE15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{710C7EAF-FB51-4D32-8C89-5ACDF7DEDE15}.Release|x64.ActiveCfg = Release|Any CPU
+		{710C7EAF-FB51-4D32-8C89-5ACDF7DEDE15}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

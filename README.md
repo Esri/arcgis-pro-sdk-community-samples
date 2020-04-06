@@ -71,7 +71,7 @@ Read the [ProGuide: Installation and Upgrade](https://github.com/Esri/arcgis-pro
 
 ## ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 184 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 185 ArcGIS Pro samples that are included in this repository.  
 
 #### Content
 
@@ -245,6 +245,7 @@ Below is the list of 184 ArcGIS Pro samples that are included in this repository
 * [MapToolZoom (c#)](../../tree/master/Map-Exploration/MapToolZoom)  
 * [Overlay3D (c#)](../../tree/master/Map-Exploration/Overlay3D)  
 * [OverlayExamples (c#)](../../tree/master/Map-Exploration/OverlayExamples)  
+* [OverlayGroundSurface (c#)](../../tree/master/Map-Exploration/OverlayGroundSurface)  
 * [OverviewMapControl (c#)](../../tree/master/Map-Exploration/OverviewMapControl)  
 * [OverviewTableControl (c#)](../../tree/master/Map-Exploration/OverviewTableControl)  
 * [ScreenCoordsToMapPoint (c#)](../../tree/master/Map-Exploration/ScreenCoordsToMapPoint)  
