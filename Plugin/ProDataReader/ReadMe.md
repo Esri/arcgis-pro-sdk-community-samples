@@ -51,7 +51,9 @@ Visual Studio:         2019
 1. Open the 'LinkToCustomPluginData.xlnk' folder to find various GPX and JPG file data sources.   
 ![UI](Screenshots/Screen2.png)    
   
-1. In the source code look at the ProMdbProjectItem class, which is used to implement the LinkToCustomPluginData.xlnk node in the Catalog dockpane.  
+1. In the source code look at the ProDataProjectItem class, which is used to implement the LinkToCustomPluginData.xlnk node in the Catalog dockpane.  
+1. The ProDataProjectItem class is triggered by an entry in config.daml specifically the 'insertComponent' tag for id: ProDataReader_ProDataReader.  Under the 'content' tag you find the attribute fileExtension="xlnk" which triggers the instantiation of the ProDataProjectItem class whenever a file with this extension (case sensitive) is encountered.    
+1. <B>Note: the fileExtension attribute is case sensitive, hence only file extensions matching a case sensitive compare with the fileExtension attribute will work</B>  
 ![UI](Screenshots/Screen3.png)    
   
 1. Under the 'LinkToCustomPluginData.xlnk' node you can see '2019-March-31-Hike' which represents a line feature class (GPS Track) and 'Berlin-Devsummit-17' which represents a point feature datasets containing the point location where the photo was taken.  In source code, the ProDataSubItem class is used to prepresent each node in the catalog browser.  

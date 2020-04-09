@@ -1,0 +1,39 @@
+﻿<ArcGIS defaultAssembly="ProWindowMVVM.dll" defaultNamespace="ProWindowMVVM" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{b649ed1a-e2f3-4edb-9745-9334a2e1a8c0}" version="1.0" desktopVersion="2.5.22081">
+    <Name>ProWindowMVVM</Name>
+    <Description>ProWindowMVVM description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>4/8/2020 1:26:03 PM, 2020</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ProWindowMVVM_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="ProWindowMVVM_Tab1" caption="New Tab">
+          <group refID="ProWindowMVVM_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ProWindowMVVM_Group1" caption="ProWindow MVVM" appearsOnAddInTab="true" keytip="G0">
+          <!-- host controls within groups -->
+          <button refID="ProWindowMVVM_TestProWindowDialog" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ProWindowMVVM_TestProWindowDialog" caption="Test ProWindow Dialog" 
+                keytip="B1"
+                className="TestProWindowDialog" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="ProWindow Dialog">ProWindow Dialog test<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

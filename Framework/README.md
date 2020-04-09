@@ -41,6 +41,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Framework' t
 * [Notifications (c#)](../../../tree/master/Framework/Notifications)  
 * [OpenMapViews (c#)](../../../tree/master/Framework/OpenMapViews)  
 * [ProgressDialog (c#)](../../../tree/master/Framework/ProgressDialog)  
+* [ProWindowMVVM (c#)](../../../tree/master/Framework/ProWindowMVVM)  
 * [QAReviewTool (c#)](../../../tree/master/Framework/QAReviewTool)  
 * [RemoveAddins (c#)](../../../tree/master/Framework/RemoveAddins)  
 * [ReusableUserControl (c#)](../../../tree/master/Framework/ReusableUserControl)  

@@ -37,6 +37,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Map-Explorat
 * [MapToolZoom (c#)](../../../tree/master/Map-Exploration/MapToolZoom)  
 * [Overlay3D (c#)](../../../tree/master/Map-Exploration/Overlay3D)  
 * [OverlayExamples (c#)](../../../tree/master/Map-Exploration/OverlayExamples)  
+* [OverlayGroundSurface (c#)](../../../tree/master/Map-Exploration/OverlayGroundSurface)  
 * [OverviewMapControl (c#)](../../../tree/master/Map-Exploration/OverviewMapControl)  
 * [OverviewTableControl (c#)](../../../tree/master/Map-Exploration/OverviewTableControl)  
 * [ScreenCoordsToMapPoint (c#)](../../../tree/master/Map-Exploration/ScreenCoordsToMapPoint)  
