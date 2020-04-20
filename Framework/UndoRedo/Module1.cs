@@ -34,7 +34,7 @@ namespace PreRel_UndoRedo
     /// dockpane manipulate the undo/redo stack - performing undo and redo actions; remove undo actions and clearing the stacks. 
     /// </para>
     /// <para>
-    /// 1. Open this solution in Visual Studio 2013.  
+    /// 1. Open this solution in Visual Studio.  
     /// 2. Click the Build menu. Then select Build Solution.
     /// 3. Click Start button to open ArcGIS Pro. ArcGIS Pro will open.
     /// 4. Open a project containing data.  

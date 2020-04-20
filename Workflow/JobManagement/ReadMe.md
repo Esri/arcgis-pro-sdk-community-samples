@@ -41,7 +41,7 @@ Visual Studio:         2017, 2019
 1.a. This is done with the combination of database management and our Workflow manager software.  
 1.b. please refer to setting up a Workflow manager database before using this sample.  
 2. must designate job type to focus on prior to compiling code  
-2.a. Open project in VS 2013. Locate JobManagementModule.cs. Find JobManagementModule. designate the Job Type ID.  
+2.a. Open project in Visual Studio. Locate JobManagementModule.cs. Find JobManagementModule. designate the Job Type ID.  
 2.b  Use 2 as your ID if you aren't certain and you just used the quick configuration, in your post install.  
 2.c  If you have any problems consult your workflow database administrator  
 2.d. currently configured to work with a Job Type called 'Work Order' some names maybe needed to change in the xaml and viewmodel  

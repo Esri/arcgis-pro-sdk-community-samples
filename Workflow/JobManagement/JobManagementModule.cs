@@ -70,24 +70,24 @@ namespace WorkflowSample
         }
     }
 
-    /// <summary>
-    /// This Sample provides a Dockable Pane that allows the user
-    /// to manipulate workflow manager databases while focusing only on one Job Type
-    /// </summary>
-    /// <remarks>    
-    /// 1  Must have a Workflow manager database set up and accessible
-    /// 1.a. This is done with the combination of database management and our Workflow manager software.
-    /// 1.b. please refer to setting up a Workflow manager database before using this sample.
-    /// 2. must designate job type to focus on prior to compiling code
-    /// 2.a. Open project in VS 2013. Locate JobManagementModule.cs. Find JobManagementModule. designate the Job Type ID.
-    /// 2.b  Use 2 as your ID if you aren't certain and you just used the quick configuration, in your post install.
-    /// 2.c  If you have any problems consult your workflow database administrator
-    /// 2.d. currently configured to work with a Job Type called 'Work Order' some names maybe needed to change in the xaml and viewmodel
-    /// 3. must have a valid workflow database connection active in project before using
-    /// 3.a. To acquire a valid worflow database connection just use the add workflow connection under the connections menu on the project tab 
-    /// </remarks>
+  /// <summary>
+  /// This Sample provides a Dockable Pane that allows the user
+  /// to manipulate workflow manager databases while focusing only on one Job Type
+  /// </summary>
+  /// <remarks>    
+  /// 1  Must have a Workflow manager database set up and accessible
+  /// 1.a. This is done with the combination of database management and our Workflow manager software.
+  /// 1.b. please refer to setting up a Workflow manager database before using this sample.
+  /// 2. must designate job type to focus on prior to compiling code
+  /// 2.a. Open project in Visual Studio. Locate JobManagementModule.cs. Find JobManagementModule. designate the Job Type ID.
+  /// 2.b  Use 2 as your ID if you aren't certain and you just used the quick configuration, in your post install.
+  /// 2.c  If you have any problems consult your workflow database administrator
+  /// 2.d. currently configured to work with a Job Type called 'Work Order' some names maybe needed to change in the xaml and viewmodel
+  /// 3. must have a valid workflow database connection active in project before using
+  /// 3.a. To acquire a valid worflow database connection just use the add workflow connection under the connections menu on the project tab 
+  /// </remarks>
 
-    internal class JobManagementModule : Module
+  internal class JobManagementModule : Module
     {
         private static JobManagementModule _this = null;
         private string QueryName = "Jobs assigned to me";

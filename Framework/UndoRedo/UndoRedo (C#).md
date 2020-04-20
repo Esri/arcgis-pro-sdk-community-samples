@@ -45,7 +45,7 @@ This sample contains a dockpane which has its own OperationManager.   The two bu
 
   
   
-1. Open this solution in Visual Studio 2013.    
+1. Open this solution in Visual Studio.    
 2. Click the Build menu. Then select Build Solution.  
 3. Click Start button to open ArcGIS Pro. ArcGIS Pro will open.  
 4. Open a project containing data.    

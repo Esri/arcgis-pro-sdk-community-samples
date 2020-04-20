@@ -40,7 +40,7 @@ Visual Studio:         2017, 2019
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Open this solution in Visual Studio 2013.    
+1. Open this solution in Visual Studio.    
 1. Click the build menu and select Build Solution.  
 1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.  
 1. Open any project - it can be an existing project containing data or a new empty project.  

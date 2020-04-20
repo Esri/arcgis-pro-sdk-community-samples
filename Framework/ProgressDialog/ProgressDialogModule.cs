@@ -27,7 +27,7 @@ namespace ProgressDialog {
     /// 3. Manually control a progress dialog
     /// </summary>
     /// <remarks>
-    /// 1. Open this solution in Visual Studio 2013.  
+    /// 1. Open this solution in Visual Studio.  
     /// 1. Click the build menu and select Build Solution.
     /// 1. Run ArCGIS Pro without running the Visual Studio Debugger.
     /// 1. Progress Dialog boxes are disabled when debugging in Visual Studio.

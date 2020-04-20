@@ -26,7 +26,7 @@ namespace WorkwithProjects
     /// 1. Creates a new project using the supplied name from a project template.
     /// </summary>
     /// <remarks>
-    /// 1. Open this solution in Visual Studio 2013.  
+    /// 1. Open this solution in Visual Studio.  
     /// 1. Click the build menu and select Build Solution.
     /// 1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.
     /// 1. Open any project - it can be an existing project containing data or a new empty project.
