@@ -30,7 +30,7 @@ using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 
-namespace Scale_CAD_Layer
+namespace GridScaleCADLayer
 {
     /// <summary>
     /// This sample can be used to transform a CAD layer by a coordinate scale factor. The scale factor is entered and a corresponding world file is created. The CAD layer data is updated based on the new world file transformation parameters corresponding with the entered scale.
@@ -41,7 +41,7 @@ namespace Scale_CAD_Layer
     /// 1. The contextual ribbon for the CAD layer becomes available to access the add-in button for Grid Scale from the Alignment group.
     /// ![UI](Screenshots/Screen1.png)
     /// 1. Click the button and enter the grid scale value.
-    /// ![UI] (Screenshots/Screen2.png)
+    /// ![UI](Screenshots/Screen2.png)
     /// 1. Click the OK button to transform the CAD layer based on the entered scale.
     /// </remarks>
     internal class Module1 : Module
@@ -55,7 +55,7 @@ namespace Scale_CAD_Layer
         {
             get
             {
-                return _this ?? (_this = (Module1)FrameworkApplication.FindModule("Scale_CAD_Layer_Module"));
+                return _this ?? (_this = (Module1)FrameworkApplication.FindModule("GridScaleCADLayer_Module"));
             }
         }
 

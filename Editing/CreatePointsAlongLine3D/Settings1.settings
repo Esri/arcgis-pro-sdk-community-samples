@@ -1,0 +1,64 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CreatePointsAlongLine3D" GeneratedClassName="Settings1">
+  <Profiles />
+  <Settings>
+    <Setting Name="lineSymbol2D" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">&lt;CIMSymbolReference xsi:type='typens:CIMSymbolReference' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/2.2.0'&gt;&lt;Symbol xsi:type='typens:CIMLineSymbol'&gt;&lt;SymbolLayers xsi:type='typens:ArrayOfCIMSymbolLayer'&gt;&lt;CIMSymbolLayer xsi:type='typens:CIMCharacterMarker'&gt;&lt;Enable&gt;true&lt;/Enable&gt;&lt;ColorLocked&gt;false&lt;/ColorLocked&gt;&lt;AnchorPointUnits&gt;Relative&lt;/AnchorPointUnits&gt;&lt;AngleX&gt;0&lt;/AngleX&gt;&lt;AngleY&gt;0&lt;/AngleY&gt;&lt;DominantSizeAxis3D&gt;Y&lt;/DominantSizeAxis3D&gt;&lt;OffsetX&gt;0&lt;/OffsetX&gt;&lt;OffsetY&gt;0&lt;/OffsetY&gt;&lt;OffsetZ&gt;0&lt;/OffsetZ&gt;&lt;RotateClockwise&gt;false&lt;/RotateClockwise&gt;&lt;Rotation&gt;180&lt;/Rotation&gt;&lt;Size&gt;25&lt;/Size&gt;&lt;BillboardMode3D&gt;FaceNearPlane&lt;/BillboardMode3D&gt;&lt;MarkerPlacement xsi:type='typens:CIMMarkerPlacementAlongLineSameSize'&gt;&lt;PrimitiveName/&gt;&lt;AngleToLine&gt;true&lt;/AngleToLine&gt;&lt;Offset&gt;0&lt;/Offset&gt;&lt;ControlPointPlacement&gt;WithMarkers&lt;/ControlPointPlacement&gt;&lt;CustomEndingOffset&gt;0&lt;/CustomEndingOffset&gt;&lt;Endings&gt;WithHalfGap&lt;/Endings&gt;&lt;OffsetAlongLine&gt;0&lt;/OffsetAlongLine&gt;&lt;PlacementTemplate xsi:type='typens:ArrayOfDouble'&gt;&lt;Double&gt;60&lt;/Double&gt;&lt;/PlacementTemplate&gt;&lt;/MarkerPlacement&gt;&lt;CharacterIndex&gt;33&lt;/CharacterIndex&gt;&lt;Depth3D&gt;0&lt;/Depth3D&gt;&lt;FontFamilyName&gt;ESRI Dimensioning&lt;/FontFamilyName&gt;&lt;FontStyleName&gt;Regular&lt;/FontStyleName&gt;&lt;FontType&gt;Unspecified&lt;/FontType&gt;&lt;ScaleX&gt;1&lt;/ScaleX&gt;&lt;Symbol xsi:type='typens:CIMPolygonSymbol'&gt;&lt;SymbolLayers xsi:type='typens:ArrayOfCIMSymbolLayer'&gt;&lt;CIMSymbolLayer xsi:type='typens:CIMSolidStroke'&gt;&lt;Enable&gt;true&lt;/Enable&gt;&lt;ColorLocked&gt;false&lt;/ColorLocked&gt;&lt;CapStyle&gt;Round&lt;/CapStyle&gt;&lt;JoinStyle&gt;Round&lt;/JoinStyle&gt;&lt;LineStyle3D&gt;Strip&lt;/LineStyle3D&gt;&lt;MiterLimit&gt;10&lt;/MiterLimit&gt;&lt;Width&gt;0.1&lt;/Width&gt;&lt;CloseCaps3D&gt;false&lt;/CloseCaps3D&gt;&lt;Color xsi:type='typens:CIMRGBColor'&gt;&lt;Values xsi:type='typens:ArrayOfDouble'&gt;&lt;Double&gt;255&lt;/Double&gt;&lt;Double&gt;255&lt;/Double&gt;&lt;Double&gt;255&lt;/Double&gt;&lt;Double&gt;100&lt;/Double&gt;&lt;/Values&gt;&lt;/Color&gt;&lt;/CIMSymbolLayer&gt;&lt;CIMSymbolLayer xsi:type='typens:CIMSolidFill'&gt;&lt;Enable&gt;true&lt;/Enable&gt;&lt;ColorLocked&gt;false&lt;/ColorLocked&gt;&lt;Color xsi:type='typens:CIMRGBColor'&gt;&lt;Values xsi:type='typens:ArrayOfDouble'&gt;&lt;Double&gt;0&lt;/Double&gt;&lt;Double&gt;0&lt;/Double&gt;&lt;Double&gt;0&lt;/Double&gt;&lt;Double&gt;100&lt;/Double&gt;&lt;/Values&gt;&lt;/Color&gt;&lt;/CIMSymbolLayer&gt;&lt;/SymbolLayers&gt;&lt;ThumbnailURI/&gt;&lt;UseRealWorldSymbolSizes&gt;false&lt;/UseRealWorldSymbolSizes&gt;&lt;/Symbol&gt;&lt;VerticalOrientation3D&gt;false&lt;/VerticalOrientation3D&gt;&lt;ScaleSymbolsProportionally&gt;true&lt;/ScaleSymbolsProportionally&gt;&lt;RespectFrame&gt;true&lt;/RespectFrame&gt;&lt;/CIMSymbolLayer&gt;&lt;/SymbolLayers&gt;&lt;ThumbnailURI/&gt;&lt;UseRealWorldSymbolSizes&gt;false&lt;/UseRealWorldSymbolSizes&gt;&lt;/Symbol&gt;&lt;MinScale&gt;0&lt;/MinScale&gt;&lt;MaxScale&gt;0&lt;/MaxScale&gt;&lt;MinDistance&gt;0&lt;/MinDistance&gt;&lt;MaxDistance&gt;0&lt;/MaxDistance&gt;&lt;/CIMSymbolReference&gt;</Value>
+    </Setting>
+    <Setting Name="lineSymbol3D" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">&lt;CIMSymbolReference xsi:type='typens:CIMSymbolReference' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/2.4.0'&gt;
+  &lt;Symbol xsi:type='typens:CIMLineSymbol'&gt;
+    &lt;SymbolLayers xsi:type='typens:ArrayOfCIMSymbolLayer'&gt;
+      &lt;CIMSymbolLayer xsi:type='typens:CIMObjectMarker3D'&gt;
+        &lt;Enable&gt;true&lt;/Enable&gt;
+        &lt;ColorLocked&gt;false&lt;/ColorLocked&gt;
+        &lt;Overprint&gt;false&lt;/Overprint&gt;
+        &lt;AnchorPointUnits&gt;Relative&lt;/AnchorPointUnits&gt;
+        &lt;AngleX&gt;0&lt;/AngleX&gt;
+        &lt;AngleY&gt;90&lt;/AngleY&gt;
+        &lt;DominantSizeAxis3D&gt;Z&lt;/DominantSizeAxis3D&gt;
+        &lt;OffsetX&gt;0&lt;/OffsetX&gt;
+        &lt;OffsetY&gt;0&lt;/OffsetY&gt;
+        &lt;OffsetZ&gt;0&lt;/OffsetZ&gt;
+        &lt;RotateClockwise&gt;false&lt;/RotateClockwise&gt;
+        &lt;Rotation&gt;0&lt;/Rotation&gt;
+        &lt;Size&gt;10&lt;/Size&gt;
+        &lt;BillboardMode3D&gt;None&lt;/BillboardMode3D&gt;
+        &lt;MarkerPlacement xsi:type='typens:CIMMarkerPlacementAlongLineSameSize'&gt;
+          &lt;PrimitiveName/&gt;
+          &lt;AngleToLine&gt;true&lt;/AngleToLine&gt;
+          &lt;Offset&gt;0&lt;/Offset&gt;
+          &lt;ControlPointPlacement&gt;WithMarkers&lt;/ControlPointPlacement&gt;
+          &lt;CustomEndingOffset&gt;0&lt;/CustomEndingOffset&gt;
+          &lt;Endings&gt;WithMarkers&lt;/Endings&gt;
+          &lt;OffsetAlongLine&gt;0&lt;/OffsetAlongLine&gt;
+          &lt;PlacementTemplate xsi:type='typens:ArrayOfDouble'&gt;
+            &lt;Double&gt;16&lt;/Double&gt;
+          &lt;/PlacementTemplate&gt;
+        &lt;/MarkerPlacement&gt;
+        &lt;ModelURI&gt;CIMPATH=ObjectMarker3D/7c4179308a2a7b08527a68d39c6672d8.dat&lt;/ModelURI&gt;
+        &lt;Width&gt;10&lt;/Width&gt;
+        &lt;Depth&gt;10&lt;/Depth&gt;
+        &lt;TintColor xsi:type='typens:CIMRGBColor'&gt;
+          &lt;Values xsi:type='typens:ArrayOfDouble'&gt;
+            &lt;Double&gt;0&lt;/Double&gt;
+            &lt;Double&gt;0&lt;/Double&gt;
+            &lt;Double&gt;0&lt;/Double&gt;
+            &lt;Double&gt;100&lt;/Double&gt;
+          &lt;/Values&gt;
+        &lt;/TintColor&gt;
+        &lt;IsRestricted&gt;false&lt;/IsRestricted&gt;
+        &lt;UseAnchorPoint&gt;true&lt;/UseAnchorPoint&gt;
+      &lt;/CIMSymbolLayer&gt;
+    &lt;/SymbolLayers&gt;
+    &lt;ThumbnailURI/&gt;
+    &lt;UseRealWorldSymbolSizes&gt;false&lt;/UseRealWorldSymbolSizes&gt;
+  &lt;/Symbol&gt;
+  &lt;MinScale&gt;0&lt;/MinScale&gt;
+  &lt;MaxScale&gt;0&lt;/MaxScale&gt;
+  &lt;MinDistance&gt;0&lt;/MinDistance&gt;
+  &lt;MaxDistance&gt;0&lt;/MaxDistance&gt;
+&lt;/CIMSymbolReference&gt;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

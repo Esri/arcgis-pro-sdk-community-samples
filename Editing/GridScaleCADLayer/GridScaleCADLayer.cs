@@ -30,7 +30,7 @@ using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 
-namespace Scale_CAD_Layer
+namespace GridScaleCADLayer
 {
   internal class GridScaleCADLayer : Button
   {
@@ -58,7 +58,7 @@ namespace Scale_CAD_Layer
         System.Windows.MessageBox.Show("Please select the CAD layer in the table of contents", "Layer Grid Scale");
         return;
       }
-
+      double dMetersPerUnit = 1;
       string CadFeatClassNameForSelectedLayer = "";
       //Run on MCT
       bool isValid = await QueuedTask.Run(() =>
@@ -81,21 +81,25 @@ namespace Scale_CAD_Layer
         string FCName = CADFeatClass.GetName();
         CadFeatClassNameForSelectedLayer = System.IO.Path.Combine(CadFileName, FCName);
 
-        // dont seem to use this?? 
-        //FeatureClassDefinition CADFeatClassDef = CADFeatClass.GetDefinition();
-        //var fcSR = CADFeatClassDef.GetSpatialReference();
-        //double dMetersPerUnits = 1;
-        //if (fcSR.IsProjected)
-        //  dMetersPerUnits = fcSR.Unit.ConversionFactor; //meters per unit
+        FeatureClassDefinition CADFeatClassDef = CADFeatClass.GetDefinition();
+        var fcSR = CADFeatClassDef.GetSpatialReference();
 
+        if (fcSR.IsProjected)
+          dMetersPerUnit = fcSR.Unit.ConversionFactor; //meters per unit
+        
         bool bIsCAD = (fileExtension == ".dwg" || fileExtension == ".dgn" || fileExtension == ".dxf");
-        return bIsCAD;
+
+        // zoom to the layer
+        MapView.Active.ZoomTo(CADLayer); //Layer's ZoomTo extent is used to get a good reference point later
+
+        return bIsCAD & !fcSR.IsGeographic; //The addin requires that the CAD data is not in geographic coordinates
       });
 
       // if not a valid CAD file
       if (!isValid)
       {
-        System.Windows.MessageBox.Show("Please select the CAD layer in the table of contents", "Scale CAD Layer");
+        System.Windows.MessageBox.Show("Please select the CAD layer in the table of contents." + Environment.NewLine +
+          "CAD data in a geographic coordinate system is not supported.", "Scale CAD Layer");
         return;
       }
 
@@ -125,14 +129,9 @@ namespace Scale_CAD_Layer
         sf = null;
       }
 
-      // zoom to the layer
-      await QueuedTask.Run( () =>
-      {
-        MapView.Active.ZoomTo(CADLayer);
-      });
-      //use the layer to get the approximate location of the CAD file for the reference point
+      //use the layer's ZoomTo extent to get the approximate location of the CAD file for the reference point
       var dataReferencePoint = (Coordinate2D)MapView.Active.Extent.Center; //this is sufficient for the reference point
-      var secondPoint = new Coordinate2D(dataReferencePoint.X + 100, dataReferencePoint.Y + 100);
+      var secondPoint = new Coordinate2D(dataReferencePoint.X + (100 / dMetersPerUnit), dataReferencePoint.Y + (100 / dMetersPerUnit));
 
       var dataReferencePointScaled = new Coordinate2D(dataReferencePoint.X * dScaleFactor, dataReferencePoint.Y * dScaleFactor);
       var SecondPointScaled = new Coordinate2D(secondPoint.X * dScaleFactor, secondPoint.Y * dScaleFactor);
@@ -154,7 +153,7 @@ namespace Scale_CAD_Layer
             IsVisible = true,
           };
           var createdCadLayer = LayerFactory.Instance.CreateLayer<FeatureLayer>(layerParams, MapView.Active.Map);
-          MapView.Active.PanTo(dataReferencePointScaled.ToMapPoint());
+          MapView.Active.ZoomTo(CADLayer); //ZoomTo the updated extent 
         });
       }
       else

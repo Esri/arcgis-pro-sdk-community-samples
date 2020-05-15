@@ -1,7 +1,7 @@
-## GridScaleCADLayer
+## CreatePointsAlongLine3D
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample can be used to transform a CAD layer by a coordinate scale factor. The scale factor is entered and a corresponding world file is created. The CAD layer data is updated based on the new world file transformation parameters corresponding with the entered scale.  
+This sample provides a point construction tool to create points along a 3D line.  
   
 
 
@@ -36,15 +36,16 @@ Visual Studio:         2019
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Build or debug the sample through Visual Studio.    
-1. In Pro, select the CAD layer in the table of contents.  
-1. The contextual ribbon for the CAD layer becomes available to access the add-in button for Grid Scale from the Alignment group.  
-![UI](Screenshots/Screen1.png)  
+1. In Visual Studio, build the solution.  
+1. Click the Visual Studio Start button to open ArcGIS Pro.  
+1. In Pro, open a 2D map containing Z aware polylines and Z aware points or create a new 2D map and add some.  
+1. Select a Z aware polyline that you want to create points along.  
+1. Open the editing create features pane and select a template for your z aware points.  
+1. Click the 'create points along a 3D line tool' to display the tools pane.  
+![UI](ScreenShots/cpal.png)  
   
-1. Click the button and enter the grid scale value.  
-![UI](Screenshots/Screen2.png)  
-  
-1. Click the OK button to transform the CAD layer based on the entered scale.  
+1. Enter the construction options for the number of points you wish to create, then click 'Create'.  
+1. Z aware points will be created using the 3D distance along the selected line. The tool can be used to select other Z aware polylines.  
   
 
 

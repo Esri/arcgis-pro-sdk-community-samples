@@ -11,7 +11,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.-->
   
- <controls:ProWindow x:Class="Scale_CAD_Layer.ScaleFactorInput"
+ <controls:ProWindow x:Class="GridScaleCADLayer.ScaleFactorInput"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"

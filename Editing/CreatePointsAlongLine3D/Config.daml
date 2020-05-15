@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--//Copyright 2020 Esri
+
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       http://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.-->
+
+<ArcGIS defaultAssembly="CreatePointsAlongLine3D.dll" defaultNamespace="CreatePointsAlongLine3D"
+        xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{cce4b717-9ab5-4563-8054-9ec08e86e253}" version="1.0" desktopVersion="2.5">
+    <Name>CreatePointsAlongLine3D</Name>
+    <Description>Create points along a 3D line</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>Esri</Company>
+    <Date>5/2020</Date>
+    <Subject>Editing</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="CreatePointsAlongLine3D_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+      </tabs>
+      <groups>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <tool id="CreatePointsAlongLine3D_CreatePointsAlongLine3DTool" categoryRefID="esri_editing_construction_point" keytip="T1"
+              caption="Create points along a 3D line" className="CreatePointsAlongLine3DTool" loadOnClick="true" 
+              smallImage="Images\PointDisplay16.png" largeImage="Images\PointDisplay32.png">
+          <!--note: use esri_editing_construction_polyline,  esri_editing_construction_polygon for categoryRefID as needed-->
+          <tooltip heading="Create Points Along A 3D Line">Create point features along a 3D line<disabledText /></tooltip>
+        </tool>
+      </controls>
+    </insertModule>
+  </modules>
+  <categories>
+    <updateCategory refID="esri_embeddableControls">
+      <insertComponent id="CreatePointsAlongLine3D_CreatePointsAlongLine3DControl" className="CreatePointsAlongLine3DControlViewModel">
+        <content className="CreatePointsAlongLine3DControlView" />
+      </insertComponent>
+    </updateCategory>
+  </categories>
+</ArcGIS>

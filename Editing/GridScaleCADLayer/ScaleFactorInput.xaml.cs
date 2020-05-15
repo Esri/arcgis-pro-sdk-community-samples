@@ -26,7 +26,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Scale_CAD_Layer
+namespace GridScaleCADLayer
 {
   /// <summary>
   /// Interaction logic for ProWindow1.xaml

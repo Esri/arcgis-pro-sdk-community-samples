@@ -13,7 +13,7 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  7/17/2019
+Date:                  6/01/2020
 ArcGIS Pro:            2.5
 Visual Studio:         2019
 .NET Target Framework: 4.8
@@ -42,7 +42,7 @@ Visual Studio:         2019
 ![UI](Screenshots/Screen1.png)  
   
 1. Click the button and enter the grid scale value.  
-![UI] (Screenshots/Screen2.png)  
+![UI](Screenshots/Screen2.png)  
   
 1. Click the OK button to transform the CAD layer based on the entered scale.  
   

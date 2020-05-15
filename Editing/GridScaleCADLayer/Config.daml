@@ -11,7 +11,7 @@
 //   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //   See the License for the specific language governing permissions and
 //   limitations under the License. -->
-<ArcGIS defaultAssembly="GridScaleCADLayer.dll" defaultNamespace="Scale_CAD_Layer" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+<ArcGIS defaultAssembly="GridScaleCADLayer.dll" defaultNamespace="GridScaleCADLayer" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{29bd9101-9156-46ec-a56c-7d603520d89f}" version="1.0" desktopVersion="2.5.21804">
     <Name>Grid Scale CAD Layer</Name>
     <Description>Transform a CAD layer using a grid scale factor.</Description>
@@ -21,13 +21,13 @@
     <Date>12/16/2019 10:38:22 AM, 2019</Date>
     <Subject>Editing</Subject>
   </AddInInfo>
-  <!--For adding button to existing Alignment group-->
+  <!--For adding the button to the existing Alignment group keep the tags within <modules></modules> uncommented-->
   <modules>
-    <insertModule id="Scale_CAD_Layer_Module" className="Module1" autoLoad="false" caption="Module1">
+    <insertModule id="GridScaleCADLayer_Module" className="Module1" autoLoad="false" caption="Module1">
       <controls>
-        <button id="scale_cad_layer_scaleCADLayer" caption="Grid Scale" className="GridScaleCADLayer" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GridScale32.png" keytip=" ">
+        <button id="GridScaleCADLayer_scaleCADLayer" caption="Grid Scale" className="GridScaleCADLayer" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GridScale32.png" keytip=" ">
           <tooltip heading="Grid Scale">
-            Transform layer using a grid scale factor.<disabledText />
+            Transform the layer using a grid scale factor.<disabledText />
           </tooltip>
         </button>
       </controls>
@@ -35,21 +35,21 @@
     <updateModule refID="esri_mapping">
       <groups>
         <updateGroup refID="esri_mapping_georeference_RasterGeoreferenceGroup">
-          <insertButton refID="scale_cad_layer_scaleCADLayer" />
+          <insertButton refID="GridScaleCADLayer_scaleCADLayer" />
         </updateGroup>
       </groups>
     </updateModule>
   </modules>
-  <!--For adding button to new Transformation group on ribbon-->
+  <!--For adding the button to a new Transformation group on the ribbon, comment out all <modules></modules> tags above, and uncomment the <modules></modules> tags below -->
   <!--<modules>
-    <insertModule id="Scale_CAD_Layer_Module" className="Module1" autoLoad="false" caption="Module1">
+    <insertModule id="GridScaleCADLayer_Module" className="Module1" autoLoad="false" caption="Module1">
       <groups>
-        <group id="scale_CAD_layer_Alignment" caption="Transformation" appearsOnAddInTab="false">
-          <button refID="scale_cad_layer_scaleCADLayer" size="large" />
+        <group id="GridScaleCADLayer_Alignment" caption="Transformation" appearsOnAddInTab="false">
+          <button refID="GridScaleCADLayer_scaleCADLayer" size="large" />
         </group>
       </groups>
       <controls>
-        <button id="scale_cad_layer_scaleCADLayer" caption="Grid Scale" className="ScaleCADLayer" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GridScale32.png">
+        <button id="GridScaleCADLayer_scaleCADLayer" caption="Grid Scale" className="ScaleCADLayer" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GridScale32.png">
           <tooltip heading="Grid Scale">Transform layer using a grid scale factor.<disabledText />
           </tooltip>
         </button>
@@ -58,7 +58,7 @@
     <updateModule refID ="esri_mapping">
       <tabs>
         <updateTab refID="esri_mapping_featureLayerCadTab">
-          <insertGroup refID="scale_CAD_layer_Alignment" insert="after" />
+          <insertGroup refID="GridScaleCADLayer_Alignment" insert="after" />
         </updateTab>
       </tabs>
     </updateModule>

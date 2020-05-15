@@ -5,14 +5,15 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{29BD9101-9156-46EC-A56C-7D603520D89F}</ProjectGuid>
+    <ProjectGuid>{CCE4B717-9AB5-4563-8054-9EC08E86E253}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GridScaleCADLayer</RootNamespace>
-    <AssemblyName>GridScaleCADLayer</AssemblyName>
+    <RootNamespace>CreatePointsAlongLine3D</RootNamespace>
+    <AssemblyName>CreatePointsAlongLine3D</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,7 +43,6 @@
     <ArcGISFolder Condition="'$(ArcGISFolder)' == ''">$(registry:HKEY_CURRENT_USER\SOFTWARE\ESRI\ArcGISPro@InstallDir)</ArcGISFolder>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -87,15 +87,15 @@
       <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\GeoProcessing\ArcGIS.Desktop.GeoProcessing.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="ArcGIS.Desktop.Layouts">
+    <Reference Include="ArcGIS.Desktop.Layouts.dll">
       <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Layout\ArcGIS.Desktop.Layouts.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="ArcGIS.Desktop.Shared.Wpf">
+    <Reference Include="ArcGIS.Desktop.Shared.Wpf.dll">
       <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Shared.Wpf.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="ArcGIS.Desktop.Ribbon.Wpf">
+    <Reference Include="ArcGIS.Desktop.Ribbon.Wpf.dll">
       <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Ribbon.Wpf.dll</HintPath>
       <Private>False</Private>
     </Reference>
@@ -107,14 +107,6 @@
       <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Resources.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="ArcGIS.Desktop.Resources">
-      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Resources.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="ESRI.ArcGIS.ItemIndex">
-      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ESRI.ArcGIS.ItemIndex.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <AddInContent Include="Config.daml" />
@@ -124,11 +116,17 @@
     <AddInContent Include="DarkImages\AddInDesktop32.png" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CPAL3DControl.xaml.cs">
+      <DependentUpon>CPAL3DControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CPAL3DControlViewModel.cs" />
+    <Compile Include="CPAL3DTool.cs" />
     <Compile Include="Module1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="GridScaleCADLayer.cs" />
-    <Compile Include="ScaleFactorInput.xaml.cs">
-      <DependentUpon>ScaleFactorInput.xaml</DependentUpon>
+    <Compile Include="Settings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings1.settings</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -144,43 +142,24 @@
     <AddInContent Include="DarkImages\GenericButtonRed32.png" />
   </ItemGroup>
   <ItemGroup>
-    <AddInContent Include="Images\GenericButtonBlue16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AddInContent Include="Images\GenericButtonBlue32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AddInContent Include="DarkImages\GenericButtonBlue16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AddInContent Include="DarkImages\GenericButtonBlue32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AddInContent Include="Images\GridScale32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="ScaleFactorInput.xaml">
+    <Page Include="CPAL3DControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <AddInContent Include="Images\GenericButtonPurple16.png" />
+    <AddInContent Include="Images\PointDisplay16.png" />
+    <AddInContent Include="Images\PointDisplay32.png" />
   </ItemGroup>
   <ItemGroup>
-    <AddInContent Include="Images\GenericButtonPurple32.png" />
+    <None Include="app.config" />
+    <None Include="Settings1.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <AddInContent Include="DarkImages\GenericButtonPurple16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AddInContent Include="DarkImages\GenericButtonPurple32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AddInContent Include="DarkImages\GridScale32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Screenshots\" />
+    <Resource Include="ScreenShots\cpal.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!--
@@ -191,7 +170,7 @@
   -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PackageAction>BuildDefault</PackageAction>
-    <DocumentationFile>bin\Debug\GridScaleCADLayer.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\CreatePointsAlongLine3D.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PackageAction>BuildDefault</PackageAction>
