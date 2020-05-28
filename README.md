@@ -71,7 +71,7 @@ Read the [ProGuide: Installation and Upgrade](https://github.com/Esri/arcgis-pro
 
 ## ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 187 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 188 ArcGIS Pro samples that are included in this repository.  
 
 #### Content
 
@@ -179,6 +179,7 @@ Below is the list of 187 ArcGIS Pro samples that are included in this repository
 * [CoordinateSystemDialog (c#)](../../tree/master/Geometry/CoordinateSystemDialog)  
 * [GeometrySamples (c#)](../../tree/master/Geometry/GeometrySamples)  
 * [MultipatchBuilderEx (c#)](../../tree/master/Geometry/MultipatchBuilderEx)  
+* [RubiksCube (c#)](../../tree/master/Geometry/RubiksCube)  
 
 
 #### Geodatabase

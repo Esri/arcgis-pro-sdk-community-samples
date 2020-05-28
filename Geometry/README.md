@@ -18,7 +18,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Geometry' to
 * [CoordinateSystemDialog (c#)](../../../tree/master/Geometry/CoordinateSystemDialog)  
 * [GeometrySamples (c#)](../../../tree/master/Geometry/GeometrySamples)  
 * [MultipatchBuilderEx (c#)](../../../tree/master/Geometry/MultipatchBuilderEx)  
-
+* [RubiksCube (c#)](../../../tree/master/Geometry/RubiksCube)  
 
 ## Instructions
 
