@@ -37,20 +37,20 @@ using ArcGIS.Desktop.Mapping;
 
 namespace TableControlSample
 {
-  /// <summary>
-  /// This sample shows how to create a custom table control.  This example creates a table control that allows to display content from active maps or through the Catalog view.  The table control responds to selected layer or table and active map view changes as long as the table type is supported.
-  /// </summary>
-  /// <remarks>  
-  /// 1. In Visual Studio, click the Build menu. Then select Build Solution.  
-  /// 1. Click Start button to open ArcGIS Pro.
-  /// 1. ArcGIS Pro will open.
-  /// 1. Open any project with map views. 
-  /// 1. Within the "Add-in" tab, click the Table Control dropdown and select the control type: Dock Pane, Pane, Dialog.
-  /// 1. A table control will open and display the current content of the selected layer or table from the active map.
-  /// 1. Select a few records in the table control.  Notice that the current map selection changes to reflect this.
-  /// ![UI](screenshots/tablecontrol.png)
-  /// </remarks>
-  internal class Module1 : Module
+    /// <summary>
+    /// This sample shows how to create a custom table control.  This example creates a table control that allows to display content from active maps or through the Catalog view.  The table control responds to selected layer or table and active map view changes as long as the table type is supported.
+    /// </summary>
+    /// <remarks>  
+    /// 1. In Visual Studio, click the Build menu. Then select Build Solution.  
+    /// 1. Click Start button to open ArcGIS Pro.
+    /// 1. ArcGIS Pro will open.
+    /// 1. Open any project with map views. 
+    /// 1. Within the "Add-in" tab, click the Table Control dropdown and select the control type: Dock Pane, Pane, Dialog.
+    /// 1. A table control will open and display the current content of the selected layer or table from the active map.
+    /// 1. Select a few records in the table control.  Notice that the current map selection changes to reflect this.
+    /// ![UI](Screenshots/tablecontrol.png)
+    /// </remarks>
+    internal class Module1 : Module
   {
     private static Module1 _this = null;
 

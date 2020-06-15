@@ -13,7 +13,7 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  7/17/2019
+Date:                  6/01/2020
 ArcGIS Pro:            2.5
 Visual Studio:         2017, 2019
 .NET Target Framework: 4.8
