@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 Copyright 2019 Esri
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,7 @@ limitations under the License.
     <Name>WorkingWithRasterLayers</Name>
     <Description>WorkingWithRasterLayers description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>3/1/2017 9:49:41 AM, 2017</Date>
     <Subject>Map Authoring</Subject>
@@ -51,20 +51,16 @@ limitations under the License.
           <tooltip heading="Add Raster Layer">Add a new image service layer to the map.<disabledText /></tooltip>
         </button>
         <button id="WorkingWithRasterLayers_SetCompressionButton" caption="Set Compression" condition="esri_custom_imageServiceLayerButtonVisibility" className="SetCompressionButton" loadOnClick="false" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
-          <tooltip heading="Set Compression">Set transmission compression on the selected image service to JPEG and compression quality to 85.<disabledText>Select an image service layer to enable.</disabledText>
-        </tooltip>
+          <tooltip heading="Set Compression">Set transmission compression on the selected image service to JPEG and compression quality to 85.<disabledText>Select an image service layer to enable.</disabledText></tooltip>
         </button>
         <button id="WorkingWithRasterLayers_SetProcessingTemplateButton" caption="Set Processing Template" condition="esri_custom_imageServiceLayerButtonVisibility" className="SetProcessingTemplateButton" loadOnClick="false" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
-          <tooltip heading="Set Processing Template">Set the processing template on the selected image service to Natural Color<disabledText>Select an image service layer to enable.</disabledText>
-          </tooltip>
+          <tooltip heading="Set Processing Template">Set the processing template on the selected image service to Natural Color<disabledText>Select an image service layer to enable.</disabledText></tooltip>
         </button>
         <button id="WorkingWithRasterLayers_SetStretchTypeButton" caption="Set Stretch Type" condition="esri_custom_imageServiceLayerButtonVisibility" className="SetStretchTypeButton" loadOnClick="false" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
-          <tooltip heading="Set Stretch Type">Set the stretch type on the selected image service to Percent Clip and enable DRA.<disabledText>Select an image service layer to enable.</disabledText>
-          </tooltip>
+          <tooltip heading="Set Stretch Type">Set the stretch type on the selected image service to Percent Clip and enable DRA.<disabledText>Select an image service layer to enable.</disabledText></tooltip>
         </button>
         <button id="WorkingWithRasterLayers_SetResamplingTypeButton" caption="Set Resampling Type" condition="esri_custom_imageServiceLayerButtonVisibility" className="SetResamplingTypeButton" loadOnClick="false" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
-          <tooltip heading="Set Resampling Type">Set the resampling type on the selected image service to Nearest Neighbor.<disabledText>Select an image service layer to enable.</disabledText>
-        </tooltip>
+          <tooltip heading="Set Resampling Type">Set the resampling type on the selected image service to Nearest Neighbor.<disabledText>Select an image service layer to enable.</disabledText></tooltip>
         </button>
       </controls>
     </insertModule>

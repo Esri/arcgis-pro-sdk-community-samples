@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -130,7 +130,7 @@
         <button id="QAReviewTool_SaveEditsButton" caption="Save" className="SaveEditsButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingSaveEdits_B_16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingSaveEdits_B_32.png" condition="esri_editing_HasEditsCondition">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
-        <button id="QAReviewTool_DiscardEditsButton" caption="Discard" className="DiscardEditsButton" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingDiscardEdits32.png" condition="esri_editing_HasEditsCondition" >
+        <button id="QAReviewTool_DiscardEditsButton" caption="Discard" className="DiscardEditsButton" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingDiscardEdits32.png" condition="esri_editing_HasEditsCondition">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
       </controls>

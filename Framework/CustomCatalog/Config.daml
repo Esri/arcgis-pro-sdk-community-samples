@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,8 +22,8 @@
     <Name>CustomCatalog</Name>
     <Description>CustomCatalog description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-		<Company>esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>4/16/2018 11:44:28 AM, 2018</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:
@@ -52,8 +52,7 @@
         </button>
         <button id="CustomCatalog_PanelIndicatorStatic_MenuButton" caption="Burger Menu Button" className="PanelIndicatorStatic_MenuButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
           <tooltip heading="Burger Menu Button">
-            ToolTip<disabledText />
-          </tooltip>
+            ToolTip<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>

@@ -57,7 +57,7 @@ namespace MultipatchBuilderEx
   /// ![UI](Screenshots/Multipatch.png)
   /// 1. Click on the "Apply Materials" button.
   /// 1. The created multipatch feature will now have materials applied to it's faces. 
-  /// ![UI](Screenshots/MultipatcMaterial.png)
+  /// ![UI](Screenshots/MultipatchMaterial.png)
   /// 1. Click on the "Apply Textures" button.
   /// 1. The created multipatch feature will now have textures applied to it's faces. 
   /// ![UI](Screenshots/MultipatchTexture.png)

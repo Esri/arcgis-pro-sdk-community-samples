@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,8 +22,8 @@
     <Name>UploadItem</Name>
     <Description>UploadItem description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-		<Company>esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>10/19/2017 8:20:50 AM, 2017</Date>
     <Subject>Sharing</Subject>
     <!-- Note subject can be one or more of these topics:

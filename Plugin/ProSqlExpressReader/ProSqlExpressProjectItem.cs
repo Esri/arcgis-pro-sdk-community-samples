@@ -30,11 +30,14 @@ using ArcGIS.Desktop.Editing;
 using ESRI.ArcGIS.ItemIndex;
 using ProSqlExpressDb;
 using System.Runtime.InteropServices;
+using ArcGIS.Desktop.Mapping;
+using ArcGIS.Core.CIM;
+using ArcGIS.Desktop.Framework.DragDrop;
 
 namespace ProSqlExpressReader
 {
 
-	internal class ProDataProjectItem : CustomProjectItemBase
+	internal class ProDataProjectItem : CustomProjectItemBase, IMappableItem
 	{
 		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		[DllImport("kernel32.dll")]
@@ -188,12 +191,27 @@ namespace ProSqlExpressReader
 			return topNode;
 		}
 
+		bool IMappableItem.CanAddToMap(MapType? mapType)
+		{
+			return true;
+		}
+
+		void IMappableItem.OnAddToMap(Map map)
+		{
+			throw new NotImplementedException();
+		}
+
+		void IMappableItem.OnAddToMap(Map map, ILayerContainerEdit groupLayer, int index)
+		{
+			throw new NotImplementedException();
+		}
+
 		private static readonly ASCIIEncoding ASCIIencoding = new ASCIIEncoding();
 
 	}
 
 
-	internal class ProDataSubItem : CustomItemBase
+	internal class ProDataSubItem : CustomItemBase, IMappableItem
 	{
 		public enum EnumSubItemType
 		{
@@ -296,6 +314,26 @@ namespace ProSqlExpressReader
 			}
 			if (imgSrc == null) throw new ArgumentException($@"Unable to find small image for ProSqlTable");
 			return imgSrc;
+		}
+
+		bool IMappableItem.CanAddToMap(MapType? mapType)
+		{
+			System.Diagnostics.Debug.WriteLine("CanAddToMap");
+			return true;
+		}
+
+		void IMappableItem.OnAddToMap(Map map)
+		{
+			System.Diagnostics.Debug.WriteLine("OnAddToMap");
+			IList<ProDataSubItem> lst = new List<ProDataSubItem>();
+			lst.Add(this);
+			_ = AddToCurrentMap.AddProDataSubItemsAsync(lst, map);
+		}
+
+		void IMappableItem.OnAddToMap(Map map, ILayerContainerEdit groupLayer, int index)
+		{
+			System.Diagnostics.Debug.WriteLine("OnAddToMap idx");
+			throw new NotImplementedException();
 		}
 	}
 }

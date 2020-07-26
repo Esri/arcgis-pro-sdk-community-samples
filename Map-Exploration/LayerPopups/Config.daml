@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -17,7 +17,6 @@
    limitations under the License.
 
 -->
-
 <ArcGIS defaultAssembly="LayerPopups.dll" defaultNamespace="LayerPopups" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{de0f7b68-519e-4e95-9736-41001956038e}" version="1.0" desktopVersion="2.0.0">
     <Name>LayerPopups</Name>
@@ -25,7 +24,7 @@
     defines a set of 'helper' classes modelled after the similar pattern ArcGIS.Desktop.Mapping implements
   for Renderer definitions. Popups can be defined that incorporate text, field values, images, charts, etc.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>3/29/2016 2:42:36 PM, 2016</Date>
     <Subject>Map Exploration</Subject>
@@ -58,7 +57,7 @@
         <button id="LayerPopups_ResetPopup" caption="ResetPopup " className="ResetPopup" loadOnClick="true" smallImage="Images\Bessy16.png" largeImage="Images\Bessy32.png" keytip="z3">
           <tooltip heading="Tooltip Heading">Reset the U.S. States layer popup back to it default setting<disabledText /></tooltip>
         </button>
-        <button id="LayerPopups_AdvancedPopup" caption="AdvancedPopup " className="AdvancedPopup" loadOnClick="true" smallImage="Images\T-Rex16.png" largeImage="Images\T-Rex32.png" keytip ="z4">
+        <button id="LayerPopups_AdvancedPopup" caption="AdvancedPopup " className="AdvancedPopup" loadOnClick="true" smallImage="Images\T-Rex16.png" largeImage="Images\T-Rex32.png" keytip="z4">
           <tooltip heading="Tooltip Heading">Apply a popup to the U.S. States layer containing text, table, an image, and charts<disabledText /></tooltip>
         </button>
       </controls>

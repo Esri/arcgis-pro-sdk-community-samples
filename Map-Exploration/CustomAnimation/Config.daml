@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 //   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,7 @@
     <Name>Custom Animation</Name>
     <Description>Adds commands to the ribbon to create custom animations.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>11/30/2015 5:30:00 PM, 2015</Date>
     <Subject>Map Exploration</Subject>

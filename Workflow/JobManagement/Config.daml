@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--Copyright 2019 Esri
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
     <Name>Job Management App</Name>
     <Description>Pro Add-in for Workflow Manager</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>4/13/2015 2:25:10 PM, 2015</Date>
     <Subject>Workflow</Subject>

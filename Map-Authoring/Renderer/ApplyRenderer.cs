@@ -30,15 +30,70 @@ using ArcGIS.Desktop.Mapping;
 
 namespace Renderer
 {
+    internal enum EnumRenderType 
+    {
+        UniqueValueRenderer,
+        ClassBreakRenderer,
+        BarChartRenderer,
+        PieChartRenderer,
+        StackedBarChartRenderer,
+        HeatMapRenderer,
+        SimpleRendererPolygon,
+        ProportionalRenderer
+    };
+
     internal class ApplyRenderer : Button
     {
+        private static EnumRenderType renderType = EnumRenderType.UniqueValueRenderer;
+
         protected async override void OnClick()
         {
             //TODO: This line below gets the first point layer in the project to apply a renderer.  
             //You can modify it to use other layers with polygon or line geometry if needed.
             var lyr = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault(s => s.ShapeType == esriGeometryType.esriGeometryPolygon);
             //TODO: Modify this line below to experiment with the different renderers
-            await ClassBreakRenderers.CBRendererGraduatedColorsOutline(lyr);
-        }      
+            switch (renderType)
+            {
+                case EnumRenderType.UniqueValueRenderer:
+                    await UniqueValueRenderers.UniqueValueRendererAsync(lyr);
+                    renderType = EnumRenderType.ClassBreakRenderer;
+                    break;
+                case EnumRenderType.ClassBreakRenderer:
+                    await ClassBreakRenderers.CBRendererGraduatedColorsOutlineAsync(lyr);
+                    renderType = EnumRenderType.BarChartRenderer;
+                    break;
+                case EnumRenderType.BarChartRenderer:
+                    await ChartRenderers.BarChartRendererAsync();
+                    renderType = EnumRenderType.PieChartRenderer;
+                    break;
+                case EnumRenderType.PieChartRenderer:
+                    await ChartRenderers.PieChartRendererAsync();
+                    renderType = EnumRenderType.StackedBarChartRenderer;
+                    break;
+                case EnumRenderType.StackedBarChartRenderer:
+                    await ChartRenderers.StackedBarChartRendererAsync();
+                    renderType = EnumRenderType.HeatMapRenderer;
+                    break;
+                case EnumRenderType.HeatMapRenderer:
+                    await HeatMapRenderers.HeatMapRenderersAsync(lyr);
+                    renderType = EnumRenderType.UniqueValueRenderer;
+                    break;
+                case EnumRenderType.SimpleRendererPolygon:
+                    await SimpleRenderers.SimpleRendererPolygon(lyr);
+                    renderType = EnumRenderType.ProportionalRenderer;
+                    break;
+                case EnumRenderType.ProportionalRenderer:
+                    await ProportionalRenderers.ProportionalRendererAsync(lyr);
+                    renderType = EnumRenderType.UniqueValueRenderer;
+                    break;
+                default:
+                    renderType = EnumRenderType.UniqueValueRenderer;
+                    break;
+
+            }
+
+            
+            //
+    }      
     }
 }

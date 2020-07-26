@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2017 Esri
@@ -47,11 +47,7 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <tool id="TestScreenToMap_MapToolScreenToMap" caption="Demo Screen To Map" 
-              className="MapToolScreenToMap" loadOnClick="true" 
-              smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png"
-              largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" 
-              condition="esri_mapping_mapPane" keytip="A1">
+        <tool id="TestScreenToMap_MapToolScreenToMap" caption="Demo Screen To Map" className="MapToolScreenToMap" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane" keytip="A1">
           <tooltip heading="Tooltip Heading">Show conversion of screen coordinates to map point<disabledText /></tooltip>
         </tool>
       </controls>

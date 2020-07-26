@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 Copyright 2019 Esri
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +18,8 @@ limitations under the License.
     <Name>ChangeColorizerForRasterLayer</Name>
     <Description>An Add-in sample shows how to change the colorizer for a raster layer using colorizer definitions.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-      <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-      <Company>esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>6/13/2017 2:54:19 PM, 2017</Date>
     <Subject>Raster</Subject>
     <!-- Note subject can be one or more of these topics:
@@ -44,12 +44,11 @@ limitations under the License.
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="ChangeColorizerForRasterLayer_AddRasterLayer" caption="Add Raster Layer" className="AddRasterLayer" loadOnClick="true" keytip ="Add a Raster Layer to the map view" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+        <button id="ChangeColorizerForRasterLayer_AddRasterLayer" caption="Add Raster Layer" className="AddRasterLayer" loadOnClick="true" keytip="Add a Raster Layer to the map view" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
           <tooltip heading="Tooltip:"> Add a raster layer to the Contents.<disabledText /></tooltip>
         </button>
-        <comboBox id="ChangeColorizerForRasterLayer_ApplyColorizers" caption="Apply Colorizers:" keytip ="Show the colorizers that can be applied to the selected raster layer." className="ApplyColorizers" itemWidth="140" itemHeight="300" extendedCaption="Extended Caption" isEditable="false" isReadOnly="false" resizable="true" image="Images\GenericButtonBlue32.png">
-          <tooltip heading="Tooltip:">Show the list of colorizers that can be applied to the selected layer. Select a colorizer to apply it to the layer. If the combo box is empty, it is maybe because you do not select a single layer, or the selected layer is not a basic raster layer type. <disabledText>Do not have an active map view.</disabledText>
-          </tooltip>
+        <comboBox id="ChangeColorizerForRasterLayer_ApplyColorizers" caption="Apply Colorizers:" keytip="Show the colorizers that can be applied to the selected raster layer." className="ApplyColorizers" itemWidth="140" itemHeight="300" extendedCaption="Extended Caption" isEditable="false" isReadOnly="false" resizable="true" image="Images\GenericButtonBlue32.png">
+          <tooltip heading="Tooltip:">Show the list of colorizers that can be applied to the selected layer. Select a colorizer to apply it to the layer. If the combo box is empty, it is maybe because you do not select a single layer, or the selected layer is not a basic raster layer type. <disabledText>Do not have an active map view.</disabledText></tooltip>
         </comboBox>
       </controls>
     </insertModule>

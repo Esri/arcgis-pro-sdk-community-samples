@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--//   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
     <Name>ProgressDialog</Name>
     <Description>ProgressDialog description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>4/16/2015 10:12:47 AM, 2015</Date>
     <Subject>Framework</Subject>
@@ -52,8 +52,7 @@
         </button>
         <button id="ProgressDialog_RunDialogButtons_Items_Button3" caption="Manual Progress Dlg" className="RunDialogButtonsManual" loadOnClick="true" smallImage="Images\GenericButtonBlack16.png" largeImage="Images\GenericButtonBlack32.png" keytip="B3">
           <tooltip heading="Manually managed Progress Dialog">
-            Shows a Manually managed Progress Dialog<disabledText />
-          </tooltip>
+            Shows a Manually managed Progress Dialog<disabledText /></tooltip>
         </button>
       </controls>
       <splitButtons>

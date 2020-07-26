@@ -37,12 +37,15 @@ namespace Renderer
     ///       * Unclassed color gradient to define quantities
     ///   * Proportional Renderer
     ///   * Heat map renderer
+    ///   * Chart renderer
     /// </summary>
     /// <remarks>
+    /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Renderers' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Renderers" is available.
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.  
     /// 1. Click Start button to open ArcGIS Pro.
     /// 1. ArcGIS Pro will open. 
-    /// 1. Open any project file that contains points, polygon and line feature layers. 
+    /// 1. Create a new blank Map project. 
+    /// 1. Add the C:\Data\Renderers\USDemographics.lpkx layer file to the map. 
     /// 1. In Add-in tab, click the "Apply Renderer" button.
     /// 1. The first point feature layer in your project's TOC will be rendered with an "Unique Value Renderer".
     /// To experiment with the various renderers available with this sample, follow the steps below:
@@ -64,7 +67,7 @@ namespace Renderer
     /// 1. Open any project and test the Apply Renderer button again.
     /// ![UI](screenshots/Renderers.png)
     /// #### Attribute Driven Symbology
-    /// 1. Create a new Local Scene. Add the c:\Data\FlightPathPoints.lyrx layer file to the scene.  This layer draws a point geometry rendered with a helicopter symbol.  The data for this layer holds the Tilt angles (X, Y and Z) for the helicopter.
+    /// 1. Create a new Local Scene. Add the C:\Data\Renderers\FlightPathPoints.lyrx layer file to the scene.  This layer draws a point geometry rendered with a helicopter symbol.  The data for this layer holds the Tilt angles (X, Y and Z) for the helicopter.
     /// 1. Use the Navigate button to tilt the view so that you can see the helicopter to display it over the map.
     /// ![Tilt](screenshots/tilt.png)
     /// 1. Click the AttributeDriverSymbology button on the Add-In tab.

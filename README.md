@@ -71,7 +71,7 @@ Read the [ProGuide: Installation and Upgrade](https://github.com/Esri/arcgis-pro
 
 ## ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 188 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 193 ArcGIS Pro samples that are included in this repository.  
 
 #### Content
 
@@ -99,16 +99,19 @@ Below is the list of 188 ArcGIS Pro samples that are included in this repository
 * [CreatePointsAlongLine3D (c#)](../../tree/master/Editing/CreatePointsAlongLine3D)  
 * [CrowdPlannerTool (c#)](../../tree/master/Editing/CrowdPlannerTool)  
 * [DatasetCompatibility (c#)](../../tree/master/Editing/DatasetCompatibility)  
+* [DemoUseSelection (c#)](../../tree/master/Editing/DemoUseSelection)  
 * [DivideLines (c#)](../../tree/master/Editing/DivideLines)  
 * [EditEvents (c#)](../../tree/master/Editing/EditEvents)  
 * [EditingTemplates (c#)](../../tree/master/Editing/EditingTemplates)  
 * [EditOperationRowEvent (c#)](../../tree/master/Editing/EditOperationRowEvent)  
 * [ExtendTool (c#)](../../tree/master/Editing/ExtendTool)  
+* [GeometryControl (c#)](../../tree/master/Editing/GeometryControl)  
 * [GridScaleCADLayer (c#)](../../tree/master/Editing/GridScaleCADLayer)  
 * [GroundToGrid (c#)](../../tree/master/Editing/GroundToGrid)  
 * [GroundToGridEvents (c#)](../../tree/master/Editing/GroundToGridEvents)  
 * [InspectorTool (c#)](../../tree/master/Editing/InspectorTool)  
 * [Inspector_AddAttributeAsync (c#)](../../tree/master/Editing/Inspector_AddAttributeAsync)  
+* [LayerSnapModes (c#)](../../tree/master/Editing/LayerSnapModes)  
 * [MainConnectorManhole (c#)](../../tree/master/Editing/MainConnectorManhole)  
 * [ModifyNewlyAddedFeatures (c#)](../../tree/master/Editing/ModifyNewlyAddedFeatures)  
 * [MultipatchBuilder (c#)](../../tree/master/Editing/MultipatchBuilder)  
@@ -206,9 +209,11 @@ Below is the list of 188 ArcGIS Pro samples that are included in this repository
 * [ConstructMarkerFromFont (c#)](../../tree/master/Map-Authoring/ConstructMarkerFromFont)  
 * [CustomSymbolPicker (c#)](../../tree/master/Map-Authoring/CustomSymbolPicker)  
 * [DictionarySymbolPreview (c#)](../../tree/master/Map-Authoring/DictionarySymbolPreview)  
+* [DisplayFilters (c#)](../../tree/master/Map-Authoring/DisplayFilters)  
 * [ExportWeb3DObjectResource (c#)](../../tree/master/Map-Authoring/ExportWeb3DObjectResource)  
 * [GeocodingTools (c#)](../../tree/master/Map-Authoring/GeocodingTools)  
 * [GetSymbolSwatch (c#)](../../tree/master/Map-Authoring/GetSymbolSwatch)  
+* [GraphicsLayers (c#)](../../tree/master/Map-Authoring/GraphicsLayers)  
 * [LabelLineFeatures (c#)](../../tree/master/Map-Authoring/LabelLineFeatures)  
 * [LayersPane (c#)](../../tree/master/Map-Authoring/LayersPane)  
 * [MappingAddIns (c#)](../../tree/master/Map-Authoring/MappingAddIns)  

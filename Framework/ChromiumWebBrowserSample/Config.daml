@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2020 Esri
@@ -17,7 +17,6 @@
    limitations under the License.
 
 -->
-
 <ArcGIS defaultAssembly="ChromiumWebBrowserSample.dll" defaultNamespace="ChromiumWebBrowserSample" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{2ea8eecf-b31d-4d2e-b8f8-360e5fdbfafe}" version="1.0" desktopVersion="2.5.21419">
     <Name>ChromiumWebBrowserSample</Name>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,8 +22,8 @@
     <Name>DynamicJoins</Name>
     <Description>DynamicJoins description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-		<Company>esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>3/5/2017 6:42:20 PM, 2017</Date>
     <Subject>Geodatabase</Subject>
     <!-- Note subject can be one or more of these topics:
@@ -47,10 +47,7 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="DynamicJoins_JoinsDockpane_ShowButton" caption="Show Joins Dockpane" 
-								className="JoinsDockpane_ShowButton" loadOnClick="true" 
-								smallImage="Images\KauaiOld16.png" 
-								largeImage="Images\KauaiOld32.png" keytip="B1">
+        <button id="DynamicJoins_JoinsDockpane_ShowButton" caption="Show Joins Dockpane" className="JoinsDockpane_ShowButton" loadOnClick="true" smallImage="Images\KauaiOld16.png" largeImage="Images\KauaiOld32.png" keytip="B1">
           <tooltip heading="Show Dockpane">
 						Show Joins Dockpane<disabledText /></tooltip>
         </button>

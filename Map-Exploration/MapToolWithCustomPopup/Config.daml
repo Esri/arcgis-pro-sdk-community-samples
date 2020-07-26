@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,7 +22,7 @@
     <Name>Custom Pop-up Tool</Name>
     <Description>Show a custom pop-up.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>9/28/2015</Date>
     <Subject>Map-Exploration</Subject>
@@ -37,15 +37,12 @@
       </tabs>
       -->
       <groups>
-        <group id="CustomPopup_Group1" caption="Plenary Demo 3" appearsOnAddInTab="true" keytip="z1" >
+        <group id="CustomPopup_Group1" caption="Plenary Demo 3" appearsOnAddInTab="true" keytip="z1">
           <tool refID="CustomPopup_CustomPopupTool" size="large" />
         </group>
       </groups>
       <controls>
-        <tool id="CustomPopup_CustomPopupTool" caption="Pop-up (Customized)" 
-              className="CustomPopupTool" loadOnClick="true" 
-              smallImage="Images\T-Rex16.png" largeImage="Images\T-Rex32.png" 
-              condition="esri_mapping_mapPane" keytip="z2">
+        <tool id="CustomPopup_CustomPopupTool" caption="Pop-up (Customized)" className="CustomPopupTool" loadOnClick="true" smallImage="Images\T-Rex16.png" largeImage="Images\T-Rex32.png" condition="esri_mapping_mapPane" keytip="z2">
           <tooltip heading="Pop-up (Customized)">
             Shows a custom pop-up for features in the map.<disabledText /></tooltip>
         </tool>
@@ -54,7 +51,7 @@
     <updateModule refID="ProAppModule1_Module">
       <tabs>
         <updateTab refID="Plenary_Tab">
-          <insertGroup refID="CustomPopup_Group1" insert="after"/>
+          <insertGroup refID="CustomPopup_Group1" insert="after" />
         </updateTab>
       </tabs>
     </updateModule>

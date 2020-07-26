@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,8 +22,8 @@
     <Name>LoadReportSample</Name>
     <Description>An Addin which demonstrates how to execute a downstream trace using the utility network</Description>
     <Image>Images\AddinDesktop32.png</Image>
-		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-		<Company>esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>5/31/2016 11:17:02 AM, 2016</Date>
     <Subject>UtilityNetwork</Subject>
     <!-- Note subject can be one or more of these topics:
@@ -34,7 +34,7 @@
       <tabs>
         <!-- This section of code defines an SDK Samples tab.  We add it to the Utility Network tab group and show it when a Utility Network layer is selected -->
         <tab id="SDKSamples_Tab" caption="Load Report SDK Sample" tabGroupID="esri_networkanalysis_utility_TabGroup" condition="esri_mapping_utilityNetworkCondition" keytip="UNSS">
-          <group refID="General_Group"/>
+          <group refID="General_Group" />
           <group refID="esri_networkanalysis_trace_StartingLocationsAndBarriers_Group" />
           <group refID="Electric_Group" />
         </tab>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -30,13 +30,13 @@
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>
   <!--ProSnippet: Panes: Reset Panes-->
-    <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/ResetPanes.png" width="40%">-->   
+  <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/ResetPanes.png" width="40%">-->
   <DockPaneSets>
- <insertDockPaneSet id="esri_DockPaneReset_bookmarks" caption="Reset pane for Bookmarks">
-    <DockPaneID refID="esri_mapping_showBookmarksWindow"/>
-    <DockPaneID refID="esri_core_contentsDockPane"/>
- </insertDockPaneSet>
- </DockPaneSets>
+    <insertDockPaneSet id="esri_DockPaneReset_bookmarks" caption="Reset pane for Bookmarks">
+      <DockPaneID refID="esri_mapping_showBookmarksWindow" />
+      <DockPaneID refID="esri_core_contentsDockPane" />
+    </insertDockPaneSet>
+  </DockPaneSets>
   <!--End ProSnippet-->
   <modules>
     <insertModule id="ModifyProUIWithDAML_Module" className="Module1" autoLoad="false" caption="Module1">

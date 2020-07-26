@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,15 +22,14 @@
     <Name>Custom Pop-up Tool</Name>
     <Description>Show a custom pop-up.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>9/28/2015</Date>
     <Subject>Map-Exploration</Subject>
   </AddInInfo>
   <modules>
     <insertModule id="CustomPopup_Module" className="PopupModule" autoLoad="false" caption="PopupModule">
-      <tabs>
-      </tabs>
+      <tabs></tabs>
       <groups>
         <group id="CustomPopup_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="z1">
           <tool refID="CustomPopup_CustomPopupTool" size="large" />

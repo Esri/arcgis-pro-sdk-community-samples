@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -20,32 +20,27 @@
 <ArcGIS defaultAssembly="AnimationFromPath.dll" defaultNamespace="AnimationFromPath" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{3ee36ee8-81bb-4e8a-9d29-526cdfadc5bb}" version="1.0" desktopVersion="2.0.0000">
     <Name>AnimationFromPath</Name>
-		<Description>Provides options for creating animation from path</Description>
+    <Description>Provides options for creating animation from path</Description>
     <Image>Images\AddinDesktop32.png</Image>
-		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-		<Company>esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>9/1/2017 3:27:33 PM, 2017</Date>
-		<Subject>Map Exploration</Subject>
+    <Subject>Map Exploration</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>
-
   <conditions>
     <!-- our custom conditions -->
     <insertCondition id="nSeconds_state_condition" caption="N-seconds state">
       <state id="nSeconds_state" />
     </insertCondition>
-
     <insertCondition id="customPitch_state_condition" caption="Custom-pitch state">
       <state id="customPitch_state" />
     </insertCondition>
-
     <insertCondition id="faceTarget_state_condition" caption="Face-target state">
       <state id="faceTarget_state" />
     </insertCondition>
-    
   </conditions>
-  
   <modules>
     <insertModule id="AnimationFromPath_Module" className="Module1" autoLoad="false" caption="Module1">
       <!-- uncomment to have the control hosted on a separate tab-->
@@ -59,42 +54,32 @@
               an empty group-->
         <group id="AnimationFromPath_Group1" caption="Animation From Path" appearsOnAddInTab="true">
           <!-- host controls within groups -->
-
-          <comboBox refID="logicChoiceComboBox" size="middle" separator="true"/>
-          <editBox refID="keyEveryNSecTextBox" size="middle" separator="true"/>
-          <comboBox refID="cameraDirectionChoiceComboBox" size="middle" separator="true"/>
-          <editBox refID="totalDurationTextBox" size="middle" separator="true"/>
-          <editBox refID="cameraZOffsetTextBox" size="middle" separator="true"/>
-          <editBox refID="customPitchTextBox" size="middle" separator="true"/>
+          <comboBox refID="logicChoiceComboBox" size="middle" separator="true" />
+          <editBox refID="keyEveryNSecTextBox" size="middle" separator="true" />
+          <comboBox refID="cameraDirectionChoiceComboBox" size="middle" separator="true" />
+          <editBox refID="totalDurationTextBox" size="middle" separator="true" />
+          <editBox refID="cameraZOffsetTextBox" size="middle" separator="true" />
+          <editBox refID="customPitchTextBox" size="middle" separator="true" />
           <tool refID="AnimationFromPath_SetTarget" size="large" />
-          <button refID="AnimationFromPath_CreateAnimationFromPath" size="large" />        
+          <button refID="AnimationFromPath_CreateAnimationFromPath" size="large" />
         </group>
       </groups>
       <controls>
         <!-- add your controls here -->
         <comboBox id="logicChoiceComboBox" caption="Choose Method" isReadOnly="true" resizable="true" itemWidth="140" className="ChooseMethodComboBox">
           <tooltip heading="Tooltip Heading">
-            Tooltip text<disabledText />
-          </tooltip>
+            Tooltip text<disabledText /></tooltip>
         </comboBox>
-
         <editBox id="keyEveryNSecTextBox" caption="Key spacing (secs)" sizeString="01234567" condition="nSeconds_state_condition" className="KeyEveryNSecondEditBox" />
-
         <editBox id="totalDurationTextBox" caption="Duration (secs)" sizeString="01234567" className="TotalDurationEditBox" />
-        
         <comboBox id="cameraDirectionChoiceComboBox" caption="Choose View" isReadOnly="true" resizable="true" itemWidth="140" className="ChooseViewComboBox">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </comboBox>
-        
         <editBox id="customPitchTextBox" caption="Custom Pitch" sizeString="01234567" condition="customPitch_state_condition" className="CustomPitchEditBox" />
-        
         <editBox id="cameraZOffsetTextBox" caption="Z-Offset/Scale" sizeString="01234567" className="CameraZOffsetEditBox" />
-        
-
-        <button id="AnimationFromPath_CreateAnimationFromPath" caption="Create Keys"  className="CreateAnimationFromPathButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingToolBarShow32.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingToolBarShow32.png">
+        <button id="AnimationFromPath_CreateAnimationFromPath" caption="Create Keys" className="CreateAnimationFromPathButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingToolBarShow32.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingToolBarShow32.png">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
-        
         <tool id="AnimationFromPath_SetTarget" caption="Set Target" className="SetTarget" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SyncExtent32.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SyncExtent32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </tool>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,8 +22,8 @@
     <Name>Crowd Planner Tool</Name>
     <Description>Sample Crowd Planner Prototype</Description>
     <Image>Images\AddinDesktop32.png</Image>
-		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-		<Company>esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>4/28/2017 10:43:43 AM, 2017</Date>
     <Subject>Editing</Subject>
     <!-- Note subject can be one or more of these topics:

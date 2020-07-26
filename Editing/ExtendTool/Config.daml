@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--//   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
     <Name>ExtendTool</Name>
     <Description>ExtendTool</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>5/18/2015</Date>
     <Subject>Editing</Subject>
@@ -36,8 +36,7 @@
       </groups> -->
       <controls>
         <!-- add your controls here -->
-        <tool id="ExtendTool_Extend" caption="Extend " className="Extend" loadOnClick="true" smallImage="Images\EditingExtendTool16.png" keytip="ZZ"
-              largeImage="Images\EditingExtendTool32.png" condition="esri_mapping_mapPane" categoryRefID="esri_editing_CommandList">
+        <tool id="ExtendTool_Extend" caption="Extend " className="Extend" loadOnClick="true" smallImage="Images\EditingExtendTool16.png" keytip="ZZ" largeImage="Images\EditingExtendTool32.png" condition="esri_mapping_mapPane" categoryRefID="esri_editing_CommandList">
           <tooltip heading="Extend">Extend a line to the intersection of another feature.<disabledText /></tooltip>
           <content L_group="Sample Tools" />
         </tool>

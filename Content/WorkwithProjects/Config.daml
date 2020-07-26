@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!---
 //   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +19,7 @@
     <Name>WorkwithProjects</Name>
     <Description>WorkwithProjects description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>4/17/2015 8:31:35 AM, 2015</Date>
     <Subject>Content</Subject>
@@ -43,14 +43,13 @@
         </group>
       </groups>
       <controls>
-        <button id="WorkwithProjects_WorkWithProjects_ShowButton" caption="Show Work With Projects" className="WorkWithProjects_ShowButton" loadOnClick="true" keytip="ZQ"
-                            smallImage="Images\Dino16.png" largeImage="Images\Dino32.png" condition="esri_mapping_openProjectCondition" >
+        <button id="WorkwithProjects_WorkWithProjects_ShowButton" caption="Show Work With Projects" className="WorkWithProjects_ShowButton" loadOnClick="true" keytip="ZQ" smallImage="Images\Dino16.png" largeImage="Images\Dino32.png" condition="esri_mapping_openProjectCondition">
           <tooltip heading="Show Work With Projects Dockpane">
             Show Work With Projects Dockpane<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="WorkwithProjects_WorkWithProjects" caption="Working With Projects " className="WorkWithProjectsViewModel" dock="group" dockWith="esri_core_contentsDockPane" condition="esri_mapping_openProjectCondition" >
+        <dockPane id="WorkwithProjects_WorkWithProjects" caption="Working With Projects " className="WorkWithProjectsViewModel" dock="group" dockWith="esri_core_contentsDockPane" condition="esri_mapping_openProjectCondition">
           <content className="WorkWithProjectsView" />
         </dockPane>
       </dockPanes>

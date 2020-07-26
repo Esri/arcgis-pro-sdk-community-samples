@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,7 +22,7 @@
     <Name>MapToolIdentify</Name>
     <Description>MapToolIdentify description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>5/3/2016 7:24:39 AM, 2016</Date>
     <Subject>Map-Exploration</Subject>
@@ -47,12 +47,9 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <tool id="MapToolIdentify_MapToolIdentify" caption="Identify Features" className="MapToolIdentify"
-              loadOnClick="true" smallImage="Images\GenericButtonRed16.png"
-              largeImage="Images\GenericButtonRed32.png" condition="esri_mapping_mapPane" keytip="z2">
+        <tool id="MapToolIdentify_MapToolIdentify" caption="Identify Features" className="MapToolIdentify" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" condition="esri_mapping_mapPane" keytip="z2">
           <tooltip heading="Identify Features">
-            Identify features on the current map using a circular sketch.<disabledText />
-          </tooltip>
+            Identify features on the current map using a circular sketch.<disabledText /></tooltip>
         </tool>
       </controls>
     </insertModule>

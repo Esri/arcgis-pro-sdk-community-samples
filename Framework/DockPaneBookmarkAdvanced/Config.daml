@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -23,7 +23,7 @@
     <Description>Second lab working with dockpane, maps and bookmarks.  In this lab you will trap for changes to the map project items in addition to 
     adding buttons allowing you to delete and add bookmarks.  You will also style these buttons according to ArcGIS Pro style guidelines. </Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>2/18/2015 9:34:42 AM, 2015</Date>
     <Subject>Framework</Subject>
@@ -44,16 +44,13 @@
         <button id="DockPaneBookmarkAdvanced_BookmarkOutline_MenuButton" caption="Outline" className="BookmarkOutline_MenuButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="Z2">
           <tooltip heading="Burger Menu Button">ToolTip<disabledText /></tooltip>
         </button>
-        <button id="DockPaneBookmarkAdvanced_BookmarkGallery_MenuButton" caption="Gallery" className="BookmarkGallery_MenuButton" 
-                loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="Z2">
+        <button id="DockPaneBookmarkAdvanced_BookmarkGallery_MenuButton" caption="Gallery" className="BookmarkGallery_MenuButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="Z2">
           <tooltip heading="Burger Menu Button">
-            ToolTip<disabledText />
-          </tooltip>
+            ToolTip<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="DockPaneBookmarkAdvanced_Bookmark" caption="Bookmark" className="BookmarkViewModel" 
-                  dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="DockPaneBookmarkAdvanced_Bookmark" caption="Bookmark" className="BookmarkViewModel" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="BookmarkView" />
         </dockPane>
       </dockPanes>
@@ -61,7 +58,7 @@
         <menu id="DockPaneBookmarkAdvanced_Bookmark_Menu" caption="Change view" contextMenu="true">
           <button refID="DockPaneBookmarkAdvanced_BookmarkOutline_MenuButton" />
           <button refID="DockPaneBookmarkAdvanced_BookmarkGallery_MenuButton" />
-        </menu>       
+        </menu>
       </menus>
     </insertModule>
   </modules>

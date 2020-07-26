@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -23,7 +23,7 @@
     <Description>ArcGIS Pro SDK Sample showing methods to explode multipart geometry into single part geometries
     and how to retrieve the outer most ring(s) of a multipart geometry.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>8/14/2015 8:26:46 AM, 2015</Date>
     <Subject>Geometry</Subject>

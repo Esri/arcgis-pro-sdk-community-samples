@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ArcGIS defaultAssembly="GeoprocessingExecuteAsync.dll" defaultNamespace="GeoprocessingExecuteAsync" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <!--//   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,7 @@
     <Name>GeoprocessingExecuteAsync</Name>
     <Description>Shows execution of Buffer tool around a line drawn on the map.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>4/14/2015 8:36:16 AM, 2015</Date>
     <Subject>Geoprocessing</Subject>

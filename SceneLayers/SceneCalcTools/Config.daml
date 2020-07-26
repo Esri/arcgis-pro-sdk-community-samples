@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,54 +22,40 @@
     <Name>Scene Volume Calc Tools</Name>
     <Description>Sample add-in which provides a workflow and tools for calculating volume using a scene layer mesh and point cloud file.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-	  <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-	  <Company>esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>June 4, 2019</Date>
     <Subject>SceneLayers</Subject>
   </AddInInfo>
-
   <conditions>
     <insertCondition id="ShowPerMapPane_Condition" caption="Map Pane Condition">
       <state id="ShowPerMapPane" />
     </insertCondition>
   </conditions>
-  
   <modules>
     <insertModule id="SceneCalcTools_Module" className="Module1" autoLoad="false" caption="Module1">
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="SceneCalcTools_Group1" caption="Scene Tools"  appearsOnAddInTab="true">
+        <group id="SceneCalcTools_Group1" caption="Scene Tools" appearsOnAddInTab="true">
           <!-- host controls within groups -->
           <button refID="SceneCalcTools_SceneCalcDockpane_ShowButton" size="large" />
         </group>
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="SceneCalcTools_SceneCalcDockpane_ShowButton" caption="Scene Volume Calculation" 
-				className="SceneCalcDockpane_ShowButton" loadOnClick="true" keytip="B1"
-				smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png"
-				largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+        <button id="SceneCalcTools_SceneCalcDockpane_ShowButton" caption="Scene Volume Calculation" className="SceneCalcDockpane_ShowButton" loadOnClick="true" keytip="B1" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
           <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
         </button>
-        <tool id="SceneCalcTools_ElevationMapTool" caption="ElevationMapTool" className="ElevationMapTool" 
-			  loadOnClick="true" keytip="T1"
-			  smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" 
-			  largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" 
-			  condition="esri_mapping_mapPane">
+        <tool id="SceneCalcTools_ElevationMapTool" caption="ElevationMapTool" className="ElevationMapTool" loadOnClick="true" keytip="T1" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Tooltip Heading">Measure the 'above' volume over a sketched base area<disabledText /></tooltip>
         </tool>
-        <tool id="SceneCalcTools_SketchPolygonMapTool" caption="SketchPolygonMapTool" className="SketchPolygonMapTool" 
-			  loadOnClick="true" keytip="T2" 
-			  smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" 
-			  largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" 
-			  condition="esri_mapping_mapPane">
+        <tool id="SceneCalcTools_SketchPolygonMapTool" caption="SketchPolygonMapTool" className="SketchPolygonMapTool" loadOnClick="true" keytip="T2" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Tooltip Heading">Sketch a 'base' polygon to measure volume 'above' for<disabledText /></tooltip>
         </tool>
       </controls>
       <dockPanes>
-        <dockPane id="SceneCalcTools_SceneCalcDockpane" caption="Scene Volume Calculation" 
-				  className="SceneCalcDockpaneViewModel" dock="right" width="200">
+        <dockPane id="SceneCalcTools_SceneCalcDockpane" caption="Scene Volume Calculation" className="SceneCalcDockpaneViewModel" dock="right" width="200">
           <content className="SceneCalcDockpaneView" />
         </dockPane>
       </dockPanes>

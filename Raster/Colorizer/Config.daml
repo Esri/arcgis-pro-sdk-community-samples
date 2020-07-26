@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2020 Esri
@@ -49,20 +49,12 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="Colorizer_BtnNewColor" caption="New Color by 'Value'" className="BtnNewColor" loadOnClick="true" 
-                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" 
-                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
-          <tooltip heading="Tip:">Use a color ramp to assign new colors to raster<disabledText>No active map view, or no suitable raster in the TOC selected</disabledText>
-          </tooltip>
+        <button id="Colorizer_BtnNewColor" caption="New Color by 'Value'" className="BtnNewColor" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tip:">Use a color ramp to assign new colors to raster<disabledText>No active map view, or no suitable raster in the TOC selected</disabledText></tooltip>
         </button>
-        <comboBox id="Colorizer_ApplyAttributes" caption="Use this attribute:" 
-                  keytip ="Show the colorizers that can be applied to the selected raster layer." 
-                  className="ApplyAttributes" itemWidth="140" itemHeight="300" 
-                  extendedCaption="Extended Caption" isEditable="false" isReadOnly="false" resizable="true" 
-                  image="Images\GenericButtonBlue32.png">
+        <comboBox id="Colorizer_ApplyAttributes" caption="Use this attribute:" keytip="Show the colorizers that can be applied to the selected raster layer." className="ApplyAttributes" itemWidth="140" itemHeight="300" extendedCaption="Extended Caption" isEditable="false" isReadOnly="false" resizable="true" image="Images\GenericButtonBlue32.png">
           <tooltip heading="Tip:">Shows all attribute columns for the selected Raster
-            <disabledText>No active map view, or no suitable raster in the TOC selected</disabledText>
-          </tooltip>
+            <disabledText>No active map view, or no suitable raster in the TOC selected</disabledText></tooltip>
         </comboBox>
       </controls>
     </insertModule>

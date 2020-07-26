@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,7 +22,7 @@
     <Name>CommandFilter</Name>
     <Description>Shows how to register a command filter. When the command filter is turned 'On' or "Off', a Notification is also popped</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>6/19/2015 2:26:33 PM, 2015</Date>
     <Subject>Framework</Subject>
@@ -47,7 +47,7 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="CommandFilter_CommandFilterDockPane_ShowButton" caption="Show FilterDockPane " className="CommandFilterDockPane_ShowButton" loadOnClick="true" largeImage="Images\Dino32.png"  keytip="Z1">
+        <button id="CommandFilter_CommandFilterDockPane_ShowButton" caption="Show FilterDockPane " className="CommandFilterDockPane_ShowButton" loadOnClick="true" largeImage="Images\Dino32.png" keytip="Z1">
           <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
         </button>
       </controls>

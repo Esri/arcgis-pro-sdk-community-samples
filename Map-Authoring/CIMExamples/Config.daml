@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,7 +22,7 @@
     <Name>CIMExamples</Name>
     <Description>CIMExamples description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>2/16/2016 2:43:04 PM, 2016</Date>
     <Subject>Map Authoring</Subject>
@@ -67,10 +67,9 @@
         <button id="CIMExamples_ChangeLayerSelectionColor" keytip="Z5" caption="Layer Selection Color" className="ChangeLayerSelectionColor" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
           <tooltip heading="Layer Selection Color">Change the selection color for the given feature layer<disabledText /></tooltip>
         </button>
-        <button id="CIMExamples_CreateCIMRasterStretchColorizerFromScratch"  keytip="Z6" caption="Raster Strech" className="CreateCIMRasterStretchColorizerFromScratch" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+        <button id="CIMExamples_CreateCIMRasterStretchColorizerFromScratch" keytip="Z6" caption="Raster Strech" className="CreateCIMRasterStretchColorizerFromScratch" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
           <tooltip heading="Raster Stretch">
-            Create CIMRasterStretchColorizer from scratch<disabledText />
-          </tooltip>
+            Create CIMRasterStretchColorizer from scratch<disabledText /></tooltip>
         </button>
       </controls>
     </insertModule>

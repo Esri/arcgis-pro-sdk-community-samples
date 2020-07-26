@@ -39,7 +39,7 @@ namespace Renderer
         /// <remarks></remarks>
         /// <param name="featureLayer"></param>
         /// <returns></returns>
-        internal static Task ProportionalRenderer(FeatureLayer featureLayer)
+        internal static Task ProportionalRendererAsync(FeatureLayer featureLayer)
         {
             return QueuedTask.Run(() =>
             {
@@ -59,6 +59,7 @@ namespace Renderer
                 featureLayer.SetRenderer(propRndr);
             });
         }
+
         #endregion
     }
 }

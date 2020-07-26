@@ -1,4 +1,22 @@
-﻿using System;
+/*
+
+   Copyright 2020 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +42,7 @@ namespace OverlayGroundSurface
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Configurations\Projects' with sample data required for this solution.  Make sure that the Sample data (specifically CommunitySampleData-3D-04-06-2020.zip) is unzipped into c:\data and c:\data\PolyTest is available.
+  /// 1. This solution is using the **Newtonsoft.Json NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.
   /// 1. Click Start button to debug ArcGIS Pro.
   /// 1. Open the Pro project file: PolyTest.aprx in the C:\Data\PolyTest\ folder.  Open the 'Graphic Test' tab in ArcGIS Pro.
@@ -55,6 +74,99 @@ namespace OverlayGroundSurface
     }
 
     internal static MapView CurrentMapView { get; set; }
+
+    #region UI properties and states
+
+    private static List<Geometry> _geometries = new List<Geometry>();
+    private static bool _hasImportData = false;
+
+    internal static bool HasImportData
+    {
+      get { return _hasImportData; }
+      set { _hasImportData = value; }
+    }
+
+    internal static bool HasGeometries
+    {
+      get { return HasImportData && _geometries.Count > 0; }
+    }
+
+    internal static List<Geometry> Geometries
+    {
+      get
+      {
+        return _geometries;
+      }
+      set
+      {
+        if (value == null) _geometries = null;
+        else
+        {
+          _geometries.Clear();
+          if (value != null)
+          {
+            foreach (var geom in value)
+            {
+              _geometries.Add(geom.Clone());
+            }
+          }
+        }
+        SetState("has_geometry_state", _geometries != null && _geometries.Count > 0);
+      }
+    }
+
+    private static Polygon _polygon = null;
+
+    internal static Polygon Polygon
+    {
+      get
+      {
+        return _polygon;
+      }
+      set
+      {
+        if (value == null) _polygon = null;
+        else _polygon = value.Clone() as Polygon;
+        SetState("has_polygon_state", _polygon != null);
+        foreach (var mv in _graphics.Keys)
+        {
+          ClearGraphics(mv);
+        }
+        var mvs = new List<MapView>();
+        foreach (var mv in _graphic.Keys)
+        {
+          if (_graphic[mv] != null) mvs.Add(mv);
+        }
+        foreach (var mv in mvs)
+        {
+          _graphic[mv]?.Dispose();
+          _graphic[mv] = null;
+        }
+        HasImportData = false;
+      }
+    }
+
+    internal static void SetState(string stateName, bool active)
+    {
+      if (FrameworkApplication.State.Contains(stateName) == active) return;
+      // toggle the state
+      if (FrameworkApplication.State.Contains(stateName))
+      {
+        //deactivates the state
+        FrameworkApplication.State.Deactivate(stateName);
+      }
+      else
+      {
+        //activates the state
+        FrameworkApplication.State.Activate(stateName);
+      }
+    }
+
+    internal static double Resolution { get; set; } = 1.00;
+
+    internal static double Elevation { get; set; } = 1.00;
+
+    #endregion UI properties and states
 
     #region Overlay Helpers
 
@@ -139,61 +251,11 @@ namespace OverlayGroundSurface
 
     #endregion Utility Helpers
 
-    #region UI and Polygon Helpers
+    #region Polygon Helpers
 
-    private static Polygon _polygon = null;
-
-    internal static Polygon Polygon
+    internal static List<Geometry> MakeFishnetPolygons(Polygon inputPoly)
     {
-      get
-      {
-        return _polygon;
-      }
-      set
-      {
-        if (value == null) _polygon = null;
-        else _polygon = value.Clone() as Polygon;
-        SetState("has_polygon_state", _polygon != null);
-        foreach (var mv in _graphics.Keys)
-        {
-          ClearGraphics(mv);
-        }
-        var mvs = new List<MapView>();
-        foreach (var mv in _graphic.Keys)
-        {
-          if (_graphic[mv] != null) mvs.Add(mv);
-        }
-        foreach (var mv in mvs)
-        {
-          _graphic[mv]?.Dispose();
-          _graphic[mv] = null;
-        }
-      }
-    }
-
-    internal static void SetState(string stateName, bool active)
-    {
-      if (FrameworkApplication.State.Contains(stateName) == active) return;
-      // toggle the state
-      if (FrameworkApplication.State.Contains(stateName))
-      {
-        //deactivates the state
-        FrameworkApplication.State.Deactivate(stateName);
-      }
-      else
-      {
-        //activates the state
-        FrameworkApplication.State.Activate(stateName);
-      }
-    }
-
-    internal static double Resolution { get; set; } = 1.00;
-
-    internal static double Elevation { get; set; } = 1.00;
-
-    internal static List<Polygon> MakeFishnetPolygons(Polygon inputPoly)
-    {
-      List<Polygon> polygons = new List<Polygon>();
+      List<Geometry> polygons = new List<Geometry>();
       Envelope envPoly = inputPoly.Extent;
       var interval = GetFishnetIntervalDistance(envPoly);
       for (var dX = envPoly.XMin; dX < envPoly.XMax + interval; dX += interval)
@@ -203,7 +265,7 @@ namespace OverlayGroundSurface
           var cutEnv = EnvelopeBuilder.CreateEnvelope(dX, dY, dX + interval, dY + interval, envPoly.SpatialReference);
           if (GeometryEngine.Instance.Intersects(cutEnv, inputPoly))
           {
-            var addPolygonPart = GeometryEngine.Instance.Clip(inputPoly, cutEnv) as Polygon;
+            var addPolygonPart = GeometryEngine.Instance.Clip(inputPoly, cutEnv);
             polygons.Add(addPolygonPart);
           }
         }
@@ -211,7 +273,7 @@ namespace OverlayGroundSurface
       return polygons;
     }
 
-    internal static Polygon MakeFishnetPolygon(Polygon inputPoly)
+    internal static Geometry MakeFishnetPolygon(Polygon inputPoly)
     {
       Envelope envPoly = inputPoly.Extent;
       var interval = GetFishnetIntervalDistance(envPoly);
@@ -235,14 +297,14 @@ namespace OverlayGroundSurface
           }
         }
       }
-      return pb.ToGeometry() as Polygon;
+      return pb.ToGeometry();
     }
 
-    #endregion UI and Polygon Helpers
+    #endregion Polygon Helpers
 
     #region MultiPatch Helpers
 
-    internal static async Task<Multipatch> MakeFishnetMultiPatchAsync(Polygon inputPoly)
+    internal static async Task<Geometry> MakeFishnetMultiPatchAsync(Polygon inputPoly)
     {
       Envelope envPoly = inputPoly.Extent;
       var interval = GetFishnetIntervalDistance(envPoly);
@@ -285,7 +347,7 @@ namespace OverlayGroundSurface
       }            // assign the patches to the multipatchBuilder
       mpb.Patches = patches;
       // call ToGeometry to get the multipatch
-      return mpb.ToGeometry() as Multipatch;
+      return mpb.ToGeometry();
     }
 
     internal static async Task<Multipatch> MakeFishnetRingMultiPatchAsync(Polygon inputPoly)

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,7 +22,7 @@
     <Name>ReplaceAttachments</Name>
     <Description>Given that a layer with a FeatureClass as the Datasource is selected, for all related FeatureClasses having attachments, Replace All Attachments matching a given attachment with a new attachment</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>4/16/2015 3:39:38 PM, 2015</Date>
     <Subject>Geodatabase</Subject>

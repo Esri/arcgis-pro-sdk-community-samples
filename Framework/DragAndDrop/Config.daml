@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -17,13 +17,12 @@
    limitations under the License.
 
 -->
-
 <ArcGIS defaultAssembly="DragAndDrop.dll" defaultNamespace="DragAndDrop" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{9e25ed1d-9f47-4680-95e8-7b2b0d0e7234}" version="1.0" desktopVersion="2.4.19946">
     <Name>DragAndDrop</Name>
     <Description>DragAndDrop description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>6/18/2019 6:00:12 AM, 2019</Date>
     <Subject>Framework</Subject>
@@ -44,6 +43,7 @@
         <group id="DragAndDrop_Group1" caption="Drag and Drop" appearsOnAddInTab="true">
           <!-- host controls within groups -->
           <button refID="DragAndDrop_DragAndDropDockpane1_ShowButton" size="large" />
+          <button refID="DragAndDrop_DragAndDropTOCItems_ShowButton" size="large" />
         </group>
       </groups>
       <controls>
@@ -51,10 +51,16 @@
         <button id="DragAndDrop_DragAndDropDockpane1_ShowButton" caption="Drag and Drop" className="DragAndDropDockpane1_ShowButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
           <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
         </button>
+        <button id="DragAndDrop_DragAndDropTOCItems_ShowButton" caption="Drag and Drop TOC Items" className="DragAndDropTOCItems_ShowButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+          <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
+        </button>
       </controls>
       <dockPanes>
         <dockPane id="DragAndDrop_DragAndDropDockpane1" caption="Drag and Drop Dockpane" className="DragAndDropDockpane1ViewModel" dock="group" dockWith="esri_core_contentsDockPane" isDropTarget="false">
           <content className="DragAndDropDockpane1View" />
+        </dockPane>
+        <dockPane id="DragAndDrop_DragAndDropTOCItems" caption="Drag and drop TOC items" className="DragAndDropTOCItemsViewModel" dock="group" dockWith="esri_core_contentsDockPane" isDropTarget="false">
+          <content className="DragAndDropTOCItemsView" />
         </dockPane>
       </dockPanes>
     </insertModule>

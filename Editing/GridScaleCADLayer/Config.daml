@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--//   Copyright 2020 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -27,8 +27,7 @@
       <controls>
         <button id="GridScaleCADLayer_scaleCADLayer" caption="Grid Scale" className="GridScaleCADLayer" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GridScale32.png" keytip=" ">
           <tooltip heading="Grid Scale">
-            Transform the layer using a grid scale factor.<disabledText />
-          </tooltip>
+            Transform the layer using a grid scale factor.<disabledText /></tooltip>
         </button>
       </controls>
     </insertModule>

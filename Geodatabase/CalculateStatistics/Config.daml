@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2020 Esri
@@ -47,17 +47,11 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="CalculateStatistics_CalculateLength" caption="Calculate Length" className="CalculateLength" 
-                loadOnClick="true" keytip="B0"
-                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" 
-                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+        <button id="CalculateStatistics_CalculateLength" caption="Calculate Length" className="CalculateLength" loadOnClick="true" keytip="B0" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
           <tooltip heading="Calculate Length">
             Calculates the sum of all lengths using the Calculate Statistics functions<disabledText /></tooltip>
         </button>
-        <button id="CalculateStatistics_CalculateArea" caption="Calculate Area" className="CalculateArea" 
-                loadOnClick="true" keytip="B1"
-                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" 
-                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+        <button id="CalculateStatistics_CalculateArea" caption="Calculate Area" className="CalculateArea" loadOnClick="true" keytip="B1" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
           <tooltip heading="Calculate Area">
             Calculates the sum of all areas using the Calculate Statistics functions<disabledText /></tooltip>
         </button>

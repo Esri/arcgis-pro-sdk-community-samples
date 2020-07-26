@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 //   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,7 @@
     <Name>Feature Selection</Name>
     <Description>Adds a custom tool and dock pane to manage selections in the map.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>5/11/2015 3:39:00 PM, 2015</Date>
     <Subject>Map Exploration</Subject>
@@ -31,12 +31,12 @@
         </group>
       </groups>
       <controls>
-        <tool id="FeatureSelection_FeatureSelectionTool" caption="Hit Test" className="FeatureSelection.FeatureSelectionTool" loadOnClick="false" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" keytip='z2'/>
+        <tool id="FeatureSelection_FeatureSelectionTool" caption="Hit Test" className="FeatureSelection.FeatureSelectionTool" loadOnClick="false" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" keytip="z2" />
         <button id="FeatureSelection_FeatureSelectionDockPane_ShowButton" caption="Feature Selection" className="FeatureSelectionDockPane_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
           <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
         </button>
-        <button id="FeatureSelection_SetAsExpression" caption="Create New Expression" className="FeatureSelection_Module:SetAsExpression" smallImage="Images\SQLQueryNew16.png" loadOnClick="false" keytip="z3"/>
-        <button id="FeatureSelection_AddToExpression" caption="Add To Expression" className="FeatureSelection_Module:AddToExpression" smallImage="Images\SQLQueryAdd16.png" loadOnClick="false" keytip="z4"/>
+        <button id="FeatureSelection_SetAsExpression" caption="Create New Expression" className="FeatureSelection_Module:SetAsExpression" smallImage="Images\SQLQueryNew16.png" loadOnClick="false" keytip="z3" />
+        <button id="FeatureSelection_AddToExpression" caption="Add To Expression" className="FeatureSelection_Module:AddToExpression" smallImage="Images\SQLQueryAdd16.png" loadOnClick="false" keytip="z4" />
       </controls>
       <dockPanes>
         <dockPane id="FeatureSelection_FeatureSelectionDockPane" caption="Feature Selection" className="FeatureSelectionDockPaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
@@ -45,8 +45,8 @@
       </dockPanes>
       <menus>
         <menu id="FeatureSelection_RowContextMenu" caption="RowMenu" contextMenu="true">
-          <button refID="FeatureSelection_SetAsExpression"/>
-          <button refID="FeatureSelection_AddToExpression"/>
+          <button refID="FeatureSelection_SetAsExpression" />
+          <button refID="FeatureSelection_AddToExpression" />
         </menu>
       </menus>
     </insertModule>

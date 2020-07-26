@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -41,14 +41,15 @@
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
         <!--<group id="DuplicateLayout_Group1" caption="Group 1" appearsOnAddInTab="true">
-          --><!-- host controls within groups --><!--
+          -->
+        <!-- host controls within groups -->
+        <!--
           <button refID="DuplicateLayout_Clone" size="large" />
         </group>-->
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="DuplicateLayout_Clone" caption="Clone" className="Clone" loadOnClick="true" 
-                smallImage="Images\clone16.png" largeImage="Images\clone32.png">
+        <button id="DuplicateLayout_Clone" caption="Clone" className="Clone" loadOnClick="true" smallImage="Images\clone16.png" largeImage="Images\clone32.png">
           <tooltip heading="Tooltip Heading">Clones the selected Layout(s)<disabledText /></tooltip>
         </button>
       </controls>
@@ -57,7 +58,7 @@
       <menus>
         <updateMenu refID="esri_layouts_projectItem">
           <!--Note: New_Menu_Item_Button is a button control that must exist within the controls tag-->
-          <insertButton refID="DuplicateLayout_Clone" placeWith="esri_layouts_projectItem_LayoutProperties"/>
+          <insertButton refID="DuplicateLayout_Clone" placeWith="esri_layouts_projectItem_LayoutProperties" />
         </updateMenu>
       </menus>
     </updateModule>

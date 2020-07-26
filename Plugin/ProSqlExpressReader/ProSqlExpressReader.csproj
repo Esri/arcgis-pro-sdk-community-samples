@@ -130,6 +130,7 @@
     <Compile Include="ProSqlExpressProjectItemContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RibbonUI.cs" />
+    <Compile Include="TestThePlugin.cs" />
   </ItemGroup>
   <ItemGroup>
     <AddInContent Include="Images\GenericButtonBlue16.png" />

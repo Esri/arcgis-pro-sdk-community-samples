@@ -15,7 +15,7 @@ Language:              C#
 Subject:               Geometry
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  7/10/2020
+Date:                  7/01/2020
 ArcGIS Pro:            2.6
 Visual Studio:         2019
 .NET Target Framework: 4.8
@@ -52,7 +52,7 @@ Visual Studio:         2019
   
 1. Click on the "Apply Materials" button.  
 1. The created multipatch feature will now have materials applied to it's faces.   
-![UI](Screenshots/MultipatcMaterial.png)  
+![UI](Screenshots/MultipatchMaterial.png)  
   
 1. Click on the "Apply Textures" button.  
 1. The created multipatch feature will now have textures applied to it's faces.   

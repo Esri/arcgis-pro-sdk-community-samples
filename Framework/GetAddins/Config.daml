@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -41,7 +41,7 @@
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
         <group id="GetAddins_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="za">
-          <!-- host controls within groups -->        
+          <!-- host controls within groups -->
         </group>
       </groups>
       <controls>

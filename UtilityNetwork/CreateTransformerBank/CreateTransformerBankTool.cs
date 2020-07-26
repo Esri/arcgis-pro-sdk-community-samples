@@ -28,6 +28,7 @@ using ArcGIS.Core.Data.UtilityNetwork;
 using UtilityNetworkSamples;
 using ArcGIS.Desktop.Mapping.Events;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
+using ArcGIS.Core.Data;
 
 namespace CreateTransformerBank
 {
@@ -111,16 +112,18 @@ namespace CreateTransformerBank
             else
             {
               using (UtilityNetworkDefinition utilityNetworkDefinition = utilityNetwork.GetDefinition())
-              // Get the NetworkSource, AssetGroup, and AssetTypes for all of the features we want to create
-              // The existance of these values has already been confirmed in the ValidateDataModel() routine
+              // Get the NetworkSource, FeatureClass, AssetGroup, and AssetTypes for all of the features we want to create
+              // The existence of these values has already been confirmed in the ValidateDataModel() routine
 
               // TransformerBank
               using (NetworkSource transformerBankNetworkSource = GetNetworkSource(utilityNetworkDefinition, AssemblyNetworkSourceName))
+              using (FeatureClass transformerBankFeatureClass = utilityNetwork.GetTable(transformerBankNetworkSource) as FeatureClass)
               using (AssetGroup transformerBankAssetGroup = transformerBankNetworkSource.GetAssetGroup(TransformerBankAssetGroupName))
               using (AssetType transformerBankAssetType = transformerBankAssetGroup.GetAssetType(TransformerBankAssetTypeName))
 
               // Transformer
               using (NetworkSource deviceNetworkSource = GetNetworkSource(utilityNetworkDefinition, DeviceNetworkSourceName))
+              using (FeatureClass deviceFeatureClass = utilityNetwork.GetTable(deviceNetworkSource) as FeatureClass)
               using (AssetGroup transformerAssetGroup = deviceNetworkSource.GetAssetGroup(TransformerAssetGroupName))
               using (AssetType transformerAssetType = transformerAssetGroup.GetAssetType(TransformerAssetTypeName))
 
@@ -135,33 +138,32 @@ namespace CreateTransformerBank
                 MapPoint clickPoint = geometry as MapPoint;
 
                 // Create a transformer bank
-                Layer transformerBankLayer = GetLayerForEdit(map, AssemblyNetworkSourceName, TransformerBankAssetGroupName);
-                RowToken token = createOperation.CreateEx(transformerBankLayer, CreateAttributes(transformerBankAssetGroup, transformerBankAssetType, clickPoint));
+
+                RowToken token = createOperation.CreateEx(transformerBankFeatureClass, CreateAttributes(transformerBankAssetGroup, transformerBankAssetType, clickPoint));
                 RowHandle transformerBankHandle = new RowHandle(token);
 
                 // Create three transformers, one for each phase
-                Layer transformerLayer = GetLayerForEdit(map, DeviceNetworkSourceName, TransformerAssetGroupName);
 
                 MapPoint transformerPointA = CreateOffsetMapPoint(clickPoint, -1 * XOffset, YOffset);
-                token = createOperation.CreateEx(transformerLayer, CreateDeviceAttributes(transformerAssetGroup, transformerAssetType, transformerPointA, APhase));
+                token = createOperation.CreateEx(deviceFeatureClass, CreateDeviceAttributes(transformerAssetGroup, transformerAssetType, transformerPointA, APhase));
                 RowHandle transformerHandleA = new RowHandle(token);
 
                 MapPoint transformerPointB = CreateOffsetMapPoint(clickPoint, 0, YOffset);
-                token = createOperation.CreateEx(transformerLayer, CreateDeviceAttributes(transformerAssetGroup, transformerAssetType, transformerPointB, BPhase));
+                token = createOperation.CreateEx(deviceFeatureClass, CreateDeviceAttributes(transformerAssetGroup, transformerAssetType, transformerPointB, BPhase));
                 RowHandle transformerHandleB = new RowHandle(token);
 
                 MapPoint transformerPointC = CreateOffsetMapPoint(clickPoint, XOffset, YOffset);
-                token = createOperation.CreateEx(transformerLayer, CreateDeviceAttributes(transformerAssetGroup, transformerAssetType, transformerPointC, CPhase));
+                token = createOperation.CreateEx(deviceFeatureClass, CreateDeviceAttributes(transformerAssetGroup, transformerAssetType, transformerPointC, CPhase));
                 RowHandle transformerHandleC = new RowHandle(token);
 
                 // Create containment associations between the bank and the transformers
-                ContainmentAssociationDescription containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, transformerHandleA, false);
+                AssociationDescription containmentAssociationDescription = new AssociationDescription(AssociationType.Containment, transformerBankHandle, transformerHandleA, false);
                 createOperation.Create(containmentAssociationDescription);
 
-                containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, transformerHandleB, false);
+                containmentAssociationDescription = new AssociationDescription(AssociationType.Containment, transformerBankHandle, transformerHandleB, false);
                 createOperation.Create(containmentAssociationDescription);
 
-                containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, transformerHandleC, false);
+                containmentAssociationDescription = new AssociationDescription(AssociationType.Containment, transformerBankHandle, transformerHandleC, false);
                 createOperation.Create(containmentAssociationDescription);
 
                 // Find the high-side terminal for transformers
@@ -171,73 +173,71 @@ namespace CreateTransformerBank
                 long highSideTerminalID = highSideTerminal.ID;
 
                 // Create three fuses, one for each phase
-                Layer fuseLayer = GetLayerForEdit(map, DeviceNetworkSourceName, FuseAssetGroupName);
 
                 MapPoint fusePointA = CreateOffsetMapPoint(clickPoint, -1 * XOffset, 2 * YOffset);
-                token = createOperation.CreateEx(fuseLayer, CreateDeviceAttributes(fuseAssetGroup, fuseAssetType, fusePointA, APhase));
+                token = createOperation.CreateEx(deviceFeatureClass, CreateDeviceAttributes(fuseAssetGroup, fuseAssetType, fusePointA, APhase));
                 RowHandle fuseHandleA = new RowHandle(token);
 
                 MapPoint fusePointB = CreateOffsetMapPoint(clickPoint, 0, 2 * YOffset);
-                token = createOperation.CreateEx(fuseLayer, CreateDeviceAttributes(fuseAssetGroup, fuseAssetType, fusePointB, BPhase));
+                token = createOperation.CreateEx(deviceFeatureClass, CreateDeviceAttributes(fuseAssetGroup, fuseAssetType, fusePointB, BPhase));
                 RowHandle fuseHandleB = new RowHandle(token);
 
                 MapPoint fusePointC = CreateOffsetMapPoint(clickPoint, XOffset, 2 * YOffset);
-                token = createOperation.CreateEx(fuseLayer, CreateDeviceAttributes(fuseAssetGroup, fuseAssetType, fusePointC, CPhase));
+                token = createOperation.CreateEx(deviceFeatureClass, CreateDeviceAttributes(fuseAssetGroup, fuseAssetType, fusePointC, CPhase));
                 RowHandle fuseHandleC = new RowHandle(token);
 
-               // Create containment associations between the bank and the fuses
-               containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, fuseHandleA, false);
+                // Create containment associations between the bank and the fuses
+                containmentAssociationDescription = new AssociationDescription(AssociationType.Containment, transformerBankHandle, fuseHandleA, false);
                 createOperation.Create(containmentAssociationDescription);
 
-                containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, fuseHandleB, false);
+                containmentAssociationDescription = new AssociationDescription(AssociationType.Containment, transformerBankHandle, fuseHandleB, false);
                 createOperation.Create(containmentAssociationDescription);
 
-                containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, fuseHandleC, false);
+                containmentAssociationDescription = new AssociationDescription(AssociationType.Containment, transformerBankHandle, fuseHandleC, false);
                 createOperation.Create(containmentAssociationDescription);
 
                 // Connect the high-side transformer terminals to the fuses (connect the A-phase transformer to the A-phase fuse, and so on)
-                ConnectivityAssociationDescription connectivityAssociationDescription = new ConnectivityAssociationDescription(transformerHandleA, highSideTerminalID, fuseHandleA);
+                AssociationDescription connectivityAssociationDescription = new AssociationDescription(AssociationType.JunctionJunctionConnectivity, transformerHandleA, highSideTerminalID, fuseHandleA);
                 createOperation.Create(connectivityAssociationDescription);
 
-                connectivityAssociationDescription = new ConnectivityAssociationDescription(transformerHandleB, highSideTerminalID, fuseHandleB);
+                connectivityAssociationDescription = new AssociationDescription(AssociationType.JunctionJunctionConnectivity, transformerHandleB, highSideTerminalID, fuseHandleB);
                 createOperation.Create(connectivityAssociationDescription);
 
-                connectivityAssociationDescription = new ConnectivityAssociationDescription(transformerHandleC, highSideTerminalID, fuseHandleC);
+                connectivityAssociationDescription = new AssociationDescription(AssociationType.JunctionJunctionConnectivity, transformerHandleC, highSideTerminalID, fuseHandleC);
                 createOperation.Create(connectivityAssociationDescription);
 
                 // Create three arresters, one for each phase
-                Layer arresterLayer = GetLayerForEdit(map, DeviceNetworkSourceName, ArresterAssetGroupName);
 
                 MapPoint arresterPointA = CreateOffsetMapPoint(clickPoint, -1 * XOffset, 3 * YOffset);
-                token = createOperation.CreateEx(arresterLayer, CreateDeviceAttributes(arresterAssetGroup, arresterAssetType, arresterPointA, APhase));
+                token = createOperation.CreateEx(deviceFeatureClass, CreateDeviceAttributes(arresterAssetGroup, arresterAssetType, arresterPointA, APhase));
                 RowHandle arresterHandleA = new RowHandle(token);
 
                 MapPoint arresterPointB = CreateOffsetMapPoint(clickPoint, 0, 3 * YOffset);
-                token = createOperation.CreateEx(arresterLayer, CreateDeviceAttributes(arresterAssetGroup, arresterAssetType, arresterPointB, BPhase));
+                token = createOperation.CreateEx(deviceFeatureClass, CreateDeviceAttributes(arresterAssetGroup, arresterAssetType, arresterPointB, BPhase));
                 RowHandle arresterHandleB = new RowHandle(token);
 
                 MapPoint arresterPointC = CreateOffsetMapPoint(clickPoint, XOffset, 3 * YOffset);
-                token = createOperation.CreateEx(arresterLayer, CreateDeviceAttributes(arresterAssetGroup, arresterAssetType, arresterPointC, CPhase));
+                token = createOperation.CreateEx(deviceFeatureClass, CreateDeviceAttributes(arresterAssetGroup, arresterAssetType, arresterPointC, CPhase));
                 RowHandle arresterHandleC = new RowHandle(token);
 
                 // Create containment associations between the bank and the arresters
-                containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, arresterHandleA, false);
+                containmentAssociationDescription = new AssociationDescription(AssociationType.Containment, transformerBankHandle, arresterHandleA, false);
                 createOperation.Create(containmentAssociationDescription);
 
-                containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, arresterHandleB, false);
+                containmentAssociationDescription = new AssociationDescription(AssociationType.Containment, transformerBankHandle, arresterHandleB, false);
                 createOperation.Create(containmentAssociationDescription);
 
-                containmentAssociationDescription = new ContainmentAssociationDescription(transformerBankHandle, arresterHandleC, false);
+                containmentAssociationDescription = new AssociationDescription(AssociationType.Containment, transformerBankHandle, arresterHandleC, false);
                 createOperation.Create(containmentAssociationDescription);
 
                 // Create connectivity associations between the fuses and the arresters (connect the A-phase fuse the A-phase arrester, and so on)
-                connectivityAssociationDescription = new ConnectivityAssociationDescription(fuseHandleA, arresterHandleA);
+                connectivityAssociationDescription = new AssociationDescription(AssociationType.JunctionJunctionConnectivity, fuseHandleA, arresterHandleA);
                 createOperation.Create(connectivityAssociationDescription);
 
-                connectivityAssociationDescription = new ConnectivityAssociationDescription(fuseHandleB, arresterHandleB);
+                connectivityAssociationDescription = new AssociationDescription(AssociationType.JunctionJunctionConnectivity, fuseHandleB, arresterHandleB);
                 createOperation.Create(connectivityAssociationDescription);
 
-                connectivityAssociationDescription = new ConnectivityAssociationDescription(fuseHandleC, arresterHandleC);
+                connectivityAssociationDescription = new AssociationDescription(AssociationType.JunctionJunctionConnectivity, fuseHandleC, arresterHandleC);
                 createOperation.Create(connectivityAssociationDescription);
 
                 // Execute the edit operation, which creates all of the rows and associations
@@ -282,40 +282,6 @@ namespace CreateTransformerBank
     {
       if (MapView.Active == null) return null;
       return MapView.Active.Map;
-    }
-
-
-    // Get the layer to create our feature on
-    // It looks for either:
-    //    - A feature layer for the given feature class
-    //    - a subtype group layer for the given feature class, returning the feature layer child that matches the provided subtype
-    private Layer GetLayerForEdit(Map map, string featureClassName, string subtypeName)
-    {
-      foreach (Layer layer in map.GetLayersAsFlattenedList())
-      {
-        if (layer is SubtypeGroupLayer)
-        {
-          if (layer.Name == featureClassName)
-          {
-            CompositeLayer compositeLayer = layer as SubtypeGroupLayer;
-            foreach (Layer subtypeLayer in compositeLayer.Layers)
-            {
-              if (subtypeLayer.Name == subtypeName)
-              {
-                return subtypeLayer;
-              }
-            }
-          }
-        }
-        else if (layer is FeatureLayer)
-        {
-          if (layer.Name == featureClassName)
-          {
-            return layer;
-          }
-        }
-      }
-      return null;
     }
 
     // CreateOffsetMapPoint - creates a new MapPoint offset from a given base point.

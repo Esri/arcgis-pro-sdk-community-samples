@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,7 +22,7 @@
     <Name>InsertIntoContextMenu</Name>
     <Description>InsertIntoContextMenu description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>6/12/2015 2:53:47 PM, 2015</Date>
     <Subject>Framework</Subject>
@@ -30,23 +30,23 @@
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>
   <modules>
-    <insertModule id="InsertIntoContextMenu_Module" className="Module1" autoLoad="false" caption="Module1">      
+    <insertModule id="InsertIntoContextMenu_Module" className="Module1" autoLoad="false" caption="Module1">
       <controls>
         <!-- add your controls here -->
         <button id="InsertIntoContextMenu_LayerViewerButton" caption="Layer Viewer" className="LayerViewerButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" condition="esri_mapping_singleLayerSelectedCondition" keytip="Z0">
-            <tooltip heading="View Layer Definition">
-                <disabledText />
-            </tooltip>
+          <tooltip heading="View Layer Definition">
+            <disabledText />
+          </tooltip>
         </button>
       </controls>
     </insertModule>
-      <!-- Update the mapping module. Insert our custom button into the layers existing context menu. -->
-      <updateModule refID="esri_mapping">
-          <menus>
-              <updateMenu refID="esri_mapping_layerContextMenu">
-                  <insertButton refID="InsertIntoContextMenu_LayerViewerButton" separator="true" placeWith="esri_mapping_selectedLayerPropertiesButton" />
-              </updateMenu>
-          </menus>
-      </updateModule>
+    <!-- Update the mapping module. Insert our custom button into the layers existing context menu. -->
+    <updateModule refID="esri_mapping">
+      <menus>
+        <updateMenu refID="esri_mapping_layerContextMenu">
+          <insertButton refID="InsertIntoContextMenu_LayerViewerButton" separator="true" placeWith="esri_mapping_selectedLayerPropertiesButton" />
+        </updateMenu>
+      </menus>
+    </updateModule>
   </modules>
 </ArcGIS>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+   Copyright 2020 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="DemoUseSelection.dll" defaultNamespace="DemoUseSelection" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{8f8df5e0-b1b7-404e-b4a0-6567ec27cdef}" version="1.0" desktopVersion="2.6">
+    <Name>DemoUseSelection</Name>
+    <Description>DemoUseSelection description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>6/2/2020 9:37:23 AM, 2020</Date>
+    <Subject>Editing</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <conditions>
+    <insertCondition id="demo_useselection_start_editing_needed">
+      <state id="esri_editing_editingNotAvailable" />
+    </insertCondition>
+  </conditions>
+  <modules>
+    <insertModule id="DemoUseSelection_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="DemoUseSelection_Tab1" caption="Use SEL" keytip="TB">
+          <group refID="DemoUseSelection_Group1" />
+          <group refID="DemoUseSelection_Group2" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="DemoUseSelection_Group1" caption="Group 1" appearsOnAddInTab="false" keytip="G0">
+          <!-- host controls within groups -->
+          <button refID="DemoUseSelection_Ribbon_EnableEditing" size="large" />
+          <button refID="DemoUseSelection_Ribbon_DisableEditing" size="large" />
+          <button refID="esri_editing_ToggleEditingBtn" />
+          <!-- or uncomment to use the built in toggle editing button
+					
+					-->
+        </group>
+        <group id="DemoUseSelection_Group2" caption="Edit Tools" appearsOnAddInTab="false" keytip="G1">
+          <!-- host controls within groups -->
+          <tool refID="DemoUseSelection_Ribbon_DifferenceTool_v1" size="large" />
+          <tool refID="DemoUseSelection_Ribbon_DifferenceTool_v2" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <tool id="DemoUseSelection_Ribbon_DifferenceTool_v1" caption="DifferenceTool 1" className="DemoUseSelection.Ribbon.DifferenceTool_v1" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/MarsCat16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/MarsCat32.png" condition="esri_editing_EditingMapCondition" keytip="T0">
+          <tooltip heading="Difference Tool v1">
+						Illustrates UseSelection = true + built-in 'Shift' key behavior to toggle-on select mode.<disabledText /></tooltip>
+        </tool>
+        <tool id="DemoUseSelection_Ribbon_DifferenceTool_v2" caption="DifferenceTool 2" className="DemoUseSelection.Ribbon.DifferenceTool_v2" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/BexDog16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/BexDog32.png" condition="esri_editing_EditingMapCondition" keytip="T1">
+          <tooltip heading="Difference Tool v2">
+						Illustrates UseSelection = true + "custom" behavior using 'W' key to toggle-on select mode via ActivateSelectAsync.<disabledText /></tooltip>
+        </tool>
+        <button id="DemoUseSelection_Ribbon_EnableEditing" caption="Enable Editing" className="DemoUseSelection.Ribbon.EnableEditing" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Rabbit16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Rabbit32.png" condition="demo_useselection_start_editing_needed" keytip="B0">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="DemoUseSelection_Ribbon_DisableEditing" caption="Disable Editing" className="DemoUseSelection.Ribbon.DisableEditing" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Bessy16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Bessy32.png" condition="esri_editing_EditingPossibleCondition" keytip="B1">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

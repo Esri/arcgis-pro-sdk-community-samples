@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 //Copyright 2019 Esri
 
@@ -19,7 +19,7 @@
     <Name>CallScriptFromNet</Name>
     <Description>Calls a Python script from .Net application.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>6/29/2015 2:04:46 PM, 2015</Date>
     <Subject>Geoprocessing</Subject>

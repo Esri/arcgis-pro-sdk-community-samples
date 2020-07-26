@@ -83,7 +83,7 @@ namespace OpenItemDialogBrowseFilter
             bf.Name = "\"customItem\" files";
             //Add typeID for Filters_ProGPXItem custom item
             bf.AddCanBeTypeId("Filters_ProGPXItem");
-            //Does not allow browising into files
+            //Does not allow browsing into files
             bf.AddDontBrowseIntoFlag(BrowseProjectFilter.FilterFlag.DontBrowseFiles);
             //Display only folders and GDB in the browse dialog
             bf.Includes.Add("FolderConnection");

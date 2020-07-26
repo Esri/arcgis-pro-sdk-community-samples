@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+//   Copyright 2019 Esri
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       http://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License. 
+-->
+<ArcGIS defaultAssembly="GeometryControl.dll" defaultNamespace="GeometryControl" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{448525a2-1f86-4436-b550-c1eacdc502dd}" version="1.0" desktopVersion="2.6.23123">
+    <Name>GeometryControl</Name>
+    <Description>Demonstrates the usage of the GeometryControl for viewing geometry vertices or sketch vertices.</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>4/2019</Date>
+    <Subject>Editing</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="GeometryControl_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="GeometryControl_Tab1" caption="New Tab">
+          <group refID="GeometryControl_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="GeometryControl_Group1" caption="Group 1" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="GeometryControl_GeometryViewDockpane_ShowButton" size="large" />
+          <tool refID="GeometryControl_ModifyToolWithSketchProperties" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <tool id="GeometryControl_ModifyToolWithSketchProperties" caption="Sketch Vertices" className="ModifyToolWithSketchProperties" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Sketch Vertices">Show sketch vertices<disabledText /></tooltip>
+        </tool>
+        <button id="GeometryControl_GeometryViewDockpane_ShowButton" caption="Show GeometryView Dockpane" className="GeometryViewDockpane_ShowButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+          <tooltip heading="Show GeometryView Dockpane">Show GeometryView Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="GeometryControl_GeometryViewDockpane" caption="GeometryViewDockpane" className="GeometryViewDockpaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="GeometryViewDockpaneView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+  <categories>
+    <updateCategory refID="esri_embeddableControls">
+      <insertComponent id="GeometryControl_SketchPropertiesView" className="SketchPropertiesViewModel">
+        <content className="SketchPropertiesView" />
+      </insertComponent>
+    </updateCategory>
+  </categories>
+</ArcGIS>

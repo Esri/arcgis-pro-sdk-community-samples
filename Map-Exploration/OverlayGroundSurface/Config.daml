@@ -1,12 +1,25 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ArcGIS defaultAssembly="OverlayGroundSurface.dll"
-        defaultNamespace="OverlayGroundSurface"
-        xmlns="http://schemas.esri.com/DADF/Registry"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
 
+   Copyright 2020 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="OverlayGroundSurface.dll" defaultNamespace="OverlayGroundSurface" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{710c7eaf-fb51-4d32-8c89-5acdf7dede15}" version="1.0" desktopVersion="2.5.22081">
-    <Name>OverlayGroundSurface</Name>   
+    <Name>OverlayGroundSurface</Name>
     <Description>OverlayGroundSurface description</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
@@ -17,10 +30,25 @@
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>
   <conditions>
-    <insertCondition id="has_polygon_condition" caption="Plygon is ready for sampling">
+    <insertCondition id="has_polygon_condition" caption="Polygon is ready for sampling">
       <and>
         <state id="esri_mapping_mapPane" />
         <state id="has_polygon_state" />
+      </and>
+    </insertCondition>
+    <insertCondition id="has_geometry_condition" caption="Geometry is ready for sampling">
+      <and>
+        <state id="esri_mapping_mapPane" />
+        <state id="has_geometry_state" />
+      </and>
+    </insertCondition>
+    <insertCondition id="has_polygon_or_geometry_condition" caption="Polygon or Geometry is ready for sampling">
+      <and>
+        <state id="esri_mapping_mapPane" />
+        <or>
+          <state id="has_polygon_state" />
+          <state id="has_geometry_state" />
+        </or>
       </and>
     </insertCondition>
   </conditions>
@@ -43,94 +71,50 @@
           <comboBox refID="OverlayGroundSurface_ComboElevation" />
           <button refID="OverlayGroundSurface_ClearGraphics" size="large" />
           <button refID="OverlayGroundSurface_ShowPoints" size="large" />
+          <button refID="OverlayGroundSurface_ImportGeometry" size="large" />
+          <button refID="OverlayGroundSurface_ExportGeometry" size="large" />
         </group>
         <group id="OverlayGroundSurface_Group2" caption="Polygon 2 Graphic" keytip="G1">
-          <button refID="OverlayGroundSurface_MakeManyPolygons" size="large" />
-          <button refID="OverlayGroundSurface_MakeMultiPartPolygon" size="large" />
-          <button refID="OverlayGroundSurface_MakeMultiPatch" size="large" />
-          <button refID="OverlayGroundSurface_MakeMultiPatchRing" size="large" />
+          <button refID="OverlayGroundSurface_RenderAsManyPolygons" size="large" />
+          <button refID="OverlayGroundSurface_RenderAsMultiPartPolygon" size="large" />
+          <button refID="OverlayGroundSurface_RenderAsMultiPatch" size="large" />
+          <button refID="OverlayGroundSurface_RenderAsMultiPatchRing" size="large" />
         </group>
       </groups>
       <controls>
         <!-- add your controls here -->
-        <tool id="OverlayGroundSurface_CreatePolygonTool" caption="Create 3D Polygon Tool"
-              className="CreatePolygonTool" loadOnClick="true" keytip="T1"
-              smallImage="Images/3DPolygon16.png"
-              largeImage="Images/3DPolygon32.png" condition="esri_editing_3DMapCondition">
-          <tooltip heading="Create Polygon">
-            Create a polygon that can then be used for other operations<disabledText />
-          </tooltip>
+        <tool id="OverlayGroundSurface_CreatePolygonTool" caption="Create 3D Polygon Tool" className="CreatePolygonTool" loadOnClick="true" keytip="T1" smallImage="Images/3DPolygon16.png" largeImage="Images/3DPolygon32.png" condition="esri_editing_3DMapCondition">
+          <tooltip heading="Create Polygon">Create a polygon that can then be used for other operations<disabledText /></tooltip>
         </tool>
-        <comboBox id="OverlayGroundSurface_ComboResolution" caption="Resolution" keytip="C0"
-                  className="ComboResolution" itemWidth="100"
-                  extendedCaption="Resolution used to create multiparts (higher = more parts)"
-                  isEditable="false" isReadOnly="true" resizable="true">
-          <tooltip heading="Resolution for Multi Parts">
-            Resolution used to create multiparts (higher = more parts)<disabledText />
-          </tooltip>
+        <comboBox id="OverlayGroundSurface_ComboResolution" caption="Resolution" keytip="C0" className="ComboResolution" itemWidth="100" extendedCaption="Resolution used to create multiparts (higher = more parts)" isEditable="false" isReadOnly="true" resizable="true">
+          <tooltip heading="Resolution for Multi Parts">Resolution used to create multiparts (higher = more parts)<disabledText /></tooltip>
         </comboBox>
-        <comboBox id="OverlayGroundSurface_ComboElevation" caption="Elevation" keytip="C1"
-                  className="ComboElevation" itemWidth="100"
-                  extendedCaption="Extra elevation for 3D rendering" isEditable="false"
-                  isReadOnly="true" resizable="true">
-          <tooltip heading="Elevation">
-            Extra Elevation for 3D graphics<disabledText />
-          </tooltip>
+        <comboBox id="OverlayGroundSurface_ComboElevation" caption="Elevation" keytip="C1" className="ComboElevation" itemWidth="100" extendedCaption="Extra elevation for 3D rendering" isEditable="false" isReadOnly="true" resizable="true">
+          <tooltip heading="Elevation">Extra Elevation for 3D graphics<disabledText /></tooltip>
         </comboBox>
-        <button id="OverlayGroundSurface_ClearGraphics" caption="Clear Graphics"
-                className="ClearGraphics" loadOnClick="true" keytip="B9"
-                condition="has_polygon_condition"
-                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png"
-                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed32.png">
-          <tooltip heading="Fishnet Polygons">
-            Take the polygon and split the polygon into many pieces (like a fishnet)<disabledText />
-          </tooltip>
+        <button id="OverlayGroundSurface_ClearGraphics" caption="Clear Graphics" className="ClearGraphics" loadOnClick="true" keytip="B9" condition="has_polygon_condition" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed32.png">
+          <tooltip heading="Fishnet Polygons">Take the polygon and split the polygon into many pieces (like a fishnet)<disabledText /></tooltip>
         </button>
-        <button id="OverlayGroundSurface_MakeManyPolygons" caption="Make Many Polygons"
-                className="MakeManyPolygons" loadOnClick="true" keytip="B0"
-                condition="has_polygon_condition"
-                smallImage="Images/ManyPolys16.png"
-                largeImage="Images/ManyPolys32.png">
-          <tooltip heading="Fishnet Multipath Feature">
-            Take the polygon and split the polygon into many pieces (like a fishnet) to create a single multipatch geometry feature<disabledText />
-          </tooltip>
+        <button id="OverlayGroundSurface_RenderAsManyPolygons" caption="Render as Many Polygons" className="RenderAsManyPolygons" loadOnClick="true" keytip="B0" condition="has_polygon_or_geometry_condition" smallImage="Images/ManyPolys16.png" largeImage="Images/ManyPolys32.png">
+          <tooltip heading="Fishnet Multipath Feature">Take the polygon and split the polygon into many pieces (like a fishnet) to create a single multipatch geometry feature<disabledText /></tooltip>
         </button>
-        <button id="OverlayGroundSurface_MakeMultiPartPolygon" caption="Make MultiPart Polygon"
-                className="MakeMultiPartPolygon" loadOnClick="true" keytip="B1"
-                condition="has_polygon_condition"
-                smallImage="Images/MultiPartPoly16.png"
-                largeImage="Images/MultiPartPoly32.png">
-          <tooltip heading="Fishnet Polygon">
-            Take the polygon and split the polygon into many pieces (like a fishnet) to create a single multi part polygon<disabledText />
-          </tooltip>
+        <button id="OverlayGroundSurface_RenderAsMultiPartPolygon" caption="Render as MultiPart Polygon" className="RenderAsMultiPartPolygon" loadOnClick="true" keytip="B1" condition="has_polygon_or_geometry_condition" smallImage="Images/MultiPartPoly16.png" largeImage="Images/MultiPartPoly32.png">
+          <tooltip heading="Fishnet Polygon">Take the polygon and split the polygon into many pieces (like a fishnet) to create a single multi part polygon<disabledText /></tooltip>
         </button>
-        <button id="OverlayGroundSurface_MakeMultiPatch" caption="Make Triangle MultiPatch"
-                className="MakeMultiPatch" loadOnClick="true" keytip="B2"
-                condition="has_polygon_condition"
-                smallImage="Images/MultiPatch16.png"
-                largeImage="Images/MultiPatch32.png">
-          <tooltip heading="Fishnet MultiPatch">
-            Take the polygon and split the polygon into many pieces (like a fishnet) to create a single multipatch geometry<disabledText />
-          </tooltip>
+        <button id="OverlayGroundSurface_RenderAsMultiPatch" caption="Render as Triangle MultiPatch" className="RenderAsMultiPatch" loadOnClick="true" keytip="B2" condition="has_polygon_or_geometry_condition" smallImage="Images/MultiPatch16.png" largeImage="Images/MultiPatch32.png">
+          <tooltip heading="Fishnet MultiPatch">Take the polygon and split the polygon into many pieces (like a fishnet) to create a single multipatch geometry<disabledText /></tooltip>
         </button>
-        <button id="OverlayGroundSurface_MakeMultiPatchRing" caption="Make Ring MultiPatch"
-                className="MakeMultiPatchRing" loadOnClick="true" keytip="B6"
-                condition="has_polygon_condition"
-                smallImage="Images/MultiPatchRing16.png"
-                largeImage="Images/MultiPatchRing32.png">
-          <tooltip heading="Fishnet MultiPatch">
-            Take the polygon and split the polygon into many pieces (like a fishnet) to create a single multipatch geometry<disabledText />
-          </tooltip>
+        <button id="OverlayGroundSurface_RenderAsMultiPatchRing" caption="Render as Ring MultiPatch" className="RenderAsMultiPatchRing" loadOnClick="true" keytip="B3" condition="has_polygon_or_geometry_condition" smallImage="Images/MultiPatchRing16.png" largeImage="Images/MultiPatchRing32.png">
+          <tooltip heading="Fishnet MultiPatch">Take the polygon and split the polygon into many pieces (like a fishnet) to create a single multipatch geometry<disabledText /></tooltip>
         </button>
-        <button id="OverlayGroundSurface_ShowPoints" caption="Show Vertices"
-                className="ShowPoints"
-                loadOnClick="true" keytip="B5"
-                condition="has_polygon_condition"
-                smallImage="Images/3DPoint16.png"
-                largeImage="Images/3DPoint32.png">
-          <tooltip heading="Show Points">
-            Displays the points for all polygon vertices: toggle on/off<disabledText />
-          </tooltip>
+        <button id="OverlayGroundSurface_ShowPoints" caption="Show Vertices" className="ShowPoints" loadOnClick="true" keytip="B4" condition="has_polygon_or_geometry_condition" smallImage="Images/3DPoint16.png" largeImage="Images/3DPoint32.png">
+          <tooltip heading="Show Points">Displays the points for all polygon vertices: toggle on/off<disabledText /></tooltip>
+        </button>
+        <button id="OverlayGroundSurface_ImportGeometry" caption="Import Geometry" className="ImportGeometries" loadOnClick="true" keytip="B5" smallImage="Images/3DPolyImport16.png" largeImage="Images/3DPolyImport32.png">
+          <tooltip heading="Import Geometries">Import Geometry which was exported earlier<disabledText /></tooltip>
+        </button>
+        <button id="OverlayGroundSurface_ExportGeometry" caption="Export Geometry" className="ExportGeometries" loadOnClick="true" keytip="B6" condition="has_geometry_condition" smallImage="Images/3DPolyExport16.png" largeImage="Images/3DPolyExport32.png">
+          <tooltip heading="Export Geometries">Export Geometry which was just rendered<disabledText /></tooltip>
         </button>
       </controls>
     </insertModule>

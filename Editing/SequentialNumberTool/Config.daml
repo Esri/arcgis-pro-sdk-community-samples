@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 //   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,15 +28,12 @@
   <modules>
     <insertModule id="SeqNum_Module" className="Module1" autoLoad="true" caption="Module1">
       <!-- uncomment to have the control hosted on a separate tab-->
-      <tabs>
-      </tabs>
-      <groups>
-      </groups>
+      <tabs></tabs>
+      <groups></groups>
       <controls>
         <!-- add your controls here -->
-        <tool id="SeqNum_SeqNumTool" caption="Sequential Numbering" className="SeqNumTool" loadOnClick="true" 
-              smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/PaperClip16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/PaperClip32.png" condition="esri_mapping_mapPane" categoryRefID="esri_editing_CommandList">
-          <content L_group="Sample Tools" gallery2d="false" gallery3d="false"/>
+        <tool id="SeqNum_SeqNumTool" caption="Sequential Numbering" className="SeqNumTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/PaperClip16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/PaperClip32.png" condition="esri_mapping_mapPane" categoryRefID="esri_editing_CommandList">
+          <content L_group="Sample Tools" gallery2d="false" gallery3d="false" />
           <tooltip heading="Sequential Numbering">Sequentially number points, lines or polygons along a sketch.<disabledText /></tooltip>
         </tool>
       </controls>

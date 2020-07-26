@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -38,59 +38,47 @@
     <insertModule id="ConfigureGallery_Module" className="Module1" autoLoad="false" caption="Module1">
       <controls>
         <!-- add your controls here -->
-        <button id="ConfigureGallery_Buttons_AcmeCommand1" caption="Command 1" 
-                categoryRefID="AcmeCustom_AnalysisTools" 
-                className="ConfigureGallery.Buttons.AcmeCommand1" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/MarsCat32.png" keytip="a1">
+        <button id="ConfigureGallery_Buttons_AcmeCommand1" caption="Command 1" categoryRefID="AcmeCustom_AnalysisTools" className="ConfigureGallery.Buttons.AcmeCommand1" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/MarsCat32.png" keytip="a1">
           <tooltip heading="Tooltip Heading">
-            Command 1<disabledText />
-          </tooltip>
+            Command 1<disabledText /></tooltip>
           <content version="1.0" group="Group A" />
         </button>
-        <button id="ConfigureGallery_Buttons_AcmeCommand2" caption="Command 2"
-                categoryRefID="AcmeCustom_AnalysisTools"
-                className="ConfigureGallery.Buttons.AcmeCommand2" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/BexDog32.png" keytip="a2">
+        <button id="ConfigureGallery_Buttons_AcmeCommand2" caption="Command 2" categoryRefID="AcmeCustom_AnalysisTools" className="ConfigureGallery.Buttons.AcmeCommand2" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/BexDog32.png" keytip="a2">
           <tooltip heading="Tooltip Heading">
             Command 2<disabledText /></tooltip>
           <content version="1.0" group="Group A" />
         </button>
-        <button id="ConfigureGallery_Buttons_AcmeCommand3" caption="Command 3"
-                categoryRefID="AcmeCustom_AnalysisTools"
-                className="ConfigureGallery.Buttons.AcmeCommand3" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EvilGenius32.png" keytip="a3">
+        <button id="ConfigureGallery_Buttons_AcmeCommand3" caption="Command 3" categoryRefID="AcmeCustom_AnalysisTools" className="ConfigureGallery.Buttons.AcmeCommand3" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EvilGenius32.png" keytip="a3">
           <tooltip heading="Tooltip Heading">
             Command 3<disabledText /></tooltip>
           <content version="1.0" group="Special" />
         </button>
-        <button id="ConfigureGallery_Buttons_AcmeCommand4" caption="Command 4" 
-                className="ConfigureGallery.Buttons.AcmeCommand4" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Rabbit32.png" keytip="a4">
+        <button id="ConfigureGallery_Buttons_AcmeCommand4" caption="Command 4" className="ConfigureGallery.Buttons.AcmeCommand4" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Rabbit32.png" keytip="a4">
           <tooltip heading="Tooltip Heading">
             Command 4<disabledText /></tooltip>
           <content version="1.0" group="Special" />
         </button>
-        <button id="ConfigureGallery_Buttons_AcmeCommand5" caption="Command 5" 
-                className="ConfigureGallery.Buttons.AcmeCommand5" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Bessy32.png" keytip="a5">
+        <button id="ConfigureGallery_Buttons_AcmeCommand5" caption="Command 5" className="ConfigureGallery.Buttons.AcmeCommand5" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Bessy32.png" keytip="a5">
           <tooltip heading="Tooltip Heading">
             Command 5<disabledText /></tooltip>
           <content version="1.0" group="Group B" />
         </button>
-        <button id="ConfigureGallery_Buttons_AcmeCommand6" caption="Command 6" 
-                categoryRefID="AcmeCustom_AnalysisTools"
-                className="ConfigureGallery.Buttons.AcmeCommand6" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Panda32.png" keytip="a6">
+        <button id="ConfigureGallery_Buttons_AcmeCommand6" caption="Command 6" categoryRefID="AcmeCustom_AnalysisTools" className="ConfigureGallery.Buttons.AcmeCommand6" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Panda32.png" keytip="a6">
           <tooltip heading="Tooltip Heading">
             Command 6<disabledText /></tooltip>
-          <content version="1.0"  />
+          <content version="1.0" />
         </button>
         <tool id="ConfigureGallery_ConstructionTool1" categoryRefID="esri_editing_construction_point" caption="Tool 1" className="ConstructionTool1" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" keytip="at1">
           <!--note: use esri_editing_construction_polyline,  esri_editing_construction_polygon for categoryRefID as needed-->
           <tooltip heading="Tooltip Heading">
-            Tooltip text<disabledText />
-          </tooltip>
+            Tooltip text<disabledText /></tooltip>
         </tool>
       </controls>
       <!-- uncomment to have the control hosted on a separate tab-->
       <tabs>
         <tab id="ConfigureGallery_Tab1" caption="Configure Gallery">
-          <group refID="MyGroup"/>
-          <group refID="ConfigureGallery_Group1"/>
+          <group refID="MyGroup" />
+          <group refID="ConfigureGallery_Group1" />
         </tab>
       </tabs>
       <groups>
@@ -112,5 +100,5 @@
         </gallery>
       </galleries>
     </insertModule>
-  </modules> 
+  </modules>
 </ArcGIS>

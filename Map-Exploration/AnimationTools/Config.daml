@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2018 Esri
@@ -28,17 +28,14 @@
     <Subject>Map Exploration</Subject>
   </AddInInfo>
   <modules>
-
     <updateModule refID="esri_mapping">
-       <tabs>
+      <tabs>
         <updateTab refID="esri_mapping_animationTab">
-          <insertGroup refID="AnimationTools_Group1"  />
-          <insertGroup refID="AnimationTools_Group2"  /> 
+          <insertGroup refID="AnimationTools_Group1" />
+          <insertGroup refID="AnimationTools_Group2" />
         </updateTab>
       </tabs>
-
     </updateModule>
-
     <insertModule id="AnimationTools_Module" className="Module1" autoLoad="false" caption="Animation Tools Sample">
       <groups>
         <group id="AnimationTools_Group1" caption="Vehicle Animation Settings" appearsOnAddInTab="false">
@@ -56,23 +53,19 @@
         <!-- add your controls here -->
         <editBox id="AnimationTools_SpeedEditBox" caption="Speed of vehicle (MPH): " className="SpeedEditBox" sizeString="AAAAAAAAA">
           <tooltip heading="Enter Speed Value">
-            Enter the speed of the vehicle in Miles-Per-Hour which you would like the vehicle to simulate traveling in your animation.<disabledText />
-          </tooltip>
+            Enter the speed of the vehicle in Miles-Per-Hour which you would like the vehicle to simulate traveling in your animation.<disabledText /></tooltip>
         </editBox>
         <comboBox id="AnimationTools_VehicleListComboBox" caption="Choose vehicle:" className="VehicleListComboBox" itemWidth="110" extendedCaption="Extended Caption" isEditable="false" isReadOnly="true" resizable="true" sizeString="AAAAAAAA">
           <tooltip heading="Choose Vehicle for Animation.">
-            Choose the vehicle you wish to track when building your animation. NOTE: This assumes you have previously built the route for this vehicle.<disabledText />
-          </tooltip>
+            Choose the vehicle you wish to track when building your animation. NOTE: This assumes you have previously built the route for this vehicle.<disabledText /></tooltip>
         </comboBox>
         <button id="AnimationTools_SpeedKeyframesButton" caption="Speed Animation" className="SpeedKeyframesButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/AnimImport32.png">
           <tooltip heading="Build Speed Animation">
-            Build an animation which will simulate the specified speed for the vehicle along its route.  NOTE: Speeds under 35 MPH may not show well in exported video. <disabledText />
-          </tooltip>
+            Build an animation which will simulate the specified speed for the vehicle along its route.  NOTE: Speeds under 35 MPH may not show well in exported video. <disabledText /></tooltip>
         </button>
         <button id="AnimationTools_TenSecondKeyframesButton" caption="10-Second Animation" className="TenSecondKeyframesButton" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/AnimBuild32.png">
           <tooltip heading="Build 10-Second Animation">
-            Build a 10-second duration animation which will quickly follow the chosen vehicle along its route.<disabledText />
-          </tooltip>
+            Build a 10-second duration animation which will quickly follow the chosen vehicle along its route.<disabledText /></tooltip>
         </button>
       </controls>
     </insertModule>

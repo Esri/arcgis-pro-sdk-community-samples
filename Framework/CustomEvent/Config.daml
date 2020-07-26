@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -17,13 +17,12 @@
    limitations under the License.
 
 -->
-
 <ArcGIS defaultAssembly="CustomEvent.dll" defaultNamespace="CustomEvent" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{b6ae5439-1951-46db-a856-7b737afe1613}" version="1.0" desktopVersion="2.0">
     <Name>CustomEvent</Name>
     <Description>Provides an example of implementing a custom event</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>1/7/2016 1:11:24 PM, 2016</Date>
     <Subject>Framework</Subject>

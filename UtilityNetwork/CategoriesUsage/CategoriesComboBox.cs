@@ -203,7 +203,7 @@ namespace CategoriesUsage
         }
 
         // Add field for feature class alias
-        IReadOnlyList<string> addFieldParams = Geoprocessing.MakeValueArray(new object[] { categoryReportTableName, "FeatureClassAlias", "TEXT", null, null, 32, "Feature Class", "NULLABLE", "NON_REQUIRED", null });
+        IReadOnlyList<string> addFieldParams = Geoprocessing.MakeValueArray(new object[] { categoryReportTableName, "FeatureClassAlias", "TEXT", null, null, 32, "Table", "NULLABLE", "NON_REQUIRED", null });
         result = await Geoprocessing.ExecuteToolAsync("management.AddField", addFieldParams);
         if (result.IsFailed)
         {
@@ -266,11 +266,11 @@ namespace CategoriesUsage
                   {
 
                     // Our Category is assigned to this AssetType.  Create a row to store in the category report table
-                    using (FeatureClass networkSourceFeatureClass = utilityNetwork.GetTable(networkSource) as FeatureClass)
-                    using (FeatureClassDefinition networkSourceFeatureClassDefinition = networkSourceFeatureClass.GetDefinition())
+                    using (Table networkSourceTable = utilityNetwork.GetTable(networkSource))
+                    using (TableDefinition networkSourceTableDefinition = networkSourceTable.GetDefinition())
                     using (RowBuffer rowBuffer = categoryReportTable.CreateRowBuffer())
                     {
-                      rowBuffer["FeatureClassAlias"] = networkSourceFeatureClassDefinition.GetAliasName();
+                      rowBuffer["FeatureClassAlias"] = networkSourceTableDefinition.GetAliasName();
                       rowBuffer["AssetGroupName"] = assetGroup.Name;
                       rowBuffer["AssetTypeName"] = assetType.Name;
                       categoryReportTable.CreateRow(rowBuffer).Dispose();

@@ -71,10 +71,9 @@ namespace ProSqlExpressReader
 		}
 	}
 
-
 	internal class AddToCurrentMap : Button
 	{
-		protected async override void OnClick()
+		protected override void OnClick()
 		{
 			if (MapView.Active?.Map == null)
 			{
@@ -83,8 +82,12 @@ namespace ProSqlExpressReader
 			}
 			var catalog = Project.GetCatalogPane();
 			var items = catalog.SelectedItems;
-			var ProDataSubItems = items.OfType<ProDataSubItem>();
-			foreach (var item in ProDataSubItems)
+			_ = AddProDataSubItemsAsync(items.OfType<ProDataSubItem>(), MapView.Active.Map);
+		}
+
+		public static async Task AddProDataSubItemsAsync (IEnumerable<ProDataSubItem> proDataSubItems, Map mapToAddTo)
+		{
+			foreach (ProDataSubItem item in proDataSubItems)
 			{
 				try
 				{
@@ -103,10 +106,10 @@ namespace ProSqlExpressReader
 									break;
 								}
 								var sqlPath = parts[0];
-                                var sqlConStr = parts[1];
+								var sqlConStr = parts[1];
 								var dataset = parts[2];
 								var conSql = new PluginDatasourceConnectionPath("ProSqlExpressPluginDatasource",
-																			  new Uri(item.Path.Replace(";", "||"), UriKind.Absolute));
+																				new Uri(item.Path.Replace(";", "||"), UriKind.Absolute));
 								using (var pluginSql = new PluginDatastore(conSql))
 								{
 									foreach (var tn in pluginSql.GetTableNames())
@@ -118,12 +121,12 @@ namespace ProSqlExpressReader
 												if (table is FeatureClass)
 												{
 													//Add as a layer to the active map or scene
-													LayerFactory.Instance.CreateFeatureLayer((FeatureClass)table, MapView.Active.Map);
+													LayerFactory.Instance.CreateFeatureLayer((FeatureClass)table, mapToAddTo);
 												}
 												else
 												{
 													//add as a standalone table
-													StandaloneTableFactory.Instance.CreateStandaloneTable(table, MapView.Active.Map);
+													StandaloneTableFactory.Instance.CreateStandaloneTable(table, mapToAddTo);
 												}
 											}
 										}
@@ -138,39 +141,39 @@ namespace ProSqlExpressReader
 									MessageBox.Show($@"Item path can't be parsed: {item.Path}");
 									break;
 								}
-                                sqlPath = parts[0];
-                                sqlConStr = parts[1];
-                                var tableName = string.Empty;
-                                if (parts.Length == 3) tableName = parts[2];
+								sqlPath = parts[0];
+								sqlConStr = parts[1];
+								var tableName = string.Empty;
+								if (parts.Length == 3) tableName = parts[2];
 
-                                conSql = new PluginDatasourceConnectionPath("ProSqlExpressPluginDatasource",
-																			  new Uri(item.Path.Replace(";", "||"), UriKind.Absolute));
+								conSql = new PluginDatasourceConnectionPath("ProSqlExpressPluginDatasource",
+												new Uri(item.Path.Replace(";", "||"), UriKind.Absolute));
 								using (var pluginSql = new PluginDatastore(conSql))
 								{
-                                    var tableNames = new List<string>();
-                                    if (string.IsNullOrEmpty(tableName))
-                                    {
-                                        tableNames = new List<string>(pluginSql.GetTableNames());
-                                    }
-                                    else tableNames.Add(tableName);
-                                    foreach (var tn in tableNames)
-                                    {
-                                        System.Diagnostics.Debug.Write($"Open table: {tn}\r\n");
-                                        //open the table
-                                        using (var table = pluginSql.OpenTable(tn))
-                                        {
-                                            if (table is FeatureClass)
-                                            {
-                                                //Add as a layer to the active map or scene
-                                                LayerFactory.Instance.CreateFeatureLayer((FeatureClass)table, MapView.Active.Map);
-                                            }
-                                            else
-                                            {
-                                                //add as a standalone table
-                                                StandaloneTableFactory.Instance.CreateStandaloneTable(table, MapView.Active.Map);
-                                            }
-                                        }
-                                    }
+									var tableNames = new List<string>();
+									if (string.IsNullOrEmpty(tableName))
+									{
+										tableNames = new List<string>(pluginSql.GetTableNames());
+									}
+									else tableNames.Add(tableName);
+									foreach (var tn in tableNames)
+									{
+										System.Diagnostics.Debug.Write($"Open table: {tn}\r\n");
+										//open the table
+										using (var table = pluginSql.OpenTable(tn))
+										{
+											if (table is FeatureClass)
+											{
+												//Add as a layer to the active map or scene
+												LayerFactory.Instance.CreateFeatureLayer((FeatureClass)table, mapToAddTo);
+											}
+											else
+											{
+												//add as a standalone table
+												StandaloneTableFactory.Instance.CreateStandaloneTable(table, mapToAddTo);
+											}
+										}
+									}
 								}
 								break;
 						}

@@ -37,17 +37,17 @@ using ArcGIS.Desktop.Mapping;
 
 namespace ChromiumWebBrowserSample
 {    /// <summary>
-	 /// This sample shows how to implement pane that contains a Chromium web browser control
-	 /// </summary>    
-	 /// <remarks>    
-	 /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-	 /// 1. Click Start button to open ArcGIS Pro.
-	 /// 1. ArcGIS Pro will open. 
-	 /// 1. Open any project file. 
-	 /// 1. Click on the Add-in tab on the ribbon and then on the "Open ChromePane" button.  
-	 /// 1. The pane opens showing the https://github.com/esri/arcgis-pro-sdk-community-samples page.  
-	 /// ![UI](Screenshots/Screen1.png)
-	 /// </remarks>
+		 /// This sample shows how to implement pane that contains a Chromium web browser control.  For details on how to utilize the Chromium web browser control in an add-in see here: https://github.com/Esri/arcgis-pro-sdk/wiki/ProConcepts-Framework#chromiumwebbrowser  
+		 /// </summary>    
+		 /// <remarks>    
+		 /// 1. In Visual Studio click the Build menu. Then select Build Solution.
+		 /// 1. Click Start button to open ArcGIS Pro.
+		 /// 1. ArcGIS Pro will open. 
+		 /// 1. Open any project file. 
+		 /// 1. Click on the Add-in tab on the ribbon and then on the "Open ChromePane" button.  
+		 /// 1. The pane opens showing the https://github.com/esri/arcgis-pro-sdk-community-samples page.  
+		 /// ![UI](Screenshots/Screen1.png)
+		 /// </remarks>
 	internal class Module1 : Module
 	{
 		private static Module1 _this = null;

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ArcGIS defaultAssembly="ArcGISOnlineConnect.dll" defaultNamespace="ArcGISOnlineConnect" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <!--//   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,7 @@
     <Name>ArcGISOnlineConnect</Name>
     <Description>ArcGISOnlineConnect description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>5/26/2015 12:13:44 PM, 2015</Date>
     <Subject>Content</Subject>
@@ -42,8 +42,7 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="ArcGISOnlineConnect_AgolDockpane_ShowButton" caption="Show AgolDockpane " className="AgolDockpane_ShowButton" loadOnClick="true" keytip="ZA"
-                smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+        <button id="ArcGISOnlineConnect_AgolDockpane_ShowButton" caption="Show AgolDockpane " className="AgolDockpane_ShowButton" loadOnClick="true" keytip="ZA" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
           <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
         </button>
       </controls>

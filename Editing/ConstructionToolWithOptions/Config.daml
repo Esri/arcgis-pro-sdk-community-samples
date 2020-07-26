@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- 
     Copyright 2019 Esri 
     
@@ -22,7 +22,7 @@
     <Name>ConstructionToolWithOptions</Name>
     <Description>ConstructionToolWithOptions description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>5/29/2017 9:20:51 AM, 2017</Date>
     <Subject>Editing</Subject>
@@ -46,15 +46,15 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <tool id="ConstructionToolWithOptions_BufferedLineTool" categoryRefID="esri_editing_construction_polygon" caption="Buffered Line" className="BufferedLineTool" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" keytip="B1" >
+        <tool id="ConstructionToolWithOptions_BufferedLineTool" categoryRefID="esri_editing_construction_polygon" caption="Buffered Line" className="BufferedLineTool" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" keytip="B1">
           <tooltip heading="Buffered Line">Create a polygon with a fixed buffer.<disabledText /></tooltip>
           <content toolOptionsID="ConstructionToolWithOptions_BufferedLineToolOptions" />
         </tool>
-        <tool id="ConstructionToolWithOptions_CircleTool_polyline" categoryRefID="esri_editing_construction_polyline" caption="Circle Options" className="CircleTool" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="B2" >
+        <tool id="ConstructionToolWithOptions_CircleTool_polyline" categoryRefID="esri_editing_construction_polyline" caption="Circle Options" className="CircleTool" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="B2">
           <tooltip heading="Circle with Options">Create a circle with a fixed radius.<disabledText /></tooltip>
           <content toolOptionsID="ConstructionToolWithOptions_CircleToolOptions" />
         </tool>
-        <tool id="ConstructionToolWithOptions_CircleTool_polygon" categoryRefID="esri_editing_construction_polygon" caption="Circle Options" className="CircleTool" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="B3" >
+        <tool id="ConstructionToolWithOptions_CircleTool_polygon" categoryRefID="esri_editing_construction_polygon" caption="Circle Options" className="CircleTool" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" keytip="B3">
           <tooltip heading="Circle with Options">Create a circle with a fixed radius.<disabledText /></tooltip>
           <content toolOptionsID="ConstructionToolWithOptions_CircleToolOptions" />
         </tool>

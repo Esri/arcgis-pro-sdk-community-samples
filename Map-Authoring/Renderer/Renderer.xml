@@ -4,6 +4,34 @@
         <name>Renderer</name>
     </assembly>
     <members>
+        <member name="M:Renderer.ChartRenderers.PieChartRendererAsync">
+            <summary>
+            Renders a feature layer using Pie chart symbols to represent data
+            </summary>
+            <remarks>
+            ![Pie chart renderer](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/pie-chart.png)
+            </remarks>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:Renderer.ChartRenderers.BarChartRendererAsync">
+            <summary>
+            Renders a feature layer using Bar chart symbols to represent data
+            </summary>
+            <remarks>
+            ![bar chart renderer](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/bar-chart.png)
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Renderer.ChartRenderers.StackedBarChartRendererAsync">
+            <summary>
+            Renders a feature layer using stacked bar chart symbols to represent data
+            </summary>
+            <remarks>
+            ![stacked bar chart renderer](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/stacked-bar-chart.png)
+            </remarks>
+            <returns></returns>
+        </member>
         <member name="M:Renderer.ClassBreakRenderers.CBRendererGraduatedColors(ArcGIS.Desktop.Mapping.FeatureLayer)">
             <summary>
             Renders a feature layer using graduated colors to draw quantities.
@@ -13,7 +41,7 @@
             <returns>
             </returns>
         </member>
-        <member name="M:Renderer.ClassBreakRenderers.CBRendererGraduatedColorsOutline(ArcGIS.Desktop.Mapping.FeatureLayer)">
+        <member name="M:Renderer.ClassBreakRenderers.CBRendererGraduatedColorsOutlineAsync(ArcGIS.Desktop.Mapping.FeatureLayer)">
             <summary>
             Renders a feature layer using graduated colors to draw quantities. The outline width is varied based on attributes.
             ![graduatedColorOutline.png](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/graduatedColorOutline.png "Graduated colors with natural breaks renderer.") 
@@ -69,12 +97,15 @@
                   * Unclassed color gradient to define quantities
               * Proportional Renderer
               * Heat map renderer
+              * Chart renderer
             </summary>
             <remarks>
+            1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Renderers' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Renderers" is available.
             1. In Visual Studio click the Build menu. Then select Build Solution.  
             1. Click Start button to open ArcGIS Pro.
             1. ArcGIS Pro will open. 
-            1. Open any project file that contains points, polygon and line feature layers. 
+            1. Create a new blank Map project. 
+            1. Add the C:\Data\Renderers\USDemographics.lpkx layer file to the map. 
             1. In Add-in tab, click the "Apply Renderer" button.
             1. The first point feature layer in your project's TOC will be rendered with an "Unique Value Renderer".
             To experiment with the various renderers available with this sample, follow the steps below:
@@ -96,7 +127,7 @@
             1. Open any project and test the Apply Renderer button again.
             ![UI](screenshots/Renderers.png)
             #### Attribute Driven Symbology
-            1. Create a new Local Scene. Add the c:\Data\FlightPathPoints.lyrx layer file to the scene.  This layer draws a point geometry rendered with a helicopter symbol.  The data for this layer holds the Tilt angles (X, Y and Z) for the helicopter.
+            1. Create a new Local Scene. Add the C:\Data\Renderers\FlightPathPoints.lyrx layer file to the scene.  This layer draws a point geometry rendered with a helicopter symbol.  The data for this layer holds the Tilt angles (X, Y and Z) for the helicopter.
             1. Use the Navigate button to tilt the view so that you can see the helicopter to display it over the map.
             ![Tilt](screenshots/tilt.png)
             1. Click the AttributeDriverSymbology button on the Add-In tab.
@@ -115,7 +146,7 @@
             </summary>
             <returns>False to prevent Pro from closing, otherwise True</returns>
         </member>
-        <member name="M:Renderer.ProportionalRenderers.ProportionalRenderer(ArcGIS.Desktop.Mapping.FeatureLayer)">
+        <member name="M:Renderer.ProportionalRenderers.ProportionalRendererAsync(ArcGIS.Desktop.Mapping.FeatureLayer)">
             <summary>
             Renders a feature layer using proportional symbols to draw quantities.
             ![Proportional Symbols renderer](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/proportional-renderer.png)
@@ -157,7 +188,7 @@
             <returns>
             </returns>
         </member>
-        <member name="M:Renderer.UniqueValueRenderers.UniqueValueRenderer(ArcGIS.Desktop.Mapping.FeatureLayer)">
+        <member name="M:Renderer.UniqueValueRenderers.UniqueValueRendererAsync(ArcGIS.Desktop.Mapping.FeatureLayer)">
             <summary>
             Renders a feature layer using unique values from one or multiple fields
             </summary>

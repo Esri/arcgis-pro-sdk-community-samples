@@ -134,22 +134,23 @@ namespace ParcelFabricMultistoryTool
                     // apply the spatial filter to the feature layer in question
                     rowCursor = recordsLayer.Search(spatialQueryFilter);
 
-                    Guid guid = new Guid();
-                    long lOID = -1;
-                    string featName = "";
-                    while (rowCursor.MoveNext())
+                    RowHandle rowHandle = null;
+                    var featName = string.Empty;
+                    if (rowCursor.MoveNext())
                     {
-                        var feature = rowCursor.Current as Feature;
-                        guid = feature.GetGlobalID();
-                        lOID = feature.GetObjectID();
-                        featName = Convert.ToString(feature["NAME"]);
+                        var row = rowCursor.Current;
+                        rowHandle = new RowHandle(row);
+                        featName = Convert.ToString(row["NAME"]);
                     }
 
-                    // Reference the parcel record and set it as the active record
-                    var parcelRecord = new ParcelRecord(pfL.Map, featName, guid, lOID);
-                    pfL.SetActiveRecord(parcelRecord);
+                    if (rowHandle != null)
+                    {
+                        // Reference the parcel record and set it as the active record
+                        var parcelRecord = new ParcelRecord(rowHandle.Token);
+                        pfL.SetActiveRecord(parcelRecord);
 
-                    ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Record activated:  " + featName, "Info", System.Windows.MessageBoxButton.OK, MessageBoxImage.Information);
+                        ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Record activated:  " + featName, "Info", System.Windows.MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
                 }
                 catch (Exception exc)
                 {

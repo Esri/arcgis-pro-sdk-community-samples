@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,8 +22,8 @@
     <Name>Labeling</Name>
     <Description>Labeling description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-		<Company>esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>12/8/2017 1:52:26 PM, 2017</Date>
     <Subject>Map Authoring</Subject>
     <!-- Note subject can be one or more of these topics:
@@ -46,7 +46,7 @@
         </group>
       </groups>
       <controls>
-        <!-- add your controls here -->        
+        <!-- add your controls here -->
         <button id="Labeling_LabelGallery_ShowButton" caption="Text Symbols Gallery" className="LabelGallery_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
           <tooltip heading="Text Symbols Gallery">Show Text Symbols Gallery<disabledText /></tooltip>
         </button>

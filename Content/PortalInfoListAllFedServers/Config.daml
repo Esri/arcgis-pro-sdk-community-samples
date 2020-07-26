@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,8 +22,8 @@
     <Name>ListAllFedServers</Name>
     <Description>ListAllFedServers description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-		<Company>esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>1/29/2018 3:51:22 PM, 2018</Date>
     <Subject>Content</Subject>
     <!-- Note subject can be one or more of these topics:
@@ -40,8 +40,7 @@
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="ListAllFedServers_Group1" caption="Sharing team"
-							 appearsOnAddInTab="true" keytip="G1">
+        <group id="ListAllFedServers_Group1" caption="Sharing team" appearsOnAddInTab="true" keytip="G1">
           <!-- host controls within groups -->
           <button refID="ListAllFedServers_Button1" size="large" />
         </group>
@@ -53,8 +52,7 @@
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="PortalInfo_Dockpane" caption="PortalInfo Dockpane" 
-									className="PortalInfoDockpaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="PortalInfo_Dockpane" caption="PortalInfo Dockpane" className="PortalInfoDockpaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="PortalInfoDockpane" />
         </dockPane>
       </dockPanes>

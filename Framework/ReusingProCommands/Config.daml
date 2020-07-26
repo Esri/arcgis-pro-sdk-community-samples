@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -31,7 +31,7 @@
     <insertModule id="ReusingProCommands_Module" className="Module1" autoLoad="false" caption="Module1">
       <tabs>
         <tab id="ReusingProCommands_Tab1" caption="Reuse Pro Cmds" keytip="T1">
-          <group refID="ReusingProCommands_Group1"/>
+          <group refID="ReusingProCommands_Group1" />
         </tab>
       </tabs>
       <groups>
@@ -42,21 +42,15 @@
         </group>
       </groups>
       <controls>
-        <button id="ReusingProCommands_CreateBookmarkButton" caption="Create Bookmark" className="CreateBookmarkButton" loadOnClick="true" keytip="B1"
-                smallImage="Images\GenericButtonBlue16.png" largeImage="Images\BookmarkCreate32.png">
+        <button id="ReusingProCommands_CreateBookmarkButton" caption="Create Bookmark" className="CreateBookmarkButton" loadOnClick="true" keytip="B1" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\BookmarkCreate32.png">
           <tooltip heading="Tooltip Heading">Create Bookmark with Code-Behind reusing Pro Command<disabledText /></tooltip>
         </button>
-        <button id="ReusingProCommands_ReuseDockPane_ShowButton" 
-                caption="Show Reuse Cmds DockPane" 
-                className="ReuseDockPane_ShowButton" loadOnClick="true" keytip="B2"
-                smallImage="Images\GenericButtonPurple16.png" largeImage="Images\MapTiled32.png">
+        <button id="ReusingProCommands_ReuseDockPane_ShowButton" caption="Show Reuse Cmds DockPane" className="ReuseDockPane_ShowButton" loadOnClick="true" keytip="B2" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\MapTiled32.png">
           <tooltip heading="Show Dockpane">Show Reuse Pro Commands Dockpane<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="ReusingProCommands_ReuseDockPane" caption="Reuse Pro Cmds" 
-                  className="ReuseDockPaneViewModel" dock="group" 
-                  dockWith="esri_core_contentsDockPane">
+        <dockPane id="ReusingProCommands_ReuseDockPane" caption="Reuse Pro Cmds" className="ReuseDockPaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="ReuseDockPaneView" />
         </dockPane>
       </dockPanes>

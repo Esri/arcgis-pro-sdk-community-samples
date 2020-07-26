@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--//Copyright 2019 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,7 @@
     <Name>DockpaneSimple</Name>
     <Description>DockpaneSimple description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>2/18/2015 8:10:55 AM, 2015</Date>
     <Subject>Framework</Subject>

@@ -16,7 +16,7 @@
             </summary>
             <remarks>
             A mesh symbol is a CIMMeshSymbol object.  Define an array of CIMSymbolLayers which contains a CIMMaterialSymbol layer with the specified properties such as Color, etc.
-            Assign this array of CIMSymbolLayers to the CIMMeshSybol.
+            Assign this array of CIMSymbolLayers to the CIMMeshSymbol.
             ![MeshSymbolOrange](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/mesh-material-orange.png)
             </remarks>
             <returns></returns>

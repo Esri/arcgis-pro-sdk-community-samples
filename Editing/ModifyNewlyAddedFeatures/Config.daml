@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -34,7 +34,7 @@
       <!-- uncomment to have the control hosted on a separate tab-->
       <tabs>
         <tab id="ModifyNewlyAddedFeatures_Tab1" caption="Post Edit Mods" keytip="T0">
-          <group refID="ModifyNewlyAddedFeatures_Group1"/>
+          <group refID="ModifyNewlyAddedFeatures_Group1" />
         </tab>
       </tabs>
       <groups>
@@ -43,19 +43,16 @@
         <group id="ModifyNewlyAddedFeatures_Group1" caption="Group 1" appearsOnAddInTab="false" keytip="G0">
           <!-- host controls within groups -->
           <button refID="ModifyNewlyAddedFeatures_ModifyMonitor_ShowButton" size="large" />
-          <button refID="esri_editing_ShowCreateFeaturesBtn"/>
-          <button refID="esri_editing_ShowEditFeaturesBtn"/>
-          <button refID="esri_mapping_exploreTool"/>
+          <button refID="esri_editing_ShowCreateFeaturesBtn" />
+          <button refID="esri_editing_ShowEditFeaturesBtn" />
+          <button refID="esri_mapping_exploreTool" />
         </group>
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="ModifyNewlyAddedFeatures_ModifyMonitor_ShowButton" caption="Show Modify Monitor"
-                className="ModifyMonitor_ShowButton" loadOnClick="true" keytip="B1"
-                smallImage="Images\KauaiOld16.png" largeImage="Images\KauaiOld32.png">
+        <button id="ModifyNewlyAddedFeatures_ModifyMonitor_ShowButton" caption="Show Modify Monitor" className="ModifyMonitor_ShowButton" loadOnClick="true" keytip="B1" smallImage="Images\KauaiOld16.png" largeImage="Images\KauaiOld32.png">
           <tooltip heading="Show Modify Feature Row Monitor Dockpane">
-            Show Dockpane<disabledText />
-          </tooltip>
+            Show Dockpane<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>

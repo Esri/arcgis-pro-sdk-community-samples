@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -24,7 +24,7 @@
     sophisticated tool development. It has all the basic features such as key handling, simple mouse click
   implementation, and an associated embeddable control that can be moved around the Map View.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>2/11/2016 2:47:23 PM, 2016</Date>
     <Subject>Map Exploration</Subject>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--//   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
     <Name>UpdateAttributesWithSketch</Name>
     <Description>Creates a sketch tool that updates the attributes of features that intersect the sketch.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>5/18/2015</Date>
     <Subject>Editing</Subject>
@@ -41,8 +41,7 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <tool id="UpdateAttributesWithSketch_AttributeWithSketch" caption="AttributeWithSketch " className="AttributeWithSketch" loadOnClick="true"  keytip="ZA"
-              smallImage="Images\EditingSketchTool16.png" largeImage="Images\EditingSketchTool32.png" condition="esri_mapping_mapPane">
+        <tool id="UpdateAttributesWithSketch_AttributeWithSketch" caption="AttributeWithSketch " className="AttributeWithSketch" loadOnClick="true" keytip="ZA" smallImage="Images\EditingSketchTool16.png" largeImage="Images\EditingSketchTool32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Attribute with sketch">Update attribute values for features that intersect the sketch.<disabledText /></tooltip>
         </tool>
       </controls>

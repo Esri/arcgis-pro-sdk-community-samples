@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2020 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="DisplayFilters.dll" defaultNamespace="DisplayFilters" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{219ba09d-ca22-4ba9-b8bf-ae490499a656}" version="1.0" desktopVersion="2.6.24769">
+    <Name>DisplayFilters</Name>
+    <Description>DisplayFilters description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>uma2526</Author>
+    <Company>Acme</Company>
+    <Date>7/6/2020 11:15:36 AM, 2020</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="DisplayFilters_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="DisplayFilters_Tab1" caption="New Tab">
+          <group refID="DisplayFilters_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="DisplayFilters_Group1" caption="Display Filters" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="DisplayFilters_ApplyDisplayFiltersLayerDoc" size="large" />
+          <button refID="DisplayFilters_ApplyDisplayFilters" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="DisplayFilters_ApplyDisplayFiltersLayerDoc" caption="Apply DisplayFilters 2" className="ApplyDisplayFiltersLayerDoc" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Apply Display Filters 2">Display Filters are applied to the Hydrology layer by using LayerDocument.<disabledText /></tooltip>
+        </button>
+        <button id="DisplayFilters_ApplyDisplayFilters" caption="Apply DisplayFilters 1" className="ApplyDisplayFilters" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Apply Display Filters 1">
+            Display Filters are applied to the Hydrology layer by using GetDefinition/SetDefinition method pair.<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -17,7 +17,6 @@
    limitations under the License.
 
 -->
-
 <ArcGIS defaultAssembly="WizardSample.dll" defaultNamespace="WizardSample" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{6c2ad456-410f-4fe2-8df3-c9a974ef98c0}" version="1.0" desktopVersion="2.0.8533">
     <Name>WizardSample</Name>
@@ -61,9 +60,7 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="WizardSample_ShowWizard" caption="Show Wizard" className="ShowWizard" 
-                loadOnClick="true" keytip="B1"
-                smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+        <button id="WizardSample_ShowWizard" caption="Show Wizard" className="ShowWizard" loadOnClick="true" keytip="B1" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
       </controls>

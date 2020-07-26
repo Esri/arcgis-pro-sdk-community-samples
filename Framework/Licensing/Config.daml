@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,7 +22,7 @@
     <Name>Acme Licensing</Name>
     <Description>Shows how to use IExtensionConfig to authorize your Add-in via Backstage</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>4/13/2016 2:40:13 PM, 2016</Date>
     <Subject>Framework</Subject>
@@ -49,7 +49,7 @@
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="Licensing_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="G2" >
+        <group id="Licensing_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="G2">
           <!-- host controls within groups -->
           <button refID="Licensing_SelectFeatures" size="large" />
         </group>

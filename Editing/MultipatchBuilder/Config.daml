@@ -1,4 +1,5 @@
-﻿<!--
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
 
    Copyright 2019 Esri
 
@@ -52,24 +53,15 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="MultipatchBuilder_TriangleMultipatch" caption="Create Multipatch Geometry" 
-                className="CreateTriangleMultipatch" loadOnClick="true" keytip="B1" 
-                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/MultipatchTexturedEditing16.png" 
-                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/MultipatchTexturedEditing32.png">
+        <button id="MultipatchBuilder_TriangleMultipatch" caption="Create Multipatch Geometry" className="CreateTriangleMultipatch" loadOnClick="true" keytip="B1" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/MultipatchTexturedEditing16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/MultipatchTexturedEditing32.png">
           <tooltip heading="Create Triangle Multipatch">Create a multipatch feature using the MultipatchBuilderEx object.
           <disabledText /></tooltip>
         </button>
-        <comboBox id="MultipatchBuilder_MakeWalls" caption="Texture:" keytip="C1" 
-                  className="MakeWalls" itemWidth="140" itemHeight="300" 
-                  extendedCaption="Extended Caption" isEditable="false" isReadOnly="false" 
-                  resizable="true" image="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GeodatabaseFeatureClassMultipatch16.png">
+        <comboBox id="MultipatchBuilder_MakeWalls" caption="Texture:" keytip="C1" className="MakeWalls" itemWidth="140" itemHeight="300" extendedCaption="Extended Caption" isEditable="false" isReadOnly="false" resizable="true" image="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GeodatabaseFeatureClassMultipatch16.png">
           <tooltip heading="Tip:">Shows all textures: Use this drop down to select the texture for the building
             <disabledText /></tooltip>
         </comboBox>
-        <button id="MultipatchBuilder_InspectMultiPatch" caption="InspectMultiPatch" 
-                className="InspectMultiPatch" loadOnClick="true" keytip="B1"
-                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingReplaceMultiPatch16.png" 
-                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingReplaceMultiPatch32.png">
+        <button id="MultipatchBuilder_InspectMultiPatch" caption="InspectMultiPatch" className="InspectMultiPatch" loadOnClick="true" keytip="B1" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingReplaceMultiPatch16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingReplaceMultiPatch32.png">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
       </controls>

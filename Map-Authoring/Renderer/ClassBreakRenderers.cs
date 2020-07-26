@@ -63,7 +63,7 @@ namespace Renderer
         /// </summary>
         /// <param name="featureLayer"></param>
         /// <returns></returns>
-        internal static Task CBRendererGraduatedColorsOutline(FeatureLayer featureLayer)
+        internal static Task CBRendererGraduatedColorsOutlineAsync(FeatureLayer featureLayer)
         {
             return QueuedTask.Run(() =>
             {
@@ -216,6 +216,9 @@ namespace Renderer
                     ClassBreakType = ClassBreakType.GraduatedColor,
                     ClassificationMethod = ClassificationMethod.Manual,
                     Field = SDKHelpers.GetNumericField(featureLayer),
+                    //Important to add the Minimum break for your data to be classified correctly.
+                    //This is vital especially if you have data with negative values.
+                    //MinimumBreak = 
                     Breaks = listClassBreaks.ToArray()
                 };
            

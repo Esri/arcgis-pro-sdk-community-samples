@@ -1,7 +1,7 @@
 ## ChromiumWebBrowserSample
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows how to implement pane that contains a Chromium web browser control  
+This sample shows how to implement pane that contains a Chromium web browser control.  For details on how to utilize the Chromium web browser control in an add-in see here: https://github.com/Esri/arcgis-pro-sdk/wiki/ProConcepts-Framework#chromiumwebbrowser    
   
 
 
@@ -13,7 +13,7 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  7/10/2020
+Date:                  7/01/2020
 ArcGIS Pro:            2.6
 Visual Studio:         2019
 .NET Target Framework: 4.8

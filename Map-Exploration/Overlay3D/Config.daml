@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2018 Esri
@@ -47,10 +47,7 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="Overlay3D_Overlay3DDockpane_ShowButton" caption="Show Overlay 3D Dockpane" 
-                className="Overlay3DDockpane_ShowButton" loadOnClick="true" keytip="B1"
-                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" 
-                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+        <button id="Overlay3D_Overlay3DDockpane_ShowButton" caption="Show Overlay 3D Dockpane" className="Overlay3DDockpane_ShowButton" loadOnClick="true" keytip="B1" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
           <tooltip heading="Show Dockpane">Show Overlay 3D Dockpane<disabledText /></tooltip>
         </button>
       </controls>

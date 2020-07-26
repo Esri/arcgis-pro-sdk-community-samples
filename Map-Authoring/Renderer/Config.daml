@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -48,10 +48,14 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="Renderer_ApplyRenderer" caption="Apply Renderer" className="ApplyRenderer" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+        <button id="Renderer_ApplyRenderer" caption="Apply Renderer" 
+                className="ApplyRenderer" loadOnClick="true" 
+                smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
-        <button id="Renderer_AttributeDrivenSymbology" caption="AttributeDrivenSymbology" className="AttributeDrivenSymbology" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+        <button id="Renderer_AttributeDrivenSymbology" caption="Attribute Driven Symbology" 
+                className="AttributeDrivenSymbology" loadOnClick="true" 
+                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
       </controls>

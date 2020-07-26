@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -17,13 +17,12 @@
    limitations under the License.
 
 -->
-
 <ArcGIS defaultAssembly="CustomCatalogContext.dll" defaultNamespace="CustomCatalogContext" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{a4f746a5-555b-4274-9394-266aab8ece04}" version="1.0" desktopVersion="2.0.8533">
     <Name>CustomCatalogContext</Name>
     <Description>CustomCatalogContext description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>5/30/2017 1:16:14 PM, 2017</Date>
     <Subject>Content</Subject>
@@ -45,11 +44,7 @@
       <groups></groups>
       <controls>
         <!-- add your controls here -->
-        <button id="CustomCatalogContext_CustomCatalogButton" 
-								caption="Custom Catalog Button" keytip="B1"
-								className="CustomCatalogButton" loadOnClick="true" 
-								smallImage="Images\GenericButtonBlue16.png" 
-								largeImage="Images\GenericButtonBlue32.png">
+        <button id="CustomCatalogContext_CustomCatalogButton" caption="Custom Catalog Button" keytip="B1" className="CustomCatalogButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
           <tooltip heading="Custom Catalog Menu Button">This menu button shows how to add a custom menu to a specific selection of Catalog menus<disabledText /></tooltip>
         </button>
       </controls>

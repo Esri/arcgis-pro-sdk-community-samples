@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2020 Esri
@@ -42,7 +42,7 @@
               an empty group-->
         <group id="Filters_Group1" caption="Browse Dialog Filter" appearsOnAddInTab="false">
           <gallery refID="Filters_FilterGallery" inline="true" size="large" />
-          <button refID="Filters_ProWindowMakeProFilters" size="large"/>
+          <button refID="Filters_ProWindowMakeProFilters" size="large" />
         </group>
       </groups>
       <controls>
@@ -112,7 +112,7 @@
             <disabledText />
           </tooltip>
           <button refID="Filters_ToggleGalleryButton" />
-          <button refID="Filters_ProWindowMakeProFilters"/>
+          <button refID="Filters_ProWindowMakeProFilters" />
         </gallery>
       </galleries>
     </insertModule>
@@ -131,7 +131,6 @@
           </dontBrowseIntoFlags>
         </content>
       </insertComponent>
-     
       <insertComponent id="NewLineFeatures_Filter">
         <content displayName="Line feature class in FGDB" include="FolderConnection, GDB" exclude="esri_browsePlaces_Online">
           <canBeTypeIds>
@@ -146,7 +145,6 @@
         </content>
       </insertComponent>
     </updateCategory>
-   
     <updateCategory refID="esri_customItems">
       <!--Custom item is registered within the "esri_customItems" category -->
       <insertComponent id="Filters_ProGPXItem" className="ProGPXItem">

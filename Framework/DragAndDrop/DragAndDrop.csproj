@@ -132,12 +132,21 @@
       <DependentUpon>DragAndDropDockpane1.xaml</DependentUpon>
     </Compile>
     <Compile Include="DragAndDropDockpane1ViewModel.cs" />
+    <Compile Include="DragAndDropTOCItems.xaml.cs">
+      <DependentUpon>DragAndDropTOCItems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DragAndDropTOCItemsViewModel.cs" />
     <Compile Include="GDBItem.cs" />
+    <Compile Include="Helpers\DragDropExtensions.cs" />
     <Compile Include="Module1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="DragAndDropDockpane1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DragAndDropTOCItems.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

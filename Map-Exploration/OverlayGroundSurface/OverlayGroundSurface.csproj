@@ -127,10 +127,12 @@
     <Compile Include="ComboElevation.cs" />
     <Compile Include="ComboResolution.cs" />
     <Compile Include="CreatePolygonTool.cs" />
-    <Compile Include="MakeManyPolygons.cs" />
-    <Compile Include="MakeMultiPartPolygon.cs" />
-    <Compile Include="MakeMultiPatch.cs" />
-    <Compile Include="MakeMultiPatchRing.cs" />
+    <Compile Include="ExportGeometry.cs" />
+    <Compile Include="ImportGeometry.cs" />
+    <Compile Include="RenderAsManyPolygons.cs" />
+    <Compile Include="RenderAsMultiPartPolygon.cs" />
+    <Compile Include="RenderAsMultiPatch.cs" />
+    <Compile Include="RenderAsMultiPatchRing.cs" />
     <Compile Include="Module1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShowPoints.cs" />
@@ -157,7 +159,12 @@
     <AddInContent Include="Images\MultiPatchRing16.png" />
     <AddInContent Include="Images\MultiPatchRing32.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AddInContent Include="Images\3DPolyExport16.png" />
+    <AddInContent Include="Images\3DPolyExport32.png" />
+    <AddInContent Include="Images\3DPolyImport16.png" />
+    <AddInContent Include="Images\3DPolyImport32.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Screenshots\Screen1.png" />
     <None Include="Screenshots\Screen2.png" />

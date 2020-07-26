@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,7 +22,7 @@
     <Name>BackStage_PropertyPage</Name>
     <Description>Sample illustrating how to add a custom backstage tab into the backstage, add custom property pages into the Options backstage item, and save and restore project settings</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>4/16/2015 9:46:11 AM, 2015</Date>
     <Subject>Framework</Subject>

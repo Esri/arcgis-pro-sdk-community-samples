@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,18 +22,16 @@
     <Name>RestartSketch</Name>
     <Description>A sketch context menu item to restart the edit sketch from the last vertex.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>7/14/2016</Date>
     <Subject>Editing</Subject>
-
   </AddInInfo>
   <modules>
     <insertModule id="RestartSketch_Module" className="Module1" autoLoad="false" caption="Module1">
       <controls>
         <!-- add your controls here -->
-        <button id="RestartSketch_RestartSketchButton" caption="Restart Sketch" 
-                className="RestartSketchButton" loadOnClick="true" keytip="B1">
+        <button id="RestartSketch_RestartSketchButton" caption="Restart Sketch" className="RestartSketchButton" loadOnClick="true" keytip="B1">
           <tooltip heading="Restart Sketch">Restart the sketch from the last sketch point.<disabledText /></tooltip>
         </button>
       </controls>

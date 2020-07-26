@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2020 Esri
@@ -51,22 +51,13 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <tool id="LabelLineFeatures_LabelFeatures" caption="Label using OIDs" className="LabelFeatures" 
-              loadOnClick="true" keytip="T0"
-              smallImage="Images\LabelFeatures16.png"
-              largeImage="Images\LabelFeatures32.png">
+        <tool id="LabelLineFeatures_LabelFeatures" caption="Label using OIDs" className="LabelFeatures" loadOnClick="true" keytip="T0" smallImage="Images\LabelFeatures16.png" largeImage="Images\LabelFeatures32.png">
           <tooltip heading="Select US Rivers features to label them">US Rivers feature class will be labeled using the OIDs of the selected features.<disabledText /></tooltip>
         </tool>
-        <tool id="LabelLineFeatures_LabelManyFeatures" caption="Label using attributes" className="LabelManyFeatures" 
-              loadOnClick="true" keytip="T1" 
-              smallImage="Images\LabelFeatures16-2.png"
-              largeImage="Images\LabelFeatures32-2.png" condition="esri_mapping_mapPane">
+        <tool id="LabelLineFeatures_LabelManyFeatures" caption="Label using attributes" className="LabelManyFeatures" loadOnClick="true" keytip="T1" smallImage="Images\LabelFeatures16-2.png" largeImage="Images\LabelFeatures32-2.png" condition="esri_mapping_mapPane">
           <tooltip heading="Select US Rivers features to label them">US Rivers feature class will be labeled based on the attributes of the LabelOn field. <disabledText /></tooltip>
         </tool>
-        <button id="LabelLineFeatures_ClearLabels" caption="Reset LabelOn field" className="ClearLabels" 
-                loadOnClick="true" keytip="T2"
-                smallImage="Images\ClearLabels16.png" 
-                largeImage="Images\ClearLabels32.png">
+        <button id="LabelLineFeatures_ClearLabels" caption="Reset LabelOn field" className="ClearLabels" loadOnClick="true" keytip="T2" smallImage="Images\ClearLabels16.png" largeImage="Images\ClearLabels32.png">
           <tooltip heading="Reset LabelOn field attributes">Resets all the attributes of the LabelOn field of the US Rivers features. This is clear the labels for the feature class.<disabledText /></tooltip>
         </button>
       </controls>

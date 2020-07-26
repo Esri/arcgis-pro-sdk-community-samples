@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -22,7 +22,7 @@
     <Name>ExportWeb3DObjectResource</Name>
     <Description>Exports 3D marker symbol layer to web 3D object resource</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>6/26/2015 2:04:49 PM, 2015</Date>
     <Subject>Map Authoring</Subject>
@@ -30,13 +30,13 @@
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>
   <modules>
-    <insertModule id="ExportWeb3DObjectResource_Module" className="Module1" autoLoad="false" caption="Module1">    
+    <insertModule id="ExportWeb3DObjectResource_Module" className="Module1" autoLoad="false" caption="Module1">
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
         <group id="ExportWeb3DObjectResource_Group1" caption="Export Web 3D Object" appearsOnAddInTab="true" keytip="G0">
           <!-- host controls within groups -->
-          <button refID="ExportWeb3DObjectResource_UI_Options" size="large"/>
+          <button refID="ExportWeb3DObjectResource_UI_Options" size="large" />
         </group>
       </groups>
       <controls>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 //Copyright 2019 Esri
 
@@ -18,7 +18,7 @@
     <Name>ConstructionTool</Name>
     <Description>ConstructionTool description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>2/20/2015 11:02:04 AM, 2015</Date>
     <Subject>Editing</Subject>
@@ -44,12 +44,10 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <tool id="ConstructionTool_SimpleSketchTool" categoryRefID="esri_editing_construction_point" caption="Simple Point Sketch" extendedCaption="Simple Point Sketch (Solution)" 
-                  className="SimpleSketchTool" loadOnClick="true" smallImage="Images\BexDog16.png" largeImage="Images\BexDog32.png" keytip="Z1">
-          <tooltip heading="Pointy sketch tool">Simple sketch tool to construct point features.<disabledText /></tooltip>          
+        <tool id="ConstructionTool_SimpleSketchTool" categoryRefID="esri_editing_construction_point" caption="Simple Point Sketch" extendedCaption="Simple Point Sketch (Solution)" className="SimpleSketchTool" loadOnClick="true" smallImage="Images\BexDog16.png" largeImage="Images\BexDog32.png" keytip="Z1">
+          <tooltip heading="Pointy sketch tool">Simple sketch tool to construct point features.<disabledText /></tooltip>
         </tool>
-        <button id="ConstructionTool_AttributeButton" caption="Change Attributes" className="AttributeButton" loadOnClick="true" keytip="ZZ"
-                        smallImage="Images\MarsCat16.png" largeImage="Images\MarsCat32.png" condition="esri_mapping_mapPane">
+        <button id="ConstructionTool_AttributeButton" caption="Change Attributes" className="AttributeButton" loadOnClick="true" keytip="ZZ" smallImage="Images\MarsCat16.png" largeImage="Images\MarsCat32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Change Selected Attributes">Use selected features and change string attribute data.<disabledText /></tooltip>
         </button>
       </controls>

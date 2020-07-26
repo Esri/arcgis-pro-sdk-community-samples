@@ -13,7 +13,7 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  7/10/2020
+Date:                  7/01/2020
 ArcGIS Pro:            2.6
 Visual Studio:         2019
 .NET Target Framework: 4.8
@@ -45,7 +45,9 @@ Visual Studio:         2019
 1. Click Start button to open ArcGIS Pro.  
 1. In ArcGIS Pro create a new project using the Map template.  
 1. ArcGIS Pro displays a map view.    
-1. From the Add-in tab opend the -Drag and Drop Dockpane-  
+### Drag and drog from Catalog or the file system  
+  
+1. From the Add-in tab click the Drag and Drop button  
 ![UI](Screenshots/Screen1.png)  
   
 1. Use the Windows file explorer to navigate to a Geodatabase folder, for example -C:\Data\SDK\SDK.gdb-, then drag & drop the folder into the dropzone in the Drag & Drop dockpane.  
@@ -57,6 +59,12 @@ Visual Studio:         2019
   
 1. The feature class is added to the map.    
 ![UI](Screenshots/Screen4.png)  
+### Drag and drop from the Map's TOC  
+  
+1. From the Add-In tab, click the Drag and Drop TOC Items button. The "Drag and drop TOC items" dockpane will open.  
+1. Drag any layer(s) from the active map's TOC to the text box in the dockpane.  
+1. The text box in the dockpane will list information about the map members being dragged and dropped.  
+![UI](Screenshots/Screen5.png)  
   
 
 

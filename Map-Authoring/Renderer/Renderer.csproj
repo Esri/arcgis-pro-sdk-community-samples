@@ -97,6 +97,7 @@
   <ItemGroup>
     <Compile Include="ApplyRenderer.cs" />
     <Compile Include="AttributeDrivenSymbology.cs" />
+    <Compile Include="ChartRenderers.cs" />
     <Compile Include="ClassBreakRenderers.cs" />
     <Compile Include="HeatMapRenderers.cs" />
     <Compile Include="Helpers\SDKHelpercs.cs" />

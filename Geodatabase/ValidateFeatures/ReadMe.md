@@ -13,7 +13,7 @@ Language:              C#
 Subject:               Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  7/10/2020
+Date:                  7/01/2020
 ArcGIS Pro:            2.6
 Visual Studio:         2017, 2019
 .NET Target Framework: 4.8

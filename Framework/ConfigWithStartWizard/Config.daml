@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -17,29 +17,21 @@
    limitations under the License.
 
 -->
-
-<ArcGIS defaultAssembly="ConfigWithStartWizard.dll"
-        defaultNamespace="ConfigWithStartWizard"
-        xmlns="http://schemas.esri.com/DADF/Registry"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-
+<ArcGIS defaultAssembly="ConfigWithStartWizard.dll" defaultNamespace="ConfigWithStartWizard" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{43ea84e4-7b44-4d76-80ba-44095ba768b4}" version="1.0" desktopVersion="2.0.0">
     <Name>ConfigWithStartWizard</Name>
     <Description>ConfigWithStartWizard description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>1/4/2017 11:54:53 AM, 2017</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>
-
   <Configuration>
-    <ConfigurationManager className="ConfigurationManagerStartWizard"/>
+    <ConfigurationManager className="ConfigurationManagerStartWizard" />
   </Configuration>
-
   <modules>
     <insertModule id="ConfigWithStartWizard_Module" className="ConfigWithStartWizardModule" autoLoad="false" caption="Module1">
       <!-- uncomment to have the control hosted on a separate tab-->
@@ -48,8 +40,7 @@
           <group refID="ConfigWithStartWizard_Group1"/>
         </tab>-->
       </tabs>
-      <groups>
-      </groups>
+      <groups></groups>
       <controls>
         <!-- add your controls here -->
       </controls>

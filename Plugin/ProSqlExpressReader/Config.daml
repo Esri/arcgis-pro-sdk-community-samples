@@ -50,22 +50,25 @@
       <tabs></tabs>
       <groups>
         <group id="SqlExpress_Group1" caption="SqlExpress Reader" appearsOnAddInTab="true" keytip="G1">
-          <button refID="ProSqlExpressReader_AddToProject" size="large" />
+          <button refID="ProSqlExpressReader_TestThePlugin" size="large" />
         </group>
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="ProSqlExpressReader_AddToProject" caption="Add To Project" className="AddToProject" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ArcGISProject16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ArcGISProject32.png" keytip="B1">
+        <button id="ProSqlExpressReader_AddToProject" caption="Add To Project" className="AddToProject" loadOnClick="true" keytip="B1" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ArcGISProject16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ArcGISProject32.png">
           <tooltip heading="Tooltip Heading">
 						Add this GIS item to your Project<disabledText /></tooltip>
         </button>
-        <button id="ProSqlExpressReader_DelFromProject" caption="Remove From Project" className="DelFromProject" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ArcGISProjectSave16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ArcGISProjectSave32.png" keytip="B2">
+        <button id="ProSqlExpressReader_DelFromProject" caption="Remove From Project" className="DelFromProject" loadOnClick="true" keytip="B2" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ArcGISProjectSave16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ArcGISProjectSave32.png">
           <tooltip heading="Tooltip Heading">
 						Remove this GIS item from your Project<disabledText /></tooltip>
         </button>
-        <button id="ProSqlExpressReader_AddToMap" caption="Add To Current Map" className="AddToCurrentMap" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/AddLayerFromPath16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/AddLayerFromPath32.png" keytip="B3">
+        <button id="ProSqlExpressReader_AddToMap" caption="Add To Current Map" className="AddToCurrentMap" loadOnClick="true" keytip="B3" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/AddLayerFromPath16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/AddLayerFromPath32.png">
           <tooltip heading="Tooltip Heading">
 						Add this GIS Feature Class to your map<disabledText /></tooltip>
+        </button>
+        <button id="ProSqlExpressReader_TestThePlugin" caption="Plugin Test Add 2 Map" className="TestThePlugin" loadOnClick="true" keytip="B4" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/AddContent16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/AddContent32.png">
+          <tooltip heading="Tooltip Heading">Testing add to map function for Plugin datasource<disabledText /></tooltip>
         </button>
       </controls>
       <menus>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -21,8 +21,8 @@
   <AddInInfo id="{68a103e0-41e7-4706-8ab6-151f4ee5555f}" version="1.0" desktopVersion="2.2.11598">
     <Name>SOEWithPropertiesTest</Name>
     <Description>SOEWithPropertiesTest description</Description>
-    <Image>Images\AddinDesktop32.png</Image>    
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>2/16/2018 2:16:15 PM, 2018</Date>
     <Subject>Sharing</Subject>

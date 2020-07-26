@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2020 Esri
@@ -26,10 +26,8 @@
     <Company>Esri</Company>
     <Date>12/5/2019 10:27:38 AM, 2019</Date>
     <Subject>Editing, Parcel Fabric</Subject>
-
   </AddInInfo>
   <modules>
-
     <updateModule refID="esri_editing_EditingModule">
       <tabs>
         <updateTab refID="esri_editing_parcelTab">
@@ -40,19 +38,18 @@
     <insertModule id="ParcelFabricMultistoryTool_Module" className="Module1" autoLoad="false" caption="Module1">
       <groups>
         <group id="ParcelFabricMultistoryTool_Group1" caption="Multistory Tools" appearsOnAddInTab="false">
-          <subgroup refID="subgroup1"/>
-          <subgroup refID="subgroup2"/>
-          <subgroup refID="subgroup3"/>
+          <subgroup refID="subgroup1" />
+          <subgroup refID="subgroup2" />
+          <subgroup refID="subgroup3" />
         </group>
       </groups>
-
       <subgroups>
         <subgroup id="subgroup1" size="AlwaysMedium">
           <tool refID="ParcelFabricMultistoryTool_ActivateRecord_MapTool" />
           <button refID="ParcelFabricMultistoryTool_SelectTool_Button" />
           <button refID="ParcelFabricMultistoryTool_ExploreTool_Button" separator="true" />
         </subgroup>
-        <subgroup id="subgroup2" size="AlwaysMedium" >
+        <subgroup id="subgroup2" size="AlwaysMedium">
           <editBox refID="ParcelFabricMultistoryTool_ParcelName_EditBox" />
           <button refID="ParcelFabricMultistoryTool_DuplicateParcelVertical_Button" />
           <button refID="ParcelFabricMultistoryTool_ShowAttributes_Button" separator="true" />
@@ -63,13 +60,10 @@
           <button refID="ParcelFabricMultistoryTool_BuildParcelByRecord_Button" />
         </subgroup>
       </subgroups>
-    
-    
       <controls>
         <editBox id="ParcelFabricMultistoryTool_ParcelName_EditBox" caption="Parcel Name: " className="ParcelName_EditBox" sizeString="AAAAAAAAA">
           <tooltip heading="Enter Parcel Name">
-            Enter the name of the new parcel which will be created when you duplicate the selected parcel.<disabledText />
-          </tooltip>
+            Enter the name of the new parcel which will be created when you duplicate the selected parcel.<disabledText /></tooltip>
         </editBox>
         <tool id="ParcelFabricMultistoryTool_ActivateRecord_MapTool" caption="Activate" className="ActivateRecord_MapTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ActiveRecord16.png" condition="esri_mapping_mapPane">
           <tooltip heading="Activate Record">Activate parcel fabric record by clicking on the map.<disabledText /></tooltip>
@@ -77,16 +71,16 @@
         <button id="ParcelFabricMultistoryTool_BuildParcelByRecord_Button" caption="Build Record" className="BuildParcelByRecord_Button" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/BuildParcelsActive16.png" condition="esri_editing_activeParcelRecordCondition">
           <tooltip heading="Build Parcels By Record">Build parcels for the current active record.<disabledText /></tooltip>
         </button>
-        <button id="ParcelFabricMultistoryTool_DuplicateParcelVertical_Button" caption="Duplicate Vertical" className="DuplicateParcelVertical_Button" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingDuplicateVertical16.png" >
+        <button id="ParcelFabricMultistoryTool_DuplicateParcelVertical_Button" caption="Duplicate Vertical" className="DuplicateParcelVertical_Button" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingDuplicateVertical16.png">
           <tooltip heading="Duplicate Vertical">Duplicates the currently selected parcel polygon with a vertical offset.<disabledText /></tooltip>
         </button>
-        <button id="ParcelFabricMultistoryTool_ExploreTool_Button" caption="Explore" className="ExploreTool_Button" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Map16.png" >
+        <button id="ParcelFabricMultistoryTool_ExploreTool_Button" caption="Explore" className="ExploreTool_Button" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Map16.png">
           <tooltip heading="Explore">Activates the default explore tool.<disabledText /></tooltip>
         </button>
-        <button id="ParcelFabricMultistoryTool_SelectTool_Button" caption="Select" className="SelectTool_Button" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SelectionSelectTool16.png" >
+        <button id="ParcelFabricMultistoryTool_SelectTool_Button" caption="Select" className="SelectTool_Button" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SelectionSelectTool16.png">
           <tooltip heading="Select by Rectangle">Activates the default select tool, with selection by clicking or drawing a rectangle.<disabledText /></tooltip>
         </button>
-        <button id="ParcelFabricMultistoryTool_ShowAttributes_Button" caption="Show Attributes" className="ShowAttributes_Button" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/AttributesWindow16.png" >
+        <button id="ParcelFabricMultistoryTool_ShowAttributes_Button" caption="Show Attributes" className="ShowAttributes_Button" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/AttributesWindow16.png">
           <tooltip heading="Show Attributes">Opens the Attributes pane.<disabledText /></tooltip>
         </button>
         <button id="ParcelFabricMultistoryTool_ValidateExtent_Button" caption="Validate Extent" className="ValidateExtent_Button" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ValidateExtent16.png" condition="esri_editing_TopologyGDBCondition">

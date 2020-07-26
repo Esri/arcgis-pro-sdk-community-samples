@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 Copyright 2019 Esri
 
@@ -19,7 +19,7 @@ limitations under the License.
     <Name>Sketch Tool</Name>
     <Description>Adds custom sketch tool for ArcGIS Pro.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author> 
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
     <Date>3/1/2015 2:09:23 PM, 2015</Date>
     <Subject>Map Exploration</Subject>
