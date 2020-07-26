@@ -402,6 +402,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProWindowMVVM", "Framework\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreatePointsAlongLine3D", "Editing\CreatePointsAlongLine3D\CreatePointsAlongLine3D.csproj", "{CCE4B717-9AB5-4563-8054-9EC08E86E253}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubiksCube", "Geometry\RubiksCube\RubiksCube.csproj", "{BC601ABB-8C3B-4743-BF1A-54E50F9EFD79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1978,6 +1980,14 @@ Global
 		{CCE4B717-9AB5-4563-8054-9EC08E86E253}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CCE4B717-9AB5-4563-8054-9EC08E86E253}.Release|x64.ActiveCfg = Release|Any CPU
 		{CCE4B717-9AB5-4563-8054-9EC08E86E253}.Release|x64.Build.0 = Release|Any CPU
+		{BC601ABB-8C3B-4743-BF1A-54E50F9EFD79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC601ABB-8C3B-4743-BF1A-54E50F9EFD79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC601ABB-8C3B-4743-BF1A-54E50F9EFD79}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BC601ABB-8C3B-4743-BF1A-54E50F9EFD79}.Debug|x64.Build.0 = Debug|Any CPU
+		{BC601ABB-8C3B-4743-BF1A-54E50F9EFD79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC601ABB-8C3B-4743-BF1A-54E50F9EFD79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC601ABB-8C3B-4743-BF1A-54E50F9EFD79}.Release|x64.ActiveCfg = Release|Any CPU
+		{BC601ABB-8C3B-4743-BF1A-54E50F9EFD79}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

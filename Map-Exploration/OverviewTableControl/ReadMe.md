@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  6/01/2020
-ArcGIS Pro:            2.5
+Date:                  7/10/2020
+ArcGIS Pro:            2.6
 Visual Studio:         2017, 2019
 .NET Target Framework: 4.8
 ```
@@ -45,7 +45,7 @@ Visual Studio:         2017, 2019
 1. Within the "Add-in" tab, click the Table Control dropdown and select the control type: Dock Pane, Pane, Dialog.  
 1. A table control will open and display the current content of the selected layer or table from the active map.  
 1. Select a few records in the table control.  Notice that the current map selection changes to reflect this.  
-![UI](screenshots/tablecontrol.png)  
+![UI](Screenshots/tablecontrol.png)  
   
 
 

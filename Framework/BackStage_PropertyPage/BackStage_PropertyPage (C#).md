@@ -17,8 +17,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  7/17/2019
-ArcGIS Pro:            2.5
+Date:                  7/10/2020
+ArcGIS Pro:            2.6
 Visual Studio:         2017, 2019
 .NET Target Framework: 4.8
 ```
@@ -51,7 +51,7 @@ Modules can write out their own set of properties when a project is saved. Corre
 
   
   
-1. Open this solution in Visual Studio 2013.    
+1. Open this solution in Visual Studio.    
 1. Click the build menu and select Build Solution.  
 1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.  
 1. Open any project - it can be an existing project containing data or a new empty project.  
