@@ -414,6 +414,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisplayFilters", "Map-Autho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsLayers", "Map-Authoring\GraphicsLayers\GraphicsLayers.csproj", "{3711865A-D5D9-4607-8A1B-659019D6C148}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateChanges", "UtilityNetwork\ValidateChanges\ValidateChanges.csproj", "{0A907E31-89CA-439F-855C-81FC9375EEEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2038,6 +2040,14 @@ Global
 		{3711865A-D5D9-4607-8A1B-659019D6C148}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3711865A-D5D9-4607-8A1B-659019D6C148}.Release|x64.ActiveCfg = Release|Any CPU
 		{3711865A-D5D9-4607-8A1B-659019D6C148}.Release|x64.Build.0 = Release|Any CPU
+		{0A907E31-89CA-439F-855C-81FC9375EEEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A907E31-89CA-439F-855C-81FC9375EEEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A907E31-89CA-439F-855C-81FC9375EEEF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0A907E31-89CA-439F-855C-81FC9375EEEF}.Debug|x64.Build.0 = Debug|Any CPU
+		{0A907E31-89CA-439F-855C-81FC9375EEEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A907E31-89CA-439F-855C-81FC9375EEEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A907E31-89CA-439F-855C-81FC9375EEEF}.Release|x64.ActiveCfg = Release|Any CPU
+		{0A907E31-89CA-439F-855C-81FC9375EEEF}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

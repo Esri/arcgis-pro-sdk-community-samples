@@ -71,7 +71,7 @@ Read the [ProGuide: Installation and Upgrade](https://github.com/Esri/arcgis-pro
 
 ## ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 193 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 194 ArcGIS Pro samples that are included in this repository.  
 
 #### Content
 
@@ -316,6 +316,7 @@ Below is the list of 193 ArcGIS Pro samples that are included in this repository
 * [CategoriesUsage (c#)](../../tree/master/UtilityNetwork/CategoriesUsage)  
 * [CreateTransformerBank (c#)](../../tree/master/UtilityNetwork/CreateTransformerBank)  
 * [LoadReportSample (c#)](../../tree/master/UtilityNetwork/LoadReportSample)  
+* [ValidateChanges (c#)](../../tree/master/UtilityNetwork/ValidateChanges)  
 
 
 #### Workflow
