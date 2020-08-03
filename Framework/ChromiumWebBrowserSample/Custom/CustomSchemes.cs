@@ -30,8 +30,8 @@ using System.Windows.Media.Imaging;
 
 /// <summary>
 /// Note: Custom scheme names must conform to RFC 3986.
-/// <a href="https://tools.ietf.org/pdf/rfc3986.pdf"/>. Namely:
-/// &quot;Section 3.1 Scheme:<br/>
+/// &lt;a href="https://tools.ietf.org/pdf/rfc3986.pdf"/&gt;. Namely:
+/// &quot;Section 3.1 Scheme:&lt;br/&gt;
 /// .....Scheme names consist of a sequence of characters beginning with a
 ///letter and followed by any combination of letters, digits, plus
 /// ("+"), period ("."), or hyphen("-"). Although schemes are case-
@@ -69,10 +69,19 @@ namespace ChromiumWebBrowserSample.Custom
 	/// <remarks>The custom scheme name is &quot;resource&quot;</remarks>
 	public class ImageResourceSchemeHandler : ResourceHandler
 	{
+		/// <summary>
+		/// 
+		/// </summary>
 		public ImageResourceSchemeHandler()
 		{
 
 		}
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="request"></param>
+		/// <param name="callback"></param>
+		/// <returns></returns>
 		public override CefReturnValue ProcessRequestAsync(IRequest request, ICallback callback)
 		{
 			using (callback)
@@ -119,11 +128,19 @@ namespace ChromiumWebBrowserSample.Custom
 	/// </remarks>
 	public class EmbeddedResourceSchemeHandler : ResourceHandler
 	{
+		/// <summary>
+		/// 
+		/// </summary>
 		public EmbeddedResourceSchemeHandler()
 		{
 
 		}
-
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="request"></param>
+		/// <param name="callback"></param>
+		/// <returns></returns>
 		public override CefReturnValue ProcessRequestAsync(IRequest request, ICallback callback)
 		{
 			using (callback)

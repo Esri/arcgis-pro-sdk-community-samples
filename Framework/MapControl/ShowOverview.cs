@@ -40,8 +40,10 @@ namespace MapControl {
             if (_isOpen)
                 return;
             _overview = new OverviewWindow();
+      var cam = MapView.Active.Camera;
+      cam.Heading = 90;
             _overview.ViewContent = MapControlContentFactory.Create(
-                MapView.Active.Map, MapView.Active.Extent, MapView.Active.ViewingMode);
+                MapView.Active.Map, cam, MapView.Active.ViewingMode);
             _overview.Closed += (s, e) => {
                 _isOpen = false;
                 lock (_lock) {

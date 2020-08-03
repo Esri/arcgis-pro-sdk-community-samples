@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{46B17BA8-B2C3-4F07-8031-833A96E630C7}</ProjectGuid>
+    <ProjectGuid>{6DA0B756-6B7D-451F-8AFF-1ABD718C9665}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TransferAttributes</RootNamespace>
-    <AssemblyName>TransferAttributes</AssemblyName>
+    <RootNamespace>ProIcons</RootNamespace>
+    <AssemblyName>ProIcons</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -87,15 +87,15 @@
       <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\GeoProcessing\ArcGIS.Desktop.GeoProcessing.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="ArcGIS.Desktop.Layouts">
+    <Reference Include="ArcGIS.Desktop.Layouts.dll">
       <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Layout\ArcGIS.Desktop.Layouts.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="ArcGIS.Desktop.Shared.Wpf">
+    <Reference Include="ArcGIS.Desktop.Shared.Wpf.dll">
       <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Shared.Wpf.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="ArcGIS.Desktop.Ribbon.Wpf">
+    <Reference Include="ArcGIS.Desktop.Ribbon.Wpf.dll">
       <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Ribbon.Wpf.dll</HintPath>
       <Private>False</Private>
     </Reference>
@@ -107,74 +107,53 @@
       <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Resources.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="ArcGIS.Desktop.Resources">
-      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Resources.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="ESRI.ArcGIS.ItemIndex">
-      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ESRI.ArcGIS.ItemIndex.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <AddInContent Include="Config.daml" />
+    <AddInContent Include="Config.daml">
+      <SubType>Designer</SubType>
+    </AddInContent>
     <AddInContent Include="Images\AddInDesktop16.png" />
     <AddInContent Include="Images\AddInDesktop32.png" />
     <AddInContent Include="DarkImages\AddInDesktop16.png" />
     <AddInContent Include="DarkImages\AddInDesktop32.png" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChooseTemplate.xaml.cs">
-      <DependentUpon>ChooseTemplate.xaml</DependentUpon>
+    <Compile Include="AllProImagesPane.xaml.cs">
+      <DependentUpon>AllProImagesPane.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ChooseTemplateViewModel.cs" />
-    <Compile Include="Converters.cs" />
-    <Compile Include="FieldMapping.cs" />
-    <Compile Include="Module1.cs" />
+    <Compile Include="AllProImagesPaneViewModel.cs" />
+    <Compile Include="ImagesPane.xaml.cs">
+      <DependentUpon>ImagesPane.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImagesPaneViewModel.cs" />
+    <Compile Include="ProIconsModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TransferAttributes_Features.cs" />
-    <Compile Include="TransferAttributes_Template.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AddInContent Include="Images\GenericButtonRed16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AddInContent Include="Images\GenericButtonRed32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AddInContent Include="DarkImages\GenericButtonRed16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AddInContent Include="DarkImages\GenericButtonRed32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="ChooseTemplate.xaml">
+    <Page Include="AllProImagesPane.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImagesPane.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <AddInContent Include="Images\GenericButtonBlue16.png" />
+    <AddInContent Include="Images\GenericButtonGreen16.png" />
   </ItemGroup>
   <ItemGroup>
-    <AddInContent Include="Images\GenericButtonBlue32.png" />
+    <AddInContent Include="Images\GenericButtonGreen32.png" />
   </ItemGroup>
   <ItemGroup>
-    <AddInContent Include="DarkImages\GenericButtonBlue16.png" />
+    <AddInContent Include="DarkImages\GenericButtonGreen16.png" />
   </ItemGroup>
   <ItemGroup>
-    <AddInContent Include="DarkImages\GenericButtonBlue32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ReadMe.md" />
-    <None Include="Screenshots\Screen2.png" />
-    <None Include="Screenshots\Screen3.png" />
-    <None Include="Screenshots\Screen4.png" />
-    <None Include="Screenshots\Screen5.png" />
-    <None Include="Screenshots\Screen6.png" />
+    <AddInContent Include="DarkImages\GenericButtonGreen32.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Screenshots\Screen1.png" />
+    <None Include="Screenshots\Screen2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!--
@@ -185,8 +164,7 @@
   -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PackageAction>BuildDefault</PackageAction>
-    <DocumentationFile>bin\Debug\TransferAttributes.xml</DocumentationFile>
-    <NoWarn>1591</NoWarn>
+    <DocumentationFile>bin\Debug\ProIcons.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PackageAction>BuildDefault</PackageAction>
@@ -204,6 +182,6 @@
   </Target>
   -->
   <!--<Target Name="BeforeBuild">
-    <Error Text="D:\arcgis\bin\Esri.ProApp.SDK.Desktop.targets not found." Condition="!Exists('D:\arcgis\bin\Esri.ProApp.SDK.Desktop.targets') AND !Exists('Esri.ArcGISPro.Extensions.targets')" />
+    <Error Text="C:\ArcGIS\bin\Esri.ProApp.SDK.Desktop.targets not found." Condition="!Exists('C:\ArcGIS\bin\Esri.ProApp.SDK.Desktop.targets') AND !Exists('Esri.ArcGISPro.Extensions.targets')" />
   </Target>-->
 </Project>

@@ -416,6 +416,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsLayers", "Map-Autho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateChanges", "UtilityNetwork\ValidateChanges\ValidateChanges.csproj", "{0A907E31-89CA-439F-855C-81FC9375EEEF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProIcons", "Framework\ProIcons\ProIcons.csproj", "{6DA0B756-6B7D-451F-8AFF-1ABD718C9665}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2048,6 +2050,14 @@ Global
 		{0A907E31-89CA-439F-855C-81FC9375EEEF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0A907E31-89CA-439F-855C-81FC9375EEEF}.Release|x64.ActiveCfg = Release|Any CPU
 		{0A907E31-89CA-439F-855C-81FC9375EEEF}.Release|x64.Build.0 = Release|Any CPU
+		{6DA0B756-6B7D-451F-8AFF-1ABD718C9665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DA0B756-6B7D-451F-8AFF-1ABD718C9665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DA0B756-6B7D-451F-8AFF-1ABD718C9665}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6DA0B756-6B7D-451F-8AFF-1ABD718C9665}.Debug|x64.Build.0 = Debug|Any CPU
+		{6DA0B756-6B7D-451F-8AFF-1ABD718C9665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DA0B756-6B7D-451F-8AFF-1ABD718C9665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DA0B756-6B7D-451F-8AFF-1ABD718C9665}.Release|x64.ActiveCfg = Release|Any CPU
+		{6DA0B756-6B7D-451F-8AFF-1ABD718C9665}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

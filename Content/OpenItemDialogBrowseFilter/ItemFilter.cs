@@ -36,10 +36,6 @@ namespace OpenItemDialogBrowseFilter
     private string _parent;
     private string _id;
     private string _caption;
-    private string _condition;
-    private bool _hasImage = true;
-    private string _image;
-    private string _packURI = "";
     private string _content;
     private List<string> _filterFlags = new List<string>();
     private static string _currentControl;
@@ -57,8 +53,6 @@ namespace OpenItemDialogBrowseFilter
       //initialize members
       _damlFileName = damlFile;
       _elementName = elementName;
-
-      _hasImage = false;
 
       _parent = xElement.Parent.Name.LocalName;
       _container = container;

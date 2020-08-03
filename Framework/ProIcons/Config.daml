@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2020 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+
+<ArcGIS defaultAssembly="ProIcons.dll" defaultNamespace="ProIcons" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{6da0b756-6b7d-451f-8aff-1abd718c9665}" version="1.0" desktopVersion="2.0.0">
+    <Name>ProIcons</Name>
+    <Description>ProIcons description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>2/7/2020 11:08:19 AM, 2020</Date>
+    <Subject>Framework</Subject>
+  </AddInInfo>
+  <modules>
+    <insertModule id="ProIcons_Module" className="ProIconsModule" autoLoad="false" caption="Module1">
+      <tabs>
+        <tab id="ProIcons_Tab" caption="Pro Icons" keytip="T1">
+          <group refID="ProIcons_Group" />
+        </tab>
+      </tabs>
+      <groups>
+        <group id="ProIcons_Group" caption="Pro Icons" keytip="G1">
+          <button refID="ProIcons_AllProImagesPane_OpenButton" size="large" />
+          <button refID="ProIcons_ImagesPane_OpenButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <button id="ProIcons_ImagesPane_OpenButton" caption="Verify Icon" className="ImagesPane_OpenButton" keytip="B1" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericCheckMarkGreen16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericCheckMarkGreen32.png">
+          <tooltip heading="Icon Search">Find a specific icon in each theme<disabledText /></tooltip>
+        </button>
+        <button id="ProIcons_AllProImagesPane_OpenButton" caption="Show All Icons" keytip="B2" className="AllProImagesPane_OpenButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SearchMyOrganization_enabled16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SearchMyOrganization_enabled32.png">
+          <tooltip heading="Show all icons">Search for icons<disabledText /></tooltip>
+        </button>
+      </controls>
+      <panes>
+        <pane id="ProIcons_ImagesPane" caption="Verify Icon" className="ImagesPaneViewModel" 
+							smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen16.png">
+          <content className="ImagesPaneView" />
+        </pane>
+        <pane id="ProIcons_AllProImagesPane" caption="Show All Icons" className="AllProImagesPaneViewModel" 
+							smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen16.png" defaultTab="esri_mapping_homeTab" defaultTool="esri_mapping_navigateTool">
+          <content className="AllProImagesPaneView" />
+        </pane>
+      </panes>
+    </insertModule>
+  </modules>
+</ArcGIS>
