@@ -43,6 +43,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Map-Explorat
 * [ScreenCoordsToMapPoint (c#)](../../../tree/master/Map-Exploration/ScreenCoordsToMapPoint)  
 * [ScribbleControl_ArcGISPro (c#)](../../../tree/master/Map-Exploration/ScribbleControl_ArcGISPro)  
 * [TableControl (c#)](../../../tree/master/Map-Exploration/TableControl)  
+* [TableControlsDockpane (c#)](../../../tree/master/Map-Exploration/TableControlsDockpane)  
 * [TimeNavigation (c#)](../../../tree/master/Map-Exploration/TimeNavigation)  
 * [WindowsLocationTool (c#)](../../../tree/master/Map-Exploration/WindowsLocationTool)  
 * [WorkingWithQueryDefinitionFilters (c#)](../../../tree/master/Map-Exploration/WorkingWithQueryDefinitionFilters)  

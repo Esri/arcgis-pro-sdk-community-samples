@@ -71,7 +71,7 @@ Read the [ProGuide: Installation and Upgrade](https://github.com/Esri/arcgis-pro
 
 ## ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 195 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 197 ArcGIS Pro samples that are included in this repository.  
 
 #### Content
 
@@ -260,6 +260,7 @@ Below is the list of 195 ArcGIS Pro samples that are included in this repository
 * [ScreenCoordsToMapPoint (c#)](../../tree/master/Map-Exploration/ScreenCoordsToMapPoint)  
 * [ScribbleControl_ArcGISPro (c#)](../../tree/master/Map-Exploration/ScribbleControl_ArcGISPro)  
 * [TableControl (c#)](../../tree/master/Map-Exploration/TableControl)  
+* [TableControlsDockpane (c#)](../../tree/master/Map-Exploration/TableControlsDockpane)  
 * [TimeNavigation (c#)](../../tree/master/Map-Exploration/TimeNavigation)  
 * [WindowsLocationTool (c#)](../../tree/master/Map-Exploration/WindowsLocationTool)  
 * [WorkingWithQueryDefinitionFilters (c#)](../../tree/master/Map-Exploration/WorkingWithQueryDefinitionFilters)  
@@ -270,6 +271,7 @@ Below is the list of 195 ArcGIS Pro samples that are included in this repository
 * [CreateReport (c#)](../../tree/master/Layouts/CreateReport)  
 * [DuplicateLayout (c#)](../../tree/master/Layouts/DuplicateLayout)  
 * [LayoutMapSeries (c#)](../../tree/master/Layouts/LayoutMapSeries)  
+* [LayoutWithLabels (c#)](../../tree/master/Layouts/LayoutWithLabels)  
 * [Puzzle_2 1 (c#)](../../tree/master/Layouts/Puzzle_2-1)  
 * [TextElementAddin (c#)](../../tree/master/Layouts/TextElementAddin)  
 

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2020 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="TableControlsDockpane.dll" defaultNamespace="TableControlsDockpane" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{efa4688b-55e3-4f55-8b09-75b8c8cda69a}" version="1.0" desktopVersion="2.6.0">
+    <Name>TableControlsDockpane</Name>
+    <Description>TableControlsDockpane description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, http://www.esri.com</Company>
+    <Date>8/31/2020 7:30:26 AM</Date>
+    <Subject>Map Exploration</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="TableControlsDockpane_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="TableControlsDockpane_Tab1" caption="New Tab">
+          <group refID="TableControlsDockpane_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="TableControlsDockpane_Group1" caption="Attribute Table"
+               appearsOnAddInTab="true" keytip="G1">
+          <!-- host controls within groups -->
+          <button refID="TableControlsDockpane_AttributeTable_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="TableControlsDockpane_AttributeTable_ShowButton" 
+                caption="Show AttributeTables" className="AttributeTable_ShowButton" 
+                loadOnClick="true" keytip="B1"
+                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" 
+                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+          <tooltip heading="Show AttributeTables Dockpane">Select the Layers to be shown in the attributes dockpane but selecting the layer's node in the Contents dockpane's TOC<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="TableControlsDockpane_AttributeTable" caption="AttributeTable" 
+                  className="AttributeTableViewModel" dock="group" 
+                  dockWith="esri_core_contentsDockPane">
+          <content className="AttributeTableView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

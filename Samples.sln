@@ -418,6 +418,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateChanges", "UtilityN
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProIcons", "Framework\ProIcons\ProIcons.csproj", "{6DA0B756-6B7D-451F-8AFF-1ABD718C9665}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableControlsDockpane", "Map-Exploration\TableControlsDockpane\TableControlsDockpane.csproj", "{EFA4688B-55E3-4F55-8B09-75B8C8CDA69A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutWithLabels", "Layouts\LayoutWithLabels\LayoutWithLabels.csproj", "{D7D66A28-E582-4044-B800-729B5D190114}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2058,6 +2062,22 @@ Global
 		{6DA0B756-6B7D-451F-8AFF-1ABD718C9665}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6DA0B756-6B7D-451F-8AFF-1ABD718C9665}.Release|x64.ActiveCfg = Release|Any CPU
 		{6DA0B756-6B7D-451F-8AFF-1ABD718C9665}.Release|x64.Build.0 = Release|Any CPU
+		{EFA4688B-55E3-4F55-8B09-75B8C8CDA69A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA4688B-55E3-4F55-8B09-75B8C8CDA69A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA4688B-55E3-4F55-8B09-75B8C8CDA69A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EFA4688B-55E3-4F55-8B09-75B8C8CDA69A}.Debug|x64.Build.0 = Debug|Any CPU
+		{EFA4688B-55E3-4F55-8B09-75B8C8CDA69A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA4688B-55E3-4F55-8B09-75B8C8CDA69A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFA4688B-55E3-4F55-8B09-75B8C8CDA69A}.Release|x64.ActiveCfg = Release|Any CPU
+		{EFA4688B-55E3-4F55-8B09-75B8C8CDA69A}.Release|x64.Build.0 = Release|Any CPU
+		{D7D66A28-E582-4044-B800-729B5D190114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7D66A28-E582-4044-B800-729B5D190114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7D66A28-E582-4044-B800-729B5D190114}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D7D66A28-E582-4044-B800-729B5D190114}.Debug|x64.Build.0 = Debug|Any CPU
+		{D7D66A28-E582-4044-B800-729B5D190114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7D66A28-E582-4044-B800-729B5D190114}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7D66A28-E582-4044-B800-729B5D190114}.Release|x64.ActiveCfg = Release|Any CPU
+		{D7D66A28-E582-4044-B800-729B5D190114}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

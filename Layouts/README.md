@@ -16,6 +16,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Layouts' top
 * [CreateReport (c#)](../../../tree/master/Layouts/CreateReport)  
 * [DuplicateLayout (c#)](../../../tree/master/Layouts/DuplicateLayout)  
 * [LayoutMapSeries (c#)](../../../tree/master/Layouts/LayoutMapSeries)  
+* [LayoutWithLabels (c#)](../../../tree/master/Layouts/LayoutWithLabels)  
 * [Puzzle_2 1 (c#)](../../../tree/master/Layouts/Puzzle_2-1)  
 * [TextElementAddin (c#)](../../../tree/master/Layouts/TextElementAddin)  
 
