@@ -186,7 +186,7 @@ namespace OpenItemDialogBrowseFilter
             {
               var row = _displayItemsDataTable.NewRow();
               row["id"] = filter.ID;
-              row["name"] = filter.ElementName;
+              row["name"] = filter.Caption;
               _displayItemsDataTable.Rows.Add(row);
             }
             break;

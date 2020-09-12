@@ -42,6 +42,8 @@ namespace OpenItemDialogBrowseFilter
     public string ElementName => _elementName;
     public string ID => _id;
     public string Content => _content;
+
+    public string Caption => _caption;
     /// <summary>
     /// Creates a browse project filter or esri_item item
     /// </summary>
