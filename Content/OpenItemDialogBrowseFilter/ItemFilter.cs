@@ -39,6 +39,7 @@ namespace OpenItemDialogBrowseFilter
     private string _content;
     private List<string> _filterFlags = new List<string>();
     private static string _currentControl;
+    public string Caption => _caption;
     public string ElementName => _elementName;
     public string ID => _id;
     public string Content => _content;
