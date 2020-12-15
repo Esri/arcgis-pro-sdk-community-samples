@@ -83,6 +83,7 @@ namespace TableControlsDockpane
         #endregion Public Functions
 
         #region Table Properties
+
         private ObservableCollection<TabItemViewModel> _tabItems = new ObservableCollection<TabItemViewModel>();
         public ObservableCollection<TabItemViewModel> TabItems
         {

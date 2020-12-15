@@ -1,0 +1,184 @@
+﻿<UserControl x:Class="DeviceTracker.GNSSPropertiesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
+             xmlns:ui="clr-namespace:DeviceTracker"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             xmlns:local="clr-namespace:DeviceTracker"
+             mc:Ignorable="d" 
+             x:Name="gnssView"
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{Binding Path=ui.GNSSPropertiesViewModel}">
+     <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+              
+                <ResourceDictionary>
+                  <local:BoolToVisibleConverter x:Key="boolToVisibilityConverter"/>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+      </ResourceDictionary>
+    </UserControl.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    
+    <DockPanel Grid.Row="0">
+      <ListBox DockPanel.Dock="Top" Style="{DynamicResource Esri_ListBoxPanelIndicator}"
+                 ItemsSource="{Binding GNSSItems}" 
+                 SelectedIndex="{Binding CurrentTabIndex, Mode=TwoWay}"
+                 IsSynchronizedWithCurrentItem="True"/>
+    </DockPanel>
+    
+    <Grid Grid.Row="1" Margin="8,8,8,0" Visibility="{Binding IsGNSSSourceTab, Converter={StaticResource boolToVisibilityConverter}}">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Orientation="Vertical" IsEnabled="False">
+        <TextBlock Text="Current Properties" Style="{StaticResource Esri_TextBlockRegular}" FontWeight="Bold"/>
+        <Grid Margin="8,4">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+
+          <TextBlock Grid.Row="0"  Grid.Column="0" Margin="0,4" Text="Port : " Style="{StaticResource Esri_TextBlockRegular}"/>
+          <TextBox Grid.Row="0" Grid.Column="1" Margin="0,2" Text="{Binding CurrentSource.Port}"/>
+          <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,4" Text="BaudRate : " Style="{StaticResource Esri_TextBlockRegular}"/>
+          <TextBox Grid.Row="1" Grid.Column="1" Margin="0,2" Text="{Binding CurrentSource.BaudRate}"/>
+          <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,4" Text="Antenna Height : " Style="{StaticResource Esri_TextBlockRegular}"/>
+          <TextBox Grid.Row="2" Grid.Column="1" Margin="0,2" Text="{Binding CurrentSource.AntennaHeight}"/>
+          <TextBlock Grid.Row="3" Grid.Column="0" Margin="0,4" Text="Data Bits : " Style="{StaticResource Esri_TextBlockRegular}"/>
+          <TextBox Grid.Row="3" Grid.Column="1" Margin="0,2" Text="{Binding CurrentSource.DataBits}"/>
+          <TextBlock Grid.Row="4" Grid.Column="0" Margin="0,4" Text="Parity : " Style="{StaticResource Esri_TextBlockRegular}"/>
+          <TextBox Grid.Row="4" Grid.Column="1" Margin="0,2" Text="{Binding CurrentSource.Parity}"/>
+          <TextBlock Grid.Row="5" Grid.Column="0" Margin="0,4" Text="Stop Bits : " Style="{StaticResource Esri_TextBlockRegular}"/>
+          <TextBox Grid.Row="5" Grid.Column="1" Margin="0,2" Text="{Binding CurrentSource.StopBits}"/>
+
+          <TextBlock Grid.Row="6" Grid.Column="0" Margin="0,4" Text="Accuracy : " Style="{StaticResource Esri_TextBlockRegular}"/>
+          <TextBox Grid.Row="6" Grid.Column="1" Margin="0,2" Text="{Binding SourceAccuracy}"/>
+        </Grid>
+      </StackPanel>
+
+      <StackPanel Grid.Row="1" Grid.ColumnSpan="3"  Orientation="Vertical" Margin="0,4">
+        <TextBlock Text="Input Properties" Style="{StaticResource Esri_TextBlockRegular}" FontWeight="Bold"/>
+        <Grid Margin="8.4">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+
+          <TextBlock Grid.Row="0"  Grid.Column="0" Margin="0,4" Text="Port : " Style="{StaticResource Esri_TextBlockRegular}"/>
+          <TextBox Grid.Row="0" Grid.Column="1" Margin="0,2" Text="{Binding InputSource.Port}"/>
+          <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,4" Text="BaudRate : " Style="{StaticResource Esri_TextBlockRegular}"/>
+          <TextBox Grid.Row="1" Grid.Column="1" Margin="0,2" Text="{Binding InputSource.BaudRate}"/>
+          <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,4" Text="Antenna Height : " Style="{StaticResource Esri_TextBlockRegular}"/>
+          <TextBox Grid.Row="2" Grid.Column="1" Margin="0,2" Text="{Binding InputSource.AntennaHeight}"/>
+          <!--<TextBlock Grid.Row="3" Grid.Column="0" Text="Data Bits : " Style="{StaticResource Esri_TextBlockRegular}"/>
+          <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding InputSource.DataBits}"/>
+          <TextBlock Grid.Row="4" Grid.Column="0" Text="Parity : " Style="{StaticResource Esri_TextBlockRegular}"/>
+          <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding InputSource.Parity}"/>
+          <TextBlock Grid.Row="5" Grid.Column="0" Text="Stop Bits : " Style="{StaticResource Esri_TextBlockRegular}"/>
+          <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding InputSource.StopBits}"/>-->
+
+          <TextBlock Grid.Row="6" Grid.Column="0" Margin="0,4" Text="Accuracy : " Style="{StaticResource Esri_TextBlockRegular}"/>
+          <TextBox Grid.Row="6" Grid.Column="1"  Margin="0,2" Text="{Binding InputSourceAccuracy}"/>
+        </Grid>
+      </StackPanel>
+      
+      <Button Grid.Row="2" Grid.Column="0" Content="Close" Command="{Binding CloseSourceCmd}"  Style="{DynamicResource Esri_Button}"/>
+      <Button Grid.Row="2" Grid.Column="1" Content="Open" Command="{Binding OpenSourceCmd}"  Style="{DynamicResource Esri_Button}"/>
+      <Button Grid.Row="2" Grid.Column="2" Content="Update" Command="{Binding UpdateSourceCmd}"  Style="{DynamicResource Esri_Button}"/>
+
+      <Button Grid.Row="3" Grid.ColumnSpan="3" Content="Get DeviceSource Properties" Command="{Binding GetSourcePropertiesCmd}"  Style="{StaticResource Esri_Button}"/>
+      <Button Grid.Row="4" Grid.ColumnSpan="3" Content="Enable / Disable DeviceSource" Command="{Binding EnableSourceCmd}"  Style="{StaticResource Esri_Button}"/>
+
+      <Label Margin="0,8,0,0" Grid.Row="5" Content="Source Events" FontWeight="Bold"/>
+      <Button Grid.Row="6" Grid.Column="0" Content="Connect" Command="{Binding ConnectSourceEventsCmd}"  Style="{StaticResource Esri_Button}"/>
+      <Button Grid.Row="6" Grid.Column="1" Content="Disconnect" Command="{Binding DisconnectSourceEventsCmd}"  Style="{StaticResource Esri_Button}"/>
+      <Button Grid.Row="6" Grid.Column="2" Content="Clear Log" Command="{Binding ClearLogCmd}"  Style="{StaticResource Esri_Button}"/>
+
+      <ScrollViewer Margin="5,10,5,5" Grid.Row="7" Grid.ColumnSpan="3" VerticalScrollBarVisibility="Auto"
+                  ui:ScrollViewerExtensions.AlwaysScrollToEnd="True">
+        <TextBlock Text="{Binding EventLog}" TextWrapping="Wrap" Style="{DynamicResource Esri_TextBlockRegular}"/>
+      </ScrollViewer>
+    </Grid>
+      
+    <Grid Grid.Row="1" Margin="8,8,8,0" Visibility="{Binding IsGNSSLocationTab, Converter={StaticResource boolToVisibilityConverter}}" >
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <StackPanel Grid.Row="0" Grid.ColumnSpan="3"  Orientation="Vertical">
+        <TextBlock Text="Location Options" Style="{StaticResource Esri_TextBlockRegular}" FontWeight="Bold"/>
+        <StackPanel>
+          <CheckBox Margin="0,4,0,0" Content="Show Location" IsChecked="{Binding LocationOptions_ShowLocation}"/>
+          <CheckBox Margin="0,4,0,0" Content="Keep At Center" IsChecked="{Binding LocationOptions_KeepAtCenter}"/>
+          <CheckBox Margin="0,4,0,0" Content="Track up Navigation" IsChecked="{Binding LocationOptions_TrackUp}"/>
+          <Button Margin="4,12,4,0" Content="Update Options" Command="{Binding UpdateMapLocationOptionsCmd}"  Style="{StaticResource Esri_Button}"/>
+        </StackPanel>
+      </StackPanel>
+
+      <Button Margin="4,12,4,0" Grid.Row="1" Grid.ColumnSpan="3" Content="Zoom/Pan To Location" Command="{Binding ZoomPanToLocationCmd}"  Style="{StaticResource Esri_Button}"/>
+      <Button Grid.Row="2" Grid.ColumnSpan="3" Content="Add Last Location" Command="{Binding AddLastLocationCmd}"  Style="{StaticResource Esri_Button}"/>
+      
+      <Label Margin="0,8,0,0" Grid.Row="3" Content="Snapshot Events" FontWeight="Bold"/>
+      <Button Grid.Row="4" Grid.Column="0" Content="Connect" Command="{Binding GetLocationsCmd}"  Style="{StaticResource Esri_Button}"/>
+      <Button Grid.Row="4" Grid.Column="1" Content="Disconnect" Command="{Binding DisconnectLocationsCmd}"  Style="{StaticResource Esri_Button}"/>
+      <Button Grid.Row="4" Grid.Column="2" Content="Clear Log" Command="{Binding ClearLocLogCmd}"  Style="{StaticResource Esri_Button}"/>
+      <Button Grid.Row="5" Content="Add Polyline" Grid.ColumnSpan="3"  Command="{Binding AddPolylineCmd}"  Style="{StaticResource Esri_Button}"/>
+
+      <ScrollViewer Margin="5,10,5,5" Grid.Row="6" Grid.ColumnSpan="3" VerticalScrollBarVisibility="Auto"
+                  ui:ScrollViewerExtensions.AlwaysScrollToEnd="True">
+        <TextBlock Text="{Binding LocEventLog}" TextWrapping="Wrap" Style="{DynamicResource Esri_TextBlockRegular}"/>
+      </ScrollViewer>
+    </Grid>
+  </Grid>
+</UserControl>

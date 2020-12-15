@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="QueryGraphicBoundary.dll" defaultNamespace="QueryGraphicBoundary" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{3c54b579-906a-4238-b724-577e5b7a35bb}" version="1.0" desktopVersion="2.7">
+    <Name>QueryGraphicBoundary</Name>
+    <Description>Demonstrates masking</Description>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, http://www.esri.com</Company>
+    <Date>4/6/2020 12:22:34 PM, 2020</Date>
+    <Subject>VoxelLayers</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="QueryGraphicBoundary_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="QueryGraphicBoundary_Tab1" caption="Test Mask">
+          <group refID="QueryGraphicBoundary_Group1" />
+          <group refID="QueryGraphicBoundary_Group2" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="QueryGraphicBoundary_Group1" caption="Masking" appearsOnAddInTab="false">
+          <!-- host controls within groups -->
+          <tool refID="QueryGraphicBoundary_Ribbon_UpdateOutline" size="large" />
+          <subgroup refID="QueryGraphicBoundary_Ribbon_MaskOptions" />
+        </group>
+        <group id="QueryGraphicBoundary_Group2" caption="" appearsOnAddInTab="false">
+          <button refID="QueryGraphicBoundary_ClearOutlines" size="large" />
+        </group>
+      </groups>
+      <subgroups>
+        <subgroup id="QueryGraphicBoundary_Ribbon_MaskOptions" size="AlwaysMedium" verticalAlignment="Center">
+          <toolbar refID="QueryGraphicBoundary_Ribbon_MaskToolbar1" />
+          <toolbar refID="QueryGraphicBoundary_Ribbon_MaskToolbar2" />
+        </subgroup>
+      </subgroups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="QueryGraphicBoundary_ClearOutlines" caption="ClearOutlines" className="QueryGraphicBoundary.Ribbon.ClearOutlines" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/BexDog16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/BexDog32.png">
+          <tooltip heading="Tooltip Heading">
+						Clear the outline(s)<disabledText /></tooltip>
+        </button>
+        <labelControl id="QueryGraphicBoundary_Ribbon_MaskLabel" caption="Mask: " />
+        <comboBox id="QueryGraphicBoundary_Ribbon_MaskKindPicker" caption="Mask" className="QueryGraphicBoundary.Ribbon.MaskKindPicker" itemWidth="140" extendedCaption="Mask Picker" isEditable="false" isReadOnly="true" resizable="true">
+          <tooltip heading="Tooltip Heading">
+						Tooltip text<disabledText /></tooltip>
+        </comboBox>
+        <labelControl id="QueryGraphicBoundary_Ribbon_MarginLabel" caption="Margin: " />
+        <spinner id="QueryGraphicBoundary_Ribbon_MarginSpinner" caption="Spin" className="QueryGraphicBoundary.Ribbon.MarginSpinner" format="F1" defaultValue="0" maximum="100" minimum="0" increment=".5">
+          <tooltip heading="Mask Margin">
+							Specify margin in map units
+							<disabledText></disabledText></tooltip>
+        </spinner>
+        <tool id="QueryGraphicBoundary_Ribbon_UpdateOutline" caption="UpdateOutline" className="QueryGraphicBoundary.Ribbon.UpdateOutline" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/MarsCat16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/MarsCat32.png" condition="esri_mapping_mapViewingMode2DCondition">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </tool>
+      </controls>
+      <toolbars>
+        <toolbar id="QueryGraphicBoundary_Ribbon_MaskToolbar1">
+          <group>
+            <labelControl refID="QueryGraphicBoundary_Ribbon_MaskLabel" size="small" />
+            <comboBox refID="QueryGraphicBoundary_Ribbon_MaskKindPicker" size="small" />
+          </group>
+        </toolbar>
+        <toolbar id="QueryGraphicBoundary_Ribbon_MaskToolbar2">
+          <group>
+            <labelControl refID="QueryGraphicBoundary_Ribbon_MarginLabel" size="small" />
+            <spinner refID="QueryGraphicBoundary_Ribbon_MarginSpinner" size="small" />
+          </group>
+        </toolbar>
+      </toolbars>
+    </insertModule>
+  </modules>
+</ArcGIS>

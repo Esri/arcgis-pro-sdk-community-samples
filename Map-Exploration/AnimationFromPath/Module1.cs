@@ -36,15 +36,15 @@ namespace AnimationFromPath
   /// - Keyframes only at vertices - creates a keyframe at each line vertex
   /// </summary>
   /// <remarks>
-  ///1. In Visual Studio click the Build menu. Then select Build Solution.
-  ///2. Click Start button to open ArcGIS Pro.
-  ///3. ArcGIS Pro will open. 
-  ///4. Open a scene or map view and a line feature class
-  ///5. Select a line feature
-  ///6. On the ADD-IN tab choose options under Animation from Path group and create keyframes
-  ///NOTE - the selected line geometry is used for creating the keyframes. This means that
-  /// for a 2D line feature, the keyframes will be created at zero height + any Z-Offset you
-  /// specified in the options on the ADD-IN tab
+  /// 1. In Visual Studio click the Build menu. Then select Build Solution.
+  /// 1. Click Start button to open ArcGIS Pro.
+  /// 1. ArcGIS Pro will open. 
+  /// 1. Open a scene or map view and a line feature class
+  /// 1. Select a line feature
+  /// 1. On the ADD-IN tab choose options under Animation from Path group and create keyframes
+  /// NOTE - the selected line geometry is used for creating the keyframes. This means that
+  ///  for a 2D line feature, the keyframes will be created at zero height + any Z-Offset you
+  ///  specified in the options on the ADD-IN tab
   /// </remarks>
   internal class Module1 : Module
   {

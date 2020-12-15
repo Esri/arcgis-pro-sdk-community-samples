@@ -1,7 +1,7 @@
 ## CreateReport
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrate how to create a report.  
+This sample demonstrate how to create a report and modify that report.  
   
 
 
@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  7/01/2020
-ArcGIS Pro:            2.6
+Date:                  12/01/2020
+ArcGIS Pro:            2.7
 Visual Studio:         2019
 .NET Target Framework: 4.8
 ```
@@ -51,6 +51,14 @@ Visual Studio:         2019
 1. Click Create Report.  The Report project item is generated. You can see this in the Catalog pane.  
 1. Export the report to a PDF.  The report PDF file is exported to the project's home folder.  
 ![UI](screenshots/CreateReport.png)    
+###Modify an existing report by adding a new field  
+  
+1. You can modify this report that was just created. To modify the report, click/add additional fields in the fields listbox.  
+1. The Update report button gets enabled when you add additional fields. Click Update Report.  
+![UI](screenshots/UpdateReport.png)   
+  
+1. Notice the new fields added to the Report view.  
+![UI](screenshots/ModifiedReport.png)   
   
 
 

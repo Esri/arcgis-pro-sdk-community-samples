@@ -38,27 +38,33 @@ using ArcGIS.Desktop.Mapping.Events;
 
 namespace CreateReport
 {
-    /// <summary>
-    /// This sample demonstrate how to create a report.
-    /// </summary>
-    /// <remarks>
-    /// 1. In Visual Studio click the Build menu. Then select Build Solution. 
-    /// 1. Click Start button to open ArcGIS Pro.
-    /// 1. ArcGIS Pro will open. 
-    /// 1. Open any project file that contains feature layers. Activate the mapview with the feature layers.
-    /// 1. In the Add-In tab, click the Create Report button. This will display the Create Report dockpane.
-    /// 1. Pick a layer in the active map for which you want to use to generate a report.  Check the "Report uses only the selected features" check box if needed.
-    /// 1. Modify or accept the default Report Name.
-    /// 1. Pick the fields needed for the report.
-    /// 1. Pick a Grouping field. This is optional.
-    /// 1. Pick the templates and styling for report.
-    /// 1. Pick a field used to generate field statistics if required.
-    /// 1. Pick the Statistics option.
-    /// 1. Click Create Report.  The Report project item is generated. You can see this in the Catalog pane.
-    /// 1. Export the report to a PDF.  The report PDF file is exported to the project's home folder.
-    /// ![UI](screenshots/CreateReport.png)  
-	/// </remarks>
-    internal class Module1 : Module
+  /// <summary>
+  /// This sample demonstrate how to create a report and modify that report.
+  /// </summary>
+  /// <remarks>
+  /// 1. In Visual Studio click the Build menu. Then select Build Solution. 
+  /// 1. Click Start button to open ArcGIS Pro.
+  /// 1. ArcGIS Pro will open. 
+  /// 1. Open any project file that contains feature layers. Activate the mapview with the feature layers.
+  /// 1. In the Add-In tab, click the Create Report button. This will display the Create Report dockpane.
+  /// 1. Pick a layer in the active map for which you want to use to generate a report.  Check the "Report uses only the selected features" check box if needed.
+  /// 1. Modify or accept the default Report Name.
+  /// 1. Pick the fields needed for the report.
+  /// 1. Pick a Grouping field. This is optional.
+  /// 1. Pick the templates and styling for report.
+  /// 1. Pick a field used to generate field statistics if required.
+  /// 1. Pick the Statistics option.
+  /// 1. Click Create Report.  The Report project item is generated. You can see this in the Catalog pane.
+  /// 1. Export the report to a PDF.  The report PDF file is exported to the project's home folder.
+  /// ![UI](screenshots/CreateReport.png)  
+  /// ###Modify an existing report by adding a new field
+  /// 1. You can modify this report that was just created. To modify the report, click/add additional fields in the fields listbox.
+  /// 1. The Update report button gets enabled when you add additional fields. Click Update Report.
+  /// ![UI](screenshots/UpdateReport.png) 
+  /// 1. Notice the new fields added to the Report view.
+  /// ![UI](screenshots/ModifiedReport.png) 
+  /// </remarks>
+  internal class Module1 : Module
     {
         private static Module1 _this = null;
 
@@ -84,30 +90,6 @@ namespace CreateReport
             //return false to ~cancel~ Application close
             return true;
         }
-
-        protected override bool Initialize()
-        {
-            ActiveMapViewChangedEvent.Subscribe(OnActiveMapViewChanged);
-            DrawCompleteEvent.Subscribe(OnDrawComplete);
-            return base.Initialize();
-        }
-
-        private void OnDrawComplete(MapViewEventArgs obj)
-        {
-            if (obj.MapView == null)
-                return;
-            CreateReportViewModel vm = FrameworkApplication.DockPaneManager.Find("CreateReport_CreateReport") as CreateReportViewModel;
-            vm.UpdateCollectionsAsync();
-        }
-
-        private void OnActiveMapViewChanged(ActiveMapViewChangedEventArgs obj)
-        {
-            if (obj.IncomingView == null)
-                return;
-            CreateReportViewModel vm = FrameworkApplication.DockPaneManager.Find("CreateReport_CreateReport") as CreateReportViewModel;
-            vm.UpdateCollectionsAsync();
-        }
-
 
         #endregion Overrides
 

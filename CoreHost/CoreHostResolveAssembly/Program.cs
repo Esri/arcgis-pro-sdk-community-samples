@@ -35,7 +35,7 @@ namespace CoreHostResolveAssembly
   /// The references to ArcGIS.Core.dll and ArcGIS.CoreHost.dll in Visual Studio have the "Copy Local" property set to "false". 
   /// </summary>
   /// <remarks>
-  /// 1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\SDK\SDK.gdb" is available.
+  /// 1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  Make sure that the Sample data is unzipped in c:\data and "C:\Data\SDK\SDK.gdb" is available.
   /// 1. Open this solution in Visual Studio 
   /// 1. Click the build menu and select Build Solution.
   /// 1. Specify a valid path to a file geodatabase as your debug command line parameter 

@@ -29,7 +29,7 @@ namespace TableControlsDockpane
     {
 
         /// <summary>
-        /// Call: var foundElement = visualRootElement.GetChildOfType<ComboBox>();
+        /// Call: var foundElement = visualRootElement.GetChildOfType&lt;ComboBox&gt;();
         /// </summary>
         /// <typeparam name="T">type you specify in GetChildOfType&lt;type&gt;</typeparam>
         /// <param name="depObj">root node from where to search from</param>
@@ -38,7 +38,6 @@ namespace TableControlsDockpane
             where T : DependencyObject
         {
             if (depObj == null) return null;
-
             for (int i = 0; i < System.Windows.Media.VisualTreeHelper.GetChildrenCount(depObj); i++)
             {
                 var child = System.Windows.Media.VisualTreeHelper.GetChild(depObj, i);

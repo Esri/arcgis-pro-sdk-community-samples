@@ -16,8 +16,8 @@
     <Name>Grid Scale CAD Layer</Name>
     <Description>Transform a CAD layer using a grid scale factor.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>Esri SDK Team</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>12/16/2019 10:38:22 AM, 2019</Date>
     <Subject>Editing</Subject>
   </AddInInfo>

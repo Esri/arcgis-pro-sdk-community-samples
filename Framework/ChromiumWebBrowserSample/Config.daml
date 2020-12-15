@@ -22,8 +22,8 @@
     <Name>ChromiumWebBrowserSample</Name>
     <Description>ChromiumWebBrowserSample description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>arcgisprosdk</Author>
-    <Company>Acme</Company>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, http://www.esri.com</Company>
     <Date>12/17/2019 4:02:21 PM, 2019</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

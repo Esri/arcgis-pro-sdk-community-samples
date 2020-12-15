@@ -13,8 +13,8 @@ Language:              C#
 Subject:               SceneLayers
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  7/01/2020
-ArcGIS Pro:            2.6
+Date:                  12/01/2020
+ArcGIS Pro:            2.7
 Visual Studio:         2017, 2019
 .NET Target Framework: 4.8
 ```
@@ -41,7 +41,7 @@ Visual Studio:         2017, 2019
 1. Click Start button to open ArcGIS Pro.  
 1. ArcGIS Pro will open.   
 1. Open the project "Scene_Volume_Calculation.aprx" found in folder: "C:\Data\VolumeCalcTools\Scene_Volume_Calculation\"  
-1. The demo dataset contains a 3D integrated mesh scene layer, Asphalt3D_132, which is visible as the project opens.  The default view is zoomed in to show three asphalt stockpiles.  There is also a bookmark, Asphalt Stockpiles, to restore this view for trying the add-in tools. There is a single “volume polygon” in green seen around the base of the largest stockpile, which is contained in the polygon feature layer, Clip_Polygon_Asphalt.  
+1. The demo dataset contains a 3D integrated mesh scene layer, Asphalt3D_132, which is visible as the project opens.  The default view is zoomed in to show three asphalt stockpiles.  There is also a bookmark, Asphalt Stockpiles, to restore this view for trying the add-in tools. There is a single "volume polygon" in green seen around the base of the largest stockpile, which is contained in the polygon feature layer, Clip_Polygon_Asphalt.  
 1. Click on the Add-In Tab and you will find a new button provided by the add-in with the caption "Scene Volume Calculation".  Click the button to open the new dockpane which has the same caption.  Resize the dockpane as needed to view the text boxes.  
 ![UI](Screenshot/Screen1.png)   
   
@@ -53,7 +53,7 @@ Visual Studio:         2017, 2019
 ![UI](Screenshot/Screen3.png)   
   
 1. Click the Elevation tool to active it and in the scene, click on a spot near the base of the asphalt pile.  This will apply the elevation of the clicked location to the feature’s PlaneHeight attribute, which drives the polygon’s elevation via the layer properties.  You can select another elevation point and see how the height of the selected polygon adjusts.  
-1. Next, in the Volume Calc Direction combobox, set the value to “Above” which specifies that you will calculate the volume of the stockpile above the reference plane of the volume polygon. Finally, with the single new polygon selected, click the Volume button on the dockpane.  When prompted, confirm “yes” to run the routine.  
+1. Next, in the Volume Calc Direction combobox, set the value to "Above" which specifies that you will calculate the volume of the stockpile above the reference plane of the volume polygon. Finally, with the single new polygon selected, click the Volume button on the dockpane.  When prompted, confirm "yes" to run the routine.  
 1. Review the values for the selected feature in the dockpane, which shows the volume, surface area and estimated weight.  The Volume routine runs the Polygon Volume geoprocessing tool and calculates additional attributes in the edit operation and displays these in the dockpane.  
 ![UI](Screenshot/Screen4.png)   
   

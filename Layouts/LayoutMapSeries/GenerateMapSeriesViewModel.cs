@@ -70,7 +70,6 @@ namespace LayoutMapSeries
 
       pane.Activate();
     }
-
     
     public IReadOnlyCollection<SetPage> PageLayouts
     {

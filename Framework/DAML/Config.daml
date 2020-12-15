@@ -202,6 +202,30 @@
       </galleries>
     </updateModule>
     <!--End ProSnippet-->
+    <!--ProSnippet: Subgroup: Insert and delete subgroups within a group. -->
+    <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/insert-delete-subgroup-in-group.png" width="40%">-->
+    <!--Note: "updateModule" tag should be within the "modules" tag-->
+    <updateModule refID="esri_mapping">
+      <groups>
+        <updateGroup refID="esri_mapping_layerGroup">
+          <insertSubgroup refID="esri_mapping_enableAnimation_subGroup"/>
+          <deleteSubgroup refID="esri_mapping_firstLayerSubGroup"/>
+        </updateGroup>
+      </groups>
+    </updateModule>
+   <!--End ProSnippet-->    
+   <!--ProSnippet: Subgroup: Insert and delete within a subgroup -->
+    <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/insert-delete-within-subgroup.png" width="40%"> -->
+   <!--Note: "updateModule" tag should be within the "modules" tag-->
+   <updateModule refID="esri_mapping">
+    <subgroups>
+      <updateSubgroup refID="esri_mapping_firstLayerSubGroup">        
+        <deleteGallery refID="esri_mapping_basemapGallery"/>
+        <insertButtonPalette refID="esri_mapping_firstLayerSubGroup"/>
+      </updateSubgroup>                
+    </subgroups>
+  </updateModule>
+  <!--End ProSnippet-->
   </modules>
   <!--ProSnippet: Backstage tab: Delete Pro's tabs and insert your own tab-->
   <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/BackstageDeleteExistingTabsInsertNewTabs.png" width="40%">-->

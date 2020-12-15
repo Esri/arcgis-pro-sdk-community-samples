@@ -130,6 +130,7 @@
     <Compile Include="Module1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportField.cs" />
+    <Compile Include="ReportFieldComparer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="CreateReport.xaml">
@@ -157,6 +158,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="screenshots\ModifiedReport.png" />
+    <Resource Include="screenshots\UpdateReport.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!--

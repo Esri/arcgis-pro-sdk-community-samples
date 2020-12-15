@@ -67,11 +67,13 @@ namespace EditingTemplates
         // group templates are stored on the primary layer
         var layerDef = precinctLayer.GetDefinition() as CIMFeatureLayer;
 
-        //set new template values
-        var myGroupTemplateDef = new CIMGroupEditingTemplate();
-        myGroupTemplateDef.Name = "My Group Template";
-        myGroupTemplateDef.Description = "some desc";
-        myGroupTemplateDef.WriteTags(new[] { "Group", "Polygon"});
+				//set new template values
+				var myGroupTemplateDef = new CIMGroupEditingTemplate
+				{
+					Name = "My Group Template",
+					Description = "some desc"
+				};
+				myGroupTemplateDef.WriteTags(new[] { "Group", "Polygon"});
 
         // set the default construction tool
         myGroupTemplateDef.SetDefaultToolDamlID("esri_editing_SketchPolygonTool");

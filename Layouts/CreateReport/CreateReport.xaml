@@ -50,19 +50,18 @@
         </DockPanel>
         <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,-264">
             <TextBlock Text="Layers in Active Map" Margin="5"></TextBlock>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition SharedSizeGroup="A"/>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="Auto" SharedSizeGroup="A"/>
-                </Grid.ColumnDefinitions>
-                <!--Layers in Active map-->
-                <ComboBox Grid.Column="0" ItemsSource="{Binding Layers}" SelectedItem="{Binding SelectedLayer}" Margin="5"></ComboBox>
-                <!--Should selection be used for report?-->
-                <CheckBox Grid.Column="1" IsChecked="{Binding IsUseSelection}"  Margin="5">Report uses only selected features</CheckBox>
-            </Grid>
-           
-            <TextBlock Text="Report Name" Margin="5"></TextBlock>
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition SharedSizeGroup="A"/>
+          <ColumnDefinition />
+          <ColumnDefinition Width="Auto" SharedSizeGroup="A"/>
+        </Grid.ColumnDefinitions>
+        <!--Layers in Active map-->
+        <ComboBox Grid.Column="0" ItemsSource="{Binding Layers}" SelectedItem="{Binding SelectedLayer}" Margin="5"></ComboBox>
+        <!--Should selection be used for report?-->
+        <CheckBox Grid.Column="1" IsChecked="{Binding IsUseSelection}"  Margin="5">Report uses only selected features</CheckBox>
+      </Grid>
+      <TextBlock Text="Report Name" Margin="5"></TextBlock>
             <!--Name of report-->
             <TextBox MinWidth="150" Margin="5" Text="{Binding ReportName}"></TextBox>
             <TextBlock Text="Fields included in Report" Margin="5"></TextBlock>
@@ -72,7 +71,7 @@
             <ListBox HorizontalContentAlignment="Stretch"  
                  ItemsSource="{Binding Path=ReportFields, Mode=OneWay}"
                  Margin="5" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
-                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionMode="Extended">
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionMode="Extended" MaxHeight="350">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <CheckBox IsChecked="{Binding Path=IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
@@ -144,7 +143,8 @@
             <!--Create Report-->
             <Button Style="{DynamicResource Esri_Button}" Margin="5" Command="{Binding CreateReportCommand}">Create Report</Button>
             <!--Export Report-->
-            <Button Style="{DynamicResource Esri_Button}" Margin="5" Command="{Binding ExportReportCommand}">Export Report</Button>
-        </StackPanel>
+      <Button Style="{DynamicResource Esri_Button}" Margin="5" Command="{Binding ExportReportCommand}" >Export Report</Button>
+      <Button Style="{DynamicResource Esri_Button}" Margin="5" Command="{Binding UpdateReportCommand}" >Update Report</Button>
+    </StackPanel>
     </Grid>
 </UserControl>

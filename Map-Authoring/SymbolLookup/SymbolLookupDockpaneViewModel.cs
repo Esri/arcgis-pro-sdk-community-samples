@@ -257,6 +257,7 @@ namespace SymbolLookup
 						if (lyr.CanLookupSymbol())
 						{
 							var symbol = lyr.LookupSymbol(kvp.Value[0], activeMapView);
+              if (symbol == null) continue;
 							lock (_lock)
 								FeatureItems.Add(new FeatureItem(lyr, kvp.Value[0], symbol));
 						}

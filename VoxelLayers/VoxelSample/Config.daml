@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="VoxelSample.dll" defaultNamespace="VoxelSample" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{ae612502-c520-4595-9afb-48d1838c08a1}" version="1.0" desktopVersion="2.7">
+    <Name>VoxelSample</Name>
+    <Description>Demonstrates use of the Voxel API</Description>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>10/26/2020 8:46:36 AM</Date>
+    <Subject>VoxelLayers</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="VoxelSample_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="VoxelSample_Tab1" caption="Voxel Sample">
+          <group refID="esri_mapping_navigateGroup" />
+          <group refID="VoxelSample_Group1" />
+          <group refID="VoxelSample_Group2" />
+          <group refID="VoxelSample_Group3" />
+          <group refID="VoxelSample_Group4" />
+          <group refID="VoxelSample_Group5" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="VoxelSample_Group1" caption="General" appearsOnAddInTab="false">
+          <!-- host controls within groups -->
+          <button refID="VoxelSample_Examples_CreateLayer" size="large" />
+          <button refID="VoxelSample_Examples_ChangeVariableProfile" size="large" />
+          <button refID="VoxelSample_Examples_ManipulateTOC" size="large" />
+        </group>
+        <group id="VoxelSample_Group2" caption="Surface" appearsOnAddInTab="false">
+          <button refID="VoxelSample_Examples_IsoSurface_CreateIsoSurface" size="large" />
+          <button refID="VoxelSample_Examples_IsoSurface_UpdateIsoSurface" size="large" />
+          <button refID="VoxelSample_Examples_IsoSurface_DeleteIsoSurface" size="large" />
+        </group>
+        <group id="VoxelSample_Group3" caption="Slice" appearsOnAddInTab="false">
+          <button refID="VoxelSample_Examples_Slice_CreateSlice" size="large" />
+          <button refID="VoxelSample_Examples_Slice_DeleteSlice" size="large" />
+        </group>
+        <group id="VoxelSample_Group4" caption="Section" appearsOnAddInTab="false">
+          <button refID="VoxelSample_Examples_Section_CreateSection" size="large" />
+          <button refID="VoxelSample_Examples_Section_CreateSectionCircle" size="large" />
+          <button refID="VoxelSample_Examples_Section_CreateSectionCross" size="large" />
+          <button refID="VoxelSample_Examples_Section_CreateSectionDiagonal" size="large" />
+          <button refID="VoxelSample_Examples_Section_UpdateSections" size="large" />
+          <button refID="VoxelSample_Examples_Section_DeleteAllSections" size="large" />
+        </group>
+        <group id="VoxelSample_Group5" caption="Locked Section" appearsOnAddInTab="false">
+          <button refID="VoxelSample_Examples_LockSection_LockSections" size="large" />
+          <button refID="VoxelSample_Examples_LockSection_UnlockSections" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="VoxelSample_Examples_CreateLayer" caption="CreateLayer" className="VoxelSample.Examples.CreateLayer" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="VoxelSample_Examples_ChangeVariableProfile" caption="ChangeVariableProfile" className="VoxelSample.Examples.ChangeVariableProfile" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="VoxelSample_Examples_ManipulateTOC" caption="ManipulateTOC" className="VoxelSample.Examples.ManipulateTOC" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="VoxelSample_Examples_IsoSurface_CreateIsoSurface" caption="CreateIsoSurface" className="VoxelSample.Examples.IsoSurface.CreateIsoSurface" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="VoxelSample_Examples_IsoSurface_UpdateIsoSurface" caption="UpdateIsoSurface" className="VoxelSample.Examples.IsoSurface.UpdateIsoSurface" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="VoxelSample_Examples_IsoSurface_DeleteIsoSurface" caption="DeleteIsoSurface" className="VoxelSample.Examples.IsoSurface.DeleteIsoSurface" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="VoxelSample_Examples_Slice_CreateSlice" caption="CreateSlice" className="VoxelSample.Examples.Slice.CreateSlice" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonOrange16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonOrange32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="VoxelSample_Examples_Slice_DeleteSlice" caption="DeleteSlice" className="VoxelSample.Examples.Slice.DeleteSlice" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonOrange16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonOrange32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="VoxelSample_Examples_Section_CreateSection" caption="CreateSection" className="VoxelSample.Examples.Section.CreateSection" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="VoxelSample_Examples_Section_CreateSectionCircle" caption="CreateSectionCircle" className="VoxelSample.Examples.Section.CreateSectionCircle" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="VoxelSample_Examples_Section_CreateSectionCross" caption="CreateSectionCross" className="VoxelSample.Examples.Section.CreateSectionCross" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="VoxelSample_Examples_Section_CreateSectionDiagonal" caption="CreateSectionDiagonal" className="VoxelSample.Examples.Section.CreateSectionDiagonal" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="VoxelSample_Examples_Section_UpdateSections" caption="UpdateSections" className="VoxelSample.Examples.Section.UpdateSections" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="VoxelSample_Examples_Section_DeleteAllSections" caption="DeleteAllSections" className="VoxelSample.Examples.Section.DeleteAllSections" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="VoxelSample_Examples_LockSection_LockSections" caption="LockSections" className="VoxelSample.Examples.LockSection.LockSections" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlack16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlack32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="VoxelSample_Examples_LockSection_UnlockSections" caption="UnlockSections" className="VoxelSample.Examples.LockSection.UnlockSections" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlack16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlack32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

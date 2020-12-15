@@ -22,8 +22,8 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  7/01/2020
-ArcGIS Pro:            2.6
+Date:                  12/01/2020
+ArcGIS Pro:            2.7
 Visual Studio:         2017, 2019
 .NET Target Framework: 4.8
 ```

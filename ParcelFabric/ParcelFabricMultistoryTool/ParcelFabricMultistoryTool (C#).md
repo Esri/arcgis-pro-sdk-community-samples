@@ -10,11 +10,11 @@
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
-Subject:               Editing, Parcel Fabric
+Subject:               ParcelFabric
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  7/01/2020
-ArcGIS Pro:            2.6
+Date:                  12/01/2020
+ArcGIS Pro:            2.7
 Visual Studio:         2019
 .NET Target Framework: 4.8
 ```
@@ -42,7 +42,7 @@ Visual Studio:         2019
  1. Open the solution in Visual Studio 2017 or 2019.  
  1. Click the Build menu and select Build Solution.  
  1. Click the Start button to open ArcGIS Pro.   
- 1. Open the project “NapervilleParcels.aprx" found in folder: “C:\data\ParcelFabric”.  
+ 1. Open the project "NapervilleParcels.aprx" found in folder: "C:\data\ParcelFabric".  
  1. The project opens in the 2D map view.  You can see two polygon layers displayed, Tax Parcels and Records, with an imagery basemap.  
  1. Click on the Condominium Units bookmark and you will find centered in the map a condominium complex, seen in the screenshot below with the red outline.  This will be the area for your parcel editing.  
  1. As a parcel fabric layer is contained in the map, the Parcels ribbon becomes available, as seen in the green outline in the screenshot below.  The Parcels ribbon consists of a Records tab, which contains tools and commands for editing parcels in a parcel fabric.  

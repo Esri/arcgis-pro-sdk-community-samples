@@ -153,10 +153,10 @@ namespace OpenItemDialogBrowseFilter
     private void GetTypeIDsForSelectedFilterFlag()
     {
       if (SelectedDisplayItem is null) return;
-      var filterFlag = (BrowseProjectFilter.FilterFlag)Enum.Parse(typeof(BrowseProjectFilter.FilterFlag), SelectedDisplayItem.Row["name"].ToString());
+			var filterFlag = (BrowseProjectFilter.FilterFlag)Enum.Parse(typeof(BrowseProjectFilter.FilterFlag), SelectedDisplayItem.Row["name"].ToString());
       var flagsForSelectedTypeID = ArcGIS.Desktop.Internal.Core.BrowseFilter.BrowseFilterUtils.GetTypeIdsForFlag(filterFlag);
-      var sb = new StringBuilder();
-      foreach (var flag in flagsForSelectedTypeID)
+			var sb = new StringBuilder();
+			foreach (var flag in flagsForSelectedTypeID)
       {
         sb.AppendLine(flag);
       }

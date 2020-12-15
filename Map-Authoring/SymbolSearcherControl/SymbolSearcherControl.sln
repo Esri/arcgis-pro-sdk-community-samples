@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymbolSearcherControl", "SymbolSearcherControl.csproj", "{02F1C4E4-9BA1-403A-B950-2F3BB9438FEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02F1C4E4-9BA1-403A-B950-2F3BB9438FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02F1C4E4-9BA1-403A-B950-2F3BB9438FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02F1C4E4-9BA1-403A-B950-2F3BB9438FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02F1C4E4-9BA1-403A-B950-2F3BB9438FEE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {25298FF7-B798-4751-AB66-903FD0FD1444}
+	EndGlobalSection
+EndGlobal

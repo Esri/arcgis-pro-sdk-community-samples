@@ -1,0 +1,78 @@
+﻿<ArcGIS defaultAssembly="SymbolSearcherControl.dll" defaultNamespace="SymbolSearcherControl" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{02f1c4e4-9ba1-403a-b950-2f3bb9438fee}" version="1.0" desktopVersion="2.7.25976">
+    <Name>SymbolSearcherControl</Name>
+    <Description>SymbolSearcherControl description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>8/6/2020 10:20:39 AM</Date>
+    <Subject>Map Authoring</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="SymbolSearcherControl_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="SymbolSearcherControl_Tab1" caption="New Tab">
+          <group refID="SymbolSearcherControl_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="SymbolSearcherControl_Group1" caption="Various Symbol Searchers" appearsOnAddInTab="true" keytip="G1">
+          <!-- host controls within groups -->
+          <button refID="SymbolSearcherControl_SymbolSearcherDockpane_ShowButton" size="large" />
+          <button refID="SymbolSearcherControl_SimpleSymbolSearcher_ShowButton" size="large" />
+          <button refID="SymbolSearcherControl_VerySimpleSymbolSearcher_ShowButton" size="large" />
+          <button refID="SymbolSearcherControl_SymbolPicker_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="SymbolSearcherControl_SymbolSearcherDockpane_ShowButton" keytip="B1" 
+								caption="Pro Symbol Searcher" className="SymbolSearcherDockpane_ShowButton" loadOnClick="true" 
+								smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" 
+								largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+          <tooltip heading="Pro Symbol Searcher">Shows a Dockpane with a SymbolSearcher/SymbolPicker that emulates the Pro Searcher<disabledText /></tooltip>
+        </button>
+        <button id="SymbolSearcherControl_SimpleSymbolSearcher_ShowButton" keytip="B2"
+								caption="Simple Symbol Searcher" className="SimpleSymbolSearcher_ShowButton" loadOnClick="true" 
+								smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" 
+								largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+          <tooltip heading="Simple Symbol Searcher">Shows a Dockpane with a SymbolSearcher where type and style are preset<disabledText /></tooltip>
+        </button>
+        <button id="SymbolSearcherControl_VerySimpleSymbolSearcher_ShowButton" keytip="B3"
+								caption="Very Simple Symbol Searcher" className="VerySimpleSymbolSearcher_ShowButton" loadOnClick="true" 
+								smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" 
+								largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+          <tooltip heading="Very Simple Searcher">
+						Shows a Dockpane with a SymbolSearcher and a listbox control<disabledText /></tooltip>
+        </button>
+        <button id="SymbolSearcherControl_SymbolPicker_ShowButton" keytip="B4" 
+								caption="Show Symbol Picker" className="SymbolPicker_ShowButton" loadOnClick="true" 
+								smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" 
+								largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+					<tooltip heading="Pro Symbol Picker">
+						Shows a Dockpane with a standalone SymbolPicker Control<disabledText />
+					</tooltip>
+				</button>
+      </controls>
+      <dockPanes>
+        <dockPane id="SymbolSearcherControl_SymbolSearcherDockpane" caption="Symbol Searcher" className="SymbolSearcherDockpaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="SymbolSearcherDockpaneView" />
+        </dockPane>
+        <dockPane id="SymbolSearcherControl_SimpleSymbolSearcher" caption="Simple Symbol Searcher" className="SimpleSymbolSearcherViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="SimpleSymbolSearcherView" />
+        </dockPane>
+        <dockPane id="SymbolSearcherControl_VerySimpleSymbolSearcher" caption="Very Simple Symbol Searcher" className="VerySimpleSymbolSearcherViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="VerySimpleSymbolSearcherView" />
+        </dockPane>
+        <dockPane id="SymbolSearcherControl_SymbolPicker" caption="SymbolPicker" className="SymbolPickerViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="SymbolPickerView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

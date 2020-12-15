@@ -34,8 +34,6 @@ namespace SymbolLookup
     /// </summary>
     internal class FeatureItem
     {
-       
-
         public FeatureItem(FeatureLayer featureLayer, long oid, CIMSymbol cimSymbol)
         {
             _featureLayer = featureLayer;

@@ -30,13 +30,17 @@ using ArcGIS.Core.Data;
 using ArcGIS.Core.Geometry;
 using ArcGIS.Desktop.Catalog;
 using ArcGIS.Desktop.Core;
+using ArcGIS.Desktop.Core.Events;
 using ArcGIS.Desktop.Editing;
 using ArcGIS.Desktop.Extensions;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Dialogs;
+using ArcGIS.Desktop.Framework.Events;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
+using ArcGIS.Desktop.Layouts;
 using ArcGIS.Desktop.Mapping;
+using ArcGIS.Desktop.Mapping.Events;
 using ArcGIS.Desktop.Reports;
 
 namespace CreateReport
@@ -45,24 +49,41 @@ namespace CreateReport
 	{
 		private const string _dockPaneID = "CreateReport_CreateReport";
 		private object _lock = new object();
+		private static readonly object _reportTemplatesLock = new object();
+		private static readonly object _reportStylesLock = new object();
+		private List<Report> _reportsInProject = new List<Report>();
 		Map _activeMap;
 
 		protected CreateReportViewModel()
 		{
+			//subscribe to event, 
+			//to refresh layers in map when active map changes
+			ActiveMapViewChangedEvent.Subscribe(OnActiveMapViewChanged);
+			//When a Map Pane is initialized
+			ActivePaneChangedEvent.Subscribe(OnActivePaneChanged);
+			//When a new report is created
+			ArcGIS.Desktop.Core.Events.ProjectItemsChangedEvent.Subscribe(OnProjectItemsChanged);
 			System.Windows.Data.BindingOperations.EnableCollectionSynchronization(_layers, _lock);
-		}
-		/// <summary>
-		/// Called when the dock pane is first initialized.
-		/// </summary>
-		protected override async Task InitializeAsync()
-		{
+			System.Windows.Data.BindingOperations.EnableCollectionSynchronization(_reportTemplates, _reportTemplatesLock);
+			System.Windows.Data.BindingOperations.EnableCollectionSynchronization(_reportStyles, _reportStylesLock);
 			if (MapView.Active == null)
 				return;
-
-			await UpdateCollectionsAsync();
-			await base.InitializeAsync();
+			GetLayersInMap();
+			_ = UpdateCollectionsAsync(); //Gets the template types and styles.
+			_ = GetReportsInProjectAsync();			
 		}
 
+		private async Task GetReportsInProjectAsync()
+		{
+			var reportItems = Project.Current.GetItems<ReportProjectItem>();
+			_reportsInProject.Clear();
+			await QueuedTask.Run(() => {
+				foreach (var reportItem in reportItems)
+				{
+					_reportsInProject.Add(reportItem.GetReport());
+				}
+			});			
+		}
 
 		#region Binding properties
 		/// <summary>
@@ -241,8 +262,6 @@ namespace CreateReport
 				SelectedStatsOption = StatsOptions[0];
 			}
 		}
-
-
 		private bool _isUseSelection;
 		/// <summary>
 		/// Check box binding to use the selected features in map
@@ -276,12 +295,8 @@ namespace CreateReport
 						rptFld.IsSelected = true;
 					}
 				}
-
-
 			}
 		}
-
-		private bool _isCreateReport;
 
 		#endregion
 		#region Commands
@@ -327,7 +342,7 @@ namespace CreateReport
 		{
 			get
 			{
-				_createReportCmd = new RelayCommand(() => CreateReport(), () => { return MapView.Active != null && SelectedLayer != null; });
+				_createReportCmd = new RelayCommand(() => CreateReport(), CanCreateReport);
 				return _createReportCmd;
 			}
 		}
@@ -340,69 +355,97 @@ namespace CreateReport
 		{
 			get
 			{
-				_exportReportCmd = new RelayCommand(() => ExportReport(), () => { return _isCreateReport; });
+				//_exportReportCmd = new RelayCommand(() =>	ExportReport(), _reportsInProject.Any(r => r.Name == ReportName));
+				_exportReportCmd = new RelayCommand(() => ExportReport(), CanExportReport);
 				return _exportReportCmd;
 			}
 		}
-		#endregion
 
+		private ICommand _updateReportCommand;
+		public ICommand UpdateReportCommand
+		{
+			get
+			{
+				_updateReportCommand = new RelayCommand(() => UpdateReport(), CanUpdateReport);
+				return _updateReportCommand;
+			}
+		}
+		#endregion
 
 		/// <summary>
 		/// Creates the report
 		/// </summary>
 		/// <returns></returns>
 		private async Task CreateReport()
+    {
+      ReportDataSource reportDataSource = null;
+      Report report = null;
+			//_isCreateReport = false;
+			var reportTemplate = await GetReportTemplate(SelectedReportTemplate);			
+      await QueuedTask.Run(() =>
+      {
+        //Adding all fields to the report
+        List<CIMReportField> reportFields = new List<CIMReportField>();
+        var selectedReportFields = ReportFields.Where((fld) => fld.IsSelected);
+        foreach (var rfld in selectedReportFields)
+        {
+          var cimReportField = new CIMReportField() { Name = rfld.Name };
+          reportFields.Add(cimReportField);
+          //Defining grouping field
+          if (rfld.Name == SelectedGroupField?.Name)
+            cimReportField.Group = true;
+          //To DO: Do sort info here.
+        }
+
+        //Report field statistics
+        List<ReportFieldStatistic> reportFieldStats = new List<ReportFieldStatistic>();
+
+        if (SelectedStatsField != null)
+        {
+          ReportFieldStatistic reportStat = new ReportFieldStatistic();
+          reportStat.Field = SelectedStatsField.Name;
+          reportStat.Statistic = (FieldStatisticsFlag)Enum.Parse(typeof(FieldStatisticsFlag), SelectedStatsOption);
+          reportFieldStats.Add(reportStat);
+        }
+
+        //Set Datasource
+        reportDataSource = new ReportDataSource(SelectedLayer, "", IsUseSelection, reportFields);
+
+        try
+        {
+          report = ReportFactory.Instance.CreateReport(ReportName, reportDataSource, null, reportFieldStats, reportTemplate, SelectedReportStyle);
+          //_isCreateReport = true;
+        }
+        catch (System.InvalidOperationException e)
+        {
+          if (e.Message.Contains("Group field defined for a non-grouping template"))
+          {
+            MessageBox.Show("A group field cannot be defined for a non-grouping template.");
+          }
+          else if (e.Message.Contains("Grouping template specified but no group field defined"))
+          {
+            MessageBox.Show("A group field should be defined for a grouping template.");
+          }
+        }
+      });
+			//Open the report
+			IReportPane iNewReportPane = await ProApp.Panes.CreateReportPaneAsync(report); //GUI thread
+
+		}
+
+    private bool CanCreateReport()
 		{
-			ReportDataSource reportDataSource = null;
-			Report report = null;
-			_isCreateReport = false;
-			var reportTemplate = await GetReportTemplate(SelectedReportTemplate);
-			await QueuedTask.Run(() =>
-			{
-							//Adding all fields to the report
-							List<CIMReportField> reportFields = new List<CIMReportField>();
-				var selectedReportFields = ReportFields.Where((fld) => fld.IsSelected);
-				foreach (var rfld in selectedReportFields)
-				{
-					var cimReportField = new CIMReportField() { Name = rfld.Name };
-					reportFields.Add(cimReportField);
-								//Defining grouping field
-								if (rfld.Name == SelectedGroupField?.Name)
-						cimReportField.Group = true;
-								//To DO: Do sort info here.
-							}
-
-							//Report field statistics
-							List<ReportFieldStatistic> reportFieldStats = new List<ReportFieldStatistic>();
-
-				if (SelectedStatsField != null)
-				{
-					ReportFieldStatistic reportStat = new ReportFieldStatistic();
-					reportStat.Field = SelectedStatsField.Name;
-					reportStat.Statistic = (FieldStatisticsFlag)Enum.Parse(typeof(FieldStatisticsFlag), SelectedStatsOption);
-					reportFieldStats.Add(reportStat);
-				}
-
-							//Set Datasource
-							reportDataSource = new ReportDataSource(SelectedLayer, "", IsUseSelection, reportFields);
-
-				try
-				{
-					report = ReportFactory.Instance.CreateReport(ReportName, reportDataSource, null, reportFieldStats, reportTemplate, SelectedReportStyle);
-					_isCreateReport = true;
-				}
-				catch (System.InvalidOperationException e)
-				{
-					if (e.Message.Contains("Group field defined for a non-grouping template"))
-					{
-						MessageBox.Show("A group field cannot be defined for a non-grouping template.");
-					}
-					else if (e.Message.Contains("Grouping template specified but no group field defined"))
-					{
-						MessageBox.Show("A group field should be defined for a grouping template.");
-					}
-				}
-			});
+			var canCreateReport = true;
+			//No active map view
+			if (MapView.Active == null)
+				canCreateReport = false;
+			//No selected layer
+			if (SelectedLayer == null)
+				canCreateReport = false;
+			//Does report exist already?			
+			if (_reportsInProject.Any(r => r.Name == ReportName))
+				canCreateReport = false;
+			return canCreateReport;
 		}
 		/// <summary>
 		/// Exports report
@@ -425,34 +468,175 @@ namespace CreateReport
 				ExportPageOption = ExportPageOptions.ExportAllPages,
 				TotalPageNumberOverride = 12,
 				StartingPageNumberLabelOffset = 0
-
 			};
 			//Create PDF format with appropriate settings
 			PDFFormat pdfFormat = new PDFFormat();
 			pdfFormat.Resolution = 300;
-			pdfFormat.OutputFileName = Path.Combine(Project.Current.HomeFolderPath, report.Name);
-			await ExportAReportToPdf(report, pdfFormat, exportOptions, IsUseSelection);
-			MessageBox.Show($"{ReportName} report exported to {pdfFormat.OutputFileName}");
-
-
+			pdfFormat.OutputFileName = Path.Combine(Project.Current.HomeFolderPath, $"{report.Name}.pdf");
+			await QueuedTask.Run(() =>
+			{
+				report?.ExportToPDF(ReportName, pdfFormat, exportOptions, IsUseSelection);
+			});
+			System.Diagnostics.Process.Start(Path.Combine(Project.Current.HomeFolderPath, $"{report.Name}.pdf"));
 		}
+		private bool CanExportReport()
+		{
+			var canExportReport = false;
+			//Does report exist already?			
+			if (_reportsInProject.Any(r => r.Name == ReportName))
+				canExportReport = true;
+			return canExportReport;
+		}
+		private double fieldIncrement = 0.9388875113593206276389;
+		/// <summary>
+		/// Updates the report with the new field and the title of the field.
+		/// </summary>
+		/// <remarks>
+		/// New Field: The new field gets added to the ReportDetails section.
+		/// Field title: If the report is grouped, the title goes in the "GroupHeader". If not, the title goes in the PageHeader section.
+		/// </remarks>
+		/// <returns></returns>
+		private async Task UpdateReport()
+		{
+			await QueuedTask.Run(() =>
+			{
+				//report to update
+				var reportToUpdate = _reportsInProject.FirstOrDefault(r => r.Name == ReportName);
+
+				//Create field
+				foreach (var field in _fieldsAddToReport)
+				{         
+          //Get the "ReportSectionElement"					
+          var mainReportSection = reportToUpdate.Elements.OfType<ReportSectionElement>().FirstOrDefault();
+					if (mainReportSection == null) return;
+
+					#region Field content
+					//Get the "ReportDetails" within the ReportSectionElement. ReportDetails is where "fields" are.
+					var reportDetailsSection = mainReportSection?.Elements.OfType<ReportDetails>().FirstOrDefault();
+					if (reportDetailsSection == null) return;
+
+					//Within ReportDetails find the envelope that encloses a field.
+					//We get the first CIMParagraphTextGraphic in the collection so that we can add the new field next to it.					
+					var lastFieldGraphic = reportDetailsSection.Elements.FirstOrDefault((r) =>
+					{
+						var gr = r as GraphicElement;
+						if (gr == null) return false;
+						return (gr.GetGraphic() is CIMParagraphTextGraphic ? true : false);						
+					});
+					//Get the Envelope of the last field
+					var graphicBounds = lastFieldGraphic.GetBounds();					
+
+					//Min and Max values of the envelope
+					var xMinOfFieldEnvelope = graphicBounds.XMin;
+					var yMinOfFieldEnvelope = graphicBounds.YMin;
+
+					var xMaxOfFieldEnvelope = graphicBounds.XMax;
+					var YMaxOfFieldEnvelope = graphicBounds.YMax;
+					//create the new Envelope to be offset from the existing field
+					MapPoint newMinPoint = MapPointBuilder.CreateMapPoint(xMinOfFieldEnvelope + fieldIncrement, yMinOfFieldEnvelope);
+					MapPoint newMaxPoint = MapPointBuilder.CreateMapPoint(xMaxOfFieldEnvelope + fieldIncrement, YMaxOfFieldEnvelope);
+					Envelope newFieldEnvelope = EnvelopeBuilder.CreateEnvelope(newMinPoint, newMaxPoint);
+					#endregion
+					//Create field
+					GraphicElement fieldGraphic = ReportElementFactory.Instance.CreateFieldValueTextElement(reportDetailsSection, newFieldEnvelope, field);
+
+					#region Field title
+					Envelope envelopeOfLastField = null;
+					ILayoutElementContainer reportsSection;
+					//Field title in Page Header.
+					//Get the Page header section
+					var pageHeaderSection = mainReportSection?.Elements.OfType<ReportPageHeader>();
+					//Check if there are any elements in the page header section. If there are none, the report is "Grouped"
+					if (pageHeaderSection.FirstOrDefault().Elements.Count() == 0) //Page header has no child elements. The report is grouped on a field.
+					{
+						//Get Group Header.
+						// the title needs to be in the GroupHeader section.
+						var reportGroupHeader = mainReportSection?.Elements.OfType<ReportGroupHeader>().FirstOrDefault();
+						//Get the paragraph text element (the last title)
+						var lastFieldGroupHeaderGraphic = reportGroupHeader.Elements.FirstOrDefault((h) =>
+						{
+							var graphic = h as GraphicElement;
+							if (graphic == null) return false;
+							return (graphic.GetGraphic() is CIMParagraphTextGraphic ? true : false);
+						});
+						//Get the Envelope of the last field header
+						envelopeOfLastField = lastFieldGroupHeaderGraphic?.GetBounds();
+						//The ILayoutElementContainer is the "GroupHeader". Needed for the CreateRectangleParagraphGraphicElement method 
+						reportsSection = reportGroupHeader;
+					}
+					else //not grouped
+					{
+						//Get the "ReportPageHeader" within the ReportSectionElement. ReportPageHeader is where "fields titles" are.
+						var reportPageHeader = mainReportSection?.Elements.OfType<ReportPageHeader>().FirstOrDefault();
+						//Get the paragraph text element (the last title)
+						var lastFieldPageHeaderGraphic = reportPageHeader.Elements.FirstOrDefault((h) =>
+						{
+							var graphic = h as GraphicElement;
+							if (graphic == null) return false;
+							return (graphic.GetGraphic() is CIMParagraphTextGraphic ? true : false);
+						});
+						//Get the Envelope of the last field header
+						envelopeOfLastField = lastFieldPageHeaderGraphic?.GetBounds();
+						//The ILayoutElementContainer is the "PageHeader". Needed for the CreateRectangleParagraphGraphicElement method 
+						reportsSection = reportPageHeader;
+					}			
+
+					//Min and Max values of the envelope
+					var xMinOfHeaderFieldEnvelope = envelopeOfLastField.XMin;
+					var yMinOfHeaderFieldEnvelope = envelopeOfLastField.YMin;
+
+					var xMaxOfHeaderFieldEnvelope = envelopeOfLastField.XMax;
+					var YMaxOfHeaderFieldEnvelope = envelopeOfLastField.YMax;
+					//create the new Envelope to be offset from the existing field
+					MapPoint newHeaderMinPoint = MapPointBuilder.CreateMapPoint(xMinOfHeaderFieldEnvelope + fieldIncrement, yMinOfHeaderFieldEnvelope);
+					MapPoint newHeaderMaxPoint = MapPointBuilder.CreateMapPoint(xMaxOfHeaderFieldEnvelope + fieldIncrement, YMaxOfHeaderFieldEnvelope);
+					Envelope newHeaderFieldEnvelope = EnvelopeBuilder.CreateEnvelope(newHeaderMinPoint, newHeaderMaxPoint);
+					#endregion
+					//Create field header title
+					GraphicElement fieldHeaderGraphic = ReportElementFactory.Instance.CreateRectangleParagraphGraphicElement(reportsSection, newHeaderFieldEnvelope, field.Name);
+				}
+			});
+		}
+
+    private bool CanUpdateReport()
+		{
+			var canUpdateReport = false;
+			if (_reportsInProject.Any(r => r.Name == ReportName))
+				canUpdateReport = true;
+			//Check if there are fields selected in the UI not in the report. If yes, then we need to update.
+			var reportToUpdate = _reportsInProject.FirstOrDefault(r => r.Name == ReportName);
+			if (reportToUpdate == null) return false;
+			var cimFieldsInReport = reportToUpdate.DataSource.Fields.ToList();
+			//This is a "ReportField" collection. Change to CIMReportField collection
+			var reportFieldsSelected = SelectedFields.ToList();
+			List<CIMReportField> cimReportFieldsSelected = new List<CIMReportField>();
+			foreach (var rfld in reportFieldsSelected)
+			{
+				var cimReportField = new CIMReportField() { Name = rfld.Name };
+				cimReportFieldsSelected.Add(cimReportField);
+			}
+			//New fields: Fields in the "SelectedFields" of dockpane, but not in the report object.
+			_fieldsAddToReport = cimReportFieldsSelected.Except(cimFieldsInReport, new ReportFieldComparer()).ToList();
+
+			canUpdateReport = _fieldsAddToReport.Count == 0 ? false : true;
+
+			//TODO: Check if a new statistics is checked
+			//If nothing new, no need to update
+
+			return canUpdateReport;
+		}
+		
 
 		#region Private methods and props
 
 		private List<string> _groupingTemplates = new List<string>();
 		private List<string> _nonGroupingTemplates = new List<string>();
+		private List<CIMReportField> _fieldsAddToReport;
 
-		private async Task ExportAReportToPdf(Report report, PDFFormat pdfFormat, ReportExportOptions reportExportOptions, bool isUseSelectionSet = true)
-		{
-			await QueuedTask.Run(() =>
-			{
-
-				report?.ExportToPDF(ReportName, pdfFormat, reportExportOptions, isUseSelectionSet);
-			});
-		}
 		private async Task<ReportTemplate> GetReportTemplate(string reportName)
 		{
 			var reportTemplates = await ReportTemplateManager.GetTemplatesAsync();
+			//return reportTemplates;
 			return reportTemplates.Where(r => r.Name == reportName).First();
 		}
 
@@ -492,15 +676,11 @@ namespace CreateReport
 
 		public async Task UpdateCollectionsAsync()
 		{
-			_activeMap = MapView.Active.Map;
-			//Get the layers in active map
-			GetLayers();
-
 			//Get the report Templates
 			await QueuedTask.Run(() =>
 			{
-							//Creating a collection of grouping and non grouping report templates
-							foreach (ReportTemplate reportTemplate in ReportTemplateManager.GetTemplates())
+				//Creating a collection of grouping and non grouping report templates
+				foreach (ReportTemplate reportTemplate in ReportTemplateManager.GetTemplates())
 				{
 					if (reportTemplate.Name.Contains("Grouping"))
 						_groupingTemplates.Add(reportTemplate.Name);
@@ -509,38 +689,36 @@ namespace CreateReport
 				}
 			});
 			//Initialize the report template collection with non grouping styles - since non grouping field is selected.
-			ReportTemplates = new ObservableCollection<string>(_nonGroupingTemplates);
+			lock (_reportTemplatesLock)
+				ReportTemplates = new ObservableCollection<string>(_nonGroupingTemplates);
 			SelectedReportTemplate = ReportTemplates[0];
 			//Get the report Styles
+			var reportStylesList = new List<string>();
+			ReportStyles.Clear();
 			await QueuedTask.Run(() =>
 			{
 				foreach (string reportStyle in ReportStylingManager.GetStylings())
 				{
-					var defReportStyleAction = (Action)(() =>
-								{
-								ReportStyles.Add(reportStyle);
-							});
-					ActionOnGuiThread(defReportStyleAction);
+					reportStylesList.Add(reportStyle);
 				}
 			});
+			ReportStyles = new ObservableCollection<string>(reportStylesList);
 			SelectedReportStyle = ReportStyles[0];
-
 		}
-		private void GetLayers()
+		public void GetLayersInMap()
 		{
-			Layers.Clear();
-			if (_activeMap == null)
-				return;
+			System.Diagnostics.Debug.WriteLine($"MapView name: {MapView.Active?.Map.Name}");
+			if (MapView.Active?.Map == null) return;
+			_activeMap = MapView.Active.Map;
 			ReportName = $"Report_{_activeMap.Name}";
-			var layers = _activeMap.GetLayersAsFlattenedList().OfType<FeatureLayer>();
-			//if (layers.Count == 0)
-			//    return;
+			var lyrs = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>();
 			lock (_lock)
 			{
-				foreach (var layer in layers)
+				_layers.Clear();
+				foreach (var lyr in lyrs)
 				{
-					lock (_lock)
-						Layers.Add(layer);
+					_layers.Add(lyr);
+					System.Diagnostics.Debug.WriteLine($"LayerName name: {lyr.Name}");
 				}
 			}
 			SelectedLayer = Layers.Count > 0 ? Layers[0] : null;
@@ -560,6 +738,42 @@ namespace CreateReport
 			{
 				//Using the dispatcher to perform this action on the GUI thread.
 				ProApp.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, theAction);
+			}
+		}
+		private void OnActiveMapViewChanged(ActiveMapViewChangedEventArgs obj)
+		{
+			System.Diagnostics.Debug.WriteLine("Enter ActiveMapViewChangedEvent");
+			if (obj.IncomingView == null)
+				return;
+			System.Diagnostics.Debug.WriteLine("Incoming is not null");
+			GetLayersInMap();
+		}
+		private void OnActivePaneChanged(PaneEventArgs obj)
+		{
+			System.Diagnostics.Debug.WriteLine("Enter OnActivePaneInitialize Event");
+			if (obj.IncomingPane == null)
+				return;
+			System.Diagnostics.Debug.WriteLine("Incoming is not null");
+			if (obj.IncomingPane is IMapPane)
+			{
+				System.Diagnostics.Debug.WriteLine("Incoming is a MapPane");
+				GetLayersInMap();
+			}
+		}
+		private void OnProjectItemsChanged(ProjectItemsChangedEventArgs obj)
+		{
+			if (!(obj.ProjectItem is ReportProjectItem) )return;
+			var reportObject = obj.ProjectItem as ReportProjectItem;
+			if (obj.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add) //new report is being added
+			{
+				//_reportExists = obj.ProjectItem.Name == ReportName ? true : false;
+				_reportsInProject.Add(reportObject.GetReport());
+			}
+			if (obj.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove) //new report is being added
+			{
+				//_reportExists = obj.ProjectItem.Name == ReportName ? true : false;
+				if (_reportsInProject.Contains(reportObject.GetReport()))
+					_reportsInProject.Remove(reportObject.GetReport());
 			}
 		}
 		#endregion

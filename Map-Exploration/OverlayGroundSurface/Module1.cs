@@ -41,7 +41,7 @@ namespace OverlayGroundSurface
   /// OverlayGroundSurface illustrates how to draw geometries over a ground surface using AddOverlay.  
   /// </summary>
   /// <remarks>
-  /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Configurations\Projects' with sample data required for this solution.  Make sure that the Sample data (specifically CommunitySampleData-3D-04-06-2020.zip) is unzipped into c:\data and c:\data\PolyTest is available.
+  /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Configurations\Projects' with sample data required for this solution.  Make sure that the Sample data (specifically CommunitySampleData-3D-mm-dd-yyyy.zip) is unzipped into c:\data and c:\data\PolyTest is available.
   /// 1. This solution is using the **Newtonsoft.Json NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.
   /// 1. Click Start button to debug ArcGIS Pro.

@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="SymbolSearcherControl.SymbolSearcherDockpaneView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
+             xmlns:local="clr-namespace:SymbolSearcherControl"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             xmlns:controls="clr-namespace:ArcGIS.Desktop.Mapping.Controls;assembly=ArcGIS.Desktop.Mapping"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{Binding Path=local.SymbolPickerDockpaneViewModel}">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
+      <TextBlock Grid.Column="1" Text="{Binding Heading}" Style="{DynamicResource Esri_TextBlockDockPaneHeader}">
+        <TextBlock.ToolTip>
+          <WrapPanel Orientation="Vertical" MaxWidth="300">
+            <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
+          </WrapPanel>
+        </TextBlock.ToolTip>
+      </TextBlock>
+    </DockPanel>
+    <StackPanel Grid.Row="1" Orientation="Vertical">
+      <TextBlock Margin="5">Style Item Types:</TextBlock>
+      <ComboBox x:Name="StyleItemTypeCombo" ItemsSource="{Binding SearchTypes}" 
+                SelectedItem="{Binding SelectedSearchType}" Margin="5"/>
+      <!--ShowDefaultEntries="{Binding ElementName=ShowDefaultsCheckBox, Path=IsChecked}"-->
+      <!--StyleItemType="{Binding ElementName=StyleItemTypeCombo, Path=SelectedItem, Mode=OneWay}"-->
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition/>
+          <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+				<controls:SymbolSearcherControl x:Name="SymbolSearch" 
+              Grid.Column="0"
+				      SearchOutputOptions="{Binding SearchOutputOptions}"
+              SearchFilterStyle="{Binding SearchFilterStyle}"
+				      SearchFilterType="{Binding SearchFilterType}"
+              SearchPauseAutoSearch="{Binding SearchPauseSearching}"
+				      HorizontalAlignment="Stretch"
+              VerticalAlignment="Top" 
+				      Margin="0" Padding="5"/>
+        <ComboBox Grid.Column="1" Height="24" HorizontalAlignment="Left" 
+              ItemsSource="{Binding FilterStyles}"
+              SelectedItem="{Binding SelectedFilterStyle}"
+              DisplayMemberPath="Name" Margin="5"
+              VerticalAlignment="Center" x:Name="StylesComboBox">
+        </ComboBox>
+      </Grid>
+
+      <controls:SymbolPickerControl x:Name="SymbolPicker" 
+				PickerStyleItems="{Binding Path=SearchResultStyleItems, ElementName=SymbolSearch, Mode=OneWay}"
+        SelectedPickerStyleItem="{Binding SelectedPickerStyleItem, Mode=TwoWay}"
+				ViewingOption="{Binding PickerViewOption, Mode=TwoWay}"
+				GroupingOption="{Binding PickerGroupOption, Mode=TwoWay}"
+				ShowOptionsDropDown="{Binding Path=IsChecked, ElementName=ShowOptionsCheckBox, Mode=OneWay}"
+				HorizontalAlignment="Stretch"                                    
+				Padding="5" Margin="0" MaxHeight="450"/>
+    </StackPanel>
+    <StackPanel Grid.Row="2" Orientation="Vertical">
+      <TextBlock Margin="5">Select layer:</TextBlock>
+      <ComboBox Margin="5" ItemsSource="{Binding LayersInMap}" 
+                SelectedItem="{Binding SelectedLayer}"></ComboBox>
+      <Button Command="{Binding ApplySymbologyCommand}" Margin="5" 
+              Style="{DynamicResource Esri_Button}">Apply Symbology to Layer</Button>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Left">
+      <Button Command="{Binding CmdSetSelectedFilterStyleItem}" Margin="5" 
+              Style="{DynamicResource Esri_Button}">Set SelectedFilterStyleItem</Button>
+      <Button Command="{Binding PickStyleXFileCommand}" Margin="5" 
+              Style="{DynamicResource Esri_Button}">Add StyleX File</Button>
+      <Button Command="{Binding CmdTest}" Margin="5" 
+              Style="{DynamicResource Esri_Button}">Test</Button>
+    </StackPanel>
+    <StackPanel Orientation="Vertical" Grid.Row="4">
+      <TextBlock MinHeight="100" Text="{Binding Status}" />
+    </StackPanel>
+  </Grid>
+</UserControl>

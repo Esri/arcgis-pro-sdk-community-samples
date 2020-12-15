@@ -1,14 +1,14 @@
 ## AnimationFromPath
 
 <!-- TODO: Write a brief abstract explaining this sample -->
- This sample allows creation of animation from path. A couple of different  options have been proovided including View Along, Top-Down, Face-Target etc.  
- The add-in also allows for setting Z-Offset, Duration and Custom Pitch.  
- The Set Target tool can be used to specify a target that the camera will always  face in the created animation. Set-target tool is used with the Face-Target view mode.  
- In addition to the view you would like, the add-in also provides three different  options for creating the keyframes. You can choose to:  
- - Keyframes along path - creates fewer keyframes but tries to keep you on the path     while avoiding sharp turns at corners  
- - Keyframes every N seconds - creates a keyframe at the time-spacing specified  
- - Keyframes only at vertices - creates a keyframe at each line vertex  
-   
+This sample allows creation of animation from path. A couple of different options have been proovided including View Along, Top-Down, Face-Target etc.  
+The add-in also allows for setting Z-Offset, Duration and Custom Pitch.  
+The Set Target tool can be used to specify a target that the camera will always face in the created animation. Set-target tool is used with the Face-Target view mode.  
+In addition to the view you would like, the add-in also provides three different options for creating the keyframes. You can choose to:  
+- Keyframes along path - creates fewer keyframes but tries to keep you on the path    while avoiding sharp turns at corners  
+- Keyframes every N seconds - creates a keyframe at the time-spacing specified  
+- Keyframes only at vertices - creates a keyframe at each line vertex  
+  
 
 
 <a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
@@ -19,8 +19,8 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  7/01/2020
-ArcGIS Pro:            2.6
+Date:                  12/01/2020
+ArcGIS Pro:            2.7
 Visual Studio:         2017, 2019
 .NET Target Framework: 4.8
 ```
@@ -43,13 +43,13 @@ Visual Studio:         2017, 2019
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 1. In Visual Studio click the Build menu. Then select Build Solution.  
-2. Click Start button to open ArcGIS Pro.  
-3. ArcGIS Pro will open.   
-4. Open a scene or map view and a line feature class  
-5. Select a line feature  
-6. On the ADD-IN tab choose options under Animation from Path group and create keyframes  
+1. Click Start button to open ArcGIS Pro.  
+1. ArcGIS Pro will open.   
+1. Open a scene or map view and a line feature class  
+1. Select a line feature  
+1. On the ADD-IN tab choose options under Animation from Path group and create keyframes  
 NOTE - the selected line geometry is used for creating the keyframes. This means that  for a 2D line feature, the keyframes will be created at zero height + any Z-Offset you  specified in the options on the ADD-IN tab  
-   
+  
 
 
 <!-- End -->
