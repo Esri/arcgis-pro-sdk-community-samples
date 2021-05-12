@@ -144,32 +144,32 @@ namespace Inspector_AddAttributeAsync
         return true;
 
       // execute the select on the MCT
-      var result = await QueuedTask.Run(async () =>
-      {
-        // define the spatial query filter
-        var spatialQuery = new SpatialQueryFilter() { FilterGeometry = geometry, SpatialRelationship = SpatialRelationship.Contains };
+      var result = await QueuedTask.Run(() =>
+			{
+				// define the spatial query filter
+				var spatialQuery = new SpatialQueryFilter() { FilterGeometry = geometry, SpatialRelationship = SpatialRelationship.Contains };
 
-        // gather the selection
-        var pointSelection = _pointLayer.Select(spatialQuery);
+				// gather the selection
+				var pointSelection = _pointLayer.Select(spatialQuery);
 
-        // get the list of oids
-        List<long> oids = pointSelection.GetObjectIDs().ToList();
-        if (oids.Count == 0)
-          return false;
-      
-        // if some attributes aren't valid
-        if (_attributesValid.ContainsValue(false))
-          return false;
+				// get the list of oids
+				List<long> oids = pointSelection.GetObjectIDs().ToList();
+				if (oids.Count == 0)
+					return false;
 
-        // everything is valid - apply to the identified features
-        var editOp = new EditOperation();
-        editOp.Name = "Apply edits";
-        foreach (var oid in oids)
-          editOp.Modify(_pointLayer, oid, _attributes);
-        editOp.Execute();
+				// if some attributes aren't valid
+				if (_attributesValid.ContainsValue(false))
+					return false;
 
-        return true;
-      });
+				// everything is valid - apply to the identified features
+				var editOp = new EditOperation();
+				editOp.Name = "Apply edits";
+				foreach (var oid in oids)
+					editOp.Modify(_pointLayer, oid, _attributes);
+				editOp.Execute();
+
+				return true;
+			});
 
       return result;
     }

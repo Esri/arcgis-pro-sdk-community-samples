@@ -131,12 +131,15 @@ namespace ProSqlExpressPluginDatasource
                             }
                         }
                     }
+                    
                     _pluginFields.Add(new PluginField()
                         {
                             Name = col.ColumnName,
                             AliasName = col.Alias,
-                            FieldType = fieldType
+                            FieldType = fieldType,
+                            Length = col.ColumnLength
                         });
+                    
                     }
                 }
             return _pluginFields;

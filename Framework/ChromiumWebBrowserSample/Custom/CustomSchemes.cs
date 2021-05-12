@@ -28,38 +28,6 @@ using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-/// <summary>
-/// Note: Custom scheme names must conform to RFC 3986.
-/// &lt;a href="https://tools.ietf.org/pdf/rfc3986.pdf"/&gt;. Namely:
-/// &quot;Section 3.1 Scheme:&lt;br/&gt;
-/// .....Scheme names consist of a sequence of characters beginning with a
-///letter and followed by any combination of letters, digits, plus
-/// ("+"), period ("."), or hyphen("-"). Although schemes are case-
-/// insensitive, the canonical form is lowercase and documents that
-/// specify schemes must do so with lowercase letters.&quot;
-/// </summary>
-/// <remarks>
-/// Place your scheme name in the Config.daml within your custom scheme resource
-/// handler registration DAML.In this sample, the corresponding resource
-/// handler registration in the DAML looks like this:
-/// </remarks>
-/// <example>
-/// <code>
-/// <updateCategory refID="esri_cef_customSchemes">
-///			
-///			<insertComponent id="ChromiumWebBrowserSample_Custom_ResourceHandler" 
-///			                 className="ChromiumWebBrowserSample.Custom.ImageResourceSchemeHandler">
-///				<content SchemeName="resource"/>
-///			</insertComponent>
-///
-///			<insertComponent id="ChromiumWebBrowserSample_Custom_ResourceHandler2" 
-///			                 className="ChromiumWebBrowserSample.Custom.EmbeddedResourceSchemeHandler">
-///				<content SchemeName="embeddedresource"/>
-///			</insertComponent>
-///
-///		</updateCategory>
-/// </code>
-/// </example>
 namespace ChromiumWebBrowserSample.Custom
 {
 	/// <summary>
@@ -88,7 +56,7 @@ namespace ChromiumWebBrowserSample.Custom
 			{
 				var url = request.Url;
 				var image_path = url.Replace(@"/", "").Replace(@"resource:", "");
-				MimeType = ResourceHandler.GetMimeType(System.IO.Path.GetExtension(image_path));
+				MimeType = Cef.GetMimeType(Path.GetExtension(image_path));
 
 				var asm_name = Assembly.GetExecutingAssembly().GetName().Name;
 				var bitmap = new BitmapImage(new Uri(
@@ -153,7 +121,7 @@ namespace ChromiumWebBrowserSample.Custom
 				var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resource_path);
 				if (stream != null)
 				{
-					MimeType = ResourceHandler.GetMimeType(System.IO.Path.GetExtension(content_path));
+					MimeType = Cef.GetMimeType(Path.GetExtension(content_path));
 					Stream = stream;
 					ResponseLength = stream.Length;
 					StatusCode = (int)System.Net.HttpStatusCode.OK;

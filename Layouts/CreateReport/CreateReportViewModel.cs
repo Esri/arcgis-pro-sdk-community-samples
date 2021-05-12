@@ -413,7 +413,7 @@ namespace CreateReport
 
         try
         {
-          report = ReportFactory.Instance.CreateReport(ReportName, reportDataSource, null, reportFieldStats, reportTemplate, SelectedReportStyle);
+          report = ReportFactory.Instance.CreateReport(ReportName, reportDataSource, null, reportFieldStats, reportTemplate, SelectedReportStyle);					
           //_isCreateReport = true;
         }
         catch (System.InvalidOperationException e)
@@ -507,7 +507,7 @@ namespace CreateReport
 				foreach (var field in _fieldsAddToReport)
 				{         
           //Get the "ReportSectionElement"					
-          var mainReportSection = reportToUpdate.Elements.OfType<ReportSectionElement>().FirstOrDefault();
+          var mainReportSection = reportToUpdate.Elements.OfType<ReportSection>().FirstOrDefault();
 					if (mainReportSection == null) return;
 
 					#region Field content
@@ -633,11 +633,11 @@ namespace CreateReport
 		private List<string> _nonGroupingTemplates = new List<string>();
 		private List<CIMReportField> _fieldsAddToReport;
 
-		private async Task<ReportTemplate> GetReportTemplate(string reportName)
+		private async Task<ReportTemplate> GetReportTemplate(string templateUsed)
 		{
 			var reportTemplates = await ReportTemplateManager.GetTemplatesAsync();
 			//return reportTemplates;
-			return reportTemplates.Where(r => r.Name == reportName).First();
+			return reportTemplates.Where(r => r.Name == templateUsed).First();
 		}
 
 		private async Task GetFieldsAsync()

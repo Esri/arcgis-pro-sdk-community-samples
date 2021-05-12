@@ -24,7 +24,7 @@ namespace GraphicsLayers
 {
     internal class GraphicsElementToolItem
     {
-        internal GraphicsElementToolItem(string id, string group, IPlugInWrapper plugin)
+        internal GraphicsElementToolItem(string id, string group, IPlugInWrapper plugin, string name)
         {
             CommandID = id;
             PlugInWrapper = plugin;
@@ -33,6 +33,7 @@ namespace GraphicsLayers
             else
                 Icon32 = PlugInWrapper.LargeImage;
             Group = group;
+            Name = name;
         }
         public IPlugInWrapper PlugInWrapper { get; private set; }
         public object Icon32 { get; private set; }
@@ -41,6 +42,7 @@ namespace GraphicsLayers
 
         public string Group { get; private set; }
 
+        public string Name { get; private set; }
         internal void Execute()
         {
             if (PlugInWrapper.IsRelevant)

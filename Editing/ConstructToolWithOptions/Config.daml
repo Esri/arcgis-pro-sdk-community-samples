@@ -22,8 +22,8 @@
     <Name>ConstructToolWithOptions</Name>
     <Description>ConstructToolWithOptions description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-		<Company>esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>12/19/2019 3:11:05 PM, 2019</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

@@ -26,7 +26,7 @@
 						 xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
 						 xmlns:cef="clr-namespace:CefSharp;assembly=CefSharp.Core"
 						 xmlns:ui="clr-namespace:ChromiumWebBrowserSample.UI"
-						 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+						 xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
 						 xmlns:behaviours="clr-namespace:ChromiumWebBrowserSample.Behaviours"
 						 xmlns:tkit="http://schemas.xceed.com/wpf/xaml/toolkit"
 						 mc:Ignorable="d" 

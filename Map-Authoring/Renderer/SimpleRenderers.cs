@@ -22,6 +22,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ArcGIS.Core.CIM;
+using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 
@@ -105,7 +106,6 @@ namespace Renderer
             {
                 //Create a circle marker
                 var lineSymbol = SymbolFactory.Instance.ConstructLineSymbol(ColorFactory.Instance.RedRGB, 2, SimpleLineStyle.DashDotDot);
-                //();
 
                 //Get the layer's current renderer
                 CIMSimpleRenderer renderer = featureLayer.GetRenderer() as CIMSimpleRenderer;
@@ -117,6 +117,37 @@ namespace Renderer
                 featureLayer.SetRenderer(renderer);
             });
         }
-        #endregion
+    #endregion
+    #region Snippet Simple Renderer for a Line feature layer using a style from a StyleProjectItem.
+    /// <summary>
+    /// Renders a Line feature layer using a style from a StyleProjectItem.
+    /// </summary>
+    /// <remarks>
+    /// ![Simple Renderer Style item](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/simple-line-style-item.png)
+    /// </remarks>
+    /// <param name="featureLayer"></param>
+    /// <returns></returns>
+    internal static Task SimpleRendererLineFromStyeItem(FeatureLayer featureLayer)
+        {
+          //Get all styles in the project
+          var styleProjectItem2D = Project.Current.GetItems<StyleProjectItem>().FirstOrDefault(s => s.Name == "ArcGIS 2D");
+
+          return QueuedTask.Run(() => {
+            //Get a specific style in the project by name
+            var arrowLineSymbol = styleProjectItem2D.SearchSymbols(StyleItemType.LineSymbol, "Arrow Line 2 (Mid)")[0];
+            if (arrowLineSymbol == null) return;
+
+            //Get the layer's current renderer
+            var renderer = featureLayer?.GetRenderer() as CIMSimpleRenderer;
+
+            //Update the symbol of the current simple renderer
+            renderer.Symbol = arrowLineSymbol.Symbol.MakeSymbolReference();
+
+            //Update the feature layer renderer
+            featureLayer.SetRenderer(renderer);
+          });
     }
+    #endregion
+
+  }
 }

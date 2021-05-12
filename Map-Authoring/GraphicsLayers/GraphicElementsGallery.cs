@@ -63,12 +63,12 @@ namespace GraphicsLayers
                     //This flavor (off component) returns empty string
                     //if the attribute is not there
                     var group = component.ReadAttribute("group") ?? "";
-
+                    var name = component.ReadAttribute("name") ?? "";
                     //check we get a plugin
                     var plugin = FrameworkApplication.GetPlugInWrapper(component.ID);
                     if (plugin != null)
                     {
-                        Add(new GraphicsElementToolItem(component.ID, group, plugin));
+                        Add(new GraphicsElementToolItem(component.ID, group, plugin, name));
                     }
                 }
                 catch (Exception e)

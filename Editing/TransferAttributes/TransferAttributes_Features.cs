@@ -33,6 +33,7 @@ namespace TransferAttributes
   /// </summary>
   /// <remarks>
   /// At 2.4, EditOperation.TransferAttributes method is one of the few functions which honors preset field mapping combinations. 
+  /// </remarks>
   internal class TransferAttributes_Features : MapTool
   {
     public TransferAttributes_Features()

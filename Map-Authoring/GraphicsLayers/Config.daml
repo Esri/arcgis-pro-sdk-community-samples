@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!--
+﻿<!--
 
    Copyright 2020 Esri
 
@@ -97,31 +96,37 @@
         <!-- add your controls here -->
         <tool id="GraphicsLayerExamples_GraphicCreationTools_TextGraphic" categoryRefID="GraphicsLayerExamples_Category" caption="Text graphic" className="GraphicsLayers.GraphicCreationTools.TextGraphic" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementText16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementText32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Text">Text at the clicked point<disabledText /></tooltip>
-          <content group="Text" />
+          <content group="Text" name="Text" />
         </tool>
         <tool id="GraphicsLayerExamples_GraphicCreationTools_TextCalloutGraphic" categoryRefID="GraphicsLayerExamples_Category" caption="Text callout raphic" className="GraphicsLayers.GraphicCreationTools.TextCalloutGraphic" loadOnClick="true" smallImage="Images\balloonCallout16.png" largeImage="Images\balloonCallout32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Callout Text">Balloon callout text<disabledText /></tooltip>
-          <content group="Text" />
+          <content group="Text" name="Callout" />
         </tool>
         <tool id="GraphicsLayerExamples_GraphicCreationTools_PolygonGraphic" categoryRefID="GraphicsLayerExamples_Category" caption="Polygon graphic" className="GraphicsLayers.GraphicCreationTools.PolygonGraphic" loadOnClick="true" smallImage="Images\polygon16.png" largeImage="Images\polygon32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Polygon graphic">Polygon graphic<disabledText /></tooltip>
-          <content group="Shapes" />
+          <content group="Shapes" name="Polygon" />
         </tool>
         <tool id="GraphicsLayerExamples_GraphicCreationTools_LineGraphic" categoryRefID="GraphicsLayerExamples_Category" caption="Line graphic" className="GraphicsLayers.GraphicCreationTools.LineGraphic" loadOnClick="true" smallImage="Images\line16.png" largeImage="Images\line32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Line graphic">Line graphic<disabledText /></tooltip>
-          <content group="Shapes" />
+          <content group="Shapes" name="Line" />
         </tool>
         <tool id="GraphicsLayerExamples_GraphicCreationTools_PointGraphic" categoryRefID="GraphicsLayerExamples_Category" caption="Point graphic" className="GraphicsLayers.GraphicCreationTools.PointGraphic" loadOnClick="true" smallImage="Images\point16.png" largeImage="Images\point32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Point graphic">Point graphic<disabledText /></tooltip>
-          <content group="Shapes" />
+          <content group="Shapes" name="Point" />
         </tool>
         <tool id="GraphicsLayerExamples_GraphicCreationTools_PictureGraphic" categoryRefID="GraphicsLayerExamples_Category" caption="Picture graphic" className="GraphicsLayers.GraphicCreationTools.PictureGraphic" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Picture16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Picture16.png" condition="esri_mapping_mapPane">
           <tooltip heading="Picture graphic">Picture graphic<disabledText /></tooltip>
-          <content group="Images" />
+          <content group="Images" name="Image" />
         </tool>
         <tool id="GraphicsLayerExamples_GraphicCreationTools_CurvedTextGraphic" categoryRefID="GraphicsLayerExamples_Category" caption="Curved Text Graphic" className="GraphicsLayers.GraphicCreationTools.CurvedTextGraphic" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementSplinedText16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementSplinedText32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Curved text graphic">Text written on curved line<disabledText /></tooltip>
-          <content group="Text" />
+          <content group="Text" name="Curved" />
+        </tool>
+        <tool id="GraphicsLayers_GraphicCreationTools_MultiPointGraphic" categoryRefID="GraphicsLayerExamples_Category" caption="Multi-Point Graphic" className="GraphicsLayers.GraphicCreationTools.MultiPointGraphic" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GeodatabaseFeatureClassMultipoint16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GeodatabaseFeatureClassMultipoint32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Tooltip Heading">
+            Tooltip text<disabledText />
+          </tooltip>
+          <content group="Shapes" name="Multi-Point" />
         </tool>
         <button id="GraphicsLayerExamples_AddGraphicsLayer" caption="New graphics layer" className="AddGraphicsLayer" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/LayerGraphics16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/LayerGraphics32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Graphics layer">Create new graphics layer<disabledText /></tooltip>
@@ -179,7 +184,7 @@
         </tool>
       </controls>
       <galleries>
-        <gallery id="GraphicsLayerExamples_GraphicElementsGallery" showGroup="true" caption="Create graphic elements" className="GraphicElementsGallery" itemsInRow="6" dataTemplateFile="pack://application:,,,/GraphicsLayers;component//GraphicElementsGalleryTemplate.xaml" templateID="GraphicElementsGalleryItemTemplate" resizable="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonOrange32.png">
+        <gallery id="GraphicsLayerExamples_GraphicElementsGallery" showGroup="true" caption="Create graphic elements" className="GraphicElementsGallery" itemsInRow="4" dataTemplateFile="pack://application:,,,/GraphicsLayers;component//GraphicElementsGalleryTemplate.xaml" templateID="GraphicElementsGalleryItemTemplate" resizable="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonOrange32.png">
           <tooltip heading="Create graphic elements">Collection of tools to create graphic elements<disabledText /></tooltip>
         </gallery>
       </galleries>

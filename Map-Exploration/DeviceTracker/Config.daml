@@ -21,7 +21,7 @@
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>Esri, http://www.esri.com</Company>
     <Date>10/22/2020 1:19:13 PM, 2020</Date>
-		<Subject>Map Exploration</Subject>
+    <Subject>Map Exploration</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>

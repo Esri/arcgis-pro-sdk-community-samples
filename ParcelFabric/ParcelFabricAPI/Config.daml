@@ -1,11 +1,12 @@
-﻿<ArcGIS defaultAssembly="ParcelFabricAPI.dll" defaultNamespace="ParcelFabricAPI" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="ParcelFabricAPI.dll" defaultNamespace="ParcelFabricAPI" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{33cf7364-f4c2-420c-aef4-501801c1a565}" version="1.0" desktopVersion="2.7.26650">
     <Name>ParcelFabricAPI</Name>
     <Description>Parcel Fabric API</Description>
-		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-		<Company>esri, http://www.esri.com</Company>
-		<Date>11/10/2020 8:46:47 AM</Date>
-		<Subject>Parcel Fabric</Subject>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>11/10/2020 8:46:47 AM</Date>
+    <Subject>Parcel Fabric</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>
@@ -32,25 +33,19 @@
           <tooltip heading="Show Dockpane">
 						Shows the Parcel Fabric API Dockpane<disabledText /></tooltip>
         </button>
-        <button id="ParcelLayerAPI_ImportPlat_ShowButton" caption="Import Plat" className="ImportPlat_ShowButton" 
-								loadOnClick="true" keytip="B2" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericImport16.png" 
-								largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericImport32.png">
+        <button id="ParcelLayerAPI_ImportPlat_ShowButton" caption="Import Plat" className="ImportPlat_ShowButton" loadOnClick="true" keytip="B2" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericImport16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericImport32.png">
           <tooltip heading="Import Plat">
 						Shows the Parcel Fabric Import Plat Dockpane<disabledText /></tooltip>
         </button>
-        <button id="ParcelLayerAPI_FixupImportData" caption="FixupImportData" className="FixupImportData" 
-								loadOnClick="true" keytip="B3" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" 
-								largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+        <button id="ParcelLayerAPI_FixupImportData" caption="FixupImportData" className="FixupImportData" loadOnClick="true" keytip="B3" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="ParcelLayerAPI_ParcelFabricAPI" caption="Parcel Fabric API" className="ParcelFabricAPIViewModel" 
-									dock="group" dockWith="esri_core_projectDockPane">
+        <dockPane id="ParcelLayerAPI_ParcelFabricAPI" caption="Parcel Fabric API" className="ParcelFabricAPIViewModel" dock="group" dockWith="esri_core_projectDockPane">
           <content className="ParcelFabricAPIView" />
         </dockPane>
-        <dockPane id="ParcelLayerAPI_ImportPlat" caption="Import Plat" className="ImportPlatViewModel" dock="group" 
-									dockWith="esri_core_projectDockPane">
+        <dockPane id="ParcelLayerAPI_ImportPlat" caption="Import Plat" className="ImportPlatViewModel" dock="group" dockWith="esri_core_projectDockPane">
           <content className="ImportPlatView" />
         </dockPane>
       </dockPanes>

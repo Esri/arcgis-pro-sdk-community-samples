@@ -13,6 +13,7 @@
     <AssemblyName>CommandFilter</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <NoWarn>1591</NoWarn>
@@ -25,7 +26,7 @@
     <WarningLevel>4</WarningLevel>
     <StartAction>Program</StartAction>
     <StartProgram>C:\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe</StartProgram>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DocumentationFile>CommandFilter.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -38,9 +39,8 @@
     <WarningLevel>4</WarningLevel>
     <StartAction>Program</StartAction>
     <StartProgram>C:\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe</StartProgram>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>
-    </DocumentationFile>
+    <PlatformTarget>x64</PlatformTarget>
+    <DocumentationFile></DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

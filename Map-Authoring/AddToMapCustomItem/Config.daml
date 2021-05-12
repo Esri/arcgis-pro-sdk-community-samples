@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="AddToMapCustomItem.dll" defaultNamespace="AddToMapCustomItem" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{bc1ef677-6580-43ad-adb9-c4943b410efd}" version="1.0" desktopVersion="2.8.29331">
+    <Name>AddToMapCustomItem</Name>
+    <Description>AddToMapCustomItem description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>uma2526</Author>
+    <Company>Acme</Company>
+    <Date>3/3/2021 1:23:27 PM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="AddToMapCustomItem_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="AddToMapCustomItem_Tab1" caption="New Tab">
+          <group refID="AddToMapCustomItem_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <!--<group id="AddTableToMapCustomItem_Group1" caption="Create Table" appearsOnAddInTab="true">
+          <button refID="AddToMapCustomItem_TableToMap_CreateTableFromPath" size="large" />
+          <button refID="AddToMapCustomItem_TableToMap_CreateTableFromItem" size="large" />
+        </group>-->
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="AddToMapCustomItem_AddToMap_ShowItemName" caption="Show item name" className="ShowItemNameAddToMap" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+      <menus>
+        <menu id="AddToMapCustomItem_AddToMap_ContextMenu" caption="AddToMap_Menu">
+          <button refID="AddToMapCustomItem_AddToMap_ShowItemName" />
+        </menu>
+      </menus>
+    </insertModule>
+  </modules>
+  <categories>
+    <updateCategory refID="esri_customItems">
+      <insertComponent id="AddToMapCustomItem_AddToMap" className="AddToMapCustomItem">
+        <!--TODO: Modify the fileExtension attribute to your unique custom fitem's file extension.-->
+        <!--You cannot use any file extensions known to Pro and Geoprocessing.-->
+        <content displayName="AddToMap" fileExtension="uxh" isContainer="false" keywords="AddToMap" contextMenuID="AddToMapCustomItem_AddToMap_ContextMenu">
+          <filterFlags>
+            <!--Change this flag as needed. See FilterFlag enum. Example: AddToMap, DontBrowseFiles...-->
+            <type id="AddToMap" />
+          </filterFlags>
+        </content>
+      </insertComponent>
+    </updateCategory>
+  </categories>
+</ArcGIS>

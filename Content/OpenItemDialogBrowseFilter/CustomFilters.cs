@@ -104,8 +104,8 @@ namespace OpenItemDialogBrowseFilter
         public static void NewFilterCompositeFilter()
         {
 
-            ///Create and use a Composite Filter that displays "lyr" or "lyrx" files.
-            ///The composite filter is used in an OpenItemDialog.
+            //Create and use a Composite Filter that displays "lyr" or "lyrx" files.
+            //The composite filter is used in an OpenItemDialog.
             BrowseProjectFilter compositeFilter = new BrowseProjectFilter();
             compositeFilter.AddFilter(BrowseProjectFilter.GetFilter("esri_browseDialogFilters_layers_lyr"));
             compositeFilter.AddFilter(BrowseProjectFilter.GetFilter("esri_browseDialogFilters_layers_lyrx"));
@@ -123,8 +123,8 @@ namespace OpenItemDialogBrowseFilter
         }
         public static void NewFilterFromDAMLDeclaration()
         {
-            ///Create and use a filter defined in DAML. The filter displays line feature classes in a file GDB.
-            ///The browse filter is used in an OpenItemDialog.
+            //Create and use a filter defined in DAML. The filter displays line feature classes in a file GDB.
+            //The browse filter is used in an OpenItemDialog.
 
             var bf = new BrowseProjectFilter("NewLineFeatures_Filter");
             //Display the filter in an Open Item dialog

@@ -37,6 +37,8 @@ namespace GalleryDemo
     public WebMapsGallery()
     {
       Initialize();
+      //fire the click event even if the item is currently selected.
+      this.AlwaysFireOnClick = true;
     }
     /// <summary>
     /// Called when a gallery item is clicked.

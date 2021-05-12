@@ -296,7 +296,7 @@ namespace LayoutWithLabels
 		{
 			get
 			{
-				return new RelayCommand(async () => 
+				return new RelayCommand(() =>
 				{
 					// find the labeling layer and add the table content
 					var fcName = "PolygonLabels";

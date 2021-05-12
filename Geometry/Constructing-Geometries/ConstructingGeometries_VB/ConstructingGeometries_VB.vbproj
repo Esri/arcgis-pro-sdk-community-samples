@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <NoWarn>1591</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,15 +41,23 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
+    <NoWarn>1591</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup>
     <OptionCompare>Binary</OptionCompare>
+    <NoWarn>1591</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup>
     <OptionStrict>Off</OptionStrict>
+    <NoWarn>1591</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
+    <NoWarn>1591</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ArcGIS.Desktop.GeoProcessing">

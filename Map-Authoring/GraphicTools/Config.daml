@@ -1,51 +1,49 @@
-﻿<ArcGIS defaultAssembly="GraphicTools.dll" defaultNamespace="GraphicTools" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="GraphicTools.dll" defaultNamespace="GraphicTools" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{ca37f0ea-bca0-4b2d-8f60-bfbd3b1eec7a}" version="1.0" desktopVersion="2.6.24046">
     <Name>Graphic Markup Tools</Name>
     <Description>Sample add-in demonstrating graphics layer capabilities with map graphic markup workflow tools. </Description>
     <Image>Images\AddinDesktop32.png</Image>
-		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-		<Company>esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>9/25/2020</Date>
     <Subject>Map Authoring</Subject>
   </AddInInfo>
   <modules>
-    <insertModule id="GraphicTools_Module" className="Module1" autoLoad="false" caption="Module1">      
+    <insertModule id="GraphicTools_Module" className="Module1" autoLoad="false" caption="Module1">
       <tabs>
         <tab id="GraphicTools_Tab1" caption="Graphics Markup" keytip="T1">
-          <group refID="GraphicTools_Group1"/>
-          <group refID="GraphicTools_Group2"/>
-          <group refID="GraphicTools_Group3"/>
-          <group refID="GraphicTools_Group4"/>        
+          <group refID="GraphicTools_Group1" />
+          <group refID="GraphicTools_Group2" />
+          <group refID="GraphicTools_Group3" />
+          <group refID="GraphicTools_Group4" />
         </tab>
-      </tabs>      
+      </tabs>
       <groups>
         <group id="GraphicTools_Group1" caption="Graphic Selection" appearsOnAddInTab="false" keytip="G1">
           <toolPalette refID="esri_layouts_selectToolPalette" size="large" />
           <button refID="esri_layouts_selectAllButton" size="middle" />
           <button refID="esri_layouts_clearSelectionButton" size="middle" />
           <button refID="esri_layouts_deleteSelectionButton" size="middle" />
-        </group>        
+        </group>
         <group id="GraphicTools_Group2" caption="Markup Tools" appearsOnAddInTab="false" keytip="G2">
           <tool refID="GraphicTools_Point_Text_Graphics" size="middle" />
           <tool refID="GraphicTools_Polygon_Text_Graphics" size="middle" />
           <button refID="GraphicTools_RunZoomToSelection" size="middle" />
-          <tool refID="GraphicTools_MapQueryTool" size="middle"  />
+          <tool refID="GraphicTools_MapQueryTool" size="middle" />
           <button refID="GraphicTools_ApplyTextButton" size="middle" />
           <button refID="GraphicTools_TextPane_ShowButton" size="middle" />
         </group>
-        
         <group id="GraphicTools_Group3" caption="Text Values" appearsOnAddInTab="false" keytip="G3">
-          <editBox refID="GraphicTools_TextEditBox" size="middle"/>
-          <editBox refID="GraphicTools_QueryEditBox" size="middle"/>
+          <editBox refID="GraphicTools_TextEditBox" size="middle" />
+          <editBox refID="GraphicTools_QueryEditBox" size="middle" />
         </group>
-
         <group id="GraphicTools_Group4" caption="Update Status" appearsOnAddInTab="false" keytip="G4">
           <button refID="GraphicTools_UpdateColorRed" size="middle" separator="true" />
           <button refID="GraphicTools_UpdateColorYellow" size="middle" />
           <button refID="GraphicTools_UpdateColorGreen" size="middle" />
         </group>
       </groups>
-      
       <palettes>
         <toolPalette id="esri_layouts_selectToolPalette" caption="Select" extendedCaption="Select layout elements.">
           <tool refID="esri_layouts_selectByRectangleTool" />
@@ -55,77 +53,44 @@
           <tool refID="esri_layouts_selectByLineTool" />
         </toolPalette>
       </palettes>
-      
       <controls>
-        <tool id="GraphicTools_Point_Text_Graphics" caption="Point + Text" className="Point_Text_Graphics" 
-							 keytip="t1"
-							loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementMarker32.png" 
-							largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_onlyGraphicsLayersSelectedCondition">
+        <tool id="GraphicTools_Point_Text_Graphics" caption="Point + Text" className="Point_Text_Graphics" keytip="t1" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementMarker32.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_onlyGraphicsLayersSelectedCondition">
           <tooltip heading="Point + Text">Insert a point graphic with text from text and query edit boxes.<disabledText /></tooltip>
         </tool>
-        <tool id="GraphicTools_Polygon_Text_Graphics" caption="Polygon + Text" className="Polygon_Text_Graphics"
-							keytip="t2"
-							loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementPolygonText32.png" 
-							largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementPolygonText32.png" condition="esri_mapping_onlyGraphicsLayersSelectedCondition" >
+        <tool id="GraphicTools_Polygon_Text_Graphics" caption="Polygon + Text" className="Polygon_Text_Graphics" keytip="t2" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementPolygonText32.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementPolygonText32.png" condition="esri_mapping_onlyGraphicsLayersSelectedCondition">
           <tooltip heading="Polygon + Text">Insert a polygon graphic with text from text and query edit boxes.<disabledText /></tooltip>
         </tool>
-        <button id="GraphicTools_TextPane_ShowButton" caption="Text Pane" className="TextPane_ShowButton"
-								keytip="B1"
-								loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/PopupPane32.png" 
-								largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+        <button id="GraphicTools_TextPane_ShowButton" caption="Text Pane" className="TextPane_ShowButton" keytip="B1" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/PopupPane32.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
           <tooltip heading="Text Pane">Open the Graphic Text pane for use with expanded text.<disabledText /></tooltip>
         </button>
-        <button id="GraphicTools_ApplyTextButton" caption="Update Text" className="ApplyTextButton" 
-								keytip="B2"
-								loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementDynamicText32.png" 
-								largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png" condition="esri_layouts_selectedElementsNotPartsCondition">
+        <button id="GraphicTools_ApplyTextButton" caption="Update Text" className="ApplyTextButton" keytip="B2" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementDynamicText32.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png" condition="esri_layouts_selectedElementsNotPartsCondition">
           <tooltip heading="Update Text">Update the selected text with values from ribbon edit boxes, or the text pane if pane is open.<disabledText /></tooltip>
         </button>
-        <editBox id="GraphicTools_TextEditBox" caption="Text Value:" className="TextEditBox" keytip="E1"
-								 sizeString="AAAAAAAAAAAAAA">
+        <editBox id="GraphicTools_TextEditBox" caption="Text Value:" className="TextEditBox" keytip="E1" sizeString="AAAAAAAAAAAAAA">
           <tooltip heading="Enter a text graphic value">
             Enter the value of the text graphic that accompanies points and/or polygons.<disabledText /></tooltip>
         </editBox>
-        <editBox id="GraphicTools_QueryEditBox" caption="Risk Value:" className="QueryEditBox"  keytip="E1"
-								 sizeString="AAAAAAAAAAAAAA">
-          <tooltip heading="Risk/Vulnerability Value">The risk/vulnerability value from the CDC layer assigned by using the 'Insert Risk Value' query tool.<disabledText />
-          </tooltip>
+        <editBox id="GraphicTools_QueryEditBox" caption="Risk Value:" className="QueryEditBox" keytip="E1" sizeString="AAAAAAAAAAAAAA">
+          <tooltip heading="Risk/Vulnerability Value">The risk/vulnerability value from the CDC layer assigned by using the 'Insert Risk Value' query tool.<disabledText /></tooltip>
         </editBox>
-        <tool id="GraphicTools_MapQueryTool" caption="Insert Risk Value" className="MapQueryTool"
-							 keytip="t3"
-							loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SelectionMethodAdd32.png" 
-							largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
+        <tool id="GraphicTools_MapQueryTool" caption="Insert Risk Value" className="MapQueryTool" keytip="t3" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SelectionMethodAdd32.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Insert Risk Value">Select and query a location on the map for the CDC layer risk/vulnerability data.<disabledText /></tooltip>
         </tool>
-        <button id="GraphicTools_RunZoomToSelection" caption="Zoom To" className="GraphicTools_Module:RunZoomToSelection" 
-								 keytip="B3"
-								loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SelectionZoomToSelected16.png" 
-								largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png" condition="esri_layouts_selectedElementsNotPartsCondition">
+        <button id="GraphicTools_RunZoomToSelection" caption="Zoom To" className="GraphicTools_Module:RunZoomToSelection" keytip="B3" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SelectionZoomToSelected16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png" condition="esri_layouts_selectedElementsNotPartsCondition">
           <tooltip heading="Zoom To Selection">Zoom to the extent of selected graphics.<disabledText /></tooltip>
         </button>
-        <button id="GraphicTools_UpdateColorRed" caption="Issue Found" className="UpdateColorRed"
-								keytip="B4"
-								loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" 
-								largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png" condition="esri_layouts_selectedElementsNotPartsCondition" >
+        <button id="GraphicTools_UpdateColorRed" caption="Issue Found" className="UpdateColorRed" keytip="B4" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png" condition="esri_layouts_selectedElementsNotPartsCondition">
           <tooltip heading="Issue Found">Update the selected point and/or polygon status color to red - 'Issue Found'.<disabledText /></tooltip>
         </button>
-        <button id="GraphicTools_UpdateColorGreen" caption="Complete" className="UpdateColorGreen" 
-								keytip="B5"
-								loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen32.png" 
-								largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png" condition="esri_layouts_selectedElementsNotPartsCondition">
+        <button id="GraphicTools_UpdateColorGreen" caption="Complete" className="UpdateColorGreen" keytip="B5" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen32.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png" condition="esri_layouts_selectedElementsNotPartsCondition">
           <tooltip heading="Complete">Update the selected point and/or polygon status color to green - 'Complete'.<disabledText /></tooltip>
         </button>
-        <button id="GraphicTools_UpdateColorYellow" caption="To Review" className="UpdateColorYellow" 
-								keytip="B6"
-								loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonYellow32.png" 
-								largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png" condition="esri_layouts_selectedElementsNotPartsCondition">
+        <button id="GraphicTools_UpdateColorYellow" caption="To Review" className="UpdateColorYellow" keytip="B6" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonYellow32.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png" condition="esri_layouts_selectedElementsNotPartsCondition">
           <tooltip heading="To Review">Update the selected point and/or polygon status color to yellow - 'To Review'.<disabledText /></tooltip>
         </button>
       </controls>
-
       <dockPanes>
-        <dockPane id="GraphicTools_TextPane" caption="Graphic Text" className="TextPaneViewModel" dock="group" 
-									dockWith="esri_core_contentsDockPane">
+        <dockPane id="GraphicTools_TextPane" caption="Graphic Text" className="TextPaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="TextPaneView" />
         </dockPane>
       </dockPanes>

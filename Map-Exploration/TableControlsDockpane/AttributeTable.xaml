@@ -61,6 +61,7 @@
                     <DataTemplate>
                         <editing:TableControl TableContent="{Binding TableContent}"
                                               RowContextMenu="{Binding RowContextMenu}" 
+																							ActiveRowIndex="{Binding ActiveRowIdx, Mode=TwoWay}"
                                               SelectedRowContextMenu="{Binding RowContextMenu}" />
                     </DataTemplate>
                 </TabControl.ContentTemplate>

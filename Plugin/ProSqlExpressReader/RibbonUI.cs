@@ -85,7 +85,7 @@ namespace ProSqlExpressReader
 			_ = AddProDataSubItemsAsync(items.OfType<ProDataSubItem>(), MapView.Active.Map);
 		}
 
-		public static async Task AddProDataSubItemsAsync (IEnumerable<ProDataSubItem> proDataSubItems, Map mapToAddTo)
+		public static async Task AddProDataSubItemsAsync (IEnumerable<ProDataSubItem> proDataSubItems, Map mapToAddTo, GroupLayer grpLyr = null, int lyrIdx = -1)
 		{
 			foreach (ProDataSubItem item in proDataSubItems)
 			{
@@ -109,7 +109,7 @@ namespace ProSqlExpressReader
 								var sqlConStr = parts[1];
 								var dataset = parts[2];
 								var conSql = new PluginDatasourceConnectionPath("ProSqlExpressPluginDatasource",
-																				new Uri(item.Path.Replace(";", "||"), UriKind.Absolute));
+															new Uri(item.Path.Replace(";", "||"), UriKind.Absolute));
 								using (var pluginSql = new PluginDatastore(conSql))
 								{
 									foreach (var tn in pluginSql.GetTableNames())
@@ -118,10 +118,14 @@ namespace ProSqlExpressReader
 										{
 											using (var table = pluginSql.OpenTable(tn))
 											{
-												if (table is FeatureClass)
+												if (table is FeatureClass fc)
 												{
-													//Add as a layer to the active map or scene
-													LayerFactory.Instance.CreateFeatureLayer((FeatureClass)table, mapToAddTo);
+													if (grpLyr != null)
+														//Add as a layer to the active map or scene
+														LayerFactory.Instance.CreateFeatureLayer(fc, grpLyr, lyrIdx);
+													else
+														//Add as a layer to the active map or scene
+														LayerFactory.Instance.CreateFeatureLayer(fc, mapToAddTo);
 												}
 												else
 												{
@@ -162,10 +166,14 @@ namespace ProSqlExpressReader
 										//open the table
 										using (var table = pluginSql.OpenTable(tn))
 										{
-											if (table is FeatureClass)
+											if (table is FeatureClass fc)
 											{
-												//Add as a layer to the active map or scene
-												LayerFactory.Instance.CreateFeatureLayer((FeatureClass)table, mapToAddTo);
+												if (grpLyr != null)
+													//Add as a layer to the active map or scene
+													LayerFactory.Instance.CreateFeatureLayer(fc, grpLyr, lyrIdx);
+												else
+													//Add as a layer to the active map or scene
+													LayerFactory.Instance.CreateFeatureLayer(fc, mapToAddTo);
 											}
 											else
 											{

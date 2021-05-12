@@ -210,11 +210,11 @@ namespace ProSqlExpressDb
                 string tableSchemaClause = $@"SELECT * FROM {tableName} WHERE 1=0;";
                 using (SqlDataAdapter adapter = new SqlDataAdapter(tableSchemaClause, sqlCon))
                 {
-                    adapter.Fill(dt);
+                    adapter.FillSchema(dt, SchemaType.Mapped);
                 }
                 foreach (DataColumn col in dt.Columns)
                 {
-                    fieldInfo.Columns.Add(new ProSqlColumnInfo { ColumnName = col.ColumnName, Alias = col.Caption, ColumnDataType = col.DataType });
+                    fieldInfo.Columns.Add(new ProSqlColumnInfo { ColumnName = col.ColumnName, Alias = col.Caption, ColumnDataType = col.DataType, ColumnLength = col.MaxLength});
                 }
                 var keys = GetKeyNames(tableName, sqlCon);
                 fieldInfo.ObjectIdField = keys.Count > 0 ? keys[0] : string.Empty;

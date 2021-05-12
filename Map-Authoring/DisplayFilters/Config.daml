@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2020 Esri
@@ -22,8 +22,8 @@
     <Name>DisplayFilters</Name>
     <Description>DisplayFilters description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-		<Company>esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>7/6/2020 11:15:36 AM, 2020</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

@@ -130,8 +130,6 @@ namespace Renderer
                   "HOTHRACE10"
             };
 
-        QueuedTask.Run(() =>
-        {
           BarChartRendererDefinition barChartRendererDefn = new BarChartRendererDefinition()
           {
             ChartFields = chartFields,
@@ -149,7 +147,6 @@ namespace Renderer
 
           //Sets the renderer to the feature layer
           featureLayer.SetRenderer(barChartChartRenderer);
-        });
       });
     }
     #endregion
@@ -187,9 +184,7 @@ namespace Renderer
                  "HBLACK10",
                   "HOTHRACE10"
             };
-
-        QueuedTask.Run(() =>
-        {
+        
           StackedChartRendererDefinition barChartpieChartRendererDefn = new StackedChartRendererDefinition()
           {
             ChartFields = chartFields,
@@ -208,7 +203,6 @@ namespace Renderer
           //Sets the renderer to the feature layer
           featureLayer.SetRenderer(stackedBarChartChartRenderer);
         });
-      });
     }
     #endregion
   }

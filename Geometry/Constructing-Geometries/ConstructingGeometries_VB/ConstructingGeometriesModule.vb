@@ -54,12 +54,12 @@ Imports ArcGIS.Desktop.Mapping
 Friend Class ConstructingGeometriesModule
     Inherits ArcGIS.Desktop.Framework.Contracts.Module
 
-    Private Shared Property _this As Object
+  Private Shared Property _this As ConstructingGeometriesModule
 
-    ''' <summary>
-    ''' Retrieve the singleton instance to this module here
-    ''' </summary>
-    Public Shared ReadOnly Property Current() As ConstructingGeometriesModule
+  ''' <summary>
+  ''' Retrieve the singleton instance to this module here
+  ''' </summary>
+  Public Shared ReadOnly Property Current() As ConstructingGeometriesModule
         Get
             If (_this Is Nothing) Then
                 _this = DirectCast(FrameworkApplication.FindModule("ConstructingGeometries_VB_Module"), ConstructingGeometriesModule)
@@ -132,8 +132,8 @@ Friend Class ConstructingGeometriesModule
               arguments.Add(SpatialReferenceBuilder.CreateSpatialReference(3857))
             End Sub)
 
-    Return Geoprocessing.ExecuteToolAsync("CreateFeatureclass_management", Geoprocessing.MakeValueArray(arguments.ToArray()))
-    End Function
+    Return Await Geoprocessing.ExecuteToolAsync("CreateFeatureclass_management", Geoprocessing.MakeValueArray(arguments.ToArray()))
+  End Function
 
 #Region "Overrides"
     ''' <summary>

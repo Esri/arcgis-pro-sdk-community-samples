@@ -188,6 +188,16 @@
             <returns>
             </returns>
         </member>
+        <member name="M:Renderer.SimpleRenderers.SimpleRendererLineFromStyeItem(ArcGIS.Desktop.Mapping.FeatureLayer)">
+            <summary>
+            Renders a Line feature layer using a style from a StyleProjectItem.
+            </summary>
+            <remarks>
+            ![Simple Renderer Style item](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/simple-line-style-item.png)
+            </remarks>
+            <param name="featureLayer"></param>
+            <returns></returns>
+        </member>
         <member name="M:Renderer.UniqueValueRenderers.UniqueValueRendererAsync(ArcGIS.Desktop.Mapping.FeatureLayer)">
             <summary>
             Renders a feature layer using unique values from one or multiple fields

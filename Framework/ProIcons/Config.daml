@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2020 Esri
@@ -17,7 +17,6 @@
    limitations under the License.
 
 -->
-
 <ArcGIS defaultAssembly="ProIcons.dll" defaultNamespace="ProIcons" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{6da0b756-6b7d-451f-8aff-1abd718c9665}" version="1.0" desktopVersion="2.0.0">
     <Name>ProIcons</Name>
@@ -50,12 +49,10 @@
         </button>
       </controls>
       <panes>
-        <pane id="ProIcons_ImagesPane" caption="Verify Icon" className="ImagesPaneViewModel" 
-							smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen16.png">
+        <pane id="ProIcons_ImagesPane" caption="Verify Icon" className="ImagesPaneViewModel" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen16.png">
           <content className="ImagesPaneView" />
         </pane>
-        <pane id="ProIcons_AllProImagesPane" caption="Show All Icons" className="AllProImagesPaneViewModel" 
-							smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen16.png" defaultTab="esri_mapping_homeTab" defaultTool="esri_mapping_navigateTool">
+        <pane id="ProIcons_AllProImagesPane" caption="Show All Icons" className="AllProImagesPaneViewModel" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen16.png" defaultTab="esri_mapping_homeTab" defaultTool="esri_mapping_navigateTool">
           <content className="AllProImagesPaneView" />
         </pane>
       </panes>

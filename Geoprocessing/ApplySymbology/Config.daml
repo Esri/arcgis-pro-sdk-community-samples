@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="ApplySymbology.dll" defaultNamespace="ApplySymbology" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{48825870-5a6f-4bdd-9271-6475a4c45ef6}" version="1.0" desktopVersion="2.1.9472">
+    <Name>ApplySymbology</Name>
+    <Description>ApplySymbology description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>Esri, http://www.esri.com</Company>
+    <Date>7/28/2017 12:10:56 PM, 2017</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ApplySymbology_Module" className="ApplySymb" autoLoad="false" caption="ApplySymb">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="ApplySymbology_Tab1" caption="New Tab">
+          <group refID="ApplySymbology_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ApplySymbology_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="G1">
+          <!-- host controls within groups -->
+          <button refID="ApplySymbology_ApplySymbButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ApplySymbology_ApplySymbButton" caption="Move Symbology" className="ApplySymbButton" keytip="B1" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

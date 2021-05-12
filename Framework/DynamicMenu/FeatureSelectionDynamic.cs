@@ -31,116 +31,116 @@ using ArcGIS.Desktop.Mapping;
 
 namespace FeatureDynamicMenu
 {
-    /// <summary>
-    /// Implementation of custom Map tool.
-    /// </summary>
-    class FeatureSelectionDynamic : MapTool
-    {
-        
-        private static readonly IDictionary<BasicFeatureLayer, List<long>> Selection = new Dictionary<BasicFeatureLayer, List<long>>();
-        private static readonly object LockSelection = new object();
-        private System.Windows.Point _clickPoint;
+	/// <summary>
+	/// Implementation of custom Map tool.
+	/// </summary>
+	class FeatureSelectionDynamic : MapTool
+	{
 
-        public System.Windows.Point MouseLocation => _clickPoint;
+		private static readonly IDictionary<BasicFeatureLayer, List<long>> Selection = new Dictionary<BasicFeatureLayer, List<long>>();
+		private static readonly object LockSelection = new object();
+		private System.Windows.Point _clickPoint;
 
-        /// <summary>
-        /// Define the tool as a sketch tool that draws a point in screen space on the view.
-        /// </summary>
-        public FeatureSelectionDynamic()
-        {
-            IsSketchTool = true;
-            SketchType = SketchGeometryType.Rectangle;
-            SketchOutputMode = SketchOutputMode.Map;
+		public System.Windows.Point MouseLocation => _clickPoint;
 
-            // binding sync: we need to lock this selection collection since it will be updated
-            // asynchronously from a worker thread
-            BindingOperations.EnableCollectionSynchronization(Selection, LockSelection);
-            //Set the embeddable's control's DAML ID to show on the mapview when the tool is active.
-            OverlayControlID = "FeatureDynamicMenu_EmbeddedControl";
-            //Allow the embeddable control to be re-sized.
-            OverlayControlCanResize = true;
-            //Specify a ratio of 0 to 1 to place the control
-            OverlayControlPositionRatio = new Point(0, 0);  //top left
-        }
+		/// <summary>
+		/// Define the tool as a sketch tool that draws a point in screen space on the view.
+		/// </summary>
+		public FeatureSelectionDynamic()
+		{
+			IsSketchTool = true;
+			SketchType = SketchGeometryType.Rectangle;
+			SketchOutputMode = SketchOutputMode.Map;
 
-        internal static IDictionary<BasicFeatureLayer, List<long>> FeatureSelection => Selection;
+			// binding sync: we need to lock this selection collection since it will be updated
+			// asynchronously from a worker thread
+			BindingOperations.EnableCollectionSynchronization(Selection, LockSelection);
+			//Set the embeddable's control's DAML ID to show on the mapview when the tool is active.
+			OverlayControlID = "FeatureDynamicMenu_EmbeddedControl";
+			//Allow the embeddable control to be re-sized.
+			OverlayControlCanResize = true;
+			//Specify a ratio of 0 to 1 to place the control
+			OverlayControlPositionRatio = new Point(0, 0);  //top left
+		}
 
-        private void ShowContextMenu()
-        {
-            _clickPoint = MouseCursorPosition.GetMouseCursorPosition();
-            System.Diagnostics.Debug.WriteLine($@"MouseLocation: {_clickPoint.X} {_clickPoint.Y}");
-            var contextMenu = FrameworkApplication.CreateContextMenu("DynamicMenu_DynamicFeatureSelection", () => MouseLocation);
-            contextMenu.DataContext = this;
-            contextMenu.Closed += (o, e) =>
-            {
-                // clear the list asynchronously
-                lock (LockSelection)
-                {
-                    Selection.Clear();
-                }
-            };
-            contextMenu.IsOpen = true;
-        }
-        
-        protected override Task OnToolActivateAsync(bool hasMapViewChanged)
-        {
-            GetLayersFromActiveMap();        
-            return base.OnToolActivateAsync(hasMapViewChanged);
-        }
+		internal static IDictionary<BasicFeatureLayer, List<long>> FeatureSelection => Selection;
 
-        protected override Task OnToolDeactivateAsync(bool hasMapViewChanged)
-        {
-            return base.OnToolDeactivateAsync(hasMapViewChanged);
-        }
+		private void ShowContextMenu()
+		{
+			_clickPoint = MouseCursorPosition.GetMouseCursorPosition();
+			System.Diagnostics.Debug.WriteLine($@"MouseLocation: {_clickPoint.X} {_clickPoint.Y}");
+			var contextMenu = FrameworkApplication.CreateContextMenu("DynamicMenu_DynamicFeatureSelection", () => MouseLocation);
+			contextMenu.DataContext = this;
+			contextMenu.Closed += (o, e) =>
+			{
+							// clear the list asynchronously
+							lock (LockSelection)
+				{
+					Selection.Clear();
+				}
+			};
+			contextMenu.IsOpen = true;
+		}
 
-        protected override Task<bool> OnSketchCompleteAsync(Geometry geometry)
-        {
-            List<long> oids = new List<long>();
-            var vm = OverlayEmbeddableControl as EmbeddedControlViewModel;
+		protected override Task OnToolActivateAsync(bool hasMapViewChanged)
+		{
+			GetLayersFromActiveMap();
+			return base.OnToolActivateAsync(hasMapViewChanged);
+		}
+
+		protected override Task OnToolDeactivateAsync(bool hasMapViewChanged)
+		{
+			return base.OnToolDeactivateAsync(hasMapViewChanged);
+		}
+
+		protected override Task<bool> OnSketchCompleteAsync(Geometry geometry)
+		{
+			List<long> oids = new List<long>();
+			var vm = OverlayEmbeddableControl as EmbeddedControlViewModel;
 
 			return QueuedTask.Run(() =>
-            {
-                SpatialQueryFilter spatialQueryFilter = new SpatialQueryFilter
-                {
-                    FilterGeometry = geometry,
-                    SpatialRelationship = SpatialRelationship.Intersects,
+						{
+							SpatialQueryFilter spatialQueryFilter = new SpatialQueryFilter
+							{
+								FilterGeometry = geometry,
+								SpatialRelationship = SpatialRelationship.Intersects,
 
-                };
-                var selection = vm?.SelectedLayer.Select(spatialQueryFilter);
-                if (selection == null)
-                    return false;
-                oids.AddRange(selection.GetObjectIDs());
+							};
+							var selection = vm?.SelectedLayer.Select(spatialQueryFilter);
+							if (selection == null)
+								return false;
+							oids.AddRange(selection.GetObjectIDs());
 
-                lock (LockSelection)
-                {
-                    Selection.Add(vm?.SelectedLayer, oids);
-                }
+							lock (LockSelection)
+							{
+								Selection.Add(vm?.SelectedLayer, oids);
+							}
 
-                Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, (Action)(() => ShowContextMenu()));
+							Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, (Action)(() => ShowContextMenu()));
 
-                return true;
-            });
-        }
+							return true;
+						});
+		}
 
-        private void GetLayersFromActiveMap()
-        {
-            var vm = OverlayEmbeddableControl as EmbeddedControlViewModel;
-            vm?.Layers.Clear();
-            Map map = MapView.Active.Map;
-            if (map == null)
-                return;
-            vm.MapName = map.Name;
-            var layers = map.GetLayersAsFlattenedList().OfType<BasicFeatureLayer>();
-            lock (LockSelection)
-            {
-                foreach (var layer in layers)
-                {
-                    vm.Layers.Add(layer);
-                }
+		private void GetLayersFromActiveMap()
+		{
+			var vm = OverlayEmbeddableControl as EmbeddedControlViewModel;
+			vm?.Layers.Clear();
+			Map map = MapView.Active.Map;
+			if (map == null)
+				return;
+			vm.MapName = map.Name;
+			var layers = map.GetLayersAsFlattenedList().OfType<BasicFeatureLayer>();
+			lock (LockSelection)
+			{
+				foreach (var layer in layers)
+				{
+					vm.Layers.Add(layer);
+				}
 
-                if (vm.Layers.Count > 0)
-                    vm.SelectedLayer = vm.Layers[0];
-            }
-        }
-    }
+				if (vm.Layers.Count > 0)
+					vm.SelectedLayer = vm.Layers[0];
+			}
+		}
+	}
 }

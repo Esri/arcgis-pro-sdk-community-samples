@@ -4,8 +4,8 @@
     <Name>ContextMenu</Name>
     <Description>ContextMenu description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-		<Company>esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>11/30/2020 3:49:37 PM</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

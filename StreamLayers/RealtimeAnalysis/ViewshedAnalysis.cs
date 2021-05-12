@@ -93,7 +93,7 @@ namespace RealtimeAnalysis
 			});
 		}
 
-		private async void CreateLayer()
+		private void CreateLayer()
 		{
 			Map map = MapView.Active.Map;
 
@@ -126,24 +126,24 @@ namespace RealtimeAnalysis
 
 			#region Define Subtype layers
 			subtypeGroupLayerCreateParam.SubtypeLayers = new List<SubtypeFeatureLayerCreationParams>()
-	  {
+		{
         //define first subtype layer with unique value renderer
         new SubtypeFeatureLayerCreationParams()
 		{
-		  SubtypeId = 1,
-		  RendererDefinition = new UniqueValueRendererDefinition(new string[] { "type" })
+			SubtypeId = 1,
+			RendererDefinition = new UniqueValueRendererDefinition(new string[] { "type" })
 		},
 
         //define second subtype layer with simple symbol renderer
         new SubtypeFeatureLayerCreationParams()
 		{
-		  SubtypeId = 2,
-		  RendererDefinition = new SimpleRendererDefinition()
-		  {
-			  SymbolTemplate = SymbolFactory.Instance.ConstructPointSymbol(CIMColor.CreateRGBColor(255, 0, 0), 8, SimpleMarkerStyle.Hexagon).MakeSymbolReference()
-		  }
+			SubtypeId = 2,
+			RendererDefinition = new SimpleRendererDefinition()
+			{
+				SymbolTemplate = SymbolFactory.Instance.ConstructPointSymbol(CIMColor.CreateRGBColor(255, 0, 0), 8, SimpleMarkerStyle.Hexagon).MakeSymbolReference()
+			}
 		}
-	  };
+		};
 			#endregion
 
 			#region Define additional parameters
@@ -157,7 +157,7 @@ namespace RealtimeAnalysis
 			#endregion
 
 			SubtypeGroupLayer subtypeGroupLayer =
-			  LayerFactory.Instance.CreateLayer<SubtypeGroupLayer>(subtypeGroupLayerCreateParam, map);
+				LayerFactory.Instance.CreateLayer<SubtypeGroupLayer>(subtypeGroupLayerCreateParam, map);
 			#endregion
 		}
 

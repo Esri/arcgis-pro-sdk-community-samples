@@ -36,18 +36,18 @@ using ArcGIS.Desktop.Mapping;
 
 namespace ConfigureGallery.Buttons
 {
-    internal class AcmeCommands : Button
-    {
-        protected async override void OnClick()
-        {
-            Module1.Current.RunMe(this.Caption);
-        }
+	internal class AcmeCommands : Button
+	{
+		protected async override void OnClick()
+		{
+			await Module1.Current.RunMe(this.Caption);
+		}
 
-        internal class AcmeCommand1 : AcmeCommands { }
-        internal class AcmeCommand2 : AcmeCommands { }
-        internal class AcmeCommand3 : AcmeCommands { }
-        internal class AcmeCommand4 : AcmeCommands { }
-        internal class AcmeCommand5 : AcmeCommands { }
-        internal class AcmeCommand6 : AcmeCommands { }
-    }
+		internal class AcmeCommand1 : AcmeCommands { }
+		internal class AcmeCommand2 : AcmeCommands { }
+		internal class AcmeCommand3 : AcmeCommands { }
+		internal class AcmeCommand4 : AcmeCommands { }
+		internal class AcmeCommand5 : AcmeCommands { }
+		internal class AcmeCommand6 : AcmeCommands { }
+	}
 }

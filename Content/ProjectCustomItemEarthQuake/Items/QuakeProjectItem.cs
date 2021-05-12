@@ -16,8 +16,11 @@
    limitations under the License.
 
 */
+using ArcGIS.Core.CIM;
+using ArcGIS.Core.Geometry;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Internal.Core;
+using ArcGIS.Desktop.Mapping;
 using ESRI.ArcGIS.ItemIndex;
 using System;
 using System.Collections.Generic;
@@ -151,10 +154,16 @@ namespace ProjectCustomItemEarthQuake.Items
 				XElement value = time.Element(aw + "value");
 				string date = value.Value;
 				DateTime timestamp = Convert.ToDateTime(date);
+				XElement xLong = origin.Element(aw + "longitude");
+				value = xLong.Element(aw + "value");
+				var longitude = Convert.ToDouble(value.Value);
+				XElement xLat = origin.Element(aw + "latitude");
+				value = xLat.Element(aw + "value");
+				var latitude = Convert.ToDouble(value.Value);
 
 				//Make an "event" item for each child read from the quake file
 				QuakeEventCustomItem item = new QuakeEventCustomItem(
-				  fullName, path, "acme_quake_event", timestamp.ToString());
+				  fullName, path, "acme_quake_event", timestamp.ToString(), longitude, latitude);
 				//if (events.Any(s => s.Name == fullName))
 				//    continue;
 				events.Add(item);
@@ -196,13 +205,14 @@ namespace ProjectCustomItemEarthQuake.Items
 	/// Quake event items. These are children of a QuakeProjectItem
 	/// </summary>
 	/// <remarks>QuakeEventCustomItems are, themselves, custom items</remarks>
-	internal class QuakeEventCustomItem : CustomItemBase
+	internal class QuakeEventCustomItem : CustomItemBase, IMappableItem, IMappableItemEx
 	{
+		public MapPoint QuakeLocation;
 
-		public QuakeEventCustomItem(string name, string path, string type, string lastModifiedTime) : base(name, path, type, lastModifiedTime)
+		public QuakeEventCustomItem(string name, string path, string type, string lastModifiedTime, double longitude, double latitude) : base(name, path, type, lastModifiedTime)
 		{
 			this.DisplayType = "QuakeEvent";
-			//this.ContextMenuID = "QuakeProjectItem_ContextMenu";
+			QuakeLocation = MapPointBuilder.CreateMapPoint(longitude, latitude, SpatialReferences.WGS84);
 		}
 
 		public void SetNewName(string newName)
@@ -213,6 +223,32 @@ namespace ProjectCustomItemEarthQuake.Items
 			NotifyPropertyChanged("Title");
 			this._itemInfoValue.name = newName;
 			this._itemInfoValue.description = newName;			
+		}
+
+		public bool CanAddToMap(MapType? mapType)
+		{
+			return true;
+		}
+
+		public void OnAddToMap(Map map)
+		{
+			OnAddToMapEx(map);
+		}
+
+		public void OnAddToMap(Map map, ILayerContainerEdit groupLayer, int index)
+		{
+			OnAddToMapEx(map, groupLayer, index);
+		}
+
+		public string[] OnAddToMapEx(Map map)
+		{
+			return OnAddToMapEx (map, null, -1);
+		}
+
+		public string[] OnAddToMapEx(Map map, ILayerContainerEdit groupLayer, int index)
+		{
+			Module1.AddOrUpdateOverlay(this.QuakeLocation, Module1.GetPointSymbolRef());
+			return new string[] { this.Title };
 		}
 
 		public override ImageSource LargeImage

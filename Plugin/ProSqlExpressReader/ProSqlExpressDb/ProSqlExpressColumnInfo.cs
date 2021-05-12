@@ -38,9 +38,15 @@ namespace ProSqlExpressDb
         /// Alias of the attribute column name
         /// </summary>
         public string Alias { get; set; }
+
         /// <summary>
         /// .Net datatype of the attribute column
         /// </summary>
         public Type ColumnDataType { get; set; }
+        
+        /// <summary>
+        /// Maximum length of the characters in the attribute column
+        /// </summary>
+        public int ColumnLength { get; set; }
     }
 }

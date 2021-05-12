@@ -1,10 +1,11 @@
-﻿<ArcGIS defaultAssembly="SymbolControls.dll" defaultNamespace="SymbolControls" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="SymbolControls.dll" defaultNamespace="SymbolControls" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{228553d5-9b04-4b35-8fdf-c10852820d29}" version="1.0" desktopVersion="2.7.26348">
     <Name>SymbolControls</Name>
     <Description>SymbolControls description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-		<Company>esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>10/16/2020 9:43:28 AM</Date>
     <Subject>Map Authoring</Subject>
     <!-- Note subject can be one or more of these topics:

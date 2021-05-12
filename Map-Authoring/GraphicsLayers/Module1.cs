@@ -116,7 +116,8 @@ namespace GraphicsLayers
     /// </remarks>
     private void OnTOCSelectionChanged(MapViewEventArgs obj)
     {
-      var selectedGraphicLayers = obj.MapView.GetSelectedLayers().OfType<GraphicsLayer>();
+      var selectedGraphicLayers = obj.MapView?.GetSelectedLayers().OfType<GraphicsLayer>();
+      if (selectedGraphicLayers == null) return;
       if (selectedGraphicLayers.Count() == 0){ //nothing selected. So clear the selected graphic layer.
         SelectedGraphicsLayerTOC = null;
         return; 

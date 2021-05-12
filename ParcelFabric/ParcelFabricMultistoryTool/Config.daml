@@ -22,8 +22,8 @@
     <Name>Multistory Parcel Tools Sample</Name>
     <Description>Sample add-in with tools and workflow for creating parcels on multistory buildings, such as condominiums.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-		<Company>esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>12/5/2019 10:27:38 AM, 2019</Date>
     <Subject>ParcelFabric</Subject>
   </AddInInfo>

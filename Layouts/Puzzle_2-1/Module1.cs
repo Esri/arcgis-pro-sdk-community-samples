@@ -31,6 +31,7 @@ using ArcGIS.Desktop.Layouts.Events;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Core.Geometry;
 using System.Media;
+using ArcGIS.Desktop.Mapping.Events;
 
 namespace Puzzle_2_1
 {
@@ -86,12 +87,12 @@ namespace Puzzle_2_1
       IPlugInWrapper New_Button = FrameworkApplication.GetPlugInWrapper("Puzzle_2_1_NewGame");
 
       base.Initialize();
-      LayoutSelectionChangedEvent.Subscribe(LayoutSelectionCallBack);
+      ElementSelectionChangedEvent.Subscribe(LayoutSelectionCallBack);
       return true;
       
     }
 
-    async public void LayoutSelectionCallBack(LayoutSelectionChangedEventArgs args)
+    async public void LayoutSelectionCallBack(ElementSelectionChangedEventArgs args)
     {
       if (Globals.selEvents)
       {
@@ -104,7 +105,8 @@ namespace Puzzle_2_1
         TextElement statusText = layout.FindElement("Status") as TextElement;
         TextProperties statusProp = statusText.TextProperties;
 
-        var selElm = args.Elements.ToList().FirstOrDefault();  // could also use layoutView.GetSelectedElements().FirstOrDefault();        
+        if (!(args.ElementContainer is Layout theLayoutView)) return;
+        var selElm = theLayoutView.GetSelectedElements().ToList().FirstOrDefault();  // could also use layoutView.GetSelectedElements().FirstOrDefault();        
 
         if (Globals.elmType == "MF" && selElm is MapFrame)  //Select appropriate Map Frame
         {

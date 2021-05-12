@@ -32,7 +32,15 @@
   <categories>
     <updateCategory refID="esri_customItems">
       <insertComponent id="ProSqlExpressReader_ProSqlExpressReader" className="ProDataProjectItem" containerType="ProSqlExpressReaderContainer">
-        <content displayName="ProSqlExpressReader" fileExtension="sqlexpress" isContainer="true" keywords="ProSqlExpressReader" contextMenuID="ProSqlExpressReaderAdd_ContextMenu" />
+				<content displayName="ProSqlExpressReader"
+								 fileExtension="sqlexpress" isContainer="true"
+								 keywords="ProSqlExpressReader"
+								 contextMenuID="ProSqlExpressReaderAdd_ContextMenu">
+					<filterFlags>
+						<!--Change this flag as needed. See FilterFlag enum. Example: AddToMap, DontBrowseFiles...-->
+						<type id="AddToMap" />
+					</filterFlags>
+				</content>				
       </insertComponent>
       <insertComponent id="ProSqlExpressReader_ProDataSubItem" className="ProDataSubItem">
         <content displayName="ProDataSubItem" isContainer="false" keywords="ProDataSubItem" contextMenuID="ProDataSubItem_ContextMenu" />

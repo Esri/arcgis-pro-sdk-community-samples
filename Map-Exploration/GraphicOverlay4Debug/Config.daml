@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2020 Esri
@@ -18,74 +18,55 @@
 
 -->
 <ArcGIS defaultAssembly="GraphicOverlay4Debug.dll" defaultNamespace="GraphicOverlay4Debug" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-	<AddInInfo id="{a65f1fad-8fab-4998-a5f8-840df0c7be04}" version="1.0" desktopVersion="2.7.26133">
-		<Name>GraphicOverlay4Debug</Name>
-		<Description>GraphicOverlay4Debug description</Description>
-		<Image>Images\AddinDesktop32.png</Image>
-		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-		<Company>esri, http://www.esri.com</Company>
-		<Date>9/15/2020 7:32:07 AM</Date>
-		<Subject>Framework</Subject>
-		<!-- Note subject can be one or more of these topics:
+  <AddInInfo id="{a65f1fad-8fab-4998-a5f8-840df0c7be04}" version="1.0" desktopVersion="2.7.26133">
+    <Name>GraphicOverlay4Debug</Name>
+    <Description>GraphicOverlay4Debug description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>9/15/2020 7:32:07 AM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
-	</AddInInfo>
-	<modules>
-		<insertModule id="GraphicOverlay4Debug_Module" className="Module1" autoLoad="false" caption="Module1">
-			<!-- uncomment to have the control hosted on a separate tab-->
-			<tabs>
-				<tab id="GraphicOverlay4Debug_Tab1" caption="Visual Debug" keytip="T1">
-					<group refID="GraphicOverlay4Debug_Group1"/>
-				</tab>
-			</tabs>
-			<groups>
-				<!-- comment this out if you have no controls on the Addin tab to avoid
+  </AddInInfo>
+  <modules>
+    <insertModule id="GraphicOverlay4Debug_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="GraphicOverlay4Debug_Tab1" caption="Visual Debug" keytip="T1">
+          <group refID="GraphicOverlay4Debug_Group1" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-				<group id="GraphicOverlay4Debug_Group1" caption="Visual Debug" keytip="G1">
-					<!-- host controls within groups -->
-					<tool refID="GraphicOverlay4Debug_SketchPoint" size="large" />
-					<tool refID="GraphicOverlay4Debug_SketchLine" size="large" />
-					<tool refID="GraphicOverlay4Debug_SketchPolygon" size="large" />
-					<button refID="GraphicOverlay4Debug_ClearGraphics" size="large" />
-				</group>
-			</groups>
-			<controls>
-				<!-- add your controls here -->
-				<tool id="GraphicOverlay4Debug_SketchPoint" caption="Sketch Point"
-					  className="SketchPoint" loadOnClick="true" keytip="B1"
-					  smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png"
-					  largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png"
-					  condition="esri_mapping_mapPane">
-					<tooltip heading="Sketch Point">
-						Sketch Points on the map to add points to the graphic overlay<disabledText />
-					</tooltip>
-				</tool>
-				<tool id="GraphicOverlay4Debug_SketchLine" caption="Sketch Line"
-					  className="SketchLine" loadOnClick="true" keytip="B2"
-					  smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png"
-					  largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png"
-					  condition="esri_mapping_mapPane">
-					<tooltip heading="Sketch Line">
-						Sketch Lines on the map to add lines to the graphic overlay<disabledText />
-					</tooltip>
-				</tool>
-				<tool id="GraphicOverlay4Debug_SketchPolygon" caption="Sketch Polygon" 
-					  className="SketchPolygon" loadOnClick="true" keytip="B3" 
-					  smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" 
-					  largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" 
-					  condition="esri_mapping_mapPane">
-					<tooltip heading="Sketch Polygon">
-						Sketch Polygons on the map to add polygons to the graphic overlay<disabledText />
-					</tooltip>
-				</tool>
-				<button id="GraphicOverlay4Debug_ClearGraphics" caption="Clear Graphics" 
-						className="ClearGraphics" loadOnClick="true" keytip="B4"
-						smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png"
-						largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
-					<tooltip heading="Clear Graphics">
-						Clears all graphics that were added to the graphic overlay using the sketch tools<disabledText />
-					</tooltip>
-				</button>
-			</controls>
-		</insertModule>
-	</modules>
+        <group id="GraphicOverlay4Debug_Group1" caption="Visual Debug" keytip="G1">
+          <!-- host controls within groups -->
+          <tool refID="GraphicOverlay4Debug_SketchPoint" size="large" />
+          <tool refID="GraphicOverlay4Debug_SketchLine" size="large" />
+          <tool refID="GraphicOverlay4Debug_SketchPolygon" size="large" />
+          <button refID="GraphicOverlay4Debug_ClearGraphics" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <tool id="GraphicOverlay4Debug_SketchPoint" caption="Sketch Point" className="SketchPoint" loadOnClick="true" keytip="B1" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Sketch Point">
+						Sketch Points on the map to add points to the graphic overlay<disabledText /></tooltip>
+        </tool>
+        <tool id="GraphicOverlay4Debug_SketchLine" caption="Sketch Line" className="SketchLine" loadOnClick="true" keytip="B2" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Sketch Line">
+						Sketch Lines on the map to add lines to the graphic overlay<disabledText /></tooltip>
+        </tool>
+        <tool id="GraphicOverlay4Debug_SketchPolygon" caption="Sketch Polygon" className="SketchPolygon" loadOnClick="true" keytip="B3" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Sketch Polygon">
+						Sketch Polygons on the map to add polygons to the graphic overlay<disabledText /></tooltip>
+        </tool>
+        <button id="GraphicOverlay4Debug_ClearGraphics" caption="Clear Graphics" className="ClearGraphics" loadOnClick="true" keytip="B4" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Clear Graphics">
+						Clears all graphics that were added to the graphic overlay using the sketch tools<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
 </ArcGIS>

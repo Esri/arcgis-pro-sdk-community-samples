@@ -30,25 +30,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/// <summary>
-/// This sample demonstrates the use of the BeforeSketchCompleted event to
-/// modify the sketch geometry before the sketch is completed.
-/// The example sets the Z values of the sketch to the specified elevation surface
-/// regardless of the current Z environment and any existing Z values the sketch may have.
-/// </summary>
-/// <remarks>
-///1. In Visual Studio click the Build menu. Then select Build Solution.
-///2. Click Start button to open ArcGIS Pro.
-///3. ArcGIS Pro will open. 
-///4. Open a map containing Z aware editable data and an elevation surface called 'Ground'
-///Alternatively create a new map with Z aware editable data (e.g. map notes) and add an elevation source.
-///5. Open the add-in tab and click on the BeforeSketchCompleted button in the Sketch Events group
-///6. On the edit tab, click on the Create button in the Features group to display the create features pane.
-///7. Create a feature using a construction tool (the default polygon or line tool where applicable.
-///8. Select and examine the Z values on the newly created feature via the attributes pane and switch to the 
-///geometry tab. The Z values should reflect the surface Z values.
-/// </remarks>
-/// 
 namespace BeforeSketchCompleted
 {
   internal class BeforeSketchCompleted : Button

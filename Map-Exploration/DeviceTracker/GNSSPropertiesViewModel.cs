@@ -355,23 +355,25 @@ namespace DeviceTracker
     private RelayCommand _EnableSourceCmd;
     public ICommand EnableSourceCmd => _EnableSourceCmd ?? (_EnableSourceCmd = new RelayCommand(() => EnableSource(), DoesSourceExist));
 
-    private void EnableSource()
+    private async void EnableSource()
     {
-      try
-      {
-        bool enabled = MapDeviceLocationService.Instance.IsDeviceLocationEnabled;
-
-        // dont await
-        QueuedTask.Run(() =>
+        var msg = await QueuedTask.Run(() =>
         {
-          MapDeviceLocationService.Instance.SetDeviceLocationEnabled(!enabled);
+          string message = null;
+          try
+          {
+            bool enabled = MapDeviceLocationService.Instance.IsDeviceLocationEnabled;
+            MapDeviceLocationService.Instance.SetDeviceLocationEnabled(!enabled);
+          }
+          catch (InvalidOperationException e)
+          {
+            message = e.Message;
+          }
+          return message;
         });
-      }
-      catch (InvalidOperationException e)
-      {
-        MessageBox.Show(e.Message);
-      }
+      if (msg != null) MessageBox.Show(msg);
     }
+
 
     private RelayCommand _ConnectSourceEventsCmd;
     public ICommand ConnectSourceEventsCmd => _ConnectSourceEventsCmd ?? (_ConnectSourceEventsCmd = new RelayCommand(() => ConnectSourceEvents()));

@@ -14,35 +14,29 @@ Language:              C#
 Subject:               Plugin
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  12/01/2020
-ArcGIS Pro:            2.7
+Date:                  5/12/2021
+ArcGIS Pro:            2.8
 Visual Studio:         2019
 .NET Target Framework: 4.8
 ```
 
 ## Resources
 
-* [API Reference online](https://pro.arcgis.com/en/pro-app/sdk/api-reference)
-* <a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">ArcGIS Pro SDK for .NET (pro.arcgis.com)</a>
-* [arcgis-pro-sdk-community-samples](https://github.com/Esri/arcgis-pro-sdk-community-samples)
-* [ArcGIS Pro DAML ID Reference](https://github.com/Esri/arcgis-pro-sdk/wiki/ArcGIS-Pro-DAML-ID-Reference)
-* [FAQ](https://github.com/Esri/arcgis-pro-sdk/wiki/FAQ)
-* [ArcGIS Pro SDK icons](https://github.com/Esri/arcgis-pro-sdk/releases/tag/2.4.0.19948)
-
-![ArcGIS Pro SDK for .NET Icons](https://Esri.github.io/arcgis-pro-sdk/images/Home/Image-of-icons.png  "ArcGIS Pro SDK Icons")
+[Community Sample Resources](https://github.com/Esri/arcgis-pro-sdk-community-samples#resources)
 
 ### Samples Data
 
-* Sample data for ArcGIS Pro SDK Community Samples can be downloaded from the [repo releases](https://github.com/Esri/arcgis-pro-sdk-community-samples/releases) page.  
+* Sample data for ArcGIS Pro SDK Community Samples can be downloaded from the [Releases](https://github.com/Esri/arcgis-pro-sdk-community-samples/releases) page.  
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
 1. Make sure that the Sample data is unzipped in c:\data   
 1. The data used in this sample is located in this folder 'C:\Data\PluginData\SQLExpressData'  
-1. In order to run this sample you have to install SQL Server Express, which can be downloaded and installed for free from Microsoft here: https://www.microsoft.com/en-us/download/details.aspx?id=13255.  The SQL Server version supported is 2017 or newer.    
+1. In order to run this sample you have to install SQL Server Express, which can be downloaded and installed for free from Microsoft here: https://www.microsoft.com/en-us/Download/details.aspx?id=101064.  The SQL Server version supported is 2017 or newer.    
 1. Once SQL Server Express is installed and running, use 'Microsoft SQL Server Management Studio 18' to 'attach' the following database files:  
 1. C:\Data\PluginData\SQLExpressData\TestSqlExpress.mdf and C:\Data\PluginData\SQLExpressData\FDTestSQLExpress.mdf.     
+1. Make sure that the 'C:\Data\PluginData\SQLExpressData' folder allows full access to the 'Users' group otherwise you will not be able to attach the database files to SQL Express.  
 1. In Visual Studio click the Build menu. Then select Build Solution.  
 1. Click Start button to open ArcGIS Pro.  
 1. In ArcGIS Pro open this project: 'C:\Data\PluginData\SqlExpress\SqlExpress.aprx'  
@@ -66,10 +60,16 @@ Visual Studio:         2019
 1. You can also view the attribute table for the plugindatasource featureclass that you added to your map  
 ![UI](Screenshots/Screen5.png)   
   
+1. Finally you can validate the proper function of the IMappableItem, IMappableItemEx implementations which allows browsing and adding map data through the ArcGIS Pro 'Add Data' button on the Map tab.  First browse the the SQLExpress.sqlexpress location and drill down into the available data.  
+![UI](Screenshots/Screen6.png)   
+  
+1. Now you can add the data to the current map.    
+![UI](Screenshots/Screen7.png)   
+  
 
 
 <!-- End -->
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://esri.github.io/arcgis-pro-sdk/images/ArcGISPro.png"  alt="ArcGIS Pro SDK for Microsoft .NET Framework" height = "20" width = "20" align="top"  >
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[Home](https://github.com/Esri/arcgis-pro-sdk/wiki) | <a href="https://pro.arcgis.com/en/pro-app/sdk/api-reference" target="_blank">API Reference</a> | [Requirements](https://github.com/Esri/arcgis-pro-sdk/wiki#requirements) | [Download](https://github.com/Esri/arcgis-pro-sdk/wiki#installing-arcgis-pro-sdk-for-net) | <a href="https://github.com/esri/arcgis-pro-sdk-community-samples" target="_blank">Samples</a>
+[Home](https://github.com/Esri/arcgis-pro-sdk/wiki) | <a href="https://pro.arcgis.com/en/pro-app/latest/sdk/api-reference" target="_blank">API Reference</a> | [Requirements](https://github.com/Esri/arcgis-pro-sdk/wiki#requirements) | [Download](https://github.com/Esri/arcgis-pro-sdk/wiki#installing-arcgis-pro-sdk-for-net) | <a href="https://github.com/esri/arcgis-pro-sdk-community-samples" target="_blank">Samples</a>

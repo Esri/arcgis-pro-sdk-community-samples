@@ -37,7 +37,7 @@ using ArcGIS.Desktop.Framework.DragDrop;
 namespace ProSqlExpressReader
 {
 
-	internal class ProDataProjectItem : CustomProjectItemBase, IMappableItem
+	internal class ProDataProjectItem : CustomProjectItemBase, IMappableItem, IMappableItemEx
 	{
 		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		[DllImport("kernel32.dll")]
@@ -193,17 +193,29 @@ namespace ProSqlExpressReader
 
 		bool IMappableItem.CanAddToMap(MapType? mapType)
 		{
-			return true;
+			return false;
 		}
 
 		void IMappableItem.OnAddToMap(Map map)
 		{
-			throw new NotImplementedException();
+			// pass to OnAddToMapEx and ignore the return value
+			((IMappableItemEx)this).OnAddToMapEx(map);
 		}
 
 		void IMappableItem.OnAddToMap(Map map, ILayerContainerEdit groupLayer, int index)
 		{
-			throw new NotImplementedException();
+			((IMappableItemEx)this).OnAddToMapEx(map, groupLayer, index);
+		}
+
+		string[] IMappableItemEx.OnAddToMapEx(Map map)
+		{
+			// call with null groupLayer
+			return ((IMappableItemEx)this).OnAddToMapEx(map, null, -1);
+		}
+
+		string[] IMappableItemEx.OnAddToMapEx(Map map, ILayerContainerEdit groupLayer, int index)
+		{    
+			return new string[] { };
 		}
 
 		private static readonly ASCIIEncoding ASCIIencoding = new ASCIIEncoding();
@@ -211,7 +223,7 @@ namespace ProSqlExpressReader
 	}
 
 
-	internal class ProDataSubItem : CustomItemBase, IMappableItem
+	internal class ProDataSubItem : CustomItemBase, IMappableItem, IMappableItemEx
 	{
 		public enum EnumSubItemType
 		{
@@ -324,16 +336,28 @@ namespace ProSqlExpressReader
 
 		void IMappableItem.OnAddToMap(Map map)
 		{
-			System.Diagnostics.Debug.WriteLine("OnAddToMap");
-			IList<ProDataSubItem> lst = new List<ProDataSubItem>();
-			lst.Add(this);
-			_ = AddToCurrentMap.AddProDataSubItemsAsync(lst, map);
+			// pass to OnAddToMapEx and ignore the return value
+			((IMappableItemEx)this).OnAddToMapEx(map);
 		}
 
 		void IMappableItem.OnAddToMap(Map map, ILayerContainerEdit groupLayer, int index)
 		{
-			System.Diagnostics.Debug.WriteLine("OnAddToMap idx");
-			throw new NotImplementedException();
+			((IMappableItemEx)this).OnAddToMapEx(map, groupLayer, index);
+		}
+
+		string[] IMappableItemEx.OnAddToMapEx(Map map)
+		{
+			// call with null groupLayer
+			return ((IMappableItemEx)this).OnAddToMapEx(map, null, -1);
+		}
+
+		string[] IMappableItemEx.OnAddToMapEx(Map map, ILayerContainerEdit groupLayer, int index)
+		{
+			System.Diagnostics.Debug.WriteLine("OnAddToMap");
+			IList<ProDataSubItem> lst = new List<ProDataSubItem>();
+			lst.Add(this);
+			_ = AddToCurrentMap.AddProDataSubItemsAsync(lst, map);
+			return new string[] { this.ComboPath };
 		}
 	}
 }

@@ -37,49 +37,102 @@ using ArcGIS.Desktop.Mapping;
 
 namespace ProjectCustomItemEarthQuake
 {
-    /// <summary>
-    /// This sample covers how to 'customize' Pro's access to content by using custom items and project custom items.  Specifically we are reading a 'custom' formatted XML file containing earthquake data.
-    /// </summary>
-    /// <remarks>
-    /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
-    /// 1. Make sure that the Sample data is unzipped in c:\data 
-    /// 1. The data used in this sample is located in this folder 'C:\Data\CustomItem\QuakeCustomItem'
-    /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 1. Click Start button to open ArcGIS Pro.
-    /// 1. In ArcGIS Pro open C:\Data\CustomItem\QuakeCustomItem\QuakeCustomItem.aprx
-    /// 1. Open ArcGIS Pro's Catalog dockpane
-    /// 1. Under Folders browse to QuakeCustomItem and open the folder.  
-    /// 1. Notice that earthquake.quake has a custom icon.  This is the result of a -custom item- implementation for all .quake file extensions.
-    /// ![UI](Screenshots/Screen1.png)  
-    /// 1. Open config.daml in the solution and find the update to the -esri_customItems- category, specifically the -acme_quake_handler- component.  This component allows to specify a -fileExtension- -quake- and also a -className- -ProjectCustomItemEarthQuake.Items.QuakeProjectItem- for the codebehind implementation.
-    /// 1. Open the Items\QuakeProjectItem.cs source in the solution.  Notice that this class derives from -CustomProjectItemBase- which provides the most of the functionality required for project custom items.  Notice some overrides to modify the out-of-box behavior like for example the -bex the dog- icon.
-    /// 1. Back in ArcGIS Pro's Catalog pane open -earthquake.quake-.  Notice the list of earthquake events that a -children- of the -earthquake.quake- file.
-    /// ![UI](Screenshots/Screen1.png)   
-    /// 1. Open the Items\QuakeProjectItem.cs source in the solution.  Notice that this class overrides the -Fetch- function which uses the -AddRangeToChildren- function to add children to the -earthquake.quake- parent.
-    /// ![UI](Screenshots/Screen2.png)   
-    /// 1. Navigate back to the *Bex the dog* icon, right click on this item to bring up the context menu and then click on *Add To Project* to add the *Item* to the current project.
-    /// ![UI](Screenshots/Screen3.png)
-    /// ![UI](Screenshots/Screen4.png)
-    /// 1. Rename *earthquakes.quake* by using the rename Context Menu button or by simply clicking on the *Custom Project Item* name to enable editing of the name
-    /// ![UI](Screenshots/Screen5.png)
-    /// ![UI](Screenshots/Screen6.png)
-    /// 1. Click the "Open Quake Event" button. Browse to the 'C:\Data\CustomItem\QuakeCustomItem' folder. You will be able to see the .quake item.  Double click the .quake item to browse into it to see the quake events
-    ///![UI](Screenshots/Screen6.png)
-        /// </remarks>
-    internal class Module1 : Module
-  {
-    private static Module1 _this = null;
+	/// <summary>
+	/// This sample covers how to 'customize' Pro's access to content by using custom items and project custom items.  Specifically we are reading a 'custom' formatted XML file containing earthquake data.
+	/// </summary>
+	/// <remarks>
+	/// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+	/// 1. Make sure that the Sample data is unzipped in c:\data 
+	/// 1. The data used in this sample is located in this folder 'C:\Data\CustomItem\QuakeCustomItem'
+	/// 1. In Visual Studio click the Build menu. Then select Build Solution.
+	/// 1. Click Start button to open ArcGIS Pro.
+	/// 1. In ArcGIS Pro open C:\Data\CustomItem\QuakeCustomItem\QuakeCustomItem.aprx
+	/// 1. Open ArcGIS Pro's Catalog dockpane
+	/// 1. Under Folders browse to QuakeCustomItem and open the folder.  
+	/// 1. Notice that earthquake.quake has a custom icon.  This is the result of a -custom item- implementation for all .quake file extensions.
+	/// ![UI](Screenshots/Screen1.png)  
+	/// 1. Open config.daml in the solution and find the update to the -esri_customItems- category, specifically the -acme_quake_handler- component.  This component allows to specify a -fileExtension- -quake- and also a -className- -ProjectCustomItemEarthQuake.Items.QuakeProjectItem- for the codebehind implementation.
+	/// 1. Open the Items\QuakeProjectItem.cs source in the solution.  Notice that this class derives from -CustomProjectItemBase- which provides the most of the functionality required for project custom items.  Notice some overrides to modify the out-of-box behavior like for example the -bex the dog- icon.
+	/// 1. Back in ArcGIS Pro's Catalog pane open -earthquake.quake-.  Notice the list of earthquake events that a -children- of the -earthquake.quake- file.
+	/// ![UI](Screenshots/Screen1.png)   
+	/// 1. Open the Items\QuakeProjectItem.cs source in the solution.  Notice that this class overrides the -Fetch- function which uses the -AddRangeToChildren- function to add children to the -earthquake.quake- parent.
+	/// ![UI](Screenshots/Screen2.png)   
+	/// 1. Navigate back to the *Bex the dog* icon, right click on this item to bring up the context menu and then click on *Add To Project* to add the *Item* to the current project.
+	/// ![UI](Screenshots/Screen3.png)
+	/// ![UI](Screenshots/Screen4.png)
+	/// 1. Rename *earthquakes.quake* by using the rename Context Menu button or by simply clicking on the *Custom Project Item* name to enable editing of the name
+	/// ![UI](Screenshots/Screen5.png)
+	/// ![UI](Screenshots/Screen6.png)
+	/// 1. Click the "Open Quake Event" button. Browse to the 'C:\Data\CustomItem\QuakeCustomItem' folder. You will be able to see the .quake item.  Double click the .quake item to browse into it to see the quake events
+	/// ![UI](Screenshots/Screen6.png)
+	/// </remarks>
+	internal class Module1 : Module
+	{
+		private static Module1 _this = null;
 
-    /// <summary>
-    /// Retrieve the singleton instance to this module here
-    /// </summary>
-    public static Module1 Current
-    {
-      get
-      {
-        return _this ?? (_this = (Module1)FrameworkApplication.FindModule("ProjectCustomItemEarthQuake_Module"));
-      }
+		/// <summary>
+		/// Retrieve the singleton instance to this module here
+		/// </summary>
+		public static Module1 Current
+		{
+			get
+			{
+				return _this ?? (_this = (Module1)FrameworkApplication.FindModule("ProjectCustomItemEarthQuake_Module"));
+			}
+		}
+
+		#region Overlay Helpers
+
+		private static List<IDisposable> _graphics = new List<IDisposable>();
+
+    internal static void ClearGraphics()
+		{
+      foreach (var g in _graphics) g.Dispose();
+      _graphics.Clear();
     }
+
+    internal static void AddOrUpdateOverlay(Geometry geom, CIMSymbolReference symRef)
+		{
+			var mapView = MapView.Active;
+			if (mapView == null) return;
+			_graphics.Add(mapView.AddOverlay(geom, symRef));
+		}
+
+		#endregion Overlay Helpers
+
+		#region Symbol Helper
+
+		private static CIMSymbolReference _point3DSymbolRef = null;
+    private static CIMSymbolReference _point2DSymbolRef = null;
+
+    internal static CIMSymbolReference GetPointSymbolRef()
+    {
+      if (Is3D)
+      {
+        if (_point3DSymbolRef != null) return _point3DSymbolRef;
+        var pointSymbol = GetPointSymbol("ArcGIS 3D", @"Pushpin 2");
+        CIMPointSymbol pnt3DSym = pointSymbol.Symbol as CIMPointSymbol;
+        pnt3DSym.SetSize(200);
+        pnt3DSym.SetRealWorldUnits(true);
+        _point3DSymbolRef = pnt3DSym.MakeSymbolReference();
+        return _point3DSymbolRef;
+      }
+      if (_point2DSymbolRef != null) return _point2DSymbolRef;
+      CIMPointSymbol pntSym = SymbolFactory.Instance.ConstructPointSymbol(ColorFactory.Instance.RedRGB, 8, SimpleMarkerStyle.Circle);
+      _point2DSymbolRef = pntSym.MakeSymbolReference();
+      return _point2DSymbolRef;
+    }
+
+    private static SymbolStyleItem GetPointSymbol(string styleProjectItemName, string symbolStyleName)
+    {
+      var style3DProjectItem = Project.Current.GetItems<StyleProjectItem>().Where(p => p.Name == styleProjectItemName).FirstOrDefault();
+      var symbolStyle = style3DProjectItem.SearchSymbols(StyleItemType.PointSymbol, symbolStyleName).FirstOrDefault();
+      return symbolStyle;
+    }
+
+    internal static bool Is3D => (MapView.Active?.ViewingMode == MapViewingMode.SceneGlobal || MapView.Active?.ViewingMode == MapViewingMode.SceneLocal);
+
+    #endregion Symbol Helper
 
     #region Overrides
     /// <summary>

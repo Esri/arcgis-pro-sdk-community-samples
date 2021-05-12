@@ -13,6 +13,8 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <NoWarn>1591</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,7 +26,8 @@
     <WarningLevel>4</WarningLevel>
     <StartAction>Program</StartAction>
     <StartProgram>C:\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe</StartProgram>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,11 +38,14 @@
     <WarningLevel>4</WarningLevel>
     <StartAction>Program</StartAction>
     <StartProgram>C:\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe</StartProgram>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
     <ArcGISFolder>$([MSBuild]::GetRegistryValueFromView('HKEY_LOCAL_MACHINE\SOFTWARE\ESRI\ArcGISPro', 'InstallDir', null, RegistryView.Registry64))</ArcGISFolder>
     <ArcGISFolder Condition="'$(ArcGISFolder)' == ''">$(registry:HKEY_CURRENT_USER\SOFTWARE\ESRI\ArcGISPro@InstallDir)</ArcGISFolder>
+    <NoWarn>1591</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -171,9 +177,12 @@
     <PackageAction>BuildDefault</PackageAction>
     <DocumentationFile>bin\Debug\XAML-Icons-doc.xml</DocumentationFile>
     <NoWarn>1591</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PackageAction>BuildDefault</PackageAction>
+    <NoWarn>1591</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.PackageAddIn" />
   <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.CleanAddIn" />

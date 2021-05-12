@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2020 Esri
@@ -22,8 +22,8 @@
     <Name>LayoutWithLabels</Name>
     <Description>LayoutWithLabels description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-		<Company>esri, http://www.esri.com</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
     <Date>7/16/2020 12:21:09 PM, 2020</Date>
     <Subject>Layouts</Subject>
     <!-- Note subject can be one or more of these topics:
@@ -47,11 +47,7 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="LayoutWithLabels_SelectParcelsToLabel_ShowButton" 
-								caption="Label Selected Parcels" keytip="B1"
-								className="SelectParcelsToLabel_ShowButton" loadOnClick="true" 
-								smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" 
-								largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+        <button id="LayoutWithLabels_SelectParcelsToLabel_ShowButton" caption="Label Selected Parcels" keytip="B1" className="SelectParcelsToLabel_ShowButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
           <tooltip heading="Label Selected Parcels">Loads a CSV with parcel Ids to select, then labels those parcels, and creates a layout.<disabledText /></tooltip>
         </button>
       </controls>
