@@ -55,7 +55,7 @@
       </Style>
     </ResourceDictionary>
   </UserControl.Resources>
-  <Grid Margin="4">
+  <Grid Margin="4" IsEnabled="{Binding DockPaneIsEnabled}">
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="Auto"/>
       <ColumnDefinition Width="*"/>

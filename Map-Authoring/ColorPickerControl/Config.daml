@@ -1,0 +1,46 @@
+﻿<ArcGIS defaultAssembly="ColorPickerControl.dll" defaultNamespace="ColorPickerControl" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{d431e7c1-fd09-4ffe-82ff-9481e13ccc81}" version="1.0" desktopVersion="2.9.32683">
+    <Name>ColorPickerControl</Name>
+    <Description>ColorPickerControl description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+	  <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+	  <Company>esri, http://www.esri.com</Company>
+	  <Date>6/13/2021 12:29:15 PM, 2021</Date>
+	  <Subject>Map Authoring</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ColorPickerControl_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="ColorPickerControl_Tab1" caption="New Tab">
+          <group refID="ColorPickerControl_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ColorPickerControl_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="G1">
+          <!-- host controls within groups -->
+          <button refID="ColorPickerControl_PolygonColorPicker_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ColorPickerControl_PolygonColorPicker_ShowButton" keytip="B0"
+            caption="Show Polygon ColorPicker" className="PolygonColorPicker_ShowButton" loadOnClick="true" 
+            smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EvilGenius16.png"
+            largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EvilGenius32.png">
+          <tooltip heading="Show Dockpane">Show Dockpane that allows to define a simple polygon renderer with a selectable fill color<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="ColorPickerControl_PolygonColorPicker" caption="Polygon ColorPicker" 
+                   className="PolygonColorPickerViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="PolygonColorPickerView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

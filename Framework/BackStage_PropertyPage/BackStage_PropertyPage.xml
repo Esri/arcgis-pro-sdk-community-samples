@@ -56,7 +56,7 @@
         </member>
         <member name="M:BackStage_PropertyPage.ApplicationSettingsViewModel.CancelAsync">
             <summary>
-            Perform special actions when the page is to be cancelled.
+            Perform special actions when the page is to be Canceled.
             </summary>
             <returns>A Task that represents CancelAsync</returns>
         </member>
@@ -223,7 +223,7 @@
         </member>
         <member name="M:BackStage_PropertyPage.ProjectSettingsViewModel.CancelAsync">
             <summary>
-            Perform special actions when the page is to be cancelled.
+            Perform special actions when the page is to be Canceled.
             </summary>
             <returns>A Task that represents CancelAsync</returns>
         </member>

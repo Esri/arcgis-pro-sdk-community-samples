@@ -20,7 +20,7 @@
 <ArcGIS defaultAssembly="TableControl.dll" defaultNamespace="TableControl" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{360e6443-ff64-4690-885a-bd53ab9eeb5d}" version="1.0" desktopVersion="2.3.14257">
     <Name>TableControl</Name>
-    <Description>TableControl description</Description>
+    <Description>This sample demonstrates using the TableControl on a dockpane. </Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, http://www.esri.com</Company>
@@ -43,6 +43,7 @@
         <group id="TableControl_Group1" caption="Group 1" appearsOnAddInTab="true">
           <!-- host controls within groups -->
           <button refID="TableControl_TableControlDockpane_ShowButton" size="large" />
+          <tool refID="TableControl_IdentifyTool" size="large" />
         </group>
       </groups>
       <controls>
@@ -50,6 +51,9 @@
         <button id="TableControl_TableControlDockpane_ShowButton" caption="Show Preview" className="TableControlDockpane_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
           <tooltip heading="Show Preview">Show the preview dockpane<disabledText /></tooltip>
         </button>
+        <tool id="TableControl_IdentifyTool" caption="Identify Tool" className="IdentifyTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Identify Tool">Identify a feature<disabledText /></tooltip>
+        </tool>
       </controls>
       <dockPanes>
         <dockPane id="TableControl_TableControlDockpane" caption="Preview" className="TableControlDockpaneViewModel" dock="bottom">

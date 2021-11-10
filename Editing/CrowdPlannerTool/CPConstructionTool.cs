@@ -49,7 +49,7 @@ namespace CrowdPlannerTool
                 _dockpane = FrameworkApplication.DockPaneManager.Find("CrowdPlannerTool_CPDockpane") as CPDockpaneViewModel;
             }
 
-            // ***  Check to ensure the densitysettings are set.  If not, show a warning and deactivate tool.
+            // ***  Check to ensure the density settings are set.  If not, show a warning and deactivate tool.
             if (_dockpane.HighSetting == 0 || _dockpane.MediumSetting == 0 || _dockpane.LowSetting == 0 || _dockpane.TargetSetting == 0)
             {
                 ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("An empty setting value exists. All settings are required to use this tool.", "Warning!");

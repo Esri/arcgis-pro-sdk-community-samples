@@ -15,8 +15,8 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  5/12/2021
-ArcGIS Pro:            2.8
+Date:                  11/01/2021
+ArcGIS Pro:            2.9
 Visual Studio:         2017, 2019
 .NET Target Framework: 4.8
 ```
@@ -48,6 +48,12 @@ Visual Studio:         2017, 2019
 1. Click the Add to Map button to add the data to the active map.      
 1. Right click on a row and see the custom context menu. Choose Zoom to Row to zoom to the active row in the map.   
 ![UI](screenshots/TableControl_ContextMenu.png)  
+  
+1.Click the Find button to see the Find UI.  
+![UI](screenshots/tableControl_Find.png)    
+  
+1.Use the Identify tool on the Add-in tab to identify a feature.  
+1.The table control will scroll to that row and select it in the table.  
   
 
 

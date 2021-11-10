@@ -1,0 +1,55 @@
+﻿<ArcGIS defaultAssembly="ToggleSwitches.dll" defaultNamespace="ToggleSwitches" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{d8685130-bbbd-4e69-a504-86d2c57a5246}" version="1.0" desktopVersion="2.9.31448">
+    <Name>ToggleSwitches</Name>
+    <Description>Toggle Switches Device Status</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>jacq0000</Author>
+    <Company>ESRI</Company>
+    <Date>9/9/2021 12:10:47 PM</Date>
+    <Subject>NetworkDiagram</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    
+    <insertModule id="ToggleSwitches_Module"
+				  className="ToggleSwitchesModule" autoLoad="false" caption="ToggleSwitches">
+
+      <groups>
+        <group id="ToggleSwitches_Group1" caption="Toggle Switches" appearsOnAddInTab="true" keytip="ToggleSwitches_Group1" condition="esri_networkdiagrams_networkDiagramMapCondition">
+          <button refID="ToggleSwitches_ColorEdges" size="large" />
+          <button refID="ToggleSwitches_ToggleSwitches" size="large" />
+        </group>
+      </groups>
+      
+      <controls>
+        <button id="ToggleSwitches_ColorEdges" caption="ColorEdges" className="ColorEdges" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SymbolizeErrors16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SymbolizeErrors32.png" keytip="ToggleSwitches_ColorEdges">
+          <tooltip heading="Color Subnetwork">
+            Change the color of all diagram edges so they are uniformly colorized according to their related subnetwork<disabledText />
+          </tooltip>
+        </button>
+        <button id="ToggleSwitches_ToggleSwitches" caption="ToggleSwitches" className="ToggleSwitches" loadOnClick="true"  smallImage="Images/ToggleSwitches216.png" largeImage="Images/ToggleSwitches32.png" keytip="ToggleSwitches_ToggleSwitches" condition="ChangeSwitches_CannotEditCondition">
+          <tooltip heading="Toggle Switches">
+            Toogle the status of the selected medium voltage switches, validate and save the network topology, update the related subnetworks and color the diagram edges per subnetwork
+            <disabledText>
+              This button is unavalaible because there is no selection or some unsaved edition
+            </disabledText>
+          </tooltip>
+        </button>
+      </controls>
+      
+    </insertModule>
+
+  </modules>
+
+  <conditions>
+    <insertCondition id="ChangeSwitches_CannotEditCondition" caption="Diagram CannotEdit">
+      <and>
+        <state id="esri_mapping_activeMapView_hasFeatureSelectionState" />
+        <not>
+          <state id="esri_editing_HasEdits" />
+        </not>
+      </and>
+    </insertCondition>
+  </conditions>
+</ArcGIS>

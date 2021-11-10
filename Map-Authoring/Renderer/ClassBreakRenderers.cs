@@ -24,6 +24,7 @@ using System.Threading.Tasks;
 using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
 using ArcGIS.Desktop.Core;
+using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 using Renderer.Helpers;
@@ -37,11 +38,18 @@ namespace Renderer
         /// Renders a feature layer using graduated colors to draw quantities.
         /// ![cb-colors.png](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/cb-colors.png "Graduated colors with natural breaks renderer.")
         /// </summary>
-        /// <param name="featureLayer"></param>
         /// <returns>
         /// </returns>
-        internal static Task CBRendererGraduatedColors(FeatureLayer featureLayer)
+        internal static Task CBRendererGraduatedColors()
         {
+            //Check feature layer name
+            //Code works with the USDemographics feature layer available with the ArcGIS Pro SDK Sample data
+            var featureLayer = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault(f => f.Name == "USDemographics");
+            if (featureLayer == null)
+            {
+              MessageBox.Show("This renderer works with the USDemographics feature layer available with the ArcGIS Pro SDK Sample data", "Data missing");
+              return Task.FromResult(0);
+            }
             return QueuedTask.Run(() =>
             {
                 GraduatedColorsRendererDefinition gcDef = new GraduatedColorsRendererDefinition()
@@ -61,10 +69,17 @@ namespace Renderer
         /// Renders a feature layer using graduated colors to draw quantities. The outline width is varied based on attributes.
         /// ![graduatedColorOutline.png](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/graduatedColorOutline.png "Graduated colors with natural breaks renderer.") 
         /// </summary>
-        /// <param name="featureLayer"></param>
         /// <returns></returns>
-        internal static Task CBRendererGraduatedColorsOutlineAsync(FeatureLayer featureLayer)
+        internal static Task CBRendererGraduatedColorsOutlineAsync()
         {
+            //Check feature layer name
+            //Code works with the USDemographics feature layer available with the ArcGIS Pro SDK Sample data
+            var featureLayer = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault(f => f.Name == "USDemographics");
+            if (featureLayer == null)
+            {
+              MessageBox.Show("This renderer works with the USDemographics feature layer available with the ArcGIS Pro SDK Sample data", "Data missing");
+              return Task.FromResult(0);
+            }
             return QueuedTask.Run(() =>
             {
                 //Gets the first numeric field of the feature layer
@@ -118,12 +133,19 @@ namespace Renderer
         /// Renders a feature layer using graduated symbols and natural breaks to draw quantities.
         /// ![cb-symbols.png](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/cb-symbols.png "Graduated symbols with natural breaks renderer.")
         /// </summary>
-        /// <param name="featureLayer"></param>
         /// <returns>        
         /// </returns>
-        internal static Task CBRendererGraduatedSymbols(FeatureLayer featureLayer)
+        internal static Task CBRendererGraduatedSymbols()
         {
-            return QueuedTask.Run(() =>
+          //Check feature layer name
+          //Code works with the USDemographics feature layer available with the ArcGIS Pro SDK Sample data
+          var featureLayer = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault(f => f.Name == "USDemographics");
+          if (featureLayer == null)
+          {
+            MessageBox.Show("This renderer works with the USDemographics feature layer available with the ArcGIS Pro SDK Sample data", "Data missing");
+            return Task.FromResult(0);
+          }
+          return QueuedTask.Run(() =>
             {
                 GraduatedSymbolsRendererDefinition gsDef = new GraduatedSymbolsRendererDefinition()
                 {                   
@@ -176,10 +198,17 @@ namespace Renderer
         /// Renders a feature layer using graduated colors and manual intervals to draw quantities. 
         ///  ![cb-colors-manual-breaks.png](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/cb-colors-manual-breaks.png "Graduated colors with manual intervals renderer.")
         /// </summary>
-        /// <param name="featureLayer"></param>
         /// <returns></returns>
-        internal static Task CBGraduatedColorsManualBreaks(FeatureLayer featureLayer)
+        internal static Task CBGraduatedColorsManualBreaks()
         {
+            //Check feature layer name
+            //Code works with the USDemographics feature layer available with the ArcGIS Pro SDK Sample data
+            var featureLayer = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault(f => f.Name == "USDemographics");
+            if (featureLayer == null)
+            {
+              MessageBox.Show("This renderer works with the USDemographics feature layer available with the ArcGIS Pro SDK Sample data", "Data missing");
+              return Task.FromResult(0);
+            }
             //Change these class breaks to be appropriate for your data. These class breaks defined below apply to the US States feature class
             List<CIMClassBreak> listClassBreaks = new List<CIMClassBreak>
             {

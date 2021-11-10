@@ -105,7 +105,7 @@ namespace BackStage_PropertyPage
     }
 
     /// <summary>
-    /// Perform special actions when the page is to be cancelled.
+    /// Perform special actions when the page is to be Canceled.
     /// </summary>
     /// <returns>A Task that represents CancelAsync</returns>
     protected override Task CancelAsync()

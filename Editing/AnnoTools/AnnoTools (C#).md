@@ -23,8 +23,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  5/12/2021
-ArcGIS Pro:            2.8
+Date:                  11/01/2021
+ArcGIS Pro:            2.9
 Visual Studio:         2017, 2019
 .NET Target Framework: 4.8
 ```
@@ -41,7 +41,7 @@ Visual Studio:         2017, 2019
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
 1. Make sure that the Sample data is unzipped in c:\data   
-1. The project used for this sample is 'C:\Data\SampleAnno.aprx'  
+1. The project used for this sample is 'C:\Data\SampleAnno\SampleAnno.aprx'  
 1. In Visual studio click the Build menu. Then select Build Solution.  
 1. Click Start button to open ArcGIS Pro.  
 1. ArcGIS Pro will open, select the SampleAnno.aprx project  
@@ -54,8 +54,8 @@ Visual Studio:         2017, 2019
 1. Select the Advanced Anno Tool and digitize a line.  An annotation feature will be created.   
 ![UI](Screenshots/Screen3.png)  
   
-1. Click the 'Modify Anno Geometry' button on the Add-In tab and drag a rectange around some annotation features. The geometry of these features will be rotated 90 degrees.  
-1. Click the 'Modify Anno Symbol' button on the Add-In tab and drag a rectange around some annotation features. The text and symbol color of these features will change to 'Hello World' in red.  
+1. Click the 'Modify Anno Geometry' button on the Add-In tab and drag a rectangle around some annotation features. The geometry of these features will be rotated 90 degrees.  
+1. Click the 'Modify Anno Symbol' button on the Add-In tab and drag a rectangle around some annotation features. The text and symbol color of these features will change to 'Hello World' in red.  
 ![UI](Screenshots/Screen4.png)  
   
 

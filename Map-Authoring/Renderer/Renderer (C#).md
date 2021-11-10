@@ -11,6 +11,8 @@ This sample renders feature layers with various types of renderers. There are ex
   * Proportional Renderer  
   * Heat map renderer  
   * Chart renderer  
+  * Dot Density Renderer  
+  * Attribute driven symbology  
   
 
 
@@ -22,8 +24,8 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  5/12/2021
-ArcGIS Pro:            2.8
+Date:                  11/01/2021
+ArcGIS Pro:            2.9
 Visual Studio:         2017, 2019
 .NET Target Framework: 4.8
 ```
@@ -50,16 +52,16 @@ To experiment with the various renderers available with this sample, follow the 
   
 1. Stop debugging Pro.  
 1. In Visual Studio's solution explorer, open the ApplyRenderer.cs file. This is the class file for the Apply Renderer button.  
-1. The OnClick method in the ApplyRenderer.cs file gets the first point feature layer in your project and then applies the Unique Value Renderer to it.<br />  
-   **You can modify the code in the OnClick method in this file to use one of the various renderers available in this sample and/or select any feature layer in your project.**  
+1. The OnClick method in the ApplyRenderer.cs file uncomment the method that calls the renderer you want to use.<br />  
+   **You can modify the code in the OnClick method in this file to use one of the various renderers available in this sample.**  
     ```c#  
     protected async override void OnClick()  
     {  
-      //TODO: This line below gets the first point layer in the project to apply a renderer.  
-      //You can modify it to use other layers with polygon or line geometry if needed.  
-      var lyr = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault(s => s.ShapeType == esriGeometryType.esriGeometryPoint);  
-      //TODO: Modify this line below to experiment with the different renderers  
-      await UniqueValueRenderers.UniqueValueRenderer(lyr);  
+         //TODO: Modify this line below to experiment with the different renderers  
+         //await DotDensityRenderer.DotDensityRendererAsync();
+         //Charts
+         //await ChartRenderers.BarChartRendererAsync();
+         //etc
     }  
     ```
 1. After modifying the OnClickMethod build the solution and click the start button to open Pro.    

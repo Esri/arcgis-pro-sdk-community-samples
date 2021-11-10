@@ -38,6 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace ChromiumWebBrowserSample
 {
 	/// <summary>
+	/// The Chromium web browser control is obsolete starting with ArcGIS Pro release 2.9, please use the ArcGIS Pro SDK's WebViewBrowser control as shown in the WebView2Edge. 
 	/// This sample shows how to implement pane that contains a Chromium web browser control.  For details on how to utilize the Chromium web browser control in an add-in see here: https://github.com/Esri/arcgis-pro-sdk/wiki/ProConcepts-Framework#chromiumwebbrowser  
 	/// </summary>    
 	/// <remarks>    

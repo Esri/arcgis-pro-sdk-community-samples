@@ -136,6 +136,7 @@
     <Compile Include="DockpaneWithHelpViewModel.cs" />
     <Compile Include="Module1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Show.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="DockpaneWithHelp.xaml">
@@ -155,11 +156,14 @@
   <ItemGroup>
     <AddInContent Include="DarkImages\GenericButtonPurple32.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Screenshots\" />
+    <Resource Include="Screenshots\Screen1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Screen1.png" />
+    <Content Include="Readme.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!--

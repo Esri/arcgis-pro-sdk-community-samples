@@ -538,9 +538,9 @@ namespace QAReviewTool
 								{
 									await Project.Current.SaveEditsAsync();
 								}
-								else // operation cancelled
+								else // operation Canceled
 								{
-									MessageBox.Show("Add field cancelled.");
+									MessageBox.Show("Add field Canceled.");
 									QAFieldComboBox.Text = "Choose...";
 									return;
 								}

@@ -103,7 +103,7 @@ namespace AddDeleteFieldToFromFeatureClass
                     System.Diagnostics.Debug.WriteLine($@"Add {field.Key} from {fullSpec}");
 
                     var parameters = Geoprocessing.MakeValueArray(fullSpec, field.Key, fieldType.ToUpper(), null, null,
-                        fieldLength, field.Value, isNullable ? "NULABLE" : "NON_NULLABLE");
+                        fieldLength, field.Value, isNullable ? "NULLABLE" : "NON_NULLABLE");
                     var cts = new CancellationTokenSource();
                     var results = Geoprocessing.ExecuteToolAsync("management.AddField", parameters, null, cts.Token,
                         (eventName, o) =>

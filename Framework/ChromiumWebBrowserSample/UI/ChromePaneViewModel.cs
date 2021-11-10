@@ -72,6 +72,7 @@ namespace ChromiumWebBrowserSample.UI
 		}
 
 		private ICommand _openResourceCmd = null;
+		private ICommand _openResourceLocalFileCmd = null;
 		private ICommand _openEmbeddedResourceCmd = null;
 		private ICommand _openFileResourceCmd = null;
 
@@ -91,6 +92,32 @@ namespace ChromiumWebBrowserSample.UI
 				}
 				return _openResourceCmd;
 			}
+		}
+
+		public ICommand OpenResourceLocalFileCmd
+		{
+			get
+			{
+				if (_openResourceLocalFileCmd == null)
+				{
+					_openResourceLocalFileCmd = new RelayCommand(new Action<Object>((sender) =>
+					{
+						var menu_item = sender as System.Windows.Controls.MenuItem;
+						var text = menu_item.Header;
+						var address = System.IO.Path.Combine(AddinAssemblyLocation(), text.ToString());
+						this.BrowserAddress = address;
+					}), () => { return true; });
+				}
+				return _openResourceLocalFileCmd;
+			}
+		}
+
+		private static string AddinAssemblyLocation()
+		{
+			var asm = System.Reflection.Assembly.GetExecutingAssembly();
+			return System.IO.Path.GetDirectoryName(
+							  Uri.UnescapeDataString(
+									  new Uri(asm.CodeBase).LocalPath));
 		}
 
 		public ICommand OpenEmbeddedResourceCmd

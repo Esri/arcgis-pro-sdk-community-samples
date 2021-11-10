@@ -22,7 +22,7 @@ using ArcGIS.Desktop.Mapping.Events;
 namespace CameraNavigation
 {
   /// <summary>
-  /// Camera Properties DockPane implementation. Provideds bindable Camera property and button commands to zoom to and pan to new camera position.
+  /// Camera Properties DockPane implementation. Provides bindable Camera property and button commands to zoom to and pan to new camera position.
   /// </summary>
   internal class CameraPaneViewModel : DockPane
   {
@@ -83,6 +83,16 @@ namespace CameraNavigation
       get { return _zoomToCmd; }
     }
 
+    private bool _DockPaneIsEnabled;
+    public bool DockPaneIsEnabled
+    {
+      get { return _DockPaneIsEnabled; }
+      set
+      {
+        SetProperty(ref _DockPaneIsEnabled, value, () => DockPaneIsEnabled);
+      }
+    }
+
     private void OnCameraChanged(MapViewCameraChangedEventArgs obj)
     {
       if (obj.MapView == MapView.Active)
@@ -91,12 +101,13 @@ namespace CameraNavigation
 
     private void OnActiveMapViewChanged(ActiveMapViewChangedEventArgs obj)
     {
+      DockPaneIsEnabled = obj.IncomingView != null;
       if (obj.IncomingView == null)
       {
         Camera = null;
         return;
       }
-        
+      System.Diagnostics.Debug.WriteLine($@"{obj.IncomingView.GetType().ToString()}");
       Camera = obj.IncomingView.Camera;
     }
   }

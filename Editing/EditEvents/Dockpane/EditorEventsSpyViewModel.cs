@@ -372,7 +372,7 @@ namespace EditEventsSample.Dockpane
         }
 
         //This event is fired once per edit execute
-        //Note: This event won't fire if the edits were cancelled
+        //Note: This event won't fire if the edits were Canceled
         _editevents.Add(EditCompletingEvent.Subscribe((ec) =>
         {
           RecordEvent("EditCompletingEvent", "");
@@ -383,8 +383,8 @@ namespace EditEventsSample.Dockpane
           //from doing the cancel or this will never get called
           if (_cancelEdit)
           {
-            ec.CancelEdit($"EditCompletingEvent, edit cancelled");
-            AddEntry("*** edits cancelled");
+            ec.CancelEdit($"EditCompletingEvent, edit Canceled");
+            AddEntry("*** edits Canceled");
             AddEntry("---------------------------------");
           }
         }));
@@ -516,7 +516,7 @@ namespace EditEventsSample.Dockpane
             //we cancel the edit in this example
             AddEntry($"*** {_validateMsg}");
             rc.CancelEdit(_validateMsg);
-            AddEntry("*** edit cancelled");
+            AddEntry("*** edit Canceled");
             AddEntry("---------------------------------");
             return;
           }
@@ -528,8 +528,8 @@ namespace EditEventsSample.Dockpane
         if (_cancelEdit)
         {
           //cancel the edit
-          rc.CancelEdit($"{rc.EditType} for {table.GetName()} cancelled");
-          AddEntry("*** edit cancelled");
+          rc.CancelEdit($"{rc.EditType} for {table.GetName()} Canceled");
+          AddEntry("*** edit Canceled");
           AddEntry("---------------------------------");
         }
       }

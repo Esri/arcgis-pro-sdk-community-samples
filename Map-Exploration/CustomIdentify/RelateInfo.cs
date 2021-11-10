@@ -28,219 +28,241 @@ using ArcGIS.Desktop.Mapping;
 
 namespace CustomIdentify
 {
-    /// <summary>
-    /// Class to managed the related information for a given feature layer
-    /// </summary>
-    public class RelateInfo {
+  /// <summary>
+  /// Class to managed the related information for a given feature layer
+  /// </summary>
+  public class RelateInfo
+  {
 
-        private string _displayFieldName = "";
-        /// <summary>
-        /// Finds all related children
-        /// </summary>
-        public HierarchyRow GetRelationshipChildren(Layer member, Geodatabase gdb,
-                                 string featureClassName, long objectID, string rcException = "") {
+	private string _displayFieldName = "";
+	/// <summary>
+	/// Finds all related children
+	/// </summary>
+	public HierarchyRow GetRelationshipChildren(Layer member, Geodatabase gdb,
+							 string featureClassName, long objectID, string rcException = "")
+	{
+	  if (!QueuedTask.OnWorker)
+	  {
+		throw new CalledOnWrongThreadException();
+	  }
 
-            if (!QueuedTask.OnWorker) {
-                throw new CalledOnWrongThreadException();
-            }
+	  string displayValue = "";
+	  if (member != null)
+	  {
+		if (string.IsNullOrEmpty(_displayFieldName))
+		{
+		  CIMFeatureLayer currentCIMFeatureLayer = member.GetDefinition() as CIMFeatureLayer;
+		  _displayFieldName = currentCIMFeatureLayer?.FeatureTable.DisplayField ?? "";
+		}
 
-            string displayValue = "";
-            if (member != null) {
-                if (string.IsNullOrEmpty(_displayFieldName)) {
-                    CIMFeatureLayer currentCIMFeatureLayer = member.GetDefinition() as CIMFeatureLayer;
-                    _displayFieldName = currentCIMFeatureLayer?.FeatureTable.DisplayField ?? "";
-                }
+		  var inspector = new Inspector();
+		  inspector.Load(member, objectID);
+		if (!string.IsNullOrEmpty(_displayFieldName))
+		{
+		  displayValue = $"{inspector[_displayFieldName]?.ToString() ?? ""}";
+		}
+	  }
+	  //Did the display value get set?
+	  if (string.IsNullOrEmpty(displayValue))
+		displayValue = $"OID: {objectID.ToString()}";
 
-                if (!string.IsNullOrEmpty(_displayFieldName)) {
-                    var inspector = new Inspector();
-                    inspector.Load(member, objectID);
-                    displayValue =  $"{inspector[_displayFieldName]?.ToString() ?? ""}";
-                }
-            }
-            //Did the display value get set?
-            if (string.IsNullOrEmpty(displayValue))
-                displayValue = $"OBJECTID: {objectID.ToString()}";
+	  var newHRow = new HierarchyRow()
+	  {
+		name = displayValue,
+		type = $"{featureClassName}"
+	  };
 
-            var newHRow = new HierarchyRow()
-            {
-                name = displayValue,
-                type = $"{featureClassName}" 
-            };
+	  //Check the layer for any relationships
+	  var children = GetRelationshipChildrenFromLayer(member as BasicFeatureLayer, objectID);
+	  if (children.Count > 0)
+	  {
+		newHRow.children = children;
+		return newHRow;//Give layer related precedence over GDB related
+	  }
 
-            //Check the layer for any relationships
-            var children = GetRelationshipChildrenFromLayer(member as BasicFeatureLayer, objectID);
-            if (children.Count > 0) {
-                newHRow.children = children;
-                return newHRow;//Give layer related precedence over GDB related
-            }
+	  //If we are here we do not have any relates on the layer
+	  //See if we have relates in the GDB
+	  var relationshipClassDefinitions = GetRelationshipClassDefinitionsFromFeatureClass(gdb, featureClassName);
+	  foreach (var relationshipClassDefinition in relationshipClassDefinitions)
+	  {
+		var rcName = relationshipClassDefinition.GetName(); //get the name
+		if (rcException == rcName) //exception so we don't go in circles
+		  continue;
+		//Alternate way of getting the features classes in the relationship (new at 1.3):  
+		//IReadOnlyList<Definition> definitions = GetRelatedDefinitions(relationshipClassDefinition, DefinitionRelationshipType.DatasetsRelatedThrough);  
+		var relationshipClass = gdb.OpenDataset<RelationshipClass>(rcName); //open the relationship class
 
-            //If we are here we do not have any relates on the layer
-            //See if we have relates in the GDB
-            var relationshipClassDefinitions = GetRelationshipClassDefinitionsFromFeatureClass(gdb, featureClassName);
-            foreach (var relationshipClassDefinition in relationshipClassDefinitions)
-            {
-                var rcName = relationshipClassDefinition.GetName(); //get the name
-                if (rcException == rcName) //exception so we don't go in circles
-                    continue;
-                //Alternate way of getting the features classes in the relationship (new at 1.3):  
-                //IReadOnlyList<Definition> definitions = GetRelatedDefinitions(relationshipClassDefinition, DefinitionRelationshipType.DatasetsRelatedThrough);  
-                var relationshipClass = gdb.OpenDataset<RelationshipClass>(rcName); //open the relationship class
+		var origin = relationshipClassDefinition.GetOriginClass(); //get the origin of the relationship class
+		var destination = relationshipClassDefinition.GetDestinationClass(); //get the destination of the relationship class
+		string displayName;
+		if (origin == featureClassName)
+		{
+		  //the feature class is the origin. So we need the rows in the destination related to the origin
+		  var oids = new List<long> { objectID }; 
+		  IReadOnlyList<Row> relatedOriginRows = relationshipClass.GetRowsRelatedToOriginRows(oids);
+		  if (relatedOriginRows.Count > 0)
+		  {
+			displayName = string.Format("{0}: {1}", rcName, destination);
+			var childHRow = new HierarchyRow()
+			{
+			  name = displayName,
+			  type = rcName
+			};
+			foreach (var row in relatedOriginRows)
+			{
+			  //var lyr = GetRelationshipClassDefinitionsFromFeatureClass();
+			  //childHRow.children.Add(GetRelationshipChildren(lyr, gdb, destination, row.GetObjectID(), rcName)); //recursive: to get the attributes of the related feature
+			}
+			newHRow.children.Add(childHRow);
+			continue;
+		  }
+		}
+		IReadOnlyList<Row> relatedDestinationRows = relationshipClass.GetRowsRelatedToDestinationRows(new List<long> { objectID }); //Feature class is the destination so get the rows related to it
+		if (relatedDestinationRows.Count > 0)
 
-                var origin = relationshipClassDefinition.GetOriginClass(); //get the origin of the relationship class
-                var destination = relationshipClassDefinition.GetDestinationClass(); //get the destination of the relationship class
-                string displayName = "";
+		{
+		  displayName = string.Format("{0}: {1}", rcName, origin);
+		  var childHRow = new HierarchyRow()
+		  {
+			name = displayName,
+			type = rcName
+		  };
+		  foreach (var row in relatedDestinationRows)
+		  {
 
-                IReadOnlyList<Row> relatedRows = null;
-                if (origin == featureClassName)
-                {
-                    relatedRows = relationshipClass.GetRowsRelatedToOriginRows(new List<long> { objectID }); //the feature class is the origin. So we need the rows in the destination related to the origin
-                    if (relatedRows.Count > 0)
+			//childHRow.children.Add(GetRelationshipChildren(null, gdb, origin, row.GetObjectID(), rcName));
+		  }
+		  newHRow.children.Add(childHRow);
+		}
 
-                    {
-                        displayName = string.Format("{0}: {1}", rcName, destination);
-                        var childHRow = new HierarchyRow()
-                        {
-                            name = displayName,
-                            type = rcName
-                        };
-                        foreach (var row in relatedRows)
-                        {
+	  }
+	  return newHRow;
+	}
 
-                            childHRow.children.Add(GetRelationshipChildren(null, gdb, destination, row.GetObjectID(), rcName)); //recursive: to get the attributes of the related feature
-                        }
-                        newHRow.children.Add(childHRow);
-                        continue;
-                    }
-                }
-                relatedRows = relationshipClass.GetRowsRelatedToDestinationRows(new List<long> { objectID }); //Feature class is the destination so get the rows related to it
-                if (relatedRows.Count > 0)
+	internal List<HierarchyRow> GetRelationshipChildrenFromLayer(BasicFeatureLayer member, 
+	  long objectID)
+	{
+	  var children = new List<HierarchyRow>();
 
-                {
-                    displayName = string.Format("{0}: {1}", rcName, origin);
-                    var childHRow = new HierarchyRow()
-                    {
-                        name = displayName,
-                        type = rcName
-                    };
-                    foreach (var row in relatedRows)
-                    {
+	  CIMBasicFeatureLayer bfl = member.GetDefinition() as CIMBasicFeatureLayer;
+	  var relates = bfl.FeatureTable.Relates;
+	  if (relates == null || relates.Length == 0)
+		return children;
 
-                        childHRow.children.Add(GetRelationshipChildren(null, gdb, origin, row.GetObjectID(), rcName));
-                    }
-                    newHRow.children.Add(childHRow);
-                }
+	  foreach (var relate in relates)
+	  {
+		if (!(relate.DataConnection is CIMStandardDataConnection) &&
+			!(relate.DataConnection is CIMFeatureDatasetDataConnection))
+		  continue;//Not supported in this sample
 
-            }
-            return newHRow;
-        }
+		var sdc = relate.DataConnection as CIMStandardDataConnection;
+		var fdc = relate.DataConnection as CIMFeatureDatasetDataConnection;
+		var factory = sdc?.WorkspaceFactory ?? fdc.WorkspaceFactory;
+		var path = sdc?.WorkspaceConnectionString ?? fdc.WorkspaceConnectionString;
+		if (string.IsNullOrEmpty(path))
+		  continue;//No connection information we can use
 
-        internal List<HierarchyRow> GetRelationshipChildrenFromLayer(BasicFeatureLayer member, long objectID) {
+		path = path.Replace("DATABASE=", "");
+		var dstype = sdc?.DatasetType ?? fdc.DatasetType;
 
-            var children = new List<HierarchyRow>();
+		if (dstype != esriDatasetType.esriDTFeatureClass &&
+			dstype != esriDatasetType.esriDTTable)
+		{
+		  continue;//Not supported in the sample
+		}
 
-            CIMBasicFeatureLayer bfl = member.GetDefinition() as CIMBasicFeatureLayer;
-            var relates = bfl.FeatureTable.Relates;
-            if (relates == null || relates.Length == 0)
-                return children;
+		var dsname = sdc?.Dataset ?? fdc.Dataset;
+		var featDatasetName = fdc?.FeatureDataset ?? "";
 
-            foreach (var relate in relates) {
-                if (!(relate.DataConnection is CIMStandardDataConnection) &&
-                    !(relate.DataConnection is CIMFeatureDatasetDataConnection))
-                    continue;//Not supported in this sample
+		Geodatabase gdb = null;
+		if (factory == WorkspaceFactory.FileGDB)
+		{
+		  gdb = new Geodatabase(new FileGeodatabaseConnectionPath(new Uri(path, UriKind.Absolute)));
+		}
+		else if (factory == WorkspaceFactory.SDE)
+		{
+		  gdb = new Geodatabase(new DatabaseConnectionFile(new Uri(path, UriKind.Absolute)));
+		}
 
-                var sdc = relate.DataConnection as CIMStandardDataConnection;
-                var fdc = relate.DataConnection as CIMFeatureDatasetDataConnection;
-                var factory = sdc?.WorkspaceFactory ?? fdc.WorkspaceFactory;
-                var path = sdc?.WorkspaceConnectionString ?? fdc.WorkspaceConnectionString;
-                if (string.IsNullOrEmpty(path))
-                    continue;//No connection information we can use
-                path = path.Replace("DATABASE=", "");
-                var dstype = sdc?.DatasetType ?? fdc.DatasetType;
+		Table table = null;
+		//We have to open a type specific dataset - FeatureClass or Table
+		//We cannot simply use 'Table' for both
+		if (dstype == esriDatasetType.esriDTFeatureClass)
+		{
+		  table = GetDatasetFromGeodatabase<FeatureClass>(gdb, dsname, featDatasetName);
+		}
+		else
+		{
+		  table = GetDatasetFromGeodatabase<Table>(gdb, dsname, featDatasetName);
+		}
+		if (table == null)
+		  continue;//Related dataset not found
 
-                if (dstype != esriDatasetType.esriDTFeatureClass &&
-                    dstype != esriDatasetType.esriDTTable) {
-                    continue;//Not supported in the sample
-                }
+		//Get any related rows
+		var qry_fld = table.GetDefinition().GetFields().FirstOrDefault(f => f.Name == relate.ForeignKey);
+		if (qry_fld == null)
+		  continue;//We cannot find the designated foreign key
 
-                var dsname = sdc?.Dataset ?? fdc.Dataset;
-                var featDatasetName = fdc?.FeatureDataset ?? "";
+		//Load relevant values
+		var inspector = new Inspector();
+		inspector.Load(member, objectID);
 
-                Geodatabase gdb = null;
-                if (factory == WorkspaceFactory.FileGDB) {
-                    gdb = new Geodatabase(new FileGeodatabaseConnectionPath(new Uri(path, UriKind.Absolute)));
-                }
-                else if (factory == WorkspaceFactory.SDE) {
-                    gdb = new Geodatabase(new DatabaseConnectionFile(new Uri(path, UriKind.Absolute)));
-                }
+		var need_quotes = qry_fld.FieldType == FieldType.String;
+		var quote = need_quotes ? "'" : "";
+		var where = $"{relate.ForeignKey} = {quote}{inspector[relate.PrimaryKey]}{quote}";
+		var qf = new QueryFilter()
+		{
+		  WhereClause = where,
+		  SubFields = $"{table.GetDefinition().GetObjectIDField()}, {relate.ForeignKey}"
+		};
 
-                Table table = null;
-                //We have to open a type specific dataset - FeatureClass or Table
-                //We cannot simply use 'Table' for both
-                if (dstype == esriDatasetType.esriDTFeatureClass) {
-                    table = GetDatasetFromGeodatabase<FeatureClass>(gdb, dsname, featDatasetName);
-                }
-                else {
-                    table = GetDatasetFromGeodatabase<Table>(gdb, dsname, featDatasetName);
-                }
-                if (table == null)
-                    continue;//Related dataset not found
+		var childHRow = new HierarchyRow()
+		{
+		  name = dsname,
+		  type = $"{inspector[relate.PrimaryKey]}"
+		};
 
-                //Get any related rows
-                var qry_fld = table.GetDefinition().GetFields().FirstOrDefault(f => f.Name == relate.ForeignKey);
-                if (qry_fld == null)
-                    continue;//We cannot find the designated foreign key
+		using (var rc = table.Search(qf))
+		{
+		  while (rc.MoveNext())
+		  {
+			using (var row = rc.Current)
+			{
+			  var id = row.GetObjectID();
+			  var HRow = new HierarchyRow()
+			  {
+				name = $"{id}",
+				type = relate.ForeignKey
+			  };
+			  childHRow.children.Add(HRow);
+			}
+		  }
+		}
+		children.Add(childHRow);
+	  }
+	  return children;
+	}
 
-                //Load relevant values
-                var inspector = new Inspector();
-                inspector.Load(member, objectID);
+	private T GetDatasetFromGeodatabase<T>(Geodatabase gdb, string dataset, string featureDataset) where T : Table
+	{
+	  if (!string.IsNullOrEmpty(featureDataset))
+	  {
+		var fd = gdb.OpenDataset<FeatureDataset>(featureDataset);
+		if (fd != null)
+		{
+		  return fd.OpenDataset<T>(dataset);
+		}
+	  }
+	  return gdb.OpenDataset<T>(dataset);
+	}
 
-                var need_quotes = qry_fld.FieldType == FieldType.String;
-                var quote = need_quotes ? "'" : "";
-                var where = $"{relate.ForeignKey} = {quote}{inspector[relate.PrimaryKey]}{quote}";
-                var qf = new QueryFilter() {
-                    WhereClause = where,
-                    SubFields = $"{table.GetDefinition().GetObjectIDField()}, {relate.ForeignKey}" 
-                };
+	private IEnumerable<RelationshipClassDefinition> GetRelationshipClassDefinitionsFromFeatureClass(
+		  Geodatabase gdb, string featureClassName)
+	{
+	  return gdb.GetDefinitions<RelationshipClassDefinition>().
+			  Where(defn => defn.GetOriginClass().Equals(featureClassName) || defn.GetDestinationClass().Equals(featureClassName));
+	}
 
-                var childHRow = new HierarchyRow() {
-                    name = dsname,
-                    type = $"{inspector[relate.PrimaryKey]}" 
-                };
-
-                using (var rc = table.Search(qf)) {
-                    while (rc.MoveNext()) {
-                        using (var row = rc.Current) {
-                            var id = row.GetObjectID();
-                            var HRow = new HierarchyRow() {
-                                name = $"{id}",
-                                type = relate.ForeignKey
-                            };
-                            childHRow.children.Add(HRow);
-                        }
-                    }
-                }
-                children.Add(childHRow);
-            }
-            return children;
-        }
-
-        private T GetDatasetFromGeodatabase<T>(Geodatabase gdb, string dataset, string featureDataset) where T : Table {
-            if (!string.IsNullOrEmpty(featureDataset)) {
-                var fd = gdb.OpenDataset<FeatureDataset>(featureDataset);
-                if (fd != null) {
-                    return fd.OpenDataset<T>(dataset);
-                }
-            }
-            return gdb.OpenDataset<T>(dataset);
-        }
-
-
-        private IEnumerable<RelationshipClassDefinition> GetRelationshipClassDefinitionsFromFeatureClass(
-              Geodatabase gdb, string featureClassName) {
-            return gdb.GetDefinitions<RelationshipClassDefinition>().
-                    Where(defn => defn.GetOriginClass().Equals(featureClassName) || defn.GetDestinationClass().Equals(featureClassName));
-        }
-        
-    }
+  }
 }
 

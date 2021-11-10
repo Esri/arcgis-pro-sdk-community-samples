@@ -1,0 +1,48 @@
+﻿<ArcGIS defaultAssembly="WebViewBrowser.dll" defaultNamespace="WebViewBrowser" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+	<AddInInfo id="{79682455-2eac-4b08-9227-c62f56349ad5}" version="1.0" desktopVersion="2.9.31199">
+		<Name>WebViewBrowser</Name>
+		<Description>WebViewBrowser description</Description>
+		<Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, http://www.esri.com</Company>
+		<Date>8/5/2021 12:24:21 PM</Date>
+		<Subject>Framework</Subject>
+		<!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+	</AddInInfo>
+	<modules>
+		<insertModule id="WebViewBrowser_Module" className="Module1" autoLoad="false" caption="Module1">
+			<!-- uncomment to have the control hosted on a separate tab-->
+			<tabs>
+				<!--<tab id="WebViewBrowser_Tab1" caption="New Tab">
+          <group refID="WebViewBrowser_Group1"/>
+        </tab>-->
+			</tabs>
+			<groups>
+				<!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+				<group id="WebViewBrowser_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="G1">
+					<!-- host controls within groups -->
+					<button refID="WebViewBrowser_WebViewBrowser_OpenButton" size="large" />
+				</group>
+			</groups>
+			<controls>
+				<!-- add your controls here -->
+				<button id="WebViewBrowser_WebViewBrowser_OpenButton" caption="Open Test Webview2"
+						className="WebViewBrowser_OpenButton" loadOnClick="true"
+						keytip="B1"
+						smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/MarsCat16.png"
+						largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/MarsCat32.png">
+					<tooltip heading="Open Pane">
+						Open Pane to test WebView2 browser control<disabledText />
+					</tooltip>
+				</button>
+			</controls>
+			<panes>
+				<pane id="WebViewBrowser_WebViewBrowser" caption="TestWebview 2" className="WebViewBrowserViewModel" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen16.png" defaultTab="esri_mapping_homeTab" defaultTool="esri_mapping_navigateTool">
+					<content className="WebViewBrowserView" />
+				</pane>
+			</panes>
+		</insertModule>
+	</modules>
+</ArcGIS>

@@ -266,7 +266,7 @@ namespace ParcelFabricAPI
 					if (cps.Progressor.CancellationToken.IsCancellationRequested)
 					{
 						editOper.Abort();
-						return new Tuple<string, int> ("Cancelled", importedCount);
+						return new Tuple<string, int> ("Canceled", importedCount);
 					}
 					cps.Progressor.Status = (cps.Progressor.Value * 100 / cps.Progressor.Max) + @" % Completed";
 					cps.Progressor.Message = editOper.ProgressMessage;
@@ -302,7 +302,7 @@ namespace ParcelFabricAPI
 						var cnt = SelectSet(_importParcelLineLayer, qry);
 						cps.Progressor.Value += cnt;
 						if (cps.Progressor.CancellationToken.IsCancellationRequested) 
-							return new Tuple<string, int>("Cancelled", importedCount);
+							return new Tuple<string, int>("Canceled", importedCount);
 						cps.Progressor.Status = (cps.Progressor.Value * 100 / cps.Progressor.Max) + @" % Completed";
 						cps.Progressor.Message = $@"Process parcel no: {selectedTmk}";
 						var editOper = new EditOperation()
@@ -326,13 +326,13 @@ namespace ParcelFabricAPI
 						// note: this only works for single parcels
 						Dictionary<string, object> ParcelAttributes = new Dictionary<string, object>();
 						// collect the attribute to be used for the polygon
-						// unfortunately the polygon attributes are not autopopulated so we have to do this here
+						// unfortunately the polygon attributes are not auto-populated so we have to do this here
 						foreach (KeyValuePair<MapMember, List<long>> kvp in createdParcelFeatures)
 						{
 							if (cps.Progressor.CancellationToken.IsCancellationRequested)
 							{
 								editOperUpdate.Abort();
-								return new Tuple<string, int>("Cancelled", importedCount);
+								return new Tuple<string, int>("Canceled", importedCount);
 							}
 							var mapMember = kvp.Key;
 							if (mapMember.Name.EndsWith("_Lines"))
@@ -372,7 +372,7 @@ namespace ParcelFabricAPI
 							if (cps.Progressor.CancellationToken.IsCancellationRequested)
 							{
 								editOperUpdate.Abort();
-								return new Tuple<string, int>("Cancelled", importedCount);
+								return new Tuple<string, int>("Canceled", importedCount);
 							}
 							var mapMember = kvp.Key;
 							if (!mapMember.Name.EndsWith("_Lines"))
@@ -409,7 +409,7 @@ namespace ParcelFabricAPI
 					if (cps.Progressor.CancellationToken.IsCancellationRequested)
 					{
 						editOper.Abort();
-						return new Tuple<string, int>("Cancelled", importedCount);
+						return new Tuple<string, int>("Canceled", importedCount);
 					}
 					cps.Progressor.Status = (cps.Progressor.Value * 100 / cps.Progressor.Max) + @" % Completed";
 					cps.Progressor.Message = editOper.ProgressMessage;
@@ -502,7 +502,7 @@ namespace ParcelFabricAPI
 					if (cps.Progressor.CancellationToken.IsCancellationRequested)
 					{
 						editOper.Abort();
-						return "Cancelled";
+						return "Canceled";
 					}
 					cps.Progressor.Status = (cps.Progressor.Value * 100 / cps.Progressor.Max) + @" % Completed";
 					cps.Progressor.Message = editOper.ProgressMessage;

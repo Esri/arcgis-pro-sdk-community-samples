@@ -46,12 +46,12 @@ namespace AnnoTools
 	/// 4. Construction tools - Set the categoryRefID in the daml file to be "esri_editing_construction_annotation".  Also note that the geometry
 	/// being passed to the EditOperation.Crreate method is the CIMTextGraphic geometry.
 	/// 5. Editing tools - Use the GetAnnotationProperties and SetAnnotationPropertes methods on the Inspector object to modify the text formatting
-  /// attributes.  (see AnnoModifySymbol.cs).  Any custom attributes in your schema can continue to be referenced via the inspector[fieldName] methodology.  
+	/// attributes.  (see AnnoModifySymbol.cs).  Any custom attributes in your schema can continue to be referenced via the inspector[fieldName] methodology.  
 	/// </summary>
 	/// <remarks>
 	/// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
 	/// 1. Make sure that the Sample data is unzipped in c:\data 
-	/// 1. The project used for this sample is 'C:\Data\SampleAnno.aprx'
+	/// 1. The project used for this sample is 'C:\Data\SampleAnno\SampleAnno.aprx'
 	/// 1. In Visual studio click the Build menu. Then select Build Solution.
 	/// 1. Click Start button to open ArcGIS Pro.
 	/// 1. ArcGIS Pro will open, select the SampleAnno.aprx project
@@ -61,8 +61,8 @@ namespace AnnoTools
 	/// ![UI](Screenshots/Screen2.png)
 	/// 1. Select the Advanced Anno Tool and digitize a line.  An annotation feature will be created. 
 	/// ![UI](Screenshots/Screen3.png)
-	/// 1. Click the 'Modify Anno Geometry' button on the Add-In tab and drag a rectange around some annotation features. The geometry of these features will be rotated 90 degrees.
-	/// 1. Click the 'Modify Anno Symbol' button on the Add-In tab and drag a rectange around some annotation features. The text and symbol color of these features will change to 'Hello World' in red.
+	/// 1. Click the 'Modify Anno Geometry' button on the Add-In tab and drag a rectangle around some annotation features. The geometry of these features will be rotated 90 degrees.
+	/// 1. Click the 'Modify Anno Symbol' button on the Add-In tab and drag a rectangle around some annotation features. The text and symbol color of these features will change to 'Hello World' in red.
 	/// ![UI](Screenshots/Screen4.png)
 	/// </remarks>
 	internal class Module1 : Module

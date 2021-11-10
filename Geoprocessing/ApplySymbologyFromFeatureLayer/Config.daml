@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="ApplySymbologyFromFeatureLayer.dll" defaultNamespace="ApplySymbologyFromFeatureLayer" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{0cda40eb-7037-4cde-a489-bee0d900c2ac}" version="1.0" desktopVersion="2.9.31036">
+    <Name>ApplySymbologyFromFeatureLayer</Name>
+    <Description>ApplySymbologyFromFeatureLayer description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>Esri, http://www.esri.com</Company>
+    <Date>7/1/2021 1:11:46 PM</Date>
+    <Subject>Geoprocessing</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ApplySymbologyFromFeatureLayer_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="ApplySymbologyFromFeatureLayer_Tab1" caption="New Tab">
+          <group refID="ApplySymbologyFromFeatureLayer_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ApplySymbologyFromFeatureLayer_Group1" caption="Apply Symbology" keytip="G1" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="ApplySymbologyFromFeatureLayer_ApplySymbology" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ApplySymbologyFromFeatureLayer_ApplySymbology" caption="Apply Symbology From Feature Layer" className="ApplySymbology" loadOnClick="true" keytip="B1" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Apply Symbology From Feature Layer">
+            <disabledText />
+          </tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

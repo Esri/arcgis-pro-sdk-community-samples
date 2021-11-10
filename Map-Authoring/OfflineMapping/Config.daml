@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="OfflineMapping.dll" defaultNamespace="OfflineMapping" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{7e98e2b3-a295-4390-a76a-e3f832c0cc26}" version="1.0" desktopVersion="2.8.29375">
+    <Name>OfflineMapping</Name>
+    <Description>OfflineMapping description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>uma2526</Author>
+    <Company>Acme</Company>
+    <Date>3/12/2021 3:33:36 PM</Date>
+    <Subject>Map Authoring</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="OfflineMapping_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="OfflineMapping_Tab1" caption="Offline Map">
+          <group refID="OfflineMapping_Group1" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="OfflineMapping_Group1" caption="Take a map offline">
+          <!-- host controls within groups -->
+          <customControl refID="OfflineMapping_OfflineMap" size="large" />
+          <button refID="OfflineMapping_SyncReplica" size="middle" />
+          <button refID="OfflineMapping_RemoveReplicas" size="middle" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <customControl id="OfflineMapping_OfflineMap" caption="Download Map" className="OfflineMapViewModel" isDropDown="true" condition="esri_mapping_mapHasAtLeastOneSyncEnabledLayerCondition" staysOpenOnClick="true" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/CreateOfflineMap16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/CreateOfflineMap32.png">
+          <content className="OfflineMapView" />
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </customControl>
+        <button id="OfflineMapping_SyncReplica" caption="Sync replicas" className="SyncReplica" condition="esri_mapping_mapHasAtLeastOneSyncableLayerCondition" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SyncOfflineMap16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SyncOfflineMap32.png">
+          <tooltip heading="Sync replicas">
+            Performs a bi-directional sync between all replica content in the map.<disabledText /></tooltip>
+        </button>
+        <button id="OfflineMapping_RemoveReplicas" caption="Remove replicas" className="RemoveReplicas" condition="esri_mapping_mapHasAtLeastOneSyncableLayerCondition" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/RemoveOfflineMap16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/RemoveOfflineMap32.png">
+          <tooltip heading="Remove replicas">
+            Removes all replicas from the map content.<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+    <!--<updateModule refID="esri_mapping">
+      <tabs>
+        <updateTab refID="esri_mapping_homeTab">
+          <insertGroup refID="OfflineMapping_Group1" placeWith="esri_mapping_offlineGroup" />
+        </updateTab>
+      </tabs>
+    </updateModule>-->
+  </modules>
+</ArcGIS>

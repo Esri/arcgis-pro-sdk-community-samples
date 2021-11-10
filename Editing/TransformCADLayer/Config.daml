@@ -1,0 +1,66 @@
+﻿<!--//   Copyright 2020 Esri
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       http://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License. -->
+<ArcGIS defaultAssembly="TransformCADLayer.dll" defaultNamespace="TransformCADLayer" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{22798403-4e86-4817-b243-87bba77df273}" version="1.0" desktopVersion="2.8.29751">
+    <Name>Transform CAD Layer</Name>
+    <Description>Transform a CAD Layer using rotate, scale and shift parameters.</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>9/29/2021 12:00:01 PM</Date>
+    <Subject>Editing</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <!--For adding the button to the existing Alignment group keep the tags within <modules></modules> uncommented-->
+  <modules>
+    <insertModule id="TransformCADLayer_Module" className="Module1" autoLoad="false" caption="Module1">
+      <controls>
+        <button id="TransformCADLayer_TransformCADLayerButton" caption="Transform" className="TransformCADLayerButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\Transform32.png" keytip=" ">
+          <tooltip heading="Transform">
+            Transform the layer using rotate, scale and shift parameters.<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+    <updateModule refID="esri_mapping">
+      <groups>
+        <updateGroup refID="esri_mapping_georeference_RasterGeoreferenceGroup">
+          <insertButton refID="TransformCADLayer_TransformCADLayerButton" />
+        </updateGroup>
+      </groups>
+    </updateModule>
+  </modules>
+  <!--For adding the button to a new Transformation group on the ribbon, comment out all <modules></modules> tags above, and uncomment the <modules></modules> tags below -->
+  <!--<modules>
+    <insertModule id="TransformCADLayer_Module" className="Module1" autoLoad="false" caption="Module1">
+      <groups>
+        <group id="TransformCADLayer_Alignment" caption="Transformation" appearsOnAddInTab="false">
+          <button refID="TransformCADLayer_TransformCADLayer" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <button id="TransformCADLayer_TransformCADLayerButton" caption="Transform" className="TransformCADLayerButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\Transform32.png">
+          <tooltip heading="Transform">Transform the layer using rotate, scale and shift parameters.<disabledText />
+          </tooltip>
+        </button>
+      </controls>
+    </insertModule>
+    <updateModule refID ="esri_mapping">
+      <tabs>
+        <updateTab refID="esri_mapping_featureLayerCadTab">
+          <insertGroup refID="TransformCADLayer_Alignment" insert="after" />
+        </updateTab>
+      </tabs>
+    </updateModule>
+  </modules>-->
+</ArcGIS>

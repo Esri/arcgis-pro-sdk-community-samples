@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="ColorPickerControl.PolygonColorPickerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
+             xmlns:ui="clr-namespace:ColorPickerControl"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+			 xmlns:controls="clr-namespace:ArcGIS.Desktop.Mapping.Controls;assembly=ArcGIS.Desktop.Mapping"             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{Binding Path=ui.PolygonColorPickerViewModel}">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+
+		<DockPanel Grid.Row="0" Grid.ColumnSpan="2" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
+			<TextBlock Text="{Binding Heading}" Style="{DynamicResource Esri_TextBlockDockPaneHeader}">
+				<TextBlock.ToolTip>
+					<WrapPanel Orientation="Vertical" MaxWidth="300">
+						<TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
+					</WrapPanel>
+				</TextBlock.ToolTip>
+			</TextBlock>
+		</DockPanel>
+		<TextBlock Grid.Row="1" Grid.Column="0" Text="Polygon Layer to work with:" Margin="5"></TextBlock>
+		<TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding PolygonLayerName}" HorizontalAlignment="Right" Margin="5"></TextBlock>
+		<TextBlock Grid.Row="2" Grid.Column="0" Text="Polygon Fill color:" Margin="5"></TextBlock>
+		<controls:ColorPickerControl Grid.Row="2" Grid.Column="1" x:Name="ColorPicker"
+					SelectedColor="{Binding SelectedColor, Mode=TwoWay}"
+					Width="50" HorizontalAlignment="Right" Margin="5" />
+		<Button Grid.Row="3" Grid.Column="1"
+				Command="{Binding CmdChangeColor}" Margin="5" Content="Change Fill Color" 
+                Style="{DynamicResource Esri_Button}" HorizontalAlignment="Right"></Button>
+	</Grid>
+</UserControl>

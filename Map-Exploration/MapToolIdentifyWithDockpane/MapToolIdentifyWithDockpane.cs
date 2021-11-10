@@ -35,7 +35,7 @@ namespace MapToolIdentifyWithDockpane
         {
             IsSketchTool = true;
             SketchType = SketchGeometryType.Rectangle;
-            SketchOutputMode = SketchOutputMode.Screen;
+            SketchOutputMode = SketchOutputMode.Map;
         }
 
         protected override Task OnToolActivateAsync(bool active)

@@ -15,8 +15,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  5/12/2021
-ArcGIS Pro:            2.8
+Date:                  11/01/2021
+ArcGIS Pro:            2.9
 Visual Studio:         2017, 2019
 .NET Target Framework: 4.8
 ```

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="AttributeCustomDockpane.dll" defaultNamespace="AttributeCustomDockpane" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{65d3da71-2422-4877-a7af-17bcab2e48e7}" version="1.0" desktopVersion="2.8">
+    <Name>AttributeCustomDockpane</Name>
+    <Description>AttributeCustomDockpane description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>wlfka</Author>
+    <Company>Acme</Company>
+    <Date>6/7/2021 11:59:05 AM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="AttributeCustomDockpane_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="AttributeCustomDockpane_Tab1" caption="New Tab">
+          <group refID="AttributeCustomDockpane_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="AttributeCustomDockpane_Group1" caption="Custom Attribute Display" appearsOnAddInTab="true" keytip="G0">
+          <!-- host controls within groups -->
+          <button refID="AttributeCustomDockpane_ShowAttribute_ShowButton" size="large" />
+          <button refID="AttributeCustomDockpane_SelectFeature" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <tool id="AttributeCustomDockpane_SelectFeature" categoryRefID="esri_editing_construction_point" caption="Select Polygon Feature" className="SelectFeature" loadOnClick="true" keytip="T1" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png">
+          <!--note: use esri_editing_construction_polyline,  esri_editing_construction_polygon for categoryRefID as needed-->
+          <tooltip heading="Tooltip Heading">Map tools to select one polygon feature<disabledText /></tooltip>
+          <content guid="00c1fa9c-09cd-4620-88d1-620c2feb0935" />
+        </tool>
+        <button id="AttributeCustomDockpane_ShowAttribute_ShowButton" caption="Show Attribute Dockpane" className="ShowAttribute_ShowButton" loadOnClick="true" keytip="B1" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+          <tooltip heading="Show Dockpane">Shows the Attribute (points) Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="AttributeCustomDockpane_ShowAttribute" caption="Show Attributes" className="ShowAttributeViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="ShowAttributeView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

@@ -57,7 +57,6 @@ namespace InspectorTool
                 _attributeVM = this.EmbeddableControl as AttributeControlViewModel;
             }
 
-
             // initiate the following code to execute on the MCT
             QueuedTask.Run(() =>
             {
@@ -85,7 +84,7 @@ namespace InspectorTool
                         _attributeVM.AttributeInspector.Load(pointLayer, selectionInMap[pointLayer][0]);
                     }
 
-                    // subsribe to the PropertyChanged event for the string attributes
+                    // subscribe to the PropertyChanged event for the string attributes
                     foreach (ArcGIS.Desktop.Editing.Attributes.Attribute featureAttribute in _attributeVM.AttributeInspector)
                     {
                         if (featureAttribute.FieldType == FieldType.String)

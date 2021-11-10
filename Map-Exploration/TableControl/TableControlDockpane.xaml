@@ -38,13 +38,14 @@
       <!--<ui:BindingProxy x:Key="BindingProxy" Data="{Binding}" />-->
 
       <ContextMenu x:Key="MyRowContextMenu">
-          <MenuItem Header="Select/Unselect" 
+        <MenuItem Header="Select/Unselect" 
                       Command="editing:TableControlCommands.ToggleRowSelection">
           <MenuItem.Icon>
             <Image Source="{StaticResource TableSelectUnselect16}" Width="16" Height="16" RenderOptions.BitmapScalingMode="HighQuality"/>
           </MenuItem.Icon>
         </MenuItem>
-        
+
+
         <!--use the BindingProxy resource to bind to the correct datasource. 
         If implementing like this, comment out the UpdateContextMenu method in the TableControlDockpaneViewModel.cs file -->
         <!--<MenuItem Header="Zoom to Row"
@@ -53,6 +54,7 @@
       </ContextMenu>
     </ResourceDictionary>
   </UserControl.Resources>
+    
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto"/>
@@ -70,16 +72,19 @@
       <Button Content="Clear Sel" Command="editing:TableControlCommands.ClearSelection"
               CommandTarget="{Binding ElementName=tableControl}"
               Style="{DynamicResource Esri_Button}"/>
-
+     
       <Button Content="Add To Map" Command="{Binding AddToMapCommand}"
+              Style="{DynamicResource Esri_Button}"/>
+
+      <Button Content="Find" Command="editing:TableControlCommands.Find"
+              CommandTarget="{Binding ElementName=tableControl}"
               Style="{DynamicResource Esri_Button}"/>
     </DockPanel>
     <editing:TableControl AutomationProperties.AutomationId="_tableControl" x:Name="tableControl" 
                        Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
                        TableContent="{Binding Path=TableContent}" 
                        RowContextMenu="{StaticResource MyRowContextMenu}"
-                       SelectedRowContextMenu="{StaticResource MyRowContextMenu}"
-            >
+                       SelectedRowContextMenu="{StaticResource MyRowContextMenu}" >
     </editing:TableControl>
   </Grid>
 </UserControl>

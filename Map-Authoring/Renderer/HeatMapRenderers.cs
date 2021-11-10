@@ -22,6 +22,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ArcGIS.Core.CIM;
+using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 using Renderer.Helpers;
@@ -37,11 +38,18 @@ namespace Renderer
         /// <remarks>
         /// ![Heat map renderer](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/heat-map.png)
         /// </remarks>
-        /// <param name="featureLayer"></param>
         /// <returns>
         /// </returns>
-        internal static Task HeatMapRenderersAsync(FeatureLayer featureLayer)
+        internal static Task HeatMapRenderersAsync()
         {
+            //Check feature layer name
+            //Code works with the U.S. Cities feature layer available with the ArcGIS Pro SDK Sample data
+            var featureLayer = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault(f => f.Name == "U.S. Cities");
+            if (featureLayer == null)
+            {
+              MessageBox.Show("This renderer works with the U.S. Cities feature layer available with the ArcGIS Pro SDK Sample data", "Data missing");
+              return Task.FromResult(0);
+            }
             return QueuedTask.Run(() =>
             {
                 //defining a heatmap renderer that uses values from Population field as the weights

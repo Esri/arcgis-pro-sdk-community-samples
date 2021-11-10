@@ -33,7 +33,7 @@ namespace ConstructionToolWithOptions
     public BufferedLineToolOptionsViewModel(XElement options, bool canChangeOptions) : base(options, canChangeOptions) { }
 
 
-    internal const string BufferOptionName = "Buffer";
+    internal const string BufferOptionName = nameof(Buffer);
     internal const double DefaultBuffer = 25.0;
 
     // binds in xaml
@@ -44,7 +44,7 @@ namespace ConstructionToolWithOptions
       set
       {
         if (SetProperty(ref _buffer, value))
-          SetToolOption(nameof(BufferOptionName), value);
+          SetToolOption(BufferOptionName, value);
       }
     }
 
@@ -64,9 +64,21 @@ namespace ConstructionToolWithOptions
       }
     }
 
+    public override bool InitializeForActiveTemplate(ToolOptions toolOptions)
+    {
+      base.InitializeForActiveTemplate(toolOptions);
+      return true;    // true <==> do show me in ActiveTemplate;   false <==> don't show me
+    }
+
+    public override bool InitializeForTemplateProperties(ToolOptions toolOptions)
+    {
+      base.InitializeForTemplateProperties(toolOptions);
+      return false;
+    }
+
     protected override Task LoadFromToolOptions()
     {
-      double? buffer = GetToolOption<double?>(nameof(BufferOptionName), DefaultBuffer, null);
+      double? buffer = GetToolOption<double?>(BufferOptionName, DefaultBuffer, null);
       _buffer = buffer.Value;
 
       return Task.CompletedTask;

@@ -45,9 +45,7 @@
       <insertComponent id="acme_quake_handler" className="ProjectCustomItemEarthQuake.Items.QuakeProjectItem" containerType="QuakeContainer">
         <!--TODO: Modify the fileExtension attribute to your unique custom item's file extension.-->
         <!--You cannot use any file extensions known to Pro and Geoprocessing. -->
-        <content displayName="Quakes" fileExtension="quake" 
-								 isContainer="true" keywords="quake" 
-								 contextMenuID="QuakeItem_ContextMenu">
+        <content displayName="Quakes" fileExtension="quake" isContainer="true" keywords="quake" contextMenuID="QuakeItem_ContextMenu">
           <filterFlags>
             <!--Change this flag as needed. See FilterFlag enum. Example: AddToMap, DontBrowseFiles...-->
             <type id="AddToMap" />

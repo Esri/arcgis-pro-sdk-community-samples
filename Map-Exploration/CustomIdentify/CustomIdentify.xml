@@ -22,6 +22,7 @@
         <member name="T:CustomIdentify.DynamicPopupContent">
             <summary>
             Implementation of a custom popup content class
+            
             </summary>
         </member>
         <member name="M:CustomIdentify.DynamicPopupContent.#ctor(ArcGIS.Desktop.Mapping.MapMember,System.Int64)">

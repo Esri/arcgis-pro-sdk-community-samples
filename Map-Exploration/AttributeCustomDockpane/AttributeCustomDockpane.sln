@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31313.79
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttributeCustomDockpane", "AttributeCustomDockpane.csproj", "{65D3DA71-2422-4877-A7AF-17BCAB2E48E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65D3DA71-2422-4877-A7AF-17BCAB2E48E7}.Debug|x64.ActiveCfg = Debug|x64
+		{65D3DA71-2422-4877-A7AF-17BCAB2E48E7}.Debug|x64.Build.0 = Debug|x64
+		{65D3DA71-2422-4877-A7AF-17BCAB2E48E7}.Release|x64.ActiveCfg = Release|x64
+		{65D3DA71-2422-4877-A7AF-17BCAB2E48E7}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {46C44C11-689B-4C34-9850-47FD649A3B8E}
+	EndGlobalSection
+EndGlobal

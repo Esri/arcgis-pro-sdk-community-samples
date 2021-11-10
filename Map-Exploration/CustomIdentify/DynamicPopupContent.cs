@@ -24,64 +24,63 @@ using ArcGIS.Desktop.Mapping;
 
 namespace CustomIdentify
 {
+  /// <summary>
+  /// Implementation of a custom popup content class
+  /// 
+  /// </summary>
+  internal class DynamicPopupContent : PopupContent
+  {
+	private Dictionary<FieldDescription, double> _values = new Dictionary<FieldDescription, double>();
+	private long _id;
+	private RelateInfo _relateInfo;
 
-    /// <summary>
-    /// Implementation of a custom popup content class
-    /// </summary>
-    internal class DynamicPopupContent : PopupContent
-    {
-        private Dictionary<FieldDescription, double> _values = new Dictionary<FieldDescription, double>();
-        //private List<HierarchyRow> _hierarchyRows ;
-        private long _id;
-        private RelateInfo _relateInfo;
+	/// <summary>
+	/// Constructor initializing the base class with the layer and object id associated with the pop-up content
+	/// </summary>
+	//public DynamicPopupContent(MapMember mapMember, long id, List<HierarchyRow> hierarchyRows) : base(mapMember, id)
+	public DynamicPopupContent(MapMember mapMember, long id) : base(mapMember, id)
+	{
+	  //Set property indicating the html content will be generated on demand when the content is viewed.
+	  IsDynamicContent = true;
+	  _id = id;//save our id
+	}
 
-        /// <summary>
-        /// Constructor initializing the base class with the layer and object id associated with the pop-up content
-        /// </summary>
-        //public DynamicPopupContent(MapMember mapMember, long id, List<HierarchyRow> hierarchyRows) : base(mapMember, id)
-        public DynamicPopupContent(MapMember mapMember, long id) : base(mapMember, id)
-        {
-            //Set property indicating the html content will be generated on demand when the content is viewed.
-            IsDynamicContent = true;
-            _id = id;//save our id
-        }
-        /// <summary>
-        /// Called the first time the pop-up content is viewed. This is good practice when you may show a pop-up for multiple items at a time. 
-        /// This allows you to delay generating the html content until the item is actually viewed.
-        /// </summary>
-        protected override Task<string> OnCreateHtmlContent()
-        {
-            return QueuedTask.Run(() =>
-            {
-                var invalidPopup = "<p>Pop-up content could not be generated for this feature.</p>";
-                var layer = MapMember as BasicFeatureLayer;
-                if (layer == null)
-                    return invalidPopup;
+	/// <summary>
+	/// Called the first time the pop-up content is viewed. This is good practice when you may show a pop-up for multiple items at a time. 
+	/// This allows you to delay generating the html content until the item is actually viewed.
+	/// </summary>
+	protected override Task<string> OnCreateHtmlContent()
+	{
+	  return QueuedTask.Run(() =>
+	  {
+		var invalidPopup = "<p>Pop-up content could not be generated for this feature.</p>";
+		if (!(MapMember is BasicFeatureLayer layer))
+		  return invalidPopup;
 
-                List<HierarchyRow> completeHierarchyRows = new List<HierarchyRow>();
-                var gdb = layer.GetTable().GetDatastore() as Geodatabase;
-                var fcName = layer.GetTable().GetName();
-                if (_relateInfo == null)
-                    _relateInfo = new RelateInfo();
-                var newRow = _relateInfo.GetRelationshipChildren(layer, gdb, fcName, _id);
-                completeHierarchyRows.Add(newRow);
+		List<HierarchyRow> completeHierarchyRows = new List<HierarchyRow>();
+		var gdb = layer.GetTable().GetDatastore() as Geodatabase;
+		var fcName = layer.GetTable().GetName();
+		if (_relateInfo == null)
+		  _relateInfo = new RelateInfo();
+		var newRow = _relateInfo.GetRelationshipChildren(layer, gdb, fcName, _id);
+		completeHierarchyRows.Add(newRow);
 
-                //Construct a new html string that we will use to update our html template.
-                var sb = new StringBuilder();
-                sb.Append(new JavaScriptSerializer().Serialize(completeHierarchyRows));
-                string rootType = completeHierarchyRows[0].type;
-                sb.Replace(@"""children"":[],", string.Empty);
+		//Using our html template we construct a new html string that we return through OnCreateHtmlContent
+		var sb = new StringBuilder();
+		sb.Append(new JavaScriptSerializer().Serialize(completeHierarchyRows));
+		string rootType = completeHierarchyRows[0].type;
+		sb.Replace(@"""children"":[],", string.Empty);
 
-                //Get the html from the template file on disk that we have packaged with our add-in.
-                var htmlPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "template.html");
-                var html = File.ReadAllText(htmlPath);
+		//Get the html from the template file on disk that we have packaged with our add-in.
+		var htmlPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "template.html");
+		var html = File.ReadAllText(htmlPath);
 
-                //Update the template with our custom html and return it to be displayed in the pop-up window.
-                html = html.Replace("insert root layer here", layer.Name);
-                html = html.Replace("'insert data here'", sb.ToString());
-                html = html.Replace("insert root type field here", rootType);
-                return html;
-            });
-        }
-    }
+		//Update the template with our custom html and return it to be displayed in the pop-up window.
+		html = html.Replace("insert root layer here", layer.Name);
+		html = html.Replace("'insert data here'", sb.ToString());
+		html = html.Replace("insert root type field here", rootType);
+		return html;
+	  });
+	}
+  }
 }

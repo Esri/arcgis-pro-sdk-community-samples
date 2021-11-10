@@ -49,6 +49,7 @@ namespace LabelLineFeatures
         {
             return base.OnToolActivateAsync(active);
         }
+
         /// <summary>
         /// The features are labeled using a Field in the feature layer. The field LabelOn has values Yes or No. 
         /// If the value is "Yes", that feature will be labeled. If value is No, the feature will not be labeled.
@@ -92,7 +93,7 @@ namespace LabelLineFeatures
                     await inspector.ApplyAsync();                    
                 }             
 
-                //Now modify the features that are selected by the tool to have the value Yes
+                // Now modify the features that are selected by the tool to have the value Yes
                 await inspector.LoadAsync(featureLayer, oidsOfSelectedFeature);
                 // assign the attribute value of "Yes" to the field "LabelOn" for the features selected
                 // if more than one features are loaded, the change applies to all features
@@ -119,14 +120,14 @@ namespace LabelLineFeatures
                 lyrDefn.LabelClasses = listLabelClasses.ToArray();
                 //Set the layer definition
                 featureLayer.SetDefinition(lyrDefn);
-                //set the label's visiblity
+                //set the label's visibility
                 featureLayer.SetLabelVisibility(true);
             });
             return base.OnSketchCompleteAsync(geometry);
         }
+
         private async Task<CIMLabelClass> CreateAndApplyLabelClassAsync(FeatureLayer featureLayer)
         {
-
             var labelClass = await QueuedTask.Run(() =>
             {
                 var labelSelectedFeaturesWithLength = new CIMLabelClass

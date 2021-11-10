@@ -1,4 +1,5 @@
-﻿<!--
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
 
    Copyright 2020 Esri
 
@@ -124,8 +125,7 @@
         </tool>
         <tool id="GraphicsLayers_GraphicCreationTools_MultiPointGraphic" categoryRefID="GraphicsLayerExamples_Category" caption="Multi-Point Graphic" className="GraphicsLayers.GraphicCreationTools.MultiPointGraphic" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GeodatabaseFeatureClassMultipoint16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GeodatabaseFeatureClassMultipoint32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Tooltip Heading">
-            Tooltip text<disabledText />
-          </tooltip>
+            Tooltip text<disabledText /></tooltip>
           <content group="Shapes" name="Multi-Point" />
         </tool>
         <button id="GraphicsLayerExamples_AddGraphicsLayer" caption="New graphics layer" className="AddGraphicsLayer" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/LayerGraphics16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/LayerGraphics32.png" condition="esri_mapping_mapPane">

@@ -688,6 +688,7 @@ namespace LayoutWithLabels
 				Coordinate2D urTab1 = new Coordinate2D(setPage.XOffsetMapMarginalia + setPage.XWidthMapMarginalia, yOffset);
 				var theTable = LayoutElementFactory.Instance.CreateTableFrame(layout, EnvelopeBuilder.CreateEnvelope(llTab1, urTab1), mfElm, lyr, new string[] { "Label", "Description" });
 				var def = theTable.GetDefinition() as CIMTableFrame;
+				def.FittingStrategy = TableFrameFittingStrategy.AdjustColumnsAndSize;
 				def.FillingStrategy = TableFrameFillingStrategy.ShowAllRows;
 				theTable.SetDefinition(def);
 			}

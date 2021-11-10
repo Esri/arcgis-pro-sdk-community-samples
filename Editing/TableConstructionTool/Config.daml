@@ -1,0 +1,58 @@
+﻿<ArcGIS defaultAssembly="TableConstructionTool.dll" defaultNamespace="TableConstructionTool" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{a4aafcc5-bb08-484b-ba28-a85684c46731}" version="1.0" desktopVersion="2.9.31625">
+    <Name>TableConstructionTool</Name>
+    <Description>TableConstructionTool description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>uma2526</Author>
+    <Company>Acme</Company>
+    <Date>9/28/2021 12:48:34 PM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="TableConstructionTool_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="TableConstructionTool_Tab1" caption="New Tab">
+          <group refID="TableConstructionTool_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="TableConstructionTool_Group1" caption="Group 1" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <tool id="TableConstructionTool_BasicTableConstTool" categoryRefID="esri_editing_construction_table" caption="Basic" className="BasicTableConstTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Lion16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Lion32.png">
+          <tooltip heading="Basic Table Construction tool">
+            <disabledText />
+          </tooltip>
+          <content guid="79e2c798-fc82-4c2e-8705-aa89b19998c6" />
+        </tool>
+        <tool id="TableConstructionTool_IntermediateTableConstTool" categoryRefID="esri_editing_construction_table" caption="Intermediate" className="IntermediateTableConstTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Wolf16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Wolf32.png">
+          <tooltip heading="Intermediate Table Construction tool">
+            <disabledText />
+          </tooltip>
+          <content guid="96d7fa9d-22e1-4def-b32e-6b3d32adf548" />
+        </tool>
+        <tool id="TableConstructionTool_AdvancedTableConstructionTool" categoryRefID="esri_editing_construction_table" caption="Advanced" className="AdvancedTableConstructionTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/FireDragon16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/FireDragon32.png">
+          <tooltip heading="Advanced Table Construction tool">
+            <disabledText />
+          </tooltip>
+          <content guid="3c5e6a0b-b140-475f-9651-f0b7a07503aa" toolOptionsID="TableConstructionTool_TableConstructionToolOptions" />
+        </tool>
+      </controls>
+    </insertModule>
+  </modules>
+  <categories>
+    <updateCategory refID="esri_editing_tool_options">
+      <insertComponent id="TableConstructionTool_TableConstructionToolOptions" className="TableConstructionToolOptionsViewModel">
+        <content className="TableConstructionToolOptionsView" />
+      </insertComponent>
+    </updateCategory>
+  </categories>
+</ArcGIS>

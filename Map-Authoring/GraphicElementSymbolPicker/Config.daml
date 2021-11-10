@@ -1,0 +1,181 @@
+﻿<ArcGIS defaultAssembly="GraphicElementSymbolPicker.dll" defaultNamespace="GraphicElementSymbolPicker" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{f83ec5ce-4160-4dcd-a0ac-ba815482de22}" version="1.0" desktopVersion="2.9.30861">
+    <Name>GraphicElementSymbolPicker</Name>
+    <Description>GraphicElementSymbolPicker description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team</Author>
+    <Company>Esri, Inc</Company>
+    <Date>6/2/2021 4:16:50 PM</Date>
+    <Subject>Map Authoring</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <categories>
+    <!--Create a new category to hold new graphic element tools in a Gallery-->
+    <insertCategory id="GraphicsElementTools_Category"></insertCategory>
+    <!--<insertCategory id="GraphicsElementLayoutTools_Category"></insertCategory>-->
+  </categories>
+  <modules>
+    <insertModule id="GraphicElementSymbolPicker_Module" className="Module1" autoLoad="true" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs></tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <!--Group for graphics on map-->
+        <group id="GraphicElementSymbolPicker_Group1" caption="Symbol Picker" condition="esri_mapping_graphicsLayersExistCondition" appearsOnAddInTab="false">
+          <!-- host controls within groups -->
+          <gallery refID="GraphicElementSymbolPicker_GalleryGraphicElementTools" inline="false" size="large" />
+          <gallery refID="GraphicElementSymbolPicker_GalleryLineSymbols" inline="true" size="large" />
+        </group>
+        <!--Group for the Layout-->
+        <group id="GraphicElementLayoutSymbolPicker_Group" caption="Symbol Picker" condition="esri_layouts_layoutPane" appearsOnAddInTab="false">
+          <gallery refID="GraphicElementSymbolPicker_GalleryGraphicElementTools" inline="false" size="large" />
+          <gallery refID="GraphicElementSymbolPicker_GalleryLineSymbols" inline="true" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <!--Point Tools-->
+        <tool id="GraphicElementSymbolPicker_PointTools_PointTool" categoryRefID="GraphicsElementTools_Category" caption="Point" className="GraphicElementSymbolPicker.PointTools.PointTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementMarker16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementMarker32.png">
+          <tooltip heading="Point">
+            <disabledText />
+          </tooltip>
+          <content group="Point Tools" name="Point" />
+        </tool>
+        <tool id="GraphicElementSymbolPicker_PointTools_MutiPointTool" categoryRefID="GraphicsElementTools_Category" caption="Mutipoint" className="GraphicElementSymbolPicker.PointTools.MutiPointTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GeodatabaseFeatureClassMultipoint16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GeodatabaseFeatureClassMultipoint32.png">
+          <tooltip heading="Mutipoint">
+            <disabledText />
+          </tooltip>
+          <content group="Point Tools" name="Multi Point" />
+        </tool>
+        <tool id="GraphicElementSymbolPicker_PointTools_CloudPointTool" categoryRefID="GraphicsElementTools_Category" caption="Cloud" className="GraphicElementSymbolPicker.PointTools.CloudPointTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementCloud16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementCloud32.png">
+          <tooltip heading="Tooltip Heading">
+            <disabledText />
+          </tooltip>
+          <content group="Point Tools" name="Cloud" />
+        </tool>
+        <!--Line Tools-->
+        <tool id="GraphicElementSymbolPicker_LineTools_LineTool" categoryRefID="GraphicsElementTools_Category" caption="Line" className="GraphicElementSymbolPicker.LineTools.LineTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementLine16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementLine32.png">
+          <tooltip heading="Line">
+            <disabledText />
+          </tooltip>
+          <content group="Line Tools" name="Line" />
+        </tool>
+        <tool id="GraphicElementSymbolPicker_LineTools_FreehandLineTool" categoryRefID="GraphicsElementTools_Category" caption="Freehand line" className="GraphicElementSymbolPicker.LineTools.FreehandLineTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementFreehand16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementFreehand32.png">
+          <tooltip heading="Freehand line">
+            <disabledText />
+          </tooltip>
+          <content group="Line Tools" name="Freehand line" />
+        </tool>
+        <tool id="GraphicElementSymbolPicker_LineTools_CurvedLineTool" categoryRefID="GraphicsElementTools_Category" caption="Curved line" className="GraphicElementSymbolPicker.LineTools.CurvedLineTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementCurve16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementCurve32.png">
+          <tooltip heading="Curved line">
+            <disabledText />
+          </tooltip>
+          <content group="Line Tools" name="Curved line" />
+        </tool>
+        <!--Polygon Tools-->
+        <tool id="GraphicElementSymbolPicker_PolygonTools_RectangleTool" categoryRefID="GraphicsElementTools_Category" caption="Rectangle" className="GraphicElementSymbolPicker.PolygonTools.RectangleTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementRectangle16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementRectangle32.png">
+          <tooltip heading="Rectangle">
+            <disabledText />
+          </tooltip>
+          <content group="Polygon Tools" name="Rectangle" />
+        </tool>
+        <tool id="GraphicElementSymbolPicker_PolygonTools_CircleTool" categoryRefID="GraphicsElementTools_Category" caption="Circle" className="GraphicElementSymbolPicker.PolygonTools.CircleTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementCircle16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementCircle32.png">
+          <tooltip heading="Circle">
+            <disabledText />
+          </tooltip>
+          <content group="Polygon Tools" name="Circle" />
+        </tool>
+        <tool id="GraphicElementSymbolPicker_PolygonTools_PolygonTool" categoryRefID="GraphicsElementTools_Category" caption="Polygon" className="GraphicElementSymbolPicker.PolygonTools.PolygonTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementPolygon16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementPolygon32.png">
+          <tooltip heading="Polygon">
+            <disabledText />
+          </tooltip>
+          <content group="Polygon Tools" name="Polygon" />
+        </tool>
+        <tool id="GraphicElementSymbolPicker_PolygonTools_LassoTool" categoryRefID="GraphicsElementTools_Category" caption="Lasso" className="GraphicElementSymbolPicker.PolygonTools.LassoTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementLasso16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementLasso32.png">
+          <tooltip heading="Lasso">
+            <disabledText />
+          </tooltip>
+          <content group="Polygon Tools" name="Lasso" />
+        </tool>
+        <tool id="GraphicElementSymbolPicker_PolygonTools_EllipseTool" categoryRefID="GraphicsElementTools_Category" caption="Ellipse" className="GraphicElementSymbolPicker.PolygonTools.EllipseTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementEllipse16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementEllipse32.png">
+          <tooltip heading="Ellipse">
+            <disabledText />
+          </tooltip>
+          <content group="Polygon Tools" name="Ellipse" />
+        </tool>
+        <tool id="GraphicElementSymbolPicker_PolygonTools_CloudTool" categoryRefID="GraphicsElementTools_Category" caption="Cloud" className="GraphicElementSymbolPicker.PolygonTools.CloudTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementCloud16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementCloud32.png">
+          <tooltip heading="Tooltip Heading">
+            <disabledText />
+          </tooltip>
+          <content group="Polygon Tools" name="Cloud" />
+        </tool>
+        <!--Text Tools-->
+        <tool id="GraphicElementSymbolPicker_TextTools_TextTool" categoryRefID="GraphicsElementTools_Category" caption="Text" className="GraphicElementSymbolPicker.TextTools.TextTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementText16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementText32.png">
+          <tooltip heading="Text">
+            <disabledText />
+          </tooltip>
+          <content group="Text Tools" name="Text" />
+        </tool>
+        <tool id="GraphicElementSymbolPicker_TextTools_RectangleTextTool" categoryRefID="GraphicsElementTools_Category" caption="Rectangle text" className="GraphicElementSymbolPicker.TextTools.RectangleTextTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementRectangleText16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementRectangleText32.png">
+          <tooltip heading="Tooltip Heading">
+            <disabledText />
+          </tooltip>
+          <content group="Text Tools" name="Rectangle text" />
+        </tool>
+        <tool id="GraphicElementSymbolPicker_TextTools_PolygonTextTool" categoryRefID="GraphicsElementTools_Category" caption="Polygon text" className="GraphicElementSymbolPicker.TextTools.PolygonTextTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementPolygonText16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementPolygonText32.png">
+          <tooltip heading="Tooltip Heading">
+            <disabledText />
+          </tooltip>
+          <content group="Text Tools" name="Polygon text" />
+        </tool>
+        <tool id="GraphicElementSymbolPicker_TextTools_CurvedTextTool" categoryRefID="GraphicsElementTools_Category" caption="Curved text" className="GraphicElementSymbolPicker.TextTools.CurvedTextTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementSplinedText16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementSplinedText32.png">
+          <tooltip heading="Tooltip Heading">
+            <disabledText />
+          </tooltip>
+          <content group="Text Tools" name="Curved text" />
+        </tool>
+        <tool id="GraphicElementSymbolPicker_TextTools_CircleTextTool" categoryRefID="GraphicsElementTools_Category" caption="Circle text" className="GraphicElementSymbolPicker.TextTools.CircleTextTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementCircleText16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementCircleText32.png">
+          <tooltip heading="Tooltip Heading">
+            <disabledText />
+          </tooltip>
+          <content group="Text Tools" name="Circle text" />
+        </tool>
+        <tool id="GraphicElementSymbolPicker_TextTools_EllipseTextTool" categoryRefID="GraphicsElementTools_Category" caption="Ellipse text" className="GraphicElementSymbolPicker.TextTools.EllipseTextTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementEllipseText16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementEllipseText32.png">
+          <tooltip heading="Tooltip Heading">
+            <disabledText />
+          </tooltip>
+          <content group="Text Tools" name="Ellipse text" />
+        </tool>
+        <button id="GraphicElementSymbolPicker_LastToolActive" caption="Keep the last tool active" className="LastToolActive" loadOnClick="false">
+          <tooltip heading="Active Tool">
+            Keep the last insert tool active after adding a new element.  Otherwise, the select tool is reactivated after the element is added.<disabledText></disabledText></tooltip>
+        </button>      
+      </controls>
+      <galleries>
+        <gallery id="GraphicElementSymbolPicker_GalleryGraphicElementTools" showGroup="true" caption="Point" className="GalleryGraphicElementTools" itemsInRow="3" dataTemplateFile="pack://application:,,,/GraphicElementSymbolPicker;component//GalleryGraphicElementToolsTemplate.xaml" templateID="GalleryGraphicElementToolsItemTemplate" resizable="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ElementMarker32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+          <button refID="GraphicElementSymbolPicker_LastToolActive" size="large" />
+        </gallery>
+        <gallery id="GraphicElementSymbolPicker_GalleryLineSymbols" showGroup="true" caption="Symbols" className="GallerySymbols" itemsInRow="3" dataTemplateFile="pack://application:,,,/GraphicElementSymbolPicker;component//GallerySymbolsTemplate.xaml" templateID="GallerySymbolsItemTemplate" resizable="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonYellow32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </gallery>
+      </galleries>
+    </insertModule>
+    <updateModule refID="esri_mapping">
+      <tabs>
+        <updateTab refID="esri_mapping_graphicsLayerGraphicsTab">
+          <insertGroup refID="GraphicElementSymbolPicker_Group1" placeWith="esri_mapping_graphicsLayerInsertGroup" />
+        </updateTab>
+      </tabs>
+    </updateModule>
+    <updateModule refID="esri_core_module">
+      <tabs>
+        <updateTab refID="esri_core_insertTab">
+          <insertGroup refID="GraphicElementLayoutSymbolPicker_Group" insert="after" placeWith="esri_layouts_insertGraphicGroup" />
+        </updateTab>
+      </tabs>
+    </updateModule>
+  </modules>
+</ArcGIS>

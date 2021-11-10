@@ -1,6 +1,7 @@
 ## ChromiumWebBrowserSample
 
 <!-- TODO: Write a brief abstract explaining this sample -->
+ The Chromium web browser control is obsolete starting with ArcGIS Pro release 2.9, please use the ArcGIS Pro SDK's WebViewBrowser control as shown in the WebView2Edge.   
  This sample shows how to implement pane that contains a Chromium web browser control.  For details on how to utilize the Chromium web browser control in an add-in see here: https://github.com/Esri/arcgis-pro-sdk/wiki/ProConcepts-Framework#chromiumwebbrowser    
    
 
@@ -13,8 +14,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  5/12/2021
-ArcGIS Pro:            2.8
+Date:                  11/01/2021
+ArcGIS Pro:            2.9
 Visual Studio:         2019
 .NET Target Framework: 4.8
 ```

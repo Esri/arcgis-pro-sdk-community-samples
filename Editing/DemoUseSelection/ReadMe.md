@@ -1,11 +1,11 @@
 ## DemoUseSelection
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows two things.<br />  
+This sample shows two tools that are using keys to toggle into selection mode while the tool is active.<br />  
 The first is the use of ActivateSelectAsync in conjunction with UseSelection in a couple of example editing tools.  
 The two tools both do the same thing - a Difference operation against any selected polygons intersected by the sketch.<p />  
-DifferenceTool 1 shows use of UseSelection = <b>true</b>  and leverages built-in behavior of the SHIFT key to toggle the tool into selection mode.<br />  
-DifferenceTool 2 also uses UseSelection = <b>true</b> and a custom key - "W" to toggle into select mode. It also shows how to handle the SHIFT key to prevent the default behavior from intefering with the tool's use of "W".<br />  
+DifferenceTool 1 shows use of UseSelection = <b>true</b> and leverages built-in behavior of the SHIFT key to toggle the tool into selection mode.<br />  
+DifferenceTool 2 also uses UseSelection = <b>true</b> and a custom key - "W" to toggle into select mode. It also shows how to handle the SHIFT key to prevent the default behavior from interfering with the tool's use of "W".<br />  
 Developers can experiment by setting UseSelection to <b>false</b> to observe how that changes the behavior of the tools.<p />  
 The second thing demonstrated by the sample is the use of <b>Project.Current.IsEditingEnabled</b> in-conjunction with <b>Project.Current.SetIsEditingEnabledAsync(true | false)</b> to detect if a project has editing enabled and to toggle editing on|off. This is new at <b>2.6</b>  
 
@@ -18,8 +18,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, http://www.esri.com
-Date:                  5/12/2021
-ArcGIS Pro:            2.8
+Date:                  11/01/2021
+ArcGIS Pro:            2.9
 Visual Studio:         2019
 .NET Target Framework: 4.8
 ```

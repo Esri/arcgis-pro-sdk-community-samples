@@ -35,8 +35,9 @@
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+	  <RowDefinition Height="Auto"/>
+	  <RowDefinition Height="Auto"/>
+	  <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
@@ -48,7 +49,8 @@
                 </TextBlock.ToolTip>
       </TextBlock>
         </DockPanel>
-
-        <ListBox Grid.Row="1" ItemsSource="{Binding ListOfFeatures}"></ListBox>
+	<Button Grid.Row="1" Height="25" Margin="5" Command="{Binding SelectCommand}"
+                    Style="{DynamicResource Esri_Button}">Selected Features</Button>
+	<ListBox Grid.Row="2" ItemsSource="{Binding ListOfFeatures}"></ListBox>
     </Grid>
 </UserControl>

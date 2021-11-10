@@ -152,7 +152,7 @@ namespace QueryBuilderControl
     /// <returns></returns>
     private Task OnProjectClosing(ArcGIS.Desktop.Core.Events.ProjectClosingEventArgs args)
     {
-      // if already cancelled, ignore
+      // if already Canceled, ignore
       if (args.Cancel)
         return Task.CompletedTask;
 

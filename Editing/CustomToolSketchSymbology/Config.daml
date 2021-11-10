@@ -1,0 +1,49 @@
+﻿<!--//   Copyright 2021 Esri
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       http://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.-->
+<ArcGIS defaultAssembly="CustomToolSketchSymbology.dll" defaultNamespace="CustomToolSketchSymbology" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{a230ccca-a1a3-4d63-80da-edfac8911096}" version="1.0" desktopVersion="2.9.31365">
+    <Name>Cutom Tool Sketch Symbology</Name>
+    <Description>Creates a custom line construction tool that uses it's own customized sketch symbology.</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team</Author>
+    <Company>Esri</Company>
+    <Date>8/19/2021 8:31:39 AM</Date>
+    <Subject>Editing</Subject>
+  </AddInInfo>
+  <modules>
+    <insertModule id="CustomToolSketchSymbology_Module" className="Module1" autoLoad="false" caption="Module1">
+      <controls>
+        <tool id="CustomToolSketchSymbology_CustomLineConstructionTool" 
+            categoryRefID="esri_editing_construction_polyline" caption="CustomLineConstructionTool" 
+            className="CustomLineConstructionTool" loadOnClick="true" keytip="T0"
+            smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" 
+            largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png">
+          <!--note: use esri_editing_construction_polyline,  esri_editing_construction_polygon for categoryRefID as needed-->
+          <tooltip heading="Custom line construction tool">
+            Custom tool with modified sketch symbology<disabledText /></tooltip>
+          <content guid="f6bc5889-4234-430f-8d29-ad9d5991a222" />
+        </tool>
+        <tool id="CustomToolSketchSymbology_ChangeSketchSymbology" caption="ChangeSketchSymbology"
+                className="ChangeSketchSymbology" loadOnClick="true" keytip="T1"
+                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </tool>
+      </controls>
+      <groups>
+        <group id="CustomToolSketchSymbology_Group1" caption="Group 1" keytip="G0" appearsOnAddInTab="true">
+          <tool refID="CustomToolSketchSymbology_ChangeSketchSymbology" size="large" />
+        </group>
+      </groups>
+    </insertModule>
+  </modules>
+</ArcGIS>

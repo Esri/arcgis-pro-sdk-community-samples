@@ -101,6 +101,10 @@
 													 Background="{DynamicResource Esri_ControlBackgroundBrush}">
 				<tkit:DropDownButton.DropDownContent>
 					<StackPanel Orientation="Vertical">
+						<MenuItem Header="Content/HelpMe.html" Command="{Binding OpenResourceLocalFileCmd}"
+											CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+											Style="{StaticResource ProMenuItem}"></MenuItem>
+						<Separator></Separator>
 						<MenuItem Header="BexDog32.png" Command="{Binding OpenResourceCmd}"
 											CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
 											Style="{StaticResource ProMenuItem}"></MenuItem>

@@ -38,7 +38,7 @@ namespace SketchToolDemo
             // a sketch feedback is need
             IsSketchTool = true;
             // the geometry is needed in map coordinates
-            SketchOutputMode = ArcGIS.Desktop.Mapping.SketchOutputMode.Map;
+            SketchOutputMode = SketchOutputMode.Map;
         }
 
         /// <summary>
@@ -114,6 +114,7 @@ namespace SketchToolDemo
                       {
                         // make sure we have the same projection for geomProjected and geomTest
                         var geomProjected = GeometryEngine.Instance.Project(geometry, geomTest.SpatialReference);
+                
                         // we are looking for polygons are completely intersected by the cut line
                         if (GeometryEngine.Instance.Relate(geomProjected, geomTest, "TT*F*****"))
                         {

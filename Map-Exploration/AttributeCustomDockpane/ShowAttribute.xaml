@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="AttributeCustomDockpane.ShowAttributeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
+             xmlns:ui="clr-namespace:AttributeCustomDockpane"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             xmlns:editControls="clr-namespace:ArcGIS.Desktop.Editing.Controls;assembly=ArcGIS.Desktop.Editing"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{Binding Path=ui.ShowAttributeViewModel}">
+     <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+		<DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
+			<TextBlock Grid.Column="1" Text="{Binding Heading}" Style="{DynamicResource Esri_TextBlockDockPaneHeader}">
+				<TextBlock.ToolTip>
+					<WrapPanel Orientation="Vertical" MaxWidth="300">
+						<TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
+					</WrapPanel>
+				</TextBlock.ToolTip>
+            </TextBlock>
+		</DockPanel>
+
+		<Grid Grid.Row="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			<TextBlock Grid.Row="0" Style="{DynamicResource Esri_TextBlockH3}">Attributes</TextBlock>
+			<ContentPresenter Grid.Row="1" Content="{Binding InspectorView}" MinHeight="50" />
+		</Grid>
+
+		<Grid Grid.Row="2">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			<TextBlock Grid.Row="0" Style="{DynamicResource Esri_TextBlockH3}">Geometry</TextBlock>
+			<editControls:GeometryControl Grid.Row="1" GeometryMode="Geometry"
+									  Geometry="{Binding Geometry}" />
+		</Grid>
+	</Grid>
+</UserControl>

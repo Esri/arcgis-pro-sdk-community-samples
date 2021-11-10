@@ -1,0 +1,39 @@
+﻿<ArcGIS defaultAssembly="DDLCreateFeatureClass.dll" defaultNamespace="DDLCreateFeatureClass" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{b6e1e8e1-0b90-4918-911c-71682e2395f8}" version="1.0" desktopVersion="2.8.29375">
+    <Name>DDLCreateFeatureClass</Name>
+    <Description>DDLCreateFeatureClass Creates a FeatureClass using the Pro API</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+	  <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+	  <Company>esri, http://www.esri.com</Company>
+    <Date>6/24/2021 6:01:14 AM</Date>
+    <Subject>Geodatabase</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="DDLCreateFeatureClass_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="DDLCreateFeatureClass_Tab1" caption="New Tab">
+          <group refID="DDLCreateFeatureClass_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="DDLCreateFeatureClass_Group1" caption="Group 1" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="DDLCreateFeatureClass_CreateTestFeatureClass" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="DDLCreateFeatureClass_CreateTestFeatureClass" keytip="B1"
+				caption="Create Test FeatureClass" className="CreateTestFeatureClass" 
+				loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Create a Feature Class">Creates a new feature class using the Geodatabase connection from the first selected feature layer<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

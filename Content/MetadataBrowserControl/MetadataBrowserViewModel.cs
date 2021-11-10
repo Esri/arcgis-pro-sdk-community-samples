@@ -127,7 +127,7 @@ namespace MetadataBrowserControl
                     if (_selectedXSLFile == null) //flag to check so we don't get into the setter when XSLFile is added to collection
                         return;
                     XSLFile browsedFile = BrowseFileName();
-                    if (browsedFile == null) //user cancelled
+                    if (browsedFile == null) //user Canceled
                         return;
                     _selectedXSLFile = null; //set to null so setter is not called when user Browses.
                     XSLFiles.Insert(0, browsedFile); //insert new file to start of collection.
@@ -168,7 +168,7 @@ namespace MetadataBrowserControl
                 var browsedXSLFile = new XSLFile(dlg.FileName);
                 return browsedXSLFile;               
             }
-            else //user cancelled
+            else //user Canceled
             {
                 return null;
             }

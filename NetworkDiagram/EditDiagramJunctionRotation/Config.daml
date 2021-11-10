@@ -1,0 +1,42 @@
+﻿<ArcGIS defaultAssembly="EditDiagramJunctionRotation.dll" defaultNamespace="EditDiagramJunctionRotation" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{87b6b471-6b9f-439f-b65b-5e1a9c988f53}" version="1.0" desktopVersion="2.9.31464">
+    <Name>EditDiagramJunctionRotation</Name>
+    <Description>EditDiagramJunctionRotation description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>jacq0000</Author>
+    <Company>ESRI</Company>
+    <Date>9/14/2021 4:06:59 PM</Date>
+    <Subject>NetworkDiagram</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="EditDiagramJunctionRotation_Module" 
+				  className="EditDiagramJunctionRotationModule" autoLoad="false" caption="Module1">     
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="EditDiagramJunctionRotation_Group1" caption="Rotation" appearsOnAddInTab="true" keytip="EditDiagramJunctionRotation_Group1" condition="esri_networkdiagrams_networkDiagramMapCondition">
+          <!-- host controls within groups -->
+          <editBox refID="EditDiagramJunctionRotation_EditRotation" size="middle"/>
+          <button refID="EditDiagramJunctionRotation_RotateJunctionRelative" size="middle" />
+          <button refID="EditDiagramJunctionRotation_RotateJunctionAbsolute" size="middle" />
+        </group>
+      </groups>
+      <controls>
+        <editBox id="EditDiagramJunctionRotation_EditRotation" className="EditRotation" caption="Angle" dataType="double" keytip="EditDiagramJunctionRotation_EditRotation" >
+          <tooltip heading="Rotation Angle">
+            Specify the angle in degree you want to apply to the rotation field of your diagram junctions<disabledText></disabledText>
+          </tooltip>
+        </editBox>
+
+        <button id="EditDiagramJunctionRotation_RotateJunctionRelative" caption="Relative" className="RotateJunctionRelative" loadOnClick="true" smallImage="Images/EditingPresetRotateRelative16.png" largeImage="Images/EditingPresetRotateRelative32.png" keytip="EditDiagramJunctionRotation_RotateJunctionRelative">
+          <tooltip heading="Relative">The specified angle value is added to the current value of the rotation field for each selected diagram junction<disabledText /></tooltip>
+        </button>
+        <button id="EditDiagramJunctionRotation_RotateJunctionAbsolute" caption="Absolute" className="RotateJunctionAbsolute" loadOnClick="true" smallImage="Images/EditingPresetRotateAbsolute16.png" largeImage="Images/EditingPresetRotateAbsolute32.png" keytip="EditDiagramJunctionRotation_RotateJunctionAbsolute">
+          <tooltip heading="Absolute">The specified angle value is set to be the rotation field value for each selected diagram junction<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>  
+</ArcGIS>

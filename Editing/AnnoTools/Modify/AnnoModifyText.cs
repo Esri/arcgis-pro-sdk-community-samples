@@ -79,14 +79,14 @@ namespace AnnoTools
           var insp = new Inspector(true);
           insp.Load(annoLayer, featOids);
 
-          // get the annotation proeprties
+          // get the annotation properties
           var annoProperties = insp.GetAnnotationProperties();
           // assign the text string
           annoProperties.TextString = "Hello World";
           // you could also assign a text string such as the following which incorporates formatting tags
           // annoProperties.TextString = "My <CLR red = \"255\" green = \"0\" blue = \"0\" >Special</CLR> Text";
 
-          // set the annotation propertes back on the inspector
+          // set the annotation properties back on the inspector
           insp.SetAnnotationProperties(annoProperties);
 
           // create the edit operation

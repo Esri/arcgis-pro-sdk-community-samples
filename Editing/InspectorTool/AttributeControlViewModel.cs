@@ -37,8 +37,8 @@ namespace InspectorTool
             var icontrol = _featureInspector.CreateEmbeddableControl();
 
             // get view and viewmodel from the inspector
-            InspectorView = icontrol.Item2;
             InspectorViewModel = icontrol.Item1;
+            InspectorView = icontrol.Item2;
         }
 
         /// <summary>

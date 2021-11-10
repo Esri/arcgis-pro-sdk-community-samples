@@ -80,7 +80,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ProSqlExpressDb\SqlExpressDb.csproj">
       <Project>{00b0aac0-bf42-44d6-8638-15b563782ce2}</Project>
-      <Name>MdbAccessDb</Name>
+      <Name>SqlExpressDb</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

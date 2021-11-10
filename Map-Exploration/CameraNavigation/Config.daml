@@ -40,13 +40,18 @@
         </group>
       </groups>
       <controls>
-        <button id="CameraNavigation_CameraPane_ShowButton" caption="Show Camera Properties " className="CameraNavigation.CameraPane_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png" condition="esri_mapping_mapPane" keytip="z2">
-          <tooltip heading="Show Camera Properties">
-            Show Camera Properties<disabledText /></tooltip>
+        <button id="CameraNavigation_CameraPane_ShowButton" caption="Show Camera Properties" 
+				className="CameraNavigation.CameraPane_ShowButton" loadOnClick="true" 
+				smallImage="Images\GenericButtonPurple16.png"
+				largeImage="Images\GenericButtonPurple32.png"
+				condition="esri_mapping_mapPane" keytip="z2">
+          <tooltip heading="Show Camera Properties">Show Camera Properties<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="CameraNavigation_Camera_CameraPane" caption="Camera Properties" className="CameraNavigation.CameraPaneViewModel" initiallyVisible="true" dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="CameraNavigation_Camera_CameraPane" caption="Camera Properties" 
+				  className="CameraNavigation.CameraPaneViewModel" 				  
+				  dock="group" dockWith="esri_core_contentsDockPane">
           <content className="CameraNavigation.CameraPane" />
         </dockPane>
       </dockPanes>

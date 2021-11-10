@@ -103,6 +103,7 @@
     <Compile Include="AttributeDrivenSymbology.cs" />
     <Compile Include="ChartRenderers.cs" />
     <Compile Include="ClassBreakRenderers.cs" />
+    <Compile Include="DotDensityRenderer.cs" />
     <Compile Include="HeatMapRenderers.cs" />
     <Compile Include="Helpers\SDKHelpercs.cs" />
     <Compile Include="Module1.cs" />
@@ -151,6 +152,30 @@
     <None Include="screenshots\simple-point.png" />
     <None Include="screenshots\simple-polygon.png" />
     <None Include="screenshots\unique-value.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="screenshots\dotDensity-renderer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="screenshots\pie-chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="screenshots\stacked-bar-chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="screenshots\tilt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="screenshots\simple-line-style-item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="screenshots\graduatedColorOutline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="screenshots\AttrbuteDriverSymbology.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="screenshots\bar-chart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!--

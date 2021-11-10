@@ -150,7 +150,7 @@ namespace AnimationTools
                         // Return if cancel value is chosen
                         if (Convert.ToString(result) == "Cancel")
                         {
-                            ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Operation cancelled.", "Info");
+                            ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Operation Canceled.", "Info");
                             return;
                         }
                     }
@@ -160,7 +160,7 @@ namespace AnimationTools
                         // Return if cancel value is chosen
                         if (Convert.ToString(result) == "Cancel")
                         {
-                            ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Operation cancelled.", "Info");
+                            ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Operation Canceled.", "Info");
                             return;
                         }
                     }

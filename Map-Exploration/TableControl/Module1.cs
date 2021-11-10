@@ -59,6 +59,10 @@ namespace TableControl
   /// 1. Click the Add to Map button to add the data to the active map.    
   /// 1. Right click on a row and see the custom context menu. Choose Zoom to Row to zoom to the active row in the map. 
   /// ![UI](screenshots/TableControl_ContextMenu.png)
+  /// 1.Click the Find button to see the Find UI.
+  /// ![UI](screenshots/tableControl_Find.png)  
+  /// 1.Use the Identify tool on the Add-in tab to identify a feature.
+  /// 1.The table control will scroll to that row and select it in the table.
   /// </remarks>
   internal class Module1 : Module
   {
@@ -74,6 +78,8 @@ namespace TableControl
         return _this ?? (_this = (Module1)FrameworkApplication.FindModule("TableControl_Module"));
       }
     }
+
+    internal static MapMember SelectedMapMember = null;
 
     #region Overrides
     /// <summary>

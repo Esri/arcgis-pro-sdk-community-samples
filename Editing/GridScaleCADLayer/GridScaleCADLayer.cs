@@ -120,7 +120,7 @@ namespace GridScaleCADLayer
         }
         else
         {
-          // cancelled from dialog
+          // Canceled from dialog
           return;
         }
       }

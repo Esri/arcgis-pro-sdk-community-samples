@@ -52,7 +52,7 @@
           <tooltip heading="Identify Features">
             Identify features on the current map using a circular sketch.<disabledText /></tooltip>
         </tool>
-        <button id="MapToolIdentifyWithDockpane_MapToolIdentifyDockpane_ShowButton" caption="Show MapTool Identify Dockpane" className="MapToolIdentifyDockpane_ShowButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+        <button id="MapToolIdentifyWithDockpane_MapToolIdentifyDockpane_ShowButton" caption="Show MapTool Identify Dockpane" keytip="B0" className="MapToolIdentifyDockpane_ShowButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
           <tooltip heading="Show Dockpane">Show Dockpane with MapTool Identify results<disabledText /></tooltip>
         </button>
       </controls>

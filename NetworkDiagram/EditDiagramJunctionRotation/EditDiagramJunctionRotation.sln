@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditDiagramJunctionRotation", "EditDiagramJunctionRotation.csproj", "{87B6B471-6B9F-439F-B65B-5E1A9C988F53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87B6B471-6B9F-439F-B65B-5E1A9C988F53}.Debug|x64.ActiveCfg = Debug|x64
+		{87B6B471-6B9F-439F-B65B-5E1A9C988F53}.Debug|x64.Build.0 = Debug|x64
+		{87B6B471-6B9F-439F-B65B-5E1A9C988F53}.Release|x64.ActiveCfg = Release|x64
+		{87B6B471-6B9F-439F-B65B-5E1A9C988F53}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B04A6C73-7965-4E66-BE4A-2240ADF1AC23}
+	EndGlobalSection
+EndGlobal

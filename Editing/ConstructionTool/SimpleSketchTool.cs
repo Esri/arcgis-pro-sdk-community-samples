@@ -28,46 +28,46 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 
 namespace ConstructionTool
 {
-    internal class SimpleSketchTool : MapTool
-    {
-        public SimpleSketchTool() : base()
-        {
-            // select the type of construction tool you wish to implement.  
-            // Make sure that the tool is correctly registered with the correct component category type in the daml
-            SketchType = SketchGeometryType.Point;
-            // indicate that we need a sketch feedback 
-            IsSketchTool = true;
-            // and the sketch geometry should be in map coordinates
-            SketchOutputMode = ArcGIS.Desktop.Mapping.SketchOutputMode.Map;
-        }
+  internal class SimpleSketchTool : MapTool
+  {
+	public SimpleSketchTool() : base()
+	{
+	  // select the type of construction tool you wish to implement.  
+	  // Make sure that the tool is correctly registered with the correct component category type in the daml
+	  SketchType = SketchGeometryType.Point;
+	  // indicate that we need a sketch feedback 
+	  IsSketchTool = true;
+	  // and the sketch geometry should be in map coordinates
+	  SketchOutputMode = ArcGIS.Desktop.Mapping.SketchOutputMode.Map;
+	}
 
-        /// <summary>
-        /// Fires once the user completes the onscreen sketch. In the context of a construction tool the sketch geometry 
-        /// is used for the shape of the feature.
-        /// </summary>
-        /// <param name="geometry">The sketch geometry the user digitized on the screen.</param>
-        /// <returns></returns>
-        protected override Task<bool> OnSketchCompleteAsync(Geometry geometry)
-        {
-            if (geometry == null)
-                return Task.FromResult(false);
+	/// <summary>
+	/// Fires once the user completes the on-screen sketch. In the context of a construction tool the sketch geometry 
+	/// is used for the shape of the feature.
+	/// </summary>
+	/// <param name="geometry">The sketch geometry the user digitized on the screen.</param>
+	/// <returns></returns>
+	protected override Task<bool> OnSketchCompleteAsync(Geometry geometry)
+	{
+	  if (geometry == null)
+		return Task.FromResult(false);
 
-            return QueuedTask.Run(() =>
-                {
-                    // create an edit operation
-                    var editOperation = new EditOperation();
-                    editOperation.Name = string.Format("Create point in '{0}'", CurrentTemplate.Layer.Name);
-                    editOperation.ProgressMessage = "Working...";
-                    editOperation.CancelMessage = "Operation canceled";
-                    editOperation.ErrorMessage = "Error creating point";
+	  return QueuedTask.Run(() =>
+		  {
+				  // create an edit operation
+				  var editOperation = new EditOperation();
+			editOperation.Name = string.Format("Create point in '{0}'", CurrentTemplate.Layer.Name);
+			editOperation.ProgressMessage = "Working...";
+			editOperation.CancelMessage = "Operation canceled";
+			editOperation.ErrorMessage = "Error creating point";
 
-                    // queue the edit operation using the sketch geometry as the shape of the feature and any attribute 
-                    // configurations from the editing template
-                    editOperation.Create(CurrentTemplate, geometry);                    
+				  // queue the edit operation using the sketch geometry as the shape of the feature and any attribute 
+				  // configurations from the editing template
+				  editOperation.Create(CurrentTemplate, geometry);
 
-                    //execute the operation
-                    return editOperation.ExecuteAsync();
-                });
-        }
-    }
+				  //execute the operation
+				  return editOperation.ExecuteAsync();
+		  });
+	}
+  }
 }
