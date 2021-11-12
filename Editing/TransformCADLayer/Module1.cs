@@ -27,11 +27,11 @@ namespace TransformCADLayer
     /// 1. Build or debug the sample through Visual Studio.
     /// 1. In Pro, select the CAD layer in the table of contents.  
     /// 1. The contextual ribbon for the CAD layer becomes available to access the add-in button for Transform from the Alignment group.
-    /// ![UI] (Screenshots/Screen1.png)
+    /// ![UI](Screenshots/Screen1.png)
     /// 1. Click the button and enter the parameters for local coordinates, grid coordinates, scale and rotation values.
-    /// ![UI] (Screenshots/Screen2.png)
+    /// ![UI](Screenshots/Screen2.png)
     /// 1. Check the box "Update ground to grid corrections" to apply the scale and rotation values to the map's ground to grid correction settings.
-    /// ![UI] (Screenshots/Screen3.png)
+    /// ![UI](Screenshots/Screen3.png)
     /// 1. Click the Reset button to set all the transformation parameters back to starting values.
     /// 1. Click the OK button to transform the CAD layer based on the entered transformation parameters.
     /// </remarks>
