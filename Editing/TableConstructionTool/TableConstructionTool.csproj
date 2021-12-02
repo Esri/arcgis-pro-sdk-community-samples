@@ -141,7 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="screenshots\Options.png" />
-    <Resource Include="screenshots\TableConstructionTools.PNG" />
+    <Resource Include="screenshots\TableConstructionTools.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!--
