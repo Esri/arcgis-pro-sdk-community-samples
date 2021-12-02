@@ -480,6 +480,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocToolBoxEmbedding", "Fram
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransformCADLayer", "Editing\TransformCADLayer\TransformCADLayer.csproj", "{22798403-4E86-4817-B243-87BBA77DF273}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableConstructionTool", "Editing\TableConstructionTool\TableConstructionTool.csproj", "{A4AAFCC5-BB08-484B-BA28-A85684C46731}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3259,8 +3261,8 @@ Global
 		{79682455-2EAC-4B08-9227-C62F56349AD5}.Release|x64.Build.0 = Release|x64
 		{79682455-2EAC-4B08-9227-C62F56349AD5}.Release|x86.ActiveCfg = Release|Win32
 		{79682455-2EAC-4B08-9227-C62F56349AD5}.Release|x86.Build.0 = Release|Win32
-		{CF044090-836A-47AA-B103-60C5F0413B6D}.Debug|Any CPU.ActiveCfg = Debug|x64
-		{CF044090-836A-47AA-B103-60C5F0413B6D}.Debug|Any CPU.Build.0 = Debug|x64
+		{CF044090-836A-47AA-B103-60C5F0413B6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF044090-836A-47AA-B103-60C5F0413B6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF044090-836A-47AA-B103-60C5F0413B6D}.Debug|x64.ActiveCfg = Debug|x64
 		{CF044090-836A-47AA-B103-60C5F0413B6D}.Debug|x64.Build.0 = Debug|x64
 		{CF044090-836A-47AA-B103-60C5F0413B6D}.Debug|x86.ActiveCfg = Debug|x64
@@ -3280,6 +3282,15 @@ Global
 		{22798403-4E86-4817-B243-87BBA77DF273}.Release|x64.Build.0 = Release|x64
 		{22798403-4E86-4817-B243-87BBA77DF273}.Release|x86.ActiveCfg = Release|Any CPU
 		{22798403-4E86-4817-B243-87BBA77DF273}.Release|x86.Build.0 = Release|Any CPU
+		{A4AAFCC5-BB08-484B-BA28-A85684C46731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4AAFCC5-BB08-484B-BA28-A85684C46731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4AAFCC5-BB08-484B-BA28-A85684C46731}.Debug|x64.ActiveCfg = Debug|x64
+		{A4AAFCC5-BB08-484B-BA28-A85684C46731}.Debug|x64.Build.0 = Debug|x64
+		{A4AAFCC5-BB08-484B-BA28-A85684C46731}.Debug|x86.ActiveCfg = Debug|x64
+		{A4AAFCC5-BB08-484B-BA28-A85684C46731}.Release|Any CPU.ActiveCfg = Release|x64
+		{A4AAFCC5-BB08-484B-BA28-A85684C46731}.Release|x64.ActiveCfg = Release|x64
+		{A4AAFCC5-BB08-484B-BA28-A85684C46731}.Release|x64.Build.0 = Release|x64
+		{A4AAFCC5-BB08-484B-BA28-A85684C46731}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
