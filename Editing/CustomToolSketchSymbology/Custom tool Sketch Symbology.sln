@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custom tool Sketch Symbology", "Custom tool Sketch Symbology.csproj", "{A230CCCA-A1A3-4D63-80DA-EDFAC8911096}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customtool Sketch Symbology", "Customtool Sketch Symbology.csproj", "{A230CCCA-A1A3-4D63-80DA-EDFAC8911096}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
