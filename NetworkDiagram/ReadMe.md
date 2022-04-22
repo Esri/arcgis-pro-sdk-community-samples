@@ -14,8 +14,9 @@ This repository contains ArcGIS Pro Add-In Samples for the ArcGIS Pro 2.9 SDK fo
 This folder contains ArcGIS Pro Add-In Samples that fall under the 'Network Diagram' topic:
 
 * [EditDiagramJunctionRotation (c#)](../../../tree/master/NetworkDiagram/EditDiagramJunctionRotation)  
-* [ToggleSwitches (c#)](../../../tree/master/NetworkDiagram/ToggleSwitches)  
-
+* [ToggleSwitches (c#)](../../../tree/master/NetworkDiagram/ToggleSwitches)
+* [CustomizeNetworkDiagramLayoutExecution (c#)](../../../tree/master/NetworkDiagram/CustomizeNetworkDiagramLayoutExecution)
+* [CreateDiagramWithCustomLayout (c#)](../../../tree/master/NetworkDiagram/CreateDiagramWithACutomLayout)
 
 ## Instructions
 

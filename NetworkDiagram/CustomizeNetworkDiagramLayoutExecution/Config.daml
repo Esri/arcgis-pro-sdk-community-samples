@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArcGIS defaultAssembly="CustomizeNetworkDiagramLayoutExecution.dll"
+        defaultNamespace="CustomizeNetworkDiagramLayoutExecution"
+        xmlns="http://schemas.esri.com/DADF/Registry"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+
+  <AddInInfo id="{77c97cb6-9d2a-477d-9f99-18380eb2cf7e}" version="1.0" desktopVersion="2.9.32739">
+    <Name>CustomizeNetworkDiagramLayoutExecution</Name>   
+    <Description>Customize Network Diagram Layout Execution Sample</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>12/14/2021 12:07:22 PM</Date>
+    <Subject>NetworkDiagram</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+
+  <categories>
+    <updateCategory refID="esri_networkdiagrams_layouts">
+      <insertComponent id="custom_forceDirected_layout" className="CustomDispatchLayout">
+        <content name="Custom Dispatch Layout" group="Personal Layouts" tooltip="Apply the Custom Dispatch Layout to the active diagram." image="pack://application:,,,/CustomizeNetworkDiagramLayoutExecution;component/Images/CustomForceDirecteLayout32.png" />
+      </insertComponent>
+
+      <insertComponent id="custom_SmartTree_layout" className="PredefinedSmartTreeLayout">
+        <content name="Predefined Smart Tree Layout" group="Personal Layouts" tooltip="Apply the Smart Tree layout with specific parameter values to the active diagram." image="pack://application:,,,/CustomizeNetworkDiagramLayoutExecution;component/Images/PredefinedSmartTreeLayout32.png" />
+      </insertComponent>
+    </updateCategory>
+  </categories>
+  
+  <modules>
+    <insertModule id="CustomizeNetworkDiagramLayoutExecution_Module" className="CustomizeNetworkDiagramLayoutExecutionModule" autoLoad="true" caption="Custom Layout Module">
+     
+    </insertModule>
+  </modules>
+</ArcGIS>

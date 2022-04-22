@@ -1,0 +1,77 @@
+﻿<ArcGIS defaultAssembly="CreateDiagramWithACustomLayout.dll" defaultNamespace="CreateDiagramWithACustomLayout" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{8a91315c-717e-4ef4-9271-83bb461eba0b}" version="1.0" desktopVersion="2.9.32739">
+    <Name>Create Diagram With A Custom Layout</Name>
+    <Description>Create Network Diagrams for Telco</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>12/14/2021 9:55:05 AM</Date>
+    <Subject>NetworkDiagram</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="CreateDiagramWithACustomLayout_Module" className="CreateDiagramWithACustomLayoutModule" autoLoad="true" caption="Create Diagram With A Custom Layout">
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="CreateDiagramWithACustomLayout_Group1" caption="Telco" appearsOnAddInTab="true" condition="CreateDiagramWithACustomLayout_DiagramEnclosureCondition">
+          <!-- host controls within groups -->
+          <button refID="CreateDiagramWithACustomLayout_GenerateEnclosure" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="CreateDiagramWithACustomLayout_GenerateEnclosure" caption="Enclosure" className="GenerateEnclosure" loadOnClick="true"
+                condition="CreateDiagramWithACustomLayout_EnclosureCondition"
+                smallImage="Images\NEWClosureDiagram16.png"
+                largeImage="Images\NEWClosureDiagram32.png">
+          <tooltip heading="Generate Enclosure Diagram">
+            Generate a diagram based on the Enclosure Diagram custom diagram template from the cable component device selected in the active network map and automatically apply a custom layout to arrange the fibers that are in and out this cable component before the diagram opening.
+            <disabledText>This command is unavailable when there is no selected features in the network map and there is no Enclosure Diagram template for the active utility network.</disabledText>
+          </tooltip>
+        </button>
+      </controls>
+    </insertModule>
+
+    <updateModule refID="esri_networkanalysis_utility_module">
+      <!-- Home Tabs -->
+      <tabs>
+        <updateTab refID="esri_networkanalysis_utility_Data_Tab">
+          <insertGroup refID="CreateDiagramWithACustomLayout_Group1" insert="before" placeWith="esri_networkanalysis_utility_SubnetworkManagement_Group"/>
+        </updateTab>
+      </tabs>
+    </updateModule>
+
+  </modules>
+
+  <categories>
+    <updateCategory refID="esri_networkdiagrams_layouts">
+      <insertComponent id="Enclosure_Layout" className="EnclosureLayout" caption="Custom Telco Layout" autoLoad="true">
+        <content name="Custom Telco Layout" group="Personal Layouts" 
+                 tooltip="Apply the Enclosure Layout to arrange the fibers that are in and out the cable component device in the active diagram. This layout always applies to the entire diagram content even when there are diagram features currently selected in the diagram map."
+                 condition="CreateDiagramWithACustomLayout_DiagramEnclosureCondition"
+                 image="pack://application:,,,/CreateDiagramWithACustomLayout;component/Images/CustomLayout32.png"/>
+      </insertComponent>
+    </updateCategory>
+  </categories>
+
+  <conditions>
+    <insertCondition id="CreateDiagramWithACustomLayout_EnclosureCondition">
+      <and>
+        <not>
+          <state id="esri_editing_HasEdits" />
+        </not>
+        <state id="esri_mapping_mapPane" />
+        <state id="esri_map_utilityNetwork" />
+        <state id="esri_mapping_activeMapView_hasFeatureSelectionState" />
+        <state id="CreateDiagramWithACustomLayout_EnclosureState"/>
+      </and>
+    </insertCondition>
+    <insertCondition id="CreateDiagramWithACustomLayout_DiagramEnclosureCondition">
+      <and>
+        <state id="CreateDiagramWithACustomLayout_EnclosureState"/>        
+      </and>
+    </insertCondition>
+  </conditions>
+</ArcGIS>
