@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -28,6 +28,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Controls;
 using ArcGIS.Desktop.Mapping;
 using ArcGIS.Desktop.Mapping.Events;
+using ArcGIS.Core.Geometry.Exceptions;
 
 namespace DivideLines
 {
@@ -35,7 +36,10 @@ namespace DivideLines
   {
     public DivideLinesViewModel(System.Xml.Linq.XElement options, bool canChangeOptions) : base(options, canChangeOptions) { }
 
+    private bool _polyLineFeatureSelected = false;
+
     #region EmbeddableControl interface
+
     private bool _designMode;
     public bool DesignMode
     {
@@ -65,6 +69,7 @@ namespace DivideLines
       else
         return "";
     }
+
     #endregion
 
     public override async Task OpenAsync()
@@ -78,17 +83,23 @@ namespace DivideLines
       _okRelay = new RelayCommand(() => DivideLinesAsync(IsNumberOfParts, Value), CanDivideLines);
       NotifyPropertyChanged(() => OKCommand);
 
-      ArcGIS.Desktop.Mapping.Events.MapSelectionChangedEvent.Subscribe(OnSelectionChanged);
-      await QueuedTask.Run(() => _cachedValue = CheckSelection(MapView.Active.Map.GetSelection()));
+      MapSelectionChangedEvent.Subscribe(OnSelectionChanged);
+
+      //Run on MCT
+      _ = QueuedTask.Run(() =>
+      {
+        _polyLineFeatureSelected = CheckSelectionAsync(MapView.Active.Map.GetSelection());
+      });
     }
 
     public override Task CloseAsync()
     {
-      ArcGIS.Desktop.Mapping.Events.MapSelectionChangedEvent.Unsubscribe(OnSelectionChanged);
+      MapSelectionChangedEvent.Unsubscribe(OnSelectionChanged);
       return base.CloseAsync();
     }
 
     #region Bindable Properties
+
     private RelayCommand _okRelay;
     public ICommand OKCommand { get { return _okRelay; } }
 
@@ -118,29 +129,28 @@ namespace DivideLines
     #endregion
 
     #region Implementation
+
     private void OnSelectionChanged(MapSelectionChangedEventArgs obj)
     {
       if (obj.Map != MapView.Active.Map) return;
-
-      _cachedValue = false;
-      _cachedValue = CheckSelection(obj.Selection);
+      //Run on MCT
+      _ = QueuedTask.Run(() =>
+      {
+        _polyLineFeatureSelected = CheckSelectionAsync(obj.Selection);
+      });
     }
 
-    private static bool CheckSelection(Dictionary<MapMember, List<long>> sel)
+    private bool CheckSelectionAsync(SelectionSet sel)
     {
-      //Enable only if we have one selected polyline feature that is editable.
-      if (sel == null || sel.Values.Sum(List => List.Count) != 1) return false;
-
-      var member = sel.Keys.FirstOrDefault();
-      var oids = sel[member];
-      if (member is IDisplayTable)
+      //Enable only if we have a selected polyline feature that is editable.
+      if (sel == null || sel.Count != 1) return false;
+      var member = sel.ToDictionary().Keys.FirstOrDefault();
+      if (member is IDisplayTable displayTable)
       {
-        var dt = member as IDisplayTable;
-        var canEdit = dt.CanEditData();
+        var canEdit = displayTable.CanEditData();
         if (!canEdit) return false;
 
-        var flayer = member as FeatureLayer;
-        if (flayer == null) return false;
+        if (member is not FeatureLayer flayer) return false;
 
         if (flayer.ShapeType != ArcGIS.Core.CIM.esriGeometryType.esriGeometryPolyline) return false;
 
@@ -149,10 +159,9 @@ namespace DivideLines
       return false;
     }
 
-    private bool _cachedValue = false;
     private bool CanDivideLines()
     {
-      return _cachedValue;
+      return _polyLineFeatureSelected;
     }
 
     /// <summary>
@@ -161,44 +170,43 @@ namespace DivideLines
     /// <param name="numberOfParts">Number of parts to create.</param>
     /// <param name="value">Value for number or parts or distance.</param>
     /// <returns></returns>
-    private static Task DivideLinesAsync(bool numberOfParts, double value)
+    private Task DivideLinesAsync(bool numberOfParts, double value)
     {
       //Run on MCT
       return QueuedTask.Run(() =>
       {
-     //get selected feature
-     var selectedFeatures = MapView.Active.Map.GetSelection();
+        //get selected feature
+        var selectedFeatures = MapView.Active.Map.GetSelection();
 
-     //get the layer of the selected feature
-     var featLayer = selectedFeatures.Keys.First() as FeatureLayer;
-        var oid = selectedFeatures.Values.First().First();
+        //get the layer of the selected feature
+        var dictSelection = selectedFeatures.ToDictionary();
+        var featLayer = dictSelection.Keys.First() as FeatureLayer;
+        var oid = dictSelection.Values.First().First();
 
         var feature = featLayer.Inspect(oid);
 
-     //get geometry and length
-     var origPolyLine = feature.Shape as Polyline;
+        //get geometry and length
+        var origPolyLine = feature.Shape as Polyline;
         var origLength = GeometryEngine.Instance.Length(origPolyLine);
 
-        string xml = origPolyLine.ToXML();
-
-     //List of mappoint geometries for the split
-     var splitPoints = new List<MapPoint>();
+        //List of mappoint geometries for the split
+        var splitPoints = new List<MapPoint>();
 
         var enteredValue = (numberOfParts) ? origLength / value : value;
         var splitAtDistance = 0 + enteredValue;
 
         while (splitAtDistance < origLength)
         {
-       //create a mapPoint at splitDistance and add to splitpoint list
-       MapPoint pt = null;
+          //create a mapPoint at splitDistance and add to splitpoint list
+          MapPoint pt = null;
           try
           {
-            pt = GeometryEngine.Instance.MovePointAlongLine(origPolyLine, splitAtDistance, false, 0, SegmentExtension.NoExtension);
+            pt = GeometryEngine.Instance.MovePointAlongLine(origPolyLine, splitAtDistance, false, 0, SegmentExtensionType.NoExtension);
           }
           catch (GeometryObjectException)
           {
-         // line is an arc?
-       }
+            // line is an arc?
+          }
 
           if (pt != null)
             splitPoints.Add(pt);
@@ -210,8 +218,8 @@ namespace DivideLines
           ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Divide lines was unable to process your selected line. Please select another.", "Divide Lines");
           return;
         }
-     //create and execute the edit operation
-     var op = new EditOperation()
+        //create and execute the edit operation
+        var op = new EditOperation()
         {
           Name = "Divide Lines",
           SelectModifiedFeatures = false,
@@ -220,10 +228,11 @@ namespace DivideLines
         op.Split(featLayer, oid, splitPoints);
         op.Execute();
 
-     //clear selection
-     featLayer.ClearSelection();
+        //clear selection
+        featLayer.ClearSelection();
       });
     }
+
     #endregion
   }
 }

@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -45,8 +45,9 @@ namespace CategoriesUsage
   /// 1. Click on the Add-in tab on the ribbon
   /// 1. Select a feature layer or subtype group layer that participates in a utility network or a utility network layer
   /// 1. The Category Assignments combobox lists all the categories in the utility network
+  /// ![UI](Screenshots/Screenshot1.png)
   /// 1. Selecting a category will generate and display a table that lists the feature classes, asset groups, and asset types that reference the selected category
-  ///
+  /// ![UI](Screenshots/Screenshot2.png)
   /// </remarks>
   internal class CategoriesUsage : Module
   {

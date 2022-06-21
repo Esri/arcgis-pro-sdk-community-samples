@@ -1,4 +1,4 @@
-﻿/*
+/*
 
    Copyright 2019 Esri
 
@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -84,7 +84,7 @@ namespace Inspector_AddAttributeAsync
       var fieldNames = new List<string>() { "Precinct", "Address" };
 
       // set up the inspector
-      var inspector = new Inspector(false);
+      var inspector = new Inspector();
       foreach (var fieldName in fieldNames)
       {
         // add the attribute

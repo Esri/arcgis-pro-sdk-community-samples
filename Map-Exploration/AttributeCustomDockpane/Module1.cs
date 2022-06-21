@@ -1,4 +1,22 @@
-﻿using ArcGIS.Core.CIM;
+/*
+
+   Copyright 2022 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+*/
+using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
 using ArcGIS.Core.Geometry;
 using ArcGIS.Desktop.Catalog;
@@ -30,7 +48,7 @@ namespace AttributeCustomDockpane
 	/// 1. Make sure that the Sample data is unzipped in c:\data 
 	/// 1. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'
 	/// 1. In Visual Studio click the Build menu. Then select Build Solution.
-	/// 1. Click Start button to open ArcGIS Pro.
+	/// 1. Launch the debugger to open ArcGIS Pro.
 	/// 1. ArcGIS Pro opens, select the FeatureTest.aprx project
 	/// 1. Activate the Add-in tab on the ArcGIS Pro ribbon and click the 'Select Polygon Feature' button.
 	/// 1. Navigate on the map to a polygon feature and click on anywhere on the polygon feature to inspect that feature.

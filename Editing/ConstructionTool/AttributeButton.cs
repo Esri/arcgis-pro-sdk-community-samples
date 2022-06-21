@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -55,7 +55,7 @@ namespace ConstructionTool
                 });
 
                 // for each of the map members in the selected layers
-                foreach (var mapMember in currentSelectedFeatures)
+                foreach (var mapMember in currentSelectedFeatures.ToDictionary())
                 {
                     var featureLayer = mapMember.Key as BasicFeatureLayer;
                     // .. get the underlying table
@@ -105,7 +105,7 @@ namespace ConstructionTool
 //#if OrUseThis
                     // as an alternative approach
                     // use the feature inspector class
-                    var featureInspector = new Inspector(true);
+                    var featureInspector = new Inspector();
 
                     // fill the feature inspector with the oids from the feature layer               
                     await featureInspector.LoadAsync(mapMember.Key, currentSelectedFeatures[mapMember.Key]);

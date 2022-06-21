@@ -1,4 +1,4 @@
-﻿/*
+/*
 
    Copyright 2019 Esri
 
@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -45,7 +45,7 @@ namespace EditOperationRowEvent
         //creates a crowd planning zone
         var cpLayer = MapView.Active.Map.FindLayers("CrowdPlanning").FirstOrDefault() as FeatureLayer;
         var geom = MapView.Active.Extent.Expand(0.1, 0.1, true);
-        var poly = new PolygonBuilder(geom).ToGeometry();
+        var poly = new PolygonBuilderEx(geom).ToGeometry();
 
         //create an edit operation and execute
         var editOp = new EditOperation();

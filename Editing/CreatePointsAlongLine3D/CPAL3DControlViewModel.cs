@@ -1,10 +1,10 @@
-﻿//Copyright 2020 Esri
+//Copyright 2020 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -48,7 +48,7 @@ namespace CreatePointsAlongLine3D
 
         if (_mscToken == null)
           _mscToken = MapSelectionChangedEvent.Subscribe(OnSelectionChangedAsync);
-        SetState(MapView.Active.Map.GetSelection());
+        SetState(MapView.Active.Map.GetSelection().ToDictionary());
       });
       return Task.FromResult(true);
     }
@@ -111,7 +111,7 @@ namespace CreatePointsAlongLine3D
       if (obj.Map != MapView.Active.Map) return;
       if (_mapOverlay != null)
         _mapOverlay.Dispose();
-      SetState(obj.Selection);
+      SetState(obj.Selection.ToDictionary());
     }
 
     private async void SetState(Dictionary<MapMember, List<long>> sel)
@@ -146,16 +146,16 @@ namespace CreatePointsAlongLine3D
 
       return QueuedTask.Run(() =>
       {
-        var insp = new Inspector();
-        insp.Load(selMember, selOID);
-        _selLineGeom = insp.Shape as Polyline;
+      var insp = new Inspector();
+      insp.Load(selMember, selOID);
+      _selLineGeom = insp.Shape as Polyline;
 
-        //draw the line direction
-        if (MapView.Active.Map.MapType == MapType.Map)
-        {
-          string symbolXml = Settings1.Default.lineSymbol2D;
-          var symbol = CIMSymbolReference.FromXml(symbolXml);
-          _mapOverlay = MapView.Active.AddOverlay(_selLineGeom, symbol);
+      //draw the line direction
+      if (MapView.Active.Map.MapType == MapType.Map)
+      {
+          
+          var symbol = SymbolFactory.Instance.ConstructPointSymbol(CIMColor.CreateRGBColor(155, 75, 75), 12, SimpleMarkerStyle.Triangle);
+          _mapOverlay = MapView.Active.AddOverlay(_selLineGeom, symbol.MakeSymbolReference());
         }
 
         //draw the line direction in 3D. Not fully supported

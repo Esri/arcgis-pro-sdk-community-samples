@@ -5,18 +5,18 @@ This sample shows how to create the swatches for different types of Symbology fo
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Map-Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -33,8 +33,8 @@ Visual Studio:         2017, 2019
 1. Make sure that the Sample data is unzipped in c:\data   
 1. The projects used for this sample are 'C:\Data\FeatureTest\FeatureTest.aprx', 'C:\Data\Interacting with Maps\Interacting with Maps.aprx', and 'C:\Data\Admin\AdminSample.aprx'  
 1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro opens, select the FeatureTest.aprx project  
+1. Launch the debugger to open ArcGIS Pro.  
+1. Select the FeatureTest.aprx project  
 1. After the Map View is displayed, click on the 'Symbol Swatch' tab, and then click the 'Show Symbol Swatch Dockpane' button to show the 'Symbol Swatch Dockpane' dockpane    
 1. Position and size the dockpane to see all columns in the symbol swatch grid  
 ![UI](Screenshots/Screenshot1.png)  

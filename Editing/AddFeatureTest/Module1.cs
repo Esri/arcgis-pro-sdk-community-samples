@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -44,10 +44,9 @@ namespace AddFeatureTest
 	/// </summary>
 	/// <remarks>
 	/// 1. In Visual studio rebuild the solution.
-	/// 1. Debug the add-in by clicking the "Start" button.
+	/// 1. Debug the add-in.
 	/// 1. ArcGIS Pro opens, select a new Map project
 	/// 1. Zoom the new map into your local neighborhood, because the newly created features will be in close proximity.
-	/// ![UI](Screenshots/Screen1.png)
 	/// 1. Click the "Create Featureclasses" button to create a point and a polygon feature class.  Both are added to your map as well. 
 	/// ![UI](Screenshots/Screen2.png)
 	/// 1. Click the "Add Features" button to add 5 feature to each newly create feature class. 

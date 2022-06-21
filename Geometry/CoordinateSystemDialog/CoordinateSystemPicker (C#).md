@@ -1,23 +1,24 @@
 ## CoordinateSystemPicker
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample provides a re-usable Coordinate Picker User Control. Embed within your Add-in  if you need to provide a UI component similar to the core Coordinate Picker on the Pro Map  property sheet. The list of Coordinate systems is loaded the first time the dialog is  opened and remains cached for the duration of the Pro session. When a user picks a   
-Coordinate System, and clicks OK, it can be retrieved via the SpatialReference property on  the dialog.  
+This sample provides an example of the Coordinate Picker and Coordinate Details User Controls.   
+Embed within your Add-in if you need to provide a similar UI. The list of Coordinate systems  is loaded the first time the dialog is opened and remains cached for the duration of the Pro  session. When a user picks a Coordinate System in the top half of the dialog, the   
+Coordinate Details control is populated with that coordinate system via the SpatialReference property.  
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Geometry
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -35,9 +36,12 @@ Visual Studio:         2017, 2019
 1. ArcGIS Pro will open.  
 1. Either create a new blank project OR open an existing project.  
 1. Click on the ADD-IN TAB.  
-1. Click on the *Pick Coord Sys.* button. ![Coordinate systems loading](Screenshots/Screen1.png)  
+1. Click on the *Pick Coord Sys.* button.  The code behind queries for all available coordinate systems.    
 1. The Pick Coord System dialog will open up.  
-1. The code behind queries for all available coordinate systems.  ![Coordinate systems dialog](Screenshots/Screen2.png)  
+![Coordinate systems loading](Screenshots/Screen1.png)  
+  
+1. Choose a coordinate System and the Coordinate Details will pouplate with the spatial reference information.  
+![Coordinate systems dialog](Screenshots/Screen2.png)  
   
 
 

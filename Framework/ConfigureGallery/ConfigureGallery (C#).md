@@ -5,18 +5,18 @@ This sample shows how to use custom categories to configure buttons and tools in
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -30,11 +30,21 @@ Visual Studio:         2017, 2019
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
+1. Launch the debugger to open ArcGIS Pro.  
 1. Open any project. Click on the Configure Gallery tab on the ribbon.  
-1. Within this tab there is an inline gallery that hosts a collection of controls. Controls that are registered within the AcmeCustom_AnalysisTools custom category are displayed in this gallery.  
-Controls are registered to a category using DAML. In Config.daml, here is a code snippet that registers a control with the AcmeCustom_AnalysisTools category:  
+1. Within this tab there is an inline gallery that hosts a collection of controls. Controls that are registered within A custom category are displayed in this gallery.  
+ This tab also contains other controls that are placed directly on the ribbon, outside the gallery. These controls are not registered with the category.  
+![UI](screenshots/configuregallery.png)  
+  
+1. New custom categories are defined in DAML. Notice the following code snippet in the config.daml that defines a new category called AcmeCustom_AnalysisTools:  
+```xml
+<categories>
+ <!--Step 1-->
+ <!--Create a new category to hold new commands in a a Gallery-->
+ <insertCategory id = "AcmeCustom_AnalysisTools" ></ insertCategory >
+</ categories >
+```
+1. Controls are registered to a category using DAML. In Config.daml, here is a code snippet that registers a control with the AcmeCustom_AnalysisTools category:  
 ```xml
  <button id="ConfigureGallery_Buttons_AcmeCommand1" caption="Command 1" 
            categoryRefID="AcmeCustom_AnalysisTools" 
@@ -45,16 +55,8 @@ Controls are registered to a category using DAML. In Config.daml, here is a code
      <content version = "1.0" group="Group A" />
  </button>
 ```
-6. This tab also contains other controls that are placed directly on the ribbon, outside the gallery. These controls are not registered with the category.  
-7. New custom categories are defined in DAML. Notice the following code snippet in the config.daml that defines a new category called AcmeCustom_AnalysisTools:  
-```xml
-<categories>
- <!--Step 1-->
- <!--Create a new category to hold new commands in a a Gallery-->
- <insertCategory id = "AcmeCustom_AnalysisTools" ></ insertCategory >
-</ categories >
-```
-![UI](screenshots/configuregallery.png)  
+1. The gallery is built by finding all the controls registered in the custom category using the Categories.GetComponentElements method. You can also  define custom attributes in the content tag of the control entry in the config.daml. In this scenario we have defined a version and group attributes which are used to define how the gallery looks when dropped down.   
+![UI](screenshots/GalleryDropdown.png)  
   
 
 

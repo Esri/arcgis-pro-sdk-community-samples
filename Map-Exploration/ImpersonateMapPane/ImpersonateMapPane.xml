@@ -42,11 +42,6 @@
             Called when the pane is uninitialized.
             </summary>
         </member>
-        <member name="P:ImpersonateMapPane.ImpersonateMapPane1ViewModel.ViewXML">
-            <summary>
-            Gets the underlying definition of the associated map
-            </summary>
-        </member>
         <member name="T:ImpersonateMapPane.ImpersonateMapPane1_OpenButton">
             <summary>
             Button implementation to create a new instance of the pane and activate it.
@@ -79,19 +74,6 @@
             Called by Framework when ArcGIS Pro is closing
             </summary>
             <returns>False to prevent Pro from closing, otherwise True</returns>
-        </member>
-        <member name="T:ImpersonateMapPane.UserControl1">
-            <summary>
-            Interaction logic for UserControl1.xaml
-            </summary>
-            <summary>
-            UserControl1
-            </summary>
-        </member>
-        <member name="M:ImpersonateMapPane.UserControl1.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
         </member>
     </members>
 </doc>

@@ -6,7 +6,7 @@
     you may not use this file except in compliance with the License. 
     You may obtain a copy of the License at 
  
-         http://www.apache.org/licenses/LICENSE-2.0 
+         https://www.apache.org/licenses/LICENSE-2.0 
  
      Unless required by applicable law or agreed to in writing, software 
     distributed under the License is distributed on an "AS IS" BASIS, 
@@ -23,7 +23,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
-             xmlns:ui="clr-namespace:ImpersonateMapPane"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              d:DataContext="{Binding Path=ui.ImpersonateMapPane1ViewModel}">
@@ -44,8 +43,11 @@
       <TextBlock Text="{Binding MapURI, Mode=OneWay}" Style="{DynamicResource Esri_TextBlockRegular}" FontSize="20"></TextBlock>
     </StackPanel>
     <Border Grid.Row="1" BorderThickness="2" BorderBrush="{DynamicResource Esri_BorderBrush}" Margin="10">
-      <TextBox Text="{Binding ViewXML, Mode=OneWay}" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto"
+      <!-- At 2.x - using Xml -->
+      <!--<TextBox Text="{Binding ViewXML, Mode=OneWay}" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto"
+               IsReadOnly="True"/>-->
+      <TextBox Text="{Binding ViewDefinition, Mode=OneWay}" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto"
                IsReadOnly="True"/>
-    </Border>
+        </Border>
   </Grid>
 </UserControl>

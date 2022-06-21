@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -33,7 +33,7 @@ namespace SketchToolDemo
     /// 1. Make sure that the Sample data is unzipped in c:\Data
     /// 1. Before you run the sample verify that the project C:\Data\FeatureTest\FeatureTest.aprx" is present since this is required to run the sample.
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 1. Click Start button to open ArcGIS Pro.
+    /// 1. Launch the debugger to open ArcGIS Pro.
     /// 1. ArcGIS Pro will open. 
     /// 1. Open the "C:\Data\FeatureTest\FeatureTest.aprx" project.
     /// 1. Click on the Edit tab on the ribbon and select the 'CutTool' from the 2D edit tool gallery. 
@@ -97,7 +97,7 @@ private Task<bool> ReportNumberOfRowsChanged(EditCompletedEventArgs editArgs)
     var editChanges = editArgs.Modifies;
 
     // use this variable to store the total number of modifies
-    int countOfModifies = editChanges.Values.Sum(list => list.Count);
+    int countOfModifies = editChanges.ToDictionary().Values.Sum(list => list.Count);
 
     if (countOfModifies > 0)
         MessageBox.Show($"{countOfModifies.ToString()} features changed");

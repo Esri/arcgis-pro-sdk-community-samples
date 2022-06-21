@@ -5,18 +5,18 @@ This sample illustrates creating a multipatch, applying materials and applying t
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Geometry
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -40,16 +40,10 @@ Visual Studio:         2019
 1. A multipatch cube will be created.  
 ![UI](Screenshots/BlankCube.png)  
   
-1. From the "Add-in" tab select "Apply Materials".  
-![UI](Screenshots/RibbonUI2.png)  
-  
-1. The cube will have materials applied.  
+1. From the "Add-in" tab select "Apply Materials". The cube will have materials applied.  
 ![UI](Screenshots/CubeWithMaterials.png)  
   
-1. From the "Add-in" tab select "Apply Textures".  
-![UI](Screenshots/RibbonUI3.png)  
-  
-1. The cube will have the rubik's cube image applied as a texture.  
+1. From the "Add-in" tab select "Apply Textures".  The cube will have the rubik's cube image applied as a texture.  
 ![UI](Screenshots/CubeWithTextures.png)  
   
 

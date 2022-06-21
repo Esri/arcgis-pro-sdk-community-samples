@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicMenu", "DynamicMenu.csproj", "{DEB9DD29-7A64-4434-B111-A5B5FDCD2722}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureDynamicMenu", "FeatureDynamicMenu.csproj", "{DEB9DD29-7A64-4434-B111-A5B5FDCD2722}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1EA54A3-922A-42C0-BFC2-2938D5939334}
 	EndGlobalSection
 EndGlobal

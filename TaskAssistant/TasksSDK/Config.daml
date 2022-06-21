@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2017 Esri
@@ -7,7 +7,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,13 +18,13 @@
 
 -->
 <ArcGIS defaultAssembly="TasksSDK.dll" defaultNamespace="TasksSDK" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{5779636e-982b-4e38-b22a-13c80aa70272}" version="1.0" desktopVersion="2.0.0">
+  <AddInInfo id="{5779636e-982b-4e38-b22a-13c80aa70272}" version="1.0" desktopVersion="3.0.34047">
     <Name>TasksSDK</Name>
     <Description>Illustrates the Tasks API calls.  The API allows you to open an .esriTasks file, close the current
     task item or export a task item.</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>esri, http://www.esri.com</Company>
+    <Company>esri, https://www.esri.com</Company>
     <Date>4/1/2015 11:36:42 AM, 2015</Date>
     <Subject>Framework</Subject>
   </AddInInfo>

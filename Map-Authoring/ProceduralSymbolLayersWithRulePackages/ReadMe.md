@@ -5,18 +5,18 @@ This sample demonstrates rendering a polygon feature layer with a City Engine ru
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Map-Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -32,7 +32,7 @@ Visual Studio:         2017, 2019
 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a project package called 'ArcGISProSampleBuildings.ppkx' which is required for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\RulePackages" is available.  
 1. Open this solution in Visual Studio.    
 1. Click the build menu and select Build Solution.  
-1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.  
+1. Launch the debugger to open ArCGIS Pro.    
 1. Open the project package "ArcGISProSampleBuildings.ppkx" located in the "C:\Data\RulePackages" folder since this project contains all required data.  
 ![UI](Screenshots/Screen1.png)  
   

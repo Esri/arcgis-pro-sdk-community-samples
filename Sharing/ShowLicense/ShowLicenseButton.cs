@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,7 +16,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Script.Serialization;
 using System.Windows;
 using Microsoft.Win32;
 using ArcGIS.Desktop.Framework;
@@ -24,6 +23,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Core.Licensing;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Tests.APIHelpers.SharingDataContracts;
+using Newtonsoft.Json;
 
 namespace ShowLicense
 {
@@ -95,7 +95,7 @@ namespace ShowLicense
             string printLine = "";
             foreach (LicenseCodes lc in Enum.GetValues(typeof(LicenseCodes)))
             {
-                bool avail = LicenseInformation.IsAvailable(lc);
+                bool avail = LicenseInformation.IsCheckedOut(lc);
                 if (avail)
                 {
                     printLine += lc.ToString() + "\t" + LicenseInformation.GetExpirationDate(lc);
@@ -141,8 +141,7 @@ namespace ShowLicense
             string outStr = selfResponse.Content.ReadAsStringAsync().Result;
 
             //Deserialize the response in JSON into a usable object. 
-            JavaScriptSerializer serializer = new JavaScriptSerializer();
-            PortalSelf self_obj = (PortalSelf)serializer.Deserialize(outStr, typeof(PortalSelf));
+            PortalSelf self_obj = JsonConvert.DeserializeObject<PortalSelf>(outStr);
             if ((self_obj == null) || (self_obj.appInfo == null) || (self_obj.user == null))
             {
                 return new Tuple<bool, string>(true, printLicenseCodes() + "\nPro is licensed offline.");
@@ -158,12 +157,12 @@ namespace ShowLicense
             string outStr2 = response.Content.ReadAsStringAsync().Result;
 
             //Deserialize the response in JSON into a usable object. 
-            userLicenses obj = (userLicenses)serializer.Deserialize(outStr2, typeof(userLicenses));
+            userLicenses obj = JsonConvert.DeserializeObject<userLicenses>(outStr2);
             if (obj == null || obj.userEntitlementsString == null)
             {
                 return new Tuple<bool, string>(true, printLicenseCodes() + "\nPro is licensed offline, and signed in with a different account.");
             }
-            userEntitlementsString entitlement = (userEntitlementsString)serializer.Deserialize(obj.userEntitlementsString, typeof(userEntitlementsString));
+            userEntitlementsString entitlement = JsonConvert.DeserializeObject<userEntitlementsString>(obj.userEntitlementsString);
             if (entitlement == null)
                 return new Tuple<bool, string>(false, "Failed to fetch valid entitlements.");
             else

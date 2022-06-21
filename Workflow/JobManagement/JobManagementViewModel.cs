@@ -1,15 +1,15 @@
-   //Copyright 2019 Esri
-   //Licensed under the Apache License, Version 2.0 (the "License");
-   //you may not use this file except in compliance with the License.
-   //You may obtain a copy of the License at
+//Copyright 2019 Esri
+//Licensed under the Apache License, Version 2.0 (the "License");
+//you may not use this file except in compliance with the License.
+//You may obtain a copy of the License at
 
-   //    http://www.apache.org/licenses/LICENSE-2.0
+//    https://www.apache.org/licenses/LICENSE-2.0
 
-   //Unless required by applicable law or agreed to in writing, software
-   //distributed under the License is distributed on an "AS IS" BASIS,
-   //WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   //See the License for the specific language governing permissions and
-   //limitations under the License. 
+//Unless required by applicable law or agreed to in writing, software
+//distributed under the License is distributed on an "AS IS" BASIS,
+//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//See the License for the specific language governing permissions and
+//limitations under the License. 
 using System.Collections.Generic;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
@@ -21,11 +21,11 @@ using System.Windows.Controls;
 using ArcGIS.Desktop.Workflow.Models.JobModels;
 using ArcGIS.Desktop.Workflow;
 
-namespace WorkflowSample
+namespace JobManagement
 {
     internal class JobManagementViewModel : DockPane
     {
-        private const string _dockPaneID = "WorkflowSample_JobManagement";
+        private const string _dockPaneID = "JobManagement_JobManagement";
         private static string PaneTitle = "Job Management";
         private static string JobTypeName = "Work Order";
         private static string CreatePaneHeading = "Create Work Order";
@@ -364,7 +364,7 @@ namespace WorkflowSample
             IsHeader = true;
             IsOpen = true;
             Heading = OpenPaneHeading;
-            
+
             QueryResult jobs = QueuedTask.Run(() =>
             {
                 //build open job grid
@@ -381,8 +381,8 @@ namespace WorkflowSample
             if (selected != null)
             {
                 _previousOpen = true;
-                 QueuedTask.Run(() =>
-                 {
+                QueuedTask.Run(() =>
+                {
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                      Open_WorkOrderAsync(selected.JobID);
 #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
@@ -445,27 +445,28 @@ namespace WorkflowSample
             IsHeader = true;
 
             //fill job view grid
-            
+
             Job CurJob = await JobManagementModule.Current.OpenJobAsync(jobId);
             InfoCreated = CurJob.CreatedBy;
             InfoName = Heading = CurJob.Name;
             InfoID = CurJob.ID;
-            if (CurJob.AssignedTo == "")
+            var curAssignedTo = CurJob.CurrentStepInfo?[0]?.AssignedTo;
+            if (string.IsNullOrEmpty(curAssignedTo))
                 InfoAssigned = "Unassigned";
             else
-                InfoAssigned = CurJob.AssignedTo;
+                InfoAssigned = curAssignedTo;
         }
         #endregion
     }
 
-        /// <summary>
-        /// Button implementation to show the DockPane.
-        /// </summary>
-        internal class JobManagement_ShowButton : ArcGIS.Desktop.Framework.Contracts.Button
+    /// <summary>
+    /// Button implementation to show the DockPane.
+    /// </summary>
+    internal class JobManagement_ShowButton : ArcGIS.Desktop.Framework.Contracts.Button
+    {
+        protected override void OnClick()
         {
-            protected override void OnClick()
-            {
-                JobManagementViewModel.Show();
-            }
+            JobManagementViewModel.Show();
         }
     }
+}

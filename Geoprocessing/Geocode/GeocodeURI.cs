@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,9 +26,9 @@ namespace Geocode
     /// </summary>
     public class GeocodeURI
     {
-        //http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/find?text=380+New+York+Street%2C+Redlands%2C+CA+92373&outFields=match_addr,addr_type,region,postal,country&outSR=102100&maxLocations=5&f=pjson
+        //https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/find?text=380+New+York+Street%2C+Redlands%2C+CA+92373&outFields=match_addr,addr_type,region,postal,country&outSR=102100&maxLocations=5&f=pjson
 
-        private static string _baseURL = "http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/";
+        private static string _baseURL = "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/";
         private static string _verb = "find";
         private static string _format = "pjson";//change to "pjson" to "pretty-print"
         private StringBuilder _url = new StringBuilder();

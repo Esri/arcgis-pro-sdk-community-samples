@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -25,7 +25,7 @@ using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using System.Threading.Tasks;
 
-namespace ListAllFedServers
+namespace PortalInfoListAllFedServers
 {
 	/// <summary>
 	/// This sample shows how to retrieve detailed information about the connected Portal
@@ -35,7 +35,7 @@ namespace ListAllFedServers
 	/// 1. In Visual Studio click the Build menu. Then select Build Solution.
 	/// 1. Click Start button to open ArcGIS Pro.
 	/// 1. ArcGIS Pro will open, select any project.
-	/// 1. Click on the ADD-IN tab.
+	/// 1. Click on the Add-In tab.
 	/// 1. On the Add-in tab click the 'Show Portal Info' button.
 	/// 1. After the 'PortalInfo Dockpane' opens click on the 'Show Portal Info' button.
 	/// ![UI](Screenshots/Screen1.png)

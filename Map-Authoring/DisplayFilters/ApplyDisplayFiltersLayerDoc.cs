@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -75,7 +75,8 @@ namespace DisplayFilters
 
         //Add a new layer to the map using the configured LayerDocument in memory.
         var featureLayerParams = new LayerCreationParams(cimLyrDefn);
-        var configuredLyr = LayerFactory.Instance.CreateLayer<FeatureLayer>(featureLayerParams, MapView.Active.Map, LayerPosition.AddToTop);
+        featureLayerParams.MapMemberPosition = MapMemberPosition.AddToTop;
+        var configuredLyr = LayerFactory.Instance.CreateLayer<FeatureLayer>(featureLayerParams, MapView.Active.Map);
 
         #region Turn off the original layer visibility
         hydrologyLyr.SetVisibility(false);

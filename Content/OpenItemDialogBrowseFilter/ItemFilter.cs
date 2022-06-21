@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -91,8 +91,12 @@ namespace OpenItemDialogBrowseFilter
       var items = new List<ItemFilter>();
 
       //Read BrowseFilters.xml for list of browse filters in Pro
-      items.AddRange(GetFiltersOrItems(browseFilterXML, "esri_browseFilters"));
-      items.AddRange(GetFiltersOrItems(esriItemsXML, "esri_item"));
+      var filters = GetFiltersOrItems(browseFilterXML, "esri_browseFilters");
+      if (filters != null)
+        items.AddRange(filters);
+      filters = GetFiltersOrItems(esriItemsXML, "esri_item");
+      if (filters != null)
+        items.AddRange(filters);
       return items;
     }
     /// <summary>

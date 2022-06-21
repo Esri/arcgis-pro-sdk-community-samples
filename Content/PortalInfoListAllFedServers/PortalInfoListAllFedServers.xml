@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>ListAllFedServers</name>
+        <name>PortalInfoListAllFedServers</name>
     </assembly>
     <members>
-        <member name="T:ListAllFedServers.Button1">
+        <member name="T:PortalInfoListAllFedServers.Button1">
             <summary>
             Basics - This is the sample for PortalManagement SDK (ArcGIS.Desktop.Core.ArcGISPortal &amp; ArcGIS.Desktop.Core.ArcGISPortalManager) and EsriHttpClient.
             Usage -
@@ -14,7 +14,7 @@
             You can either manually sign in to the active portal, or wait till this program prompts you for user name and password.
             </summary>
         </member>
-        <member name="T:ListAllFedServers.Module1">
+        <member name="T:PortalInfoListAllFedServers.Module1">
             <summary>
             This sample shows how to retrieve detailed information about the connected Portal
             </summary>
@@ -23,25 +23,25 @@
             1. In Visual Studio click the Build menu. Then select Build Solution.
             1. Click Start button to open ArcGIS Pro.
             1. ArcGIS Pro will open, select any project.
-            1. Click on the ADD-IN tab.
+            1. Click on the Add-In tab.
             1. On the Add-in tab click the 'Show Portal Info' button.
             1. After the 'PortalInfo Dockpane' opens click on the 'Show Portal Info' button.
             ![UI](Screenshots/Screen1.png)
             1. Portal Information is now displayed in the text box below the 'Show Portal Info' button.
             </remarks>
         </member>
-        <member name="P:ListAllFedServers.Module1.Current">
+        <member name="P:PortalInfoListAllFedServers.Module1.Current">
             <summary>
             Retrieve the singleton instance to this module here
             </summary>
         </member>
-        <member name="M:ListAllFedServers.Module1.CanUnload">
+        <member name="M:PortalInfoListAllFedServers.Module1.CanUnload">
             <summary>
             Called by Framework when ArcGIS Pro is closing
             </summary>
             <returns>False to prevent Pro from closing, otherwise True</returns>
         </member>
-        <member name="T:ListAllFedServers.PortalInfoDockpane">
+        <member name="T:PortalInfoListAllFedServers.PortalInfoDockpane">
             <summary>
             Interaction logic for PortalInfoDockpane.xaml
             </summary>
@@ -49,37 +49,37 @@
             PortalInfoDockpane
             </summary>
         </member>
-        <member name="M:ListAllFedServers.PortalInfoDockpane.InitializeComponent">
+        <member name="M:PortalInfoListAllFedServers.PortalInfoDockpane.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
         </member>
-        <member name="M:ListAllFedServers.PortalInfoDockpaneViewModel.Show">
+        <member name="M:PortalInfoListAllFedServers.PortalInfoDockpaneViewModel.Show">
             <summary>
             Show the DockPane.
             </summary>
         </member>
-        <member name="F:ListAllFedServers.PortalInfoDockpaneViewModel._portalUrl">
+        <member name="F:PortalInfoListAllFedServers.PortalInfoDockpaneViewModel._portalUrl">
             <summary>
             Returns the current active ArcGIS Online string
             </summary>
         </member>
-        <member name="F:ListAllFedServers.PortalInfoDockpaneViewModel._CommandQuery">
+        <member name="F:PortalInfoListAllFedServers.PortalInfoDockpaneViewModel._CommandQuery">
             <summary>
             text for command query button
             </summary>
         </member>
-        <member name="F:ListAllFedServers.PortalInfoDockpaneViewModel._CommandDoQuery">
+        <member name="F:PortalInfoListAllFedServers.PortalInfoDockpaneViewModel._CommandDoQuery">
             <summary>
             Command for executing queries.  Bind to this property in the view.
             </summary>
         </member>
-        <member name="F:ListAllFedServers.PortalInfoDockpaneViewModel._QueryResult">
+        <member name="F:PortalInfoListAllFedServers.PortalInfoDockpaneViewModel._QueryResult">
             <summary>
             Query Result display area
             </summary>
         </member>
-        <member name="M:ListAllFedServers.PortalInfoDockpaneViewModel.CmdDoQuery">
+        <member name="M:PortalInfoListAllFedServers.PortalInfoDockpaneViewModel.CmdDoQuery">
             <summary>
             Execute the query command to get these info:
             1. basic portal info;

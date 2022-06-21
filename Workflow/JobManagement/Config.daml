@@ -1,41 +1,41 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--Copyright 2019 Esri
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.-->
-<ArcGIS defaultAssembly="WorkflowSample.dll" defaultNamespace="WorkflowSample" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{5058f440-a01b-4015-9144-a9ce2527af6d}" version="1.0" desktopVersion="2.0.0">
+<ArcGIS defaultAssembly="JobManagement.dll" defaultNamespace="JobManagement" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{5058f440-a01b-4015-9144-a9ce2527af6d}" version="1.0" desktopVersion="3.0.34047">
     <Name>Job Management App</Name>
     <Description>Pro Add-in for Workflow Manager</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>esri, http://www.esri.com</Company>
+    <Company>esri, https://www.esri.com</Company>
     <Date>4/13/2015 2:25:10 PM, 2015</Date>
     <Subject>Workflow</Subject>
   </AddInInfo>
   <modules>
-    <insertModule id="WorkflowSample_Module" className="JobManagementModule" autoLoad="false" caption="Job Management Module">
+    <insertModule id="JobManagement_Module" className="JobManagementModule" autoLoad="false" caption="Job Management Module">
       <tabs></tabs>
       <groups>
-        <group id="WorkflowSample_Group1" caption="WMX Group" appearsOnAddInTab="true" keytip="z1">
-          <button refID="WorkflowSample_JobManagement_ShowButton" size="large" />
+        <group id="JobManagement_Group1" caption="WMX Group" appearsOnAddInTab="true" keytip="z1">
+          <button refID="JobManagement_JobManagement_ShowButton" size="large" />
         </group>
       </groups>
       <controls>
-        <button id="WorkflowSample_JobManagement_ShowButton" caption="Show JobManagement " className="JobManagement_ShowButton" loadOnClick="true" smallImage="Images\ServiceWorkFlow16.png" largeImage="Images\ServiceWorkFlow32.png" keytip="z2">
+        <button id="JobManagement_JobManagement_ShowButton" caption="Show Job Management" className="JobManagement_ShowButton" loadOnClick="true" smallImage="Images\ServiceWorkFlow16.png" largeImage="Images\ServiceWorkFlow32.png" keytip="z2">
           <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="WorkflowSample_JobManagement" caption="Job Management " className="JobManagementViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="JobManagement_JobManagement" caption="Job Management" className="JobManagementViewModel" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="JobManagementView" />
         </dockPane>
       </dockPanes>

@@ -1,6 +1,0 @@
-subtype_code,subtype_description
-50,SIGINT - Space
-51,SIGINT - Air
-52,SIGINT - Land
-53,SIGINT - Surface
-54,SIGINT - Subsurface

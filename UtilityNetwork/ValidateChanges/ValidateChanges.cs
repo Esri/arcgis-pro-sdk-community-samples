@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -36,7 +36,6 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 using ArcGIS.Desktop.Mapping.Events;
 using UtilityNetworkSamples;
-using ArcGIS.Core.Data.UtilityNetwork.Extensions;
 
 using Version = ArcGIS.Core.Data.Version;
 
@@ -54,14 +53,13 @@ namespace ValidateChanges
         return;
       }
 
-      MapViewEventArgs mapViewEventArgs = new MapViewEventArgs(MapView.Active);
-      if (mapViewEventArgs.MapView.GetSelectedLayers().Count != 1)
+      if (MapView.Active.GetSelectedLayers().Count != 1)
       {
         MessageBox.Show("Please select a utility network layer.", "Validate Changes");
         return;
       }
 
-      Layer selectionLayer = mapViewEventArgs.MapView.GetSelectedLayers()[0];
+      Layer selectionLayer = MapView.Active.GetSelectedLayers()[0];
       if (!(selectionLayer is UtilityNetworkLayer) && !(selectionLayer is FeatureLayer) && !(selectionLayer is SubtypeGroupLayer))
       {
         MessageBox.Show("Please select a utility network layer.", "Validate Changes");
@@ -120,7 +118,7 @@ namespace ValidateChanges
         }
 
         // If we validating everything, get an envelope from the dirty areas table
-        EnvelopeBuilder envelopeBuilder = new EnvelopeBuilder(layer.GetSpatialReference());
+        EnvelopeBuilderEx envelopeBuilder = new EnvelopeBuilderEx(layer.GetSpatialReference());
 
         if (shouldValidateEverything)
         {
@@ -149,7 +147,7 @@ namespace ValidateChanges
 
         // Run validate topology on our envelope
         Envelope extent = envelopeBuilder.ToGeometry();
-        ValidationResult result = utilityNetwork.ValidateNetworkTopologyInEditOperation(extent, runAsync ? InvocationTarget.AsynchronousService : InvocationTarget.SynchronousService);
+        ValidationResult result = utilityNetwork.ValidateNetworkTopologyInEditOperation(extent, runAsync ? ServiceSynchronizationType.Asynchronous : ServiceSynchronizationType.Synchronous);
         if (result.HasErrors)
         {
           resultString.AppendLine("Errors found.");
@@ -174,7 +172,7 @@ namespace ValidateChanges
       return false;
     }
 
-    private EnvelopeBuilder GetExtentFromRowCursor(EnvelopeBuilder envelopeBuilder, RowCursor rowCursor)
+    private EnvelopeBuilderEx GetExtentFromRowCursor(EnvelopeBuilderEx envelopeBuilder, RowCursor rowCursor)
     {
       while (rowCursor.MoveNext())
       {
@@ -187,7 +185,7 @@ namespace ValidateChanges
       return envelopeBuilder;
     }
 
-    private EnvelopeBuilder GetExtentFromDifferenceCursor(EnvelopeBuilder envelopeBuilder, DifferenceCursor differenceCursor)
+    private EnvelopeBuilderEx GetExtentFromDifferenceCursor(EnvelopeBuilderEx envelopeBuilder, DifferenceCursor differenceCursor)
     {
       while (differenceCursor.MoveNext())
       {
@@ -200,11 +198,11 @@ namespace ValidateChanges
       return envelopeBuilder;
     }
 
-    private EnvelopeBuilder Union(EnvelopeBuilder envelopeBuilder, Envelope newEnvelope)
+    private EnvelopeBuilderEx Union(EnvelopeBuilderEx envelopeBuilder, Envelope newEnvelope)
     {
       if (envelopeBuilder.IsEmpty)
       {
-        return new EnvelopeBuilder(newEnvelope);
+        return new EnvelopeBuilderEx(newEnvelope);
       }
       else
       {

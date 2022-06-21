@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -61,7 +61,7 @@ namespace LockToSelectedRasters
             if (MapView.Active != null)
             {
                 // For each map member with a selection on it.
-                foreach (var element in mapSelectionChangedArgs.Selection)
+                foreach (var element in mapSelectionChangedArgs.Selection.ToDictionary())
                 {
                     // Check if the current MapMember is a Feature sub-layer of a mosaic layer.
                     if (element.Key is FeatureMosaicSubLayer && ((FeatureLayer)element.Key).Name == "Footprint")

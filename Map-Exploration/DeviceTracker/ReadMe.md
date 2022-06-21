@@ -5,18 +5,18 @@ This sample illustrates functionality associated with GNSS devices and snapshot 
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -31,7 +31,7 @@ Visual Studio:         2019
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 1. Start your GNSS device or simulator.   
 1. In Visual Studio, build the solution.  
-1. Click Start button to open ArcGIS Pro.  
+1. Launch the debugger to open ArcGIS Pro.  
 1. In Pro start with a new map.  Add a graphics layer to your map. (Map tab, Add Graphics Layer button).   
 1. Open the Add-In tab. And click the "Show GNSS Properties" button. The GNSS Properties dockpane appears.   
 1. If your device is not currently connected, the Current Properties section should be blank.   

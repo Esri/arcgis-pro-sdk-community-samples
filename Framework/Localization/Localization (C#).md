@@ -6,18 +6,18 @@ A ProTutorial based on this sample is also available.
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -35,7 +35,6 @@ Visual Studio:         2017, 2019
 3. Open the "Add-ins tab" on the ArcGIS Pro ribbon to see the sample button and dockpane in English.  Close ArcGIS Pro.  
   
 __4. Testing other languages__: in order to test other languages you need to install the proper language pack in ArcGIS Pro first.  Once you have additional languages installed you can change ArcGIS Pro's default language in the ArcGIS Pro Options dialog:   
-![package](Images/Localization/ArcGISoptions.png)  
   
 In order to view this sample you have to install the German language pack for ArcGIS Pro and Windows.  Change the language option to German and restart ArcGIS Pro.  Open the 'Registrierkarte Add-in' tab and verify that the language of you add-in is correct.  
 ![package](Images/Localization/Test4.png)  

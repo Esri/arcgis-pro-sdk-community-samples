@@ -4,6 +4,63 @@
         <name>CommandFilter</name>
     </assembly>
     <members>
+        <member name="T:CommandFilter.CommandFilter">
+            <summary>
+            Represents the customization filter. Implement <see cref="M:CommandFilter.CommandFilter.OnExecuteCommand(System.String)"/> to
+            execute your filtering logic
+            </summary>
+            <remarks>Customization filters must be registered via <see cref="M:FrameworkApplication.RegisterCustomizationFilter"/></remarks>
+        </member>
+        <member name="M:CommandFilter.CommandFilter.Register">
+            <summary>
+            Register for command filtering. Customization filters must be registered before they are
+            called.
+            </summary>
+        </member>
+        <member name="M:CommandFilter.CommandFilter.UnRegister">
+            <summary>
+            Unregister for command filtering
+            </summary>
+        </member>
+        <member name="P:CommandFilter.CommandFilter.PopMessageBox">
+            <summary>
+            Gets or sets the 'Pop Message Box' property. True will pop a message box if the
+            clicked command is filtered
+            </summary>
+        </member>
+        <member name="P:CommandFilter.CommandFilter.IsRegistered">
+            <summary>
+            Gets the flag indicating whether the filter is registered
+            </summary>
+        </member>
+        <member name="P:CommandFilter.CommandFilter.IsFiltering">
+            <summary>
+            Gets whether we are filtering
+            </summary>
+        </member>
+        <member name="M:CommandFilter.CommandFilter.StartFiltering">
+            <summary>
+            Start filtering
+            </summary>
+        </member>
+        <member name="M:CommandFilter.CommandFilter.StopFiltering">
+            <summary>
+            Stop filtering
+            </summary>
+        </member>
+        <member name="M:CommandFilter.CommandFilter.OnExecuteCommand(System.String)">
+            <summary>
+            Implement your custom filtering logic here. OnCommandExecute is called every time
+            a command is clicked on the UI.
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CommandFilter.CommandFilter.Dispose">
+            <summary>
+            Implements IDisposable
+            </summary>
+        </member>
         <member name="T:CommandFilter.CommandFilterDockPaneView">
             <summary>
             Interaction logic for CommandFilterDockPaneView.xaml
@@ -56,63 +113,6 @@
         <member name="T:CommandFilter.CommandFilterDockPane_ShowButton">
             <summary>
             Button implementation to show the DockPane.
-            </summary>
-        </member>
-        <member name="T:CommandFilter.CommandFilter">
-            <summary>
-            Represents the customization filter. Implement <see cref="M:CommandFilter.CommandFilter.OnCommandToExecute(System.String)"/> to
-            execute your filtering logic
-            </summary>
-            <remarks>Customization filters must be registered via <see cref="M:FrameworkApplication.RegisterCustomizationFilter"/></remarks>
-        </member>
-        <member name="M:CommandFilter.CommandFilter.Register">
-            <summary>
-            Register for command filtering. Customization filters must be registered before they are
-            called.
-            </summary>
-        </member>
-        <member name="M:CommandFilter.CommandFilter.UnRegister">
-            <summary>
-            Unregister for command filtering
-            </summary>
-        </member>
-        <member name="P:CommandFilter.CommandFilter.PopMessageBox">
-            <summary>
-            Gets or sets the 'Pop Message Box' property. True will pop a message box if the
-            clicked command is filtered
-            </summary>
-        </member>
-        <member name="P:CommandFilter.CommandFilter.IsRegistered">
-            <summary>
-            Gets the flag indicating whether the filter is registered
-            </summary>
-        </member>
-        <member name="P:CommandFilter.CommandFilter.IsFiltering">
-            <summary>
-            Gets whether we are filtering
-            </summary>
-        </member>
-        <member name="M:CommandFilter.CommandFilter.StartFiltering">
-            <summary>
-            Start filtering
-            </summary>
-        </member>
-        <member name="M:CommandFilter.CommandFilter.StopFiltering">
-            <summary>
-            Stop filtering
-            </summary>
-        </member>
-        <member name="M:CommandFilter.CommandFilter.OnCommandToExecute(System.String)">
-            <summary>
-            Implement your custom filtering logic here. OnCommandExecute is called every time
-            a command is clicked on the UI.
-            </summary>
-            <param name="ID"></param>
-            <returns></returns>
-        </member>
-        <member name="M:CommandFilter.CommandFilter.Dispose">
-            <summary>
-            Implements IDisposable
             </summary>
         </member>
         <member name="P:CommandFilter.Models.CommandFilterItem.ClickCount">

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en">
+    <Esri>
+        <CreaDate>20190503</CreaDate>
+        <CreaTime>07463700</CreaTime>
+        <ArcGISFormat>1.0</ArcGISFormat>
+        <SyncOnce>TRUE</SyncOnce>
+        <ModDate>20190503</ModDate>
+        <ModTime>074637</ModTime>
+        <DataProperties>
+            <lineage>
+                <Process ToolSource="c:\arcgis\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Rename" Date="20190503" Time="074713">Rename "C:\temp\tbx\New Toolbox.tbx" "C:\temp\tbx\Deep Thought.tbx" Toolbox</Process>
+            </lineage>
+        </DataProperties>
+    </Esri>
+    <toolbox name="New Toolbox" alias="NewToolbox">
+        <arcToolboxHelpPath>c:\arcgis\Resources\Help\gp</arcToolboxHelpPath>
+        <toolsets/>
+    </toolbox>
+    <dataIdInfo>
+        <idCitation>
+            <resTitle>New Toolbox</resTitle>
+        </idCitation>
+    </dataIdInfo>
+    <distInfo>
+        <distributor>
+            <distorFormat>
+                <formatName>ArcToolbox Toolbox</formatName>
+            </distorFormat>
+        </distributor>
+    </distInfo>
+</metadata>

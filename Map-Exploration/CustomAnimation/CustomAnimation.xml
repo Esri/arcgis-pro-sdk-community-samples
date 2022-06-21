@@ -4,51 +4,22 @@
         <name>CustomAnimation</name>
     </assembly>
     <members>
-        <member name="T:CustomAnimation.CenterAt">
-            <summary>
-            Tool used to click in the view and capture the point clicked to be used to construct keyframes around.
-            </summary>
-        </member>
-        <member name="M:CustomAnimation.CenterAt.OnToolMouseUp(ArcGIS.Desktop.Mapping.MapViewMouseButtonEventArgs)">
-            <summary>
-            Called when the mouse button is released in the view.
-            </summary>
-        </member>
-        <member name="M:CustomAnimation.CenterAt.HandleMouseUpAsync(ArcGIS.Desktop.Mapping.MapViewMouseButtonEventArgs)">
-            <summary>
-            Asynchronous callback if the OnTooMouseUp event is handled.
-            </summary>
-            <param name="e"></param>
-        </member>
-        <member name="M:CustomAnimation.CenterAt.OnUpdate">
-            <summary>
-            Called regularly by the framework.
-            </summary>
-        </member>
-        <member name="T:CustomAnimation.DegreesEdit">
-            <summary>
-            Edit box which is used to set the total number of degrees to rotate around the point.
-            </summary>
-        </member>
-        <member name="M:CustomAnimation.DegreesEdit.OnEnter">
-            <summary>
-            Called when text is committed to the edit box.
-            </summary>
-        </member>
         <member name="T:CustomAnimation.Animation">
             <summary>
             This sample shows how to create custom animations such as flying along a 3D line feature and rotating around a point of interest.
             </summary>
             <remarks>
             1. In Visual Studio click the Build menu. Then select Build Solution.
-            2. Click Start button to open ArcGIS Pro.
-            3. ArcGIS Pro will open. 
+            2. Launch the debugger to open ArcGIS Pro.
             4. With a 3D scene view active go to the Add-In tab.
             5. Select a 3D line features in the scene.
             6. Click the Follow Path button. This will create new keyframes that you can use to animate along the path. 
-            7. On the Animation tab click the play button to fly along the line. Additional options are available in the Path group on the Add-In tab to configure how the keyframes are created.
-            8. Click the Center At tool and with the tool active click a point of interest in the view.
-            9. New keyframes will be constructed that will fly around the point keeping the point you clicked at the center of the view.
+            7. On the Animation tab click the Timeline button to see the animation timeline.  Click the Play button in the Animation tab to fly along the line. 
+            8. Additional options are available in the Path group on the Add-In tab to configure how the keyframes are created.  Experiment by 
+            clicking the Clear Animation button on the Add-In tab to remove the existing keyframes, change a few of the options and click the Follow Path
+            button to create a different set of keyframes. Play these animations to see the differences. 
+            9. Click the Center At tool and with the tool active click a point of interest in the view.
+            10. New keyframes will be constructed that will fly around the point keeping the point you clicked at the center of the view.
             </remarks>
         </member>
         <member name="P:CustomAnimation.Animation.Current">
@@ -100,6 +71,37 @@
             </summary>
             <param name="insertTime">The time at which all keyframes after should be shifted.</param>
             <param name="duration">The amount of time to shift each keyframe.</param>
+        </member>
+        <member name="T:CustomAnimation.CenterAt">
+            <summary>
+            Tool used to click in the view and capture the point clicked to be used to construct keyframes around.
+            </summary>
+        </member>
+        <member name="M:CustomAnimation.CenterAt.OnToolMouseUp(ArcGIS.Desktop.Mapping.MapViewMouseButtonEventArgs)">
+            <summary>
+            Called when the mouse button is released in the view.
+            </summary>
+        </member>
+        <member name="M:CustomAnimation.CenterAt.HandleMouseUpAsync(ArcGIS.Desktop.Mapping.MapViewMouseButtonEventArgs)">
+            <summary>
+            Asynchronous callback if the OnTooMouseUp event is handled.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:CustomAnimation.CenterAt.OnUpdate">
+            <summary>
+            Called regularly by the framework.
+            </summary>
+        </member>
+        <member name="T:CustomAnimation.DegreesEdit">
+            <summary>
+            Edit box which is used to set the total number of degrees to rotate around the point.
+            </summary>
+        </member>
+        <member name="M:CustomAnimation.DegreesEdit.OnEnter">
+            <summary>
+            Called when text is committed to the edit box.
+            </summary>
         </member>
         <member name="T:CustomAnimation.FollowPath">
             <summary>

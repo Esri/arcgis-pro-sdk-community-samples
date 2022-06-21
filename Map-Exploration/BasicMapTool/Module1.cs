@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -35,7 +35,7 @@ namespace BasicMapTool
     /// <remarks>   
     /// 1. Open this solution in Visual Studio.  
     /// 1. Click the build menu and select Build Solution.
-    /// 1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.
+    /// 1. Launch the debugger to open ArCGIS Pro. 
     /// 1. Open any project or a blank map.
     /// 1. Click on the Add-in tab and see that a 'Show Coordinates' button was added.
     /// 1. Click the 'Show Coordinates' button and click anywhere on your map pane.

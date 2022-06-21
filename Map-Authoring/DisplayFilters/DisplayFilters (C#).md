@@ -5,18 +5,18 @@ This sample demonstrates how to add Display Filters to Feature Layers.
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -31,18 +31,17 @@ Visual Studio:         2019
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\DisplayFilters' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\DisplayFilters" is available.  
 1. In Visual Studio click the Build menu. Then select Build Solution.    
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
+1. Launch the debugger to open ArcGIS Pro.  
 1. Create a new blank Map project.   
 1. Add the C:\Data\DisplayFilters\Hydrology.lpkx layer file to the map. This is a sample dataset of the Hydrology in the US available with the [ArcGIS Pro SDK Community Data](https://github.com/Esri/arcgis-pro-sdk-community-samples#samples-data).  
-1. [UI](screenshots/Hydrology.png)  
+1. [UI](screenshots/Hydrology.PNG)  
 1. Click the Add-In tab.  There should be two buttons created by this sample on this tab in the "Display Filters" group: Apply Display Filters 1 amd Apply Display Filters 2.  
-[UI](screenshots/Buttons.png)  
+[UI](screenshots/buttons.PNG)  
   
 1. These buttons create and apply display filters to view the dense Hydrology dataset.   
 1. The "Apply Display Filters 1" button uses the CIMDefinition of the Hydrology layer using the GetDefinition\SetDefinition method pair.   
 1. The "Apply Display Filters 2" button uses the LayerDocument class to retrieve and work with the CIMDefinition.  
-![UI](screenshots/DisplayFilter.png)  
+![UI](screenshots/DisplayFilter.PNG)  
   
 
 

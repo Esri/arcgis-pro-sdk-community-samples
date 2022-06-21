@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -38,10 +38,9 @@ namespace CIMExamples
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data). The sample data contains an ArcGIS Pro project and data to be used for this sample. Make sure that the Sample data is unzipped in c:\data and c:\data\Admin is available.
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 1. Click Start button to open ArcGIS Pro.
-    /// 1. ArcGIS Pro will open.
+    /// 1. Launch the debugger to open ArcGIS Pro.
     /// 1. Open the project 'C:\Data\Admin\AdminSample.aprx'.  Please note that layer names and other specific data is required for this sample, hence this specific project is required.
-    /// 1. Click on the 'CIM Examples' TAB.
+    /// 1. Click on the 'CIM Examples' tab.
     /// ![CIMExamples](Screenshots/Screenshot1.png)
     /// 1. Click the 'Renderer From Scratch' button to create a new render for the States layer:
     /// ![CIMExamples](Screenshots/Screenshot2.png)

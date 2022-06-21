@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -33,7 +33,7 @@ namespace CallScriptFromNet
     /// 1. Make sure there is a Python script under ..\CallScriptFromNet\CallScriptFromNet folder.
     /// 2. Example script included in that folder is named test.py
     /// 3. Build the solution - make sure it compiles successfully.
-    /// 4. Open ArcGIS Pro - go to ADD-IN Tab, find RunPyScriptButton in Group 1 group.
+    /// 4. Open ArcGIS Pro - go to Add-In Tab, find RunPyScriptButton in Group 1 group.
     /// 5. Click on the button - wait few seconds - a message box will show up with a message of "Hello - this message is from a TEST Python script"
     /// </remarks>
     internal class RunPyScriptButton : Button
@@ -45,12 +45,12 @@ namespace CallScriptFromNet
         {
             // TODO: fix the path to test1.py so that it points to the proper file location
 
-            var pathProExe = System.IO.Path.GetDirectoryName((new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath);
+            var pathProExe = System.IO.Path.GetDirectoryName((new System.Uri(Assembly.GetEntryAssembly().Location)).AbsolutePath);
             if (pathProExe == null) return;
             pathProExe = Uri.UnescapeDataString(pathProExe);
             pathProExe = System.IO.Path.Combine(pathProExe, @"Python\envs\arcgispro-py3");
             System.Diagnostics.Debug.WriteLine(pathProExe);
-            var pathPython = System.IO.Path.GetDirectoryName((new System.Uri(Assembly.GetExecutingAssembly().CodeBase)).AbsolutePath);
+            var pathPython = System.IO.Path.GetDirectoryName((new System.Uri(Assembly.GetExecutingAssembly().Location)).AbsolutePath);
             if (pathPython == null) return;
             pathPython = Uri.UnescapeDataString(pathPython);
             System.Diagnostics.Debug.WriteLine(pathPython);

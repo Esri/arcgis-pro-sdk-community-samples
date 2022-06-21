@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -7,7 +7,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="Inspector_AddAttributeAsync.dll" defaultNamespace="Inspector_AddAttributeAsync" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{dbf33f73-9bfc-4909-9858-86dc00e911d7}" version="1.0" desktopVersion="2.4.0">
+  <AddInInfo id="{dbf33f73-9bfc-4909-9858-86dc00e911d7}" version="1.0" desktopVersion="3.0.34047">
     <Name>Inspector_AddAttributeAsync</Name>
     <Description>A sample that shows an example of Inspector AddAttributeAsync</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>esri, http://www.esri.com</Company>
+    <Company>esri, https://www.esri.com</Company>
     <Date>11/14/2019 12:00:43 PM, 2019</Date>
     <Subject>Editing</Subject>
     <!-- Note subject can be one or more of these topics:

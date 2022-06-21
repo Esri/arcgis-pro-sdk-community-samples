@@ -1,4 +1,4 @@
-﻿/*
+/*
 
    Copyright 2019 Esri
 
@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -98,15 +98,15 @@ namespace TransferAttributes
         var targetFeatures = MapView.Active.GetFeatures(targetPt);
 
         // make sure there are actually some features
-        if ((sourceFeatures == null) || (sourceFeatures.Keys.Count == 0) || 
-                (targetFeatures == null) || (targetFeatures.Keys.Count == 0))
+        if ((sourceFeatures == null) || (sourceFeatures.ToDictionary().Keys.Count == 0) || 
+                (targetFeatures == null) || (targetFeatures.ToDictionary().Keys.Count == 0))
           return false;
 
         // take the first feature in each 
-        var sourcelayer = sourceFeatures.Keys.First();
+        var sourcelayer = sourceFeatures.ToDictionary().Keys.First();
         var sourceOID = sourceFeatures[sourcelayer][0];
 
-        var targetLayer = targetFeatures.Keys.First();
+        var targetLayer = targetFeatures.ToDictionary().Keys.First();
         var targetOID = targetFeatures[targetLayer][0];
 
         // create the edit operation

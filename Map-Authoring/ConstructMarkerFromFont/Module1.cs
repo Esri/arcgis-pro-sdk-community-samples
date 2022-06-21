@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -37,9 +37,8 @@ namespace ConstructMarkerFromFont
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution. 
-  /// 1. This solution is using the **Extended.Wpf.Toolkit Nuget**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package Extended.Wpf.Toolkit".
-  /// 1. Click Start button to open ArcGIS Pro.
-  /// 1. ArcGIS Pro will open. 
+  /// 1. This solution is using the **DotNetProjects.Extended.Wpf.Toolkit**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package DotNetProjects.Extended.Wpf.Toolkit".
+  /// 1. Launch the debugger to open ArcGIS Pro.
   /// 1. Open any project file that contains a point feature layer. 
   /// 1. Right click on the point feature layer to bring up the context menu.
   /// 1. Select the "Construct Marker from Fonts" menu item.

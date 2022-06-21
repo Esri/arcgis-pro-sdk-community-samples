@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -47,7 +47,7 @@ namespace ExtendTool
                 //get selected feature geometry
                 var selectedFeatures = MapView.Active.Map.GetSelection();
                 var insp = new Inspector();
-                insp.Load(selectedFeatures.Keys.First(), selectedFeatures.Values.First());
+                insp.Load(selectedFeatures.ToDictionary().Keys.First(), selectedFeatures.ToDictionary().Values.First());
                 var selGeom = GeometryEngine.Instance.Project(insp.Shape, MapView.Active.Map.SpatialReference);
                 if (!(selGeom.GeometryType == GeometryType.Polygon
                     || selGeom.GeometryType == GeometryType.Polyline))
@@ -58,8 +58,8 @@ namespace ExtendTool
 
                 //find feature at the click
                 var clickFeatures = MapView.Active.GetFeatures(geometry);
-                var featuresOids = clickFeatures[clickFeatures.Keys.First()]; 
-                insp.Load(clickFeatures.First().Key, featuresOids.First());
+                var featuresOids = clickFeatures[clickFeatures.ToDictionary().Keys.First()]; 
+                insp.Load(clickFeatures.ToDictionary().First().Key, featuresOids.First());
                 var clickGeom = insp.Shape as Polyline;
                 if (clickGeom == null)
                 {

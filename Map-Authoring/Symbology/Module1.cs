@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -33,8 +33,7 @@ namespace Symbology
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.  
-    /// 1. Click Start button to open ArcGIS Pro.
-    /// 1. ArcGIS Pro will open. 
+    /// 1. Launch the debugger to open ArcGIS Pro.
     /// 1. Open any project file. 
     /// 1. In Add-in tab, click the "Show Symbology pane" button.
     /// 1. In the Symbology pane, you can see the custom Point, Line and Polygon symbols available in this sample. Select

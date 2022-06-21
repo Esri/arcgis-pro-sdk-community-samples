@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,6 +23,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ArcGIS.Core.CIM;
 using ArcGIS.Desktop.Core;
+using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 
@@ -37,11 +38,18 @@ namespace Renderer
         /// <remarks>
         /// ![Simple Renderer for Polygon features](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/simple-polygon.png)
         /// </remarks>
-        /// <param name="featureLayer"></param>
         /// <returns>
         /// </returns>
-        internal static Task SimpleRendererPolygon(FeatureLayer featureLayer)
-        {            
+        internal static Task SimpleRendererPolygon()
+        {
+            //Check feature layer name
+            //Code works with the USDemographics feature layer available with the ArcGIS Pro SDK Sample data
+            var featureLayer = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault(f => f.Name == "USDemographics");
+            if (featureLayer == null)
+            {
+              MessageBox.Show("This renderer works with the USDemographics feature layer available with the ArcGIS Pro SDK Sample data", "Data missing");
+              return Task.FromResult(0);
+            }
             return QueuedTask.Run(() =>
             {
                 //Creating a polygon with a red fill and blue outline.
@@ -68,11 +76,18 @@ namespace Renderer
         /// <remarks>
         /// ![Simple Renderer for Point features](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/simple-point.png)
         /// </remarks>
-        /// <param name="featureLayer"></param>
         /// <returns>
         /// </returns>
-        internal static Task SimpleRendererPoint(FeatureLayer featureLayer)
-        {            
+        internal static Task SimpleRendererPoint()
+        {
+            //Check feature layer name
+            //Code works with the USDemographics feature layer available with the ArcGIS Pro SDK Sample data
+            var featureLayer = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault(f => f.ShapeType == esriGeometryType.esriGeometryPoint);
+            if (featureLayer == null)
+            {
+              MessageBox.Show("This renderer works with a point feature layer", "Data missing");
+              return Task.FromResult(0);
+            }
             return QueuedTask.Run(() =>
             {
                 //Create a circle marker
@@ -97,11 +112,18 @@ namespace Renderer
         /// <remarks>
         /// ![Simple Renderer for Line features](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/simple-line.png)
         /// </remarks>
-        /// <param name="featureLayer"></param>
         /// <returns>
         /// </returns>
-        internal static Task SimpleRendererLine(FeatureLayer featureLayer)
-        {            
+        internal static Task SimpleRendererLine()
+        {
+            //Check feature layer name
+            //Code works with the USDemographics feature layer available with the ArcGIS Pro SDK Sample data
+            var featureLayer = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault(f => f.Name == "U.S. National Transportation Atlas Interstate Highways");
+            if (featureLayer == null)
+            {
+              MessageBox.Show("This renderer works with the U.S. National Transportation Atlas Interstate Highways feature layer available with the ArcGIS Pro SDK Sample data", "Data missing");
+              return Task.FromResult(0);
+            }
             return QueuedTask.Run(() =>
             {
                 //Create a circle marker
@@ -125,10 +147,17 @@ namespace Renderer
     /// <remarks>
     /// ![Simple Renderer Style item](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/simple-line-style-item.png)
     /// </remarks>
-    /// <param name="featureLayer"></param>
     /// <returns></returns>
-    internal static Task SimpleRendererLineFromStyeItem(FeatureLayer featureLayer)
+    internal static Task SimpleRendererLineFromStyeItem()
         {
+          //Check feature layer name
+          //Code works with the USDemographics feature layer available with the ArcGIS Pro SDK Sample data
+          var featureLayer = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault(f => f.Name == "U.S. National Transportation Atlas Interstate Highways");
+          if (featureLayer == null)
+          {
+            MessageBox.Show("This renderer works with the U.S. National Transportation Atlas Interstate Highways feature layer available with the ArcGIS Pro SDK Sample data", "Data missing");
+            return Task.FromResult(0);
+          }
           //Get all styles in the project
           var styleProjectItem2D = Project.Current.GetItems<StyleProjectItem>().FirstOrDefault(s => s.Name == "ArcGIS 2D");
 

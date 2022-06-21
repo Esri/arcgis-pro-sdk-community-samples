@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -42,12 +42,12 @@ namespace ConfigureGallery.Buttons
 		{
 			await Module1.Current.RunMe(this.Caption);
 		}
-
-		internal class AcmeCommand1 : AcmeCommands { }
-		internal class AcmeCommand2 : AcmeCommands { }
-		internal class AcmeCommand3 : AcmeCommands { }
-		internal class AcmeCommand4 : AcmeCommands { }
-		internal class AcmeCommand5 : AcmeCommands { }
-		internal class AcmeCommand6 : AcmeCommands { }
 	}
+
+	internal class AcmeCommand1 : AcmeCommands { }
+	internal class AcmeCommand2 : AcmeCommands { }
+	internal class AcmeCommand3 : AcmeCommands { }
+	internal class AcmeCommand4 : AcmeCommands { }
+	internal class AcmeCommand5 : AcmeCommands { }
+	internal class AcmeCommand6 : AcmeCommands { }
 }

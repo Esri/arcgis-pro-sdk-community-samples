@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -36,25 +36,28 @@ namespace MapControl {
         public ShowOverview() {
             RegisterForActiveViewChanged();
         }
-        protected override void OnClick() {
-            if (_isOpen)
-                return;
-            _overview = new OverviewWindow();
+    protected override void OnClick()
+    {
+      if (_isOpen)
+        return;
+      _overview = new OverviewWindow();
       var cam = MapView.Active.Camera;
-      cam.Heading = 90;
-            _overview.ViewContent = MapControlContentFactory.Create(
-                MapView.Active.Map, cam, MapView.Active.ViewingMode);
-            _overview.Closed += (s, e) => {
-                _isOpen = false;
-                lock (_lock) {
-                    _overview = null;
-                }
-            };
-            _overview.Show();
-            _isOpen = true;
+      //cam.Heading = 90;
+      _overview.ViewContent = MapControlContentFactory.Create(
+          MapView.Active.Map, cam, MapView.Active.ViewingMode);
+      _overview.Closed += (s, e) =>
+      {
+        _isOpen = false;
+        lock (_lock)
+        {
+          _overview = null;
         }
+      };
+      _overview.Show();
+      _isOpen = true;
+    }
 
-        private void RegisterForActiveViewChanged() {
+    private void RegisterForActiveViewChanged() {
             ArcGIS.Desktop.Mapping.Events.ActiveMapViewChangedEvent.Subscribe((args) => {
                 if (args.IncomingView == null)
                     return;

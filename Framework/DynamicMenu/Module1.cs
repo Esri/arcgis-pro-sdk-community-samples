@@ -3,9 +3,9 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
-//   Unless required by applicable law or agreed to in writing, software
+//   Unless required by applicable law or agreed to in writing, softwarenamespace  FeatureDynamicMenu
 //   distributed under the License is distributed on an "AS IS" BASIS,
 //   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //   See the License for the specific language governing permissions and
@@ -19,7 +19,7 @@ using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using System.Threading.Tasks;
 
-namespace FeatureDynamicMenu
+namespace  FeatureDynamicMenu
 {/// <summary>
  /// This sample shows how to display a dynamic context menu. The sample also have an embeddabel control on the map that allows you pick the layer you want to select.   
  /// When you select features with this tool, the oids of the features will be displayed in a dynamic context menu. 

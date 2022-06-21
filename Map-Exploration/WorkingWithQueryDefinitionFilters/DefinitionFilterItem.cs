@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -39,19 +39,19 @@ namespace WorkingWithQueryDefinitionFilters
         private string _queryExpression;
         private string _expressionName;
         private MapMember _mapMember;
-        private CIMDefinitionFilter _definitionFilter;
+        private DefinitionQuery _definitionFilter;
         private bool _isActiveFilter;
 
-        public DefinitionFilterItem(MapMember mapMember, CIMDefinitionFilter definitionFilter)
+        public DefinitionFilterItem(MapMember mapMember, DefinitionQuery definitionQuery)
         {
             //if (definitionFilter == null) return;
             _mapMember = mapMember;
-            _queryExpression = definitionFilter?.DefinitionExpression;
-            _expressionName = definitionFilter?.Name;
-            _definitionFilter = definitionFilter;
+            _queryExpression = definitionQuery?.WhereClause;
+            _expressionName = definitionQuery?.Name;
+            _definitionFilter = definitionQuery;
             var queryBuilderControlProps = new QueryBuilderControlProperties
             {
-                Expression = DefinitionFilter?.DefinitionExpression,
+                Expression = CurrentDefinitionQuery?.WhereClause,
                 EditClauseMode = true,
                 MapMember = ItemMapMember,
                 AutoValidate = true
@@ -100,7 +100,7 @@ namespace WorkingWithQueryDefinitionFilters
         {
             get
             {
-                _editExpressionCommand = new RelayCommand(() => EditExpression(), () => { return !(string.IsNullOrEmpty(DefinitionFilter.DefinitionExpression)); });
+                _editExpressionCommand = new RelayCommand(() => EditExpression(), () => { return !(string.IsNullOrEmpty(CurrentDefinitionQuery.WhereClause)); });
                 return _editExpressionCommand;
             }
         }
@@ -131,11 +131,11 @@ namespace WorkingWithQueryDefinitionFilters
             set { SetProperty(ref _controlProps, value, () => ControlProperties); }
         }
 
-        public CIMDefinitionFilter DefinitionFilter
+        public DefinitionQuery CurrentDefinitionQuery
         {
             get { return _definitionFilter; }
             set {
-                SetProperty(ref _definitionFilter, value, () => DefinitionFilter);
+                SetProperty(ref _definitionFilter, value, () => CurrentDefinitionQuery);
             }
         }
         private void EditExpression()
@@ -153,18 +153,19 @@ namespace WorkingWithQueryDefinitionFilters
             {
                 if (ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show($"Do you wish to remove {ExpressionName} expression?", $"Remove {ExpressionName} Definition Query", System.Windows.MessageBoxButton.YesNo, System.Windows.MessageBoxImage.Question) == System.Windows.MessageBoxResult.Yes)
                 {
-                    Module1.Current.DefFilterVM.DefinitionFilters.Remove(this);
+                    //Module1.Current.DefFilterVM.DefinitionFilters.Remove(this);
 
-                    //Apply these filters to the Selected Map Member
                     if (_mapMember is BasicFeatureLayer)
                     {
                         var selectedMapMemberAsLayer = _mapMember as BasicFeatureLayer;
-                        QueuedTask.Run(() => selectedMapMemberAsLayer.RemoveDefinitionFilter(DefinitionFilter.Name));
+                        int indexOfQueryToDelete =  selectedMapMemberAsLayer.DefinitionQueries.ToList().FindIndex(a => a.WhereClause == QueryExpression);
+                        QueuedTask.Run(() => selectedMapMemberAsLayer.RemoveDefinitionQuery(indexOfQueryToDelete));
                     }
                     if (_mapMember is StandaloneTable)
                     {
                         var selectedMapMemberAsTable = _mapMember as StandaloneTable;
-                        QueuedTask.Run(() => selectedMapMemberAsTable.RemoveDefinitionFilter(DefinitionFilter.Name));
+                        int indexOfQueryToDelete = selectedMapMemberAsTable.DefinitionQueries.ToList().FindIndex(a => a.WhereClause == QueryExpression);
+                        QueuedTask.Run(() => selectedMapMemberAsTable.RemoveDefinitionQuery(indexOfQueryToDelete));
                     }
                 }
             }               
@@ -179,12 +180,12 @@ namespace WorkingWithQueryDefinitionFilters
                 if (_mapMember is BasicFeatureLayer)
                 {
                     var selectedMapMemberAsLayer = _mapMember as BasicFeatureLayer;
-                    QueuedTask.Run(() => selectedMapMemberAsLayer.SetDefinitionFilter(DefinitionFilter));
+                    QueuedTask.Run(() => selectedMapMemberAsLayer.SetActiveDefinitionQuery(this.CurrentDefinitionQuery.Name));
                 }
                 if (_mapMember is StandaloneTable)
                 {
                     var selectedMapMemberAsTable = _mapMember as StandaloneTable;
-                    QueuedTask.Run(() => selectedMapMemberAsTable.SetDefinitionFilter(DefinitionFilter));
+                    QueuedTask.Run(() => selectedMapMemberAsTable.SetActiveDefinitionQuery(this.CurrentDefinitionQuery.Name));
                 }
             }
         }
@@ -194,20 +195,22 @@ namespace WorkingWithQueryDefinitionFilters
             if ((Module1.Current.ActiveFilterExists)) //multiple filters with same expression and name can exist.
                 return false;
             bool isActiveFilter;
-            CIMDefinitionFilter activeQueryFilter = null;
+            string activeQuery = null;
             if (this._mapMember == null) return false;
 
             if (_mapMember is BasicFeatureLayer)
             {
-                activeQueryFilter = (this._mapMember as BasicFeatureLayer).DefinitionFilter;
+                if ((this._mapMember as BasicFeatureLayer).ActiveDefinitionQuery == null) return false;
+                activeQuery = (this._mapMember as BasicFeatureLayer).ActiveDefinitionQuery.Name;
                 
             }
             if (this._mapMember is StandaloneTable)
             {
-                activeQueryFilter = (this._mapMember as StandaloneTable).DefinitionFilter;
+                if ((this._mapMember as StandaloneTable).ActiveDefinitionQuery == null) return false;
+               activeQuery = (this._mapMember as StandaloneTable).ActiveDefinitionQuery.Name;
             }
-            if (activeQueryFilter == null) return false;
-            isActiveFilter = ( (activeQueryFilter.Name == this.DefinitionFilter?.Name) && (activeQueryFilter.DefinitionExpression == this.DefinitionFilter?.DefinitionExpression) )? true : false;
+            if (activeQuery == null) return false;
+            isActiveFilter = ( (activeQuery == this.CurrentDefinitionQuery?.Name) && (activeQuery == this.CurrentDefinitionQuery?.WhereClause) )? true : false;
             if (isActiveFilter)
                 Module1.Current.ActiveFilterExists = true; //set this to true for the first pass
             return isActiveFilter;

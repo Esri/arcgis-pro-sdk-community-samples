@@ -1,10 +1,10 @@
-﻿//Copyright 2020 Esri
+//Copyright 2020 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -29,7 +29,7 @@ namespace DeviceTracker
   /// <remarks>
   /// 1. Start your GNSS device or simulator. 
   /// 1. In Visual Studio, build the solution.
-  /// 1. Click Start button to open ArcGIS Pro.
+  /// 1. Launch the debugger to open ArcGIS Pro.
   /// 1. In Pro start with a new map.  Add a graphics layer to your map. (Map tab, Add Graphics Layer button). 
   /// 1. Open the Add-In tab. And click the "Show GNSS Properties" button. The GNSS Properties dockpane appears. 
   /// 1. If your device is not currently connected, the Current Properties section should be blank. 

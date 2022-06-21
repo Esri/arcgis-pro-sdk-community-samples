@@ -5,18 +5,18 @@ Illustrates use of various aspects of the Voxel API.
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               VoxelLayers
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -29,6 +29,9 @@ Visual Studio:         2019
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
+This sample specificially requires the sample data in CommunitySampleData-VoxelLayer-mm-dd-yyyy.zip (see Sample data link above).  
+In ArcGIS Pro open a new 'Local Scene' and then used the 'CreateLayer' button to create a sample voxel layer.  
+![UI](Screenshots/Screenshot1.png)  
 The sample primarily focuses on:   
 - Layer creation   
 - Isosurfaces    

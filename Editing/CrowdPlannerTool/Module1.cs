@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -34,7 +34,6 @@ namespace CrowdPlannerTool
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a map package called 'CrowdPlannerProject.ppkx' which is required for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\CrowdPlanner" is available.
     /// 1. Open this solution in Visual Studio.  
     /// 1. Click the build menu and select Build Solution.
-    /// 1. This solution is using the **System.Windows.Controls.DataVisualization.Toolkit Nuget**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package System.Windows.Controls.DataVisualization.Toolkit".
     /// 1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.
     /// 1. Open the map package "CrowdPlannerProject.ppkx" located in the "C:\Data\CrowdPlanner" folder since this project contains all required data.
     /// 1. Click on the Add-in tab and see that a 'Crowd Planner Summary' button was added.

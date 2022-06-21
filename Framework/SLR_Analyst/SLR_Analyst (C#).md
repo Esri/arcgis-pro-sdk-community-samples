@@ -5,7 +5,7 @@ This demonstration illustrates custom ArcGIS Pro map exploration functionality p
 The general concept of the add-in is based on the [NOAA Sea Level Rise Viewer](https://coast.noaa.gov/slr/) web application.	The add-in and dataset allow for identification and selection from three layers � land use, parcels and streets.    
 The custom add-in demonstrates three main Pro SDK capabilities:  
 -	Interaction with and selection of layers within the project from a custom add-in pane.  
--	Dynamic creation of a temporary report pane with results in text and chart form, and charts which leverage a custom tooltip which allows for better data exploration.  
+-	Dynamic creation of a temporary report pane.  
 -	Basic text reporting of code attributes within a selection set.    
   
 DATA SOURCES AND DESCRIPTION (Refer to Data Distribution Permission statement at the end of this document)  
@@ -15,18 +15,18 @@ The dataset is comprised of data clipped for the study area from the following s
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -43,16 +43,13 @@ Visual Studio:         2017, 2019
 1. Make sure that the Sample data is unzipped in c:\data   
 1. The project used for this sample is 'C:\Data\SLR_Analyst\SLR_Analyst_Data.ppkx'  
 1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. This solution is using the **System.Windows.Controls.DataVisualization.Toolkit Nuget**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package System.Windows.Controls.DataVisualization.Toolkit".  
-1. Click Start button to open ArcGIS Pro.  
+1. Launch the debuuger to open ArcGIS Pro.  
 1. ArcGIS Pro will open, open the SLR_Analyst_Data.ppkx project  
 1. Once the project is open and loaded, the first step is to open the custom SLR Analyst pane. To do this, select the Add-In tab and press the Show SLR Tools add-in button to open the SLR Analyst dockpane.  
-![UI](Screenshots/Screen1.png)  
-  
 1. Use your choice of navigation to zoom to an extent within the study area where you can clearly see land use and parcel polygons.  Zooming to 1:6,000 scale should work well initially.  
 1. Choose layer(s) to select and then choose sea level rise via the slider   
 1. Click 'Run Selection' to run the analysis  
-![UI](Screenshots/Screen2.png)  
+![UI](Screenshots/Screen1.png)  
   
 
 

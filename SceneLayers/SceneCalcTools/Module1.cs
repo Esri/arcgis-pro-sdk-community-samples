@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -381,7 +381,7 @@ namespace SceneCalcTools
 
 					// Prepare for run of GP tool -- Get the path to the LAS point layer
 					string surfaceLASDataset = "Asphalt3D_132_point_cloud.las";
-					 var inspector = new ArcGIS.Desktop.Editing.Attributes.Inspector(true);
+					 var inspector = new ArcGIS.Desktop.Editing.Attributes.Inspector();
 					 inspector.Load(featLayer, featSelectionOIDs);
 					 inspector["PlaneDirection"] = refPlaneDirection;
 					 inspector["DateOfCapture"] = DateTime.Today;

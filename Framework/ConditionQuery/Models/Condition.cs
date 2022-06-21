@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -39,8 +39,8 @@ namespace ConditionsQuery.Models {
     /// false, any UI elements using that condition are enabled/disabled or visible/hidden
     /// depending on what kind of UI element they are.<br/>
     /// You can read more about conditions here:<br/>
-    /// <a href="https://github.com/ArcGIS/arcgis-pro-sdk/wiki/ProConcepts-Framework#condition-and-state">
-    /// https://github.com/ArcGIS/arcgis-pro-sdk/wiki/ProConcepts-Framework#condition-and-state</a></remarks>
+    /// <a href="https://github.com/Esri/arcgis-pro-sdk/wiki/ProConcepts-Framework#condition-and-state">
+    /// https://github.com/Esri/arcgis-pro-sdk/wiki/ProConcepts-Framework#condition-and-state</a></remarks>
     internal class Condition : INotifyPropertyChanged, IEnumerable<State> {
 
         private List<State> _states = null;

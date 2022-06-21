@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -28,8 +28,7 @@ namespace CallScriptFromNet
     /// <remarks>
     /// 1. This solution file includes an example python script named test1.py
     /// 1. This sample also requires that you install the recommended version of Python for ArcGIS Pro and add python.exe to you path.
-    /// 1. For help in installing a Python command line option for ArcGIS Pro see (Install Python for ArcGIS Pro)[http://pro.arcgis.com/en/pro-app/arcpy/get-started/installing-python-for-arcgis-pro.htm] 
-    /// ![UI](Screenshots/Python.png)
+    /// 1. For help in installing a Python command line option for ArcGIS Pro see [Install Python for ArcGIS Pro](https://pro.arcgis.com/en/pro-app/arcpy/get-started/installing-python-for-arcgis-pro.htm 
     /// 1. Open the 'RunPyScriptButton' class and update the path to test1.py to point to the sample script file in your solution
     /// 1. Build the solution - make sure it compiles successfully.
     /// 1. Open ArcGIS Pro - go to the ADD-IN Tab, find RunPyScriptButton in Group 1 group.

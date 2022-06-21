@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -32,14 +32,16 @@ namespace CustomAnimation
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-  /// 2. Click Start button to open ArcGIS Pro.
-  /// 3. ArcGIS Pro will open. 
+  /// 2. Launch the debugger to open ArcGIS Pro.
   /// 4. With a 3D scene view active go to the Add-In tab.
   /// 5. Select a 3D line features in the scene.
   /// 6. Click the Follow Path button. This will create new keyframes that you can use to animate along the path. 
-  /// 7. On the Animation tab click the play button to fly along the line. Additional options are available in the Path group on the Add-In tab to configure how the keyframes are created.
-  /// 8. Click the Center At tool and with the tool active click a point of interest in the view.
-  /// 9. New keyframes will be constructed that will fly around the point keeping the point you clicked at the center of the view.
+  /// 7. On the Animation tab click the Timeline button to see the animation timeline.  Click the Play button in the Animation tab to fly along the line. 
+  /// 8. Additional options are available in the Path group on the Add-In tab to configure how the keyframes are created.  Experiment by 
+  /// clicking the Clear Animation button on the Add-In tab to remove the existing keyframes, change a few of the options and click the Follow Path
+  /// button to create a different set of keyframes. Play these animations to see the differences. 
+  /// 9. Click the Center At tool and with the tool active click a point of interest in the view.
+  /// 10. New keyframes will be constructed that will fly around the point keeping the point you clicked at the center of the view.
   /// </remarks>
   internal class Animation : Module
   {
@@ -197,7 +199,8 @@ namespace CustomAnimation
           //The first point will have a time of 0 seconds, after that we need to set the time based on the 3D distance between the points.
           if (i > 0)
           {
-            var lineSegment = PolylineBuilder.CreatePolyline(new List<MapPoint>() { line.Points[i - 1], line.Points[i] }, 
+            var lineSegment = PolylineBuilderEx.CreatePolyline(new List<MapPoint>() { line.Points[i - 1], line.Points[i] }, 
+              AttributeFlags.HasZ,
               line.SpatialReference);
             var length = lineSegment.Length3D;
             currentTimeSeconds += length * secondsPerUnit;
@@ -241,13 +244,13 @@ namespace CustomAnimation
         double currentTimeSeconds = GetInsertTime(mapView.Map.Animation);
 
         //Get the distance from the current location to the point we want to rotate around to get the radius.
-        var cameraPoint = MapPointBuilder.CreateMapPoint(camera.X, camera.Y, camera.SpatialReference);
+        var cameraPoint = MapPointBuilderEx.CreateMapPoint(camera.X, camera.Y, camera.SpatialReference);
         var radius = GeometryEngine.Instance.GeodesicDistance(cameraPoint, point);
         var radian = ((camera.Heading - 90) / 180.0) * Math.PI;
 
         //If the spatial reference of the point is projected and the unit is not in meters we need to convert the Z values to meters.
         if (!point.SpatialReference.IsGeographic && point.SpatialReference.Unit.ConversionFactor != 1.0)
-          point = MapPointBuilder.CreateMapPoint(point.X, point.Y, 
+          point = MapPointBuilderEx.CreateMapPoint(point.X, point.Y, 
             point.Z * point.SpatialReference.Unit.ConversionFactor, point.SpatialReference);
 
         //For all geodesic calculations we will use WGS84 so we will project the point if it is not already.
@@ -319,15 +322,15 @@ namespace CustomAnimation
     {
       camera = CloneCamera(camera);
 
-      var fromPoint = GeometryEngine.Instance.MovePointAlongLine(ellipse, percentAlong, true, 0, SegmentExtension.NoExtension);
+      var fromPoint = GeometryEngine.Instance.MovePointAlongLine(ellipse, percentAlong, true, 0, SegmentExtensionType.NoExtension);
 
-      var segment = LineBuilder.CreateLineSegment(new Coordinate2D(centerPoint.X, centerPoint.Y), new Coordinate2D(fromPoint.X, centerPoint.Y), centerPoint.SpatialReference);
-      var difX = GeometryEngine.Instance.GeodesicLength(PolylineBuilder.CreatePolyline(segment, segment.SpatialReference));
+      var segment = LineBuilderEx.CreateLineSegment(new Coordinate2D(centerPoint.X, centerPoint.Y), new Coordinate2D(fromPoint.X, centerPoint.Y), centerPoint.SpatialReference);
+      var difX = GeometryEngine.Instance.GeodesicLength(PolylineBuilderEx.CreatePolyline(new Segment[] { segment }, AttributeFlags.None, segment.SpatialReference));
       if (centerPoint.X - fromPoint.X < 0)
         difX *= -1;
 
-      segment = LineBuilder.CreateLineSegment(new Coordinate2D(centerPoint.X, centerPoint.Y), new Coordinate2D(centerPoint.X, fromPoint.Y), centerPoint.SpatialReference);
-      var difY = GeometryEngine.Instance.GeodesicLength(PolylineBuilder.CreatePolyline(segment, segment.SpatialReference));
+      segment = LineBuilderEx.CreateLineSegment(new Coordinate2D(centerPoint.X, centerPoint.Y), new Coordinate2D(centerPoint.X, fromPoint.Y), centerPoint.SpatialReference);
+      var difY = GeometryEngine.Instance.GeodesicLength(PolylineBuilderEx.CreatePolyline(new Segment[] { segment }, AttributeFlags.None, segment.SpatialReference));
       if (centerPoint.Y - fromPoint.Y < 0)
         difY *= -1;
 

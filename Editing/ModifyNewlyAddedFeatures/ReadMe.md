@@ -10,18 +10,18 @@ The corresponding ProConcept document can be found here: [ProConcepts Editing / 
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -38,7 +38,7 @@ Visual Studio:         2017, 2019
 1. Make sure that the Sample data is unzipped in c:\data   
 1. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'  
 1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
+1. Launch the debugger to open ArcGIS Pro.  
 1. ArcGIS Pro will open, select the FeatureTest.aprx project  
 1. Click on the 'Post Edit Mods' tab and click the 'Show Modify Monitor' button to show the 'Modify New Added Row Monitor' dockpane    
 ![UI](Screenshots/Screenshot1.png)  

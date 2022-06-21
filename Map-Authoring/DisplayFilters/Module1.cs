@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -43,17 +43,16 @@ namespace DisplayFilters
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\DisplayFilters' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\DisplayFilters" is available.
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.  
-    /// 1. Click Start button to open ArcGIS Pro.
-    /// 1. ArcGIS Pro will open. 
+    /// 1. Launch the debugger to open ArcGIS Pro.
     /// 1. Create a new blank Map project. 
     /// 1. Add the C:\Data\DisplayFilters\Hydrology.lpkx layer file to the map. This is a sample dataset of the Hydrology in the US available with the [ArcGIS Pro SDK Community Data](https://github.com/Esri/arcgis-pro-sdk-community-samples#samples-data).
-    /// 1. [UI](screenshots/Hydrology.png)
+    /// 1. [UI](screenshots/Hydrology.PNG)
     /// 1. Click the Add-In tab.  There should be two buttons created by this sample on this tab in the "Display Filters" group: Apply Display Filters 1 amd Apply Display Filters 2.
-    /// [UI](screenshots/Buttons.png)
+    /// [UI](screenshots/buttons.PNG)
     /// 1. These buttons create and apply display filters to view the dense Hydrology dataset. 
     /// 1. The "Apply Display Filters 1" button uses the CIMDefinition of the Hydrology layer using the GetDefinition\SetDefinition method pair. 
     /// 1. The "Apply Display Filters 2" button uses the LayerDocument class to retrieve and work with the CIMDefinition.
-    /// ![UI](screenshots/DisplayFilter.png)
+    /// ![UI](screenshots/DisplayFilter.PNG)
     /// </remarks>
     internal class Module1 : Module
   {

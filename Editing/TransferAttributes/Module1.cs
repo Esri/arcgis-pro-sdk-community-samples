@@ -1,4 +1,4 @@
-﻿/*
+/*
 
    Copyright 2019 Esri
 
@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -47,7 +47,7 @@ namespace TransferAttributes
   /// 1. Make sure that the Sample data is unzipped in c:\data
   /// 1. Before you run the sample verify that the project "C:\Data\Interacting With Maps\Interacting with Maps.aprx" is present since this is required to run the sample.
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-  /// 1. Click Start button to open ArcGIS Pro.
+  /// 1. Launch the debugger to open ArcGIS Pro.
   /// 1. ArcGIS Pro will open. 
   /// 1. Open the "C:\Data\Interacting With Maps\Interacting with Maps.aprx" project.
   /// 1. Click on the Add-in tab on the ribbon and verify the add-in has loaded. 
@@ -56,7 +56,6 @@ namespace TransferAttributes
   /// ![UI](Screenshots/Screen2.png)
   /// 1. Move back to the TOC Drawing Order tab and turn off all layers except the Portland Precincts and the Topographic layers. 
   /// 1. Right click on the Portland Precincts layer and select Zoom to Layer
-  /// ![UI](Screenshots/Screen3.png)
   /// 1. Click on the Add-in tab on the ribbon and select the 'Transfer Attributes between Features' tool. 
   /// 1. Click on the map over a precinct. Then click on the map a second time over a different precinct. 
   /// ![UI](Screenshots/Screen4.png)

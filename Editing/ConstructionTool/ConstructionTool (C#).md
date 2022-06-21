@@ -7,18 +7,18 @@ This shows how to:
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -35,9 +35,9 @@ Visual Studio:         2017, 2019
 1. Make sure that the Sample data is unzipped in c:\data   
 1. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'  
 1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
+1. Launch the debugger to open ArcGIS Pro.  
 1. ArcGIS Pro will open, select the FeatureTest.aprx project  
-1. Click on the ADD-IN tab and make sure that your active map contains editable point/line/polygon features.  
+1. Click on the Add-In tab and make sure that your active map contains editable point/line/polygon features.  
 1. Click the select by 'Rectangle' button to select some features from the map.  
 ![UI](Screenshots/ScreenAttributes.png)  
   
@@ -46,7 +46,7 @@ Visual Studio:         2017, 2019
 ![UI](Screenshots/ScreenAttributes2.png)  
   
 1. Select the 'Edit' tab on the ArcGIS Pro ribbon and 'Create' new features  
-1. On the 'Create Features' pane select the test point feature layer to see the 'Pointy Sketch Tool'  
+1. On the 'Create Features' pane select the test point feature layer template to activate the 'Pointy Sketch Tool'  
 ![UI](Screenshots/ScreenEdit.png)  
   
 1. Click on the map to create new test point features  

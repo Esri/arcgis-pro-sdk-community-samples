@@ -4,6 +4,18 @@
         <name>LivingAtlasOfTheWorld</name>
     </assembly>
     <members>
+        <member name="T:LivingAtlasOfTheWorld.Common.StringExtensions">
+            <summary>
+            Class represents extensions to the System.string class
+            </summary>
+        </member>
+        <member name="M:LivingAtlasOfTheWorld.Common.StringExtensions.IsEmpty(System.String)">
+            <summary>
+            Returns whether the string is empty
+            </summary>
+            <param name="theString"></param>
+            <returns>True if the string is empty</returns>
+        </member>
         <member name="T:LivingAtlasOfTheWorld.Common.UriToString">
             <summary>
             Converts Uri to string (returns the Thumbnail property)
@@ -50,18 +62,6 @@
             <summary>
             Not implemented
             </summary>
-        </member>
-        <member name="T:LivingAtlasOfTheWorld.Common.StringExtensions">
-            <summary>
-            Class represents extensions to the System.string class
-            </summary>
-        </member>
-        <member name="M:LivingAtlasOfTheWorld.Common.StringExtensions.IsEmpty(System.String)">
-            <summary>
-            Returns whether the string is empty
-            </summary>
-            <param name="theString"></param>
-            <returns>True if the string is empty</returns>
         </member>
         <member name="T:LivingAtlasOfTheWorld.Models.OnlineQuery">
             <summary>

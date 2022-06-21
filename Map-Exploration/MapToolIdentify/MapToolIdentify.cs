@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -57,7 +57,7 @@ namespace MapToolIdentify
                     var lyrs = mv.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>();
                     foreach (var lyr in lyrs)
                     {
-                        var fCnt = features.ContainsKey(lyr) ? features[lyr].Count : 0;
+                        var fCnt = features.ToDictionary().ContainsKey(lyr) ? features[lyr].Count : 0;
                         sb.AppendLine($@"{fCnt} {(fCnt == 1 ? "record" : "records")} for {lyr.Name}");
                     }
                     return sb.ToString();

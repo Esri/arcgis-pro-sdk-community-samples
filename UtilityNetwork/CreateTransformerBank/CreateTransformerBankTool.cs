@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -139,21 +139,21 @@ namespace CreateTransformerBank
 
                 // Create a transformer bank
 
-                RowToken token = createOperation.CreateEx(transformerBankFeatureClass, CreateAttributes(transformerBankAssetGroup, transformerBankAssetType, clickPoint));
+                RowToken token = createOperation.Create(transformerBankFeatureClass, CreateAttributes(transformerBankAssetGroup, transformerBankAssetType, clickPoint));
                 RowHandle transformerBankHandle = new RowHandle(token);
 
                 // Create three transformers, one for each phase
 
                 MapPoint transformerPointA = CreateOffsetMapPoint(clickPoint, -1 * XOffset, YOffset);
-                token = createOperation.CreateEx(deviceFeatureClass, CreateDeviceAttributes(transformerAssetGroup, transformerAssetType, transformerPointA, APhase));
+                token = createOperation.Create(deviceFeatureClass, CreateDeviceAttributes(transformerAssetGroup, transformerAssetType, transformerPointA, APhase));
                 RowHandle transformerHandleA = new RowHandle(token);
 
                 MapPoint transformerPointB = CreateOffsetMapPoint(clickPoint, 0, YOffset);
-                token = createOperation.CreateEx(deviceFeatureClass, CreateDeviceAttributes(transformerAssetGroup, transformerAssetType, transformerPointB, BPhase));
+                token = createOperation.Create(deviceFeatureClass, CreateDeviceAttributes(transformerAssetGroup, transformerAssetType, transformerPointB, BPhase));
                 RowHandle transformerHandleB = new RowHandle(token);
 
                 MapPoint transformerPointC = CreateOffsetMapPoint(clickPoint, XOffset, YOffset);
-                token = createOperation.CreateEx(deviceFeatureClass, CreateDeviceAttributes(transformerAssetGroup, transformerAssetType, transformerPointC, CPhase));
+                token = createOperation.Create(deviceFeatureClass, CreateDeviceAttributes(transformerAssetGroup, transformerAssetType, transformerPointC, CPhase));
                 RowHandle transformerHandleC = new RowHandle(token);
 
                 // Create containment associations between the bank and the transformers
@@ -175,15 +175,15 @@ namespace CreateTransformerBank
                 // Create three fuses, one for each phase
 
                 MapPoint fusePointA = CreateOffsetMapPoint(clickPoint, -1 * XOffset, 2 * YOffset);
-                token = createOperation.CreateEx(deviceFeatureClass, CreateDeviceAttributes(fuseAssetGroup, fuseAssetType, fusePointA, APhase));
+                token = createOperation.Create(deviceFeatureClass, CreateDeviceAttributes(fuseAssetGroup, fuseAssetType, fusePointA, APhase));
                 RowHandle fuseHandleA = new RowHandle(token);
 
                 MapPoint fusePointB = CreateOffsetMapPoint(clickPoint, 0, 2 * YOffset);
-                token = createOperation.CreateEx(deviceFeatureClass, CreateDeviceAttributes(fuseAssetGroup, fuseAssetType, fusePointB, BPhase));
+                token = createOperation.Create(deviceFeatureClass, CreateDeviceAttributes(fuseAssetGroup, fuseAssetType, fusePointB, BPhase));
                 RowHandle fuseHandleB = new RowHandle(token);
 
                 MapPoint fusePointC = CreateOffsetMapPoint(clickPoint, XOffset, 2 * YOffset);
-                token = createOperation.CreateEx(deviceFeatureClass, CreateDeviceAttributes(fuseAssetGroup, fuseAssetType, fusePointC, CPhase));
+                token = createOperation.Create(deviceFeatureClass, CreateDeviceAttributes(fuseAssetGroup, fuseAssetType, fusePointC, CPhase));
                 RowHandle fuseHandleC = new RowHandle(token);
 
                 // Create containment associations between the bank and the fuses
@@ -209,15 +209,15 @@ namespace CreateTransformerBank
                 // Create three arresters, one for each phase
 
                 MapPoint arresterPointA = CreateOffsetMapPoint(clickPoint, -1 * XOffset, 3 * YOffset);
-                token = createOperation.CreateEx(deviceFeatureClass, CreateDeviceAttributes(arresterAssetGroup, arresterAssetType, arresterPointA, APhase));
+                token = createOperation.Create(deviceFeatureClass, CreateDeviceAttributes(arresterAssetGroup, arresterAssetType, arresterPointA, APhase));
                 RowHandle arresterHandleA = new RowHandle(token);
 
                 MapPoint arresterPointB = CreateOffsetMapPoint(clickPoint, 0, 3 * YOffset);
-                token = createOperation.CreateEx(deviceFeatureClass, CreateDeviceAttributes(arresterAssetGroup, arresterAssetType, arresterPointB, BPhase));
+                token = createOperation.Create(deviceFeatureClass, CreateDeviceAttributes(arresterAssetGroup, arresterAssetType, arresterPointB, BPhase));
                 RowHandle arresterHandleB = new RowHandle(token);
 
                 MapPoint arresterPointC = CreateOffsetMapPoint(clickPoint, XOffset, 3 * YOffset);
-                token = createOperation.CreateEx(deviceFeatureClass, CreateDeviceAttributes(arresterAssetGroup, arresterAssetType, arresterPointC, CPhase));
+                token = createOperation.Create(deviceFeatureClass, CreateDeviceAttributes(arresterAssetGroup, arresterAssetType, arresterPointC, CPhase));
                 RowHandle arresterHandleC = new RowHandle(token);
 
                 // Create containment associations between the bank and the arresters
@@ -267,8 +267,7 @@ namespace CreateTransformerBank
 
       if (MapView.Active != null)
       {
-        MapViewEventArgs mapViewEventArgs = new MapViewEventArgs(MapView.Active);
-        IReadOnlyList<Layer> selectedLayers = mapViewEventArgs.MapView.GetSelectedLayers();
+        IReadOnlyList<Layer> selectedLayers = MapView.Active.GetSelectedLayers();
         if (selectedLayers.Count > 0)
         {
           utilityNetwork = UtilityNetworkUtils.GetUtilityNetworkFromLayer(selectedLayers[0]);
@@ -287,14 +286,12 @@ namespace CreateTransformerBank
     // CreateOffsetMapPoint - creates a new MapPoint offset from a given base point.
     private MapPoint CreateOffsetMapPoint(MapPoint basePoint, double xOffset, double yOffset)
     {
-      using (MapPointBuilder mapPointBuilder = new MapPointBuilder())
-      {
-        mapPointBuilder.X = basePoint.X + xOffset;
-        mapPointBuilder.Y = basePoint.Y + yOffset;
-        mapPointBuilder.Z = basePoint.Z;
-        mapPointBuilder.HasZ = true;
-        return mapPointBuilder.ToGeometry();
-      }
+      MapPointBuilderEx mapPointBuilder = new MapPointBuilderEx();
+      mapPointBuilder.X = basePoint.X + xOffset;
+      mapPointBuilder.Y = basePoint.Y + yOffset;
+      mapPointBuilder.Z = basePoint.Z;
+      mapPointBuilder.HasZ = true;
+      return mapPointBuilder.ToGeometry();
     }
 
     // CreateAttributes - creates a dictionary of attribute-value pairs

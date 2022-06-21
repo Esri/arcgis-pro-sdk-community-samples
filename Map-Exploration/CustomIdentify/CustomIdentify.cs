@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -50,7 +50,7 @@ namespace CustomIdentify
 		if (mapView != null)
 		{
 		  //Get the features that intersect the sketch geometry.
-		  var features = mapView.GetFeatures(geometry);
+		  var features = mapView.GetFeatures(geometry).ToDictionary();
 		  if (features.Count > 0)
 		  {
 			foreach (var kvp in features)

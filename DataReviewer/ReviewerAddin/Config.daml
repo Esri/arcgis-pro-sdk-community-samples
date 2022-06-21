@@ -1,22 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ArcGIS xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" defaultAssembly="DataReviewerProSDKSamples.dll" defaultNamespace="DataReviewerProSDKSamples" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{78ff1a6a-a163-4d45-9cd4-3a732fa5f246}" version="1.0" desktopVersion="2.0.0">
+<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" defaultAssembly="ReviewerAddin.dll" defaultNamespace="DataReviewerProSDKSamples" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{78ff1a6a-a163-4d45-9cd4-3a732fa5f246}" version="1.0" desktopVersion="3.0.34047">
     <Name>DataReviewerProSDKSamples</Name>
     <Description>Data Reviewer Pro SDK Sample</Description>
     <Image>Images\DataReviewerBatchChecksAdd32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>esri, http://www.esri.com</Company>
+    <Company>esri, https://www.esri.com</Company>
     <Date>06/01/2015 10:20:00 AM, 2015</Date>
     <Subject>DataReviewer</Subject>
   </AddInInfo>
   <!--
-  //Copyright 2019 Esri
+  //Copyright 2022 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -76,14 +76,11 @@
         </group>
         <group id="ReviewerSessionsGroup_Advanced" caption="Reviewer Sessions" smallImage="Images\DataReviewerResultsAdd16.png" keytip="Z5">
           <button refID="Add_Reviewer_Sessions_Advanced" size="large" />
-          <gallery refID="Reviewer_Sessions_Gallery_Advanced" inline="true" />
+          <gallery refID="Reviewer_Sessions_Gallery_Advanced" inline="true" size="large" />
         </group>
-        <!--<group id="ReviewerSessionsGalleryGroup_Advanced" caption="Reviewer Sessions" smallImage="Images\DataReviewerSession32.png" >
-          <gallery refID="Reviewer_Sessions_Gallery_Advanced" inline="true"/>
-        </group>-->
         <group id="ReviewerBatchJobsGroup_Advanced" caption="Reviewer Batch Jobs" smallImage="Images\DataReviewerBatchJobFile16.png" keytip="Z6">
           <button refID="Add_Reviewer_BatchJob_Advanced" size="large" />
-          <gallery refID="Reviewer_BatchJob_Gallery_Advanced" inline="true" />
+          <gallery refID="Reviewer_BatchJob_Gallery_Advanced" inline="true" size="large" />
         </group>
         <!--<group id="ReviewerBatchJobsGalleryGroup_Advanced" caption="Reviewer Batch Jobs" smallImage="Images\DataReviewerBatchJobFile16.png" >
           <gallery refID="Reviewer_BatchJob_Gallery_Advanced" inline="true"/>
@@ -189,13 +186,13 @@
         <!-- Gallery for advanced functionality-->
         <!-- Batch Jobs Gallery-->
         <gallery id="Reviewer_BatchJob_Gallery_Advanced" className="DataReviewerProSDKSamples.GalleryItemsViewModel" caption="Batch Jobs" itemsInRow="5" itemWidth="60" showItemCaption="true" showGroup="false" resizable="true" largeImage="Images\DataReviewerBatchJobFile32.png" dataTemplateFile="pack://application:,,,/DataReviewerProSDKSamples;component/GalleryTemplate.xaml" templateID="GalleryItemTemplate" keytip="Zx">
-          <tooltip heading="">
-            Choose a batch job to remove from the project.<disabledText></disabledText></tooltip>
+          <tooltip heading="Reviewer Batch Jobs">
+            Choose a batch job to remove from the project.<disabledText/></tooltip>
         </gallery>
         <!-- Sessions Gallery-->
         <gallery id="Reviewer_Sessions_Gallery_Advanced" className="DataReviewerProSDKSamples.GalleryItemsViewModel" caption="Sessions" itemsInRow="5" itemWidth="60" showItemCaption="true" showGroup="false" resizable="true" largeImage="Images\DataReviewerSession32.png" dataTemplateFile="pack://application:,,,/DataReviewerProSDKSamples;component/GalleryTemplate.xaml" templateID="GalleryItemTemplate" keytip="Zy">
-          <tooltip heading="">
-            Choose a batch job to remove from the project.<disabledText></disabledText></tooltip>
+          <tooltip heading="Reviewer Sessions">
+            Choose a batch job to remove from the project.<disabledText/></tooltip>
         </gallery>
       </galleries>
     </insertModule>

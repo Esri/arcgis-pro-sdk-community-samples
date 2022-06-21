@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,7 +23,7 @@ namespace ExcelDropHandler
     /// ArcGIS Pro Addin allows to Drag and drop *.xlsx file on ArcGIS Pro and execute the necessary Geoprocessing Tools automatically. 
     /// </summary>
     /// <remarks> 
-    /// This sample uses Excel files in Pro.   To use Excel files in Pro, you need Microsoft Access Database Engine 2016. Refer to the [Work with Microsoft Excel files in ArcGIS Pro](https://prodev.arcgis.com/en/pro-app/help/data/excel/work-with-excel-in-arcgis-pro.htm)
+    /// This sample uses Excel files in Pro.   To use Excel files in Pro, you need Microsoft Access Database Engine 2016. Refer to the [Work with Microsoft Excel files in ArcGIS Pro](https://pro.arcgis.com/en/pro-app/help/data/excel/work-with-excel-in-arcgis-pro.htm)
     /// help topic for more information on dowloading the required driver.
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
     /// 1. Make sure that the Sample data is unzipped in c:\data     

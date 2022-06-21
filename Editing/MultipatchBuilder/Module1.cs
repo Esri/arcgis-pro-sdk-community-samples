@@ -1,4 +1,4 @@
-﻿/*
+/*
 
    Copyright 2019 Esri
 
@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -45,7 +45,7 @@ namespace MultipatchBuilder
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.    
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-  /// 1. Click Start button to open ArcGIS Pro.
+  /// 1. Launch the debugger to open ArcGIS Pro.
   /// 1. ArcGIS Pro will open. 
   /// 1. Open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project which contains the required data needed for this sample.
   /// 1. Open the "Portland 3D City" mapview.

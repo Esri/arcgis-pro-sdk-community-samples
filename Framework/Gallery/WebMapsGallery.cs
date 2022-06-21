@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -66,66 +66,64 @@ namespace GalleryDemo
       //Add the webmaps to the gallery 
       foreach (var dataItem in lstWebmapItems)
         Add(dataItem);
-
     }
 
 
     #region Get Webmaps and open it.
     private static string _arcgisOnline = @"http://www.arcgis.com:80/";
 
-        /// <summary>
-        /// Gets a collection of web map items from ArcGIS Online
-        /// </summary>
-        /// <returns></returns>
-        private async Task<List<WebMapItem>> GetWebMapsAsync()
+    /// <summary>
+    /// Gets a collection of web map items from ArcGIS Online
+    /// </summary>
+    /// <returns></returns>
+    private async Task<List<WebMapItem>> GetWebMapsAsync()
+    {
+        var lstWebmapItems = new List<WebMapItem>();
+        try
         {
-            var lstWebmapItems = new List<WebMapItem>();
-            try
+            await QueuedTask.Run(async () =>
             {
-                await QueuedTask.Run(async () =>
+                ArcGISPortal portal = ArcGISPortalManager.Current.GetPortal(new Uri(_arcgisOnline));
+                PortalQueryParameters query = PortalQueryParameters.CreateForItemsOfType(PortalItemType.WebMap);
+
+                PortalQueryResultSet<PortalItem> results = await ArcGIS.Desktop.Core.ArcGISPortalExtensions.SearchForContentAsync(portal, query);
+
+                if (results == null)
+                    return;
+
+                foreach (var item in results.Results.OfType<PortalItem>())
                 {
-                    ArcGISPortal portal = ArcGISPortalManager.Current.GetPortal(new Uri(_arcgisOnline));
-                    PortalQueryParameters query = PortalQueryParameters.CreateForItemsOfType(PortalItemType.WebMap);
+                    lstWebmapItems.Add(new WebMapItem(item));
+                }
+            });
 
-                    PortalQueryResultSet<PortalItem> results = await ArcGIS.Desktop.Core.ArcGISPortalExtensions.SearchForContentAsync(portal, query);
-
-                    if (results == null)
-                        return;
-
-                    foreach (var item in results.Results.OfType<PortalItem>())
-                    {
-                        lstWebmapItems.Add(new WebMapItem(item));
-                    }
-                });
-
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
-            }
-            return lstWebmapItems;
         }
-        /// <summary>
-        /// Opens a web map item in a map pane.
-        /// </summary>
-        /// <param name="item"></param>
-        private async void OpenWebMapAsync(object item)
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine(ex.Message);
+        }
+        return lstWebmapItems;
+    }
+    /// <summary>
+    /// Opens a web map item in a map pane.
+    /// </summary>
+    /// <param name="item"></param>
+    private async void OpenWebMapAsync(object item)
     {
 
       if (item is WebMapItem)
       {
         WebMapItem clickedWebMapItem = (WebMapItem)item;
-
-        //Open WebMap
-        var currentItem = ItemFactory.Instance.Create(clickedWebMapItem.ID, ItemFactory.ItemType.PortalItem);
-        if (MapFactory.Instance.CanCreateMapFrom(currentItem))
+        await QueuedTask.Run(() =>
         {
-          await QueuedTask.Run(() =>
-           {
-             var newMap = MapFactory.Instance.CreateMapFromItem(currentItem);
-             FrameworkApplication.Panes.CreateMapPaneAsync(newMap);
-           });
-        }
+          //Open WebMap
+          var currentItem = ItemFactory.Instance.Create(clickedWebMapItem.ID, ItemFactory.ItemType.PortalItem);
+          if (MapFactory.Instance.CanCreateMapFrom(currentItem))
+          {
+               var newMap = MapFactory.Instance.CreateMapFromItem(currentItem);
+               FrameworkApplication.Panes.CreateMapPaneAsync(newMap);          
+          }
+        });
       }
     }
     #endregion

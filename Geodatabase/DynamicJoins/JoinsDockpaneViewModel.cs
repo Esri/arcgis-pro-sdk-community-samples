@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -303,7 +303,7 @@ namespace DynamicJoins
         : $"{leftTable.GetName()} INNER JOIN {rightTable.GetName()} ON {leftTable.GetName()}.{_leftField.Name} = {rightTable.GetName()}.{_rightField.Name}";
       var queryDescription = database.GetQueryDescription($"SELECT {fields} FROM {joinClause}", LayerName);
       var table = database.OpenTable(queryDescription);
-      LayerFactory.Instance.CreateFeatureLayer(table as FeatureClass, MapView.Active.Map, 0, LayerName);
+      LayerFactory.Instance.CreateLayer<FeatureLayer>(new FeatureLayerCreationParams(table as FeatureClass) { Name = LayerName }, MapView.Active.Map);
     }
 
     private RelationshipClass MakeJoin(RelationshipClass relationshipClass, Table leftTable, Table rightTable)
@@ -321,7 +321,7 @@ namespace DynamicJoins
       var join = new Join(joinDescription);
       var joinedTable = @join.GetJoinedTable();
       if (joinedTable is FeatureClass)
-        LayerFactory.Instance.CreateFeatureLayer(joinedTable as FeatureClass, MapView.Active.Map, 0, LayerName);
+        LayerFactory.Instance.CreateLayer<FeatureLayer>(new FeatureLayerCreationParams(joinedTable as FeatureClass) { Name = LayerName }, MapView.Active.Map);
       return relationshipClass;
     }
 
@@ -438,7 +438,7 @@ namespace DynamicJoins
       var queryTableDescription = new QueryTableDescription(queryDef);
       var geodatabase = leftTable.GetDatastore() as Geodatabase;
       var queryTable = geodatabase.OpenQueryTable(queryTableDescription);
-      LayerFactory.Instance.CreateFeatureLayer(queryTable as FeatureClass, MapView.Active.Map, 0, LayerName);
+      LayerFactory.Instance.CreateLayer<FeatureLayer>(new FeatureLayerCreationParams(queryTable as FeatureClass) { Name = LayerName }, MapView.Active.Map);
     }
 
     private Table GetTable(GDBProjectItem selectedProjectItem, TableInfo selectedTable)

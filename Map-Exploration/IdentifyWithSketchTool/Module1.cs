@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -30,7 +30,7 @@ namespace IdentifyWithSketchTool
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 1. Click Start button to open ArcGIS Pro.
+    /// 1. Launch the debugger to open ArcGIS Pro.
     /// 1. ArcGIS Pro will open. 
     /// 1. Open a project with a map view that has feature layers.
     /// 1. Click on the Sketch tab and then on the 'Select And Zoom' button.

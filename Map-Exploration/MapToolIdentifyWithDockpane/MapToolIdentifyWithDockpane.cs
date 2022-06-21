@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -35,7 +35,7 @@ namespace MapToolIdentifyWithDockpane
         {
             IsSketchTool = true;
             SketchType = SketchGeometryType.Rectangle;
-            SketchOutputMode = SketchOutputMode.Map;
+            SketchOutputMode = SketchOutputMode.Screen;
         }
 
         protected override Task OnToolActivateAsync(bool active)
@@ -51,12 +51,13 @@ namespace MapToolIdentifyWithDockpane
                 {
                 // Get the features that intersect the sketch geometry. 
                 // getFeatures returns a dictionary of featurelayer and a list of Object ids for each
-                Dictionary<BasicFeatureLayer, List<long>> featuresObjectIds = mv.GetFeatures(geometry);
+                Dictionary<MapMember, List<long>> featuresObjectIds = mv.GetFeatures(geometry).ToDictionary();
 
                 // go through all feature layers and do a spatial query to find features 
                 foreach (var featOids in featuresObjectIds)
                 {
-                    var featLyr = featOids.Key;
+                    var featLyr = featOids.Key as BasicFeatureLayer;
+                    if (featLyr == null) continue;
                     var qf = new QueryFilter() { ObjectIDs = featOids.Value };
                     var rowCursor = featLyr.Search(qf);
                     while (rowCursor.MoveNext())
@@ -64,7 +65,7 @@ namespace MapToolIdentifyWithDockpane
                         using (var feat = rowCursor.Current as Feature)
                         {
                             var listOID = new List<long> {feat.GetObjectID() }; 
-                            var displayExp = String.Join(Environment.NewLine, featLyr.QueryDisplayExpressions(listOID.ToArray()));
+                            var displayExp = String.Join(Environment.NewLine, featLyr.GetDisplayExpressions(listOID.ToArray()));
                             Module1.MapToolIdentifyDockpaneVM.AddToListOfFeatures($@"Layer: {featLyr.Name} obj id: {feat.GetObjectID()} Display Expression: {displayExp}");
                             //Access all field values
                             var count = feat.GetFields().Count();

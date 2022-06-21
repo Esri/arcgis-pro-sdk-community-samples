@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -24,6 +24,7 @@ using System.Windows.Input;
 using System.Windows.Threading;
 using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
+using ArcGIS.Core.Data.Exceptions;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
@@ -33,297 +34,277 @@ using LayersPane.Extensions;
 
 namespace LayersPane
 {
-    internal class LayersPaneViewModel : ViewStatePane
+  internal class LayersPaneViewModel : ViewStatePane
+  {
+    #region Private Properties
+    public const string ViewPaneID = "LayersPane_LayersPane";
+    private bool _isLoading = false;
+    private string _status = "";
+    private Layer _selectedLayer;
+    private DataTable _dataTable;
+    private IReadOnlyList<Layer> _allMapLayers;
+    #endregion Properties
+
+    #region CTor
+
+    /// <summary>
+    /// Default construction - Consume the passed in CIMView. Call the base constructor to wire up the CIMView.
+    /// </summary>
+    /// <param name="view"></param>
+    public LayersPaneViewModel(CIMView view)
+        : base(view)
     {
-        #region Private Properties
-        public const string ViewPaneID = "LayersPane_LayersPane";
-        public const string ViewDefaultPath = "LayersPaneViewModel_Pane_View_Path";
-        private string _path = null;
-        private bool _isLoading = false;
-        private string _status = "";
-        private Layer _selectedLayer;
-        private DataTable _dataTable;
-        private IReadOnlyList<Layer> _allMapLayers;
-        #endregion Properties
+      //register 
+      LayersPaneUtils.PaneCreated(this);
 
-        #region CTor
+      //get the active map
+      MapView activeView = MapView.Active;
+      //get all the layers in the active map
+      _allMapLayers = activeView.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().ToList();
+      //set the selected layer to be the first one from the list
+      if (_allMapLayers.Count > 0)
+        _selectedLayer = _allMapLayers[0];
 
-        /// <summary>
-        /// Default construction - Consume the passed in CIMView. Call the base constructor to wire up the CIMView.
-        /// </summary>
-        /// <param name="view"></param>
-        public LayersPaneViewModel(CIMView view)
-            : base(view)
-        {
-            _path = view.ViewXML;
+      //set up the command for the query
+      QueryRowsCommand = new RelayCommand(new Action<object>(async (qry) => await QueryRows(qry)), CanQueryRows);
+    }
 
-            //register 
-            LayersPaneUtils.PaneCreated(this);
+    #endregion CTor
 
-            //get the active map
-            MapView activeView = MapView.Active;
-            //get all the layers in the active map
-            _allMapLayers = activeView.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().ToList();
-            //set the selected layer to be the first one from the list
-            if (_allMapLayers.Count > 0)
-                _selectedLayer = _allMapLayers[0];
+    #region Public Properties
 
-            //set up the command for the query
-            QueryRowsCommand = new RelayCommand(new Action<object>(async (qry) => await QueryRows(qry)), CanQueryRows);
-        }
+    public IReadOnlyList<Layer> AllMapLayers
+    {
+      get { return _allMapLayers; }
+    }
 
-        #endregion CTor
+    public Layer SelectedLayer
+    {
+      get { return _selectedLayer; }
+      set
+      {
+        SetProperty(ref _selectedLayer, value, () => SelectedLayer);
+      }
+    }
 
-        #region Public Properties
+    public DataTable FeatureData
+    {
+      get { return _dataTable; }
+      set
+      {
+        SetProperty(ref _dataTable, value, () => FeatureData);
+      }
+    }
 
-        public IReadOnlyList<Layer> AllMapLayers
-        {
-            get { return _allMapLayers; }
-        }
-        
-        public Layer SelectedLayer
-        {
-            get { return _selectedLayer; }
-            set
-            {
-				SetProperty(ref _selectedLayer, value, () => SelectedLayer);
-            }
-        }
+    public bool IsLoading
+    {
+      get { return _isLoading; }
+      set
+      {
+        SetProperty(ref _isLoading, value, () => IsLoading);
+      }
+    }
 
-        public DataTable FeatureData
-        {
-            get { return _dataTable; }
-            set
-            {
-				SetProperty(ref _dataTable, value, () => FeatureData);
-			}
-        }
+    public string Status
+    {
+      get { return _status; }
+      set
+      {
+        SetProperty(ref _status, value, () => Status);
+      }
+    }
 
-        public bool IsLoading
-        {
-            get { return _isLoading; }
-            set
-            {
-				SetProperty(ref _isLoading, value, () => IsLoading);
-            }
-        }
+    public ICommand QueryRowsCommand { get; private set; }
 
-        public string Status
-        {
-            get { return _status; }
-            set
-            {
-                SetProperty(ref _status, value, () => Status);
-            }
-        }
+    #endregion Public Properties
 
-        public string Path
-        {
-            get { return _path == null ? ViewDefaultPath : _path; }
-        }
+    #region Private Helpers
 
-        public ICommand QueryRowsCommand { get; private set; }
-
-        #endregion Public Properties
-
-        #region Private Helpers
-
-        private bool CanQueryRows()
-        {
-            return _selectedLayer != null;
-        }
-
-        /// <summary>
-        /// Execute a query against the selected layer's feature class and 
-        /// display the resulting datatable
-        /// </summary>
-        /// <param name="query"></param>
-        /// <returns></returns>
-        private async Task QueryRows(object query)
-        {
-            var where = string.Empty;
-            if (query != null) where = query.ToString();
-            IsLoading = true;
-            var rowCount = 0;
-            // get the features using the query
-            if (_selectedLayer != null)
-            {
-                await QueuedTask.Run(() =>
-                {
-                    var basicFl = _selectedLayer as BasicFeatureLayer;
-                    if (basicFl != null)
-                    {
-                        Table layerTable = basicFl.GetTable();
-
-                        var dt = new DataTable();
-                        var queryFilter = new ArcGIS.Core.Data.QueryFilter
-                        {
-                            WhereClause = where
-                        };
-                        RowCursor cursor;
-                        // Use try catch to catch invalid SQL statements in queryFilter
-                        try
-                        {
-                            cursor = layerTable.Search(queryFilter);
-                        }
-                        catch (GeodatabaseGeneralException gdbEx)
-                        {
-                            ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Error searching data. " + gdbEx.Message,
-                                "Search Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                            return;
-                        }
-                        if (cursor.MoveNext())
-                        {
-                            using (Row currentRow = cursor.Current)
-                            {
-                                var maxcols = currentRow.GetFields().Count() > 6
-                                ? 6
-                                : currentRow.GetFields().Count();
-                                for (var c = 0; c < maxcols; c++)
-                                {
-                                    Type colType = typeof(string);
-                                    var format = string.Empty;
-                                    var fldDefinition = currentRow.GetFields()[c];
-                                    switch (fldDefinition.FieldType)
-                                    {
-                                        case FieldType.Blob:
-                                            format = "Blob";
-                                            break;
-                                        case FieldType.Raster:
-                                            format = "Raster";
-                                            break;
-                                        case FieldType.Geometry:
-                                            format = "Geom";
-                                            break;
-                                        case FieldType.Date:
-                                            colType = typeof(DateTime);
-                                            format = @"mm/dd/yyyy";
-                                            break;
-                                        case FieldType.Double:
-                                            format = "0,0.0##";
-                                            break;
-                                        case FieldType.Integer:
-                                        case FieldType.OID:
-                                        case FieldType.Single:
-                                        case FieldType.SmallInteger:
-                                            format = "0,0";
-                                            break;
-                                        case FieldType.GlobalID:
-                                        case FieldType.GUID:
-                                        case FieldType.String:
-                                        case FieldType.XML:
-                                        default:
-                                            break;
-                                    }
-                                    var col = new DataColumn(fldDefinition.Name, colType)
-                                    {
-                                        Caption = fldDefinition.AliasName
-                                    };
-                                    dt.Columns.Add(col);
-                                }
-                                do
-                                {
-                                    var row = dt.NewRow();
-                                    rowCount++;
-                                    for (var colIdx = 0; colIdx < maxcols; colIdx++)
-                                    {
-                                        row[colIdx] = currentRow[colIdx];
-                                    }
-                                    dt.Rows.Add(row);
-                                } while (cursor.MoveNext());
-                            }
-                        }
-                        Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal,
-                            (Action)(() => UpdateDataTableOnUI(dt)));
-                    }
-                });
-            }
-            Status = string.Format("{0} rows loaded", rowCount);
-            IsLoading = false;
-        }
-
-        private string GetName(ArcGIS.Core.Data.Field field)
-        {
-            return string.IsNullOrEmpty(field.AliasName) ? field.Name : field.AliasName;
-        }
-
-        private DataTable _dtDataTable;
-        /// <summary>
-        /// called on UI thread
-        /// </summary>
-        internal void UpdateDataTableOnUI(DataTable dt)
-        {
-            _dtDataTable = dt.Copy();
-            FeatureData = _dtDataTable;
-        }
-
-        /// <summary>
-        /// Must be overridden in child classes - persist the state of the view to the CIM.
-        /// </summary>
-        public override CIMView ViewState
-        {
-            get
-            {
-                var view = CreatePane();
-                view.InstanceID = (int)InstanceID;//from Framework.Pane
-                                                  //view.InstanceIDSpecified = true;
-                return view;
-            }
-        }
-
-        internal static CIMView CreatePane(string path = ViewDefaultPath)
-        {
-            var view = new CIMGenericView();
-            view.ViewXML = path;
-            view.ViewType = ViewPaneID;
-            return view;
-        }
-
-        /// <summary>
-        /// Create a new instance of the pane.
-        /// </summary>
-        internal static LayersPaneViewModel Create()
-        {
-            var view = new CIMGenericView();
-            view.ViewType = ViewPaneID;
-            return FrameworkApplication.Panes.Create(ViewPaneID, new object[] { view }) as LayersPaneViewModel;
-        }
-
-      
-        #endregion Private Helpers
-
-        #region Pane Overrides
-
-        /// <summary>
-        /// Called when the pane is initialized.
-        /// </summary>
-        protected async override Task InitializeAsync()
-        {
-            await base.InitializeAsync();
-        }
-
-        /// <summary>
-        /// Called when the pane is uninitialized.
-        /// </summary>
-        protected async override Task UninitializeAsync()
-        {
-            await base.UninitializeAsync();
-        }
-
-        #endregion Pane Overrides
+    private bool CanQueryRows()
+    {
+      return _selectedLayer != null;
     }
 
     /// <summary>
-    /// Button implementation to create a new instance of the pane and activate it.
+    /// Execute a query against the selected layer's feature class and 
+    /// display the resulting datatable
     /// </summary>
-    internal class LayersPane_OpenButton : Button
+    /// <param name="query"></param>
+    /// <returns></returns>
+    private async Task QueryRows(object query)
     {
-        protected override void OnClick()
+      var where = string.Empty;
+      if (query != null) where = query.ToString();
+      IsLoading = true;
+      var rowCount = 0;
+      // get the features using the query
+      if (_selectedLayer != null)
+      {
+        await QueuedTask.Run(() =>
         {
-            //LayersPaneViewModel.Create();
-            LayersPaneUtils.OpenPaneView(LayersPaneViewModel.ViewPaneID);
-        }
+          var basicFl = _selectedLayer as BasicFeatureLayer;
+          if (basicFl != null)
+          {
+            Table layerTable = basicFl.GetTable();
+
+            var dt = new DataTable();
+            var queryFilter = new ArcGIS.Core.Data.QueryFilter
+            {
+              WhereClause = where
+            };
+            RowCursor cursor;
+                    // Use try catch to catch invalid SQL statements in queryFilter
+                    try
+            {
+              cursor = layerTable.Search(queryFilter);
+            }
+            catch (GeodatabaseGeneralException gdbEx)
+            {
+              ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Error searching data. " + gdbEx.Message,
+                          "Search Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+              return;
+            }
+            if (cursor.MoveNext())
+            {
+              using (Row currentRow = cursor.Current)
+              {
+                var maxcols = currentRow.GetFields().Count() > 6
+                        ? 6
+                        : currentRow.GetFields().Count();
+                for (var c = 0; c < maxcols; c++)
+                {
+                  Type colType = typeof(string);
+                  var format = string.Empty;
+                  var fldDefinition = currentRow.GetFields()[c];
+                  switch (fldDefinition.FieldType)
+                  {
+                    case FieldType.Blob:
+                      format = "Blob";
+                      break;
+                    case FieldType.Raster:
+                      format = "Raster";
+                      break;
+                    case FieldType.Geometry:
+                      format = "Geom";
+                      break;
+                    case FieldType.Date:
+                      colType = typeof(DateTime);
+                      format = @"mm/dd/yyyy";
+                      break;
+                    case FieldType.Double:
+                      format = "0,0.0##";
+                      break;
+                    case FieldType.Integer:
+                    case FieldType.OID:
+                    case FieldType.Single:
+                    case FieldType.SmallInteger:
+                      format = "0,0";
+                      break;
+                    case FieldType.GlobalID:
+                    case FieldType.GUID:
+                    case FieldType.String:
+                    case FieldType.XML:
+                    default:
+                      break;
+                  }
+                  var col = new DataColumn(fldDefinition.Name, colType)
+                  {
+                    Caption = fldDefinition.AliasName
+                  };
+                  dt.Columns.Add(col);
+                }
+                do
+                {
+                  var row = dt.NewRow();
+                  rowCount++;
+                  for (var colIdx = 0; colIdx < maxcols; colIdx++)
+                  {
+                    row[colIdx] = currentRow[colIdx];
+                  }
+                  dt.Rows.Add(row);
+                } while (cursor.MoveNext());
+              }
+            }
+            Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal,
+                        (Action)(() => UpdateDataTableOnUI(dt)));
+          }
+        });
+      }
+      Status = string.Format("{0} rows loaded", rowCount);
+      IsLoading = false;
     }
+
+    private string GetName(ArcGIS.Core.Data.Field field)
+    {
+      return string.IsNullOrEmpty(field.AliasName) ? field.Name : field.AliasName;
+    }
+
+    private DataTable _dtDataTable;
+    /// <summary>
+    /// called on UI thread
+    /// </summary>
+    internal void UpdateDataTableOnUI(DataTable dt)
+    {
+      _dtDataTable = dt.Copy();
+      FeatureData = _dtDataTable;
+    }
+
+    /// <summary>
+    /// Must be overridden in child classes - persist the state of the view to the CIM.
+    /// </summary>
+    public override CIMView ViewState
+    {
+      get
+      {
+        _cimView.InstanceID = (int)InstanceID;
+        return _cimView;
+      }
+    }
+
+    /// <summary>
+    /// Create a new instance of the pane.
+    /// </summary>
+    internal static CIMView CreatePane()
+    {
+      var view = new CIMGenericView();
+      view.ViewType = ViewPaneID;
+      return view;
+    }
+
+    #endregion Private Helpers
+
+    #region Pane Overrides
+
+    /// <summary>
+    /// Called when the pane is initialized.
+    /// </summary>
+    protected async override Task InitializeAsync()
+    {
+        await base.InitializeAsync();
+    }
+
+    /// <summary>
+    /// Called when the pane is uninitialized.
+    /// </summary>
+    protected async override Task UninitializeAsync()
+    {
+      await base.UninitializeAsync();
+    }
+
+    #endregion Pane Overrides
+  }
+
+  /// <summary>
+  /// Button implementation to create a new instance of the pane and activate it.
+  /// </summary>
+  internal class LayersPane_OpenButton : Button
+  {
+    protected override void OnClick()
+    {
+      //LayersPaneViewModel.Create();
+      LayersPaneUtils.OpenPaneView(LayersPaneViewModel.ViewPaneID);
+    }
+  }
 
 
 }

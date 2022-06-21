@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 Copyright 2019 Esri
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+    https://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,12 +14,12 @@ See the License for the specific language governing permissions and
 limitations under the License. 
 -->
 <ArcGIS defaultAssembly="LockToSelectedRasters.dll" defaultNamespace="LockToSelectedRasters" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{4d669203-bf8b-4693-a992-66d193e4f890}" version="1.0" desktopVersion="2.1.10257">
+  <AddInInfo id="{4d669203-bf8b-4693-a992-66d193e4f890}" version="1.0" desktopVersion="3.0.34047">
     <Name>LockToSelectedRasters</Name>
     <Description>LockToSelectedRasters description</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>esri, http://www.esri.com</Company>
+    <Company>esri, https://www.esri.com</Company>
     <Date>2/16/2018 3:19:59 PM, 2018</Date>
     <Subject>Raster</Subject>
     <!-- Note subject can be one or more of these topics:

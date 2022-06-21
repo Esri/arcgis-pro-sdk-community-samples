@@ -5,7 +5,7 @@
 //   you may not use this file except in compliance with the License. 
 //   You may obtain a copy of the License at 
 //
-//       http://www.apache.org/licenses/LICENSE-2.0 
+//       https://www.apache.org/licenses/LICENSE-2.0 
 //
 //   Unless required by applicable law or agreed to in writing, software 
 //   distributed under the License is distributed on an "AS IS" BASIS, 
@@ -29,7 +29,7 @@ using ArcGIS.Desktop.Editing.Templates;
 namespace ConstructionToolWithOptions
 {
   // IEditingCreateToolControl 
-  internal class CircleToolOptionsViewModel : ToolOptionsEmbeddableControl, IEditingCreateToolMultiple
+  internal class CircleToolOptionsViewModel : ToolOptionsEmbeddableControl
   {
     public CircleToolOptionsViewModel(XElement options, bool canChangeOptions) : base(options, canChangeOptions) { }
 
@@ -47,23 +47,7 @@ namespace ConstructionToolWithOptions
         if (SetProperty(ref _radius, value))
           SetToolOption(nameof(Radius), value);
       }
-    }
-
-    protected override bool ShowThisControl
-    {
-      get
-      {
-        //// show in ActiveTemplate pane
-        //if (IsActiveTemplate)
-        //  return true;
-
-        //// dont show in TemplateProperties
-        //return false;
-
-        // show in both ActiveTemplate and TemplateProperties panes
-        return true;
-      }
-    }
+    }   
 
     protected override Task LoadFromToolOptions()
     {
@@ -93,7 +77,7 @@ namespace ConstructionToolWithOptions
 
     internal void SetValidIfNotEditingDifferentValues(bool isValid)
     {
-      SetValid(IsDifferentValue || isValid);
+      IsValid = IsDifferentValue || isValid;
     }
   }
 }

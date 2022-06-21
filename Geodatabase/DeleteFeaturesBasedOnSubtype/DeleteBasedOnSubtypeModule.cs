@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -25,7 +25,7 @@ namespace DeleteFeaturesBasedOnSubtype
 	/// 1. Click Start button to open ArcGIS Pro.
 	/// 1. ArcGIS Pro will open.
 	/// 1. Open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project which contains the required data needed for this sample.
-	/// 1. Make sure "Portland Crimes" is the active map and the "Contents" dockpane is open.
+	/// 1. Make sure the Map Pane and the corresponding Table of Contents (TOC) Pane are Open and the Map Pane is Active
 	/// 1. Select "Crimes" on the Contents table of content.
 	/// ![UI](Screenshots/Screen1.png)
 	/// 1. Click on the Add-In Tab and note the "Delete All Features Having Subtype" dropdown.

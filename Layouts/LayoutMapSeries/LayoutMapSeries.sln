@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutMapSeries", "LayoutMapSeries.csproj", "{E486208E-A5BB-485E-9D7C-846BE20017AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordNavigator", "RecordNavigator\RecordNavigator.csproj", "{A13A6BAB-74F8-46F1-8CA6-8F1B5540EB6A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordNavigator", "..\LayoutMapSeriesRecordNavigator\RecordNavigator.csproj", "{A13A6BAB-74F8-46F1-8CA6-8F1B5540EB6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

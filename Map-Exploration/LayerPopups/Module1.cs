@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -34,7 +34,7 @@ namespace LayerPopups
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a project called 'AdminSample.aprx' that includes data that is used by this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Admin" is available.
     /// 1. Open this solution in Visual Studio.  
     /// 1. Click the build menu and select Build Solution.
-    /// 1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.
+    /// 1. Launch the debugger to open ArCGIS Pro.  
     /// 1. Open the project "AdminSample.aprx" in the "C:\Data\Admin\" folder since this project contains data referenced by the sample code.
     /// 1. Click on the Add-in tab and see that three buttons in a 'Layer Popup' group were added.
 	/// ![UI](Screenshots/Screen1.png)  

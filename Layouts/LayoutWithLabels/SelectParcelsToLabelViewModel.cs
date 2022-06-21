@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -30,6 +30,7 @@ using ArcGIS.Core.Geometry;
 using ArcGIS.Desktop.Catalog;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Editing;
+using ArcGIS.Desktop.Editing.Controls;
 using ArcGIS.Desktop.Extensions;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
@@ -98,8 +99,8 @@ namespace LayoutWithLabels
 						await QueuedTask.Run(() =>
 						{
 							Uri myUri = new Uri(lyrPckg);
-							var labelLayer = LayerFactory.Instance.CreateFeatureLayer(myUri,
-								MapView.Active.Map, LayerPosition.AddToTop) as FeatureLayer;
+							var layerParams = new LayerCreationParams(myUri) { MapMemberPosition = MapMemberPosition.AddToTop };
+							var labelLayer = LayerFactory.Instance.CreateLayer<FeatureLayer>(layerParams,MapView.Active.Map) ;
 							// clear any old data
 							var qf = new QueryFilter()
 							{
@@ -367,23 +368,34 @@ namespace LayoutWithLabels
 							//Add Map Frame
 							Coordinate2D llMap = new Coordinate2D(SelectedPageLayout.MarginLayout, SelectedPageLayout.MarginLayout);
 							Coordinate2D urMAP = new Coordinate2D(SelectedPageLayout.WidthMap, SelectedPageLayout.Height - SelectedPageLayout.MarginLayout);
-							Envelope envMap = EnvelopeBuilder.CreateEnvelope(llMap, urMAP);
+							Envelope envMap = EnvelopeBuilderEx.CreateEnvelope(llMap, urMAP);
 
 							//Reference map, create Map Frame and add to layout
 							MapProjectItem mapPrjItem = Project.Current.GetItems<MapProjectItem>().FirstOrDefault(item => item.Name.Equals("Map"));
 							Map theMap = mapPrjItem.GetMap();
-							MapFrame mfElm = LayoutElementFactory.Instance.CreateMapFrame(layout, envMap, theMap);
+							MapFrame mfElm = ElementFactory.Instance.CreateMapFrameElement(layout, envMap, theMap);
 							mfElm.SetName(SelectedPageLayout.MapFrameName);
 							if (currentCamera != null)
 								mfElm.SetCamera(currentCamera);
 
 							//Scale bar
 							Coordinate2D llScalebar = new Coordinate2D(2 * SelectedPageLayout.MarginLayout, 2 * SelectedPageLayout.MarginLayout);
-							LayoutElementFactory.Instance.CreateScaleBar(layout, llScalebar, mfElm);
+							var scaleBarGeometry = MapPointBuilderEx.CreateMapPoint(llScalebar);
+							//Create Scale Bar
+							ScaleBarInfo sbInfo = new ScaleBarInfo()
+							{
+								MapFrameName = mfElm.Name
+							};
+							var sbElm = ElementFactory.Instance.CreateMapSurroundElement(layout, scaleBarGeometry, sbInfo) as ScaleBar;
 
 							//NorthArrow
 							Coordinate2D llNorthArrow = new Coordinate2D(SelectedPageLayout.WidthMap - 2 * SelectedPageLayout.MarginLayout, 2 * SelectedPageLayout.MarginLayout);
-							var northArrow = LayoutElementFactory.Instance.CreateNorthArrow(layout, llNorthArrow, mfElm);
+							var northArrowGeometry = MapPointBuilderEx.CreateMapPoint(llNorthArrow);
+							NorthArrowInfo sbInfoNorthArrow = new NorthArrowInfo
+							{
+								MapFrameName = mfElm.Name
+							};
+							var northArrow = ElementFactory.Instance.CreateMapSurroundElement(layout, northArrowGeometry, sbInfoNorthArrow) as NorthArrow;
 							northArrow.SetAnchor(Anchor.CenterPoint);
 							northArrow.SetLockedAspectRatio(true);
 							northArrow.SetWidth(2 * northArrow.GetWidth());
@@ -391,7 +403,8 @@ namespace LayoutWithLabels
 							// Title: dynamic text: <dyn type="page" property="name"/>
 							var title = @"Title goes here";
 							Coordinate2D llTitle = new Coordinate2D(SelectedPageLayout.XOffsetMapMarginalia, SelectedPageLayout.Height - 2 * SelectedPageLayout.MarginLayout);
-							var titleGraphics = LayoutElementFactory.Instance.CreatePointTextGraphicElement(layout, llTitle, null) as TextElement;
+							var pointGeometry = MapPointBuilderEx.CreateMapPoint(llTitle);
+							var titleGraphics = ElementFactory.Instance.CreateTextGraphicElement(layout, TextType.PointText, pointGeometry, null) as TextElement;
 							titleGraphics.SetTextProperties(new TextProperties(title, "Arial", 16, "Bold"));
 
 							// Table 1
@@ -399,9 +412,13 @@ namespace LayoutWithLabels
 
 							// legend
 							Coordinate2D llLegend = new Coordinate2D(SelectedPageLayout.XOffsetMapMarginalia, SelectedPageLayout.MarginLayout);
-							Coordinate2D urLegend = new Coordinate2D(SelectedPageLayout.XOffsetMapMarginalia + SelectedPageLayout.XWidthMapMarginalia, SelectedPageLayout.HeightPartsMarginalia);
+							Coordinate2D urLegend = new Coordinate2D(SelectedPageLayout.XOffsetMapMarginalia + SelectedPageLayout.XWidthMapMarginalia, SelectedPageLayout.HeightPartsMarginalia);							
 							System.Diagnostics.Debug.WriteLine(mfElm);
-							LayoutElementFactory.Instance.CreateLegend(layout, EnvelopeBuilder.CreateEnvelope(llLegend, urLegend), mfElm);
+							var legendInfo = new LegendInfo
+							{
+								MapFrameName = mfElm.Name
+							};
+							var legend = ElementFactory.Instance.CreateMapSurroundElement(layout, EnvelopeBuilderEx.CreateEnvelope(llLegend, urLegend), legendInfo) as Legend;
 
 							return layout;
 						});
@@ -603,10 +620,16 @@ namespace LayoutWithLabels
 			var mapView = MapView.Active;
 			if (mapView == null)
 				return;
+			var selectionDictionary = new Dictionary<MapMember, List<long>>();
+			foreach (var item in flashFeatures)
+			{
+				selectionDictionary.Add(item.Key, item.Value);
+			}
 			await QueuedTask.Run(() =>
 			{
 				//Flash the collection of features.
-				mapView.FlashFeature(flashFeatures);
+				var selectionSet = SelectionSet.FromDictionary(selectionDictionary);
+				mapView.FlashFeature(selectionSet);
 			});
 		}
 
@@ -686,7 +709,12 @@ namespace LayoutWithLabels
 				
 				Coordinate2D llTab1 = new Coordinate2D(setPage.XOffsetMapMarginalia, yOffset - 2*setPage.HeightPartsMarginalia);
 				Coordinate2D urTab1 = new Coordinate2D(setPage.XOffsetMapMarginalia + setPage.XWidthMapMarginalia, yOffset);
-				var theTable = LayoutElementFactory.Instance.CreateTableFrame(layout, EnvelopeBuilder.CreateEnvelope(llTab1, urTab1), mfElm, lyr, new string[] { "Label", "Description" });
+				var tableFrameInfo = new TableFrameInfo()
+				{
+					MapFrameName = mfElm.Name,
+					MapMemberUri = lyr.URI
+				};
+				var theTable = ElementFactory.Instance.CreateMapSurroundElement(layout, EnvelopeBuilderEx.CreateEnvelope(llTab1, urTab1), tableFrameInfo) as TableFrame; 
 				var def = theTable.GetDefinition() as CIMTableFrame;
 				def.FittingStrategy = TableFrameFittingStrategy.AdjustColumnsAndSize;
 				def.FillingStrategy = TableFrameFillingStrategy.ShowAllRows;

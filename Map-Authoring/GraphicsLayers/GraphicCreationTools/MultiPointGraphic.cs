@@ -1,4 +1,22 @@
-﻿using ArcGIS.Core.CIM;
+/*
+
+   Copyright 2022 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+*/
+using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
 using ArcGIS.Core.Geometry;
 using ArcGIS.Desktop.Catalog;
@@ -44,7 +62,7 @@ namespace GraphicsLayers.GraphicCreationTools
       return QueuedTask.Run( () => {
         var lineSketched = geometry as Polyline;
         //Create MultipPoints from the sketched line
-        var multiPoints = MultipointBuilder.CreateMultipoint(lineSketched);
+        var multiPoints = MultipointBuilderEx.CreateMultipoint(lineSketched);
         //specify a symbol
         var point_symbol = SymbolFactory.Instance.ConstructPointSymbol(
                               ColorFactory.Instance.GreenRGB);

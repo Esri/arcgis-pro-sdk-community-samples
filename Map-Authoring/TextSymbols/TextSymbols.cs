@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -81,7 +81,7 @@ namespace TextSymbols
         #endregion
         #region Snippet Creates a simple line callout text symbol
         /// <summary>
-        /// Creates a simple line callout text symbol.  The [CIMSimpleLineCallout](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic2760.html) created is a dash-dot-dash line symbol with an offset of 10 from the geometry being labeled.
+        /// Creates a simple line callout text symbol.  The [CIMSimpleLineCallout](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic2760.html) created is a dash-dot-dash line symbol with an offset of 10 from the geometry being labeled.
         /// ![lineCallOut](http://Esri.github.io/arcgis-pro-sdk/images/Labeling/line-callout.png "Line Callout text symbol")
         /// </summary>
         /// <returns></returns>
@@ -108,7 +108,7 @@ namespace TextSymbols
         #endregion
         #region Snippet Creates a balloon callout text symbol 
         /// <summary>
-        /// Creates a black banner balloon callout text symbol. The [CIMBalloonCallout](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic487.html) created is a rectangular polygon with rounded corners.
+        /// Creates a black banner balloon callout text symbol. The [CIMBalloonCallout](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic487.html) created is a rectangular polygon with rounded corners.
         /// ![lineCallOut](http://Esri.github.io/arcgis-pro-sdk/images/Labeling/banner-callout.png "Black banner text symbol")
         /// </summary>
         /// <returns></returns>
@@ -142,7 +142,7 @@ namespace TextSymbols
         #endregion
         #region Snippet Creates a point callout text symbol  
         /// <summary>
-        /// Creates a highway shield callout text symbol. The [CIMPointSymbolCallout](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic4116.html) created is a highway shield point symbol from the ArcGIS 2D style.
+        /// Creates a highway shield callout text symbol. The [CIMPointSymbolCallout](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic4116.html) created is a highway shield point symbol from the ArcGIS 2D style.
         /// ![lineCallOut](http://Esri.github.io/arcgis-pro-sdk/images/Labeling/highway-callout.png "Highway shield text symbol")
         /// </summary>
         /// <returns></returns>
@@ -168,7 +168,7 @@ namespace TextSymbols
 
         #region Snippet Creates a background callout text symbol  
         /// <summary>
-        /// Creates a solid fill background text symbol with an Accent bar and leader line.  The [CIMBackgroundCallout](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic474.html) created has a solid fill aqua polygon, with a black dash-dot-dash leader line and a solid accent bar.
+        /// Creates a solid fill background text symbol with an Accent bar and leader line.  The [CIMBackgroundCallout](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic474.html) created has a solid fill aqua polygon, with a black dash-dot-dash leader line and a solid accent bar.
         /// ![lineCallOut](http://Esri.github.io/arcgis-pro-sdk/images/Labeling//background-callout.png "background callout symbol")
         /// </summary>
         /// <returns></returns>

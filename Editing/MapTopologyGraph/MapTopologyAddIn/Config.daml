@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--//   Copyright 2022 Esri
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       https://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.-->
+
+<ArcGIS defaultAssembly="MapTopologyAddIn.dll" defaultNamespace="MapTopologyAddIn" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{5dcc93de-58fe-4b6d-a970-7c29a6b1502d}" version="1.0" desktopVersion="3.0.34271">
+    <Name>Map Topology AddIn</Name>
+    <Description>Builds map topology graph and finds topologically connected features for a specified(selected) feature.</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team</Author>
+    <Company>Esri</Company>
+    <Date>1/30/2022 10:54:23 PM, 2022</Date>
+    <Subject>Editing</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="MapTopologyAddIn_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="MapTopologyAddIn_Tab1" caption="New Tab">
+          <group refID="MapTopologyAddIn_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="MapTopologyAddIn_Group1" caption="MapTopoBuild" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="MapTopologyAddIn_BuildTopologyBtn" size="large" />
+          <button refID="MapTopologyAddIn_MapTopoForAFeature_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="MapTopologyAddIn_BuildTopologyBtn" caption="Build Map Topology Graph" className="BuildTopologyBtn" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Build Topology Graph">Toggle the button to build map topology graph for the current map extent and highlight all the nodes and edges.<disabledText /></tooltip>
+        </button>
+        <button id="MapTopologyAddIn_MapTopoForAFeature_ShowButton" caption="Show Topology connections" className="MapTopoForAFeature_ShowButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+          <tooltip heading="Show Dockpane">Show Topology Connections Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="MapTopologyAddIn_MapTopoForAFeature" caption="Topology Connections of a Feature" className="MapTopoForAFeatureViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="MapTopoForAFeatureView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

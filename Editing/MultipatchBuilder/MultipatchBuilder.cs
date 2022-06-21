@@ -1,4 +1,4 @@
-﻿/*
+/*
 
    Copyright 2019 Esri
 
@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -60,14 +60,14 @@ namespace MultipatchBuilder
             // process each wall:
             for (var idx = 0; idx < coords.Count-3; idx += 2)
             {
-                var patch = mpb.MakePatch(esriPatchType.Triangles);
+                var patch = mpb.MakePatch(PatchType.Triangles);
                 var wallCoords = GetWallCoordinates(coords, idx);
                 patch.Coords = wallCoords;
                 // if (idx == 0) ShowPatchLabels(patch);
                 patches.Add(patch);
             }
             // add the roof
-            var roofPatch = mpb.MakePatch(esriPatchType.TriangleFan);
+            var roofPatch = mpb.MakePatch(PatchType.TriangleFan);
             var roofCoords = GetRoofCoordinates(coords);
             roofPatch.Coords = roofCoords;
             patches.Add(roofPatch);
@@ -201,7 +201,7 @@ namespace MultipatchBuilder
                 // reposition the last two labels
                 // 2 meters up
                 System.Diagnostics.Debug.WriteLine($@"Pnt: {coordCount} {coord.X} {coord.Y} {coord.Z} ");
-                var labelPnt = MapPointBuilder.CreateMapPoint (new Coordinate3D (coord.X, coord.Y, coord.Z+4*coordCount++)); 
+                var labelPnt = MapPointBuilderEx.CreateMapPoint (new Coordinate3D (coord.X, coord.Y, coord.Z+4*coordCount++)); 
                 textGraphic.Shape = labelPnt;
 
                 CimGraphics.Add(MapView.Active.AddOverlay(textGraphic));

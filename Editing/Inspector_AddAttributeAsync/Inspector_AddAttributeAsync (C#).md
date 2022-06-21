@@ -7,18 +7,18 @@ In this example we are using Inspector.AddAttributeAsync to only add a few field
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -35,10 +35,10 @@ Visual Studio:         2019
 1. Make sure that the Sample data is unzipped in C:\Data  
 1. Before you run the sample verify that the project "C:\Data\Interacting with Maps\Interacting with Maps.aprx" is present since this is required to run the sample.  
 1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
+1. Launch the debugger to open ArcGIS Pro.  
 1. ArcGIS Pro will open.  
 1. Open the "C:\Data\Interacting with Maps\Interacting with Maps" project.  
-1. Click on the ADD-IN TAB.  
+1. Click on the Add-In tab.  
 ![UI](Screenshots/ribbon.png)  
   
 1. Click on the "Apply Attrributes" button.  

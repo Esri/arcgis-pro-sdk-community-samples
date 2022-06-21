@@ -1,4 +1,4 @@
-﻿/*
+/*
 
    Copyright 2019 Esri
 
@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -46,17 +46,17 @@ namespace MultipatchBuilderEx
       // create a new feature
       bool result = await QueuedTask.Run(() =>
       {
-        // track the newly created objectID
-        long newObjectID = -1;
-
-        var op = new EditOperation();
-        op.Name = "Create multipatch feature";
-        op.SelectNewFeatures = false;
-        op.Create(member, multipatch, oid => newObjectID = oid);
+        var op = new EditOperation
+        {
+          Name = "Create multipatch feature",
+          SelectNewFeatures = false
+        };
+        var rowToken = op.Create(member, multipatch);
         if (op.Execute())
         {
+          // track the newly created objectID
           // save the oid in the module for other commands to use
-          Module1.MultipatchOID = newObjectID;
+          Module1.MultipatchOID = rowToken.ObjectID.Value;
           return true;
         }
 

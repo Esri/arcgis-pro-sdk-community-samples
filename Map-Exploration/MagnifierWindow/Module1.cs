@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -29,10 +29,9 @@ namespace MagnifierWindow
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 1. Click Start button to open ArcGIS Pro.
-    /// 1. ArcGIS Pro will open. 
+    /// 1. Launch the debugger to open ArcGIS Pro.
     /// 1. Open a 2D map view for example: C:\Data\FeatureTest\FeatureTest.aprx from the sample dataset.
-    /// 1. Click on the ADD-IN tab
+    /// 1. Click on the Add-In tab
     /// 1. Click on the Magnifier tool
     /// 1. A map control window will open up that shows the same content as in your main 2D map view
     /// 1. Move the mouse in the main view and the camera in map control window will update to show you a magnified view of where you are in the main 2D map view. Additionally, the current geo-coordinates in the main view are also displayed in the lower left corner of the map control window

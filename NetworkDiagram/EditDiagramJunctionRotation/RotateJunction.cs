@@ -1,6 +1,26 @@
-﻿using ArcGIS.Core.CIM;
+/*
+
+   Copyright 2022 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+*/
+using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
-using ArcGIS.Core.Data.UtilityNetwork.NetworkDiagrams;
+using ArcGIS.Core.Data.Exceptions;
+using ArcGIS.Core.Data.NetworkDiagrams;
+using ArcGIS.Core.Data.UtilityNetwork;
 using ArcGIS.Core.Geometry;
 using ArcGIS.Desktop.Catalog;
 using ArcGIS.Desktop.Core;
@@ -62,10 +82,10 @@ namespace EditDiagramJunctionRotation
                 List<long> junctionObjectIDs = new List<long>();
 
                 // get the selection by Layer
-                Dictionary<MapMember, List<long>> selection = MapView.Active.Map.GetSelection();
+                SelectionSet selection = MapView.Active.Map.GetSelection();
 
                 // Get the selection only for junctions
-                foreach (var v in selection)
+                foreach (var v in selection.ToDictionary())
                 {
                   FeatureLayer featureLayer = v.Key as FeatureLayer;
                   if (featureLayer != null)

@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -224,7 +224,7 @@ namespace IdentifyWindow
             QueuedTask.Run(() =>
             {
                 //select features that intersect the sketch geometry
-                var selection = mapView.Map.GetSelection()
+                var selection = mapView.Map.GetSelection().ToDictionary()
                       .Where(kvp => kvp.Key is BasicFeatureLayer)
                       .Select(kvp => (BasicFeatureLayer)kvp.Key);
                 //zoom to selection
@@ -242,7 +242,7 @@ namespace IdentifyWindow
             if (mapView == null) return Task.FromResult(0);
             return QueuedTask.Run(() => {
                 var pieChartResult = new List<KeyValuePair<string, int>>();
-                foreach (var selection in mapView.Map.GetSelection()
+                foreach (var selection in mapView.Map.GetSelection().ToDictionary()
                     .Where(kvp => kvp.Key is BasicFeatureLayer)) {
                     pieChartResult.Add(new KeyValuePair<string, int>(selection.Key.Name, selection.Value.Count));
                 }
@@ -331,10 +331,15 @@ namespace IdentifyWindow
             var mapView = MapView.Active;
             if (mapView == null)
                 return;
+            var selectionDictionary = new Dictionary<MapMember, List<long>>();
+            foreach (var item in flashFeatures)
+            {
+              selectionDictionary.Add(item.Key, item.Value);
+            }
             await QueuedTask.Run(() =>
             {
                 //Flash the collection of features.
-                mapView.FlashFeature(flashFeatures);
+                mapView.FlashFeature(SelectionSet.FromDictionary(selectionDictionary));
             });
         }
 

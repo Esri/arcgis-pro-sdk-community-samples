@@ -1,10 +1,10 @@
-//Copyright 2019 Esri
+//Copyright 2022 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -31,6 +31,8 @@ using ArcGIS.Desktop.Core.Geoprocessing;
 using ArcGIS.Desktop.DataReviewer.Models;
 using ArcGIS.Desktop.Mapping;
 using ArcGIS.Core.Geometry;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace DataReviewerProSDKSamples
 {
@@ -40,15 +42,33 @@ namespace DataReviewerProSDKSamples
     /// </summary>
     internal class GalleryItem : ViewModelBase
     {
+        private ImageSource _reviewerSessionGalleryImage = null;
+        private ImageSource _reviewerBatchJobGalleryImage = null;
+        private string _typeId = null;
+
         public GalleryItem(string typeId,string path, string name)
         {
-            TypeId = typeId;
+            _typeId = typeId;
             Path = path;
             Name = name;
+            Text = name;
+            ToolTip = name;
         }
-        public string TypeId { get; set; }
+        public string TypeId
+        {
+            get
+            {
+                return _typeId;
+            }
+            set
+            {
+                _typeId = value;
+                NotifyPropertyChanged(() => TypeId);
+            }
+        }
         public string Path { get; set; }
         public string Name { get; set; }
+        public string Text { get; set; }
 
         public ContextMenu GalleryItemMenu 
         {
@@ -62,6 +82,34 @@ namespace DataReviewerProSDKSamples
                     return null;
             }
         }
+
+        public ImageSource ReviewerSessionGalleryImage => _reviewerSessionGalleryImage;
+        public ImageSource ReviewerBatchJobGalleryImage => _reviewerBatchJobGalleryImage;
+
+        public ImageSource ReviewerBatchJobsGalleryItem { get; set; }
+        public ImageSource Icon
+        {
+            get
+            {
+                if (_typeId == "file_datareviewer_batchjob")
+                {
+                    if (_reviewerBatchJobGalleryImage == null)
+                        _reviewerBatchJobGalleryImage = new BitmapImage(new Uri("pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/DataReviewerBatchJobFile32.png"));
+                    return _reviewerBatchJobGalleryImage;
+                }
+                else if (_typeId == "SessionResources")
+                {
+                    if (_reviewerSessionGalleryImage == null)
+                        _reviewerSessionGalleryImage = new BitmapImage(new Uri("pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/DataReviewerSession32.png"));
+                    return _reviewerSessionGalleryImage;
+                }
+                else
+                    return null;
+
+            }
+        }
+
+        public string ToolTip { get; set; }
     }
 
     /// <summary>

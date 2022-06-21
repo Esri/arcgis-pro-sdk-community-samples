@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -42,7 +42,7 @@ namespace Colorizer
         /// </summary>
         public ApplyAttributes()
         {
-            SelectedLayersChanged(new ArcGIS.Desktop.Mapping.Events.MapViewEventArgs(MapView.Active));
+      SelectedLayersChanged(null); // new ArcGIS.Desktop.Mapping.Events.MapViewEventArgs(MapView.Active));
             ArcGIS.Desktop.Mapping.Events.TOCSelectionChangedEvent.Subscribe(SelectedLayersChanged);
 
             Add(new ComboBoxItem("Msg: Select a Raster in the TOC"));
@@ -55,7 +55,7 @@ namespace Colorizer
         {
             // Clears the combo box items when layer selection changes. 
             Clear();
-
+            if (mapViewArgs == null) return;
             // Checks the state of the active pane. 
             // Returns the active pane state if the active pane is not null, else returns null.
             State state = (FrameworkApplication.Panes.ActivePane != null) ? FrameworkApplication.Panes.ActivePane.State : null;

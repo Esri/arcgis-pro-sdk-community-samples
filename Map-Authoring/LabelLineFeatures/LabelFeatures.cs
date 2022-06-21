@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -60,7 +60,7 @@ namespace LabelLineFeatures
                 //select features that intersect the sketch geometry
                 var selection = MapView.Active.SelectFeatures(geometry, SelectionCombinationMethod.New);
                 //Get the line feature we want to label
-                var featureLayer = selection.Where(f => f.Key.ShapeType == esriGeometryType.esriGeometryPolyline).FirstOrDefault().Key as FeatureLayer;
+                var featureLayer = selection.ToDictionary().Where(f => (f.Key as BasicFeatureLayer).ShapeType == esriGeometryType.esriGeometryPolyline).FirstOrDefault().Key as FeatureLayer;
                 if (featureLayer == null) return;
                 //Get the list of line features that are selected
                 var oidsOfSelectedFeature = selection[featureLayer];
@@ -73,7 +73,7 @@ namespace LabelLineFeatures
                 var theLabelClass = listLabelClasses.Where(l => l.Name == "LabelSelectedFeaturesWithLength").FirstOrDefault();
                 if (theLabelClass == null) //create label class and add to the collection
                 {
-                    theLabelClass = await CreateAndApplyLabelClassAsync(featureLayer, oidField.Name, oidsOfSelectedFeature);
+                    theLabelClass = await CreateAndApplyLabelClassAsync(featureLayer, oidField.Name, oidsOfSelectedFeature.ToList());
                     listLabelClasses.Add(theLabelClass);
                 }
                 else

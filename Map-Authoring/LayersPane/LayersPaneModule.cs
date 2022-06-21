@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -33,8 +33,7 @@ namespace LayersPane
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.    
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-  /// 1. Click Start button to open ArcGIS Pro.
-  /// 1. ArcGIS Pro will open. 
+  /// 1. Launch the debugger to open ArcGIS Pro.
   /// 1. Open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project which contains the required data needed for this sample.
   /// 1. Click on the Add-in tab on the ribbon and then on the "Open LayersPane" button.
   /// 1. On the "layer pane" click the 'Search button' and the pane's grid will display the selected feature layer's columns and data.
@@ -43,33 +42,33 @@ namespace LayersPane
   /// 1. The data displayed is now restricted to records that match the given where clause.
   /// </remarks>
   internal class LayersPaneModule : Module
+  {
+    private static LayersPaneModule _this = null;
+
+    /// <summary>
+    /// Retrieve the singleton instance to this module here
+    /// </summary>
+    public static LayersPaneModule Current
     {
-        private static LayersPaneModule _this = null;
-
-        /// <summary>
-        /// Retrieve the singleton instance to this module here
-        /// </summary>
-        public static LayersPaneModule Current
-        {
-            get
-            {
-                return _this ?? (_this = (LayersPaneModule)FrameworkApplication.FindModule("LayersPane_Module"));
-            }
-        }
-
-        #region Overrides
-        /// <summary>
-        /// Called by Framework when ArcGIS Pro is closing
-        /// </summary>
-        /// <returns>False to prevent Pro from closing, otherwise True</returns>
-        protected override bool CanUnload()
-        {
-            //TODO - add your business logic
-            //return false to ~cancel~ Application close
-            return true;
-        }
-
-        #endregion Overrides
-
+      get
+      {
+        return _this ?? (_this = (LayersPaneModule)FrameworkApplication.FindModule("LayersPane_Module"));
+      }
     }
+
+    #region Overrides
+    /// <summary>
+    /// Called by Framework when ArcGIS Pro is closing
+    /// </summary>
+    /// <returns>False to prevent Pro from closing, otherwise True</returns>
+    protected override bool CanUnload()
+    {
+      //TODO - add your business logic
+      //return false to ~cancel~ Application close
+      return true;
+    }
+
+    #endregion Overrides
+
+  }
 }

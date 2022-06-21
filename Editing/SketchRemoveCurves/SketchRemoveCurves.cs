@@ -1,9 +1,9 @@
-﻿//   Copyright 2020 Esri
+//   Copyright 2020 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -64,7 +64,7 @@ namespace SketchRemoveCurves
         foreach (var sketchSegment in sketchPart)
         {
           if (sketchSegment.IsCurve)
-            newSegments.Add(LineBuilder.CreateLineSegment(sketchSegment.StartPoint, sketchSegment.EndPoint));
+            newSegments.Add(LineBuilderEx.CreateLineSegment(sketchSegment.StartPoint, sketchSegment.EndPoint));
           else
             newSegments.Add(sketchSegment);
         }
@@ -74,12 +74,12 @@ namespace SketchRemoveCurves
       //create the new sketch geometry based on sketch type and set back on the sketch
       if (arg.Sketch.GeometryType == GeometryType.Polyline)
       {
-        var polyline = PolylineBuilder.CreatePolyline(newParts);
+        var polyline = PolylineBuilderEx.CreatePolyline(newParts, AttributeFlags.None);
         arg.SetSketchGeometry(polyline);
       }
       else
       {
-        var polygon = PolygonBuilder.CreatePolygon(newParts);
+        var polygon = PolygonBuilderEx.CreatePolygon(newParts, AttributeFlags.None);
         arg.SetSketchGeometry(polygon);
       }
 

@@ -5,18 +5,18 @@ This sample demonstrates tools that can be created around a graphic element crea
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -32,7 +32,7 @@ Visual Studio:         2019
 1. Download the Community Sample data(see under the 'Resources' section for downloading sample data). The sample data contains a dataset called GraphicTools.Make sure that the Sample data is unzipped under C:\Data and the folder "C:\Data\GraphicTools" is available.  
 1. Open the solution in Visual Studio.  
 1. Click the Build menu and select Build Solution.  
-1. Click the Start button to open ArcGIS Pro.   
+1. Launch the debugger to open ArcGIS Pro.   
 1. Open the project "GraphicTools.aprx" found in folder: "C:\data\GraphicTools. The project opens in a 2D map view, at the Washington, DC bookmark.  In the Contents pane, you can see the two layers, Graphics Markup and Overall SVI - Tracts, along with several layers included in the larger CDC Social Vulnerability Index 2018 - USA group layer dataset.   
 1. Click on the Survey Site bookmark and notice that street level blocks are clearly visible.This area will be the center of the survey, and planning using the map graphics markup tools.Click on the Graphics Markup tab on the ribbon.  The add-in divides tools into four groups on the tab:  
    * Graphic Selection – Standard Pro tools for working with graphic selections.  

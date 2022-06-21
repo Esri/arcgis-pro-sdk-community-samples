@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -45,9 +45,8 @@ namespace CalculateStatistics
                 var featureLayer = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().Where(fl => fl.Name.Contains("TestPolygons")).FirstOrDefault();
                 var len = QueuedTask.Run(() =>
                 {
-                    var enterpriseDbType = Utilities.GetDatabaseType(featureLayer);
                     var fc = featureLayer.GetFeatureClass();
-                    return GetArea(fc, enterpriseDbType);
+                    return GetArea(fc);
                 });
                 MessageBox.Show($@"Len: {len.Result}");
             }
@@ -57,7 +56,7 @@ namespace CalculateStatistics
             }
         }
 
-        double GetArea(FeatureClass fc, EnterpriseDatabaseType enterpriseDbType)
+        double GetArea(FeatureClass fc)
         {
             try
             {
@@ -65,12 +64,6 @@ namespace CalculateStatistics
                 {
                     // the name of the area field changes depending on what enterprise geodatabase is used
                     var areaFieldName = "Shape_Area";
-                    switch (enterpriseDbType)
-                    {
-                        case EnterpriseDatabaseType.SQLServer:
-                            areaFieldName = "STArea";
-                            break;
-                    }
                     Field areaField = fcd.GetFields().FirstOrDefault(x => x.Name.Contains(areaFieldName));
                     if (areaField == null) return 0;
                     System.Diagnostics.Debug.WriteLine(areaField.Name); // Output is "Shape.STArea()" as expected

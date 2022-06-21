@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -29,7 +29,7 @@ using ArcGIS.Desktop.Editing.Templates;
 using ArcGIS.Desktop.Core.Geoprocessing;
 using ArcGIS.Desktop.Core;
 
-namespace ConstructingGeometries
+namespace ConstructingGeometries_CSharp
 {
   /// <summary>
   /// This sample provide four buttons showing the construction of geometry types of type MapPoint, Multipoint, Polyline, and Polygon and shows how to:
@@ -105,7 +105,7 @@ namespace ConstructingGeometries
       return () =>
       {
         command.Execute(null); // if it is a tool, execute will set current tool
-              return Task.FromResult(0);
+        return Task.FromResult(0);
       };
     }
     #endregion Overrides
@@ -175,8 +175,8 @@ namespace ConstructingGeometries
       };
       await QueuedTask.Run(() =>
       {
-              // spatial reference
-              arguments.Add(SpatialReferenceBuilder.CreateSpatialReference(3857));
+        // spatial reference
+        arguments.Add(SpatialReferenceBuilder.CreateSpatialReference(3857));
       });
 
       IGPResult result = await Geoprocessing.ExecuteToolAsync("CreateFeatureclass_management", Geoprocessing.MakeValueArray(arguments.ToArray()));

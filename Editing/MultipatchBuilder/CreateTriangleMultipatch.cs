@@ -1,4 +1,4 @@
-﻿/*
+/*
 
    Copyright 2019 Esri
 
@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -54,7 +54,7 @@ namespace MultipatchBuilder
                 new Coordinate2D(4.7085223197937,1.89953327178955)
               };
 
-      esriTextureCompressionType compressionType = esriTextureCompressionType.CompressionJPEG;
+      TextureCompressionType compressionType = TextureCompressionType.CompressionJPEG;
       byte[] glassImageBuffer = GetBufferImage("pack://application:,,,/MultipatchBuilder;component/Textures/Glass.jpg", compressionType);
       var glassTextureResource = new TextureResource(new JPEGTexture(glassImageBuffer));
       byte[] roofImageBuffer = GetBufferImage("pack://application:,,,/MultipatchBuilder;component/Textures/Roof.jpg", compressionType);
@@ -190,19 +190,18 @@ namespace MultipatchBuilder
       // create a new feature using the multipatch
       bool result = await QueuedTask.Run(() =>
       {
-        // track the newly created objectID
-        long newObjectID = -1;
         var op = new EditOperation
         {
           Name = "Create multipatch feature",
           SelectNewFeatures = false
         };
         Module1.NewMultipatch = mpb.ToGeometry() as Multipatch;
-        op.Create(buildingLyr, Module1.NewMultipatch, oid => newObjectID = oid);
+        var rowToken = op.Create(buildingLyr, Module1.NewMultipatch);
         if (op.Execute())
         {
+          // track the newly created objectID
           // save the oid in the module for other commands to use
-          Module1.NewMultipatchOID = newObjectID;
+          Module1.NewMultipatchOID = rowToken.ObjectID.Value;
           return true;
         }
         var msg = op.ErrorMessage;
@@ -211,9 +210,9 @@ namespace MultipatchBuilder
     }
 
     // sUri of the form  "pack://application:,,,/myPack;component/Images/image.jpg"
-    private byte[] GetBufferImage(string sUri, esriTextureCompressionType compressionType)
+    private byte[] GetBufferImage(string sUri, TextureCompressionType compressionType)
     {
-      System.Drawing.Imaging.ImageFormat format = (compressionType == esriTextureCompressionType.CompressionJPEG) ? System.Drawing.Imaging.ImageFormat.Jpeg : System.Drawing.Imaging.ImageFormat.Bmp;
+      System.Drawing.Imaging.ImageFormat format = (compressionType == TextureCompressionType.CompressionJPEG) ? System.Drawing.Imaging.ImageFormat.Jpeg : System.Drawing.Imaging.ImageFormat.Bmp;
 
       Uri uri = new Uri(sUri, UriKind.RelativeOrAbsolute);
       StreamResourceInfo info = System.Windows.Application.GetResourceStream(uri);

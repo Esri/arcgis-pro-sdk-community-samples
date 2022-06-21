@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -149,11 +149,11 @@ namespace DemoUseSelection.Ribbon
 			return base.OnSketchModifiedAsync();
 		}
 
-		protected override Task<bool> OnSketchCancelledAsync()
+		protected override Task<bool> OnSketchCanceledAsync()
 		{
 			//Mark that the sketch was cleared
 			_sketchStarted = false;
-			return base.OnSketchCancelledAsync();
+			return base.OnSketchCanceledAsync();
 		}
 
 		protected override Task OnToolActivateAsync(bool active)
@@ -173,7 +173,7 @@ namespace DemoUseSelection.Ribbon
 			{
 
 				//filter out non-polygons
-				var sel_set = Module1.Current.FilterSelection(mv.Map.GetSelection());
+				var sel_set = Module1.Current.FilterSelection(mv.Map.GetSelection().ToDictionary());
 				if (sel_set.Count() == 0)
 					return false;
 

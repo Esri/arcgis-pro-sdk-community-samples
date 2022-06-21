@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapTopologyAddIn", "MapTopologyAddIn\MapTopologyAddIn.csproj", "{705F40F5-B1F0-4938-BB0A-DFF1110C58B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{705F40F5-B1F0-4938-BB0A-DFF1110C58B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{705F40F5-B1F0-4938-BB0A-DFF1110C58B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{705F40F5-B1F0-4938-BB0A-DFF1110C58B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{705F40F5-B1F0-4938-BB0A-DFF1110C58B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {927F629F-2D8A-445D-8E39-216E92731498}
+	EndGlobalSection
+EndGlobal

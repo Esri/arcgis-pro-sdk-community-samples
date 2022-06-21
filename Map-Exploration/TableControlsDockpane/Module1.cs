@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -47,8 +47,8 @@ namespace TableControlsDockpane
     /// 1. Make sure that the Sample data is unzipped in c:\data 
     /// 1. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 1. Click Start button to open ArcGIS Pro.
-    /// 1. ArcGIS Pro will open, select the FeatureTest.aprx project
+    /// 1. Launch the debugger to open ArcGIS Pro.
+    /// 1. Select the FeatureTest.aprx project
     /// 1. Open the current active map's Contents dockpane and select the layers for which to view the attribute tables:
     /// ![UI](Screenshots/Screenshot1.png)
     /// 1. Click on the ADD-IN tab and the click the 'Show AttributeTables' button.
@@ -59,9 +59,8 @@ namespace TableControlsDockpane
     /// ![UI](Screenshots/Screenshot3.png)
     /// 1. Select the 'Edit' tab on the ArcGIS Pro ribbon and 'Create' new features
     /// 1. On the 'Create Features' pane select the 'TestLines' feature layer and create a new line feature on the map.
-    /// ![UI](Screenshots/Screenshot4.png)
     /// 1. Note that the table control on the Attribute Table Viewer dockpane is automatically updated to show the newly added feature.
-    /// ![UI](Screenshots/Screenshot5.png)
+    /// ![UI](Screenshots/Screenshot4.png)
     /// </remarks>
     internal class Module1 : Module
     {

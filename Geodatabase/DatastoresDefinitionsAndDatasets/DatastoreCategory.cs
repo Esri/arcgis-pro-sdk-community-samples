@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -190,12 +190,12 @@ namespace DatastoresDefinitionsAndDatasets
 			{
 				if (LstDatastoreTypes.Count == 0)
 				{
-					LstDatastoreTypes.Add(new DatastoreCategory(EnumDatastoreType.FileGDB,  "File Geodatabase", "GDB Path", ItemFilters.geodatabases, "Select a File GeoDatabase"));
-					LstDatastoreTypes.Add(new DatastoreCategory(EnumDatastoreType.EnterpriseGDB, "Enterprise Geodatabase", "Enterprise GDB", ItemFilters.databases, "Select a database connection file"));
-					LstDatastoreTypes.Add(new DatastoreCategory(EnumDatastoreType.WebGDB, "Feature Service", "", ItemFilters.folders, "Select a folder"));
-					//LstDatastoreTypes.Add(new DatastoreCategory(EnumDatastoreType.EnterpriseDB, "Enterprise Database", "Enterprise DB", ItemFilters.folders, "Select a folder"));
-					LstDatastoreTypes.Add(new DatastoreCategory(EnumDatastoreType.SqliteDB, "Sqlite Database", "SQL Lite DB", ItemFilters.folders, "Select a folder"));
-					LstDatastoreTypes.Add(new DatastoreCategory(EnumDatastoreType.ShapeFile, "Shape File", "Shape Folder", ItemFilters.folders, "Select a folder"));
+					LstDatastoreTypes.Add(new DatastoreCategory(EnumDatastoreType.FileGDB,  "File Geodatabase", "GDB Path", ItemFilters.Geodatabases, "Select a File GeoDatabase"));
+					LstDatastoreTypes.Add(new DatastoreCategory(EnumDatastoreType.EnterpriseGDB, "Enterprise Geodatabase", "Enterprise GDB", ItemFilters.Databases, "Select a database connection file"));
+					LstDatastoreTypes.Add(new DatastoreCategory(EnumDatastoreType.WebGDB, "Feature Service", "", ItemFilters.Folders, "Select a folder"));
+					//LstDatastoreTypes.Add(new DatastoreCategory(EnumDatastoreType.EnterpriseDB, "Enterprise Database", "Enterprise DB", ItemFilters.Folders, "Select a folder"));
+					LstDatastoreTypes.Add(new DatastoreCategory(EnumDatastoreType.SqliteDB, "Sqlite Database", "SQL Lite DB", ItemFilters.Folders, "Select a folder"));
+					LstDatastoreTypes.Add(new DatastoreCategory(EnumDatastoreType.ShapeFile, "Shape File", "Shape Folder", ItemFilters.Folders, "Select a folder"));
 				}
 				return LstDatastoreTypes;
 			}

@@ -5,18 +5,18 @@ This sample demonstrates how to change colors for rasters that have attribute ta
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Raster
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -33,15 +33,11 @@ Visual Studio:         2019
 1. In Visual Studio click the Build menu. Then select Build Solution.  
 1. Click Start button to open ArcGIS Pro.  
 1. In ArcGIS Pro the 'C:\Data\Raster\Landuse\Landuse.aprx' project.    
-![UI](Screenshots/Screen1.png)  
-  
-1. Click on the ADD-IN tab and then click the "New Color by 'Value'" button to change the raster image colors and break those colors up by using the 'Value' field in the raster's Attribute table.    
+1. Click on the Add-In tab and then click the "New Color by 'Value'" button to change the raster image colors and break those colors up by using the 'Value' field in the raster's Attribute table.    
 1. A message box will display: "In ArcGIS Pro 2.5 and older this method only works when using the 'value' field, unless you deploy the 'RecalculateColorizer' workaround."", click Ok.  
 ![UI](Screenshots/Screen2.png)  
   
 1. Open the map's content dockpane and select the raster in the TOC (table of content).  
-![UI](Screenshots/Screen3.png)  
-  
 1. The add-in automatically selects the first column in the attribute table, in this case the ObjectID column, and renders the raster with a color ramp using the 'ObjectID' column.  
 ![UI](Screenshots/Screen4.png)  
   

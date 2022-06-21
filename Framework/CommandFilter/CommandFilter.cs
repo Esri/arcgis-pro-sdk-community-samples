@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -35,12 +35,12 @@ using ArcGIS.Desktop.Mapping;
 using CommandFilter.Models;
 
 namespace CommandFilter {
-    /// <summary>
-    /// Represents the customization filter. Implement <see cref="OnCommandToExecute"/> to
-    /// execute your filtering logic
-    /// </summary>
-    /// <remarks>Customization filters must be registered via <see cref="M:FrameworkApplication.RegisterCustomizationFilter"/></remarks>
-    class CommandFilter : CustomizationFilter, IDisposable {
+  /// <summary>
+  /// Represents the customization filter. Implement <see cref="OnExecuteCommand"/> to
+  /// execute your filtering logic
+  /// </summary>
+  /// <remarks>Customization filters must be registered via <see cref="M:FrameworkApplication.RegisterCustomizationFilter"/></remarks>
+  class CommandFilter : CustomizationFilter, IDisposable {
 
         private ObservableCollection<CommandFilterItem> _clickedCommands = null;
         private bool _popMessageBox = false;
@@ -122,7 +122,7 @@ namespace CommandFilter {
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        protected override bool OnCommandToExecute(string ID) {
+        protected override bool OnExecuteCommand(string ID) {
             if (!_filter)
                 return true;
 

@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -27,10 +27,9 @@ namespace MappingSampleAddIns
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 1. Click Start button to open ArcGIS Pro.
-    /// 1. ArcGIS Pro will open. 
+    /// 1. Launch the debugger to open ArcGIS Pro.
     /// 1. Open a map view. 
-    /// 1. Click on 'ADD-IN TAB' on the ribbon
+    /// 1. Click on 'Add-In' tab on the ribbon
     /// 1. Within this tab there are 2 buttons in 'Mapping' group
     /// 1. The button on the left sets the current map's basemap layer to ArcGIS Online's Street basemap 
     /// 1. The other button allows you to add a new layer just by using a path or url and if it happens to be a feature layer, it shows total number of features in that layer

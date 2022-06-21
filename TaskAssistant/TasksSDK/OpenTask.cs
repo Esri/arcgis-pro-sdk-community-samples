@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,6 +19,7 @@ using System.Threading.Tasks;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.TaskAssistant;
+using ArcGIS.Desktop.TaskAssistant.Exceptions;
 
 namespace TasksSDK
 {
@@ -44,9 +45,10 @@ namespace TasksSDK
           return;
         }
 
-        Guid guid = await TaskAssistantModule.OpenTaskAsync(taskFile);
+      //Guid guid = await TaskAssistantModule.OpenTaskAsync(taskFile); 2.x
+      Guid guid = await TaskAssistantFactory.Instance.OpenTaskFileAsync(taskFile);
 
-        // keep the guid for CloseTaskAsync
+      // keep the guid for CloseTaskAsync
         Module1.Current.taskGuid = guid;
       }
       catch (OpenTaskException e)

@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>WorkflowSample</name>
+        <name>JobManagement</name>
     </assembly>
     <members>
-        <member name="T:WorkflowSample.DataGridColumns">
+        <member name="T:JobManagement.DataGridColumns">
             <summary>
             This Class exists to help populate the open data grid with the query results
             allows binding to the columns property in a data grid
             </summary>
         </member>
-        <member name="T:WorkflowSample.JobManagementView">
+        <member name="T:JobManagement.JobManagementView">
             <summary>
             Interaction logic for JobManagementView.xaml
             </summary>
@@ -18,77 +18,17 @@
             JobManagementView
             </summary>
         </member>
-        <member name="M:WorkflowSample.JobManagementView.InitializeComponent">
+        <member name="M:JobManagement.JobManagementView.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
         </member>
-        <member name="M:WorkflowSample.JobManagementViewModel.Show">
-            <summary>
-            Show the DockPane.
-            </summary>
-        </member>
-        <member name="F:WorkflowSample.JobManagementViewModel._heading">
-            <summary>
-            Get and set Text shown near the top of the DockPane.
-            </summary>
-        </member>
-        <member name="P:WorkflowSample.JobManagementViewModel.JobOpened">
-            <summary>
-            Get and set Flag for if a job is currently opened
-            </summary>
-        </member>
-        <member name="P:WorkflowSample.JobManagementViewModel.IsControl">
-            <summary>
-            Gets and sets the visibility of the Control Group
-            </summary>
-        </member>
-        <member name="P:WorkflowSample.JobManagementViewModel.IsHeader">
-            <summary>
-            Gets and sets the visibility of the Header Group
-            </summary>
-        </member>
-        <member name="P:WorkflowSample.JobManagementViewModel.IsCreate">
-            <summary>
-            Gets and sets the visibility of the Create Group
-            </summary>
-        </member>
-        <member name="P:WorkflowSample.JobManagementViewModel.IsOpen">
-            <summary>
-            Gets and sets the visibility of the Open Group
-            </summary>
-        </member>
-        <member name="P:WorkflowSample.JobManagementViewModel.IsView">
-            <summary>
-            Gets and sets visibility of view information grid
-            </summary>
-        </member>
-        <member name="P:WorkflowSample.JobManagementViewModel.IsJobOpen">
-            <summary>
-            Gets and sets visibility of Work Order Pane
-            </summary>
-        </member>
-        <member name="P:WorkflowSample.JobManagementViewModel.OwnerInfo">
-            <summary>
-            Gets and sets visibility of the info icon for owner box
-            </summary>
-        </member>
-        <member name="P:WorkflowSample.JobManagementViewModel.CheckInfo">
-            <summary>
-            Gets and sets visibility of the info icon for check box
-            </summary>
-        </member>
-        <member name="T:WorkflowSample.JobManagement_ShowButton">
-            <summary>
-            Button implementation to show the DockPane.
-            </summary>
-        </member>
-        <member name="T:WorkflowSample.OwnerComboBoxItem">
+        <member name="T:JobManagement.OwnerComboBoxItem">
             <summary>
             This Class is used for populated the combo box for the owner property on the create pane
             </summary>
         </member>
-        <member name="T:WorkflowSample.JobManagementModule">
+        <member name="T:JobManagement.JobManagementModule">
             <summary>
             This Sample provides a Dockable Pane that allows the user
             to manipulate workflow manager databases while focusing only on one Job Type
@@ -98,7 +38,7 @@
             1.a. This is done with the combination of database management and our Workflow manager software.
             1.b. please refer to setting up a Workflow manager database before using this sample.
             2. must designate job type to focus on prior to compiling code
-            2.a. Open project in VS 2013. Locate JobManagementModule.cs. Find JobManagementModule. designate the Job Type ID.
+            2.a. Open project in Visual Studio. Locate JobManagementModule.cs. Find JobManagementModule. designate the Job Type ID.
             2.b  Use 2 as your ID if you aren't certain and you just used the quick configuration, in your post install.
             2.c  If you have any problems consult your workflow database administrator
             2.d. currently configured to work with a Job Type called 'Work Order' some names maybe needed to change in the xaml and viewmodel
@@ -106,39 +46,69 @@
             3.a. To acquire a valid worflow database connection just use the add workflow connection under the connections menu on the project tab 
             </remarks>
         </member>
-        <member name="P:WorkflowSample.JobManagementModule.Current">
+        <member name="P:JobManagement.JobManagementModule.Current">
             <summary>
             Retrieve the singleton instance to this module here
             </summary>
         </member>
-        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+        <member name="M:JobManagement.JobManagementViewModel.Show">
             <summary>
-            GeneratedInternalTypeHelper
+            Show the DockPane.
             </summary>
         </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+        <member name="F:JobManagement.JobManagementViewModel._heading">
             <summary>
-            CreateInstance
+            Get and set Text shown near the top of the DockPane.
             </summary>
         </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+        <member name="P:JobManagement.JobManagementViewModel.JobOpened">
             <summary>
-            GetPropertyValue
+            Get and set Flag for if a job is currently opened
             </summary>
         </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+        <member name="P:JobManagement.JobManagementViewModel.IsControl">
             <summary>
-            SetPropertyValue
+            Gets and sets the visibility of the Control Group
             </summary>
         </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+        <member name="P:JobManagement.JobManagementViewModel.IsHeader">
             <summary>
-            CreateDelegate
+            Gets and sets the visibility of the Header Group
             </summary>
         </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+        <member name="P:JobManagement.JobManagementViewModel.IsCreate">
             <summary>
-            AddEventHandler
+            Gets and sets the visibility of the Create Group
+            </summary>
+        </member>
+        <member name="P:JobManagement.JobManagementViewModel.IsOpen">
+            <summary>
+            Gets and sets the visibility of the Open Group
+            </summary>
+        </member>
+        <member name="P:JobManagement.JobManagementViewModel.IsView">
+            <summary>
+            Gets and sets visibility of view information grid
+            </summary>
+        </member>
+        <member name="P:JobManagement.JobManagementViewModel.IsJobOpen">
+            <summary>
+            Gets and sets visibility of Work Order Pane
+            </summary>
+        </member>
+        <member name="P:JobManagement.JobManagementViewModel.OwnerInfo">
+            <summary>
+            Gets and sets visibility of the info icon for owner box
+            </summary>
+        </member>
+        <member name="P:JobManagement.JobManagementViewModel.CheckInfo">
+            <summary>
+            Gets and sets visibility of the info icon for check box
+            </summary>
+        </member>
+        <member name="T:JobManagement.JobManagement_ShowButton">
+            <summary>
+            Button implementation to show the DockPane.
             </summary>
         </member>
     </members>

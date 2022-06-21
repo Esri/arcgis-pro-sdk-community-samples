@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,8 +23,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
              xmlns:ui="clr-namespace:CrowdPlannerTool"
              xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
-             xmlns:DV="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
-             xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
              xmlns:frameworkControls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
@@ -39,10 +37,10 @@
     </UserControl.Resources>
 
     <Grid>
-        <Grid.Resources>
+        <!--<Grid.Resources>
             <ui:ReverseBooleanConverter x:Key="ReverseBooleanConverter"/>
             <ui:VisiblityConverter x:Key="VisiblityConverter"/>
-        </Grid.Resources>
+        </Grid.Resources>-->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -114,113 +112,6 @@
         </Grid>
 
 
-        <Grid Grid.Row="3" >
-            <DVC:Chart Name="SummaryChart1" Title="High Estimate" Margin="-1,130,1,-130" >
-                <DVC:Chart.PlotAreaStyle>
-                    <Style TargetType="{x:Type Grid}">
-                        <Setter Property="Background" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"/>
-                    </Style>
-                </DVC:Chart.PlotAreaStyle>
-                <DVC:Chart.LegendStyle>
-                    <Style TargetType="{x:Type DV:Legend}">
-                        <Setter Property="Background" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"/>
-                        <Setter Property="BorderBrush" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"></Setter>
-                    </Style>
-                </DVC:Chart.LegendStyle>
-                <DVC:Chart.Series>
-                    <DVC:PieSeries Name="SummaryPie" 
-                            IndependentValueBinding="{Binding Path=Key}"
-                            DependentValueBinding="{Binding Path=Value}"
-                            ItemsSource="{Binding Path=PieChartResult}">
-                        <DVC:PieSeries.Palette>
-                            <DV:ResourceDictionaryCollection>
-                                <ResourceDictionary>
-                                    <Style x:Key="DataPointStyle" TargetType="Control">
-                                        <Setter Property="Background" Value="#FF9BBB59"/>
-                                    </Style>
-                                </ResourceDictionary>
-                                <ResourceDictionary>
-                                    <Style x:Key="DataPointStyle" TargetType="Control">
-                                        <Setter Property="Background" Value="#FF4F81BD"/>
-                                    </Style>
-                                </ResourceDictionary>
-                            </DV:ResourceDictionaryCollection>
-                        </DVC:PieSeries.Palette>
-                    </DVC:PieSeries>
-                </DVC:Chart.Series>
-            </DVC:Chart>
-
-            <DVC:Chart Name="SummaryChart2" Title="Medium Estimate" Margin="-1,299,1,-299" >
-                <DVC:Chart.PlotAreaStyle>
-                    <Style TargetType="{x:Type Grid}">
-                        <Setter Property="Background" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"/>
-                    </Style>
-                </DVC:Chart.PlotAreaStyle>
-                <DVC:Chart.LegendStyle>
-                    <Style TargetType="{x:Type DV:Legend}">
-                        <Setter Property="Background" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"/>
-                        <Setter Property="BorderBrush" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"></Setter>
-                    </Style>
-                </DVC:Chart.LegendStyle>
-                <DVC:Chart.Series>
-                    <DVC:PieSeries Name="SummaryPie2" 
-                            IndependentValueBinding="{Binding Path=Key}"
-                            DependentValueBinding="{Binding Path=Value}"
-                            ItemsSource="{Binding Path=PieChartResultMedium}">
-                        <DVC:PieSeries.Palette>
-                            <DV:ResourceDictionaryCollection>
-                                <ResourceDictionary>
-                                    <Style x:Key="DataPointStyle" TargetType="Control">
-                                        <Setter Property="Background" Value="#FF9BBB59"/>
-                                    </Style>
-                                </ResourceDictionary>
-                                <ResourceDictionary>
-                                    <Style x:Key="DataPointStyle" TargetType="Control">
-                                        <Setter Property="Background" Value="#FF4F81BD"/>
-                                    </Style>
-                                </ResourceDictionary>
-                            </DV:ResourceDictionaryCollection>
-                        </DVC:PieSeries.Palette>
-                    </DVC:PieSeries>
-                </DVC:Chart.Series>
-            </DVC:Chart>
-
-            <DVC:Chart Name="SummaryChart3" Title="Low Estimate" Margin="-1,468,1,-468" >
-                <DVC:Chart.PlotAreaStyle>
-                    <Style TargetType="{x:Type Grid}">
-                        <Setter Property="Background" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"/>
-                    </Style>
-                </DVC:Chart.PlotAreaStyle>
-                <DVC:Chart.LegendStyle>
-                    <Style TargetType="{x:Type DV:Legend}">
-                        <Setter Property="Background" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"/>
-                        <Setter Property="BorderBrush" Value="{DynamicResource Esri_DockPaneClientAreaBackgroundBrush}"></Setter>
-                    </Style>
-                </DVC:Chart.LegendStyle>
-                <DVC:Chart.Series>
-                    <DVC:PieSeries Name="SummaryPie3" 
-                            IndependentValueBinding="{Binding Path=Key}"
-                            DependentValueBinding="{Binding Path=Value}"
-                            ItemsSource="{Binding Path=PieChartResultLow}">
-                        <DVC:PieSeries.Palette>
-                            <DV:ResourceDictionaryCollection>
-                                <ResourceDictionary>
-                                    <Style x:Key="DataPointStyle" TargetType="Control">
-                                        <Setter Property="Background" Value="#FF9BBB59"/>
-                                    </Style>
-                                </ResourceDictionary>
-                                <ResourceDictionary>
-                                    <Style x:Key="DataPointStyle" TargetType="Control">
-                                        <Setter Property="Background" Value="#FF4F81BD"/>
-                                    </Style>
-                                </ResourceDictionary>
-                            </DV:ResourceDictionaryCollection>
-                        </DVC:PieSeries.Palette>
-                    </DVC:PieSeries>
-                </DVC:Chart.Series>
-            </DVC:Chart>
-
-        </Grid>
     <Button Name="UpdateSettings" Command="{Binding Path=UpdateSettingsCmd}" ToolTip="Populate Totals and Settings" Style="{DynamicResource Esri_Button}"
                 Margin="3,3,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" >
           <StackPanel Orientation="Horizontal">

@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -44,8 +44,7 @@ namespace Renderer
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Renderers' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Renderers" is available.
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.  
-  /// 1. Click Start button to open ArcGIS Pro.
-  /// 1. ArcGIS Pro will open. 
+  /// 1. Launch the debugger to open ArcGIS Pro.
   /// 1. Create a new blank Map project. 
   /// 1. Add the C:\Data\Renderers\USDemographics.lpkx layer file to the map. 
   /// 1. In Add-in tab, click the "Apply Renderer" button.
@@ -68,6 +67,7 @@ namespace Renderer
   /// 1. After modifying the OnClickMethod build the solution and click the start button to open Pro.  
   /// 1. Open any project and test the Apply Renderer button again.
   /// ![UI](screenshots/Renderers.png)
+  /// Note: Use the US Cities layer available with the sample data to the Heat map renderer. This feature class is available in the C:\Data\Admin\AdminData.gdb file geodatabase.
   /// #### Attribute Driven Symbology
   /// 1. Create a new Local Scene. Add the C:\Data\Renderers\FlightPathPoints.lyrx layer file to the scene.  This layer draws a point geometry rendered with a helicopter symbol.  The data for this layer holds the Tilt angles (X, Y and Z) for the helicopter.
   /// 1. Use the Navigate button to tilt the view so that you can see the helicopter to display it over the map.

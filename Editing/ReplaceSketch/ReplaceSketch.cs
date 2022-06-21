@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -43,7 +43,7 @@ namespace ReplaceSketch
           var sketchGeom = await MapView.Active.GetCurrentSketchAsync();
 
           //loop through underlying features for the first one that matches sketch geometry type
-          foreach (var layer in searchFeatures.Keys)
+          foreach (var layer in searchFeatures.ToDictionary().Keys)
           {
             //load the first feature into the inspector
             var insp = new Inspector();
@@ -74,8 +74,8 @@ namespace ReplaceSketch
 
       //build a search circle geometry
       var cent = new Coordinate2D(mapPoint);
-      var searchGeom = EllipticArcBuilder.CreateEllipticArcSegment(cent, searchRadius, esriArcOrientation.esriArcClockwise, MapView.Active.Map.SpatialReference);
-      var searchPB = new PolygonBuilder(new[] { searchGeom });
+      var searchGeom = EllipticArcBuilderEx.CreateCircle(cent, searchRadius, ArcOrientation.ArcClockwise, MapView.Active.Map.SpatialReference);
+      var searchPB = new PolygonBuilderEx(new[] { searchGeom }, AttributeFlags.None);
       return searchPB.ToGeometry();
     }
   }

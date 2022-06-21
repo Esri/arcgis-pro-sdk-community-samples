@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using ArcGIS.Core.CIM;
@@ -36,25 +37,34 @@ namespace Geocode
         /// <param name="text"></param>
         /// <param name="numResults"></param>
         /// <returns></returns>
-        public static CandidateResponse SearchFor(string text, int numResults = 2)
+        public async static Task<CandidateResponse> SearchFor(string text, int numResults = 2)
         {
-            WebClient wc = new WebClient();
-            wc.Headers.Add("user-agent", "GeocodeExample");
-            wc.Headers.Add("referer", "GeocodeExample");
-            wc.Encoding = System.Text.Encoding.UTF8;
+            //WebClient wc = new WebClient();
+            HttpClient hc = new HttpClient();
+            hc.DefaultRequestHeaders.Add("user-agent", "GeocodeExample");
+            hc.DefaultRequestHeaders.Add("referer", "GeocodeExample");
+
+            //wc.Headers.Add("user-agent", "GeocodeExample");
+            //wc.Headers.Add("referer", "GeocodeExample");
+            //wc.Encoding = System.Text.Encoding.UTF8;
 
             CandidateResponse geocodeResult = null;
-            using (StreamReader sr = new StreamReader(wc.OpenRead(new Geocode.GeocodeURI(text, numResults).Uri),
-                                                      System.Text.Encoding.UTF8, true))
-            {
-                string response = sr.ReadToEnd();
-                if (ResponseIsError(response))
-                {
-                    //throw
-                    throw new System.ApplicationException(response);
-                }
-                geocodeResult = ObjectSerialization.JsonToObject<CandidateResponse>(response);
-            }
+            var uri = new Geocode.GeocodeURI(text, numResults).Uri;
+
+
+      using (var httpResponse = await hc.GetStreamAsync(uri).ConfigureAwait(false))
+      {
+        using (StreamReader sr = new StreamReader(httpResponse, System.Text.Encoding.UTF8, true))
+        {
+          string response = sr.ReadToEnd();
+          if (ResponseIsError(response))
+          {
+            //throw
+            throw new System.ApplicationException(response);
+          }
+          geocodeResult = ObjectSerialization.JsonToObject<CandidateResponse>(response);
+        }
+      }
             return geocodeResult;
         }
 
@@ -80,7 +90,7 @@ namespace Geocode
             return QueuedTask.Run(() =>
             {                
                 ArcGIS.Core.Geometry.SpatialReference spatialReference = SpatialReferenceBuilder.CreateSpatialReference(extent.WKID);
-                ArcGIS.Core.Geometry.Envelope envelope = EnvelopeBuilder.CreateEnvelope(extent.XMin, extent.YMin, extent.XMax, extent.YMax, spatialReference);
+                ArcGIS.Core.Geometry.Envelope envelope = EnvelopeBuilderEx.CreateEnvelope(extent.XMin, extent.YMin, extent.XMax, extent.YMax, spatialReference);
 
                 //apply extent
                 MapView.Active.ZoomTo(GeometryEngine.Instance.Expand(envelope, 3, 3, true));

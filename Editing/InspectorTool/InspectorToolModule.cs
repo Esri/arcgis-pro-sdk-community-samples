@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,10 +26,10 @@ namespace InspectorTool
     /// 1. Make sure that the Sample data is unzipped in c:\data 
     /// 1. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 1. Click Start button to open ArcGIS Pro.
+    /// 1. Launch the debugger to open ArcGIS Pro.
     /// 1. ArcGIS Pro will open, select the FeatureTest.aprx project
-    /// 1. Activate the EDIT ribbon and click the modify button.
-    /// 1. Navigate to the Pro SDK Samples node in the Modify Features pane.
+    /// 1. Activate the Edit tab and click the modify button.
+    /// 1. Navigate to the Pro SDK template in the Modify Features pane.
     /// ![UI](Screenshots/InspectorTool.PNG)
     /// 1. Click the 'Select Inspector Tool' and draw rectangle around point features.
     /// ![UI](Screenshots/SelectionPointFeatures.PNG)

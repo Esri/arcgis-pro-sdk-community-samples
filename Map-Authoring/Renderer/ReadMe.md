@@ -16,18 +16,18 @@ This sample renders feature layers with various types of renderers. There are ex
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -42,8 +42,7 @@ Visual Studio:         2017, 2019
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Renderers' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Renderers" is available.  
 1. In Visual Studio click the Build menu. Then select Build Solution.    
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
+1. Launch the debugger to open ArcGIS Pro.  
 1. Create a new blank Map project.   
 1. Add the C:\Data\Renderers\USDemographics.lpkx layer file to the map.   
 1. In Add-in tab, click the "Apply Renderer" button.  
@@ -67,6 +66,7 @@ To experiment with the various renderers available with this sample, follow the 
 1. After modifying the OnClickMethod build the solution and click the start button to open Pro.    
 1. Open any project and test the Apply Renderer button again.  
 ![UI](screenshots/Renderers.png)  
+Note: Use the US Cities layer available with the sample data to the Heat map renderer. This feature class is available in the C:\Data\Admin\AdminData.gdb file geodatabase.  
 #### Attribute Driven Symbology  
   
 1. Create a new Local Scene. Add the C:\Data\Renderers\FlightPathPoints.lyrx layer file to the scene.  This layer draws a point geometry rendered with a helicopter symbol.  The data for this layer holds the Tilt angles (X, Y and Z) for the helicopter.  

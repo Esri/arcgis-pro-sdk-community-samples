@@ -1,23 +1,26 @@
 ## ProSqlExpressReader
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-ProSqlExpressReader implements a three plugin datasources to read the following:  
-- Classic ArcGIS Personal Geodatabase: A personal geodatabase is a Microsoft Access database that can store, query, and manage both spatial and nonspatial data.  ProSqlExpressPluginDatasource implements read-only sql to personal geodatabase feature class data.  
+ProSqlExpressReader implements a plugin datasource to read the following data from a SQL Server Express database:  
+- Classic ArcGIS Personal Geodatabase stored in a SQL Server Express database.  
+A classic ArcGIS personal geodatabase was used in the past by ArcMap. It was Microsoft Access database that allowed to store, query, and manage both spatial and nonspatial data.  
+The sample data includes a SQL Server Express database that contains the data of such a 'classic' Microsoft Access Geodatabase.  
+ProSqlExpressPluginDatasource implements read-only access to this personal geodatabase feature class and tabular data.  
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Plugin
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -37,6 +40,7 @@ Visual Studio:         2019
 1. Once SQL Server Express is installed and running, use 'Microsoft SQL Server Management Studio 18' to 'attach' the following database files:  
 1. C:\Data\PluginData\SQLExpressData\TestSqlExpress.mdf and C:\Data\PluginData\SQLExpressData\FDTestSQLExpress.mdf.     
 1. Make sure that the 'C:\Data\PluginData\SQLExpressData' folder allows full access to the 'Users' group otherwise you will not be able to attach the database files to SQL Express.  
+1. Regarding the sql server connection, please note that this sample code uses 'TrustServerCertificate=True' in the connection string.  This is only done for simplified testing of this sample.  For production please consider to use a CA Signed certificate, by leveraging [Let's Encrypt](https://letsencrypt.org/) to get a CA signed certificate from a known trusted CA for free, and install it on your system. Don't forget to set it up to automatically refresh. You can read more on this topic in SQL Server books online under the topic of "Encryption Hierarchy", and "Using Encryption Without Validation".  
 1. In Visual Studio click the Build menu. Then select Build Solution.  
 1. Click Start button to open ArcGIS Pro.  
 1. In ArcGIS Pro open this project: 'C:\Data\PluginData\SqlExpress\SqlExpress.aprx'  

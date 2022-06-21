@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -32,8 +32,7 @@ namespace LayoutMapSeries
    /// <remarks>
    /// 1. This solution is using the **Newtonsoft.Json NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".
    /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-   /// 1. Click Start button to open ArcGIS Pro.
-   /// 1. ArcGIS Pro will open. 
+   /// 1. Launch the debugger to open ArcGIS Pro.
    /// 1. Open the "C:\Data\LayoutMapSeries\LayoutMapSeries.aprx" project file. Click on the Add-in tab on the ribbon and then on the Show "Generate Map Series" button.
    /// 1. This "Create Map Series" dockpane will open.
    /// 1. Select a "Map Series Layout" from the drop down and the click the "Generate Series" button.

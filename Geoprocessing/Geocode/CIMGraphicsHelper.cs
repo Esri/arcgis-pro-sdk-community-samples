@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 //
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 //
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -76,7 +76,7 @@ namespace Geocode
         public void UpdateLocation(PointN point)
         {
             ArcGIS.Core.Geometry.SpatialReference sptlRef = SpatialReferenceBuilder.CreateSpatialReference(point.SpatialReference.WKID);
-            MapPoint mapPoint = MapPointBuilder.CreateMapPoint(point.X, point.Y, sptlRef);
+            MapPoint mapPoint = MapPointBuilderEx.CreateMapPoint(point.X, point.Y, sptlRef);
             _graphic.Location = mapPoint;           
         }
 
@@ -152,7 +152,7 @@ namespace Geocode
       };
       CIMPointGraphic pointGraphic = new CIMPointGraphic();
             ArcGIS.Core.Geometry.SpatialReference spatialRef = SpatialReferenceBuilder.CreateSpatialReference(point.SpatialReference.WKID);
-            MapPoint mapPoint = MapPointBuilder.CreateMapPoint(point.X, point.Y, spatialRef);
+            MapPoint mapPoint = MapPointBuilderEx.CreateMapPoint(point.X, point.Y, spatialRef);
             pointGraphic.Location = mapPoint;
             pointGraphic.Symbol = symbolRef;
 

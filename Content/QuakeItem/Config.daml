@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2022 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+
+<ArcGIS defaultAssembly="QuakeItem.dll" defaultNamespace="QuakeItem" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{445daa6e-0399-4114-89eb-736688f1ee1c}" version="1.0" desktopVersion="3.0.34916">
+    <Name>QuakeItem</Name>
+    <Description>QuakeItem description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>charlesm</Author>
+    <Company>Acme</Company>
+    <Date>4/3/2019 2:27:44 PM, 2019</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <categories>
+    <!-- this is the custom project item container-->
+    <updateCategory refID="esri_core_projectContainers">
+      <insertComponent id="QuakeItem_FolderContainer" className="QuakeItem.Items.QuakeProjectItemContainer" insert="before" placeWith="esri_geodatabase_folderConnectionContainer">
+        <content type="QuakeContainer" displayName="Earthquakes" contextMenu="QuakeItemsContainer_ContextMenu" />
+        <!--contextMenu="QuakeItems_AddFoldersMenu"-->
+      </insertComponent>
+    </updateCategory>
+    <!-- this is the custom (project) item-->
+    <!-- Custom items also get registered in 
+    C:\Users\<user name>\AppData\Local\ESRI\SearchResources\ItemInfoTypesExt.json for the indexer 
+    when Pro is started. It is advisable to delete this file in-between sessions when you are 
+    developing your custom item and refactoring your code, etc.-->
+    <!-- this is the custom (project) item-->
+    <!-- Custom items also get registered in 
+    %AppData%\..\Local\ESRI\SearchResources\ItemInfoTypesExt.json for the indexer 
+    when Pro is started. It is advisable to delete this file in-between sessions when you are 
+    developing your custom item and refactoring your code, etc.-->
+    <updateCategory refID="esri_customItems">
+      <insertComponent id="acme_quake_handler" 
+					   className="QuakeItem.Items.QuakeProjectItem" 
+					   containerType="QuakeContainer">
+        <!--TODO: Modify the fileExtension attribute to your unique custom item's file extension.-->
+        <!--You cannot use any file extensions known to Pro and Geoprocessing. -->
+        <content displayName="Quakes" fileExtension="quake" isContainer="true" 
+				 keywords="quake" 
+				 contextMenuID="QuakeItem_ContextMenu">
+          <filterFlags>
+            <type id="Container"/>
+          </filterFlags>
+        </content>
+      </insertComponent>
+      <insertComponent id="acme_quake_event" className="QuakeItem.Items.QuakeEventCustomItem" containerType="QuakeContainer">
+        <content displayName="QuakesEventItem" keywords="quakeEvent" contextMenuID="QuakeEventItem_ContextMenu">
+          <filterFlags>
+            <!--Change this flag as needed. See FilterFlag enum. Example: AddToMap, DontBrowseFiles...-->
+            <type id="AddToMap" />
+          </filterFlags>
+        </content>
+      </insertComponent>
+    </updateCategory>
+	  <updateCategory refID="esri_browseFilters">
+		  <insertComponent id="Add_QuakeItem_To_Project">
+			  <content displayName="Quake Item" include="FolderConnection" exclude="esri_browsePlaces_Online">
+				  <canBeTypeIds>
+					  <type id="acme_quake_handler" />
+				  </canBeTypeIds>
+			  </content>
+		  </insertComponent>
+	  </updateCategory>
+  </categories>
+  <modules>
+    <insertModule id="QuakeItem_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="QuakeItem_Tab1" caption="Earthquake" keytip="EQ1">
+          <group refID="QuakeItem_Group1" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="QuakeItem_Group1" caption="Group 1" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="QuakeItem_QuakeEventFilterDialog" size="large" />
+          <button refID="QuakeItem_DelQuakeItemFromProject" size="large" />
+		  <button refID="QuakeItem_QuakeFilterDialog"/>
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="QuakeItem_AddQuakeItemToProject" caption="Add Quake to Project" className="QuakeItem.Ribbon.AddQuakeItemToProject" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="QuakeItem_DelQuakeItemFromProject" caption="Delete Quake From Project" className="QuakeItem.Ribbon.DelQuakeItemFromProject" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">
+				  Tooltip text<disabledText/>
+			  </tooltip>
+        </button>
+        <button id="QuakeItem_RenameQuakeEventItem" caption="Rename Quake Event" className="QuakeItem.Ribbon.RenameQuakeEventItem" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="QuakeItem_ShowXml" caption="Show Metadata" className="QuakeItem.Ribbon.ShowXml" loadOnClick="true" keytip="B4" 
+				smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" 
+				largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Earthquake CIM">Shows item metadata in the VS output window. Debug mode only<disabledText /></tooltip>
+        </button>
+		  <button id="QuakeItem_QuakeFilterDialog" caption="Add Quake to Project" className="QuakeItemDialog" loadOnClick="true" 
+				  smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonOrange16.png" 
+				  largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonOrange32.png">
+          <tooltip heading="Tooltip Heading">
+				  Tooltip text<disabledText/>
+			  </tooltip>
+        </button>
+        <button id="QuakeItem_QuakeEventFilterDialog" caption="Add Quake Event to Map" 
+				className="QuakeEventItemDialog" loadOnClick="true" 
+				smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" 
+				largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png"
+				condition="esri_mapping_graphicsLayersExistCondition">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="QuakeItem_AddQuakeEventItemToMap" caption="Add Quake Event to Map" className="QuakeItem.Ribbon.AddQuakeEventItemToMap" loadOnClick="true" 
+				smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" 
+				largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png"
+				condition="esri_mapping_graphicsLayersExistCondition">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+      <menus>
+        <menu id="QuakeItemsContainer_ContextMenu" caption="Add Folders" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/TaskItem32.png" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/TaskItem16.png">
+          <tooltip heading="Folder">Add Earthquakes to your project.</tooltip>
+          <button refID="esri_folderConnectionAddButton" />
+        </menu>
+        <menu id="QuakeItem_ContextMenu" caption="Custom Item">
+          <button refID="QuakeItem_AddQuakeItemToProject" />
+          <button refID="QuakeItem_DelQuakeItemFromProject" />
+          <button refID="esri_core_rename" />
+          <button refID="QuakeItem_ShowXml" />
+        </menu>
+        <menu id="QuakeEventItem_ContextMenu" caption="Custom Item">
+          <button refID="QuakeItem_AddQuakeEventItemToMap" />
+          <button refID="QuakeItem_RenameQuakeEventItem" />
+          <button refID="QuakeItem_ShowXml" />
+        </menu>
+      </menus>
+    </insertModule>
+  </modules>
+</ArcGIS>

@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,6 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 using ArcGIS.Desktop.Core;
+using ArcGIS.Desktop.Framework;
 
 namespace MagnifierWindow
 {
@@ -30,7 +31,9 @@ namespace MagnifierWindow
           //Only enable for 2D view
           if (MapView.Active.ViewingMode != ArcGIS.Core.CIM.MapViewingMode.Map)
             return;
-          mapControlWindow = new MapControlWindow();
+          mapControlWindow = new MapControlWindow() { 
+          Owner = FrameworkApplication.Current.MainWindow
+          };
           mapControlWindow.Show();
         }
         protected override Task OnToolActivateAsync(bool active)

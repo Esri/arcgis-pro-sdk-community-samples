@@ -68,9 +68,24 @@
             ![UI](Screenshots/Screen.png)
             </remarks>
         </member>
+        <member name="M:CoreHostGDB.Program.ResolveProAssemblyPath(System.Object,System.ResolveEventArgs)">
+            <summary>
+            Resolves the ArcGIS Pro Assembly Path.  Called when loading of an assembly fails.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+            <returns>programmatically loaded assembly in the pro /bin path</returns>
+        </member>
+        <member name="M:CoreHostGDB.Program.GetInstallDirAndVersionFromReg">
+            <summary>
+            Gets the ArcGIS Pro install location, major version, and build number from the registry.
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception">InvalidOperationException</exception>
+        </member>
         <member name="T:CoreHostGDB.UI.ExtendListView">
             <summary>
-            From <a href="http://social.technet.microsoft.com/wiki/contents/articles/17635.the-equivalent-to-autogeneratecolumns-for-a-listviewgridview.aspx"/>
+            From <a href="https://social.technet.microsoft.com/wiki/contents/articles/17635.the-equivalent-to-autogeneratecolumns-for-a-listviewgridview.aspx"/>
             </summary>
         </member>
         <member name="T:CoreHostGDB.UI.GDBGrid">

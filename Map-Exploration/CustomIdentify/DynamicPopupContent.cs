@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -17,10 +17,10 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Script.Serialization;
 using ArcGIS.Core.Data;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
+using Newtonsoft.Json;
 
 namespace CustomIdentify
 {
@@ -67,7 +67,7 @@ namespace CustomIdentify
 
 		//Using our html template we construct a new html string that we return through OnCreateHtmlContent
 		var sb = new StringBuilder();
-		sb.Append(new JavaScriptSerializer().Serialize(completeHierarchyRows));
+		sb.Append(JsonConvert.SerializeObject(completeHierarchyRows));
 		string rootType = completeHierarchyRows[0].type;
 		sb.Replace(@"""children"":[],", string.Empty);
 

@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -498,6 +498,7 @@ namespace CreateReport
 		/// <returns></returns>
 		private async Task UpdateReport()
 		{
+			await GetReportsInProjectAsync();
 			await QueuedTask.Run(() =>
 			{
 				//report to update
@@ -505,95 +506,110 @@ namespace CreateReport
 
 				//Create field
 				foreach (var field in _fieldsAddToReport)
-				{         
-          //Get the "ReportSectionElement"					
-          var mainReportSection = reportToUpdate.Elements.OfType<ReportSection>().FirstOrDefault();
+				{
+					//Get the "ReportSectionElement"					
+					var mainReportSection = reportToUpdate.Elements.OfType<ReportSection>().FirstOrDefault();
 					if (mainReportSection == null) return;
 
-					#region Field content
-					//Get the "ReportDetails" within the ReportSectionElement. ReportDetails is where "fields" are.
-					var reportDetailsSection = mainReportSection?.Elements.OfType<ReportDetails>().FirstOrDefault();
-					if (reportDetailsSection == null) return;
+          #region Field content
+          //Get the "ReportDetails" within the ReportSectionElement. ReportDetails is where "fields" are.
+          var reportDetailsSection = mainReportSection?.Elements.OfType<ReportDetails>().FirstOrDefault();
+          if (reportDetailsSection == null) return;
 
-					//Within ReportDetails find the envelope that encloses a field.
-					//We get the first CIMParagraphTextGraphic in the collection so that we can add the new field next to it.					
-					var lastFieldGraphic = reportDetailsSection.Elements.FirstOrDefault((r) =>
-					{
-						var gr = r as GraphicElement;
-						if (gr == null) return false;
-						return (gr.GetGraphic() is CIMParagraphTextGraphic ? true : false);						
-					});
-					//Get the Envelope of the last field
-					var graphicBounds = lastFieldGraphic.GetBounds();					
+          //Within ReportDetails find the envelope that encloses a field.
+          //We get the first CIMParagraphTextGraphic in the collection so that we can add the new field next to it.					
+          var lastFieldGraphic = reportDetailsSection.Elements.FirstOrDefault((r) =>
+          {
+            var gr = r as GraphicElement;
+            if (gr == null) return false;
+            return (gr.GetGraphic() is CIMParagraphTextGraphic ? true : false);
+          });
+          //Get the Envelope of the last field
+          var graphicBounds = lastFieldGraphic.GetBounds();
 
-					//Min and Max values of the envelope
-					var xMinOfFieldEnvelope = graphicBounds.XMin;
-					var yMinOfFieldEnvelope = graphicBounds.YMin;
+          //Min and Max values of the envelope
+          var xMinOfFieldEnvelope = graphicBounds.XMin;
+          var yMinOfFieldEnvelope = graphicBounds.YMin;
 
-					var xMaxOfFieldEnvelope = graphicBounds.XMax;
-					var YMaxOfFieldEnvelope = graphicBounds.YMax;
-					//create the new Envelope to be offset from the existing field
-					MapPoint newMinPoint = MapPointBuilder.CreateMapPoint(xMinOfFieldEnvelope + fieldIncrement, yMinOfFieldEnvelope);
-					MapPoint newMaxPoint = MapPointBuilder.CreateMapPoint(xMaxOfFieldEnvelope + fieldIncrement, YMaxOfFieldEnvelope);
-					Envelope newFieldEnvelope = EnvelopeBuilder.CreateEnvelope(newMinPoint, newMaxPoint);
-					#endregion
-					//Create field
-					GraphicElement fieldGraphic = ReportElementFactory.Instance.CreateFieldValueTextElement(reportDetailsSection, newFieldEnvelope, field);
+          var xMaxOfFieldEnvelope = graphicBounds.XMax;
+          var YMaxOfFieldEnvelope = graphicBounds.YMax;
+          //create the new Envelope to be offset from the existing field
+          MapPoint newMinPoint = MapPointBuilderEx.CreateMapPoint(xMinOfFieldEnvelope + fieldIncrement, yMinOfFieldEnvelope);
+          MapPoint newMaxPoint = MapPointBuilderEx.CreateMapPoint(xMaxOfFieldEnvelope + fieldIncrement, YMaxOfFieldEnvelope);
+          Envelope newFieldEnvelope = EnvelopeBuilderEx.CreateEnvelope(newMinPoint, newMaxPoint);
+          #endregion
+          //Create field
+          GraphicElement fieldGraphic = ReportElementFactory.Instance.CreateFieldValueTextElement(reportDetailsSection, newFieldEnvelope, field);
 
-					#region Field title
-					Envelope envelopeOfLastField = null;
-					ILayoutElementContainer reportsSection;
+          #region Field title
+          Envelope envelopeOfLastField = null;
+					IElementContainer reportsSection;
 					//Field title in Page Header.
 					//Get the Page header section
-					var pageHeaderSection = mainReportSection?.Elements.OfType<ReportPageHeader>();
+					var pageHeaderSection = mainReportSection?.Elements.OfType<ReportPageHeader>().FirstOrDefault();
 					//Check if there are any elements in the page header section. If there are none, the report is "Grouped"
-					if (pageHeaderSection.FirstOrDefault().Elements.Count() == 0) //Page header has no child elements. The report is grouped on a field.
+					if (pageHeaderSection.Elements.Count() == 0) //Page header has no child elements. The report is grouped on a field.
 					{
-						//Get Group Header.
-						// the title needs to be in the GroupHeader section.
-						var reportGroupHeader = mainReportSection?.Elements.OfType<ReportGroupHeader>().FirstOrDefault();
-						//Get the paragraph text element (the last title)
-						var lastFieldGroupHeaderGraphic = reportGroupHeader.Elements.FirstOrDefault((h) =>
-						{
-							var graphic = h as GraphicElement;
-							if (graphic == null) return false;
-							return (graphic.GetGraphic() is CIMParagraphTextGraphic ? true : false);
-						});
-						//Get the Envelope of the last field header
-						envelopeOfLastField = lastFieldGroupHeaderGraphic?.GetBounds();
-						//The ILayoutElementContainer is the "GroupHeader". Needed for the CreateRectangleParagraphGraphicElement method 
-						reportsSection = reportGroupHeader;
-					}
+            //Get Group Header.
+            // the title needs to be in the GroupHeader section.
+            var reportGroupHeader = mainReportSection?.Elements.OfType<ReportGroupHeader>().FirstOrDefault();
+            List<Element> textGraphicsInReportHeader = new List<Element>();
+            foreach (var elm in reportGroupHeader.Elements)
+            {
+              var elmGraphic = elm as GraphicElement;
+              if (elmGraphic == null) continue;
+              var graphic = elmGraphic.GetGraphic();
+              var cimParaGraphic = graphic as CIMParagraphTextGraphic;
+
+              if (cimParaGraphic != null)
+                textGraphicsInReportHeader.Add(elmGraphic);
+            }
+            //Get the Envelope of the last field header
+            envelopeOfLastField = textGraphicsInReportHeader?.FirstOrDefault().GetBounds();
+            //The IElementContainer is the "GroupHeader". Needed for the CreateRectangleParagraphGraphicElement method 					
+            reportsSection = reportGroupHeader;
+          }
 					else //not grouped
 					{
 						//Get the "ReportPageHeader" within the ReportSectionElement. ReportPageHeader is where "fields titles" are.
-						var reportPageHeader = mainReportSection?.Elements.OfType<ReportPageHeader>().FirstOrDefault();
+						//var reportPageHeader = mainReportSection?.Elements.OfType<ReportPageHeader>().FirstOrDefault();
 						//Get the paragraph text element (the last title)
-						var lastFieldPageHeaderGraphic = reportPageHeader.Elements.FirstOrDefault((h) =>
+						List<Element> textGraphicsInPageHeader = new List<Element>();
+						foreach (var elm in pageHeaderSection.Elements)
 						{
-							var graphic = h as GraphicElement;
-							if (graphic == null) return false;
-							return (graphic.GetGraphic() is CIMParagraphTextGraphic ? true : false);
-						});
-						//Get the Envelope of the last field header
-						envelopeOfLastField = lastFieldPageHeaderGraphic?.GetBounds();
+							var elmGraphic = elm as GraphicElement;
+							if (elmGraphic == null) continue;
+							var graphic = elmGraphic.GetGraphic();
+							var cimParaGraphic = graphic as CIMParagraphTextGraphic;
+
+							if (cimParaGraphic != null)
+								textGraphicsInPageHeader.Add(elmGraphic);
+						}
+						if (textGraphicsInPageHeader.Count > 0)
+            {
+							//Get the Envelope of the last field header
+							envelopeOfLastField = textGraphicsInPageHeader.FirstOrDefault().GetBounds();							
+						}
+						
+					}
+					if (envelopeOfLastField != null)
+					{
+						//Min and Max values of the envelope
+						var xMinOfHeaderFieldEnvelope = envelopeOfLastField.XMin;
+						var yMinOfHeaderFieldEnvelope = envelopeOfLastField.YMin;
+
+						var xMaxOfHeaderFieldEnvelope = envelopeOfLastField.XMax;
+						var YMaxOfHeaderFieldEnvelope = envelopeOfLastField.YMax;
+						//create the new Envelope to be offset from the existing field
+						MapPoint newHeaderMinPoint = MapPointBuilderEx.CreateMapPoint(xMinOfHeaderFieldEnvelope + fieldIncrement, yMinOfHeaderFieldEnvelope);
+						MapPoint newHeaderMaxPoint = MapPointBuilderEx.CreateMapPoint(xMaxOfHeaderFieldEnvelope + fieldIncrement, YMaxOfHeaderFieldEnvelope);
+						Envelope newHeaderFieldEnvelope = EnvelopeBuilderEx.CreateEnvelope(newHeaderMinPoint, newHeaderMaxPoint);
+						#endregion
 						//The ILayoutElementContainer is the "PageHeader". Needed for the CreateRectangleParagraphGraphicElement method 
-						reportsSection = reportPageHeader;
-					}			
-
-					//Min and Max values of the envelope
-					var xMinOfHeaderFieldEnvelope = envelopeOfLastField.XMin;
-					var yMinOfHeaderFieldEnvelope = envelopeOfLastField.YMin;
-
-					var xMaxOfHeaderFieldEnvelope = envelopeOfLastField.XMax;
-					var YMaxOfHeaderFieldEnvelope = envelopeOfLastField.YMax;
-					//create the new Envelope to be offset from the existing field
-					MapPoint newHeaderMinPoint = MapPointBuilder.CreateMapPoint(xMinOfHeaderFieldEnvelope + fieldIncrement, yMinOfHeaderFieldEnvelope);
-					MapPoint newHeaderMaxPoint = MapPointBuilder.CreateMapPoint(xMaxOfHeaderFieldEnvelope + fieldIncrement, YMaxOfHeaderFieldEnvelope);
-					Envelope newHeaderFieldEnvelope = EnvelopeBuilder.CreateEnvelope(newHeaderMinPoint, newHeaderMaxPoint);
-					#endregion
-					//Create field header title
-					GraphicElement fieldHeaderGraphic = ReportElementFactory.Instance.CreateRectangleParagraphGraphicElement(reportsSection, newHeaderFieldEnvelope, field.Name);
+						reportsSection = pageHeaderSection;
+						//Create field header title
+						GraphicElement fieldHeaderGraphic = ReportElementFactory.Instance.CreateRectangleParagraphGraphicElement(reportsSection, newHeaderFieldEnvelope, field.Name);
+				}
 				}
 			});
 		}

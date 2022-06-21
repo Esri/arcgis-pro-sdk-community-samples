@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -47,15 +47,15 @@ namespace MainConnectorManhole
         var map = MapView.Active.Map;
         IEnumerable<Layer> layers = map.GetLayersAsFlattenedList().AsEnumerable();
         Layer mainLayer = layers.FirstOrDefault(l => l.Name == "main");
-        Layer mhLayer = layers.FirstOrDefault(l => l.Name == "Manhole");
-        Layer conLayer = layers.FirstOrDefault(l => l.Name == "Connector");
+        Layer mhLayer = layers.FirstOrDefault(l => l.Name == "manhole");
+        Layer conLayer = layers.FirstOrDefault(l => l.Name == "connector");
 
         if ((mainLayer == null) || (mhLayer == null) || (conLayer == null))
           return false;
 
         var mainTemplate = mainLayer.GetTemplate("main");
-        var mhTemplate = mhLayer.GetTemplate("Manhole");
-        var conTemplate = conLayer.GetTemplate("Connector");
+        var mhTemplate = mhLayer.GetTemplate("manhole");
+        var conTemplate = conLayer.GetTemplate("connector");
 
         if ((mainTemplate == null) || (mhTemplate == null) || (conTemplate == null))
           return false;
@@ -83,7 +83,7 @@ namespace MainConnectorManhole
             pnt, //top of vertical connector
             GeometryEngine.Instance.Move(pnt, 0, 0, -20) as MapPoint //bottom of vertical connector
           };
-          var conPolyLine = PolylineBuilder.CreatePolyline(conPoints);
+          var conPolyLine = PolylineBuilderEx.CreatePolyline(conPoints);
           op.Create(conTemplate, conPolyLine);
         }
         return op.Execute();

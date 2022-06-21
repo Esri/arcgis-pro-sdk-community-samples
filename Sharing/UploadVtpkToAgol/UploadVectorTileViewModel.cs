@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -143,12 +143,12 @@ namespace UploadVtpkToAgol
                 {
                     // first we create an 'Item' using itemfactory
                     Item currentItem = ItemFactory.Instance.Create(FilePath);
-
+                    var lyrParams = new LayerCreationParams(currentItem);
                     // Finally add the feature service to the map
                     // if we have an item that can be turned into a layer
                     // add it to the map
                     if (LayerFactory.Instance.CanCreateLayerFrom(currentItem))
-                        LayerFactory.Instance.CreateLayer(currentItem, MapView.Active.Map);
+                        LayerFactory.Instance.CreateLayer<FeatureLayer>(lyrParams, MapView.Active.Map);
                 }
                 catch (Exception ex)
                 {
@@ -194,12 +194,12 @@ namespace UploadVtpkToAgol
             // Create an item from the search results
             string itemId = results.Results[0].ID;
             var currentItem = ItemFactory.Instance.Create(itemId, ItemFactory.ItemType.PortalItem);
-
+            var lyrParams = new LayerCreationParams(currentItem);
             // Finally add the feature service to the map
             // if we have an item that can be turned into a layer
             // add it to the map
             if (LayerFactory.Instance.CanCreateLayerFrom(currentItem))
-                LayerFactory.Instance.CreateLayer(currentItem, MapView.Active.Map);
+                LayerFactory.Instance.CreateLayer<FeatureLayer>(lyrParams, MapView.Active.Map);
             return $@"Uploaded this item: {results.Results[0].Name} [Type: {results.Results[0].Type}] to ArcGIS Online and added the item to the Map";
          
         }
@@ -230,12 +230,12 @@ namespace UploadVtpkToAgol
             // Create an item from the search results
             string itemId = results.Results[0].ID;
             var currentItem = ItemFactory.Instance.Create(itemId, ItemFactory.ItemType.PortalItem);
-
+            var lyrParams = new LayerCreationParams(currentItem);
             // Finally add the feature service to the map
             // if we have an item that can be turned into a layer
             // add it to the map
             if (LayerFactory.Instance.CanCreateLayerFrom(currentItem))
-                LayerFactory.Instance.CreateLayer(currentItem, MapView.Active.Map);
+                LayerFactory.Instance.CreateLayer<FeatureLayer>(lyrParams, MapView.Active.Map);
             return $@"Downloaded this item: {results.Results[0].Name} [Type: {results.Results[0].Type}] to ArcGIS Online and added the item to the Map";
         }
         /// <summary>
@@ -262,12 +262,12 @@ namespace UploadVtpkToAgol
             var myItem = results.PortalItems.FirstOrDefault(i => i.Tags.Contains("UploadVtpkToAgol Demo"));
 
             var currentItem = ItemFactory.Instance.Create(myItem.ID, ItemFactory.ItemType.PortalItem);
-
+            var lyrParams = new LayerCreationParams(currentItem);
             // Finally add the Vextor tile package to the map
             // if we have an item that can be turned into a layer
             // add it to the map
             if (LayerFactory.Instance.CanCreateLayerFrom(currentItem))
-                LayerFactory.Instance.CreateLayer(currentItem, MapView.Active.Map);
+                LayerFactory.Instance.CreateLayer<FeatureLayer>(lyrParams, MapView.Active.Map);
             return $@"Downloaded this item: {myItem.Name} [Type: {myItem.Type}] to ArcGIS Online and added the item to the Map";
         }
     }

@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -103,8 +103,9 @@ namespace ProDataReader
 									{
 										using (var table = pluginGpx.OpenTable(tn))
 										{
+											var lyrParams = new FeatureLayerCreationParams((FeatureClass)table);
 											//Add as a layer to the active map or scene
-											LayerFactory.Instance.CreateFeatureLayer((FeatureClass)table, groupLayer);
+											LayerFactory.Instance.CreateLayer<FeatureLayer>(lyrParams, groupLayer);
                                             zoomToEnv = ((FeatureClass)table).GetExtent().Clone() as ArcGIS.Core.Geometry.Envelope;
                                         }
                                     }
@@ -124,8 +125,9 @@ namespace ProDataReader
 									{
 										using (var table = pluginJpg.OpenTable(tn))
 										{
+											var featureLyrParams = new FeatureLayerCreationParams((FeatureClass)table);
 											//Add as a layer to the active map or scene
-											LayerFactory.Instance.CreateFeatureLayer((FeatureClass)table, MapView.Active.Map);
+											LayerFactory.Instance.CreateLayer<FeatureLayer>(featureLyrParams, MapView.Active.Map);
 										}
 									}
 								}

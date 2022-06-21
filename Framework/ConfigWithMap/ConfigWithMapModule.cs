@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -54,19 +54,19 @@ namespace ConfigWithMap
         /// <summary>
         /// Retrieve the singleton instance to this module here
         /// </summary>
-        public static ConfigWithMapModule Current => _this ?? (_this = (ConfigWithMapModule)FrameworkApplication.FindModule("ConfigWithMapModule"));
+        public static ConfigWithMapModule Current => _this ??= (ConfigWithMapModule)FrameworkApplication.FindModule("ConfigWithMapModule");
 
-        public ConfigWithMapModule()
-        {
-            _this = this;
-        }
-        
-        #region Overrides
-        /// <summary>
-        /// Called by Framework when ArcGIS Pro is closing
-        /// </summary>
-        /// <returns>False to prevent Pro from closing, otherwise True</returns>
-        protected override bool CanUnload()
+    public ConfigWithMapModule()
+    {
+      _this = this;
+    }
+
+    #region Overrides
+    /// <summary>
+    /// Called by Framework when ArcGIS Pro is closing
+    /// </summary>
+    /// <returns>False to prevent Pro from closing, otherwise True</returns>
+    protected override bool CanUnload()
         {
             //TODO - add your business logic
             //return false to ~cancel~ Application close
@@ -143,9 +143,9 @@ namespace ConfigWithMap
 
                 var selectedFeatures = mapView.Map.GetSelection();
 
-                var inspector = new Inspector(false);
+                var inspector = new Inspector();
 
-                foreach (var kvEntry in selectedFeatures)
+                foreach (var kvEntry in selectedFeatures.ToDictionary())
                 {
                     foreach (var id in kvEntry.Value)
                     {

@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -45,8 +45,8 @@ namespace GetSymbolSwatch
   /// 1. Make sure that the Sample data is unzipped in c:\data 
   /// 1. The projects used for this sample are 'C:\Data\FeatureTest\FeatureTest.aprx', 'C:\Data\Interacting with Maps\Interacting with Maps.aprx', and 'C:\Data\Admin\AdminSample.aprx'
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-  /// 1. Click Start button to open ArcGIS Pro.
-  /// 1. ArcGIS Pro opens, select the FeatureTest.aprx project
+  /// 1. Launch the debugger to open ArcGIS Pro.
+  /// 1. Select the FeatureTest.aprx project
   /// 1. After the Map View is displayed, click on the 'Symbol Swatch' tab, and then click the 'Show Symbol Swatch Dockpane' button to show the 'Symbol Swatch Dockpane' dockpane  
   /// 1. Position and size the dockpane to see all columns in the symbol swatch grid
   /// ![UI](Screenshots/Screenshot1.png)

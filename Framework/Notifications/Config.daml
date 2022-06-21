@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -7,7 +7,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,14 +18,14 @@
 
 -->
 <ArcGIS defaultAssembly="Notifications.dll" defaultNamespace="Notifications" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{d67aabcc-8efa-4191-83c5-b000fe6aa8c4}" version="1.0" desktopVersion="2.1.10204">
+  <AddInInfo id="{d67aabcc-8efa-4191-83c5-b000fe6aa8c4}" version="1.0" desktopVersion="3.0.34047">
     <Name>Notifications</Name>
     <Description>Sample illustrating how to add notifications to the notification dock pane  (You can find the notification pane by 
     clicking the bell icon in the upper right of the applicataion.)  Notifications can be application or project based.  Also 
     demonstrates how to display toast notifications. </Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>Esri, http://www.esri.com</Company>
+    <Company>Esri, https://www.esri.com</Company>
     <Date>1/1/2018 11:52:37 PM, 2018</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

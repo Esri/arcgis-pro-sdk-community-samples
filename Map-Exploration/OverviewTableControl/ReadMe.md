@@ -5,18 +5,18 @@ This sample shows how to create a custom table control.  This example creates a 
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -32,13 +32,13 @@ Visual Studio:         2017, 2019
     
   
 1. In Visual Studio, click the Build menu. Then select Build Solution.    
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.  
+1. Launch the debugger to open ArcGIS Pro.  
 1. Open any project with map views.   
-1. Within the "Add-in" tab, click the Table Control dropdown and select the control type: Dock Pane, Pane, Dialog.  
+1. Select a layer in the Contents pane  
+1. Within the "Add-in" tab, click the Open button.  
 1. A table control will open and display the current content of the selected layer or table from the active map.  
 1. Select a few records in the table control.  Notice that the current map selection changes to reflect this.  
-![UI](Screenshots/tablecontrol.png)  
+![UI](screenshots/tablecontrol.png)  
   
 
 

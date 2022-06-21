@@ -5,7 +5,7 @@
 //   you may not use this file except in compliance with the License. 
 //   You may obtain a copy of the License at 
 //
-//       http://www.apache.org/licenses/LICENSE-2.0 
+//       https://www.apache.org/licenses/LICENSE-2.0 
 //
 //   Unless required by applicable law or agreed to in writing, software 
 //   distributed under the License is distributed on an "AS IS" BASIS, 
@@ -34,15 +34,20 @@ namespace ImpersonateMapPane
   {
     private const string _viewPaneID = "ImpersonateMapPane_ImpersonateMapPane1";
     private string _viewDefinition = "";
+    private string _customValue = "";
 
     /// <summary>
     /// Consume the passed in CIMView. Call the base constructor to wire up the CIMView.
     /// </summary>
     public ImpersonateMapPane1ViewModel(CIMView view)
-      : base(view) {
+      : base(view)
+    {
       //Set to true to change docking behavior
       _dockUnderMapView = false;
-      _viewDefinition = FormatXml(view.ToXml());
+      //At 2.x - using Xml
+      //_viewDefinition = FormatXml(view.ToXml());
+
+      _viewDefinition = view.ToJson();//Json at 3.0
     }
 
     /// <summary>
@@ -70,9 +75,17 @@ namespace ImpersonateMapPane
       get
       {
         _cimView.InstanceID = (int)InstanceID;
-        //Cache content in _cimView.ViewProperties or in _cimView.ViewXML
-        //_cimView.ViewXML = new XDocument(new XElement("Root",
-        //new XElement("custom", "custom value"))).ToString(SaveOptions.DisableFormatting);
+        //Cache content in _cimView.ViewProperties
+        //((CIMGenericView)_cimView).ViewProperties["custom"] = "custom value";
+        //((CIMGenericView)_cimView).ViewProperties["custom2"] = "custom value2";
+        
+
+        //At 3.0 - use view.ViewProperties
+        ((CIMGenericView)_cimView).ViewProperties["custom"] = _customValue;
+        //can also include serialized content
+        ((CIMGenericView)_cimView).ViewProperties["self"] = _cimView.ToJson();
+        //etc
+        ((CIMGenericView)_cimView).ViewProperties["foo"] = "bar";
         return _cimView;
       }
     }
@@ -83,6 +96,39 @@ namespace ImpersonateMapPane
     protected async override Task InitializeAsync()
     {
       var uri = ((CIMGenericView)_cimView).ViewProperties["MAPURI"] as string;
+      //Custom content may originally have been persisted in the view.ViewXML property
+      //by the addin at 2.x.
+
+      //When a 2.x aprx is opened, any custom view content persisted in the aprx
+      //in the _cimView.ViewXML property will be moved to the ViewProperties dictionary
+      //and added as the key "ViewXML"
+      if (((CIMGenericView)_cimView).ViewProperties.ContainsKey("ViewXML"))//Legacy content
+      {
+        //This is content that would have been persisted at 2.x in the
+        //deprecated _cimView.ViewXML property...
+        var previous_custom_content = ((CIMGenericView)_cimView).ViewProperties["ViewXML"] as string;
+        //TODO - handle previous content from 2.x
+        //...
+
+        //For the sample, we convert to JSON
+        XmlDocument doc = new XmlDocument();
+        doc.LoadXml(previous_custom_content);
+        //This is particular example is using Newtonsoft...
+        _customValue = $"From 2.x: {Newtonsoft.Json.JsonConvert.SerializeXmlNode(doc)}";
+
+        //remove the legacy content
+        ((CIMGenericView)_cimView).ViewProperties.Remove("ViewXML");
+      }
+      //3.0 check ViewProperties for any other custom keys
+      if (((CIMGenericView)_cimView).ViewProperties.ContainsKey("custom"))
+      {
+        _customValue = ((CIMGenericView)_cimView).ViewProperties["custom"] as string;
+      }
+      //etc....
+      if (string.IsNullOrEmpty(_customValue))
+      {
+
+      }
       await this.SetMapURI(uri);
       await base.InitializeAsync();
     }
@@ -97,10 +143,7 @@ namespace ImpersonateMapPane
 
     #endregion Pane Overrides
 
-    /// <summary>
-    /// Gets the underlying definition of the associated map
-    /// </summary>
-    public string ViewXML
+    public string ViewDefinition
     {
       get
       {
@@ -108,15 +151,15 @@ namespace ImpersonateMapPane
       }
     }
 
-    private static string FormatXml(string xml)
-          {
-      var doc = new XmlDocument();
-      var sb = new StringBuilder();
-      doc.LoadXml(xml);
-      var xmlWriterSettings = new XmlWriterSettings { Indent = true, OmitXmlDeclaration = true };
-      doc.Save(XmlWriter.Create(sb, xmlWriterSettings));
-      return sb.ToString();
-        }
+    //private static string FormatXml(string xml)
+    //{
+    //  var doc = new XmlDocument();
+    //  var sb = new StringBuilder();
+    //  doc.LoadXml(xml);
+    //  var xmlWriterSettings = new XmlWriterSettings { Indent = true, OmitXmlDeclaration = true };
+    //  doc.Save(XmlWriter.Create(sb, xmlWriterSettings));
+    //  return sb.ToString();
+    //}
   }
 
   /// <summary>

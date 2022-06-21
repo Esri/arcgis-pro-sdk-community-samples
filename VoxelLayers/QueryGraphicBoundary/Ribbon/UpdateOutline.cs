@@ -1,4 +1,22 @@
-﻿using System;
+/*
+
+   Copyright 2022 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -70,7 +88,7 @@ namespace QueryGraphicBoundary.Ribbon
 			{
 
 				var sel = mv.SelectFeatures(sel_geom);
-				var sel_first = sel.FirstOrDefault(kvp => kvp.Value.Count() > 0);
+				var sel_first = sel.ToDictionary().FirstOrDefault(kvp => kvp.Value.Count() > 0);
 				if (sel_first.Key == null)
 				{
 					graphic?.Dispose();
@@ -81,10 +99,10 @@ namespace QueryGraphicBoundary.Ribbon
 												 DrawingOutlineType.BoundingEnvelope :
 												 DrawingOutlineType.Exact;
 
-				var feat_layer = sel_first.Key;
+				var feat_layer = sel_first.Key as FeatureLayer;
 				bool isAnno = feat_layer is AnnotationLayer;
 				var oid = sel_first.Value.First();
-				var outline = feat_layer.QueryDrawingOutline(oid, MapView.Active, outlineType);
+				var outline = feat_layer.GetDrawingOutline(oid, MapView.Active, outlineType);
 
 				graphic?.Dispose();
 

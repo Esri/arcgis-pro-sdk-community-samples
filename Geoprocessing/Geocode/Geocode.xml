@@ -116,6 +116,36 @@
             <param name="WKID">The wkid for the spatial reference to be created</param>
             <returns>A CIM spatial reference</returns>
         </member>
+        <member name="T:Geocode.GeocodeModule">
+            <summary>
+            This sample provides a new tab and controls that launches a Geocode dialog window. 
+            This dialog window will allow you to enter an address or place name and will geocode 
+            the results and then zoom to and place a graphic at the location on the map. 
+            </summary>
+            <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            2. Launch the debuuger to open ArcGIS Pro.
+            4. Open a map and add a base map.
+            5. Click the Add-in tab group and click the Geocode Address button.
+            6. In the Geocode dialog window, enter an address or place name.
+            7. Click the Go button.
+            ![UI](Screenshots/Screen.png)
+            8. The application will geocode the entered value, zoom to the 
+               location, and place a graphic symbol at the location.
+            ![UI](Screenshots/Screen2.png)
+            </remarks>
+        </member>
+        <member name="P:Geocode.GeocodeModule.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:Geocode.GeocodeModule.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
         <member name="T:Geocode.GeocodeURI">
             <summary>
             Construct a URI for the ArcGIS Online geocode service
@@ -180,37 +210,6 @@
             Remove the Point Graphic from the specified mapview
             </summary>
             <param name="mapView"></param>
-        </member>
-        <member name="T:Geocode.GeocodeModule">
-            <summary>
-            This sample provides a new tab and controls that launches a Geocode dialog window. 
-            This dialog window will allow you to enter an address or place name and will geocode 
-            the results and then zoom to and place a graphic at the location on the map. 
-            </summary>
-            <remarks>
-            1. In Visual Studio click the Build menu. Then select Build Solution.
-            2. Click Start button to open ArcGIS Pro.
-            3. ArcGIS Pro will open.
-            4. Open a map and add a base map.
-            5. Click the ADD-IN tab group and click the Geocode Address button.
-            6. In the Geocode dialog window, enter and address or place name.
-            7. Click the Go button.
-            ![UI](Screenshots/Screen.png)
-            8. The application will geocode the entered value, zoom to the 
-               location, and place a graphic symbol at the location.
-            ![UI](Screenshots/Screen2.png)
-            </remarks>
-        </member>
-        <member name="P:Geocode.GeocodeModule.Current">
-            <summary>
-            Retrieve the singleton instance to this module here
-            </summary>
-        </member>
-        <member name="M:Geocode.GeocodeModule.CanUnload">
-            <summary>
-            Called by Framework when ArcGIS Pro is closing
-            </summary>
-            <returns>False to prevent Pro from closing, otherwise True</returns>
         </member>
         <member name="T:Geocode.GeocodeWindow">
             <summary>

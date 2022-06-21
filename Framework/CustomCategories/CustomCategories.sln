@@ -1,9 +1,9 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomCategoriesExample", "CustomCategoriesExample.csproj", "{F3E48608-C97E-4B89-8BC3-1DC904695226}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomCategoriesExample", "CustomCategories\CustomCategoriesExample.csproj", "{F3E48608-C97E-4B89-8BC3-1DC904695226}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtraReport1", "ExtraReport1\ExtraReport1.csproj", "{9F44BCDF-71AC-424B-A354-68F29F977CAF}"
 EndProject

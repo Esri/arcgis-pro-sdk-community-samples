@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,22 +22,21 @@ using System.Threading.Tasks;
 
 namespace UpdateAttributesWithSketch
 {
-    /// <summary>
-    /// This sample creates a sketch tool that can be used to update the attributes of features that it intersects. It shows an example of creating a sketch tool, finding intersecting features, updating attributes and performing the edit through an edit operation.
-    /// </summary>
-    /// <remarks>
-    /// 1. Examine the code within AttributeWithSketch.cs.
-    /// 1. Replace the string "PARCEL_ID" with a field name from data you will add to the application.
-    /// 1. Build or debug start the sample through Visual Studio.
-    /// 1. Create a new map and add some data or open an existing map with known data.
-    /// 1. Examine the ADD-IN TAB on the ribbon, the sample should be present.
-    /// 1. Select the layer in the table of contents who's attributes you wish to update with this tool.
-    /// 1. Select the tool in the ADD-IN TAB.
-    /// 1. Sketch a line across features in the selected layer.
-    /// 1. Features that intersect the sketch will have their attributes updated.
-    /// ![UI](Screenshots/Screen.png)    
-    /// </remarks>
-    internal class Module1 : Module
+  /// <summary>
+  /// This sample creates a sketch tool that can be used to update the attributes of features that it intersects. It shows an example of creating a sketch tool, finding intersecting features, updating attributes and performing the edit through an edit operation.
+  /// </summary>
+  /// <remarks>
+  /// 1. Examine the code within AttributeWithSketch.cs.
+  /// 1. This code finds a field named "PARCEL_ID" and replaces the value with "42".
+  /// 1. Build or debug start the sample through Visual Studio.
+  /// 1. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'
+  /// 1. Select the layer in the table of contents who's attributes you wish to update with this tool. Create a field called "PARCEL_ID" in this layer.
+  /// 1. Select the "AttributeWithSketch" tool in the Add-In Tab.
+  /// 1. Sketch a line across features in the selected layer.
+  /// 1. Features that intersect the sketch will have their attributes in the PARCEL_ID field updated.
+  /// ![UI](Screenshots/Screen.png)    
+  /// </remarks>
+  internal class Module1 : Module
     {
         private static Module1 _this = null;
 

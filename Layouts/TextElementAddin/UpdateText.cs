@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -54,20 +54,20 @@ namespace TextElementAddin
       {
         var lyt = layoutItem.GetLayout();  //Each layoutItem has metadata and an associated Layout object
 
-              //Reference a text element called "Text"
-              var txtElm = lyt.Elements.Single(item => (item is TextElement && item.Name.Equals("Text"))) as TextElement;
+        //Reference a text element called "Text"
+        var txtElm = lyt.Elements.Single(item => (item is TextElement && item.Name.Equals("Text"))) as TextElement;
 
-              //Modify the text elements placement properties
-              var xPlacement = txtElm.GetX();
+        //Modify the text elements placement properties
+        var xPlacement = txtElm.GetX();
         var yPlacement = txtElm.GetY();
         txtElm.SetAnchor(ArcGIS.Core.CIM.Anchor.CenterPoint);
-        xPlacement = 4.25;
-        yPlacement = 5.5;
+        xPlacement = 3.5;
+        yPlacement = 9.5;
         txtElm.SetX(xPlacement);
         txtElm.SetY(yPlacement);
 
-              //Modify the text properties
-              var txtProp = txtElm.TextProperties;
+        //Modify the text properties
+        var txtProp = txtElm.TextProperties;
         txtProp.Text = "Some New Text";
         txtProp.Font = "Tahoma";
         txtProp.FontSize = 24;

@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -43,7 +43,7 @@ namespace ChangeDataSource
 	/// <remarks>
 	/// 1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\FeatureTest\FeatureNewTest.gdb" is available.
 	/// 1. In Visual Studio click the Build menu. Then select Build Solution.
-	/// 1. Click Start button to open ArcGIS Pro.
+	/// 1. Launch the debugger to open ArcGIS Pro.
 	/// 1. In ArcGIS Pro open "C:\Data\FeatureTest\FeatureTest.aprx"
 	/// 1. Open the 'Add-in' tab and click on the "Show Change DataSource" button to open the "Change DataSource" dockpane 
 	/// 1. On the "Change DataSource" dockpane browse to the "C:\Data\FeatureTest\FeatureNewTest.gdb" database which will be used to replace the current datasource for all layers.

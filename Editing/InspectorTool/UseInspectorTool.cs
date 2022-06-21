@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -72,11 +72,11 @@ namespace InspectorTool
                 if (pointLayer != null)
                 {
                     // if the point layer contains selected features
-                    if (selectionInMap.ContainsKey(pointLayer))
+                    if (selectionInMap.ToDictionary().ContainsKey(pointLayer))
                     {
                         // get a list of the selected point features 
                         var selectionDictionary = new Dictionary<MapMember, List<long>>();
-                        selectionDictionary.Add(pointLayer as MapMember, selectionInMap[pointLayer]);
+                        selectionDictionary.Add(pointLayer as MapMember, selectionInMap.ToDictionary()[pointLayer]);
                         // and store it in the view model, this property populates the tree view
                         _attributeVM.SelectedMapFeatures = selectionDictionary;
 

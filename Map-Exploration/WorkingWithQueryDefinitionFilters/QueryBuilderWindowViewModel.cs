@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -65,7 +65,6 @@ namespace WorkingWithQueryDefinitionFilters
             set {
                 //SetProperty(ref _expression, value, () => Expression);
                 _expression = value;
-
             }
         }
         private QueryBuilderControlProperties _controlProps = null;
@@ -93,7 +92,6 @@ namespace WorkingWithQueryDefinitionFilters
                 return false;
             else
                 return true;
-            //return (string.Compare(_origExpression, newExpression) != 0);
         }
         /// <summary>
         /// Gets the Apply command to write query definition to mapMember.
@@ -124,37 +122,28 @@ namespace WorkingWithQueryDefinitionFilters
                     _origExpression = newExpression;
                     ControlProps.Expression = newExpression;
                     ThisDefinitionFilterItem.QueryExpression = ControlProps.Expression;
-                    ThisDefinitionFilterItem.DefinitionFilter = new CIMDefinitionFilter {DefinitionExpression = ControlProps.Expression, Name = ThisDefinitionFilterItem.ExpressionName };
+                    ThisDefinitionFilterItem.CurrentDefinitionQuery = new DefinitionQuery {WhereClause = ControlProps.Expression};
                     Module1.Current.DefFilterVM.SelectedDefinitionFilter = ThisDefinitionFilterItem;
-                    //We might be creating a new Filter. So we have to add the current filter to the collection of DefintionFilters
-                    if (!Module1.Current.DefFilterVM.DefinitionFilters.Contains(ThisDefinitionFilterItem))
-                        Module1.Current.DefFilterVM.DefinitionFilters.Add(ThisDefinitionFilterItem);
-                    ApplyFilterChangesToLayer(ThisDefinitionFilterItem.ItemMapMember, Module1.Current.DefFilterVM.DefinitionFilters);
+                    ApplyFilterChangesToLayer(ThisDefinitionFilterItem.ItemMapMember);
 
                     ThisQueryBuilderWindow.Close();
                 }
             }          
         }
 
-        private void ApplyFilterChangesToLayer(MapMember mapMember, System.Collections.ObjectModel.ObservableCollection<DefinitionFilterItem> definitionFilters)
+        private void ApplyFilterChangesToLayer(MapMember mapMember)
         {
-            //Get the definition filters from the collection of DefinitionFilters
-            var defFilters = new List<CIMDefinitionFilter>();
-            foreach (var filter in definitionFilters)
-            {
-                defFilters.Add(filter.DefinitionFilter);
-            }
             QueuedTask.Run(() => {
                 //Apply these filters to the Selected Map Member
                 if (mapMember is BasicFeatureLayer)
                 {
                     var selectedMapMemberAsLayer = mapMember as BasicFeatureLayer;
-                    selectedMapMemberAsLayer.SetDefinitionFilters(defFilters);
-                }
+                    selectedMapMemberAsLayer.InsertDefinitionQuery(new DefinitionQuery { WhereClause = ThisDefinitionFilterItem.QueryExpression});
+              }
                 if (mapMember is StandaloneTable)
                 {
                     var selectedMapMemberAsTable = mapMember as StandaloneTable;
-                    selectedMapMemberAsTable.SetDefinitionFilters(defFilters);
+                    selectedMapMemberAsTable.InsertDefinitionQuery(new DefinitionQuery { WhereClause = ThisDefinitionFilterItem.QueryExpression });
                 }
             });
         }

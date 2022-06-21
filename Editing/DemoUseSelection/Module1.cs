@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -51,16 +51,16 @@ namespace DemoUseSelection
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.  
-  /// 1. Click Start button to open ArcGIS Pro.
+  /// 1. Launch the debugger to open ArcGIS Pro.
   /// 1. ArcGIS Pro will open. 
   /// 1. Open any project which features you can edit, for example: 'C:\Data\FeatureTest\FeatureTest.aprx' 
   /// 1. Click the Edit tab.  Notice that edit functions like create/modify are enabled.
   /// ![UI](Screenshots/Screen1.png)
-  /// 1. Click the SEL tab.  Then click 'Disable Editing' to disable editing.
+  /// 1. Click the Use SEL tab.  Then click 'Disable Editing' to disable editing.
   /// ![UI](Screenshots/Screen2.png)
   /// 1. Click the Edit tab.  Notice that edit functions like create/modify are now disabled. 
   /// ![UI](Screenshots/Screen3.png)
-  /// 1. Click the SEL tab.  Then click 'Enable Editing' to re-able editing.  Notice that the 'Difference' custom tools are now re-abled as well. 
+  /// 1. Click the Use SEL tab.  Then click 'Enable Editing' to re-able editing.  Notice that the 'Difference' custom tools are now re-abled as well. 
   /// ![UI](Screenshots/Screen4.png)
   /// 1. To utilize the "Edit" button you have to set the "Disable/Enable Editing" option in ArcGIS Pro options as shown here.
   /// ![UI](Screenshots/Screen5.png)

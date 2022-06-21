@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -29,9 +29,11 @@ namespace ScribbleControl_ArcGISPro
   /// </summary>
   internal class Scribble_AddButton : Button
   {
+
     protected override void OnClick()
     {
       Scribble_ControlView scribbleControl = null;
+
       MapViewOverlayControl overlayControl = null;
 
       string mapURI = MapView.Active.Map.URI;
@@ -46,17 +48,34 @@ namespace ScribbleControl_ArcGISPro
       scribbleControl = new Scribble_ControlView();
       scribbleControl.Name = "Pro_ScribbleControl";
       scribbleControl.Width = MapView.Active.GetViewSize().Width;
-      scribbleControl.Height = 40;
+      scribbleControl.Height = MapView.Active.GetViewSize().Height;
       scribbleControl.cvs.DefaultDrawingAttributes.Width = 20;
       scribbleControl.cvs.DefaultDrawingAttributes.Height = 20;
       scribbleControl.cvs.DefaultDrawingAttributes.Color = Colors.Tomato;
       overlayControl = new MapViewOverlayControl(scribbleControl, false);
+
+      MapView.Active.ViewSizeChanged += Active_ViewSizeChanged;
 
       //Add the overlay control to active map view
       MapView.Active.AddOverlayControl(overlayControl);
 
       //Add to dictionary
       Scribble_Module.projectControls.Add(mapURI, overlayControl);
+    }
+
+    private void Active_ViewSizeChanged(object sender, EventArgs e)
+    {
+      if (MapView.Active == null)
+        return; // a pane is being opened or closed
+
+      string mapURI = MapView.Active.Map.URI;
+      MapViewOverlayControl overlayControl = null;
+      if (Scribble_Module.projectControls.Contains(mapURI))
+      {
+        overlayControl = (MapViewOverlayControl)Scribble_Module.projectControls[mapURI];
+        overlayControl.Control.Width = MapView.Active.GetViewSize().Width;
+        overlayControl.Control.Height = MapView.Active.GetViewSize().Height;
+      }
     }
   }
 }

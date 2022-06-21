@@ -1,4 +1,22 @@
-﻿using ArcGIS.Core.CIM;
+/*
+
+   Copyright 2022 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+*/
+using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
 using ArcGIS.Core.Geometry;
 using ArcGIS.Desktop.Catalog;
@@ -22,174 +40,209 @@ using System.Windows.Input;
 
 namespace GraphicElementSymbolPicker
 {
-  /// <summary>
-  /// This sample demonstrates creating graphic elements in a map and a layout.
-  /// </summary>
-  /// <remarks>
-  /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-  /// 1. Click Start button to open ArcGIS Pro. 
-  /// 1. ArcGIS Pro will open. 
-  /// 1. Open any project that contains a Map with a graphics layer and/or layout.
-  /// 1. You will need a Graphics Layer in the map to work with this sample.  If the map doesn't have a Graphics Layer, click the Map tab and use the Add Graphics layer button to insert a new layer in the map.
-  /// 1. In the Graphic tab on the Pro ribbon, this add-in adds a new "Symbol Picker" group.
-  ///       ![UI](screenshots/SymbolPicker.png)
-  /// 1. In the graphic elements creation tool gallery, activate the point, line, polygon or a text graphic element creation tool in order to create graphics elements.
-  /// 1. In the Symbol selector gallery, select the point, line, polygon or text symbol you want to use.
-  ///       ![UI](screenshots/SymbolSelector.png)
-  /// 1. Using the activated tool, sketch the point, line, polygon or text. The graphics elements are created using the selected symbol.
-  /// 1. Open a Layout view.  
-  /// 1. The Insert tab on the ribbon includes the same Symbol Picker group with the Tool and symbol gallery.
-  /// 1. These tools can also be used to add Graphic Elements to the layout view.
-  ///       ![UI](screenshots/LayoutGraphicElement.png)
-  /// 1. To create multiple graphic elements one after the other using the same active tool, you can click the "Keep Last Tool active" button.
-  ///       ![UI](screenshots/keepLastToolActive.png)
-  /// </remarks>
-  internal class Module1 : Module
-  {
-    private static Module1 _this = null;
-
     /// <summary>
-    /// Retrieve the singleton instance to this module here
+    /// This sample demonstrates creating graphic elements in a map and a layout.
     /// </summary>
-    public static Module1 Current
+    /// <remarks>
+    /// 1. In Visual Studio click the Build menu. Then select Build Solution.
+    /// 1. Launch the debugger to open ArcGIS Pro. 
+    /// 1. Open any project that contains a Map with a graphics layer and/or layout.
+    /// 1. You will need a Graphics Layer in the map to work with this sample.  If the map doesn't have a Graphics Layer, click the Map tab and use the Add Graphics layer button to insert a new layer in the map.
+    /// 1. In the Markup tab on the Pro ribbon, this add-in adds a new "Symbol Picker" group.
+    ///       ![UI](screenshots/SymbolPicker.png)
+    /// 1. In the graphic elements creation tool gallery, activate the point, line, polygon or a text graphic element creation tool in order to create graphics elements.
+    /// 1. In the Symbol selector gallery, select the point, line, polygon or text symbol you want to use.
+    ///       ![UI](screenshots/SymbolSelector.png)
+    /// 1. Using the activated tool, sketch the point, line, polygon or text. The graphics elements are created using the selected symbol.
+    /// 1. Open a Layout view.  
+    /// 1. The Markup tab on the ribbon is available for creating graphics elements for layouts also.
+    ///       ![UI](screenshots/LayoutGraphicElement.png)
+    /// 1. To create multiple graphic elements one after the other using the same active tool, you can click the "Keep Last Tool active" button.
+    ///       ![UI](screenshots/keepLastToolActive.png)
+    /// </remarks>
+    internal class Module1 : Module
     {
-      get
-      {
-        return _this ?? (_this = (Module1)FrameworkApplication.FindModule("GraphicElementSymbolPicker_Module"));
-      }
-    }
-    private static CIMSymbol _selectedSymbol;
-    public static CIMSymbol SelectedSymbol { 
-      get
-      {
-          return _selectedSymbol;
-      }
-      internal set {
-        _selectedSymbol = value;
-      }
-    }
-    //Symbol gallery items: Points, lines, polys and text
-    public static ObservableCollection<object> GallerySymbolItems = new ObservableCollection<object>();
+        private static Module1 _this = null;
 
-    public static List<GeometrySymbolItem> PointGallerySymbolItems = new List<GeometrySymbolItem>();
-    public static List<GeometrySymbolItem> LineGallerySymbolItems = new List<GeometrySymbolItem>();
-    public static List<GeometrySymbolItem> PolygonGallerySymbolItems = new List<GeometrySymbolItem>();
-    public static List<GeometrySymbolItem> TextGallerySymbolItems = new List<GeometrySymbolItem>();
-
-    //Tool gallery items
-    public static ObservableCollection<object> GalleryElementToolItems = new ObservableCollection<object>();
-
-    //private static ToolType _activeGeometry;
-    public static ToolType ActiveToolGeometry = ToolType.Point;
-
-    private LayoutOptions _layoutOptions;
-    public LayoutOptions LayoutOptions
-    {
-      get { return ApplicationOptions.LayoutOptions; }
-      set
-      {
-        _layoutOptions = value;
-      }
-    }
-    public enum ToolType
-    {
-      Point,
-      Line,
-      Polygon,
-      Text,
-      None
-    }
-    #region Overrides
-    protected  override bool Initialize()
-    {
-      LayoutOptions = ApplicationOptions.LayoutOptions;
-      System.Diagnostics.Debug.WriteLine($"LayoutOptions.KeepLastToolActive: {LayoutOptions.KeepLastToolActive}");
-      ArcGIS.Desktop.Core.Events.ProjectOpenedEvent.Subscribe(OnProjectOpened);
-      //Gather the tool items from the DAML
-      foreach (var component in Categories.GetComponentElements("GraphicsElementTools_Category"))
-      {
-        try
+        /// <summary>
+        /// Retrieve the singleton instance to this module here
+        /// </summary> 
+        public static Module1 Current
         {
-          var content = component.GetContent();
-          //This flavor (off component) returns empty string
-          //if the attribute is not there
-          var group = component.ReadAttribute("group") ?? "";
-          var name = component.ReadAttribute("name") ?? "";
-          //check we get a plugin
-          var plugin = FrameworkApplication.GetPlugInWrapper(component.ID);
-          if (plugin != null)
-          {
-            GalleryElementToolItems.Add(new ElementCreationToolGalleryItem(component.ID, group, plugin, name));
-          }
+            get
+            {
+                return _this ?? (_this = (Module1)FrameworkApplication.FindModule("GraphicElementSymbolPicker_Module"));
+            }
         }
-        catch (Exception e)
+
+        private static String _selectedSymbolName;
+        public static String SelectedSymbolName
         {
-          string x = e.Message;
+            get
+            {
+                return _selectedSymbolName;
+            }
+            set
+            {
+                _selectedSymbolName = value;
+            }
         }
-      }        
-      return base.Initialize();
-    }
-    /// <summary>
-    /// When the project opens, gather all the symbols. This will save time when you toggle between the tools on the gallery
-    /// </summary>
-    /// <param name="obj"></param>
-    private async void OnProjectOpened(ProjectEventArgs obj)
-    {
-      if (obj.Project == null) return;
-      PointGallerySymbolItems = await GetStyleItemsAsync(StyleItemType.PointSymbol);
-      System.Diagnostics.Debug.WriteLine($"No of point symbols: {PointGallerySymbolItems.Count}");
 
-      LineGallerySymbolItems = await GetStyleItemsAsync(StyleItemType.LineSymbol);
-      System.Diagnostics.Debug.WriteLine($"No of line symbols: {LineGallerySymbolItems.Count}");
-      PolygonGallerySymbolItems = await GetStyleItemsAsync(StyleItemType.PolygonSymbol);
-
-      System.Diagnostics.Debug.WriteLine($"No of Polygon symbols: {PolygonGallerySymbolItems.Count}");
-      TextGallerySymbolItems = await GetStyleItemsAsync(StyleItemType.TextSymbol);
-      System.Diagnostics.Debug.WriteLine($"No of Text symbols: {TextGallerySymbolItems.Count}");
-
-      //Point symbols are default. Populate GallerySymbolItems collection with Points to begin with.
-      foreach (var ptSymbol in PointGallerySymbolItems)
-      {
-        GallerySymbolItems.Add(ptSymbol);
-      }
-    }
-
-    /// <summary>
-    /// Called by Framework when ArcGIS Pro is closing
-    /// </summary>
-    /// <returns>False to prevent Pro from closing, otherwise True</returns>
-    protected override bool CanUnload()
-    {
-      //TODO - add your business logic
-      //return false to ~cancel~ Application close
-      return true;
-    }
-
-    #endregion Overrides
-
-    public static async Task<List<GeometrySymbolItem>> GetStyleItemsAsync(StyleItemType styleItemType)
-    {
-      //Collection to hold the symbols in the various Style project items
-      var geometrySymbolStyleItems = new List<GeometrySymbolItem>();
-      //Collection to hold all the StyleProjectitems
-      List<StyleProjectItem> styleProjectItems = new List<StyleProjectItem>();
-      
-      await QueuedTask.Run(() => {
-        //First get the Favorite style
-        var containerStyle = Project.Current.GetProjectItemContainer("Style");
-        styleProjectItems.Add(containerStyle.GetItems().OfType<StyleProjectItem>().First(item => item.TypeID == "personal_style"));
-        //All other styles like 2D, 3D etc
-        styleProjectItems.AddRange(Project.Current?.GetItems<StyleProjectItem>());
-        //Search for specific symbols and add them to geometrySymbolStyleItems collection
-        foreach (var styleProjectitem in styleProjectItems)
+        private static CIMSymbol _selectedSymbol;
+        public static CIMSymbol SelectedSymbol
         {
-          foreach (var styleItem in styleProjectitem.SearchSymbols(styleItemType, ""))
-          {
-            geometrySymbolStyleItems.Add(new GeometrySymbolItem(styleItem, styleProjectitem.Name));
-          }
-        }  
-      });
-      return geometrySymbolStyleItems;
+            get
+            {
+                return _selectedSymbol;
+            }
+            internal set
+            {          
+                _selectedSymbol = value;
+                if (_selectedSymbol != null)
+                {
+                    //Use the TextAndGraphics application settings to assign the
+                    //appropriate points symbol size or text size
+                    QueuedTask.Run(() =>
+                    {
+                        double size = 0;
+                        if (_selectedSymbol is CIMPointSymbol)  
+                        {
+                            size = ApplicationOptions.TextAndGraphicsElementsOptions.GetDefaultPointSymbol().GetSize();
+                            if (size > 0) _selectedSymbol.SetSize(size);
+                        }
+                        
+                        else if (_selectedSymbol is CIMTextSymbol)
+                        {
+                            size = ApplicationOptions.TextAndGraphicsElementsOptions.GetDefaultTextSymbol().GetSize();
+                            if (size > 0) _selectedSymbol.SetSize(size);
+                        }
+                    });
+                }
+            }
+        }
+        //Symbol gallery items: Points, lines, polys and text
+        public static ObservableCollection<object> GallerySymbolItems = new ObservableCollection<object>();
+
+        public static List<GeometrySymbolItem> PointGallerySymbolItems = new List<GeometrySymbolItem>();
+        public static List<GeometrySymbolItem> LineGallerySymbolItems = new List<GeometrySymbolItem>();
+        public static List<GeometrySymbolItem> PolygonGallerySymbolItems = new List<GeometrySymbolItem>();
+        public static List<GeometrySymbolItem> TextGallerySymbolItems = new List<GeometrySymbolItem>();
+
+        //Tool gallery items
+        public static ObservableCollection<object> GalleryElementToolItems = new ObservableCollection<object>();
+
+        //private static ToolType _activeGeometry;
+        public static ToolType ActiveToolGeometry = ToolType.Point;
+
+        private LayoutOptions _layoutOptions;
+        public LayoutOptions LayoutOptions
+        {
+            get { return ApplicationOptions.LayoutOptions; }
+            set
+            {
+                _layoutOptions = value;
+            }
+        }
+        public enum ToolType
+        {
+            Point,
+            Line,
+            Polygon,
+            Text,
+            None
+        }
+        #region Overrides
+        protected override bool Initialize()
+        {
+            LayoutOptions = ApplicationOptions.LayoutOptions;
+            System.Diagnostics.Debug.WriteLine($"LayoutOptions.KeepLastToolActive: {LayoutOptions.KeepLastToolActive}");
+            ArcGIS.Desktop.Core.Events.ProjectOpenedEvent.Subscribe(OnProjectOpened);
+            //Gather the tool items from the DAML
+            foreach (var component in Categories.GetComponentElements("GraphicsElementTools_Category"))
+            {
+                try
+                {
+                    var content = component.GetContent();
+                    //This flavor (off component) returns empty string
+                    //if the attribute is not there
+                    var group = component.ReadAttribute("group") ?? "";
+                    var name = component.ReadAttribute("name") ?? "";
+                    //check we get a plugin
+                    var plugin = FrameworkApplication.GetPlugInWrapper(component.ID);
+                    if (plugin != null)
+                    {
+                        GalleryElementToolItems.Add(new ElementCreationToolGalleryItem(component.ID, group, plugin, name));
+                    }
+                }
+                catch (Exception e)
+                {
+                    string x = e.Message;
+                }
+            }
+            return base.Initialize();
+        }
+        /// <summary>
+        /// When the project opens, gather all the symbols. This will save time when you toggle between the tools on the gallery
+        /// </summary>
+        /// <param name="obj"></param>
+        private async void OnProjectOpened(ProjectEventArgs obj)
+        {
+            if (obj.Project == null) return;
+            PointGallerySymbolItems = await GetStyleItemsAsync(StyleItemType.PointSymbol);
+            System.Diagnostics.Debug.WriteLine($"No of point symbols: {PointGallerySymbolItems.Count}");
+
+            LineGallerySymbolItems = await GetStyleItemsAsync(StyleItemType.LineSymbol);
+            System.Diagnostics.Debug.WriteLine($"No of line symbols: {LineGallerySymbolItems.Count}");
+            PolygonGallerySymbolItems = await GetStyleItemsAsync(StyleItemType.PolygonSymbol);
+
+            System.Diagnostics.Debug.WriteLine($"No of Polygon symbols: {PolygonGallerySymbolItems.Count}");
+            TextGallerySymbolItems = await GetStyleItemsAsync(StyleItemType.TextSymbol);
+            System.Diagnostics.Debug.WriteLine($"No of Text symbols: {TextGallerySymbolItems.Count}");
+
+            //Point symbols are default. Populate GallerySymbolItems collection with Points to begin with.
+            foreach (var ptSymbol in PointGallerySymbolItems)
+            {
+                GallerySymbolItems.Add(ptSymbol);
+            }
+        }
+
+        /// <summary>
+        /// Called by Framework when ArcGIS Pro is closing
+        /// </summary>
+        /// <returns>False to prevent Pro from closing, otherwise True</returns>
+        protected override bool CanUnload()
+        {
+            //TODO - add your business logic
+            //return false to ~cancel~ Application close
+            return true;
+        }
+
+        #endregion Overrides
+
+        public static async Task<List<GeometrySymbolItem>> GetStyleItemsAsync(StyleItemType styleItemType)
+        {
+            //Collection to hold the symbols in the various Style project items
+            var geometrySymbolStyleItems = new List<GeometrySymbolItem>();
+            //Collection to hold all the StyleProjectitems
+            List<StyleProjectItem> styleProjectItems = new List<StyleProjectItem>();
+
+            await QueuedTask.Run(() =>
+            {
+                //First get the Favorite style
+                var containerStyle = Project.Current.GetProjectItemContainer("Style");
+                styleProjectItems.Add(containerStyle.GetItems().OfType<StyleProjectItem>().First(item => item.TypeID == "personal_style"));
+                //All other styles like 2D, 3D etc
+                styleProjectItems.AddRange(Project.Current?.GetItems<StyleProjectItem>());
+                //Search for specific symbols and add them to geometrySymbolStyleItems collection
+                foreach (var styleProjectitem in styleProjectItems)
+                {
+                    foreach (var styleItem in styleProjectitem.SearchSymbols(styleItemType, ""))
+                    {
+                        geometrySymbolStyleItems.Add(new GeometrySymbolItem(styleItem, styleProjectitem.Name));
+                    }
+                }
+            });
+            return geometrySymbolStyleItems;
+        }
     }
-  }
 }

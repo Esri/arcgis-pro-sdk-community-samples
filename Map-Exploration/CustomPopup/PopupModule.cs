@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -29,15 +29,14 @@ namespace CustomPopup
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-  /// 2. Click Start button to open ArcGIS Pro.
-  /// 3. ArcGIS Pro will open. 
-  /// 4. Open a map view. Click on the Add-In tab on the ribbon.
-  /// 5. Within this tab there is a Custom Pop-up tool. Click it to activate the tool.
-  /// 6. In the map click and drag a box around the features you want to identify.
-  /// 7. The pop-up window should display and you should see a table showing the values for all the visible numeric fields in the layer. 
-  /// It will also display a pie chart for those same fields.
-  /// 8. As you click through the pop-up results the content is being generated dynamically for each feature.
-  /// 9. The pop-up window also has a custom command "Show statistics" at the bottom of the window that when clicked shows additional information about the feature.
+  /// 2. Launch the debugger to open ArcGIS Pro.
+  /// 3. Open a map view. Click on the Add-In tab on the ribbon.
+  /// 4. Within this tab there is a Custom Pop-up tool. Click it to activate the tool.
+  /// 5. In the map click and drag a box around the features you want to identify.
+  /// 6. The pop-up window should display and you should see a table showing the values for all the visible numeric fields in the layer. 
+  /// It will also display a chart for those same fields.
+  /// 7. As you click through the pop-up results the content is being generated dynamically for each feature.
+  /// 8. The pop-up window also has a custom command "Show statistics" at the bottom of the window that when clicked shows additional information about the feature.
   ///
   ///![UI](screenshots/Popup.png)
   /// </remarks>

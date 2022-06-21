@@ -1,4 +1,22 @@
-﻿using ArcGIS.Core.CIM;
+/*
+
+   Copyright 2022 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+*/
+using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
 using ArcGIS.Core.Geometry;
 using ArcGIS.Desktop.Core.Geoprocessing;
@@ -31,7 +49,7 @@ namespace TransformCADLayer
     // so that its updated location is properly displayed based on the entered
     // transformation parameters.
 
-    private string sTargetWldFile = "temp.wld";
+    private string sTargetWldFile = "temp.wld3";
     protected async override void OnClick()
     {
       // get the feature layer that's selected in the table of contents
@@ -62,7 +80,7 @@ namespace TransformCADLayer
         fileExtension = fileExtension.ToLower();
 
         string sTargetFileName = System.IO.Path.GetFileNameWithoutExtension(CadFileName);
-        sTargetWldFile = System.IO.Path.Combine(sCADFilePath, sTargetFileName + ".wld");
+        sTargetWldFile = System.IO.Path.Combine(sCADFilePath, sTargetFileName + ".wld3");
 
         //get name for layer
         string FCName = CADFeatClass.GetName();
@@ -272,8 +290,8 @@ namespace TransformCADLayer
     try
     {
     StreamWriter sw = new StreamWriter(sTargetFile);
-    string Line1 = sX1From + "," + sY1From + " " + sX1To + "," + sY1To;
-    string Line2 = sX2From + "," + sY2From + " " + sX2To + "," + sY2To;
+    string Line1 = sX1From + "," + sY1From + ",0 " + sX1To + "," + sY1To + ",0";
+    string Line2 = sX2From + "," + sY2From + ",0 " + sX2To + "," + sY2To + ",0";
     sw.WriteLine(Line1);
     sw.WriteLine(Line2);
     sw.Close();

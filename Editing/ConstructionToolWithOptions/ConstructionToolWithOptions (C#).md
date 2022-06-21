@@ -5,22 +5,22 @@ This sample illustrates how to build a construction tool with options allowing u
 Two samples are included.  
 The first is the BufferedLineTool.  The line sketch geoemtry is buffered by a user defined distance to create a polygon feature.  
 The second sample is the CircleTool.  A user defined radius is used to create a circular arc with the point sketch geometry as the centroid.  This tool is registered with both the esri_editing_construction_polyline and esri_editing_construction_polygon categories allowing both polyline and polygon features to be created.  
-The CircleTool options follows the multiple tool options pattern (implementing IEditingCreateToolMultiple) allowing the users to select multiple templates in the manage templates dialog and change tool option values for those templates. The BufferedLineTool sample follows the single use pattern.  
+The CircleTool options follows the multiple tool options pattern (implementing ToolOptionsEmbeddableControl) allowing the users to select multiple templates in the manage templates dialog and change tool option values for those templates. The BufferedLineTool sample follows the single use pattern.  
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -37,7 +37,7 @@ Visual Studio:         2017, 2019
 1. Make sure that the Sample data is unzipped in c:\data  
 1. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'  
 1. In Visual Studio click the Build menu.Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
+1. Launch the debugger to open ArcGIS Pro.  
 1. ArcGIS Pro will open, select the FeatureTest.aprx project  
 1. Select the 'Edit' tab on the ArcGIS Pro ribbon and 'Create' new features  
 1. On the 'Create Features' pane select the test polygon feature layer to see the 'Buffered Line' tool  

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2020 Esri
@@ -7,7 +7,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,14 +18,14 @@
 
 -->
 <ArcGIS defaultAssembly="ConstructToolWithOptions.dll" defaultNamespace="ConstructToolWithOptions" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{8d16216b-b1be-4fc8-90d5-37ec9694eebf}" version="1.0" desktopVersion="2.5.21419">
+  <AddInInfo id="{8d16216b-b1be-4fc8-90d5-37ec9694eebf}" version="1.0" desktopVersion="3.0.34791">
     <Name>ConstructToolWithOptions</Name>
     <Description>ConstructToolWithOptions description</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>esri, http://www.esri.com</Company>
+    <Company>esri, https://www.esri.com</Company>
     <Date>12/19/2019 3:11:05 PM, 2019</Date>
-    <Subject>Framework</Subject>
+    <Subject>Editing</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>
@@ -40,24 +40,24 @@
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="ConstructToolWithOptions_Group1" caption="Group 1" appearsOnAddInTab="false">
+        <group id="ConstructToolWithOptions_Group1" caption="Group 1" appearsOnAddInTab="true">
           <!-- host controls within groups -->
         </group>
       </groups>
       <controls>
         <!-- add your controls here -->
-        <tool id="ConstructToolWithOptions_Tools_ConstructFacilitiesTool" categoryRefID="esri_editing_construction_point" caption="Construct Facilities with Subtypes Tool" className="ConstructToolWithOptions.Tools.ConstructFacilitiesTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png">
+        <tool id="ConstructToolWithOptions_ConstructFacilitiesTool" categoryRefID="esri_editing_construction_point" caption="Construct Facilities with Subtypes Tool" className="ConstructFacilitiesTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png">
           <!--note: use esri_editing_construction_polyline,  esri_editing_construction_polygon for categoryRefID as needed-->
           <tooltip heading="Select Subtype">This tool creates a Facility Site Point and allows to selected the subtype<disabledText /></tooltip>
-          <content insert="before" placeWith="esri_editing_SketchPointTool" toolOptionsID="ConstructToolWithOptions_ToolOptionsUI_ConstructFacilitiesToolToolOptions" />
+          <content guid="cdf8db34-6880-4e16-8253-145d739de379" insert="before" placeWith="esri_editing_SketchPointTool" toolOptionsID="ConstructToolWithOptions_ConstructFacilitiesToolToolOptions" />
         </tool>
       </controls>
     </insertModule>
   </modules>
   <categories>
     <updateCategory refID="esri_editing_tool_options">
-      <insertComponent id="ConstructToolWithOptions_ToolOptionsUI_ConstructFacilitiesToolToolOptions" className="ConstructToolWithOptions.ToolOptionsUI.ConstructFacilitiesToolToolOptionsViewModel">
-        <content className="ConstructToolWithOptions.ToolOptionsUI.ConstructFacilitiesToolToolOptionsView" />
+      <insertComponent id="ConstructToolWithOptions_ConstructFacilitiesToolToolOptions" className="ConstructFacilitiesToolToolOptionsViewModel">
+        <content className="ConstructFacilitiesToolToolOptionsView" />
       </insertComponent>
     </updateCategory>
   </categories>

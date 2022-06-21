@@ -1,4 +1,4 @@
-﻿/*
+/*
 
    Copyright 2019 Esri
 
@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -30,6 +30,7 @@ using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Core.Events;
 using ArcGIS.Desktop.Editing;
 using ArcGIS.Desktop.Editing.Attributes;
+using ArcGIS.Desktop.Editing.Controls;
 using ArcGIS.Desktop.Extensions;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
@@ -50,7 +51,7 @@ namespace TableControl
     }
 
     private Item _selectedItem;
-    private async void OnProjectWindowSelectedItem(ProjectWindowSelectedItemsChangedEventArgs args)
+    private void OnProjectWindowSelectedItem(ProjectWindowSelectedItemsChangedEventArgs args)
     {
       if (args.IProjectWindow.SelectionCount > 0)
       {
@@ -77,7 +78,7 @@ namespace TableControl
     private TableControlContent _tableContent;
     public TableControlContent TableContent
     {
-      get { return _tableContent; } 
+      get { return _tableContent; }
       set { SetProperty(ref _tableContent, value); }
     }
 
@@ -96,13 +97,13 @@ namespace TableControl
 
             QueuedTask.Run(() =>
             {
+              StandaloneTableCreationParams tableCreationParams = new StandaloneTableCreationParams(_selectedItem);
               // test if the selected Catalog item can create a layer
               if (LayerFactory.Instance.CanCreateLayerFrom(_selectedItem))
-                Module1.SelectedMapMember = LayerFactory.Instance.CreateLayer(_selectedItem, map);
-
+                Module1.SelectedMapMember = LayerFactory.Instance.CreateLayer<Layer>(new LayerCreationParams(_selectedItem), map);
               // test if the selected Catalog item can create a table
               else if (StandaloneTableFactory.Instance.CanCreateStandaloneTableFrom(_selectedItem))
-                Module1.SelectedMapMember = StandaloneTableFactory.Instance.CreateStandaloneTable(_selectedItem, map);
+                Module1.SelectedMapMember = StandaloneTableFactory.Instance.CreateStandaloneTable(tableCreationParams, map);
 
               else
                 Module1.SelectedMapMember = null;
@@ -114,8 +115,8 @@ namespace TableControl
       }
     }
 
-    private ArcGIS.Desktop.Editing.TableControl _tableControl = null;
-    internal void SetTable(ArcGIS.Desktop.Editing.TableControl tableControl)
+    private ArcGIS.Desktop.Editing.Controls.TableControl _tableControl = null;
+    internal void SetTable(ArcGIS.Desktop.Editing.Controls.TableControl tableControl)
     {
       _tableControl = tableControl;
       UpdateContextMenu();
@@ -134,7 +135,7 @@ namespace TableControl
 
       _contextmenu_item_added = true;
     }
-  
+
     private ICommand _zoomToRowCommand = null;
     public ICommand ZoomToRowCommand
     {

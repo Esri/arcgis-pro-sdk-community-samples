@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -37,8 +37,9 @@ namespace ValidateFeatures
   /// 1. Open a map view.
   /// 1. Click on the Add-In Tab.  
   /// 1. Click on the Show Validate Selection Pane button.  This causes the Validate Selection pane to appear.
+  /// ![UI](Screenshots/Screenshot1.png)
   /// 1. Clicking on the Validate Selection button within the pane will cause the selected features in the the active map to be validating.  Results will appear on the pane.
-  /// ![UI](Screenshots/Screenshot1.png) 
+  /// ![UI](Screenshots/Screenshot2.png) 
   /// </remarks>
   internal class Module1 : Module
   {

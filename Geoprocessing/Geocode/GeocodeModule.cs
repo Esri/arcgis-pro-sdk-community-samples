@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -29,11 +29,10 @@ namespace Geocode
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 2. Click Start button to open ArcGIS Pro.
-    /// 3. ArcGIS Pro will open.
+    /// 2. Launch the debuuger to open ArcGIS Pro.
     /// 4. Open a map and add a base map.
-    /// 5. Click the ADD-IN tab group and click the Geocode Address button.
-    /// 6. In the Geocode dialog window, enter and address or place name.
+    /// 5. Click the Add-in tab group and click the Geocode Address button.
+    /// 6. In the Geocode dialog window, enter an address or place name.
     /// 7. Click the Go button.
     /// ![UI](Screenshots/Screen.png)
     /// 8. The application will geocode the entered value, zoom to the 

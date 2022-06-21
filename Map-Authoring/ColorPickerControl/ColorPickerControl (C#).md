@@ -5,18 +5,18 @@ This sample shows how to use the Pro API's ColorPicker Control from a Dockpane.
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -33,8 +33,8 @@ Visual Studio:         2019
 1. Make sure that the Sample data is unzipped in c:\data  
 1. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'  
 1. In Visual Studio click the Build menu.Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open, select the FeatureTest.aprx project  
+1. Launch the debugger to open ArcGIS Pro.  
+1. Select the FeatureTest.aprx project  
 1. The first polygon feature layer in your project's TOC is used to demonstrate the ColorPicker Control.  
 1. In Add-in tab, click the "Show Polygon ColorPicker" button.  
 ![UI](Screenshots/Screen1.png)  

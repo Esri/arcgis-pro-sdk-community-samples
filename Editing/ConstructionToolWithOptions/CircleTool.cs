@@ -5,7 +5,7 @@
 //   you may not use this file except in compliance with the License. 
 //   You may obtain a copy of the License at 
 //
-//       http://www.apache.org/licenses/LICENSE-2.0 
+//       https://www.apache.org/licenses/LICENSE-2.0 
 //
 //   Unless required by applicable law or agreed to in writing, software 
 //   distributed under the License is distributed on an "AS IS" BASIS, 
@@ -37,6 +37,7 @@ namespace ConstructionToolWithOptions
       UseSnapping = true;
       // Select the type of construction tool you wish to implement.  
       SketchType = SketchGeometryType.Point;
+      UsesCurrentTemplate = true;
     }
 
     #region Tool Options
@@ -69,15 +70,15 @@ namespace ConstructionToolWithOptions
       {
         //build a circular arc
         var cent = new Coordinate2D(geometry as MapPoint);
-        var circleEAB = EllipticArcBuilder.CreateEllipticArcSegment(cent, Radius, esriArcOrientation.esriArcClockwise, MapView.Active.Map.SpatialReference);
+        var circleEAB = EllipticArcBuilderEx.CreateCircle(cent, Radius, ArcOrientation.ArcClockwise, MapView.Active.Map.SpatialReference);
 
         // find the source layer and determine whether polyline/polygon.  Create the appropriate shape
         var lyr = CurrentTemplate.Layer as BasicFeatureLayer;
         Geometry circleGeom = null;
         if (lyr.ShapeType == esriGeometryType.esriGeometryPolygon)
-          circleGeom = PolygonBuilder.CreatePolygon(new[] { circleEAB });
+          circleGeom = PolygonBuilderEx.CreatePolygon(new[] { circleEAB }, AttributeFlags.None);
         else
-          circleGeom = PolylineBuilder.CreatePolyline(circleEAB);
+          circleGeom = PolylineBuilderEx.CreatePolyline(circleEAB, AttributeFlags.None);
 
         // Create an edit operation
         var createOperation = new EditOperation();

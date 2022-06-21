@@ -1,10 +1,10 @@
-﻿//Copyright 2020 Esri
+//Copyright 2020 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -24,7 +24,7 @@ namespace LayerSnapModes
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio, build the solution.
-  /// 1. Click the Visual Studio Start button to open ArcGIS Pro.
+  /// 1. Launch the debugger to open ArcGIS Pro.
   /// 1. In Pro, open a map with feature layers or create a new map and add some.
   /// 1. Turn on the application snap modes Vertex, Edge and End from the snapping dropdown on the editing tab.
   /// 1. On the add-in tab, click Show LayerSnapModes to display the LayerSnapModes dockpane.

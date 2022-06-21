@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -45,8 +45,7 @@ namespace GraphicsLayers
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-  /// 1. Click Start button to open ArcGIS Pro. 
-  /// 1. ArcGIS Pro will open. 
+  /// 1. Launch the debugger to open ArcGIS Pro. 
   /// 1. Open any project that contains a Map.
   /// 1. You will need a Graphics Layer in the map to work with this sample.  If the map doesn't have a Graphics Layer, click the Map tab and use the Add Graphics layer button to insert a new layer in the map.
   /// 1. Notice the Graphics Example tab that appears on the Pro ribbon when a Graphics Layer exists in the map.
@@ -102,11 +101,17 @@ namespace GraphicsLayers
     }
     protected override bool Initialize()
     {
-      ArcGIS.Desktop.Mapping.Events.ElementSelectionChangedEvent.Subscribe(OnElementSelectionChanged);
+      ArcGIS.Desktop.Layouts.Events.ElementEvent.Subscribe(OnElementSelectionChanged);
       ArcGIS.Desktop.Mapping.Events.TOCSelectionChangedEvent.Subscribe(OnTOCSelectionChanged);
       CommandFilterOrder cmdFilter = new CommandFilterOrder(); //command filter is on.
       return base.Initialize();
     }
+
+    //private void OnElementSelectionChanged(ElementEventArgs obj)
+    //{
+    //  throw new NotImplementedException();
+    //}
+
     /// <summary>
     /// Even handler for TOCSelection changed event
     /// </summary>
@@ -123,7 +128,7 @@ namespace GraphicsLayers
         return; 
       }
       SelectedGraphicsLayerTOC = selectedGraphicLayers.FirstOrDefault();
-    } 
+    }
     /// <summary>
     /// Event handler for graphics element changed event
     /// </summary>
@@ -131,23 +136,24 @@ namespace GraphicsLayers
     /// <remarks>
     /// When graphics element selection changes, a dictionary is updated with the Graphics Layer as the key and the elements in the layer that are currently selected as the values.
     /// </remarks>
-    private async void OnElementSelectionChanged(ElementSelectionChangedEventArgs obj)
+    private async void OnElementSelectionChanged(ElementEventArgs obj)
     {
+      if (obj.Hint != ElementEventHint.SelectionChanged) return;
       System.Diagnostics.Debug.WriteLine($"Debug Message: OnElementSelectionChanged");
-      if (obj.ElementContainer == null)
+      if (obj.Container == null)
       {
         //skip – this is viewer initialization
         System.Diagnostics.Debug.WriteLine($"This is viewer initialization");
         return;
       }
-      if (obj.ElementContainer != null)
+      if (obj.Container != null)
       {
         System.Diagnostics.Debug.WriteLine($"ElementContainer is not null");
-        var gl = obj.ElementContainer as GraphicsLayer;
+        var gl = obj.Container as GraphicsLayer;
         if (gl is GraphicsLayer)
         {
           System.Diagnostics.Debug.WriteLine($"gl is GraphicsLayer: {gl.GetType().Name}");
-          System.Diagnostics.Debug.WriteLine($"Selected Elements count: {obj.SelectedElementCount}");
+          System.Diagnostics.Debug.WriteLine($"Selected Elements count: {obj.Elements.Count()}");
           if (GraphicsLayerSelectedElements.ContainsKey(gl)) //gl exists in the dictionary so only update value
           {
             GraphicsLayerSelectedElements[gl] = gl.GetSelectedElements().ToList();

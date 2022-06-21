@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -34,10 +34,9 @@ namespace QueryBuilderControl
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 1. Click Start button to open ArcGIS Pro.
-    /// 1. ArcGIS Pro will open.
+    /// 1. Launch the debugger to open ArcGIS Pro.
     /// 1. Open an existing project.
-    /// 1. Click on the ADD-IN TAB.
+    /// 1. Click on the Add-In tab.
     /// 1. Click on the *Show DefinitionQueryDockPane* button. 
     /// 1. The Definition Query dock pane will open up.
     /// ![UI](Screenshots/QueryBuilderDockPane.png)

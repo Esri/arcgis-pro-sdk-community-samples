@@ -3,7 +3,7 @@
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -32,7 +32,7 @@ namespace ProceduralSymbolLayersWithRulePackages
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a project package called 'ArcGISProSampleBuildings.ppkx' which is required for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\RulePackages" is available.
     /// 1. Open this solution in Visual Studio.  
     /// 1. Click the build menu and select Build Solution.
-    /// 1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.
+    /// 1. Launch the debugger to open ArCGIS Pro.  
     /// 1. Open the project package "ArcGISProSampleBuildings.ppkx" located in the "C:\Data\RulePackages" folder since this project contains all required data.
     /// ![UI](Screenshots/Screen1.png)
     /// 1. Click the ADD-IN tab in ArcGIS Pro.

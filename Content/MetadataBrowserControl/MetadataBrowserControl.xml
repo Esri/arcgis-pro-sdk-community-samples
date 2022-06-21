@@ -31,32 +31,6 @@
             <param name="xsltPath"></param>
             <returns></returns>
         </member>
-        <member name="F:MetadataBrowserControl.Utility.WebBrowserUtility.BindableSourceProperty">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:MetadataBrowserControl.Utility.WebBrowserUtility.GetBindableSource(System.Windows.DependencyObject)">
-            <summary>
-            
-            </summary>
-            <param name="obj"></param>
-            <returns></returns>
-        </member>
-        <member name="M:MetadataBrowserControl.Utility.WebBrowserUtility.SetBindableSource(System.Windows.DependencyObject,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="obj"></param>
-            <param name="value"></param>
-        </member>
-        <member name="M:MetadataBrowserControl.Utility.WebBrowserUtility.BindableSourcePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>
-            
-            </summary>
-            <param name="o"></param>
-            <param name="e"></param>
-        </member>
         <member name="T:MetadataBrowserControl.MetadataBrowserView">
             <summary>
             Interaction logic for Dockpane1View.xaml
@@ -155,6 +129,32 @@
             Subscribes to the Selected item changed event. ItemInfo of the selected item is instantiated.
             </summary>
             <param name="obj"></param>
+        </member>
+        <member name="F:MetadataBrowserControl.Utility.WebBrowserUtility.BindableSourceProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MetadataBrowserControl.Utility.WebBrowserUtility.GetBindableSource(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MetadataBrowserControl.Utility.WebBrowserUtility.SetBindableSource(System.Windows.DependencyObject,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:MetadataBrowserControl.Utility.WebBrowserUtility.BindableSourcePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <param name="e"></param>
         </member>
         <member name="T:MetadataBrowserControl.XSLFile">
             <summary>

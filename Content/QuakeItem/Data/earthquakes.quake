@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<q:quakeml xmlns="http://quakeml.org/xmlns/bed/1.2" xmlns:anss="http://anss.org/xmlns/event/0.1" xmlns:catalog="http://anss.org/xmlns/catalog/0.1" xmlns:q="http://quakeml.org/xmlns/quakeml/1.2">
+  <eventParameters publicID="quakeml:earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.quakeml">
+    <event catalog:datasource="us" catalog:eventsource="us" catalog:eventid="1000i2k0"
+           publicID="quakeml:earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us1000i2k0.quakeml">
+      <description>
+        <type>earthquake name</type>
+        <text>192km ESE of Tadine, New Caledonia</text>
+      </description>
+      <origin catalog:datasource="us" catalog:dataid="us1000i2k0" catalog:eventsource="us" catalog:eventid="1000i2k0" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000i2k0/us/1543993396040/product.xml">
+        <time>
+          <value>2018-12-05T06:43:04.120Z</value>
+        </time>
+        <longitude>
+          <value>169.6677</value>
+        </longitude>
+        <latitude>
+          <value>-22.0502</value>
+        </latitude>
+        <depth>
+          <value>10000</value>
+          <uncertainty>1800</uncertainty>
+        </depth>
+        <originUncertainty>
+          <horizontalUncertainty>7600</horizontalUncertainty>
+          <preferredDescription>horizontal uncertainty</preferredDescription>
+        </originUncertainty>
+        <quality>
+          <usedPhaseCount>126</usedPhaseCount>
+          <standardError>1.09</standardError>
+          <azimuthalGap>31</azimuthalGap>
+          <minimumDistance>2.989</minimumDistance>
+        </quality>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-12-05T07:03:16.040Z</creationTime>
+        </creationInfo>
+      </origin>
+      <magnitude catalog:datasource="us" catalog:dataid="us1000i2k0" catalog:eventsource="us" catalog:eventid="1000i2k0" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000i2k0/us/1543993396040/product.xml#magnitude">
+        <mag>
+          <value>6.6</value>
+          <uncertainty>0.044</uncertainty>
+        </mag>
+        <type>mww</type>
+        <stationCount>50</stationCount>
+        <originID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000i2k0/us/1543993396040/product.xml</originID>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-12-05T07:03:16.040Z</creationTime>
+        </creationInfo>
+      </magnitude>
+      <preferredOriginID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000i2k0/us/1543993396040/product.xml</preferredOriginID>
+      <preferredMagnitudeID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000i2k0/us/1543993396040/product.xml#magnitude</preferredMagnitudeID>
+      <type>earthquake</type>
+      <creationInfo>
+        <agencyID>us</agencyID>
+        <creationTime>2018-12-05T08:48:39.870Z</creationTime>
+      </creationInfo>
+    </event>
+    <event catalog:datasource="us" catalog:eventsource="us" catalog:eventid="1000i2gt" publicID="quakeml:earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us1000i2gt.quakeml">
+      <description>
+        <type>earthquake name</type>
+        <text>168km ESE of Tadine, New Caledonia</text>
+      </description>
+      <origin catalog:datasource="us" catalog:dataid="us1000i2gt" catalog:eventsource="us" catalog:eventid="1000i2gt" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000i2gt/us/1543984759040/product.xml">
+        <time>
+          <value>2018-12-05T04:18:08.400Z</value>
+        </time>
+        <longitude>
+          <value>169.4464</value>
+        </longitude>
+        <latitude>
+          <value>-21.9685</value>
+        </latitude>
+        <depth>
+          <value>10000</value>
+          <uncertainty>1800</uncertainty>
+        </depth>
+        <originUncertainty>
+          <horizontalUncertainty>8000</horizontalUncertainty>
+          <preferredDescription>horizontal uncertainty</preferredDescription>
+        </originUncertainty>
+        <quality>
+          <usedPhaseCount>119</usedPhaseCount>
+          <standardError>0.98</standardError>
+          <azimuthalGap>20</azimuthalGap>
+          <minimumDistance>2.788</minimumDistance>
+        </quality>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-12-05T04:39:19.040Z</creationTime>
+        </creationInfo>
+      </origin>
+      <magnitude catalog:datasource="us" catalog:dataid="us1000i2gt" catalog:eventsource="us" catalog:eventid="1000i2gt" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000i2gt/us/1543984759040/product.xml#magnitude">
+        <mag>
+          <value>7.5</value>
+          <uncertainty>0.058</uncertainty>
+        </mag>
+        <type>mww</type>
+        <stationCount>29</stationCount>
+        <originID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000i2gt/us/1543984759040/product.xml</originID>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-12-05T04:39:19.040Z</creationTime>
+        </creationInfo>
+      </magnitude>
+      <preferredOriginID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000i2gt/us/1543984759040/product.xml</preferredOriginID>
+      <preferredMagnitudeID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000i2gt/us/1543984759040/product.xml#magnitude</preferredMagnitudeID>
+      <type>earthquake</type>
+      <creationInfo>
+        <agencyID>us</agencyID>
+        <creationTime>2018-12-05T21:22:18.579Z</creationTime>
+      </creationInfo>
+    </event>
+    <event catalog:datasource="us" catalog:eventsource="us" catalog:eventid="1000hzjp" publicID="quakeml:earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us1000hzjp.quakeml">
+      <description>
+        <type>earthquake name</type>
+        <text>293km WNW of Saumlaki, Indonesia</text>
+      </description>
+      <origin catalog:datasource="us" catalog:dataid="us1000hzjp" catalog:eventsource="us" catalog:eventid="1000hzjp" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hzjp/us/1543671923040/product.xml">
+        <time>
+          <value>2018-12-01T13:27:21.510Z</value>
+        </time>
+        <longitude>
+          <value>128.7097</value>
+        </longitude>
+        <latitude>
+          <value>-7.403</value>
+        </latitude>
+        <depth>
+          <value>140610</value>
+          <uncertainty>5600</uncertainty>
+        </depth>
+        <originUncertainty>
+          <horizontalUncertainty>7600</horizontalUncertainty>
+          <preferredDescription>horizontal uncertainty</preferredDescription>
+        </originUncertainty>
+        <quality>
+          <usedPhaseCount>142</usedPhaseCount>
+          <standardError>1.15</standardError>
+          <azimuthalGap>30</azimuthalGap>
+          <minimumDistance>4.976</minimumDistance>
+        </quality>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-12-01T13:45:23.040Z</creationTime>
+        </creationInfo>
+      </origin>
+      <magnitude catalog:datasource="us" catalog:dataid="us1000hzjp" catalog:eventsource="us" catalog:eventid="1000hzjp" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hzjp/us/1543671923040/product.xml#magnitude">
+        <mag>
+          <value>6.3</value>
+          <uncertainty>0.071</uncertainty>
+        </mag>
+        <type>mww</type>
+        <stationCount>19</stationCount>
+        <originID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hzjp/us/1543671923040/product.xml</originID>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-12-01T13:45:23.040Z</creationTime>
+        </creationInfo>
+      </magnitude>
+      <preferredOriginID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hzjp/us/1543671923040/product.xml</preferredOriginID>
+      <preferredMagnitudeID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hzjp/us/1543671923040/product.xml#magnitude</preferredMagnitudeID>
+      <type>earthquake</type>
+      <creationInfo>
+        <agencyID>us</agencyID>
+        <creationTime>2018-12-03T18:35:43.940Z</creationTime>
+      </creationInfo>
+    </event>
+    <event catalog:datasource="ak" catalog:eventsource="ak" catalog:eventid="20419042" publicID="quakeml:earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ak20419042.quakeml">
+      <description>
+        <type>earthquake name</type>
+        <text>4km NNW of Anchorage, Alaska</text>
+      </description>
+      <origin catalog:datasource="ak" catalog:dataid="AK20419042" catalog:eventsource="ak" catalog:eventid="20419042" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/AK20419042/ak/1543602256451/product.xml">
+        <time>
+          <value>2018-11-30T17:35:37.382Z</value>
+        </time>
+        <longitude>
+          <value>-149.9214</value>
+        </longitude>
+        <latitude>
+          <value>61.2586</value>
+        </latitude>
+        <depth>
+          <value>39800</value>
+          <uncertainty>300</uncertainty>
+        </depth>
+        <originUncertainty>
+          <horizontalUncertainty>0</horizontalUncertainty>
+          <preferredDescription>horizontal uncertainty</preferredDescription>
+        </originUncertainty>
+        <quality>
+          <usedPhaseCount>63</usedPhaseCount>
+          <standardError>0.67</standardError>
+        </quality>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <creationTime>2018-11-30T18:24:16.451Z</creationTime>
+          <version>2</version>
+        </creationInfo>
+      </origin>
+      <magnitude catalog:datasource="ak" catalog:dataid="AK20419042" catalog:eventsource="ak" catalog:eventid="20419042" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/AK20419042/ak/1543602256451/product.xml#magnitude">
+        <mag>
+          <value>5.7</value>
+        </mag>
+        <type>ml</type>
+        <originID>quakeml:earthquake.usgs.gov/realtime/product/origin/AK20419042/ak/1543602256451/product.xml</originID>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <creationTime>2018-11-30T18:24:16.451Z</creationTime>
+        </creationInfo>
+      </magnitude>
+      <preferredOriginID>quakeml:earthquake.usgs.gov/realtime/product/origin/AK20419042/ak/1543602256451/product.xml</preferredOriginID>
+      <preferredMagnitudeID>quakeml:earthquake.usgs.gov/realtime/product/origin/AK20419042/ak/1543602256451/product.xml#magnitude</preferredMagnitudeID>
+      <type>earthquake</type>
+      <creationInfo>
+        <agencyID>ak</agencyID>
+        <creationTime>2018-12-05T21:04:39.770Z</creationTime>
+        <version>2</version>
+      </creationInfo>
+    </event>
+    <event catalog:datasource="ak" catalog:eventsource="ak" catalog:eventid="20419010" publicID="quakeml:earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ak20419010.quakeml">
+      <description>
+        <type>earthquake name</type>
+        <text>12km N of Anchorage, Alaska</text>
+      </description>
+      <origin catalog:datasource="ak" catalog:dataid="AK20419010" catalog:eventsource="ak" catalog:eventid="20419010" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/AK20419010/ak/1543603692513/product.xml">
+        <time>
+          <value>2018-11-30T17:29:29.206Z</value>
+        </time>
+        <longitude>
+          <value>-149.9234</value>
+        </longitude>
+        <latitude>
+          <value>61.3234</value>
+        </latitude>
+        <depth>
+          <value>44100</value>
+          <uncertainty>300</uncertainty>
+        </depth>
+        <originUncertainty>
+          <horizontalUncertainty>0</horizontalUncertainty>
+          <preferredDescription>horizontal uncertainty</preferredDescription>
+        </originUncertainty>
+        <quality>
+          <usedPhaseCount>172</usedPhaseCount>
+          <standardError>0.7</standardError>
+        </quality>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <creationTime>2018-11-30T18:48:12.513Z</creationTime>
+          <version>1</version>
+        </creationInfo>
+      </origin>
+      <magnitude catalog:datasource="ak" catalog:dataid="AK20419010" catalog:eventsource="ak" catalog:eventid="20419010" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/AK20419010/ak/1543603692513/product.xml#magnitude">
+        <mag>
+          <value>7</value>
+        </mag>
+        <type>mww</type>
+        <originID>quakeml:earthquake.usgs.gov/realtime/product/origin/AK20419010/ak/1543603692513/product.xml</originID>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <creationTime>2018-11-30T18:48:12.513Z</creationTime>
+        </creationInfo>
+      </magnitude>
+      <preferredOriginID>quakeml:earthquake.usgs.gov/realtime/product/origin/AK20419010/ak/1543603692513/product.xml</preferredOriginID>
+      <preferredMagnitudeID>quakeml:earthquake.usgs.gov/realtime/product/origin/AK20419010/ak/1543603692513/product.xml#magnitude</preferredMagnitudeID>
+      <type>earthquake</type>
+      <creationInfo>
+        <agencyID>ak</agencyID>
+        <creationTime>2018-12-05T18:00:43.990Z</creationTime>
+        <version>1</version>
+      </creationInfo>
+    </event>
+    <event catalog:datasource="us" catalog:eventsource="us" catalog:eventid="1000hwdw" publicID="quakeml:earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us1000hwdw.quakeml">
+      <description>
+        <type>earthquake name</type>
+        <text>16km SW of Sarpol-e Zahab, Iran</text>
+      </description>
+      <origin catalog:datasource="us" catalog:dataid="us1000hwdw" catalog:eventsource="us" catalog:eventid="1000hwdw" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hwdw/us/1543861304040/product.xml">
+        <time>
+          <value>2018-11-25T16:37:32.710Z</value>
+        </time>
+        <longitude>
+          <value>45.7432</value>
+        </longitude>
+        <latitude>
+          <value>34.3464</value>
+        </latitude>
+        <depth>
+          <value>18000</value>
+          <uncertainty>1800</uncertainty>
+        </depth>
+        <originUncertainty>
+          <horizontalUncertainty>5800</horizontalUncertainty>
+          <preferredDescription>horizontal uncertainty</preferredDescription>
+        </originUncertainty>
+        <quality>
+          <usedPhaseCount>123</usedPhaseCount>
+          <standardError>0.89</standardError>
+          <azimuthalGap>22</azimuthalGap>
+          <minimumDistance>0.768</minimumDistance>
+        </quality>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-12-03T18:21:44.040Z</creationTime>
+        </creationInfo>
+      </origin>
+      <magnitude catalog:datasource="us" catalog:dataid="us1000hwdw" catalog:eventsource="us" catalog:eventid="1000hwdw" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hwdw/us/1543861304040/product.xml#magnitude">
+        <mag>
+          <value>6.3</value>
+          <uncertainty>0.059</uncertainty>
+        </mag>
+        <type>mww</type>
+        <stationCount>28</stationCount>
+        <originID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hwdw/us/1543861304040/product.xml</originID>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-12-03T18:21:44.040Z</creationTime>
+        </creationInfo>
+      </magnitude>
+      <preferredOriginID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hwdw/us/1543861304040/product.xml</preferredOriginID>
+      <preferredMagnitudeID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hwdw/us/1543861304040/product.xml#magnitude</preferredMagnitudeID>
+      <type>earthquake</type>
+      <creationInfo>
+        <agencyID>us</agencyID>
+        <creationTime>2018-12-03T18:33:33.106Z</creationTime>
+      </creationInfo>
+    </event>
+    <event catalog:datasource="ak" catalog:eventsource="ak" catalog:eventid="20386247" publicID="quakeml:earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ak20386247.quakeml">
+      <description>
+        <type>earthquake name</type>
+        <text>65km SSW of Redoubt Volcano, Alaska</text>
+      </description>
+      <origin catalog:datasource="ak" catalog:dataid="AK20386247" catalog:eventsource="ak" catalog:eventid="20386247" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/AK20386247/ak/1543797892632/product.xml">
+        <time>
+          <value>2018-11-21T18:21:44.383Z</value>
+        </time>
+        <longitude>
+          <value>-153.2683</value>
+        </longitude>
+        <latitude>
+          <value>59.9503</value>
+        </latitude>
+        <depth>
+          <value>143200</value>
+          <uncertainty>100</uncertainty>
+        </depth>
+        <originUncertainty>
+          <horizontalUncertainty>0</horizontalUncertainty>
+          <preferredDescription>horizontal uncertainty</preferredDescription>
+        </originUncertainty>
+        <quality>
+          <usedPhaseCount>309</usedPhaseCount>
+          <standardError>0.79</standardError>
+        </quality>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <creationTime>2018-12-03T00:44:52.632Z</creationTime>
+          <version>2</version>
+        </creationInfo>
+      </origin>
+      <magnitude catalog:datasource="ak" catalog:dataid="AK20386247" catalog:eventsource="ak" catalog:eventid="20386247" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/AK20386247/ak/1543797892632/product.xml#magnitude">
+        <mag>
+          <value>5.9</value>
+        </mag>
+        <type>ml</type>
+        <originID>quakeml:earthquake.usgs.gov/realtime/product/origin/AK20386247/ak/1543797892632/product.xml</originID>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <creationTime>2018-12-03T00:44:52.632Z</creationTime>
+        </creationInfo>
+      </magnitude>
+      <preferredOriginID>quakeml:earthquake.usgs.gov/realtime/product/origin/AK20386247/ak/1543797892632/product.xml</preferredOriginID>
+      <preferredMagnitudeID>quakeml:earthquake.usgs.gov/realtime/product/origin/AK20386247/ak/1543797892632/product.xml#magnitude</preferredMagnitudeID>
+      <type>earthquake</type>
+      <creationInfo>
+        <agencyID>ak</agencyID>
+        <creationTime>2018-12-03T01:00:43.257Z</creationTime>
+        <version>2</version>
+      </creationInfo>
+    </event>
+    <event catalog:datasource="ci" catalog:eventsource="ci" catalog:eventid="38138175" publicID="quakeml:earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ci38138175.quakeml">
+      <description>
+        <type>earthquake name</type>
+        <text>8km WSW of Alberto Oviedo Mota, B.C., MX</text>
+      </description>
+      <origin catalog:datasource="ci" catalog:dataid="ci38138175" catalog:eventsource="ci" catalog:eventid="38138175" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/ci38138175/ci/1543943917670/product.xml">
+        <time>
+          <value>2018-11-19T20:18:42.510Z</value>
+        </time>
+        <longitude>
+          <value>-115.2535</value>
+        </longitude>
+        <latitude>
+          <value>32.2065</value>
+        </latitude>
+        <depth>
+          <value>10950</value>
+          <uncertainty>31610</uncertainty>
+        </depth>
+        <originUncertainty>
+          <horizontalUncertainty>790</horizontalUncertainty>
+          <preferredDescription>horizontal uncertainty</preferredDescription>
+        </originUncertainty>
+        <quality>
+          <usedPhaseCount>46</usedPhaseCount>
+          <usedStationCount>29</usedStationCount>
+          <standardError>0.38</standardError>
+          <azimuthalGap>149</azimuthalGap>
+          <minimumDistance>0.2168</minimumDistance>
+        </quality>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>CI</agencyID>
+          <creationTime>2018-12-04T17:18:37.670Z</creationTime>
+          <version>8</version>
+        </creationInfo>
+      </origin>
+      <magnitude catalog:datasource="ci" catalog:dataid="ci38138175" catalog:eventsource="ci" catalog:eventid="38138175" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/ci38138175/ci/1543943917670/product.xml#magnitude">
+        <mag>
+          <value>4.82</value>
+        </mag>
+        <type>mw</type>
+        <stationCount>6</stationCount>
+        <originID>quakeml:earthquake.usgs.gov/realtime/product/origin/ci38138175/ci/1543943917670/product.xml</originID>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>CI</agencyID>
+          <creationTime>2018-12-04T17:18:37.670Z</creationTime>
+        </creationInfo>
+      </magnitude>
+      <preferredOriginID>quakeml:earthquake.usgs.gov/realtime/product/origin/ci38138175/ci/1543943917670/product.xml</preferredOriginID>
+      <preferredMagnitudeID>quakeml:earthquake.usgs.gov/realtime/product/origin/ci38138175/ci/1543943917670/product.xml#magnitude</preferredMagnitudeID>
+      <type>earthquake</type>
+      <creationInfo>
+        <agencyID>ci</agencyID>
+        <creationTime>2018-12-04T17:18:39.698Z</creationTime>
+        <version>8</version>
+      </creationInfo>
+    </event>
+    <event catalog:datasource="us" catalog:eventsource="us" catalog:eventid="1000htm5" publicID="quakeml:earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us1000htm5.quakeml">
+      <description>
+        <type>earthquake name</type>
+        <text>245km SE of Lambasa, Fiji</text>
+      </description>
+      <origin catalog:datasource="us" catalog:dataid="us1000htm5" catalog:eventsource="us" catalog:eventid="1000htm5" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000htm5/us/1542573690040/product.xml">
+        <time>
+          <value>2018-11-18T20:25:45.970Z</value>
+        </time>
+        <longitude>
+          <value>-178.9</value>
+        </longitude>
+        <latitude>
+          <value>-17.8972</value>
+        </latitude>
+        <depth>
+          <value>533600</value>
+          <uncertainty>6900</uncertainty>
+        </depth>
+        <originUncertainty>
+          <horizontalUncertainty>10500</horizontalUncertainty>
+          <preferredDescription>horizontal uncertainty</preferredDescription>
+        </originUncertainty>
+        <quality>
+          <usedPhaseCount>60</usedPhaseCount>
+          <standardError>1.02</standardError>
+          <azimuthalGap>72</azimuthalGap>
+          <minimumDistance>2.906</minimumDistance>
+        </quality>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-11-18T20:41:30.040Z</creationTime>
+        </creationInfo>
+      </origin>
+      <magnitude catalog:datasource="us" catalog:dataid="us1000htm5" catalog:eventsource="us" catalog:eventid="1000htm5" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000htm5/us/1542573690040/product.xml#magnitude">
+        <mag>
+          <value>6.7</value>
+          <uncertainty>0.056</uncertainty>
+        </mag>
+        <type>mww</type>
+        <stationCount>31</stationCount>
+        <originID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000htm5/us/1542573690040/product.xml</originID>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-11-18T20:41:30.040Z</creationTime>
+        </creationInfo>
+      </magnitude>
+      <preferredOriginID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000htm5/us/1542573690040/product.xml</preferredOriginID>
+      <preferredMagnitudeID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000htm5/us/1542573690040/product.xml#magnitude</preferredMagnitudeID>
+      <type>earthquake</type>
+      <creationInfo>
+        <agencyID>us</agencyID>
+        <creationTime>2018-11-19T18:58:10.040Z</creationTime>
+      </creationInfo>
+    </event>
+    <event catalog:datasource="us" catalog:eventsource="us" catalog:eventid="1000hsfz" publicID="quakeml:earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us1000hsfz.quakeml">
+      <description>
+        <type>earthquake name</type>
+        <text>Southern East Pacific Rise</text>
+      </description>
+      <origin catalog:datasource="us" catalog:dataid="us1000hsfz" catalog:eventsource="us" catalog:eventid="1000hsfz" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hsfz/us/1543814843040/product.xml">
+        <time>
+          <value>2018-11-15T23:09:01.060Z</value>
+        </time>
+        <longitude>
+          <value>-122.0441</value>
+        </longitude>
+        <latitude>
+          <value>-56.2363</value>
+        </latitude>
+        <depth>
+          <value>10000</value>
+          <uncertainty>1700</uncertainty>
+        </depth>
+        <originUncertainty>
+          <horizontalUncertainty>10100</horizontalUncertainty>
+          <preferredDescription>horizontal uncertainty</preferredDescription>
+        </originUncertainty>
+        <quality>
+          <usedPhaseCount>450</usedPhaseCount>
+          <standardError>0.87</standardError>
+          <azimuthalGap>16</azimuthalGap>
+          <minimumDistance>27.209</minimumDistance>
+        </quality>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-12-03T05:27:23.040Z</creationTime>
+        </creationInfo>
+      </origin>
+      <magnitude catalog:datasource="us" catalog:dataid="us1000hsfz" catalog:eventsource="us" catalog:eventid="1000hsfz" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hsfz/us/1543814843040/product.xml#magnitude">
+        <mag>
+          <value>6.3</value>
+          <uncertainty>0.06</uncertainty>
+        </mag>
+        <type>mww</type>
+        <stationCount>27</stationCount>
+        <originID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hsfz/us/1543814843040/product.xml</originID>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-12-03T05:27:23.040Z</creationTime>
+        </creationInfo>
+      </magnitude>
+      <preferredOriginID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hsfz/us/1543814843040/product.xml</preferredOriginID>
+      <preferredMagnitudeID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hsfz/us/1543814843040/product.xml#magnitude</preferredMagnitudeID>
+      <type>earthquake</type>
+      <creationInfo>
+        <agencyID>us</agencyID>
+        <creationTime>2018-12-03T05:29:31.194Z</creationTime>
+      </creationInfo>
+    </event>
+    <event catalog:datasource="us" catalog:eventsource="us" catalog:eventid="1000hsaf" publicID="quakeml:earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us1000hsaf.quakeml">
+      <description>
+        <type>earthquake name</type>
+        <text>101km E of Visokoi Island, South Georgia and the South Sandwich Islands</text>
+      </description>
+      <origin catalog:datasource="us" catalog:dataid="us1000hsaf" catalog:eventsource="us" catalog:eventid="1000hsaf" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hsaf/us/1544045453040/product.xml">
+        <time>
+          <value>2018-11-15T20:02:22.920Z</value>
+        </time>
+        <longitude>
+          <value>-25.546</value>
+        </longitude>
+        <latitude>
+          <value>-56.7065</value>
+        </latitude>
+        <depth>
+          <value>15000</value>
+          <uncertainty>1700</uncertainty>
+        </depth>
+        <originUncertainty>
+          <horizontalUncertainty>9200</horizontalUncertainty>
+          <preferredDescription>horizontal uncertainty</preferredDescription>
+        </originUncertainty>
+        <quality>
+          <usedPhaseCount>103</usedPhaseCount>
+          <standardError>0.76</standardError>
+          <azimuthalGap>26</azimuthalGap>
+          <minimumDistance>6.674</minimumDistance>
+        </quality>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-12-05T21:30:53.040Z</creationTime>
+        </creationInfo>
+      </origin>
+      <magnitude catalog:datasource="us" catalog:dataid="us1000hsaf" catalog:eventsource="us" catalog:eventid="1000hsaf" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hsaf/us/1544045453040/product.xml#magnitude">
+        <mag>
+          <value>6.4</value>
+          <uncertainty>0.05</uncertainty>
+        </mag>
+        <type>mww</type>
+        <stationCount>39</stationCount>
+        <originID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hsaf/us/1544045453040/product.xml</originID>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-12-05T21:30:53.040Z</creationTime>
+        </creationInfo>
+      </magnitude>
+      <preferredOriginID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hsaf/us/1544045453040/product.xml</preferredOriginID>
+      <preferredMagnitudeID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hsaf/us/1544045453040/product.xml#magnitude</preferredMagnitudeID>
+      <type>earthquake</type>
+      <creationInfo>
+        <agencyID>us</agencyID>
+        <creationTime>2018-12-05T21:33:00.406Z</creationTime>
+      </creationInfo>
+    </event>
+    <event catalog:datasource="us" catalog:eventsource="us" catalog:eventid="1000hqkp" publicID="quakeml:earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us1000hqkp.quakeml">
+      <description>
+        <type>earthquake name</type>
+        <text>North Atlantic Ocean</text>
+      </description>
+      <origin catalog:datasource="us" catalog:dataid="us1000hqkp" catalog:eventsource="us" catalog:eventid="1000hqkp" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hqkp/us/1542556081040/product.xml">
+        <time>
+          <value>2018-11-11T14:03:59.560Z</value>
+        </time>
+        <longitude>
+          <value>-49.8719</value>
+        </longitude>
+        <latitude>
+          <value>15.5653</value>
+        </latitude>
+        <depth>
+          <value>10000</value>
+          <uncertainty>1900</uncertainty>
+        </depth>
+        <originUncertainty>
+          <horizontalUncertainty>9200</horizontalUncertainty>
+          <preferredDescription>horizontal uncertainty</preferredDescription>
+        </originUncertainty>
+        <quality>
+          <usedPhaseCount>78</usedPhaseCount>
+          <standardError>0.65</standardError>
+          <azimuthalGap>50</azimuthalGap>
+          <minimumDistance>9.69</minimumDistance>
+        </quality>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-11-18T15:48:01.040Z</creationTime>
+        </creationInfo>
+      </origin>
+      <magnitude catalog:datasource="us" catalog:dataid="us1000hqkp" catalog:eventsource="us" catalog:eventid="1000hqkp" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hqkp/us/1542556081040/product.xml#magnitude">
+        <mag>
+          <value>6.3</value>
+          <uncertainty>0.048</uncertainty>
+        </mag>
+        <type>mww</type>
+        <stationCount>42</stationCount>
+        <originID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hqkp/us/1542556081040/product.xml</originID>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-11-18T15:48:01.040Z</creationTime>
+        </creationInfo>
+      </magnitude>
+      <preferredOriginID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hqkp/us/1542556081040/product.xml</preferredOriginID>
+      <preferredMagnitudeID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hqkp/us/1542556081040/product.xml#magnitude</preferredMagnitudeID>
+      <type>earthquake</type>
+      <creationInfo>
+        <agencyID>us</agencyID>
+        <creationTime>2018-11-18T15:50:46.028Z</creationTime>
+      </creationInfo>
+    </event>
+    <event catalog:datasource="us" catalog:eventsource="us" catalog:eventid="1000hpim" publicID="quakeml:earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us1000hpim.quakeml">
+      <description>
+        <type>earthquake name</type>
+        <text>120km NW of Olonkinbyen, Svalbard and Jan Mayen</text>
+      </description>
+      <origin catalog:datasource="us" catalog:dataid="us1000hpim" catalog:eventsource="us" catalog:eventid="1000hpim" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hpim/us/1543983142040/product.xml">
+        <time>
+          <value>2018-11-09T01:49:40.060Z</value>
+        </time>
+        <longitude>
+          <value>-11.2502</value>
+        </longitude>
+        <latitude>
+          <value>71.6264</value>
+        </latitude>
+        <depth>
+          <value>10000</value>
+          <uncertainty>1800</uncertainty>
+        </depth>
+        <originUncertainty>
+          <horizontalUncertainty>4500</horizontalUncertainty>
+          <preferredDescription>horizontal uncertainty</preferredDescription>
+        </originUncertainty>
+        <quality>
+          <usedPhaseCount>128</usedPhaseCount>
+          <standardError>0.97</standardError>
+          <azimuthalGap>19</azimuthalGap>
+          <minimumDistance>7.848</minimumDistance>
+        </quality>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-12-05T04:12:22.040Z</creationTime>
+        </creationInfo>
+      </origin>
+      <magnitude catalog:datasource="us" catalog:dataid="us1000hpim" catalog:eventsource="us" catalog:eventid="1000hpim" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hpim/us/1543983142040/product.xml#magnitude">
+        <mag>
+          <value>6.7</value>
+          <uncertainty>0.034</uncertainty>
+        </mag>
+        <type>mww</type>
+        <stationCount>81</stationCount>
+        <originID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hpim/us/1543983142040/product.xml</originID>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-12-05T04:12:22.040Z</creationTime>
+        </creationInfo>
+      </magnitude>
+      <preferredOriginID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hpim/us/1543983142040/product.xml</preferredOriginID>
+      <preferredMagnitudeID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hpim/us/1543983142040/product.xml#magnitude</preferredMagnitudeID>
+      <type>earthquake</type>
+      <creationInfo>
+        <agencyID>us</agencyID>
+        <creationTime>2018-12-05T04:19:22.929Z</creationTime>
+      </creationInfo>
+    </event>
+    <event catalog:datasource="us" catalog:eventsource="us" catalog:eventid="1000hpej" publicID="quakeml:earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us1000hpej.quakeml">
+      <description>
+        <type>earthquake name</type>
+        <text>64km ESE of Manjimup, Australia</text>
+      </description>
+      <origin catalog:datasource="us" catalog:dataid="us1000hpej" catalog:eventsource="us" catalog:eventid="1000hpej" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hpej/us/1541738036040/product.xml">
+        <time>
+          <value>2018-11-08T21:07:01.460Z</value>
+        </time>
+        <longitude>
+          <value>116.8388</value>
+        </longitude>
+        <latitude>
+          <value>-34.3508</value>
+        </latitude>
+        <depth>
+          <value>10000</value>
+          <uncertainty>1800</uncertainty>
+        </depth>
+        <originUncertainty>
+          <horizontalUncertainty>8700</horizontalUncertainty>
+          <preferredDescription>horizontal uncertainty</preferredDescription>
+        </originUncertainty>
+        <quality>
+          <usedPhaseCount>61</usedPhaseCount>
+          <standardError>0.97</standardError>
+          <azimuthalGap>61</azimuthalGap>
+          <minimumDistance>1.458</minimumDistance>
+        </quality>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-11-09T04:33:56.040Z</creationTime>
+        </creationInfo>
+      </origin>
+      <magnitude catalog:datasource="us" catalog:dataid="us1000hpej" catalog:eventsource="us" catalog:eventid="1000hpej" publicID="quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hpej/us/1541738036040/product.xml#magnitude">
+        <mag>
+          <value>5.2</value>
+          <uncertainty>0.089</uncertainty>
+        </mag>
+        <type>mww</type>
+        <stationCount>12</stationCount>
+        <originID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hpej/us/1541738036040/product.xml</originID>
+        <evaluationMode>manual</evaluationMode>
+        <creationInfo>
+          <agencyID>us</agencyID>
+          <creationTime>2018-11-09T04:33:56.040Z</creationTime>
+        </creationInfo>
+      </magnitude>
+      <preferredOriginID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hpej/us/1541738036040/product.xml</preferredOriginID>
+      <preferredMagnitudeID>quakeml:earthquake.usgs.gov/realtime/product/origin/us1000hpej/us/1541738036040/product.xml#magnitude</preferredMagnitudeID>
+      <type>earthquake</type>
+      <creationInfo>
+        <agencyID>us</agencyID>
+        <creationTime>2018-11-24T06:39:45.251Z</creationTime>
+      </creationInfo>
+    </event>
+    <creationInfo>
+      <creationTime>2018-12-05T22:21:00.000Z</creationTime>
+    </creationInfo>
+  </eventParameters>
+</q:quakeml>

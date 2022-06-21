@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -52,7 +52,7 @@ namespace OverlayGroundSurface
         var item = openItemDialog.Items.ToArray()[0];
         var filePath = item.Path;
         var json = System.IO.File.ReadAllText(filePath);
-        var geometryBag = GeometryBagBuilder.FromJson(json);
+        var geometryBag = GeometryBagBuilderEx.FromJson(json);
         Module1.Geometries = geometryBag.Geometries.ToList();
         Module1.HasImportData = true;
         MessageBox.Show($@"Geometries loaded: {Module1.Geometries.Count()}");

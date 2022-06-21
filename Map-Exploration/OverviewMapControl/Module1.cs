@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -30,7 +30,7 @@ namespace OverviewMapControl
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 2. Click Start button to open ArcGIS Pro.
+    /// 2. Launch the debugger to open ArcGIS Pro.
     /// 3. ArcGIS Pro will open. 
     /// 4. Open any project with map views. Make sure a map is active.
     /// 5. Within the "Map Control" tab click the "Show Map Control" button.

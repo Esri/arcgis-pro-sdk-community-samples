@@ -1,4 +1,4 @@
-﻿/*
+/*
 
    Copyright 2019 Esri
 
@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -76,8 +76,8 @@ namespace EditingTemplates
 				myGroupTemplateDef.WriteTags(new[] { "Group", "Polygon"});
 
         // set the default construction tool
-        myGroupTemplateDef.SetDefaultToolDamlID("esri_editing_SketchPolygonTool");
-
+        myGroupTemplateDef.SetDefaultToolID("esri_editing_SketchPolygonTool");
+        
         // remove construction tools from being available with this template
         List<string> filter = new List<string>();
         // guid = esri_editing_SketchFreehandPolygonTool
@@ -86,7 +86,7 @@ namespace EditingTemplates
         filter.Add("ACD53634-CBC7-44d5-BDE9-692FA8D45850");
         // esri_editing_SketchTracePolygonTool
         filter.Add("E22F7D98-007D-427C-8282-13704F7C84C3");
-        myGroupTemplateDef.ToolFilter = filter.ToArray();
+        myGroupTemplateDef.ExcludedToolGUIDs = filter.ToArray();
 
         // create the base part
         var basepart = new CIMGroupEditingTemplatePart();

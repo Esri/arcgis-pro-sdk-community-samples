@@ -3,7 +3,7 @@
 '   you may not use this file except in compliance with the License.
 '   You may obtain a copy of the License at
 
-'       http://www.apache.org/licenses/LICENSE-2.0
+'       https://www.apache.org/licenses/LICENSE-2.0
 
 '   Unless required by applicable law or agreed to in writing, software
 '   distributed under the License is distributed on an "AS IS" BASIS,
@@ -102,10 +102,10 @@ Friend Class CreatePolylines
 
                         ' for every 5 geometries, construct a new polyline and queue a feature create
                         If (pointCounter Mod 5 = 0) Then
-                            ' construct a new polyline by using the 5 point coordinate in the current list
-                            Dim newPolyline = PolylineBuilder.CreatePolyline(lineMapPoints, polylineDefinition.GetSpatialReference())
-                            ' queue the create operation as part of the edit operation
-                            createOperation.Create(polylineLayer, newPolyline)
+                    ' construct a new polyline by using the 5 point coordinate in the current list
+                    Dim newPolyline = PolylineBuilderEx.CreatePolyline(lineMapPoints, AttributeFlags.None, polylineDefinition.GetSpatialReference())
+                    ' queue the create operation as part of the edit operation
+                    createOperation.Create(polylineLayer, newPolyline)
                             ' reset the list of coordinates
                             lineMapPoints = New List(Of MapPoint)(5)
                         End If

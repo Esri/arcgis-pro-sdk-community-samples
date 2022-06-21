@@ -1,4 +1,4 @@
-﻿/*
+/*
 
    Copyright 2020 Esri
 
@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -52,13 +52,9 @@ namespace RubiksCube
   /// ![UI](Screenshots/RibbonUI.png)
   /// 1. A multipatch cube will be created.
   /// ![UI](Screenshots/BlankCube.png)
-  /// 1. From the "Add-in" tab select "Apply Materials".
-  /// ![UI](Screenshots/RibbonUI2.png)
-  /// 1. The cube will have materials applied.
+  /// 1. From the "Add-in" tab select "Apply Materials". The cube will have materials applied.
   /// ![UI](Screenshots/CubeWithMaterials.png)
-  /// 1. From the "Add-in" tab select "Apply Textures".
-  /// ![UI](Screenshots/RibbonUI3.png)
-  /// 1. The cube will have the rubik's cube image applied as a texture.
+  /// 1. From the "Add-in" tab select "Apply Textures".  The cube will have the rubik's cube image applied as a texture.
   /// ![UI](Screenshots/CubeWithTextures.png)
   /// </remarks>
   internal class Module1 : Module

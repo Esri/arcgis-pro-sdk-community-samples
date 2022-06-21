@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -17,22 +17,22 @@ using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Catalog;
 
-namespace FolderConnections
-{ 
-    internal class DisplayConnections : Button
+namespace FolderConnectionManager
+{
+  internal class DisplayConnections : Button
+  {
+    protected override void OnClick()
     {
-        protected override void OnClick()
-        {
-            // Get an iterable object containing all the current folder connections
-            IEnumerable<FolderConnectionProjectItem> projectFolders = Project.Current.GetItems<FolderConnectionProjectItem>();
+      // Get an iterable object containing all the current folder connections
+      IEnumerable<FolderConnectionProjectItem> projectFolders = Project.Current.GetItems<FolderConnectionProjectItem>();
 
-            // Iterate over the list of connections and append each to a string
-            string folders = null;
-            foreach (var item in projectFolders)
-                folders += item.Path + "\n";
+      // Iterate over the list of connections and append each to a string
+      string folders = null;
+      foreach (var item in projectFolders)
+        folders += item.Path + "\n";
 
-            // Show a message box listing each of the folder connections
-            ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(folders, "Folder Connections");      
-        }
+      // Show a message box listing each of the folder connections
+      ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(folders, "Folder Connections");
     }
+  }
 }

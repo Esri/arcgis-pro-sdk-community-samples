@@ -1,4 +1,22 @@
-﻿using System;
+/*
+
+   Copyright 2022 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -44,16 +62,17 @@ namespace VoxelSample.Examples.Section
 				voxelLayer.SetSectionContainerVisibility(true);
 
 				//delete all sections
-				foreach (var section in voxelLayer.GetSections())
-					voxelLayer.DeleteSection(section);
+				var volume = voxelLayer.SelectedVariableProfile.Volume;
+				foreach (var section in volume.GetSections())
+					volume.DeleteSection(section);
 
-				var volume = voxelLayer.GetVolumeSize();
-				var voxel_pos = new Coordinate3D(0, 0, volume.Item3);
-				var voxel_pos_ur = new Coordinate3D(volume.Item1, volume.Item2, volume.Item3);
+				var vol_size = volume.GetVolumeSize();
+				var voxel_pos = new Coordinate3D(0, 0, vol_size.Z);
+				var voxel_pos_ur = new Coordinate3D(vol_size.X, vol_size.Y, vol_size.Z);
 
 				//Make the diagonal in voxel space we will be using
-				var lineBuilder = new LineBuilder(voxel_pos, voxel_pos_ur, null);
-				var diagonal = PolylineBuilder.CreatePolyline(lineBuilder.ToSegment());
+				var lineBuilder = new LineBuilderEx(voxel_pos, voxel_pos_ur, null);
+				var diagonal = PolylineBuilderEx.CreatePolyline(lineBuilder.ToSegment());
 
 				var num_sections = 12;
 				var spacing = 1 / (double)num_sections;
@@ -76,10 +95,10 @@ namespace VoxelSample.Examples.Section
 						end_pt = segments.First().EndCoordinate;
 					}
 
-					voxelLayer.CreateSection(new SectionDefinition()
+					volume.CreateSection(new SectionDefinition()
 					{
 						Name = $"Diagonal {s + 1}",
-						VoxelPosition = new Coordinate3D(end_pt.X, end_pt.Y, volume.Item3),
+						VoxelPosition = new Coordinate3D(end_pt.X, end_pt.Y, vol_size.Z),
 						Normal = normal,
 						IsVisible = true
 					});

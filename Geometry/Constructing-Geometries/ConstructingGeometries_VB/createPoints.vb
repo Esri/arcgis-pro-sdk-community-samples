@@ -3,7 +3,7 @@
 '   you may not use this file except in compliance with the License.
 '   You may obtain a copy of the License at
 
-'       http://www.apache.org/licenses/LICENSE-2.0
+'       https://www.apache.org/licenses/LICENSE-2.0
 
 '   Unless required by applicable law or agreed to in writing, software
 '   distributed under the License is distributed on an "AS IS" BASIS,
@@ -89,9 +89,9 @@ Friend Class CreatePoints
               For i As Integer = 0 To 20
                 ' generate either 2D or 3D geometries
                 If (classDefinition.HasZ()) Then
-                  newMapPoint = MapPointBuilder.CreateMapPoint(randomGenerator.NextCoordinate3D(areaOfInterest), spatialReference)
+                  newMapPoint = MapPointBuilderEx.CreateMapPoint(randomGenerator.NextCoordinate3D(areaOfInterest), spatialReference)
                 Else
-                  newMapPoint = MapPointBuilder.CreateMapPoint(randomGenerator.NextCoordinate2D(areaOfInterest), spatialReference)
+                  newMapPoint = MapPointBuilderEx.CreateMapPoint(randomGenerator.NextCoordinate2D(areaOfInterest), spatialReference)
                 End If
 
                 ' queue feature creation

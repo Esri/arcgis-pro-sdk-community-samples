@@ -1,4 +1,4 @@
-﻿/*
+/*
 
    Copyright 2019 Esri
 
@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -52,10 +52,10 @@ namespace Inspector_AddAttributeAsync
   /// 1. Make sure that the Sample data is unzipped in C:\Data
   /// 1. Before you run the sample verify that the project "C:\Data\Interacting with Maps\Interacting with Maps.aprx" is present since this is required to run the sample.
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-  /// 1. Click Start button to open ArcGIS Pro.
+  /// 1. Launch the debugger to open ArcGIS Pro.
   /// 1. ArcGIS Pro will open.
   /// 1. Open the "C:\Data\Interacting with Maps\Interacting with Maps" project.
-  /// 1. Click on the ADD-IN TAB.
+  /// 1. Click on the Add-In tab.
   /// ![UI](Screenshots/ribbon.png)
   /// 1. Click on the "Apply Attrributes" button.
   /// 1. A dockpane will be displayed showing the fields requiring user input. In this example we have chosen 2 fields from the Police Stations layer. 

@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -34,6 +34,7 @@ using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 using ArcGIS.Desktop.TaskAssistant;
+using ArcGIS.Desktop.TaskAssistant.Exceptions;
 
 namespace TasksSDK
 {
@@ -59,28 +60,34 @@ namespace TasksSDK
         return;
       }
 
-      try
+      await QueuedTask.Run(async () =>
       {
-        // retrieve the task item information
-        TaskItemInfo taskItemInfo = await TaskAssistantModule.GetTaskItemInfoAsync(taskFile);
+          try
+          {
+              // retrieve the task item information
+              //TaskItemInfo taskItemInfo = await TaskAssistantModule.GetTaskItemInfoAsync(taskFile); 2.x
+              TaskItemInfo taskItemInfo = await TaskAssistantFactory.Instance.GetTaskItemInfoAsync(taskFile);
 
-        string message = "Name : " + taskItemInfo.Name;
-        message += "\r\n" + "Description : " + taskItemInfo.Description;
-        message += "\r\n" + "Guid : " + taskItemInfo.Guid.ToString("B");
-        message += "\r\n" + "Task Count : " + taskItemInfo.GetTasks().Count();
+              string message = "Name : " + taskItemInfo.Name;
+              message += "\r\n" + "Description : " + taskItemInfo.Description;
+              message += "\r\n" + "Guid : " + taskItemInfo.Guid.ToString("B");
+              message += "\r\n" + "Task Count : " + taskItemInfo.GetTasks().Count();
 
-        ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(message, "Task Information");
-      }
-      catch (OpenTaskException e)
-      {
-        // exception thrown if task file doesn't exist or has incorrect format
-        ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(e.Message, "Task Information");
-      }
-      catch (TaskFileVersionException e)
-      {
-        // exception thrown if task file does not support returning task information
-        ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(e.Message, "Task Information");
-      }
+              ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(message, "Task Information");
+          }
+          catch (OpenTaskException e)
+          {
+              // exception thrown if task file doesn't exist or has incorrect format
+              ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(e.Message, "Task Information");
+          }
+          catch (TaskFileVersionException e)
+          {
+              // exception thrown if task file does not support returning task information
+              ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(e.Message, "Task Information");
+          }
+      });
+
+      
 
 
       // OR   obtain the task information from a task project item

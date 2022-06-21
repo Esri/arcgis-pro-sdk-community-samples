@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -68,7 +68,7 @@ namespace AnnoTools
           return false;
 
         EditOperation op = null;
-        foreach (var annoLayer in features.Keys.OfType<AnnotationLayer>())
+        foreach (var annoLayer in features.ToDictionary().Keys.OfType<AnnotationLayer>())
         {
           // are there features?
           var featOids = features[annoLayer];
@@ -76,7 +76,7 @@ namespace AnnoTools
             continue;
 
           // use the inspector methodology - load multiple features at once
-          var insp = new Inspector(true);
+          var insp = new Inspector();
           insp.Load(annoLayer, featOids);
 
           // get the annotation properties

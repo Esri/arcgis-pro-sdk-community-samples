@@ -5,18 +5,18 @@ Shows how to interrogate the underlying datasource of a feature layer for its da
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -32,6 +32,13 @@ Visual Studio:         2017, 2019
 Dataset compatibility can be useful if you are writing an editing addin and want to know if the datasets loaded into your TOC have long or short transaction semantics.   
 Datasets with long semantics have undoable and redoable edits whilst short transation semantic datasets do not.  
 Sometimes, short transaction edits are referred to as "direct edits".  
+  
+1. In Visual Studio click the Build menu.Then select Build Solution.  
+1. Launch the debugger to open ArcGIS Pro.  
+1. ArcGIS Pro will open, select any project that has a map with a mixed TOC - Data from a file geodatabase, feature services, etc.  
+1. Click the Add-In.  
+1. Click the Dataset Compatibility button.  
+![UI](screenshots/screen1.png)  
   
 
 

@@ -10,25 +10,6 @@
             </summary>
             <remarks>Procedural symbol items do not have a preview image. So a custom png is used to display these symbol types in the dockpane</remarks>
         </member>
-        <member name="M:Symbology.MeshSymbology.CreateMeshSymbolAsync">
-            <summary>
-            Create a mesh symbol that can be applied to a multi-patch feature layer.
-            </summary>
-            <remarks>
-            A mesh symbol is a CIMMeshSymbol object.  Define an array of CIMSymbolLayers which contains a CIMMaterialSymbol layer with the specified properties such as Color, etc.
-            Assign this array of CIMSymbolLayers to the CIMMeshSymbol.
-            ![MeshSymbolOrange](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/mesh-material-orange.png)
-            </remarks>
-            <returns></returns>
-        </member>
-        <member name="F:Symbology.MeshSymbology._rulePkgPath">
-            <summary>
-            Creates Mesh procedural symbol with various textures.
-            ![MeshProceduralTexture](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/mesh-procedural-texture.png)
-            </summary>
-            <remarks>Note: The rule package used in this method can be obtained from the Sample Data included in the arcgis-pro-sdk-community-samples repository.</remarks>
-            <returns></returns>
-        </member>
         <member name="M:Symbology.MyLineSymbology.CreateMyMarkerLineSymbolAsync">
             <summary>
             Create a line symbol with the markers placed at a 45 degree angle. <br/>  
@@ -52,10 +33,10 @@
         <member name="M:Symbology.MyLineSymbology.CreateLineDashTwoMarkers2Async">
             <summary>
             Create a line symbol with a dash and two markers. <br/>
-            In this pattern of creating this symbol, a [CIMVectorMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic6176.html) object is created as a new [CIMSymbolLayer](http://prodev.arcgis.com/en/pro-app/sdk/api-reference/#topic5503.html).
-            The circle and square markers created by [ContructMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic12350.html) method is then assigned to the [MarkerGraphics](http://prodev.arcgis.com/en/pro-app/sdk/api-reference/#topic6188.html) property of the CIMVectorMarker. 
-            When using this method, the CIMVectorMarker's [Frame](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic6187.html) property needs to be set to the [CIMMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic3264.html) object's Frame. 
-            Similarly, the CIMVectorMarker's [Size](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic3284.html) property needs to be set to the CIMMarker object's size.
+            In this pattern of creating this symbol, a [CIMVectorMarker](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic6176.html) object is created as a new [CIMSymbolLayer](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic5503.html).
+            The circle and square markers created by [ContructMarker](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic12350.html) method is then assigned to the [MarkerGraphics](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic6188.html) property of the CIMVectorMarker. 
+            When using this method, the CIMVectorMarker's [Frame](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic6187.html) property needs to be set to the [CIMMarker](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic3264.html) object's Frame. 
+            Similarly, the CIMVectorMarker's [Size](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic3284.html) property needs to be set to the CIMMarker object's size.
             </summary>
             <remarks>
             This line symbol comprises three symbol layers listed below: 
@@ -66,6 +47,25 @@
             </remarks>
             <returns></returns>
         </member>
+        <member name="M:Symbology.MeshSymbology.CreateMeshSymbolAsync">
+            <summary>
+            Create a mesh symbol that can be applied to a multi-patch feature layer.
+            </summary>
+            <remarks>
+            A mesh symbol is a CIMMeshSymbol object.  Define an array of CIMSymbolLayers which contains a CIMMaterialSymbol layer with the specified properties such as Color, etc.
+            Assign this array of CIMSymbolLayers to the CIMMeshSymbol.
+            ![MeshSymbolOrange](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/mesh-material-orange.png)
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="F:Symbology.MeshSymbology._rulePkgPath">
+            <summary>
+            Creates Mesh procedural symbol with various textures.
+            ![MeshProceduralTexture](http://Esri.github.io/arcgis-pro-sdk/images/Symbology/mesh-procedural-texture.png)
+            </summary>
+            <remarks>Note: The rule package used in this method can be obtained from the Sample Data included in the arcgis-pro-sdk-community-samples repository.</remarks>
+            <returns></returns>
+        </member>
         <member name="T:Symbology.Module1">
             <summary>
             This sample creates custom point, line and polygon symbol items that you can use to render feature layers.  
@@ -73,8 +73,7 @@
             </summary>
             <remarks>
             1. In Visual Studio click the Build menu. Then select Build Solution.  
-            1. Click Start button to open ArcGIS Pro.
-            1. ArcGIS Pro will open. 
+            1. Launch the debugger to open ArcGIS Pro.
             1. Open any project file. 
             1. In Add-in tab, click the "Show Symbology pane" button.
             1. In the Symbology pane, you can see the custom Point, Line and Polygon symbols available in this sample. Select

@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -288,10 +288,10 @@ namespace Overlay3D
                   var projBottomPnt = GeometryEngine.Instance.Project(pnt, MapView.Active.Map.SpatialReference) as MapPoint;
                   var surfaceZ = await MapView.Active.Map.GetZsFromSurfaceAsync(projBottomPnt);
                   var z = (surfaceZ.Geometry as MapPoint).Z;
-                  projBottomPnt = MapPointBuilder.CreateMapPoint(projBottomPnt.X, projBottomPnt.Y, z, projBottomPnt.SpatialReference);
-                  var projTopPnt = MapPointBuilder.CreateMapPoint(projBottomPnt.X, projBottomPnt.Y, projBottomPnt.Z + 50, projBottomPnt.SpatialReference);
+                  projBottomPnt = MapPointBuilderEx.CreateMapPoint(projBottomPnt.X, projBottomPnt.Y, z, projBottomPnt.SpatialReference);
+                  var projTopPnt = MapPointBuilderEx.CreateMapPoint(projBottomPnt.X, projBottomPnt.Y, projBottomPnt.Z + 50, projBottomPnt.SpatialReference);
                   IList<MapPoint> pnts = new List<MapPoint>() { projBottomPnt, projTopPnt };
-                  geoms.Add (row.GetObjectID(), PolylineBuilder.CreatePolyline (pnts));
+                  geoms.Add (row.GetObjectID(), PolylineBuilderEx.CreatePolyline (pnts, AttributeFlags.None));
                 }
               }
             }
@@ -446,7 +446,11 @@ namespace Overlay3D
         {
           //QueuedTask.Run(() =>
           //{
-          foreach (var disp in _flushList) disp.Dispose();
+          foreach (var disp in _flushList)
+          {
+            disp?.Dispose();
+          }
+
           _flushList.Clear();
           //});
         }, true);

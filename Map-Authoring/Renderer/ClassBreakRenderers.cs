@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -151,6 +151,7 @@ namespace Renderer
                 {                   
                     ClassificationField = SDKHelpers.GetNumericField(featureLayer), //getting the first numeric field
                     ClassificationMethod = ClassificationMethod.NaturalBreaks,
+                    SymbolTemplate = SymbolFactory.Instance.ConstructPointSymbol(CIMColor.CreateRGBColor(76,230,0)).MakeSymbolReference(),
                     MinimumSymbolSize = 4,
                     MaximumSymbolSize = 50,
                     BreakCount = 5,
@@ -167,11 +168,18 @@ namespace Renderer
         /// Renders a feature layer using an unclassed color gradient.
         /// ![cb-unclassed.png](http://Esri.github.io/arcgis-pro-sdk/images/Renderers/cb-unclassed.png "Class breaks unclassed renderer.")
         /// </summary>
-        /// <param name="featureLayer"></param>
         /// <returns>        
         /// </returns>
-        internal static Task UnclassedRenderer(FeatureLayer featureLayer)
+        internal static Task UnclassedRenderer()
         {
+            //Check feature layer name
+            //Code works with the USDemographics feature layer available with the ArcGIS Pro SDK Sample data
+            var featureLayer = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault(f => f.Name == "U.S. National Transportation Atlas Interstate Highways");
+            if (featureLayer == null)
+            {
+              MessageBox.Show("This renderer works with the U.S. National Transportation Atlas Interstate Highways feature layer available with the ArcGIS Pro SDK Sample data", "Data missing");
+              return Task.FromResult(0);
+            }
             return QueuedTask.Run(() =>
             {                
                 //Gets the first numeric field of the feature layer

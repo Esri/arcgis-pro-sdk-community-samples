@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,17 +22,16 @@ using System.Threading.Tasks;
 
 namespace MainConnectorManhole
 {
-    /// <summary>This sample creates a sketch tool that creates multiple features in 3D. It demonstrates a line sketch tool, working with 3D geometry, and edit templates.</summary>
-    /// <remarks>
-    /// 1. The sample was initially created for internal demonstrations to show feature construction in 3D. 
-    /// 1. It requires the main (line), connector (line) and manhole (point) 3D layers in a scene. 
-    /// 1. The demonstration shows using the sketch to draw on a surface with the resulting features created underneath and connecting.
-    /// ![UI](Screenshots/Screen.png)
-    /// 1. The following two screenshots are examples of the expected output.
-    /// ![UI](Screenshots/OutputExample1.png)
-    /// ![UI](Screenshots/OutputExample2.png)
-    /// </remarks>
-    internal class Module1 : Module
+  /// <summary>This sample creates a sketch tool that creates multiple features in 3D. It demonstrates a line sketch tool, working with 3D geometry, and edit templates.</summary>
+  /// <remarks>
+  /// 1. The data for this sample is available in the CommunitySampleData-3D-05-11-2022.zip download (see link below). After unzipping the content, use the project foudn in this location:  c:\Data\MainManhole\MainManhole.ppkx
+  /// 1. The sample requires a main (line), connector (line) and manhole (point) 3D layers in a scene. You can use the "scene" in this project to run the add-in.
+  /// 1. The demonstration shows using the sketch to draw on a surface with the resulting features created underneath and connecting.
+  /// ![UI](Screenshots/Screen.png)
+  /// 1. The following screenshot is an example of the expected output.
+  /// ![UI](Screenshots/OutputExample1.png)  
+  /// </remarks>
+  internal class Module1 : Module
     {
         private static Module1 _this = null;
 

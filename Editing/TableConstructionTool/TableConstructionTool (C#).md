@@ -5,18 +5,18 @@ This sample demonstrates 3 workflows that use the "Table Construction tool" - Ba
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -29,11 +29,10 @@ Visual Studio:         2019
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'c:\data\TableConstruction' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "c:\data\TableConstruction\TableConstructionTool.ppkx" is available.  
 1. Open this solution in Visual Studio.    
 1. Click the Build menu and select Build Solution.  
 1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.  
-1. In ArcGIS Pro, open the c:\data\TableConstruction\TableConstructionTool.ppkx project package.  
+1. In ArcGIS Pro, open the TableConstructionTool.ppkx project package.  
 1. Open the "Map" project item, if it is not already open.  This map will have a "USCities" feature layer and a "CityDemographicsTable" standalone table.  
 1. Activate the "Edit" tab on the ribbon and click the "Create" button to open the "Create Features" dockpane.  
 1. Select the CityDemographicsTable template. This will display the various Table construction tools available for this template. The highlighted 3 tools are custom table constructions tools that have been added by this sample.  

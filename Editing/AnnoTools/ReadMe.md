@@ -15,18 +15,18 @@ TextString, FontName, VerticalAlignment, HorizontalAlignment etc) are not guaran
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -43,7 +43,7 @@ Visual Studio:         2017, 2019
 1. Make sure that the Sample data is unzipped in c:\data   
 1. The project used for this sample is 'C:\Data\SampleAnno\SampleAnno.aprx'  
 1. In Visual studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
+1. Start the Debugger to open ArcGIS Pro.  
 1. ArcGIS Pro will open, select the SampleAnno.aprx project  
 1. Activate an annotation template and see the two additional construction tools - Simple Anno Tool (Template) and Advanced Anno Tool.  
 ![UI](Screenshots/Screen1.png)  
@@ -54,9 +54,19 @@ Visual Studio:         2017, 2019
 1. Select the Advanced Anno Tool and digitize a line.  An annotation feature will be created.   
 ![UI](Screenshots/Screen3.png)  
   
-1. Click the 'Modify Anno Geometry' button on the Add-In tab and drag a rectangle around some annotation features. The geometry of these features will be rotated 90 degrees.  
-1. Click the 'Modify Anno Symbol' button on the Add-In tab and drag a rectangle around some annotation features. The text and symbol color of these features will change to 'Hello World' in red.  
+1. Click the 'Modify Anno Geometry' tool on the Add-In tab and drag a rectangle around the annotation features created by the advanced tool. The geometry of these features will be rotated 90 degrees.  
+1. Click the 'Modify Anno Symbol' tool on the Add-In tab and drag a rectangle around some annotation features. The text and symbol color of these features will change to 'Hello World' in red.  
 ![UI](Screenshots/Screen4.png)  
+  
+1. Click the 'Balloon Callout' tool on the Add-In tab and drag a rectangle around some annotation features. The text will change to a 'Balloon Callout'.  
+![UI](Screenshots/Screen5.png)  
+  
+1. Click the 'Simple Line Callout' tool on the Add-In tab and drag a rectangle around some annotation features. The text will change to a 'Line Callout'.  
+![UI](Screenshots/Screen6.png)  
+  
+1. Click the 'New Anno Template' button on the Add-In tab. Notice the new template created in the Create Feature pane.  
+1. Click the 'New Anno Template from Existing Tempate' button on the Add-In tab. Notice the new template created in the Create Feature pane.  
+![UI](Screenshots/Screen7.png)  
   
 
 

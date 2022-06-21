@@ -5,7 +5,7 @@
 //   you may not use this file except in compliance with the License. 
 //   You may obtain a copy of the License at 
 //
-//       http://www.apache.org/licenses/LICENSE-2.0 
+//       https://www.apache.org/licenses/LICENSE-2.0 
 //
 //   Unless required by applicable law or agreed to in writing, software 
 //   distributed under the License is distributed on an "AS IS" BASIS, 
@@ -29,7 +29,7 @@ namespace ConstructionToolWithOptions
   /// Two samples are included.
   /// The first is the BufferedLineTool.  The line sketch geoemtry is buffered by a user defined distance to create a polygon feature.
   /// The second sample is the CircleTool.  A user defined radius is used to create a circular arc with the point sketch geometry as the centroid.  This tool is registered with both the esri_editing_construction_polyline and esri_editing_construction_polygon categories allowing both polyline and polygon features to be created.
-  /// The CircleTool options follows the multiple tool options pattern (implementing IEditingCreateToolMultiple) allowing the users to select multiple templates
+  /// The CircleTool options follows the multiple tool options pattern (implementing ToolOptionsEmbeddableControl) allowing the users to select multiple templates
   /// in the manage templates dialog and change tool option values for those templates. The BufferedLineTool sample follows the single use pattern.
   /// </summary>
   /// <remarks>
@@ -37,7 +37,7 @@ namespace ConstructionToolWithOptions
   /// 1. Make sure that the Sample data is unzipped in c:\data
   /// 1. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'
   /// 1. In Visual Studio click the Build menu.Then select Build Solution.
-  /// 1. Click Start button to open ArcGIS Pro.
+  /// 1. Launch the debugger to open ArcGIS Pro.
   /// 1. ArcGIS Pro will open, select the FeatureTest.aprx project
   /// 1. Select the 'Edit' tab on the ArcGIS Pro ribbon and 'Create' new features
   /// 1. On the 'Create Features' pane select the test polygon feature layer to see the 'Buffered Line' tool

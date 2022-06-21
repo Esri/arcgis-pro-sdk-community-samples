@@ -5,18 +5,18 @@ This sample illustrates how animation keyframes can be generated with camera pos
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -30,17 +30,14 @@ Visual Studio:         2017, 2019
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data). The sample data contains a dataset called 'VehicleAnimation'.  Make sure that the Sample data is unzipped under c:\data and the folder "C:\Data\VehicleAnimation\" is available.  
-1. Open this solution in Visual Studio 2017.  
-1. Click the Build menu and select Build Solution.  
-1. Click the Start button to open ArcGIS Pro. ArcGIS Pro will open.  
+1. In Visual Studio click the Build menu. Then select Build Solution.  
+1. Launch the debugger to open ArcGIS Pro.  
 1. Open the project "VehicleAnimation.aprx" found in folder "C:\Data\VehicleAnimation\".  
 1. The demo dataset contains polyline route and 3D point layers for three different vehicles – a car, sailboat and helicopter.  There project’s bookmarks which will take you to the start of each vehicle route.  The project opens at the beginning of the car route. Each of the 3D point layers has a range already set so that only one vehicle point feature is visible at a time.  
 1. Click on the Animation Tab, and you will find two new sample groups added to the end of the tab – "Vehicle Animation Settings" and Build Animation".    
 ![UI](Screenshots/Screen1.png)  
   
-1. Click on the Timeline button in the Playback group to open the Timeline pane.  Make sure that you have a new, empty animation in the Timeline.  Note:  It is essential that the timeline window be empty of keyframes showing the "Create first keyframe" button before proceeding with building an animation.  Dock the pane at the bottom of the Pro UI if necessary for better viewing.    
-![UI](Screenshots/Screen2.png)  
-  
+1. Click on the Timeline button in the Playback group to open the Timeline pane.    
 1. First, create a speed animation for the car.  Enter your desired speed value in the edit box at the top of the Vehicle Animation Settings group or proceed with the default value of 55 miles per hour.  
 1. Make sure that "Car" is chosen in the combobox in the Vehicle Animation Settings group.  
 1. Press the "Speed Animation" button in the Build Animation group. You will be prompted to confirm if your choices are correct.  If so, press "OK".  

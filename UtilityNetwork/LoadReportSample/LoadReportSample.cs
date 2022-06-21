@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -39,7 +39,10 @@ namespace LoadReportSample
   /// 1. Select a feature layer or subtype group layer that participates in a utility network or a utility network layer
   /// 1. Click on the Load Report SDK Sample tab on the Utility Network tab group
   /// 1. Click on the Starting Points tool to create a starting point on the map
+  /// ![UI](Screenshots/Screenshot1.png)
+  /// ![UI](Screenshots/Screenshot2.png)
   /// 1. Click on the Create Load Report tool
+  /// ![UI](Screenshots/Screenshot3.png)
   /// </remarks>
   internal class LoadReportSample : Module
 	{

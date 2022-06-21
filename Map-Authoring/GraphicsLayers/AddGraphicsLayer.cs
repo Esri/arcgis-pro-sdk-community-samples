@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -46,15 +46,12 @@ namespace GraphicsLayers
             if (MapView.Active.GetSelectedLayers().Count == 1)
                 selectedGroupLayer = MapView.Active.GetSelectedLayers()[0] as GroupLayer;
 
-            var graphicsLayerCreationParams = new GraphicsLayerCreationParams {Name = "Graphics Layer" };
+            var graphicsLayerCreationParams = new GraphicsLayerCreationParams {Name = "Graphics Layer", MapMemberPosition = MapMemberPosition.AutoArrange };
             QueuedTask.Run( () => {
                 if (selectedGroupLayer != null)
-                    LayerFactory.Instance.CreateLayer<GraphicsLayer>(graphicsLayerCreationParams, selectedGroupLayer,
-LayerPosition.AutoArrange);
+                    LayerFactory.Instance.CreateLayer<GraphicsLayer>(graphicsLayerCreationParams, selectedGroupLayer);
                 if (selectedGroupLayer == null)
-                    LayerFactory.Instance.CreateLayer<GraphicsLayer>(graphicsLayerCreationParams, MapView.Active.Map,
-LayerPosition.AutoArrange);
-
+                    LayerFactory.Instance.CreateLayer<GraphicsLayer>(graphicsLayerCreationParams, MapView.Active.Map);
             });
             
 

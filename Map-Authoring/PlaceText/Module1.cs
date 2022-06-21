@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -42,8 +42,8 @@ namespace PlaceText
   /// </summary>
   /// <remarks>
   /// 1. In Visual studio rebuild the solution.
-  /// 1. Debug the add-in by clicking the "Start" button.
-  /// 1. ArcGIS Pro opens, select any project with a map.
+  /// 1. Launch the debugger to open ArcGIS Pro.
+  /// 1. When ArcGIS Pro opens, select any project with a map.
   /// 1. Open the Add-in Tab and click on the "Place Text Tool" button to active the "Place Text" Map tool.
   /// ![UI](Screenshots/Screen1.png)
   /// 1. Click on the map to place a point marker with text inside.

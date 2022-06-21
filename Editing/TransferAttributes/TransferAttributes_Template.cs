@@ -1,4 +1,4 @@
-﻿/*
+/*
 
    Copyright 2019 Esri
 
@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -77,11 +77,11 @@ namespace TransferAttributes
       {
         // find the target feature from the geometry click
         var targetFeatures = MapView.Active.GetFeatures(geometry);
-        if ((targetFeatures == null) || (targetFeatures.Keys.Count == 0))
+        if ((targetFeatures == null) || (targetFeatures.ToDictionary().Keys.Count == 0))
           return false;
 
         // we will use the first feature returned
-        var targetLayer = targetFeatures.Keys.First();
+        var targetLayer = targetFeatures.ToDictionary().Keys.First();
         var targetOID = targetFeatures[targetLayer][0];
 
         // At 2.4, EditOperation.TransferAttributes method is one of the few functions which honors the field mapping.
@@ -96,13 +96,13 @@ namespace TransferAttributes
         switch (templateLayer.ShapeType)
         {
           case esriGeometryType.esriGeometryPoint:
-            emptyGeometry = MapPointBuilder.CreateMapPoint();
+            emptyGeometry = MapPointBuilderEx.CreateMapPoint();
             break;
           case esriGeometryType.esriGeometryPolyline:
-            emptyGeometry = PolylineBuilder.CreatePolyline();
+            emptyGeometry = PolylineBuilderEx.CreatePolyline();
             break;
           case esriGeometryType.esriGeometryPolygon:
-            emptyGeometry = PolygonBuilder.CreatePolygon();
+            emptyGeometry = PolygonBuilderEx.CreatePolygon();
             break;
         }
 
@@ -110,20 +110,19 @@ namespace TransferAttributes
         if (emptyGeometry == null)
           return false;
 
-        long newObjectID = -1;
-
         // create the temporary feature using the empty geometry
         var op = new EditOperation();
         op.Name = "Transfer attributes from template";
 
         // note Create signature.. we are interested in the new ObjectID
-        op.Create(template, emptyGeometry, object_id => newObjectID = object_id);
+        var rowToken = op.Create(template, emptyGeometry);
         // execute
         var opResult = op.Execute();
 
         // if create was successful
         if (opResult)
         {
+          var newObjectID = rowToken.ObjectID.Value;
           // chain to create a new operation
           var opChain = op.CreateChainedOperation();
           // transfer the attributes between the temporary feature and the target feature

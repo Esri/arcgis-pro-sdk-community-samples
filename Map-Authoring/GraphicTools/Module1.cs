@@ -1,4 +1,22 @@
-﻿using System;
+/*
+
+   Copyright 2022 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +46,7 @@ namespace GraphicTools
   /// 1. Download the Community Sample data(see under the 'Resources' section for downloading sample data). The sample data contains a dataset called GraphicTools.Make sure that the Sample data is unzipped under C:\Data and the folder "C:\Data\GraphicTools" is available.
   /// 1. Open the solution in Visual Studio.
   /// 1. Click the Build menu and select Build Solution.
-  /// 1. Click the Start button to open ArcGIS Pro. 
+  /// 1. Launch the debugger to open ArcGIS Pro. 
   /// 1. Open the project "GraphicTools.aprx" found in folder: "C:\data\GraphicTools. The project opens in a 2D map view, at the Washington, DC bookmark.  In the Contents pane, you can see the two layers, Graphics Markup and Overall SVI - Tracts, along with several layers included in the larger CDC Social Vulnerability Index 2018 - USA group layer dataset. 
   /// 1. Click on the Survey Site bookmark and notice that street level blocks are clearly visible.This area will be the center of the survey, and planning using the map graphics markup tools.Click on the Graphics Markup tab on the ribbon.  The add-in divides tools into four groups on the tab:
   ///    * Graphic Selection – Standard Pro tools for working with graphic selections.

@@ -1,12 +1,12 @@
 /*
 
-   Copyright 2020 Esri
+   Copyright 2022 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,12 +16,6 @@
    limitations under the License.
 
 */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Input;
-using System.Threading.Tasks;
 using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
 using ArcGIS.Core.Geometry;
@@ -33,21 +27,28 @@ using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
+using ArcGIS.Desktop.Layouts;
 using ArcGIS.Desktop.Mapping;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace ConstructToolWithOptions
 {
+  internal class SubtypeChoice
+  {
+    public int SubtypefieldValue { get; set; }
+    public string FeatureCodeValue { get; set; }
 
-	internal class SubtypeChoice
-	{
-		public int SubtypefieldValue { get; set; }
-		public string FeatureCodeValue { get; set; }
+    public override string ToString()
+    {
+      return $"{this.SubtypefieldValue} - {this.FeatureCodeValue}";
+    }
+  }
 
-		public override string ToString()
-		{
-			return $"{this.SubtypefieldValue} - {this.FeatureCodeValue}";
-		}
-	}
 
 	/// <summary>
 	/// This sample illustrates how to build a point construction tool with the option to select the feature subtype when the point is created.  
@@ -57,7 +58,7 @@ namespace ConstructToolWithOptions
 	/// 1. Make sure that the Sample data is unzipped in c:\data
 	/// 1. The project used for this sample is 'C:\Data\ConstructToolSample\ConstructToolSample.ppkx'
 	/// 1. In Visual Studio click the Build menu.Then select Build Solution.
-	/// 1. Click Start button to open ArcGIS Pro.
+	/// 1. Launch the debugger to open ArcGIS Pro.
 	/// 1. ArcGIS Pro will open, select the ConstructToolSample.ppkx project
 	/// 1. Select the 'Edit' tab on the ArcGIS Pro ribbon and click the 'Create' button  
 	/// 1. On the 'Create Features' pane select any of the point features (FacilitySitePoint... feature classes) to see the 'Construct Facilities with Subtypes Tool' tool
@@ -66,67 +67,31 @@ namespace ConstructToolWithOptions
 	/// ![UI](Screenshots/Screen2.png)      
 	/// 1. Select a subtype to generate a new point feature using that subtype.
 	/// </remarks>
-	internal class Module1 : Module
-	{
-		private static Module1 _this = null;
+  internal class Module1 : Module
+  {
+    private static Module1 _this = null;
 
-		/// <summary>
-		/// Retrieve the singleton instance to this module here
-		/// </summary>
-		public static Module1 Current
-		{
-			get
-			{
-				return _this ?? (_this = (Module1)FrameworkApplication.FindModule("ConstructToolWithOptions_Module"));
-			}
-		}
+    /// <summary>
+    /// Retrieve the singleton instance to this module here
+    /// </summary>
 
-		#region For Tool Options
+    public static Module1 Current => _this ??= (Module1)FrameworkApplication.FindModule("ConstructToolWithOptions_Module");
 
-		private List<SubtypeChoice> _subtypeChoices = new List<SubtypeChoice>();
+    #region For Tool Options
+
+    private List<SubtypeChoice> _subtypeChoices = new List<SubtypeChoice>();
+
+
 		private int _currentSubtypeChoice = 0;
-		private bool _saveLastSubtypeChoiceToDefaults = true;
-		private bool _useSubtypeChoiceOverride = true;
-
-		public bool SaveLastSubtypeChoiceToDefaults
-		{
-			get
-			{
-				return _saveLastSubtypeChoiceToDefaults;
-			}
-			set
-			{
-				_saveLastSubtypeChoiceToDefaults = value;
-			}
-		}
-
-		public bool UseSubtypeChoiceOverride
-		{
-			get
-			{
-				return _useSubtypeChoiceOverride;
-			}
-			set
-			{
-				_useSubtypeChoiceOverride = value;
-			}
-		}
-
 		public int SelectedSubtypeChoiceIndex
-		{
-			get
-			{
-				return _currentSubtypeChoice;
-			}
-			set
-			{
-				_currentSubtypeChoice = value;
-			}
-		}
+    {
+      get => _currentSubtypeChoice;
+      set => _currentSubtypeChoice = value;
+    }
 
-		public SubtypeChoice SelectedSubtypeChoice => _subtypeChoices[_currentSubtypeChoice];
+    public SubtypeChoice SelectedSubtypeChoice => _subtypeChoices[_currentSubtypeChoice];
 
-		public List<SubtypeChoice> SubtypeChoices => _subtypeChoices;
+    public List<SubtypeChoice> SubtypeChoices => _subtypeChoices;
 
 		#endregion
 
@@ -189,13 +154,13 @@ namespace ConstructToolWithOptions
 		/// </summary>
 		/// <returns>False to prevent Pro from closing, otherwise True</returns>
 		protected override bool CanUnload()
-		{
-			//TODO - add your business logic
-			//return false to ~cancel~ Application close
-			return true;
-		}
+    {
+      //TODO - add your business logic
+      //return false to ~cancel~ Application close
+      return true;
+    }
 
-		#endregion Overrides
+    #endregion Overrides
 
-	}
+  }
 }

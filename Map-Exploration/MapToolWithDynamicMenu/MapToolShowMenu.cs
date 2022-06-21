@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -64,15 +64,16 @@ namespace MapToolWithDynamicMenu
                 var mapTopLeft = MapView.Active.ClientToMap(topLeft);
                 var mapBottomRight = MapView.Active.ClientToMap(bottomRight);
                 //create a geometry using these points
-                Geometry envelopeGeometry = EnvelopeBuilder.CreateEnvelope(mapTopLeft, mapBottomRight);
+                Geometry envelopeGeometry = EnvelopeBuilderEx.CreateEnvelope(mapTopLeft, mapBottomRight);
                 if (envelopeGeometry == null) return false;
                 //Get the features that intersect the sketch geometry.
                 var result = ActiveMapView.GetFeatures(geometry);
-                foreach (var kvp in result)
+                foreach (var kvp in result.ToDictionary())
                 {
-                    var bfl = kvp.Key;
+                    var bfl = kvp.Key as BasicFeatureLayer;
+                    if (bfl is null) continue;
                     // only look at points
-                    if (kvp.Key.ShapeType != esriGeometryType.esriGeometryPoint) continue;
+                    if (bfl.ShapeType != esriGeometryType.esriGeometryPoint) continue;
                     var layerName = bfl.Name;
                     var oidName = bfl.GetTable().GetDefinition().GetObjectIDField();
                     foreach (var oid in kvp.Value)

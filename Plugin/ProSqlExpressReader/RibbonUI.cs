@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -122,15 +122,15 @@ namespace ProSqlExpressReader
 												{
 													if (grpLyr != null)
 														//Add as a layer to the active map or scene
-														LayerFactory.Instance.CreateFeatureLayer(fc, grpLyr, lyrIdx);
+														LayerFactory.Instance.CreateLayer<FeatureLayer>(new FeatureLayerCreationParams(fc) { MapMemberIndex = lyrIdx }, grpLyr);
 													else
 														//Add as a layer to the active map or scene
-														LayerFactory.Instance.CreateFeatureLayer(fc, mapToAddTo);
+														LayerFactory.Instance.CreateLayer<FeatureLayer>(new FeatureLayerCreationParams(fc), mapToAddTo);
 												}
 												else
 												{
 													//add as a standalone table
-													StandaloneTableFactory.Instance.CreateStandaloneTable(table, mapToAddTo);
+													StandaloneTableFactory.Instance.CreateStandaloneTable(new StandaloneTableCreationParams(table), mapToAddTo);
 												}
 											}
 										}
@@ -170,15 +170,16 @@ namespace ProSqlExpressReader
 											{
 												if (grpLyr != null)
 													//Add as a layer to the active map or scene
-													LayerFactory.Instance.CreateFeatureLayer(fc, grpLyr, lyrIdx);
+													LayerFactory.Instance.CreateLayer<FeatureLayer>(new FeatureLayerCreationParams(fc) { MapMemberIndex = lyrIdx }, grpLyr);
 												else
 													//Add as a layer to the active map or scene
-													LayerFactory.Instance.CreateFeatureLayer(fc, mapToAddTo);
+													
+													LayerFactory.Instance.CreateLayer<FeatureLayer>(new FeatureLayerCreationParams (fc), mapToAddTo);
 											}
 											else
 											{
 												//add as a standalone table
-												StandaloneTableFactory.Instance.CreateStandaloneTable(table, mapToAddTo);
+												StandaloneTableFactory.Instance.CreateStandaloneTable(new StandaloneTableCreationParams(table), mapToAddTo);
 											}
 										}
 									}

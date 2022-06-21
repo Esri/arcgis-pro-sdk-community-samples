@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -29,15 +29,14 @@ namespace FeatureSelection
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-  /// 2. Click Start button to open ArcGIS Pro.
-  /// 3. ArcGIS Pro will open. 
+  /// 2. Launch the debugger to open ArcGIS Pro.
   /// 4. With a map view active go to the Add-In tab and click the Feature Selection button.
   /// 5. This will open the Feature Selection dock pane.
   /// 6. Select the layer of interest in the Combo box and in the list below it will show the object ids of the selected features.
   /// ![UI](Screenshots/screenshot1.png)
   /// 7. Select any of the object ids to see the attributes for that feature.
   /// 8. Click the select tool next to the layers combo box to interactively select features for that layer in the map.
-  /// 9. Right-click a given row in the attributes data grid and select Create New Expression to add that criteria to the where clause.
+  /// 9. Enter a Where clause in the "Select Where" edit box.
   /// 10. This where clause can be used to further narrow down the selection.
   /// ![UI](Screenshots/screenshot2.png)
   /// </remarks>

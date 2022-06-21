@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -42,13 +42,13 @@ namespace TableControlSample
     /// </summary>
     /// <remarks>  
     /// 1. In Visual Studio, click the Build menu. Then select Build Solution.  
-    /// 1. Click Start button to open ArcGIS Pro.
-    /// 1. ArcGIS Pro will open.
+    /// 1. Launch the debugger to open ArcGIS Pro.
     /// 1. Open any project with map views. 
-    /// 1. Within the "Add-in" tab, click the Table Control dropdown and select the control type: Dock Pane, Pane, Dialog.
+    /// 1. Select a layer in the Contents pane
+    /// 1. Within the "Add-in" tab, click the Open button.
     /// 1. A table control will open and display the current content of the selected layer or table from the active map.
     /// 1. Select a few records in the table control.  Notice that the current map selection changes to reflect this.
-    /// ![UI](Screenshots/tablecontrol.png)
+    /// ![UI](screenshots/tablecontrol.png)
     /// </remarks>
     internal class Module1 : Module
   {

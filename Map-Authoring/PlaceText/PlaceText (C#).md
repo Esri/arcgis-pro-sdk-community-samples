@@ -5,18 +5,18 @@ This sample shows how to place point markers with text inside the point marker.
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -30,8 +30,8 @@ Visual Studio:         2017, 2019
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 1. In Visual studio rebuild the solution.  
-1. Debug the add-in by clicking the "Start" button.  
-1. ArcGIS Pro opens, select any project with a map.  
+1. Launch the debugger to open ArcGIS Pro.  
+1. When ArcGIS Pro opens, select any project with a map.  
 1. Open the Add-in Tab and click on the "Place Text Tool" button to active the "Place Text" Map tool.  
 ![UI](Screenshots/Screen1.png)  
   

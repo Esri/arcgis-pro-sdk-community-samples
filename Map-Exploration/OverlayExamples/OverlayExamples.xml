@@ -46,11 +46,9 @@
             1. Make sure that the Sample data is unzipped in c:\data
             1. Before you run the sample verify that the project C:\data\SDK\SDK 1.1.aprx"C:\Data\FeatureTest\FeatureTest.aprx" is present since this is required to run the sample.
             1. In Visual Studio click the Build menu. Then select Build Solution.
-            1. Click Start button to open ArcGIS Pro.
-            1. ArcGIS Pro will open. 
+            1. Launch the debugger to open ArcGIS Pro.
             1. Open the "C:\Data\FeatureTest\FeatureTest.aprx" project.
             1. Click on the Add-In tab on the ribbon.
-            Playing with the add-in:  
             There are 3 examples of working with the graphic overlay:  
             1. "Add Overlay:" Sketch a line anywhere. Each time you sketch, the previous graphic is erased
             ![UI](Screenshots/Screen1.png)
@@ -80,6 +78,15 @@
             <remarks>If multiple features are selected just the ObjectID of the first feature
             in the selected set is returned</remarks>
             <param name="point"></param>
+            <returns>The object id of the selected feature or -1</returns>
+        </member>
+        <member name="M:OverlayExamples.Module1.SelectLineFeature(ArcGIS.Core.Geometry.Envelope)">
+            <summary>
+            This method must be called on the MCT
+            </summary>
+            <remarks>If multiple features are selected just the ObjectID of the first feature
+            in the selected set is returned</remarks>
+            <param name="envelope"></param>
             <returns>The object id of the selected feature or -1</returns>
         </member>
         <member name="M:OverlayExamples.Module1.CreateLineSymbolAsync">

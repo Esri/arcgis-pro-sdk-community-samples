@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -119,13 +119,13 @@ namespace OverviewMapControl
               //Creating the overview rectangle
               IList<MapPoint> segments = new List<MapPoint>
               {
-                MapPointBuilder.CreateMapPoint(_overviewEnvelope.XMin, _overviewEnvelope.YMin, _overviewEnvelope.SpatialReference),
-                MapPointBuilder.CreateMapPoint(_overviewEnvelope.XMax, _overviewEnvelope.YMin, _overviewEnvelope.SpatialReference),
-                MapPointBuilder.CreateMapPoint(_overviewEnvelope.XMax, _overviewEnvelope.YMax, _overviewEnvelope.SpatialReference),
-                MapPointBuilder.CreateMapPoint(_overviewEnvelope.XMin, _overviewEnvelope.YMax, _overviewEnvelope.SpatialReference),
-                MapPointBuilder.CreateMapPoint(_overviewEnvelope.XMin, _overviewEnvelope.YMin, _overviewEnvelope.SpatialReference)
+                MapPointBuilderEx.CreateMapPoint(_overviewEnvelope.XMin, _overviewEnvelope.YMin, _overviewEnvelope.SpatialReference),
+                MapPointBuilderEx.CreateMapPoint(_overviewEnvelope.XMax, _overviewEnvelope.YMin, _overviewEnvelope.SpatialReference),
+                MapPointBuilderEx.CreateMapPoint(_overviewEnvelope.XMax, _overviewEnvelope.YMax, _overviewEnvelope.SpatialReference),
+                MapPointBuilderEx.CreateMapPoint(_overviewEnvelope.XMin, _overviewEnvelope.YMax, _overviewEnvelope.SpatialReference),
+                MapPointBuilderEx.CreateMapPoint(_overviewEnvelope.XMin, _overviewEnvelope.YMin, _overviewEnvelope.SpatialReference)
               };
-              _polyLine = PolylineBuilder.CreatePolyline(segments, _overviewEnvelope.SpatialReference);
+              _polyLine = PolylineBuilderEx.CreatePolyline(segments, AttributeFlags.None, _overviewEnvelope.SpatialReference);
               
                 _graphic = _mapControl.AddOverlay(_polyLine, _lineSymbol.MakeSymbolReference());
             });

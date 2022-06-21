@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -43,7 +43,7 @@ namespace GraphicOverlay4Debug
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 1. Click Start button to debug ArcGIS Pro.
+    /// 1. Launch the debugger to ArcGIS Pro.
     /// 1. In ArcGIS Pro open a new project with an empty map and after the map is displayed select the 'Visual Debug' tab
     /// ![UI](Screenshots/Screen1.png)
     /// 1. Select the 'Sketch Point' tool and start to sketch points on the map.  Each sketched point will be added to the map as a graphic overlay.

@@ -1,4 +1,22 @@
-﻿using ArcGIS.Core.CIM;
+/*
+
+   Copyright 2022 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+*/
+using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
 using ArcGIS.Core.Geometry;
 using ArcGIS.Desktop.Catalog;
@@ -26,7 +44,7 @@ using System.Xml.Linq;
 
 namespace AddToMapCustomItem
 {
-  internal class AddToMapCustomItem : CustomItemBase, IMappableItemEx, IMappableItem
+  internal class AddToMapCustomItem : CustomItemBase, IMappableItem
   {
     protected AddToMapCustomItem() : base()
     {
@@ -60,7 +78,7 @@ namespace AddToMapCustomItem
     
     //Add the item to the map.
     //OnAddToMapEx is already on the MCT. 
-    public string[] OnAddToMapEx(Map map)
+    List<string> IMappableItem.OnAddToMap(Map map)
     {
       //Converts the custom item file to a feature class in the File GDB
       //The output will not be added to the map
@@ -75,21 +93,14 @@ namespace AddToMapCustomItem
       
       //Create a layer from the feature class
       var itemUri = new Uri($@"{gdb}\{nameFC}");
-      var layer = LayerFactory.Instance.CreateLayer(itemUri, MapView.Active.Map, LayerPosition.AddToTop);
+      var layer = LayerFactory.Instance.CreateLayer(itemUri, MapView.Active.Map);
 
       List<string> uris = new List<string>();
       if (layer != null)
         uris.Add(layer.URI);
-      return uris.ToArray();
+      return uris;
     }
-    public void OnAddToMap(Map map)
-    {
-    }
-
-    public void OnAddToMap(Map map, ILayerContainerEdit groupLayer, int index)
-    {
-    }
-   
+  
     public override ImageSource LargeImage
     {
       get
@@ -181,10 +192,11 @@ namespace AddToMapCustomItem
     }
 
 
-    public string[] OnAddToMapEx(Map map, ILayerContainerEdit groupLayer, int index)
+    List<string> IMappableItem.OnAddToMap(Map map, ILayerContainerEdit groupLayer, int index)
     {
-      return OnAddToMapEx(map);
+      return null;
     }
+
   }
   internal class ShowItemNameAddToMap : Button
   {

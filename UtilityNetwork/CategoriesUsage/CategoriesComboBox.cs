@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -285,7 +285,7 @@ namespace CategoriesUsage
           if (needToAddStandaloneTable)
           {
             IStandaloneTableFactory tableFactory = StandaloneTableFactory.Instance;
-            tableFactory.CreateStandaloneTable(categoryReportTable, MapView.Active.Map);
+            tableFactory.CreateStandaloneTable(new StandaloneTableCreationParams(categoryReportTable), MapView.Active.Map);
           }
         }
 
@@ -298,8 +298,7 @@ namespace CategoriesUsage
         if (standaloneTable.Name == categoryReportTableName)
           FrameworkApplication.Panes.OpenTablePane(standaloneTable, TableViewMode.eAllRecords);
       }
-    }
-  
+    }  
 
   }
 }

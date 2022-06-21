@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -272,8 +272,8 @@ namespace WorkingWithQueryDefinitionFilters
             {
                 if (SelectedMapMember != null)
                 {
-                    var filters = SelectedMapMember is StandaloneTable ? (SelectedMapMember as StandaloneTable).GetDefinitionFilters()
-                        : (SelectedMapMember as BasicFeatureLayer).GetDefinitionFilters();
+                    var filters = SelectedMapMember is StandaloneTable ? (SelectedMapMember as StandaloneTable).DefinitionQueries
+                        : (SelectedMapMember as BasicFeatureLayer).DefinitionQueries;
                     if (filters.Count > 0) {
                         foreach (var filter in filters)
                         {

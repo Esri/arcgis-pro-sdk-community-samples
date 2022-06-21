@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -57,10 +57,10 @@ namespace FeatureSelection
       {
         //Return all the features that intersect the sketch geometry
         var result = MapView.Active.GetFeatures(geometry);
-        var layerSelection = result.FirstOrDefault(kvp => kvp.Key == featureSelVM.SelectedLayer);
+        var layerSelection = result.ToDictionary().FirstOrDefault(kvp => kvp.Key == featureSelVM.SelectedLayer);
 
         //Clear the selection if no features where returned
-        if (!result.ContainsKey(featureSelVM.SelectedLayer))
+        if (!result.ToDictionary().ContainsKey(featureSelVM.SelectedLayer))
         {
           featureSelVM.SelectedLayer.Select(null, SelectionCombinationMethod.Subtract);
           return true;

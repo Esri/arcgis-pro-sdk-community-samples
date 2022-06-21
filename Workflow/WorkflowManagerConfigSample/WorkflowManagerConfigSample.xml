@@ -4,6 +4,11 @@
         <name>WorkflowManagerConfigSample</name>
     </assembly>
     <members>
+        <member name="P:WorkflowManagerConfigSample.ConfigurationManager1.ApplicationName">
+            <summary>
+            Replaces the default ArcGIS Pro application name
+            </summary>
+        </member>
         <member name="T:WorkflowManagerConfigSample.Module1">
             <summary>
             This sample allows users to only interact with the Workflow Pane in ArcGIS Pro, and hides the Workflow View, the Job view and the Workflow ribbon on map from the user. This configuration allows organizations to deploy a slimmed down version of Workflow Manager for ArcGIS Pro that focusses on work completion. Users see only their jobs or jobs in their groups, and is for users who don’t have the requirement to edit job properties, search for jobs and see a workflow diagram. This creates a simpler UI 
@@ -28,11 +33,6 @@
             Called by Framework when ArcGIS Pro is closing
             </summary>
             <returns>False to prevent Pro from closing, otherwise True</returns>
-        </member>
-        <member name="P:WorkflowManagerConfigSample.ConfigurationManager1.ApplicationName">
-            <summary>
-            Replaces the default ArcGIS Pro application name
-            </summary>
         </member>
     </members>
 </doc>

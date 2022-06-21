@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2022 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+
+<ArcGIS defaultAssembly="ImportPlatToFabric.dll" defaultNamespace="ImportPlatToFabric" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{33cf7364-f4c2-420c-aef4-501801c1a565}" version="1.0" desktopVersion="3.0.34047">
+    <Name>ImportPlatToFabric</Name>
+    <Description>Import Plat To Fabric</Description>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>11/10/2020 8:46:47 AM</Date>
+    <Subject>Parcel Fabric</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ImportPlatFromLines_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="ImportPlatFromLines_Tab1" caption="Parcels" keytip="T1">
+          <group refID="ImportPlatFromLines_Group1" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ImportPlatFromLines_Group1" caption="Parcel Fabric" keytip="G1">
+          <button refID="ImportPlatFromLines_ImportPlat_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ImportPlatFromLines_ImportPlatToFabric_ShowButton" caption="Import Plat To Fabric" className="ImportPlatToFabric_ShowButton" loadOnClick="true" keytip="B1" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+          <tooltip heading="Show Dockpane">
+			  Shows the Import Plat To Fabric Dockpane<disabledText /></tooltip>
+        </button>
+        <button id="ImportPlatFromLines_ImportPlat_ShowButton" caption="Import Plat" className="ImportPlat_ShowButton" loadOnClick="true" keytip="B2" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericImport16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericImport32.png">
+          <tooltip heading="Import Plat">
+						Shows the Parcel Fabric Import Plat Dockpane<disabledText /></tooltip>
+        </button>
+        <button id="ImportPlatFromLines_FixupImportData" caption="FixupImportData" className="FixupImportData" loadOnClick="true" keytip="B3" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="ImportPlatFromLines_ImportPlatToFabric" caption="Import Plat To Fabric" className="ImportPlatToFabricViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="ParcelFabricAPIView" />
+        </dockPane>
+        <dockPane id="ImportPlatFromLines_ImportPlat" caption="Import Plat" className="ImportPlatViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="ImportPlatView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

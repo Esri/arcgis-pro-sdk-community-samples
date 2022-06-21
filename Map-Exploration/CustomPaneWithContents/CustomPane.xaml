@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,18 +26,19 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              d:DataContext="{Binding Path=ui.CustomPaneViewModel}">
-     <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </UserControl.Resources>
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
   <Grid>
     <Border BorderBrush="{DynamicResource Esri_BorderBrush}" BorderThickness="2" Padding="2" CornerRadius="3">
       <Border BorderBrush="{DynamicResource Esri_BorderBrush}" BorderThickness="2" Padding="2" CornerRadius="3">
         <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
           <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -57,6 +58,12 @@
             <TextBlock Text="ContentID:" HorizontalAlignment="Left" 
                                Style="{DynamicResource Esri_TextBlockRegular}" FontSize="20" Margin="0,0,10,0"></TextBlock>
             <TextBlock Text="{Binding ContentID, Mode=OneWay}" HorizontalAlignment="Left" 
+                               Style="{DynamicResource Esri_TextBlockRegular}" FontSize="20" Margin="0,0,10,0"></TextBlock>
+          </StackPanel>
+          <StackPanel Orientation="Horizontal" Grid.Row="3">
+            <TextBlock Text="Last Change:" HorizontalAlignment="Left" 
+                               Style="{DynamicResource Esri_TextBlockRegular}" FontSize="20" Margin="0,0,10,0"></TextBlock>
+            <TextBlock Text="{Binding LastChanged, Mode=OneWay}" HorizontalAlignment="Left" 
                                Style="{DynamicResource Esri_TextBlockRegular}" FontSize="20" Margin="0,0,10,0"></TextBlock>
           </StackPanel>
         </Grid>

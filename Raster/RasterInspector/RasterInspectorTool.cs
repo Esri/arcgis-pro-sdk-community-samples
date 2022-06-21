@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -24,6 +24,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Core.Data.Raster;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Core.CIM;
+using ArcGIS.Desktop.Framework.Dialogs;
 
 namespace RasterInspector
 {
@@ -57,7 +58,7 @@ namespace RasterInspector
 
           // determine the cursor position in mapping coordinates
           var clientCoords = new System.Windows.Point(e.ClientPoint.X, e.ClientPoint.Y);
-          if (clientCoords == null || ActiveMapView == null) return;
+          if (ActiveMapView == null) return;
           var mapPointAtCursor = ActiveMapView.ClientToMap(clientCoords);
           if (mapPointAtCursor == null) return;
 
@@ -125,35 +126,39 @@ namespace RasterInspector
     /// </summary>
     /// <param name="active"></param>
     /// <returns></returns>
-    protected override Task OnToolActivateAsync(bool active)
+    protected async override Task OnToolActivateAsync(bool active)
     {
       // get the first selected raster layer
       var selectedRasterLayer = ActiveMapView.GetSelectedLayers().OfType<BasicRasterLayer>().FirstOrDefault();
 
-      QueuedTask.Run(() =>
+      _bandindex = await QueuedTask.Run(() =>
       {
-              // get the raster from layer
-              _selectedRaster = selectedRasterLayer?.GetRaster();
+        // get the raster from layer
+        _selectedRaster = selectedRasterLayer?.GetRaster();
 
+        var colorizer = selectedRasterLayer?.GetColorizer();
+        var str = colorizer.ToJson();
 
         if (selectedRasterLayer?.GetColorizer() is CIMRasterRGBColorizer)
         {
-                // if the rgb renderer is used get the index of the band used to render the reb color component
-                var rgbColorizer = selectedRasterLayer?.GetColorizer() as CIMRasterRGBColorizer;
-          _bandindex = rgbColorizer.RedBandIndex;
+          // if the rgb renderer is used get the index of the band used to render the reb color component
+          var rgbColorizer = selectedRasterLayer?.GetColorizer() as CIMRasterRGBColorizer;
+          return rgbColorizer.RedBandIndex;
         }
         else if (selectedRasterLayer?.GetColorizer() is CIMRasterStretchColorizer)
         {
-                // if the stretch renderer is used get the selected band index
-                var stretchColorizer = selectedRasterLayer?.GetColorizer() as CIMRasterStretchColorizer;
-          _bandindex = stretchColorizer.BandIndex;
+          // if the stretch renderer is used get the selected band index
+          var stretchColorizer = selectedRasterLayer?.GetColorizer() as CIMRasterStretchColorizer;
+          return stretchColorizer.BandIndex;
         }
+        return -1;
       });
 
-
-      RasterValuesPaneViewModel.Show();
-
-      return base.OnToolActivateAsync(active);
+      if (_bandindex > -1)
+        RasterValuesPaneViewModel.Show();
+      else
+        MessageBox.Show("For pixel insp. sample, please use either a stretch or RGB colorizer",
+          "Pixel Inspector");
     }
 
     protected override Task<bool> OnSketchCompleteAsync(Geometry geometry)

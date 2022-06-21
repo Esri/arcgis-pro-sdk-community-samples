@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -88,7 +88,7 @@ namespace GraphicsLayers.Helpers
       //Iterate through the elements to move the anchor point for the copy.
       foreach (var element in copyElements)
       {
-        var elementPoly = PolygonBuilder.CreatePolygon(element.GetBounds());
+        var elementPoly = PolygonBuilderEx.CreatePolygon(element.GetBounds());
         var pointsList = elementPoly.Copy2DCoordinatesToList();
         element.SetAnchorPoint(pointsList[1]);
       }

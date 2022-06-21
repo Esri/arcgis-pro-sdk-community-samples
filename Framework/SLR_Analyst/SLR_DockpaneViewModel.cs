@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -215,7 +215,7 @@ namespace SLR_Analyst
 				// For sub-selection
 				SpatialQueryFilter spatialFilter = new SpatialQueryFilter
 				{
-					FilterGeometry = new PolygonBuilder(MapView.Active.Extent).ToGeometry(),
+					FilterGeometry = new PolygonBuilderEx(MapView.Active.Extent).ToGeometry(),
 					SpatialRelationship = SpatialRelationship.Intersects
 				};
 
@@ -254,7 +254,7 @@ namespace SLR_Analyst
 					await Geoprocessing.ExecuteToolAsync("SelectLayerByLocation_management", args);
 
 					Selection ParcelsSelection = ParcelsLayer.Select(spatialFilter, SelectionCombinationMethod.And);
-					int parcelsSelectionCount;
+					long parcelsSelectionCount;
 					parcelsSelectionCount = ParcelsSelection.GetCount();
 
 					// Format parcels report for Textbox output:
@@ -299,7 +299,7 @@ namespace SLR_Analyst
 					await Geoprocessing.ExecuteToolAsync("SelectLayerByLocation_management", args);
 
 					Selection StreetsSelection = StreetsLayer.Select(spatialFilter, SelectionCombinationMethod.And);
-					int streetsSelectionCount;
+					long streetsSelectionCount;
 					streetsSelectionCount = StreetsSelection.GetCount();
 					// Format streets report for Textbox output:
 					string streetSelectionCountstring = Convert.ToString(streetsSelectionCount);
@@ -343,7 +343,7 @@ namespace SLR_Analyst
 					await Geoprocessing.ExecuteToolAsync("SelectLayerByLocation_management", args);
 
 					Selection LandUseSelection = LandUseLayer.Select(spatialFilter, SelectionCombinationMethod.And);
-					int luSelectionCount;
+					long luSelectionCount;
 					luSelectionCount = LandUseSelection.GetCount();
 					// Format land use report for Textbox output:
 					string luSelectionCountstring = Convert.ToString(luSelectionCount);

@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -38,8 +38,11 @@ using ArcGIS.Desktop.Mapping;
 namespace ProSqlExpressReader
 {
   /// <summary>
-  /// ProSqlExpressReader implements a three plugin datasources to read the following:
-  /// - Classic ArcGIS Personal Geodatabase: A personal geodatabase is a Microsoft Access database that can store, query, and manage both spatial and nonspatial data.  ProSqlExpressPluginDatasource implements read-only sql to personal geodatabase feature class data.
+  /// ProSqlExpressReader implements a plugin datasource to read the following data from a SQL Server Express database:
+  /// - Classic ArcGIS Personal Geodatabase stored in a SQL Server Express database.
+  /// A classic ArcGIS personal geodatabase was used in the past by ArcMap. It was Microsoft Access database that allowed to store, query, and manage both spatial and nonspatial data.
+  /// The sample data includes a SQL Server Express database that contains the data of such a 'classic' Microsoft Access Geodatabase.
+  /// ProSqlExpressPluginDatasource implements read-only access to this personal geodatabase feature class and tabular data.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
@@ -49,6 +52,7 @@ namespace ProSqlExpressReader
   /// 1. Once SQL Server Express is installed and running, use 'Microsoft SQL Server Management Studio 18' to 'attach' the following database files:
   /// 1. C:\Data\PluginData\SQLExpressData\TestSqlExpress.mdf and C:\Data\PluginData\SQLExpressData\FDTestSQLExpress.mdf.   
 	/// 1. Make sure that the 'C:\Data\PluginData\SQLExpressData' folder allows full access to the 'Users' group otherwise you will not be able to attach the database files to SQL Express.
+  /// 1. Regarding the sql server connection, please note that this sample code uses 'TrustServerCertificate=True' in the connection string.  This is only done for simplified testing of this sample.  For production please consider to use a CA Signed certificate, by leveraging [Let's Encrypt](https://letsencrypt.org/) to get a CA signed certificate from a known trusted CA for free, and install it on your system. Don't forget to set it up to automatically refresh. You can read more on this topic in SQL Server books online under the topic of "Encryption Hierarchy", and "Using Encryption Without Validation".
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.
   /// 1. Click Start button to open ArcGIS Pro.
   /// 1. In ArcGIS Pro open this project: 'C:\Data\PluginData\SqlExpress\SqlExpress.aprx'
@@ -73,33 +77,33 @@ namespace ProSqlExpressReader
   /// ![UI](Screenshots/Screen7.png) 
   /// </remarks>
   internal class Module1 : Module
+  {
+    private static Module1 _this = null;
+
+    /// <summary>
+    /// Retrieve the singleton instance to this module here
+    /// </summary>
+    public static Module1 Current
     {
-        private static Module1 _this = null;
-
-        /// <summary>
-        /// Retrieve the singleton instance to this module here
-        /// </summary>
-        public static Module1 Current
-        {
-            get
-            {
-                return _this ?? (_this = (Module1)FrameworkApplication.FindModule("ProSqlExpressReader_Module"));
-            }
-        }
-
-        #region Overrides
-        /// <summary>
-        /// Called by Framework when ArcGIS Pro is closing
-        /// </summary>
-        /// <returns>False to prevent Pro from closing, otherwise True</returns>
-        protected override bool CanUnload()
-        {
-            //TODO - add your business logic
-            //return false to ~cancel~ Application close
-            return true;
-        }
-
-        #endregion Overrides
-
+      get
+      {
+        return _this ?? (_this = (Module1)FrameworkApplication.FindModule("ProSqlExpressReader_Module"));
+      }
     }
+
+    #region Overrides
+    /// <summary>
+    /// Called by Framework when ArcGIS Pro is closing
+    /// </summary>
+    /// <returns>False to prevent Pro from closing, otherwise True</returns>
+    protected override bool CanUnload()
+    {
+      //TODO - add your business logic
+      //return false to ~cancel~ Application close
+      return true;
+    }
+
+    #endregion Overrides
+
+  }
 }

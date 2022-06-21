@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -44,7 +44,7 @@ namespace CustomAnimation
 
         //Get the collection of line layers that have at least one feature selected.
         var selection = mapView.Map.GetSelection();
-        var keyValuePairs = selection.Where(kvp => (kvp.Key is BasicFeatureLayer) 
+        var keyValuePairs = selection.ToDictionary().Where(kvp => (kvp.Key is BasicFeatureLayer) 
           && (kvp.Key as BasicFeatureLayer).ShapeType == esriGeometryType.esriGeometryPolyline);
 
           foreach (var kvp in keyValuePairs)

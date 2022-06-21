@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -42,9 +42,8 @@ namespace OverlayGroundSurface
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Configurations\Projects' with sample data required for this solution.  Make sure that the Sample data (specifically CommunitySampleData-3D-mm-dd-yyyy.zip) is unzipped into c:\data and c:\data\PolyTest is available.
-  /// 1. This solution is using the **Newtonsoft.Json NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-  /// 1. Click Start button to debug ArcGIS Pro.
+  /// 1. Launch the debugger to debug ArcGIS Pro.
   /// 1. Open the Pro project file: PolyTest.aprx in the C:\Data\PolyTest\ folder.  Open the 'Graphic Test' tab in ArcGIS Pro.
   /// ![UI](Screenshots/Screen1.png)
   /// 1. Make sure that the 'Scene' is selected as the active map in ArcGIS Pro and then click on the 'Create 3D Polygon Tool'.
@@ -262,7 +261,7 @@ namespace OverlayGroundSurface
       {
         for (var dY = envPoly.YMin; dY < envPoly.YMax + interval; dY += interval)
         {
-          var cutEnv = EnvelopeBuilder.CreateEnvelope(dX, dY, dX + interval, dY + interval, envPoly.SpatialReference);
+          var cutEnv = EnvelopeBuilderEx.CreateEnvelope(dX, dY, dX + interval, dY + interval, envPoly.SpatialReference);
           if (GeometryEngine.Instance.Intersects(cutEnv, inputPoly))
           {
             var addPolygonPart = GeometryEngine.Instance.Clip(inputPoly, cutEnv);
@@ -277,7 +276,7 @@ namespace OverlayGroundSurface
     {
       Envelope envPoly = inputPoly.Extent;
       var interval = GetFishnetIntervalDistance(envPoly);
-      var pb = new PolygonBuilder(inputPoly.SpatialReference)
+      var pb = new PolygonBuilderEx(inputPoly.SpatialReference)
       {
         HasZ = true
       };
@@ -285,7 +284,7 @@ namespace OverlayGroundSurface
       {
         for (var dY = envPoly.YMin; dY < envPoly.YMax + interval; dY += interval)
         {
-          var cutEnv = EnvelopeBuilder.CreateEnvelope(dX, dY, dX + interval, dY + interval, envPoly.SpatialReference);
+          var cutEnv = EnvelopeBuilderEx.CreateEnvelope(dX, dY, dX + interval, dY + interval, envPoly.SpatialReference);
           if (GeometryEngine.Instance.Intersects(cutEnv, inputPoly))
           {
             var addPolygonPart = GeometryEngine.Instance.Clip(inputPoly, cutEnv) as Polygon;
@@ -324,7 +323,7 @@ namespace OverlayGroundSurface
       {
         for (var dY = envPoly.YMin; dY < envPoly.YMax + interval; dY += interval)
         {
-          var cutEnv = EnvelopeBuilder.CreateEnvelope(dX, dY, dX + interval, dY + interval,
+          var cutEnv = EnvelopeBuilderEx.CreateEnvelope(dX, dY, dX + interval, dY + interval,
                                                       envPoly.SpatialReference);
           if (GeometryEngine.Instance.Intersects(cutEnv, inputPoly))
           {
@@ -338,7 +337,7 @@ namespace OverlayGroundSurface
             {
               addPolygonPart = GeometryEngine.Instance.Move(result.Geometry, 0, 0, Module1.Elevation) as Polygon;
             }
-            var patch = mpb.MakePatch(esriPatchType.TriangleStrip);
+            var patch = mpb.MakePatch(PatchType.TriangleStrip);
             patch.Coords = GetPolygonAsTriangleStrip(addPolygonPart);
             patch.Material = materialRed;
             patches.Add(patch);
@@ -371,7 +370,7 @@ namespace OverlayGroundSurface
       {
         for (var dY = envPoly.YMin; dY < envPoly.YMax + interval; dY += interval)
         {
-          var cutEnv = EnvelopeBuilder.CreateEnvelope(dX, dY, dX + interval, dY + interval,
+          var cutEnv = EnvelopeBuilderEx.CreateEnvelope(dX, dY, dX + interval, dY + interval,
                                                       envPoly.SpatialReference);
           if (GeometryEngine.Instance.Intersects(cutEnv, inputPoly))
           {
@@ -385,7 +384,7 @@ namespace OverlayGroundSurface
             {
               addPolygonPart = GeometryEngine.Instance.Move(result.Geometry, 0, 0, Module1.Elevation) as Polygon;
             }
-            var patch = mpb.MakePatch(first ? esriPatchType.FirstRing : esriPatchType.Ring);
+            var patch = mpb.MakePatch(first ? PatchType.FirstRing : PatchType.Ring);
             first = false;
             patch.InsertPoints(0, addPolygonPart.Points);
             patch.Material = materialRed;

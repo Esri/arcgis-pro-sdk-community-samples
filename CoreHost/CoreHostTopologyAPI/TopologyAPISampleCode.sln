@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopologyAPI", "TopologyAPI.csproj", "{A4A50CD0-644A-4E5B-A1E5-4A26E1F2CDC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreHostTopologyAPI", "CoreHostTopologyAPI.csproj", "{A4A50CD0-644A-4E5B-A1E5-4A26E1F2CDC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

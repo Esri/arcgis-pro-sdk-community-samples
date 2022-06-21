@@ -7,18 +7,18 @@ We will add toolbar buttons to the dockPane to modify the selected rows of the t
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -34,10 +34,9 @@ Visual Studio:         2017, 2019
 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
 1. Make sure that the Sample data is unzipped in c:\data  
 1. In Visual Studio click the Build menu.Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.    
+1. Launch the debugger to open ArcGIS Pro.   
 1. Open any project.  
-1. Click on the ADD-IN TAB.    
+1. Click on the Add-In tab.    
 1. Click on the* Show Preview* button.     
 1. A dockpane will be displayed with an empty TableControl.  
 1. Open the Catalog pane and navigate to a datasource from the Community Samples Data.     
@@ -49,8 +48,8 @@ Visual Studio:         2017, 2019
 1. Right click on a row and see the custom context menu. Choose Zoom to Row to zoom to the active row in the map.   
 ![UI](screenshots/TableControl_ContextMenu.png)  
   
-1.Click the Find button to see the Find UI.  
-![UI](screenshots/tableControl_Find.png)    
+1.Click the Find button to see the Find UI.      
+![UI](screenshots/TableControl_Find.png)    
   
 1.Use the Identify tool on the Add-in tab to identify a feature.  
 1.The table control will scroll to that row and select it in the table.  

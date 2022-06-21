@@ -1,10 +1,10 @@
-﻿//Copyright 2020 Esri
+//Copyright 2020 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,7 +22,7 @@ namespace CreatePointsAlongLine3D
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio, build the solution.
-  /// 1. Click the Visual Studio Start button to open ArcGIS Pro.
+  /// 1. Launch the debugger to open ArcGIS Pro.
   /// 1. In Pro, open a 2D map containing Z aware polylines and Z aware points or create a new 2D map and add some.
   /// 1. Select a Z aware polyline that you want to create points along.
   /// 1. Open the editing create features pane and select a template for your z aware points.

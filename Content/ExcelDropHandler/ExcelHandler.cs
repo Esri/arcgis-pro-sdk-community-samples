@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -67,7 +67,6 @@ namespace ExcelDropHandler
 
         private async void OnDrop2D(DropInfo dropInfo)
         {
-
             string xlsName = dropInfo.Items[0].Data.ToString();
             string xlsLayerName = Module1.GetUniqueLayerName(xlsName);
             string xlsSheetName = Module1.GetUniqueStandaloneTableName(xlsName);
@@ -78,7 +77,7 @@ namespace ExcelDropHandler
 
             //To use Excel files in Pro, you need Microsoft Access Database Engine 2016. 
             //Refer to the Pro Help topic "Work with Microsoft Excel files" for more information on dowloading the required driver.
-            //https://prodev.arcgis.com/en/pro-app/help/data/excel/work-with-excel-in-arcgis-pro.htm
+            //https://pro.arcgis.com/en/pro-app/help/data/excel/work-with-excel-in-arcgis-pro.htm
 
             #region Geoprocessing.ExecuteToolAsync(MakeXYEventLayer_management)
             var cts = new CancellationTokenSource();
@@ -98,7 +97,7 @@ namespace ExcelDropHandler
 
             #region Assign Symbology (from Location layer)
             var featureLayer = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().Where(fl => fl.Name.Contains(xlsLayerName)).FirstOrDefault();
-            await ModifyLayerSymbologyFromLyrFileAsync(featureLayer, @"E:\Data\SDK\Default2DPointSymbols.lyrx");
+            await ModifyLayerSymbologyFromLyrFileAsync(featureLayer, @"C:\Data\SDK\Default2DPointSymbols.lyrx");
             //  @"C:\Data\SDK\Default2DPointSymbols.lyrx"
 
             #endregion
@@ -118,7 +117,7 @@ namespace ExcelDropHandler
 
             //To use Excel files in Pro, you need Microsoft Access Database Engine 2016. 
             //Refer to the Pro Help topic "Work with Microsoft Excel files" for more information on dowloading the required driver.
-            //https://prodev.arcgis.com/en/pro-app/help/data/excel/work-with-excel-in-arcgis-pro.htm
+            //https://pro.arcgis.com/en/pro-app/help/data/excel/work-with-excel-in-arcgis-pro.htm
 
             #region await Geoprocessing.ExecuteToolAsync(MakeXYEventLayer_management)
             var cts = new CancellationTokenSource();
@@ -138,7 +137,7 @@ namespace ExcelDropHandler
 
             #region Assign Symbology from lyr file
             var featureLayer = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().Where(fl => fl.Name.Contains(xlsLayerName)).FirstOrDefault();
-            await ModifyLayerSymbologyFromLyrFileAsync(featureLayer, @"E:\Data\SDK\Default3DPointSymbols.lyrx");           
+            await ModifyLayerSymbologyFromLyrFileAsync(featureLayer, @"C:\Data\SDK\Default3DPointSymbols.lyrx");           
 
             #endregion
         }

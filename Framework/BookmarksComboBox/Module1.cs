@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,7 +22,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 using System.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 
-namespace bookmark_comboBox_solution
+namespace BookmarkComboBox
 {    
     /// <summary>
     /// This sample shows how to:
@@ -50,7 +50,7 @@ namespace bookmark_comboBox_solution
         {
             get
             {
-                return _this ?? (_this = (Module1)FrameworkApplication.FindModule("bookmark_comboBox_solution_Module"));
+                return _this ?? (_this = (Module1)FrameworkApplication.FindModule("BookmarkComboBox_Module"));
             }
         }
 

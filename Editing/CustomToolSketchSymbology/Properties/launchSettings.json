@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Customtool Sketch Symbology": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\ArcGIS\\Pro\\bin\\ArcGISPro.exe",
+      "commandLineArgs": ""
+    }
+  }
+}

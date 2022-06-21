@@ -5,18 +5,18 @@ This sample demonstrates how to modify the Pro UI using DAML
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -35,25 +35,15 @@ Visual Studio:         2017, 2019
 1. Open any project with at least one feature layer.  
 1. Notice the following customizations made to the Pro UI:  
 * The Bookmarks button has been removed in the Navigate group on the Map tab  
-<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/DeleteCoreButton.png" width="40%">  
+![RemoveButton](screenshots/DeleteCoreButton.png)   
 * A new button has been inserted into the Navigate group on the Map Tab  
-<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/NewButtonCoreGroup.png" width="40%">  
+![NewButton](screenshots/NewButtonCoreGroup.png)   
 * With any Map view active, right click on a feature layer in the TOC. Notice the New Button context menu item added.  
-<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/NewMenuItemInContextMenu.png" width="40%">  
+![New Menu](screenshots/NewMenuItemInContextMenu.png)  
 * Click the Project tab to access Pro's backstage.  Notice the missing Open and New project tabs.  A new tab called "Geocode" has been inserted above the Save project button.  
-<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/BackstageDeleteExistingTabsInsertNewTabs.png" width="40%">  
+![New Backstage tab](screenshots/BackstageDeleteExistingTabsInsertNewTabs.png)  
 * Click the Project tab to access Pro's backstage. Click the Options tab to display the Options Property Sheet.  Notice the new "Sample Project Settings" property page inserted within the Project group.  
-<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/PropertySheetOptionsDialog.png" width="40%">  
-* With any Map active, right click on the Map in the Contents pane to access the context menu. Notice the new button inserted into the context menu.  
-<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/2DMapContextMenu.png" width="40%">  
-* With any Scene active, right click on the Scene in the Contents pane to access the context menu. Notice the new button inserted into the context menu.  
-<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/SceneContextMenu.png" width="40%">  
-* In the Catalog pane, right click on the Map Container to access its context menu. Notice a new Menu inserted into the context menu.  
-<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/MapContainerContextMenu.png" width="40%">  
-* In the Catalog pane, right click on any Map item to access its context menu. Notice a new button inserted into the context menu.  
-<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/MapContentContextMenu.png" width="40%">  
-* In the Catalog pane, right click on any Local Scene to access its context menu. Notice a new button inserted into the context menu.  
-<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/SceneContentContextMenu.png" width="40%">  
+![New Backstage tab](screenshots/PropertySheetOptionsDialog.png)  
   
 
 

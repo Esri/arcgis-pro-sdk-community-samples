@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -27,58 +27,58 @@ using System.Threading.Tasks;
 
 namespace CalculateStatistics
 {
-    public static class Utilities
+  public static class Utilities
+  {
+    /// <summary>
+    /// returns the enterprise gdb type for a given feature layer
+    /// </summary>
+    /// <param name="lyr"></param>
+    /// <returns>EnterpriseDatabaseType enum of database or .Unknown</returns>
+    public static EnterpriseDatabaseType GetDatabaseType(FeatureLayer lyr)
     {
-        /// <summary>
-        /// returns the enterprise gdb type for a given feature layer
-        /// </summary>
-        /// <param name="lyr"></param>
-        /// <returns>EnterpriseDatabaseType enum of database or .Unknown</returns>
-        public static EnterpriseDatabaseType GetDatabaseType(FeatureLayer lyr)
+      EnterpriseDatabaseType enterpriseDatabaseType = EnterpriseDatabaseType.Unknown;
+      using (Table table = lyr.GetTable())
+      {
+        try
         {
-            EnterpriseDatabaseType enterpriseDatabaseType = EnterpriseDatabaseType.Unknown;
-            using (Table table = lyr.GetTable())
-            {
-                try
-                {
-                    var geodatabase = table.GetDatastore() as Geodatabase;
-                    enterpriseDatabaseType = (geodatabase.GetConnector() as DatabaseConnectionProperties).DBMS;
-                }
-                catch (InvalidOperationException)
-                {
-                }
-            }
-            return enterpriseDatabaseType;
+          var geodatabase = table.GetDatastore() as Geodatabase;
+          enterpriseDatabaseType = (geodatabase.GetConnector() as DatabaseConnectionProperties).DBMS;
         }
-
-        /// <summary>
-        /// workaround to get sum from enterprise gdb lenght/area fields
-        /// see https://community.esri.com/message/889796-problem-using-shapestlength-field-in-the-calculatestatistics-method
-        /// </summary>
-        /// <param name="fc">feature class to get sum from</param>
-        /// <param name="fieldName">fieldname to sum up</param>
-        /// <returns>sum</returns>
-        public static double GetSumWorkAround(FeatureClass fc, string fieldName)
+        catch (InvalidOperationException)
         {
-            try
-            {
-                using (FeatureClassDefinition fcd = fc.GetDefinition())
-                {
-                    double totalLen = 0.0;
-                    var cur = fc.Search();
-                    while (cur.MoveNext())
-                    {
-                        var feat = cur.Current;
-                        totalLen += Convert.ToDouble(feat[fieldName]);
-                    }
-                    return totalLen;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
         }
-
+      }
+      return enterpriseDatabaseType;
     }
+
+    /// <summary>
+    /// workaround to get sum from enterprise gdb lenght/area fields
+    /// see https://community.esri.com/message/889796-problem-using-shapestlength-field-in-the-calculatestatistics-method
+    /// </summary>
+    /// <param name="fc">feature class to get sum from</param>
+    /// <param name="fieldName">fieldname to sum up</param>
+    /// <returns>sum</returns>
+    public static double GetSumWorkAround(FeatureClass fc, string fieldName)
+    {
+      try
+      {
+        using (FeatureClassDefinition fcd = fc.GetDefinition())
+        {
+          double totalLen = 0.0;
+          var cur = fc.Search();
+          while (cur.MoveNext())
+          {
+            var feat = cur.Current;
+            totalLen += Convert.ToDouble(feat[fieldName]);
+          }
+          return totalLen;
+        }
+      }
+      catch (Exception)
+      {
+        throw;
+      }
+    }
+
+  }
 }

@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--//Copyright 2019 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,13 +14,13 @@
 //   limitations under the License.
 
 -->
-<ArcGIS defaultAssembly="ConstructingGeometries.dll" defaultNamespace="ConstructingGeometries" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{29AD53A1-481B-4E90-AA4B-F13FA586022B}" version="1.0" desktopVersion="2.0.0">
+<ArcGIS defaultAssembly="ConstructingGeometries_CSharp.dll" defaultNamespace="ConstructingGeometries_CSharp" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{ad9c111d-4c23-42bf-a1b7-b3b51832a0f6}" version="1.0" desktopVersion="3.0.34047">
     <Name>ConstructingGeometries</Name>
     <Description>Samples showing how to construct geometries (using C#).</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>esri, http://www.esri.com</Company>
+    <Company>esri, https://www.esri.com</Company>
     <Date>2/16/2015 11:21:52 AM, 2015</Date>
     <Subject>Geometry, Geodatabase</Subject>
   </AddInInfo>
@@ -39,19 +39,29 @@
       <controls>
         <!-- add your controls here -->
         <button id="ConstructingGeometries_createPoints" caption="Create Points" extendedCaption="Create Points (Core.Geometry API)" className="CreatePoints" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" condition="environment_ready_for_sample" keytip="B1">
-          <tooltip heading="Geometry Samples">Create random sample points.<disabledText /></tooltip>
+          <tooltip heading="Geometry Samples">
+            Create random sample points.<disabledText />
+          </tooltip>
         </button>
         <button id="ConstructingGeometries_createMultiPoints" caption="Create Multipoints" extendedCaption="Create Multipoints (Core.Geometry API)" className="CreateMultiPoints" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" condition="environment_ready_for_sample" keytip="B2">
-          <tooltip heading="Geometry Samples">Create a random multi point.<disabledText /></tooltip>
+          <tooltip heading="Geometry Samples">
+            Create a random multi point.<disabledText />
+          </tooltip>
         </button>
         <button id="ConstructingGeometries_createPolylines" caption="Create Polylines" extendedCaption="Create Polylines (Core.Geometry API)" className="CreatePolylines" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" condition="geometry_points_constructed_condition" keytip="B3">
-          <tooltip heading="Geometry Samples">Create polylines from the first 20 points of the point feature layer.<disabledText /></tooltip>
+          <tooltip heading="Geometry Samples">
+            Create polylines from the first 20 points of the point feature layer.<disabledText />
+          </tooltip>
         </button>
         <button id="ConstructingGeometries_createPolygons" caption="Create Polygons" extendedCaption="Create Polygons (Core.Geometry API)" className="CreatePolygons" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" condition="geometry_lines_constructed_condition" keytip="B4">
-          <tooltip heading="Geometry Samples">Create a polygon from the multipoint feature.<disabledText /></tooltip>
+          <tooltip heading="Geometry Samples">
+            Create a polygon from the multipoint feature.<disabledText />
+          </tooltip>
         </button>
         <button id="ConstructingGeometries_Setup" caption="Setup " className="Setup" extendedCaption="Setup for Geometry Construction (Core.Geometry API)" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" condition="esri_mapping_mapPane" keytip="B5">
-          <tooltip heading="Geometry Samples">Setup layers for points, multipoints, polylines, and polygons.<disabledText /></tooltip>
+          <tooltip heading="Geometry Samples">
+            Setup layers for points, multipoints, polylines, and polygons.<disabledText />
+          </tooltip>
         </button>
       </controls>
     </insertModule>

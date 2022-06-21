@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -45,7 +45,7 @@ namespace GraphicsLayers.Selections
               var allGraphicsLayers = MapView.Active?.Map?.GetLayersAsFlattenedList().OfType<GraphicsLayer>();
               if (allGraphicsLayers.Count() == 0) return;
               //Get the geometry of the map's extent
-              var geometry = PolygonBuilder.CreatePolygon(MapView.Active.Extent);             
+              var geometry = PolygonBuilderEx.CreatePolygon(MapView.Active.Extent);             
               //Keep adding the elements to the selection
               MapView.Active.SelectElements(geometry, SelectionCombinationMethod.Add);             
             });

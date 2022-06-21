@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,7 +26,7 @@ namespace ChangeColorizerForRasterLayer
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
     /// 1. Click Start button to open ArcGIS Pro.
-    /// 1. When ArcGIS Pro opens choose to create a new Map Project using the "Map" blank templates.  
+    /// 1. When ArcGIS Pro opens choose to create a new Map Project using the "Map" template.  
     /// 1. Click on the ADD-IN tab and then click the "Add Raster Layer" button to add a new image service layer to the map from this location: http://sampleserver6.arcgisonline.com/arcgis/rest/services/CharlotteLAS/ImageServer  
     /// ![UI](Screenshots/Screen1.png)
     /// 1. Make sure the raster layer is selected on the Map's Contents pane.

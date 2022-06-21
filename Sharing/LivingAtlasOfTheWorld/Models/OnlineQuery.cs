@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -30,7 +30,7 @@ namespace LivingAtlasOfTheWorld.Models {
         public static readonly string DefaultEsriLayerContentTypes = "(type:\"Map Service\" OR type:\"Image Service\" OR type:\"Feature Service\" OR type:\"WMS\" OR type:\"KML\")";
         public static readonly string DefaultEsriWebMapContentTypes = "(type:\"Web Map\" OR type:\"Explorer Map\" OR type:\"Web Mapping Application\" OR type:\"Online Map\")";
 
-        public static readonly string RestAPIReference = "http://resources.arcgis.com/en/help/arcgis-rest-api/";
+        public static readonly string RestAPIReference = "https://resources.arcgis.com/en/help/arcgis-rest-api/";
         public static string EsriGroupId = "b36bd80e51f54ad698f9ae5f292d9ab1";
         public static readonly string QueryBase = "/sharing/rest/search?q=";
         private string _response = "";

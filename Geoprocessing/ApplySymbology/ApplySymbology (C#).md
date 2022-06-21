@@ -5,18 +5,18 @@ This sample shows how to move Symbology from one layer to another layer using th
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -29,7 +29,7 @@ Visual Studio:         2017, 2019
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.   
+1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.   
 1. In Visual studio click the Build menu. Then select Build Solution and debug the solution.  
 1. ArcGIS Pro will open, select and open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project.  
 1. Open the 'Portland Crimes' map, select the 'Crimes' layer, and use the 'New Layer File' button on the 'Share' tab to save the 'Crimes' layer as lyrx file, called 'Crimes.lyrx'.  

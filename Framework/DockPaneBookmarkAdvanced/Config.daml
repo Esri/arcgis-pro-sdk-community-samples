@@ -1,13 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
 
-   Copyright 2019 Esri
+   Copyright 2022 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -17,14 +17,15 @@
    limitations under the License.
 
 -->
-<ArcGIS defaultAssembly="DockPaneBookmarkAdvanced.dll" defaultNamespace="DockPaneBookmarkAdvanced" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{a91e68f7-b599-47c2-bfc1-15d4b737dfce}" version="1.0" desktopVersion="2.0.0">
+
+<ArcGIS defaultAssembly="AdvancedUIDemo.dll" defaultNamespace="AdvancedUIDemo" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{a91e68f7-b599-47c2-bfc1-15d4b737dfce}" version="1.0" desktopVersion="3.0.34794">
     <Name>DockPaneBookmarkAdvanced</Name>
     <Description>Second lab working with dockpane, maps and bookmarks.  In this lab you will trap for changes to the map project items in addition to 
     adding buttons allowing you to delete and add bookmarks.  You will also style these buttons according to ArcGIS Pro style guidelines. </Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>esri, http://www.esri.com</Company>
+    <Company>esri, https://www.esri.com</Company>
     <Date>2/18/2015 9:34:42 AM, 2015</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

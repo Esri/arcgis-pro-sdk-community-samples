@@ -2,13 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:ribbon="http://schemas.actiprosoftware.com/winfx/xaml/ribbon">
 <!--
-    //Copyright 2019 Esri
+    //Copyright 2022 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -24,35 +24,40 @@
         <Setter Property="Height" Value="{Binding RelativeSource={RelativeSource self}, Path=ActualHeight}"/>
         <Style.Triggers>
             <DataTrigger Binding="{Binding TypeId}" Value="file_datareviewer_batchjob">
-                <Setter Property="Source" Value="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/DataReviewerBatchJobFile32.png" />
+                <Setter Property="Source" Value="{Binding ReviewerBatchJobGalleryImage}" />
             </DataTrigger>
 
             <DataTrigger Binding="{Binding TypeId}" Value="SessionResources">
-                <Setter Property="Source" Value="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/DataReviewerSession32.png" />
+                <Setter Property="Source" Value="{Binding ReviewerSessionGalleryImage}" />
             </DataTrigger>
         </Style.Triggers>
     </Style>
 
     <!-- DataTemplate for Batch Job and Session gallery items-->
-    <DataTemplate x:Key="GalleryItemTemplate">
+    <DataTemplate x:Key="Image">
         <Grid SnapsToDevicePixels="True" Width="100" Height="68" UseLayoutRounding="True"  ribbon:ScreenTipService.ScreenTipHeader="{Binding Name}"
               ContextMenu="{Binding GalleryItemMenu}"
-              ribbon:ScreenTipService.ScreenTipDescription="{Binding Name}">
+              ribbon:ScreenTipService.ScreenTipDescription="{Binding Tooltip}">
 
             <Grid Margin="0" VerticalAlignment="Center">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="32" />
+                    <RowDefinition Height="36" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <Image x:Name="Image" Margin="3,0,3,0" Width="32" 
+                <Image x:Name="GalleryItemImage" Margin="3,0,3,0" Width="32" 
                            Height="32" HorizontalAlignment="Center" 
                            VerticalAlignment="Center" Stretch="Uniform" 
-                           Style="{StaticResource ImageStyleLarge}" SnapsToDevicePixels="True" />
-
-                <ribbon:TwoLineLabel Grid.Row="1" Margin="5,0,5,0" Width="90"
-                             HorizontalAlignment="Center" VerticalAlignment="Top" 
-					                   Label="{Binding Name}" SnapsToDevicePixels="True" />
+                           ToolTip="{Binding ToolTip}"
+                           Style="{DynamicResource ImageStyleLarge}" SnapsToDevicePixels="True">
+                    <Image.Effect>
+                        <DropShadowEffect Color="{DynamicResource Esri_Color_Gray145}" Opacity="0.4" />
+                    </Image.Effect>
+                </Image> 
+                <TextBlock Grid.Row="1" Margin="5,0,5,0" Width="90"
+                             HorizontalAlignment="Center" VerticalAlignment="Top"  
+                             Style="{DynamicResource Esri_TextBlockRegular}"
+					         Text="{Binding Name}" SnapsToDevicePixels="True" TextWrapping="Wrap" />
 
             </Grid>
 

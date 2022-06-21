@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,13 +18,14 @@
 */
 
 using ArcGIS.Core.Geometry;
+using Nancy.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Script.Serialization;
+//using System.Web.Script.Serialization;
 
 namespace LayoutMapSeries.LayoutSettings
 {
@@ -62,7 +63,7 @@ namespace LayoutMapSeries.LayoutSettings
     internal static SetPage FromJson(string json)
 		{
 			JavaScriptSerializer serializer = new JavaScriptSerializer();
-			return (SetPage)serializer.Deserialize(json, typeof(SetPage));
+			return (SetPage)serializer.DeserializeObject(json);
 		}
 		/// <summary>
 		/// Convert object to json string
@@ -99,7 +100,7 @@ namespace LayoutMapSeries.LayoutSettings
 		internal static SetPage FromJson(string json)
 		{
 			JavaScriptSerializer serializer = new JavaScriptSerializer();
-			return (SetPage)serializer.Deserialize(json, typeof(SetPage));
+			return (SetPage)serializer.DeserializeObject(json);
 		}
 		/// <summary>
 		/// Convert object to json string

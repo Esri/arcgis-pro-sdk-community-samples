@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -60,7 +60,7 @@ namespace CustomPopup
 
         //For each feature in the result create a new instance of our custom popup content class.
         List<PopupContent> popups = new List<PopupContent>();
-        foreach (var kvp in result)
+        foreach (var kvp in result.ToDictionary())
         {
           kvp.Value.ForEach(id => popups.Add(new DynamicPopupContent(kvp.Key, id)));
         }
@@ -158,7 +158,11 @@ namespace CustomPopup
         //Create a query filter using the fields found above and a where clause for the object id associated with this pop-up content.
         var tableDef = layer.GetTable().GetDefinition();
         var oidField = tableDef.GetObjectIDField();
-        var qf = new QueryFilter() { WhereClause = string.Format("{0} = {1}", oidField, ID), SubFields = string.Join(",", fields.Select(f => f.Name)) };
+        var qf = new QueryFilter()
+        {
+          WhereClause = $"{oidField} = {ObjectID}",
+          SubFields = string.Join(",", fields.Select(f => f.Name))
+        };
         var rows = layer.Search(qf);
 
         //Get the first row, there should only be 1 row.

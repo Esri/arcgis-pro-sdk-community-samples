@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 //   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,13 +13,13 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 -->
-<ArcGIS defaultAssembly="FolderConnections.dll" defaultNamespace="FolderConnections" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{677aa346-e49c-44b1-be7c-dee0a76ed078}" version="1.0" desktopVersion="2.0.0">
+<ArcGIS defaultAssembly="FolderConnectionManager.dll" defaultNamespace="FolderConnectionManager" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{677aa346-e49c-44b1-be7c-dee0a76ed078}" version="1.0" desktopVersion="3.0.34047">
     <Name>FolderConnectionManager</Name>
     <Description>Allows saving and loading folder connections to a Project.</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>esri, http://www.esri.com</Company>
+    <Company>esri, https://www.esri.com</Company>
     <Date>9/14/2015 1:23:45 PM, 2015</Date>
     <Subject>Content</Subject>
     <!-- Note subject can be one or more of these topics:
@@ -46,13 +46,19 @@
       <controls>
         <!-- add your controls here -->
         <button id="FolderConnections_ShowFolders" caption="Display Connections" className="DisplayConnections" loadOnClick="true" keytip="ZA" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
-          <tooltip heading="Display Connections">Display all folder connections in the current Project<disabledText /></tooltip>
+          <tooltip heading="Display Connections">
+            Display all folder connections in the current Project<disabledText />
+          </tooltip>
         </button>
         <button id="FolderConnections_SaveConnections" caption="Save Connections" className="SaveConnections" loadOnClick="true" keytip="ZB" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
-          <tooltip heading="Save Connections">Save the current Project's folder connections into a text file<disabledText /></tooltip>
+          <tooltip heading="Save Connections">
+            Save the current Project's folder connections into a text file<disabledText />
+          </tooltip>
         </button>
         <button id="FolderConnections_LoadConnections" caption="Load Connections" className="LoadConnections" loadOnClick="true" keytip="ZC" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
-          <tooltip heading="Load Connections">Load a text file containing directories to be used as folder connections<disabledText /></tooltip>
+          <tooltip heading="Load Connections">
+            Load a text file containing directories to be used as folder connections<disabledText />
+          </tooltip>
         </button>
       </controls>
     </insertModule>

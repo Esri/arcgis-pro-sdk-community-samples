@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -198,7 +198,7 @@ namespace EditEventsSample.Dockpane
           x1 += _offset;
           y1 += _offset;
           _offset += _delta;
-          var pt = MapPointBuilder.CreateMapPoint(x1, y1, crimes.GetSpatialReference());
+          var pt = MapPointBuilderEx.CreateMapPoint(x1, y1, crimes.GetSpatialReference());
           Dictionary<string, object> attributes = new Dictionary<string, object>();
           attributes["SHAPE"] = pt;
           attributes["OFFENSE_TYPE"] = 4;
@@ -453,7 +453,7 @@ namespace EditEventsSample.Dockpane
 
       if (args.Creates != null)
       {
-        foreach (var kvp in args.Creates)
+        foreach (var kvp in args.Creates.ToDictionary())
         {
           var oids = string.Join(",", kvp.Value.Select(n => n.ToString()).ToArray());
           adds.AppendLine($" {kvp.Key.Name} {oids}");
@@ -465,7 +465,7 @@ namespace EditEventsSample.Dockpane
       }
       if (args.Modifies != null)
       {
-        foreach (var kvp in args.Modifies)
+        foreach (var kvp in args.Modifies.ToDictionary())
         {
           var oids = string.Join(",", kvp.Value.Select(n => n.ToString()).ToArray());
           mods.AppendLine($" {kvp.Key.Name} {oids}");
@@ -477,7 +477,7 @@ namespace EditEventsSample.Dockpane
       }
       if (args.Deletes != null)
       {
-        foreach (var kvp in args.Deletes)
+        foreach (var kvp in args.Deletes.ToDictionary())
         {
           var oids = string.Join(",", kvp.Value.Select(n => n.ToString()).ToArray());
           dels.AppendLine($" {kvp.Key.Name} {oids}");

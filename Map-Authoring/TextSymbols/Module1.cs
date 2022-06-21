@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -41,9 +41,8 @@ namespace TextSymbols
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.  
-    /// 1. Click Start button to open ArcGIS Pro.
-    /// 1. ArcGIS Pro will open. 
-    /// 1. Open C:\Data\TextSymbols\TextSymbols.ppkx or any project file that has a map with feature layers and/or Annotation layers. 
+    /// 1. Launch the debugger to open ArcGIS Pro.
+    /// 1. Open any project file that has a map with feature layers and/or Annotation layers. 
     /// 1. Activate the map.
     /// 1. In the Add-in tab, click the "Text Symbols Gallery" button.
     /// 1. In the Text Symbols Gallery dockpane, you can see the custom text symbols available in this sample. 

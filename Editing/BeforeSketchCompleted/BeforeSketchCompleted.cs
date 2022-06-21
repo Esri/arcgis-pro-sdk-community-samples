@@ -1,9 +1,9 @@
-﻿//   Copyright 2020 Esri
+//   Copyright 2020 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -47,14 +47,15 @@ namespace BeforeSketchCompleted
     private async Task OnBeforeSketchCompletedEvent(BeforeSketchCompletedEventArgs arg)
     {
       //check if surfacename is in the map
-      if (arg.MapView.Map.ElevationSurfaces.Count(s => s.Name == surfaceName) == 0)
+      var elSurface = arg.MapView.Map.GetElevationSurfaceLayers().Where(s => s.Name == surfaceName).FirstOrDefault();
+      if (arg.MapView.Map.GetElevationSurfaceLayers().Count(s => s.Name == surfaceName) == 0)
       {
         MessageBox.Show("Surface: " + surfaceName + " is not in the map");
         return;
       }
 
       //set the sketch Z values from the specified elevation surface
-      var ZResult = await arg.MapView.Map.GetZsFromSurfaceAsync(arg.Sketch,surfaceName);
+      var ZResult = await arg.MapView.Map.GetZsFromSurfaceAsync(arg.Sketch, elSurface);
       if (ZResult.Status == SurfaceZsResultStatus.Ok)
         arg.SetSketchGeometry(ZResult.Geometry);
     }

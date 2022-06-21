@@ -1,13 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
 
-   Copyright 2019 Esri
+   Copyright 2022 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -17,13 +17,14 @@
    limitations under the License.
 
 -->
+
 <ArcGIS defaultAssembly="UploadVtpkToAgol.dll" defaultNamespace="UploadVtpkToAgol" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{e706895b-16b0-42f2-8eb1-49020fcc8b9f}" version="1.0" desktopVersion="2.0.0">
+  <AddInInfo id="{e706895b-16b0-42f2-8eb1-49020fcc8b9f}" version="1.0" desktopVersion="3.0.34921">
     <Name>UploadVtpkToAgol</Name>
     <Description>UploadVtpkToAgol description</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>esri, http://www.esri.com</Company>
+    <Company>esri, https://www.esri.com</Company>
     <Date>3/5/2016 11:32:50 AM, 2016</Date>
     <Subject>Sharing</Subject>
     <!-- Note subject can be one or more of these topics:

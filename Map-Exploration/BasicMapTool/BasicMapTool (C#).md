@@ -5,18 +5,18 @@ Provides a basic map tool that can be Copy/Paste inherited as a starting point f
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -33,7 +33,7 @@ Visual Studio:         2017, 2019
   
 1. Open this solution in Visual Studio.    
 1. Click the build menu and select Build Solution.  
-1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.  
+1. Launch the debugger to open ArCGIS Pro.   
 1. Open any project or a blank map.  
 1. Click on the Add-in tab and see that a 'Show Coordinates' button was added.  
 1. Click the 'Show Coordinates' button and click anywhere on your map pane.  

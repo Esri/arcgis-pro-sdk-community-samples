@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -27,32 +27,32 @@ using System.Windows.Media;
 
 namespace ConfigureGallery
 {
-    internal class AcmeGalleryItem
+  internal class AcmeGalleryItem
+  {
+    internal AcmeGalleryItem(string id, string group, IPlugInWrapper plugin)
     {
-        internal AcmeGalleryItem(string id, string group, IPlugInWrapper plugin)
-        {
-            CommandID = id;
-            PlugInWrapper = plugin;
-            if (PlugInWrapper.LargeImage is ImageSource)
-                Icon32 = (ImageSource)PlugInWrapper.LargeImage;
-            else
-                Icon32 = PlugInWrapper.LargeImage;
-            Group = group;
-        }
-
-        public IPlugInWrapper PlugInWrapper { get; private set; }
-        public object Icon32 { get; private set; }
-
-        public string CommandID { get; private set; }
-
-        public string Group { get; private set; }
-
-        internal void Execute()
-        {
-            if (PlugInWrapper.IsRelevant)
-            {
-                ((ICommand)PlugInWrapper).Execute(null);
-            }
-        }
+      CommandID = id;
+      PlugInWrapper = plugin;
+      if (PlugInWrapper.LargeImage is ImageSource)
+        Icon32 = (ImageSource)PlugInWrapper.LargeImage;
+      else
+        Icon32 = PlugInWrapper.LargeImage;
+      Group = group;
     }
+
+    public IPlugInWrapper PlugInWrapper { get; private set; }
+    public object Icon32 { get; private set; }
+
+    public string CommandID { get; private set; }
+
+    public string Group { get; private set; }
+
+    internal void Execute()
+    {
+      if (PlugInWrapper.IsRelevant)
+      {
+        ((ICommand)PlugInWrapper).Execute(null);
+      }
+    }
+  }
 }

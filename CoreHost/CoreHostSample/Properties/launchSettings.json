@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CoreHostSample": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Data\\SDK.gdb"
+    }
+  }
+}

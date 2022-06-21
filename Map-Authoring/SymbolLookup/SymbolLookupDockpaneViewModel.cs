@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -248,7 +248,7 @@ namespace SymbolLookup
 				var activeMapView = MapView.Active;
 				if (activeMapView == null)
 					return;
-				var features = activeMapView.Map.GetSelection();
+				var features = activeMapView.Map.GetSelection().ToDictionary();
 				foreach (var kvp in features)
 				{
 					if (kvp.Key is FeatureLayer)

@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -20,6 +20,7 @@ using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.TaskAssistant;
+using ArcGIS.Desktop.TaskAssistant.Exceptions;
 
 namespace TasksSDK
 {
@@ -50,7 +51,8 @@ namespace TasksSDK
       try
       {
         string exportFolder = "c:\\temp";
-        string fileName = await TaskAssistantModule.ExportTaskAsync(taskItem.TaskItemGuid, exportFolder);
+        //string fileName = await TaskAssistantModule.ExportTaskAsync(taskItem.TaskItemGuid, exportFolder);2.x
+        string fileName = await TaskAssistantFactory.Instance.ExportTaskItemAsync(taskItem.TaskItemGuid, exportFolder);
         ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Task saved to " + fileName);
       }
       catch (ExportTaskException e)

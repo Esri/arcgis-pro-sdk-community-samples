@@ -5,18 +5,18 @@ This sample provides an edit sketch context menu to restart the sketch from the 
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2017, 2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -35,7 +35,7 @@ To use this add-in:
 1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\FeatureTest\FeatureTest.aprx" is available.  
 1. Open this solution in Visual Studio.  
 1. Click the build menu and select Build Solution.  
-1. Click the Start button to open ArCGIS Pro. ArcGIS Pro will open.    
+1. Launch the debugger to open ArCGIS Pro. ArcGIS Pro will open.    
 1. Open the "C:\Data\FeatureTest\FeatureTest.aprx" project.  
 1. Create an edit sketch representing the offset from an origin. E.g. start the sketch at an intersection and digitize a segment with direction and distance constraints.  
 1. Start editing on the "TestLines" feature layer.  Place the first vertex by snapping to a given point and right click to chose a direction.  

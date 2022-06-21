@@ -1,9 +1,9 @@
-﻿//   Copyright 2019 Esri
+//   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -113,7 +113,7 @@ namespace SeqNum
 
         //get oids for featlayer, otherwise return
         var featOids = new List<long>();
-        if (!features.TryGetValue(featLayer, out featOids))
+        if (!features.ToDictionary().TryGetValue(featLayer, out featOids))
           return true;
 
         //dictionary to hold list of feature oids along the sketch
@@ -141,12 +141,12 @@ namespace SeqNum
                 continue;
 
               //Find the midpoint of the intersected sketch
-              sketchPoint = GeometryEngine.Instance.MovePointAlongLine(sketchInPoly, 0.5, true, 0, SegmentExtension.NoExtension);
+              sketchPoint = GeometryEngine.Instance.MovePointAlongLine(sketchInPoly, 0.5, true, 0, SegmentExtensionType.NoExtension);
               break;
 
             case esriGeometryType.esriGeometryPolyline:
               //get the first intersection point between the sketch and the lines
-              var intersectionPoints = GeometryEngine.Instance.Intersection(geometry, featShape, GeometryDimension.esriGeometry0Dimension) as Multipoint;
+              var intersectionPoints = GeometryEngine.Instance.Intersection(geometry, featShape, GeometryDimensionType.EsriGeometry0Dimension) as Multipoint;
               sketchPoint = intersectionPoints.Points[0];
               break;
 
@@ -159,7 +159,7 @@ namespace SeqNum
           //find the distance of the sketchPoint along the original sketch and add to sorted dictionary for this feature oid
           double distanceAlongCurve, distanceFromCurve = 0;
           LeftOrRightSide whichSide;
-          GeometryEngine.Instance.QueryPointAndDistance(geometry as Multipart, SegmentExtension.NoExtension, sketchPoint, AsRatioOrLength.AsLength, out distanceAlongCurve, out distanceFromCurve, out whichSide);
+          GeometryEngine.Instance.QueryPointAndDistance(geometry as Multipart, SegmentExtensionType.NoExtension, sketchPoint, AsRatioOrLength.AsLength, out distanceAlongCurve, out distanceFromCurve, out whichSide);
           distanceFromStart.Add(distanceAlongCurve, oid);
         }
 

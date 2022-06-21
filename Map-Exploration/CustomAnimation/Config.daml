@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
 //   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,12 +14,12 @@
 //   limitations under the License. 
 -->
 <ArcGIS defaultAssembly="CustomAnimation.dll" defaultNamespace="CustomAnimation" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{5fc28b12-dad5-4a18-9e09-0d888cdf3a2b}" version="1.0" desktopVersion="2.0.0">
+  <AddInInfo id="{5fc28b12-dad5-4a18-9e09-0d888cdf3a2b}" version="1.0" desktopVersion="3.0.34047">
     <Name>Custom Animation</Name>
     <Description>Adds commands to the ribbon to create custom animations.</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>esri, http://www.esri.com</Company>
+    <Company>esri, https://www.esri.com</Company>
     <Date>11/30/2015 5:30:00 PM, 2015</Date>
     <Subject>Map Exploration</Subject>
   </AddInInfo>
@@ -28,10 +28,12 @@
       <groups>
         <group id="CustomAnimation_TimingGroup" caption="Timing" appearsOnAddInTab="true" keytip="z1">
           <customControl refID="CustomAnimation_TimingControl" size="large" />
+          <button refID="CustomAnimation_ClearTracks" size="large" />
         </group>
         <group id="CustomAnimation_Path" caption="Path" appearsOnAddInTab="true" keytip="z2">
           <button refID="CustomAnimation_FollowPath" size="large" />
           <customControl refID="CustomAnimation_PathOptionsControl" size="large" />
+          <button refID="CustomAnimation_ClearAnimation" size="large" />
         </group>
         <group id="CustomAnimation_AroundPointGroup" caption="Around Point" appearsOnAddInTab="true" keytip="z3">
           <tool refID="CustomAnimation_CenterAt" size="large" />
@@ -66,6 +68,9 @@
             Specify the degree rotation to make around the center point. A positive value will rotate counter-clockwise and a negative value will rotate clockwise.
             <disabledText>Active view must be a 3D scene.</disabledText></tooltip>
         </editBox>
+        <button id="CustomAnimation_ClearAnimation" caption="Clear Animation" className="ClearAnimation" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
       </controls>
     </insertModule>
   </modules>

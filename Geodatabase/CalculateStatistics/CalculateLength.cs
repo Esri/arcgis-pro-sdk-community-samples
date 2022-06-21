@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -45,9 +45,8 @@ namespace CalculateStatistics
                 var featureLayer = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().Where(fl => fl.Name.Contains("TestLines")).FirstOrDefault();
                 var len = QueuedTask.Run(() =>
                 {
-                    var enterpriseDbType = Utilities.GetDatabaseType(featureLayer);
                     var fc = featureLayer.GetFeatureClass();
-                    return GetLength(fc, enterpriseDbType);
+                    return GetLength(fc);
                 });
                 MessageBox.Show($@"Len: {len.Result}");
             }
@@ -57,20 +56,15 @@ namespace CalculateStatistics
             }
         }
 
-        double GetLength(FeatureClass fc, EnterpriseDatabaseType enterpriseDbType)
+        double GetLength(FeatureClass fc)
         {
             try
             {
                 using (FeatureClassDefinition fcd = fc.GetDefinition())
                 {                    
                     // the name of the length field changes depending on what enterprise geodatabase is used
-                    var areaFieldName = "Shape_Length";
-                    switch (enterpriseDbType)
-                    {
-                        case EnterpriseDatabaseType.SQLServer:
-                            areaFieldName = "STLength";
-                            break;
-                    }
+                    var areaFieldName = "Shape_Length";                    
+
                     Field lengthField = fcd.GetFields().FirstOrDefault(x => x.Name.Contains(areaFieldName));
                     if (lengthField == null) return 0;
                     System.Diagnostics.Debug.WriteLine(lengthField.Name); 

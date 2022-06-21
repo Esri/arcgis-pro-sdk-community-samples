@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -65,7 +65,7 @@ namespace AddRasterLayer
                
                 // Create a url pointing to the source. In this case it is a url to an image service 
                 // which will result in an image service layer being created.
-                string dataSoureUrl = @"http://imagery.arcgisonline.com/arcgis/services/LandsatGLS/GLS2010_Enhanced/ImageServer";
+                string dataSoureUrl = @"https://environment.data.gov.uk/image/services/SURVEY/VegetationObjectModel/ImageServer";
                 // Note: A url can also point to  
                 // 1.) An image on disk or an in a file geodatabase. e.g. string dataSoureUrl = @"C:\temp\a.tif"; This results in a raster layer.
                 // 2.) A mosaic dataset in a file gdb e.g. string dataSoureUrl = @"c:\temp\mygdb.gdb\MyMosaicDataset"; This results in a mosaic layer.
@@ -77,19 +77,20 @@ namespace AddRasterLayer
                 // The layer has to be created on the Main CIM Thread (MCT).
                 await QueuedTask.Run(() =>
                 {
-                    // Create a layer based on the url. In this case the layer we are creating is an image service layer.
-                    rasterLayer = (ImageServiceLayer)LayerFactory.Instance.CreateLayer(new Uri(dataSoureUrl), myMap);
+                  // Create a layer based on the url. In this case the layer we are creating is an image service layer.
+                  var layerParams = new LayerCreationParams(new Uri(dataSoureUrl));
+                  rasterLayer = LayerFactory.Instance.CreateLayer<ImageServiceLayer>(layerParams, myMap);
 
-                    // Check if it is created.
-                    if (rasterLayer == null)
-                    {
-                        ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Failed to create layer for url:" + dataSoureUrl); 
-                        return;
-                    }
+                  // Check if it is created.
+                  if (rasterLayer == null)
+                  {
+                      ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Failed to create layer for url:" + dataSoureUrl); 
+                      return;
+                  }
                     
-                    // Validate the colorizer to see if the layer is colorized correctly.
-                    if (!(rasterLayer.GetColorizer() is CIMRasterRGBColorizer))
-                        ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Colorizer does not match for layer created from url: " + dataSoureUrl); 
+                  // Validate the colorizer to see if the layer is colorized correctly.
+                  if (!(rasterLayer.GetColorizer() is CIMRasterRGBColorizer))
+                      ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Colorizer does not match for layer created from url: " + dataSoureUrl); 
                 });
             }
             catch (Exception exc)

@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -30,10 +30,10 @@ namespace TimeNavigation
 	/// <remarks>
 	/// 1. Download the Community Sample data(see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.
 	/// 1. In Visual Studio click the Build menu.Then select Build Solution.  
-	/// 1. Click Start button to open ArcGIS Pro.
-	/// 1. ArcGIS Pro will open.  
+	/// 1. Launch the debugger to open ArcGIS Pro.
 	/// 1. Open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project which contains the required data needed for this sample.
-	/// 1. Click on the new Navigation tab within the Time tab group on the ribbon.  
+	/// 1. Open the Portland Crimes map.
+  /// 1. Click on the new Navigation tab on the ribbon.  
 	/// ![UI](screenshots/UICommands.png)  
 	/// 1. Within this tab there are 3 groups that provide functionality to navigate through time.
 	/// 1. The Map Time group provides two date picker controls to set the start and end time in the map.

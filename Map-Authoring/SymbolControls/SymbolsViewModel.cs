@@ -1,4 +1,22 @@
-﻿using System;
+/*
+
+   Copyright 2022 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -20,6 +38,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Layouts;
+using ArcGIS.Desktop.Layouts.Events;
 using ArcGIS.Desktop.Mapping;
 using ArcGIS.Desktop.Mapping.Controls;
 using ArcGIS.Desktop.Mapping.Events;
@@ -43,7 +62,7 @@ namespace SymbolControls
       LayersAddedEvent.Subscribe(OnLayersAdded);
       LayersRemovedEvent.Subscribe(OnLayersemoved);
       //Subscribe to Graphic Elements selection changed event
-      ElementSelectionChangedEvent.Subscribe(OnGraphicsElementSelectionChanged);
+      ArcGIS.Desktop.Layouts.Events.ElementEvent.Subscribe(OnElementSelectionChanged);
       #endregion
       BindingOperations.EnableCollectionSynchronization(_layersInMap, _layersInMapLock);
       _ = GetLayersInMapAsync();      
@@ -72,7 +91,39 @@ namespace SymbolControls
       }
       SelectedStyleItemType = StyleItemTypeValues.FirstOrDefault();
       SearchPauseSearching = false;
-    }    
+    }
+
+    private async void OnElementSelectionChanged(ElementEventArgs obj)
+    {
+      if (!(SelectedLayer is GraphicsLayer)) return;
+      if (obj.Hint != ElementEventHint.SelectionChanged) return;
+      //check the container is a graphics layer - could be a Layout (or even map view)
+      if (obj.Container is GraphicsLayer graphicsLayer)
+      {
+        //get the total selection count for the container
+        var count = obj.Elements.Count();
+        //Check count - could have been an unselect or clearselect
+        if (count > 0)
+        {
+          //this is a selection or add to selection
+          var selectedElements = graphicsLayer.GetSelectedElements().ToList();
+          var selectedGraphicElements = selectedElements.ConvertAll(x => (GraphicElement)x);
+          //Get the first graphic to compare against
+          var firstGraphicElement = selectedGraphicElements.FirstOrDefault();
+          await QueuedTask.Run(() =>
+          {
+            //Get type of the first element
+            var firstGraphicElementType = firstGraphicElement.GetGraphic().GetType(); //This needs to run on MCT.
+            //iterate to check if elements match in the selectedElements collection
+            var differentGraphicTypes = selectedGraphicElements.FirstOrDefault(se => se.GetGraphic().GetType() != firstGraphicElementType);
+            _isAllGraphicsSameType = differentGraphicTypes == null ? true : false;
+            System.Diagnostics.Debug.WriteLine($"No. of graphics selected: {count} Are they the same type? {_isAllGraphicsSameType}");
+          });
+          await GetStyleItemForGraphicsLayerAsync(SelectedLayer as GraphicsLayer);
+        }
+      }
+    }
+
     /// <summary>
     /// Show the DockPane.
     /// </summary>
@@ -502,36 +553,7 @@ namespace SymbolControls
       {
         await GetLayersInMapAsync();
       });
-    }
-    private async void OnGraphicsElementSelectionChanged(ElementSelectionChangedEventArgs obj)
-    {
-      if (!(SelectedLayer is GraphicsLayer)) return;
-      //check the container is a graphics layer - could be a Layout (or even map view)
-      if (obj.ElementContainer is GraphicsLayer graphicsLayer)
-      {
-        //get the total selection count for the container
-        var count = obj.SelectedElementCount;
-        //Check count - could have been an unselect or clearselect
-        if (count > 0)
-        {
-          //this is a selection or add to selection
-          var selectedElements = graphicsLayer.GetSelectedElements().ToList();
-          var selectedGraphicElements = selectedElements.ConvertAll(x => (GraphicElement)x);
-          //Get the first graphic to compare against
-          var firstGraphicElement = selectedGraphicElements.FirstOrDefault();
-         await QueuedTask.Run(() =>
-          {
-            //Get type of the first element
-            var firstGraphicElementType = firstGraphicElement.GetGraphic().GetType(); //This needs to run on MCT.
-            //iterate to check if elements match in the selectedElements collection
-            var differentGraphicTypes = selectedGraphicElements.FirstOrDefault(se => se.GetGraphic().GetType() != firstGraphicElementType);
-            _isAllGraphicsSameType = differentGraphicTypes == null ? true : false;
-            System.Diagnostics.Debug.WriteLine($"No. of graphics selected: {count} Are they the same type? {_isAllGraphicsSameType}");
-          });
-          await GetStyleItemForGraphicsLayerAsync(SelectedLayer as GraphicsLayer);
-        }
-      }
-    }
+    }    
     #endregion
   }
 

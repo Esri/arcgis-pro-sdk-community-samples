@@ -7,18 +7,18 @@ A context menu is added to each table control allowing access to row functionali
   
 
 
-<a href="http://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
-Organization:          Esri, http://www.esri.com
-Date:                  11/01/2021
-ArcGIS Pro:            2.9
-Visual Studio:         2019
-.NET Target Framework: 4.8
+Organization:          Esri, https://www.esri.com
+Date:                  06/10/2022
+ArcGIS Pro:            3.0
+Visual Studio:         2022
+.NET Target Framework: net6.0-windows
 ```
 
 ## Resources
@@ -35,8 +35,8 @@ Visual Studio:         2019
 1. Make sure that the Sample data is unzipped in c:\data   
 1. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'  
 1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open, select the FeatureTest.aprx project  
+1. Launch the debugger to open ArcGIS Pro.  
+1. Select the FeatureTest.aprx project  
 1. Open the current active map's Contents dockpane and select the layers for which to view the attribute tables:  
 ![UI](Screenshots/Screenshot1.png)  
   
@@ -50,10 +50,8 @@ Visual Studio:         2019
   
 1. Select the 'Edit' tab on the ArcGIS Pro ribbon and 'Create' new features  
 1. On the 'Create Features' pane select the 'TestLines' feature layer and create a new line feature on the map.  
-![UI](Screenshots/Screenshot4.png)  
-  
 1. Note that the table control on the Attribute Table Viewer dockpane is automatically updated to show the newly added feature.  
-![UI](Screenshots/Screenshot5.png)  
+![UI](Screenshots/Screenshot4.png)  
   
 
 

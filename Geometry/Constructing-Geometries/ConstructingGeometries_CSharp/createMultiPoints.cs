@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -25,7 +25,7 @@ using ArcGIS.Core.Data;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 
-namespace ConstructingGeometries
+namespace ConstructingGeometries_CSharp
 {
   /// <summary>
   /// This code sample shows how to build Multipoint objects. 
@@ -63,16 +63,16 @@ namespace ConstructingGeometries
       // a separate thread
       return QueuedTask.Run(() =>
       {
-              // get the feature class associated with the layer
-              var featureClass = multiPointLayer.GetTable() as FeatureClass;
+        // get the feature class associated with the layer
+        var featureClass = multiPointLayer.GetTable() as FeatureClass;
         var featureClassDefinition = featureClass.GetDefinition() as FeatureClassDefinition;
 
-              // store the spatial reference as its own variable
-              var spatialReference = featureClassDefinition.GetSpatialReference();
+        // store the spatial reference as its own variable
+        var spatialReference = featureClassDefinition.GetSpatialReference();
 
-              // define an area of interest. Random points are generated in the allowed
-              // confines of the allow extent range
-              var areaOfInterest = MapView.Active.Extent;
+        // define an area of interest. Random points are generated in the allowed
+        // confines of the allow extent range
+        var areaOfInterest = MapView.Active.Extent;
 
         // start an edit operation to create new (random) multi-point feature
         var createOperation = new EditOperation()
@@ -84,31 +84,31 @@ namespace ConstructingGeometries
         var classDefinition = featureClass.GetDefinition() as FeatureClassDefinition;
 
         Multipoint newPoints = null;
-              // generate either 2D or 3D geometries
-              if (classDefinition.HasZ())
+        // generate either 2D or 3D geometries
+        if (classDefinition.HasZ())
         {
-                // 3D
-                // create a list to hold the 20 coordinates of the multi-point feature
-                IList<Coordinate3D> coordinateList = new List<Coordinate3D>(20);
+          // 3D
+          // create a list to hold the 20 coordinates of the multi-point feature
+          IList<Coordinate3D> coordinateList = new List<Coordinate3D>(20);
           for (int i = 0; i < 20; i++)
           {
             coordinateList.Add(randomGenerator.NextCoordinate3D(areaOfInterest));
           }
-          newPoints = MultipointBuilder.CreateMultipoint(coordinateList, classDefinition.GetSpatialReference());
+          newPoints = MultipointBuilderEx.CreateMultipoint(coordinateList, classDefinition.GetSpatialReference());
         }
         else
         {
-                // 2D
-                // create a list to hold the 20 coordinates of the multi-point feature
-                IList<Coordinate2D> coordinateList = new List<Coordinate2D>(20);
+          // 2D
+          // create a list to hold the 20 coordinates of the multi-point feature
+          IList<Coordinate2D> coordinateList = new List<Coordinate2D>(20);
           for (int i = 0; i < 20; i++)
           {
             coordinateList.Add(randomGenerator.NextCoordinate2D(areaOfInterest));
           }
-          newPoints = MultipointBuilder.CreateMultipoint(coordinateList, classDefinition.GetSpatialReference());
+          newPoints = MultipointBuilderEx.CreateMultipoint(coordinateList, classDefinition.GetSpatialReference());
         }
-              // create and execute the feature creation operation
-              createOperation.Create(multiPointLayer, newPoints);
+        // create and execute the feature creation operation
+        createOperation.Create(multiPointLayer, newPoints);
 
         return createOperation.ExecuteAsync();
       });

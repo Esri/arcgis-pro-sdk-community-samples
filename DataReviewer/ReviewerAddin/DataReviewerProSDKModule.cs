@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -82,13 +82,6 @@ namespace DataReviewerProSDKSamples
       }
     }
 
-    /// <summary>
-    /// Create an instance of the DataReviewerModule
-    /// </summary>
-    internal static DataReviewerModule DataReviewerModule
-    {
-      get { return FrameworkApplication.FindModule(Constants.DataReviewerModuleName) as DataReviewerModule; }
-    }
     #endregion
 
     #region Basic Examples
@@ -124,10 +117,10 @@ namespace DataReviewerProSDKSamples
         await QueuedTask.Run(() =>
         {
                   //Step 1: First check if the Reviewer workspace contains current Reviewer dataset.
-                  if (DataReviewerModule.HasValidReviewerDataset(strReviewerResultsWorkspacePath))
+                  if (ReviewerUtil.HasValidReviewerDataset(strReviewerResultsWorkspacePath))
           {
                     //Step 2: Create the Reviewer ResultsItem
-                    reviewerResultProjectItem = DataReviewerModule.CreateResultsProjectItem(strReviewerResultsWorkspacePath);
+                    reviewerResultProjectItem = ReviewerUtil.CreateResultsProjectItem(strReviewerResultsWorkspacePath);
           }
           else
           {
@@ -360,9 +353,9 @@ namespace DataReviewerProSDKSamples
         IProjectItem reviewerBatchJobProjectItem3 = null;
         await QueuedTask.Run(() =>
         {
-          reviewerBatchJobProjectItem1 = DataReviewerModule.CreateBatchJobProjectItem(batchJob1);
-          reviewerBatchJobProjectItem2 = DataReviewerModule.CreateBatchJobProjectItem(batchJob2);
-          reviewerBatchJobProjectItem3 = DataReviewerModule.CreateBatchJobProjectItem(batchJob3);
+          reviewerBatchJobProjectItem1 = ReviewerUtil.CreateBatchJobProjectItem(batchJob1);
+          reviewerBatchJobProjectItem2 = ReviewerUtil.CreateBatchJobProjectItem(batchJob2);
+          reviewerBatchJobProjectItem3 = ReviewerUtil.CreateBatchJobProjectItem(batchJob3);
 
                   //Step 2: Add BatchJobItems to the current project
                   if (null != reviewerBatchJobProjectItem1)
@@ -440,10 +433,10 @@ namespace DataReviewerProSDKSamples
         await QueuedTask.Run(() =>
         {
                   //Step 2: Check if the Reviewer workspace contains current Reviewer dataset.
-                  if (DataReviewerModule.HasValidReviewerDataset(strReviewerResultsWorkspacePath))
+                  if (ReviewerUtil.HasValidReviewerDataset(strReviewerResultsWorkspacePath))
           {
                     //Step 3: Create the Reviewer ResultsItem
-                    reviewerResultProjectItem = DataReviewerModule.CreateResultsProjectItem(strReviewerResultsWorkspacePath);
+                    reviewerResultProjectItem = ReviewerUtil.CreateResultsProjectItem(strReviewerResultsWorkspacePath);
           }
           else
           {
@@ -645,7 +638,7 @@ namespace DataReviewerProSDKSamples
             {
                       //Step 2:  Create Reviewer BatchJobItems
                       //This is done inside a try-catch so that you can Skip invalid batch jobs and continue with valid batch jobs
-                      IProjectItem rbjItem = DataReviewerModule.CreateBatchJobProjectItem(rbjPath);
+                      IProjectItem rbjItem = ReviewerUtil.CreateBatchJobProjectItem(rbjPath);
               if (null != rbjItem)
               {
                         //Step 3: Add BatchJobItems to the current project
@@ -737,7 +730,7 @@ namespace DataReviewerProSDKSamples
       else
         browseGeodatabaseDialog.InitialLocation = _lastBrowseLocation;
 
-      browseGeodatabaseDialog.Filter = ItemFilters.geodatabases;
+      browseGeodatabaseDialog.Filter = ItemFilters.Geodatabases;
 
 
       browseGeodatabaseDialog.MultiSelect = false;

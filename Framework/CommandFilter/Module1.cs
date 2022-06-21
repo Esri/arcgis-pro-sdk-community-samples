@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -62,13 +62,12 @@ namespace CommandFilter {
         /// <returns></returns>
         public static Uri PackUriForResource(string resourceName, string folderName = "Images") {
             string asm = System.IO.Path.GetFileNameWithoutExtension(
-                System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                System.Reflection.Assembly.GetExecutingAssembly().Location);
             string uriString = folderName.Length > 0
                 ? string.Format("pack://application:,,,/{0};component/{1}/{2}", asm, folderName, resourceName)
                 : string.Format("pack://application:,,,/{0};component/{1}", asm, resourceName);
             return new Uri(uriString, UriKind.Absolute);
         }
-
 
         #region Overrides
         /// <summary>

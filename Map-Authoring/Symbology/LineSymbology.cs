@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -63,7 +63,6 @@ namespace Symbology
                 CIMMarkerPlacementAlongLineSameSize markerPlacement = new CIMMarkerPlacementAlongLineSameSize()
                 {
                     AngleToLine = true,
-                    ControlPointPlacement = PlacementEndings.WithMarkers,
                     PlacementTemplate = new double[] { 5 }
                 };
                 //assign the markerplacement to the marker
@@ -145,7 +144,6 @@ namespace Symbology
             {
                 AngleToLine = true,
                 Offset = 0,
-                ControlPointPlacement = PlacementEndings.WithMarkers,
                 Endings = PlacementEndings.Custom,
                 OffsetAlongLine = 15,
                 PlacementTemplate = new double[] { 60 }
@@ -173,10 +171,10 @@ namespace Symbology
         #region Snippet Dash line with two markers - Method II
         /// <summary>
         /// Create a line symbol with a dash and two markers. <br/>
-        /// In this pattern of creating this symbol, a [CIMVectorMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic6176.html) object is created as a new [CIMSymbolLayer](http://prodev.arcgis.com/en/pro-app/sdk/api-reference/#topic5503.html).
-        /// The circle and square markers created by [ContructMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic12350.html) method is then assigned to the [MarkerGraphics](http://prodev.arcgis.com/en/pro-app/sdk/api-reference/#topic6188.html) property of the CIMVectorMarker. 
-        /// When using this method, the CIMVectorMarker's [Frame](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic6187.html) property needs to be set to the [CIMMarker](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic3264.html) object's Frame. 
-        /// Similarly, the CIMVectorMarker's [Size](http://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic3284.html) property needs to be set to the CIMMarker object's size.
+        /// In this pattern of creating this symbol, a [CIMVectorMarker](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic6176.html) object is created as a new [CIMSymbolLayer](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic5503.html).
+        /// The circle and square markers created by [ContructMarker](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic12350.html) method is then assigned to the [MarkerGraphics](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic6188.html) property of the CIMVectorMarker. 
+        /// When using this method, the CIMVectorMarker's [Frame](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic6187.html) property needs to be set to the [CIMMarker](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic3264.html) object's Frame. 
+        /// Similarly, the CIMVectorMarker's [Size](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic3284.html) property needs to be set to the CIMMarker object's size.
         /// </summary>
         /// <remarks>
         /// This line symbol comprises three symbol layers listed below: 
@@ -238,7 +236,6 @@ namespace Symbology
                        {
                            AngleToLine = true,
                            Offset = 0,
-                           ControlPointPlacement = PlacementEndings.WithMarkers,
                            Endings = PlacementEndings.Custom,
                            OffsetAlongLine = 15,
                            PlacementTemplate = new double[] {60},

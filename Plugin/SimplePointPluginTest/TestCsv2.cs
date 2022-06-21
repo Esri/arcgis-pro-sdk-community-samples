@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,6 +18,7 @@
 */
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,30 +42,39 @@ namespace SimplePointPluginTest
   {
     protected async override void OnClick()
     {
-      //Change this path to the path of your sample csv data
-      string csv_path = @"C:\Data\SimplePointPlugin\SimplePointData";
-
-      await QueuedTask.Run(() =>
+      try
       {
-        using (var pluginws = new PluginDatastore(
-             new PluginDatasourceConnectionPath("SimplePointPlugin_Datasource",
-                   new Uri(csv_path, UriKind.Absolute))))
+        //Change this path to the path of your sample csv data
+        string csvPath = @"C:\Data\SimplePointPlugin\SimplePointData";
+        var dirCsv = new DirectoryInfo(csvPath);
+        if (!dirCsv.Exists) throw new Exception($@"The sample cannot find and csv files in this folder: {csvPath}");
+        var csvFiles = dirCsv.GetFiles();
+        if (csvFiles.Length <= 0) throw new Exception($@"The test folder has no csv files: {csvPath}");
+        await QueuedTask.Run(() =>
         {
-          System.Diagnostics.Debug.Write("==========================\r\n");
-          foreach (var table_name in pluginws.GetTableNames())
+          using (var pluginws = new PluginDatastore(
+                new PluginDatasourceConnectionPath("SimplePointPlugin_Datasource",
+                      new Uri(csvPath, UriKind.Absolute))))
           {
-            System.Diagnostics.Debug.Write($"Table: {table_name}\r\n");
-            //open each table....use the returned table name
-            //or just pass in the name of a csv file in the workspace folder
-            using (var table = pluginws.OpenTable(table_name))
+            System.Diagnostics.Debug.Write("==========================\r\n");
+            foreach (var table_name in pluginws.GetTableNames())
             {
-              //Add as a layer to the active map or scene
-              LayerFactory.Instance.CreateFeatureLayer((FeatureClass)table, MapView.Active.Map);
+              System.Diagnostics.Debug.Write($"Table: {table_name}\r\n");
+              //open each table....use the returned table name
+              //or just pass in the name of a csv file in the workspace folder
+              using (var table = pluginws.OpenTable(table_name))
+              {
+                //Add as a layer to the active map or scene
+                LayerFactory.Instance.CreateLayer<FeatureLayer>(new FeatureLayerCreationParams((FeatureClass)table), MapView.Active.Map);
+              }
             }
           }
-        }
-      });
-
+        });
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show(ex.Message);
+      }
     }
   }
 }

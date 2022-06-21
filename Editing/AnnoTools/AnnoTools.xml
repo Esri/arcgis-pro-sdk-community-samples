@@ -46,56 +46,26 @@
             <param name="geometry">The geometry created by the sketch.</param>
             <returns>A Task returning a Boolean indicating if the sketch complete event was successfully handled.</returns>
         </member>
-        <member name="T:AnnoTools.AnnoNewTemplate">
+        <member name="T:AnnoTools.AnnoSimpleConstructionTool">
             <summary>
-            Demonstrates how to create a new annotation template.  Use the CreateTemplate extension method after setting the AnnotationProperties on an 
-            Inspector object. 
+            An annotation construction tool that uses a point sketch type.  
             </summary>
             <remarks>
-            The only guaranteed fields in an annotation feature class schema are AnnotationClassID, SymbolID, Element, FeatureID, ZOrder, 
-            Status and Shape.  All other fields which store text formatting attributes (such as TextString, FontName,  VerticalAlignment etc) 
-            are not guaranteed to exist in the physical schema.  This is different from the annotation schema in ArcGIS 10x where all fields 
-            existed and were unable to be deleted. In ArcGIS Pro, these text formatting fields are able to be deleted by the user if they exist; 
-            they are no longer designated as protected or system fields. 
+            Annotation construction tools work as per other construction tools.  Set the categoryRefID in the daml file to be "esri_editing_construction_annotation".
             <para></para>
-            Use the GetAnnotationProperties and SetAnnotationProperties on an Inspector object to access these text formatting attributes. Do not 
-            use the inspector[fieldName] methodology as the fields may not exist. 
+            Annotation feature classes store polygon geometry.  This polygon is the bounding box of the text of an annotation feature. The bounding box 
+            is calculated from the text string, font, font size, angle orientation and other text formatting attributes of the feature. It is automatically 
+            updated by the application each time the annotation attributes are modified. You should never need to access or modify an annotation features 
+            polygon shape.  
+            <para></para>
+            The text attributes of an annotation feature are represented by a CIMTextGraphic. The CIMTextGraphic consists of the text string, text attributes 
+            (such as verticalAlignment, horizontalAlignment, fontFamily, fontSize etc), callouts, leader lines and the CIMTextGraphic geometry. This geometry 
+            can be a point, straight line, bezier curve, multipoint geometry or GeometryBag and represents the baseline geometry that the text string sits upon. 
+            <para></para>
+            When creating an annotation feature the geometry passed to the Create method is the CIMTextGraphic geometry. 
             </remarks>
         </member>
-        <member name="T:AnnoTools.AnnoNewTemplateFromExistingTemplate">
-            <summary>
-            Demonstrates how to create a new annotation template from an existing template.  Use the CreateTemplate extension method after setting the AnnotationProperties on an 
-            Inspector object. 
-            </summary>
-            <remarks>
-            The only guaranteed fields in an annotation feature class schema are AnnotationClassID, SymbolID, Element, FeatureID, ZOrder, 
-            Status and Shape.  All other fields which store text formatting attributes (such as TextString, FontName,  VerticalAlignment etc) 
-            are not guaranteed to exist in the physical schema.  This is different from the annotation schema in ArcGIS 10x where all fields 
-            existed and were unable to be deleted. In ArcGIS Pro, these text formatting fields are able to be deleted by the user if they exist; 
-            they are no longer designated as protected or system fields. 
-            <para></para>
-            Use the GetAnnotationProperties and SetAnnotationProperties on an Inspector object to access these text formatting attributes. Do not 
-            use the inspector[fieldName] methodology as the fields may not exist. 
-            </remarks>
-        </member>
-        <member name="T:AnnoTools.AnnoModifySymbol">
-            <summary>
-            Illustrates how to modify the text attributes and symbol of an annotation feature using the 
-            GetAnnotationProperties and SetAnnotationProperties methods on the inspector, followed by the EditOperation.Modify method.
-            <para></para>
-            The text attributes of an annotation feature are represented as a CIMTextGraphic.The CIMTextGraphic 
-            contains the text string, text formatting attributes (such as alignment, angle, font, color, etc), and other information (such as 
-            callouts and leader lines). It also has a shape which represents the baseline geometry that the annotation text string sits upon.
-            </summary>
-            <remarks>
-            Use the GetAnnotationProperties method on the <see cref="T:ArcGIS.Desktop.Editing.Attributes.Inspector"/> object to retrieve the 
-            AnnotationProperties class which allows you to directly access and set the majority of the CIMTextGraphic properties including it's geometry.  
-            If you need to access the CIMTextGraphic itself use the TextGraphic property.  Use the LoadFromTextGraphic to set a new CIMTextGraphic.  After modifying the 
-            annotation properties, don't forget to use the SetAnnotationProperties method on the inspector to write the properties. Then pass the inspector to 
-            EditOperation.Modify.  This tool illustrates this pattern.
-            </remarks>
-        </member>
-        <member name="M:AnnoTools.AnnoModifySymbol.OnSketchCompleteAsync(ArcGIS.Core.Geometry.Geometry)">
+        <member name="M:AnnoTools.AnnoSimpleConstructionTool.OnSketchCompleteAsync(ArcGIS.Core.Geometry.Geometry)">
             <summary>
             Called when the sketch finishes. This is where we will create the edit operation and then execute it.
             </summary>
@@ -134,6 +104,30 @@
             <param name="geometry">The geometry created by the sketch.</param>
             <returns>A Task returning a Boolean indicating if the sketch complete event was successfully handled.</returns>
         </member>
+        <member name="T:AnnoTools.AnnoModifySymbol">
+            <summary>
+            Illustrates how to modify the text attributes and symbol of an annotation feature using the 
+            GetAnnotationProperties and SetAnnotationProperties methods on the inspector, followed by the EditOperation.Modify method.
+            <para></para>
+            The text attributes of an annotation feature are represented as a CIMTextGraphic.The CIMTextGraphic 
+            contains the text string, text formatting attributes (such as alignment, angle, font, color, etc), and other information (such as 
+            callouts and leader lines). It also has a shape which represents the baseline geometry that the annotation text string sits upon.
+            </summary>
+            <remarks>
+            Use the GetAnnotationProperties method on the <see cref="T:ArcGIS.Desktop.Editing.Attributes.Inspector"/> object to retrieve the 
+            AnnotationProperties class which allows you to directly access and set the majority of the CIMTextGraphic properties including it's geometry.  
+            If you need to access the CIMTextGraphic itself use the TextGraphic property.  Use the LoadFromTextGraphic to set a new CIMTextGraphic.  After modifying the 
+            annotation properties, don't forget to use the SetAnnotationProperties method on the inspector to write the properties. Then pass the inspector to 
+            EditOperation.Modify.  This tool illustrates this pattern.
+            </remarks>
+        </member>
+        <member name="M:AnnoTools.AnnoModifySymbol.OnSketchCompleteAsync(ArcGIS.Core.Geometry.Geometry)">
+            <summary>
+            Called when the sketch finishes. This is where we will create the edit operation and then execute it.
+            </summary>
+            <param name="geometry">The geometry created by the sketch.</param>
+            <returns>A Task returning a Boolean indicating if the sketch complete event was successfully handled.</returns>
+        </member>
         <member name="T:AnnoTools.AnnoModifyText">
             <summary>
             Illustrates the recommended way to modify the text of an annotation feature at ArcGIS Pro 2.2 using the 
@@ -153,32 +147,6 @@
             </remarks>
         </member>
         <member name="M:AnnoTools.AnnoModifyText.OnSketchCompleteAsync(ArcGIS.Core.Geometry.Geometry)">
-            <summary>
-            Called when the sketch finishes. This is where we will create the edit operation and then execute it.
-            </summary>
-            <param name="geometry">The geometry created by the sketch.</param>
-            <returns>A Task returning a Boolean indicating if the sketch complete event was successfully handled.</returns>
-        </member>
-        <member name="T:AnnoTools.AnnoSimpleConstructionTool">
-            <summary>
-            An annotation construction tool that uses a point sketch type.  
-            </summary>
-            <remarks>
-            Annotation construction tools work as per other construction tools.  Set the categoryRefID in the daml file to be "esri_editing_construction_annotation".
-            <para></para>
-            Annotation feature classes store polygon geometry.  This polygon is the bounding box of the text of an annotation feature. The bounding box 
-            is calculated from the text string, font, font size, angle orientation and other text formatting attributes of the feature. It is automatically 
-            updated by the application each time the annotation attributes are modified. You should never need to access or modify an annotation features 
-            polygon shape.  
-            <para></para>
-            The text attributes of an annotation feature are represented by a CIMTextGraphic. The CIMTextGraphic consists of the text string, text attributes 
-            (such as verticalAlignment, horizontalAlignment, fontFamily, fontSize etc), callouts, leader lines and the CIMTextGraphic geometry. This geometry 
-            can be a point, straight line, bezier curve, multipoint geometry or GeometryBag and represents the baseline geometry that the text string sits upon. 
-            <para></para>
-            When creating an annotation feature the geometry passed to the Create method is the CIMTextGraphic geometry. 
-            </remarks>
-        </member>
-        <member name="M:AnnoTools.AnnoSimpleConstructionTool.OnSketchCompleteAsync(ArcGIS.Core.Geometry.Geometry)">
             <summary>
             Called when the sketch finishes. This is where we will create the edit operation and then execute it.
             </summary>
@@ -256,7 +224,7 @@
             1. Make sure that the Sample data is unzipped in c:\data 
             1. The project used for this sample is 'C:\Data\SampleAnno\SampleAnno.aprx'
             1. In Visual studio click the Build menu. Then select Build Solution.
-            1. Click Start button to open ArcGIS Pro.
+            1. Start the Debugger to open ArcGIS Pro.
             1. ArcGIS Pro will open, select the SampleAnno.aprx project
             1. Activate an annotation template and see the two additional construction tools - Simple Anno Tool (Template) and Advanced Anno Tool.
             ![UI](Screenshots/Screen1.png)
@@ -264,9 +232,16 @@
             ![UI](Screenshots/Screen2.png)
             1. Select the Advanced Anno Tool and digitize a line.  An annotation feature will be created. 
             ![UI](Screenshots/Screen3.png)
-            1. Click the 'Modify Anno Geometry' button on the Add-In tab and drag a rectangle around some annotation features. The geometry of these features will be rotated 90 degrees.
-            1. Click the 'Modify Anno Symbol' button on the Add-In tab and drag a rectangle around some annotation features. The text and symbol color of these features will change to 'Hello World' in red.
+            1. Click the 'Modify Anno Geometry' tool on the Add-In tab and drag a rectangle around the annotation features created by the advanced tool. The geometry of these features will be rotated 90 degrees.
+            1. Click the 'Modify Anno Symbol' tool on the Add-In tab and drag a rectangle around some annotation features. The text and symbol color of these features will change to 'Hello World' in red.
             ![UI](Screenshots/Screen4.png)
+            1. Click the 'Balloon Callout' tool on the Add-In tab and drag a rectangle around some annotation features. The text will change to a 'Balloon Callout'.
+            ![UI](Screenshots/Screen5.png)
+            1. Click the 'Simple Line Callout' tool on the Add-In tab and drag a rectangle around some annotation features. The text will change to a 'Line Callout'.
+            ![UI](Screenshots/Screen6.png)
+            1. Click the 'New Anno Template' button on the Add-In tab. Notice the new template created in the Create Feature pane.
+            1. Click the 'New Anno Template from Existing Tempate' button on the Add-In tab. Notice the new template created in the Create Feature pane.
+            ![UI](Screenshots/Screen7.png)
             </remarks>
         </member>
         <member name="P:AnnoTools.Module1.Current">
@@ -279,6 +254,38 @@
             Called by Framework when ArcGIS Pro is closing
             </summary>
             <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+        <member name="T:AnnoTools.AnnoNewTemplate">
+            <summary>
+            Demonstrates how to create a new annotation template.  Use the CreateTemplate extension method after setting the AnnotationProperties on an 
+            Inspector object. 
+            </summary>
+            <remarks>
+            The only guaranteed fields in an annotation feature class schema are AnnotationClassID, SymbolID, Element, FeatureID, ZOrder, 
+            Status and Shape.  All other fields which store text formatting attributes (such as TextString, FontName,  VerticalAlignment etc) 
+            are not guaranteed to exist in the physical schema.  This is different from the annotation schema in ArcGIS 10x where all fields 
+            existed and were unable to be deleted. In ArcGIS Pro, these text formatting fields are able to be deleted by the user if they exist; 
+            they are no longer designated as protected or system fields. 
+            <para></para>
+            Use the GetAnnotationProperties and SetAnnotationProperties on an Inspector object to access these text formatting attributes. Do not 
+            use the inspector[fieldName] methodology as the fields may not exist. 
+            </remarks>
+        </member>
+        <member name="T:AnnoTools.AnnoNewTemplateFromExistingTemplate">
+            <summary>
+            Demonstrates how to create a new annotation template from an existing template.  Use the CreateTemplate extension method after setting the AnnotationProperties on an 
+            Inspector object. 
+            </summary>
+            <remarks>
+            The only guaranteed fields in an annotation feature class schema are AnnotationClassID, SymbolID, Element, FeatureID, ZOrder, 
+            Status and Shape.  All other fields which store text formatting attributes (such as TextString, FontName,  VerticalAlignment etc) 
+            are not guaranteed to exist in the physical schema.  This is different from the annotation schema in ArcGIS 10x where all fields 
+            existed and were unable to be deleted. In ArcGIS Pro, these text formatting fields are able to be deleted by the user if they exist; 
+            they are no longer designated as protected or system fields. 
+            <para></para>
+            Use the GetAnnotationProperties and SetAnnotationProperties on an Inspector object to access these text formatting attributes. Do not 
+            use the inspector[fieldName] methodology as the fields may not exist. 
+            </remarks>
         </member>
     </members>
 </doc>

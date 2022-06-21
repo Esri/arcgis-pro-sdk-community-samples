@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -48,8 +48,7 @@ namespace SymbolLookup
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution. 
-    /// 1. Click Start button to open ArcGIS Pro.
-    /// 1. ArcGIS Pro will open. 
+    /// 1. Launch the debugger to open ArcGIS Pro.
     /// 1. Open any project file that contains feature layers. Activate the mapview with the feature layers.
     /// 1. In the Add-In tab, click the SymbolLookup button. This will display the Symbol Lookup dockpane.
     /// 1. The Select Features button in this dockpane is Pro's Select By Rectangle button. Click this button to activate the select features tool and select some features.

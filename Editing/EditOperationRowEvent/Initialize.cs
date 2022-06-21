@@ -1,4 +1,4 @@
-﻿/*
+/*
 
    Copyright 2019 Esri
 
@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -49,6 +49,8 @@ namespace EditOperationRowEvent
         {
           //find layer and derive geodatabase
           var cpLayer = MapView.Active.Map.FindLayers("CrowdPlanning").FirstOrDefault() as FeatureLayer;
+
+          if (cpLayer == null) return;
           var geodatabase = cpLayer.GetFeatureClass().GetDatastore() as Geodatabase;
 
           //Advise if the project has edits. Need to clear edits to make schema changes.
@@ -62,8 +64,7 @@ namespace EditOperationRowEvent
           //For the purpose of this sample, start with a fresh table
           var mva = Geoprocessing.MakeValueArray(geodatabase.GetPath().AbsolutePath,"EditLog");
           var cts = new System.Threading.CancellationTokenSource();
-          await Geoprocessing.ExecuteToolAsync("Delete_management", mva);
-          await Geoprocessing.ExecuteToolAsync("CreateTable_management", mva);
+           await Geoprocessing.ExecuteToolAsync("CreateTable_management", mva);
 
           //add fields to editlog
           var tablePath = geodatabase.GetPath().AbsolutePath + @"\EditLog";

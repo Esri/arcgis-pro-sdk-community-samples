@@ -1,0 +1,54 @@
+<!--
+   Copyright 2022 Esri
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+       https://www.apache.org/licenses/LICENSE-2.0
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<ArcGIS defaultAssembly="TrayButtons.dll" defaultNamespace="TrayButtons" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{becdcb92-7469-4b7a-9b38-322d6f1acb8d}" version="1.0" desktopVersion="3.0.36051">
+    <Name>TrayButtons</Name>
+    <Description>TrayButtons description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>Esri, https://www.esri.com</Company>
+    <Date>6/8/2022 12:00:25 PM</Date>
+    <Subject>Map Authoring</Subject>
+  </AddInInfo>
+  <modules>
+    <insertModule id="TrayButtons_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+			<!--tabs>
+        <<tab id="TrayButtons_Tab1" caption="New Tab">
+          <group refID="TrayButtons_Group1"/>
+        </tab>>
+      </tabs-->
+			<!--groups>
+        < comment this out if you have no controls on the Addin tab to avoid
+              an empty group>		 
+      </groups-->
+			<!--controls>
+      </controls-->
+    </insertModule>
+  </modules>
+  <categories>
+    <updateCategory refID="esri_mapping_MapTrayButtons">
+      <insertComponent id="TrayButtons_ZoomToVisibleExtentTrayButton" className="ZoomToVisibleExtentTrayButton">
+        <content L_name="ZoomToVisibleExtentTrayButton" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ZoomFullExtent32.png" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ZoomFullExtent16.png" L_tooltipHeading="Zoom to visible layers extent" L_tooltip="This tray button will zoom the map to the extent of it's visible layers." />
+      </insertComponent>
+      <insertComponent id="TrayButtons_MiniToolbarTrayButton" className="MiniToolbarTrayButton">
+        <content L_name="MiniToolbarTrayButton" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" L_tooltipHeading="Mini Toolbar Tray Popup Button" L_tooltip="This tray button will toggle the Editing Mini Toolbar and within the popup allow you to control its properties" />
+      </insertComponent>
+    </updateCategory>
+    <updateCategory refID="esri_layouts_LayoutTrayButtons">
+      <insertComponent id="TrayButtons_LayoutGuideToggle" className="LayoutGuideToggle">
+        <content L_name="LayoutGuideToggle" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Rulers32.png" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Rulers16.png" L_tooltipHeading="Layout Guide Toggle" L_tooltip="This tray button turns on guides that have been setup for the layout." />
+      </insertComponent>
+    </updateCategory>
+  </categories>
+</ArcGIS>

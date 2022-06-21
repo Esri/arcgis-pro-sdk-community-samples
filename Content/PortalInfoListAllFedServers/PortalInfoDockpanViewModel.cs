@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -27,7 +27,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ListAllFedServers
+namespace PortalInfoListAllFedServers
 {
 	internal class PortalInfoDockpaneViewModel : DockPane
 	{
@@ -117,35 +117,37 @@ namespace ListAllFedServers
 		private async void CmdDoQuery()
 		{
 			#region setup
+			StringBuilder out_str = new StringBuilder();
 			ArcGISPortal arcGISportal = ArcGISPortalManager.Current.GetActivePortal();
 			if (arcGISportal == null)
 				return;
-			if (!arcGISportal.IsSignedOn())
-			{
-				//Calling "SignIn" will trigger the OAuth popup if your credentials are
-				//not cached (eg from a previous sign in in the session)
-				await QueuedTask.Run(() =>
-				{
-					SignInResult result = arcGISportal.SignIn();
-					if (result.success)
-					{
-						envFailure = false;
-					}
-					else
-						envFailure = true;
-				});
+      await QueuedTask.Run(() =>
+      {
+        if (!arcGISportal.IsSignedOn())
+        {
+          //Calling "SignIn" will trigger the OAuth popup if your credentials are
+          //not cached (eg from a previous sign in in the session)
 
-			}//fill in username and password manually
-			#endregion
+          SignInResult result = arcGISportal.SignIn();
+          if (result.success)
+          {
+            envFailure = false;
+          }
+          else
+            envFailure = true;
+        }//fill in username and password manually
+				#endregion
 
-			#region portal basic info
-			var online = ArcGISPortalManager.Current.GetPortal(new Uri(_portalUrl));
+				#region portal basic info
+				var online = ArcGISPortalManager.Current.GetPortal(new Uri(_portalUrl));
 
-			//print out portal info
-			StringBuilder out_str = new StringBuilder();
-			out_str.AppendLine("Portal URL: " + arcGISportal.PortalUri);
-			out_str.AppendLine("User name: " + arcGISportal.GetSignOnUsername());
-			#endregion
+				//print out portal info
+				
+				out_str.AppendLine("Portal URL: " + arcGISportal.PortalUri);
+				out_str.AppendLine("User name: " + arcGISportal.GetSignOnUsername());
+				#endregion
+			});
+
 
 			/*
 			 * the following calls are only present for portals; For online, just print the info generated above.

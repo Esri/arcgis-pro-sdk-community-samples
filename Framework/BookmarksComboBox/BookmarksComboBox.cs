@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -28,7 +28,7 @@ using ArcGIS.Desktop.Core.Events;
 using ArcGIS.Desktop.Mapping.Events;
 using MessageBox = ArcGIS.Desktop.Framework.Dialogs.MessageBox;
 
-namespace bookmark_comboBox_solution
+namespace BookmarkComboBox
 {
     /// <summary>
     /// Represents the comboBox that holds the collection of Bookmarks in the project.

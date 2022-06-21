@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -248,7 +248,7 @@ namespace LivingAtlasOfTheWorld.UI {
 
             QueuedTask.Run(action: async () => {
                 if (LayerFactory.Instance.CanCreateLayerFrom(result) && MapView.Active?.Map != null)
-                    LayerFactory.Instance.CreateLayer(result, MapView.Active.Map);
+                    LayerFactory.Instance.CreateLayer<Layer>(new LayerCreationParams(result), MapView.Active.Map);
                 else if (MapFactory.Instance.CanCreateMapFrom(result)) {
                     Map newMap = MapFactory.Instance.CreateMapFromItem(result);
                     IMapPane newMapPane = await ProApp.Panes.CreateMapPaneAsync(newMap);

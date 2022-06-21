@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en">
+    <Esri>
+        <CreaDate>20190503</CreaDate>
+        <CreaTime>07474600</CreaTime>
+        <ArcGISFormat>1.0</ArcGISFormat>
+        <SyncOnce>TRUE</SyncOnce>
+        <ModDate>20190503</ModDate>
+        <ModTime>074746</ModTime>
+    </Esri>
+    <tool name="Answer" displayname="Answer" toolboxalias="NewToolbox">
+        <arcToolboxHelpPath>c:\arcgis\Resources\Help\gp</arcToolboxHelpPath>
+        <parameters/>
+        <summary>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</summary>
+    </tool>
+    <dataIdInfo>
+        <idCitation>
+            <resTitle>Answer</resTitle>
+        </idCitation>
+    </dataIdInfo>
+    <distInfo>
+        <distributor>
+            <distorFormat>
+                <formatName>ArcToolbox Tool</formatName>
+            </distorFormat>
+        </distributor>
+    </distInfo>
+</metadata>

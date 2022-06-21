@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -143,7 +143,7 @@ namespace AnimationFromPath
 
       if (mapSelection.Count == 1)
       {
-        var layer = mapSelection.First().Key;
+        var layer = mapSelection.ToDictionary().First().Key;
         if (layer is FeatureLayer)
         {
           ftrLayer = (FeatureLayer)layer;
@@ -153,7 +153,7 @@ namespace AnimationFromPath
             return;
           }
 
-          int numFtrsSelected = await QueuedTask.Run(() => ftrLayer.GetSelection().GetCount());
+          var numFtrsSelected = await QueuedTask.Run(() => ftrLayer.GetSelection().GetCount());
 
           if (numFtrsSelected != 1)
           {
@@ -304,8 +304,8 @@ namespace AnimationFromPath
           //straight line segments
           if (s.SegmentType == SegmentType.Line)
           {
-            MapPoint startPt = await QueuedTask.Run(() => MapPointBuilder.CreateMapPoint(s.StartPoint.X, s.StartPoint.Y, s.StartPoint.Z * Z_CONVERSION_FACTOR, layerSpatRef));
-            MapPoint endPt = await QueuedTask.Run(() => MapPointBuilder.CreateMapPoint(s.EndPoint.X, s.EndPoint.Y, s.EndPoint.Z * Z_CONVERSION_FACTOR, layerSpatRef));
+            MapPoint startPt = await QueuedTask.Run(() => MapPointBuilderEx.CreateMapPoint(s.StartPoint.X, s.StartPoint.Y, s.StartPoint.Z * Z_CONVERSION_FACTOR, layerSpatRef));
+            MapPoint endPt = await QueuedTask.Run(() => MapPointBuilderEx.CreateMapPoint(s.EndPoint.X, s.EndPoint.Y, s.EndPoint.Z * Z_CONVERSION_FACTOR, layerSpatRef));
 
             //we will be creating three intermediate keyframes for staright segments only if segment length is more than a set threshold
             //the threshold is just a guess and might have to be altered depending upon the path geometry. Should work for most cases though
@@ -392,12 +392,12 @@ namespace AnimationFromPath
           else if (s.SegmentType == SegmentType.EllipticArc && segmentDuration > 5)
           {
             EllipticArcSegment ellipArc = s as EllipticArcSegment;
-            MapPoint startPt = await QueuedTask.Run(() => MapPointBuilder.CreateMapPoint(s.StartPoint.X, s.StartPoint.Y, s.StartPoint.Z, layerSpatRef));
-            MapPoint endPt = await QueuedTask.Run(() => MapPointBuilder.CreateMapPoint(s.EndPoint.X, s.EndPoint.Y, s.EndPoint.Z, layerSpatRef));
+            MapPoint startPt = await QueuedTask.Run(() => MapPointBuilderEx.CreateMapPoint(s.StartPoint.X, s.StartPoint.Y, s.StartPoint.Z, layerSpatRef));
+            MapPoint endPt = await QueuedTask.Run(() => MapPointBuilderEx.CreateMapPoint(s.EndPoint.X, s.EndPoint.Y, s.EndPoint.Z, layerSpatRef));
 
             double radius = Math.Sqrt((ellipArc.CenterPoint.X - startPt.X) * (ellipArc.CenterPoint.X - startPt.X) + (ellipArc.CenterPoint.Y - startPt.Y) * (ellipArc.CenterPoint.Y - startPt.Y));
             double angle = ellipArc.CentralAngle;
-            MapPoint centerPt = await QueuedTask.Run(() => MapPointBuilder.CreateMapPoint(ellipArc.CenterPoint.X, ellipArc.CenterPoint.Y, (s.StartPoint.Z + s.EndPoint.Z) / 2, layerSpatRef));
+            MapPoint centerPt = await QueuedTask.Run(() => MapPointBuilderEx.CreateMapPoint(ellipArc.CenterPoint.X, ellipArc.CenterPoint.Y, (s.StartPoint.Z + s.EndPoint.Z) / 2, layerSpatRef));
 
             int num_keys = (int)segmentDuration;
 
@@ -474,12 +474,12 @@ namespace AnimationFromPath
           else if (s.SegmentType == SegmentType.EllipticArc)
           {
             EllipticArcSegment ellipArc = s as EllipticArcSegment;
-            MapPoint startPt = await QueuedTask.Run(() => MapPointBuilder.CreateMapPoint(s.StartPoint.X, s.StartPoint.Y, s.StartPoint.Z, layerSpatRef));
-            MapPoint endPt = await QueuedTask.Run(() => MapPointBuilder.CreateMapPoint(s.EndPoint.X, s.EndPoint.Y, s.EndPoint.Z, layerSpatRef));
+            MapPoint startPt = await QueuedTask.Run(() => MapPointBuilderEx.CreateMapPoint(s.StartPoint.X, s.StartPoint.Y, s.StartPoint.Z, layerSpatRef));
+            MapPoint endPt = await QueuedTask.Run(() => MapPointBuilderEx.CreateMapPoint(s.EndPoint.X, s.EndPoint.Y, s.EndPoint.Z, layerSpatRef));
 
             double radius = Math.Sqrt((ellipArc.CenterPoint.X - startPt.X) * (ellipArc.CenterPoint.X - startPt.X) + (ellipArc.CenterPoint.Y - startPt.Y) * (ellipArc.CenterPoint.Y - startPt.Y));
             double angle = ellipArc.CentralAngle;
-            MapPoint centerPt = await QueuedTask.Run(() => MapPointBuilder.CreateMapPoint(ellipArc.CenterPoint.X, ellipArc.CenterPoint.Y, (s.StartPoint.Z + s.EndPoint.Z) / 2, layerSpatRef));
+            MapPoint centerPt = await QueuedTask.Run(() => MapPointBuilderEx.CreateMapPoint(ellipArc.CenterPoint.X, ellipArc.CenterPoint.Y, (s.StartPoint.Z + s.EndPoint.Z) / 2, layerSpatRef));
 
             //we are creating five intermediate keyframes for arcs
             MapPoint firstIntPoint = await CreatePointAlongArc(startPt, endPt, centerPt, angle * ARC_CONSTRAINT_FACTOR, radius, layerSpatRef, ellipArc.IsMinor, ellipArc.IsCounterClockwise);
@@ -597,8 +597,8 @@ namespace AnimationFromPath
           //straight line segments
           if (s.SegmentType == SegmentType.Line)
           {
-            MapPoint startPt = await QueuedTask.Run(() => MapPointBuilder.CreateMapPoint(s.StartPoint.X, s.StartPoint.Y, s.StartPoint.Z, layerSpatRef));
-            MapPoint endPt = await QueuedTask.Run(() => MapPointBuilder.CreateMapPoint(s.EndPoint.X, s.EndPoint.Y, s.EndPoint.Z, layerSpatRef));
+            MapPoint startPt = await QueuedTask.Run(() => MapPointBuilderEx.CreateMapPoint(s.StartPoint.X, s.StartPoint.Y, s.StartPoint.Z, layerSpatRef));
+            MapPoint endPt = await QueuedTask.Run(() => MapPointBuilderEx.CreateMapPoint(s.EndPoint.X, s.EndPoint.Y, s.EndPoint.Z, layerSpatRef));
 
             //add start of path to points collection
             if (num_iterations == 0)
@@ -650,12 +650,12 @@ namespace AnimationFromPath
           else if (s.SegmentType == SegmentType.EllipticArc)
           {
             EllipticArcSegment ellipArc = s as EllipticArcSegment;
-            MapPoint startPt = await QueuedTask.Run(() => MapPointBuilder.CreateMapPoint(s.StartPoint.X, s.StartPoint.Y, s.StartPoint.Z, layerSpatRef));
-            MapPoint endPt = await QueuedTask.Run(() => MapPointBuilder.CreateMapPoint(s.EndPoint.X, s.EndPoint.Y, s.EndPoint.Z, layerSpatRef));
+            MapPoint startPt = await QueuedTask.Run(() => MapPointBuilderEx.CreateMapPoint(s.StartPoint.X, s.StartPoint.Y, s.StartPoint.Z, layerSpatRef));
+            MapPoint endPt = await QueuedTask.Run(() => MapPointBuilderEx.CreateMapPoint(s.EndPoint.X, s.EndPoint.Y, s.EndPoint.Z, layerSpatRef));
 
             double radius = Math.Sqrt((ellipArc.CenterPoint.X - startPt.X) * (ellipArc.CenterPoint.X - startPt.X) + (ellipArc.CenterPoint.Y - startPt.Y) * (ellipArc.CenterPoint.Y - startPt.Y));
             double angle = ellipArc.CentralAngle;
-            MapPoint centerPt = await QueuedTask.Run(() => MapPointBuilder.CreateMapPoint(ellipArc.CenterPoint.X, ellipArc.CenterPoint.Y, (s.StartPoint.Z + s.EndPoint.Z) / 2, layerSpatRef));
+            MapPoint centerPt = await QueuedTask.Run(() => MapPointBuilderEx.CreateMapPoint(ellipArc.CenterPoint.X, ellipArc.CenterPoint.Y, (s.StartPoint.Z + s.EndPoint.Z) / 2, layerSpatRef));
 
             //add start of path to points collection
             if (num_iterations == 0)
@@ -769,8 +769,8 @@ namespace AnimationFromPath
 
           double segmentDuration = (TotalDuration / pathLength) * segmentLength;
 
-          MapPoint startPt = await QueuedTask.Run(() => MapPointBuilder.CreateMapPoint(s.StartPoint.X, s.StartPoint.Y, s.StartPoint.Z, layerSpatRef));
-          MapPoint endPt = await QueuedTask.Run(() => MapPointBuilder.CreateMapPoint(s.EndPoint.X, s.EndPoint.Y, s.EndPoint.Z, layerSpatRef));
+          MapPoint startPt = await QueuedTask.Run(() => MapPointBuilderEx.CreateMapPoint(s.StartPoint.X, s.StartPoint.Y, s.StartPoint.Z, layerSpatRef));
+          MapPoint endPt = await QueuedTask.Run(() => MapPointBuilderEx.CreateMapPoint(s.EndPoint.X, s.EndPoint.Y, s.EndPoint.Z, layerSpatRef));
 
           //create keyframe at start vertex of path in map space
           double timeSpanValue = accumulatedDuration;
@@ -811,7 +811,7 @@ namespace AnimationFromPath
                                                           fromPt.Y + distanceFromStartPoint * (lineVec.Y),
                                                           fromPt.Z + distanceFromStartPoint * (lineVec.Z));
 
-      MapPoint intermediateKeyframePoint = await QueuedTask.Run(() => MapPointBuilder.CreateMapPoint(ptAlong.X, ptAlong.Y, ptAlong.Z, spatRef));
+      MapPoint intermediateKeyframePoint = await QueuedTask.Run(() => MapPointBuilderEx.CreateMapPoint(ptAlong.X, ptAlong.Y, ptAlong.Z, spatRef));
       return intermediateKeyframePoint;
     }
     private static async Task<MapPoint> CreatePointAlongArc(MapPoint startPt, MapPoint endPt, MapPoint centerPt, double angle, double radius, SpatialReference spatRef, bool arcIsMinor, bool arcIsCounterClockwise)
@@ -837,7 +837,7 @@ namespace AnimationFromPath
       System.Windows.Media.Media3D.Vector3D ptAlong = new System.Windows.Media.Media3D.Vector3D();
       ptAlong = radius * Math.Cos(angle) * start + radius * Math.Sin(angle) * orthoVec;
 
-      MapPoint intermediateKeyframePoint = await QueuedTask.Run(() => MapPointBuilder.CreateMapPoint(ptAlong.X + centerPt.X, ptAlong.Y + centerPt.Y, ptAlong.Z + centerPt.Z, spatRef));
+      MapPoint intermediateKeyframePoint = await QueuedTask.Run(() => MapPointBuilderEx.CreateMapPoint(ptAlong.X + centerPt.X, ptAlong.Y + centerPt.Y, ptAlong.Z + centerPt.Z, spatRef));
       return intermediateKeyframePoint;
     }
     private static async Task CreateCameraKeyframe(MapView mapView, MapPoint orig_cameraPoint, ProjectionTransformation transformation,

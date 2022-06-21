@@ -1,4 +1,4 @@
-﻿/*
+/*
 
    Copyright 2019 Esri
 
@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -56,7 +56,7 @@ namespace EditingTemplates
         var layerDef = layer.GetDefinition() as CIMFeatureLayer;
 
         //set new template values
-        var myTemplateDef = new CIMFeatureTemplate();
+        var myTemplateDef = new CIMRowTemplate();
         myTemplateDef.Name = "My CIM template";
         myTemplateDef.Description = "some description";
         myTemplateDef.WriteTags(new[] { "Point", "TesterTag" });
@@ -66,13 +66,13 @@ namespace EditingTemplates
         myTemplateDef.DefaultValues.Add("City", "Portland");
 
         // set the default construction tool
-        myTemplateDef.SetDefaultToolDamlID("esri_editing_SketchPointTool");
+        myTemplateDef.SetDefaultToolID("esri_editing_SketchPointTool");
 
         // remove construction tools from being available with this template
         List<string> filter = new List<string>();
         // guid = esri_editing_ConstructPointsAlongLineCommand
         filter.Add("BCCF295A-9C64-4ADC-903E-62D827C10EF7");   
-        myTemplateDef.ToolFilter = filter.ToArray();
+        myTemplateDef.ExcludedToolGUIDs = filter.ToArray();
 
         //get all templates on this layer
         // NOTE - layerDef.FeatureTemplates could be null 

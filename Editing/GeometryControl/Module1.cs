@@ -1,9 +1,9 @@
-﻿//   Copyright 2020 Esri
+//   Copyright 2020 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -37,7 +37,7 @@ namespace GeometryControl
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio, build the solution.
-    /// 1. Click Start button to open ArcGIS Pro.
+    /// 1. Launch the debugger to open ArcGIS Pro.
     /// 1. Open any project containing data.
     /// 1. Activate the Add-in tab.
     /// ![UI](Screenshots/UI_Ribbon.png)

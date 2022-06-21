@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 //   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,12 +14,12 @@
 //   limitations under the License.
 -->
 <ArcGIS defaultAssembly="DivideLines.dll" defaultNamespace="DivideLines" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{3d5af139-7a66-4c5a-8a33-9b61a6ddccd4}" version="1.0" desktopVersion="2.0.0">
+  <AddInInfo id="{3d5af139-7a66-4c5a-8a33-9b61a6ddccd4}" version="1.0" desktopVersion="3.0.34047">
     <Name>Divide Lines</Name>
     <Description>Provides a tool to divide a polyline into equal number of parts or parts of a certain length.</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>esri, http://www.esri.com</Company>
+    <Company>esri, https://www.esri.com</Company>
     <Date>6/12/2015</Date>
     <Subject>Editing</Subject>
     <!-- Note subject can be one or more of these topics:
@@ -27,8 +27,8 @@
   </AddInInfo>
   <categories>
     <updateCategory refID="esri_embeddableControls">
-      <insertComponent id="esri_sample_divideLines_EmbeddableControl" className="DivideLinesViewModel">
-        <content className="DivideLinesView" relatedCommand="esri_sample_divideLinesTool" />
+      <insertComponent id="DivideLines_DivideLines" className="DivideLinesViewModel">
+        <content className="DivideLinesView" />
       </insertComponent>
     </updateCategory>
   </categories>
@@ -49,9 +49,15 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <tool id="esri_sample_divideLinesTool" caption="Divide Lines" keytip="ZD" className="DivideLines" smallImage="Images\CadastralSplitLineString16.png" largeImage="Images\CadastralSplitLineString32.png" condition="esri_mapping_mapPane" categoryRefID="esri_editing_CommandList">
+        <tool id="esri_sample_divideLinesTool" caption="Divide Lines" keytip="ZD"
+              className="DivideLinesTool"
+              smallImage="Images\CadastralSplitLineString16.png"
+              largeImage="Images\CadastralSplitLineString32.png"
+              condition="esri_mapping_mapPane"
+              categoryRefID="esri_editing_CommandList">
           <tooltip heading="Divide">
-            Divide a line into equal number of parts or parts of a certain length.<disabledText /></tooltip>
+            Divide a line into equal number of parts or parts of a specified length.<disabledText />
+          </tooltip>
           <content L_group="Divide" gallery2d="false" gallery3d="false" />
         </tool>
       </controls>

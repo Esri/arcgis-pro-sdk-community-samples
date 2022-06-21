@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -28,10 +28,9 @@ namespace AddRasterLayer
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 2. Click Start button to open ArcGIS Pro.
-    /// 3. ArcGIS Pro will open. 
+    /// 2. Launch the debugger to open ArcGIS Pro.
     /// 4. Open a map view (using this path: "CIMPATH=map/map.xml")
-    /// 5. Click on the ADD-IN tab. 
+    /// 5. Click on the Add-In tab. 
     /// 6. Click the Add Raster Layer button to add a new raster layer to the map.
     /// ![UI](Screenshots/Screen.png)
     /// </remarks>

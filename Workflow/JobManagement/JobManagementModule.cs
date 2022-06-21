@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -38,7 +38,7 @@ using System.Runtime.InteropServices;
 using ConfigurationManager = ArcGIS.Desktop.Workflow.Models.ConfigurationManager;
 
 
-namespace WorkflowSample
+namespace JobManagement
 {
     /// <summary>
     /// This Class is used for populated the combo box for the owner property on the create pane
@@ -100,7 +100,7 @@ namespace WorkflowSample
         {
             get
             {
-                return _this ?? (_this = (JobManagementModule)FrameworkApplication.FindModule("WorkflowSample_Module"));
+                return _this ?? (_this = (JobManagementModule)FrameworkApplication.FindModule("JobManagement_Module"));
             }
         }
 
@@ -119,10 +119,10 @@ namespace WorkflowSample
             JobsManager JM = wfCon.GetManager<JobsManager>();
             var ret = JM.CreateNewJob(JobTypeID.ToString());
             var job = JM.GetJob(ret);
-            if (owner != null)
+            if (owner != null && job.CurrentStepInfo?.Count > 0)
             {
-                job.AssignedTo = owner.AssignedTo;
-                job.AssignedType = owner.AssignmentType;
+                job.CurrentStepInfo[0].AssignedTo = owner.AssignedTo;
+                job.CurrentStepInfo[0].AssignedType = owner.AssignmentType;
             }
             job.Save();
             return ret;

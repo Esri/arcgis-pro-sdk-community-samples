@@ -1,9 +1,9 @@
-﻿//   Copyright 2019 Esri
+//   Copyright 2019 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -30,7 +30,7 @@ namespace SeqNum
   /// <remarks>
   /// 1. Prepare some polygon data with an integer and text field for testing.
   /// 1. In Visual Studio, build the solution.
-  /// 1. Click Start button to open ArcGIS Pro.
+  /// 1. Launch the debugger to open ArcGIS Pro.
   /// 1. In Pro start with a new map and add your polygon data.  
   /// 1. Open the Modify Features dockpane from the edit tab.
   /// 1. Locate and activate the Sequential Numbering tool from the Sample Tools category in the dockpane.

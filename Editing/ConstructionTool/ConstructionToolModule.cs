@@ -4,7 +4,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -35,16 +35,16 @@ namespace ConstructionTool
     /// 1. Make sure that the Sample data is unzipped in c:\data 
     /// 1. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 1. Click Start button to open ArcGIS Pro.
+    /// 1. Launch the debugger to open ArcGIS Pro.
     /// 1. ArcGIS Pro will open, select the FeatureTest.aprx project
-    /// 1. Click on the ADD-IN tab and make sure that your active map contains editable point/line/polygon features.
+    /// 1. Click on the Add-In tab and make sure that your active map contains editable point/line/polygon features.
     /// 1. Click the select by 'Rectangle' button to select some features from the map.
     /// ![UI](Screenshots/ScreenAttributes.png)
     /// 1. Click the 'Change Attributes' button which will update the first string field content for each 'selected' feature
     /// 1. View the updated attribute content using the Attributes pane
     /// ![UI](Screenshots/ScreenAttributes2.png)
     /// 1. Select the 'Edit' tab on the ArcGIS Pro ribbon and 'Create' new features
-    /// 1. On the 'Create Features' pane select the test point feature layer to see the 'Pointy Sketch Tool'
+    /// 1. On the 'Create Features' pane select the test point feature layer template to activate the 'Pointy Sketch Tool'
     /// ![UI](Screenshots/ScreenEdit.png)
     /// 1. Click on the map to create new test point features
     /// ![UI](Screenshots/ScreenEdit2.png)

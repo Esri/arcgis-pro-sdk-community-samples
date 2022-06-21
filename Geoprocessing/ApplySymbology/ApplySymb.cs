@@ -1,4 +1,22 @@
-﻿using System;
+/*
+
+   Copyright 2022 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +31,7 @@ namespace ApplySymbology
   /// This sample shows how to move Symbology from one layer to another layer using the 'Apply Symbology From Layer' GeoProcessing tool.  
   /// </summary>
   /// <remarks>
-  /// 1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available. 
+  /// 1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available. 
   /// 1. In Visual studio click the Build menu. Then select Build Solution and debug the solution.
   /// 1. ArcGIS Pro will open, select and open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project.
   /// 1. Open the 'Portland Crimes' map, select the 'Crimes' layer, and use the 'New Layer File' button on the 'Share' tab to save the 'Crimes' layer as lyrx file, called 'Crimes.lyrx'.

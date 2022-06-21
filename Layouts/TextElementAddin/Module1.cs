@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -27,11 +27,10 @@ namespace TextElementAddin
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-    /// 1. Click Start button to open ArcGIS Pro.
+    /// 1. Launch the debugger to open ArcGIS Pro.
     /// 1. Create a new project.
     /// 1. Insert a new layout called "Layout".
     /// 1. Insert a new text element called "Text".
-    /// ![UI](Screenshots/Screen0.png)
     /// ![UI](Screenshots/Screen1.png)
     /// 1. Click on the Add-In Tab.
     /// 1. Click the UpdateText button.

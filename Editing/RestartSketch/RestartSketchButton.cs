@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -49,12 +49,12 @@ namespace RestartSketch
         if (sketchGeom.GeometryType == GeometryType.Polygon)
         {
           //sketch polygons need two points for the initial feedback to work
-          var sketchPoly = new PolygonBuilder(new[] { lastSketchPoint,lastSketchPoint });
+          var sketchPoly = new PolygonBuilderEx(new[] { lastSketchPoint,lastSketchPoint }, AttributeFlags.None);
           await MapView.Active.SetCurrentSketchAsync(sketchPoly.ToGeometry());
         }
         else
         {
-          var sketchPolyline = new PolylineBuilder(new[] { lastSketchPoint });
+          var sketchPolyline = new PolylineBuilderEx(new[] { lastSketchPoint }, AttributeFlags.None);
           await MapView.Active.SetCurrentSketchAsync(sketchPolyline.ToGeometry());
         }
       });

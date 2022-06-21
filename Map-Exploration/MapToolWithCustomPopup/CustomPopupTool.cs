@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,7 +26,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media;
 using ArcGIS.Desktop.Framework.Dialogs;
 
-namespace CustomPopup
+namespace MapToolWithCustomPopup
 {
     /// <summary>
     /// Implementation of custom pop-up tool.
@@ -55,7 +55,7 @@ namespace CustomPopup
 
           //For each feature in the result create a new instance of our custom pop-up content class.
           List<PopupContent> popups = new List<PopupContent>();
-                foreach (var kvp in result)
+                foreach (var kvp in result.ToDictionary())
                 {
                     kvp.Value.ForEach(id => popups.Add(new DynamicPopupContent(kvp.Key, id)));
                 }
@@ -108,9 +108,13 @@ namespace CustomPopup
 
           //Create a query filter using the fields found above and a where clause for the object id associated with this pop-up content.
           var tableDef = layer.GetTable().GetDefinition();
-                var oidField = tableDef.GetObjectIDField();
-                var qf = new QueryFilter() { WhereClause = $"{oidField} = {ID}", SubFields = string.Join(",", fields.Select(f => f.Name)) };
-                var rows = layer.Search(qf);
+          var oidField = tableDef.GetObjectIDField();
+          var qf = new QueryFilter()
+          {
+            WhereClause = $"{oidField} = {ObjectID}",
+            SubFields = string.Join(",", fields.Select(f => f.Name))
+          };
+          var rows = layer.Search(qf);
 
           //Get the first row, there should only be 1 row.
           if (!rows.MoveNext())

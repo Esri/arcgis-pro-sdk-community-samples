@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<!--//   Copyright 2022 Esri
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       http://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.-->
+<doc>
+    <assembly>
+        <name>MapTopologyAddIn</name>
+    </assembly>
+    <members>
+        <member name="T:MapTopologyAddIn.BuildTopologyBtn">
+            <summary>
+            This toggle button allows you to build the map topology graph for the current map view extent.
+            It also highlights all the nodes and edges that are part of that graph and report the number of nodes
+            and edges present in the graph.
+            </summary>
+        </member>
+        <member name="M:MapTopologyAddIn.BuildTopologyBtn.ClearOverlay">
+            <summary>
+            Function to clear the current overlay on the map.
+            </summary>
+        </member>
+        <member name="M:MapTopologyAddIn.BuildTopologyBtn.BuildGraphWithActiveView">
+            <summary>
+            This function builds the map topology graph of the current map view extent.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MapTopologyAddIn.MapTopoForAFeatureView">
+            <summary>
+            Interaction logic for MapTopoForAFeatureView.xaml
+            </summary>
+            <summary>
+            MapTopoForAFeatureView
+            </summary>
+        </member>
+        <member name="M:MapTopologyAddIn.MapTopoForAFeatureView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:MapTopologyAddIn.MapTopoForAFeatureViewModel">
+            <summary>
+            This custom dockpane allows you to find the topologically connected features of a particular feature you
+            select on the map. It also highlights the connected features on the map and displays their feature class name 
+            and object ID in a list box in the pane. If you click on any of the list box items on the pane, it will
+            flash that particular feature on the map. The overlay will be cleared when you close the pane.
+            </summary>
+        </member>
+        <member name="F:MapTopologyAddIn.MapTopoForAFeatureViewModel._lockLinkedFeaturesCollections">
+            <summary>
+            used to lock collections for use by multiple threads
+            </summary>
+        </member>
+        <member name="F:MapTopologyAddIn.MapTopoForAFeatureViewModel._listOfLinkedFeatures">
+            <summary>
+            UI lists, readonly collections, and properties
+            </summary>
+        </member>
+        <member name="P:MapTopologyAddIn.MapTopoForAFeatureViewModel.ListOfLinkedfeatures">
+            <summary>
+            Our List of Linked Features which is bound to our Dockpane XAML
+            </summary>
+        </member>
+        <member name="P:MapTopologyAddIn.MapTopoForAFeatureViewModel.SelectedLinkedFeature">
+            <summary>
+            This is where we store the feature selected from the grid on the pane
+            </summary>
+        </member>
+        <member name="P:MapTopologyAddIn.MapTopoForAFeatureViewModel.FindLinkedTopoFeaturesCommand">
+            <summary>
+            Implement a 'RelayCommand' to retrieve all topologically connected features
+            </summary>
+        </member>
+        <member name="M:MapTopologyAddIn.MapTopoForAFeatureViewModel.InitializeAsync">
+            <summary>
+            Override to implement custom initialization code for this dockpane
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MapTopologyAddIn.MapTopoForAFeatureViewModel.Show">
+            <summary>
+            Show the DockPane.
+            </summary>
+        </member>
+        <member name="M:MapTopologyAddIn.MapTopoForAFeatureViewModel.OnHidden">
+            <summary>
+            When the dock pane is hidden (when it's closed), the graphics overlay is cleared too.
+            </summary>
+        </member>
+        <member name="F:MapTopologyAddIn.MapTopoForAFeatureViewModel._heading">
+            <summary>
+            Text shown near the top of the DockPane.
+            </summary>
+        </member>
+        <member name="M:MapTopologyAddIn.MapTopoForAFeatureViewModel.FindLinkedFeatures">
+            <summary>
+            Method for retrieving map items in the project.
+            </summary>
+        </member>
+        <member name="T:MapTopologyAddIn.MapTopoForAFeature_ShowButton">
+            <summary>
+            Button implementation to show the custom DockPane.
+            </summary>
+        </member>
+        <member name="T:MapTopologyAddIn.Module1">
+             <summary>
+             This sample provides two buttons on the AddIn tab in ArcGIS Pro. One of them (Build Map Topology Graph button), builds the map topology graph 
+             for the current map view extent and shows the number of nodes and edges in that graph in a popup window.
+             The 2nd button ("Show Topology connections") allows you to open up a custom dock pane that will help you identify all the topologically 
+             connected features for the currently selected feature in the map.
+             </summary>
+             <remarks>
+            1. In Visual Studio click the Build menu. Then select Build Solution.
+            2. Click Start button to open ArcGIS Pro.
+            3. ArcGIS Pro will open. 
+            4. Open a map view that contains editable polyline and/or polygon data.
+            ![UI](Screenshots/MapExtent.jpg)
+            5. Click on the AddIn tab on the ribbon. You will see a group named Map Topology AddIn and two buttons in that group named "build Map Topology Graph" and "Show Topology connections".
+            ![UI](Screenshots/AddInTab2.jpg)
+            Part I:
+            6. Click on the "Build Map Topology Graph" button. Notice that the button is now toggled ON and appears in the color blue to indicate it is toggled ON. What this does, is it creates the map topology graph for the current extent of the map that is visible on the screen,
+            and it highlights all the nodes and edges that are part of the graph. It also displays a window showing the number of nodes and edges in the graph created. Hit OK in the popup window.
+            ![UI](Screenshots/BuildGraph1.jpg)
+            7. Click the "Build Map Topology Graph" button again. You will see that the button is toggled OFF and the overlay containing the nodes and edges is cleared from the map.
+            ![UI](Screenshots/BuildGraph2.jpg)
+            8. Now, zoom or pan on the map to change it's extent or what is displayed in the map. Then try step 6 again and watch how the results vary according to the map extent. Clear the overlay when done by toggling the button OFF.
+            Part II:
+            9. Click the "Show Topology connections" button from the AddIn tab on the ribbon.
+            ![UI](Screenshots/DockPane1.jpg)
+            10. A custom dockpane opens up with the name "Topology connections of a feature".
+            ![UI](Screenshots/DockPane2.jpg)
+            11. From the Edit tab or the Map tab on the ribbon, enable the selection tool and select a feature on the map.
+            ![UI](Screenshots/SelectionTool.jpg)
+            12. Now click the "Find connected features" button. All the nodes and edges connected to the selected feature on the map, will be highlighted, and all the features that are topologically connected to the selected feature will
+            be listed on the dockpane by their Feature Class Name and Object ID.
+            ![UI](Screenshots/DockPane3.jpg)
+            13. Click on one of the features listed on the pane, and that feature will flash on the map view.
+            ![UI](Screenshots/DockPane4.jpg)
+            14. Select any other feature using the selection tool and then repeat steps 12 and 13. You'll find that the previous overlay 
+            is cleared and the results for the newly selected feature is displayed.
+             </remarks>
+        </member>
+        <member name="P:MapTopologyAddIn.Module1.Current">
+            <summary>
+            Retrieve the singleton instance to this module here
+            </summary>
+        </member>
+        <member name="M:MapTopologyAddIn.Module1.CanUnload">
+            <summary>
+            Called by Framework when ArcGIS Pro is closing
+            </summary>
+            <returns>False to prevent Pro from closing, otherwise True</returns>
+        </member>
+    </members>
+</doc>

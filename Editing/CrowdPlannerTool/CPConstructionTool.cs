@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -78,19 +78,15 @@ namespace CrowdPlannerTool
 
             await QueuedTask.Run(async () =>
             {
-                // Create an edit operation
+                // Create an EditOperation and make updates using Inspector
                 var createOperation = new EditOperation();
                 createOperation.Name = string.Format("Create {0}", CurrentTemplate.Layer.Name);
                 createOperation.SelectNewFeatures = true;
                 createOperation.Create(CurrentTemplate, geometry);
                 await createOperation.ExecuteAsync();
                 var selectedFeatures = ArcGIS.Desktop.Mapping.MapView.Active.Map.GetSelection();
-                // get the first layer and its corresponding selected feature OIDs
-                var firstSelectionSet = selectedFeatures.First();
-                // create an instance of the inspector class
                 var inspector = new ArcGIS.Desktop.Editing.Attributes.Inspector();
-                // load the selected features into the inspector using a list of object IDs
-                inspector.Load(firstSelectionSet.Key, firstSelectionSet.Value);
+                inspector.Load(selectedFeatures.ToDictionary().Keys.First(), selectedFeatures.ToDictionary().Values.First());
                 var squarefeetValue = inspector["Shape_Area"];
                 long squarefeetValueLong;
                 squarefeetValueLong = Convert.ToInt64(squarefeetValue);

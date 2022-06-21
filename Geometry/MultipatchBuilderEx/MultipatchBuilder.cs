@@ -1,4 +1,4 @@
-﻿/*
+/*
 
    Copyright 2019 Esri
 
@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -96,27 +96,27 @@ namespace MultipatchBuilderEx
       var mpb = new ArcGIS.Core.Geometry.MultipatchBuilderEx();
 
       // make each patch using the appropriate coordinates and add to the patch list
-      var patch = mpb.MakePatch(esriPatchType.Triangles);
+      var patch = mpb.MakePatch(PatchType.Triangles);
       patch.Coords = coords_face1;
       patches.Add(patch);
 
-      patch = mpb.MakePatch(esriPatchType.Triangles);
+      patch = mpb.MakePatch(PatchType.Triangles);
       patch.Coords = coords_face2;
       patches.Add(patch);
 
-      patch = mpb.MakePatch(esriPatchType.Triangles);
+      patch = mpb.MakePatch(PatchType.Triangles);
       patch.Coords = coords_face3;
       patches.Add(patch);
 
-      patch = mpb.MakePatch(esriPatchType.Triangles);
+      patch = mpb.MakePatch(PatchType.Triangles);
       patch.Coords = coords_face4;
       patches.Add(patch);
 
-      patch = mpb.MakePatch(esriPatchType.Triangles);
+      patch = mpb.MakePatch(PatchType.Triangles);
       patch.Coords = coords_face5;
       patches.Add(patch);
 
-      patch = mpb.MakePatch(esriPatchType.Triangles);
+      patch = mpb.MakePatch(PatchType.Triangles);
       patch.Coords = coords_face6;
       patches.Add(patch);
 

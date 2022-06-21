@@ -1,4 +1,4 @@
-﻿/*
+/*
 
    Copyright 2019 Esri
 
@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -54,7 +54,7 @@ namespace MultipatchBuilderEx
 
 
             // create the textures
-            esriTextureCompressionType compressionType = esriTextureCompressionType.CompressionJPEG;
+            TextureCompressionType compressionType = TextureCompressionType.CompressionJPEG;
             byte[] brickImageBuffer = GetBufferImage("pack://application:,,,/MultipatchBuilderEx;component/Textures/Brick.jpg", compressionType);
             var brickTextureResource = new TextureResource(new JPEGTexture(brickImageBuffer));
 
@@ -135,9 +135,9 @@ namespace MultipatchBuilderEx
         }
 
         // sUri of the form  "pack://application:,,,/myPack;component/Images/image.jpg"
-        private byte[] GetBufferImage(string sUri, esriTextureCompressionType compressionType)
+        private byte[] GetBufferImage(string sUri, TextureCompressionType compressionType)
         {
-            System.Drawing.Imaging.ImageFormat format = (compressionType == esriTextureCompressionType.CompressionJPEG) ? System.Drawing.Imaging.ImageFormat.Jpeg : System.Drawing.Imaging.ImageFormat.Bmp;
+            System.Drawing.Imaging.ImageFormat format = (compressionType == TextureCompressionType.CompressionJPEG) ? System.Drawing.Imaging.ImageFormat.Jpeg : System.Drawing.Imaging.ImageFormat.Bmp;
 
             Uri uri = new Uri(sUri, UriKind.RelativeOrAbsolute);
             StreamResourceInfo info = Application.GetResourceStream(uri);
@@ -152,12 +152,12 @@ namespace MultipatchBuilderEx
         }
 
         // fileName of the form  "d:\Temp\Image.jpg"
-        private byte[] GetBufferFromImageFile(string fileName, esriTextureCompressionType compressionType)
+        private byte[] GetBufferFromImageFile(string fileName, TextureCompressionType compressionType)
         {
             System.Drawing.Image image = System.Drawing.Image.FromFile(fileName);
             MemoryStream memoryStream = new MemoryStream();
 
-            System.Drawing.Imaging.ImageFormat format = compressionType == esriTextureCompressionType.CompressionJPEG ? System.Drawing.Imaging.ImageFormat.Jpeg : System.Drawing.Imaging.ImageFormat.Bmp;
+            System.Drawing.Imaging.ImageFormat format = compressionType == TextureCompressionType.CompressionJPEG ? System.Drawing.Imaging.ImageFormat.Jpeg : System.Drawing.Imaging.ImageFormat.Bmp;
             image.Save(memoryStream, format);
             byte[] imageBuffer = memoryStream.ToArray();
 

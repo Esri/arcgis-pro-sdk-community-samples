@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -28,7 +28,7 @@ namespace CameraNavigation
   {
     private const string _dockPaneID = "CameraNavigation_Camera_CameraPane";
 
-    public CameraPaneViewModel() 
+    public CameraPaneViewModel()
     {
       _zoomToCmd = new RelayCommand(() => MapView.Active.ZoomToAsync(Camera, TimeSpan.FromSeconds(1.5)), () => { return MapView.Active != null; });
       _panToCmd = new RelayCommand(() => MapView.Active.PanToAsync(Camera, TimeSpan.FromSeconds(1.5)), () => { return MapView.Active != null; });
@@ -37,7 +37,10 @@ namespace CameraNavigation
       ActiveMapViewChangedEvent.Subscribe(OnActiveMapViewChanged);
 
       if (MapView.Active != null)
+      {
         Camera = MapView.Active.Camera;
+        DockPaneIsEnabled = true;
+      }
     }
 
     ~CameraPaneViewModel()

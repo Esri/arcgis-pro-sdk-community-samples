@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2019 Esri
@@ -7,7 +7,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="CategoriesUsage.dll" defaultNamespace="CategoriesUsage" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{d479f441-0161-4cc9-aeaf-203bd836f64c}" version="1.0" desktopVersion="2.1.10257">
+  <AddInInfo id="{d479f441-0161-4cc9-aeaf-203bd836f64c}" version="1.0" desktopVersion="3.0.33757">
     <Name>CategoriesUsage</Name>
     <Description>An add-in that demonstrates how to use the UtilityNetworkDefinition constellation of classes.</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>esri, http://www.esri.com</Company>
+    <Company>esri, https://www.esri.com</Company>
     <Date>10/17/2018 3:53:50 PM, 2018</Date>
     <Subject>UtilityNetwork</Subject>
     <!-- Note subject can be one or more of these topics:

@@ -3,7 +3,7 @@
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 
-//       http://www.apache.org/licenses/LICENSE-2.0
+//       https://www.apache.org/licenses/LICENSE-2.0
 
 //   Unless required by applicable law or agreed to in writing, software
 //   distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,6 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ArcGIS.Core.Data;
+using ArcGIS.Core.Data.Exceptions;
 using ArcGIS.Core.Data.UtilityNetwork;
 using ArcGIS.Core.Data.UtilityNetwork.Trace;
 using ArcGIS.Desktop.Core;
@@ -89,14 +90,13 @@ namespace LoadReportSample
         return;
       }
 
-      MapViewEventArgs mapViewEventArgs = new MapViewEventArgs(MapView.Active);
-      if (mapViewEventArgs.MapView.GetSelectedLayers().Count != 1)
+      if (MapView.Active.GetSelectedLayers().Count != 1)
       {
         MessageBox.Show("Please select a utility network layer.", "Create Load Report");
         return;
       }
 
-      Layer selectionLayer = mapViewEventArgs.MapView.GetSelectedLayers()[0];
+      Layer selectionLayer = MapView.Active.GetSelectedLayers()[0];
       if (!(selectionLayer is UtilityNetworkLayer) && !(selectionLayer is FeatureLayer) && !(selectionLayer is SubtypeGroupLayer))
       {
         MessageBox.Show("Please select a utility network layer.", "Create Load Report");
@@ -210,7 +210,7 @@ namespace LoadReportSample
 
                   // Take the default TraceConfiguration from the Tier for Traversability
 
-                  Traversability tierTraceTraversability = mediumVoltageTier.TraceConfiguration.Traversability;
+                  Traversability tierTraceTraversability = mediumVoltageTier.GetTraceConfiguration().Traversability;
                   traceConfiguration.Traversability.FunctionBarriers = tierTraceTraversability.FunctionBarriers;
                   traceConfiguration.Traversability.Scope = tierTraceTraversability.Scope;
                   ConditionalExpression baseCondition = tierTraceTraversability.Barriers as ConditionalExpression;
@@ -265,7 +265,7 @@ namespace LoadReportSample
                     FunctionOutputResult functionOutputResult = resultsA.OfType<FunctionOutputResult>().First();
                     results.TotalLoadA = (double)functionOutputResult.FunctionOutputs.First().Value;
                   }
-                  catch (ArcGIS.Core.Data.GeodatabaseUtilityNetworkException e)
+                  catch (GeodatabaseUtilityNetworkException e)
                   {
                     //No A phase connectivity to source
                     if (!e.Message.Equals("No subnetwork source was discovered."))
@@ -291,7 +291,7 @@ namespace LoadReportSample
                     FunctionOutputResult functionOutputResult = resultsB.OfType<FunctionOutputResult>().First();
                     results.TotalLoadB = (double)functionOutputResult.FunctionOutputs.First().Value;
                   }
-                  catch (ArcGIS.Core.Data.GeodatabaseUtilityNetworkException e)
+                  catch (GeodatabaseUtilityNetworkException e)
                   {
                     // No B phase connectivity to source
                     if (!e.Message.Equals("No subnetwork source was discovered."))
@@ -316,7 +316,7 @@ namespace LoadReportSample
                     FunctionOutputResult functionOutputResult = resultsC.OfType<FunctionOutputResult>().First();
                     results.TotalLoadC = (double)functionOutputResult.FunctionOutputs.First().Value;
                   }
-                  catch (ArcGIS.Core.Data.GeodatabaseUtilityNetworkException e)
+                  catch (GeodatabaseUtilityNetworkException e)
                   {
                     // No C phase connectivity to source
                     if (!e.Message.Equals("No subnetwork source was discovered."))

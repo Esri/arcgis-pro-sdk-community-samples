@@ -1,4 +1,4 @@
-﻿/*
+/*
 
    Copyright 2020 Esri
 
@@ -6,7 +6,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -53,21 +53,19 @@ namespace RubiksCube
       // add the multipatch geometry to the layer
       string msg = await QueuedTask.Run(() =>
       {
-        long newObjectID = -1;
-
         var op = new EditOperation();
         op.Name = "Create multipatch feature";
         op.SelectNewFeatures = false;
 
         // queue feature creation and track the newly created objectID
-        op.Create(localSceneLayer, cubeMultipatch, oid => newObjectID = oid);
+        var rowToken = op.Create(localSceneLayer, cubeMultipatch);
         // execute
         bool result = op.Execute();
         // if successful
         if (result)
         {
           // save the objectID in the module for other commands to use
-          Module1.CubeMultipatchObjectID = newObjectID;
+          Module1.CubeMultipatchObjectID = rowToken.ObjectID.Value;
 
           // zoom to it
           MapView.Active.ZoomTo(localSceneLayer);
@@ -92,7 +90,7 @@ namespace RubiksCube
       MultipatchBuilderEx cubeMultipatchBuilderEx = new MultipatchBuilderEx();
 
       // make the top face patch
-      Patch topFacePatch = cubeMultipatchBuilderEx.MakePatch(esriPatchType.FirstRing);
+      Patch topFacePatch = cubeMultipatchBuilderEx.MakePatch(PatchType.FirstRing);
       topFacePatch.Coords = new List<Coordinate3D>
       {
         new Coordinate3D(0, 0, side),
@@ -102,7 +100,7 @@ namespace RubiksCube
       };
 
       // make the bottom face patch
-      Patch bottomFacePatch = cubeMultipatchBuilderEx.MakePatch(esriPatchType.FirstRing);
+      Patch bottomFacePatch = cubeMultipatchBuilderEx.MakePatch(PatchType.FirstRing);
       bottomFacePatch.Coords = new List<Coordinate3D>
       {
         new Coordinate3D(0, 0, 0),
@@ -112,7 +110,7 @@ namespace RubiksCube
       };
 
       // make the sides face patch
-      Patch sidesFacePatch = cubeMultipatchBuilderEx.MakePatch(esriPatchType.TriangleStrip);
+      Patch sidesFacePatch = cubeMultipatchBuilderEx.MakePatch(PatchType.TriangleStrip);
       sidesFacePatch.Coords = new List<Coordinate3D>
       {
         new Coordinate3D(0, 0, 0),
