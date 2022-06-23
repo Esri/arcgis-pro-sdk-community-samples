@@ -453,8 +453,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LayoutWithLabels", "Layouts
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapTopologyAddIn", "Editing\MapTopologyGraph\MapTopologyAddIn\MapTopologyAddIn.csproj", "{954E39A8-50E0-4603-9D30-7B0ED69DC4B5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Puzzle_2-1", "Layouts\Puzzle_2-1\Puzzle_2-1.csproj", "{4BC05F37-A679-4051-84C1-833206568000}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecordNavigator", "Layouts\LayoutMapSeriesRecordNavigator\RecordNavigator.csproj", "{B796B43E-AC2A-481B-997C-E6553228FA4E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SLR_Analyst", "Framework\SLR_Analyst\SLR_Analyst.csproj", "{FF483913-E205-4A86-9737-9D233520D1E2}"
@@ -470,6 +468,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeepThought", "Geoprocessing\DeepThought\DeepThought.csproj", "{0BC9D5EB-297A-48F8-BE2B-BD204512EB23}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrayButtons", "Map-Authoring\TrayButtons\TrayButtons.csproj", "{19133997-632C-473A-8D0F-A595B2EA8B95}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapPuzzle", "Layouts\MapPuzzle\MapPuzzle.csproj", "{FDAAA375-2E62-4828-AA0F-1C98028A0D03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -2237,14 +2237,6 @@ Global
 		{954E39A8-50E0-4603-9D30-7B0ED69DC4B5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{954E39A8-50E0-4603-9D30-7B0ED69DC4B5}.Release|x86.ActiveCfg = Release|Any CPU
 		{954E39A8-50E0-4603-9D30-7B0ED69DC4B5}.Release|x86.Build.0 = Release|Any CPU
-		{4BC05F37-A679-4051-84C1-833206568000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4BC05F37-A679-4051-84C1-833206568000}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4BC05F37-A679-4051-84C1-833206568000}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{4BC05F37-A679-4051-84C1-833206568000}.Debug|x86.Build.0 = Debug|Any CPU
-		{4BC05F37-A679-4051-84C1-833206568000}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4BC05F37-A679-4051-84C1-833206568000}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4BC05F37-A679-4051-84C1-833206568000}.Release|x86.ActiveCfg = Release|Any CPU
-		{4BC05F37-A679-4051-84C1-833206568000}.Release|x86.Build.0 = Release|Any CPU
 		{B796B43E-AC2A-481B-997C-E6553228FA4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B796B43E-AC2A-481B-997C-E6553228FA4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B796B43E-AC2A-481B-997C-E6553228FA4E}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -2309,6 +2301,14 @@ Global
 		{19133997-632C-473A-8D0F-A595B2EA8B95}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19133997-632C-473A-8D0F-A595B2EA8B95}.Release|x86.ActiveCfg = Release|Any CPU
 		{19133997-632C-473A-8D0F-A595B2EA8B95}.Release|x86.Build.0 = Release|Any CPU
+		{FDAAA375-2E62-4828-AA0F-1C98028A0D03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDAAA375-2E62-4828-AA0F-1C98028A0D03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDAAA375-2E62-4828-AA0F-1C98028A0D03}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FDAAA375-2E62-4828-AA0F-1C98028A0D03}.Debug|x86.Build.0 = Debug|Any CPU
+		{FDAAA375-2E62-4828-AA0F-1C98028A0D03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDAAA375-2E62-4828-AA0F-1C98028A0D03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDAAA375-2E62-4828-AA0F-1C98028A0D03}.Release|x86.ActiveCfg = Release|Any CPU
+		{FDAAA375-2E62-4828-AA0F-1C98028A0D03}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
