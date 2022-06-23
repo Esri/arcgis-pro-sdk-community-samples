@@ -11,9 +11,8 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+    <Reference Include="Newtonsoft.Json">
       <HintPath>C:\Program Files\ArcGIS\Pro\bin\Newtonsoft.Json.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
       <CopyLocal>False</CopyLocal>
     </Reference>

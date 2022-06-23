@@ -48,6 +48,8 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>C:\Program Files\ArcGIS\Pro\bin\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+      <CopyLocal>False</CopyLocal>
     </Reference>
   </ItemGroup>
   <ItemGroup>
