@@ -29,9 +29,6 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. This solution requires C# 7.2.  Currently you have to manually switch to that language version by using the 'Build' tab under the project properties, then use the 'Advanced' button to change the language as shown below.  
-![UI](Screenshots/screen1.png)    
-  
 1. This solution is using the **RBush NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package RBush".  
 1. This solution is using the **System.Collections.Immutable NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package System.Collections.Immutable".  
 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
@@ -39,12 +36,12 @@ Visual Studio:         2022
 1. The data used in this sample is located in this folder 'C:\Data\SimplePointPlugin\SimplePointData'  
 1. In Visual Studio click the Build menu. Then select Build Solution.  
 1. Click Start button to open ArcGIS Pro.  
-1. In ArcGIS Pro create a new Map using the Empty Map Template.  
+1. In ArcGIS Pro create a new Map.  
 1. In Visual Studio set a break point inside the TestCsv1.OnClick code-behind.  
 1. In ArcGIS Pro click on the 'Debug Add-in Code' button.  
 1. You can now step through the code showing how to use a custom plugin in code.  
 1. In ArcGIS Pro click on the 'Add Plugin Data to Map' button.  
-1. The test is now added to the current map.  
+1. The test data is now added to the current map.  
 1. Use the test data on the map or via the attribute table.  
 ![UI](Screenshots/screen2.png)    
   

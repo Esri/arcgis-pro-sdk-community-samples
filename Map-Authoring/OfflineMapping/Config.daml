@@ -23,8 +23,8 @@
     <Name>OfflineMapping</Name>
     <Description>OfflineMapping description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>uma2526</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>Esri, https://www.esri.com</Company>
     <Date>3/12/2021 3:33:36 PM</Date>
     <Subject>Map Authoring</Subject>
     <!-- Note subject can be one or more of these topics:

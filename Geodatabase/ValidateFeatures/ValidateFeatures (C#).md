@@ -35,8 +35,10 @@ Visual Studio:         2022
 1. Open a map view.  
 1. Click on the Add-In Tab.    
 1. Click on the Show Validate Selection Pane button.  This causes the Validate Selection pane to appear.  
+![UI](Screenshots/Screenshot1.png)  
+  
 1. Clicking on the Validate Selection button within the pane will cause the selected features in the the active map to be validating.  Results will appear on the pane.  
-![UI](Screenshots/Screenshot1.png)   
+![UI](Screenshots/Screenshot2.png)   
   
 
 

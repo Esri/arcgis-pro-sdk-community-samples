@@ -29,8 +29,11 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-This sample specificially requires the sample data in CommunitySampleData-VoxelLayer-mm-dd-yyyy.zip (see Sample data link above).  
-In ArcGIS Pro open a new 'Local Scene' and then used the 'CreateLayer' button to create a sample voxel layer.  
+1. This sample specificially requires the sample data in CommunitySampleData-VoxelLayer-mm-dd-yyyy.zip (see Sample data link above).  
+1. Make sure you unzip to c:\data and have C:\Data\VoxelData available before you run this sample.  
+1. Build the sample and start a debug session.  
+1. In ArcGIS Pro open a new 'Local Scene' and then use the 'CreateLayer' button to create a sample voxel layer.  
+1. The voxel layer should look like this:  
 ![UI](Screenshots/Screenshot1.png)  
 The sample primarily focuses on:   
 - Layer creation   
@@ -38,8 +41,8 @@ The sample primarily focuses on:
 - Slices    
 - Sections    
 - Locked Sections    
-Refer to the   
-<a href="https://github.com/Esri/arcgis-pro-sdk/wiki/ProSnippets-VoxelLayers">Voxel Snippets</a> for additional examples.  
+For additional examples refer to <a href="https://github.com/Esri/arcgis-pro-sdk/wiki/ProSnippets-VoxelLayers">Voxel Snippets</a>  
+For concepts refer to the <a href="https://github.com/Esri/arcgis-pro-sdk/wiki/ProConcepts-Voxel-Layers>Voxel Pro Guide</a>.  
   
 
 

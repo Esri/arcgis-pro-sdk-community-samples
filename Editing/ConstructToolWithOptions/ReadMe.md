@@ -33,7 +33,7 @@ Visual Studio:         2022
 1. Make sure that the Sample data is unzipped in c:\data  
 1. The project used for this sample is 'C:\Data\ConstructToolSample\ConstructToolSample.ppkx'  
 1. In Visual Studio click the Build menu.Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
+1. Launch the debugger to open ArcGIS Pro.  
 1. ArcGIS Pro will open, select the ConstructToolSample.ppkx project  
 1. Select the 'Edit' tab on the ArcGIS Pro ribbon and click the 'Create' button    
 1. On the 'Create Features' pane select any of the point features (FacilitySitePoint... feature classes) to see the 'Construct Facilities with Subtypes Tool' tool  

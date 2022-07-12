@@ -1,7 +1,7 @@
-## ConstructToolWithOptions
+## AddInInfoManager
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates how to build a point construction tool with the option to select the feature subtype when the point is created.    
+This sample illustrates how to retrieve Add-In metadata information similar to the 'Add-in Manager' available out-of-box in the ArcGIS Pro backstage.  
   
 
 
@@ -10,7 +10,7 @@ This sample illustrates how to build a point construction tool with the option t
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
-Subject:               Editing
+Subject:               Content
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
 Date:                  06/10/2022
@@ -29,20 +29,13 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in c:\data  
-1. The project used for this sample is 'C:\Data\ConstructToolSample\ConstructToolSample.ppkx'  
-1. In Visual Studio click the Build menu.Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. ArcGIS Pro will open, select the ConstructToolSample.ppkx project  
-1. Select the 'Edit' tab on the ArcGIS Pro ribbon and click the 'Create' button    
-1. On the 'Create Features' pane select any of the point features (FacilitySitePoint... feature classes) to see the 'Construct Facilities with Subtypes Tool' tool  
-![UI](Screenshots/Screen1.png)        
+1. In Visual studio click the Build menu. Then select Build Solution.  
+1. Click Start button to open ArcGIS Pro.  
+1. ArcGIS Pro will open, select any project  
+1. Open the Add-in tab and click the "Show AddIn Info Manager" button to open "AddIn List" dockpane.  
+![UI](Screenshots/screenshot1.png)  
   
-1. Select the tool and see the Options page displaying the subtype selection  
-![UI](Screenshots/Screen2.png)        
-  
-1. Select a subtype to generate a new point feature using that subtype.  
+1. Click on any of the Add-ins in "AddIn List" to delete the selected add-in.  
   
 
 

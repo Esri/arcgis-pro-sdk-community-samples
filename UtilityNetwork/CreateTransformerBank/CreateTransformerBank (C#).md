@@ -42,6 +42,7 @@ Visual Studio:         2022
 1. Click on the Create Transformer Bank tool  
 1. Click on the map to create a transformer bank at that location  
 ![UI](Screenshots/Screenshot1.png)  
+![UI](Screenshots/Screenshot2.png)  
   
 
 
