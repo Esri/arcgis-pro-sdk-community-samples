@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "COGOLineFeatures", "COGOLineFeatures.csproj", "{F21E873C-FFBC-4253-9692-857A3344CF62}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F21E873C-FFBC-4253-9692-857A3344CF62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F21E873C-FFBC-4253-9692-857A3344CF62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F21E873C-FFBC-4253-9692-857A3344CF62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F21E873C-FFBC-4253-9692-857A3344CF62}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {857D7B1D-EE65-40CC-BB24-D97EEC30769F}
+	EndGlobalSection
+EndGlobal

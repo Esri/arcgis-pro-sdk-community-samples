@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--//   Copyright 2022 Esri
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+
+//       http://www.apache.org/licenses/LICENSE-2.0
+
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License. -->
+<ArcGIS defaultAssembly="COGOLineFeatures.dll" defaultNamespace="COGOLineFeatures" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{f21e873c-ffbc-4253-9692-857a3344cf62}" version="1.0" desktopVersion="3.0.36056">
+    <Name>COGO Line Features</Name>
+    <Description>Create a line and enter COGO attributes.</Description>
+    <Image>Images\FabricAddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>Esri</Company>
+    <Date>2/10/2022 9:02:32 PM</Date>
+    <Subject>Editing, Geometry</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="COGOLineFeatures_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="COGOLineFeatures_Tab1" caption="New Tab">
+          <group refID="COGOLineFeatures_Group1"/>
+        </tab>-->
+      </tabs>
+      <!--<groups>-->
+      <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+      <!--<group id="COGOLineFeatures_Group1" caption="Group 1" appearsOnAddInTab="true">-->
+      <!-- host controls within groups -->
+      <!--</group>-->
+      <!--<group id="COGOLineFeatures.View_Group1" caption="Group 1" appearsOnAddInTab="false">
+          <button refID="COGOLineFeatures_View_COGOLine" size="large" />
+          <button refID="COGOLineFeatures_View_COGOLineInput" size="large" />
+          <button refID="COGOLineFeatures_View_COGOCircularArcInput" size="large" />
+        </group>
+      </groups>-->
+      <controls>
+        <!-- add your controls here -->
+        <tool id="COGOLineFeatures_CreateCOGOLine" categoryRefID="esri_editing_construction_polyline" caption="COGO Line" className="CreateCOGOLine" loadOnClick="true" smallImage="Images\COGOLineDialogIcon16.png" largeImage="Images\COGOLineDialogIcon32.png">
+          <!--note: use esri_editing_construction_point,  esri_editing_construction_polygon for categoryRefID as needed-->
+          <tooltip heading="COGO Line">Create a line and enter COGO attributes.<disabledText /></tooltip>
+          <content guid="584e0675-c4f7-4e09-9f23-dd450e462d08" />
+        </tool>
+      </controls>
+      <menus>
+        <menu id="COGOLineFeatures_Model_COGOLine_ContextMenu" caption="COGOLine_Menu">
+          <button refID="COGOLineFeatures_Model_COGOLine_ShowItemName" />
+        </menu>
+      </menus>
+    </insertModule>
+  </modules>
+  <categories>
+    <updateCategory refID="esri_customItems">
+      <insertComponent id="COGOLineFeatures_Model_COGOLine" className="COGOLine">
+        <!--TODO: Modify the fileExtension attribute to your unique custom item's file extension.-->
+        <!--You cannot use any file extensions known to Pro and Geoprocessing.-->
+        <content displayName="COGOLine" fileExtension="acme508130" isContainer="false" keywords="COGOLine" contextMenuID="COGOLineFeatures_Model_COGOLine_ContextMenu">
+          <filterFlags>
+            <!--Change this flag as needed. See FilterFlag enum. Example: AddToMap, DontBrowseFiles...-->
+            <type id="File" />
+          </filterFlags>
+        </content>
+      </insertComponent>
+    </updateCategory>
+  </categories>
+</ArcGIS>

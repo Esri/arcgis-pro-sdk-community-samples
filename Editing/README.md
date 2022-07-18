@@ -16,6 +16,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Editing' top
 * [AddFeatureTest (c#)](../../../tree/master/Editing/AddFeatureTest)  
 * [AnnoTools (c#)](../../../tree/master/Editing/AnnoTools)  
 * [BeforeSketchCompleted (c#)](../../../tree/master/Editing/BeforeSketchCompleted)  
+* [COGOLineFeatures (c#)](../../../tree/master/Editing/COGOLineFeatures)  
 * [ConstructionTool (c#)](../../../tree/master/Editing/ConstructionTool)  
 * [ConstructionToolWithOptions (c#)](../../../tree/master/Editing/ConstructionToolWithOptions)  
 * [ConstructToolWithOptions (c#)](../../../tree/master/Editing/ConstructToolWithOptions)  
