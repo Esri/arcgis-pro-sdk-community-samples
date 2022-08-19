@@ -46,23 +46,25 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="ImportPlatFromLines_ImportPlatToFabric_ShowButton" caption="Import Plat To Fabric" className="ImportPlatToFabric_ShowButton" loadOnClick="true" keytip="B1" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
-          <tooltip heading="Show Dockpane">
-			  Shows the Import Plat To Fabric Dockpane<disabledText /></tooltip>
-        </button>
-        <button id="ImportPlatFromLines_ImportPlat_ShowButton" caption="Import Plat" className="ImportPlat_ShowButton" loadOnClick="true" keytip="B2" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericImport16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericImport32.png">
+        <button id="ImportPlatFromLines_ImportPlat_ShowButton"
+                caption="Import Plat" className="ImportPlat_ShowButton"
+                loadOnClick="true" keytip="B2"
+                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericImport16.png"
+                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericImport32.png">
           <tooltip heading="Import Plat">
-						Shows the Parcel Fabric Import Plat Dockpane<disabledText /></tooltip>
+            Shows the Parcel Fabric Import Plat Dockpane<disabledText />
+          </tooltip>
         </button>
         <button id="ImportPlatFromLines_FixupImportData" caption="FixupImportData" className="FixupImportData" loadOnClick="true" keytip="B3" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+          <tooltip heading="Tooltip Heading">
+            Tooltip text<disabledText />
+          </tooltip>
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="ImportPlatFromLines_ImportPlatToFabric" caption="Import Plat To Fabric" className="ImportPlatToFabricViewModel" dock="group" dockWith="esri_core_projectDockPane">
-          <content className="ParcelFabricAPIView" />
-        </dockPane>
-        <dockPane id="ImportPlatFromLines_ImportPlat" caption="Import Plat" className="ImportPlatViewModel" dock="group" dockWith="esri_core_projectDockPane">
+        <dockPane id="ImportPlatFromLines_ImportPlat" caption="Import Plat"
+                  className="ImportPlatViewModel" dock="group"
+                  dockWith="esri_core_projectDockPane">
           <content className="ImportPlatView" />
         </dockPane>
       </dockPanes>
