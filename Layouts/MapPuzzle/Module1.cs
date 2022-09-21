@@ -120,7 +120,7 @@ namespace MapPuzzle
 
         if (Globals.elmType == "MF" && selElm is GraphicElement)
         {
-          System.Windows.MessageBox.Show("Hey Bonehead: will you please follow instuctions, you selected the wrong thing!");
+          System.Windows.MessageBox.Show("Please follow instuctions, you selected the wrong thing!");
           return;
         }
 
@@ -163,7 +163,7 @@ namespace MapPuzzle
         }
         if (Globals.elmType == "REC" && selElm is MapFrame)
         {
-          System.Windows.MessageBox.Show("Hey Bonehead: will you please follow instuctions, you selected the wrong thing!");
+          System.Windows.MessageBox.Show("Please follow instuctions, you selected the wrong thing!");
           return;
         }
       }
