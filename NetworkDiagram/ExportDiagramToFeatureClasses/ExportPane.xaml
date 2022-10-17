@@ -1,0 +1,134 @@
+﻿<UserControl x:Class="ExportDiagramToFeatureClasses.ExportPaneView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
+             xmlns:ui="clr-namespace:ExportDiagramToFeatureClasses"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{Binding Path=ui.ExportPaneViewModel}">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="3"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="3"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="3"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <Grid  Grid.Row="0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="20"/>
+        <ColumnDefinition Width="auto"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <Label Grid.Column="1" Content="Output Geodatabase" FontWeight="Bold"/>
+      <Button Grid.Column="0" Content="{Binding GeodatabaseLabel}" Command="{Binding OpenGeodatabase}" Background="{x:Null}" BorderBrush="{x:Null}" Width="17"/>
+    </Grid>
+
+    <Grid Grid.Row="2" Visibility="{Binding IsGeodataseVisible}">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="25"/>
+        <ColumnDefinition Width="auto"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="1"/>
+      </Grid.ColumnDefinitions>
+
+      <Label Grid.Row="0" Grid.Column="1" Content="Folder" VerticalContentAlignment="Center"/>
+      <Grid Grid.Row="0" Grid.Column="2">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox Grid.Column="0" Text="{Binding Folder,Mode=TwoWay}" VerticalAlignment="Center" Height="20"/>
+        <Button Grid.Column="1" Command="{Binding SetFolder}" Width="15" Margin="0,2,0,2" Height="20" Content="..."/>
+      </Grid>
+
+      <Label Grid.Row="1"  Grid.Column="1" Content="Type" VerticalContentAlignment="Center"/>
+      <ComboBox Grid.Row="1" Grid.Column="2" ItemsSource="{Binding TypeList}" SelectedValue="{Binding TypeGeodatabase}" Height="20"/>
+
+      <Label Grid.Row="2" Grid.Column="1" Content="Name"/>
+      <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding Name, Mode=TwoWay}" Height="20"/>
+    </Grid>
+
+    <Grid Grid.Row="4">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="20"/>
+        <ColumnDefinition Width="auto"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <Label Grid.Column="1" Content="Options" FontWeight="Bold"/>
+      <Button Grid.Column="0" Content="{Binding OptionLabel}" Command="{Binding OpenOption}" Background="{x:Null}" BorderBrush="{x:Null}" Width="17"/>
+    </Grid>
+
+    <Grid Grid.Row="6" Visibility="{Binding IsOptionVisible}">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="30"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <CheckBox Grid.Row="0" Grid.Column="1" Content="Export aggregations" IsChecked="{Binding ExportAggregation, Mode=TwoWay}"/>
+      <CheckBox Grid.Row="1" Grid.Column="1" Content="Add to a new map" IsChecked="{Binding CreateMap,Mode=TwoWay}"/>
+    </Grid>
+
+    <Grid Grid.Row="8"  Visibility="{Binding IsInformationVisible}" Background="LightGreen">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="30*"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <TextBlock Grid.Column="0" Text="{Binding Information}" TextAlignment="Left" VerticalAlignment="Top"/>
+      <Button Grid.Column="1" Content="X" Background="LightGreen" Command="{Binding ClosInformation}" BorderBrush="{x:Null}"/>
+    </Grid>
+
+    <Grid Grid.Row="9"  Visibility="{Binding IsWarningVisible}" Background="Salmon">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="30*"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <TextBlock Grid.Column="0" Text="{Binding Warning}" TextAlignment="Left" VerticalAlignment="Top"/>
+      <Button Grid.Column="1" Content="X" Background="Salmon" Command="{Binding CloseWarning}" BorderBrush="{x:Null}" />
+    </Grid>
+
+    <Grid Grid.Row="10">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="15*"/>
+        <ColumnDefinition Width="auto"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <Button Grid.Column="1" Content="Run" Command="{Binding Execute}" Style="{DynamicResource Esri_SimpleButton}"/>
+    </Grid>
+  </Grid>
+
+</UserControl>

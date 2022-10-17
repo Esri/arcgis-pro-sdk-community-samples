@@ -1,0 +1,38 @@
+﻿<ArcGIS defaultAssembly="ExportDiagramToFeatureClasses.dll" defaultNamespace="ExportDiagramToFeatureClasses" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{4760fe4f-2cde-45be-a783-07f3701d705a}" version="1.0" desktopVersion="3.0.36056">
+    <Name>ExportDiagramToFeatureClasses</Name>
+    <Description>Export a Diagram To Feature Classes</Description>
+    <Image>Images\ExportDiagramToFeatureClasses32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>9/29/2022 12:01:37 PM</Date>
+    <Subject>NetworkDiagram</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ExportDiagramToFeatureClasses_Module" className="ExportDiagramToFeatureClassesModule" autoLoad="true" caption="Export DiagramTo Feature Classes Module">
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ExportDiagramToFeatureClasses_Group1" caption="Export" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="ExportDiagramToFeatureClasses_ExportPane_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ExportDiagramToFeatureClasses_ExportPane_ShowButton" caption="Export Diagram To Feature Classes" className="ExportPane_ShowButton" loadOnClick="true" smallImage="Images\ExportDiagramToFeatureClasses16.png" largeImage="Images\ExportDiagramToFeatureClasses32.png">
+          <tooltip heading="Export Diagram To Feature Classes">
+            Export the network diagram in the active diagram map to feature classes<disabledText />
+          </tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="ExportDiagramToFeatureClasses_ExportPane" caption="Export Diagram To Feature Classes" className="ExportPaneViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="ExportPaneView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>
