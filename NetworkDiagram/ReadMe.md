@@ -16,6 +16,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Network Diag
 * [CreateDiagramWithACustomLayout (c#)](../../../tree/master/NetworkDiagram/CreateDiagramWithACustomLayout)  
 * [CustomizeNetworkDiagramLayoutExecution (c#)](../../../tree/master/NetworkDiagram/CustomizeNetworkDiagramLayoutExecution)  
 * [EditDiagramJunctionRotation (c#)](../../../tree/master/NetworkDiagram/EditDiagramJunctionRotation)  
+* [ExportDiagramToFeatureClasses (c#)](../../../tree/master/NetworkDiagram/ExportDiagramToFeatureClasses)  
 * [ToggleSwitches (c#)](../../../tree/master/NetworkDiagram/ToggleSwitches)  
 
 

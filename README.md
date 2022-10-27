@@ -85,7 +85,7 @@ Read the [ProGuide: Installation and Upgrade](https://github.com/Esri/arcgis-pro
 
 ## ArcGIS Pro Add-In Community Sample List
 
-Below is the list of 217 ArcGIS Pro samples that are included in this repository.  
+Below is the list of 223 ArcGIS Pro samples that are included in this repository.  
 
 #### Content
 
@@ -358,6 +358,7 @@ Below is the list of 217 ArcGIS Pro samples that are included in this repository
 * [CategoriesUsage (c#)](../../tree/master/UtilityNetwork/CategoriesUsage)  
 * [CreateTransformerBank (c#)](../../tree/master/UtilityNetwork/CreateTransformerBank)  
 * [LoadReportSample (c#)](../../tree/master/UtilityNetwork/LoadReportSample)  
+* [TraceNetworkSample (c#)](../../tree/master/UtilityNetwork/TraceNetworkSample)  
 * [ValidateChanges (c#)](../../tree/master/UtilityNetwork/ValidateChanges)  
 
 
@@ -366,6 +367,7 @@ Below is the list of 217 ArcGIS Pro samples that are included in this repository
 * [CreateDiagramWithACustomLayout (c#)](../../tree/master/NetworkDiagram/CreateDiagramWithACustomLayout)  
 * [CustomizeNetworkDiagramLayoutExecution (c#)](../../tree/master/NetworkDiagram/CustomizeNetworkDiagramLayoutExecution)  
 * [EditDiagramJunctionRotation (c#)](../../tree/master/NetworkDiagram/EditDiagramJunctionRotation)  
+* [ExportDiagramToFeatureClasses (c#)](../../tree/master/NetworkDiagram/ExportDiagramToFeatureClasses)  
 * [ToggleSwitches (c#)](../../tree/master/NetworkDiagram/ToggleSwitches)  
 
 
@@ -382,6 +384,10 @@ Below is the list of 217 ArcGIS Pro samples that are included in this repository
 
 #### Core Host
 
+* [CoreHostGDB (c#)](../../tree/master/CoreHost/CoreHostGDB)  
+* [CoreHostResolveAssembly (c#)](../../tree/master/CoreHost/CoreHostResolveAssembly)  
+* [CoreHostSample (c#)](../../tree/master/CoreHost/CoreHostSample)  
+* [CoreHostTopologyAPI (c#)](../../tree/master/CoreHost/CoreHostTopologyAPI)  
 
 
 #### Sharing

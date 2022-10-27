@@ -16,6 +16,7 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Utility Netw
 * [CategoriesUsage (c#)](../../../tree/master/UtilityNetwork/CategoriesUsage)  
 * [CreateTransformerBank (c#)](../../../tree/master/UtilityNetwork/CreateTransformerBank)  
 * [LoadReportSample (c#)](../../../tree/master/UtilityNetwork/LoadReportSample)  
+* [TraceNetworkSample (c#)](../../../tree/master/UtilityNetwork/TraceNetworkSample)  
 * [ValidateChanges (c#)](../../../tree/master/UtilityNetwork/ValidateChanges)  
 
 

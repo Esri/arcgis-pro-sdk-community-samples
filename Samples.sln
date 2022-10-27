@@ -475,6 +475,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddInInfoManager", "Content
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "COGOLineFeatures", "Editing\COGOLineFeatures\COGOLineFeatures.csproj", "{AEDF32E8-A0F2-418F-B4FB-52E322D6EFBF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExportDiagramToFeatureClasses", "NetworkDiagram\ExportDiagramToFeatureClasses\ExportDiagramToFeatureClasses.csproj", "{16E9BAFC-D4CB-4C81-AD49-5BAB518BA404}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2329,6 +2331,14 @@ Global
 		{AEDF32E8-A0F2-418F-B4FB-52E322D6EFBF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AEDF32E8-A0F2-418F-B4FB-52E322D6EFBF}.Release|x86.ActiveCfg = Release|Any CPU
 		{AEDF32E8-A0F2-418F-B4FB-52E322D6EFBF}.Release|x86.Build.0 = Release|Any CPU
+		{16E9BAFC-D4CB-4C81-AD49-5BAB518BA404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16E9BAFC-D4CB-4C81-AD49-5BAB518BA404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16E9BAFC-D4CB-4C81-AD49-5BAB518BA404}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{16E9BAFC-D4CB-4C81-AD49-5BAB518BA404}.Debug|x86.Build.0 = Debug|Any CPU
+		{16E9BAFC-D4CB-4C81-AD49-5BAB518BA404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16E9BAFC-D4CB-4C81-AD49-5BAB518BA404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16E9BAFC-D4CB-4C81-AD49-5BAB518BA404}.Release|x86.ActiveCfg = Release|Any CPU
+		{16E9BAFC-D4CB-4C81-AD49-5BAB518BA404}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
