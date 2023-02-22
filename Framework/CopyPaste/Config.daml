@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="CopyPaste.dll" defaultNamespace="CopyPaste" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{b9a4d9f0-98e4-4912-a68f-dfbec394c876}" version="1.0" desktopVersion="3.1.41323">
+    <Name>CopyPaste</Name>
+    <Description>CopyPaste description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>1/3/2023 12:55:39 PM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="CopyPaste_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="CopyPaste_Tab1" caption="Custom Copy/Paste" keytip="T0">
+          <group refID="CopyPaste_Group1" />
+          <group refID="CopyPaste_Group2" />
+          <group refID="CopyPaste_Group3" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="CopyPaste_Group1" caption="Create Graphic" keytip="G1">
+          <!-- host controls within groups -->
+          <tool refID="CopyPaste_CreateLine" size="large" />
+          <tool refID="CopyPaste_CreatePoint" size="large" />
+          <tool refID="CopyPaste_CreatePolygon" size="large" />
+        </group>
+        <group id="CopyPaste_Group2" caption="Copy / Paste" keytip="G2">
+          <comboBox refID="ComboBoxShowingLayers_CopyToFeature" size="middle" />
+          <button refID="esri_core_editPasteButton" size="middle" />
+          <button refID="esri_core_editCopyButton" size="large" />
+          <button refID="esri_mapping_selectByRectangleTool" size="large" />
+        </group>
+        <group id="CopyPaste_Group3" caption="Analysis" keytip="G3">
+          <button refID="CopyPaste_ShowClipboard" size="large" />
+          <button refID="CopyPaste_ClearClipboard" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <tool id="CopyPaste_CreateLine" caption="Create Line" className="CreateLine" loadOnClick="true" keytip="T1" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Create Line">The newly created line can be copied to the clipboard for later 'paste' processing.<disabledText /></tooltip>
+        </tool>
+        <button id="CopyPaste_ShowClipboard" caption="Show Clipboard" className="ShowClipboard" loadOnClick="true" keytip="S1" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Show Clipboard">
+            Show what's on the Clipboard<disabledText /></tooltip>
+        </button>
+        <tool id="CopyPaste_CreatePoint" caption="Create Point" className="CreatePoint" loadOnClick="true" keytip="T2" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Create Point">The newly created point can be copied to the clipboard for later 'paste' processing.<disabledText /></tooltip>
+        </tool>
+        <tool id="CopyPaste_CreatePolygon" caption="Create Polygon" className="CreatePolygon" loadOnClick="true" keytip="T3" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Create Polygon">The newly created polygon can be copied to the clipboard for later 'paste' processing.<disabledText /></tooltip>
+        </tool>
+        <comboBox id="ComboBoxShowingLayers_CopyToFeature" caption="Paste Into Layer" className="SelectFeatureLayer" keytip="X1" itemWidth="140" extendedCaption="Extended Caption" isEditable="false" isReadOnly="true" resizable="true">
+          <tooltip heading="Paste Into Layer">Shows or allows to select the destination Feature Layer for the paste<disabledText /></tooltip>
+        </comboBox>
+        <button id="CopyPaste_ClearClipboard" caption="ClearClipboard" className="ClearClipboard" loadOnClick="true" keytip="B2" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

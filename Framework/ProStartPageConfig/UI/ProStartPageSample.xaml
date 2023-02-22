@@ -1,0 +1,221 @@
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<UserControl x:Class="ProStartPageConfig.UI.StartPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ui="clr-namespace:ProStartPageConfig.UI"
+             xmlns:local="clr-namespace:ProStartPageConfig"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:helpers="clr-namespace:ProStartPageConfig.Helpers"
+             xmlns:controls="clr-namespace:ArcGIS.Desktop.Core.Controls;assembly=ArcGIS.Desktop.Core"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             mc:Ignorable="d"              
+             d:DesignHeight="800" d:DesignWidth="1000" Background="{DynamicResource App_LightGray}">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ProStartPageConfig;component\Styles\DrawingImages.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ProStartPageConfig;component\Styles\ControlStyles.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid x:Name="WindowContent" Background="{DynamicResource App_PageBackground}">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <Grid x:Name="Header" Grid.Row="0" Height="65" VerticalAlignment="Top"
+          Background="{DynamicResource App_ControlBackground}">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <Grid x:Name="Logo" Grid.Column="0"
+            Margin="27,0,0,0">
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+
+          <!--Icon-->
+          <Image Width="32" Height="32" Stretch="Uniform" 
+                   Source="{DynamicResource EsriGlobe}">
+          </Image>
+
+          <!--Text-->
+          <Grid Grid.Column="1" Margin="15,5,0,0" >
+            <Viewbox Width="153" Height="25" FlowDirection="LeftToRight">
+              <Canvas Width="153" Height="25">
+                <Path Data="M2.67 24H0.3L9.48 2.76H11.58L20.7 24H18.3L15.96 18.42H4.98L2.67 24ZM5.79 16.44H15.15L10.47 5.16L5.79 16.44ZM23.7059 13.05C23.7059 12.67 23.6959 12.18 23.6759 11.58C23.6559 10.98 23.6259 10.44 23.5859 9.96H25.5359C25.5759 10.34 25.6059 10.76 25.6259 11.22C25.6459 11.68 25.6559 12.06 25.6559 12.36H25.7159C26.1159 11.54 26.7159 10.88 27.5159 10.38C28.3159 9.86 29.2159 9.6 30.2159 9.6C30.4759 9.6 30.7059 9.61 30.9059 9.63C31.1259 9.65 31.3459 9.69 31.5659 9.75L31.2959 11.67C31.1759 11.63 30.9759 11.59 30.6959 11.55C30.4159 11.51 30.1359 11.49 29.8559 11.49C29.3159 11.49 28.7959 11.59 28.2959 11.79C27.7959 11.99 27.3559 12.31 26.9759 12.75C26.6159 13.17 26.3159 13.72 26.0759 14.4C25.8559 15.06 25.7459 15.86 25.7459 16.8V24H23.7059V13.05ZM44.0991 13.17C43.7591 12.63 43.2591 12.19 42.5991 11.85C41.9591 11.49 41.2591 11.31 40.4991 11.31C39.6791 11.31 38.9391 11.46 38.2791 11.76C37.6191 12.04 37.0491 12.44 36.5691 12.96C36.1091 13.46 35.7491 14.06 35.4891 14.76C35.2491 15.44 35.1291 16.18 35.1291 16.98C35.1291 17.78 35.2491 18.52 35.4891 19.2C35.7491 19.88 36.1091 20.48 36.5691 21C37.0291 21.5 37.5891 21.9 38.2491 22.2C38.9091 22.48 39.6491 22.62 40.4691 22.62C41.3691 22.62 42.1291 22.45 42.7491 22.11C43.3691 21.77 43.8791 21.33 44.2791 20.79L45.8091 21.93C45.2091 22.67 44.4691 23.26 43.5891 23.7C42.7291 24.14 41.6891 24.36 40.4691 24.36C39.3291 24.36 38.2991 24.18 37.3791 23.82C36.4591 23.44 35.6691 22.92 35.0091 22.26C34.3691 21.6 33.8691 20.82 33.5091 19.92C33.1491 19.02 32.9691 18.04 32.9691 16.98C32.9691 15.92 33.1491 14.94 33.5091 14.04C33.8691 13.14 34.3691 12.36 35.0091 11.7C35.6691 11.04 36.4591 10.53 37.3791 10.17C38.2991 9.79 39.3291 9.6 40.4691 9.6C41.4091 9.6 42.3591 9.81 43.3191 10.23C44.2991 10.63 45.0891 11.23 45.6891 12.03L44.0991 13.17ZM65.2191 6.57C64.4791 5.79 63.5991 5.19 62.5791 4.77C61.5591 4.33 60.3891 4.11 59.0691 4.11C57.7091 4.11 56.4791 4.36 55.3791 4.86C54.2991 5.36 53.3791 6.04 52.6191 6.9C51.8591 7.74 51.2691 8.72 50.8491 9.84C50.4491 10.96 50.2491 12.14 50.2491 13.38C50.2491 14.62 50.4491 15.8 50.8491 16.92C51.2691 18.04 51.8591 19.02 52.6191 19.86C53.3791 20.7 54.2991 21.37 55.3791 21.87C56.4791 22.37 57.7091 22.62 59.0691 22.62C60.2691 22.62 61.3691 22.49 62.3691 22.23C63.3691 21.97 64.1791 21.64 64.7991 21.24V14.79H59.8491V12.9H66.9591V22.47C65.7991 23.17 64.5491 23.69 63.2091 24.03C61.8691 24.37 60.4791 24.54 59.0391 24.54C57.4391 24.54 55.9591 24.26 54.5991 23.7C53.2391 23.14 52.0691 22.37 51.0891 21.39C50.1091 20.39 49.3391 19.21 48.7791 17.85C48.2391 16.49 47.9691 15 47.9691 13.38C47.9691 11.76 48.2491 10.27 48.8091 8.91C49.3691 7.55 50.1391 6.38 51.1191 5.4C52.1191 4.4 53.2891 3.62 54.6291 3.06C55.9891 2.5 57.4591 2.22 59.0391 2.22C60.7391 2.22 62.2191 2.47 63.4791 2.97C64.7391 3.47 65.8191 4.17 66.7191 5.07L65.2191 6.57ZM74.648 24H72.488V2.76H74.648V24ZM90.5709 6.18C90.1109 5.54 89.5209 5.03 88.8009 4.65C88.0809 4.25 87.2109 4.05 86.1909 4.05C85.6709 4.05 85.1409 4.13 84.6009 4.29C84.0609 4.45 83.5709 4.7 83.1309 5.04C82.6909 5.36 82.3309 5.77 82.0509 6.27C81.7909 6.77 81.6609 7.36 81.6609 8.04C81.6609 8.72 81.7909 9.28 82.0509 9.72C82.3109 10.16 82.6509 10.54 83.0709 10.86C83.5109 11.16 84.0009 11.41 84.5409 11.61C85.1009 11.81 85.6809 12.01 86.2809 12.21C87.0209 12.45 87.7609 12.71 88.5009 12.99C89.2609 13.27 89.9409 13.64 90.5409 14.1C91.1409 14.54 91.6309 15.11 92.0109 15.81C92.3909 16.49 92.5809 17.36 92.5809 18.42C92.5809 19.48 92.3709 20.4 91.9509 21.18C91.5509 21.94 91.0209 22.57 90.3609 23.07C89.7209 23.57 88.9809 23.94 88.1409 24.18C87.3209 24.42 86.4909 24.54 85.6509 24.54C85.0109 24.54 84.3709 24.47 83.7309 24.33C83.0909 24.21 82.4809 24.02 81.9009 23.76C81.3209 23.5 80.7809 23.17 80.2809 22.77C79.7809 22.37 79.3409 21.91 78.9609 21.39L80.8209 20.01C81.2809 20.77 81.9209 21.41 82.7409 21.93C83.5809 22.43 84.5609 22.68 85.6809 22.68C86.2209 22.68 86.7709 22.6 87.3309 22.44C87.8909 22.26 88.3909 22 88.8309 21.66C89.2909 21.3 89.6609 20.87 89.9409 20.37C90.2409 19.85 90.3909 19.25 90.3909 18.57C90.3909 17.83 90.2409 17.22 89.9409 16.74C89.6609 16.24 89.2809 15.83 88.8009 15.51C88.3209 15.17 87.7709 14.89 87.1509 14.67C86.5309 14.45 85.8809 14.23 85.2009 14.01C84.5009 13.79 83.8109 13.54 83.1309 13.26C82.4509 12.98 81.8409 12.62 81.3009 12.18C80.7609 11.72 80.3209 11.16 79.9809 10.5C79.6609 9.84 79.5009 9.03 79.5009 8.07C79.5009 7.05 79.7009 6.17 80.1009 5.43C80.5209 4.69 81.0609 4.08 81.7209 3.6C82.3809 3.12 83.1109 2.77 83.9109 2.55C84.7109 2.33 85.5009 2.22 86.2809 2.22C87.7209 2.22 88.9509 2.48 89.9709 3C90.9909 3.5 91.7609 4.1 92.2809 4.8L90.5709 6.18ZM112.215 2.76H118.215C119.295 2.76 120.275 2.88 121.155 3.12C122.035 3.34 122.785 3.69 123.405 4.17C124.045 4.63 124.535 5.22 124.875 5.94C125.215 6.64 125.385 7.47 125.385 8.43C125.385 9.39 125.205 10.23 124.845 10.95C124.505 11.65 124.015 12.24 123.375 12.72C122.755 13.18 121.995 13.53 121.095 13.77C120.215 14.01 119.235 14.13 118.155 14.13H114.375V24H112.215V2.76ZM114.375 12.3H118.035C119.735 12.3 121.025 11.97 121.905 11.31C122.785 10.65 123.225 9.69 123.225 8.43C123.225 7.11 122.765 6.15 121.845 5.55C120.945 4.93 119.675 4.62 118.035 4.62H114.375V12.3ZM128.061 13.05C128.061 12.67 128.051 12.18 128.031 11.58C128.011 10.98 127.981 10.44 127.941 9.96H129.891C129.931 10.34 129.961 10.76 129.981 11.22C130.001 11.68 130.011 12.06 130.011 12.36H130.071C130.471 11.54 131.071 10.88 131.871 10.38C132.671 9.86 133.571 9.6 134.571 9.6C134.831 9.6 135.061 9.61 135.261 9.63C135.481 9.65 135.701 9.69 135.921 9.75L135.651 11.67C135.531 11.63 135.331 11.59 135.051 11.55C134.771 11.51 134.491 11.49 134.211 11.49C133.671 11.49 133.151 11.59 132.651 11.79C132.151 11.99 131.711 12.31 131.331 12.75C130.971 13.17 130.671 13.72 130.431 14.4C130.211 15.06 130.101 15.86 130.101 16.8V24H128.061V13.05ZM152.295 16.98C152.295 18.04 152.105 19.02 151.725 19.92C151.365 20.82 150.855 21.6 150.195 22.26C149.535 22.92 148.745 23.44 147.825 23.82C146.905 24.18 145.895 24.36 144.795 24.36C143.715 24.36 142.715 24.18 141.795 23.82C140.875 23.44 140.085 22.92 139.425 22.26C138.765 21.6 138.245 20.82 137.865 19.92C137.505 19.02 137.325 18.04 137.325 16.98C137.325 15.92 137.505 14.94 137.865 14.04C138.245 13.14 138.765 12.36 139.425 11.7C140.085 11.04 140.875 10.53 141.795 10.17C142.715 9.79 143.715 9.6 144.795 9.6C145.895 9.6 146.905 9.79 147.825 10.17C148.745 10.53 149.535 11.04 150.195 11.7C150.855 12.36 151.365 13.14 151.725 14.04C152.105 14.94 152.295 15.92 152.295 16.98ZM150.135 16.98C150.135 16.2 150.005 15.47 149.745 14.79C149.505 14.09 149.155 13.49 148.695 12.99C148.235 12.47 147.675 12.06 147.015 11.76C146.355 11.46 145.615 11.31 144.795 11.31C143.975 11.31 143.235 11.46 142.575 11.76C141.935 12.06 141.385 12.47 140.925 12.99C140.465 13.49 140.105 14.09 139.845 14.79C139.605 15.47 139.485 16.2 139.485 16.98C139.485 17.76 139.605 18.5 139.845 19.2C140.105 19.88 140.465 20.48 140.925 21C141.385 21.5 141.935 21.9 142.575 22.2C143.235 22.48 143.975 22.62 144.795 22.62C145.615 22.62 146.355 22.48 147.015 22.2C147.675 21.9 148.235 21.5 148.695 21C149.155 20.48 149.505 19.88 149.745 19.2C150.005 18.5 150.135 17.76 150.135 16.98Z"
+                      Fill="{DynamicResource App_DarkGray2}"/>
+                <Path Data="M95.864 3.084C95.864 2.708 95.936 2.356 96.08 2.028C96.224 1.692 96.42 1.404 96.668 1.164C96.916 0.916 97.204 0.72 97.532 0.576C97.868 0.432 98.224 0.36 98.6 0.36C98.976 0.36 99.328 0.432 99.656 0.576C99.992 0.72 100.284 0.916 100.532 1.164C100.78 1.404 100.976 1.692 101.12 2.028C101.264 2.356 101.336 2.708 101.336 3.084C101.336 3.46 101.264 3.812 101.12 4.14C100.976 4.468 100.78 4.756 100.532 5.004C100.284 5.244 99.992 5.436 99.656 5.58C99.328 5.716 98.976 5.784 98.6 5.784C98.224 5.784 97.868 5.716 97.532 5.58C97.204 5.436 96.916 5.244 96.668 5.004C96.42 4.756 96.224 4.468 96.08 4.14C95.936 3.812 95.864 3.46 95.864 3.084ZM96.296 3.084C96.296 3.396 96.356 3.692 96.476 3.972C96.596 4.252 96.76 4.5 96.968 4.716C97.176 4.924 97.42 5.088 97.7 5.208C97.98 5.328 98.28 5.388 98.6 5.388C98.92 5.388 99.22 5.328 99.5 5.208C99.78 5.088 100.024 4.924 100.232 4.716C100.44 4.5 100.604 4.252 100.724 3.972C100.844 3.692 100.904 3.396 100.904 3.084C100.904 2.764 100.844 2.464 100.724 2.184C100.604 1.904 100.44 1.66 100.232 1.452C100.024 1.244 99.78 1.08 99.5 0.96C99.22 0.839999 98.92 0.779999 98.6 0.779999C98.28 0.779999 97.98 0.839999 97.7 0.96C97.42 1.08 97.176 1.244 96.968 1.452C96.76 1.66 96.596 1.904 96.476 2.184C96.356 2.464 96.296 2.764 96.296 3.084ZM97.532 1.536H98.612C98.756 1.536 98.896 1.552 99.032 1.584C99.168 1.616 99.288 1.668 99.392 1.74C99.504 1.812 99.592 1.904 99.656 2.016C99.72 2.128 99.752 2.268 99.752 2.436C99.752 2.66 99.688 2.844 99.56 2.988C99.432 3.124 99.26 3.216 99.044 3.264L99.872 4.608H99.2L98.48 3.324H98.084V4.608H97.532V1.536ZM98.528 2.88C98.688 2.88 98.84 2.852 98.984 2.796C99.128 2.732 99.2 2.608 99.2 2.424C99.2 2.256 99.132 2.144 98.996 2.088C98.868 2.032 98.732 2.004 98.588 2.004H98.084V2.88H98.528Z"
+                      Fill="{DynamicResource App_DarkGray2}"/>
+              </Canvas>
+            </Viewbox>
+
+          </Grid>
+        </StackPanel>
+      </Grid>
+
+      <!-- SignIn Control-->
+      <controls:SignOnControl x:Name="SignOn" Grid.Column="1"
+            HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,6,15,5"/>
+      <!--
+      <Border BorderThickness="1" BorderBrush="Black" 
+              Grid.Column="1" HorizontalAlignment="Right"
+                VerticalAlignment="Center" Margin="0,10,0,5">
+        <Rectangle Width="200" Height="50" Fill="CornflowerBlue"/>
+      </Border>-->
+
+    </Grid>
+
+    <Grid Grid.Row="1" x:Name="Body">
+      <Grid.RowDefinitions>
+          <RowDefinition Height="55"/>
+          <RowDefinition Height="175"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border BorderThickness="1" Margin="0,0,20,0"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Background="{DynamicResource App_ControlBackground}"
+                BorderBrush="{DynamicResource App_ControlBackground}"
+                Grid.Column="0" Grid.Row="1"
+                Width="161"
+                MinHeight="161"
+                CornerRadius="0,3,3,0">
+
+          <Grid Margin="10">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Home button -->
+            <ToggleButton Grid.Row="0"
+                          x:Name="NavHomeButton"
+                          Content="Home"
+                          Command="{Binding NavigationCommand}"
+                          CommandParameter="Home">
+              <ToggleButton.Style>
+                <Style BasedOn="{StaticResource NavigationToggleButtonStyle}" TargetType="ToggleButton">
+                  <Setter Property="Tag" Value="{DynamicResource Home24}"/>
+                  <Style.Triggers>
+                    <DataTrigger Binding="{Binding CurrentNavPage}" Value="0">
+                      <Setter Property="IsChecked" Value="True"/>
+                    </DataTrigger>
+                    <Trigger Property="IsMouseOver" Value="True">
+                      <Setter Property="Tag" Value="{DynamicResource Home24Hover}"/>
+                    </Trigger>
+                    <Trigger Property="IsPressed" Value="True">
+                      <Setter Property="Tag" Value="{DynamicResource Home24Hover}"/>
+                    </Trigger>
+                    <Trigger Property="IsChecked" Value="True">
+                      <Setter Property="Tag" Value="{DynamicResource Home24Hover}"/>
+                    </Trigger>
+                  </Style.Triggers>
+                </Style>
+              </ToggleButton.Style>
+            </ToggleButton>
+
+            <!-- Learn button -->
+            <ToggleButton Grid.Row="1"
+                          x:Name="NavResourcesButton"
+                          Content="Learning Resources"
+                          Command="{Binding NavigationCommand}"
+                          CommandParameter="Resources"
+                          Margin="0,4,0,0">
+              <ToggleButton.Style>
+                <Style BasedOn="{StaticResource NavigationToggleButtonStyle}" TargetType="ToggleButton">
+                  <Setter Property="Tag" Value="{DynamicResource Resources24}"/>
+                  <Style.Triggers>
+                    <DataTrigger Binding="{Binding CurrentNavPage}" Value="1">
+                      <Setter Property="IsChecked" Value="True"/>
+                    </DataTrigger>
+                    <Trigger Property="IsMouseOver" Value="True">
+                      <Setter Property="Tag" Value="{DynamicResource Resources24Hover}"/>
+                    </Trigger>
+                    <Trigger Property="IsPressed" Value="True">
+                      <Setter Property="Tag" Value="{DynamicResource Resources24Hover}"/>
+                    </Trigger>
+                    <Trigger Property="IsChecked" Value="True">
+                      <Setter Property="Tag" Value="{DynamicResource Resources24Hover}"/>
+                    </Trigger>
+                  </Style.Triggers>
+                </Style>
+              </ToggleButton.Style>
+            </ToggleButton>
+
+            <Border Grid.Row="2"
+                    Height="1"
+                    Background="{DynamicResource App_LightGray2}"
+                    Margin="0,5,0,5"
+                  CornerRadius="3"/>
+
+            <!-- Settings button -->
+            <Button Grid.Row="3"
+                    x:Name="NavSettingsButton"
+                    Content="Settings"
+                    Command="{Binding NavigationCommand}"
+                    CommandParameter="Settings">
+              <Button.Style>
+                <Style BasedOn="{StaticResource NavigationButtonStyle}" TargetType="Button">
+                  <Setter Property="Tag" Value="{DynamicResource Settings24}"/>
+                  <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                      <Setter Property="Tag" Value="{DynamicResource Settings24Hover}"/>
+                    </Trigger>
+                    <Trigger Property="IsPressed" Value="True">
+                      <Setter Property="Tag" Value="{DynamicResource Settings24Hover}"/>
+                    </Trigger>
+                  </Style.Triggers>
+                </Style>
+              </Button.Style>
+            </Button>
+          </Grid>
+
+        </Border>
+
+      <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="3">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                  VerticalScrollBarVisibility="Auto"
+                  CanContentScroll="True" Margin="0,0,0,10">
+
+          <i:Interaction.Behaviors>
+            <helpers:PropagateMouseWheelBehavior/>
+          </i:Interaction.Behaviors>
+
+          <ContentPresenter Content="{Binding Path=ControlContent}"></ContentPresenter>
+          
+        </ScrollViewer>
+      </Grid>
+    </Grid>
+  </Grid>
+</UserControl>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="ReferencingArcGISProImages.dll" defaultNamespace="ReferencingArcGISProImages" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{1132a50e-9ae8-4ebd-a52e-b731219e73e4}" version="1.0" desktopVersion="3.1.41763">
+    <Name>ReferencingArcGISProImages</Name>
+    <Description>ReferencingArcGISProImages description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>1/16/2023 7:50:31 PM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ReferencingArcGISProImages_Module" className="Module1" autoLoad="true" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="ReferencingArcGISProImages_Tab1" caption="Reference Icons" keytip="T1">
+          <group refID="ReferencingArcGISProImages_Group1" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ReferencingArcGISProImages_Group1" caption="ArcGIS Pro Built-in PNGs" keytip="G1">
+          <!-- host controls within groups -->
+          <button refID="ReferencingArcGISProImages_FavoriteStar1" size="large" />
+          <button refID="ReferencingArcGISProImages_FavoriteStar2" size="large" />
+          <button refID="ReferencingArcGISProImages_ReferenceFromXAML_ShowButton" size="large" />
+          <button refID="ReferencingArcGISProImages_FavoriteStar3" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- These image paths are commonly used before release 4.0 starting with 4.0 this pack URI is not supported anymore -->
+        <button id="ReferencingArcGISProImages_FavoriteStar3" caption="FavoriteStar Local" className="FavoriteStar"
+                loadOnClick="true" keytip="B3"
+                smallImage="pack://application:,,,/ReferencingArcGISProImages;component/Images/AddInDesktop16.png"
+                largeImage="pack://application:,,,/ReferencingArcGISProImages;component/Images/AddInDesktop32.png">
+          <tooltip heading="FavoriteStar Image (local resource)">
+            Using pack URI to link images that are local resources in the Images/DarkImages folders<disabledText />
+          </tooltip>
+        </button>
+        <!-- These image paths are commonly used before release 4.0 starting with 4.0 this pack URI is not supported anymore -->
+        <button id="ReferencingArcGISProImages_FavoriteStar1" caption="FavoriteStar Image" className="FavoriteStar" 
+                loadOnClick="true" keytip="B0" 
+                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/FavoriteStar16.png" 
+                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/FavoriteStar32.png">
+          <tooltip heading="FavoriteStar Image (ArcGIS Pro)">
+            Using pack URI to link images<disabledText /></tooltip>
+        </button>
+        <!-- These image paths are can be used starting with release 3.1 and this is also the only supported format starting with 4.0 -->
+        <button id="ReferencingArcGISProImages_FavoriteStar2" caption="FavoriteStar Image" className="FavoriteStar" 
+                loadOnClick="true" keytip="B1" 
+                smallImage="FavoriteStar16" 
+                largeImage="FavoriteStar32">
+          <tooltip heading="FavoriteStar Image (ArcGIS Pro)">
+            Using simplified image link supported starting with release 3.1<disabledText /></tooltip>
+        </button>
+        <button id="ReferencingArcGISProImages_ReferenceFromXAML_ShowButton" caption="Show ReferenceFromXAML" className="ReferenceFromXAML_ShowButton" 
+                loadOnClick="true" keytip="B2"
+                smallImage="FilesFavoriteStylXFile16" 
+                largeImage="FilesFavoriteStylXFile32">
+          <tooltip heading="Show Dockpane with References from XAML">Shows a dockpane that is referencing ArcGIS Pro icon from XAML and code-behind<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="ReferencingArcGISProImages_ReferenceFromXAML" caption="ReferenceFromXAML" className="ReferenceFromXAMLViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="ReferenceFromXAMLView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

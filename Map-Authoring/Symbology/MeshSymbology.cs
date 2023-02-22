@@ -40,6 +40,10 @@ namespace Symbology
             };
             return lineSymbols;
         }
+        // cref: ArcGIS.Core.CIM.CIMMeshSymbol
+        // cref: ArcGIS.Core.CIM.CIMMaterialSymbolLayer
+        // cref: ArcGIS.Desktop.Mapping.ColorFactory.CreateRGBColor(System.Double,System.Double,System.Double,System.Double)
+        // cref: ArcGIS.Desktop.Mapping.ColorFactory
         #region Snippet Mesh material fill symbol
         /// <summary>
         /// Create a mesh symbol that can be applied to a multi-patch feature layer.
@@ -70,7 +74,10 @@ namespace Symbology
            });
         }
         #endregion
-
+        // cref: ArcGIS.Core.CIM.CIMMeshSymbol
+        // cref: ArcGIS.Core.CIM.CIMProceduralSymbolLayer
+        // cref: ArcGIS.Core.CIM.CIMProceduralSymbolLayer.RulePackage
+        // cref: ArcGIS.Core.CIM.CIMSymbolLayer
         #region Snippet Mesh procedural texture symbol
         /// <summary>
         /// Creates Mesh procedural symbol with various textures.

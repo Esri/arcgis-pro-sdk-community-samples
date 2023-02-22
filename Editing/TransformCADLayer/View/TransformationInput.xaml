@@ -24,7 +24,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
         mc:Ignorable="d"
-        Title="Transform CAD Layer" Height="270" Width="309"        
+        Title="Transform CAD Layer" Height="270" Width="309" ResizeMode="NoResize"
         WindowStartupLocation="CenterOwner"
         x:Name="TransformationInputWindow"
      >

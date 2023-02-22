@@ -35,12 +35,12 @@ namespace TextSymbols
         {
             var textSymbols = new Dictionary<CIMTextSymbol, string>
             {
-                {  await CreateSimpleTextAsync(), "Simple text" },
-                {  await CreateTextSymbolWithHaloAsync(), "Red text hallo"},
-                {  await CreateSimpleLineCalloutAsync(), "Line callout" },
+                { await CreateSimpleTextAsync(), "Simple text" },
+                { await CreateTextSymbolWithHaloAsync(), "Red text hallo"},
+                { await CreateSimpleLineCalloutAsync(), "Line callout" },
                 { await CreatePointCallOutAsync(), "Point callout"},
-                {  await CreateBalloonCalloutAsync(), "Balloon callout" },
-                {await CreateBackgroundCalloutAsync(), "Background callout" }
+                { await CreateBalloonCalloutAsync(), "Balloon callout" },
+                { await CreateBackgroundCalloutAsync(), "Background callout" }
             };
 
             return textSymbols;

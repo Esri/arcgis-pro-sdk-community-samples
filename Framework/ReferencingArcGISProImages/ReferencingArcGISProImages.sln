@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReferencingArcGISProImages", "ReferencingArcGISProImages.csproj", "{EEBA7FC3-83E1-471E-8B60-4B4253C84965}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEBA7FC3-83E1-471E-8B60-4B4253C84965}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEBA7FC3-83E1-471E-8B60-4B4253C84965}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEBA7FC3-83E1-471E-8B60-4B4253C84965}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEBA7FC3-83E1-471E-8B60-4B4253C84965}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89CF7CC3-0042-4A8A-86A5-133632E17991}
+	EndGlobalSection
+EndGlobal

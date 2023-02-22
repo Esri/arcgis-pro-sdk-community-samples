@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="DiagramEditing.dll" defaultNamespace="DiagramEditing" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{cce71e38-fdcf-494d-86b6-86e62f6dc150}" version="1.0" desktopVersion="3.1.40766">
+    <Name>DiagramEditing</Name>
+    <Description>DiagramEditing description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>10/18/2022 1:58:26 PM</Date>
+    <Subject>NetworkDiagram</Subject>
+  </AddInInfo>
+  <modules>
+    <insertModule id="DiagramEditing_Module" className="DiagramEditingModule" autoLoad="true" caption="Diagram Editing">
+      <groups>
+        <group id="DiagramEditing_Group1" 
+               caption="Diagram Editing" 
+               appearsOnAddInTab="true" 
+               launcherButtonID="DiagramEditing_DiagramEditingOptionBtn" 
+               smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/3DNavigationTool16.png" 
+               condition="esri_networkdiagrams_networkDiagramMapCondition">
+          <tool refID="esri_mapping_exploreSplitButton" size="large" />
+          <toolPalette refID="esri_mapping_selectToolPalette" size="large" />
+          <button refID="esri_mapping_clearSelectionButton" size="small" />
+          <button refID="esri_mapping_zoomToSelectionButton" size="small" />
+          <button refID="DiagramEditing_Swap" size="large" separator="true" />
+          <toolPalette refID="DiagramEditing_Mirror_Palette" size="large" />
+          <tool refID="DiagramEditing_ReferencePoint" size="large" separator="true" />
+          <buttonPalette refID="DiagramEditing_AlignJunctions_Palette" />
+          <toolPalette refID="DiagramEditing_AlignJunctionByAngle_Palette" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <button id="DiagramEditing_DiagramEditingOptionBtn"
+                caption="Diagram Editing Options"
+                className="ShowDiagramEditingOption"
+                loadOnClick="true"
+                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png"
+                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+          <tooltip heading="Diagram Editing Options">
+            Set custom diagram editing tool options.<disabledText />
+          </tooltip>
+        </button>
+        <button id="DiagramEditing_AlignJunctions_Vertically"
+                caption="Vertically Align Junctions"
+                className="AlignJunctions_Vertically"
+                loadOnClick="true"
+                smallImage="Images\AlignVertically16.png"
+                largeImage="Images\AlignVertically32.png"
+                condition="DiagramEditing_SelectionCondition">
+          <tooltip heading="Vertically Align Junctions">
+            Vertically aligns the set of selected diagram junctions using the X of the specified reference point that determines the alignment axis.
+            <disabledText>This command is enabled only when there are diagram features selected in the active diagram map.</disabledText>
+          </tooltip>
+        </button>
+        <button id="DiagramEditing_AlignJunctions_Horizontally"
+                caption="Horizontally Align Junctions"
+                className="AlignJunctions_Horizontally"
+                loadOnClick="true"
+                smallImage="Images\AlignHorizontally16.png"
+                largeImage="Images\AlignHorizontally32.png"
+                condition="DiagramEditing_SelectionCondition">
+          <tooltip heading="Horizontally Align Junctions ">
+            Horizontally aligns the set of selected diagram junctions using the Y of the specified reference point that determines the alignment axis.
+            <disabledText>This command is enabled only when there are diagram features selected in the active diagram map.</disabledText>
+          </tooltip>
+        </button>
+        <tool id="DiagramEditing_AlignJunctionByAngle_Vertically"
+              caption="Vertically Align Junctions By Angle"
+              className="AlignJunctionByAngleVertically"
+              loadOnClick="true"
+              smallImage="Images\AlignByAngleVertically16.png"
+              largeImage="Images\AlignByAngleVertically32.png"
+              condition="DiagramEditing_SelectionCondition">
+          <tooltip heading="Vertically Align Junctions by Angle">
+            Vertically projects the set of selected diagram junctions along the axis that crosses the specified reference point and is paralleled to the line you've just sketched on the diagram background.
+            <disabledText>This command is enabled only when there are diagram features selected in the active diagram map.</disabledText>
+          </tooltip>
+        </tool>
+        <tool id="DiagramEditing_AlignJunctionByAngle_Horizontally"
+              caption="Horizontally Align Junctions By Angle"
+              className="AlignJunctionByAngleHorizontally"
+              loadOnClick="true"
+              smallImage="Images\AlignByAngleHorizontally16.png"
+              largeImage="Images\AlignByAngleHorizontally32.png"
+              condition="DiagramEditing_SelectionCondition">
+          <tooltip heading="Horizontally Align Junctions by Angle">
+            Horizontally projects the set of selected diagram junctions along the axis that crosses the specified reference point and is paralleled to the line you've just sketched on the diagram background.
+            <disabledText>This command is enabled only when there are diagram features selected in the active diagram map.</disabledText>
+          </tooltip>
+        </tool>
+        <tool id="DiagramEditing_MirrorVertically"
+              caption="Vertically Mirror"
+              className="MirrorVertically"
+              loadOnClick="true"
+              smallImage="Images\MirrorVertically16.png"
+              largeImage="Images\MirrorVertically32.png"
+              condition="DiagramEditing_SelectionCondition">
+          <tooltip heading="Vertically Mirror">
+            Moves the selected diagram features so any pair of junctions and vertices are moved to the exactly opposite side of an horizontal line of reflection built from the Y coordinate of the location you've just clicked on the diagram background.
+            <disabledText>This command is enabled only when there are diagram features selected in the active diagram map.</disabledText>
+          </tooltip>
+        </tool>
+        <tool id="DiagramEditing_MirrorHorizontally"
+              caption="Horizontally Mirror"
+              className="MirrorHorizontally"
+              loadOnClick="true"
+              smallImage="Images\MirrorHorizontally16.png"
+              largeImage="Images\MirrorHorizontally32.png"
+              condition="DiagramEditing_SelectionCondition">
+          <tooltip heading="Horizontally Mirror">
+            Moves the selected diagram features so any pair of junctions and vertices are moved to the exactly opposite side of an vertical line of reflection built from the X coordinate of the location you've just clicked on the diagram background.
+            <disabledText>This command is enabled only when there are diagram features selected in the active diagram map.</disabledText>
+          </tooltip>
+        </tool>
+        <tool id="DiagramEditing_MirrorAngle"
+              caption="Angle Mirror"
+              className="MirrorAngle"
+              loadOnClick="true"
+              smallImage="Images\MirrorByAngle16.png"
+              largeImage="Images\MirrorByAngle32.png"
+              condition="DiagramEditing_SelectionCondition">
+          <tooltip heading="Angle Mirror">
+            Moves the selected diagram features so any pair of junctions and vertices are moved to the exactly opposite side of the line of reflection that you've just sketched on the diagram background.
+            <disabledText>This command is enabled only when there are diagram features selected in the active diagram map.</disabledText>
+          </tooltip>
+        </tool>
+        <button id="DiagramEditing_Swap"
+                caption="Swap"
+                className="Swap"
+                loadOnClick="true"
+                smallImage="Images\SwapJunctions16.png"
+                largeImage="Images\SwapJunctions32.png"
+                condition="DiagramEditing_SelectionCondition">
+          <tooltip heading="Swap Two Diagram Features">
+            Swaps the positions of two selected diagram features
+            <disabledText>This command is enabled only when there are diagram features selected in the active diagram map.</disabledText>
+          </tooltip>
+        </button>
+        <button id="DiagramEditing_ReferencePoint"
+                caption="Reference Point"
+                className="ReferencePoint"
+                loadOnClick="true"
+                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SetDiagramPivot32.png"
+                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/SetDiagramPivot16.png">
+          <tooltip heading="Reference Point">
+            Define a reference point by clicking it. The clicked junction automatically appears with a gray star symbol.
+            <disabledText />
+          </tooltip>
+        </button>
+      </controls>
+      <palettes>
+        <buttonPalette id="DiagramEditing_AlignJunctions_Palette" 
+                       caption="Align Junctions" 
+                       dropDown="false" 
+                       menuStyle="true">
+          <button refID="DiagramEditing_AlignJunctions_Vertically" />
+          <button refID="DiagramEditing_AlignJunctions_Horizontally" />
+        </buttonPalette>
+        <toolPalette id="DiagramEditing_AlignJunctionByAngle_Palette" 
+                     caption="Align Junction By Angle">
+          <tool refID="DiagramEditing_AlignJunctionByAngle_Vertically" />
+          <tool refID="DiagramEditing_AlignJunctionByAngle_Horizontally" />
+        </toolPalette>
+        <toolPalette id="DiagramEditing_Mirror_Palette" 
+                     caption="Mirror">
+          <tool refID="DiagramEditing_MirrorVertically" />
+          <tool refID="DiagramEditing_MirrorHorizontally" />
+          <tool refID="DiagramEditing_MirrorAngle" />
+        </toolPalette>
+      </palettes>
+    </insertModule>
+  </modules>
+  <conditions>
+    <insertCondition id="DiagramEditing_SelectionCondition" 
+                     caption="These tool must have a selection and no edition.">
+      <and>
+        <state id="esri_mapping_activeMapView_hasFeatureSelectionState" />
+        <not>
+          <state id="esri_editing_HasEdits" />
+        </not>
+      </and>
+    </insertCondition>
+  </conditions>
+</ArcGIS>

@@ -16,6 +16,7 @@
    limitations under the License.
 
 */
+using ArcGIS.Desktop.Framework.Contracts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,60 +26,35 @@ using System.Threading.Tasks;
 
 namespace CreateReport
 {
-    /// <summary>
-    /// Represents the report field
-    /// </summary>
-    public class ReportField : INotifyPropertyChanged
+  /// <summary>
+  /// Represents the report field
+  /// </summary>
+  public class ReportField : PropertyChangedBase
+  {
+    private bool _isSelected;
+    private string _displayName;
+    private string _name;
+
+    public bool IsSelected
     {
-        private bool _isSelected;
-        private string _displayName;
-        private string _name;
+      get => _isSelected;
+      set
+      {
+        SetProperty(ref _isSelected, value);
+      }
+    }
+    public string DisplayName
+    {
+      get => _displayName;
+      set => SetProperty(ref _displayName, value);
 
-        public bool IsSelected
-        {
-            get => _isSelected;
-            set
-            {
-                _isSelected = value;
-                NotifyPropertyChanged("IsSelected");
-                OnFieldSelectionChanged(new FieldSelectionChangedEventArgs {ChangedReportField = this });
-            }
-        }
-        public string DisplayName
-        {
-            get => _displayName;
-            set
-            {
-                _displayName = value;
-                NotifyPropertyChanged("DisplayName");
-            }
-        }
-
-        public string Name { get => _name; set { _name = value; NotifyPropertyChanged("Name"); } }
-
-        #region INotifyPropertyChanged Members
-        public event PropertyChangedEventHandler PropertyChanged;
-        #endregion
-
-        #region Private Helpers
-        private void NotifyPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        #endregion
-
-        protected virtual void OnFieldSelectionChanged(FieldSelectionChangedEventArgs e)
-        {
-            FieldSelectionChanged?.Invoke(this, e);
-        }
-
-        public event EventHandler<FieldSelectionChangedEventArgs> FieldSelectionChanged;
     }
 
-    public class FieldSelectionChangedEventArgs : EventArgs
+    public string Name
     {
-        public ReportField ChangedReportField { get; set; }
-
+      get => _name;
+      set => SetProperty(ref _name, value);
     }
+  }
 }
 

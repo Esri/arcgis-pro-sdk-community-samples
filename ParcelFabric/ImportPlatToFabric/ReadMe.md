@@ -20,8 +20,8 @@ Language:              C#
 Subject:               Parcel Fabric
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  06/10/2022
-ArcGIS Pro:            3.0
+Date:                  02/22/2023
+ArcGIS Pro:            3.1
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```

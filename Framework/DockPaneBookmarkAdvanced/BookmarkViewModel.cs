@@ -79,8 +79,6 @@ namespace AdvancedUIDemo
 			IsNoBookmarkExists = Visibility.Collapsed;
 		}
 
-       
-
     #region Subscribed Events
 
     /// <summary>

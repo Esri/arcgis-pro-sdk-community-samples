@@ -24,16 +24,16 @@
   <modules>
     <insertModule id="TrayButtons_Module" className="Module1" autoLoad="false" caption="Module1">
       <!-- uncomment to have the control hosted on a separate tab-->
-			<!--tabs>
+      <!--tabs>
         <<tab id="TrayButtons_Tab1" caption="New Tab">
           <group refID="TrayButtons_Group1"/>
         </tab>>
       </tabs-->
-			<!--groups>
+      <!--groups>
         < comment this out if you have no controls on the Addin tab to avoid
               an empty group>		 
       </groups-->
-			<!--controls>
+      <!--controls>
       </controls-->
     </insertModule>
   </modules>
@@ -44,6 +44,9 @@
       </insertComponent>
       <insertComponent id="TrayButtons_MiniToolbarTrayButton" className="MiniToolbarTrayButton">
         <content L_name="MiniToolbarTrayButton" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" L_tooltipHeading="Mini Toolbar Tray Popup Button" L_tooltip="This tray button will toggle the Editing Mini Toolbar and within the popup allow you to control its properties" />
+      </insertComponent>
+      <insertComponent id="TrayButtons_ColorPickerTrayButton" className="ColorPickerTrayButton">
+        <content L_name="ColorPickerTrayButton" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ColorSelector32.png" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ColorSelector16.png" L_tooltipHeading="ColorPickerTrayButton" L_tooltip="This is a sample tray button" />
       </insertComponent>
     </updateCategory>
     <updateCategory refID="esri_layouts_LayoutTrayButtons">

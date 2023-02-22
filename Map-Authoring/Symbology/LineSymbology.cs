@@ -42,6 +42,10 @@ namespace Symbology
             };
             return lineSymbols;
         }
+        // cref: ArcGIS.Core.CIM.CIMLineSymbol
+        // cref: ArcGIS.Desktop.Mapping.SymbolFactory.ConstructMarker(System.Int32,System.String,System.String,System.Int32)
+        // cref: ArcGIS.Desktop.Mapping.SymbolFactory.ConstructLineSymbol(ArcGIS.Core.CIM.CIMColor,System.Double,ArcGIS.Desktop.Mapping.SimpleLineStyle)
+        // cref: ArcGIS.Core.CIM.CIMMarkerPlacementAlongLineSameSize
         #region Snippet Markers placed at a 45 degree angle
         /// <summary>
         /// Create a line symbol with the markers placed at a 45 degree angle. <br/>  
@@ -77,6 +81,12 @@ namespace Symbology
             });
         }
         #endregion
+        // cref: ArcGIS.Core.CIM.CIMLineSymbol
+        // cref: ArcGIS.Core.CIM.CIMSolidStroke
+        // cref: ArcGIS.Core.CIM.CIMGeometricEffect
+        // cref: ArcGIS.Core.CIM.CIMGeometricEffectDashes
+        // cref: ArcGIS.Core.CIM.CIMGeometricEffectOffset
+        // cref: ArcGIS.Core.CIM.CIMMarkerPlacementAlongLineSameSize
 
         #region Snippet Dash line with two markers - Method I
         /// <summary>
@@ -167,6 +177,12 @@ namespace Symbology
         }
 
         #endregion
+        // cref: ArcGIS.Core.CIM.CIMLineSymbol
+        // cref: ArcGIS.Desktop.Mapping.SymbolFactory.ConstructMarker(System.Int32,System.String,System.String,System.Int32)
+        // cref: ArcGIS.Core.CIM.CIMGeometricEffect
+        // cref: ArcGIS.Core.CIM.CIMGeometricEffectDashes
+        // cref: ArcGIS.Core.CIM.CIMSolidStroke
+        // cref: ArcGIS.Core.CIM.CIMVectorMarker
 
         #region Snippet Dash line with two markers - Method II
         /// <summary>

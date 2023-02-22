@@ -23,8 +23,8 @@
     <Name>AttributeCustomDockpane</Name>
     <Description>AttributeCustomDockpane description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>wlfka</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
     <Date>6/7/2021 11:59:05 AM</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

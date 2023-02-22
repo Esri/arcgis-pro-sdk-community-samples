@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="MapToolOverlay.dll" defaultNamespace="MapToolOverlay" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{af79d7af-8fe7-4051-b781-6dabb6200477}" version="1.0" desktopVersion="3.0.0">
+    <Name>MapToolOverlay</Name>
+    <Description>MapToolOverlay description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>8/19/2022 2:02:52 PM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="MapToolOverlay_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="MapToolOverlay_Tab1" caption="New Tab">
+          <group refID="MapToolOverlay_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="MapToolOverlay_Group1" caption="Overlay Test" keytip="G0" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <tool refID="MapToolOverlay_MapToolOverlayText" size="large" />
+          <tool refID="MapToolOverlay_MapToolOverlayPoint" size="large" />
+          <tool refID="MapToolOverlay_MapToolOverlayLine" size="large" />
+          <tool refID="MapToolOverlay_MapToolOverlayArrow" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+				<tool id="MapToolOverlay_MapToolOverlayText"
+              caption="MapTool Overlay Text"
+              className="MapToolOverlayText"
+              loadOnClick="true" keytip="B1"
+              smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png"
+              largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
+					<tooltip heading="Map Tool">
+						Demonstrate a Text overlay driven by a map tool<disabledText />
+					</tooltip>
+				</tool>
+				<tool id="MapToolOverlay_MapToolOverlayPoint"
+              caption="MapTool Overlay Point"
+              className="MapToolOverlayPoint"
+              loadOnClick="true" keytip="B2"
+              smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png"
+              largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png"
+              condition="esri_mapping_mapPane">
+					<tooltip heading="Map Tool">
+						Demonstrate a Point overlay driven by a map tool<disabledText />
+					</tooltip>
+				</tool>
+				<tool id="MapToolOverlay_MapToolOverlayLine"
+              caption="MapTool Overlay Line"
+              className="MapToolOverlayLine"
+              loadOnClick="true" keytip="B3"
+              smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png"
+              largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png"
+              condition="esri_mapping_mapPane">
+					<tooltip heading="Map Tool">
+						Demonstrate a Line overlay driven by a map tool<disabledText />
+					</tooltip>
+				</tool>
+        <tool id="MapToolOverlay_MapToolOverlayArrow" 
+							caption="MapTool Overlay Arrow" 
+							className="MapToolOverlayArrow" 
+							loadOnClick="true" keytip="B4"
+							smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png"
+							largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png"
+							condition="esri_mapping_mapPane">
+					<tooltip heading="Map Tool">
+						Demonstrate an arrow line overlay driven by a map tool<disabledText />
+					</tooltip>
+				</tool>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

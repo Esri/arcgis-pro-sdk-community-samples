@@ -57,8 +57,6 @@ namespace ProIcons
       FrameworkApplication.Panes.Create(_viewPaneID);
     }
 
-    #region Pane Overrides
-
     public ICommand SearchCmd
     {
       get
@@ -223,6 +221,19 @@ namespace ProIcons
       }
     }
 
+    /// <summary>
+    /// Missing PNGs list
+    /// </summary>
+    private string _missingPngs = "Missing PNGs";
+    public string MissingPngs
+    {
+      get { return _missingPngs; }
+      set
+      {
+        SetProperty(ref _missingPngs, value);
+      }
+    }
+
     private ObservableCollection<string> _targets = new ObservableCollection<string>();
 
     public ObservableCollection<String> Targets
@@ -232,6 +243,8 @@ namespace ProIcons
         return _targets; 
       }
     }
+
+    #region Pane Overrides
 
     /// <summary>
     /// Called when the pane is initialized.

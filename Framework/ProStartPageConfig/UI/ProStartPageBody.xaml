@@ -1,0 +1,279 @@
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<UserControl x:Class="ProStartPageConfig.UI.ProStartPageBody"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:ui="clr-namespace:ProStartPageConfig.UI"
+             xmlns:local="clr-namespace:ProStartPageConfig"
+             xmlns:models="clr-namespace:ProStartPageConfig.Models"
+             xmlns:core="clr-namespace:ArcGIS.Desktop.Core.Controls;assembly=ArcGIS.Desktop.Core"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="950">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ProStartPageConfig;component\Styles\DrawingImages.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ProStartPageConfig;component\Styles\ControlStyles.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  
+  <Grid x:Name="BodyContent">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="55"/>
+      <RowDefinition Height="150"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="65*"/>
+      <ColumnDefinition Width="5*"/>
+      <ColumnDefinition Width="30*"/>
+    </Grid.ColumnDefinitions>
+
+    <TextBlock x:Name="TitleTextBlock" FontSize="16"
+               Text="New Project"
+               HorizontalAlignment="Left" VerticalAlignment="Center"
+               Grid.Row="0" Grid.ColumnSpan="3"
+               Style="{DynamicResource Esri_TextBlockH3}"/>
+
+    <Border x:Name="ButtonPanelBorder" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left"
+            Background="{DynamicResource App_ControlBackground}"
+            BorderBrush="{DynamicResource App_ControlBackground}"
+            BorderThickness="1" Padding="15"
+            CornerRadius="3.5">
+
+      <Grid MinWidth="402">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- project template list-->
+        <ListBox x:Name="ProjectTemplatesList"
+                Grid.Column="0" Background="{DynamicResource App_ControlBackground}"
+                BorderThickness="0" Padding="10,0" MinWidth="250"
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled"                 
+                ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                ScrollViewer.CanContentScroll="False"
+                ItemsSource="{Binding Path=Templates}"
+                SelectedItem="{Binding SelectedTemplateItem}">
+          <ListBox.ItemsPanel>
+            <ItemsPanelTemplate>
+              <StackPanel Orientation="Horizontal" />
+            </ItemsPanelTemplate>
+          </ListBox.ItemsPanel>
+          <ListBox.ItemTemplate>
+            <DataTemplate DataType="{x:Type models:ProTemplateItem}">
+              <Border CornerRadius="3" BorderThickness="0" Padding="20,0"
+                          ToolTip="{Binding Path=Name}" HorizontalAlignment="Stretch">
+                <Grid VerticalAlignment="Top">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                  </Grid.RowDefinitions>
+                  <Image x:Name="image"
+                         Width="48"
+                         Height="48"
+                         Grid.Row="0" HorizontalAlignment="Center"
+                         Source="{Binding Path=ImageSource}" 
+                         VerticalAlignment="Top" Margin="0,0,0,10">
+                    <Image.ToolTip>
+                      <ToolTip>
+                        <DockPanel Height="18">
+                          <TextBlock TextWrapping="Wrap" Text="{Binding Path=Name}"
+                                     VerticalAlignment="Center"></TextBlock>
+                        </DockPanel>
+                      </ToolTip>
+                    </Image.ToolTip>
+                  </Image>
+                  <TextBlock Text="{Binding Path=Name}" FontWeight="Bold" TextWrapping="NoWrap"
+                      VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"
+                             Style="{DynamicResource Esri_TextBlockRegular}">
+                    <TextBlock.ToolTip>
+                      <ToolTip>
+                        <TextBlock Text="{Binding Path=Name}" TextWrapping="NoWrap"
+                                   VerticalAlignment="Top" FontWeight="Normal"/>
+                      </ToolTip>
+                    </TextBlock.ToolTip>
+                  </TextBlock>
+                </Grid>
+              </Border>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+
+        </ListBox>
+
+        <!-- Separator -->
+        <Border Grid.Column="1"
+                Width="3"
+                VerticalAlignment="Stretch"
+                Background="{DynamicResource App_LightGray2}"
+                Margin="5">
+        </Border>
+
+        <!-- project no template command link-->
+        <ListBox x:Name="ProjectTemplatesList2" Background="{DynamicResource App_ControlBackground}"
+                   Grid.Column="2"
+                   BorderThickness="0"
+                   ScrollViewer.HorizontalScrollBarVisibility="Disabled"                 
+                   ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                   ScrollViewer.CanContentScroll="False"
+                   ItemsSource="{Binding Templates2}"
+                   SelectedItem="{Binding SelectedTemplateItem2}"
+                   Margin="20,0,20,0" HorizontalAlignment="Stretch"
+                   MinWidth="140" Padding="15,0">
+
+          <ListBox.ItemsPanel>
+            <ItemsPanelTemplate>
+              <StackPanel Orientation="Horizontal" />
+            </ItemsPanelTemplate>
+          </ListBox.ItemsPanel>
+          <ListBox.ItemTemplate>
+            <DataTemplate DataType="{x:Type models:ProTemplateItem}">
+              <Border CornerRadius="3" BorderThickness="0" ToolTip="{Binding Path=Name}"
+                          HorizontalAlignment="Stretch">
+                <Grid VerticalAlignment="Top">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                  </Grid.RowDefinitions>
+                  <Image x:Name="image"
+                         Width="48"
+                         Height="48"
+                         Grid.Row="0" Margin="0,0,0,10"
+                         Source="{Binding Path=ImageSource}" 
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Top">
+                    <Image.ToolTip>
+                      <ToolTip>
+                        <DockPanel Height="18">
+                          <TextBlock TextWrapping="NoWrap" Text="{Binding Path=Name}"
+                                         VerticalAlignment="Center"></TextBlock>
+                        </DockPanel>
+                      </ToolTip>
+                    </Image.ToolTip>
+                  </Image>
+                  <TextBlock Text="{Binding Path=Name}" FontWeight="Bold" TextWrapping="NoWrap"
+                      VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1"
+                             Style="{DynamicResource Esri_TextBlockRegular}">
+                    <TextBlock.ToolTip>
+                      <ToolTip>
+                        <TextBlock Text="{Binding Path=Name}" TextWrapping="NoWrap" 
+                                   VerticalAlignment="Center" FontWeight="Normal"/>
+                      </ToolTip>
+                    </TextBlock.ToolTip>
+                  </TextBlock>
+                </Grid>
+              </Border>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+
+      </Grid>
+    </Border>
+
+    <!-- resources button -->
+    <Border Grid.Row="1" Grid.Column="2" Width="254" HorizontalAlignment="Left"
+              BorderThickness="2" CornerRadius="3.5" Padding="1" Margin="10,0,0,0"
+            BorderBrush="{DynamicResource App_ControlBackground}"
+            Background="{DynamicResource App_ControlBackground}">
+      <Border.Effect>
+        <DropShadowEffect ShadowDepth="6" Opacity="0.3" BlurRadius="6" />
+      </Border.Effect>
+      <Button x:Name="ShowResourcesBtn" BorderThickness="0"
+                    Command="{Binding ResourcesCommand}" CommandParameter="Resources"
+                    Background="{DynamicResource App_ControlBackground}" Margin="0">
+        <Button.Style>
+          <Style TargetType="{x:Type Button}">
+            <Setter Property="Template">
+              <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                  <Border x:Name="Border" 
+                  Background="{TemplateBinding Background}" 
+                  BorderBrush="{TemplateBinding BorderBrush}" 
+                  BorderThickness="{TemplateBinding BorderThickness}" 
+                  CornerRadius="3.5">
+                    <ContentPresenter Focusable="False" 
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"                                
+                              Margin="2"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                              RecognizesAccessKey="True" />
+                  </Border>
+                  <ControlTemplate.Triggers>
+                    <Trigger Property="IsMouseOver" Value="true">
+                      <Setter Property="Background" TargetName="Border" Value="{DynamicResource App_ButtonHoverBlue}"/>
+                      <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource App_ButtonHoverBlue}"/>
+                    </Trigger>
+                  </ControlTemplate.Triggers>
+                </ControlTemplate>
+              </Setter.Value>
+            </Setter>
+          </Style>
+        </Button.Style>
+        <Button.Content>
+          <Grid Background="{DynamicResource App_ControlBackground}">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0" Source="{Binding ResourcesButtonImage}">
+            </Image>
+
+            <TextBlock x:Name="ResourcesButtonText"
+                     Grid.Row="1" Text="Learning Resources" FontSize="22" FontWeight="Normal"
+                           ToolTip="Learning Resources" Style="{DynamicResource Esri_TextBlockRegular}"
+                           HorizontalAlignment="Center" VerticalAlignment="Top"
+                           Margin="0,10"/>
+          </Grid>
+        </Button.Content>
+      </Button>
+    </Border>
+
+    <core:RecentProjectsControl x:Name="recentProjects" Grid.Row="2" Grid.Column="0" 
+                                ShowHorizontalScroll="Disabled"
+                                ShowVerticalScroll="Disabled"
+                                Margin="0,30,0,0">
+      <i:Interaction.Triggers>
+        <i:EventTrigger EventName="SelectedProjectChanged">
+          <i:InvokeCommandAction Command="{Binding ProjectChosenCmd}" CommandParameter="{Binding ElementName=recentProjects, Path=SelectedProject}"/>
+        </i:EventTrigger>
+      </i:Interaction.Triggers>
+    </core:RecentProjectsControl>
+
+    <core:RecentTemplatesControl x:Name="recentTemplates" Grid.Row="2" Grid.Column="2"
+                                ShowHorizontalScroll="Disabled"
+                                ShowVerticalScroll="Disabled"
+                                 Margin="0,30,0,0">
+      <i:Interaction.Triggers>
+        <i:EventTrigger EventName="SelectedTemplateChanged">
+          <i:InvokeCommandAction Command="{Binding TemplateChosenCmd}" CommandParameter="{Binding ElementName=recentTemplates, Path=SelectedTemplate}"/>
+        </i:EventTrigger>
+      </i:Interaction.Triggers>
+    </core:RecentTemplatesControl>
+    
+  </Grid>
+</UserControl>

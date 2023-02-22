@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "EVChargers": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\ArcGIS\\Pro\\bin\\ArcGISPro.exe",
+      "commandLineArgs": "C:\\Users\\uma2526\\Documents\\ArcGIS\\Projects\\LocationOfEVChargers\\LocationOfEVChargers.aprx"
+    }
+  }
+}

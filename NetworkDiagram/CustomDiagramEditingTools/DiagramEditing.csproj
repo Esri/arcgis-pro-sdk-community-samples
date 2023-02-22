@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <NoWarn>CA1416</NoWarn>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Config.daml" />
+    <Content Include="DarkImages\AlignByAngleHorizontally16.png" />
+    <Content Include="DarkImages\AlignByAngleHorizontally32.png" />
+    <Content Include="DarkImages\AlignByAngleVertically16.png" />
+    <Content Include="DarkImages\AlignByAngleVertically32.png" />
+    <Content Include="DarkImages\AlignHorizontally16.png" />
+    <Content Include="DarkImages\AlignHorizontally32.png" />
+    <Content Include="DarkImages\AlignVertically16.png" />
+    <Content Include="DarkImages\AlignVertically32.png" />
+    <Content Include="DarkImages\MirrorByAngle16.png" />
+    <Content Include="DarkImages\MirrorByAngle32.png" />
+    <Content Include="DarkImages\MirrorHorizontally16.png" />
+    <Content Include="DarkImages\MirrorHorizontally32.png" />
+    <Content Include="DarkImages\MirrorVertically16.png" />
+    <Content Include="DarkImages\MirrorVertically32.png" />
+    <Content Include="DarkImages\SwapJunctions16.png" />
+    <Content Include="DarkImages\SwapJunctions32.png" />
+    <Content Include="Images\AddInDesktop16.png" />
+    <Content Include="Images\AddInDesktop32.png" />
+    <Content Include="DarkImages\AddInDesktop16.png" />
+    <Content Include="DarkImages\AddInDesktop32.png" />
+    <Content Include="Images\AlignByAngleHorizontally16.png" />
+    <Content Include="Images\AlignByAngleHorizontally32.png" />
+    <Content Include="Images\AlignByAngleVertically16.png" />
+    <Content Include="Images\AlignByAngleVertically32.png" />
+    <Content Include="Images\AlignHorizontally16.png" />
+    <Content Include="Images\AlignHorizontally32.png" />
+    <Content Include="Images\AlignVertically16.png" />
+    <Content Include="Images\AlignVertically32.png" />
+    <Content Include="Images\MirrorByAngle16.png" />
+    <Content Include="Images\MirrorByAngle32.png" />
+    <Content Include="Images\MirrorHorizontally16.png" />
+    <Content Include="Images\MirrorHorizontally32.png" />
+    <Content Include="Images\MirrorVertically16.png" />
+    <Content Include="Images\MirrorVertically32.png" />
+    <Content Include="Images\SwapJunctions16.png" />
+    <Content Include="Images\SwapJunctions32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="DarkImages\AlignByAngleHorizontally16.png" />
+    <None Remove="DarkImages\AlignByAngleHorizontally32.png" />
+    <None Remove="DarkImages\AlignByAngleVertically16.png" />
+    <None Remove="DarkImages\AlignByAngleVertically32.png" />
+    <None Remove="DarkImages\AlignHorizontal16.png" />
+    <None Remove="DarkImages\AlignHorizontal32.png" />
+    <None Remove="DarkImages\AlignHorizontally16.png" />
+    <None Remove="DarkImages\AlignHorizontally32.png" />
+    <None Remove="DarkImages\AlignVertical16.png" />
+    <None Remove="DarkImages\AlignVertical32.png" />
+    <None Remove="DarkImages\AlignVertically16.png" />
+    <None Remove="DarkImages\AlignVertically32.png" />
+    <None Remove="DarkImages\AngleHorizontal16.png" />
+    <None Remove="DarkImages\AngleHorizontal32.png" />
+    <None Remove="DarkImages\AngleVertical16.png" />
+    <None Remove="DarkImages\AngleVertical32.png" />
+    <None Remove="DarkImages\MirrorAngle16.png" />
+    <None Remove="DarkImages\MirrorAngle32.png" />
+    <None Remove="DarkImages\MirrorByAngle16.png" />
+    <None Remove="DarkImages\MirrorByAngle32.png" />
+    <None Remove="DarkImages\MirrorHorizontal16.png" />
+    <None Remove="DarkImages\MirrorHorizontal32.png" />
+    <None Remove="DarkImages\MirrorHorizontally16.png" />
+    <None Remove="DarkImages\MirrorHorizontally32.png" />
+    <None Remove="DarkImages\MirrorVertical16.png" />
+    <None Remove="DarkImages\MirrorVertical32.png" />
+    <None Remove="DarkImages\MirrorVertically16.png" />
+    <None Remove="DarkImages\MirrorVertically32.png" />
+    <None Remove="DarkImages\Swap16.png" />
+    <None Remove="DarkImages\Swap32.png" />
+    <None Remove="DarkImages\SwapJunctions16.png" />
+    <None Remove="DarkImages\SwapJunctions32.png" />
+    <None Remove="Images\AlignByAngleHorizontally16.png" />
+    <None Remove="Images\AlignByAngleHorizontally32.png" />
+    <None Remove="Images\AlignByAngleVertically16.png" />
+    <None Remove="Images\AlignByAngleVertically32.png" />
+    <None Remove="Images\AlignHorizontal16.png" />
+    <None Remove="Images\AlignHorizontal32.png" />
+    <None Remove="Images\AlignHorizontally16.png" />
+    <None Remove="Images\AlignHorizontally32.png" />
+    <None Remove="Images\AlignVertical16.png" />
+    <None Remove="Images\AlignVertical32.png" />
+    <None Remove="Images\AlignVertically16.png" />
+    <None Remove="Images\AlignVertically32.png" />
+    <None Remove="Images\AngleHorizontal16.png" />
+    <None Remove="Images\AngleHorizontal32.png" />
+    <None Remove="Images\AngleVertical16.png" />
+    <None Remove="Images\AngleVertical32.png" />
+    <None Remove="Images\MirrorAngle16.png" />
+    <None Remove="Images\MirrorAngle32.png" />
+    <None Remove="Images\MirrorByAngle16.png" />
+    <None Remove="Images\MirrorByAngle32.png" />
+    <None Remove="Images\MirrorHorizontal16.png" />
+    <None Remove="Images\MirrorHorizontal32.png" />
+    <None Remove="Images\MirrorHorizontally16.png" />
+    <None Remove="Images\MirrorHorizontally32.png" />
+    <None Remove="Images\MirrorVertical16.png" />
+    <None Remove="Images\MirrorVertical32.png" />
+    <None Remove="Images\MirrorVertically16.png" />
+    <None Remove="Images\MirrorVertically32.png" />
+    <None Remove="Images\Swap16.png" />
+    <None Remove="Images\Swap32.png" />
+    <None Remove="Images\SwapJunctions16.png" />
+    <None Remove="Images\SwapJunctions32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ArcGIS.Desktop.Framework">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Framework.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Core">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Core.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Desktop.Core">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Core\ArcGIS.Desktop.Core.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Desktop.Mapping">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Mapping\ArcGIS.Desktop.Mapping.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Desktop.Catalog">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Catalog\ArcGIS.Desktop.Catalog.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Desktop.Editing">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Editing\ArcGIS.Desktop.Editing.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Desktop.Extensions">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\DesktopExtensions\ArcGIS.Desktop.Extensions.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Desktop.GeoProcessing">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\GeoProcessing\ArcGIS.Desktop.GeoProcessing.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Desktop.Layouts">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Layout\ArcGIS.Desktop.Layouts.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Desktop.Shared.Wpf">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Shared.Wpf.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Desktop.Ribbon.Wpf">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Ribbon.Wpf.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Desktop.DataGrid.Contrib.Wpf">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.DataGrid.Contrib.Wpf.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcGIS.Desktop.Resources">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Resources.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ItemIndex">
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ESRI.ArcGIS.ItemIndex.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <Import Project="C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets" Condition="Exists('C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets') AND !Exists('Esri.ArcGISPro.Extensions.targets')" />
+</Project>

@@ -42,7 +42,6 @@ namespace SimplePointPluginTest
   /// </summary>
   /// <remarks>
   /// 1. This solution is using the **RBush NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package RBush".
-  /// 1. This solution is using the **System.Collections.Immutable NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package System.Collections.Immutable".
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
   /// 1. Make sure that the Sample data is unzipped in c:\data 
   /// 1. The data used in this sample is located in this folder 'C:\Data\SimplePointPlugin\SimplePointData'

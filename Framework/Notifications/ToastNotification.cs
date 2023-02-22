@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 
@@ -40,7 +41,7 @@ namespace Notifications
       {
         Title = "Notification Title",
         Message = "Notification Message",
-        ImageUrl = @"pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ToastLicensing32.png",
+        ImageSource = System.Windows.Application.Current.Resources["ToastLicensing32"] as ImageSource
       });
     }
   }
@@ -57,7 +58,7 @@ namespace Notifications
       {
         Title = "My Notification Title",
         Message = "My Notification Message",
-        ImageUrl = @"pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ToastLicensing32.png"
+        ImageSource = System.Windows.Application.Current.Resources["ToastLicensing32"] as ImageSource
       });
     }
   }

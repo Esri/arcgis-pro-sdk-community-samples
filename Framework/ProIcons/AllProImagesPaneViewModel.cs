@@ -52,19 +52,31 @@ namespace ProIcons
       else
         _resournceXaml = new ResourceDictionary() { Source = new Uri("pack://application:,,,/ArcGIS.Desktop.Resources;component/XamlImages.xaml") };
 
+      System.Text.StringBuilder sbResult = new ();
       foreach (string key in _resournceXaml.Keys)
       {
-        ImageSource imgSource = _resournceXaml[key] as ImageSource;
+        var imgSource = _resournceXaml[key] as ImageSource;
         if (imgSource != null)
         {
-          ProImage proImage = new ProImage();
+          var proImage = new ProImage();
           proImage.Name = key;
           proImage.Source = imgSource;
           _images.Add(proImage);
+          var pngPath = new Uri($@"pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/{key}.png");
+          try
+          {
+            var bmp = new System.Windows.Media.Imaging.BitmapImage(pngPath);
+            //sbResult.AppendLine($@"BitmapImage worked w/h: {bmp.Width}/{bmp.Height} ");
+          }
+          catch (Exception ex)
+          {
+            sbResult.AppendLine($@"BitmapImage failed: {ex.Message}");
+          }
         }
       }
+      MissingPngs = sbResult.ToString();
+      if (sbResult.Length == 0) MissingPngs = "All Pngs were found";
       _images = _images.OrderBy(o => o.Name).ToList();
-
     }
 
     public List<ProImage> ProImages
@@ -134,6 +146,19 @@ namespace ProIcons
       }
     }
 
+    /// <summary>
+    /// Missing PNGs list
+    /// </summary>
+    private string _missingPngs = "Missing PNGs";
+    public string MissingPngs
+    {
+      get { return _missingPngs; }
+      set
+      {
+        SetProperty(ref _missingPngs, value);
+      }
+    }
+
     internal void InvokeClearCommand()
     {
       // Clear the text
@@ -156,6 +181,7 @@ namespace ProIcons
       if (iconName.StartsWith("pack"))
         iconName = System.IO.Path.GetFileNameWithoutExtension(iconName);
 
+      System.Text.StringBuilder sbResult = new();
       foreach (string key in _resournceXaml.Keys)
       {
         if (string.IsNullOrEmpty(iconName) || Regex.IsMatch(key, Regex.Escape(iconName), RegexOptions.IgnoreCase))
@@ -166,11 +192,23 @@ namespace ProIcons
             ProImage proImage = new ProImage();
             proImage.Name = key;
             proImage.Source = imgSource;
-            _images.Add(proImage);
+            _images.Add(proImage); 
+            var pngPath = new Uri($@"pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/{key}.png");
+            try
+            {
+              var bmp = new System.Windows.Media.Imaging.BitmapImage(pngPath);
+              //sbResult.AppendLine($@"BitmapImage worked w/h: {bmp.Width}/{bmp.Height} ");
+            }
+            catch (Exception ex)
+            {
+              sbResult.AppendLine($@"BitmapImage failed: {ex.Message}");
+            }
           }
         }
       }
-      
+      MissingPngs = sbResult.ToString();
+      if (sbResult.Length == 0) MissingPngs = "All Pngs were found";
+
       // Sort by name
       _images = _images.OrderBy(o => o.Name).ToList();
       NotifyPropertyChanged("ProImages");

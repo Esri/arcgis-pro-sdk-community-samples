@@ -671,23 +671,25 @@ namespace CreateReport
 					if (fd.Name == shapeField) continue; //filter out the shape field.
 								var defFieldAction = (Action)(() =>
 								{
-								var field = new ReportField { IsSelected = false, DisplayName = fd.Alias, Name = fd.Name };
-								ReportFields.Add(field);
-								field.FieldSelectionChanged += this.Field_FieldSelectionChanged;
-											//field.IsSelected = true;
-										});
+								   var field = new ReportField { IsSelected = false, DisplayName = fd.Alias, Name = fd.Name };
+								   ReportFields.Add(field);
+									 field.PropertyChanged += Field_PropertyChanged;
+								});
 					ActionOnGuiThread(defFieldAction);
 				}
 			}));
 		}
 
-		private void Field_FieldSelectionChanged(object sender, FieldSelectionChangedEventArgs e)
+		private void Field_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
 		{
-			var reportField = e.ChangedReportField;
-			if (reportField.IsSelected)
-				SelectedFields.Add(new ReportField { DisplayName = reportField.DisplayName, Name = reportField.Name });
-			else
-				SelectedFields.Remove(SelectedFields.Where((fld) => fld.Name == reportField.Name).FirstOrDefault());
+			if (e.PropertyName == nameof(ReportField.IsSelected))
+			{
+				var reportField = sender as ReportField;
+        if (reportField.IsSelected)
+          SelectedFields.Add(new ReportField { DisplayName = reportField.DisplayName, Name = reportField.Name });
+        else
+          SelectedFields.Remove(SelectedFields.Where((fld) => fld.Name == reportField.Name).FirstOrDefault());
+      }
 		}
 
 		public async Task UpdateCollectionsAsync()

@@ -22,8 +22,8 @@
     <Name>TableConstructionTool</Name>
     <Description>TableConstructionTool description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>uma2526</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
     <Date>9/28/2021 12:48:34 PM</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

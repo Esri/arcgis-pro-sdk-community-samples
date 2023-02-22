@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  06/10/2022
-ArcGIS Pro:            3.0
+Date:                  02/22/2023
+ArcGIS Pro:            3.1
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -30,7 +30,6 @@ Visual Studio:         2022
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 1. This solution is using the **RBush NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package RBush".  
-1. This solution is using the **System.Collections.Immutable NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package System.Collections.Immutable".  
 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
 1. Make sure that the Sample data is unzipped in c:\data   
 1. The data used in this sample is located in this folder 'C:\Data\SimplePointPlugin\SimplePointData'  

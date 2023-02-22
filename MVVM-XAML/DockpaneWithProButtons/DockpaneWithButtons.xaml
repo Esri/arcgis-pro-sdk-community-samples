@@ -1,0 +1,135 @@
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<UserControl x:Class="DockpaneWithProButtons.DockpaneWithButtonsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
+             xmlns:ui="clr-namespace:DockpaneWithProButtons"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{Binding Path=ui.DockpaneWithButtonsViewModel}">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
+      <TextBlock Grid.Column="1" Text="{Binding Heading}" Style="{DynamicResource Esri_TextBlockDockPaneHeader}">
+        <TextBlock.ToolTip>
+          <WrapPanel Orientation="Vertical" MaxWidth="300">
+            <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
+          </WrapPanel>
+        </TextBlock.ToolTip>
+      </TextBlock>
+    </DockPanel>
+    <Grid  Grid.Row="1" >
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+      </Grid.ColumnDefinitions>
+      
+      <TextBlock Grid.Row="1" Grid.Column="0" Margin="5,0,5,0" 
+                 Text="Esri Styled Button" HorizontalAlignment="Left" VerticalAlignment="Center" />
+      
+      <Button Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Margin="5" Content="Esri Styled"
+              Style="{DynamicResource Esri_Button}" Command="{Binding CmdEsriStyleButton}"
+              CommandParameter="{Binding Text, ElementName=CmdParam}" />
+
+      <TextBlock Grid.Row="2" Grid.Column="0" Margin="5,0,5,0" 
+                 Text="Esri Styled Button, borderless" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+      <Button Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Command="{Binding CmdBorderlessButton}"
+              CommandParameter="{Binding Text, ElementName=CmdParam}"
+				      Margin="5" Style="{DynamicResource Esri_ButtonBorderless}" Content="Esri Borderless" />
+
+      <TextBlock Grid.Row="3" Grid.Column="0" Margin="5,0,5,0" 
+                 Text="Esri Styled Button, Image" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+      <Button Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" MinWidth="0" MinHeight="0" Padding="5"
+              Margin="5" Style="{DynamicResource Esri_Button}" Command="{Binding CmdImageButton}" 
+              CommandParameter="{Binding Text, ElementName=CmdParam}">
+        <Image Source="Images\AddXYEvent16.png" Width="16" Height="16" />
+      </Button>
+
+      <TextBlock Grid.Row="4" Grid.Column="0" Margin="5,0,5,0" 
+                 Text="Esri Button, stacked content" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+      <Button Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right"
+                        Margin="5" BorderThickness="1" Padding="0" 
+                        Style="{DynamicResource Esri_Button}"
+                        Command="{Binding CmdStackedButton}" 
+                        CommandParameter="{Binding Text, ElementName=CmdParam}"
+                        Background="Transparent">
+        <Button.Content>
+          <StackPanel Orientation="Horizontal">
+            <Image Source="Images\3DShowHidden16.png" Margin="10" 
+                       HorizontalAlignment="Center"
+                       Stretch="None"></Image>
+            <TextBlock HorizontalAlignment="Center" Text="Stack " 
+                           VerticalAlignment="Center" FontSize="14" FontWeight="SemiBold"
+                           Margin="5,5,10,5">
+              <TextBlock.Style>
+                <Style TargetType="TextBlock">
+                  <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                      <Setter Property="TextBlock.TextDecorations" Value="Underline" />
+                      <Setter Property="Cursor" Value="Hand"/>
+                      <Setter Property="Foreground" Value="{DynamicResource Esri_Gray155}" />
+                    </Trigger>
+                  </Style.Triggers>
+                </Style>
+              </TextBlock.Style>
+            </TextBlock>
+          </StackPanel>
+        </Button.Content>
+      </Button>
+
+      <TextBlock Grid.Row="5" Grid.Column="0" Margin="5,0,5,0" 
+                 Text="Pro button, Pro functionality" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+      <Button Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" MinWidth="0" MinHeight="0" Padding="5"
+              Margin="5" Style="{DynamicResource Esri_Button}" Command="{Binding CmdOpenProject}">
+        <Image Source="Images\ArcGISProjectOpen16.png" Width="16" Height="16" />
+      </Button>
+
+      <TextBlock Grid.Row="6" Grid.Column="0" Margin="5" 
+                 Text="Text for CommandParameter: " HorizontalAlignment="Left" VerticalAlignment="Center" />
+      <TextBox x:Name="CmdParam" Grid.Row="6" Grid.Column="1" Text="Cmd parameter here" VerticalAlignment="Center"/>
+    </Grid>
+  </Grid>
+</UserControl>

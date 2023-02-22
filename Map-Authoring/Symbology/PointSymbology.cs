@@ -40,6 +40,10 @@ namespace Symbology
 
             return PtSymbols;
         }
+        // cref: ArcGIS.Core.CIM.CIMPointSymbol
+        // cref: ArcGIS.Core.CIM.CIMVectorMarker
+        // cref: ArcGIS.Desktop.Mapping.SymbolFactory.ConstructSolidFill(ArcGIS.Core.CIM.CIMColor)
+        // cref: ArcGIS.Desktop.Mapping.SymbolFactory.ConstructPointSymbol(ArcGIS.Core.CIM.CIMColor,System.Double,ArcGIS.Desktop.Mapping.SimpleMarkerStyle)
         #region Snippet Custom fill and outline
         /// <summary>
         /// Creates a point symbol with custom fill and outline          
@@ -64,6 +68,9 @@ namespace Symbology
             
         }
         #endregion
+        // cref: ArcGIS.Core.CIM.CIMPointSymbol
+        // cref: ArcGIS.Desktop.Mapping.SymbolFactory.ConstructMarker(System.Int32, System.String, System.String, System.Int32)
+        // cref: ArcGIS.Desktop.Mapping.SymbolFactory.ConstructPointSymbol(ArcGIS.Core.CIM.CIMMarker)
         #region Snippet Point Symbol from a font
         /// <summary>
         /// Create a point symbol from a character in a font file

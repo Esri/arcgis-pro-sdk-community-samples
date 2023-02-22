@@ -1,0 +1,70 @@
+/*
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+*/
+using ArcGIS.Core.CIM;
+using ArcGIS.Core.Data;
+using ArcGIS.Core.Data.DDL;
+using ArcGIS.Core.Geometry;
+using ArcGIS.Desktop.Catalog;
+using ArcGIS.Desktop.Core;
+using ArcGIS.Desktop.Editing;
+using ArcGIS.Desktop.Extensions;
+using ArcGIS.Desktop.Framework;
+using ArcGIS.Desktop.Framework.Contracts;
+using ArcGIS.Desktop.Framework.Dialogs;
+using ArcGIS.Desktop.Framework.Threading.Tasks;
+using ArcGIS.Desktop.Layouts;
+using ArcGIS.Desktop.Mapping;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DDLCreateDeleteAttributeAndSpatialIndexes
+{
+    internal class RemovingAttributeIndex : Button
+    {
+        protected override void OnClick()
+        {
+            QueuedTask.Run(() =>
+            {
+                using (Geodatabase geodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(new Uri(@"C:\temp\mySampleGeoDatabase.gdb"))))
+                {
+                    SchemaBuilder schemaBuilder = new SchemaBuilder(geodatabase);
+                    using (FeatureClass feature = geodatabase.OpenDataset<FeatureClass>("Buildings"))
+                    {
+                        FeatureClassDefinition featureClassDefinition = feature.GetDefinition();
+                        string attributeIndexName = "Idx";
+                        RemoveAttributeIndex(schemaBuilder, featureClassDefinition,attributeIndexName);
+                    }
+                }
+            });
+        }
+        #region Removing attribute index
+        public void RemoveAttributeIndex(SchemaBuilder schemaBuilder, FeatureClassDefinition featureClassDefinition, string attributeIndexName)
+        {
+            // Find index to be removed 
+            ArcGIS.Core.Data.Index indexToRemove = featureClassDefinition.GetIndexes().First(f => f.GetName().Equals(attributeIndexName));       // Index description of the index to be removed 
+            AttributeIndexDescription indexDescriptionToRemove = new AttributeIndexDescription(indexToRemove, new TableDescription(featureClassDefinition));       // Enqueue DDL operation to remove index 
+            schemaBuilder.Delete(indexDescriptionToRemove);       // Execute delete index operation
+            bool isDeleteIndexSuccess = schemaBuilder.Build();
+        }
+       #endregion
+    }
+}

@@ -23,8 +23,8 @@
     <Name>QuakeItem</Name>
     <Description>QuakeItem description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>charlesm</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
     <Date>4/3/2019 2:27:44 PM, 2019</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

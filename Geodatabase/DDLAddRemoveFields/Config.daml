@@ -1,0 +1,49 @@
+﻿<ArcGIS defaultAssembly="AddRemoveFields.dll" defaultNamespace="AddRemoveFields" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{f97e97b7-31ab-423b-9eff-6122ff2f265d}" version="1.0" desktopVersion="3.2.47810">
+    <Name>AddRemoveFields</Name>
+    <Description>AddRemoveFields description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>osm12773</Author>
+    <Company>Acme</Company>
+    <Date>2/17/2023 10:05:26 AM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="AddRemoveFields_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="AddRemoveFields_Tab1" caption="New Tab">
+          <group refID="AddRemoveFields_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="AddRemoveFields_Group1" caption="Add/Remove Fields" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="AddRemoveFields_AddFieldsInFeatureClassButton" size="large" />
+          <button refID="AddRemoveFields_CreateEmtpyGeodatabaseButton" size="large" />
+          <button refID="AddRemoveFields_AddFieldWithDomainButton" size="large" />
+          <button refID="AddRemoveFields_RemoveFieldTableButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here --> 
+        <button id="AddRemoveFields_AddFieldsInFeatureClassButton" caption="Add Fields In Feature Class" className="AddFieldsInFeatureClassButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="AddRemoveFields_CreateEmtpyGeodatabaseButton" caption="Create Emtpy Geodatabase" className="CreateEmtpyGeodatabaseButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="AddRemoveFields_AddFieldWithDomainButton" caption="Add Field With Domain" className="AddFieldWithDomainButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="AddRemoveFields_RemoveFieldTableButton" caption="Remove Field Table" className="RemoveFieldTableButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

@@ -39,6 +39,7 @@
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
 
     <Grid Grid.Row="0">
@@ -114,7 +115,6 @@
               Minimum="1" Maximum="10" Value="{Binding Scale}" IsSnapToTickEnabled="True" />
     </Grid>
 
-
     <Grid Grid.Row="2" Width="300" HorizontalAlignment="Center">
       <GroupBox Header="Suggestions">
         <ListBox ItemsSource="{Binding Targets}" SelectedItem="{Binding SelectedItem}">
@@ -128,7 +128,7 @@
         </ListBox>
       </GroupBox>
     </Grid>
+
+    <TextBlock Grid.Row="3" Margin="5" VerticalAlignment="Stretch" Height="100" Text="{Binding MissingPngs}" />
   </Grid>
-
-
 </UserControl>
