@@ -43,7 +43,7 @@ namespace VoxelSample.Examples
     protected override void OnClick()
     {
       //Set path to a .NetCDF
-      _path = @"C:\Data\VoxelData\china_epa.nc";
+      _path = @"C:\Data\VoxelData\EMU_Caribbean_Voxel.nc";
       var map = MapView.Active.Map;
 
       QueuedTask.Run(() =>
