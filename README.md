@@ -129,6 +129,7 @@ Below is the list of 241 ArcGIS Pro samples that are included in this repository
 * [Inspector_AddAttributeAsync (c#)](../../tree/master/Editing/Inspector_AddAttributeAsync)  
 * [LayerSnapModes (c#)](../../tree/master/Editing/LayerSnapModes)  
 * [MainConnectorManhole (c#)](../../tree/master/Editing/MainConnectorManhole)  
+* [MapTopologyAddIn (c#)](../../tree/master/Editing/MapTopologyAddIn)  
 * [ModifyNewlyAddedFeatures (c#)](../../tree/master/Editing/ModifyNewlyAddedFeatures)  
 * [MultipatchBuilder (c#)](../../tree/master/Editing/MultipatchBuilder)  
 * [ReplaceSketch (c#)](../../tree/master/Editing/ReplaceSketch)  
