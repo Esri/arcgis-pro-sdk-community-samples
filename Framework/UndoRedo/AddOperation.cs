@@ -20,7 +20,7 @@ using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Mapping;
 
-namespace PreRel_UndoRedo
+namespace UndoRedo
 {
     /// <summary>
     /// Button to illustrate how operations can be added to different OperationManagers. 

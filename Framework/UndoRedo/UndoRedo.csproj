@@ -8,7 +8,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <NoWarn>1591;CA1416</NoWarn>
     <UseWPF>true</UseWPF>
-    <AssemblyName>PreRel_UndoRedo</AssemblyName>
+    <AssemblyName>UndoRedo</AssemblyName>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>

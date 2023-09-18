@@ -18,9 +18,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PreRel_UndoRedo
+namespace UndoRedo
 {
-  internal static class PreRel_UndoRedo
+  internal static class UndoRedo
   {
     internal static string Category = "SampleCategory";
   }
@@ -48,7 +48,7 @@ namespace PreRel_UndoRedo
     /// </summary>
     public override string Category
     {
-      get { return PreRel_UndoRedo.Category; }
+      get { return UndoRedo.Category; }
     }
 
     /// <summary>

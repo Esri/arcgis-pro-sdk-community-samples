@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>PreRel_UndoRedo</name>
+        <name>UndoRedo</name>
     </assembly>
     <members>
-        <member name="T:PreRel_UndoRedo.AddOperation">
+        <member name="T:UndoRedo.AddOperation">
             <summary>
             Button to illustrate how operations can be added to different OperationManagers. 
             </summary>
@@ -14,7 +14,7 @@
             See <see cref="T:ArcGIS.Desktop.Framework.OperationManager"/> for additional information on the OperationManager and undo/redo stacks.
             </remarks>
         </member>
-        <member name="T:PreRel_UndoRedo.Module1">
+        <member name="T:UndoRedo.Module1">
             <summary>
             This sample demonstrates how to add operations onto the undo/redo stack.   
             </summary>
@@ -46,84 +46,84 @@
             ![UI](Screenshots/Screen.png)
             </remarks>
         </member>
-        <member name="P:PreRel_UndoRedo.Module1.Current">
+        <member name="P:UndoRedo.Module1.Current">
             <summary>
             Retrieve the singleton instance to this module here
             </summary>
         </member>
-        <member name="T:PreRel_UndoRedo.MySampleOperation">
+        <member name="T:UndoRedo.MySampleOperation">
             <summary>
             An empty sample undo/redo operation used for illustrating how to add to an OperationManager.
             </summary>
         </member>
-        <member name="P:PreRel_UndoRedo.MySampleOperation.Name">
+        <member name="P:UndoRedo.MySampleOperation.Name">
             <summary>
             Gets the name of the operation
             </summary>
         </member>
-        <member name="P:PreRel_UndoRedo.MySampleOperation.Category">
+        <member name="P:UndoRedo.MySampleOperation.Category">
             <summary>
             Gets the category of the operation
             </summary>
         </member>
-        <member name="M:PreRel_UndoRedo.MySampleOperation.DoAsync">
+        <member name="M:UndoRedo.MySampleOperation.DoAsync">
             <summary>
             Performs the operation
             </summary>
             <returns>A Task to the DoAsync method</returns>
         </member>
-        <member name="M:PreRel_UndoRedo.MySampleOperation.RedoAsync">
+        <member name="M:UndoRedo.MySampleOperation.RedoAsync">
             <summary>
             Repeats the operation
             </summary>
             <returns>A Task to the RedoAsync method</returns>
         </member>
-        <member name="M:PreRel_UndoRedo.MySampleOperation.UndoAsync">
+        <member name="M:UndoRedo.MySampleOperation.UndoAsync">
             <summary>
             Undo the operation to reset the state
             </summary>
             <returns>A Task to the UndoAsync method</returns>
         </member>
-        <member name="T:PreRel_UndoRedo.MyZoomOperation">
+        <member name="T:UndoRedo.MyZoomOperation">
             <summary>
             A sample undo/redo operation that illustrates zoom in and zoom out actions. 
             </summary>
         </member>
-        <member name="P:PreRel_UndoRedo.MyZoomOperation.Name">
+        <member name="P:UndoRedo.MyZoomOperation.Name">
             <summary>
             Gets the name of the operation
             </summary>
         </member>
-        <member name="P:PreRel_UndoRedo.MyZoomOperation.Category">
+        <member name="P:UndoRedo.MyZoomOperation.Category">
             <summary>
             Gets the category of the operation
             </summary>
         </member>
-        <member name="M:PreRel_UndoRedo.MyZoomOperation.Do">
+        <member name="M:UndoRedo.MyZoomOperation.Do">
             <summary>
             Performs the operation
             </summary>
             <returns>A Task to the Do method</returns>
         </member>
-        <member name="M:PreRel_UndoRedo.MyZoomOperation.DoAsync">
+        <member name="M:UndoRedo.MyZoomOperation.DoAsync">
             <summary>
             Performs the operation
             </summary>
             <returns>A Task to the DoAsync method</returns>
         </member>
-        <member name="M:PreRel_UndoRedo.MyZoomOperation.RedoAsync">
+        <member name="M:UndoRedo.MyZoomOperation.RedoAsync">
             <summary>
             Repeats the operation
             </summary>
             <returns>A Task to the RedoAsync method</returns>
         </member>
-        <member name="M:PreRel_UndoRedo.MyZoomOperation.UndoAsync">
+        <member name="M:UndoRedo.MyZoomOperation.UndoAsync">
             <summary>
             Undo the operation to reset the state
             </summary>
             <returns>A Task to the UndoAsync method</returns>
         </member>
-        <member name="T:PreRel_UndoRedo.SampleDockPaneView">
+        <member name="T:UndoRedo.SampleDockPaneView">
             <summary>
             Interaction logic for SampleDockPaneView.xaml
             </summary>
@@ -131,12 +131,12 @@
             SampleDockPaneView
             </summary>
         </member>
-        <member name="M:PreRel_UndoRedo.SampleDockPaneView.InitializeComponent">
+        <member name="M:UndoRedo.SampleDockPaneView.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
         </member>
-        <member name="T:PreRel_UndoRedo.SampleDockPaneViewModel">
+        <member name="T:UndoRedo.SampleDockPaneViewModel">
             <summary>
             Dockpane that illustrates how to manage an OperationManager and add undo/redo operations to it.  
             </summary>
@@ -151,107 +151,107 @@
             - clears all operations of a specific category from the undo and redo stacks
             </remarks>
         </member>
-        <member name="F:PreRel_UndoRedo.SampleDockPaneViewModel._operationManager">
+        <member name="F:UndoRedo.SampleDockPaneViewModel._operationManager">
             <summary>
             Operation manager for the dockpane
             </summary>
         </member>
-        <member name="M:PreRel_UndoRedo.SampleDockPaneViewModel.#ctor">
+        <member name="M:UndoRedo.SampleDockPaneViewModel.#ctor">
             <summary>
             constructor for the dockpane viewmodel. 
             </summary>
         </member>
-        <member name="M:PreRel_UndoRedo.SampleDockPaneViewModel.Show">
+        <member name="M:UndoRedo.SampleDockPaneViewModel.Show">
             <summary>
             Show the DockPane.
             </summary>
         </member>
-        <member name="F:PreRel_UndoRedo.SampleDockPaneViewModel._heading">
+        <member name="F:UndoRedo.SampleDockPaneViewModel._heading">
             <summary>
             Text shown near the top of the DockPane.
             </summary>
         </member>
-        <member name="F:PreRel_UndoRedo.SampleDockPaneViewModel._compositeZoomInCmd">
+        <member name="F:UndoRedo.SampleDockPaneViewModel._compositeZoomInCmd">
             <summary>
             Composite zoom in command, binds to a button in the view
             </summary>
         </member>
-        <member name="F:PreRel_UndoRedo.SampleDockPaneViewModel._fixedZoomInCmd">
+        <member name="F:UndoRedo.SampleDockPaneViewModel._fixedZoomInCmd">
             <summary>
             Fixed zoom in command, binds to a button in the view
             </summary>
         </member>
-        <member name="F:PreRel_UndoRedo.SampleDockPaneViewModel._fixedZoomOutCmd">
+        <member name="F:UndoRedo.SampleDockPaneViewModel._fixedZoomOutCmd">
             <summary>
             fixed zoom out command, binds to a button in the view
             </summary>
         </member>
-        <member name="M:PreRel_UndoRedo.SampleDockPaneViewModel.CompositeZoomIn">
+        <member name="M:UndoRedo.SampleDockPaneViewModel.CompositeZoomIn">
             <summary>
             Action for the composite zoom in button.  Performs a 3x zoom in.
             </summary>
             <returns>A Task that represents the CompositeZoomIn method</returns>
         </member>
-        <member name="M:PreRel_UndoRedo.SampleDockPaneViewModel.FixedZoomIn">
+        <member name="M:UndoRedo.SampleDockPaneViewModel.FixedZoomIn">
             <summary>
             Action for the fixed zoom in button
             </summary>
             <returns>A Task that represents the FixedZoomIn method</returns>
         </member>
-        <member name="P:PreRel_UndoRedo.SampleDockPaneViewModel.CanUndo">
+        <member name="P:UndoRedo.SampleDockPaneViewModel.CanUndo">
             <summary>
             Determines if the undo button can be enabled.  It should be enabled if operations exist on the undo stack of the OperationManager.
             </summary>
             <returns>returns True if operations exist</returns>
         </member>
-        <member name="P:PreRel_UndoRedo.SampleDockPaneViewModel.CanRedo">
+        <member name="P:UndoRedo.SampleDockPaneViewModel.CanRedo">
             <summary>
             Determines if the redo button can be enabled. It should be enabled if operations exist on the redo stack of the OperationManager 
             </summary>
         </member>
-        <member name="F:PreRel_UndoRedo.SampleDockPaneViewModel._undoCmd">
+        <member name="F:UndoRedo.SampleDockPaneViewModel._undoCmd">
             <summary>
             The Undo command; binds to a button on the view
             </summary>
         </member>
-        <member name="F:PreRel_UndoRedo.SampleDockPaneViewModel._redoCmd">
+        <member name="F:UndoRedo.SampleDockPaneViewModel._redoCmd">
             <summary>
              The Redo command; binds to a button on the view
             </summary>
         </member>
-        <member name="M:PreRel_UndoRedo.SampleDockPaneViewModel.Undo">
+        <member name="M:UndoRedo.SampleDockPaneViewModel.Undo">
             <summary>
             Action for the undo button; performs the undo action on the OperationManager
             </summary>
             <returns>A Task that represents the Undo method</returns>
         </member>
-        <member name="M:PreRel_UndoRedo.SampleDockPaneViewModel.Redo">
+        <member name="M:UndoRedo.SampleDockPaneViewModel.Redo">
             <summary>
             Action for the redo button; performs the redo action on the OperationManager
             </summary>
             <returns>A Task that represents the Redo method</returns>
         </member>
-        <member name="F:PreRel_UndoRedo.SampleDockPaneViewModel._removeOperationCmd">
+        <member name="F:UndoRedo.SampleDockPaneViewModel._removeOperationCmd">
             <summary>
             The RemoveOperation command; binds to a button on the view
             </summary>
         </member>
-        <member name="F:PreRel_UndoRedo.SampleDockPaneViewModel._clearOperationsCommand">
+        <member name="F:UndoRedo.SampleDockPaneViewModel._clearOperationsCommand">
             <summary>
             The Clear Operations command; binds to a button on the view
             </summary>
         </member>
-        <member name="M:PreRel_UndoRedo.SampleDockPaneViewModel.RemoveOperation">
+        <member name="M:UndoRedo.SampleDockPaneViewModel.RemoveOperation">
             <summary>
             Action for the RemoveOperation button; pops the most recent operation from the undo stack (without undoing it)
             </summary>
         </member>
-        <member name="M:PreRel_UndoRedo.SampleDockPaneViewModel.ClearOperations">
+        <member name="M:UndoRedo.SampleDockPaneViewModel.ClearOperations">
             <summary>
             Action for the ClearOperations button; clears the undo and redo stacks of a specific category of operations
             </summary>
         </member>
-        <member name="T:PreRel_UndoRedo.SampleDockPane_ShowButton">
+        <member name="T:UndoRedo.SampleDockPane_ShowButton">
             <summary>
             Button implementation to show the DockPane.
             </summary>
