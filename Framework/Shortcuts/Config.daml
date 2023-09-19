@@ -1,0 +1,97 @@
+﻿<ArcGIS defaultAssembly="Shortcuts.dll" defaultNamespace="Shortcuts" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{548ed6ba-bfad-401e-aa52-c72a82fbd9e5}" version="1.0" desktopVersion="3.2.49073">
+    <Name>Shortcuts</Name>
+    <Description>Shortcuts description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>earl9083</Author>
+    <Company>Acme</Company>
+    <Date>9/18/2023 5:50:23 PM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="Shortcuts_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="Shortcuts_Tab1" caption="New Tab">
+          <group refID="Shortcuts_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="Shortcuts_Group1" caption="Shortcuts Sample" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="Shortcuts_Buttons_StateAButton" size="large" />
+          <button refID="Shortcuts_Buttons_ClearStateButton" size="large" />
+          <button refID="Shortcuts_Buttons_ConditionAButton" size="large" />
+          <button refID="Shortcuts_Buttons_SampleButton" size="large" />
+          <button refID="Shortcuts_Panes_SamplePane_OpenButton" size="large" />
+          <button refID="Shortcuts_Buttons_MapPaneButton" size="large" />
+          <tool refID="Shortcuts_Tools_SampleTool" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="Shortcuts_Buttons_StateAButton" caption="StateAButton" className="Shortcuts.Buttons.StateAButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Toggle State">
+            Click to toggle State A<disabledText />
+          </tooltip>
+        </button>
+        <button id="Shortcuts_Buttons_ClearStateButton" caption="ClearStateButton" className="Shortcuts.Buttons.ClearStateButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Clear state<disabledText /></tooltip>
+        </button>
+        <button id="Shortcuts_Buttons_ConditionAButton" caption="ConditionAButton" condition="ConditionA" className="Shortcuts.Buttons.ConditionAButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Condition A<disabledText /></tooltip>
+        </button>
+        <button id="Shortcuts_Buttons_SampleButton" caption="SampleButton" className="Shortcuts.Buttons.SampleButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Sample button<disabledText /></tooltip>
+        </button>
+        <button id="Shortcuts_Panes_SamplePane_OpenButton" caption="Open SamplePane" className="Shortcuts.Panes.SamplePane_OpenButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen32.png">
+          <tooltip heading="Open Pane">Open Pane<disabledText /></tooltip>
+        </button>
+        <button id="Shortcuts_Buttons_MapPaneButton" caption="MapPaneButton" className="Shortcuts.Buttons.MapPaneButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <tool id="Shortcuts_Tools_SampleTool" caption="SampleTool" className="Shortcuts.Tools.SampleTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Tool Target">Type "n" before and after clicking. A message will only appear when the tool is activated.<disabledText /></tooltip>
+        </tool>
+
+      </controls>
+      <panes>
+        <pane id="Shortcuts_Panes_SamplePane" caption="SamplePane" className="Shortcuts.Panes.SamplePaneViewModel" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen16.png" defaultTab="esri_mapping_homeTab" defaultTool="esri_mapping_navigateTool">
+          <content className="Shortcuts.Panes.SamplePaneView" />
+        </pane>
+      </panes>
+    </insertModule>
+  </modules>
+  <conditions>
+    <insertCondition id="ConditionA">
+      <state id="StateA" />
+    </insertCondition>
+  </conditions>
+  <accelerators>
+    <insertAccelerator refID="ShortcutExample_SampleButton" key="j" />
+  </accelerators>
+  <shortcutTables>
+    <insertShortcutTable id="mapViewOnly" category="Mapping" targetID="esri_mapping_mapPane">
+      <shortcut refID="Shortcuts_Buttons_MapPaneButton" key="k" flags="None" onKeyUp="true" />
+      <!--<shortcut refID="ShortcutFramework_Buttons_MapViewButtonB" key="b" flags="None" />
+      <shortcut refID="ShortcutFramework_Buttons_MapViewButtonC" key="c" flags="None" onKeyUp="true" />-->
+      <!--<shortcut refID="TestMenu1" key="m" flags="Ctrl" />-->
+    </insertShortcutTable>
+    <!--<insertShortcutTable id="PaneOnly" category="FrameworkExample" targetID="Shortcuts_Panes_SamplePane">
+      <shortcut refID="Shortcuts_Buttons_MapPaneButton" key="t" flags="None" />
+    </insertShortcutTable>-->
+
+    <!--Shortcut is invoked when Condition A is true and Shortcuts_Panes_SamplePane is active-->
+    <insertShortcutTable id="ConditionOnly" category="FrameworkExample2" targetID="Shortcuts_Panes_SamplePane" condition="ConditionA">
+      <shortcut refID="Shortcuts_Buttons_ConditionAButton" key="l" flags="None" />
+    </insertShortcutTable>
+
+    <insertShortcutTable id="ToolOnly" category="Mapping" targetID="Shortcuts_Tools_SampleTool">
+      <shortcut refID="Shortcuts_Buttons_MapPaneButton" key="n" flags="None" />
+    </insertShortcutTable>
+  </shortcutTables>
+</ArcGIS>
