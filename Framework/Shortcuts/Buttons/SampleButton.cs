@@ -23,7 +23,7 @@ namespace Shortcuts.Buttons
   {
     protected override void OnClick()
     {
-      MessageBox.Show("message");
+      MessageBox.Show("Sample Button message");
     }
   }
 }
