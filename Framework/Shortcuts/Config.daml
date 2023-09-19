@@ -97,7 +97,7 @@
     <!--DockPane shortcut via keyCommand when Sample DockPane is active-->
     <insertShortcutTable id="DockPaneKeyCommand" caption="DockPane keyCommand" category="Dockpane" targetID="Shortcuts_Panes_SampleDockPane">
       <shortcut refID="Dock_Pane_Cmd" key="a" flags="None" />
-    </insertShortcutTable>a
+    </insertShortcutTable>
 
     <!--Shortcut is invoked when Condition A is true and Shortcuts_Panes_SamplePane is active-->
     <insertShortcutTable id="ConditionOnly" caption="Condition" category="FrameworkExample2" targetID="Shortcuts_Panes_SamplePane" condition="ConditionA">
