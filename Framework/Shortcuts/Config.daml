@@ -1,10 +1,10 @@
 ﻿<ArcGIS defaultAssembly="Shortcuts.dll" defaultNamespace="Shortcuts" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{548ed6ba-bfad-401e-aa52-c72a82fbd9e5}" version="1.0" desktopVersion="3.2.49073">
     <Name>Shortcuts</Name>
-    <Description>Shortcuts description</Description>
+    <Description>Adds a few controls to demonstrate how the Shortcuts framework works.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>earl9083</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team</Author>
+    <Company>Esri</Company>
     <Date>9/18/2023 5:50:23 PM</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:
