@@ -21,35 +21,34 @@ using System.Windows.Input;
 namespace Shortcuts
 {
   /// <summary>
-  /// This sample provides a new tab and controls that allow you to set the 
-  ///time in the map view, step through time, and navigate between time 
-  ///enabled bookmarks in the map.
+  /// This sample provides an overview of the Shortcuts framework. Examples
+  /// include: Global Accelerator, keyUp shortcut, conditional shortcut, 
+  /// Pane and DockPane shortcut via keyCommand
   /// </summary>
   /// <remarks>
-  ///1. In Visual Studio click the Build menu. Then select Build Solution.
-  ///2. Click Start button to open ArcGIS Pro.
-  ///3. ArcGIS Pro will open. 
-  ///4. Open a map view that contains time aware data. Click on the new 
-  ///Navigation tab within the 
-  ///Time tab group on the ribbon.
-  ///![UI](screenshots/UICommands.png)
-  ///6. Within this tab there are 3 groups that provide functionality to 
-  ///navigate through time.
-  ///7. The Map Time group provides two date picker controls to set the 
-  ///start and end time in the map.
-  ///8. The Time Step group provides two combo boxes to set the time step 
-  ///interval. The previous and next 
-  ///button can be used to offset the map time forward or back by the 
-  ///specified time step interval.
-  ///9.. The Bookmarks group provides a gallery of time enabled bookmarks 
-  ///for the map. Clicking a bookmark in the 
-  ///gallery will zoom the map to that location and time. 
-  ///It also provides play, previous and next buttons that can be used to 
-  ///navigate between the time enabled bookmarks. 
-  ///These commands are only enabled when there are at least 2 bookmarks 
-  ///in the map. Finally it provides a 
-  ///slider that can be used to set how quickly to move between 
-  ///bookmarks during playback.
+  /// 1. In Visual Studio click the Build menu. Then select Build Solution.
+  /// 2. Click Start button to open ArcGIS Pro.
+  /// 3. ArcGIS Pro will open. 
+  /// 4. Open a project with a map or create a blank template and insert a map.
+  /// 5. Press "h" to invoke the Accelerator. ----
+  /// 6. Activate the Map Pane.
+  /// 7. Press "k" to invoke a shortcut targeting the Map Pane.
+  /// 8. With the Map Pane still activated, press "Shift + j" to trigger a shortcut
+  ///    that opens a Sample DockPane.
+  /// 9. With the DockPane activated, press "a" - this will trigger a keyCommanmd 
+  ///    shortcut on the DockPane.
+  /// 10. Click on the Add-In ribbon tab and then click on the "Open SamplePane"
+  ///     button in the Shortcuts Sample group. This will open a sample Pane.
+  /// 11. With the SamplePane activated, click the "StateAButton" in the
+  ///     Shortcuts Sample group. This will satisfy ConditionA which will allow
+  ///     invocation of a conditional shortcut.
+  /// 12. With the SamplePane activated, press "l" - this will invoke the
+  ///     conditional shortcut.
+  /// 13. Dismiss the MessageBox and, with the SamplePane still activated, press
+  ///     "r" - this will trigger a keyCommanmd shortcut on the Pane.
+  /// 14. Activate the Map Pane - this will enable the "Open Sample Tool" button.
+  ///     Click the button to simulate tool activation. Press "n" to invoke
+  ///     a shortcut targeted at the tool.
   /// </remarks>
   internal class Module1 : Module
   {
