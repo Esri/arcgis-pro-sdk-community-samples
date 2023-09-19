@@ -47,6 +47,15 @@ namespace Shortcuts.Panes
       get => _heading;
       set => SetProperty(ref _heading, value);
     }
+    protected override void OnKeyCommand(string commandID)
+    {
+      switch (commandID)
+      {
+        case "Dock_Pane_Cmd":
+          MessageBox.Show("Dockpane shortcut");
+          break;
+      }
+    }
   }
 
   /// <summary>

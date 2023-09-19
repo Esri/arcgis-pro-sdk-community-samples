@@ -67,7 +67,15 @@ namespace Shortcuts.Panes
     {
       await base.UninitializeAsync();
     }
-
+    protected override void OnKeyCommand(string commandID)
+    {
+      switch (commandID)
+      {
+        case "Pane_Cmd":
+          MessageBox.Show("Pane shortcut");
+          break;
+      }
+    }
     #endregion Pane Overrides
   }
 

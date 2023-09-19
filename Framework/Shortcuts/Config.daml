@@ -60,11 +60,17 @@
       <panes>
         <pane id="Shortcuts_Panes_SamplePane" caption="SamplePane" className="Shortcuts.Panes.SamplePaneViewModel" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen16.png" defaultTab="esri_mapping_homeTab" defaultTool="esri_mapping_navigateTool">
           <content className="Shortcuts.Panes.SamplePaneView" />
+          <keyCommands>
+            <keyCommand id="Pane_Cmd" caption="Pane Shortcut" tooltip="Pane Shortcut using keyCommand" image="BexDog16"/>
+          </keyCommands>
         </pane>
       </panes>
       <dockPanes>
         <dockPane id="Shortcuts_Panes_SampleDockPane" caption="SampleDockPane" className="Shortcuts.Panes.SampleDockPaneViewModel" dock="group" dockWith="esri_core_projectDockPane">
           <content className="Shortcuts.Panes.SampleDockPaneView" />
+          <keyCommands>
+            <keyCommand id="Dock_Pane_Cmd" caption="DockPane Shortcut" tooltip="DockPane Shortcut using keyCommand" image="T-Rex16"/>
+          </keyCommands>
         </dockPane>
       </dockPanes>
     </insertModule>
@@ -88,10 +94,18 @@
     <insertShortcutTable id="DockPaneOnly" caption="DockPane Only" description="This is a custom group" category="Custom" targetID="esri_mapping_mapPane">
       <shortcut refID="Shortcuts_Panes_SampleDockPane_ShowButton" key="j" flags="Shift" />
     </insertShortcutTable>
+    <!--DockPane shortcut via keyCommand when Sample DockPane is active-->
+    <insertShortcutTable id="DockPaneKeyCommand" caption="DockPane keyCommand" category="Dockpane" targetID="Shortcuts_Panes_SampleDockPane">
+      <shortcut refID="Dock_Pane_Cmd" key="a" flags="None" />
+    </insertShortcutTable>a
 
     <!--Shortcut is invoked when Condition A is true and Shortcuts_Panes_SamplePane is active-->
     <insertShortcutTable id="ConditionOnly" caption="Condition" category="FrameworkExample2" targetID="Shortcuts_Panes_SamplePane" condition="ConditionA">
       <shortcut refID="Shortcuts_Buttons_ConditionAButton" key="l" flags="None" />
+    </insertShortcutTable>
+    <!--Pane shortcut via keyCommand when Sample Pane is active-->
+    <insertShortcutTable id="PaneKeyCommand" caption="Pane keyCommand" category="Pane" targetID="Shortcuts_Panes_SamplePane">
+      <shortcut refID="Pane_Cmd" key="r" flags="None" />
     </insertShortcutTable>
 
     <!--Shortcut is invoked when Shortcuts_Tools_SampleTool is active-->
