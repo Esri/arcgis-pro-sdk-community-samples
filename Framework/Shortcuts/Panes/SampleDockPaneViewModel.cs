@@ -41,12 +41,18 @@ namespace Shortcuts.Panes
     /// <summary>
     /// Text shown near the top of the DockPane.
     /// </summary>
-    private string _heading = "My DockPane";
+    private string _heading = "Sample DockPane";
     public string Heading
     {
       get => _heading;
       set => SetProperty(ref _heading, value);
     }
+
+    /// <summary>
+    /// keyCommand implementation used in DockPane keyCommand
+    /// example. A MessageBox is shown.
+    /// </summary>
+    /// <param name="commandID"></param>
     protected override void OnKeyCommand(string commandID)
     {
       switch (commandID)

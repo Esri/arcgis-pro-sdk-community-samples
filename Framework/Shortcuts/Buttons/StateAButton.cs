@@ -19,8 +19,14 @@ using System.Threading.Tasks;
 
 namespace Shortcuts.Buttons
 {
+  /// <summary>
+  /// This button is used to set "StateA" state in this sample. The state value is
+  /// used in the conditional shortcut example.
+  /// </summary>
   internal class StateAButton : Button
   {
+    // The below method highlights/unhighlights the State A Button depending on whether
+    // State A and the Sample Pane are activated.
     protected override void OnUpdate()
     {
       Pane activePane = FrameworkApplication.Panes.ActivePane;
@@ -36,6 +42,8 @@ namespace Shortcuts.Buttons
         this.IsChecked = false;
       }
     }
+    // The below method activates/deactivates "StateA" on click depending on whether
+    // State A is already activated and the Sample Pane is activated.
     protected override void OnClick()
     {
       Pane activePane = FrameworkApplication.Panes.ActivePane;

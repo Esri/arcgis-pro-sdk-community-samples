@@ -67,6 +67,11 @@ namespace Shortcuts.Panes
     {
       await base.UninitializeAsync();
     }
+
+    /// <summary>
+    /// keyCommand implementation used in Pane keyCommand
+    /// example. A MessageBox is shown.
+    /// </summary>
     protected override void OnKeyCommand(string commandID)
     {
       switch (commandID)

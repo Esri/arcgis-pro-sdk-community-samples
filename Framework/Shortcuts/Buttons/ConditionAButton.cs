@@ -19,6 +19,11 @@ using System.Threading.Tasks;
 
 namespace Shortcuts.Buttons
 {
+  /// <summary>
+  /// This button helps to illustrate condition. In DAML, it is only enabled when
+  /// Condition A is met. If Condition A is met, then the conditional shortcut
+  /// may also be invoked.
+  /// </summary>
   internal class ConditionAButton : Button
   {
     protected override void OnClick()

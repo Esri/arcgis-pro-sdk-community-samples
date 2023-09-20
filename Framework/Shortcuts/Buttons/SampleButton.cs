@@ -19,6 +19,9 @@ using System.Threading.Tasks;
 
 namespace Shortcuts.Buttons
 {
+  /// <summary>
+  /// Button that is called by some of the shortcut scenarios in this sample.
+  /// </summary>
   internal class SampleButton : Button
   {
     protected override void OnClick()

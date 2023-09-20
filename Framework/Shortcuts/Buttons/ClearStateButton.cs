@@ -19,6 +19,9 @@ using System.Threading.Tasks;
 
 namespace Shortcuts.Buttons
 {
+  /// <summary>
+  /// This button is used to clear state (State A) after setting state with the StateAButton.
+  /// </summary>
   internal class ClearStateButton : Button
   {
     protected override void OnClick()
