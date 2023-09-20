@@ -99,12 +99,12 @@
   </accelerators>
   <shortcutTables>
 
-    <!--Shortcut is invoked when Map Pane is active, on key up-->
+    <!--Contextual Shortcut is invoked when Map Pane is active, on key up-->
     <insertShortcutTable id="mapViewOnly" caption="MapView Only" category="Mapping" targetID="esri_mapping_mapPane">
       <shortcut refID="Shortcuts_Buttons_SampleButton" key="k" flags="None" onKeyUp="true" />
     </insertShortcutTable>
 
-    <!--Shortcut opens Sample Dock Pane when Map Pane is active-->
+    <!--Contextual Shortcut opens Sample Dock Pane when Map Pane is active-->
     <insertShortcutTable id="DockPaneOnly" caption="DockPane Only" description="This is a custom group" category="Custom" targetID="esri_mapping_mapPane">
       <shortcut refID="Shortcuts_Panes_SampleDockPane_ShowButton" key="j" flags="Shift" />
     </insertShortcutTable>
