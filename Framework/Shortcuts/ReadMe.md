@@ -29,7 +29,7 @@ Visual Studio:         2022
  1. In Visual Studio click the Build menu. Then select Build Solution.  
  1. Click Start button to open ArcGIS Pro.  
  1. ArcGIS Pro will open.  
- 1. Press `h` to invoke the Accelerator command. A Message will appear.
+ 1. Press `h` to invoke the Accelerator command. A message will appear.
  1. Open a map view. 
  1. Press `k` to invoke a shortcut targeting the map view.
  1. With the map view still activated, press `Shift + j` to trigger a shortcut that opens a Sample DockPane.
