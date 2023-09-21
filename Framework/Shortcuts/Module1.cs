@@ -44,9 +44,9 @@ namespace Shortcuts
   /// 3. ArcGIS Pro will open. 
   /// 4. Open a project with a map or create a blank template and insert a map.
   /// 5. Press "h" to invoke the Accelerator. ----
-  /// 6. Activate the Map Pane.
-  /// 7. Press "k" to invoke a shortcut targeting the Map Pane.
-  /// 8. With the Map Pane still activated, press "Shift + j" to trigger a shortcut
+  /// 6. Activate the Map View.
+  /// 7. Press "k" to invoke a shortcut targeting the Map View.
+  /// 8. With the Map View still activated, press "Shift + j" to trigger a shortcut
   ///    that opens a Sample DockPane.
   /// 9. With the DockPane activated, press "a" - this will trigger a keyCommanmd 
   ///    shortcut on the DockPane.
@@ -59,7 +59,7 @@ namespace Shortcuts
   ///     conditional shortcut.
   /// 13. Dismiss the MessageBox and, with the SamplePane still activated, press
   ///     "r" - this will trigger a keyCommanmd shortcut on the Pane.
-  /// 14. Activate the Map Pane - this will enable the "Open Sample Tool" button.
+  /// 14. Activate the Map View - this will enable the "Open Sample Tool" button.
   ///     Click the button to simulate tool activation. Press "n" to invoke
   ///     a shortcut targeted at the tool.
   /// </remarks>
