@@ -43,7 +43,7 @@ namespace Shortcuts
   /// 2. Click Start button to open ArcGIS Pro.
   /// 3. ArcGIS Pro will open. 
   /// 4. Open a project with a map or create a blank template and insert a map.
-  /// 5. Press "h" to invoke the Accelerator. ----
+  /// 5. Press "h" to invoke the Accelerator command.
   /// 6. Activate the Map View.
   /// 7. Press "k" to invoke a shortcut targeting the Map View.
   /// 8. With the Map View still activated, press "Shift + j" to trigger a shortcut
