@@ -40,7 +40,7 @@ Visual Studio:         2022
  1. Dismiss the message and, with the SamplePane still activated, press `r` - this will trigger a keyCommanmd shortcut on the Pane.
  1. Activate the map view - this will enable the "Open Sample Tool" button.
  1. Click the button to simulate tool activation. Press `n` to invoke a shortcut targeted at the tool.
-![condition_shortcut](https://github.com/medina-e/arcgis-pro-sdk-community-samples/assets/126819295/66dc7277-3243-4d4b-9a4b-509a0b2125f2)
+![UI](Screenshots/ConditionShortcut.png)  
 
 
    
