@@ -34,7 +34,7 @@ Visual Studio:         2022
  1. Expand the "Global" group. Scroll down to "SampleButton." This is a read-only accelerator added by this AddIn.
  1. Uncheck the "Show currently active shortcuts" checkbox at the top of the dialog.
  1. Expand the Custom group. This is an example of a Custom category added in this sample.
- 1. Close the Keyboard Shortcuts Dialog
+ 1. Close the Keyboard Shortcuts Dialog.
  1. Press `h` to invoke the Accelerator command. A message will appear.
  1. Press `k` to invoke a shortcut targeting the map view.
  1. With the map view still activated, press `Shift + j` to trigger a shortcut that opens a Sample DockPane.

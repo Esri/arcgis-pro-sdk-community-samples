@@ -52,7 +52,7 @@ namespace Shortcuts
   /// 7. Expand the "Global" group.Scroll down to "SampleButton." This is a read-only accelerator added by this AddIn.
   /// 8. Uncheck the "Show currently active shortcuts" checkbox at the top of the dialog.
   /// 9. Expand the Custom group. This is an example of a Custom category added in this sample.
-  /// 10. Close the Keyboard Shortcuts dialog
+  /// 10. Close the Keyboard Shortcuts dialog.
   /// 11. Press `h` to invoke the Accelerator command.A message will appear.
   /// 12. Press "h" to invoke the Accelerator command.
   /// 13. Activate the Map View.
