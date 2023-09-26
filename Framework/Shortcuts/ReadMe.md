@@ -1,7 +1,7 @@
-## Shortcuts
+## Keyboard Shortcuts
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-  This sample provides an overview of the Shortcuts framework. Examples include: Global Accelerator, keyUp shortcut, conditional shortcut, 
+  This sample provides an overview of the Keyboard Shortcuts framework. Examples include: Global Accelerator, keyUp shortcut, conditional shortcut, 
   Pane and DockPane shortcut via keyCommand.
    
 
@@ -29,8 +29,13 @@ Visual Studio:         2022
  1. In Visual Studio click the Build menu. Then select Build Solution.  
  1. Click Start button to open ArcGIS Pro.  
  1. ArcGIS Pro will open.  
- 1. Press `h` to invoke the Accelerator command. A message will appear.
  1. Open a map view. 
+ 1. Launch the Keyboard Shortcuts Dialog with F12. Take a moment to inspect the Shortcut Tables. 
+ 1. Expand the "Global" group. Scroll down to "SampleButton." This is a read-only accelerator added by this AddIn.
+ 1. Uncheck the "Show currently active shortcuts" checkbox at the top of the dialog.
+ 1. Expand the Custom group. This is an example of a Custom category added in this sample.
+ 1. Close the Keyboard Shortcuts Dialog
+ 1. Press `h` to invoke the Accelerator command. A message will appear.
  1. Press `k` to invoke a shortcut targeting the map view.
  1. With the map view still activated, press `Shift + j` to trigger a shortcut that opens a Sample DockPane.
  1. With the DockPane activated, press `a` - this will trigger a keyCommanmd shortcut on the DockPane.
@@ -40,6 +45,7 @@ Visual Studio:         2022
  1. Dismiss the message and, with the SamplePane still activated, press `r` - this will trigger a keyCommanmd shortcut on the Pane.
  1. Activate the map view - this will enable the "Open Sample Tool" button.
  1. Click the button to simulate tool activation. Press `n` to invoke a shortcut targeted at the tool.
+ ![UI](Screenshots/ShortcutDialog.png)  
 ![UI](Screenshots/ConditionShortcut.png)  
 
 
