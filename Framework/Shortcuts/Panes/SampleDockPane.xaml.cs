@@ -14,14 +14,14 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 
-namespace KeyboardShortcuts.Panes
+namespace Shortcuts.Panes
 {
   /// <summary>
-  /// Interaction logic for SamplePaneView.xaml
+  /// Interaction logic for SampleDockPaneView.xaml
   /// </summary>
-  public partial class SamplePaneView : UserControl
+  public partial class SampleDockPaneView : UserControl
   {
-    public SamplePaneView()
+    public SampleDockPaneView()
     {
       InitializeComponent();
     }

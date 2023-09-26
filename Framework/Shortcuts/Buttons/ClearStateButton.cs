@@ -11,19 +11,38 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License. 
 
+using ArcGIS.Core.CIM;
+using ArcGIS.Core.Data;
+using ArcGIS.Core.Geometry;
+using ArcGIS.Desktop.Catalog;
+using ArcGIS.Desktop.Core;
+using ArcGIS.Desktop.Editing;
+using ArcGIS.Desktop.Extensions;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Dialogs;
+using ArcGIS.Desktop.Framework.Threading.Tasks;
+using ArcGIS.Desktop.Layouts;
+using ArcGIS.Desktop.Mapping;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace KeyboardShortcuts.Tools
+namespace Shortcuts.Buttons
 {
   /// <summary>
-  /// This provides simulation of a basic tool used in the tool shortcut example.
+  /// This button is used to clear state (State A) after setting state with the StateAButton.
   /// </summary>
-  internal class SampleTool : Tool
+  internal class ClearStateButton : Button
   {
-    public SampleTool()
+    protected override void OnClick()
     {
+      Pane activePane = FrameworkApplication.Panes.ActivePane;
+
+      if (activePane == null) return;
+      activePane.State.Deactivate("StateA");
     }
   }
 }

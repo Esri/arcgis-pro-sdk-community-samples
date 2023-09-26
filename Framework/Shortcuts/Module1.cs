@@ -35,7 +35,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace KeyboardShortcuts
+namespace Shortcuts
 {
   /// <summary>
   /// This sample provides an overview of the Keyboard Shortcuts framework. Examples
@@ -81,7 +81,7 @@ namespace KeyboardShortcuts
     /// <summary>
     /// Retrieve the singleton instance to this module here
     /// </summary>
-    public static Module1 Current => _this ??= (Module1)FrameworkApplication.FindModule("KeyboardShortcuts_Module");
+    public static Module1 Current => _this ??= (Module1)FrameworkApplication.FindModule("Shortcuts_Module");
 
     #region Overrides
     /// <summary>

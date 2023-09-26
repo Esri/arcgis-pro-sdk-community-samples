@@ -29,7 +29,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace KeyboardShortcuts.Panes
+namespace Shortcuts.Panes
 {
   internal class SamplePaneViewModel : ViewStatePane
   {
