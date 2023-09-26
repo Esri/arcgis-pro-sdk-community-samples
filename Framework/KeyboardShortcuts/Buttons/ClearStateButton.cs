@@ -30,61 +30,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace Shortcuts.Panes
+namespace KeyboardShortcuts.Buttons
 {
-  internal class SampleDockPaneViewModel : DockPane
-  {
-    private const string _dockPaneID = "Shortcuts_Panes_SampleDockPane";
-
-    protected SampleDockPaneViewModel() { }
-
-    /// <summary>
-    /// Show the DockPane.
-    /// </summary>
-    internal static void Show()
-    {
-      DockPane pane = FrameworkApplication.DockPaneManager.Find(_dockPaneID);
-      if (pane == null)
-        return;
-
-      pane.Activate();
-    }
-
-    /// <summary>
-    /// Text shown near the top of the DockPane.
-    /// </summary>
-    private string _heading = "Sample DockPane";
-    public string Heading
-    {
-      get => _heading;
-      set => SetProperty(ref _heading, value);
-    }
-
-    /// <summary>
-    /// keyCommand implementation used in DockPane keyCommand
-    /// example. A MessageBox is shown.
-    /// </summary>
-    /// <param name="commandID"></param>
-    protected override void OnKeyCommand(string commandID)
-    {
-      switch (commandID)
-      {
-        case "Dock_Pane_Cmd":
-          MessageBox.Show("Dockpane shortcut");
-          break;
-      }
-    }
-  }
-
   /// <summary>
-  /// Button implementation to show the DockPane.
+  /// This button is used to clear state (State A) after setting state with the StateAButton.
   /// </summary>
-	internal class SampleDockPane_ShowButton : Button
+  internal class ClearStateButton : Button
   {
     protected override void OnClick()
     {
-      SampleDockPaneViewModel.Show();
+      Pane activePane = FrameworkApplication.Panes.ActivePane;
+
+      if (activePane == null) return;
+      activePane.State.Deactivate("StateA");
     }
   }
 }

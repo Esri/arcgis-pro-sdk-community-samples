@@ -30,7 +30,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shortcuts.Buttons
+namespace KeyboardShortcuts.Buttons
 {
   /// <summary>
   /// Button that is called by some of the shortcut scenarios in this sample.

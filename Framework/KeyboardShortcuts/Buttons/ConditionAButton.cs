@@ -30,7 +30,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shortcuts.Buttons
+namespace KeyboardShortcuts.Buttons
 {
   /// <summary>
   /// This button helps to illustrate condition. In DAML, it is only enabled when

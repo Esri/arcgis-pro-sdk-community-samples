@@ -30,7 +30,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shortcuts.Buttons
+namespace KeyboardShortcuts.Buttons
 {
   /// <summary>
   /// This button is used to set "StateA" state in this sample. The state value is
