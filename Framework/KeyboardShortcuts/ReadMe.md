@@ -46,6 +46,7 @@ Visual Studio:         2022
 1. With the Sample Pane activated, press `l` - this will invoke the conditional shortcut.
 1. Dismiss the MessageBox and, with the Sample Pane still activated, press `r` - this will trigger a keyCommanmd shortcut on the Pane.
 1. Activate the Map View - this will enable the "Open Sample Tool" button. Click the button to simulate tool activation. Press `n` to invoke a shortcut targeted at the tool.
+
 ![UI](Screenshots/ShortcutDialog.png)  
 ![UI](Screenshots/ConditionShortcut.png)  
 
