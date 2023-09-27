@@ -91,7 +91,7 @@
         <pane id="KeyboardShortcuts_Panes_SamplePane" caption="Sample Pane" className="KeyboardShortcuts.Panes.SamplePaneViewModel" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen16.png" defaultTab="esri_mapping_homeTab" defaultTool="esri_mapping_navigateTool">
           <content className="KeyboardShortcuts.Panes.SamplePaneView" />
           <keyCommands>
-            <keyCommand id="Pane_Cmd" caption="DockPane Shortcut" tooltip="DockPane Shortcut using keyCommand" image="T-Rex16"/>
+            <keyCommand id="Pane_Cmd" caption="DockPane Shortcut" tooltip="Dockpane Shortcut using keyCommand" image="T-Rex16"/>
           </keyCommands>
         </pane>
       </panes>
@@ -111,12 +111,12 @@
       <shortcut refID="KeyboardShortcuts_Buttons_SampleButton" key="k" flags="None" onKeyUp="true" />
     </insertShortcutTable>
 
-    <!--Contextual Shortcut opens Sample Dock Pane when Map Pane is active-->
-    <insertShortcutTable id="DockPaneOnly" caption="DockPane Only" description="This is a custom group" category="Custom" targetID="esri_mapping_mapPane">
+    <!--Contextual Shortcut opens Sample Dockpane when Map Pane is active-->
+    <insertShortcutTable id="DockPaneOnly" caption="Dockpane Only" description="This is a custom group" category="Custom" targetID="esri_mapping_mapPane">
       <shortcut refID="KeyboardShortcuts_Panes_SampleDockpane_ShowButton" key="j" flags="Shift" />
     </insertShortcutTable>
-    <!--DockPane shortcut via keyCommand when Sample DockPane is active-->
-    <insertShortcutTable id="DockPaneKeyCommand" caption="DockPane keyCommand" category="Dockpane" targetID="KeyboardShortcuts_Panes_SampleDockpane">
+    <!--Dockpane shortcut via keyCommand when Sample Dockpane is active-->
+    <insertShortcutTable id="DockPaneKeyCommand" caption="Dockpane keyCommand" category="Dockpane" targetID="KeyboardShortcuts_Panes_SampleDockpane">
       <shortcut refID="Dock_Pane_Cmd" key="a" flags="None" />
     </insertShortcutTable>
 
