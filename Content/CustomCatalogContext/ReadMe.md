@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Content
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,17 +29,15 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
-1. Open any project file. Click on the Catalog Dockpane tab selector or if the Catalog Dockpane is not displayed, use the View tab on the Pro ribbon and select the 'Catalog Pane'.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Click Start button to open ArcGIS Pro.  
+3. ArcGIS Pro will open.   
+4. Open any project file. Click on the Catalog Dockpane tab selector or if the Catalog Dockpane is not displayed, use the View tab on the Pro ribbon and select the 'Catalog Pane'.  
 ![UI](Screenshots/Screen1.png)    
+5. Right click on either the 'Maps' or 'Styles' nodes to use the 'Custom Catalog Button' menu option.  
+6. In the OnClick code behind the context of the clicked on IProjectWindow(s) is retrieved from the FrameworkApplication.ActiveWindow property.  
+7. The IProjectWindow's SelectedItems property to access each of the selected items which in turn can be cast to the respective project item depending on what "type" of item it is (i.e. map, style, gdb, etc)  
   
-1. Right click on either the 'Maps' or 'Styles' nodes to use the 'Custom Catalog Button' menu option.  
-1. In the OnClick code behind the context of the clicked on IProjectWindow(s) is retrieved from the FrameworkApplication.ActiveWindow property.  
-1. The IProjectWindow's SelectedItems property to access each of the selected items which in turn can be cast to the respective project item depending on what "type" of item it is (i.e. map, style, gdb, etc)  
-  
-
 
 <!-- End -->
 

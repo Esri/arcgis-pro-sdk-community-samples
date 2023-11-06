@@ -14,8 +14,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -30,22 +30,19 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\SDK\SDK.gdb" is available.  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. ArcGIS Pro will open, select the FeatureTest.aprx project, alternatively create a new map and insert map notes.  
-1. Open a map containing editable data.   
+1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\SDK\SDK.gdb" is available.
+2. In Visual Studio click the Build menu. Then select Build Solution.  
+3. Launch the debugger to open ArcGIS Pro.  
+4. ArcGIS Pro will open, select the FeatureTest.aprx project, alternatively create a new map and insert map notes.  
+5. Open a map containing editable data.   
 ![UI](Screenshots/Screen1.png)  
-  
-1. Open the add-in tab and click on the SketchRemoveCurves button in the Sketch Events group  
-1. On the edit tab, click on the Create button in the Features group to display the create features pane.  
-1. Start a sketch, and create some sketch segments as curves.  
+6. Open the add-in tab and click on the SketchRemoveCurves button in the Sketch Events group  
+7. On the edit tab, click on the Create button in the Features group to display the create features pane.  
+8. Start a sketch, and create some sketch segments as curves.  
 ![UI](Screenshots/Screen2.png)  
-  
-1. Finish the sketch. The curves will be replaced with straight lines.  
+9. Finish the sketch. The curves will be replaced with straight lines.  
 ![UI](Screenshots/Screen3.png)  
   
-
 
 <!-- End -->
 

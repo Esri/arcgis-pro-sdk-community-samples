@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Map-Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,26 +29,22 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a project package called 'ArcGISProSampleBuildings.ppkx' which is required for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\RulePackages" is available.  
-1. Open this solution in Visual Studio.    
-1. Click the build menu and select Build Solution.  
-1. Launch the debugger to open ArCGIS Pro.    
-1. Open the project package "ArcGISProSampleBuildings.ppkx" located in the "C:\Data\RulePackages" folder since this project contains all required data.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a project package called 'ArcGISProSampleBuildings.ppkx' which is required for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\RulePackages" is available.
+2. Open this solution in Visual Studio.    
+3. Click the build menu and select Build Solution.  
+4. Launch the debugger to open ArCGIS Pro.    
+5. Open the project package "ArcGISProSampleBuildings.ppkx" located in the "C:\Data\RulePackages" folder since this project contains all required data.  
 ![UI](Screenshots/Screen1.png)  
-  
-1. Click the ADD-IN tab in ArcGIS Pro.  
-1. Click the Procedural Symbol button. This will open the ProceduralSymbol dockpane.  
-1. There are 3 City Engine rule packages available in this dockpane. Select any rule package thumbnail in the gallery.  
+6. Click the ADD-IN tab in ArcGIS Pro.  
+7. Click the Procedural Symbol button. This will open the ProceduralSymbol dockpane.  
+8. There are 3 City Engine rule packages available in this dockpane. Select any rule package thumbnail in the gallery.  
 ![UI](Screenshots/Screen2.png)  
-  
-1. The building footprint feature layer will be rendered with this rule package.    
+9. The building footprint feature layer will be rendered with this rule package.    
 ![UI](Screenshots/Screen3.png)  
-  
-1. In your project, a BuildingStyles Style project item will be created. This will contain the procedural symbol used to render the feature layer.  
+10. In your project, a BuildingStyles Style project item will be created. This will contain the procedural symbol used to render the feature layer.  
 Note: In the TOC, you will notice that the Building Footprint layer will not have a thumbnail for the generated symbol.   
 You can fix this by using the Symbology Dockpane and clicking the camera button to create a Thumbnail. Click Apply to apply the image to the TOC.  
   
-
 
 <!-- End -->
 

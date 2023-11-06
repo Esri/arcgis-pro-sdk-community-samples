@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,14 +29,13 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
 2. Launch the debugger to open ArcGIS Pro.  
 4. Open a map view (using this path: "CIMPATH=map/map.xml")  
 5. Click on the Add-In tab.   
 6. Click the Add Raster Layer button to add a new raster layer to the map.  
 ![UI](Screenshots/Screen.png)  
   
-
 
 <!-- End -->
 

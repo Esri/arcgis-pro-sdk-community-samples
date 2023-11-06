@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,26 +29,22 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. This solution is using the **AvalonEdit Nuget**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package AvalonEdit".  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.  
-1. Open any ArcGIS Pro project file containing data.  
-1. If the project doesn't have a map view add a new map view, and if the project doesn't have a layout view add a layout view.  
-1. Click on the Add-in tab and see the 'Show Conditions' button.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. This solution is using the **AvalonEdit Nuget**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package AvalonEdit".  
+3. Click Start button to open ArcGIS Pro.  
+4. ArcGIS Pro will open.  
+5. Open any ArcGIS Pro project file containing data.  
+6. If the project doesn't have a map view add a new map view, and if the project doesn't have a layout view add a layout view.  
+7. Click on the Add-in tab and see the 'Show Conditions' button.  
 ![UI](Screenshots/Screenshot1.png)  
-  
-1. Click the 'Show Conditions' button to bring up the 'Conditions' dockpane into view.  
-1. Open the 'Active States' and the 'Selected Condition XML' panes and select a condition under 'Enabled Conditions'.  This will show the 'Condition XML' for the selected condition, if a XML condition has been defined for the selected condition.  
+8. Click the 'Show Conditions' button to bring up the 'Conditions' dockpane into view.  
+9. Open the 'Active States' and the 'Selected Condition XML' panes and select a condition under 'Enabled Conditions'.  This will show the 'Condition XML' for the selected condition, if a XML condition has been defined for the selected condition.  
 ![UI](Screenshots/Screenshot2.png)  
-  
-1. Select the map view as the active view and click the refresh button on the Condition dock pane.  You should now find the 'esri_mapping_mapPane' condition under 'Active States'.  
+10. Select the map view as the active view and click the refresh button on the Condition dock pane.  You should now find the 'esri_mapping_mapPane' condition under 'Active States'.  
 ![UI](Screenshots/Screenshot3.png)  
-  
-1. Select the layout view as the active view and click the refresh button on the Condition dock pane.  You should now find that the 'esri_mapping_mapPane' condition is not listed under 'Active States' anymore.  
+11. Select the layout view as the active view and click the refresh button on the Condition dock pane.  You should now find that the 'esri_mapping_mapPane' condition is not listed under 'Active States' anymore.  
 ![UI](Screenshots/Screenshot4.png)  
   
-
 
 <!-- End -->
 

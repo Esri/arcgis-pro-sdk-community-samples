@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,37 +29,32 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Open this solution in Visual Studio.    
-1. Click the Build menu and select Build Solution.  
-1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.  
-1. In ArcGIS Pro, open the TableConstructionTool.ppkx project package.  
-1. Open the "Map" project item, if it is not already open.  This map will have a "USCities" feature layer and a "CityDemographicsTable" standalone table.  
-1. Activate the "Edit" tab on the ribbon and click the "Create" button to open the "Create Features" dockpane.  
-1. Select the CityDemographicsTable template. This will display the various Table construction tools available for this template. The highlighted 3 tools are custom table constructions tools that have been added by this sample.  
+1. Open this solution in Visual Studio.
+2. Click the Build menu and select Build Solution.  
+3. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.  
+4. In ArcGIS Pro, open the TableConstructionTool.ppkx project package.  
+5. Open the "Map" project item, if it is not already open.  This map will have a "USCities" feature layer and a "CityDemographicsTable" standalone table.  
+6. Activate the "Edit" tab on the ribbon and click the "Create" button to open the "Create Features" dockpane.  
+7. Select the CityDemographicsTable template. This will display the various Table construction tools available for this template. The highlighted 3 tools are custom table constructions tools that have been added by this sample.  
 ![UI](screenshots/TableConstructionTools.png)  
 ### Basic table construction tool  
-  
-1. Click the "Basic Table Construction Tool" to activate it.  This is the button with the Lion icon.   
-1. Click the "Create" button. This will invoke the code in the "OnSketchCompleteAsync" callback in the BasicTableConstTool.cs file in the Visual Studio solution.  
-1. One record will be added to the "CityDemographicsTable" table. Dismiss the message box that displays this information. At this point, you can open the CityDemographicsTable standalone table and check the newly added record.  
+8. Click the "Basic Table Construction Tool" to activate it.  This is the button with the Lion icon.   
+9. Click the "Create" button. This will invoke the code in the "OnSketchCompleteAsync" callback in the BasicTableConstTool.cs file in the Visual Studio solution.  
+10. One record will be added to the "CityDemographicsTable" table. Dismiss the message box that displays this information. At this point, you can open the CityDemographicsTable standalone table and check the newly added record.  
 ### Intermediate table construction tool  
-  
-1. Click the "Intermediate Table Construction Tool" to activate it.  This is the button with the Wolf icon.   
-1. Using the mouse cursor, sketch a rectangle geometry on the map to select a few of features in the USCities feature layer.  
-1. When you complete the sketch, the code in the "OnSketchCompleteAsync" callback in the IntermediateTableConstTool.cs file is invoked.  
-1. One record per selected feature will be added to the "CityDemographicsTable" table. The "Name" field of the table will be pre-populated with the "CITY_NAME" attribute of the selected USCities feature. At this point, you can open the CityDemographicsTable standalone table and check the newly added records.  
+11. Click the "Intermediate Table Construction Tool" to activate it.  This is the button with the Wolf icon.   
+12. Using the mouse cursor, sketch a rectangle geometry on the map to select a few of features in the USCities feature layer.  
+13. When you complete the sketch, the code in the "OnSketchCompleteAsync" callback in the IntermediateTableConstTool.cs file is invoked.  
+14. One record per selected feature will be added to the "CityDemographicsTable" table. The "Name" field of the table will be pre-populated with the "CITY_NAME" attribute of the selected USCities feature. At this point, you can open the CityDemographicsTable standalone table and check the newly added records.  
 ### Advanced table construction tool  
-  
-1. Click the "Advanced Table Construction Tool" to activate it.  This is the button with the Fire dragon icon.   
-1. Activating this tool will display the "Options" pane for the Advanced Table Construction tool.  
+15. Click the "Advanced Table Construction Tool" to activate it.  This is the button with the Fire dragon icon.   
+16. Activating this tool will display the "Options" pane for the Advanced Table Construction tool.  
 ![UI](screenshots/Options.png)  
+17. Select the "USCities" layer in the "Select Layer" drop down. Select the "CITY_NAME" field in the "Select Field" dropdown.  Select "Name" in the "Select Table field" drop down.  
+18. Using the mouse cursor, sketch a rectangle geometry on the map to select a few of features in the USCities feature layer.  
+19. When you complete the sketch, the code in the "OnSketchCompleteAsync" callback in the AdvancedTableConstructionTool.cs file is invoked.  
+20. One record per selected feature will be added to the "CityDemographicsTable" table. The "Name" field of the table will be pre-populated with the "CITY_NAME" attribute of the selected USCities feature. At this point, you can open the CityDemographicsTable standalone table and check the newly added records.  
   
-1. Select the "USCities" layer in the "Select Layer" drop down. Select the "CITY_NAME" field in the "Select Field" dropdown.  Select "Name" in the "Select Table field" drop down.  
-1. Using the mouse cursor, sketch a rectangle geometry on the map to select a few of features in the USCities feature layer.  
-1. When you complete the sketch, the code in the "OnSketchCompleteAsync" callback in the AdvancedTableConstructionTool.cs file is invoked.  
-1. One record per selected feature will be added to the "CityDemographicsTable" table. The "Name" field of the table will be pre-populated with the "CITY_NAME" attribute of the selected USCities feature. At this point, you can open the CityDemographicsTable standalone table and check the newly added records.  
-  
-
 
 <!-- End -->
 

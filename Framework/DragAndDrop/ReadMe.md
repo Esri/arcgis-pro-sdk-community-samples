@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,35 +31,29 @@ Visual Studio:         2022
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
    
   
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in c:\data   
-1. The project used for this sample is -C:\Data\SDK\SDK.gdb-.   
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. In ArcGIS Pro create a new project using the Map template.  
-1. ArcGIS Pro displays a map view.    
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+2. Make sure that the Sample data is unzipped in c:\data   
+3. The project used for this sample is -C:\Data\SDK\SDK.gdb-.   
+4. In Visual Studio click the Build menu. Then select Build Solution.  
+5. Click Start button to open ArcGIS Pro.  
+6. In ArcGIS Pro create a new project using the Map template.  
+7. ArcGIS Pro displays a map view.    
 ### Drag and drog from Catalog or the file system  
-  
-1. From the Add-in tab click the Drag and Drop button  
+8. From the Add-in tab click the Drag and Drop button  
 ![UI](Screenshots/Screen1.png)  
-  
-1. Use the Windows file explorer to navigate to a Geodatabase folder, for example -C:\Data\SDK\SDK.gdb-, then drag & drop the folder into the dropzone in the Drag & Drop dockpane.  
+9. Use the Windows file explorer to navigate to a Geodatabase folder, for example -C:\Data\SDK\SDK.gdb-, then drag & drop the folder into the dropzone in the Drag & Drop dockpane.  
 ![UI](Screenshots/Screen2.png)  
-  
-1. Notice that after the drop the Tree Control is being populated with the feature classes contained in the dropped Geodatabase.  
-1. Drag one of the feature classes listed in the Tree Control onto the Map pane.   
+10. Notice that after the drop the Tree Control is being populated with the feature classes contained in the dropped Geodatabase.  
+11. Drag one of the feature classes listed in the Tree Control onto the Map pane.   
 ![UI](Screenshots/Screen3.png)  
-  
-1. The feature class is added to the map.    
+12. The feature class is added to the map.    
 ![UI](Screenshots/Screen4.png)  
 ### Drag and drop from the Map's TOC  
-  
-1. From the Add-In tab, click the Drag and Drop TOC Items button. The "Drag and drop TOC items" dockpane will open.  
-1. Drag any layer(s) from the active map's TOC to the text box in the dockpane.  
-1. The text box in the dockpane will list information about the map members being dragged and dropped.  
+13. From the Add-In tab, click the Drag and Drop TOC Items button. The "Drag and drop TOC items" dockpane will open.  
+14. Drag any layer(s) from the active map's TOC to the text box in the dockpane.  
+15. The text box in the dockpane will list information about the map members being dragged and dropped.  
 ![UI](Screenshots/Screen5.png)  
   
-
 
 <!-- End -->
 

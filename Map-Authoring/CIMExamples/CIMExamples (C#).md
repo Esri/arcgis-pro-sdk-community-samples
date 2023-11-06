@@ -4,10 +4,10 @@
 Shows the following CIM capabilities:  
   
 1. Provide sample to create CIMUniqueValueRenderer from scratch  
-1. Same as above but using the UniqueValueRendererDefinition class and the layer to configure the underlying Renderer  
-1. How to create the equivalent of symbol levels in Pro.  
-1. How to change out the Data Connection (equivalent to changing "DataSource" in ArcObjects)  
-1. Change the selection color for the given feature layer  
+2. Same as above but using the UniqueValueRendererDefinition class and the layer to configure the underlying Renderer  
+3. How to create the equivalent of symbol levels in Pro.  
+4. How to change out the Data Connection (equivalent to changing "DataSource" in ArcObjects)  
+5. Change the selection color for the given feature layer  
   
 
 
@@ -19,8 +19,8 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -35,33 +35,26 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data). The sample data contains an ArcGIS Pro project and data to be used for this sample. Make sure that the Sample data is unzipped in c:\data and c:\data\Admin is available.  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. Open the project 'C:\Data\Admin\AdminSample.aprx'.  Please note that layer names and other specific data is required for this sample, hence this specific project is required.  
-1. Click on the 'CIM Examples' tab.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data). The sample data contains an ArcGIS Pro project and data to be used for this sample. Make sure that the Sample data is unzipped in c:\data and c:\data\Admin is available.
+2. In Visual Studio click the Build menu. Then select Build Solution.  
+3. Launch the debugger to open ArcGIS Pro.  
+4. Open the project 'C:\Data\Admin\AdminSample.aprx'.  Please note that layer names and other specific data is required for this sample, hence this specific project is required.  
+5. Click on the 'CIM Examples' tab.  
 ![CIMExamples](Screenshots/Screenshot1.png)  
-  
-1. Click the 'Renderer From Scratch' button to create a new render for the States layer:  
+6. Click the 'Renderer From Scratch' button to create a new render for the States layer:  
 ![CIMExamples](Screenshots/Screenshot2.png)  
-  
-1. Click the 'Renderer via Definition' button to create a new UniqueValueRendererDefinition for States using the 'TOTPOP2010' field:  
+7. Click the 'Renderer via Definition' button to create a new UniqueValueRendererDefinition for States using the 'TOTPOP2010' field:  
 ![CIMExamples](Screenshots/Screenshot3.png)   
-  
-1. Click the 'Create Symbol Levels' button to create the equivalent of symbol levels in Pro:  
+8. Click the 'Create Symbol Levels' button to create the equivalent of symbol levels in Pro:  
 ![CIMExamples](Screenshots/Screenshot4.png)  
-  
-1. Click the 'Layer DataSource' button to change out the Data Connection to 'C:\Data\Admin\AdminSample.gdb':  
+9. Click the 'Layer DataSource' button to change out the Data Connection to 'C:\Data\Admin\AdminSample.gdb':  
 ![CIMExamples](Screenshots/Screenshot5.png)  
-  
-1. Click the 'Layer Selection Color' button to change the selection color for the given feature layer:  
+10. Click the 'Layer Selection Color' button to change the selection color for the given feature layer:  
 ![CIMExamples](Screenshots/Screenshot6.png)    
-  
-1. Add a raster layer to your map.  For example: find and add 'CharlotteLAS' from the 'All Portal' connection, add the layer to your map, and then zoom to the newly added layer's extent.  
-1. Click the 'Raster Stretch' button to create a CIMRasterStretchColorizer:  
+11. Add a raster layer to your map.  For example: find and add 'CharlotteLAS' from the 'All Portal' connection, add the layer to your map, and then zoom to the newly added layer's extent.  
+12. Click the 'Raster Stretch' button to create a CIMRasterStretchColorizer:  
 ![CIMExamples](Screenshots/Screenshot7.png)    
   
-
 
 <!-- End -->
 

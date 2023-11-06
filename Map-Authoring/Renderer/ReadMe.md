@@ -24,8 +24,8 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -40,18 +40,17 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Renderers' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Renderers" is available.  
-1. In Visual Studio click the Build menu. Then select Build Solution.    
-1. Launch the debugger to open ArcGIS Pro.  
-1. Create a new blank Map project.   
-1. Add the C:\Data\Renderers\USDemographics.lpkx layer file to the map.   
-1. In Add-in tab, click the "Apply Renderer" button.  
-1. The first point feature layer in your project's TOC will be rendered with an "Unique Value Renderer".  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Renderers' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Renderers" is available.
+2. In Visual Studio click the Build menu. Then select Build Solution.    
+3. Launch the debugger to open ArcGIS Pro.  
+4. Create a new blank Map project.   
+5. Add the C:\Data\Renderers\USDemographics.lpkx layer file to the map.   
+6. In Add-in tab, click the "Apply Renderer" button.  
+7. The first point feature layer in your project's TOC will be rendered with an "Unique Value Renderer".  
 To experiment with the various renderers available with this sample, follow the steps below:  
-  
-1. Stop debugging Pro.  
-1. In Visual Studio's solution explorer, open the ApplyRenderer.cs file. This is the class file for the Apply Renderer button.  
-1. The OnClick method in the ApplyRenderer.cs file uncomment the method that calls the renderer you want to use.<br />  
+8. Stop debugging Pro.  
+9. In Visual Studio's solution explorer, open the ApplyRenderer.cs file. This is the class file for the Apply Renderer button.  
+10. The OnClick method in the ApplyRenderer.cs file uncomment the method that calls the renderer you want to use.<br />  
    **You can modify the code in the OnClick method in this file to use one of the various renderers available in this sample.**  
     ```c#  
     protected async override void OnClick()  
@@ -63,21 +62,18 @@ To experiment with the various renderers available with this sample, follow the 
          //etc
     }  
     ```
-1. After modifying the OnClickMethod build the solution and click the start button to open Pro.    
-1. Open any project and test the Apply Renderer button again.  
+11. After modifying the OnClickMethod build the solution and click the start button to open Pro.    
+12. Open any project and test the Apply Renderer button again.  
 ![UI](screenshots/Renderers.png)  
 Note: Use the US Cities layer available with the sample data to the Heat map renderer. This feature class is available in the C:\Data\Admin\AdminData.gdb file geodatabase.  
 #### Attribute Driven Symbology  
-  
-1. Create a new Local Scene. Add the C:\Data\Renderers\FlightPathPoints.lyrx layer file to the scene.  This layer draws a point geometry rendered with a helicopter symbol.  The data for this layer holds the Tilt angles (X, Y and Z) for the helicopter.  
-1. Use the Navigate button to tilt the view so that you can see the helicopter to display it over the map.  
+13. Create a new Local Scene. Add the C:\Data\Renderers\FlightPathPoints.lyrx layer file to the scene.  This layer draws a point geometry rendered with a helicopter symbol.  The data for this layer holds the Tilt angles (X, Y and Z) for the helicopter.  
+14. Use the Navigate button to tilt the view so that you can see the helicopter to display it over the map.  
 ![Tilt](screenshots/tilt.png)  
-  
-1. Click the AttributeDriverSymbology button on the Add-In tab.  
-1. Notice that the helicopter is now displayed using the Tilt fields.  
+15. Click the AttributeDriverSymbology button on the Add-In tab.  
+16. Notice that the helicopter is now displayed using the Tilt fields.  
 ![AttrbuteDriverSymbology](screenshots/AttrbuteDriverSymbology.png)  
   
-
 
 <!-- End -->
 

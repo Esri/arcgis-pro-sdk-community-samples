@@ -12,8 +12,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -28,15 +28,13 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. The data for this sample is available in the CommunitySampleData-3D-05-11-2022.zip download (see link below). After unzipping the content, use the project foudn in this location:  c:\Data\MainManhole\MainManhole.ppkx  
-1. The sample requires a main (line), connector (line) and manhole (point) 3D layers in a scene. You can use the "scene" in this project to run the add-in.  
-1. The demonstration shows using the sketch to draw on a surface with the resulting features created underneath and connecting.  
+1. The data for this sample is available in the CommunitySampleData-3D-05-11-2022.zip download (see link below). After unzipping the content, use the project foudn in this location:  c:\Data\MainManhole\MainManhole.ppkx
+2. The sample requires a main (line), connector (line) and manhole (point) 3D layers in a scene. You can use the "scene" in this project to run the add-in.  
+3. The demonstration shows using the sketch to draw on a surface with the resulting features created underneath and connecting.  
 ![UI](Screenshots/Screen.png)  
-  
-1. The following screenshot is an example of the expected output.  
+4. The following screenshot is an example of the expected output.  
 ![UI](Screenshots/OutputExample1.png)    
   
-
 
 <!-- End -->
 

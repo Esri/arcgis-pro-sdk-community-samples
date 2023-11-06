@@ -36,8 +36,6 @@
       <tabGroups>
         <!--The new Tab Group is created here-->
         <tabGroup caption="Example State Solution" id="working_with_DAML_ExampleStateTabGroup">
-          <color A="255" R="238" G="170" B="90" />
-          <borderColor A="0" R="251" G="226" B="195" />
         </tabGroup>
       </tabGroups>
       <!-- uncomment to have the control hosted on a separate tab-->

@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,19 +29,20 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open, open any project or create a new project.  
-1. Activate the Add-In tab.   
-1. Click the 'Toast Notification' button and see a toast notification appear in the upper right of the application.  
+1. In Visual studio click the Build menu. Then select Build Solution.
+2. Click Start button to open ArcGIS Pro.  
+3. ArcGIS Pro will open, open any project or create a new project.  
+4. Activate the Add-In tab.   
 ![UI](Screenshots/Screen1.png)  
+5. Click the 'Toast Notification' button and see a toast notification appear in the upper right of the application.  
+![UI](Screenshots/Screen2.png)  
+6. Click the 'Notification with Feedback' button and see a toast notification appear in the upper right of the application.  Click on that toast notification and a messagebox saying 'This message was just removed' will appear.   
+![UI](Screenshots/Screen3.png)  
+7. Click the 'Add Set of Notifications' button and see a number of notifications added to the notification dock pane.  This button will also open the notification dock pane if it's now already open.  
+![UI](Screenshots/Screen4.png)  
+8. Click the 'Remove Notifications' button and see two of those notifications be removed from the notification dock pane.  
+![UI](Screenshots/Screen5.png)  
   
-1. Click the 'My Toast Notification' button and see a toast notification appear in the upper right of the application.  Click the toast notification and a messagebox saying 'Hello World' will appear.   
-1. Open the notification dock pane by clicking on the bell button in the upper right of the application.   
-1. Click the 'Add Notifications' button and see a number of notifications added to the notification dock pane.  
-1. Click the 'Remove Notifications' button and see two of those notifications be removed from the dock pane.  
-  
-
 
 <!-- End -->
 

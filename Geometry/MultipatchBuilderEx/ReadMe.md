@@ -15,8 +15,8 @@ Language:              C#
 Subject:               Geometry
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,31 +31,27 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in C:\Data  
-1. Before you run the sample verify that the project "C:\Data\MultipatchTest\MultipatchTest.aprx" is present since this is required to run the sample.  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.  
-1. Open the "C:\Data\MultipatchTest\MultipatchTest.aprx" project.  
-1. Click on the ADD-IN TAB.  
-1. Click on the *Create Triangle Multipatch* button.   
-1. A new multiaptch feature will be created.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+2. Make sure that the Sample data is unzipped in C:\Data  
+3. Before you run the sample verify that the project "C:\Data\MultipatchTest\MultipatchTest.aprx" is present since this is required to run the sample.  
+4. In Visual Studio click the Build menu. Then select Build Solution.  
+5. Click Start button to open ArcGIS Pro.  
+6. ArcGIS Pro will open.  
+7. Open the "C:\Data\MultipatchTest\MultipatchTest.aprx" project.  
+8. Click on the ADD-IN TAB.  
+9. Click on the *Create Triangle Multipatch* button.   
+10. A new multiaptch feature will be created.  
 ![UI](Screenshots/Multipatch.png)  
-  
-1. Click on the "Apply Materials" button.  
-1. The created multipatch feature will now have materials applied to it's faces.   
+11. Click on the "Apply Materials" button.  
+12. The created multipatch feature will now have materials applied to it's faces.   
 ![UI](Screenshots/MultipatchMaterial.png)  
-  
-1. Click on the "Apply Textures" button.  
-1. The created multipatch feature will now have textures applied to it's faces.   
+13. Click on the "Apply Textures" button.  
+14. The created multipatch feature will now have textures applied to it's faces.   
 ![UI](Screenshots/MultipatchTexture.png)  
-  
-1. Click on the "Add Multipatch to Overlay" button.  
-1. A new multiaptch geometry will be added to the overlay using a mesh symbol.  
+15. Click on the "Add Multipatch to Overlay" button.  
+16. A new multiaptch geometry will be added to the overlay using a mesh symbol.  
 ![UI](Screenshots/MultipatchOverlay.png)  
   
-
 
 <!-- End -->
 

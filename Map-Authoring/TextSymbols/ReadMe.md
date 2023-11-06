@@ -16,8 +16,8 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -32,19 +32,17 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.    
-1. Launch the debugger to open ArcGIS Pro.  
-1. Open any project file that has a map with feature layers and/or Annotation layers.   
-1. Activate the map.  
-1. In the Add-in tab, click the "Text Symbols Gallery" button.  
-1. In the Text Symbols Gallery dockpane, you can see the custom text symbols available in this sample.   
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Launch the debugger to open ArcGIS Pro.  
+3. Open any project file that has a map with feature layers and/or Annotation layers.   
+4. Activate the map.  
+5. In the Add-in tab, click the "Text Symbols Gallery" button.  
+6. In the Text Symbols Gallery dockpane, you can see the custom text symbols available in this sample.   
 ![UI](screenshots/LabelGalery.png)   
+7. Select a text symbol.  
+8. Select the Layer you want to label from the collection of feature layers in the combo box.  
+9. Click the Label button to apply the lables.   
   
-1. Select a text symbol.  
-1. Select the Layer you want to label from the collection of feature layers in the combo box.  
-1. Click the Label button to apply the lables.   
-  
-
 
 <!-- End -->
 

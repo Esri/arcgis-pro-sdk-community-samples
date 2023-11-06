@@ -1,8 +1,7 @@
 ## CallScriptFromNet
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This Button add-in, when clicked, calls a Python script, reads the text stream output from the script and uses it. From simplicity, output text is sent to windows messagebox.  
-However, you can execute complex Python code in the Python script and call the script from within the button.   
+This Button add-in, when clicked, uses the first Polygon layer in the Map and runs a buffer operation with help of a Python script.  It reads the text stream output from python and displays it.   
   
 
 
@@ -14,8 +13,8 @@ Language:              C#
 Subject:               Geoprocessing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -30,18 +29,22 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. This solution file includes an example python script named test1.py  
-1. This sample also requires that you install the recommended version of Python for ArcGIS Pro and add python.exe to you path.  
-1. For help in installing a Python command line option for ArcGIS Pro see (Install Python for ArcGIS Pro)[https://pro.arcgis.com/en/pro-app/arcpy/get-started/installing-python-for-arcgis-pro.htm]   
-![UI](Screenshots/Python.png)  
+1. This solution file includes an example python script named test1.py which is included as 'Content' (Build action) in the add-in.
+2. This sample also requires an ArcGIS Project with a map that has at least one polygon layer in the Map's table of content.  
+3. Rebuild the project in Visual Studio and debug.   
+4. In ArcGIS Pro open a project with a map that has one polygon layer in the Map's TOC.  
+5. Make sure the Map is the active map.  
+6. Go to the ADD-IN Tab, find the "Python Script" group and click "Show Python Feedback" followed by "Run Py Script".  
+7. The "Run Python Script" Dockpane will populate the "In" and "Out" feature classes used for the script's buffer operation.    
+8. Note: the "In" feature class is derived from the first feature layer in the active Map's table of content.  
+9. Note: the "Out" feature class is derived from the "In" feature class with a "_Buffer" appended to the feature class name.  
+10. Note: if the "Out" feature class exists the code will delete the feature class in order for the script to work.  
+11. The Feedback from Python is displayed in the dockpane:  
+![UI](Screenshots/Screen1.png)  
+12. If you have ArcGIS Pro installed and licensed on your machine you should be able to run this python script directly from a Windows command prompt.  
+13. To do so open a Windows Command prompt and copy/paste the content from the Dockpane's 'Command line' field.  
+![UI](Screenshots/Screen2.png)  
   
-1. Open the 'RunPyScriptButton' class and update the path to test1.py to point to the sample script file in your solution  
-1. Build the solution - make sure it compiles successfully.  
-1. Open ArcGIS Pro - go to the ADD-IN Tab, find RunPyScriptButton in Group 1 group.  
-1. Click on the button - wait few seconds - a message box will show up with a message of "Hello - this message is from a TEST Python script"  
-![UI](Screenshots/Screen.png)  
-  
-
 
 <!-- End -->
 

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+
+<ArcGIS defaultAssembly="TableViewerTest.dll"
+        defaultNamespace="TableViewerTest"
+        xmlns="http://schemas.esri.com/DADF/Registry"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+
+  <AddInInfo id="{cfd04011-22b2-4c68-ac86-0bcd4623980f}" version="1.0" desktopVersion="3.1.41804">
+    <Name>TableViewerTest</Name>   
+    <Description>TableViewerTest description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>1/25/2023 4:56:29 AM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <conditions>
+    <insertCondition id="condition_DisasterOverlay" caption="Disaster Overlay">
+      <!-- our condition is set true or false based on this underlying state -->
+      <state id="state_DisasterOverlay" />
+    </insertCondition>
+    <insertCondition id="condition_AddToCAMA" caption="Disaster Submission">
+      <state id="state_AddToCAMA" />
+    </insertCondition>
+    <insertCondition id="condition_CamaPostReady" caption="CAMA Post Ready">
+      <state id="state_CamaPostReady" />
+    </insertCondition>
+  </conditions>
+  <modules>
+    <insertModule id="TableViewerTest_Module" className="Module1" autoLoad="true" caption="Module1">
+      <tabs>
+        <tab id="TableViewerTest_Tab1" caption="TableView Tester" keytip="T0">
+          <group refID="TableViewerTest_Group0" />
+          <group refID="TableViewerTest_Group1" />
+          <group refID="TableViewerTest_Group2" />
+          <group refID="TableViewerTest_Group3" />
+          <group refID="TableViewerTest_Group4" />
+		      <group refID="TableViewerTest_Group5" />
+        </tab>
+      </tabs>
+      <groups>
+        <group id="TableViewerTest_Group1" caption="Disaster Tax Assessment" keytip="G1">
+          <!--<button refID="TableViewerTest_DisasterHouseFire" size="large" />-->
+          <button refID="TableViewerTest_DisasterTsunami" size="large" />
+        </group>
+        <group id="TableViewerTest_Group2" caption="Computer-Assisted Mass Appraisal" keytip="G2">
+          <button refID="TableViewerTest_CustomizeCAMA" size="large" />
+          <button refID="TableViewerTest_ShowCAMA" size="large" />
+          <button refID="TableViewerTest_AddToCAMAQueue" size="large" />
+          <button refID="TableViewerTest_PostToCAMA" size="large" />
+          <button refID="TableViewerTest_ShowPostedCAMA" size="large" />
+        </group>
+        <group id="TableViewerTest_Group3" caption="Demo Functions" keytip="G3">
+          <button refID="TableViewerTest_RestartDemo" size="large" />
+        </group>
+        <group id="TableViewerTest_Group4" caption="Selection" keytip="G4">
+          <button refID="esri_mapping_selectByRectangleTool" size="large" />
+          <button refID="esri_mapping_clearSelectionButton" size="middle" />
+        </group>
+		<group id="TableViewerTest_Group5" caption="Navigate" keytip="G4">
+		  <button refID="esri_mapping_bookmarksNavigateGallery" size="large" />
+		  <button refID="esri_mapping_prevExtentButton" size="small" />
+      <button refID="esri_mapping_nextExtentButton" size="small" />
+		</group>
+      </groups>
+      <controls>
+        <button id="TableViewerTest_DisasterHouseFire" caption="House Fire" className="DisasterHouseFire" keytip="B1" 
+                loadOnClick="true" 
+                largeImage="pack://application:,,,/TableViewerTest;component/Images/DisasterHouseFire32.png">
+          <tooltip heading="House Fire">
+            Adjust the Tax Assessment after a house fire<disabledText />
+          </tooltip>
+        </button>
+        <button id="TableViewerTest_DisasterTsunami" caption="Tsunami / Hurricane" className="DisasterTsunami" keytip="B2" 
+                loadOnClick="true"
+                largeImage="pack://application:,,,/TableViewerTest;component/Images/DisasterTsunami32.png">
+          <tooltip heading="Tsunami / Hurricane">
+            Adjust the Tax Assessment after a declared Tsunami / Hurricane Disaster<disabledText />
+          </tooltip>
+        </button>
+        <button id="TableViewerTest_RestartDemo" caption="Undo" className="RestartDemo" keytip="B5"
+                loadOnClick="true" smallImage="EditUndo_B_16" largeImage="EditUndo_B_32">
+          <tooltip heading="Undo">
+            Undo the changes made with the Misclosures button<disabledText />
+          </tooltip>
+        </button>
+        <button id="TableViewerTest_CustomizeCAMA" caption="Customize CAMA Queue" className="CAMACustomize"
+                keytip="B6" condition="condition_DisasterOverlay" loadOnClick="true"
+                smallImage="CustomizeRibbon16" largeImage="CustomizeRibbon32">
+          <tooltip heading="Show CAMA Queue">
+            Shows the list of changes to the CAMA system (Computer-Assisted Mass Appraisal)<disabledText />
+          </tooltip>
+        </button>
+        <button id="TableViewerTest_ShowCAMA" caption="Show CAMA Queue" className="CAMAShow" keytip="B6"
+                condition="condition_DisasterOverlay"
+                loadOnClick="true" smallImage="TableOpen16" largeImage="TableOpen32">
+          <tooltip heading="Show CAMA Queue">
+            Shows the list of changes to the CAMA system (Computer-Assisted Mass Appraisal)<disabledText />
+          </tooltip>
+        </button>
+        <button id="TableViewerTest_PostToCAMA" caption="Post Queue To CAMA" className="CAMAPostTo" keytip="B7"
+                condition="condition_CamaPostReady"
+                loadOnClick="true" smallImage="ExportTable16" largeImage="ExportTable32">
+          <tooltip heading="Submit To CAMA">
+            Submits all queued CAMA changes to the CAMA system (Computer-Assisted Mass Appraisal)<disabledText />
+          </tooltip>
+        </button>
+        <button id="TableViewerTest_ShowPostedCAMA" caption="Show Posted To CAMA" className="CAMAShowPosted" keytip="B8"
+                condition="condition_DisasterOverlay"
+                loadOnClick="true" smallImage="TableRelatesAdd16" largeImage="TableRelatesAdd32">
+          <tooltip heading="Show Posted To CAMA">
+            Shows all posted changes for the CAMA system<disabledText />
+          </tooltip>
+        </button>
+        <button id="TableViewerTest_AddToCAMAQueue" caption="Add To CAMA Queue" className="CAMAAddToQueue" keytip="B9"
+                condition="condition_AddToCAMA"
+                loadOnClick="true" smallImage="TableFieldNew16" largeImage="TableFieldNew32">
+          <tooltip heading="Add To CAMA Queue">
+            Use selected Tax Parcels and add them to the CAMA Queue.<disabledText />
+          </tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

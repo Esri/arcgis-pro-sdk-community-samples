@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,17 +29,15 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual studio rebuild the solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. When ArcGIS Pro opens, select any project with a map.  
-1. Open the Add-in Tab and click on the "Place Text Tool" button to active the "Place Text" Map tool.  
+1. In Visual studio rebuild the solution.
+2. Launch the debugger to open ArcGIS Pro.  
+3. When ArcGIS Pro opens, select any project with a map.  
+4. Open the Add-in Tab and click on the "Place Text Tool" button to active the "Place Text" Map tool.  
 ![UI](Screenshots/Screen1.png)  
+5. Click on the map to place a point marker with text inside.  
+6. The sample code has been hardcoded to a circle (index 40) but developers can change the index to experiment with different shapes.  
+7. Click the 'Clear' button to remove all placed 'point marker' text.  
   
-1. Click on the map to place a point marker with text inside.  
-1. The sample code has been hardcoded to a circle (index 40) but developers can change the index to experiment with different shapes.  
-1. Click the 'Clear' button to remove all placed 'point marker' text.  
-  
-
 
 <!-- End -->
 

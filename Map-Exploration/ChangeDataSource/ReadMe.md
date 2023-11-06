@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,19 +29,17 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\FeatureTest\FeatureNewTest.gdb" is available.  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. In ArcGIS Pro open "C:\Data\FeatureTest\FeatureTest.aprx"  
-1. Open the 'Add-in' tab and click on the "Show Change DataSource" button to open the "Change DataSource" dockpane   
-1. On the "Change DataSource" dockpane browse to the "C:\Data\FeatureTest\FeatureNewTest.gdb" database which will be used to replace the current datasource for all layers.  
-1. Click the 'Replace Layer Datasources' button to replace all data connections.  
+1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\FeatureTest\FeatureNewTest.gdb" is available.
+2. In Visual Studio click the Build menu. Then select Build Solution.  
+3. Launch the debugger to open ArcGIS Pro.  
+4. In ArcGIS Pro open "C:\Data\FeatureTest\FeatureTest.aprx"  
+5. Open the 'Add-in' tab and click on the "Show Change DataSource" button to open the "Change DataSource" dockpane   
+6. On the "Change DataSource" dockpane browse to the "C:\Data\FeatureTest\FeatureNewTest.gdb" database which will be used to replace the current datasource for all layers.  
+7. Click the 'Replace Layer Datasources' button to replace all data connections.  
 ![UI](Screenshots/Screen1.png)  
-  
-1. Verify that all data connection have been changed:  
+8. Verify that all data connection have been changed:  
 ![UI](Screenshots/Screen2.png)  
   
-
 
 <!-- End -->
 

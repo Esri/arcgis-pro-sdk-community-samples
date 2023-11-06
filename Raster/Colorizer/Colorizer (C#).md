@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Raster
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,25 +29,21 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Raster\Landuse' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Raster\Landuse" is available.  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. In ArcGIS Pro the 'C:\Data\Raster\Landuse\Landuse.aprx' project.    
-1. Click on the Add-In tab and then click the "New Color by 'Value'" button to change the raster image colors and break those colors up by using the 'Value' field in the raster's Attribute table.    
-1. A message box will display: "In ArcGIS Pro 2.5 and older this method only works when using the 'value' field, unless you deploy the 'RecalculateColorizer' workaround."", click Ok.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Raster\Landuse' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Raster\Landuse" is available.
+2. In Visual Studio click the Build menu. Then select Build Solution.  
+3. Click Start button to open ArcGIS Pro.  
+4. In ArcGIS Pro the 'C:\Data\Raster\Landuse\Landuse.aprx' project.    
+5. Click on the Add-In tab and then click the "New Color by 'Value'" button to change the raster image colors and break those colors up by using the 'Value' field in the raster's Attribute table.    
+6. A message box will display: "In ArcGIS Pro 2.5 and older this method only works when using the 'value' field, unless you deploy the 'RecalculateColorizer' workaround."", click Ok.  
 ![UI](Screenshots/Screen2.png)  
-  
-1. Open the map's content dockpane and select the raster in the TOC (table of content).  
-1. The add-in automatically selects the first column in the attribute table, in this case the ObjectID column, and renders the raster with a color ramp using the 'ObjectID' column.  
+7. Open the map's content dockpane and select the raster in the TOC (table of content).  
+8. The add-in automatically selects the first column in the attribute table, in this case the ObjectID column, and renders the raster with a color ramp using the 'ObjectID' column.  
 ![UI](Screenshots/Screen4.png)  
-  
-1. On the 'Use this attribute' drop down select the 'LandType' attribute column and verify that the raster redraws with a color ramp using the 'LandType' column.  
+9. On the 'Use this attribute' drop down select the 'LandType' attribute column and verify that the raster redraws with a color ramp using the 'LandType' column.  
 ![UI](Screenshots/Screen5.png)  
-  
-1. On the 'Use this attribute' drop down select 'Attribute driven RGB', which will use the RGB values that are defined in the raster's attribute table to define the colors.  Verify that the raster redraws with colors defined by the 'Red', 'Green', and 'Blue' columns.  
+10. On the 'Use this attribute' drop down select 'Attribute driven RGB', which will use the RGB values that are defined in the raster's attribute table to define the colors.  Verify that the raster redraws with colors defined by the 'Red', 'Green', and 'Blue' columns.  
 ![UI](Screenshots/Screen6.png)  
   
-
 
 <!-- End -->
 

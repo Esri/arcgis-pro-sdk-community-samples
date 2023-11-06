@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,18 +29,16 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio, build the solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. In Pro, open a 2D map containing Z aware polylines and Z aware points or create a new 2D map and add some.  
-1. Select a Z aware polyline that you want to create points along.  
-1. Open the editing create features pane and select a template for your z aware points.  
-1. Click the 'create points along a 3D line tool' to display the tools pane.  
+1. In Visual Studio, build the solution.
+2. Launch the debugger to open ArcGIS Pro.  
+3. In Pro, open a 2D map containing Z aware polylines and Z aware points or create a new 2D map and add some.  
+4. Select a Z aware polyline that you want to create points along.  
+5. Open the editing create features pane and select a template for your z aware points.  
+6. Click the 'create points along a 3D line tool' to display the tools pane.  
 ![UI](ScreenShots/cpal.png)  
+7. Enter the construction options for the number of points you wish to create, then click 'Create'.  
+8. Z aware points will be created using the 3D distance along the selected line. The tool can be used to select other Z aware polylines.  
   
-1. Enter the construction options for the number of points you wish to create, then click 'Create'.  
-1. Z aware points will be created using the 3D distance along the selected line. The tool can be used to select other Z aware polylines.  
-  
-
 
 <!-- End -->
 

@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,53 +31,41 @@ Visual Studio:         2022
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 Using the sample:  
   
-1. Open this solution in Visual Studio.    
-1. Click the build menu and select Build Solution.    
-1. Click the Start button to open ArCGIS Pro. ArcGIS Pro will open.      
-1. Open any project.  
-1. Click on the Add-in tab and verify that a "Feature Indexing" group was added.  
-1. Notice the buttons in the FeatureIndexing group.  
-1. Tap the "Create Feature With Index" button.  
+1. Open this solution in Visual Studio.
+2. Click the build menu and select Build Solution.    
+3. Click the Start button to open ArCGIS Pro. ArcGIS Pro will open.      
+4. Open any project.  
+5. Click on the Add-in tab and verify that a "Feature Indexing" group was added.  
+6. Notice the buttons in the FeatureIndexing group.  
+7. Tap the "Create Feature With Index" button.  
 ![UI](Screenshots/Screen0.png)  
-  
-1. Add the new Database into the Catalog pane.  
+8. Add the new Database into the Catalog pane.  
 ![UI](Screenshots/Screen1.png)    
-  
-1. Expand the newly added database.  
-1. Right click on the "Buildings" Feature class.  
-1. Open the table  
+9. Expand the newly added database.  
+10. Right click on the "Buildings" Feature class.  
+11. Open the table  
 ![UI](Screenshots/Screen2.png)    
-  
-1. Notice the "*" denotes indexing which can be seen on the name and address name fields.  
+12. Notice the "*" denotes indexing which can be seen on the name and address name fields.  
 ![UI](Screenshots/Screen3.png)  
-  
-1. Tap the "Add Indexs To An Existing Data Set" button.  
+13. Tap the "Add Indexs To An Existing Data Set" button.  
 ![UI](Screenshots/Screen4.png)    
-  
-1. Refresh the database  
-1. Right click on the "Building" Feature class.  
-1. Open the table.  
+14. Refresh the database  
+15. Right click on the "Building" Feature class.  
+16. Open the table.  
 ![UI](Screenshots/Screen2.png)   
-  
-1. Notice the "*" can be seen on buildingUsage and buildingColor name fields.  
+17. Notice the "*" can be seen on buildingUsage and buildingColor name fields.  
 ![UI] (Screenshots/Screen5.png)    
-  
-1. Notice when hovering over a field name it displays information regarding whether or not a field is indexed.  
+18. Notice when hovering over a field name it displays information regarding whether or not a field is indexed.  
 ![UI](Screenshots/Screen6.png)  
-  
-1. In order to delete the SpatialIndex Tap the "Remove Spatial Index" button.  
+19. In order to delete the SpatialIndex Tap the "Remove Spatial Index" button.  
 ![UI](Screenshots/Screen8.png)  
-  
-1. This will delete the indexing on the Shape field.  
+20. This will delete the indexing on the Shape field.  
 ![UI](Screenshots/Screen7.png)  
-  
-1. In order to delete the Attribute index Tap the "Remove Attribute Index" button.  
+21. In order to delete the Attribute index Tap the "Remove Attribute Index" button.  
 ![UI](Screenshots/Screen9.png)  
-  
-1. Notice the attribute "name" and "address" are no longer indexed.  
+22. Notice the attribute "name" and "address" are no longer indexed.  
 ![UI](Screenshots/Screen10.png)  
   
-
 
 <!-- End -->
 

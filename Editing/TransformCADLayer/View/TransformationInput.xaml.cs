@@ -43,6 +43,31 @@ namespace TransformCADLayer
     public TransformationInput()
     {
       InitializeComponent();
+      OriginX.Focus();
+    }
+    private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+    {
+      TextBox textBox = (TextBox)sender;
+      textBox.Dispatcher.BeginInvoke(new Action(() => textBox.SelectAll()));
+      e.Handled = true;
+    }
+    private void TextBox_KeyDown(object sender, KeyEventArgs e)
+    {
+      if (e.Key == Key.Enter)
+      {
+        if((sender as TextBox).Name == nameof(OriginX))
+          OriginY.Focus();
+        else if ((sender as TextBox).Name == nameof(OriginY))
+          GridX.Focus();
+        else if ((sender as TextBox).Name == nameof(GridX))
+          GridY.Focus();
+        else if ((sender as TextBox).Name == nameof(GridY))
+          ScaleFactor.Focus();
+        else if ((sender as TextBox).Name == nameof(ScaleFactor))
+          Rotation.Focus();
+
+        e.Handled = true;
+      }
     }
   }
 }

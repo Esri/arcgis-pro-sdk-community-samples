@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -33,14 +33,13 @@ Dataset compatibility can be useful if you are writing an editing addin and want
 Datasets with long semantics have undoable and redoable edits whilst short transation semantic datasets do not.  
 Sometimes, short transaction edits are referred to as "direct edits".  
   
-1. In Visual Studio click the Build menu.Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. ArcGIS Pro will open, select any project that has a map with a mixed TOC - Data from a file geodatabase, feature services, etc.  
-1. Click the Add-In.  
-1. Click the Dataset Compatibility button.  
+1. In Visual Studio click the Build menu.Then select Build Solution.
+2. Launch the debugger to open ArcGIS Pro.  
+3. ArcGIS Pro will open, select any project that has a map with a mixed TOC - Data from a file geodatabase, feature services, etc.  
+4. Click the Add-In.  
+5. Click the Dataset Compatibility button.  
 ![UI](screenshots/screen1.png)  
   
-
 
 <!-- End -->
 

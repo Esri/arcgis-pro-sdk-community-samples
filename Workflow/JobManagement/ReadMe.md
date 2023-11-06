@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Workflow
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,8 +31,8 @@ Visual Studio:         2022
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
       
 1  Must have a Workflow manager database set up and accessible  
-1.a. This is done with the combination of database management and our Workflow manager software.  
-1.b. please refer to setting up a Workflow manager database before using this sample.  
+1. a. This is done with the combination of database management and our Workflow manager software.
+2.b. please refer to setting up a Workflow manager database before using this sample.  
 2. must designate job type to focus on prior to compiling code  
 2.a. Open project in Visual Studio. Locate JobManagementModule.cs. Find JobManagementModule. designate the Job Type ID.  
 2.b  Use 2 as your ID if you aren't certain and you just used the quick configuration, in your post install.  
@@ -41,7 +41,6 @@ Visual Studio:         2022
 3. must have a valid workflow database connection active in project before using  
 3.a. To acquire a valid worflow database connection just use the add workflow connection under the connections menu on the project tab   
   
-
 
 <!-- End -->
 

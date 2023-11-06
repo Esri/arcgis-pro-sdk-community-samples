@@ -15,8 +15,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,19 +31,18 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
- 1. In Visual Studio click the Build menu. Then select Build Solution.  
- 1. This solution is using the **Extended.Wpf.Toolkit NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Extended.Wpf.Toolkit".  
- 1. Click Start button to open ArcGIS Pro.  
- 1. ArcGIS Pro will open.   
- 1. Open a map view. The map should contain a few feature layers.  
- 1. Click on the Add-In tab on the ribbon.  
- 1. Within this tab there is a Display Dynamic Menu tool. Click it to activate the tool.  
- 1. In the map click a point around which you want to identify features and display them in a dynamic menu.  
- 1. A dynamic menu with the OIds of the features selected will display.  
- 1. Click one of the items in the menu. You will see the feature flash on the map and their attributes will be displayed in a pop-up.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+ 2. This solution is using the **Extended.Wpf.Toolkit NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Extended.Wpf.Toolkit".  
+ 3. Click Start button to open ArcGIS Pro.  
+ 4. ArcGIS Pro will open.   
+ 5. Open a map view. The map should contain a few feature layers.  
+ 6. Click on the Add-In tab on the ribbon.  
+ 7. Within this tab there is a Display Dynamic Menu tool. Click it to activate the tool.  
+ 8. In the map click a point around which you want to identify features and display them in a dynamic menu.  
+ 9. A dynamic menu with the OIds of the features selected will display.  
+ 10. Click one of the items in the menu. You will see the feature flash on the map and their attributes will be displayed in a pop-up.  
 ![UI](Screenshots/DynamicMenu.png)  
    
-
 
 <!-- End -->
 

@@ -1,0 +1,62 @@
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<UserControl x:Class="GetLineOfSight.LoSToolOptionsViewView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ui="clr-namespace:GetLineOfSight"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{Binding Path=ui.LoSToolOptionsViewViewModel}">
+            <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Margin="30,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Content="Select TIN:" Foreground="{StaticResource Esri_Gray155}" />
+        <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding TinLayersInMap}" SelectedItem="{Binding SelectedTinLayer, Mode=TwoWay}" Margin="6,0,18,0" />
+        <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Content="{Binding ObserverHeightLabel}" Foreground="{StaticResource Esri_Gray155}" />
+        <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"  Text="{Binding Path=ObserverHeight, UpdateSourceTrigger=PropertyChanged}" Margin="6,0,18,0" />
+        <Label Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Content="{Binding TargetHeightLabel}" Foreground="{StaticResource Esri_Gray155}" />
+        <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"  Text="{Binding Path=TargetHeight, UpdateSourceTrigger=PropertyChanged}" Margin="6,0,18,0" />
+        <Label Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Content="Apply Curvature:" Foreground="{StaticResource Esri_Gray155}" IsEnabled="{Binding IsCurvatureApplicable}"/>
+        <CheckBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding ApplyCurvature}" Margin="6,0,0,0" IsEnabled="{Binding IsCurvatureApplicable}"/>
+        <Label Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Content="Apply Refraction" Foreground="{StaticResource Esri_Gray155}" IsEnabled="{Binding IsCurvatureApplicable}" />
+        <CheckBox Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding ApplyRefraction}" Margin="6,0,0,0" IsEnabled="{Binding IsCurvatureApplicable}"/>
+        <Label Grid.Row="5" VerticalAlignment="Center" Content="Refraction Factor" IsEnabled="{Binding IsRefractionEnabled}" Foreground="{StaticResource Esri_Gray155}" />
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding RefractionFactor}"  IsEnabled="{Binding IsRefractionEnabled}" Margin="6,0,18,0" VerticalAlignment="Center"  />
+    </Grid>
+</UserControl>

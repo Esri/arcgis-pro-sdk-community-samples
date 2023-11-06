@@ -15,8 +15,8 @@ Language:              C#
 Subject:               Console
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: 4.6.1
 ```
@@ -31,12 +31,11 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu.  Then select Build Solution.    
-1. Click Start button to run the sample.    
-1. The trace results will be displayed as below  
+1. In Visual Studio click the Build menu.  Then select Build Solution.
+2. Click Start button to run the sample.    
+3. The trace results will be displayed as below  
 ![UI](Screenshots/Screenshot1.png)    
   
-
 
 <!-- End -->
 

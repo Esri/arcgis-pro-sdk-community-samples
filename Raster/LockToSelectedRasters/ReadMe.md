@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Raster
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,7 +29,7 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
 2. Click Start button to open ArcGIS Pro.  
 3. ArcGIS Pro will open.   
 4. Open a map view and add one or more mosaic dataset(s) to the map. Zoom to the mosaic layer.   
@@ -41,7 +41,6 @@ Visual Studio:         2022
 10. Click the Lock To Selected Rasters button again to deactivate the tool. The display of the mosaic layer will switch back to the original mosaic method before the tool was activated.  
 ![UI](Screenshots/screenshot1.jpg)  
   
-
 
 <!-- End -->
 

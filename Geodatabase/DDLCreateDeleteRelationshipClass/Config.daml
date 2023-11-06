@@ -1,4 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+
 <ArcGIS defaultAssembly="DDLCreateDeleteRelationshipClass.dll"
         defaultNamespace="DDLCreateDeleteRelationshipClass"
         xmlns="http://schemas.esri.com/DADF/Registry"
@@ -9,8 +28,8 @@
     <Name>DDLCreateDeleteRelationshipClass</Name>   
     <Description>DDLCreateDeleteRelationshipClass description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>osm12773</Author>
-    <Company>Acme</Company>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, https://www.esri.com</Company>
     <Date>2/14/2023 1:37:15 PM</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

@@ -121,6 +121,7 @@ namespace OpenItemDialogBrowseFilter
             };
             bool? ok = op.ShowDialog();
         }
+
         public static void NewFilterFromDAMLDeclaration()
         {
             //Create and use a filter defined in DAML. The filter displays line feature classes in a file GDB.
@@ -161,6 +162,7 @@ namespace OpenItemDialogBrowseFilter
             };
             bool? ok = aNewFilter.ShowDialog();
         }
+
         public static void UseProFilterGeodatabases()
         {
             //Create a browse filter that uses Pro's "esri_browseDialogFilters_geodatabases" filter.
@@ -176,8 +178,7 @@ namespace OpenItemDialogBrowseFilter
                 BrowseFilter = bf
             };
             bool? ok = aNewFilter.ShowDialog();
-        }        
-
+        }
 
         public static void ModifyAddMapToDisplayCustomItem()
         {

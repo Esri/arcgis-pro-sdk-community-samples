@@ -27,24 +27,25 @@ using System.Threading.Tasks;
 
 namespace Symbology
 {
-    /// <summary>
-    /// This sample creates custom point, line and polygon symbol items that you can use to render feature layers.  
-    /// These symbol items are stored in a personal style file in your project that you can re-use.
-    /// </summary>
-    /// <remarks>
-    /// 1. In Visual Studio click the Build menu. Then select Build Solution.  
-    /// 1. Launch the debugger to open ArcGIS Pro.
-    /// 1. Open any project file. 
-    /// 1. In Add-in tab, click the "Show Symbology pane" button.
-    /// 1. In the Symbology pane, you can see the custom Point, Line and Polygon symbols available in this sample. Select
-    /// each of these items in the combo box to see the available symbols.
-    /// ![UI](Screenshots/SymbologyPane.png)  
-    /// 1. In the project, access the Style project items available in the current project using the Catalog Pane.
-    /// 1. Click the MyCustomSymbols style project item. This is a personal style file created by the sample. It comprises all the symbols you saw in the Symbology pane.
-    /// ![UI](Screenshots/CustomStyleProjectItem.png)  
-    /// 1. You can now use these custom symbols to render any feature layer.
-    /// </remarks>
-    internal class Module1 : Module
+  /// <summary>
+  /// This sample creates custom point, line and polygon symbol items that you can use to render feature layers.  
+  /// These symbol items are stored in a personal style file in your project that you can re-use.
+  /// </summary>
+  /// <remarks>
+  /// 1. In Visual Studio click the Build menu. Then select Build Solution.  
+  /// 1. Launch the debugger to open ArcGIS Pro.
+  /// 1. Open any project file. 
+  /// 1. In Add-in tab, click the "Show Symbology pane" button.
+  /// 1. In the Symbology pane, you can see the custom Point, Line and Polygon symbols available in this sample. Select
+  /// each of these items in the combo box to see the available symbols.
+  /// ![UI](Screenshots/SymbologyPane.png)  
+  /// 1. In the project, access the Style project items available in the current project using the Catalog Pane.
+  /// 1. Click the MyCustomSymbols style project item. This is a personal style file created by the sample. It comprises all the symbols you saw in the Symbology pane.
+  /// ![UI](Screenshots/CustomStyleProjectItem.png)  
+  /// 1. You can now use these custom symbols to render featurelayers in your project using the ArcGIS Pro Symbology UI.
+  /// ![UI](Screenshots/ChangeSymbols.png)  
+  /// </remarks>
+  internal class Module1 : Module
     {
         private static Module1 _this = null;
 

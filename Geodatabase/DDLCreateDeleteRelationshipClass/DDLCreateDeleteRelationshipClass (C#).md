@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,44 +29,35 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Open this solution in Visual Studio.    
-1. Click the build menu and select Build Solution.  
-1. Click the Start button to open ArCGIS Pro. ArcGIS Pro will open.      
-1. Open any project.  
-1. Click on the Add-in tab and verify that a "Operations" group was added.  
-1. Notice the buttons in the "Operations" group.  
-1. Tap the "Create Relationship with Relationship Rules" button.  
+1. Open this solution in Visual Studio.
+2. Click the build menu and select Build Solution.  
+3. Click the Start button to open ArCGIS Pro. ArcGIS Pro will open.      
+4. Open any project.  
+5. Click on the Add-in tab and verify that a "Operations" group was added.  
+6. Notice the buttons in the "Operations" group.  
+7. Tap the "Create Relationship with Relationship Rules" button.  
 ![UI](Screenshots/Screen0.png)  
-  
-1. Add the new Database into the Catalog pane.  
+8. Add the new Database into the Catalog pane.  
 ![UI](Screenshots/Screen1.png)    
-  
-1. Notice the structure of the data.  
-1. In order to move the "BuildingToBuildingType" RelationshipClass out of the FeatureDataSet ,"Parcel_Information", and into the root we tap on the "Remove RelationshipClass out of feature dataset" button  
+9. Notice the structure of the data.  
+10. In order to move the "BuildingToBuildingType" RelationshipClass out of the FeatureDataSet ,"Parcel_Information", and into the root we tap on the "Remove RelationshipClass out of feature dataset" button  
 ![UI](Screenshots/Screen2.png)  
-  
-1. Notice the "BuildingToBuildingType" is in the root of the "mySampleGeoDatabase.gdb".  
+11. Notice the "BuildingToBuildingType" is in the root of the "mySampleGeoDatabase.gdb".  
 ![UI](Screenshots/Screen3.png)    
-  
-1. Delete the "mySampleGeoDatabase.gdb"  
-1. Tap on the "Create Atrributed Relationship" button   
+12. Delete the "mySampleGeoDatabase.gdb"  
+13. Tap on the "Create Atrributed Relationship" button   
 ![UI](Screenshots/Screen4.png)   
-  
-1. Add the new Database into the Catalog pane.  
-1. Right click on "BuildingToBuildingType", select properties, then select Rules.Notice the Min and Max values are blank.  
+14. Add the new Database into the Catalog pane.  
+15. Right click on "BuildingToBuildingType", select properties, then select Rules.Notice the Min and Max values are blank.  
 ![UI](Screenshots/Screen5.png)  
-  
-1. Tap the "Modify RelationshipClass" button  
+16. Tap the "Modify RelationshipClass" button  
 ![UI](Screenshots/Screen7.png)    
-  
-1.Right click on "BuildingToBuildingType", select properties, then select Rules.Notice the Min and Max values are no longer blank.  
-1.Tap the "Delete RelationshipClass" button  
+17.Right click on "BuildingToBuildingType", select properties, then select Rules.Notice the Min and Max values are no longer blank.  
+18.Tap the "Delete RelationshipClass" button  
 ![UI](Screenshots/Screen8.png)  
+19.Refresh the Database.  
+20. Notice "BuildingToBuildingType" has been deleted.  
   
-1.Refresh the Database.  
-1. Notice "BuildingToBuildingType" has been deleted.  
-  
-
 
 <!-- End -->
 

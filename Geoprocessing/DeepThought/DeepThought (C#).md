@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Geoprocessing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,21 +31,25 @@ Visual Studio:         2022
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
       
   
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
-1. Open any project file or an empty map template. The Geoprocessing dockpane is displayed.  
-1. On the Geoprocessing dockpane click on the 'Toolboxes' tab.  The list of toolboxes are displayed.  
-1. Search for 'Deep Thought' in the toolbox list.    
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Click Start button to open ArcGIS Pro.  
+3. ArcGIS Pro will open.   
+4. Open any project file or an empty map template. The Geoprocessing dockpane is displayed.  
+5. On the Geoprocessing dockpane click on the 'Toolboxes' tab.  The list of toolboxes are displayed.  
+6. Search for 'Deep Thought' in the toolbox list.    
 ![UI](Screenshots/Screen1.png)  
-  
-1. Double click on 'Answer (from xml)' and run the tool by clicking the 'Run' button.  
+7. Double click on 'Answer (from xml)' and run the tool by clicking the 'Run' button.  
 ![UI](Screenshots/Screen2.png)  
-  
-1. Wait for the GP task to finish and you can view the answer in the popup.  
+8. Wait for the GP task to finish and you can view the answer in the popup.  
 ![UI](Screenshots/Screen3.png)  
+9. In order to test programmatic instantiation of the 'Deep Thought' answer script, select the Add-in tab with the 'Running Py Scripts' group.  
+![UI](Screenshots/Screen4.png)  
+10. Click the 'Prompt to run Deep Thought' button to see the parameter input for the answer.py popup.  
+![UI](Screenshots/Screen5.png)  
+11. Click the 'Run Deep Thought' button runs the python command directly using a progressor.  Run this command outside the VS debugger to see the progresssor.  
+![UI](Screenshots/Screen6.png)    
+![UI](Screenshots/Screen7.png)  
   
-
 
 <!-- End -->
 

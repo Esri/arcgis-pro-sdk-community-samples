@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Content
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,18 +29,16 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. This solution is using the **Newtonsoft.Json NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open, select any project.  
-1. Click on the Add-In tab.  
-1. On the Add-in tab click the 'Show Portal Info' button.  
-1. After the 'PortalInfo Dockpane' opens click on the 'Show Portal Info' button.  
+1. This solution is using the **Newtonsoft.Json NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".
+2. In Visual Studio click the Build menu. Then select Build Solution.  
+3. Click Start button to open ArcGIS Pro.  
+4. ArcGIS Pro will open, select any project.  
+5. Click on the Add-In tab.  
+6. On the Add-in tab click the 'Show Portal Info' button.  
+7. After the 'PortalInfo Dockpane' opens click on the 'Show Portal Info' button.  
 ![UI](Screenshots/Screen1.png)  
+8. Portal Information is now displayed in the text box below the 'Show Portal Info' button.  
   
-1. Portal Information is now displayed in the text box below the 'Show Portal Info' button.  
-  
-
 
 <!-- End -->
 

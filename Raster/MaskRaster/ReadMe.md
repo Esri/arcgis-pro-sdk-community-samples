@@ -14,8 +14,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -30,30 +30,25 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in C:\Data   
-1. The project used for this sample is 'C:\Data\RasterSample\RasterSample.aprx'  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
-1. Open the 'RasterSample.aprx' project or to use your own data open a map view and add a raster to the map.  
-1. Select the raster layer in the TOC.  
-1. Click on the Add-In tab on the ribbon.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+2. Make sure that the Sample data is unzipped in C:\Data   
+3. The project used for this sample is 'C:\Data\RasterSample\RasterSample.aprx'  
+4. In Visual Studio click the Build menu. Then select Build Solution.  
+5. Click Start button to open ArcGIS Pro.  
+6. ArcGIS Pro will open.   
+7. Open the 'RasterSample.aprx' project or to use your own data open a map view and add a raster to the map.  
+8. Select the raster layer in the TOC.  
+9. Click on the Add-In tab on the ribbon.  
 ![UI](Screenshots/Screenshot1.png)  
-  
-1. Within this tab there is a Mask Raster Tool. Click it to activate the tool.  
-1. In the map draw a rectangle around the area of the raster you want to mask.  
+10. Within this tab there is a Mask Raster Tool. Click it to activate the tool.  
+11. In the map draw a rectangle around the area of the raster you want to mask.  
 ![UI](Screenshots/Screenshot2.png)  
-  
-1. A copy of the source raster dataset of the layer you selected will be saved in your project folder, the copy will be processed to mask pixels and a new layer will be added to your map using the processed copy.  
+12. A copy of the source raster dataset of the layer you selected will be saved in your project folder, the copy will be processed to mask pixels and a new layer will be added to your map using the processed copy.  
 ![UI](Screenshots/Screenshot3.png)  
-  
-1. You need to adjust the newly added raster layer's symbology to see the full masking effect.  
+13. You need to adjust the newly added raster layer's symbology to see the full masking effect.  
 ![UI](Screenshots/Screenshot4.png)  
+14. Press the escape key if you want to deactivate the tool.  
   
-1. Press the escape key if you want to deactivate the tool.  
-  
-
 
 <!-- End -->
 

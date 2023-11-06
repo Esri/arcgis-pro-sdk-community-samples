@@ -17,8 +17,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -38,26 +38,23 @@ The tab can be positioned using the "insert" and "placeWith" attributes in the c
   
 Property sheets are used to capture settings. They can be either project or application settings. You can insert your custom property sheets into the existing Options property sheets which are displayed from the backstage Options tab.  This is achieved in the config.daml by using the updateSheet xml tag and specifying the  esri_core_optionsPropertySheet id.  Use the group attribute on the insertPage tag to specify whether your view/viewmodel represents project or application settings.   
 This sample has an example of both project and application settings, including illustrating how these settings can be saved.   
-
   
 Modules can write out their own set of properties when a project is saved. Correspondingly, modules can read their own settings when a project is opened.  The module contains two methods OnReadStateAsync and OnWriteStateAsync which should be overriden to read and write module specific settings or properties.   
-
   
   
-1. Open this solution in Visual Studio.    
-1. Click the build menu and select Build Solution.  
-1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.  
-1. Open any project - it can be an existing project containing data or a new empty project.  
-1. Click the project tab.  See that there is a new Sample Tab item in the backstage.  Select it and it will show the new backstage tab.  
-1. Click the project tab and select the Options backstage item.  The options property page will display.  
-1. See that there is a Sample Project Settings under Project and a Sample App Settings under Application.   
-1. Change the project settings and application settings.   
-1. Save the project.  
-1. Open another project (or create new); return to the Project|Options|Sample Project Settings and see that the settings have been reset.  
-1. Open the project from step4; return to the Project|Options|Sample Project Settings and see that the settings have been restored.  
+1. Open this solution in Visual Studio.
+2. Click the build menu and select Build Solution.  
+3. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.  
+4. Open any project - it can be an existing project containing data or a new empty project.  
+5. Click the project tab.  See that there is a new Sample Tab item in the backstage.  Select it and it will show the new backstage tab.  
+6. Click the project tab and select the Options backstage item.  The options property page will display.  
+7. See that there is a Sample Project Settings under Project and a Sample App Settings under Application.   
+8. Change the project settings and application settings.   
+9. Save the project.  
+10. Open another project (or create new); return to the Project|Options|Sample Project Settings and see that the settings have been reset.  
+11. Open the project from step4; return to the Project|Options|Sample Project Settings and see that the settings have been restored.  
 ![UI](Screenshots/Screen.png)  
   
-
 
 <!-- End -->
 

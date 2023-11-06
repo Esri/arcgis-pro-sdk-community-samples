@@ -14,8 +14,8 @@ Language:              C#
 Subject:               Content
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -30,17 +30,16 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.   
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
-1. Open any project file that contains project items such as Maps, toolboxs, databases with metadata.   
-1. In the Catalog pane, select any item that has metadata.  
-1. Select the Add-in tab and click the Metadata Transform viewer button.  The Metadata Viewer dockpane will be displayed.  
-1. The dockpane will display the metadata of the project item selected in a browser control.  
-1. Note that a default transform located in the ArcGIS Pro installation folder is applied to display the metadata.  `C:\Program Files\ArcGIS\Pro\Resources\Metadata\Stylesheets\XML.xsl`  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Click Start button to open ArcGIS Pro.  
+3. ArcGIS Pro will open.   
+4. Open any project file that contains project items such as Maps, toolboxs, databases with metadata.   
+5. In the Catalog pane, select any item that has metadata.  
+6. Select the Add-in tab and click the Metadata Transform viewer button.  The Metadata Viewer dockpane will be displayed.  
+7. The dockpane will display the metadata of the project item selected in a browser control.  
+8. Note that a default transform located in the ArcGIS Pro installation folder is applied to display the metadata.  `C:\Program Files\ArcGIS\Pro\Resources\Metadata\Stylesheets\XML.xsl`  
 ![UI](Screenshots/MetadataViewer.png)  
   
-
 
 <!-- End -->
 

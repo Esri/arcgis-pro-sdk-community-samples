@@ -15,8 +15,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,16 +31,14 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu.  Then select Build Solution.    
-1. Click Start button to open ArcGIS Pro.    
-1. ArcGIS Pro will open.    
-1. Open C:\Data\UtilityNetwork\UtilityNetworkSamples.aprx or a map view that references a utility network with the correct schema    
+1. In Visual Studio click the Build menu.  Then select Build Solution.
+2. Click Start button to open ArcGIS Pro.    
+3. ArcGIS Pro will open.    
+4. Open C:\Data\UtilityNetwork\UtilityNetworkSamples.aprx or a map view that references a utility network with the correct schema    
 ![UI](Screenshots/Screenshot1.png)  
-  
-1. Click on the **ExportSubnetwork** button on the add-in to trigger the **Export Subnetwork Tool** from the Utility Network Tools toolbox.  
+5. Click on the **ExportSubnetwork** button on the add-in to trigger the **Export Subnetwork Tool** from the Utility Network Tools toolbox.  
 ![UI](Screenshots/Screenshot2.png)  
-  
-1. On successful completion of the export operation, the resulting output, Export.json, is exported into the path of the directory designated for temporary files.  
+6. On successful completion of the export operation, the resulting output, Export.json, is exported into the path of the directory designated for temporary files.  
 ```json
  {
   "controllers" : [
@@ -91,7 +89,6 @@ Visual Studio:         2022
           . 
  ```
   
-
 
 <!-- End -->
 

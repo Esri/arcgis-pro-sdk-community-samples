@@ -16,8 +16,8 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -32,24 +32,22 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
-1. Open a project with a map view that has feature layers.  
-1. Click on the Sketch tab and then on the 'Select And Zoom' button.  
-1. On your map view 'sketch' (using the rubber band rectangle) an area containing features  
-1. Features will be selected and the map view will be zoom to the selection area's extent  
-1. Next click the 'Custom Identify' button and you will see the 'Identify Result' popup  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Launch the debugger to open ArcGIS Pro.  
+3. ArcGIS Pro will open.   
+4. Open a project with a map view that has feature layers.  
+5. Click on the Sketch tab and then on the 'Select And Zoom' button.  
+6. On your map view 'sketch' (using the rubber band rectangle) an area containing features  
+7. Features will be selected and the map view will be zoom to the selection area's extent  
+8. Next click the 'Custom Identify' button and you will see the 'Identify Result' popup  
 ![UI](Screenshots/2DScreen.png)      
-  
-1. Now open a project that contains a scene with 3D features  
-1. Click on the Sketch tab and then on the 'Select And Zoom' button  
-1. On your 3D map view 'sketch' (using the rubber band rectangle) an area containing features  
-1. Features will be selected and the map view will be zoom to the selection area's extent  
-1. Next click the 'Custom Identify' button and you will see the 'Identify Result' pop-up  
+9. Now open a project that contains a scene with 3D features  
+10. Click on the Sketch tab and then on the 'Select And Zoom' button  
+11. On your 3D map view 'sketch' (using the rubber band rectangle) an area containing features  
+12. Features will be selected and the map view will be zoom to the selection area's extent  
+13. Next click the 'Custom Identify' button and you will see the 'Identify Result' pop-up  
 ![UI](Screenshots/3DScreen.png)      
   
-
 
 <!-- End -->
 

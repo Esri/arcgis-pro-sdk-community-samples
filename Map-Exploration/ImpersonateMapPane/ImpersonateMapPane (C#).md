@@ -14,8 +14,8 @@ Language:              C#
 Subject:               Map-Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -30,18 +30,16 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in c:\data  
-1. The project used for this sample is 'C:\data\Interacting with Maps\Interacting with Maps.aprx'  
-1. In Visual Studio click the Build menu.Then select Build Solution.   
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open, select the Interacting with Maps.aprx project  
-1. Select the 'Add-in' tab on the ArcGIS Pro ribbon. See the 'Open ImpersonateMapPane1' button  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+2. Make sure that the Sample data is unzipped in c:\data  
+3. The project used for this sample is 'C:\data\Interacting with Maps\Interacting with Maps.aprx'  
+4. In Visual Studio click the Build menu.Then select Build Solution.   
+5. Click Start button to open ArcGIS Pro.  
+6. ArcGIS Pro will open, select the Interacting with Maps.aprx project  
+7. Select the 'Add-in' tab on the ArcGIS Pro ribbon. See the 'Open ImpersonateMapPane1' button  
 ![UI](Screenshots/ImpersonateMapPane_2.png)  
-  
-1. Click the button and see the Impersonate pane open.  Reposition the pane to view it side by side with the 2D map  
+8. Click the button and see the Impersonate pane open.  Reposition the pane to view it side by side with the 2D map  
 ![UI](Screenshots/ImpersonateMapPane_4.png)  
-
 
 <!-- End -->
 

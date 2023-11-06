@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,7 +31,7 @@ Visual Studio:         2022
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 To use this sample:  
   
-1. Build or debug the sample through Visual Studio.  
+1. Build or debug the sample through Visual Studio.
 2. In Pro, select the Add-In ribbon and click the button SetG 2G.  
 ![UI](Screenshots/Screen1.png)  
 3. The sample code toggles the existing check-boxes from OFF to ON or vice versa.  
@@ -39,7 +39,6 @@ To use this sample:
 5. Open the Ground to Grid corrections to see the changes in the UI.  
 ![UI](Screenshots/Screen2.png)  
   
-
 
 <!-- End -->
 

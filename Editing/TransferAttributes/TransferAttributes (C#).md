@@ -15,8 +15,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,38 +31,31 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in c:\data  
-1. Before you run the sample verify that the project "C:\Data\Interacting With Maps\Interacting with Maps.aprx" is present since this is required to run the sample.  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
-1. Open the "C:\Data\Interacting With Maps\Interacting with Maps.aprx" project.  
-1. Click on the Add-in tab on the ribbon and verify the add-in has loaded.   
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+2. Make sure that the Sample data is unzipped in c:\data  
+3. Before you run the sample verify that the project "C:\Data\Interacting With Maps\Interacting with Maps.aprx" is present since this is required to run the sample.  
+4. In Visual Studio click the Build menu. Then select Build Solution.  
+5. Launch the debugger to open ArcGIS Pro.  
+6. ArcGIS Pro will open.   
+7. Open the "C:\Data\Interacting With Maps\Interacting with Maps.aprx" project.  
+8. Click on the Add-in tab on the ribbon and verify the add-in has loaded.   
 ![UI](Screenshots/Screen1.png)  
-  
-1. Move to the TOC List by Selection tab and ensure that the Portland Precincts layer is the only selectable layer.   
+9. Move to the TOC List by Selection tab and ensure that the Portland Precincts layer is the only selectable layer.   
 ![UI](Screenshots/Screen2.png)  
-  
-1. Move back to the TOC Drawing Order tab and turn off all layers except the Portland Precincts and the Topographic layers.   
-1. Right click on the Portland Precincts layer and select Zoom to Layer  
-1. Click on the Add-in tab on the ribbon and select the 'Transfer Attributes between Features' tool.   
-1. Click on the map over a precinct. Then click on the map a second time over a different precinct.   
+10. Move back to the TOC Drawing Order tab and turn off all layers except the Portland Precincts and the Topographic layers.   
+11. Right click on the Portland Precincts layer and select Zoom to Layer  
+12. Click on the Add-in tab on the ribbon and select the 'Transfer Attributes between Features' tool.   
+13. Click on the map over a precinct. Then click on the map a second time over a different precinct.   
 ![UI](Screenshots/Screen4.png)  
-  
-1. The second precinct should now have the attributes of the first precinct. The symbology of the feature should have also changed.   
+14. The second precinct should now have the attributes of the first precinct. The symbology of the feature should have also changed.   
 ![UI](Screenshots/Screen5.png)  
-  
-1. Move back to the Add-in tab on the ribbon and select the 'Transfer Attributes from Templates' tool.   
-1. The Transfer Attributes from Template UI displays in a dock pane.    
+15. Move back to the Add-in tab on the ribbon and select the 'Transfer Attributes from Templates' tool.   
+16. The Transfer Attributes from Template UI displays in a dock pane.    
 ![UI](Screenshots/Screen6.png)  
+17. Use the Field Mapping button on the burger button (or from the Add-in ribbon) to investigate the current field mappings between layers. Add additional  field mappings if required.   
+18. Choose the layer Portland Precincts and the Central Precinct template.  
+19. Click in the precinct polygon that you changed with the previous tool.  The feature will now have the attributes of the Central Precinct template.  
   
-1. Use the Field Mapping button on the burger button (or from the Add-in ribbon) to investigate the current field mappings between layers. Add additional  field mappings if required.   
-  
-1. Choose the layer Portland Precincts and the Central Precinct template.  
-1. Click in the precinct polygon that you changed with the previous tool.  The feature will now have the attributes of the Central Precinct template.  
-  
-
 
 <!-- End -->
 

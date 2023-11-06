@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="AlternativeEnergizationAddIn.dll" defaultNamespace="AlternativeEnergizationAddIn" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{1c3b219d-6b2e-4e45-aba7-e119b07619d1}" version="1.0" desktopVersion="3.1.41833">
+    <Name>AlternativeEnergizationAddIn</Name>
+    <Description>AlternativeEnergizationAddIn description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, https://www.esri.com</Company>
+    <Date>8/11/2023 3:03:25 PM</Date>
+    <Subject>Utility Network</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="AlternativeEnergizationAddIn_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="AlternativeEnergizationAddIn_Tab1" caption="New Tab">
+          <group refID="AlternativeEnergizationAddIn_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="AlternativeEnergizationAddIn_Group1" 
+							 caption="Alternative Energization" keytip="G1">
+          <!-- host controls within groups -->
+          <tool refID="AlternativeEnergizationAddIn_ShowCurrentIsolationOutageTool" size="large" />
+          <button refID="AlternativeEnergizationAddIn_AlternativeEnergizationTool" size="large" />
+          <button refID="AlternativeEnergizationAddIn_ActivateAlternativeTool" size="large" />
+					<tool refID="esri_networkanalysis_trace_ClearAllBtn"/>
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="AlternativeEnergizationAddIn_AlternativeEnergizationTool"
+								caption="Alternative Energization" 
+								className="AlternativeEnergizationTool" 
+								loadOnClick="true" keytip="B1"
+								smallImage="upstream-trace-16" 
+								largeImage="upstream-trace-32" 
+								condition="esri_mapping_mapPane">
+          <tooltip heading="Alternative Energization">Tooltip text<disabledText /></tooltip>
+        </button>
+        <tool id="AlternativeEnergizationAddIn_ShowCurrentIsolationOutageTool" 
+							caption="Isolation Outage" keytip="B2"
+							className="ShowCurrentIsolationOutageTool" loadOnClick="true" 
+							smallImage="connected-trace-16"
+							largeImage="connected-trace-32"
+							condition="esri_mapping_mapPane">
+          <tooltip heading="Isolation Outage">Tooltip text<disabledText /></tooltip>
+        </tool>
+        <button id="AlternativeEnergizationAddIn_ActivateAlternativeTool" 
+								caption="Alternative Outage" keytip="B3"
+								className="ActivateAlternativeTool" loadOnClick="true" 
+								smallImage="NamedTraceConfiguration16"
+								largeImage="NamedTraceConfiguration32" condition="esri_mapping_mapPane">
+          <tooltip heading="Alternative Outage">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+		<updateModule refID="esri_networkanalysis_utility_module">
+			<tabs>
+				<updateTab refID="esri_networkanalysis_utility_network_Tab">
+					<insertGroup refID="AlternativeEnergizationAddIn_Group1" />
+				</updateTab>
+			</tabs>
+		</updateModule>
+	</modules>
+</ArcGIS>

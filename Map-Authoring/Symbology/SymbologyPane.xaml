@@ -65,7 +65,9 @@
         </DockPanel>
         <StackPanel Grid.Row="1">
             <ComboBox ItemsSource="{Binding SymbolGeometries}" SelectedItem="{Binding SelectedGeometry}" />
-            <ListBox ItemContainerStyle="{DynamicResource Esri_ListBoxItemHighlightBrush}" ItemsSource="{Binding MyCustomStyleItems}" ScrollViewer.VerticalScrollBarVisibility="Auto"
+            <ListBox ItemContainerStyle="{DynamicResource Esri_ListBoxItemHighlightBrush}" 
+                     ItemsSource="{Binding MyCustomStyleItems}" 
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"
                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                 ItemTemplate="{StaticResource SymbologyTemplate}"
                      SelectedItem="{Binding SelectedSymbolStyleItem}"

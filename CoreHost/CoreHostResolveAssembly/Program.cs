@@ -115,18 +115,18 @@ namespace CoreHostResolveAssembly
         {
             string alias = table.GetAliasName();
             string name = table.GetName();
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine(string.Format("{0} ({1})", alias.Length > 0 ? alias : name, name));
+            StringBuilder sb = new();
+            sb.AppendLine($"{(alias.Length > 0 ? alias : name)} ({name})");
             sb.AppendLine(new string('-', 80));
             foreach (var fld in table.GetFields())
             {
-                sb.Append(string.Format("{0,-20}", fld.AliasName ?? fld.Name));
-                sb.Append(string.Format("{0,-14} ({1}) ", fld.FieldType.ToString(), fld.Length));
+                sb.Append($"{fld.AliasName ?? fld.Name,-20}");
+                sb.Append($"{fld.FieldType.ToString(),-14} ({fld.Length}) ");
                 if (fld.IsNullable || fld.IsRequired)
                 {
 
                     string sep = fld.IsNullable && fld.IsRequired ? ", " : "";
-                    sb.Append(string.Format("({0}{1}{2})", fld.IsNullable ? "Null" : "", sep, fld.IsRequired ? "Required" : ""));
+                    sb.Append($"({(fld.IsNullable ? "Null" : "")}{sep}{(fld.IsRequired ? "Required" : "")})");
                 }
                 sb.Append("\r\n");
             }

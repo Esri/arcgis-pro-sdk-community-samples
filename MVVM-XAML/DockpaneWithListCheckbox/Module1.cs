@@ -47,7 +47,7 @@ namespace DockpaneWithListCheckbox
    /// ![Screen1](Screenshots/Screen1.png)
    /// 1. Click the 'Populate List' button to populate the list box.
    /// ![Screen2](Screenshots/Screen2.png)
-   /// 1. Select a few items and click the 'Read Selcted Items' button to test the selection.
+   /// 1. Select a few items and click the 'Read Selected Items' button to test the selection.
    /// ![Screen3](Screenshots/Screen3.png)
    /// </remarks>
   internal class Module1 : Module

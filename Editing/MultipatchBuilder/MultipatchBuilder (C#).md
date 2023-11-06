@@ -14,8 +14,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -30,24 +30,20 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.      
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
-1. Open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project which contains the required data needed for this sample.  
-1. Open the "Portland 3D City" mapview.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.
+2. In Visual Studio click the Build menu. Then select Build Solution.  
+3. Launch the debugger to open ArcGIS Pro.  
+4. ArcGIS Pro will open.   
+5. Open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project which contains the required data needed for this sample.  
+6. Open the "Portland 3D City" mapview.  
 ![UI](Screenshots/Screen1.png)  
-  
-1. One of the building footprint polygons has already been selected.  Select 'Glass' from the texture drop down and then click the 'Create Multipatch Geometry' button to generate the Multipatch geomtry for the selected footprint.   
+7. One of the building footprint polygons has already been selected.  Select 'Glass' from the texture drop down and then click the 'Create Multipatch Geometry' button to generate the Multipatch geomtry for the selected footprint.   
 ![UI](Screenshots/Screen2.png)  
-  
-1. Select the next building footprint and change the texture dropdown to 'Red-solid'. Then click the 'Create Multipatch Geometry' button to generate the Multipatch geomtry for this footprint.   
+8. Select the next building footprint and change the texture dropdown to 'Red-solid'. Then click the 'Create Multipatch Geometry' button to generate the Multipatch geomtry for this footprint.   
 ![UI](Screenshots/Screen3.png)  
-  
-1. Select the next building footprint and change the texture dropdown to 'Gray-solid'. Then click the 'Create Multipatch Geometry' button to generate the Multipatch geomtry for this footprint.   
+9. Select the next building footprint and change the texture dropdown to 'Gray-solid'. Then click the 'Create Multipatch Geometry' button to generate the Multipatch geomtry for this footprint.   
 ![UI](Screenshots/Screen4.png)  
   
-
 
 <!-- End -->
 

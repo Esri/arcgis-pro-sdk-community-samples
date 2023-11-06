@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,28 +29,23 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a map package called 'CrowdPlannerProject.ppkx' which is required for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\CrowdPlanner" is available.  
-1. Open this solution in Visual Studio.    
-1. Click the build menu and select Build Solution.  
-1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.  
-1. Open the map package "CrowdPlannerProject.ppkx" located in the "C:\Data\CrowdPlanner" folder since this project contains all required data.  
-1. Click on the Add-in tab and see that a 'Crowd Planner Summary' button was added.  
-1. The 'Crowd Planner Summary' button opens the 'Crowd Planner' pane.   
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a map package called 'CrowdPlannerProject.ppkx' which is required for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\CrowdPlanner" is available.
+2. Open this solution in Visual Studio.    
+3. Click the build menu and select Build Solution.  
+4. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.  
+5. Open the map package "CrowdPlannerProject.ppkx" located in the "C:\Data\CrowdPlanner" folder since this project contains all required data.  
+6. Click on the Add-in tab and see that a 'Crowd Planner Summary' button was added.  
+7. The 'Crowd Planner Summary' button opens the 'Crowd Planner' pane.   
 ![UI](Screenshots/Screen1.png)  
-  
-1. Click the 'Populate Values' button and note that now the pane entry fields have been populated using data from the sample record in the Crowd Planning feature class.  
+8. Click the 'Populate Values' button and note that now the pane entry fields have been populated using data from the sample record in the Crowd Planning feature class.  
 ![UI](Screenshots/Screen2.png)  
-  
-1. Select the 'Edit' tab and create a new 'CrowdPlanning' feature by using the CP construction tool.  
+9. Select the 'Edit' tab and create a new 'CrowdPlanning' feature by using the CP construction tool.  
 ![UI](Screenshots/Screen3.png)  
-  
-1. Digitize a new polygon and note that its attributes are automatically populated.   
+10. Digitize a new polygon and note that its attributes are automatically populated.   
 ![UI](Screenshots/Screen4.png)  
-  
-1. Finally you can also play with the various value adjustment buttons that are provided on the 'Crowd Planner' pane.  
+11. Finally you can also play with the various value adjustment buttons that are provided on the 'Crowd Planner' pane.  
 ![UI](Screenshots/Screen5.png)  
   
-
 
 <!-- End -->
 

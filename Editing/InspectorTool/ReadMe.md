@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,26 +29,22 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in c:\data   
-1. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. ArcGIS Pro will open, select the FeatureTest.aprx project  
-1. Activate the Edit tab and click the modify button.  
-1. Navigate to the Pro SDK template in the Modify Features pane.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+2. Make sure that the Sample data is unzipped in c:\data   
+3. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'  
+4. In Visual Studio click the Build menu. Then select Build Solution.  
+5. Launch the debugger to open ArcGIS Pro.  
+6. ArcGIS Pro will open, select the FeatureTest.aprx project  
+7. Activate the Edit tab and click the modify button.  
+8. Navigate to the Pro SDK template in the Modify Features pane.  
 ![UI](Screenshots/InspectorTool.PNG)  
-  
-1. Click the 'Select Inspector Tool' and draw rectangle around point features.  
+9. Click the 'Select Inspector Tool' and draw rectangle around point features.  
 ![UI](Screenshots/SelectionPointFeatures.PNG)  
-  
-1. Click on an ObjectID in the tree view.  
+10. Click on an ObjectID in the tree view.  
 ![UI](Screenshots/SelectedFeaturesTreeViewAndInspector.PNG)  
-  
-1. Change the text for the 'Description' attribute.  
+11. Change the text for the 'Description' attribute.  
 ![UI](Screenshots/ChangeDescriptionValue.PNG)  
   
-
 
 <!-- End -->
 

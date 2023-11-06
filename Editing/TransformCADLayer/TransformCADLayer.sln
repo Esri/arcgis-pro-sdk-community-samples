@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31205.134
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransformCADLayer", "TransformCADLayer.csproj", "{22798403-4E86-4817-B243-87BBA77DF273}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransformCADLayer", "TransformCADLayer.csproj", "{269139F3-5F89-4603-B12A-8461F51DC475}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{22798403-4E86-4817-B243-87BBA77DF273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{22798403-4E86-4817-B243-87BBA77DF273}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{22798403-4E86-4817-B243-87BBA77DF273}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{22798403-4E86-4817-B243-87BBA77DF273}.Release|Any CPU.Build.0 = Release|Any CPU
+		{269139F3-5F89-4603-B12A-8461F51DC475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{269139F3-5F89-4603-B12A-8461F51DC475}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{269139F3-5F89-4603-B12A-8461F51DC475}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{269139F3-5F89-4603-B12A-8461F51DC475}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {FB9E18AA-5441-411C-A5FA-ACB945C99CBD}
+		SolutionGuid = {C98FDBE7-5C92-447E-9F22-E5A57ECEB8DE}
 	EndGlobalSection
 EndGlobal

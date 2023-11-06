@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,14 +29,13 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.   
-1. Open any project that contains a Map.  
-1. You will need a Graphics Layer in the map to work with this sample.  If the map doesn't have a Graphics Layer, click the Map tab and use the Add Graphics layer button to insert a new layer in the map.  
-1. Notice the Graphics Example tab that appears on the Pro ribbon when a Graphics Layer exists in the map.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Launch the debugger to open ArcGIS Pro.   
+3. Open any project that contains a Map.  
+4. You will need a Graphics Layer in the map to work with this sample.  If the map doesn't have a Graphics Layer, click the Map tab and use the Add Graphics layer button to insert a new layer in the map.  
+5. Notice the Graphics Example tab that appears on the Pro ribbon when a Graphics Layer exists in the map.  
 ![UI](screenshots/GraphicsExample.png)  
-  
-1. This tab has various controls that demonstrates common Graphic Element functionalities such as:  
+6. This tab has various controls that demonstrates common Graphic Element functionalities such as:  
      * Create Graphics layer  
      * Create Graphic elements (Text, point, line, polygon and image)  
      * Clipboard  
@@ -44,24 +43,19 @@ Visual Studio:         2022
      * Select graphic elements  
      * Group, Order and Align graphic elements.  
      * Move Graphic elements  
-  
-1. **Create Graphics Layer:** To create a new graphics layer, click the New graphics layer button. A new graphics layer will appear on the TOC.  
-1. **Create Graphic elements:** The Create Graphic elements gallery has a collection of tools to add Text,   
+7. **Create Graphics Layer:** To create a new graphics layer, click the New graphics layer button. A new graphics layer will appear on the TOC.  
+8. **Create Graphic elements:** The Create Graphic elements gallery has a collection of tools to add Text,   
 Shape and Image elements to your map. In order to add an element, select a graphic layer in the map TOC.   
 The graphic element gets added to the selected layer in the Map TOC.  
-  
-1. **Clipboard:** The **Copy** button copies the selected elements to the clipboard.  The **Paste** button pastes the elements in the clipboard to the selected Graphics Layer in the TOC. The **Paste into Group** button allows you to paste the selected graphics into a Group element.  
-1. **Select graphic elements:** The Select tool palette provides you with tools to select graphic elements.   
+9. **Clipboard:** The **Copy** button copies the selected elements to the clipboard.  The **Paste** button pastes the elements in the clipboard to the selected Graphics Layer in the TOC. The **Paste into Group** button allows you to paste the selected graphics into a Group element.  
+10. **Select graphic elements:** The Select tool palette provides you with tools to select graphic elements.   
 You can select using a rectangle and a lasso. There is also a tool that allows you select only text graphic elements that lie within a selection rectangle. Buttons to Select all graphics, Clear selection and Delete Graphics are also provided.  
-  
-1. **Modify graphic element symbology:** You can change the selected Text element's font, size, etc using the text symbol properties controls. Similarly, you can change the selected point, line or polygon graphic elements symbology.  
-1. **Group, Order and Align graphic elements:** When you select multiple symbols from the same graphics layer, you can group them using the Group button. Grouped graphics can be ungrouped using the Un-group button. The "Select graphics to group" tool allows you to select graphics using a rectangle and then groups them.   
+11. **Modify graphic element symbology:** You can change the selected Text element's font, size, etc using the text symbol properties controls. Similarly, you can change the selected point, line or polygon graphic elements symbology.  
+12. **Group, Order and Align graphic elements:** When you select multiple symbols from the same graphics layer, you can group them using the Group button. Grouped graphics can be ungrouped using the Un-group button. The "Select graphics to group" tool allows you to select graphics using a rectangle and then groups them.   
 You can change the Z-Order of graphics using the Bring to Front and Send Back buttons.   
 There are two alignment tools that allows you to select graphics to align them to the left or to the top.  
+13. **Move Graphics:** Right click the selected Graphic element. In the context menu, click the Move Graphic option. This will move the anchor point of the selected graphic.  
   
-1. **Move Graphics:** Right click the selected Graphic element. In the context menu, click the Move Graphic option. This will move the anchor point of the selected graphic.  
-  
-
 
 <!-- End -->
 

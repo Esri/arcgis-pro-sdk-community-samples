@@ -15,8 +15,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,31 +31,28 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in c:\data  
-1. In Visual Studio click the Build menu.Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.    
-1. Open the Interacting with Map project.  
-1. Open the Create Features dockpane.   
-1. Click on the ADD-IN TAB.    
-1. Click on the *Create Template with CIM* button.     
-1. A new template 'My CIM Template' will be created.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+2. Make sure that the Sample data is unzipped in c:\data  
+3. In Visual Studio click the Build menu.Then select Build Solution.  
+4. Click Start button to open ArcGIS Pro.  
+5. ArcGIS Pro will open.    
+6. Open the Interacting with Map project.  
+7. Open the Create Features dockpane.   
+8. Click on the ADD-IN TAB.    
+9. Click on the *Create Template with CIM* button.     
+10. A new template 'My CIM Template' will be created.  
 ![UI](screenshots/Templates_NewCIMTemplate.png)   
-  
-1. Click on the *Create Template with Extension* button.     
-1. A new template 'My extension Template' will be created.  
+11. Click on the *Create Template with Extension* button.     
+12. A new template 'My extension Template' will be created.  
 ![UI](screenshots/Templates_NewExtensionTemplate.png)   
-  
-1. Click on the *Modify Template with CIM* button.     
-1. Activate the 'North Precinct' template and see the default construction tool is now the Right Angle Polygon tool.  
-1. Click on the *Create Features* button.     
-1. See 3 new Fire Station features created all with different City attribute values.  
-1. Click on the *Create Group Template with CIM* button.     
-1. A new template 'My Group Template' will be created.  
+13. Click on the *Modify Template with CIM* button.     
+14. Activate the 'North Precinct' template and see the default construction tool is now the Right Angle Polygon tool.  
+15. Click on the *Create Features* button.     
+16. See 3 new Fire Station features created all with different City attribute values.  
+17. Click on the *Create Group Template with CIM* button.     
+18. A new template 'My Group Template' will be created.  
 ![UI](screenshots/Templates_GroupTemplate.png)   
   
-
 
 <!-- End -->
 

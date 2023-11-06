@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,26 +29,25 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Start your GNSS device or simulator.   
-1. In Visual Studio, build the solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. In Pro start with a new map.  Add a graphics layer to your map. (Map tab, Add Graphics Layer button).   
-1. Open the Add-In tab. And click the "Show GNSS Properties" button. The GNSS Properties dockpane appears.   
-1. If your device is not currently connected, the Current Properties section should be blank.   
-1. Under "Input Parameters", enter the communicating comPort for your device. The comPort is the mandatory property required to connect. Other parameters such as baud rate, antenna height, accuracy are optional.    
-1. Click the "Open" button. The "Current Parameters" should be populated and your device should be connected.  
-1. You can update your connection parameters (such as baud rate or antenna height) by entering values in the Input Properties and clicking the "Update" button.  
-1. You can close the connection by clicking the 'Close' button.   
-1. With your device connected, enable the device by clicking the "Enable/Disable DeviceSource" button.   
-1. Move to the GNSS Location tab.   
-1. Click the "Zoom/Pan to Location" button.  You should zoom to where your device is tracking.   
-1. Click "Show Location" and other Location Options then "Update Options" button to configure the device location map options.   
-1. To add the most recent location to the graphics layer, click the "Add Last Location" button.   
-1. To connect to the snapshot events, click the "Connect" button under Snapshot Events.  The event and location data will be logged to the dockPane.   
-1. Wait until a number of snapshot events have been received.  Click the "Add Polyline" button.  Recent snapshot data will be added to the graphics layer as a polyline.   
-1. Disconnect from the snapshot events by clicking the "Disconnect" button.   
+1. Start your GNSS device or simulator.
+2. In Visual Studio, build the solution.  
+3. Launch the debugger to open ArcGIS Pro.  
+4. In Pro start with a new map.  Add a graphics layer to your map. (Map tab, Add Graphics Layer button).   
+5. Open the Add-In tab. And click the "Show GNSS Properties" button. The GNSS Properties dockpane appears.   
+6. If your device is not currently connected, the Current Properties section should be blank.   
+7. Under "Input Parameters", enter the communicating comPort for your device. The comPort is the mandatory property required to connect. Other parameters such as baud rate, antenna height, accuracy are optional.    
+8. Click the "Open" button. The "Current Parameters" should be populated and your device should be connected.  
+9. You can update your connection parameters (such as baud rate or antenna height) by entering values in the Input Properties and clicking the "Update" button.  
+10. You can close the connection by clicking the 'Close' button.   
+11. With your device connected, enable the device by clicking the "Enable/Disable DeviceSource" button.   
+12. Move to the GNSS Location tab.   
+13. Click the "Zoom/Pan to Location" button.  You should zoom to where your device is tracking.   
+14. Click "Show Location" and other Location Options then "Update Options" button to configure the device location map options.   
+15. To add the most recent location to the graphics layer, click the "Add Last Location" button.   
+16. To connect to the snapshot events, click the "Connect" button under Snapshot Events.  The event and location data will be logged to the dockPane.   
+17. Wait until a number of snapshot events have been received.  Click the "Add Polyline" button.  Recent snapshot data will be added to the graphics layer as a polyline.   
+18. Disconnect from the snapshot events by clicking the "Disconnect" button.   
   
-
 
 <!-- End -->
 

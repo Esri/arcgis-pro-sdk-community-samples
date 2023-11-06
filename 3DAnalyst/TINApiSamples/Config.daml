@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="TINApiSamples.dll" defaultNamespace="TINApiSamples" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{27a761a1-e552-4b27-ba42-e8e0b6c76222}" version="1.0" desktopVersion="3.2.48880">
+    <Name>TINApiSamples</Name>
+    <Description>TINApiSamples description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>uma2526</Author>
+    <Company>Acme</Company>
+    <Date>8/25/2023 2:17:58 PM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="TINApiSamples_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="TINApiSamples_Tab1" caption="TIN API">
+          <group refID="TINApiSamples_Group1" />
+          <group refID="TINApiSamples_Group2" />
+          <group refID="TINApiSamples_Group3" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="TINApiSamples_Group1" caption="Search elements using filters" appearsOnAddInTab="false">
+          <!-- host controls within groups -->
+          <tool refID="TINApiSamples_SearchMethods_SearchNodes" size="large" />
+          <tool refID="TINApiSamples_SearchMethods_SearchEdges" size="large" />
+          <tool refID="TINApiSamples_SearchMethods_SearchTriangles" size="large" />
+          <comboBox refID="TINApiSamples_SearchMethods_SearchFilters_ComboFilterType" />
+		  <checkBox refID="TINApiSamples_SearchMethods_SearchFilters_CheckBoxDataElementsOnly"/>
+        </group>
+        <group id="TINApiSamples_Group2" caption="Proximity Analysis" appearsOnAddInTab="false">
+          <tool refID="TINApiSamples_ProximityAnalysis_GetNearestNode" size="large" />
+          <tool refID="TINApiSamples_ProximityAnalysis_GetNearestEdge" size="large" />
+          <tool refID="TINApiSamples_GetTriangleElements_GetTriangleByPoint" size="large" />
+          <tool refID="TINApiSamples_GetTriangleElements_GetTriangleNeighbors" size="large" />
+        </group>
+        <group id="TINApiSamples_Group3" caption="Misc" appearsOnAddInTab="false">
+          <button refID="TINApiSamples_GetTINExtents" size="large" />
+		  <gallery refID="TINApiSamples_TinLayerRendererGallery" inline="false"/>
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <tool id="TINApiSamples_SearchMethods_SearchNodes" caption="Nodes" className="TINApiSamples.SearchMethods.SearchNodes" loadOnClick="true" smallImage="ExportTinNodes16" largeImage="ExportTinNodes32" condition="esri_mapping_mapPane">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </tool>
+        <tool id="TINApiSamples_SearchMethods_SearchEdges" caption="Edges" className="TINApiSamples.SearchMethods.SearchEdges" loadOnClick="true" smallImage="ExportTinEdges16" largeImage="ExportTinEdges32" condition="esri_mapping_mapPane">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </tool>
+        <tool id="TINApiSamples_SearchMethods_SearchTriangles" caption="Triangles" className="TINApiSamples.SearchMethods.SearchTriangles" loadOnClick="true" smallImage="ExportTinTriangles16" largeImage="ExportTinTriangles32" condition="esri_mapping_mapPane">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </tool>
+        <tool id="TINApiSamples_GetTriangleElements_GetTriangleByPoint" caption="Nearest Triangle" className="TINApiSamples.ProximityAnalysis.GetTriangleByPoint" loadOnClick="true" smallImage="ElementTriangle16" largeImage="ElementTriangle32" condition="esri_mapping_mapPane">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </tool>
+        <tool id="TINApiSamples_GetTriangleElements_GetTriangleNeighbors" caption="Triangle Neighbors" className="TINApiSamples.ProximityAnalysis.GetTriangleNeighbors" loadOnClick="true" smallImage="SSNeighborhoodSymbolizeWeights16" largeImage="SSNeighborhoodSymbolizeWeights32" condition="esri_mapping_mapPane">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </tool>
+        <button id="TINApiSamples_GetTINExtents" caption="Get Extents" className="GetTINExtents" loadOnClick="true" smallImage="Extent_Indicator16" largeImage="Extent_Indicator32">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <tool id="TINApiSamples_ProximityAnalysis_GetNearestNode" caption="Nearest Node" className="TINApiSamples.ProximityAnalysis.GetNearestNode" loadOnClick="true" smallImage="ModelBuilderNodeVicinityCost16" largeImage="ModelBuilderNodeVicinityCost32" condition="esri_mapping_mapPane">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </tool>
+        <tool id="TINApiSamples_ProximityAnalysis_GetNearestEdge" caption="Nearest Edge" className="TINApiSamples.ProximityAnalysis.GetNearestEdge" loadOnClick="true" smallImage="KnowledgeGraphCollapseNeighbors16" largeImage="KnowledgeGraphCollapseNeighbors32" condition="esri_mapping_mapPane">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </tool>
+        <comboBox id="TINApiSamples_SearchMethods_SearchFilters_ComboFilterType" caption="Filter Type" className="TINApiSamples.SearchMethods.SearchFilters.ComboFilterType" itemWidth="100" extendedCaption="Extended Caption" isEditable="false" isReadOnly="true" resizable="true">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </comboBox>
+		<checkBox id="TINApiSamples_SearchMethods_SearchFilters_CheckBoxDataElementsOnly" caption="DataElementsOnly" className="TINApiSamples.SearchMethods.SearchFilters.ChkBoxDataElementsOnly">			  
+		</checkBox>
+		  <!-- TIN Layer Renderers -->
+		  <button id="TINApiSamples_Points_Simple" caption="Simple" className="TINApiSamples.TinRenderers.TinLayerPoints_Simple" loadOnClick="true" smallImage="TinPoints24" largeImage="TinPoints24">
+			  <tooltip heading="Symbolize your layer using points">Same Symbol<disabledText />
+			  </tooltip>
+		  </button>
+		  <button id="TINApiSamples_Points_Elevation" caption="Elevation" className="TINApiSamples.TinRenderers.TinLayerPoints_Elevation" loadOnClick="true" smallImage="LasElevationB16" largeImage="LasElevationB32">
+			  <tooltip heading="Symbolize your layer using points">
+				  Elevation: Classification method uses Standard Deviation with a Deviation Interval of One Half.<disabledText />
+			  </tooltip>
+		  </button>
+		  <button id="TINApiSamples_Lines_Contour" caption="Contours" className="TINApiSamples.TinRenderers.TinLayerLines_Contour" loadOnClick="true" smallImage="LasContour16" largeImage="LasContour32">
+			  <tooltip heading="Symbolize your layer using points">
+				  Contours<disabledText />
+			  </tooltip>
+		  </button>
+		  <button id="TINApiSamples_Lines_SimpleEdge" caption="Edge" className="TINApiSamples.TinRenderers.TinLayerLines_SimpleEdge" loadOnClick="true" smallImage="TinEdges24" largeImage="TinEdges24">
+			  <tooltip heading="Symbolize your layer using Simple Edge">
+				  Simple Edges<disabledText />
+			  </tooltip>
+		  </button>
+		  <button id="TINApiSamples_Lines_EdgeType" caption="Edge Type" className="TINApiSamples.TinRenderers.TinLayerLines_EdgeType" loadOnClick="true" smallImage="TinEdges24" largeImage="TinEdges24">
+			  <tooltip heading="Symbolize your layer using Edge Type">
+				  Edge Type<disabledText />
+			  </tooltip>
+		  </button>
+		  <button id="TINApiSamples_Surface_Simple" caption="Simple" className="TINApiSamples.TinRenderers.TinLayerSurface_Simple" loadOnClick="true" smallImage="TinSurface24" largeImage="TinSurface24">
+			  <tooltip heading="Symbolize your layer using Surfaces">
+				  Simple Surface<disabledText />
+			  </tooltip>
+		  </button>
+		  <button id="TINApiSamples_Surface_Elevation" caption="Elevation" className="TINApiSamples.TinRenderers.TinLayerSurface_Elevation" loadOnClick="true" smallImage="TinSurface24" largeImage="TinSurface24">
+			  <tooltip heading="Symbolize your layer using Surfaces">
+				  Elevation.
+				  Classification Method: Standard Deviation with a Deviation Interval of One Quarter.<disabledText />
+			  </tooltip>
+		  </button>
+		  <button id="TINApiSamples_Surface_Slope" caption="Slope" className="TINApiSamples.TinRenderers.TinLayerSurface_Slope" loadOnClick="true" smallImage="TinSurface24" largeImage="TinSurface24">
+			  <tooltip heading="Symbolize your layer using Surfaces">
+				  Slope
+				  Classification Method: DefinedInterval with a Interval Size of 13.<disabledText />
+			  </tooltip>
+		  </button>
+		  <button id="TINApiSamples_Surface_Aspect" caption="Aspect" className="TINApiSamples.TinRenderers.TinLayerSurface_Aspect" loadOnClick="true" smallImage="TinSurface24" largeImage="TinSurface24">
+			  <tooltip heading="Symbolize your layer using Surfaces">
+				  Aspect<disabledText />
+			  </tooltip>
+		  </button>
+      </controls>
+		<galleries>
+			<gallery id="TINApiSamples_TinLayerRendererGallery" caption="TIN Symbology" showGroup="true" className="TINApiSamples.TinRenderers.TinLayerRendererGallery" itemsInRow="3" dataTemplateFile="pack://application:,,,/TINApiSamples;component/TinRenderers/TinLayerGalleryTemplate.xaml" templateID="TinLayerGalleryItemTemplate" resizable="true" largeImage="LayerTIN32">
+				<tooltip heading="TIN Symbology">
+					Tin Layer Renderers<disabledText />
+				</tooltip>
+			</gallery>
+		</galleries>
+    </insertModule>
+  </modules>
+</ArcGIS>

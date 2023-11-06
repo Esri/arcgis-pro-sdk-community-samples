@@ -22,7 +22,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 
-namespace UndoRedo
+namespace PreRel_UndoRedo
 {
   /// <summary>
   /// Dockpane that illustrates how to manage an OperationManager and add undo/redo operations to it.  
@@ -39,7 +39,7 @@ namespace UndoRedo
   /// </remarks>
     internal class SampleDockPaneViewModel : DockPane
     {
-        internal static string _dockPaneID = "UndoRedo_SampleDockPane";
+        internal static string _dockPaneID = "PreRel_UndoRedo_SampleDockPane";
 
 
     /// <summary>
@@ -259,7 +259,7 @@ namespace UndoRedo
           if (OperationManager != null)
           { 
             // find all the operations of my category
-            List<Operation> ops = OperationManager.FindUndoOperations(o => o.Category == UndoRedo.Category);
+            List<Operation> ops = OperationManager.FindUndoOperations(o => o.Category == PreRel_UndoRedo.Category);
         // remove the most recent (this is the one at the top of the list)
             if ((ops != null) && (ops.Count > 0))
           OperationManager.RemoveUndoOperation(ops[0]);
@@ -273,8 +273,8 @@ namespace UndoRedo
         {
           if (OperationManager != null)
           {
-            OperationManager.ClearUndoCategory(UndoRedo.Category);
-            OperationManager.ClearRedoCategory(UndoRedo.Category);
+            OperationManager.ClearUndoCategory(PreRel_UndoRedo.Category);
+            OperationManager.ClearRedoCategory(PreRel_UndoRedo.Category);
           }
         }
         #endregion

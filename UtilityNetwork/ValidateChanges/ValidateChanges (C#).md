@@ -17,8 +17,8 @@ Language:              C#
 Subject:               UtilityNetwork
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -33,16 +33,15 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
- 1. In Visual Studio click the Build menu. Then select Build Solution.  
- 1. Click Start button to open ArcGIS Pro.  
- 1. ArcGIS Pro will open.  
- 1. Open a project and map view that references a utility network.  
- 1. Switch to a branch version that contains edits to utility network features.  
- 1. Select a feature layer or subtype group layer that participates in a utility network or a utility network layer.  
- 1. Click on the Add-in tab on the ribbon.  
- 1. Click on the Validate Changes button.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+ 2. Click Start button to open ArcGIS Pro.  
+ 3. ArcGIS Pro will open.  
+ 4. Open a project and map view that references a utility network.  
+ 5. Switch to a branch version that contains edits to utility network features.  
+ 6. Select a feature layer or subtype group layer that participates in a utility network or a utility network layer.  
+ 7. Click on the Add-in tab on the ribbon.  
+ 8. Click on the Validate Changes button.  
    
-
 
 <!-- End -->
 

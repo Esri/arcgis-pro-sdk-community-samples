@@ -17,8 +17,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -35,7 +35,7 @@ Visual Studio:         2022
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 To install this add-in:  
   
-1. In Visual Studio click the Build menu. Then select Build Solution.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
 2. Select a polygon to split.  
 3. Activate the editor split tool.  
 ![UI](Screenshots/Screenshot1.png)    
@@ -46,7 +46,6 @@ To install this add-in:
 6. Continue or adjust the sketch as necessary then finish the sketch to use it as the splitting line.  
 ![UI](Screenshots/Screenshot4.png)    
   
-
 
 <!-- End -->
 

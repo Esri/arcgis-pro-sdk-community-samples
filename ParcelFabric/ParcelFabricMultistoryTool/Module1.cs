@@ -47,7 +47,7 @@ namespace ParcelFabricMultistoryTool
     ///<remarks>
     /// Using the sample:
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a dataset called ParcelFabricMultistoryTool.  Make sure that the Sample data is unzipped under C:\Data and the folder "C:\Data\ParcelFabric" is available.  
-    /// 1. Open the solution in Visual Studio 2017 or 2019.
+    /// 1. Open the solution in Visual Studio.
     /// 1. Click the Build menu and select Build Solution.
     /// 1. Click the Start button to open ArcGIS Pro. 
     /// 1. Open the project "NapervilleParcels.aprx" found in folder: "C:\data\ParcelFabric".

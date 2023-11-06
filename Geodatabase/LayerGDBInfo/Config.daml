@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="LayerGDBInfo.dll" defaultNamespace="LayerGDBInfo" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{27a53de9-caa9-4d0c-82c5-82dea294226b}" version="1.0" desktopVersion="3.1.0">
+    <Name>LayerGDBInfo</Name>
+    <Description>LayerGDBInfo description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>4/27/2023 16:59:55</Date>
+    <Subject>Geodatabase</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="LayerGDBInfo_Module" className="Module1" autoLoad="false" caption="Module1">
+      <tabs>
+        <!--<tab id="LayerGDBInfo_Tab1" caption="New Tab">
+          <group refID="LayerGDBInfo_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <group id="LayerGDBInfo_Group1" caption="Enterprise GDB" appearsOnAddInTab="true" keytip="X0">
+          <button refID="LayerGDBInfo_ShowLayerGDBVersion" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <button id="LayerGDBInfo_ShowLayerGDBVersion" caption="Show Layer GDB Version" 
+                className="ShowLayerGDBVersion" loadOnClick="true" keytip="B0"
+                smallImage="GeodatabaseConnection16" largeImage="GeodatabaseConnection32">
+          <tooltip heading="Show Layer GDB Version">
+            Shows the first (or selected) Layer's GDB Version<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

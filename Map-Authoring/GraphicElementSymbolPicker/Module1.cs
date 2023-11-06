@@ -151,6 +151,7 @@ namespace GraphicElementSymbolPicker
             Text,
             None
         }
+
         #region Overrides
         protected override bool Initialize()
         {

@@ -16,8 +16,8 @@ Language:              VB
 Subject:               Geometry, Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -32,30 +32,25 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
- 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
- 1. Make sure that the Sample data is unzipped in c:\data   
- 1. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'  
- 1. In Visual Studio click the Build menu. Then select Build Solution.  
- 1. Click Start button to open ArcGIS Pro.  
- 1. ArcGIS Pro will open, select the FeatureTest.aprx project  
- 1. Click on the ADD-IN tab and make sure that your active map contains Setup/point/multipoint/line/polygon features buttons as shown below.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+ 2. Make sure that the Sample data is unzipped in c:\data   
+ 3. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'  
+ 4. In Visual Studio click the Build menu. Then select Build Solution.  
+ 5. Click Start button to open ArcGIS Pro.  
+ 6. ArcGIS Pro will open, select the FeatureTest.aprx project  
+ 7. Click on the ADD-IN tab and make sure that your active map contains Setup/point/multipoint/line/polygon features buttons as shown below.  
  ![UI](Screenshots/ScreenPoints.png)  
-  
- 1. Click on Setup button to enable the create point and create multipoint buttons   
+ 8. Click on Setup button to enable the create point and create multipoint buttons   
  ![UI](Screenshots/ScreenPoint1.png)  
-  
- 1. Click the createPoints button to create random points over the current extent of the map  
- 1. The map extent shows the random created points and also enables create polylines button  
+ 9. Click the createPoints button to create random points over the current extent of the map  
+ 10. The map extent shows the random created points and also enables create polylines button  
  ![UI](Screenshots/ScreenPoint2.png)  
-  
- 1. Click the createPolylines button to create random lines the current extent of the map  
- 1. The map extent shows the random lines and also enables create polygons button  
+ 11. Click the createPolylines button to create random lines the current extent of the map  
+ 12. The map extent shows the random lines and also enables create polygons button  
  ![UI](Screenshots/ScreenPoint3.png)  
-  
- 1. Click the createPolygons button to create random polygon over the current extent of the map  
+ 13. Click the createPolygons button to create random polygon over the current extent of the map  
  ![UI](Screenshots/ScreenPoint4.png)  
    
-
 
 <!-- End -->
 

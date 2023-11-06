@@ -17,8 +17,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -33,24 +33,20 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Open this solution in Visual Studio.    
-1. Click the build menu and select Build Solution.  
-1. Run ArCGIS Pro without running the Visual Studio Debugger.  
-1. Progress Dialog boxes are disabled when debugging in Visual Studio.  
-1. Open any project - it can be an existing project containing data or a new empty project.  
-1. Click on the Add-in tab and see the split button in the 'Progress Dialog Test' group.  
+1. Open this solution in Visual Studio.
+2. Click the build menu and select Build Solution.  
+3. Run ArCGIS Pro without running the Visual Studio Debugger.  
+4. Progress Dialog boxes are disabled when debugging in Visual Studio.  
+5. Open any project - it can be an existing project containing data or a new empty project.  
+6. Click on the Add-in tab and see the split button in the 'Progress Dialog Test' group.  
 ![UI](Screenshots/Screen.png)  
-  
-1. Click on any of the split buttons to see the respective progress dialog implementation work.  
+7. Click on any of the split buttons to see the respective progress dialog implementation work.  
 ![UI](Screenshots/Screen2.png)  
-  
-1. If you like to see a progress dialog with a progress bar that iterates to a given number of steps you can use the "Cancelable Progress Dlg" button.  This progress dialog runs through 10 steps and updates the progress bar accordingly.  
+8. If you like to see a progress dialog with a progress bar that iterates to a given number of steps you can use the "Cancelable Progress Dlg" button.  This progress dialog runs through 10 steps and updates the progress bar accordingly.  
 ![UI](Screenshots/Screen3.png)  
-  
-1. Progress dialogs support the ArcGIS Pro Dark Theme seamlessly.  
+9. Progress dialogs support the ArcGIS Pro Dark Theme seamlessly.  
 ![UI](Screenshots/Screen4.png)  
   
-
 
 <!-- End -->
 

@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,24 +29,21 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. This solution is using the **Newtonsoft.Json NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".  
-1. This solution is using the **Expression.Interaction NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Expression.Interaction".  
-1. In Visual studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open, select any project  
-1. Open the Add-in tab and click the "Show Joins Dockpane" button to open "Joins" dockpane.  
+1. This solution is using the **Newtonsoft.Json NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".
+2. This solution is using the **Expression.Interaction NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Expression.Interaction".  
+3. In Visual studio click the Build menu. Then select Build Solution.  
+4. Click Start button to open ArcGIS Pro.  
+5. ArcGIS Pro will open, select any project  
+6. Open the Add-in tab and click the "Show Joins Dockpane" button to open "Joins" dockpane.  
 ![UI](Screenshots/Screen1.png)  
-  
-1. Select two data sources to join  
-1. select the Join fields  
+7. Select two data sources to join  
+8. select the Join fields  
 ![UI](Screenshots/Screen2.png)  
-  
-1. Define remaining options including layer name  
-1. Click the "Generate Join" button to create the layer  
-1. Open the new layer's attribute table to view the join result.  
+9. Define remaining options including layer name  
+10. Click the "Generate Join" button to create the layer  
+11. Open the new layer's attribute table to view the join result.  
 ![UI](Screenshots/Screen3.png)  
   
-
 
 <!-- End -->
 

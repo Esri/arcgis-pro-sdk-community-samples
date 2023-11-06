@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Content
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,17 +31,16 @@ Visual Studio:         2022
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 Using the sample:  
   
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
-1. Open any project.  
-1. Click the Dialog filters tab on the Pro ribbon.  
-1. Notice the in-line gallery that displays a collection of Dialog filters.  
-1. Click the gallery expander to view the entire gallery. The filters in this sample are grouped into two categories: Custom Pro browse filters and Built-in browse filters.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Click Start button to open ArcGIS Pro.  
+3. ArcGIS Pro will open.   
+4. Open any project.  
+5. Click the Dialog filters tab on the Pro ribbon.  
+6. Notice the in-line gallery that displays a collection of Dialog filters.  
+7. Click the gallery expander to view the entire gallery. The filters in this sample are grouped into two categories: Custom Pro browse filters and Built-in browse filters.  
 ![UI](screenshots/FilterGallery.png)  
-  
-1. Clicking on each filter will display Pro's OpenItemDialog set to that specific filter.  
-1. The table below offers a brief explanation of these filters showcased in this sample.    
+8. Clicking on each filter will display Pro's OpenItemDialog set to that specific filter.  
+9. The table below offers a brief explanation of these filters showcased in this sample.    
   
 |Browse dialog image with filter| Filter type| Description|  
 |------------- |:-------------:| -----:|  
@@ -53,9 +52,8 @@ Using the sample:
 |![Lyr and Lyrx](screenshots/LyrLyrx.png)  | Built-in Pro BrowseProjectFilter<br />**Lyr and Lyrx**:Show Lyrx and lyr files     |  
 |![Geodatabase](screenshots/Geodatabase.png)  | Built-in Pro BrowseProjectFilter<br />**Geodatabase**: Show all Geodatabases|  
 |![Custom Item](screenshots/AddToMapCustomItem.png)  | Built-in Pro BrowseProjectFilter<br />**Custom Item**: Browse custom item in Pro's Add to map dialog|      
-  
-1. Click the "Browse Filter Spy+" button choice at the bottom of the in-line gallery or on the Pro ribbon.    
-1. The Browse Filter Spy+ dialog allows you to choose between 3 options - Pro Browse Filters, Pro FilterFlags and ProTypeIDs.  
+10. Click the "Browse Filter Spy+" button choice at the bottom of the in-line gallery or on the Pro ribbon.    
+11. The Browse Filter Spy+ dialog allows you to choose between 3 options - Pro Browse Filters, Pro FilterFlags and ProTypeIDs.  
     * **Pro Browse Filters**: Using this choice you can see all the Browse Filters defined in DAML. This includes Pro's built in filters and those defined in Add-ins (config.daml).   
     You can select any of the browse filters and see its DAML Definition below. The Open Filter button will display Pro's OpenItemDialog set to that specific filter.   
     * **Pro FilterFlags**: Using this choice you can see the enum values for BrowseProjectFilter.FilterFlag. Additionally, when you select any filterFlag,      you can see the typeIDs that participate in that filter flag.  
@@ -63,7 +61,6 @@ Using the sample:
     Additionally, when you select a TypeID in the data grid, you can see the DAML definition of the type ID. This will allow you to see the filterFlags used by that typeID.  
 ![UI](screenshots/ProFilters.png)  
   
-
 
 <!-- End -->
 

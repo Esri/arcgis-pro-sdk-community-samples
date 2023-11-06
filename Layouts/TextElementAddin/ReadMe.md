@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Layouts
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,20 +29,17 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. Create a new project.  
-1. Insert a new layout called "Layout".  
-1. Insert a new text element called "Text".  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Launch the debugger to open ArcGIS Pro.  
+3. Create a new project.  
+4. Insert a new layout called "Layout".  
+5. Insert a new text element called "Text".  
 ![UI](Screenshots/Screen1.png)  
-  
-1. Click on the Add-In Tab.  
-1. Click the UpdateText button.  
+6. Click on the Add-In Tab.  
+7. Click the UpdateText button.  
 ![UI](Screenshots/Screen2.png)  
+8. Note that the text of the layout text element changed  
   
-1. Note that the text of the layout text element changed  
-  
-
 
 <!-- End -->
 

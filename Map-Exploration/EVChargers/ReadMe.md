@@ -14,8 +14,8 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -30,25 +30,22 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a Pro package called 'LocationOfEVChargers' in c:\Data\DisplayFilters.    
-1. Open this sample in Visual Studio.    
-1. Click the build menu and select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. Open the project "c:\Data\DisplayFilters\LocationOfEVChargers" Pro project package.  
-1. Open and activate the EVLocations map. This map has a EVChargers feature layer. It is a point dataset with over 57,000 charger locations in the US and Canada.  
-1. Click on the Add-in tab.   
-1. Click the 'Charger locations' button. This will activate an embeddable control that stretches to fit the width of the active MapView. This control has search filters to interact with the charger locations.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a Pro package called 'LocationOfEVChargers' in c:\Data\DisplayFilters.
+2. Open this sample in Visual Studio.    
+3. Click the build menu and select Build Solution.  
+4. Launch the debugger to open ArcGIS Pro.  
+5. Open the project "c:\Data\DisplayFilters\LocationOfEVChargers" Pro project package.  
+6. Open and activate the EVLocations map. This map has a EVChargers feature layer. It is a point dataset with over 57,000 charger locations in the US and Canada.  
+7. Click on the Add-in tab.   
+8. Click the 'Charger locations' button. This will activate an embeddable control that stretches to fit the width of the active MapView. This control has search filters to interact with the charger locations.  
 ![UI](screenshots/search-filter.png)  
-  
-1. Enter a location (Ex. Redlands), and pick a charger (Level 1, Level 2, Fast) or Connector type (Tesla, J1772, etc) you are interested in. Or select all of them.  
-1. Click the Apply button. This will set a definition query on the feature layer using your filter options. The charger locations that satisfy your filter options will be displayed and labelled.  
-1. The map view will zoom to the selected results. A dockpane will also appear in Pro that itemizes the results. Each result item will show more details about the charger location - Address, Charger type, connector type, etc.  
+9. Enter a location (Ex. Redlands), and pick a charger (Level 1, Level 2, Fast) or Connector type (Tesla, J1772, etc) you are interested in. Or select all of them.  
+10. Click the Apply button. This will set a definition query on the feature layer using your filter options. The charger locations that satisfy your filter options will be displayed and labelled.  
+11. The map view will zoom to the selected results. A dockpane will also appear in Pro that itemizes the results. Each result item will show more details about the charger location - Address, Charger type, connector type, etc.  
 ![UI](screenshots/search-results.png)  
+12. Click on each item in the dockpane to zoom and flash to the feature on the map view.  
+13. Additionally, you can use the cursor to select a charger locations on the Map view. This will also select the item in the results dockpane.  
   
-1. Click on each item in the dockpane to zoom and flash to the feature on the map view.  
-1. Additionally, you can use the cursor to select a charger locations on the Map view. This will also select the item in the results dockpane.  
-  
-
 
 <!-- End -->
 

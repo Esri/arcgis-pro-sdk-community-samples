@@ -119,6 +119,15 @@ namespace DockpaneWithProButtons
 
     #endregion Button Commands
 
+    #region Button Images loaded from Pro
+    
+    public System.Windows.Media.ImageSource ImageCmdStackedButton
+    {
+      get { return System.Windows.Application.Current.Resources["GenericRefresh16"] as System.Windows.Media.ImageSource; }
+    }
+
+    #endregion
+
     /// <summary>
     /// Text shown near the top of the DockPane.
     /// </summary>

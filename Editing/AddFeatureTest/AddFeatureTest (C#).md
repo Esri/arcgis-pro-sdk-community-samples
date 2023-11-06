@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,17 +29,15 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual studio rebuild the solution.  
-1. Debug the add-in.  
-1. ArcGIS Pro opens, select a new Map project  
-1. Zoom the new map into your local neighborhood, because the newly created features will be in close proximity.  
-1. Click the "Create Featureclasses" button to create a point and a polygon feature class.  Both are added to your map as well.   
+1. In Visual studio rebuild the solution.
+2. Debug the add-in.  
+3. ArcGIS Pro opens, select a new Map project  
+4. Zoom the new map into your local neighborhood, because the newly created features will be in close proximity.  
+5. Click the "Create Featureclasses" button to create a point and a polygon feature class.  Both are added to your map as well.   
 ![UI](Screenshots/Screen2.png)  
-  
-1. Click the "Add Features" button to add 5 feature to each newly create feature class.   
+6. Click the "Add Features" button to add 5 feature to each newly create feature class.   
 ![UI](Screenshots/Screen3.png)  
   
-
 
 <!-- End -->
 

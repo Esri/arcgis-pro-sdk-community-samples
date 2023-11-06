@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,7 +29,7 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Build or debug the sample through Visual Studio.  
+1. Build or debug the sample through Visual Studio.
 2. In Pro, select the Add-In ribbon and click the button Show Ground To Grid Events Pane.  
 ![UI](Screenshots/Screen1.png)  
 3. On the dockable pane click the button Start Events.  
@@ -37,7 +37,6 @@ Visual Studio:         2022
 5. The code detects the change and writes the previous value and new value to the Ground to Grid Events pane.  
 ![UI](Screenshots/Screen2.png)  
   
-
 
 <!-- End -->
 

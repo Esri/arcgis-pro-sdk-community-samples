@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Console
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: 4.6.1
 ```
@@ -29,16 +29,15 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Open this solution in Visual Studio   
-1. Click the build menu and select Build Solution.  
-1. Click the Start button to run the WPF app.    
-1. Specify a valid path to a file geodatabase path in the 'Open a GDB' input field and click the 'Open' button.    
-1. The 'Open a Dataset' dropdown is filled with all available datasets.    
-1. Select a dataset on the 'Open a Dataset' dropdown and click the 'Read' button.  
-1. View the table showing the dataset's content.  
+1. Open this solution in Visual Studio
+2. Click the build menu and select Build Solution.  
+3. Click the Start button to run the WPF app.    
+4. Specify a valid path to a file geodatabase path in the 'Open a GDB' input field and click the 'Open' button.    
+5. The 'Open a Dataset' dropdown is filled with all available datasets.    
+6. Select a dataset on the 'Open a Dataset' dropdown and click the 'Read' button.  
+7. View the table showing the dataset's content.  
 ![UI](Screenshots/Screen.png)  
   
-
 
 <!-- End -->
 

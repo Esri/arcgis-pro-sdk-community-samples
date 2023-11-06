@@ -1,18 +1,20 @@
 ## AddRemoveFields
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates how toAddRemoveFields.
+This sample shows how to use the DDL APIs to add and remove fields in a FeatureClass.  
+  
+
 
 <a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
 
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
-Subject:               $subject$
+Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -27,12 +29,36 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-<!-- Do not modify the text below. Please add your content after step 3 -->
-
-1. In Visual Studio click the Build menu. Then select Build Solution.
-2. Click Start button to open ArcGIS Pro.
-3. ArcGIS Pro will open.
-AddRemoveFields
+1. Open this solution in Visual Studio.
+2. Click the build menu and select Build Solution.    
+3. Click the Start button to open ArcGIS Pro. ArcGIS Pro will open.      
+4. Open any project.  
+5. Click on the Add-in tab and verify that a "Add/Remove Fields" group was added.  
+6. Notice the buttons in the "Add/Remove Fields" group.  
+7. Tap the "Create Emtpy Geodatabase" button.  
+![UI](Screenshots/Screen0.png)  
+8. Add the new Database located in the "C:\temp\mySampleGeoDatabase.gdb" directory into the Catalog pane.  
+9. Add a Feature Class to the Geodatabase and name it "Parcels".  
+![UI](Screenshots/Screen1.png)  
+10. Tap the finish button to finish adding the new Feature Class  
+![UI](Screenshots/Screen2.png)  
+11. Tap the "Add Fields in Feature Class" button.  
+![UI](Screenshots/Screen3.png)  
+12. Open the Table for the Parcels Feature Class.  
+13. Notice the newly added "Tax_Code" , "Parcel_ID" , "Global_ID" and "Parcel_Address" fields.  
+![UI](Screenshots/Screen4.png)  
+14. Tap the "Remove Field Table"  
+![UI](Screenshots/Screen8.png)  
+15. Open the Table for the Parcels Feature Class.  
+16. Notice the "Parcel_Address" Field has been deleted.  
+![UI](Screenshots/Screen5.png)  
+17. Add a new Feature Class named "Pipes",  
+18. Tap the "Add Field with Domain" button.  
+![UI](Screenshots/Screen6.png)   
+19. Open the table for the "Pipes" Feature Class.  
+![UI](Screenshots/Screen7.png)  
+20. Notice the domains of the "Pipe Type" field.  
+  
 
 <!-- End -->
 

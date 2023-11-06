@@ -46,7 +46,10 @@ namespace VoxelSample
   /// 1. This sample specificially requires the sample data in CommunitySampleData-VoxelLayer-mm-dd-yyyy.zip (see Sample data link above).
   /// 1. Make sure you unzip to c:\data and have C:\Data\VoxelData available before you run this sample.
   /// 1. Build the sample and start a debug session.
-  /// 1. In ArcGIS Pro open a new 'Local Scene' and then use the 'CreateLayer' button to create a sample voxel layer.
+  /// 1. In ArcGIS Pro open a new 'Local Scene' and change the Map's projection to 'WGS 1984' Geographic Coordinate system.  WKID is: 4326.  
+  /// 1. Note: if the projection of the local scene doesn't match the projection used in the Voxel data, the data cannot be displayed on the scene.
+  /// ![UI](Screenshots/Screen1.png)
+  /// 1. Then use the 'CreateLayer' button to create a sample voxel layer.
   /// 1. The voxel layer should look like this:
   /// ![UI](Screenshots/Screenshot1.png)
   /// The sample primarily focuses on: 
@@ -55,8 +58,9 @@ namespace VoxelSample
   /// - Slices  
   /// - Sections  
   /// - Locked Sections  
+  /// - Voxel Coordinate Spaces
   /// For additional examples refer to &lt;a href="https://github.com/Esri/arcgis-pro-sdk/wiki/ProSnippets-VoxelLayers"&gt;Voxel Snippets&lt;/a&gt;
-  /// For concepts refer to the &lt;a href="https://github.com/Esri/arcgis-pro-sdk/wiki/ProConcepts-Voxel-Layers&gt;Voxel Pro Guide&lt;/a&gt;.
+  /// For concepts refer to the &lt;a href="https://github.com/Esri/arcgis-pro-sdk/wiki/ProConcepts-Voxel-Layers"&gt;Voxel Pro Guide&lt;/a&gt;.
   /// </remarks>
   internal class Module1 : Module
   {

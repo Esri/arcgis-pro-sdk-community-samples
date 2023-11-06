@@ -15,8 +15,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,7 +31,7 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
- 1. In Visual Studio click the Build menu. Then select Build Solution.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
  2. Launch the debugger to open ArcGIS Pro.  
  3. ArcGIS Pro will open.   
  4. Open any project with map views. Make sure a map is active.  
@@ -42,7 +42,6 @@ Visual Studio:         2022
   
 ![UI](screenshots/mapcontrol.png)  
    
-
 
 <!-- End -->
 

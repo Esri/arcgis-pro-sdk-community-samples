@@ -14,8 +14,8 @@ Language:              C#
 Subject:               Raster
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -30,17 +30,16 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. This solution is using the **Gu.Wpf.DataGrid2D**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package Gu.Wpf.DataGrid2D".  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
-1. Open a project containing a raster layer. Add a raster dataset if needed.  
-1. Select the raster layer in the table of contents.  
-1. Switch to th Add-In tab.  
-1. Click the pixel inspector tool and move the mouse pointer across the raster dataset.  
+1. This solution is using the **Gu.Wpf.DataGrid2D**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package Gu.Wpf.DataGrid2D".
+2. In Visual Studio click the Build menu. Then select Build Solution.  
+3. Click Start button to open ArcGIS Pro.  
+4. ArcGIS Pro will open.   
+5. Open a project containing a raster layer. Add a raster dataset if needed.  
+6. Select the raster layer in the table of contents.  
+7. Switch to th Add-In tab.  
+8. Click the pixel inspector tool and move the mouse pointer across the raster dataset.  
 ![UI](Screenshots/PixelInspector.png)  
   
-
 
 <!-- End -->
 

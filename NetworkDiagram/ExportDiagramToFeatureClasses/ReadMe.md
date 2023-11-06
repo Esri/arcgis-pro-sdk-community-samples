@@ -22,8 +22,8 @@ Language:              C#
 Subject:               NetworkDiagram
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -38,31 +38,27 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio, click the Build menu. Then select Build Solution.    
-1. Start ArcGIS Pro.    
-1. Open your favorite utility network or trace network ArcGIS Pro project.  
-1. Open the network diagram you want to export or generate a new network diagram.  
-1. In the Add-In tab on the ribbon, click Export Diagram To Feature Classes:  
+1. In Visual Studio, click the Build menu. Then select Build Solution.
+2. Start ArcGIS Pro.    
+3. Open your favorite utility network or trace network ArcGIS Pro project.  
+4. Open the network diagram you want to export or generate a new network diagram.  
+5. In the Add-In tab on the ribbon, click Export Diagram To Feature Classes:  
 ![UI](Screenshots/ExportDiagramToFeatureClassesButton.png)  
-  
-1. The Export Diagram To Feature Classes pane window opens:  
+6. The Export Diagram To Feature Classes pane window opens:  
 ![UI](Screenshots/ExportDiagramToFeatureClassesPaneWindow1.png)  
-  
-1. Expand the Output Geodatabase section to specify the output geodatabase into which you want to export your network diagram.  
-1. Click the browse button next to the Folder text area. Then, browse to and select the output folder where this geodatabase already exists or will be created.  
-1. From the Type drop down list, pick up the type of output geodatabase you want to create—File or Mobile.  
-1. In the Name text area, type the name of the output geodatabase.  
-1. Then, expand the Options section.  
-1. To export the diagram aggregations, make sure the 'Export aggregations' option is checked.  
-1. If you want the exported diagram features to display in a new map once the export completes, check 'Add to a new map'.  
-1. The Export Diagram To Feature Classes pane window should look like as follows:  
+7. Expand the Output Geodatabase section to specify the output geodatabase into which you want to export your network diagram.  
+8. Click the browse button next to the Folder text area. Then, browse to and select the output folder where this geodatabase already exists or will be created.  
+9. From the Type drop down list, pick up the type of output geodatabase you want to create—File or Mobile.  
+10. In the Name text area, type the name of the output geodatabase.  
+11. Then, expand the Options section.  
+12. To export the diagram aggregations, make sure the 'Export aggregations' option is checked.  
+13. If you want the exported diagram features to display in a new map once the export completes, check 'Add to a new map'.  
+14. The Export Diagram To Feature Classes pane window should look like as follows:  
 ![UI](Screenshots/ExportDiagramToFeatureClassesPaneWindow2.png)  
-  
-1. Make sure the diagram map you want to export is the active map and click Run.  
-1. The export process starts. A message displays at the bottom of the pane window when it completes.  
+15. Make sure the diagram map you want to export is the active map and click Run.  
+16. The export process starts. A message displays at the bottom of the pane window when it completes.  
 ![UI](Screenshots/ExportDiagramToFeatureClassesPaneWindow2.png)  
-  
-1. In the Catalog pane window, go to the specified output folder and expand the output geodatabase where your diagram should have been exported. The next paragraphs explain how it is exported.  
+17. In the Catalog pane window, go to the specified output folder and expand the output geodatabase where your diagram should have been exported. The next paragraphs explain how it is exported.  
 ![UI](Screenshots/ExportDiagramToFeatureClasses_OutputFC.png)  
     
 In the specified output geodatabase, you should see a new feature dataset whose name corresponds to the exported network diagram layer name. Under this feature dataset, there is a set of feature classes whose names correspond to utility or trace network source class names. There is a feature class with a given network source class name when there is at least one diagram feature representing such a network source feature in the original diagram. For example, if there are structure junctions in the original diagram, the StructureJunction class is created under the exported feature dataset and all the structure diagram junctions are exported in this class. When there is no structure junction in the original diagram, there is no StructureJunction class in the exported feature dataset.  
@@ -73,7 +69,6 @@ With the 'Export aggregations' option checked, you also get the Aggregations tab
 When the 'Add to a new map' option is checked, the process continues after the diagram export completion. It first creates a new map whose name corresponds to the diagram layer name suffixed with a number. Then, it analyzes the layer definitions on the sublayers under the original network diagram layer and builds new layers with similar layer definitions in the newly open map for the exported diagram features.  
 ![UI](Screenshots/ExportDiagramToFeatureClasses_AddedToAMap.png)  
   
-
 
 <!-- End -->
 

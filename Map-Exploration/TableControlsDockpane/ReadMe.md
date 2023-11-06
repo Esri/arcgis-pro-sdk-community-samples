@@ -15,8 +15,8 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,29 +31,25 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in c:\data   
-1. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. Select the FeatureTest.aprx project  
-1. Open the current active map's Contents dockpane and select the layers for which to view the attribute tables:  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+2. Make sure that the Sample data is unzipped in c:\data   
+3. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'  
+4. In Visual Studio click the Build menu. Then select Build Solution.  
+5. Launch the debugger to open ArcGIS Pro.  
+6. Select the FeatureTest.aprx project  
+7. Open the current active map's Contents dockpane and select the layers for which to view the attribute tables:  
 ![UI](Screenshots/Screenshot1.png)  
-  
-1. Click on the ADD-IN tab and the click the 'Show AttributeTables' button.  
-1. For each selected layer on the Content TOC a tab and the corresponding TableControl is added on the Attribute table viewer dockpane:  
+8. Click on the ADD-IN tab and then click the 'Show AttributeTables' button.  
+9. For each selected layer on the Content TOC a tab and the corresponding TableControl is added on the Attribute table viewer dockpane:  
 ![UI](Screenshots/Screenshot2.png)  
-  
-1. Click any row in one of those tables then right click and select 'zoom to feature' from the context menu.  
-1. The map will zoom to the selected feature.  
+10. Click any row in one of those tables then right click and select 'zoom to feature' from the context menu.  
+11. The map will zoom to the selected feature.  
 ![UI](Screenshots/Screenshot3.png)  
-  
-1. Select the 'Edit' tab on the ArcGIS Pro ribbon and 'Create' new features  
-1. On the 'Create Features' pane select the 'TestLines' feature layer and create a new line feature on the map.  
-1. Note that the table control on the Attribute Table Viewer dockpane is automatically updated to show the newly added feature.  
+12. Select the 'Edit' tab on the ArcGIS Pro ribbon and 'Create' new features  
+13. On the 'Create Features' pane select the 'TestLines' feature layer and create a new line feature on the map.  
+14. Note that the table control on the Attribute Table Viewer dockpane is automatically updated to show the newly added feature.  
 ![UI](Screenshots/Screenshot4.png)  
   
-
 
 <!-- End -->
 

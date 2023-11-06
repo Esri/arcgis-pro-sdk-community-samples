@@ -1,0 +1,103 @@
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<UserControl x:Class="GeoProcesssingWithMemoryGDB.MemoryGDBStatsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
+             xmlns:ui="clr-namespace:GeoProcesssingWithMemoryGDB"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{Binding Path=ui.MemoryGDBStatsViewModel}">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid Margin="5">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="200"/>
+      <RowDefinition Height="200"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="2*"/>
+      <ColumnDefinition Width="1*"/>
+    </Grid.ColumnDefinitions>
+    <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding Heading}" 
+               Style="{DynamicResource Esri_TextBlockDockPaneHeader}">
+      <TextBlock.ToolTip>
+        <WrapPanel Orientation="Vertical" MaxWidth="300">
+          <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
+        </WrapPanel>
+      </TextBlock.ToolTip>
+    </TextBlock>
+    <TextBlock Grid.Row="1" Grid.Column="0" Text="Memory GDB Status" Margin="0,5,0,5" />
+    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding MemoryStatus}" HorizontalAlignment="Right" Margin="0,5,0,5" />
+    <TextBlock Grid.Row="2" Grid.Column="0" Text="Memory Performance [min]" Margin="0,5,0,5" />
+    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding MemoryPerformance}" HorizontalAlignment="Right" Margin="0,5,0,5" />
+    <TextBlock Grid.Row="3" Grid.Column="0" Text="Memory record count" Margin="0,5,0,5" />
+    <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding MemoryCount}" HorizontalAlignment="Right" Margin="0,5,0,5" />
+    <TextBox Name="TxtStatus" Grid.Row="4" Grid.ColumnSpan="2" TextWrapping="Wrap" IsReadOnly="True" Text="{Binding Status}" MinHeight="120" MaxHeight="200" />
+    <TextBox Name="TxtGPStatus" Grid.Row="5" Grid.ColumnSpan="2" TextWrapping="Wrap" IsReadOnly="True" Text="{Binding GPStatus}" MinHeight="120" MaxHeight="200" />
+    <TextBlock Grid.Row="6" Grid.Column="0" Text="Memory Geodatabase Content" 
+               VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" />
+    <Button Grid.Row="6" Grid.Column="1" Command="{Binding CmdRefreshMemoryGDB}"
+            VerticalAlignment="Center" Margin="5" Style="{DynamicResource Esri_Button}">
+      <Button.Content>
+        <Border>
+          <StackPanel Orientation="Horizontal">
+            <Image Source="{Binding ImgRefreshMemoryGDB}" 
+                   HorizontalAlignment="Left" Stretch="None" />
+            <TextBlock HorizontalAlignment="Right" Text="Refresh"
+                       Margin="5,0,0,0"
+                   VerticalAlignment="Center" />
+          </StackPanel>
+        </Border>
+      </Button.Content>
+    </Button>
+    <Grid Grid.Row="7" Grid.ColumnSpan="2" ShowGridLines="True">
+      <ListView ItemsSource="{Binding Path=FeatureClasses}"
+                ItemContainerStyle="{DynamicResource Esri_ListBoxItemHighlightBrush}"
+                BorderBrush="{DynamicResource Esri_TextControlBrush}"
+                MinHeight="100">
+        <ListView.View>
+          <GridView>
+            <GridViewColumn Header="Feature Class Name" Width="200">
+              <GridViewColumn.HeaderContainerStyle>
+                <Style TargetType="{x:Type GridViewColumnHeader}">
+                  <Setter Property="HorizontalContentAlignment" Value="Center" />
+                </Style>
+              </GridViewColumn.HeaderContainerStyle>
+            </GridViewColumn>
+            <GridViewColumn Header=" " Width="200"/>
+          </GridView>
+        </ListView.View>
+      </ListView>
+    </Grid>
+  </Grid>
+</UserControl>

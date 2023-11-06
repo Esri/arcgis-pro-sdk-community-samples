@@ -69,7 +69,9 @@ namespace CustomPaneWithContents
       view.ViewProperties = new Dictionary<string, object>();
       view.ViewProperties["CustomPaneName"] = _paneName;
       view.ViewProperties["LastChanged"] = DateTime.Now.ToString("HH:mm:ss tt");
-      return FrameworkApplication.Panes.Create(_viewPaneID, new object[] { view }) as CustomPaneViewModel;
+      var customPane = FrameworkApplication.Panes.Create(_viewPaneID, new object[] { view }) as CustomPaneViewModel;
+      customPane.GroupID = "My Custom Pane";
+      return customPane;
     }
 
     #region View Model properties

@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,16 +29,15 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
- 1. In Visual Studio click the Build menu. Then select Build Solution.  
- 1. Click Start button to debug ArcGIS Pro.  
- 1. ArcGIS Pro will open.   
- 1. Open any project.  
- 1. Click on the Add-In tab on the ribbon and then on the "Show Dockpane With Help" button.    
- 1. The "Help DockPane" opens.    
- 1. The top right corner of the dockpane holds the help button, clicking the button calls the "OnHelpRequested" method of the code-behind which in turn opens the Pro help page.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+ 2. Click Start button to debug ArcGIS Pro.  
+ 3. ArcGIS Pro will open.   
+ 4. Open any project.  
+ 5. Click on the Add-In tab on the ribbon and then on the "Show Dockpane With Help" button.    
+ 6. The "Help DockPane" opens.    
+ 7. The top right corner of the dockpane holds the help button, clicking the button calls the "OnHelpRequested" method of the code-behind which in turn opens the Pro help page.  
 ![UI](Screenshots/Screen1.png)  
    
-
 
 <!-- End -->
 

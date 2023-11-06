@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,18 +29,15 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual studio rebuild the solution.  
-1. Debug the add-in by clicking the "Start" button.  
-1. ArcGIS Pro opens, select any Map project  
-1. Under the "Pro Icons" tab there are two buttons that show the "Show All Icons" and "Verify Icon" Panes.  
+1. In Visual studio rebuild the solution.
+2. Debug the add-in by clicking the "Start" button.  
+3. ArcGIS Pro opens, select any Map project  
+4. Under the "Pro Icons" tab there are two buttons that show the "Show All Icons" and "Verify Icon" Panes.  
 ![UI](Screenshots/Screen1.png)  
-  
-1. The "Show All Icons" pane displays all icons defined in ArcGIS Pro.  Click on any icon to get the icons name (or URI if you click the checkbox)..   
+5. The "Show All Icons" pane displays all icons defined in ArcGIS Pro.  Click on any icon to get the icons name (or URI if you click the checkbox)..   
 ![UI](Screenshots/Screen2.png)  
+6. The "Verify Icon" pane allows you to enter an icon name (use the "Show All Icons" pane to get any icon name and verify the icon image using light and dark themes.   
   
-1. The "Verify Icon" pane allows you to enter an icon name (use the "Show All Icons" pane to get any icon name and verify the icon image using light and dark themes.   
-  
-
 
 <!-- End -->
 

@@ -14,8 +14,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -30,28 +30,26 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Prepare some polygon data with an integer and text field for testing.  
-1. In Visual Studio, build the solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. In Pro start with a new map and add your polygon data.    
-1. Open the Modify Features dockpane from the edit tab.  
-1. Locate and activate the Sequential Numbering tool from the Sample Tools category in the dockpane.  
-1. In the tool pane, select the polygon layer name, the text field, set the start and increment values.  
-1. In the map sketch and finish a line accross the polygons you wish to attribute.  
+1. Prepare some polygon data with an integer and text field for testing.
+2. In Visual Studio, build the solution.  
+3. Launch the debugger to open ArcGIS Pro.  
+4. In Pro start with a new map and add your polygon data.    
+5. Open the Modify Features dockpane from the edit tab.  
+6. Locate and activate the Sequential Numbering tool from the Sample Tools category in the dockpane.  
+7. In the tool pane, select the polygon layer name, the text field, set the start and increment values.  
+8. In the map sketch and finish a line accross the polygons you wish to attribute.  
 The polygons will be attributed sequentially and the start value set to the next highest number.  
 ![UI](Screenshots/poly_sketch.png)  
 ![UI](Screenshots/poly_result.png)  
-  
-1. Change the format string to 51-###-A.  
-1. Sketch and finish a line accross some polygons.  
-1. The polygons will be attributed sequentially. The number of # determines leading zeros in the string format.  
+9. Change the format string to 51-###-A.  
+10. Sketch and finish a line accross some polygons.  
+11. The polygons will be attributed sequentially. The number of # determines leading zeros in the string format.  
 ![UI](Screenshots/poly_format_sketch.png)  
 ![UI](Screenshots/poly_format_result.png)  
   
 Continue testing with other text format combinations, feature class types and integer fields.  
 The text format string is only available for text string fields.  
   
-
 
 <!-- End -->
 

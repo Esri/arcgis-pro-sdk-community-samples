@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,22 +29,21 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. This solution is using the **RBush NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package RBush".  
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in c:\data   
-1. The data used in this sample is located in this folder 'C:\Data\SimplePointPlugin\SimplePointData'  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. In ArcGIS Pro create a new Map.  
-1. In Visual Studio set a break point inside the TestCsv1.OnClick code-behind.  
-1. In ArcGIS Pro click on the 'Debug Add-in Code' button.  
-1. You can now step through the code showing how to use a custom plugin in code.  
-1. In ArcGIS Pro click on the 'Add Plugin Data to Map' button.  
-1. The test data is now added to the current map.  
-1. Use the test data on the map or via the attribute table.  
+1. This solution is using the **RBush NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package RBush".
+2. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
+3. Make sure that the Sample data is unzipped in c:\data   
+4. The data used in this sample is located in this folder 'C:\Data\SimplePointPlugin\SimplePointData'  
+5. In Visual Studio click the Build menu. Then select Build Solution.  
+6. Click Start button to open ArcGIS Pro.  
+7. In ArcGIS Pro create a new Map.  
+8. In Visual Studio set a break point inside the TestCsv8.OnClick code-behind.  
+9. In ArcGIS Pro click on the 'Debug Add-in Code' button.  
+10. You can now step through the code showing how to use a custom plugin in code.  
+11. In ArcGIS Pro click on the 'Add Plugin Data to Map' button.  
+12. The test data is now added to the current map.  
+13. Use the test data on the map or via the attribute table.  
 ![UI](Screenshots/screen2.png)    
   
-
 
 <!-- End -->
 

@@ -30,45 +30,45 @@ using ArcGIS.Desktop.Mapping;
 
 namespace Symbology
 {
-    /// <summary>
-    /// Represents a custom symbol style item.
-    /// </summary>
-    /// <remarks>Procedural symbol items do not have a preview image. So a custom png is used to display these symbol types in the dockpane</remarks>
-    public class CustomSymbolStyleItem : INotifyPropertyChanged
+  /// <summary>
+  /// Represents a custom symbol style item.
+  /// </summary>
+  /// <remarks>Procedural symbol items do not have a preview image. So a custom png is used to display these symbol types in the dockpane</remarks>
+  public class CustomSymbolStyleItem : INotifyPropertyChanged
+  {
+    public CustomSymbolStyleItem(SymbolStyleItem symbolStyleItem, string symbolKey)
     {
-        public CustomSymbolStyleItem(SymbolStyleItem symbolStyleItem, string symbolKey)
-        {
-            if (symbolKey.ToLower().Contains("procedural"))
-                SymbolImageSource = new BitmapImage(new Uri($@"pack://application:,,,/Symbology;component/Images/{symbolKey}.png"));
+      if (symbolKey.ToLower().Contains("procedural"))
+        SymbolImageSource = new BitmapImage(new Uri($@"pack://application:,,,/Symbology;component/Images/{symbolKey}.png"));
 
-            QueuedTask.Run(() =>
-                { 
-                    SymbolName = symbolStyleItem.Name;
-                    if (!symbolKey.ToLower().Contains("procedural"))
-                        SymbolImageSource = symbolStyleItem.PreviewImage;
-                    NotifyPropertyChanged("SymbolImageSource");
-                });
-
+      QueuedTask.Run(() =>
+          {
+            SymbolName = symbolStyleItem.Name;
+            if (!symbolKey.ToLower().Contains("procedural"))
+              SymbolImageSource = symbolStyleItem.PreviewImage;
             NotifyPropertyChanged("SymbolImageSource");
+          });
 
-        }
+      NotifyPropertyChanged("SymbolImageSource");
 
-        public ImageSource SymbolImageSource
-        {
-            get;set;           
-        }
-
-        public string SymbolName
-        {
-            get;set;
-        }
-
-
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
-
-        private void NotifyPropertyChanged([CallerMemberName] string propName = "")
-        {
-            PropertyChanged(this, new PropertyChangedEventArgs(propName));
-        }
     }
+
+    public ImageSource SymbolImageSource
+    {
+      get; set;
+    }
+
+    public string SymbolName
+    {
+      get; set;
+    }
+
+
+    public event PropertyChangedEventHandler PropertyChanged = delegate { };
+
+    private void NotifyPropertyChanged([CallerMemberName] string propName = "")
+    {
+      PropertyChanged(this, new PropertyChangedEventArgs(propName));
+    }
+  }
 }

@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,21 +29,17 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Build or debug the sample through Visual Studio.  
-1. In Pro, select the CAD layer in the table of contents.    
-1. The contextual ribbon for the CAD layer becomes available to access the add-in button for Transform from the Alignment group.  
+1. Build or debug the sample through Visual Studio.
+2. In Pro, select the CAD layer in the table of contents.    
+3. The contextual ribbon for the CAD layer becomes available to access the add-in button for Transform from the Alignment group.  
 ![UI](Screenshots/Screen1.png)  
-  
-1. Click the button and enter the parameters for local coordinates, grid coordinates, scale and rotation values.  
+4. Click the button and enter the parameters for local coordinates, grid coordinates, scale and rotation values.  
 ![UI](Screenshots/Screen2.png)  
-  
-1. Check the box "Update ground to grid corrections" to apply the scale and rotation values to the map's ground to grid correction settings.  
+5. Check the box "Update ground to grid corrections" to apply the scale and rotation values to the map's ground to grid correction settings.  
 ![UI](Screenshots/Screen3.png)  
+6. Click the Reset button to set all the transformation parameters back to starting values.  
+7. Click the OK button to transform the CAD layer based on the entered transformation parameters.  
   
-1. Click the Reset button to set all the transformation parameters back to starting values.  
-1. Click the OK button to transform the CAD layer based on the entered transformation parameters.  
-  
-
 
 <!-- End -->
 

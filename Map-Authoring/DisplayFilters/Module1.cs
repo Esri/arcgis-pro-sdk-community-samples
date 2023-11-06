@@ -46,13 +46,13 @@ namespace DisplayFilters
     /// 1. Launch the debugger to open ArcGIS Pro.
     /// 1. Create a new blank Map project. 
     /// 1. Add the C:\Data\DisplayFilters\Hydrology.lpkx layer file to the map. This is a sample dataset of the Hydrology in the US available with the [ArcGIS Pro SDK Community Data](https://github.com/Esri/arcgis-pro-sdk-community-samples#samples-data).
-    /// 1. [UI](screenshots/Hydrology.PNG)
+    ///      ![UI](screenshots/Hydrology.PNG)
     /// 1. Click the Add-In tab.  There should be two buttons created by this sample on this tab in the "Display Filters" group: Apply Display Filters 1 amd Apply Display Filters 2.
-    /// [UI](screenshots/buttons.PNG)
+    ///      ![UI](screenshots/buttons.PNG)
     /// 1. These buttons create and apply display filters to view the dense Hydrology dataset. 
     /// 1. The "Apply Display Filters 1" button uses the CIMDefinition of the Hydrology layer using the GetDefinition\SetDefinition method pair. 
     /// 1. The "Apply Display Filters 2" button uses the LayerDocument class to retrieve and work with the CIMDefinition.
-    /// ![UI](screenshots/DisplayFilter.PNG)
+    ///      ![UI](screenshots/DisplayFilter.PNG)
     /// </remarks>
     internal class Module1 : Module
   {

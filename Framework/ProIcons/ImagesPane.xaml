@@ -46,6 +46,7 @@
       <StackPanel Orientation="Horizontal" Margin="0,50,0,50"  HorizontalAlignment="Center" VerticalAlignment="Center">
         <TextBox VerticalContentAlignment="Center" Width="200" Height="30" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" KeyDown="TextBox_KeyDown"/>
         <Button Width="Auto" Height="30" Command="{Binding SearchCmd}" Margin="2,0,0,0">Search</Button>
+        <Button Width="Auto" Height="30" Command="{Binding SvgSaveCmd}" IsEnabled="{Binding SvgSaveEnble}" Margin="2,0,0,0" Content="Save as .SVG" />
       </StackPanel>
     </Grid>
 
@@ -69,7 +70,8 @@
         <Grid Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,25,0">
           <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
             <TextBlock HorizontalAlignment="Center">Png</TextBlock>
-            <Image Margin="0,10,0,0" Width="{Binding Size}" Height="{Binding Size}" Stretch="None" Source="{Binding Png}">
+            <Image Margin="0,10,0,0" Width="{Binding Size}" Height="{Binding Size}" Stretch="None" 
+                   Source="{Binding Png}">
               <Image.LayoutTransform>
                 <ScaleTransform ScaleX="{Binding Scale}" ScaleY="{Binding Scale}"/>
               </Image.LayoutTransform>
@@ -80,7 +82,8 @@
         <Grid Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="25,0,0,0">
           <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
             <TextBlock HorizontalAlignment="Center">Png Dark</TextBlock>
-            <Image Margin="0,10,0,0" Width="{Binding Size}" Height="{Binding Size}" Stretch="None" Source="{Binding PngDark}">
+            <Image Margin="0,10,0,0" Width="{Binding Size}" Height="{Binding Size}" Stretch="None" 
+                   Source="{Binding PngDark}">
               <Image.LayoutTransform>
                 <ScaleTransform ScaleX="{Binding Scale}" ScaleY="{Binding Scale}"/>
               </Image.LayoutTransform>
@@ -90,8 +93,9 @@
 
         <Grid Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,25,0">
           <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-            <TextBlock HorizontalAlignment="Center">Xaml</TextBlock>
-            <Image Margin="0,10,0,0" Width="{Binding Size}" Height="{Binding Size}" Stretch="None" Source="{Binding Xaml}">
+            <TextBlock HorizontalAlignment="Center">Xaml SVG</TextBlock>
+            <Image Margin="0,10,0,0" Width="{Binding Size}" Height="{Binding Size}" Stretch="None" 
+                   Source="{Binding Xaml}">
               <Image.LayoutTransform>
                 <ScaleTransform ScaleX="{Binding Scale}" ScaleY="{Binding Scale}"/>
               </Image.LayoutTransform>
@@ -101,8 +105,9 @@
 
         <Grid Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="25,0,0,0">
           <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-            <TextBlock HorizontalAlignment="Center">Xaml Dark</TextBlock>
-            <Image Margin="0,10,0,0" Width="{Binding Size}" Height="{Binding Size}" Stretch="None" Source="{Binding XamlDark}">
+            <TextBlock HorizontalAlignment="Center">Xaml SVG Dark</TextBlock>
+            <Image Margin="0,10,0,0" Width="{Binding Size}" Height="{Binding Size}" Stretch="None" 
+                   Source="{Binding XamlDark}">
               <Image.LayoutTransform>
                 <ScaleTransform ScaleX="{Binding Scale}" ScaleY="{Binding Scale}"/>
               </Image.LayoutTransform>

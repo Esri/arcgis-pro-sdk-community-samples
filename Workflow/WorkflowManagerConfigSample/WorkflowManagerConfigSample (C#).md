@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Workflow
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -33,12 +33,11 @@ In order to use this sample you must have a Workflow manager database set up and
 Please refer to setting up a Workflow manager database before using this sample   
 Configurations are built using the configuration project template provided in the Pro SDK templates in Visual Studio.  Once selected, the configuration template creates the necessary project components which developers can use. Please refer to ArcGIS Pro SDK Configurations for more information   
   
-1. In Visual Studio click the Build menu. Then select Build Solution.    
-1. Click Start button to open ArcGIS Pro. You can also install the configuration  'WorkflowManagerConfigSample.proconfigx' and then deploy the sample using the following command line: C:[file location]\ArcGISPro.exe /config:[name of config]   
-1. The ArcGIS Pro Project must have a valid Workflow Manager database connection prior to using   
-1. To establish a valid Workflow Manager database connection just use the ‘Add Workflow Connection’ option under the connections menu on the project tab. Save the project and reopen it again to view all open jobs assigned to the current user or their groups. Users can then execute and finish jobs using only the workflow pane.   
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Click Start button to open ArcGIS Pro. You can also install the configuration  'WorkflowManagerConfigSample.proconfigx' and then deploy the sample using the following command line: C:[file location]\ArcGISPro.exe /config:[name of config]   
+3. The ArcGIS Pro Project must have a valid Workflow Manager database connection prior to using   
+4. To establish a valid Workflow Manager database connection just use the ‘Add Workflow Connection’ option under the connections menu on the project tab. Save the project and reopen it again to view all open jobs assigned to the current user or their groups. Users can then execute and finish jobs using only the workflow pane.   
   
-
 
 <!-- End -->
 

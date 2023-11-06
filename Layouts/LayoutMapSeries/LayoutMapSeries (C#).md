@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Layouts
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,20 +29,18 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. This solution is using the **Newtonsoft.Json NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. Open the "C:\Data\LayoutMapSeries\LayoutMapSeries.aprx" project file. Click on the Add-in tab on the ribbon and then on the Show "Generate Map Series" button.  
-1. This "Create Map Series" dockpane will open.  
-1. Select a "Map Series Layout" from the drop down and the click the "Generate Series" button.  
+1. This solution is using the **Newtonsoft.Json NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".
+2. In Visual Studio click the Build menu. Then select Build Solution.  
+3. Launch the debugger to open ArcGIS Pro.  
+4. Open the "C:\Data\LayoutMapSeries\LayoutMapSeries.aprx" project file. Click on the Add-in tab on the ribbon and then on the Show "Generate Map Series" button.  
+5. This "Create Map Series" dockpane will open.  
+6. Select a "Map Series Layout" from the drop down and the click the "Generate Series" button.  
 ![UI](Screenshots/Screenshot1.png)    
-  
-1. Once the new Layout has been generated, the layout is displayed and the map series items are displayed in the Map Series item list.  
-1. Now the map series items can be selected by clicking on the map series items list or the VCR buttons on the bottom.  
-1. The layout contains various layout elements like tables, dynamic text, layout, scale bar, north arrow, and finally the map frame.  
+7. Once the new Layout has been generated, the layout is displayed and the map series items are displayed in the Map Series item list.  
+8. Now the map series items can be selected by clicking on the map series items list or the VCR buttons on the bottom.  
+9. The layout contains various layout elements like tables, dynamic text, layout, scale bar, north arrow, and finally the map frame.  
 ![UI](Screenshots/Screenshot2.png)    
   
-
 
 <!-- End -->
 

@@ -28,8 +28,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -46,25 +46,21 @@ Visual Studio:         2022
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 For sample data, download CommunitySampleData-12-15-2020.zip from https://github.com/Esri/arcgis-pro-sdk-community-samples/releases and unzip it. We will be using the project in "Working with Core Geometry and Data" folder as an example for this AddIn.  
   
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
-1. Open the Workshop.aprx file from Core Geometry and Data folder you just downloaded.  We can use any project that contains editable polyline data. We are just using Workshop.aprx as an example here.  
-1. Open the Create features pane and select a polyline template (in this example that will be the sdk_polylines template).  
-1. You will see a custom tool named "Custom line construction tool" at the end of the tools listed below the activated template.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Click Start button to open ArcGIS Pro.  
+3. ArcGIS Pro will open.   
+4. Open the Workshop.aprx file from Core Geometry and Data folder you just downloaded.  We can use any project that contains editable polyline data. We are just using Workshop.aprx as an example here.  
+5. Open the Create features pane and select a polyline template (in this example that will be the sdk_polylines template).  
+6. You will see a custom tool named "Custom line construction tool" at the end of the tools listed below the activated template.  
 ![UI](Screenshots/CustomTool.jpg)  
-  
-1. First let us observe the current sketch symbology by sketching with the default tool of that line template.  
+7. First let us observe the current sketch symbology by sketching with the default tool of that line template.  
 ![UI](Screenshots/CustomTool2.jpg)  
-  
-1. Now activate the custom tool and start sketching and observe how the sketch symbology has changed.  
+8. Now activate the custom tool and start sketching and observe how the sketch symbology has changed.  
 ![UI](Screenshots/CustomTool3.jpg)  
+9. In this sample, the segment's primary color is changed to orange and the size is changed to 4.  
+10. The unselected vertex symbology is also modified to have a yellow color, total size 5, and purple outline of width 3.  
+11. When you finish or cancel the sketch (so as to deactivate the custom tool) and then activate any one of the other tools, you'll notice that the sketch symbology has been restored to the application settings.  
   
-1. In this sample, the segment's primary color is changed to orange and the size is changed to 4.  
-1. The unselected vertex symbology is also modified to have a yellow color, total size 5, and purple outline of width 3.  
-1. When you finish or cancel the sketch (so as to deactivate the custom tool) and then activate any one of the other tools, you'll notice that the sketch symbology has been restored to the application settings.  
-  
-
 
 <!-- End -->
 

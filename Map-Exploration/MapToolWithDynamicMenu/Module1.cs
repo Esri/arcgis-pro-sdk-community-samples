@@ -41,7 +41,7 @@ namespace MapToolWithDynamicMenu
     /// 1. On the map click on an area with high feature point density as shown here.
     /// ![UI](screenshots/6MapTool2D.png)
     /// 1. The pop-up menu show all features that intersect the point click area. 
-    /// 1. Click on of the features. 
+    /// 1. Click one of the feature
     /// 1. Verify that the feature was really selected.
     /// ![UI](screenshots/6MapTool2D-2.png)
     /// </remarks>

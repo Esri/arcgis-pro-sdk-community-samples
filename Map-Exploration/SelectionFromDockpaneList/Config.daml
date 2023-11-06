@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="SelectionFromDockpaneList.dll" defaultNamespace="SelectionFromDockpaneList" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{0f300517-2409-4c79-b298-a9d0f6824db1}" version="1.0" desktopVersion="3.2.48119">
+    <Name>SelectionFromDockpaneList</Name>
+    <Description>SelectionFromDockpaneList description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>4/8/2023 07:03:41</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="SelectionFromDockpaneList_Module" className="Module1" autoLoad="false" 
+                  caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="SelectionFromDockpaneList_Tab1" caption="New Tab">
+          <group refID="SelectionFromDockpaneList_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="SelectionFromDockpaneList_Group1" keytip="XG"
+               caption="Select By Dockpane" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="SelectionFromDockpaneList_SelectionDockpaneView_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="SelectionFromDockpaneList_SelectionDockpaneView_ShowButton" 
+                caption="Select by Dockpane List" className="SelectionDockpaneView_ShowButton" 
+                loadOnClick="true" keytip="X1"
+                smallImage="SelectionSelectByAttributes16"
+                largeImage="SelectionSelectByAttributes32">
+          <tooltip heading="Select by Dockpane List">
+            Shows Select by Dockpane List Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="SelectionFromDockpaneList_SelectionDockpaneView" 
+                  caption="Select by Dockpane List" 
+                  className="SelectionDockpaneViewModel" dock="group" 
+                  dockWith="esri_core_projectDockPane">
+          <content className="SelectionDockpaneView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

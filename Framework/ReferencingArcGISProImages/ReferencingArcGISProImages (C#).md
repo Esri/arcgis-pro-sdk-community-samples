@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,16 +29,15 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. In ArcGIS Pro open any map.  
-1. In ArcGIS Pro click on the 'Reference Icons' tab to view different alternatives to reference ArcGIS Pro icons (https://github.com/esri/arcgis-pro-sdk/wiki/DAML-ID-Reference-Icons).  
-1. You can look at the config.daml to see how ArcGIS Pro icons are referenced from within config.daml  
-1. Check ReferenceFromXAML.xaml on how to reference ArcGIS Pro icons from XAML  
-1. Check ReferenceFromXAMLViewModel.cs on how to reference ArcGIS Pro icons from code-behind  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Click Start button to open ArcGIS Pro.  
+3. In ArcGIS Pro open any map.  
+4. In ArcGIS Pro click on the 'Reference Icons' tab to view different alternatives to reference ArcGIS Pro icons (https://github.com/esri/arcgis-pro-sdk/wiki/DAML-ID-Reference-Icons).  
+5. You can look at the config.daml to see how ArcGIS Pro icons are referenced from within config.daml  
+6. Check ReferenceFromXAML.xaml on how to reference ArcGIS Pro icons from XAML  
+7. Check ReferenceFromXAMLViewModel.cs on how to reference ArcGIS Pro icons from code-behind  
 ![UI](Screenshots/Screen1.png)    
   
-
 
 <!-- End -->
 

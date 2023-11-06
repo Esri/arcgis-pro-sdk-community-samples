@@ -2,8 +2,7 @@
   "profiles": {
     "TransformCADLayer": {
       "commandName": "Executable",
-      "executablePath": "C:\\Program Files\\ArcGIS\\Pro\\bin\\ArcGISPro.exe",
-      "commandLineArgs": ""
+      "executablePath": "C:\\Program Files\\ArcGIS\\Pro\\bin\\ArcGISPro.exe"
     }
   }
 }

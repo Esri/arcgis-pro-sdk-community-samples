@@ -21,8 +21,8 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -37,27 +37,24 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. Open any project.  
-1. Click on the Add-In Tab.  
-1. Click on the *Simple Geocode* button.   
-1. A Messagebox will be displayed with the geocode results.   
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Launch the debugger to open ArcGIS Pro.  
+3. Open any project.  
+4. Click on the Add-In Tab.  
+5. Click on the *Simple Geocode* button.   
+6. A Messagebox will be displayed with the geocode results.   
 ![UI](screenshots/SimpleGeocode.png)    
 ![UI](screenshots/SimpleGeocodeResults.png)    
-  
-1. Click on the *Show Geocode Dockpane* button.   
-1. The Geocode dock pane will open up.  Enter a location and see the results display in the dockpane as well as on the map.  
+7. Click on the *Show Geocode Dockpane* button.   
+8. The Geocode dock pane will open up.  Enter a location and see the results display in the dockpane as well as on the map.  
 ![UI](screenshots/LocatorControl.png)    
 ![UI](screenshots/LocatorControlResults.png)    
-  
-1. Click on the *Show Custom Geocode Dockpane* button.   
-1. The Custom Geocode dock pane will open up.    
-1. Enter a location and see the results display in the dockpane.  
-1. Highlight a result and see the map zoom and a symbol be added to the map at the result location.   
+9. Click on the *Show Custom Geocode Dockpane* button.   
+10. The Custom Geocode dock pane will open up.    
+11. Enter a location and see the results display in the dockpane.  
+12. Highlight a result and see the map zoom and a symbol be added to the map at the result location.   
 ![UI](screenshots/Geocode_CustomUI.png)    
   
-
 
 <!-- End -->
 

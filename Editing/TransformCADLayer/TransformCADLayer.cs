@@ -1,6 +1,6 @@
-/*
+﻿/*
 
-   Copyright 2022 Esri
+   Copyright 2023 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -54,7 +54,7 @@ namespace TransformCADLayer
     {
       // get the feature layer that's selected in the table of contents
       var selectedLayers = MapView.Active.GetSelectedLayers();
-      var CADLayer = selectedLayers.OfType<FeatureLayer>().FirstOrDefault() as FeatureLayer;
+      FeatureLayer CADLayer = selectedLayers.OfType<FeatureLayer>().FirstOrDefault();
       string CadFileName = "";
       SpatialReference fcSR = null;
       if (CADLayer == null)
@@ -62,9 +62,9 @@ namespace TransformCADLayer
         System.Windows.MessageBox.Show("Please select the CAD layer in the table of contents", "Layer Transform");
         return;
       }
-      double dMetersPerUnit = 1;
+      double dMetersPerUnit = 1.0;
       string CadFeatClassNameForSelectedLayer = "";
-
+      CadDataset cadDataset = null;
       //Run on MCT
       bool isValid = await QueuedTask.Run(() =>
       {
@@ -78,6 +78,9 @@ namespace TransformCADLayer
         CadFileName = System.IO.Path.Combine(sCADFilePath, FeatDS.GetName());
         string fileExtension = System.IO.Path.GetExtension(CadFileName);
         fileExtension = fileExtension.ToLower();
+
+        var cadfileStore = new FileSystemDatastore(new FileSystemConnectionPath(new Uri(sCADFilePath), FileSystemDatastoreType.Cad));
+        cadDataset = cadfileStore.OpenDataset<CadDataset>(CadFileName);
 
         string sTargetFileName = System.IO.Path.GetFileNameWithoutExtension(CadFileName);
         sTargetWldFile = System.IO.Path.Combine(sCADFilePath, sTargetFileName + ".wld3");
@@ -105,20 +108,20 @@ namespace TransformCADLayer
         return;
       }
 
-      double dOriginX = 0; // Origin Northing(Y) coordinate
-      double dOriginY = 0; // Origin Northing (Y) coordinate
-      double dGridX = 0; // Grid Easting (X) coordinate
-      double dGridY = 0; // Grid Northing (Y) coordinate
+      double dOriginX = 0.0; // Origin Northing(Y) coordinate
+      double dOriginY = 0.0; // Origin Northing (Y) coordinate
+      double dGridX = 0.0; // Grid Easting (X) coordinate
+      double dGridY = 0.0; // Grid Northing (Y) coordinate
       double dScaleFactor = 1.0000; // Scale Factor
       double dRotation = 0.0000; // Rotation
       bool bSetGroundToGrid = false;
 
       #region Collect parameters from dialog
-      var transformationDlg = new TransformationInput();
+      TransformationInput transformationDlg = new();
       transformationDlg.Owner = FrameworkApplication.Current.MainWindow;
 
-      TransformationViewModel VM = new TransformationViewModel();
-      transformationDlg.DataContext = VM; 
+      TransformationViewModel VM = new();
+      transformationDlg.DataContext = VM;
 
       string sLastUsedParams = "";
       bool bCancel = false;
@@ -134,42 +137,42 @@ namespace TransformCADLayer
           string sScaleFactor = VM.Transformation.ScaleFactor;
           string sRotation = VM.Transformation.Rotation;
           string sSetGroundToGrid = VM.Transformation.UpdateGround2Grid.ToString();
-          sLastUsedParams= sOriginX + "|" + sOriginY + "|" + sGridX + "|" + sGridY + "|" 
+          sLastUsedParams = sOriginX + "|" + sOriginY + "|" + sGridX + "|" + sGridY + "|"
             + sScaleFactor + "|" + sRotation + "|" + sSetGroundToGrid;
 
           bSetGroundToGrid = VM.Transformation.UpdateGround2Grid;
 
           if (!Double.TryParse(sOriginX, out dOriginX))
           {
-            MessageBox.Show("Local Easting (X) must be a number." + Environment.NewLine 
+            MessageBox.Show("Local Easting (X) must be a number." + Environment.NewLine
               + "Press the Transform button again to retry.", "Local Easting (X)");
             return;
           }
           if (!Double.TryParse(sOriginY, out dOriginY))
           {
-            MessageBox.Show("Local Northing (Y) must be a number." + Environment.NewLine 
+            MessageBox.Show("Local Northing (Y) must be a number." + Environment.NewLine
               + "Press the Transform button again to retry.", "Local Northing (Y)");
             return;
           }
           if (!Double.TryParse(sGridX, out dGridX))
           {
-            MessageBox.Show("Grid Easting (X) must be a number." + Environment.NewLine 
+            MessageBox.Show("Grid Easting (X) must be a number." + Environment.NewLine
               + "Press the Transform button again to retry.", "Grid Easting (X)");
             return;
           }
           if (!Double.TryParse(sGridY, out dGridY))
           {
-            MessageBox.Show("Grid Northing (Y) must be a number." + Environment.NewLine 
+            MessageBox.Show("Grid Northing (Y) must be a number." + Environment.NewLine
               + "Press the Transform button again to retry.", "Grid Northing (Y)");
             return;
           }
           if (!Double.TryParse(sScaleFactor, out dScaleFactor))
           {
-            MessageBox.Show("Scale Factor must be a number." + Environment.NewLine 
+            MessageBox.Show("Scale Factor must be a number." + Environment.NewLine
               + "Press the Transform button again to retry.", "Scale Factor");
             return;
           }
-          if (dScaleFactor<=0)
+          if (dScaleFactor <= 0.0)
           {
             MessageBox.Show("Scale Factor must be greater than zero." + Environment.NewLine + "Press the Transform button again to retry.", "Scale Factor");
             return;
@@ -201,6 +204,8 @@ namespace TransformCADLayer
             await mapView.Map.SetGroundToGridCorrection(cimG2G);
           }
         }
+
+
         else
         {
           // Canceled from dialog
@@ -219,39 +224,53 @@ namespace TransformCADLayer
       }
       #endregion
 
-      var pFrom1 = new Coordinate2D(dOriginX, dOriginY);
-      var pTo1 = new Coordinate2D(dGridX, dGridY);
-      var dDeltaX = dGridX - dOriginX;
-      var dDeltaY = dGridY - dOriginY;
+      bool bUnknownProjection = false;
+      #region define projection
+      if (fcSR.IsUnknown && MapView.Active.Map.SpatialReference.IsProjected)
+      {//if .prj is unknown use the active map's projection for the CAD file.
+        fcSR = MapView.Active.Map.SpatialReference;
+        bUnknownProjection = true;
+      }
 
-      var pFrom2 = new Coordinate2D(pFrom1.X + (10000 / dMetersPerUnit), pFrom1.Y + (10000 / dMetersPerUnit));
-
-      var Rotated = GeometryEngine.Instance.Rotate(pFrom2.ToMapPoint(), pFrom1.ToMapPoint(), dRotation * Math.PI / 180);
-      MapPoint RotatedAndScaled = (MapPoint)GeometryEngine.Instance.Scale(Rotated, pFrom1.ToMapPoint(), dScaleFactor, dScaleFactor);
-      var RotatedScaledTranslated = new Coordinate2D(RotatedAndScaled.X + dDeltaX, RotatedAndScaled.Y + dDeltaY);
-
-      if (WriteWorldFile(sTargetWldFile, pFrom1, pTo1, pFrom2, RotatedScaledTranslated))
+      CancelableProgressorSource cps =
+              new("Define Projection", "Canceled");
+      int numSecondsDelay = 5;
+      bool bContinue = true;
+      //The following code assigns the .wld file so
+      //that the CAD layer can be redrawn in the correct location.
+      //a projection is assigned if it is initially unknown
+      await QueuedTask.Run(async () =>
       {
-        if (fcSR.IsUnknown && MapView.Active.Map.SpatialReference.IsProjected)
-        {//if .prj is unknown use the active map's projection for the CAD file.
-          fcSR = MapView.Active.Map.SpatialReference;
-        }
+        cps.Progressor.Max = (uint)numSecondsDelay;
+        //check every second
+        cps.Progressor.Value += 1;
+        cps.Progressor.Message = "Creating and applying world file...";
 
-        CancelableProgressorSource cps =
-                new CancelableProgressorSource("Define Projection", "Canceled");
-        int numSecondsDelay = 5;
-        bool bContinue = true;
-        //The following code re-assigns or assigns the projection so that the CAD layer
-        //can be redrawn in the correct location using the .wld file.
-        await QueuedTask.Run(async () =>
-        {
-          cps.Progressor.Max = (uint)numSecondsDelay;
-          //check every second
-          cps.Progressor.Value += 1;
-          cps.Progressor.Message = "Creating and applying world file...";
-
+        //if the CAD file projection is unknown, use define projection to match map
+        if (bUnknownProjection)
           await DefineProjectionAsync(CadFileName, fcSR, cps);
-          bContinue = !cps.Progressor.CancellationToken.IsCancellationRequested;
+
+        bContinue = !cps.Progressor.CancellationToken.IsCancellationRequested;
+
+        var pFrom1 = new Coordinate2D(dOriginX, dOriginY);
+        var pTo1 = new Coordinate2D(dGridX, dGridY);
+        var dDeltaX = dGridX - dOriginX;
+        var dDeltaY = dGridY - dOriginY;
+
+        var pFrom2 = new Coordinate2D(pFrom1.X + (10000 / dMetersPerUnit), pFrom1.Y + (10000 / dMetersPerUnit));
+
+        var Rotated = GeometryEngine.Instance.Rotate(pFrom2.ToMapPoint(), pFrom1.ToMapPoint(), dRotation * Math.PI / 180);
+        MapPoint RotatedAndScaled = (MapPoint)GeometryEngine.Instance.Scale(Rotated, pFrom1.ToMapPoint(), dScaleFactor, dScaleFactor);
+        var RotatedScaledTranslated = new Coordinate2D(RotatedAndScaled.X + dDeltaX, RotatedAndScaled.Y + dDeltaY);
+
+        if (!WriteWorldFile(sTargetWldFile, pFrom1, pTo1, pFrom2, RotatedScaledTranslated))
+        {
+          MessageBox.Show("The world file could not be created.", "Transform");
+          return;
+        }
+        else
+        {
+          cadDataset.Reload();
           if (CADLayer.Parent is Layer)
           {
             MapView.Active.ZoomTo(CADLayer.Parent as GroupLayer);
@@ -263,50 +282,47 @@ namespace TransformCADLayer
             MapView.Active.ZoomTo(CADLayer as Layer);
             MapView.Active.Invalidate(CADLayer as Layer, MapView.Active.Extent);
           }
-        }, cps.Progressor);
-        if (!bContinue)
-          return;
-      }
-      else
-      {
-        MessageBox.Show("The world file could not be created.", "Transform");
+        }
+      }, cps.Progressor);
+      if (!bContinue)
         return;
+      #endregion
+
+    }
+
+    private static bool WriteWorldFile(string sTargetFile, Coordinate2D FromPoint1, Coordinate2D ToPoint1, Coordinate2D FromPoint2, Coordinate2D ToPoint2)
+    {
+      string sX1From = FromPoint1.X.ToString("0.##########");
+      string sY1From = FromPoint1.Y.ToString("0.##########");
+      string sX2From = FromPoint2.X.ToString("0.##########");
+      string sY2From = FromPoint2.Y.ToString("0.##########");
+
+      string sX1To = ToPoint1.X.ToString("0.##########");
+      string sY1To = ToPoint1.Y.ToString("0.##########");
+      string sX2To = ToPoint2.X.ToString("0.##########");
+      string sY2To = ToPoint2.Y.ToString("0.##########");
+
+      //Write the world file
+      try
+      {
+        StreamWriter sw = new StreamWriter(sTargetFile);
+        string Line1 = sX1From + "," + sY1From + ",0 " + sX1To + "," + sY1To + ",0";
+        string Line2 = sX2From + "," + sY2From + ",0 " + sX2To + "," + sY2To + ",0";
+        sw.WriteLine(Line1);
+        sw.WriteLine(Line2);
+        sw.Close();
+
+        return true;
       }
+      catch // streamwriter can throw error if no write permissions
+      {
+        // ignore exception, but could show a message box if you want.  
+      }
+
+      return false;
     }
 
-    private bool WriteWorldFile(string sTargetFile, Coordinate2D FromPoint1, Coordinate2D ToPoint1, Coordinate2D FromPoint2, Coordinate2D ToPoint2)
-    {
-    string sX1From = FromPoint1.X.ToString("0.##########");
-    string sY1From = FromPoint1.Y.ToString("0.##########");
-    string sX2From = FromPoint2.X.ToString("0.##########");
-    string sY2From = FromPoint2.Y.ToString("0.##########");
-
-    string sX1To = ToPoint1.X.ToString("0.##########");
-    string sY1To = ToPoint1.Y.ToString("0.##########");
-    string sX2To = ToPoint2.X.ToString("0.##########");
-    string sY2To = ToPoint2.Y.ToString("0.##########");
-
-    //Write the world file
-    try
-    {
-    StreamWriter sw = new StreamWriter(sTargetFile);
-    string Line1 = sX1From + "," + sY1From + ",0 " + sX1To + "," + sY1To + ",0";
-    string Line2 = sX2From + "," + sY2From + ",0 " + sX2To + "," + sY2To + ",0";
-    sw.WriteLine(Line1);
-    sw.WriteLine(Line2);
-    sw.Close();
-
-    return true;
-    }
-    catch // streamwriter can throw error if no write permissions
-    {
-    // ignore exception, but could show a message box if you want.  
-    }
-
-    return false;
-    }
-
-    protected async Task DefineProjectionAsync(string CadFileName, SpatialReference SpatialRef, CancelableProgressorSource cps)
+    protected static async Task DefineProjectionAsync(string CadFileName, SpatialReference SpatialRef, CancelableProgressorSource cps)
     {
       //GP Define Projection
       GPExecuteToolFlags flags = GPExecuteToolFlags.Default; // | GPExecuteToolFlags.GPThread;

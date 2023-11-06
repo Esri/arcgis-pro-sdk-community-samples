@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,23 +29,32 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.    
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.  
-1. Open any project with at least one feature layer.  
-1. Notice the following customizations made to the Pro UI:  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Click Start button to open ArcGIS Pro.  
+3. ArcGIS Pro will open.  
+4. Open any project with at least one feature layer.  
+5. Notice the following customizations made to the Pro UI:  
 * The Bookmarks button has been removed in the Navigate group on the Map tab  
-![RemoveButton](screenshots/DeleteCoreButton.png)   
+<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/DeleteCoreButton.png" width="40%">  
 * A new button has been inserted into the Navigate group on the Map Tab  
-![NewButton](screenshots/NewButtonCoreGroup.png)   
+<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/NewButtonCoreGroup.png" width="40%">  
 * With any Map view active, right click on a feature layer in the TOC. Notice the New Button context menu item added.  
-![New Menu](screenshots/NewMenuItemInContextMenu.png)  
+<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/NewMenuItemInContextMenu.png" width="40%">  
 * Click the Project tab to access Pro's backstage.  Notice the missing Open and New project tabs.  A new tab called "Geocode" has been inserted above the Save project button.  
-![New Backstage tab](screenshots/BackstageDeleteExistingTabsInsertNewTabs.png)  
+<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/BackstageDeleteExistingTabsInsertNewTabs.png" width="40%">  
 * Click the Project tab to access Pro's backstage. Click the Options tab to display the Options Property Sheet.  Notice the new "Sample Project Settings" property page inserted within the Project group.  
-![New Backstage tab](screenshots/PropertySheetOptionsDialog.png)  
+<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/PropertySheetOptionsDialog.png" width="40%">  
+* With any Map active, right click on the Map in the Contents pane to access the context menu. Notice the new button inserted into the context menu.  
+<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/2DMapContextMenu.png" width="40%">  
+* With any Scene active, right click on the Scene in the Contents pane to access the context menu. Notice the new button inserted into the context menu.  
+<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/SceneContextMenu.png" width="40%">  
+* In the Catalog pane, right click on the Map Container to access its context menu. Notice a new Menu inserted into the context menu.  
+<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/MapContainerContextMenu.png" width="40%">  
+* In the Catalog pane, right click on any Map item to access its context menu. Notice a new button inserted into the context menu.  
+<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/MapContentContextMenu.png" width="40%">  
+* In the Catalog pane, right click on any Local Scene to access its context menu. Notice a new button inserted into the context menu.  
+<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/SceneContentContextMenu.png" width="40%">  
   
-
 
 <!-- End -->
 

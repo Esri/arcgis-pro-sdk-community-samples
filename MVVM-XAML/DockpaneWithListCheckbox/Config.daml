@@ -40,15 +40,21 @@
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="DockpaneWithListCheckbox_Group1" caption="Group 1" appearsOnAddInTab="true">
+        <group id="DockpaneWithListCheckbox_Group1" caption="Dockpane" 
+							 keytip="G0" appearsOnAddInTab="true">
           <!-- host controls within groups -->
-          <button refID="DockpaneWithListCheckbox_TestListbox_ShowButton" size="large" />
+          <button refID="DockpaneWithListCheckbox_TestListbox_ShowButton" 
+									size="large" />
         </group>
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="DockpaneWithListCheckbox_TestListbox_ShowButton" caption="Show TestListbox" className="TestListbox_ShowButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
-          <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
+        <button id="DockpaneWithListCheckbox_TestListbox_ShowButton" 
+								caption="Show Test Listbox" className="TestListbox_ShowButton" 
+								loadOnClick="true" keytip="B1"
+								smallImage="NetworkAnalystNDSRenderer_DirtyArea_check24" 
+								largeImage="NetworkAnalystNDSRenderer_DirtyArea_check24">
+          <tooltip heading="Show Test Listbox">Shows a Dockpane with a list that has checkboxes<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>

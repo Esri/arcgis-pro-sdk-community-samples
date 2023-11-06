@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="GeoProcesssingWithMemoryGDB.dll" defaultNamespace="GeoProcesssingWithMemoryGDB" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{fb81ce84-6389-497e-a3c9-bc4126bea08e}" version="1.0" desktopVersion="3.1.41833">
+    <Name>GeoProcesssingWithMemoryGDB</Name>
+    <Description>GeoProcesssingWithMemoryGDB description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, https://www.esri.com</Company>
+    <Date>3/15/2023 12:14:00 PM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="GeoProcesssingWithMemoryGDB_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="GeoProcesssingWithMemoryGDB_Tab1" caption="GP with Memory GDB" 
+						 keytip="T1">
+          <group refID="GeoProcesssingWithMemoryGDB_Group1" />
+					<group refID="GeoProcesssingWithMemoryGDB_Group2" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="GeoProcesssingWithMemoryGDB_Group1" caption="Memory GDB Setup" keytip="G1">
+					<button refID="GeoProcesssingWithMemoryGDB_MemoryGDBStats_ShowButton" size="large" />
+					<button refID="GeoProcesssingWithMemoryGDB_SetupMemoryGDB" size="large" />
+					<button refID="GeoProcesssingWithMemoryGDB_AddRecords" size="large" />
+					<button refID="GeoProcesssingWithMemoryGDB_Add2Map" size="large" />
+        </group>
+				<group id="GeoProcesssingWithMemoryGDB_Group2" caption="GPTool using Memory GDB" keytip="G2">
+					<button refID="GeoProcesssingWithMemoryGDB_SimpleBufferExample" size="large" />
+					<button refID="GeoProcesssingWithMemoryGDB_Densify" size="large" />
+					<button refID="GeoProcesssingWithMemoryGDB_Dissolve" size="large" />
+					<button refID="GeoProcesssingWithMemoryGDB_RestartDemo" size="large" />
+					<button refID="esri_mapping_measureDistanceTool" size="large" />
+				</group>
+      </groups>
+      <controls>
+				<button id="GeoProcesssingWithMemoryGDB_MemoryGDBStats_ShowButton"
+								caption="Show Memory GDB Stats"
+								className="MemoryGDBStats_ShowButton" loadOnClick="true" keytip="B3"
+								smallImage="ContentsWindowShow16"
+								largeImage="ContentsWindowShow32">
+					<tooltip heading="Show Memory GDB Stats">
+						Show Dockpane with Memory GDB Test Stats<disabledText />
+					</tooltip>
+				</button>
+        <button id="GeoProcesssingWithMemoryGDB_SetupMemoryGDB" 
+								caption="Setup Memory GDB" className="SetupMemoryGDB" 
+								loadOnClick="true" keytip="B1"							
+								smallImage="GeodatabaseNew16" 
+								largeImage="GeodatabaseNew32">
+					<tooltip heading="Create GDB">
+						Create memory GDB Feature Classes for testing<disabledText />
+					</tooltip>
+				</button>
+				<button id="GeoProcesssingWithMemoryGDB_AddRecords" caption="Add Records"
+								className="AddRecords" loadOnClick="true" keytip="B2"
+								smallImage="AddHuffModel16"
+								largeImage="AddHuffModel32">
+					<tooltip heading="Add Records">
+						Add test polygon records to F/C<disabledText />
+					</tooltip>
+				</button>
+				<button id="GeoProcesssingWithMemoryGDB_Add2Map" caption="Add Test F/Cs to Map"
+								className="MemoryAdd2Map" loadOnClick="true" keytip="B3"
+								smallImage="AddContent16"
+								largeImage="AddContent32">
+					<tooltip heading="Add Test F/Cs to Map">
+						Add Memory Geodatabase Test Feature class to Map<disabledText />
+					</tooltip>
+				</button>
+				<button id="GeoProcesssingWithMemoryGDB_SimpleBufferExample"
+                caption="GP tool Buffer" className="GPBuffer"
+                loadOnClick="true" keytip="BF"
+                smallImage="TemplateGroupLineBuffer16"
+                largeImage="TemplateGroupLineBuffer16">
+					<tooltip heading="GP tool Buffer">
+						Creates a buffer around the memory GDB polygon<disabledText />
+					</tooltip>
+				</button>
+				<button id="GeoProcesssingWithMemoryGDB_RestartDemo" caption="Undo" className="RestartDemo"
+                loadOnClick="true" keytip="BA"
+                smallImage="EditUndo_B_16"
+                largeImage="EditUndo_B_32">
+					<tooltip heading="Undo">
+						Undo the changes made by the buffer function<disabledText />
+					</tooltip>
+				</button>
+				<button id="GeoProcesssingWithMemoryGDB_Densify"
+                caption="GP tool Densify" className="GPDensify"
+                loadOnClick="true" keytip="BB"
+                smallImage="EditingGeneralizeDensify16"
+                largeImage="EditingGeneralizeDensify32">
+					<tooltip heading="GP tool Densify">
+						Densify the same buffer repeatedly<disabledText />
+					</tooltip>
+				</button>
+				<button id="GeoProcesssingWithMemoryGDB_Dissolve"
+                caption="GP tool Dissolve" className="GPDissolve"
+                loadOnClick="true" keytip="BD"
+                smallImage="GeoprocessingTool_Dissolve_Management16"
+                largeImage="GeoprocessingTool_Dissolve_Management16">
+					<tooltip heading="GP tool Dissolve">
+						Dissolve the same buffer repeatedly<disabledText />
+					</tooltip>
+				</button>
+			</controls>
+			<dockPanes>
+				<dockPane id="GeoProcesssingWithMemoryGDB_MemoryGDBStats"
+									caption="GDB Performance Stats"
+									className="MemoryGDBStatsViewModel" dock="group"
+									dockWith="esri_core_projectDockPane">
+					<content className="MemoryGDBStatsView" />
+				</dockPane>
+			</dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

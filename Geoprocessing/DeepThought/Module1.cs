@@ -53,6 +53,13 @@ namespace DeepThought
   /// ![UI](Screenshots/Screen2.png)
   /// 1. Wait for the GP task to finish and you can view the answer in the popup.
   /// ![UI](Screenshots/Screen3.png)
+  /// 1. In order to test programmatic instantiation of the 'Deep Thought' answer script, select the Add-in tab with the 'Running Py Scripts' group.
+  /// ![UI](Screenshots/Screen4.png)
+  /// 1. Click the 'Prompt to run Deep Thought' button to see the parameter input for the answer.py popup.
+  /// ![UI](Screenshots/Screen5.png)
+  /// 1. Click the 'Run Deep Thought' button runs the python command directly using a progressor.  Run this command outside the VS debugger to see the progresssor.
+  /// ![UI](Screenshots/Screen6.png)  
+  /// ![UI](Screenshots/Screen7.png)
   /// </remarks>
   internal class Module1 : Module
   {

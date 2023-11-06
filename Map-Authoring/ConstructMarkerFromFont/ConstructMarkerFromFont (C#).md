@@ -14,8 +14,8 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -30,18 +30,17 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.   
-1. This solution is using the **DotNetProjects.Extended.Wpf.Toolkit**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package DotNetProjects.Extended.Wpf.Toolkit".  
-1. Launch the debugger to open ArcGIS Pro.  
-1. Open any project file that contains a point feature layer.   
-1. Right click on the point feature layer to bring up the context menu.  
-1. Select the "Construct Marker from Fonts" menu item.  
-1. This will open the "Construct Marker from Fonts" dockpane.  
-1. Select a font, style and size and click Apply to render the point feature layer with the selected character.  
-1. If you check the "Add selected marker to a personal FontMarker style" option, the selected marker will be added to a FontMarker style in the project.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. This solution is using the **DotNetProjects.Extended.Wpf.Toolkit**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package DotNetProjects.Extended.Wpf.Toolkit".  
+3. Launch the debugger to open ArcGIS Pro.  
+4. Open any project file that contains a point feature layer.   
+5. Right click on the point feature layer to bring up the context menu.  
+6. Select the "Construct Marker from Fonts" menu item.  
+7. This will open the "Construct Marker from Fonts" dockpane.  
+8. Select a font, style and size and click Apply to render the point feature layer with the selected character.  
+9. If you check the "Add selected marker to a personal FontMarker style" option, the selected marker will be added to a FontMarker style in the project.  
 ![UI](ScreenShots/ConstructMarkerFromFonts.png)    
   
-
 
 <!-- End -->
 

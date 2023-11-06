@@ -45,7 +45,7 @@ namespace ComboBoxShowingLayers
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.
   /// 1. Launch the debugger to open ArcGIS Pro.
   /// 1. Open any project file with a map that contains feature layers.
-  /// 1. In Add-in tab, click the "Select Feature Layer" to see a list of all features layers for the current active map.
+  /// 1. In Add-in tab, click on the "Select Feature Layer" dropdown to see a list of all features layers for the current active map.
   /// ![UI](Screenshots/Screen1.png)  
   /// 1. Click one of the feature layers in the dropdown list to initiate an action on this feature layer.
   /// ![UI](Screenshots/Screen2.png)  

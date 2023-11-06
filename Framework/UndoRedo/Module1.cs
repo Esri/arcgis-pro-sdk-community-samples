@@ -15,7 +15,7 @@ using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Mapping;
 
-namespace UndoRedo
+namespace PreRel_UndoRedo
 {
     /// <summary>
     /// This sample demonstrates how to add operations onto the undo/redo stack.   
@@ -58,7 +58,7 @@ namespace UndoRedo
         {
             get
             {
-                return _this ?? (_this = (Module1)FrameworkApplication.FindModule("UndoRedo_Module"));
+                return _this ?? (_this = (Module1)FrameworkApplication.FindModule("PreRel_UndoRedo_Module"));
             }
         }
 

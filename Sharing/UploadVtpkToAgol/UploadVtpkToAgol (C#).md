@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Sharing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,25 +29,23 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Make sure that the Sample data is unzipped in c:\data       
-1. The data used for this sample is 'C:\Data\VectorTileDemos\AlaskaGeology.vtpk'      
-1. In Visual Studio click the Build menu. Then select Build Solution.    
-1. Click Start button to open ArcGIS Pro.    
-1. ArcGIS Pro will open.     
-1. Open a new map project.     
-1. Click on the *Upload to ArcGIS Online* tab on the ribbon.    
-1. Within this tab there is a *Show & Upload Vector Tile* button.  Click the button to display the *Show & Upload Vector Tile* dockpane.    
-1. On the *Show & Upload Vector Tile* dockpane click the open file button and open *C:\Data\VectorTileDemos\AlaskaGeology.vtpk*.    
-1. Click the *Add To Map* button to add the vector tile package to the current map.    
+1. Make sure that the Sample data is unzipped in c:\data
+2. The data used for this sample is 'C:\Data\VectorTileDemos\AlaskaGeology.vtpk'      
+3. In Visual Studio click the Build menu. Then select Build Solution.    
+4. Click Start button to open ArcGIS Pro.    
+5. ArcGIS Pro will open.     
+6. Open a new map project.     
+7. Click on the *Upload to ArcGIS Online* tab on the ribbon.    
+8. Within this tab there is a *Show & Upload Vector Tile* button.  Click the button to display the *Show & Upload Vector Tile* dockpane.    
+9. On the *Show & Upload Vector Tile* dockpane click the open file button and open *C:\Data\VectorTileDemos\AlaskaGeology.vtpk*.    
+10. Click the *Add To Map* button to add the vector tile package to the current map.    
 ![UI](Screenshots/Screenshot1.png)    
-  
-1. Click the *Upload to ArcGIS Online (AGOL)* button to upload the vector tile package (referenced under 'Select a VTPK File').    
-1. The upload status will be updated once the upload completes.    
-1. Click the "Query AGOL' button to download the previously uploaded VTPK vector tile service that was created by AGOL using the uploaded vector tile package.    
-1. Look in the code to see the query conditions.    
+11. Click the *Upload to ArcGIS Online (AGOL)* button to upload the vector tile package (referenced under 'Select a VTPK File').    
+12. The upload status will be updated once the upload completes.    
+13. Click the "Query AGOL' button to download the previously uploaded VTPK vector tile service that was created by AGOL using the uploaded vector tile package.    
+14. Look in the code to see the query conditions.    
 ![UI](Screenshots/Screenshot2.png)     
   
-
 
 <!-- End -->
 

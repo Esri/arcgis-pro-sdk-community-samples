@@ -102,6 +102,23 @@ namespace LayoutMapSeries
       }
     }
 
+    public ICommand CmdExportLayout
+    {
+      get
+      {
+        return FrameworkApplication.GetPlugInWrapper("esri_sharing_ExportLayout") as ICommand;
+      }
+    }
+
+    public System.Windows.Media.ImageSource CmdExportLayoutImg
+    {
+      get 
+      {
+        return System.Windows.Application.Current.Resources["ExportLayoutPage32"] as System.Windows.Media.ImageSource;
+      }
+    }
+
+
     private MapSeriesItem _myMapSeriesItem = null;
 
     public MapSeriesItem SelectedMapSeriesItem
@@ -221,7 +238,7 @@ namespace LayoutMapSeries
               var northArrow = ElementFactory.Instance.CreateMapSurroundElement(layout, northArrowPoint, northArrowInfo) as NorthArrow;
               northArrow.SetAnchor(Anchor.CenterPoint);
               northArrow.SetLockedAspectRatio(true);
-              northArrow.SetWidth(2 * SelectedPageLayout.MarginLayout);
+              northArrow.SetWidth(0.5 * SelectedPageLayout.MarginLayout);
 
               // Title: dynamic text: <dyn type="page" property="name"/>
               var title = @"<dyn type = ""page"" property = ""name"" />";

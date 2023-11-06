@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Content
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -32,28 +32,26 @@ Visual Studio:         2022
    
 This sample uses Excel files in Pro.   To use Excel files in Pro, you need Microsoft Access Database Engine 2016. Refer to the [Work with Microsoft Excel files in ArcGIS Pro](https://pro.arcgis.com/en/pro-app/help/data/excel/work-with-excel-in-arcgis-pro.htm) help topic for more information on dowloading the required driver.  
   
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in c:\data       
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
-1. Open a blank Map project.  
-1. ArcGIS Pro will display a map view.    
-1. Add a new Local Scene view.  
-1. Look at two eventhandler methods  
-1. OnDragOver – The Pro framework calls this method when an Excel file is dragged onto the Map holding down the left mouse button.   
-1. OnDrop – The Pro framework calls this method when the user releases the left mouse button and the Excel file is dropped on Pro.   
-1. Take a closer look at the OnDrop logic where the code for the execution of the Geoprocessing Tool can be found.    
-1. Drag and Drop Meteorites_UK.xls onto Pro in the Map View.    
-1. View the results of the Meteorite strikes layer loaded into Pro with symbology applied    
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+2. Make sure that the Sample data is unzipped in c:\data       
+3. In Visual Studio click the Build menu. Then select Build Solution.  
+4. Click Start button to open ArcGIS Pro.  
+5. ArcGIS Pro will open.   
+6. Open a blank Map project.  
+7. ArcGIS Pro will display a map view.    
+8. Add a new Local Scene view.  
+9. Look at two eventhandler methods  
+10. OnDragOver – The Pro framework calls this method when an Excel file is dragged onto the Map holding down the left mouse button.   
+11. OnDrop – The Pro framework calls this method when the user releases the left mouse button and the Excel file is dropped on Pro.   
+12. Take a closer look at the OnDrop logic where the code for the execution of the Geoprocessing Tool can be found.    
+13. Drag and Drop Meteorites_UK.xls onto Pro in the Map View.    
+14. View the results of the Meteorite strikes layer loaded into Pro with symbology applied    
 ![UI](Screenshots/2dScreen.png)  
-  
-1. Switch to the local scene view    
-1. Drag and Drop EarthquakeDamage.xls on to ArcGIS Pro    
-1. View those results.    
+15. Switch to the local scene view    
+16. Drag and Drop EarthquakeDamage.xls on to ArcGIS Pro    
+17. View those results.    
 ![UI](Screenshots/3dScreen.png)  
   
-
 
 <!-- End -->
 

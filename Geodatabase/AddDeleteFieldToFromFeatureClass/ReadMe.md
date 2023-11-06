@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,28 +29,24 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\FeatureTest\FeatureTest.aprx" is available.  
-1. Open this solution in Visual Studio.  
-1. Click the build menu and select Build Solution.  
-1. Click the Start button to open ArCGIS Pro. ArcGIS Pro will open.    
-1. Open the "C:\Data\FeatureTest\FeatureTest.aprx" project.  
-1. Open the "Contents Dock Pane" by selecting the View Tab on the Pro ribbon and then clicking the Contents button to open the Contents dock pane".  
-1. Click on the Add-in tab and verify that a "FeatureClass Schema" group was added.  
-1. Note that the "Add and Delete new field" buttons are disabled as long as no feature layer on the "Contents dock pane" has been selected.  
-1. This logic has been implemented in config.daml through the condition="esri_mapping_singleFeatureLayerSelectedCondition" attribute.  
+1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\FeatureTest\FeatureTest.aprx" is available.
+2. Open this solution in Visual Studio.  
+3. Click the build menu and select Build Solution.  
+4. Click the Start button to open ArCGIS Pro. ArcGIS Pro will open.    
+5. Open the "C:\Data\FeatureTest\FeatureTest.aprx" project.  
+6. Open the "Contents Dock Pane" by selecting the View Tab on the Pro ribbon and then clicking the Contents button to open the Contents dock pane".  
+7. Click on the Add-in tab and verify that a "FeatureClass Schema" group was added.  
+8. Note that the "Add and Delete new field" buttons are disabled as long as no feature layer on the "Contents dock pane" has been selected.  
+9. This logic has been implemented in config.daml through the condition="esri_mapping_singleFeatureLayerSelectedCondition" attribute.  
 ![UI](Screenshots/Screen0.png)  
-  
-1. Open the "Attribute table" for the "TestPoints" layer.  This will later allow you to view schema changes in real time.  
+10. Open the "Attribute table" for the "TestPoints" layer.  This will later allow you to view schema changes in real time.  
 ![UI](Screenshots/Screen1.png)  
-  
-1. Note the field names in the attribute table for the "TestPoints" layer.  
-1. Click the "Add a new field" button and check that the field "Alias Name Added Field" was added to the attribute table.  
+11. Note the field names in the attribute table for the "TestPoints" layer.  
+12. Click the "Add a new field" button and check that the field "Alias Name Added Field" was added to the attribute table.  
 ![UI](Screenshots/Screen2.png)  
-  
-1. Click the "Delete the new Field" button and check that the field "Alias Name Added Field" is successfully removed from the attribute table.  
+13. Click the "Delete the new Field" button and check that the field "Alias Name Added Field" is successfully removed from the attribute table.  
 ![UI](Screenshots/Screen3.png)  
   
-
 
 <!-- End -->
 

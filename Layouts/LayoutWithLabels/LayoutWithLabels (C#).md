@@ -18,8 +18,8 @@ Language:              C#
 Subject:               Layouts
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -34,29 +34,24 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in c:\data   
-1. The project used for this sample is 'C:\Data\LocalGovernment\LocalGovernment.aprx'  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. ArcGIS Pro will open, select the LocalGovernment.aprx project  
-1. Click on the Add-In tab and the click the 'Label Selected Parcels' button.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+2. Make sure that the Sample data is unzipped in c:\data   
+3. The project used for this sample is 'C:\Data\LocalGovernment\LocalGovernment.aprx'  
+4. In Visual Studio click the Build menu. Then select Build Solution.  
+5. Launch the debugger to open ArcGIS Pro.  
+6. ArcGIS Pro will open, select the LocalGovernment.aprx project  
+7. Click on the Add-In tab and the click the 'Label Selected Parcels' button.  
 ![UI](Screenshots/Screenshot1.png)  
-  
-1. Click the "load Layer Package" button on the "SelectParcelsToLabel" dockpane.  This loads a layer file  containing a 'labeled' polygon layer and dynamically adds it to the map  
+8. Click the "load Layer Package" button on the "SelectParcelsToLabel" dockpane.  This loads a layer file  containing a 'labeled' polygon layer and dynamically adds it to the map  
 ![UI](Screenshots/Screenshot2.png)  
-  
-1. Now that the "Read from File" button is enabled, click the "Read from File" button in order to load a sample csv file that contains records that are identified by using a unique parcel Id field.  
-1. The loaded features are displayed in a table on the "SelectParcelsToLabel" dockpane and highlighted and labeled on the map using the 'labeled' polygon layer.  
+9. Now that the "Read from File" button is enabled, click the "Read from File" button in order to load a sample csv file that contains records that are identified by using a unique parcel Id field.  
+10. The loaded features are displayed in a table on the "SelectParcelsToLabel" dockpane and highlighted and labeled on the map using the 'labeled' polygon layer.  
 ![UI](Screenshots/Screenshot3.png)  
-  
-1. You can use the "Label leader line length" control on the "SelectParcelsToLabel" dockpane to manipulate the leader line length.  
+11. You can use the "Label leader line length" control on the "SelectParcelsToLabel" dockpane to manipulate the leader line length.  
 ![UI](Screenshots/Screenshot4.png)  
-  
-1. Finally to generate the layout select a 'Map Layout" and click the "Make Layout" button.  
+12. Finally to generate the layout select a 'Map Layout" and click the "Make Layout" button.  
 ![UI](Screenshots/Screenshot5.png)  
   
-
 
 <!-- End -->
 

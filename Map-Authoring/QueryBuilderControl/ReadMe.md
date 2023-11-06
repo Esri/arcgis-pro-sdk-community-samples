@@ -14,8 +14,8 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -30,20 +30,18 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. Open an existing project.  
-1. Click on the Add-In tab.  
-1. Click on the *Show DefinitionQueryDockPane* button.   
-1. The Definition Query dock pane will open up.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Launch the debugger to open ArcGIS Pro.  
+3. Open an existing project.  
+4. Click on the Add-In tab.  
+5. Click on the *Show DefinitionQueryDockPane* button.   
+6. The Definition Query dock pane will open up.  
 ![UI](Screenshots/QueryBuilderDockPane.png)  
-  
-1. Select a feature layer or standalone table in the TOC. The dock pane will display the definition query for the highlighted TOC item.   
-1. Use the query builder control to update the definition query for the highlighted TOC item.   
-1. Use the Apply button to write the updated definition query to the highlighted layer.  
+7. Select a feature layer or standalone table in the TOC. The dock pane will display the definition query for the highlighted TOC item.   
+8. Use the query builder control to update the definition query for the highlighted TOC item.   
+9. Use the Apply button to write the updated definition query to the highlighted layer.  
 ![UI](Screenshots/QueryBuilderDockPane_Layer.png)  
   
-
 
 <!-- End -->
 

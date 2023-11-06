@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="ShowContainment.dll" defaultNamespace="ShowContainment" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{2cb1ca35-bb2c-4d6f-aed8-52dcb896d4de}" version="1.0" desktopVersion="3.2.48329">
+    <Name>ShowContainment</Name>
+    <Description>ShowContainment description</Description>
+    <!--Image>Images\AddinDesktop32.png</Image-->
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, http://www.esri.com</Company>
+    <Date>5/15/2023 11:28:33 AM</Date>
+    <Subject>NetworkDiagram</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ShowContainment_Module" className="ShowContainmentModule" autoLoad="true" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="ShowContainment_Tab1" caption="New Tab">
+          <group refID="ShowContainment_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ShowContainment_Group1" caption="Show Containment" appearsOnAddInTab="true" condition="esri_networkdiagrams_networkDiagramMapCondition">
+          <button refID="ShowContainment_ShowCAllContentButton" size="large" />
+          <button refID="ShowContainment_Show1stLevelButton" size="large" />
+        </group>
+        </groups>  
+      <controls>
+        <!-- add your controls here -->       
+        <button id="ShowContainment_ShowCAllContentButton" caption="Show All Content Levels" className="ShowContainmentButton" loadOnClick="true" 
+                condition="esri_mapping_activeMapView_hasFeatureSelectionState" smallImage="Images\ShowAllContentLevels16.png" largeImage="Images\ShowAllContentLevels32.png" >
+          <tooltip heading="Show All Content Levels">
+            Creates a new diagram based on the ExpandContainers template starting from any diagram feature selected in the active diagram that is related to a container network element.
+          </tooltip>
+        </button>
+
+        <button id="ShowContainment_Show1stLevelButton" caption="Show 1st Content Level" className="ShowContainmentPartialButton" loadOnClick="true" 
+                condition="esri_mapping_activeMapView_hasFeatureSelectionState" smallImage="Images\Show1stContentLevel16.png" largeImage="Images\Show1stContentLevel32.png" >
+          <tooltip heading="Show 1st Content Level">
+            Creates a new diagram based on the Basic template starting from any diagram feature selected in the active diagram that is related to a container network element.
+          </tooltip>
+        </button>        
+      </controls>   
+    </insertModule>
+  </modules>
+</ArcGIS>

@@ -14,8 +14,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -30,21 +30,17 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Debug through Visual Studio or compile and run ArcGIS Pro.  
-1. In Pro, add or create a map with lines or use FeatureTest.aprx from the community sample dataset  
-1. Select a single line in the map.  
-1. Click the Divide Lines tool in the Divide group within the Modify Features pane.  
+1. Debug through Visual Studio or compile and run ArcGIS Pro.
+2. In Pro, add or create a map with lines or use FeatureTest.aprx from the community sample dataset  
+3. Select a single line in the map.  
+4. Click the Divide Lines tool in the Divide group within the Modify Features pane.  
 ![UI](Screenshots/Screen1.png)  
-  
-1. In the pane for Divide Lines, select the option and enter a value. Click on Divide.  
+5. In the pane for Divide Lines, select the option and enter a value. Click on Divide.  
 ![UI](Screenshots/Screen2.png)  
-  
-1. The selected line should be divided and the selection cleared.   
+6. The selected line should be divided and the selection cleared.   
 ![UI](Screenshots/Screen3.png)  
+7. The tool remains active to enable selection of other lines to repeat the process.  
   
-1. The tool remains active to enable selection of other lines to repeat the process.  
-  
-
 
 <!-- End -->
 

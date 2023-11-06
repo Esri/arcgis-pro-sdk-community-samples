@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,28 +31,23 @@ Visual Studio:         2022
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
      
   
-1. Open this solution in Visual Studio.    
-1. Click the build menu and select Build Solution.  
-1. Launch the debugger to open ArCGIS Pro.   
-1. Open any project with a map that contains Point, Line or Polygon feature layers.  
-1. Click on the 'Custom Copy/Paste' tab and note the 'Create Graphic' group.  
-1. Click the one of the button in the 'Create Graphic' group to create geometry for which you have a feature layer in your map's table of content.  
-1. Create a geometry.  
+1. Open this solution in Visual Studio.
+2. Click the build menu and select Build Solution.  
+3. Launch the debugger to open ArCGIS Pro.   
+4. Open any project with a map that contains Point, Line or Polygon feature layers.  
+5. Click on the 'Custom Copy/Paste' tab and note the 'Create Graphic' group.  
+6. Click the one of the button in the 'Create Graphic' group to create geometry for which you have a feature layer in your map's table of content.  
+7. Create a geometry.  
 ![UI](Screenshots/Screen1.png)  
-  
-1. Select a feature layer with a geometry type that matched the created graphic using the 'Paste Into Layer' combobox.  
+8. Select a feature layer with a geometry type that matched the created graphic using the 'Paste Into Layer' combobox.  
 ![UI](Screenshots/Screen2.png)  
-  
-1. You can click the 'Show Clipboard' button in the 'Analysis' group to view the Clipboard content.  
+9. You can click the 'Show Clipboard' button in the 'Analysis' group to view the Clipboard content.  
 ![UI](Screenshots/Screen3.png)  
-  
-1. Click the paste button (this button is the out-of-box ArcGIS Pro Paste button).  
+10. Click the paste button (this button is the out-of-box ArcGIS Pro Paste button).  
 ![UI](Screenshots/Screen5.png)  
-  
-1. The graphic's geometry has been copied to the selected 'Paste to Layer'  
+11. The graphic's geometry has been copied to the selected 'Paste to Layer'  
 ![UI](Screenshots/Screen4.png)  
   
-
 
 <!-- End -->
 

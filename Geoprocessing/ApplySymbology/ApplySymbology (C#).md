@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,23 +29,19 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.   
-1. In Visual studio click the Build menu. Then select Build Solution and debug the solution.  
-1. ArcGIS Pro will open, select and open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project.  
-1. Open the 'Portland Crimes' map, select the 'Crimes' layer, and use the 'New Layer File' button on the 'Share' tab to save the 'Crimes' layer as lyrx file, called 'Crimes.lyrx'.  
+1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.
+2. In Visual studio click the Build menu. Then select Build Solution and debug the solution.  
+3. ArcGIS Pro will open, select and open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project.  
+4. Open the 'Portland Crimes' map, select the 'Crimes' layer, and use the 'New Layer File' button on the 'Share' tab to save the 'Crimes' layer as lyrx file, called 'Crimes.lyrx'.  
 ![UI](Screenshots/Screen1.png)  
-  
-1. Create a new empty 2D Map and then open the catalog dockpane and add the 'Crimes' feature class to the current map.  
+5. Create a new empty 2D Map and then open the catalog dockpane and add the 'Crimes' feature class to the current map.  
 ![UI](Screenshots/Screen2.png)  
-  
-1. Open the Add-in tab and click the "Move Symbology" button to start the 'Apply Symbology From Layer' GeoProcessing tool.  
+6. Open the Add-in tab and click the "Move Symbology" button to start the 'Apply Symbology From Layer' GeoProcessing tool.  
 ![UI](Screenshots/Screen3.png)  
-  
-1. When prompted to select the 'Symbology Input Layer' browse and select the 'Crimes.lyrx' file saved in the pervious step.  
-1. After the GeoProcessing tool completes, note that the 'Crimes' symbology has been updated.  
+7. When prompted to select the 'Symbology Input Layer' browse and select the 'Crimes.lyrx' file saved in the pervious step.  
+8. After the GeoProcessing tool completes, note that the 'Crimes' symbology has been updated.  
 ![UI](Screenshots/Screen4.png)  
   
-
 
 <!-- End -->
 

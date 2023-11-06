@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
 //Copyright 2019 Esri
 
@@ -15,7 +15,8 @@
 //   limitations under the License.
 -->
 <ArcGIS defaultAssembly="CallScriptFromNet.dll" defaultNamespace="CallScriptFromNet" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{31d7f807-1dfe-44c3-9c8b-6ffc8263159e}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{31d7f807-1dfe-44c3-9c8b-6ffc8263159e}" version="1.0" 
+						 desktopVersion="3.0.0">
     <Name>CallScriptFromNet</Name>
     <Description>Calls a Python script from .Net application.</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -36,17 +37,38 @@
       </tabs>
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid an empty group-->
-        <group id="CallScriptFromNet_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="Z0">
+        <group id="CallScriptFromNet_Group1" caption="Python Script" 
+							 appearsOnAddInTab="true" keytip="Z0">
           <!-- host controls within groups -->
-          <button refID="CallScriptFromNet_RunPyScriptButton" size="large" />
-        </group>
+          <button refID="CallScriptFromNet_RunPythonWithFeedback_ShowButton" size="large" />
+					<button refID="CallScriptFromNet_RunPyScriptButton" size="large" />
+				</group>
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="CallScriptFromNet_RunPyScriptButton" caption="RunPyScriptButton " className="RunPyScriptButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" keytip="Z1">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        <button id="CallScriptFromNet_RunPyScriptButton" caption="Run Py Script" 
+								className="RunPyScriptButton" loadOnClick="true"  keytip="Z1"
+								smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/DataReviewerExecuteBatchChecksActivMap16.png"
+								largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/DataReviewerExecuteBatchChecksActivMap32.png">
+          <tooltip heading="Run Py Script">Runs the test1.py script that is content of this add-in<disabledText /></tooltip>
+        </button>
+        <button id="CallScriptFromNet_RunPythonWithFeedback_ShowButton" 
+								caption="Show Python Feedback" keytip="Z2"
+								className="RunPythonWithFeedback_ShowButton" loadOnClick="true" 
+								smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GeoprocessingPythonWindowShow16.png" 
+								largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GeoprocessingPythonWindowShow32.png">
+          <tooltip heading="Show Python Feedback">
+						Shows the 'Run Python Feedback' Dockpane<disabledText /></tooltip>
         </button>
       </controls>
+      <dockPanes>
+        <dockPane id="CallScriptFromNet_RunPythonWithFeedback" 
+									caption="Run Python Script" 
+									className="RunPythonWithFeedbackViewModel" 
+									dock="group" dockWith="esri_core_projectDockPane">
+          <content className="RunPythonWithFeedbackView" />
+        </dockPane>
+      </dockPanes>
     </insertModule>
   </modules>
 </ArcGIS>

@@ -13,8 +13,8 @@ Language:              C#
 Subject:               VoxelLayers
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,11 +29,14 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. This sample specificially requires the sample data in CommunitySampleData-VoxelLayer-mm-dd-yyyy.zip (see Sample data link above).  
-1. Make sure you unzip to c:\data and have C:\Data\VoxelData available before you run this sample.  
-1. Build the sample and start a debug session.  
-1. In ArcGIS Pro open a new 'Local Scene' and then use the 'CreateLayer' button to create a sample voxel layer.  
-1. The voxel layer should look like this:  
+1. This sample specificially requires the sample data in CommunitySampleData-VoxelLayer-mm-dd-yyyy.zip (see Sample data link above).
+2. Make sure you unzip to c:\data and have C:\Data\VoxelData available before you run this sample.  
+3. Build the sample and start a debug session.  
+4. In ArcGIS Pro open a new 'Local Scene' and change the Map's projection to 'WGS 1984' Geographic Coordinate system.  WKID is: 4326.    
+5. Note: if the projection of the local scene doesn't match the projection used in the Voxel data, the data cannot be displayed on the scene.  
+![UI](Screenshots/Screen1.png)  
+6. Then use the 'CreateLayer' button to create a sample voxel layer.  
+7. The voxel layer should look like this:  
 ![UI](Screenshots/Screenshot1.png)  
 The sample primarily focuses on:   
 - Layer creation   
@@ -41,10 +44,10 @@ The sample primarily focuses on:
 - Slices    
 - Sections    
 - Locked Sections    
+- Voxel Coordinate Spaces  
 For additional examples refer to <a href="https://github.com/Esri/arcgis-pro-sdk/wiki/ProSnippets-VoxelLayers">Voxel Snippets</a>  
-For concepts refer to the <a href="https://github.com/Esri/arcgis-pro-sdk/wiki/ProConcepts-Voxel-Layers>Voxel Pro Guide</a>.  
+For concepts refer to the <a href="https://github.com/Esri/arcgis-pro-sdk/wiki/ProConcepts-Voxel-Layers">Voxel Pro Guide</a>.  
   
-
 
 <!-- End -->
 

@@ -15,8 +15,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,32 +31,27 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in C:\Data  
-1. Before you run the sample verify that the project "C:\Data\Interacting with Maps\Interacting with Maps.aprx" is present since this is required to run the sample.  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. ArcGIS Pro will open.  
-1. Open the "C:\Data\Interacting with Maps\Interacting with Maps" project.  
-1. Click on the Add-In tab.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+2. Make sure that the Sample data is unzipped in C:\Data  
+3. Before you run the sample verify that the project "C:\Data\Interacting with Maps\Interacting with Maps.aprx" is present since this is required to run the sample.  
+4. In Visual Studio click the Build menu. Then select Build Solution.  
+5. Launch the debugger to open ArcGIS Pro.  
+6. ArcGIS Pro will open.  
+7. Open the "C:\Data\Interacting with Maps\Interacting with Maps" project.  
+8. Click on the Add-In tab.  
 ![UI](Screenshots/ribbon.png)  
-  
-1. Click on the "Apply Attrributes" button.  
-1. A dockpane will be displayed showing the fields requiring user input. In this example we have chosen 2 fields from the Police Stations layer.   
+9. Click on the "Apply Attrributes" button.  
+10. A dockpane will be displayed showing the fields requiring user input. In this example we have chosen 2 fields from the Police Stations layer.   
 Each field is shown as invalid (outlined in a red box) indicating that validation of the values has occurred.  
 ![UI](Screenshots/ApplyAttributes_1.png)  
-  
-1. Enter a value into the first field.  The value is validated. A valid value is outlined with a green box.  The user can hover over the side bar of any invalid value to see any message you wish to display.  
+11. Enter a value into the first field.  The value is validated. A valid value is outlined with a green box.  The user can hover over the side bar of any invalid value to see any message you wish to display.  
 ![UI](Screenshots/ApplyAttributes_2.png)  
-  
-1. Enter a value into the second field.  The value is validated.    
+12. Enter a value into the second field.  The value is validated.    
 ![UI](Screenshots/ApplyAttributes_3.png)  
-  
-1. Now draw a rectangle on the map around one of more Police Station features.   
-1. The values entered will be applied to the identified features.   
+13. Now draw a rectangle on the map around one of more Police Station features.   
+14. The values entered will be applied to the identified features.   
 ![UI](Screenshots/ApplyAttributes_Results.png)  
   
-
 
 <!-- End -->
 

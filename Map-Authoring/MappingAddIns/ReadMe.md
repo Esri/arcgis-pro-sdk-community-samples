@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,16 +29,15 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. Open a map view.   
-1. Click on 'Add-In' tab on the ribbon  
-1. Within this tab there are 2 buttons in 'Mapping' group  
-1. The button on the left sets the current map's basemap layer to ArcGIS Online's Street basemap   
-1. The other button allows you to add a new layer just by using a path or url and if it happens to be a feature layer, it shows total number of features in that layer  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Launch the debugger to open ArcGIS Pro.  
+3. Open a map view.   
+4. Click on 'Add-In' tab on the ribbon  
+5. Within this tab there are 2 buttons in 'Mapping' group  
+6. The button on the left sets the current map's basemap layer to ArcGIS Online's Street basemap   
+7. The other button allows you to add a new layer just by using a path or url and if it happens to be a feature layer, it shows total number of features in that layer  
 ![UI](Screenshots/Screen1.png)  
   
-
 
 <!-- End -->
 

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ShowContainment": {
+      "commandName": "Executable",
+      "executablePath": "C:\\ArcGIS\\bin\\ArcGISPro.exe"
+    }
+  }
+}

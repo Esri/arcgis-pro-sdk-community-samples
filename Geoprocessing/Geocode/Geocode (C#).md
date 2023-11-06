@@ -14,8 +14,8 @@ Language:              C#
 Subject:               Geoprocessing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -30,7 +30,7 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
 2. Launch the debuuger to open ArcGIS Pro.  
 4. Open a map and add a base map.  
 5. Click the Add-in tab group and click the Geocode Address button.  
@@ -40,7 +40,6 @@ Visual Studio:         2022
 8. The application will geocode the entered value, zoom to the     location, and place a graphic symbol at the location.  
 ![UI](Screenshots/Screen2.png)  
   
-
 
 <!-- End -->
 

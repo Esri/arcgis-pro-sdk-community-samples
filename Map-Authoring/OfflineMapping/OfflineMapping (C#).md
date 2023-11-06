@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,26 +31,21 @@ Visual Studio:         2022
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 Using the sample:  
   
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. Open a new Map project.   
-1. Add any sync enabled feature service to the map.  
-1. In the Offline Map tab, notice there is a group created: Take a map offline. It contains the Download Map custom control and two disabled buttons - Sync Replicas and Remove Replicas.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Launch the debugger to open ArcGIS Pro.  
+3. Open a new Map project.   
+4. Add any sync enabled feature service to the map.  
+5. In the Offline Map tab, notice there is a group created: Take a map offline. It contains the Download Map custom control and two disabled buttons - Sync Replicas and Remove Replicas.  
 ![UI](screenshots/offlinemap.png)  
-  
-1. Click the Download Map button to display its contents.   
+6. Click the Download Map button to display its contents.   
 ![UI](screenshots/download.png)  
-  
-1. Turn on the check box to "Include basemaps". Pick any scale you want to use.  
+7. Turn on the check box to "Include basemaps". Pick any scale you want to use.  
 ![UI](screenshots/basemapsScales.png)  
-  
-1. Click the Download button. This will make a local copy (replica) of your feature service. You can make any edits you need to this feature service.  
-1. The Sync replica button on the group is now enabled. This button allows you to sync your local replica to the feature service.  
+8. Click the Download button. This will make a local copy (replica) of your feature service. You can make any edits you need to this feature service.  
+9. The Sync replica button on the group is now enabled. This button allows you to sync your local replica to the feature service.  
 ![UI](screenshots/sync.png)  
+10. After you are done with the edits to the replica, you can click the "Remove Replica" button to remove all the replicas from the local map content.  
   
-1. After you are done with the edits to the replica, you can click the "Remove Replica" button to remove all the replicas from the local map content.  
-  
-
 
 <!-- End -->
 

@@ -17,8 +17,8 @@ Language:              C#
 Subject:               UtilityNetwork
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -33,18 +33,17 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu.  Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.  
-1. Open C:\Data\UtilityNetwork\UtilityNetworkSamples.aprx or a map view that references a utility network with the correct schema  
-1. Select a feature layer or subtype group layer that participates in a utility network or a utility network layer  
-1. Click on the Add-in tab on the ribbon  
-1. Click on the Create Transformer Bank tool  
-1. Click on the map to create a transformer bank at that location  
+1. In Visual Studio click the Build menu.  Then select Build Solution.
+2. Click Start button to open ArcGIS Pro.  
+3. ArcGIS Pro will open.  
+4. Open C:\Data\UtilityNetwork\UtilityNetworkSamples.aprx or a map view that references a utility network with the correct schema  
+5. Select a feature layer or subtype group layer that participates in a utility network or a utility network layer  
+6. Click on the Add-in tab on the ribbon  
+7. Click on the Create Transformer Bank tool  
+8. Click on the map to create a transformer bank at that location  
 ![UI](Screenshots/Screenshot1.png)  
 ![UI](Screenshots/Screenshot2.png)  
   
-
 
 <!-- End -->
 

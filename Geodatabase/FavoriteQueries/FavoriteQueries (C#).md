@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,23 +29,21 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro opens.   
-1. Open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project which contains the required data needed for this sample.  
-1. Make sure the Map Pane and the corresponding Table of Contents (TOC) Pane are Open and the Map Pane is Active  
-1. Click on the Add-In Tab  
-1. Click the Show Favorites Dockpane Button and the DockPane opens  
-1. Select a layer from the Layers ComboBox  
-1. If there are any Queries set up for the Layer, they will show up  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.
+2. In Visual Studio click the Build menu. Then select Build Solution.  
+3. Click Start button to open ArcGIS Pro.  
+4. ArcGIS Pro opens.   
+5. Open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project which contains the required data needed for this sample.  
+6. Make sure the Map Pane and the corresponding Table of Contents (TOC) Pane are Open and the Map Pane is Active  
+7. Click on the Add-In Tab  
+8. Click the Show Favorites Dockpane Button and the DockPane opens  
+9. Select a layer from the Layers ComboBox  
+10. If there are any Queries set up for the Layer, they will show up  
 ![UI](Screenshots/Screen1.png)  
-  
-1. Select one of the Queries and click Go  
-1. The results are displayed below in the same Pane  
+11. Select one of the Queries and click Go  
+12. The results are displayed below in the same Pane  
 ![UI](Screenshots/Screen2.png)  
   
-
 
 <!-- End -->
 

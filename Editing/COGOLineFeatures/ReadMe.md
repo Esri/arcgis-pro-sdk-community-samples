@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Editing, Geometry
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,24 +29,21 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Build or debug the sample through Visual Studio.    
-1. In Pro, add a line layer or a COGO enabled line layer to the map.  
-1. Click the Edit tab and click Create Features button in the Feature group.  
-1. Click the line feature template in the Create Features pane, and click the COGO Line tool.    
+1. Build or debug the sample through Visual Studio.
+2. In Pro, add a line layer or a COGO enabled line layer to the map.  
+3. Click the Edit tab and click Create Features button in the Feature group.  
+4. Click the line feature template in the Create Features pane, and click the COGO Line tool.    
 ![UI](Screenshots/Screen01.png)  
-  
-1. Snap to or click in the map for the first point of the COGO line, then snap to or click in the map for the second point.  
-1. The COGO line dialog shows the measured Direction and Distance values.  
+5. Snap to or click in the map for the first point of the COGO line, then snap to or click in the map for the second point.  
+6. The COGO line dialog shows the measured Direction and Distance values.  
 ![UI](Screenshots/Screen02.png)    
-  
-1. Change the values as needed to match the source document; these are usually small changes to the numbers.  
-1. The first Direction entry box has the focus, you can press the Enter key to move the focus to the Distance field, and press Enter again to create the line.  
-1. The check box "Hold end point position" is turned on by default. Uncheck the box to have the end point location updated based on changed values.  
-1. You can type a negative distance to reverse the direction of the line.  
-1. To create the line you can click the OK button, or you can press Enter when in the Distance entry field. The dialog will automatically close.  
+7. Change the values as needed to match the source document; these are usually small changes to the numbers.  
+8. The first Direction entry box has the focus, you can press the Enter key to move the focus to the Distance field, and press Enter again to create the line.  
+9. The check box "Hold end point position" is turned on by default. Uncheck the box to have the end point location updated based on changed values.  
+10. You can type a negative distance to reverse the direction of the line.  
+11. To create the line you can click the OK button, or you can press Enter when in the Distance entry field. The dialog will automatically close.  
 ![UI](Screenshots/Screen03.png)  
   
-
 
 <!-- End -->
 

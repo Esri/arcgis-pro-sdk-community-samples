@@ -4,11 +4,11 @@
 ParcelFabricAPI shows the following Parcel Fabric API capabilities:  
   
 1. Create a Record – a new Record feature in the Records feature class  
-1. Setting the created Record as the active record  
-1. Copy lines from an existing import feature class selection of non-fabric features into a parcel type called "Tax" in a parcel fabric. Parcel seeds are created automatically.  
-1. Build the active record  
-1. Copy lines from an existing selection of "Tax" parcels into a parcel type called “Lot” in the same parcel fabric. Parcel seeds are created automatically.  
-1. Build the active record  
+2. Setting the created Record as the active record  
+3. Copy lines from an existing import feature class selection of non-fabric features into a parcel type called "Tax" in a parcel fabric. Parcel seeds are created automatically.  
+4. Build the active record  
+5. Copy lines from an existing selection of "Tax" parcels into a parcel type called “Lot” in the same parcel fabric. Parcel seeds are created automatically.  
+6. Build the active record  
   
 
 
@@ -20,8 +20,8 @@ Language:              C#
 Subject:               Parcel Fabric
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -36,27 +36,22 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data). The sample data contains an ArcGIS Pro project and data to be used for this sample. Make sure that the Sample data is unzipped in c:\data and c:\Data\ParcelFabric is available.  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. You can run the add-in using the debugger, but to see its full functionality you should run the add-in wihtout the debugger first since some of the functionality like Progress Dialogs are not supported when running ArcGIS Pro from the debugger.  
-1. Open the project 'c:\Data\ParcelFabric\Island\ParcelIsland.aprx'.    
-1. Select the 'Parcels' tab, and then click on 'Import Plat' to bring up the 'Import Plat' dockpane.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data). The sample data contains an ArcGIS Pro project and data to be used for this sample. Make sure that the Sample data is unzipped in c:\data and c:\Data\ParcelFabric is available.
+2. In Visual Studio click the Build menu. Then select Build Solution.  
+3. You can run the add-in using the debugger, but to see its full functionality you should run the add-in wihtout the debugger first since some of the functionality like Progress Dialogs are not supported when running ArcGIS Pro from the debugger.  
+4. Open the project 'c:\Data\ParcelFabric\Island\ParcelIsland.aprx'.    
+5. Select the 'Parcels' tab, and then click on 'Import Plat' to bring up the 'Import Plat' dockpane.  
 ![Parcel Fabric Dockpane](Screenshots/Screenshot1.png)    
-  
-1. Use the 'Import Plat' dockpane to select the zone, section, and plat to import:  
+6. Use the 'Import Plat' dockpane to select the zone, section, and plat to import:  
 ![Import Selection](Screenshots/Screenshot2.png)    
-  
-1. Click the 'Import Plat to Tax' button to start the import process.  
+7. Click the 'Import Plat to Tax' button to start the import process.  
 ![Start Import Process](Screenshots/Screenshot3.png)    
-  
-1. After the import completed you can identify some of the Tax records that were created by the import.  
+8. After the import completed you can identify some of the Tax records that were created by the import.  
 ![Import Process](Screenshots/Screenshot4.png)    
-  
-1. Click the 'Copy Tax to Lot' button in order to copy the imported Tax records into 'Lot' parcels.   
-1. After the copy completed you can identify some of the Lot records that were created by the import.  
+9. Click the 'Copy Tax to Lot' button in order to copy the imported Tax records into 'Lot' parcels.   
+10. After the copy completed you can identify some of the Lot records that were created by the import.  
 ![Import Process](Screenshots/Screenshot5.png)  
   
-
 
 <!-- End -->
 

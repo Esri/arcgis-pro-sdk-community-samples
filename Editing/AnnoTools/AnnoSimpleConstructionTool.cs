@@ -57,9 +57,11 @@ namespace AnnoTools
         return Task.FromResult(false);
 
       // Create an edit operation
-      var createOperation = new EditOperation();
-      createOperation.Name = string.Format("Create {0}", CurrentTemplate.Layer.Name);
-      createOperation.SelectNewFeatures = true;
+      var createOperation = new EditOperation
+      {
+        Name = string.Format("Create {0}", CurrentTemplate.Layer.Name),
+        SelectNewFeatures = true
+      };
 
       // pass the point geometry to the Create method
       createOperation.Create(CurrentTemplate, geometry);

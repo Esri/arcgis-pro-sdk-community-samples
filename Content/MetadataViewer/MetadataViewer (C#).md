@@ -14,8 +14,8 @@ Language:              C#
 Subject:               Content
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -30,20 +30,19 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.   
-1. This solution is using the **AvalonEdit Nuget**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package AvalonEdit -Version 5.0.4".  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
-1. Open any project file that contains project items such as Maps, toolboxs, databases with metadata.   
-1. In the Catalog pane, select any item that has metadata.  
-1. Select the Add-in tab and click the Show the Metadata viewer button.  The Metadata Viewer dockpane will be displayed.  
-1. The dockpane will display the metadata of the project item selected.  
-1. The metadata can also be edited in the viewer.    
-1. Check if your edits are valid by clicking the Validate button.  Validation errors (if any) will be displayed.  
-1. Click the Save button in the Metadata Viewer dockpane to save your edits.    
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. This solution is using the **AvalonEdit Nuget**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package AvalonEdit -Version 5.0.4".  
+3. Click Start button to open ArcGIS Pro.  
+4. ArcGIS Pro will open.   
+5. Open any project file that contains project items such as Maps, toolboxs, databases with metadata.   
+6. In the Catalog pane, select any item that has metadata.  
+7. Select the Add-in tab and click the Show the Metadata viewer button.  The Metadata Viewer dockpane will be displayed.  
+8. The dockpane will display the metadata of the project item selected.  
+9. The metadata can also be edited in the viewer.    
+10. Check if your edits are valid by clicking the Validate button.  Validation errors (if any) will be displayed.  
+11. Click the Save button in the Metadata Viewer dockpane to save your edits.    
 ![UI](Screenshots/MetadataViewer.png)  
   
-
 
 <!-- End -->
 

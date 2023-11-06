@@ -22,8 +22,8 @@
     <Name>DDLCreateDeleteFeatureClassWithSubtypes</Name>
     <Description>DDLCreateDeleteFeatureClassWithSubtypes description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>osm12773</Author>
-    <Company>Acme</Company>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, https://www.esri.com</Company>
     <Date>2/2/2023 2:52:25 PM</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

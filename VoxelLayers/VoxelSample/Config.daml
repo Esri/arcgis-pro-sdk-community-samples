@@ -40,6 +40,7 @@
           <group refID="VoxelSample_Group3" />
           <group refID="VoxelSample_Group4" />
           <group refID="VoxelSample_Group5" />
+          <group refID="VoxelSample_Group6" />
         </tab>
       </tabs>
       <groups>
@@ -71,6 +72,10 @@
         <group id="VoxelSample_Group5" caption="Locked Section" appearsOnAddInTab="false">
           <button refID="VoxelSample_Examples_LockSection_LockSections" size="large" />
           <button refID="VoxelSample_Examples_LockSection_UnlockSections" size="large" />
+        </group>
+        <group id="VoxelSample_Group6" caption="Voxel Space" appearsOnAddInTab="false">
+		  <tool refID="VoxelSample_Examples_VoxelSpace_WorldSpaceToVoxel" size="large" />
+          <button refID="VoxelSample_Examples_VoxelSpace_VoxelSpaceToWorld" size="large" />
         </group>
       </groups>
       <controls>
@@ -123,7 +128,20 @@
         <button id="VoxelSample_Examples_LockSection_UnlockSections" caption="UnlockSections" className="VoxelSample.Examples.LockSection.UnlockSections" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlack16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlack32.png">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
+		<tool id="VoxelSample_Examples_VoxelSpace_WorldSpaceToVoxel" caption="WorldSpaceToVoxel" className="VoxelSample.Examples.VoxelSpace.WorldSpaceToVoxel" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
+			<tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+		</tool>
+        <tool id="VoxelSample_Examples_VoxelSpace_VoxelSpaceToWorld" caption="VoxelSpaceToWorld" className="VoxelSample.Examples.VoxelSpace.VoxelSpaceToWorld" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </tool>
       </controls>
     </insertModule>
   </modules>
+  <categories>
+    <updateCategory refID="esri_embeddableControls">
+      <insertComponent id="VoxelSample_VoxelEmbeddableControl" className="VoxelEmbeddableControlViewModel">
+        <content className="VoxelEmbeddableControl" />
+      </insertComponent>
+    </updateCategory>
+  </categories>
 </ArcGIS>

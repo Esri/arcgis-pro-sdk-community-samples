@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="GetLineOfSight.dll" defaultNamespace="GetLineOfSight" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{d818e029-5152-42d2-afc8-3ad78f5c6c2d}" version="1.0" desktopVersion="3.2.48335">
+    <Name>GetLineOfSight</Name>
+    <Description>GetLineOfSight description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>uma2526</Author>
+    <Company>Acme</Company>
+    <Date>5/16/2023 12:36:14 PM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="GetLineOfSight_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="GetLineOfSight_Tab1" caption="New Tab">
+          <group refID="GetLineOfSight_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="GetLineOfSight_Group1" caption="Group 1" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+        </group>
+      </groups>
+      <controls>
+        <tool id="GetLineOfSight_LoSTool" categoryRefID="esri_editing_construction_polyline" caption="Line of Sight" className="LoSTool" loadOnClick="true" smallImage="LOSLinear16" largeImage="LOSLinear32">
+          <!--note: use esri_editing_construction_polyline,  esri_editing_construction_polygon for categoryRefID as needed-->
+          <tooltip heading="Line of sight">Gets the line of sight components.<disabledText /></tooltip>
+          <content guid="468c3f18-3e38-4ae6-b1ba-6c643c38caaf" toolOptionsID="GetLineOfSight_LoSToolOptionsView" />
+        </tool>
+      </controls>
+    </insertModule>
+  </modules>
+  <categories>
+    <updateCategory refID="esri_editing_tool_options">
+      <insertComponent id="GetLineOfSight_LoSToolOptionsView" className="LoSToolOptionsViewViewModel">
+        <content className="LoSToolOptionsViewView" />
+      </insertComponent>
+    </updateCategory>
+  </categories>
+</ArcGIS>

@@ -44,7 +44,7 @@ namespace AnnoTools
 	/// fields are able to be deleted by the user if they exist; they are no longer designated as protected or system fields. If you are writing 
 	/// or porting tools that create or modify annotation features, it is essential to take this important concept into account.
 	/// 4. Construction tools - Set the categoryRefID in the daml file to be "esri_editing_construction_annotation".  Also note that the geometry
-	/// being passed to the EditOperation.Crreate method is the CIMTextGraphic geometry.
+	/// being passed to the EditOperation.Create method is the CIMTextGraphic geometry.
 	/// 5. Editing tools - Use the GetAnnotationProperties and SetAnnotationPropertes methods on the Inspector object to modify the text formatting
 	/// attributes.  (see AnnoModifySymbol.cs).  Any custom attributes in your schema can continue to be referenced via the inspector[fieldName] methodology.  
 	/// </summary>

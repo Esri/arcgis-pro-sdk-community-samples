@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,23 +29,19 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio, build the solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. Open any project containing data.  
-1. Activate the Add-in tab.  
+1. In Visual Studio, build the solution.
+2. Launch the debugger to open ArcGIS Pro.  
+3. Open any project containing data.  
+4. Activate the Add-in tab.  
 ![UI](Screenshots/UI_Ribbon.png)  
-  
-1. Click the 'Show GeometryView Dockpane' button.  A new dockpane should be displayed.   
-1. Use the Select tool on the Map tab to select a feature. The vertices of the feature's geometry should be displayed in the dockpane.   
+5. Click the 'Show GeometryView Dockpane' button.  A new dockpane should be displayed.   
+6. Use the Select tool on the Map tab to select a feature. The vertices of the feature's geometry should be displayed in the dockpane.   
 ![UI](Screenshots/GeometryVertices.png)  
-  
-1. Click the 'Sketch Vertices' tool button. An empty control will be overlayed on the map.  
+7. Click the 'Sketch Vertices' tool button. An empty control will be overlayed on the map.  
 ![UI](Screenshots/SketchVertices.png)  
-  
-1. Start sketching with the tool.  The vertices of the sketch should be displayed.  
+8. Start sketching with the tool.  The vertices of the sketch should be displayed.  
 ![UI](Screenshots/Sketchvertices2.png)  
   
-
 
 <!-- End -->
 

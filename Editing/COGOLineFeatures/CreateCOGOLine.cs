@@ -52,6 +52,7 @@ namespace COGOLineFeatures
       //Gets or sets whether the tool supports firing sketch events when the map sketch changes. 
       //Default value is false.
       FireSketchEvents = true;
+      ShowGroundToGridCorrections = true;  //comment out for releases earlier than 3.2
     }
     internal static string _COGODirectionString;
     internal static double _COGODirection;

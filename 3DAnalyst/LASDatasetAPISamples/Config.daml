@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="LASDatasetAPISamples.dll" defaultNamespace="LASDatasetAPISamples" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{8d784ce0-c7e8-487a-937f-ff606093aac8}" version="1.0" desktopVersion="3.2.49070">
+    <Name>LASDatasetAPISamples</Name>
+    <Description>LASDatasetAPISamples description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>uma2526</Author>
+    <Company>Acme</Company>
+    <Date>9/18/2023 2:32:31 PM</Date>
+    <Subject>3DAnalyst</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="LASDatasetAPISamples_Module" className="Module1" autoLoad="true" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="LASDatasetAPISamples_Tab1" caption="LAS Dataset API">
+          <group refID="LASDatasetAPISamples_Group1" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="LASDatasetAPISamples_Group1" caption="LAS Dataset" appearsOnAddInTab="false">
+          <!-- host controls within groups -->
+          <button refID="LASDatasetAPISamples_LASDatasetDockpane_ShowButton" size="large" />
+          <gallery refID="LASDatasetAPISamples_LASRenderers_LasLayerRendererGallery" inline="false" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <tool id="LASDatasetAPISamples_RetrievePointsUsingFilterTool" caption="Retrieve Points" className="RetrievePointsUsingFilterTool" loadOnClick="true" smallImage="LidarSession16" largeImage="LidarSession32" condition="esri_mapping_mapPane">
+          <tooltip heading="Retrieve Points">
+			  Retrieves the points in the LAS dataset that satisfy the criteria set in the filter. If no filter is set, all points will be retrieved.<disabledText /></tooltip>
+        </tool>
+        <button id="LASDatasetAPISamples_LASDatasetDockpane_ShowButton" caption="Filter Settings" className="LASDatasetDockpane_ShowButton" loadOnClick="true" smallImage="LasFilterPoints16" largeImage="LasFilterPoints32">
+          <tooltip heading="Show Dockpane">Set LAS Filters that can be used to display the data or retrieve points.<disabledText /></tooltip>
+        </button>
+        <button id="LASDatasetAPISamples_LASRenderers_Points_Elevation" caption="Elevation" className="LASDatasetAPISamples.LASRenderers.Points_Elevation" loadOnClick="true" smallImage="TinPoints24" largeImage="TinPoints24">
+          <tooltip heading="Elevation">Symbolize LAS points based on elevation.<disabledText /></tooltip>
+        </button>
+        <button id="LASDatasetAPISamples_LASRenderers_Points_Class" caption="Class" className="LASDatasetAPISamples.LASRenderers.Points_Class" loadOnClick="true" smallImage="LasClass16" largeImage="LasClass32">
+          <tooltip heading="Class">Symbolize the LAS dataset points by the LAS classification code.<disabledText /></tooltip>
+        </button>
+        <button id="LASDatasetAPISamples_LASRenderers_points_Returns" caption="Returns" className="LASDatasetAPISamples.LASRenderers.points_Returns" loadOnClick="true" smallImage="LasReturn16" largeImage="LasReturn32">
+          <tooltip heading="Returns">Symbolize the LAS dataset points by the lidar pulse return number.<disabledText /></tooltip>
+        </button>
+        <button id="LASDatasetAPISamples_LASRenderers_surface_Elevation" caption="Elevation" className="LASDatasetAPISamples.LASRenderers.surface_Elevation" loadOnClick="true" smallImage="LasElevationA16" largeImage="LasElevationA32">
+          <tooltip heading="Elevation">Symbolize LAS surface based on elevation.<disabledText /></tooltip>
+        </button>
+        <button id="LASDatasetAPISamples_LASRenderers_surface_Aspect" caption="Aspect" className="LASDatasetAPISamples.LASRenderers.surface_Aspect" loadOnClick="true" smallImage="LasAspect16" largeImage="LasAspect32">
+          <tooltip heading="Aspect">Symbolize LAS dataset based on Aspect values.<disabledText /></tooltip>
+        </button>
+        <button id="LASDatasetAPISamples_LASRenderers_surface_slope" caption="Slope" className="LASDatasetAPISamples.LASRenderers.surface_slope" loadOnClick="true" smallImage="LasSlope16" largeImage="LasSlope32">
+          <tooltip heading="Slope">Symbolize LAS dataset based on Slope values.<disabledText /></tooltip>
+        </button>
+        <button id="LASDatasetAPISamples_LASRenderers_lines_contour" caption="Contour" className="LASDatasetAPISamples.LASRenderers.lines_contour" loadOnClick="true" smallImage="LasContour16" largeImage="LasContour32">
+          <tooltip heading="Contour">Symbolize LAS Dataset using contours.<disabledText /></tooltip>
+        </button>
+        <button id="LASDatasetAPISamples_LASRenderers_lines_edges" caption="Edges" className="LASDatasetAPISamples.LASRenderers.lines_edges" loadOnClick="true" smallImage="TinEdges24" largeImage="TinEdges24">
+          <tooltip heading="Edges">Symbolize LAS Dataset using Edges.<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="LASDatasetAPISamples_LASDatasetDockpane" caption="LAS Dataset Filter" className="LASDatasetDockpaneViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="LASDatasetDockpaneView" />
+        </dockPane>
+      </dockPanes>
+      <galleries>
+        <gallery id="LASDatasetAPISamples_LASRenderers_LasLayerRendererGallery" caption="Las Symbology" showGroup="true" className="LASDatasetAPISamples.LASRenderers.LasLayerRendererGallery" itemsInRow="4" dataTemplateFile="pack://application:,,,/LASDatasetAPISamples;component/LASRenderers/LasLayerRendererGalleryTemplate.xaml" templateID="LasLayerRendererGalleryItemTemplate" resizable="true" largeImage="LasDataset32">
+          <tooltip heading="3D Analyst LAS Dataset Symbology">Select a Symbology option from the menu.<disabledText /></tooltip>
+        </gallery>
+      </galleries>
+    </insertModule>
+  </modules>
+</ArcGIS>

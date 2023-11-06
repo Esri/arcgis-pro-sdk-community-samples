@@ -47,8 +47,11 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="Symbology_SymbologyPane_ShowButton" caption="Show SymbologyPane" className="SymbologyPane_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
-          <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
+        <button id="Symbology_SymbologyPane_ShowButton" caption="Symbology Sample Pane" 
+                className="SymbologyPane_ShowButton" loadOnClick="true" keytip="B1"
+                smallImage="GenericLayerSymbology16" 
+                largeImage="GenericLayerSymbology32">
+          <tooltip heading="Show Symbology Sample Pane">Show Symbology Sample options<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>

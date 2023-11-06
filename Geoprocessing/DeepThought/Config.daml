@@ -17,7 +17,6 @@
    limitations under the License.
 
 -->
-
 <ArcGIS defaultAssembly="DeepThought.dll" defaultNamespace="DeepThought" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{6c3de6e8-7a6c-4ff1-b312-0fcafa271df9}" version="1.0" desktopVersion="3.0.36056">
     <Name>DeepThought</Name>
@@ -44,9 +43,27 @@
         <group id="DeepThought_Group1" caption="Group 1" appearsOnAddInTab="true">        
         </group>
         -->
+        <group id="DeepThought_Group1" caption="Running Py Scripts" keytip="G1" appearsOnAddInTab="true">
+          <button refID="DeepThought_RunDeepThoughtParam" size="large" />
+					<button refID="DeepThought_RunDeepThought" size="large" />
+        </group>
       </groups>
       <controls>
         <!-- add your controls here -->
+        <button id="DeepThought_RunDeepThoughtParam" caption="Prompt to run Deep Thought" 
+								className="RunDeepThoughtParam" loadOnClick="true" keytip="B1" 
+								smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/DataReviewerReviewerRunRules16.png"
+								largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/DataReviewerReviewerRunRules32.png">
+          <tooltip heading="Prompt to run Deep Thought">Show the input parameter dialog that allows to run the 'Deep Thought' python script.<disabledText /></tooltip>
+        </button>
+				<button id="DeepThought_RunDeepThought" caption="Run Deep Thought"
+								className="RunDeepThought" loadOnClick="true" keytip="B2"
+								smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/RasterFunctionCalculator16.png"
+								largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/RasterFunctionCalculator32.png">
+					<tooltip heading="Run Deep Thought">
+						Run the 'Deep Thought' python script wiithout parameter input.<disabledText />
+					</tooltip>
+				</button>
       </controls>
     </insertModule>
   </modules>

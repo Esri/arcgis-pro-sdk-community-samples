@@ -23,8 +23,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -39,19 +39,18 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in c:\data   
-1. The project used for this sample is 'C:\Data\SLR_Analyst\SLR_Analyst_Data.ppkx'  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debuuger to open ArcGIS Pro.  
-1. ArcGIS Pro will open, open the SLR_Analyst_Data.ppkx project  
-1. Once the project is open and loaded, the first step is to open the custom SLR Analyst pane. To do this, select the Add-In tab and press the Show SLR Tools add-in button to open the SLR Analyst dockpane.  
-1. Use your choice of navigation to zoom to an extent within the study area where you can clearly see land use and parcel polygons.  Zooming to 1:6,000 scale should work well initially.  
-1. Choose layer(s) to select and then choose sea level rise via the slider   
-1. Click 'Run Selection' to run the analysis  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+2. Make sure that the Sample data is unzipped in c:\data   
+3. The project used for this sample is 'C:\Data\SLR_Analyst\SLR_Analyst_Data.ppkx'  
+4. In Visual Studio click the Build menu. Then select Build Solution.  
+5. Launch the debuuger to open ArcGIS Pro.  
+6. ArcGIS Pro will open, open the SLR_Analyst_Data.ppkx project  
+7. Once the project is open and loaded, the first step is to open the custom SLR Analyst pane. To do this, select the Add-In tab and press the Show SLR Tools add-in button to open the SLR Analyst dockpane.  
+8. Use your choice of navigation to zoom to an extent within the study area where you can clearly see land use and parcel polygons.  Zooming to 1:6,000 scale should work well initially.  
+9. Choose layer(s) to select and then choose sea level rise via the slider   
+10. Click 'Run Selection' to run the analysis  
 ![UI](Screenshots/Screen1.png)  
   
-
 
 <!-- End -->
 

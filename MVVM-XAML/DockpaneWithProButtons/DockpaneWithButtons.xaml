@@ -56,6 +56,7 @@
         <RowDefinition Height="Auto"/>
         <RowDefinition Height="Auto"/>
         <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
         <RowDefinition Height="*"/>
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
@@ -127,9 +128,44 @@
         <Image Source="Images\ArcGISProjectOpen16.png" Width="16" Height="16" />
       </Button>
 
-      <TextBlock Grid.Row="6" Grid.Column="0" Margin="5" 
+      <TextBlock Grid.Row="6" Grid.Column="0" Margin="5,0,5,0" 
+                 Text="Esri Button, Pro Icon, stacked content" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+      <Button Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right"
+                        Margin="5" BorderThickness="1" Padding="0" 
+                        Style="{DynamicResource Esri_Button}"
+                        Command="{Binding CmdStackedButton}" 
+                        CommandParameter="{Binding Text, ElementName=CmdParam}"
+                        Background="Transparent">
+        <Button.Content>
+          <StackPanel Orientation="Horizontal">
+            <Image Source="{Binding ImageCmdStackedButton}" Margin="10" 
+                       HorizontalAlignment="Center"
+                       Stretch="None"></Image>
+            <TextBlock HorizontalAlignment="Center" Text="Stack " 
+                           VerticalAlignment="Center" FontSize="14" FontWeight="SemiBold"
+                           Margin="5,5,10,5">
+              <TextBlock.Style>
+                <Style TargetType="TextBlock">
+                  <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                      <Setter Property="TextBlock.TextDecorations" Value="Underline" />
+                      <Setter Property="Cursor" Value="Hand"/>
+                      <Setter Property="Foreground" Value="{DynamicResource Esri_Gray155}" />
+                    </Trigger>
+                  </Style.Triggers>
+                </Style>
+              </TextBlock.Style>
+            </TextBlock>
+          </StackPanel>
+        </Button.Content>
+      </Button>
+
+      <TextBlock Grid.Row="7" Grid.Column="0" Margin="5" 
                  Text="Text for CommandParameter: " HorizontalAlignment="Left" VerticalAlignment="Center" />
-      <TextBox x:Name="CmdParam" Grid.Row="6" Grid.Column="1" Text="Cmd parameter here" VerticalAlignment="Center"/>
+      <TextBox x:Name="CmdParam" Grid.Row="7" Grid.Column="1" Text="Cmd parameter here" VerticalAlignment="Center"/>
+      
+      
     </Grid>
   </Grid>
 </UserControl>

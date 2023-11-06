@@ -11,6 +11,9 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Images\CaliforniaEmblem.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="ArcGIS.Desktop.Framework">
       <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Framework.dll</HintPath>
       <Private>False</Private>
@@ -63,6 +66,9 @@
     <Content Include="Images\AddInDesktop32.png" />
     <Content Include="DarkImages\AddInDesktop16.png" />
     <Content Include="DarkImages\AddInDesktop32.png" />
+    <Content Include="Images\CaliforniaEmblem.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\GenericButtonPurple16.png" />
     <Content Include="Images\GenericButtonPurple32.png" />
     <Content Include="DarkImages\GenericButtonPurple16.png" />
@@ -76,7 +82,6 @@
     <None Include="ReadMe.md" />
     <None Include="Screenshots\CustomStyleProjectItem.png" />
     <None Include="Screenshots\SymbologyPane.png" />
-    <None Include="Symbology (C# 7.0).md" />
     <None Include="Symbology (C#).md" />
     <None Include="Images\Textures procedural.png" />
     <None Include="Images\Venice Procedural.png" />

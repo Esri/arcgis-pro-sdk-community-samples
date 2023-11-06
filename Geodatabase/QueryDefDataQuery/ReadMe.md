@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,25 +29,22 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro opens.   
-1. Open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project which contains the required data needed for this sample.  
-1. Two database table are used for the query "Portland_PD_Precincts" and "Police_Stations"  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.
+2. In Visual Studio click the Build menu. Then select Build Solution.  
+3. Click Start button to open ArcGIS Pro.  
+4. ArcGIS Pro opens.   
+5. Open the "C:\Data\Interacting with Maps\Interacting with Maps.aprx" project which contains the required data needed for this sample.  
+6. Two database table are used for the query "Portland_PD_Precincts" and "Police_Stations"  
 ![UI](Screenshots/Screen1.png)  
-  
-1. Click on the Add-In Tab  
-1. Click the Show QueryDef Dockpane Button and the DockPane opens  
-1. Click the 'Query Porland Precincts' "GO" button  
-1. The add-in executes a single table QueryDef  
+7. Click on the Add-In Tab  
+8. Click the Show QueryDef Dockpane Button and the DockPane opens  
+9. Click the 'Query Porland Precincts' "GO" button  
+10. The add-in executes a single table QueryDef  
 ![UI](Screenshots/Screen2.png)  
-  
-1. Click the 'Query Porland Precincts' and related ... "GO" button  
-1. The add-in executes a multi table QueryDef  
+11. Click the 'Query Porland Precincts' and related ... "GO" button  
+12. The add-in executes a multi table QueryDef  
 ![UI](Screenshots/Screen3.png)  
   
-
 
 <!-- End -->
 

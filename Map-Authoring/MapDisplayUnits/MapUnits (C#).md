@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,31 +29,28 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.    
-1. Launch the debugger to open ArcGIS Pro.  
-1. Open any project with Maps and Scenes.  
-1. Click the Add-in tab  
-1. In the Add-in tab, click the "Show Project Units" button.  
-1. The dockpane that is displayed allows you to:  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Launch the debugger to open ArcGIS Pro.  
+3. Open any project with Maps and Scenes.  
+4. Click the Add-in tab  
+5. In the Add-in tab, click the "Show Project Units" button.  
+6. The dockpane that is displayed allows you to:  
     * Change the current project's default Unit Format Types. Unit Format Types are Distance Units, Angular Units, Area Units, Location Units, Direction Units,  Page Units, 2D Symbol Display Units and 3D Symbol Display Units.   
     * Change the Display Units for a Map or Scene in the given project. Display Units for a map uses "Location Units" UnitFormatType.  
     * Change the Elevation Units for a Scene. Elevation Units for a Scene uses "Distance Units" UnitFormatType.  
 ![UI](screenshots/DisplayUnits.png)  
 #### Change Project Default Units:  
-  
-1. For a given UnitFormatType such as "Distance", "Location", etc., you can see the available DisplayUnitFormats available. The project default is specified in the dockpane.  
-1. If you want to change the default DisplayUnitFormatType for a given UnitFormatType, use the "Make Default" button.  
+7. For a given UnitFormatType such as "Distance", "Location", etc., you can see the available DisplayUnitFormats available. The project default is specified in the dockpane.  
+8. If you want to change the default DisplayUnitFormatType for a given UnitFormatType, use the "Make Default" button.  
 #### Change Display and Elevation Units for Maps and Scenes  
+9. Using the available maps combo box drop down, select any map or scene in the project.  
+10. Notice the Spatial Reference of the Map shown.  
+11. The map/scene's current Display Unit is selected by default. The other Display Units avaialble for the map is listed in the combox box below.    
+12. Select any other Display Unit you want to use for the selected Map.  Click the Apply Button. The map/scene's Display Unit will be changed to the selected DisplayUnitFormat.  
+13. If a scene is selected, you can change its Elevation Units.  
+14. The Elevation Unit for a given scene is selected by default.    
+15. Select any other Elevation Unit you want to use for the selected Scene.  Click the Apply Button. The scene's Elevation Unit will be changed to the selected DisplayUnitFormat.  
   
-1. Using the available maps combo box drop down, select any map or scene in the project.  
-1. Notice the Spatial Reference of the Map shown.  
-1. The map/scene's current Display Unit is selected by default. The other Display Units avaialble for the map is listed in the combox box below.    
-1. Select any other Display Unit you want to use for the selected Map.  Click the Apply Button. The map/scene's Display Unit will be changed to the selected DisplayUnitFormat.  
-1. If a scene is selected, you can change its Elevation Units.  
-1. The Elevation Unit for a given scene is selected by default.    
-1. Select any other Elevation Unit you want to use for the selected Scene.  Click the Apply Button. The scene's Elevation Unit will be changed to the selected DisplayUnitFormat.  
-  
-
 
 <!-- End -->
 

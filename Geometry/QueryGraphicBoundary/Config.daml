@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2022 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+
+<ArcGIS defaultAssembly="QueryGraphicBoundary.dll" defaultNamespace="QueryGraphicBoundary" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{3c54b579-906a-4238-b724-577e5b7a35bb}" version="1.0" desktopVersion="3.0.34047">
+    <Name>QueryGraphicBoundary</Name>
+    <Description>Demonstrates masking</Description>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>4/6/2020 12:22:34 PM, 2020</Date>
+    <Subject>Geometry</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="QueryGraphicBoundary_Module" className="Module1" autoLoad="false" caption="Module1">
+      <tabs>
+        <tab id="QueryGraphicBoundary_Tab1" caption="Test Mask" keytip="XX">
+          <group refID="QueryGraphicBoundary_Group1" />
+          <group refID="QueryGraphicBoundary_Group2" />
+        </tab>
+      </tabs>
+      <groups>
+        <group id="QueryGraphicBoundary_Group1" caption="Masking" keytip="G0">
+          <subgroup refID="QueryGraphicBoundary_Ribbon_MaskOptions" />
+          <tool refID="QueryGraphicBoundary_Ribbon_UpdateOutline" size="large" />
+        </group>
+        <group id="QueryGraphicBoundary_Group2" caption="Utilities" keytip="G1"  >
+          <button refID="QueryGraphicBoundary_ClearOutlines" size="large" />
+        </group>
+      </groups>
+      <subgroups>
+        <subgroup id="QueryGraphicBoundary_Ribbon_MaskOptions" size="AlwaysMedium" 
+                  verticalAlignment="Center">
+          <comboBox refID="QueryGraphicBoundary_Ribbon_MaskKindPicker" />
+          <spinner refID="QueryGraphicBoundary_Ribbon_MarginSpinner" />
+        </subgroup>
+      </subgroups>
+      <controls>
+        <button id="QueryGraphicBoundary_ClearOutlines" caption="Clear Outlines" 
+                className="QueryGraphicBoundary.Ribbon.ClearOutlines" loadOnClick="true"
+                keytip="B0"
+                smallImage="BexDog16"
+                largeImage="BexDog32">
+          <tooltip heading="Clear Outlines">
+						Clear the outline(s)<disabledText /></tooltip>
+        </button>
+        <!--<labelControl id="QueryGraphicBoundary_Ribbon_MaskLabel" caption="Mask: " />-->
+        <comboBox id="QueryGraphicBoundary_Ribbon_MaskKindPicker" caption="Mask" editHint="Kind of mask"
+                  className="QueryGraphicBoundary.Ribbon.MaskKindPicker" itemWidth="140" keytip="C1"
+                  extendedCaption="Mask Picker" isEditable="false" isReadOnly="true" resizable="true">
+          <tooltip heading="Mask">
+            Kind of mask<disabledText /></tooltip>
+        </comboBox>
+        <!--<labelControl id="QueryGraphicBoundary_Ribbon_MarginLabel" caption="Margin: " />-->
+        <spinner id="QueryGraphicBoundary_Ribbon_MarginSpinner" caption="Margin: " keytip="B2"
+                 className="QueryGraphicBoundary.Ribbon.MarginSpinner" format="F0" defaultValue="100" 
+                 maximum="200" minimum="0" increment="10">
+          <tooltip heading="Mask Margin">Specify margin in map units<disabledText></disabledText></tooltip>
+        </spinner>
+        <tool id="QueryGraphicBoundary_Ribbon_UpdateOutline" caption="Update Outline Tool" keytip="T1"
+              className="QueryGraphicBoundary.Ribbon.UpdateOutline" loadOnClick="true" 
+              smallImage="MarsCat16" largeImage="MarsCat32" condition="esri_mapping_mapViewingMode2DCondition">
+          <tooltip heading="Update Outline Tool">Click on the map to select a feature to apply the mask to<disabledText /></tooltip>
+        </tool>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

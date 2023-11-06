@@ -29,78 +29,168 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 using System.Windows;
 using ArcGIS.Core.CIM;
+using ArcGIS.Core.Data.Analyst3D;
 
 namespace MapToolWithDynamicMenu
 {
-    internal class MapToolShowMenu : MapTool
+  internal class MapToolShowMenu : MapTool
+  {
+
+    private CIMPolygonSymbol _PolySymbol = null;
+    private CIMPointSymbol _PointSymbol = null;
+    private CIMLineSymbol _LineSymbol = null;
+    private IDisposable _graphic = null;
+
+    public MapToolShowMenu()
     {
-        public MapToolShowMenu()
-        {
-            IsSketchTool = true;
-            SketchType = SketchGeometryType.Point;
-            SketchOutputMode = SketchOutputMode.Screen;
-        }
-
-        protected override Task OnToolActivateAsync(bool active)
-        {
-            return base.OnToolActivateAsync(active);
-        }
-
-        protected override async Task<bool> OnSketchCompleteAsync(Geometry geometry)
-        {
-            var bottomRight = new Point();
-            IList<Tuple<string, string, long>> tripleTuplePoints = new List<Tuple<string, string, long>>();
-            var hasSelection = await QueuedTask.Run(() =>
-            {
-                // geometry is a point
-                var clickedPnt = geometry as MapPoint;
-                if (clickedPnt == null) return false;
-                // pixel tolerance
-                var tolerance = 3;
-                //Get the client point edges
-                var topLeft = new Point(clickedPnt.X - tolerance, clickedPnt.Y + tolerance);
-                bottomRight = new Point(clickedPnt.X + tolerance, clickedPnt.Y - tolerance);
-                //convert the client points to Map points
-                var mapTopLeft = MapView.Active.ClientToMap(topLeft);
-                var mapBottomRight = MapView.Active.ClientToMap(bottomRight);
-                //create a geometry using these points
-                Geometry envelopeGeometry = EnvelopeBuilderEx.CreateEnvelope(mapTopLeft, mapBottomRight);
-                if (envelopeGeometry == null) return false;
-                //Get the features that intersect the sketch geometry.
-                var result = ActiveMapView.GetFeatures(geometry);
-                foreach (var kvp in result.ToDictionary())
-                {
-                    var bfl = kvp.Key as BasicFeatureLayer;
-                    if (bfl is null) continue;
-                    // only look at points
-                    if (bfl.ShapeType != esriGeometryType.esriGeometryPoint) continue;
-                    var layerName = bfl.Name;
-                    var oidName = bfl.GetTable().GetDefinition().GetObjectIDField();
-                    foreach (var oid in kvp.Value)
-                    {
-                        tripleTuplePoints.Add(new Tuple<string, string, long>(layerName, oidName, oid));
-                    }
-                }
-                return true;
-            });
-            if (hasSelection)
-            {
-                ShowContextMenu(bottomRight, tripleTuplePoints);
-            }
-            return true;
-        }
-
-        private void ShowContextMenu(System.Windows.Point screenLocation, IList<Tuple<string, string, long>> tripleTuplePoints)
-        {
-            var contextMenu = FrameworkApplication.CreateContextMenu("DynamicMenu_SelectPoint", () => screenLocation);
-            if (contextMenu == null) return;
-            DynamicSelectPointMenu.SetMenuPoints(tripleTuplePoints);
-            contextMenu.Closed += (o, e) =>
-            {
-                // nothing to do
-                System.Diagnostics.Debug.WriteLine(e);
-            };
-            contextMenu.IsOpen = true;
-        }
+      IsSketchTool = true;
+      SketchType = SketchGeometryType.Point;
+      SketchOutputMode = SketchOutputMode.Screen;
     }
+
+    protected override Task OnToolActivateAsync(bool active)
+    {
+      return base.OnToolActivateAsync(active);
+    }
+
+    protected override Task OnToolDeactivateAsync(bool hasMapViewChanged)
+    {
+      _PolySymbol = null;
+      if (_graphic != null)
+      {
+        _graphic.Dispose();
+        _graphic = null;
+      }
+      return base.OnToolDeactivateAsync(hasMapViewChanged);
+    }
+
+    protected override async Task<bool> OnSketchCompleteAsync(Geometry geometry)
+    {
+      Point bottomRight = new(0, 0); 
+      if (geometry is not MapPoint clickedPnt) return false;
+      try
+      {
+        IList<Tuple<string, string, long>> tripleTuplePoints = new List<Tuple<string, string, long>>();
+        var hasSelection = await QueuedTask.Run(() =>
+        {
+          // geometry is a point
+          if (geometry is not MapPoint clickedPnt) return false;
+          // pixel tolerance
+          var toleranceInScreenUnits = 10;
+          // Use bottomRight to popup the dynamic menu result
+          bottomRight = new Point(clickedPnt.X + toleranceInScreenUnits, clickedPnt.Y + toleranceInScreenUnits);
+          var toleranceInMapUnits = GetScreenPointsInMapUnits(toleranceInScreenUnits, MapView.Active);
+
+          // Create a search circle around the click point using the pixel tolerance as a radius
+          var pnt = MapView.Active.ClientToMap(new Point(clickedPnt.X, clickedPnt.Y));
+          var arcSegment = EllipticArcBuilderEx.CreateCircle(pnt.Coordinate2D, toleranceInMapUnits, ArcOrientation.ArcClockwise, pnt.SpatialReference);
+          var circlePolygon = PolygonBuilderEx.CreatePolygon(new[] { arcSegment });
+
+          //Get the features that intersect the search circle polygon
+          var result = ActiveMapView.GetFeatures(circlePolygon);
+          foreach (var kvp in result.ToDictionary())
+          {
+            if (kvp.Key is not BasicFeatureLayer bfl) continue;
+            // only look at points
+            if (bfl.ShapeType != esriGeometryType.esriGeometryPoint) continue;
+            var layerName = bfl.Name;
+            var oidName = bfl.GetTable().GetDefinition().GetObjectIDField();
+            foreach (var oid in kvp.Value)
+            {
+              tripleTuplePoints.Add(new Tuple<string, string, long>(layerName, oidName, oid));
+            }
+          }
+          return true;
+        });
+
+        // show the tolerance polygon
+        if (_graphic != null)
+          _graphic.Dispose();
+        {
+          await QueuedTask.Run(() =>
+          {
+            // pixel tolerance
+            var toleranceInScreenUnits = 10;
+            var toleranceInMapUnits = GetScreenPointsInMapUnits(toleranceInScreenUnits, MapView.Active);
+            //Get the client point edges
+            var pnt = MapView.Active.ClientToMap(new Point(clickedPnt.X, clickedPnt.Y));
+            var arcSegment = EllipticArcBuilderEx.CreateCircle(pnt.Coordinate2D, toleranceInMapUnits, ArcOrientation.ArcClockwise, pnt.SpatialReference);
+            var circlePolygon = PolygonBuilderEx.CreatePolygon(new[] { arcSegment });
+
+            _graphic = MapView.Active.AddOverlay(circlePolygon, CIMSelectionPolySymbol.MakeSymbolReference());
+          });
+        }
+        if (hasSelection)
+        {
+          ShowContextMenu(bottomRight, tripleTuplePoints);
+        }
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show($@"Exception: {ex}");
+      }
+      return true;
+    }
+
+    private void ShowContextMenu(System.Windows.Point screenLocation, IList<Tuple<string, string, long>> tripleTuplePoints)
+    {
+      var contextMenu = FrameworkApplication.CreateContextMenu("DynamicMenu_SelectPoint", () => screenLocation);
+      if (contextMenu == null) return;
+      DynamicSelectPointMenu.SetMenuPoints(tripleTuplePoints);
+      contextMenu.Closed += (o, e) =>
+      {
+        // nothing to do
+        System.Diagnostics.Debug.WriteLine(e);
+      };
+      contextMenu.IsOpen = true;
+    }
+
+
+    private CIMPolygonSymbol CIMSelectionPolySymbol
+    {
+      get
+      {
+        if (_PolySymbol != null) return _PolySymbol;
+
+        //Create a solid fill polygon symbol for the callout.
+        var aquaBackground = ColorFactory.Instance.CreateRGBColor(190, 255, 232, 100);
+        _PolySymbol = SymbolFactory.Instance.ConstructPolygonSymbol(aquaBackground, SimpleFillStyle.DiagonalCross);
+        return _PolySymbol;
+      }
+    }
+
+    private CIMLineSymbol CIMSelectionLineSymbol
+    {
+      get
+      {
+        if (_LineSymbol != null) return _LineSymbol;
+
+        //Create a solid fill polygon symbol for the callout.
+        var aquaBackground = ColorFactory.Instance.CreateRGBColor(190, 255, 232, 100);
+        _LineSymbol = SymbolFactory.Instance.ConstructLineSymbol(ColorFactory.Instance.RedRGB, 2, SimpleLineStyle.Solid);
+        return _LineSymbol;
+      }
+    }
+
+    private CIMPointSymbol CIMSelectionPointSymbol
+    {
+      get
+      {
+        if (_PointSymbol != null) return _PointSymbol;
+
+        _PointSymbol = SymbolFactory.Instance.ConstructPointSymbol(ColorFactory.Instance.RedRGB, 20, SimpleMarkerStyle.Circle);
+        return _PointSymbol;
+      }
+    }
+
+    private double GetScreenPointsInMapUnits (double pixels, MapView mapView)
+    {
+      var left = new Point(0, 0);
+      var right = new Point(0, pixels);
+      var pntLeft = mapView.ClientToMap(left);
+      var pntRight = mapView.ClientToMap(right);
+      var line = LineBuilderEx.CreateLineSegment (pntLeft, pntRight);
+      return line.Length;
+    }
+  }
 }

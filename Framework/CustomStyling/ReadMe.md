@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -33,19 +33,16 @@ Visual Studio:         2022
  The sample contains a custom UserControl as well as a custom Light and Dark theme that is applied at runtime in conjunction with the Light or Dark theme applied to Pro.    
  Steps:    
   
- 1. In Visual Studio click the Build menu. Then select Build Solution.  
- 1. Click Start button to open ArcGIS Pro.  
- 1. The style applied to the Dockpane custom UserControl should match the Light or Dark mode of Pro.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+ 2. Click Start button to open ArcGIS Pro.  
+ 3. The style applied to the Dockpane custom UserControl should match the Light or Dark mode of Pro.  
 ![UI](Screenshots/Screen1.png)  
-  
- 1. Toggle the Pro theme (via backstage->Options->Application->General settings). Restart Pro.  
- 1. Re-start the Debugger and Re-open the Dockpane in ArcGIS Pro.  
- 1. The custom style should have changed (Light to Dark or vice versa) to match the corresponding change made to Pro.  
+ 4. Toggle the Pro theme (via backstage->Options->Application->General settings). Restart Pro.  
+ 5. Re-start the Debugger and Re-open the Dockpane in ArcGIS Pro.  
+ 6. The custom style should have changed (Light to Dark or vice versa) to match the corresponding change made to Pro.  
 ![UI](Screenshots/Screen2.png)  
-  
- 1. Please also refer to the companion ProGuide at [ProGuide: Applying Custom Styles](https://github.com/Esri/arcgis-pro-sdk/wiki/ProGuide-Applying-Custom-Styles) for more information.    
+ 7. Please also refer to the companion ProGuide at [ProGuide: Applying Custom Styles](https://github.com/Esri/arcgis-pro-sdk/wiki/ProGuide-Applying-Custom-Styles) for more information.    
    
-
 
 <!-- End -->
 

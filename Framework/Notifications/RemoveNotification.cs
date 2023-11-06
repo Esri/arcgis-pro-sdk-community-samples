@@ -17,8 +17,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
+using ArcGIS.Desktop.Internal.Catalog;
 
 namespace Notifications
 {
@@ -29,8 +31,10 @@ namespace Notifications
   {
     protected override void OnClick()
     {
+      Module1.ShowNotificationDockpane();
       NotificationManager.RemoveNotification("id_project_error_details");
       NotificationManager.RemoveNotification("id_app_action");
     }
+
   }
 }

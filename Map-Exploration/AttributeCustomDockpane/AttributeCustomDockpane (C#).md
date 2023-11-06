@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,19 +29,17 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in c:\data   
-1. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. ArcGIS Pro opens, select the FeatureTest.aprx project  
-1. Activate the Add-in tab on the ArcGIS Pro ribbon and click the 'Select Polygon Feature' button.  
-1. Navigate on the map to a polygon feature and click on anywhere on the polygon feature to inspect that feature.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+2. Make sure that the Sample data is unzipped in c:\data   
+3. The project used for this sample is 'C:\Data\FeatureTest\FeatureTest.aprx'  
+4. In Visual Studio click the Build menu. Then select Build Solution.  
+5. Launch the debugger to open ArcGIS Pro.  
+6. ArcGIS Pro opens, select the FeatureTest.aprx project  
+7. Activate the Add-in tab on the ArcGIS Pro ribbon and click the 'Select Polygon Feature' button.  
+8. Navigate on the map to a polygon feature and click on anywhere on the polygon feature to inspect that feature.  
 ![UI](Screenshots/Screenshot1.png)  
+9. The 'Show Attributes' dockpane displays the attributes and the geometry for the selected feature.  
   
-1. The 'Show Attributes' dockpane displays the attributes and the geometry for the selected feature.  
-  
-
 
 <!-- End -->
 

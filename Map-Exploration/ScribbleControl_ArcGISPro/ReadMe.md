@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,19 +29,18 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. This solution is using the **DotNetProjects.Extended.Wpf.Toolkit**.    
-1. Launch debugger to open ArcGIS Pro.  
-1. Open a map view   
-1. Click on Add-in tab and click the "Add Canvas" button in the "Scribble" group  
-1. A Scribble control will be added on top of the map view  
-1. The Scribble control will resize to fit the MapView (notice the faint gray border around the edges of the MapView)  
-1. Scribble with any of the toolbar scribble tools on top of the map view  
-1. Shapes can also be inserted by right-clicking on the Scribble canvas  
-1. To remove the Scribble overlay, click "Remove Canvas"  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. This solution is using the **DotNetProjects.Extended.Wpf.Toolkit**.    
+3. Launch debugger to open ArcGIS Pro.  
+4. Open a map view   
+5. Click on Add-in tab and click the "Add Canvas" button in the "Scribble" group  
+6. A Scribble control will be added on top of the map view  
+7. The Scribble control will resize to fit the MapView (notice the faint gray border around the edges of the MapView)  
+8. Scribble with any of the toolbar scribble tools on top of the map view  
+9. Shapes can also be inserted by right-clicking on the Scribble canvas  
+10. To remove the Scribble overlay, click "Remove Canvas"  
 ![UI](Screenshots/Screen.png)  
   
-
 
 <!-- End -->
 

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="DuplicateAndSelect.dll" defaultNamespace="DuplicateAndSelect" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{691327cd-ed1b-4181-892c-c9ae9b661da7}" version="1.0" desktopVersion="3.1.0">
+    <Name>DuplicateAndSelect</Name>
+    <Description>DuplicateAndSelect description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>5/4/2023 05:24:12</Date>
+    <Subject>Editing</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="DuplicateAndSelect_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="DuplicateAndSelect_Tab1" caption="New Tab">
+          <group refID="DuplicateAndSelect_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="DuplicateAndSelect_Group1" caption="Feature Duplicate and Select"
+               appearsOnAddInTab="true" keytip="G0">
+          <button refID="esri_editing_ShowAttributes" size="large" />
+          <tool refID="esri_mapping_selectByRectangleTool" size="large" />
+          <button refID="DuplicateAndSelect_DuplicateAndSelect" size="large" />
+          <button refID="DuplicateAndSelect_DuplicateAddSelect" size="large" />
+        </group>
+        <group id="DuplicateAndSelect_Group2" caption="Row Duplicate and Select"
+               appearsOnAddInTab="true" keytip="G1">
+          <button refID="DuplicateAndSelect_TableDupAddSelect" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <button id="DuplicateAndSelect_DuplicateAndSelect" caption="Duplicate and Select" 
+                className="DuplicateAndSelect" loadOnClick="true" keytip="B0"
+                smallImage="DataReviewerDuplicateFeature16"
+                largeImage="DataReviewerDuplicateFeature32">
+          <tooltip heading="Duplicate and Select">Duplicates the first selected feature and then select the newly added features only<disabledText /></tooltip>
+        </button>
+        <button id="DuplicateAndSelect_DuplicateAddSelect" caption="Duplicate Add Selection"
+                className="DuplicateAddSelect" loadOnClick="true" keytip="B1"
+                smallImage="DataReviewerDuplicateFeature16"
+                largeImage="DataReviewerDuplicateFeature32">
+          <tooltip heading="Duplicate Add Select">
+            Duplicates the first selected feature and then add the newly selected features to the selected set<disabledText />
+          </tooltip>
+        </button>
+        <button id="DuplicateAndSelect_TableDupAddSelect" caption="Table Dupl. Add Selection"
+                className="TableDuplicateAddSelect" loadOnClick="true" keytip="B2"
+                smallImage="TableFieldNew16"
+                largeImage="TableFieldNew32">
+          <tooltip heading="Table Dupl. Add Selection">
+            Duplicate the first selected record of a standalone table and then add the newly selected rows to the selected set<disabledText />
+          </tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

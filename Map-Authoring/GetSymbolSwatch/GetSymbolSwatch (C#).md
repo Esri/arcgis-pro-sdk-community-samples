@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Map-Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,29 +29,25 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in c:\data   
-1. The projects used for this sample are 'C:\Data\FeatureTest\FeatureTest.aprx', 'C:\Data\Interacting with Maps\Interacting with Maps.aprx', and 'C:\Data\Admin\AdminSample.aprx'  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. Select the FeatureTest.aprx project  
-1. After the Map View is displayed, click on the 'Symbol Swatch' tab, and then click the 'Show Symbol Swatch Dockpane' button to show the 'Symbol Swatch Dockpane' dockpane    
-1. Position and size the dockpane to see all columns in the symbol swatch grid  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+2. Make sure that the Sample data is unzipped in c:\data   
+3. The projects used for this sample are 'C:\Data\FeatureTest\FeatureTest.aprx', 'C:\Data\Interacting with Maps\Interacting with Maps.aprx', and 'C:\Data\Admin\AdminSample.aprx'  
+4. In Visual Studio click the Build menu. Then select Build Solution.  
+5. Launch the debugger to open ArcGIS Pro.  
+6. Select the FeatureTest.aprx project  
+7. After the Map View is displayed, click on the 'Symbol Swatch' tab, and then click the 'Show Symbol Swatch Dockpane' button to show the 'Symbol Swatch Dockpane' dockpane    
+8. Position and size the dockpane to see all columns in the symbol swatch grid  
 ![UI](Screenshots/Screenshot1.png)  
-  
-1. Click the 'Refresh' button on the 'Show Symbol Swatch Dockpane' dockpane to see symbol swatches in the grid    
+9. Click the 'Refresh' button on the 'Show Symbol Swatch Dockpane' dockpane to see symbol swatches in the grid    
 ![UI](Screenshots/Screenshot2.png)  
-  
-1. Open the 'Interacting with Maps.aprx' project  
-1. Click the 'Refresh' button on the 'Show Symbol Swatch Dockpane' dockpane to see symbol swatches in the grid    
+10. Open the 'Interacting with Maps.aprx' project  
+11. Click the 'Refresh' button on the 'Show Symbol Swatch Dockpane' dockpane to see symbol swatches in the grid    
 ![UI](Screenshots/Screenshot3.png)  
-  
-1. Open the AdminSample.aprx project  
-1. In the 'Contents' dockpane change the symbology for the 'States' layer to 'Graduated Colors'  
-1. Click the 'Refresh' button on the 'Show Symbol Swatch Dockpane' dockpane to see symbol swatches in the grid    
+12. Open the AdminSample.aprx project  
+13. In the 'Contents' dockpane change the symbology for the 'States' layer to 'Graduated Colors'  
+14. Click the 'Refresh' button on the 'Show Symbol Swatch Dockpane' dockpane to see symbol swatches in the grid    
 ![UI](Screenshots/Screenshot4.png)  
   
-
 
 <!-- End -->
 

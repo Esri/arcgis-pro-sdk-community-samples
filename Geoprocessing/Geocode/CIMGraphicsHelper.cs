@@ -113,21 +113,21 @@ namespace Geocode
             R = 255,
             G = 0,
             B = 0,
-            Alpha = 200// 0 for transparent and 255 for opaque
+            Alpha = 100// 0 for transparent and 100 for opaque
         };
         public static CIMColor Black = new CIMRGBColor
         {
             R = 0,
             G = 0,
             B = 0,
-            Alpha = 200// 0 for transparent and 255 for opaque
+            Alpha = 100// 0 for transparent and 100 for opaque
         };
         public static CIMColor Navy = new CIMRGBColor
         {
             R = 0,
             G = 0,
             B = 128,
-            Alpha = 200// 0 for transparent and 255 for opaque
+            Alpha = 100// 0 for transparent and 100 for opaque
         };
         /// <summary>
         /// Create a CIMPointGaphic which can be added to the MapView overlay.

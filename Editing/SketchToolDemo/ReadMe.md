@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,26 +29,22 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in c:\Data  
-1. Before you run the sample verify that the project C:\Data\FeatureTest\FeatureTest.aprx" is present since this is required to run the sample.  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
-1. Open the "C:\Data\FeatureTest\FeatureTest.aprx" project.  
-1. Click on the Edit tab on the ribbon and select the 'CutTool' from the 2D edit tool gallery.   
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+2. Make sure that the Sample data is unzipped in c:\Data  
+3. Before you run the sample verify that the project C:\Data\FeatureTest\FeatureTest.aprx" is present since this is required to run the sample.  
+4. In Visual Studio click the Build menu. Then select Build Solution.  
+5. Launch the debugger to open ArcGIS Pro.  
+6. ArcGIS Pro will open.   
+7. Open the "C:\Data\FeatureTest\FeatureTest.aprx" project.  
+8. Click on the Edit tab on the ribbon and select the 'CutTool' from the 2D edit tool gallery.   
 ![UI](Screenshots/Screen1.png)  
-  
-1. Sketch a line across an existing polygon.  
+9. Sketch a line across an existing polygon.  
 ![UI](Screenshots/Screen2.png)  
-  
-1. Complete the sketch using a double click.  
+10. Complete the sketch using a double click.  
 ![UI](Screenshots/Screen3.png)  
-  
-1. Verify that the polygon was split properly.  
+11. Verify that the polygon was split properly.  
 ![UI](Screenshots/Screen4.png)  
   
-
 
 <!-- End -->
 

@@ -20,8 +20,8 @@ Language:              C#
 Subject:               NetworkDiagram
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -36,45 +36,38 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu.  Then select Build Solution.    
-1. Click Start button to open ArcGIS Pro.    
-1. ArcGIS Pro will open.    
-1. Open C:\Data\UtilityNetwork\UtilityNetworkSamples.aprx  
-1. Click on the Map tab on the ribbon. Then, in the Navigate group, expand Bookmarks and click Full Extent.  
-1. Click on the Utility Network tab in the ribbon. Then, in the Diagram group, click Find Diagrams.  
-1. In the Find Diagrams pane, search for the diagram stored as RotateDiagramJunctions_Test and double click it so it opens  
+1. In Visual Studio click the Build menu.  Then select Build Solution.
+2. Click Start button to open ArcGIS Pro.    
+3. ArcGIS Pro will open.    
+4. Open C:\Data\UtilityNetwork\UtilityNetworkSamples.aprx  
+5. Click on the Map tab on the ribbon. Then, in the Navigate group, expand Bookmarks and click Full Extent.  
+6. Click on the Utility Network tab in the ribbon. Then, in the Diagram group, click Find Diagrams.  
+7. In the Find Diagrams pane, search for the diagram stored as RotateDiagramJunctions_Test and double click it so it opens  
     ![UI](Screenshots/EditDiagramJunctionRotation1.png)  
-  
-1. Click on the Add-in tab on the ribbon    
-1. In the Rotation group, type any degree angle value you want in the text box. For example, type 30.  
+8. Click on the Add-in tab on the ribbon    
+9. In the Rotation group, type any degree angle value you want in the text box. For example, type 30.  
     ![UI](Screenshots/EditDiagramJunctionRotation2.png)  
-  
-1. Then, click on the Relative tool.  
+10. Then, click on the Relative tool.  
  All the diagram junction symbols rotate by 30 degrees.  
     ![UI](Screenshots/EditDiagramJunctionRotation3.png)  
-  
-1. On the Contents pane, right click the Medium Voltage Transformer Bank layer and click Attribute Table.  
-1. Right click the Electric Junction Box layer and click Attribute Table.  
-1. Have a look to the Element rotation field in the two open attribute tables. Any diagram feature Element rotation is set to 30.  
+11. On the Contents pane, right click the Medium Voltage Transformer Bank layer and click Attribute Table.  
+12. Right click the Electric Junction Box layer and click Attribute Table.  
+13. Have a look to the Element rotation field in the two open attribute tables. Any diagram feature Element rotation is set to 30.  
     ![UI](Screenshots/EditDiagramJunctionRotation4.png)  
-  
-1. On the Contents pane, right-click the Electric Junction Box layer and click Selection > Select All.  
-1. In the Rotation group, type another degree angle value in the text box. For example, type 45.  
-1. Then, click on the Relative tool.  
+14. On the Contents pane, right-click the Electric Junction Box layer and click Selection > Select All.  
+15. In the Rotation group, type another degree angle value in the text box. For example, type 45.  
+16. Then, click on the Relative tool.  
 All the selected Electric Junction Box diagram junction symbols rotate by 45 degrees more.  
-  
-1. Have a look to the Element rotation field in the Electric Junction Box attribute table. Any Element rotation field in this table is set to 75.  
+17. Have a look to the Element rotation field in the Electric Junction Box attribute table. Any Element rotation field in this table is set to 75.  
     ![UI](Screenshots/EditDiagramJunctionRotation5.png)  
-  
-1. Have a look to the Element rotation field in the Medium Voltage Transformer Bank attribute table. Any Element rotation field in this table is still set to 30.  
-1. Clear the selection in the diagram map.  
-1. Click on the Add-in tab on the ribbon    
-1. In the Rotation group, type 0 as the degree angle value in the text box.  
-1. Then, click on the Absolute tool.  
+18. Have a look to the Element rotation field in the Medium Voltage Transformer Bank attribute table. Any Element rotation field in this table is still set to 30.  
+19. Clear the selection in the diagram map.  
+20. Click on the Add-in tab on the ribbon    
+21. In the Rotation group, type 0 as the degree angle value in the text box.  
+22. Then, click on the Absolute tool.  
 All the diagram junction symbols in the diagram rotate so they are restored to their initial angles.  
     ![UI](Screenshots/EditDiagramJunctionRotation6.png)  
   
-
 
 <!-- End -->
 

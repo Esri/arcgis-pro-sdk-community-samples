@@ -18,8 +18,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -34,29 +34,23 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.    
-1. Launch the debugger to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
-1. Open any project which features you can edit, for example: 'C:\Data\FeatureTest\FeatureTest.aprx'   
-1. Click the Edit tab.  Notice that edit functions like create/modify are enabled.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Launch the debugger to open ArcGIS Pro.  
+3. ArcGIS Pro will open.   
+4. Open any project which features you can edit, for example: 'C:\Data\FeatureTest\FeatureTest.aprx'   
+5. Click the Edit tab.  Notice that edit functions like create/modify are enabled.  
 ![UI](Screenshots/Screen1.png)  
-  
-1. Click the Use SEL tab.  Then click 'Disable Editing' to disable editing.  
+6. Click the Use SEL tab.  Then click 'Disable Editing' to disable editing.  
 ![UI](Screenshots/Screen2.png)  
-  
-1. Click the Edit tab.  Notice that edit functions like create/modify are now disabled.   
+7. Click the Edit tab.  Notice that edit functions like create/modify are now disabled.   
 ![UI](Screenshots/Screen3.png)  
-  
-1. Click the Use SEL tab.  Then click 'Enable Editing' to re-able editing.  Notice that the 'Difference' custom tools are now re-abled as well.   
+8. Click the Use SEL tab.  Then click 'Enable Editing' to re-able editing.  Notice that the 'Difference' custom tools are now re-abled as well.   
 ![UI](Screenshots/Screen4.png)  
-  
-1. To utilize the "Edit" button you have to set the "Disable/Enable Editing" option in ArcGIS Pro options as shown here.  
+9. To utilize the "Edit" button you have to set the "Disable/Enable Editing" option in ArcGIS Pro options as shown here.  
 ![UI](Screenshots/Screen5.png)  
-  
-1. Click 'Edit' to enable editing.  Notice that the 'Enable/Disable Editing' buttons honor the 'Edit' button status and vice versa.  
+10. Click 'Edit' to enable editing.  Notice that the 'Enable/Disable Editing' buttons honor the 'Edit' button status and vice versa.  
 ![UI](Screenshots/Screen6.png)  
   
-
 
 <!-- End -->
 

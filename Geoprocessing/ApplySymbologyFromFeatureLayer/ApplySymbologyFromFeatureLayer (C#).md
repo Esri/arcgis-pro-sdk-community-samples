@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Geoprocessing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -36,22 +36,19 @@ Requirements to run this sample:
 * As a sample you can use following sample data: C:\Data\Admin\AdminData.gdb\counties  
 * Both layers must have fields with the POP2000 name.  The NAME field is used, the input parameters for the "ApplySymbologyFromLayer_management" geoprocessing task  
   
-1. fieldType = "VALUE_FIELD";  
-1. sourceField = "POP2000";  
-1. targetField = "POP2000";  
+1. fieldType = "VALUE_FIELD";
+2. sourceField = "POP2000";  
+3. targetField = "POP2000";  
   
 Using the sample:  
-  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. Open any project in ArcGIS Pro with a Map that contains a the two feature layers shown as requirements above.  
+4. In Visual Studio click the Build menu. Then select Build Solution.  
+5. Click Start button to open ArcGIS Pro.  
+6. Open any project in ArcGIS Pro with a Map that contains a the two feature layers shown as requirements above.  
 ![UI](Screenshots/Screen1.png)  
-  
-1. After the map view is open switch on the Pro Ribbon to the 'Add-in' tab.  
-1. Click the "Apply Symbology From Feature Layer" button.  Notice the Symbology has been applied to the topmost layer.  
+7. After the map view is open switch on the Pro Ribbon to the 'Add-in' tab.  
+8. Click the "Apply Symbology From Feature Layer" button.  Notice the Symbology has been applied to the topmost layer.  
 ![UI](Screenshots/Screen2.png)  
   
-
 
 <!-- End -->
 

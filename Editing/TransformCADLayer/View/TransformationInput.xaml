@@ -53,32 +53,38 @@
 
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,3,0,0" HorizontalAlignment="Right" Grid.ColumnSpan="2">
             <TextBlock Margin="0,3,-10,0"  Text="Local Easting (X)" Style="{DynamicResource Esri_TextBlockRegular}" />
-            <TextBox x:Name="OriginX"  Margin="25,0,7,0" Width="100" TextAlignment="Right" Text="{Binding Path=Transformation.OriginX, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="OriginX"  Margin="25,0,7,0" Width="100" TextAlignment="Right"  KeyDown="TextBox_KeyDown" GotFocus="TextBox_GotFocus"
+                     Text="{Binding Path=Transformation.OriginX, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,3,0,0" HorizontalAlignment="Right" Grid.ColumnSpan="2">
             <TextBlock Margin="0,3,0,0"  Text="Local Northing (Y)" Style="{DynamicResource Esri_TextBlockRegular}"/>
-            <TextBox x:Name="OriginY"  Margin="15,0,7,0" Width="100" TextAlignment="Right" Text="{Binding Path=Transformation.OriginY, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="OriginY"  Margin="15,0,7,0" Width="100" TextAlignment="Right"  KeyDown="TextBox_KeyDown" GotFocus="TextBox_GotFocus"
+                     Text="{Binding Path=Transformation.OriginY, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,12,0,0" HorizontalAlignment="Right" Grid.ColumnSpan="2">
             <TextBlock Margin="0,3,-7,0"  Text="Grid Easting (X)" Style="{DynamicResource Esri_TextBlockRegular}"/>
-            <TextBox x:Name="GridX"  Margin="24,0,7,0" Width="100" TextAlignment="Right" Text="{Binding Path=Transformation.GridX, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="GridX"  Margin="24,0,7,0" Width="100" TextAlignment="Right"  KeyDown="TextBox_KeyDown" GotFocus="TextBox_GotFocus"
+                     Text="{Binding Path=Transformation.GridX, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
         
         <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,3,0,0" HorizontalAlignment="Right" Grid.ColumnSpan="2">
             <TextBlock Margin="0,3,-7,0"  Text="Grid Northing (Y)" Style="{DynamicResource Esri_TextBlockRegular}"/>
-            <TextBox x:Name="GridY"  Margin="24,0,7,0" Width="100" TextAlignment="Right" Text="{Binding Path=Transformation.GridY, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="GridY"  Margin="24,0,7,0" Width="100" TextAlignment="Right"  KeyDown="TextBox_KeyDown" GotFocus="TextBox_GotFocus"
+                     Text="{Binding Path=Transformation.GridY, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
 
         <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="0,12,0,0" HorizontalAlignment="Right" Grid.ColumnSpan="2">
             <TextBlock Margin="0,3,-3,0"  Text="Scale Factor" Style="{DynamicResource Esri_TextBlockRegular}"/>
-            <TextBox x:Name="ScaleFactor"  Margin="24,0,7,0" Width="100" TextAlignment="Right" Text="{Binding Path=Transformation.ScaleFactor, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="ScaleFactor"  Margin="24,0,7,0" Width="100" TextAlignment="Right"  KeyDown="TextBox_KeyDown" GotFocus="TextBox_GotFocus"
+                     Text="{Binding Path=Transformation.ScaleFactor, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
         
         <StackPanel Grid.Row="5" Orientation="Horizontal" Margin="0,3,0,0" HorizontalAlignment="Right" Grid.ColumnSpan="2">
             <TextBlock Margin="0,3,-5,0"  Text="Rotation (dd.dd°)" Style="{DynamicResource Esri_TextBlockRegular}"/>
-            <TextBox x:Name="Rotation"  Margin="24,0,7,0" Width="100" TextAlignment="Right" Text="{Binding Path=Transformation.Rotation, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="Rotation"  Margin="24,0,7,0" Width="100" TextAlignment="Right"  KeyDown="TextBox_KeyDown" GotFocus="TextBox_GotFocus"
+                     Text="{Binding Path=Transformation.Rotation, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
 
         <StackPanel Margin="78,7,0,0" Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Left" Grid.ColumnSpan="2">

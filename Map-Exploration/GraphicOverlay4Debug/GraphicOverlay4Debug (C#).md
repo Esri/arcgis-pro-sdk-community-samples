@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,28 +29,23 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to ArcGIS Pro.  
-1. In ArcGIS Pro open a new project with an empty map and after the map is displayed select the 'Visual Debug' tab  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Launch the debugger to ArcGIS Pro.  
+3. In ArcGIS Pro open a new project with an empty map and after the map is displayed select the 'Visual Debug' tab  
 ![UI](Screenshots/Screen1.png)  
-  
-1. Select the 'Sketch Point' tool and start to sketch points on the map.  Each sketched point will be added to the map as a graphic overlay.  
+4. Select the 'Sketch Point' tool and start to sketch points on the map.  Each sketched point will be added to the map as a graphic overlay.  
 ![UI](Screenshots/Screen2.png)  
-  
-1. Select the 'Sketch Line' and 'Sketch Polygon' tools to add lines and polygons to the graphic overlay.  
+5. Select the 'Sketch Line' and 'Sketch Polygon' tools to add lines and polygons to the graphic overlay.  
 ![UI](Screenshots/Screen3.png)  
-  
-1. Click on the 'Clear Graphics' button to clear all overlay graphics.  
+6. Click on the 'Clear Graphics' button to clear all overlay graphics.  
 In order to make use the 'visual debug' capabilities you can simply:  
+7. Copy the two regions from the sample module.cs file into your module.cs: #region Overlay Helpers, and #region Symbol Helpers  
+8. Then paste the following code snippet in order to display your geometry as a graphic overlay  
+9. QueuedTask.Run(() => Module9.AddOverlay(geometry, Module9.GetPointSymbolRef())); // for points  
+10. QueuedTask.Run(() => Module10.AddOverlay(geometry, Module10.GetLineSymbolRef())); // for lines  
+11. QueuedTask.Run(() => Module11.AddOverlay(geometry, Module11.GetPolygonSymbolRef())); // for polygons  
+12. Module12.ClearGraphics(); // to clear the graphic overlay  
   
-1. Copy the two regions from the sample module.cs file into your module.cs: #region Overlay Helpers, and #region Symbol Helpers  
-1. Then paste the following code snippet in order to display your geometry as a graphic overlay  
-1. QueuedTask.Run(() => Module1.AddOverlay(geometry, Module1.GetPointSymbolRef())); // for points  
-1. QueuedTask.Run(() => Module1.AddOverlay(geometry, Module1.GetLineSymbolRef())); // for lines  
-1. QueuedTask.Run(() => Module1.AddOverlay(geometry, Module1.GetPolygonSymbolRef())); // for polygons  
-1. Module1.ClearGraphics(); // to clear the graphic overlay  
-  
-
 
 <!-- End -->
 

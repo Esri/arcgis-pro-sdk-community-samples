@@ -23,26 +23,29 @@ using System.Threading.Tasks;
 
 namespace Notifications
 {
-	/// <summary>
-	/// This sample illustrates notifications in the application.  There are two main categories of notifications - toast notifications
-	/// which are transient message to the user that contains relevant, time-sensitive information and provides quick access to related 
-	/// content in an application; these appear in the top right hand corner of the display and last for a few seconds. The second category 
-	/// of notification are more permanent and are displayed in the notification dock pane.  These type of notifications can be further 
-	/// classified into application and project notifications. 
-	/// </summary>
-	/// <remarks>
-	/// 1. In Visual studio click the Build menu. Then select Build Solution.
-	/// 1. Click Start button to open ArcGIS Pro.
-	/// 1. ArcGIS Pro will open, open any project or create a new project.
-	/// 1. Activate the Add-In tab. 
-	/// 1. Click the 'Toast Notification' button and see a toast notification appear in the upper right of the application.
-	/// ![UI](Screenshots/Screen1.png)
-	/// 1. Click the 'My Toast Notification' button and see a toast notification appear in the upper right of the application.  Click the toast notification and a messagebox saying 'Hello World' will appear. 
-	/// 1. Open the notification dock pane by clicking on the bell button in the upper right of the application. 
-	/// 1. Click the 'Add Notifications' button and see a number of notifications added to the notification dock pane.
-	/// 1. Click the 'Remove Notifications' button and see two of those notifications be removed from the dock pane.
-	/// </remarks>
-	internal class Module1 : Module
+  /// <summary>
+  /// This sample illustrates notifications in the application.  There are two main categories of notifications - toast notifications
+  /// which are transient message to the user that contains relevant, time-sensitive information and provides quick access to related 
+  /// content in an application; these appear in the top right hand corner of the display and last for a few seconds. The second category 
+  /// of notification are more permanent and are displayed in the notification dock pane.  These type of notifications can be further 
+  /// classified into application and project notifications. 
+  /// </summary>
+  /// <remarks>
+  /// 1. In Visual studio click the Build menu. Then select Build Solution.
+  /// 1. Click Start button to open ArcGIS Pro.
+  /// 1. ArcGIS Pro will open, open any project or create a new project.
+  /// 1. Activate the Add-In tab. 
+  /// ![UI](Screenshots/Screen1.png)
+  /// 1. Click the 'Toast Notification' button and see a toast notification appear in the upper right of the application.
+  /// ![UI](Screenshots/Screen2.png)
+  /// 1. Click the 'Notification with Feedback' button and see a toast notification appear in the upper right of the application.  Click on that toast notification and a messagebox saying 'This message was just removed' will appear. 
+  /// ![UI](Screenshots/Screen3.png)
+  /// 1. Click the 'Add Set of Notifications' button and see a number of notifications added to the notification dock pane.  This button will also open the notification dock pane if it's now already open.
+  /// ![UI](Screenshots/Screen4.png)
+  /// 1. Click the 'Remove Notifications' button and see two of those notifications be removed from the notification dock pane.
+  /// ![UI](Screenshots/Screen5.png)
+  /// </remarks>
+  internal class Module1 : Module
   {
     private static Module1 _this = null;
 
@@ -55,6 +58,15 @@ namespace Notifications
       {
         return _this ?? (_this = (Module1)FrameworkApplication.FindModule("Notifications_Module"));
       }
+    }
+
+    internal static void ShowNotificationDockpane()
+    {
+      IPlugInWrapper wrapper = FrameworkApplication.GetPlugInWrapper("esri_core_notificationButton");
+      var command = wrapper as ICommand;
+
+      if ((command != null) && command.CanExecute(null))
+        command.Execute(null);
     }
 
     #region Overrides

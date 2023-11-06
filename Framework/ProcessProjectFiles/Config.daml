@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="ProcessProjectFiles.dll" defaultNamespace="ProcessProjectFiles" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{02a105ed-4e4e-4da3-ad08-177e79f78400}" version="2.2" desktopVersion="3.0.0">
+    <Name>ProcessProjectFiles</Name>
+    <Description>ProcessProjectFiles description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>4/6/2023 05:13:00</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ProcessProjectFiles_Module" className="Module1" autoLoad="false" 
+                  caption="Process Project Files">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="ProcessProjectFiles_Tab1" caption="Process .aprx" keytip="X">
+          <group refID="ProcessProjectFiles_Group1"/>
+        </tab>
+      </tabs>
+      <groups>
+        <group id="ProcessProjectFiles_Group1" caption="Process Project Files" 
+               keytip="XG">
+          <button refID="ProcessProjectFiles_OpenProjectDockpane_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <button id="ProcessProjectFiles_OpenProjectDockpane_ShowButton"
+                caption="Show Process Project Files" keytip="X1"
+                className="OpenProcessProjectFiles_ShowButton" loadOnClick="true"
+                smallImage="ArcGISProjectSave16"
+                largeImage="ArcGISProjectSave32">
+          <tooltip heading="Show Process Project Files">Shows the Dockpane to process a set of ArcGIS Pro project files<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="ProcessProjectFiles_OpenProjectDockpane" caption="Process .aprx project files" 
+                  className="ProcessProjectFilesViewModel" dock="group" 
+                  dockWith="esri_core_projectDockPane">
+          <content className="ProcessProjectFilesView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="MemoryGeodatabase.dll" defaultNamespace="MemoryGeodatabase" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{723c64ec-08d6-44fb-8b82-c27fed0eba6a}" version="1.0" desktopVersion="3.1.41833">
+    <Name>MemoryGeodatabase</Name>
+    <Description>MemoryGeodatabase description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, https://www.esri.com</Company>
+    <Date>3/14/2023 3:50:11 PM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="MemoryGeodatabase_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="MemoryGeodatabase_Tab1" caption="Memory GDB" keytip="T0">
+					<group refID="MemoryGeodatabase_Group1"/>
+				</tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="MemoryGeodatabase_Group1" caption="Performance Tests" keytip="G0">
+          <!-- host controls within groups -->
+          <button refID="MemoryGeodatabase_MemoryGDBStats_ShowButton" size="large" />
+          <button refID="MemoryGeodatabase_CreateGDB" size="large" />
+          <comboBox refID="MemoryGeodatabase_RecordCount" />
+          <button refID="MemoryGeodatabase_AddRecords" size="large" />
+          <button refID="MemoryGeodatabase_CalculateFields" size="large" />
+					<button refID="MemoryGeodatabase_Add2Map" size="large" />
+				</group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="MemoryGeodatabase_CreateGDB" caption="Create GDB" 
+								className="CreateGDB" loadOnClick="true" keytip="B0"
+								smallImage="GeodatabaseNew16" 
+								largeImage="GeodatabaseNew32">
+          <tooltip heading="Create GDB">Create Feature Classes for testing<disabledText /></tooltip>
+        </button>
+        <comboBox id="MemoryGeodatabase_RecordCount" caption="Cycles" 
+									className="RecordCount" itemWidth="50" keytip="C0"
+									extendedCaption="# of records to create" isEditable="false" 
+									isReadOnly="true" resizable="true">
+          <tooltip heading="Cycles"># of records to create of test cycles to run<disabledText /></tooltip>
+        </comboBox>
+        <button id="MemoryGeodatabase_AddRecords" caption="Add Records" 
+								className="AddRecords" loadOnClick="true" keytip="B1"
+								smallImage="AddHuffModel16"
+								largeImage="AddHuffModel32">
+          <tooltip heading="Add Records">Add # cycles of records to F/C<disabledText /></tooltip>
+        </button>
+        <button id="MemoryGeodatabase_CalculateFields" caption="Calculate Fields" 
+								className="CalculateFields" loadOnClick="true" keytip="B2"
+								smallImage="TableCalculateField16"
+								largeImage="TableCalculateField32">
+          <tooltip heading="Calculate Fields">Recalculate the columns of all records<disabledText /></tooltip>
+        </button>
+        <button id="MemoryGeodatabase_MemoryGDBStats_ShowButton" 
+								caption="Show Memory GDB Stats" 
+								className="MemoryGDBStats_ShowButton" loadOnClick="true" keytip="B3" 
+								smallImage="ContentsWindowShow16"
+								largeImage="ContentsWindowShow32">
+          <tooltip heading="Show Memory GDB Stats">
+						Show Dockpane with Memory GDB Test Stats<disabledText /></tooltip>
+        </button>
+				<button id="MemoryGeodatabase_Add2Map" caption="Add Test F/Cs to Map"
+								className="MemoryAdd2Map" loadOnClick="true" keytip="B5"
+								smallImage="AddContent16"
+								largeImage="AddContent32">
+					<tooltip heading="Add Test F/Cs to Map">
+						Add Memory and File Geodatabase Test Feature classes to Map<disabledText />
+					</tooltip>
+				</button>
+			</controls>
+      <dockPanes>
+        <dockPane id="MemoryGeodatabase_MemoryGDBStats" 
+									caption="GDB Performance Stats" 
+									className="MemoryGDBStatsViewModel" dock="group" 
+									dockWith="esri_core_projectDockPane">
+          <content className="MemoryGDBStatsView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="DockpaneWithLayerFieldSelection.dll" defaultNamespace="DockpaneWithLayerFieldSelection" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{ef55aa05-4419-4f4b-9c95-9115f51227f8}" version="1.0" desktopVersion="3.1.41833">
+    <Name>DockpaneWithLayerFieldSelection</Name>
+    <Description>DockpaneWithLayerFieldSelection description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>3/17/2023 12:51:45 PM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="DockpaneWithLayerFieldSelection_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="DockpaneWithLayerFieldSelection_Tab1" caption="New Tab">
+          <group refID="DockpaneWithLayerFieldSelection_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="DockpaneWithLayerFieldSelection_Group1" caption="Dockpane" 
+							 keytip="G1" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="DockpaneWithLayerFieldSelection_DockpaneWithLayerFieldSelection_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="DockpaneWithLayerFieldSelection_DockpaneWithLayerFieldSelection_ShowButton"
+								caption="Show Layers &amp; Field Selection" keytip="B0"
+								className="DockpaneWithLayerFieldSelection_ShowButton"
+								loadOnClick="true" 
+								smallImage="SymbolLayersTab16" 
+								largeImage="SymbolLayersTab32">
+          <tooltip heading="Show Layers &amp; Field Selection">Shows a Dockpane with a Feature Layer and Field Dropdown<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="DockpaneWithLayerFieldSelection_DockpaneWithLayerFieldSelection" caption="DockpaneWithLayerFieldSelection" className="DockpaneWithLayerFieldSelectionViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="DockpaneWithLayerFieldSelectionView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

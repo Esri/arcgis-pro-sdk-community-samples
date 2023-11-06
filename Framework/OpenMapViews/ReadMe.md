@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,23 +29,19 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
-1. Open the "C:\Data\Admin\AdminSample.aprx" project.  
-1. Click on the Add-In tab on the ribbon.  
-1. Within this tab there is a **Show Open Mapviews Dockpane** button. Click on the button to activate the Open Mapviews Dockpane.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Click Start button to open ArcGIS Pro.  
+3. ArcGIS Pro will open.   
+4. Open the "C:\Data\Admin\AdminSample.aprx" project.  
+5. Click on the Add-In tab on the ribbon.  
+6. Within this tab there is a **Show Open Mapviews Dockpane** button. Click on the button to activate the Open Mapviews Dockpane.  
 ![UI](Screenshots/Screen1.png)  
-  
-1. On the dockpane click on one of the states to view the associated mapview pane.  
+7. On the dockpane click on one of the states to view the associated mapview pane.  
 ![UI](Screenshots/Screen2.png)  
-  
-1. On the dockpane click on one of the states where 'Has Mapview' to hide the associated mapview pane.  
+8. On the dockpane click on one of the states where 'Has Mapview' to hide the associated mapview pane.  
 ![UI](Screenshots/Screen3.png)  
+9. Open the catalog view to see which maps were added to your project.  
   
-1. Open the catalog view to see which maps were added to your project.  
-  
-
 
 <!-- End -->
 

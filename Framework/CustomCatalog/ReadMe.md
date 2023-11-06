@@ -17,8 +17,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -33,19 +33,17 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.    
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.   
-1. Open any project.   
-1. Click the Add-in tab  
-1. In the Add-in tab, click the "Custom Catalog" button.  
-1. A Custom Catalog dockpane will display. This dockpane has two tab headers, Project and Portal tabs.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Click Start button to open ArcGIS Pro.  
+3. ArcGIS Pro will open.   
+4. Open any project.   
+5. Click the Add-in tab  
+6. In the Add-in tab, click the "Custom Catalog" button.  
+7. A Custom Catalog dockpane will display. This dockpane has two tab headers, Project and Portal tabs.  
 ![UI](screenshots/screen1.png)  
-  
-1. Click the Project tab. Notice the Tabindicator control that is displayed. Scroll through the 3 icons to see the display change.  
+8. Click the Project tab. Notice the Tabindicator control that is displayed. Scroll through the 3 icons to see the display change.  
 ![UI](screenshots/screen2.png)  
   
-
 
 <!-- End -->
 

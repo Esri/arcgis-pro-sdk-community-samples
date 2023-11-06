@@ -20,7 +20,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Mapping;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 
-namespace UndoRedo
+namespace PreRel_UndoRedo
 {
   /// <summary>
   /// A sample undo/redo operation that illustrates zoom in and zoom out actions. 
@@ -53,7 +53,7 @@ namespace UndoRedo
     /// </summary>
     public override string Category
     {
-      get { return UndoRedo.Category; }
+      get { return PreRel_UndoRedo.Category; }
     }
 
     /// <summary>

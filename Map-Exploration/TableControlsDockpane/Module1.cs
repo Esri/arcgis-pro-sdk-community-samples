@@ -51,7 +51,7 @@ namespace TableControlsDockpane
     /// 1. Select the FeatureTest.aprx project
     /// 1. Open the current active map's Contents dockpane and select the layers for which to view the attribute tables:
     /// ![UI](Screenshots/Screenshot1.png)
-    /// 1. Click on the ADD-IN tab and the click the 'Show AttributeTables' button.
+    /// 1. Click on the ADD-IN tab and then click the 'Show AttributeTables' button.
     /// 1. For each selected layer on the Content TOC a tab and the corresponding TableControl is added on the Attribute table viewer dockpane:
     /// ![UI](Screenshots/Screenshot2.png)
     /// 1. Click any row in one of those tables then right click and select 'zoom to feature' from the context menu.

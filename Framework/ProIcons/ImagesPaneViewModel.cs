@@ -18,13 +18,19 @@
 */
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
+using ArcGIS.Desktop.Internal.Mapping;
+using Microsoft.Win32;
 using System;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace ProIcons
 {
@@ -33,6 +39,8 @@ namespace ProIcons
     private const string _viewPaneID = "ProIcons_ImagesPane";
     private ICommand _searchCmd;
     private string _searchText;
+    private ImageSource _currentImage = null;
+
     ResourceDictionary _resourncePng;
     ResourceDictionary _resourncePngDark;
     ResourceDictionary _resournceXaml;
@@ -61,12 +69,75 @@ namespace ProIcons
     {
       get
       {
-        if (_searchCmd == null)
-          _searchCmd = new RelayCommand(new Action<object>((p) => InvokeSearchCommand()), () => { return true; }, false, false);
+        _searchCmd ??= new RelayCommand(new Action<object>((p) => InvokeSearchCommand()), () => { return true; }, false, false);
 
         return _searchCmd;
       }
     }
+
+    public ICommand SvgSaveCmd 
+    {
+      get => new RelayCommand(new Action<object>((p) =>
+      {
+        // Displays a SaveFileDialog so the user can save the Image
+        // assigned to Button2.
+        SaveFileDialog saveFileDialog1 = new()
+        {
+          Filter = "Png Image|*.Png",
+          Title = "Save as a Png File",
+          FileName = _searchText
+        };
+        saveFileDialog1.ShowDialog();
+
+        // If the file name is not an empty string open it for saving.
+        if (saveFileDialog1.FileName != "")
+        {
+          // Saves the Image via a FileStream created by the OpenFile method.
+          System.IO.FileStream fs =
+              (System.IO.FileStream)saveFileDialog1.OpenFile();
+          // Saves the Image in the appropriate ImageFormat based upon the
+          // File type selected in the dialog box.
+          // NOTE that the FilterIndex property is one-based.
+          switch (saveFileDialog1.FilterIndex)
+          {
+            case 1:
+              if (_currentImage != null)
+              {
+                SaveDrawingToFileStream(fs, (_currentImage as DrawingImage).Drawing, Scale);
+              }
+              break;
+          }
+          fs.Close();
+        }
+      }), () => { return true; }, false, false);
+    }
+
+    public void SaveDrawingToFileStream (FileStream fs, Drawing drawing, double Scale)
+    {
+      var drawingImage = new Image { Source = new DrawingImage(drawing) };
+      var width = drawing.Bounds.Width * Scale;
+      var height = drawing.Bounds.Height * Scale;
+      drawingImage.Arrange(new Rect(0, 0, width, height));
+
+      var bitmap = new RenderTargetBitmap((int)width, (int)height, 96, 96, PixelFormats.Pbgra32);
+      bitmap.Render(drawingImage);
+
+      var encoder = new PngBitmapEncoder();
+      encoder.Frames.Add(BitmapFrame.Create(bitmap));
+      encoder.Save(fs);
+    }
+
+    private bool _svgSaveEnable = false;
+
+    public bool SvgSaveEnable
+    {
+      get => _svgSaveEnable;
+      set
+      {
+        SetProperty(ref _svgSaveEnable, value);
+      }
+    }
+
 
     internal void InvokeSearchCommand()
     {
@@ -105,6 +176,9 @@ namespace ProIcons
       Png = png;
       PngDark = pngDark;
       Xaml = xaml;
+      _currentImage = xaml;
+      _currentImage.Freeze();
+      SvgSaveEnable = true;
       XamlDark = xamlDark;
     }
 
@@ -234,7 +308,7 @@ namespace ProIcons
       }
     }
 
-    private ObservableCollection<string> _targets = new ObservableCollection<string>();
+    private ObservableCollection<string> _targets = new();
 
     public ObservableCollection<String> Targets
     {

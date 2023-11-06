@@ -15,8 +15,8 @@ Language:              C#
 Subject:               Geometry
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,19 +31,17 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. ArcGIS Pro will open.  
-1. Either create a new blank project OR open an existing project.  
-1. Click on the ADD-IN TAB.  
-1. Click on the *Pick Coord Sys.* button.  The code behind queries for all available coordinate systems.    
-1. The Pick Coord System dialog will open up.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Click Start button to open ArcGIS Pro.  
+3. ArcGIS Pro will open.  
+4. Either create a new blank project OR open an existing project.  
+5. Click on the ADD-IN TAB.  
+6. Click on the *Pick Coord Sys.* button.  The code behind queries for all available coordinate systems.    
+7. The Pick Coord System dialog will open up.  
 ![Coordinate systems loading](Screenshots/Screen1.png)  
-  
-1. Choose a coordinate System and the Coordinate Details will pouplate with the spatial reference information.  
+8. Choose a coordinate System and the Coordinate Details will pouplate with the spatial reference information.  
 ![Coordinate systems dialog](Screenshots/Screen2.png)  
   
-
 
 <!-- End -->
 

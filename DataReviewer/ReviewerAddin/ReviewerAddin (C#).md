@@ -15,8 +15,8 @@ Language:              C#
 Subject:               DataReviewer
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,7 +31,7 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a Reviewer workspace and Reviewer batch Jobs needed by the sample add-in.  Make sure that the Sample data is unzipped in c:\data and c:\data\DataReviewer is available.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a Reviewer workspace and Reviewer batch Jobs needed by the sample add-in.  Make sure that the Sample data is unzipped in c:\data and c:\data\DataReviewer is available.
 2. You can modify AddReviewerResults_Basic() method to update the path of the Reviewer Workspace.  
 3. You can modify AddBatchJobs_Basic() to update the path of the Reviewer Batch job.  
 4. In Visual Studio click the Build menu. Then select Build Solution.  
@@ -59,7 +59,6 @@ Visual Studio:         2022
 8.h Right-click a Batch Job in Reviewer Batch Jobs gallery and click Remove. This Batch Job will be removed from the Project Pane.  
 ![UI](Screenshots/Screen2.png)  
   
-
 
 <!-- End -->
 

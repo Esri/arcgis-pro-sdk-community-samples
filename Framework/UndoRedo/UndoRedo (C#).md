@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -35,10 +35,9 @@ OperationManagers), but two panes showing the same map will show the same operat
 When a window becomes active, its OperationManager is requested and connected to the undo/redo user interface.   
   
 This sample contains a dockpane which has its own OperationManager.   The two buttons at the top of the dockpane illustrate how to  create an undo/redo operation and add it to the OperationManager.  The third button at the top of the dockpane illustrates a  compositeOperation which allows many operations to be grouped into a single composite operation.   The 4 buttons at the bottom of the  dockpane manipulate the undo/redo stack - performing undo and redo actions; remove undo actions and clearing the stacks.   
-
   
   
-1. Open this solution in Visual Studio.    
+1. Open this solution in Visual Studio.
 2. Click the Build menu. Then select Build Solution.  
 3. Click Start button to open ArcGIS Pro. ArcGIS Pro will open.  
 4. Open a project containing data.    
@@ -48,11 +47,9 @@ This sample contains a dockpane which has its own OperationManager.   The two bu
 8. Use the Fixed Zoom In and Fixed Zoom Out buttons to see zoom in and zoom out operations added to the undo stack for the sample dockpane.  
 9. Use the Undo and Redo buttons to undo and redo the operations.  Use the Remove Operation button to pop an operation (without undoing it).    
  Use the Clear All Operations button to clear all the operations of a particular category from the stack.      
-
   
 ![UI](Screenshots/Screen.png)  
   
-
 
 <!-- End -->
 

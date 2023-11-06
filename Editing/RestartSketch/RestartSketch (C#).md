@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -32,27 +32,23 @@ Visual Studio:         2022
 The main use case for this functionality is to start creating a new feature relative to somewhere else such as a distance and bearing from a road intersection or a distance along a stream.  
 To use this add-in:  
   
-1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\FeatureTest\FeatureTest.aprx" is available.  
-1. Open this solution in Visual Studio.  
-1. Click the build menu and select Build Solution.  
-1. Launch the debugger to open ArCGIS Pro. ArcGIS Pro will open.    
-1. Open the "C:\Data\FeatureTest\FeatureTest.aprx" project.  
-1. Create an edit sketch representing the offset from an origin. E.g. start the sketch at an intersection and digitize a segment with direction and distance constraints.  
-1. Start editing on the "TestLines" feature layer.  Place the first vertex by snapping to a given point and right click to chose a direction.  
+1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\FeatureTest\FeatureTest.aprx" is available.
+2. Open this solution in Visual Studio.  
+3. Click the build menu and select Build Solution.  
+4. Launch the debugger to open ArCGIS Pro. ArcGIS Pro will open.    
+5. Open the "C:\Data\FeatureTest\FeatureTest.aprx" project.  
+6. Create an edit sketch representing the offset from an origin. E.g. start the sketch at an intersection and digitize a segment with direction and distance constraints.  
+7. Start editing on the "TestLines" feature layer.  Place the first vertex by snapping to a given point and right click to chose a direction.  
 ![UI](Screenshots/Screen1.png)  
-  
-1. Right click to set a given distance.  
+8. Right click to set a given distance.  
 ![UI](Screenshots/Screen2.png)  
-  
-1. A new vertex has now been placed in a given direction and distance from a starting location.  
-1. Now I want to start my 'real' sketch at this vertex (with given direction and distance from a starting location).  
-1. Right click to display the sketch context menu and click 'Restart Sketch'.  
+9. A new vertex has now been placed in a given direction and distance from a starting location.  
+10. Now I want to start my 'real' sketch at this vertex (with given direction and distance from a starting location).  
+11. Right click to display the sketch context menu and click 'Restart Sketch'.  
 ![UI](Screenshots/Screen3.png)  
-  
-1. The sketch is restarted from the last sketch point.  
+12. The sketch is restarted from the last sketch point.  
 ![UI](Screenshots/Screen4.png)  
   
-
 
 <!-- End -->
 

@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Content
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,27 +31,22 @@ Visual Studio:         2022
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
    
   
-1. Open this solution in Visual Studio.  
-1. Click the build menu and select Build Solution.  
-1. Click the Start button to open ArCGIS Pro.  
-1. Open any project either a new or existing Project.  
-1. Click on the Add-in tab and see that the "Folder Connection Manager" group appears on the "add-in" tab.  
-1. Create a new Folder Connection in the Project window as shown below.    
+1. Open this solution in Visual Studio.
+2. Click the build menu and select Build Solution.  
+3. Click the Start button to open ArCGIS Pro.  
+4. Open any project either a new or existing Project.  
+5. Click on the Add-in tab and see that the "Folder Connection Manager" group appears on the "add-in" tab.  
+6. Create a new Folder Connection in the Project window as shown below.    
 ![UI](Screenshots/Screen1.png)    
-  
-1. On the Add-in tab click the "Display Connections" button in the "Folder Connection Manager" Add-In group to see the list of all current folder connection path strings.  
+7. On the Add-in tab click the "Display Connections" button in the "Folder Connection Manager" Add-In group to see the list of all current folder connection path strings.  
 ![UI](Screenshots/FolderConnect.png)    
-  
-1. On the Add-in tab click the "Save Connections" button in the "Folder Connection Manager" Add-In group.The browser pop up appears in which create a txt file on the home folder under projects to save the folderpath.  
+8. On the Add-in tab click the "Save Connections" button in the "Folder Connection Manager" Add-In group.The browser pop up appears in which create a txt file on the home folder under projects to save the folderpath.  
 ![UI](Screenshots/RemoveFolder1.png)  
-  
-1. Remove the Folder Connections you just added by right-clicking on folder name in the Project window and selecting "Remove".  
+9. Remove the Folder Connections you just added by right-clicking on folder name in the Project window and selecting "Remove".  
 ![UI](Screenshots/RemoveFolder.png)  
+10. Load your saved Folder Connection by clicking the "Load Connection" button in the "Folder Connection Manager" Add-In group. Select the text file you saved in the previous step.  
+11. Verify that your Folder Connections have been programmatically added back under 'Folders'.  
   
-1. Load your saved Folder Connection by clicking the "Load Connection" button in the "Folder Connection Manager" Add-In group. Select the text file you saved in the previous step.  
-1. Verify that your Folder Connections have been programmatically added back under 'Folders'.  
-  
-
 
 <!-- End -->
 

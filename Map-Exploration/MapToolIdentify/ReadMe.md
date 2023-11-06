@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Map-Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,24 +29,21 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a dataset called 'Interacting with Maps' with both 2D and 3D data.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.  
-1. Open this solution in Visual Studio.    
-1. Click the build menu and select Build Solution.  
-1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.  
-1. Open the project "Interacting with Maps.aprx" in the "C:\Data\Interacting with Maps" folder since this project contains 2D and 3D data.  
-1. Open the 2D crime map  
-1. Click on the Add-in tab   
-1. Click the 'Identify Features' button and draw a circle over the features to show a count by layer for.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a dataset called 'Interacting with Maps' with both 2D and 3D data.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.
+2. Open this solution in Visual Studio.    
+3. Click the build menu and select Build Solution.  
+4. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.  
+5. Open the project "Interacting with Maps.aprx" in the "C:\Data\Interacting with Maps" folder since this project contains 2D and 3D data.  
+6. Open the 2D crime map  
+7. Click on the Add-in tab   
+8. Click the 'Identify Features' button and draw a circle over the features to show a count by layer for.  
 ![UI](Screenshots/2MapTool2D.png)  
-  
-1. Validate the result.  
+9. Validate the result.  
 ![UI](Screenshots/2MapTool2D-2.png)  
-  
-1. Switch to the Portland 3D City map view and perform the identify feature on the 3D scene.  
-1. Validate the result.  
+10. Switch to the Portland 3D City map view and perform the identify feature on the 3D scene.  
+11. Validate the result.  
 ![UI](Screenshots/2MapTool3D.png)  
   
-
 
 <!-- End -->
 

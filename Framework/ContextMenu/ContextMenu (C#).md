@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,18 +29,15 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Example 1, ContextMenuTool1.cs illustrates the simplest and most straightforward approach - associating a predefined menu with the map tool ContextMenuID property. For example 1, right-click behavior is "built in".	///   
+1. Example 1, ContextMenuTool1.cs illustrates the simplest and most straightforward approach - associating a predefined menu with the map tool ContextMenuID property. For example 1, right-click behavior is "built in".	///
 ![Example 1](Screenshots/Screen1.png)  
-  
-1. Example 2, ContextMenuTool2.cs illustrates implementing custom right-click behavior to show the context menu "manually". The menu is the same menu used in Example 1.  
+2. Example 2, ContextMenuTool2.cs illustrates implementing custom right-click behavior to show the context menu "manually". The menu is the same menu used in Example 2.  
 ![Example 2](Screenshots/Screen2.png)  
-  
-1. Example 3, ContextMenuTool3.cs illustrates the most flexible approach but also the most demanding to implement: A Dynamic context menu, built on-the-fly along with custom right-click behavior to show the menu.<br/>  
+3. Example 3, ContextMenuTool3.cs illustrates the most flexible approach but also the most demanding to implement: A Dynamic context menu, built on-the-fly along with custom right-click behavior to show the menu.<br/>  
 In Example 3, the tool sketches a line and, from the context menu, line features can be selected to add their feature shape into the sketch. The insertion point (for the shape) is the right-click location - the same location used to popup the context menu.<br/>  
 ![Example 3](Screenshots/Screen3.png)  
 Consult the <a href="https://github.com/Esri/arcgis-pro-sdk/wiki/ProGuide-Context-Menus">ArcGIS Pro SDK ProGuide Context Menus</a> for more details.  
   
-
 
 <!-- End -->
 

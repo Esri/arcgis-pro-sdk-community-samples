@@ -15,8 +15,8 @@ Language:              C#
 Subject:               Console
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: 4.6.1
 ```
@@ -31,18 +31,16 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  Make sure that the Sample data is unzipped in c:\data and "C:\Data\SDK\SDK.gdb" is available.  
-1. Open this solution in Visual Studio   
-1. Click the build menu and select Build Solution.  
-1. Specify a valid path to a file geodatabase as your debug command line parameter   
-1. Click the Start button to run the console app.  
-1. Note that the AppDomain is modified on startup to resolve the Assembly Paths for ArcGIS.Core.dll and ArcGIS.CoreHost.dll by using the ArcGIS Pro installation location.  
-1. View the table definition in your file geodatabase  
+1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  Make sure that the Sample data is unzipped in c:\data and "C:\Data\SDK\SDK.gdb" is available.
+2. Open this solution in Visual Studio   
+3. Click the build menu and select Build Solution.  
+4. Specify a valid path to a file geodatabase as your debug command line parameter   
+5. Click the Start button to run the console app.  
+6. Note that the AppDomain is modified on startup to resolve the Assembly Paths for ArcGIS.Core.dll and ArcGIS.CoreHost.dll by using the ArcGIS Pro installation location.  
+7. View the table definition in your file geodatabase  
 ![UI](Screenshots/ConsoleWindow.png)  
+8. Once the output stops press any key to close the application.    
   
-1. Once the output stops press any key to close the application.    
-  
-
 
 <!-- End -->
 

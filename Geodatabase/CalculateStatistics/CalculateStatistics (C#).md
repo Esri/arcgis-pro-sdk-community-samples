@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,20 +29,17 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a dataset called 'FeatureTest' with sample data for use by this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\FeatureTest" is available.    
-1. In Visual studio click the Build menu. Then select Build Solution.    
-1. Click Start button to open ArcGIS Pro.    
-1. In ArcGIS Pro open the 'C:\Data\FeatureTest\FeatureTest.aprx' project    
-1. Click on the ADD-IN tab which contains the 'Calculate Statistics' group.      
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a dataset called 'FeatureTest' with sample data for use by this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\FeatureTest" is available.
+2. In Visual studio click the Build menu. Then select Build Solution.    
+3. Click Start button to open ArcGIS Pro.    
+4. In ArcGIS Pro open the 'C:\Data\FeatureTest\FeatureTest.aprx' project    
+5. Click on the ADD-IN tab which contains the 'Calculate Statistics' group.      
 ![UI](Screenshots/Screen1.png)    
-  
-1. Click on the "Calculate Length" button to calculate the sum of all length field values for all features in the testlines feature layer.    
+6. Click on the "Calculate Length" button to calculate the sum of all length field values for all features in the testlines feature layer.    
 ![UI](Screenshots/Screen2.png)          
-  
-1. Click on the "Calculate Area" button to calculate the sum of all area field values for all features in the testPolygon feature layer.    
+7. Click on the "Calculate Area" button to calculate the sum of all area field values for all features in the testPolygon feature layer.    
 ![UI](Screenshots/Screen3.png)    
   
-
 
 <!-- End -->
 

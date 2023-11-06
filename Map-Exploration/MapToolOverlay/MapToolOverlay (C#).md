@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,24 +29,20 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual studio rebuild the solution.  
-1. Debug the add-in.  
-1. ArcGIS Pro opens, open any project.  
-1. Click on the Add-In Tab.  
-1. Exercise each MapTool by selecting the tool and the then click on the map, hold down the mouse button and move the mouse across the map.  
-1. First the Text Overlay:  
+1. In Visual studio rebuild the solution.
+2. Debug the add-in.  
+3. ArcGIS Pro opens, open any project.  
+4. Click on the Add-In Tab.  
+5. Exercise each MapTool by selecting the tool and the then click on the map, hold down the mouse button and move the mouse across the map.  
+6. First the Text Overlay:  
 ![UI](Screenshots/Screen1.png)  
-  
-1. The Point Overlay  
+7. The Point Overlay  
 ![UI](Screenshots/Screen2.png)  
-  
-1. The Line Overlay   
+8. The Line Overlay   
 ![UI](Screenshots/Screen3.png)  
-  
-1. The Arrow Overlay  
+9. The Arrow Overlay  
 ![UI](Screenshots/Screen4.png)  
   
-
 
 <!-- End -->
 

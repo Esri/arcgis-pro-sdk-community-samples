@@ -48,9 +48,10 @@
       <controls>
         <!-- add your controls here -->
         <button id="DockpaneWithProButtons_DockpaneWithButtons_ShowButton" keytip="B0"
-								caption="Probuttons Dockpane" className="DockpaneWithButtons_ShowButton" loadOnClick="true" 
-								smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" 
-								largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+								caption="Probuttons Dockpane" 
+								className="DockpaneWithButtons_ShowButton" loadOnClick="true" 
+								smallImage="Images16" 
+								largeImage="Images32">
           <tooltip heading="Show Dockpane">Show Probuttons Dockpane<disabledText /></tooltip>
         </button>
       </controls>

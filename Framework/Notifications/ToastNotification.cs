@@ -35,13 +35,15 @@ namespace Notifications
   /// </remarks>
   internal class ToastNotification : Button
   {
+    static int messageNo = 0;
+
     protected override void OnClick()
     {
       FrameworkApplication.AddNotification(new Notification()
       {
         Title = "Notification Title",
-        Message = "Notification Message",
-        ImageSource = System.Windows.Application.Current.Resources["ToastLicensing32"] as ImageSource
+        Message = $@"Notification # {++messageNo}",
+        ImageSource = System.Windows.Application.Current.Resources["Success_Toast48"] as ImageSource
       });
     }
   }
@@ -50,15 +52,17 @@ namespace Notifications
   /// Displays a custom toast notification in the application.  The custom toast notification provides an example of overriding the
   /// OnClick action providing a acustom action. 
   /// </summary>
-  internal class MyToastNotification : Button
+  internal class ToastNotificationWithFeedback : Button
   {
+    static int messageNo = 0;
+
     protected override void OnClick()
     {
-      FrameworkApplication.AddNotification(new MyNotification()
+      FrameworkApplication.AddNotification(new NotificationWithOnClick()
       {
-        Title = "My Notification Title",
-        Message = "My Notification Message",
-        ImageSource = System.Windows.Application.Current.Resources["ToastLicensing32"] as ImageSource
+        Title = "With OnClick feedback",
+        Message = $@"OnClick Notification # {++messageNo}",
+        ImageSource = System.Windows.Application.Current.Resources["Warning_Toast48"] as ImageSource
       });
     }
   }
@@ -66,13 +70,13 @@ namespace Notifications
   /// <summary>
   /// A custom notification. Provides an example of overriding the OnClick action providing a acustom action. 
   /// </summary>
-  internal class MyNotification : Notification
+  internal class NotificationWithOnClick : Notification
   {
     protected override void OnClick()
     {
       FrameworkApplication.RemoveNotification(this);
 
-      ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("hello world");
+      ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("This message was just removed.");
     }
   }
 }

@@ -43,14 +43,22 @@
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*"></ColumnDefinition>
         <ColumnDefinition Width="Auto"></ColumnDefinition>
+        <ColumnDefinition Width="Auto"></ColumnDefinition>
       </Grid.ColumnDefinitions>
       <Grid.RowDefinitions>
         <RowDefinition Height="Auto"></RowDefinition>
         <RowDefinition Height="*"></RowDefinition>
       </Grid.RowDefinitions>
       <TextBlock Grid.ColumnSpan="2" Grid.Row="0" Margin="5,0,5,0">Select Map Series Layout:</TextBlock>
-      <ComboBox Grid.Column="0" Grid.Row="1" Margin="5,0,5,0" ItemsSource="{Binding PageLayouts}" SelectedItem="{Binding SelectedPageLayout}" DisplayMemberPath="Name"/>
+      <ComboBox Grid.Column="0" Grid.Row="1" Margin="5" ItemsSource="{Binding PageLayouts}" SelectedItem="{Binding SelectedPageLayout}" DisplayMemberPath="Name"/>
       <Button Grid.Column="1" Grid.Row="1" Margin="5" Command="{Binding GenerateMapSeries}" Style="{DynamicResource Esri_SimpleButton}">Generate Series</Button>
+      
+      <Button Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right" MinWidth="0" MinHeight="0" Padding="5"
+              Margin="5" Style="{DynamicResource Esri_Button}" Command="{Binding CmdExportLayout}"
+              ToolTip="Export a layout to a File on Disk">
+        <Image Source="{Binding CmdExportLayoutImg}" Width="16" Height="16" />
+      </Button>
+        
     </Grid>
     <ListView Grid.Row="1" Margin="5" ItemsSource="{Binding MapSeriesItems}" 
               SelectedItem="{Binding SelectedMapSeriesItem}"

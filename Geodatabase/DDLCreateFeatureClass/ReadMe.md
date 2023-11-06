@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,18 +31,16 @@ Visual Studio:         2022
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 Using the sample:  
   
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Click Start button to open ArcGIS Pro.  
-1. Open any project in ArcGIS Pro with a Map that contains a feature layer with a File Geodatabase or Enterprise Geodatabase data source.   
-1. After the map view is open switch on the Pro Ribbon to the 'Add-in' tab.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
+2. Click Start button to open ArcGIS Pro.  
+3. Open any project in ArcGIS Pro with a Map that contains a feature layer with a File Geodatabase or Enterprise Geodatabase data source.   
+4. After the map view is open switch on the Pro Ribbon to the 'Add-in' tab.  
 ![UI](Screenshots/Screen1.png)  
-  
-1. Select a feature layer on the map's content dockpane.  Make sure the feature layer's datasource is either a file Geodatabase or an Enterprise Geodatabase.   
-1. The selected feature layer's datasource will be used to create a new Point feature class using the DLL API.    
-1. Click the "Create Test FeatureClass" button.  Refresh the Databases node on the Catalog dockpane to see the newly created feature layer.  
+5. Select a feature layer on the map's content dockpane.  Make sure the feature layer's datasource is either a file Geodatabase or an Enterprise Geodatabase.   
+6. The selected feature layer's datasource will be used to create a new Point feature class using the DLL API.    
+7. Click the "Create Test FeatureClass" button.  Refresh the Databases node on the Catalog dockpane to see the newly created feature layer.  
 ![UI](Screenshots/Screen2.png)  
   
-
 
 <!-- End -->
 

@@ -16,8 +16,8 @@ Language:              C#
 Subject:               Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -32,7 +32,7 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu. Then select Build Solution.  
+1. In Visual Studio click the Build menu. Then select Build Solution.
 2. Click Start button to open ArcGIS Pro.  
 3. ArcGIS Pro will open.   
 4. Open a map view that contains at least one Feature Layer whose source points to a Feature Class from an Enterprise Geodatabase (SQL Server)  
@@ -43,7 +43,6 @@ Visual Studio:         2022
 9. The combobox lists all domains and selecting a domain will generate a Query Layer with the name "RelatedDomains"+ the domain name selected  
 10. The Query layer lists the datasets referencing the domain selected   
   
-
 
 <!-- End -->
 

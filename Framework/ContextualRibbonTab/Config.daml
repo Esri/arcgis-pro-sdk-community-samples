@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="ContextualRibbonTab.dll" defaultNamespace="ContextualRibbonTab" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{df89c3d3-c556-4e71-bd5b-3ee30169cdaf}" version="1.0" desktopVersion="3.1.41833">
+    <Name>ContextualRibbonTab</Name>
+    <Description>ContextualRibbonTab description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>4/4/2023 08:56:44</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <conditions>
+    <!-- our custom condition -->
+    <insertCondition id="special_project_condition" caption="Projects starting with Feature">
+      <!-- our condition is set true or false based on this underlying state -->
+      <state id="special_project_state" />
+    </insertCondition>
+  </conditions>
+  <modules>
+    <insertModule id="ContextualRibbonTab_Module" className="Module1" autoLoad="true"
+                  caption="Module1">
+      <tabs>
+        <tab id="ContextualRibbonTab_Tab1" caption="Contextual Tab" keytip="T1"
+             condition="special_project_condition">
+          <group refID="ContextualRibbonTab_Group1"/>
+        </tab>
+      </tabs>
+      <groups>
+        <group id="ContextualRibbonTab_Group1" caption="Contextual Group"
+               appearsOnAddInTab="true" keytip="G1">
+          <button refID="ContextualRibbonTab_ContextualButton" size="large" />
+          <button refID="ContextualRibbonTab_ContextualDockpane_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <button id="ContextualRibbonTab_ContextualButton" caption="Contextual Button"
+                className="ContextualButton" loadOnClick="true" keytip="B1"
+                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png"
+                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="ContextualRibbonTab_ContextualDockpane_ShowButton" caption="Show Contextual Dockpane" 
+                className="ContextualDockpane_ShowButton" loadOnClick="true" keytip="B2"
+                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png"
+                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+          <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="ContextualRibbonTab_ContextualDockpane" caption="ContextualDockpane"
+                  className="ContextualDockpaneViewModel" dock="group"
+                  dockWith="esri_core_projectDockPane">
+          <content className="ContextualDockpaneView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,17 +29,16 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a geodatabase called 'ReviewerWorkspace.gdb' with both tables and feature classes.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\DataReviewer\ReviewerWorkspace.gdb" is available.  
-1. Open this solution in Visual Studio.    
-1. Click the build menu and select Build Solution.  
-1. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.  
-1. Open any project.  
-1. Click on the Add-in tab and see that a 'Show List Content Dockpane' button was added.  
-1. The 'Show List Content Dockpane' button opens the 'Show GDB Content' pane.   
-1. Click the 'Open GDB' button, navigate to C:\Data\DataReviewer, and click on ReviewerWorkspace.gdb.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a geodatabase called 'ReviewerWorkspace.gdb' with both tables and feature classes.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\DataReviewer\ReviewerWorkspace.gdb" is available.
+2. Open this solution in Visual Studio.    
+3. Click the build menu and select Build Solution.  
+4. Click the Start button to open ArCGIS Pro.  ArcGIS Pro will open.  
+5. Open any project.  
+6. Click on the Add-in tab and see that a 'Show List Content Dockpane' button was added.  
+7. The 'Show List Content Dockpane' button opens the 'Show GDB Content' pane.   
+8. Click the 'Open GDB' button, navigate to C:\Data\DataReviewer, and click on ReviewerWorkspace.gdb.  
 ![UI](Screenshots/Screen1.png)  
   
-
 
 <!-- End -->
 

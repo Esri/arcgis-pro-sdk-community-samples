@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -31,16 +31,15 @@ Visual Studio:         2022
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
     
   
-1. In Visual Studio, click the Build menu. Then select Build Solution.    
-1. Launch the debugger to open ArcGIS Pro.  
-1. Open any project with map views.   
-1. Select a layer in the Contents pane  
-1. Within the "Add-in" tab, click the Open button.  
-1. A table control will open and display the current content of the selected layer or table from the active map.  
-1. Select a few records in the table control.  Notice that the current map selection changes to reflect this.  
+1. In Visual Studio, click the Build menu. Then select Build Solution.
+2. Launch the debugger to open ArcGIS Pro.  
+3. Open any project with map views.   
+4. Select a layer in the Contents pane  
+5. Within the "Add-in" tab, click the Open button.  
+6. A table control will open and display the current content of the selected layer or table from the active map.  
+7. Select a few records in the table control.  Notice that the current map selection changes to reflect this.  
 ![UI](screenshots/tablecontrol.png)  
   
-
 
 <!-- End -->
 

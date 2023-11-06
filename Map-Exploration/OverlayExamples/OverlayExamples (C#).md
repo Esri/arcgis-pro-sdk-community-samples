@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,28 +29,24 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)  
-1. Make sure that the Sample data is unzipped in c:\data  
-1. Before you run the sample verify that the project C:\data\SDK\SDK 1.1.aprx"C:\Data\FeatureTest\FeatureTest.aprx" is present since this is required to run the sample.  
-1. In Visual Studio click the Build menu. Then select Build Solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. Open the "C:\Data\FeatureTest\FeatureTest.aprx" project.  
-1. Click on the Add-In tab on the ribbon.  
+1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
+2. Make sure that the Sample data is unzipped in c:\data  
+3. Before you run the sample verify that the project C:\data\SDK\SDK 3.3.aprx"C:\Data\FeatureTest\FeatureTest.aprx" is present since this is required to run the sample.  
+4. In Visual Studio click the Build menu. Then select Build Solution.  
+5. Launch the debugger to open ArcGIS Pro.  
+6. Open the "C:\Data\FeatureTest\FeatureTest.aprx" project.  
+7. Click on the Add-In tab on the ribbon.  
 There are 3 examples of working with the graphic overlay:    
-  
-1. "Add Overlay:" Sketch a line anywhere. Each time you sketch, the previous graphic is erased  
+8. "Add Overlay:" Sketch a line anywhere. Each time you sketch, the previous graphic is erased  
 ![UI](Screenshots/Screen1.png)  
-  
-1. "Add Overlay With Snapping:" Sketch a line anywhere but use snapping. The graphic will snap to existing line features  
+9. "Add Overlay With Snapping:" Sketch a line anywhere but use snapping. The graphic will snap to existing line features  
 ![UI](Screenshots/Screen2.png)  
-  
-1. "Add Overlay Track Mouse:" Digitize a point on top of a line. You have to click on a line feature. (2D Only)  
+10. "Add Overlay Track Mouse:" Digitize a point on top of a line. You have to click on a line feature. (2D Only)  
 For the third example, hold the mouse down to drag the graphic back and forth along the 2D line.  
 ![UI](Screenshots/Screen3.png)  
 Each mouse click will place a new graphic (and erase the previous one).  
 ![UI](Screenshots/Screen4.png)  
   
-
 
 <!-- End -->
 

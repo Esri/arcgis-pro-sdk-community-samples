@@ -14,8 +14,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -30,16 +30,14 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio, build the solution.  
-1. Launch the debugger to open ArcGIS Pro.  
-1. In Pro, open a map with feature layers or create a new map and add some.  
-1. Turn on the application snap modes Vertex, Edge and End from the snapping dropdown on the editing tab.  
-1. On the add-in tab, click Show LayerSnapModes to display the LayerSnapModes dockpane.  
+1. In Visual Studio, build the solution.
+2. Launch the debugger to open ArcGIS Pro.  
+3. In Pro, open a map with feature layers or create a new map and add some.  
+4. Turn on the application snap modes Vertex, Edge and End from the snapping dropdown on the editing tab.  
+5. On the add-in tab, click Show LayerSnapModes to display the LayerSnapModes dockpane.  
 ![UI](Screenshots/lsm_dockpane.png)  
+6. Toggle some of the layer snap modes and examine the effect when snapping to the layer with a tool such as the measure tool.  
   
-1. Toggle some of the layer snap modes and examine the effect when snapping to the layer with a tool such as the measure tool.  
-  
-
 
 <!-- End -->
 

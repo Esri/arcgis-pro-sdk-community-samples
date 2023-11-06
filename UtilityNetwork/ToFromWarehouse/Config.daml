@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2023 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="ToFromWarehouse.dll" defaultNamespace="ToFromWarehouse" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{f8c5fd45-e358-4ce5-9785-c37fe0cfaa84}" version="1.0" desktopVersion="3.1.41833">
+    <Name>ToFromWarehouse</Name>
+    <Description>Adds controls to easily move features to and from a warehouse location</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>6/23/2023 2:45:18 PM</Date>
+    <Subject>Utility Network</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ToFromWarehouse_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="ToFromWarehouse_Tab1" caption="To/From Warehouse" keytip="XT">
+          <group refID="ToFromWarehouse_Group1"/>
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ToFromWarehouse_Group1" caption="To/From Warehouse" keytip="G0">
+          <!-- host controls within groups -->
+          <tool refID="ToFromWarehouse_MoveToWarehouseTool" size="large" />
+					<tool refID="ToFromWarehouse_MoveFromWarehouseTool" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->     
+				<tool id="ToFromWarehouse_MoveToWarehouseTool" caption="Move To Warehouse" 
+							className="MoveToWarehouseTool" loadOnClick="true" keytip="T0"
+							smallImage="EditingFromStart16" 
+							largeImage="EditingFromStart32" 
+							condition="esri_mapping_mapPane">
+          <tooltip heading="Move To Warehouse">Click on a feature and select a warehouse to create a new containment association between the clicked feature and the selected warehouse feature<disabledText /></tooltip>
+        </tool>
+        <tool id="ToFromWarehouse_MoveFromWarehouseTool" caption="Move From Warehouse" 
+							className="MoveFromWarehouseTool" loadOnClick="true" keytip="T1"
+							smallImage="EditingFromEnd16" 
+							largeImage="EditingFromEnd32" 
+							condition="esri_mapping_mapPane">
+          <tooltip heading="Move From Warehouse"><disabledText /></tooltip>
+        </tool>
+        
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

@@ -13,8 +13,8 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  02/22/2023
-ArcGIS Pro:            3.1
+Date:                  10/01/2023
+ArcGIS Pro:            3.2
 Visual Studio:         2022
 .NET Target Framework: net6.0-windows
 ```
@@ -29,14 +29,13 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. In Visual Studio click the Build menu then select Build Solution.   
-1. Click Start button to debug this add-in in ArcGIS Pro.  
-1. In ArcGIS Pro open any project.    
-1. Select the 'Add-in' tab on the ArcGIS Pro ribbon, you should see the 'Show Wizard' button    
-1. Click the button and see the wizard dialog open.    
+1. In Visual Studio click the Build menu then select Build Solution.
+2. Click Start button to debug this add-in in ArcGIS Pro.  
+3. In ArcGIS Pro open any project.    
+4. Select the 'Add-in' tab on the ArcGIS Pro ribbon, you should see the 'Show Wizard' button    
+5. Click the button and see the wizard dialog open.    
 ![UI](Screenshots/Screenshot1.png)  
   
-
 
 <!-- End -->
 

@@ -44,7 +44,7 @@ namespace QAReviewTool
 	/// </summary>
 	/// <remarks>
 	/// 1. Download the Community Sample data(see under the 'Resources' section for downloading sample data). Make sure that the Sample dataset is unzipped under c:\data and that the sample data contains the folder C:\Data\QAReviewTool containing a map package named "QA_Review_Tool.ppkx" which is required for this sample.
-	/// 1. Open this solution in Visual Studio 2017.
+	/// 1. Open this solution in Visual Studio.
 	/// 1. Click the build menu and select Build Solution.
 	/// 1. Click the Start button to run the solution.  ArcGIS Pro will open.
 	/// 1. Open the map package "QA_Review_Tool.ppkx" located in the "C:\Data\QAReviewTool" folder.This project contains all required data.  Be sure the Topographic basemap layer is displayed.

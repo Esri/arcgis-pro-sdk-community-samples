@@ -32,7 +32,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 
-namespace UndoRedo
+namespace PreRel_UndoRedo
 {
     /// <summary>
     /// Interaction logic for SampleDockPaneView.xaml

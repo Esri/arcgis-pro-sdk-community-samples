@@ -22,6 +22,10 @@ using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using System.Threading.Tasks;
 using ArcGIS.Core.Events;
+using ArcGIS.Core.Data;
+using ArcGIS.Core.Internal.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
+using System.CodeDom.Compiler;
 
 namespace RibbonControls
 {
@@ -37,13 +41,18 @@ namespace RibbonControls
   /// 1. Click on the "Sample Tab" tab.
   /// 1. View the various ribbon controls.   Don't forget the keytips when defining DAML items. 
   /// ![UI](Screenshots/RibbonControls.png)
-  /// ![UI](Screenshots/RibbonControls_KeyTips.png)
-  /// 
+  /// ![UI](Screenshots/RibbonControls_KeyTips.png) 
   /// 1. Group 1 contains a toolbar (which consists of a LabelControl, CombobBox and Button), CheckBox and EditBox.
   /// 1. Group 2 contains a Button, MapTool, ToolPalette, ButtonPalette and SplitButton with an additional launcher button.
   /// 1. Group 3 contains a toolbar (which consits of a CustomControl and Spinner), LabelControl and Menu.
-  /// 1. Group 4 contains an inline Gallery and a Gallery button.
-  /// 
+  /// 1. Group 4 contains an inline Gallery and a Gallery button. 
+  /// Note: this is how you can make use of the KeyTips you defined in your config.daml:
+  /// To use KeyTips you must first press the Alt key or the F10 key, this shows the available KeyTip letters for the tabs on the Pro ribbon:
+  /// ![UI](Screenshots/Screen1.png)
+  /// Next you press any of displayed KeyTips letters (white and framed in black).  So for example to get to the “Sample Tab” I simply press the ‘X’ key.  Now the UI is updated to show the ‘Sample Tab’s’ Key Tips:
+  /// ![UI](Screenshots/Screen2.png)
+  /// Finally I can choose a KeyTip from the selected ‘Sample Tab’ tab.  For example if I want to execute the ‘Button 2’ command on the ‘Sample Tab’, I simply press the ‘X’ key followed by the ‘E’ key.  The command is executed and I get this:
+  /// ![UI](Screenshots/Screen3.png)
   /// </remarks>
   internal class Module1 : Module
   {

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayerGDBInfo", "LayerGDBInfo.csproj", "{BB971227-A269-47C9-9702-8616BD99B042}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB971227-A269-47C9-9702-8616BD99B042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB971227-A269-47C9-9702-8616BD99B042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB971227-A269-47C9-9702-8616BD99B042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB971227-A269-47C9-9702-8616BD99B042}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D02A94A9-901A-4121-8EC1-13C6F6AA4815}
+	EndGlobalSection
+EndGlobal
