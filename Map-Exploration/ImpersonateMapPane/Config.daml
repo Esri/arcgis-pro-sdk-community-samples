@@ -18,7 +18,7 @@
  
  -->
 <ArcGIS defaultAssembly="ImpersonateMapPane.dll" defaultNamespace="ImpersonateMapPane" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{250bed18-ae22-40fb-bbbb-6ab7cb62dbf4}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{250bed18-ae22-40fb-bbbb-6ab7cb62dbf4}" version="1.0" desktopVersion="3.3.48105">
     <Name>ImpersonateMapPane</Name>
     <Description>ImpersonateMapPane description</Description>
     <Image>Images\AddinDesktop32.png</Image>

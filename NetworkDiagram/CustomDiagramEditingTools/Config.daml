@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="DiagramEditing.dll" defaultNamespace="DiagramEditing" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{cce71e38-fdcf-494d-86b6-86e62f6dc150}" version="1.0" desktopVersion="3.1.40766">
+  <AddInInfo id="{cce71e38-fdcf-494d-86b6-86e62f6dc150}" version="1.0" desktopVersion="3.3.48105">
     <Name>DiagramEditing</Name>
     <Description>DiagramEditing description</Description>
     <Image>Images\AddinDesktop32.png</Image>

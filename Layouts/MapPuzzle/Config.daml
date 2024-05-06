@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="MapPuzzle.dll" defaultNamespace="MapPuzzle" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{aef96892-4cae-49d7-a102-f12a6f576402}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{aef96892-4cae-49d7-a102-f12a6f576402}" version="1.0" desktopVersion="3.3.48105">
     <Name>MapPuzzle</Name>
     <Description>MapPuzzle shows how to create and manipulate layout elements</Description>
     <Image>Images\AddinDesktop32.png</Image>

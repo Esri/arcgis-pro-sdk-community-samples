@@ -28,10 +28,10 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  10/01/2023
-ArcGIS Pro:            3.2
+Date:                  04/04/2024
+ArcGIS Pro:            3.3
 Visual Studio:         2022
-.NET Target Framework: net6.0-windows
+.NET Target Framework: net8.0-windows
 ```
 
 ## Resources

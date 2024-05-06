@@ -24,7 +24,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
 
-  <AddInInfo id="{62bc636b-ddf5-484b-89f9-79b7eaac92a6}" version="1.0" desktopVersion="3.1.40781">
+  <AddInInfo id="{62bc636b-ddf5-484b-89f9-79b7eaac92a6}" version="1.0" desktopVersion="3.3.48105">
     <Name>ProConfigWithAnimatedSplash</Name>
     <Description>ProConfigWithAnimatedSplash description</Description>
     <Image>Images\AddinDesktop32.png</Image>

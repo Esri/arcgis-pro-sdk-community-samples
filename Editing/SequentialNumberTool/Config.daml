@@ -14,7 +14,7 @@
 //   limitations under the License. 
 -->
 <ArcGIS defaultAssembly="SeqNum.dll" defaultNamespace="SeqNum" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{2fe6cd60-62f5-410c-9459-75ad8d72e1d6}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{2fe6cd60-62f5-410c-9459-75ad8d72e1d6}" version="1.0" desktopVersion="3.3.48105">
     <Name>SeqNum</Name>
     <Description>Sequentially number points, lines or polygons along a sketch.</Description>
     <Image>Images\AddinDesktop32.png</Image>

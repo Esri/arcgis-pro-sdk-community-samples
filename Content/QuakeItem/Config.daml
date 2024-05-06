@@ -19,7 +19,7 @@
 -->
 
 <ArcGIS defaultAssembly="QuakeItem.dll" defaultNamespace="QuakeItem" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{445daa6e-0399-4114-89eb-736688f1ee1c}" version="1.0" desktopVersion="3.0.34916">
+  <AddInInfo id="{445daa6e-0399-4114-89eb-736688f1ee1c}" version="1.0" desktopVersion="3.3.48105">
     <Name>QuakeItem</Name>
     <Description>QuakeItem description</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -62,7 +62,8 @@
           </filterFlags>
         </content>
       </insertComponent>
-      <insertComponent id="acme_quake_event" className="QuakeItem.Items.QuakeEventCustomItem" containerType="QuakeContainer">
+      <insertComponent id="acme_quake_event" className="QuakeItem.Items.QuakeEventCustomItem" 
+                       containerType="QuakeContainer">
         <content displayName="QuakesEventItem" keywords="quakeEvent" contextMenuID="QuakeEventItem_ContextMenu">
           <filterFlags>
             <!--Change this flag as needed. See FilterFlag enum. Example: AddToMap, DontBrowseFiles...-->
@@ -92,54 +93,78 @@
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="QuakeItem_Group1" caption="Group 1" appearsOnAddInTab="true">
+        <group id="QuakeItem_Group1" caption="Group 1" appearsOnAddInTab="true" keytip="G0">
           <!-- host controls within groups -->
           <button refID="QuakeItem_QuakeEventFilterDialog" size="large" />
           <button refID="QuakeItem_DelQuakeItemFromProject" size="large" />
-		  <button refID="QuakeItem_QuakeFilterDialog"/>
+          <button refID="QuakeItem_QuakeFilterDialog"/>
         </group>
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="QuakeItem_AddQuakeItemToProject" caption="Add Quake to Project" className="QuakeItem.Ribbon.AddQuakeItemToProject" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
-        </button>
-        <button id="QuakeItem_DelQuakeItemFromProject" caption="Delete Quake From Project" className="QuakeItem.Ribbon.DelQuakeItemFromProject" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+        <button id="QuakeItem_AddQuakeItemToProject" caption="Add Quake to Project" keytip="B7"
+                className="QuakeItem.Ribbon.AddQuakeItemToProject" loadOnClick="true"
+                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png"
+                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
           <tooltip heading="Tooltip Heading">
-				  Tooltip text<disabledText/>
-			  </tooltip>
+            Tooltip text<disabledText />
+          </tooltip>
         </button>
-        <button id="QuakeItem_RenameQuakeEventItem" caption="Rename Quake Event" className="QuakeItem.Ribbon.RenameQuakeEventItem" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
-        </button>
-        <button id="QuakeItem_ShowXml" caption="Show Metadata" className="QuakeItem.Ribbon.ShowXml" loadOnClick="true" keytip="B4" 
-				smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" 
-				largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
-          <tooltip heading="Earthquake CIM">Shows item metadata in the VS output window. Debug mode only<disabledText /></tooltip>
-        </button>
-		  <button id="QuakeItem_QuakeFilterDialog" caption="Add Quake to Project" className="QuakeItemDialog" loadOnClick="true" 
-				  smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonOrange16.png" 
-				  largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonOrange32.png">
+        <button id="QuakeItem_DelQuakeItemFromProject" caption="Delete Quake From Project"
+                className="QuakeItem.Ribbon.DelQuakeItemFromProject" loadOnClick="true" keytip="B6"
+                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png"
+                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
           <tooltip heading="Tooltip Heading">
-				  Tooltip text<disabledText/>
-			  </tooltip>
+            Tooltip text<disabledText/>
+          </tooltip>
         </button>
-        <button id="QuakeItem_QuakeEventFilterDialog" caption="Add Quake Event to Map" 
-				className="QuakeEventItemDialog" loadOnClick="true" 
-				smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" 
-				largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png"
-				condition="esri_mapping_graphicsLayersExistCondition">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        <button id="QuakeItem_RenameQuakeEventItem" caption="Rename Quake Event" keytip="B5"
+                className="QuakeItem.Ribbon.RenameQuakeEventItem" loadOnClick="true"
+                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png"
+                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Tooltip Heading">
+            Tooltip text<disabledText />
+          </tooltip>
         </button>
-        <button id="QuakeItem_AddQuakeEventItemToMap" caption="Add Quake Event to Map" className="QuakeItem.Ribbon.AddQuakeEventItemToMap" loadOnClick="true" 
-				smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" 
-				largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png"
-				condition="esri_mapping_graphicsLayersExistCondition">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        <button id="QuakeItem_ShowXml" caption="Show Metadata" className="QuakeItem.Ribbon.ShowXml"
+                loadOnClick="true" keytip="B0"
+				        smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png"
+				        largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Earthquake CIM">
+            Shows item metadata in the VS output window. Debug mode only<disabledText />
+          </tooltip>
+        </button>
+        <button id="QuakeItem_QuakeFilterDialog" caption="Add Quake to Project" 
+                className="QuakeItemDialog" loadOnClick="true" keytip="B1"
+                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonOrange16.png"
+                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonOrange32.png">
+          <tooltip heading="Tooltip Heading">
+            Tooltip text<disabledText/>
+          </tooltip>
+        </button>
+        <button id="QuakeItem_QuakeEventFilterDialog" caption="Add Quake Event to Map"
+				        className="QuakeEventItemDialog" loadOnClick="true" keytip="B2"
+				        smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png"
+				        largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png"
+				        condition="esri_mapping_graphicsLayersExistCondition">
+          <tooltip heading="Tooltip Heading">
+            Tooltip text<disabledText />
+          </tooltip>
+        </button>
+        <button id="QuakeItem_AddQuakeEventItemToMap" caption="Add Quake Event to Map"
+                className="QuakeItem.Ribbon.AddQuakeEventItemToMap" loadOnClick="true" keytip="B3"
+				        smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png"
+				        largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png"
+				        condition="esri_mapping_graphicsLayersExistCondition">
+          <tooltip heading="Tooltip Heading">
+            Tooltip text<disabledText />
+          </tooltip>
         </button>
       </controls>
       <menus>
-        <menu id="QuakeItemsContainer_ContextMenu" caption="Add Folders" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/TaskItem32.png" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/TaskItem16.png">
+        <menu id="QuakeItemsContainer_ContextMenu" caption="Add Folders" 
+              largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/TaskItem32.png" 
+              smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/TaskItem16.png">
           <tooltip heading="Folder">Add Earthquakes to your project.</tooltip>
           <button refID="esri_folderConnectionAddButton" />
         </menu>

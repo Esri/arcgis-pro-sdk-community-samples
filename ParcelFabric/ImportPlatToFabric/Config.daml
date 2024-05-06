@@ -19,7 +19,7 @@
 -->
 
 <ArcGIS defaultAssembly="ImportPlatToFabric.dll" defaultNamespace="ImportPlatToFabric" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{33cf7364-f4c2-420c-aef4-501801c1a565}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{33cf7364-f4c2-420c-aef4-501801c1a565}" version="1.0" desktopVersion="3.3.48105">
     <Name>ImportPlatToFabric</Name>
     <Description>Import Plat To Fabric</Description>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>

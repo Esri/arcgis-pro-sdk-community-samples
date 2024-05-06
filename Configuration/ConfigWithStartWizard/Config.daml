@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="ConfigWithStartWizard.dll" defaultNamespace="ConfigWithStartWizard" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{43ea84e4-7b44-4d76-80ba-44095ba768b4}" version="1.0" desktopVersion="3.0.0.34794">
+  <AddInInfo id="{43ea84e4-7b44-4d76-80ba-44095ba768b4}" version="1.0" desktopVersion="3.3.48105">
     <Name>ConfigWithStartWizard</Name>
     <Description>ConfigWithStartWizard description</Description>
     <Image>Images\AddinDesktop32.png</Image>

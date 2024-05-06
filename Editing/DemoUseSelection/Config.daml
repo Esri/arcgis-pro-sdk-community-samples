@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="DemoUseSelection.dll" defaultNamespace="DemoUseSelection" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{8f8df5e0-b1b7-404e-b4a0-6567ec27cdef}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{8f8df5e0-b1b7-404e-b4a0-6567ec27cdef}" version="1.0" desktopVersion="3.3.48105">
     <Name>DemoUseSelection</Name>
     <Description>DemoUseSelection description</Description>
     <Image>Images\AddinDesktop32.png</Image>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2024 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="CreateLineOfSight.dll" defaultNamespace="CreateLineOfSight" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{bfc11bd9-b385-40eb-85e4-4821b118ad9a}" version="1.0" desktopVersion="3.2.51163" Pro="ArcGISPro">
+    <Name>CreateLineOfSight</Name>
+    <Description>CreateLineOfSight description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>1/18/2024 11:31:30 AM</Date>
+    <Subject>3DAnalyst</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="CreateLineOfSight_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="CreateLineOfSight_Tab1" caption="LoS Demo" keytip="T0">
+          <group refID="CreateLineOfSight_Group1" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="CreateLineOfSight_Group1" caption="Line of Sight" appearsOnAddInTab="false" keytip="G1">
+          <!-- host controls within groups -->
+		  <!--<button refID="CreateLineOfSight_StartDemo" size="large" />-->
+		  <button refID="CreateLineOfSight_LineOfSight" size="large" />
+          <!--<button refID="CreateLineOfSight_Reset" size="large" />-->
+
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="CreateLineOfSight_LineOfSight" caption="Sight Lines" 
+                className="LineOfSight" loadOnClick="true" keytip="B1"
+                smallImage="BexDog16" largeImage="BexDog32">
+          <tooltip heading="Sight Lines">
+            Creates the Sight Lines<disabledText /></tooltip>
+        </button>
+        <button id="CreateLineOfSight_Reset" caption="Reset" className="Reset" 
+                loadOnClick="true" keytip="B2"
+                smallImage="GenericReset16" largeImage="GenericReset32">
+          <tooltip heading="Reset">
+            Resets the created Sight Lines<disabledText /></tooltip>
+        </button>
+        <button id="CreateLineOfSight_StartDemo" caption="Start Demo" className="StartDemo" 
+                loadOnClick="true" keytip="B3" smallImage="Play16" largeImage="Play32">
+          <tooltip heading="Start Demo">Prepare demo with required settings<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

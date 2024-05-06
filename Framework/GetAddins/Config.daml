@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="GetAddins.dll" defaultNamespace="GetAddins" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{78680b40-94cc-40e3-8f10-9cf962ad9ae2}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{78680b40-94cc-40e3-8f10-9cf962ad9ae2}" version="1.0" desktopVersion="3.3.48105">
     <Name>GetAddins</Name>
     <Description>GetAddins description</Description>
     <Image>Images\AddinDesktop32.png</Image>

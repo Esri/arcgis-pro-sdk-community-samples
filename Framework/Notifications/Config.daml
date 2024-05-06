@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="Notifications.dll" defaultNamespace="Notifications" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{d67aabcc-8efa-4191-83c5-b000fe6aa8c4}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{d67aabcc-8efa-4191-83c5-b000fe6aa8c4}" version="1.0" desktopVersion="3.3.48105">
     <Name>Notifications</Name>
     <Description>Sample illustrating how to add notifications to the notification dock pane  (You can find the notification pane by 
     clicking the bell icon in the upper right of the applicataion.)  Notifications can be application or project based.  Also 

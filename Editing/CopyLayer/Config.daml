@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="CopyLayer.dll" defaultNamespace="CopyLayer" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{c5934919-ff5c-4753-abce-19756645e9b2}" version="1.0" desktopVersion="3.2.48683">
+  <AddInInfo id="{c5934919-ff5c-4753-abce-19756645e9b2}" version="1.0" desktopVersion="3.3.48105">
     <Name>CopyLayer</Name>
     <Description>CopyLayer description</Description>
     <Image>Images\AddinDesktop32.png</Image>

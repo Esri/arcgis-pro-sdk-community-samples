@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="WorkingWithQueryDefinitionFilters.dll" defaultNamespace="WorkingWithQueryDefinitionFilters" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{b58617f6-bbf0-4e86-b8e3-19284abe09f3}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{b58617f6-bbf0-4e86-b8e3-19284abe09f3}" version="1.0" desktopVersion="3.3.48105">
     <Name>WorkingWithQueryDefinitionFilters</Name>
     <Description>WorkingWithQueryDefinitionFilters description</Description>
     <Image>Images\AddinDesktop32.png</Image>

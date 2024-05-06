@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="OverlayGroundSurface.dll" defaultNamespace="OverlayGroundSurface" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{710c7eaf-fb51-4d32-8c89-5acdf7dede15}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{710c7eaf-fb51-4d32-8c89-5acdf7dede15}" version="1.0" desktopVersion="3.3.48105">
     <Name>OverlayGroundSurface</Name>
     <Description>OverlayGroundSurface description</Description>
     <Image>Images\AddinDesktop32.png</Image>

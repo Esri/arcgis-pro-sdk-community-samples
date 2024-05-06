@@ -13,12 +13,12 @@
 //   limitations under the License.-->
 
 <ArcGIS defaultAssembly="MapTopologyAddIn.dll" defaultNamespace="MapTopologyAddIn" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{5dcc93de-58fe-4b6d-a970-7c29a6b1502d}" version="1.0" desktopVersion="3.0.34271">
+  <AddInInfo id="{5dcc93de-58fe-4b6d-a970-7c29a6b1502d}" version="1.0" desktopVersion="3.3.48105">
     <Name>Map Topology AddIn</Name>
     <Description>Builds map topology graph and finds topologically connected features for a specified(selected) feature.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
     <Date>1/30/2022 10:54:23 PM, 2022</Date>
     <Subject>Editing</Subject>
     <!-- Note subject can be one or more of these topics:

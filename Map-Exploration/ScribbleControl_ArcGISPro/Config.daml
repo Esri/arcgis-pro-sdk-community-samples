@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="ScribbleControl_ArcGISPro.dll" defaultNamespace="ScribbleControl_ArcGISPro" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{91d3cac4-7d48-4b1c-a037-28d77a6f65b9}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{91d3cac4-7d48-4b1c-a037-28d77a6f65b9}" version="1.0" desktopVersion="3.3.48105">
     <Name>ScribbleControl_ArcGISPro</Name>
     <Description>Provides a scribble control to do on-screen drawing on top of map views</Description>
     <Image>Images\AddinDesktop32.png</Image>

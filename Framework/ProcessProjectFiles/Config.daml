@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="ProcessProjectFiles.dll" defaultNamespace="ProcessProjectFiles" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{02a105ed-4e4e-4da3-ad08-177e79f78400}" version="2.2" desktopVersion="3.0.0">
+  <AddInInfo id="{02a105ed-4e4e-4da3-ad08-177e79f78400}" version="2.2" desktopVersion="3.3.48105">
     <Name>ProcessProjectFiles</Name>
     <Description>ProcessProjectFiles description</Description>
     <Image>Images\AddinDesktop32.png</Image>

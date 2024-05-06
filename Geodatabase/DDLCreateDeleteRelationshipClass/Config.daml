@@ -24,7 +24,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
 
-  <AddInInfo id="{afb0d6c9-e6ba-4d6c-af5b-4db0ead91f9f}" version="1.0" desktopVersion="3.2.47810">
+  <AddInInfo id="{afb0d6c9-e6ba-4d6c-af5b-4db0ead91f9f}" version="1.0" desktopVersion="3.3.48105">
     <Name>DDLCreateDeleteRelationshipClass</Name>   
     <Description>DDLCreateDeleteRelationshipClass description</Description>
     <Image>Images\AddinDesktop32.png</Image>

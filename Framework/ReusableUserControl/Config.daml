@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="ReusableUserControl.dll" defaultNamespace="ReusableUserControl" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{0b62d9ff-5543-45e9-bfc8-c2a75d5cfdb8}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{0b62d9ff-5543-45e9-bfc8-c2a75d5cfdb8}" version="1.0" desktopVersion="3.3.48105">
     <Name>ReusableUserControl</Name>
     <Description>ReusableUserControl description</Description>
     <Image>Images\AddinDesktop32.png</Image>

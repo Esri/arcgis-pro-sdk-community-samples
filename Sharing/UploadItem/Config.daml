@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="UploadItem.dll" defaultNamespace="UploadItem" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{93883038-7f65-451c-810f-ab0edc00dccb}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{93883038-7f65-451c-810f-ab0edc00dccb}" version="1.0" desktopVersion="3.3.48105">
     <Name>UploadItem</Name>
     <Description>UploadItem description</Description>
     <Image>Images\AddinDesktop32.png</Image>

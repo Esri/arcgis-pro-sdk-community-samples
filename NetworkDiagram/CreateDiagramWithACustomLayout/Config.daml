@@ -24,7 +24,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
 
-  <AddInInfo id="{c58f5b88-aa2d-4505-aba6-c7f633eda869}" version="1.0" desktopVersion="3.0.34075">
+  <AddInInfo id="{c58f5b88-aa2d-4505-aba6-c7f633eda869}" version="1.0" desktopVersion="3.3.48105">
     <Name>Create Diagram With A Custom Layout</Name>
     <Description>Create Network Diagrams for Telco</Description>
     <Image>Images\AddinDesktop32.png</Image>

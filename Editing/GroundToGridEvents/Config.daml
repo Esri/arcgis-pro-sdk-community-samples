@@ -12,7 +12,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License. -->
 <ArcGIS defaultAssembly="G2GEvents.dll" defaultNamespace="G2GEvents" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{91220347-cee7-4963-8af1-c8372dafe747}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{91220347-cee7-4963-8af1-c8372dafe747}" version="1.0" desktopVersion="3.3.48105">
     <Name>G2GEvents</Name>
     <Description>G2GEvents description</Description>
     <Image>Images\AddinDesktop32.png</Image>

@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="CreateTransformerBank.dll" defaultNamespace="CreateTransformerBank" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{ee4f539d-318a-4c7f-8e94-adba04911c41}" version="1.0" desktopVersion="3.0.33757">
+  <AddInInfo id="{ee4f539d-318a-4c7f-8e94-adba04911c41}" version="1.0" desktopVersion="3.3.48105">
     <Name>CreateTransformerBank</Name>
     <Description>CreateTransformerBank description</Description>
     <Image>Images\AddinDesktop32.png</Image>

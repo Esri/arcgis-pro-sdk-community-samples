@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="TableFeatureClassOperations.dll" defaultNamespace="TableFeatureClassOperations" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{e10bdd0d-ffae-4f4a-b82b-28a46f58d129}" version="1.0" desktopVersion="3.1.0">
+  <AddInInfo id="{e10bdd0d-ffae-4f4a-b82b-28a46f58d129}" version="1.0" desktopVersion="3.3.48105">
     <Name>TableFeatureClassOperations</Name>
     <Description>TableFeatureClassOperations description</Description>
     <Image>Images\AddinDesktop32.png</Image>

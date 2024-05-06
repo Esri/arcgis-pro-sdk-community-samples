@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="CommandFilter.dll" defaultNamespace="CommandFilter" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{abec1803-f5a9-431f-a72d-2e4651340eb6}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{abec1803-f5a9-431f-a72d-2e4651340eb6}" version="1.0" desktopVersion="3.3.48105">
     <Name>CommandFilter</Name>
     <Description>Shows how to register a command filter. When the command filter is turned 'On' or "Off', a Notification is also popped</Description>
     <Image>Images\AddinDesktop32.png</Image>

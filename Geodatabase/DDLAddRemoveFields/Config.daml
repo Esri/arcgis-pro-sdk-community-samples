@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="AddRemoveFields.dll" defaultNamespace="AddRemoveFields" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{f97e97b7-31ab-423b-9eff-6122ff2f265d}" version="1.0" desktopVersion="3.2.47810">
+  <AddInInfo id="{f97e97b7-31ab-423b-9eff-6122ff2f265d}" version="1.0" desktopVersion="3.3.48105">
     <Name>AddRemoveFields</Name>
     <Description>AddRemoveFields description</Description>
     <Image>Images\AddinDesktop32.png</Image>

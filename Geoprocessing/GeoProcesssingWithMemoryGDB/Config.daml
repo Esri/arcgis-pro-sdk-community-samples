@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="GeoProcesssingWithMemoryGDB.dll" defaultNamespace="GeoProcesssingWithMemoryGDB" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{fb81ce84-6389-497e-a3c9-bc4126bea08e}" version="1.0" desktopVersion="3.1.41833">
+  <AddInInfo id="{fb81ce84-6389-497e-a3c9-bc4126bea08e}" version="1.0" desktopVersion="3.3.48105">
     <Name>GeoProcesssingWithMemoryGDB</Name>
     <Description>GeoProcesssingWithMemoryGDB description</Description>
     <Image>Images\AddinDesktop32.png</Image>

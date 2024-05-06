@@ -19,7 +19,7 @@
 -->
 
 <ArcGIS defaultAssembly="VoxelSample.dll" defaultNamespace="VoxelSample" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{ae612502-c520-4595-9afb-48d1838c08a1}" version="1.0" desktopVersion="3.0.34916">
+  <AddInInfo id="{ae612502-c520-4595-9afb-48d1838c08a1}" version="1.0" desktopVersion="3.3.48105">
     <Name>VoxelSample</Name>
     <Description>Demonstrates use of the Voxel API</Description>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>

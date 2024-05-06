@@ -19,7 +19,7 @@
 -->
 
 <ArcGIS defaultAssembly="ProStartPageConfig.dll" defaultNamespace="ProStartPageConfig" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{04dce3fe-08af-41b0-aa58-855937ed812b}" version="1.0" desktopVersion="3.1">
+  <AddInInfo id="{04dce3fe-08af-41b0-aa58-855937ed812b}" version="1.0" desktopVersion="3.3.48105">
     <Name>ProStartPageConfig</Name>
     <Description>ProStartPageConfig description</Description>
     <Image>Images\AddinDesktop32.png</Image>

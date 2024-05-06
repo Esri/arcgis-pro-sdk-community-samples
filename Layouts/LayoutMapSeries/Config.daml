@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="LayoutMapSeries.dll" defaultNamespace="LayoutMapSeries" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{e486208e-a5bb-485e-9d7c-846be20017ab}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{e486208e-a5bb-485e-9d7c-846be20017ab}" version="1.0" desktopVersion="3.3.48105">
     <Name>LayoutMapSeries</Name>
     <Description>LayoutMapSeries description</Description>
     <Image>Images\AddinDesktop32.png</Image>

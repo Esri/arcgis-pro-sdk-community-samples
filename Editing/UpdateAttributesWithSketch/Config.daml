@@ -12,7 +12,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License. -->
 <ArcGIS defaultAssembly="UpdateAttributesWithSketch.dll" defaultNamespace="UpdateAttributesWithSketch" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{d9836be8-0577-459c-8ad3-ef5fdb8e763e}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{d9836be8-0577-459c-8ad3-ef5fdb8e763e}" version="1.0" desktopVersion="3.3.48105">
     <Name>UpdateAttributesWithSketch</Name>
     <Description>Creates a sketch tool that updates the attributes of features that intersect the sketch.</Description>
     <Image>Images\AddinDesktop32.png</Image>

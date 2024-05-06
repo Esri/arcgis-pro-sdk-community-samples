@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="CustomStyling.dll" defaultNamespace="CustomStyling" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{491f63ab-303d-48bd-99af-69db5ab9b28a}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{491f63ab-303d-48bd-99af-69db5ab9b28a}" version="1.0" desktopVersion="3.3.48105">
     <Name>CustomStyling</Name>
     <Description>Sample showing how to apply custom styles that will work in-conjunction with Pro's Light and Dark themes</Description>
     <Image>Images\AddinDesktop32.png</Image>

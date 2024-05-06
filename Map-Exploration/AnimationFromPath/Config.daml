@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="AnimationFromPath.dll" defaultNamespace="AnimationFromPath" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{3ee36ee8-81bb-4e8a-9d29-526cdfadc5bb}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{3ee36ee8-81bb-4e8a-9d29-526cdfadc5bb}" version="1.0" desktopVersion="3.3.48105">
     <Name>AnimationFromPath</Name>
     <Description>Provides options for creating animation from path</Description>
     <Image>Images\AddinDesktop32.png</Image>

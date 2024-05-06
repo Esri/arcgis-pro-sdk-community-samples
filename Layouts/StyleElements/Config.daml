@@ -18,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="StyleElements.dll" defaultNamespace="StyleElements" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{ff291044-4b51-486f-8e5f-fb95955e8f74}" version="1.0" desktopVersion="3.2.48442">
+  <AddInInfo id="{ff291044-4b51-486f-8e5f-fb95955e8f74}" version="1.0" desktopVersion="3.3.48105">
     <Name>StyleElements</Name>
     <Description>StyleElements description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>uma2526</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
     <Date>6/1/2023 9:59:13 PM</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

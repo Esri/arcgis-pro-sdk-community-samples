@@ -24,7 +24,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
 
-  <AddInInfo id="{b69d8233-0ca5-49ea-adc4-80ad26e2a8ed}" version="1.0" desktopVersion="3.2.48119">
+  <AddInInfo id="{b69d8233-0ca5-49ea-adc4-80ad26e2a8ed}" version="1.0" desktopVersion="3.3.48105">
     <Name>ComboBoxSelectFeature</Name>   
     <Description>ComboBoxSelectFeature description</Description>
     <Image>Images\AddinDesktop32.png</Image>

@@ -38,15 +38,15 @@ namespace ToggleSwitches
   /// This add-in demonstrates toggling switches in an electric distribution network and the visual network diagram feedback.  
   /// Attributes cannot be manually edited from network diagrams; nor the attributes stored in the diagram feature classes, nor those coming from the join with the associated network source classes.
   /// However, any editable attributes on the joined network feature class can be edited by code. In this add-in sample, you will learn about how to edit the Status attribute available on Switch devices.
-  /// This code sample is tied to the sample utility network dataset referenced in the workflow steps detailed below. But, it can be easily adapted for any utility network dataset.
+  /// This code sample is tied to the sample network dataset referenced in the workflow steps detailed below. But, it can be easily adapted for any utility network dataset.
   ///
-  /// Community Sample data (see under the "Resources" section for downloading sample data) has a UtilityNetworkSamples.aprx project that contains a utility network that can be used with this sample.   
+  /// Community Sample data (see under the "Resources" section for downloading sample data) has a CommunitySampleData-NetworkDiagrams zip file that contains a project that can be used with this sample.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu.  Then select Build Solution.  
   /// 1. Click Start button to open ArcGIS Pro.  
   /// 1. ArcGIS Pro will open.  
-  /// 1. Open C:\Data\UtilityNetwork\UtilityNetworkSamples.aprx
+  /// 1. Open C:\Data\NetworkDiagrams\SDKSampleNetwork\SDKSampleNetwork.aprx
   /// 1. Click on the Map tab on the ribbon. Then, in the Navigate group, expand Bookmarks and click Full Extent.
   /// 1. Click on the Utility Network tab in the ribbon. Then, in the Diagram group, click Find Diagrams.
   /// 1. In the Find Diagrams pane, search for the diagram stored as ToggleSwitches_Test and double click it so it opens

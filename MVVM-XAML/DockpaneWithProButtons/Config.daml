@@ -18,14 +18,14 @@
 
 -->
 <ArcGIS defaultAssembly="DockpaneWithProButtons.dll" defaultNamespace="DockpaneWithProButtons" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{305e27ce-7b6a-4165-8e8a-a042ee045bcc}" version="1.0" desktopVersion="3.0.0">
+  <AddInInfo id="{305e27ce-7b6a-4165-8e8a-a042ee045bcc}" version="1.0" desktopVersion="3.3.48105">
     <Name>DockpaneWithProButtons</Name>
     <Description>DockpaneWithProButtons description</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, https://www.esri.com</Company>
     <Date>9/15/2022 6:43:13 AM</Date>
-    <Subject>Framework</Subject>
+    <Subject>MVVM-XAML</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>

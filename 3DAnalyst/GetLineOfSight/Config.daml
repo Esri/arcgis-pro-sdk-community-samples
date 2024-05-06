@@ -18,14 +18,14 @@
 
 -->
 <ArcGIS defaultAssembly="GetLineOfSight.dll" defaultNamespace="GetLineOfSight" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{d818e029-5152-42d2-afc8-3ad78f5c6c2d}" version="1.0" desktopVersion="3.2.48335">
+  <AddInInfo id="{d818e029-5152-42d2-afc8-3ad78f5c6c2d}" version="1.0" desktopVersion="3.3.48105">
     <Name>GetLineOfSight</Name>
     <Description>GetLineOfSight description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>uma2526</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
     <Date>5/16/2023 12:36:14 PM</Date>
-    <Subject>Framework</Subject>
+    <Subject>3DAnalyst</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>

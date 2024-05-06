@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="ShowContainment.dll" defaultNamespace="ShowContainment" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{2cb1ca35-bb2c-4d6f-aed8-52dcb896d4de}" version="1.0" desktopVersion="3.2.48329">
+  <AddInInfo id="{2cb1ca35-bb2c-4d6f-aed8-52dcb896d4de}" version="1.0" desktopVersion="3.3.48105">
     <Name>ShowContainment</Name>
     <Description>ShowContainment description</Description>
     <!--Image>Images\AddinDesktop32.png</Image-->

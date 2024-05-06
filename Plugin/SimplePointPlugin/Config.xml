@@ -8,7 +8,7 @@
   <Company>ESRI</Company>
   <Date>5/11/2022 8:01:44 AM</Date>
   <Targets>
-    <Target name="ArcGISPro" version="3.0" />
+    <Target name="ArcGISPro" version="3.3" />
   </Targets>
   <!-- CLR should be set to the target framework set in the .csproj -->
   <AddIn language="CLR:PluginDS" library="SimplePointPlugin.dll" namespace="SimplePointPlugin">

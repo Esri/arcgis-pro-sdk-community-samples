@@ -12,12 +12,12 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License. -->
 <ArcGIS defaultAssembly="COGOLineFeatures.dll" defaultNamespace="COGOLineFeatures" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{f21e873c-ffbc-4253-9692-857a3344cf62}" version="1.1" desktopVersion="3.0.36056">
+  <AddInInfo id="{f21e873c-ffbc-4253-9692-857a3344cf62}" version="1.1" desktopVersion="3.3.48105">
     <Name>COGO Line Features</Name>
     <Description>Create a line and enter COGO attributes.</Description>
     <Image>Images\FabricAddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>Esri</Company>
+    <Company>esri, https://www.esri.com</Company>
     <Date>1/06/2023 9:02:32 PM</Date>
     <Subject>Editing, Geometry</Subject>
     <!-- Note subject can be one or more of these topics:

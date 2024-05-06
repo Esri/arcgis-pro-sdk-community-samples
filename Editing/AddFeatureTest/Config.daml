@@ -18,14 +18,14 @@
 
 -->
 <ArcGIS defaultAssembly="AddFeatureTest.dll" defaultNamespace="AddFeatureTest" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Users/uma2526/AppData/Local/Programs/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{34d21811-b3e1-47fc-b9b0-f74f590849c9}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{34d21811-b3e1-47fc-b9b0-f74f590849c9}" version="1.0" desktopVersion="3.3.48105">
     <Name>AddFeatureTest</Name>
     <Description>AddFeatureTest description</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, https://www.esri.com</Company>
     <Date>10/8/2018 9:44:23 AM, 2018</Date>
-    <Subject>Framework</Subject>
+    <Subject>Editing</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>
@@ -49,10 +49,10 @@
       <controls>
         <!-- add your controls here -->
         <button id="AddFeatureTest_CreateFc" caption="Create Featureclasses" className="CreateFc" loadOnClick="true" keytip="B1" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
-          <tooltip heading="Tooltip Heading">1. Create the Feature classes<disabledText /></tooltip>
+          <tooltip heading="Create Featureclasses">1. Create the Feature classes<disabledText /></tooltip>
         </button>
         <button id="AddFeatureTest_AddFeatures" caption="Add Features" className="AddFeatures" loadOnClick="true" keytip="B2" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
-          <tooltip heading="Tooltip Heading">2. Add Features<disabledText /></tooltip>
+          <tooltip heading="Add Features">2. Add Features<disabledText /></tooltip>
         </button>
       </controls>
     </insertModule>

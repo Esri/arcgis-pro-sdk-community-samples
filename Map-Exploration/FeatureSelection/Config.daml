@@ -14,7 +14,7 @@
 //   limitations under the License. 
 -->
 <ArcGIS defaultAssembly="FeatureSelection.dll" defaultNamespace="FeatureSelection" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{777f533a-b0c7-4233-b64e-7c4c2e2c8efa}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{777f533a-b0c7-4233-b64e-7c4c2e2c8efa}" version="1.0" desktopVersion="3.3.48105">
     <Name>Feature Selection</Name>
     <Description>Adds a custom tool and dock pane to manage selections in the map.</Description>
     <Image>Images\AddinDesktop32.png</Image>

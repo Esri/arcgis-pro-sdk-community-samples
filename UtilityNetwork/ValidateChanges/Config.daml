@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="ValidateChanges.dll" defaultNamespace="ValidateChanges" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{0a907e31-89ca-439f-855c-81fc9375eeef}" version="1.0" desktopVersion="3.0.33757">
+  <AddInInfo id="{0a907e31-89ca-439f-855c-81fc9375eeef}" version="1.0" desktopVersion="3.3.48105">
     <Name>ValidateChanges</Name>
     <Description>ValidateChanges description</Description>
     <Image>Images\AddinDesktop32.png</Image>

@@ -13,7 +13,7 @@
 //   limitations under the License.-->
 
 <ArcGIS defaultAssembly="KeyboardShortcuts.dll" defaultNamespace="KeyboardShortcuts" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{41d72dde-66a4-43a4-abff-2099a38f1528}" version="1.0" desktopVersion="3.2.49085">
+  <AddInInfo id="{41d72dde-66a4-43a4-abff-2099a38f1528}" version="1.0" desktopVersion="3.3.48105">
     <Name>KeyboardShortcuts</Name>
     <Description>Adds a few controls to demonstrate how the Keyboard Shortcuts framework works.</Description>
     <Image>Images\AddinDesktop32.png</Image>

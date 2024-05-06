@@ -10,13 +10,13 @@ This sample illustrates TIN Api methods available to iterate and work with TIN N
 <!-- TODO: Fill this section below with metadata about this sample-->
 ```
 Language:              C#
-Subject:               Framework
+Subject:               3DAnalyst
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  10/01/2023
-ArcGIS Pro:            3.2
+Date:                  04/04/2024
+ArcGIS Pro:            3.3
 Visual Studio:         2022
-.NET Target Framework: net6.0-windows
+.NET Target Framework: net8.0-windows
 ```
 
 ## Resources
@@ -31,7 +31,7 @@ Visual Studio:         2022
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)
 2. Make sure that the Sample data is unzipped in c:\data  
-3. The project used for this sample is 'C:\Data\3DAnalyst\_3DLayersMap.ppkx'  
+3. The project used for this sample is 'C:\Data\3DAnalyst\3DLayersMap.ppkx'  
 4. In Visual Studio click the Build menu.Then select Build Solution.  
 5. Launch the debugger to open ArcGIS Pro.  
 6. ArcGIS Pro will open, select the 3DLayersMap.ppkx project package. Note: Alternatively, you can open any map with a TIN layer and a graphics layer. Using this sample, you will be adding points, lines and polygon graphic elements to explore the TIN layer's nodes, edges and triangles.  

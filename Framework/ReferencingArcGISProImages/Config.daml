@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="ReferencingArcGISProImages.dll" defaultNamespace="ReferencingArcGISProImages" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{1132a50e-9ae8-4ebd-a52e-b731219e73e4}" version="1.0" desktopVersion="3.1.41763">
+  <AddInInfo id="{1132a50e-9ae8-4ebd-a52e-b731219e73e4}" version="1.0" desktopVersion="3.3.48105">
     <Name>ReferencingArcGISProImages</Name>
     <Description>ReferencingArcGISProImages description</Description>
     <Image>Images\AddinDesktop32.png</Image>

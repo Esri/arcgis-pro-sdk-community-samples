@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="RestartSketch.dll" defaultNamespace="RestartSketch" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{d9d82b89-cc5f-4623-8013-91b09afd8d4c}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{d9d82b89-cc5f-4623-8013-91b09afd8d4c}" version="1.0" desktopVersion="3.3.48105">
     <Name>RestartSketch</Name>
     <Description>A sketch context menu item to restart the edit sketch from the last vertex.</Description>
     <Image>Images\AddinDesktop32.png</Image>

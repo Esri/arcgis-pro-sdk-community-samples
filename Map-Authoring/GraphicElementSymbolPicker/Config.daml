@@ -19,12 +19,12 @@
 -->
 
 <ArcGIS defaultAssembly="GraphicElementSymbolPicker.dll" defaultNamespace="GraphicElementSymbolPicker" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{f83ec5ce-4160-4dcd-a0ac-ba815482de22}" version="1.0" desktopVersion="3.0.36039">
+  <AddInInfo id="{f83ec5ce-4160-4dcd-a0ac-ba815482de22}" version="1.0" desktopVersion="3.3.48105">
     <Name>GraphicElementSymbolPicker</Name>
     <Description>GraphicElementSymbolPicker description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team</Author>
-    <Company>Esri, Inc</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
     <Date>6/2/2021 4:16:50 PM</Date>
     <Subject>Map Authoring</Subject>
     <!-- Note subject can be one or more of these topics:

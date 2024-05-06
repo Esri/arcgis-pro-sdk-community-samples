@@ -20,10 +20,10 @@ Language:              C#
 Subject:               NetworkDiagram
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  10/01/2023
-ArcGIS Pro:            3.2
+Date:                  04/04/2024
+ArcGIS Pro:            3.3
 Visual Studio:         2022
-.NET Target Framework: net6.0-windows
+.NET Target Framework: net8.0-windows
 ```
 
 ## Resources
@@ -39,7 +39,7 @@ Visual Studio:         2022
 1. In Visual Studio click the Build menu.  Then select Build Solution.
 2. Click Start button to open ArcGIS Pro.    
 3. ArcGIS Pro will open.    
-4. Open C:\Data\UtilityNetwork\UtilityNetworkSamples.aprx  
+4. Open C:\Data\NetworkDiagrams\SDKSampleNetwork\SDKSampleNetwork.aprx  
 5. Click on the Map tab on the ribbon. Then, in the Navigate group, expand Bookmarks and click Full Extent.  
 6. Click on the Utility Network tab in the ribbon. Then, in the Diagram group, click Find Diagrams.  
 7. In the Find Diagrams pane, search for the diagram stored as RotateDiagramJunctions_Test and double click it so it opens  

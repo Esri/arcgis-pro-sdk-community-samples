@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="DuplicateLayout.dll" defaultNamespace="DuplicateLayout" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{869b01d6-91bc-4e66-91ee-c52899d36289}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{869b01d6-91bc-4e66-91ee-c52899d36289}" version="1.0" desktopVersion="3.3.48105">
     <Name>DuplicateLayout</Name>
     <Description>DuplicateLayout description</Description>
     <Image>Images\AddinDesktop32.png</Image>

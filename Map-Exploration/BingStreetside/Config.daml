@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="BingStreetside.dll" defaultNamespace="BingStreetside" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{0d2eff3c-d98c-4421-ac9e-44ec874e6757}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{0d2eff3c-d98c-4421-ac9e-44ec874e6757}" version="1.0" desktopVersion="3.3.48105">
     <Name>BingStreetside</Name>
     <Description>BingStreetside description</Description>
     <Image>Images\AddinDesktop32.png</Image>

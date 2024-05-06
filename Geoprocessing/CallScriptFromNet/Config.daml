@@ -16,7 +16,7 @@
 -->
 <ArcGIS defaultAssembly="CallScriptFromNet.dll" defaultNamespace="CallScriptFromNet" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
   <AddInInfo id="{31d7f807-1dfe-44c3-9c8b-6ffc8263159e}" version="1.0" 
-						 desktopVersion="3.0.0">
+						 desktopVersion="3.3.48105">
     <Name>CallScriptFromNet</Name>
     <Description>Calls a Python script from .Net application.</Description>
     <Image>Images\AddinDesktop32.png</Image>

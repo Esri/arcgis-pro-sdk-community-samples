@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="SymbolLookup.dll" defaultNamespace="SymbolLookup" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{8a76cdc2-c4e1-4c72-ade1-5542a7db7573}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{8a76cdc2-c4e1-4c72-ade1-5542a7db7573}" version="1.0" desktopVersion="3.3.48105">
     <Name>SymbolLookup</Name>
     <Description>SymbolLookup description</Description>
     <Image>Images\AddinDesktop32.png</Image>

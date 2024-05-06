@@ -18,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="LASDatasetAPISamples.dll" defaultNamespace="LASDatasetAPISamples" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{8d784ce0-c7e8-487a-937f-ff606093aac8}" version="1.0" desktopVersion="3.2.49070">
+  <AddInInfo id="{8d784ce0-c7e8-487a-937f-ff606093aac8}" version="1.0" desktopVersion="3.3.48105">
     <Name>LASDatasetAPISamples</Name>
     <Description>LASDatasetAPISamples description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>uma2526</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
     <Date>9/18/2023 2:32:31 PM</Date>
     <Subject>3DAnalyst</Subject>
     <!-- Note subject can be one or more of these topics:

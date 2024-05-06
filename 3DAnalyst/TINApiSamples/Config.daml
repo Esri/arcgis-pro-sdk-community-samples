@@ -18,14 +18,14 @@
 
 -->
 <ArcGIS defaultAssembly="TINApiSamples.dll" defaultNamespace="TINApiSamples" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{27a761a1-e552-4b27-ba42-e8e0b6c76222}" version="1.0" desktopVersion="3.2.48880">
+  <AddInInfo id="{27a761a1-e552-4b27-ba42-e8e0b6c76222}" version="1.0" desktopVersion="3.3.48105">
     <Name>TINApiSamples</Name>
     <Description>TINApiSamples description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>uma2526</Author>
-    <Company>Acme</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
     <Date>8/25/2023 2:17:58 PM</Date>
-    <Subject>Framework</Subject>
+    <Subject>3DAnalyst</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>

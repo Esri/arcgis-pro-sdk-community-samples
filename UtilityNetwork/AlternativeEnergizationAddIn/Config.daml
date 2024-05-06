@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="AlternativeEnergizationAddIn.dll" defaultNamespace="AlternativeEnergizationAddIn" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{1c3b219d-6b2e-4e45-aba7-e119b07619d1}" version="1.0" desktopVersion="3.1.41833">
+  <AddInInfo id="{1c3b219d-6b2e-4e45-aba7-e119b07619d1}" version="1.0" desktopVersion="3.3.48105">
     <Name>AlternativeEnergizationAddIn</Name>
     <Description>AlternativeEnergizationAddIn description</Description>
     <Image>Images\AddinDesktop32.png</Image>

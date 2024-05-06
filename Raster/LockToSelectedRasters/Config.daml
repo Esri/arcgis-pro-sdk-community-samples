@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License. 
 -->
 <ArcGIS defaultAssembly="LockToSelectedRasters.dll" defaultNamespace="LockToSelectedRasters" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{4d669203-bf8b-4693-a992-66d193e4f890}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{4d669203-bf8b-4693-a992-66d193e4f890}" version="1.0" desktopVersion="3.3.48105">
     <Name>LockToSelectedRasters</Name>
     <Description>LockToSelectedRasters description</Description>
     <Image>Images\AddinDesktop32.png</Image>

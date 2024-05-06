@@ -19,7 +19,7 @@
 -->
 
 <ArcGIS defaultAssembly="ExtraReport1.dll" defaultNamespace="ExtraReport1" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{9f44bcdf-71ac-424b-a354-68f29f977caf}" version="1.0" desktopVersion="3.0.34794">
+  <AddInInfo id="{9f44bcdf-71ac-424b-a354-68f29f977caf}" version="1.0" desktopVersion="3.3.48105">
     <Name>ExtraReport1</Name>
     <Description>Custom Categories Example ExtraReport1</Description>
     <Image>Images\AddinDesktop32.png</Image>

@@ -16,10 +16,10 @@ Language:              C#
 Subject:               NetworkDiagram
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  10/01/2023
-ArcGIS Pro:            3.2
+Date:                  04/04/2024
+ArcGIS Pro:            3.3
 Visual Studio:         2022
-.NET Target Framework: net6.0-windows
+.NET Target Framework: net8.0-windows
 ```
 
 ## Resources
@@ -35,7 +35,7 @@ Visual Studio:         2022
 1. In Visual Studio, click the Build menu.  Then select Build Solution.
  2. Click Start button to open ArcGIS Pro.    
  3. ArcGIS Pro will open.    
- 4. Open **C:\Data\NetworkDiagram\Communications_UNSDKSample.aprx**. Make sure the Communications Network map is open as the active map.add a data reference (what data does the user need to run this sample)    
+ 4. Open **C:\Data\NetworkDiagrams\CreateDiagramWithACustomLayout\CreateDiagramWithACustomLayout.aprx**. Make sure the Communications Network map is open as the active map.add a data reference (what data does the user need to run this sample)    
  ### Generate a sample diagram and manually apply the add-in Custom Layout available from the Layout gallery to arrange its contents    
    
  5. Click on the Map tab on the ribbon.Then, in the Navigate group, expand Bookmarks and click **Distr_Cbl_3** in the bookmark list.  

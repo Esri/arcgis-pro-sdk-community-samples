@@ -24,7 +24,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
 
-  <AddInInfo id="{771d7867-50ab-400f-a0b4-9781c51ace10}" version="1.0" desktopVersion="3.0.0">
+  <AddInInfo id="{771d7867-50ab-400f-a0b4-9781c51ace10}" version="1.0" desktopVersion="3.3.48105">
     <Name>ArcGISProConfig</Name>
     <Description>ArcGISProConfig description</Description>
     <Image>Images\AddinDesktop32.png</Image>

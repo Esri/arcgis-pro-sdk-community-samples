@@ -13,7 +13,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.-->
 <ArcGIS defaultAssembly="OverviewMapControl.dll" defaultNamespace="OverviewMapControl" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{e90299db-8ce8-4ef0-8071-34f6d1e00fbe}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{e90299db-8ce8-4ef0-8071-34f6d1e00fbe}" version="1.0" desktopVersion="3.3.48105">
     <Name>OverviewMapControl</Name>
     <Description>OverviewMapControl description</Description>
     <Image>Images\AddinDesktop32.png</Image>

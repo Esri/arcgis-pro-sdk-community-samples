@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="MapToolIdentifyWithDockpane.dll" defaultNamespace="MapToolIdentifyWithDockpane" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{6721b3bb-f6b6-4e6e-aad7-ba6e60cf010f}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{6721b3bb-f6b6-4e6e-aad7-ba6e60cf010f}" version="1.0" desktopVersion="3.3.48105">
     <Name>MapToolIdentifyWithDockpane</Name>
     <Description>MapToolIdentifyWithDockpane description</Description>
     <Image>Images\AddinDesktop32.png</Image>

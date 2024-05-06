@@ -18,7 +18,7 @@
  
  -->
 <ArcGIS defaultAssembly="RibbonControls.dll" defaultNamespace="RibbonControls" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{d5cb3123-7094-44ff-ae9b-8eeb3d454185}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{d5cb3123-7094-44ff-ae9b-8eeb3d454185}" version="1.0" desktopVersion="3.3.48105">
     <Name>RibbonControls</Name>
     <Description>RibbonControls description</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -182,6 +182,8 @@
           <button refID="RibbonControls_SplitButton1_Items_Button1" />
           <button refID="RibbonControls_SplitButton1_Items_Button2" />
           <button refID="RibbonControls_SplitButton1_Items_Button3" />
+          <menu refID="RibbonControls_Menu1" />
+          <gallery refID="RibbonControls_InlineGallery1" />
         </splitButton>
       </splitButtons>
     </insertModule>

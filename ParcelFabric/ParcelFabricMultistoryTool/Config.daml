@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="ParcelFabricMultistoryTool.dll" defaultNamespace="ParcelFabricMultistoryTool" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{8d359277-b06e-488d-93c5-c43bbdca4ce1}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{8d359277-b06e-488d-93c5-c43bbdca4ce1}" version="1.0" desktopVersion="3.3.48105">
     <Name>Multistory Parcel Tools Sample</Name>
     <Description>Sample add-in with tools and workflow for creating parcels on multistory buildings, such as condominiums.</Description>
     <Image>Images\AddinDesktop32.png</Image>

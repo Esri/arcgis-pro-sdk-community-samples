@@ -44,10 +44,10 @@ namespace SimplePointPlugin.Helpers
       //RBush requires a reference
       //to the envelope so we can't construct it "on-the-fly"
       _envelope = new Envelope(
-        minX: coord.X - Tolerance,
-        minY: coord.Y - Tolerance,
-        maxX: coord.X + Tolerance,
-        maxY: coord.Y + Tolerance);
+        MinX: coord.X - Tolerance,
+        MinY: coord.Y - Tolerance,
+        MaxX: coord.X + Tolerance,
+        MaxY: coord.Y + Tolerance);
 
     }
 
@@ -79,10 +79,10 @@ namespace SimplePointPlugin.Helpers
     internal static Envelope Union2D(this Envelope envelope, Envelope other)
     {
       return new Envelope(
-        minX: Math.Min(envelope.MinX, other.MinX),
-        minY: Math.Min(envelope.MinY, other.MinY),
-        maxX: Math.Max(envelope.MaxX, other.MaxX),
-        maxY: Math.Max(envelope.MaxY, other.MaxY));
+        MinX: Math.Min(envelope.MinX, other.MinX),
+        MinY: Math.Min(envelope.MinY, other.MinY),
+        MaxX: Math.Max(envelope.MaxX, other.MaxX),
+        MaxY: Math.Max(envelope.MaxY, other.MaxY));
     }
 
     internal static ArcGIS.Core.Geometry.Envelope ToEsriEnvelope(this Envelope envelope,
@@ -112,10 +112,10 @@ namespace SimplePointPlugin.Helpers
     {
       //Spatial index does not handle Z
       return new Envelope(
-        minX: esriEnvelope.XMin,
-        minY: esriEnvelope.YMin,
-        maxX: esriEnvelope.XMax,
-        maxY: esriEnvelope.YMax);
+        MinX: esriEnvelope.XMin,
+        MinY: esriEnvelope.YMin,
+        MaxX: esriEnvelope.XMax,
+        MaxY: esriEnvelope.YMax);
     }
 
     internal static ArcGIS.Core.Geometry.MapPoint ToMapPoint(this RBushCoord3D rbushCoord,

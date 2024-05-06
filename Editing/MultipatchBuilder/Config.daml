@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="MultipatchBuilder.dll" defaultNamespace="MultipatchBuilder" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{a61e49ae-682b-4a77-9d7e-abf3a985c74d}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{a61e49ae-682b-4a77-9d7e-abf3a985c74d}" version="1.0" desktopVersion="3.3.48105">
     <Name>MultipatchBuilderEx</Name>
     <Description>MultipatchBuilderEx description</Description>
     <Image>Images\AddinDesktop32.png</Image>

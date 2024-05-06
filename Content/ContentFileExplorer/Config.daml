@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="ContentFileExplorer.dll" defaultNamespace="ContentFileExplorer" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{e8c45273-6a7d-4528-b137-c719cb710ab8}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{e8c45273-6a7d-4528-b137-c719cb710ab8}" version="1.0" desktopVersion="3.3.48105">
     <Name>ContentFileExplorer</Name>
     <Description>ContentFileExplorer description</Description>
     <Image>Images\AddinDesktop32.png</Image>

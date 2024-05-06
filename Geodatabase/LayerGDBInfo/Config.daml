@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="LayerGDBInfo.dll" defaultNamespace="LayerGDBInfo" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{27a53de9-caa9-4d0c-82c5-82dea294226b}" version="1.0" desktopVersion="3.1.0">
+  <AddInInfo id="{27a53de9-caa9-4d0c-82c5-82dea294226b}" version="1.0" desktopVersion="3.3.48105">
     <Name>LayerGDBInfo</Name>
     <Description>LayerGDBInfo description</Description>
     <Image>Images\AddinDesktop32.png</Image>

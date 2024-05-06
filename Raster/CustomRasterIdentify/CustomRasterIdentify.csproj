@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
@@ -67,9 +67,6 @@
     <Content Include="Images\GenericButtonRed32.png" />
     <Content Include="DarkImages\GenericButtonRed16.png" />
     <Content Include="DarkImages\GenericButtonRed32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="System.Windows.Controls.DataVisualization.Toolkit" Version="4.0.0.0" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.md" />

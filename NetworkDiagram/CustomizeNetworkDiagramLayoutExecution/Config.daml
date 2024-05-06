@@ -24,7 +24,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
 
-  <AddInInfo id="{db8b4785-b160-4526-a27e-86d7d57ff026}" version="1.0" desktopVersion="3.0.34080">
+  <AddInInfo id="{db8b4785-b160-4526-a27e-86d7d57ff026}" version="1.0" desktopVersion="3.3.48105">
     <Name>CustomizeNetworkDiagramLayoutExecution</Name>   
     <Description>Customize Network Diagram Layout Execution Sample</Description>
     <Image>Images\AddinDesktop32.png</Image>

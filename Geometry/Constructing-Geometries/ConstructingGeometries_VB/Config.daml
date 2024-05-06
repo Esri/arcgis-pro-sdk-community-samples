@@ -14,7 +14,7 @@
 '   limitations under the License. 
 -->
 <ArcGIS defaultAssembly="ConstructingGeometries_VB.dll" defaultNamespace="ConstructingGeometries_VB" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{4fd001df-e314-4fff-a4d1-1320fa99b087}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{4fd001df-e314-4fff-a4d1-1320fa99b087}" version="1.0" desktopVersion="3.3.48105">
     <Name>ConstructingGeometries_VB</Name>
     <Description>Samples showing how to construct geometries (using VB.NET).</Description>
     <Image>Images\AddinDesktop32.png</Image>

@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License. 
 -->
 <ArcGIS defaultAssembly="MaskRaster.dll" defaultNamespace="MaskRaster" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{24828dcd-390d-473b-ac03-b1e79bd8fb49}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{24828dcd-390d-473b-ac03-b1e79bd8fb49}" version="1.0" desktopVersion="3.3.48105">
     <Name>MaskRaster</Name>
     <Description>MaskRaster description</Description>
     <Image>Images\AddinDesktop32.png</Image>

@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="Renderer.dll" defaultNamespace="Renderer" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{4ae274a2-6a8b-4fee-a98f-6523b7847148}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{4ae274a2-6a8b-4fee-a98f-6523b7847148}" version="1.0" desktopVersion="3.3.48105">
     <Name>Renderer</Name>
     <Description>Renderer description</Description>
     <Image>Images\AddinDesktop32.png</Image>

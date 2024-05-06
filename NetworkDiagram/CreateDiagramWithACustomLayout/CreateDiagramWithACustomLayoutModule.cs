@@ -53,7 +53,7 @@ namespace CreateDiagramWithACustomLayout
   /// 1. In Visual Studio, click the Build menu.  Then select Build Solution.    
   /// 1. Click Start button to open ArcGIS Pro.  
   /// 1. ArcGIS Pro will open.  
-  /// 1. Open **C:\Data\NetworkDiagram\Communications_UNSDKSample.aprx**. Make sure the Communications Network map is open as the active map.add a data reference (what data does the user need to run this sample)  
+  /// 1. Open **C:\Data\NetworkDiagrams\CreateDiagramWithACustomLayout\CreateDiagramWithACustomLayout.aprx**. Make sure the Communications Network map is open as the active map.add a data reference (what data does the user need to run this sample)  
   /// ### Generate a sample diagram and manually apply the add-in Custom Layout available from the Layout gallery to arrange its contents  
   /// 
   /// 1. Click on the Map tab on the ribbon.Then, in the Navigate group, expand Bookmarks and click **Distr_Cbl_3** in the bookmark list.

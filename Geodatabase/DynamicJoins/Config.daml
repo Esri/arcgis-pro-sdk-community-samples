@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="DynamicJoins.dll" defaultNamespace="DynamicJoins" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{df09d708-2be6-416b-98ff-517d404bdb1b}" version="1.0" desktopVersion="3.0.33761">
+  <AddInInfo id="{df09d708-2be6-416b-98ff-517d404bdb1b}" version="1.0" desktopVersion="3.3.48105">
     <Name>DynamicJoins</Name>
     <Description>DynamicJoins description</Description>
     <Image>Images\AddinDesktop32.png</Image>

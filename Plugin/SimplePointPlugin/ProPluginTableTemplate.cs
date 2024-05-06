@@ -295,10 +295,10 @@ namespace SimplePointPlugin
       //For spatial data...
       //Domain to verify coordinates (2D)
       var sr_extent = new RBush.Envelope(
-        minX: _sr.Domain.XMin,
-        minY: _sr.Domain.YMin,
-        maxX: _sr.Domain.XMax,
-        maxY: _sr.Domain.YMax
+        MinX: _sr.Domain.XMin,
+        MinY: _sr.Domain.YMin,
+        MaxX: _sr.Domain.XMax,
+        MaxY: _sr.Domain.YMax
       );
 
       //default to the Spatial Reference domain

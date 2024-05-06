@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="RemoveAddins.dll" defaultNamespace="RemoveAddins" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{6b211307-aaec-4c34-9679-70319fb08a2b}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{6b211307-aaec-4c34-9679-70319fb08a2b}" version="1.0" desktopVersion="3.3.48105">
     <Name>RemoveAddins</Name>
     <Description>Customize the backstage by creating a Remove Add-in tab</Description>
     <Image>Images\AddinDesktop32.png</Image>

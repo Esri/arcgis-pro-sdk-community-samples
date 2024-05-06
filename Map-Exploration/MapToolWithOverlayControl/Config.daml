@@ -14,7 +14,7 @@
 //   limitations under the License. 
 -->
 <ArcGIS defaultAssembly="MapToolWithOverlayControl.dll" defaultNamespace="MapToolWithOverlayControl" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{3b045ea8-084c-41bf-a678-c93b6ec532cc}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{3b045ea8-084c-41bf-a678-c93b6ec532cc}" version="1.0" desktopVersion="3.3.48105">
     <Name>Map Tool With Overlay</Name>
     <Description>Adds custom map tool for ArcGIS Pro.</Description>
     <Image>Images\AddinDesktop32.png</Image>

@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="Symbology.dll" defaultNamespace="Symbology" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{b06b1734-2530-42eb-ae99-dd8695be253a}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{b06b1734-2530-42eb-ae99-dd8695be253a}" version="1.0" desktopVersion="3.3.48105">
     <Name>Symbology</Name>
     <Description>Symbology description</Description>
     <Image>Images\AddinDesktop32.png</Image>

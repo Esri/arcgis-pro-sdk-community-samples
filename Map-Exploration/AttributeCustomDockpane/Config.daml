@@ -19,7 +19,7 @@
 -->
 
 <ArcGIS defaultAssembly="AttributeCustomDockpane.dll" defaultNamespace="AttributeCustomDockpane" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{65d3da71-2422-4877-a7af-17bcab2e48e7}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{65d3da71-2422-4877-a7af-17bcab2e48e7}" version="1.0" desktopVersion="3.3.48105">
     <Name>AttributeCustomDockpane</Name>
     <Description>AttributeCustomDockpane description</Description>
     <Image>Images\AddinDesktop32.png</Image>

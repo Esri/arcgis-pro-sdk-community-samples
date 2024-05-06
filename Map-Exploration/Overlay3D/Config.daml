@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="Overlay3D.dll" defaultNamespace="Overlay3D" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{154a43fc-b1a1-46dc-bedb-e4f4da4fffb3}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{154a43fc-b1a1-46dc-bedb-e4f4da4fffb3}" version="1.0" desktopVersion="3.3.48105">
     <Name>Overlay3D</Name>
     <Description>Overlay3D description</Description>
     <Image>Images\AddinDesktop32.png</Image>

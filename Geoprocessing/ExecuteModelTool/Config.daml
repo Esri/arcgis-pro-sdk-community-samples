@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="ExecuteModelTool.dll" defaultNamespace="ExecuteModelTool" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{4155cf74-76d5-4a0b-8860-e9adc2909cf9}" version="1.0" desktopVersion="3.1.0">
+  <AddInInfo id="{4155cf74-76d5-4a0b-8860-e9adc2909cf9}" version="1.0" desktopVersion="3.3.48105">
     <Name>ExecuteModelTool</Name>
     <Description>ExecuteModelTool description</Description>
     <Image>Images\AddinDesktop32.png</Image>

@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="SplitPolygon.dll" defaultNamespace="SplitPolygon" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{e8d50dc2-5269-429e-812b-bf7717df4023}" version="1.0" desktopVersion="3.2.48119">
+  <AddInInfo id="{e8d50dc2-5269-429e-812b-bf7717df4023}" version="1.0" desktopVersion="3.3.48105">
     <Name>SplitPolygon</Name>
     <Description>SplitPolygon description</Description>
     <Image>Images\AddinDesktop32.png</Image>

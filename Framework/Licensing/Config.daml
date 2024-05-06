@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="Licensing.dll" defaultNamespace="Licensing" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{8ae35a3e-eddf-4d72-b0ec-c29aae7476a3}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{8ae35a3e-eddf-4d72-b0ec-c29aae7476a3}" version="1.0" desktopVersion="3.3.48105">
     <Name>Acme Licensing</Name>
     <Description>Shows how to use IExtensionConfig to authorize your Add-in via Backstage</Description>
     <Image>Images\AddinDesktop32.png</Image>

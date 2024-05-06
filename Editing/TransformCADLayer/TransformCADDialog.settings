@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="LastUsedParams" Type="System.String" Scope="User">
-      <Value Profile="(Default)">""</Value>
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

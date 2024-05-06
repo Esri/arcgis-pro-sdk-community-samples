@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="SubstitutionAddIn.dll" defaultNamespace="SubstitutionAddIn" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{99aa99b2-4d1c-48da-b2c7-9ce7dbfd96c0}" version="1.0" desktopVersion="3.1.41833">
+  <AddInInfo id="{99aa99b2-4d1c-48da-b2c7-9ce7dbfd96c0}" version="1.0" desktopVersion="3.3.48105">
     <Name>SubstitutionAddIn</Name>
     <Description>Adds the ability to turn a substitution setting into a permanent change.</Description>
     <Image>Images\AddinDesktop32.png</Image>

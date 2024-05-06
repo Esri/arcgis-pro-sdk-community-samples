@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="EditingTemplates.dll" defaultNamespace="EditingTemplates" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{15dea410-4daf-4c20-9658-4551c4addf56}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{15dea410-4daf-4c20-9658-4551c4addf56}" version="1.0" desktopVersion="3.3.48105">
     <Name>EditingTemplates</Name>
     <Description>EditingTemplates description</Description>
     <Image>Images\AddinDesktop32.png</Image>

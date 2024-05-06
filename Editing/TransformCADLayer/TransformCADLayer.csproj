@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
-    <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <NoWarn>CA1416</NoWarn>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Config.daml" />
@@ -92,6 +93,19 @@
       <CopyLocal>False</CopyLocal>
       <Private>False</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="TransformCADDialog.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TransformCADDialog.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="TransformCADDialog.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>TransformCADDialog.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets" Condition="Exists('C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets') AND !Exists('Esri.ArcGISPro.Extensions.targets')" />
 </Project>

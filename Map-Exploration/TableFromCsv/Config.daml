@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="TableFromCsv.dll" defaultNamespace="TableFromCsv" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{d147dcfd-3383-4e0c-8c9d-076b7e6ffb8e}" version="1.0" desktopVersion="3.2.49666">
+  <AddInInfo id="{d147dcfd-3383-4e0c-8c9d-076b7e6ffb8e}" version="1.0" desktopVersion="3.3.48105">
     <Name>TableFromCsv</Name>
     <Description>TableFromCsv description</Description>
     <Image>Images\AddinDesktop32.png</Image>

@@ -19,7 +19,7 @@
 -->
 
 <ArcGIS defaultAssembly="IdentifyWindow.dll" defaultNamespace="IdentifyWindow" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{0491aeb0-1c7c-4206-a602-8a3f64606013}" version="1.0" desktopVersion="3.0.34978">
+  <AddInInfo id="{0491aeb0-1c7c-4206-a602-8a3f64606013}" version="1.0" desktopVersion="3.3.48105">
     <Name>IdentifyWindow</Name>
     <Description>IdentifyWindow description</Description>
     <Image>Images\AddinDesktop32.png</Image>

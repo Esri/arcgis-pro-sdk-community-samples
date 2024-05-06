@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="GeoProcessingHistory.dll" defaultNamespace="GeoProcessingHistory" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{67e105cc-e653-465b-a48d-67003d9b303d}" version="1.0" desktopVersion="3.1.40483">
+  <AddInInfo id="{67e105cc-e653-465b-a48d-67003d9b303d}" version="1.0" desktopVersion="3.3.48105">
     <Name>GeoProcessingHistory</Name>
     <Description>Delves into the GeoProcessing History API</Description>
     <Image>Images\AddinDesktop32.png</Image>

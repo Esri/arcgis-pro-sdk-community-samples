@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="TableControlsDockpane.dll" defaultNamespace="TableControlsDockpane" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{efa4688b-55e3-4f55-8b09-75b8c8cda69a}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{efa4688b-55e3-4f55-8b09-75b8c8cda69a}" version="1.0" desktopVersion="3.3.48105">
     <Name>TableControlsDockpane</Name>
     <Description>TableControlsDockpane description</Description>
     <Image>Images\AddinDesktop32.png</Image>

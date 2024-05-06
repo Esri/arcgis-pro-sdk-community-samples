@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2024 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="EditorInspectorUI.dll" defaultNamespace="EditorInspectorUI" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{b372f6d2-1368-4184-9c1e-5fea9de8f7c4}" version="1.0" desktopVersion="3.3.51199" product="ArcGISPro">
+    <Name>EditorInspectorUI</Name>
+    <Description>EditorInspectorUI description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>1/27/2024 7:51:34 AM</Date>
+    <Subject>Editing</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="EditorInspectorUI_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="EditorInspectorUI_Tab1" caption="Inspector UI Demo">
+          <group refID="EditorInspectorUI_Group1" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="EditorInspectorUI_Group1" caption="Inspector Demo" appearsOnAddInTab="false">
+          <!-- host controls within groups -->          
+          <button refID="EditorInspectorUI_InspectorUI_DockpaneInspectorUI_ShowButton" size="large" />
+		  <button refID="esri_mapping_selectByRectangleTool" size="middle"/>
+		  <button refID="esri_mapping_clearSelectionButton" size="middle" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="EditorInspectorUI_InspectorUI_DockpaneInspectorUI_ShowButton" caption="My Inspector Grid" className="EditorInspectorUI.InspectorUI.DockpaneInspectorUI_ShowButton" loadOnClick="true" smallImage="Lion16" largeImage="Lion32" keytip="z">
+          <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+		<!--This is the dockpane-->  
+        <dockPane id="EditorInspectorUI_InspectorUI_DockpaneInspectorUI" 
+				  caption="My Inspector Grid" 
+				  className="EditorInspectorUI.InspectorUI.DockpaneInspectorUIViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="EditorInspectorUI.InspectorUI.DockpaneInspectorUIView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

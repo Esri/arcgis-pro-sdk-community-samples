@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="LayerPopups.dll" defaultNamespace="LayerPopups" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{de0f7b68-519e-4e95-9736-41001956038e}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{de0f7b68-519e-4e95-9736-41001956038e}" version="1.0" desktopVersion="3.3.48105">
     <Name>LayerPopups</Name>
     <Description>Shows how to define layer popups that will be persisted in the layer's CIM definition. The Sample
     defines a set of 'helper' classes modelled after the similar pattern ArcGIS.Desktop.Mapping implements

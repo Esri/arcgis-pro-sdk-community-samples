@@ -14,7 +14,7 @@
 //   limitations under the License. 
 -->
 <ArcGIS defaultAssembly="GeometryControl.dll" defaultNamespace="GeometryControl" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{448525a2-1f86-4436-b550-c1eacdc502dd}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{448525a2-1f86-4436-b550-c1eacdc502dd}" version="1.0" desktopVersion="3.3.48105">
     <Name>GeometryControl</Name>
     <Description>Demonstrates the usage of the GeometryControl for viewing geometry vertices or sketch vertices.</Description>
     <Image>Images\AddinDesktop32.png</Image>

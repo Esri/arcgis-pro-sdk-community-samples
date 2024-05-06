@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="WizardSample.dll" defaultNamespace="WizardSample" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{6c2ad456-410f-4fe2-8df3-c9a974ef98c0}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{6c2ad456-410f-4fe2-8df3-c9a974ef98c0}" version="1.0" desktopVersion="3.3.48105">
     <Name>WizardSample</Name>
     <Description>WizardSample description</Description>
     <Image>Images\AddinDesktop32.png</Image>

@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="ComboBoxShowingLayers.dll" defaultNamespace="ComboBoxShowingLayers" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{708c4a2a-0118-4029-816a-2427b1f3d72f}" version="1.0" desktopVersion="3.1.41295">
+  <AddInInfo id="{708c4a2a-0118-4029-816a-2427b1f3d72f}" version="1.0" desktopVersion="3.3.48105">
     <Name>ComboBoxShowingLayers</Name>
     <Description>ComboBoxShowingLayers description</Description>
     <Image>Images\AddinDesktop32.png</Image>

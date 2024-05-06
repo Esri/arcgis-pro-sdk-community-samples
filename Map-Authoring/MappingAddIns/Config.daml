@@ -12,7 +12,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License. -->
 <ArcGIS defaultAssembly="MappingSampleAddIns.dll" defaultNamespace="MappingSampleAddIns" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{cc7881f4-bd27-4d9d-b32b-78b1e3f230c4}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{cc7881f4-bd27-4d9d-b32b-78b1e3f230c4}" version="1.0" desktopVersion="3.3.48105">
     <Name>Mapping Sample AddIns</Name>
     <Description>Adds additions controls to work with a map</Description>
     <Image>Images\AddinDesktop32.png</Image>

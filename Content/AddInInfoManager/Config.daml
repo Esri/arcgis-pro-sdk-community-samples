@@ -19,7 +19,7 @@
 -->
 
 <ArcGIS defaultAssembly="AddInInfoManager.dll" defaultNamespace="AddInInfoManager" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{f4f41585-ae63-4833-ba96-bcd0252b14be}" version="1.01" desktopVersion="3.0.36056">
+  <AddInInfo id="{f4f41585-ae63-4833-ba96-bcd0252b14be}" version="1.01" desktopVersion="3.3.48105">
     <Name>AddInInfoManager</Name>
     <Description>AddInInfoManager description</Description>
     <Image>Images\AddinDesktop32.png</Image>

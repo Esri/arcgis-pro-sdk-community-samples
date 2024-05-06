@@ -37,7 +37,7 @@
 
 -->
 <ArcGIS defaultAssembly="CustomEvent.dll" defaultNamespace="CustomEvent" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{b6ae5439-1951-46db-a856-7b737afe1613}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{b6ae5439-1951-46db-a856-7b737afe1613}" version="1.0" desktopVersion="3.3.48105">
     <Name>CustomEvent</Name>
     <Description>Provides an example of implementing a custom event</Description>
     <Image>Images\AddinDesktop32.png</Image>

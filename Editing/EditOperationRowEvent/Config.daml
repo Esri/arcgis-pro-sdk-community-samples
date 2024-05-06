@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="EditOperationRowEvent.dll" defaultNamespace="EditOperationRowEvent" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{ffcc185f-1eac-4a71-b4e3-55a179e41dea}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{ffcc185f-1eac-4a71-b4e3-55a179e41dea}" version="1.0" desktopVersion="3.3.48105">
     <Name>EditOperationRowEvent</Name>
     <Description>Record add, modify and deletes to table as part of the current edit operation</Description>
     <Image>Images\AddinDesktop32.png</Image>

@@ -14,7 +14,7 @@
 
 -->
 <ArcGIS defaultAssembly="Localization.dll" defaultNamespace="Localization" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{8862ccaf-1537-4500-90af-f3f8273134c2}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{8862ccaf-1537-4500-90af-f3f8273134c2}" version="1.0" desktopVersion="3.3.48105">
     <Name>Localization</Name>
     <Description>Localization description</Description>
     <Image>Images\AddinDesktop32.png</Image>

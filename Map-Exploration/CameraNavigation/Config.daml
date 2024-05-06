@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="CameraNavigation.dll" defaultNamespace="CameraNavigation" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{ce2d1bec-a155-4e87-8268-164f4d5787c6}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{ce2d1bec-a155-4e87-8268-164f4d5787c6}" version="1.0" desktopVersion="3.3.48105">
     <Name>Navigating camera with ArcGIS Pro</Name>
     <Description>Navigating camera with ArcGIS Pro</Description>
     <Image>Images\AddinDesktop32.png</Image>

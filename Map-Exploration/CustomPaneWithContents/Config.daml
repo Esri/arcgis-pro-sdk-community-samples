@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="CustomPaneWithContents.dll" defaultNamespace="CustomPaneWithContents" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{0f771e38-6a1b-4cd8-9a7c-4583077d0f04}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{0f771e38-6a1b-4cd8-9a7c-4583077d0f04}" version="1.0" desktopVersion="3.3.48105">
     <Name>CustomPaneWithContents</Name>
     <Description>CustomPaneWithContents description</Description>
     <Image>Images\AddinDesktop32.png</Image>

@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="CalculateStatistics.dll" defaultNamespace="CalculateStatistics" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{e551bdce-868b-422b-954a-74561aa98b2c}" version="1.0" desktopVersion="3.0.33798">
+  <AddInInfo id="{e551bdce-868b-422b-954a-74561aa98b2c}" version="1.0" desktopVersion="3.3.48105">
     <Name>CalculateStatistics</Name>
     <Description>CalculateStatistics description</Description>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>

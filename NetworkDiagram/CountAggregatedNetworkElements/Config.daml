@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2024 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="CountAggregatedNetworkElements.dll" defaultNamespace="CountAggregatedNetworkElements" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{d9482460-c396-481d-afb1-d37ebd63b5d1}" version="1.0" desktopVersion="3.3.51089">
+    <Name>CountAggregatedNetworkElements</Name>
+    <Description>Fills up each diagram feature Info field with the total count of network elements it aggregates and the count of the specific aggregated network elements that users want to retrieve</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>1/4/2024 9:11:34 AM</Date>
+    <Subject>NetworkDiagram</Subject>
+  </AddInInfo>
+  <modules>
+    <insertModule id="CountAggregatedNetworkElements_Module" 
+                  className="CountAggregatedNetworkElementsModule" autoLoad="true" 
+                  caption="Count Aggregated Network Elements Module" >
+      <groups>
+        <group id="CountAggregatedNetworkElements_Group1" caption="Count Objects" 
+               appearsOnAddInTab="true" condition="CountAggregatedNetworkElements_IsUn"
+               keytip="G0">
+          <button refID="CountAggregatedNetworkElements_SelectAssetGroupAssetType_ShowButton" 
+                  size="large" />
+        </group>
+      </groups>
+      <controls>
+        <button id="CountAggregatedNetworkElements_SelectAssetGroupAssetType_ShowButton" 
+                caption="Count Aggregated Network Elements" keytip="B0"
+                className="SelectAssetGroupAssetType_ShowButton" loadOnClick="true" 
+                smallImage="CalculateStatistics16" 
+                largeImage="CalculateStatistics32">
+          <tooltip heading="Count Aggregated Network Elements">
+            Fills the diagram feature Info field with the total count of network elements it aggregates and the count of the specific aggregated network elements you request through the pane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="CountAggregatedNetworkElements_SelectAssetGroupAssetType" 
+                  caption="Count Aggregated Network Elements" 
+                  className="SelectAssetGroupAssetTypeViewModel" dock="group" 
+                  dockWith="esri_core_projectDockPane" 
+                  condition="CountAggregatedNetworkElements_IsUn">
+          <content className="SelectAssetGroupAssetTypeView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+  <conditions>
+    <insertCondition id="CountAggregatedNetworkElements_IsUn">
+      <and>
+        <state id="esri_mapping_mapTypeNetworkDiagramState"/>
+        <state id="CountAggregatedNetworkElements_ISUN"/>
+      </and>
+    </insertCondition>
+  </conditions>
+</ArcGIS>

@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="ContextualRibbonTab.dll" defaultNamespace="ContextualRibbonTab" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{df89c3d3-c556-4e71-bd5b-3ee30169cdaf}" version="1.0" desktopVersion="3.1.41833">
+  <AddInInfo id="{df89c3d3-c556-4e71-bd5b-3ee30169cdaf}" version="1.0" desktopVersion="3.3.48105">
     <Name>ContextualRibbonTab</Name>
     <Description>ContextualRibbonTab description</Description>
     <Image>Images\AddinDesktop32.png</Image>

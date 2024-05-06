@@ -13,7 +13,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License. 
 -->
-  <AddInInfo id="{4fe436ac-1865-4169-8b6a-df4d21668875}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{4fe436ac-1865-4169-8b6a-df4d21668875}" version="1.0" desktopVersion="3.3.48105">
     <Name>GeoprocessingExecuteAsync</Name>
     <Description>Shows execution of Buffer tool around a line drawn on the map.</Description>
     <Image>Images\AddinDesktop32.png</Image>

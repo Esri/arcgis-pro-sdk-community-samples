@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <OutputType>Exe</OutputType>
-    <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
-    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-    <NoWarn>CA1416,1591</NoWarn>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<NoWarn>1591;CA1416</NoWarn>
+		<OutputType>Exe</OutputType>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ArcGIS.Core">

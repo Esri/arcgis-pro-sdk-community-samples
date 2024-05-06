@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2024 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="DockpaneAndThreads.dll" defaultNamespace="DockpaneAndThreads" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{083433b2-45dc-4428-bcc7-5ca3a3edb1b0}" version="1.0" desktopVersion="3.3.51327" product="ArcGISPro">
+    <Name>DockpaneAndThreads</Name>
+    <Description>DockpaneAndThreads description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>2/27/2024 6:00:50 PM</Date>
+    <Subject>MVVM-XAML</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="DockpaneAndThreads_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="DockpaneAndThreads_Tab1" caption="Dockpane w/Threads" keytip="T1">
+          <group refID="DockpaneAndThreads_Group1"/>
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="DockpaneAndThreads_Group1" caption="Dockpane and Threads" keytip="G1" >
+          <!-- host controls within groups -->
+          <button refID="DockpaneAndThreads_DockpaneListBox_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="DockpaneAndThreads_DockpaneListBox_ShowButton" caption="Dockpane with ListBox"
+								className="DockpaneListBox_ShowButton" loadOnClick="true" keytip="B1"
+								smallImage="Online_Layer16" largeImage="Online_Layer32">
+          <tooltip heading="SDockpane with ListBox">Demonstrates how to update Dockpane content from a background thread<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="DockpaneAndThreads_DockpaneListBox" caption="DockpaneListBox" 
+									className="DockpaneListBoxViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="DockpaneListBoxView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

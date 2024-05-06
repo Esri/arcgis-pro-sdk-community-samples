@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="MapToolOverlay.dll" defaultNamespace="MapToolOverlay" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{af79d7af-8fe7-4051-b781-6dabb6200477}" version="1.0" desktopVersion="3.0.0">
+  <AddInInfo id="{af79d7af-8fe7-4051-b781-6dabb6200477}" version="1.0" desktopVersion="3.3.48105">
     <Name>MapToolOverlay</Name>
     <Description>MapToolOverlay description</Description>
     <Image>Images\AddinDesktop32.png</Image>

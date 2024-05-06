@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "CreateLineOfSight": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\ArcGIS\\Pro\\bin\\ArcGISPro.exe",
+      "commandLineArgs": "\"C:\\DevSummit\\2024\\3D Analyst and TIN layer Line of Sight\\Project\\CreateLineOfSight\\CreateLineOfSight.aprx\""
+    }
+  }
+}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2024 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="CreateReportBasic.dll" defaultNamespace="CreateReportBasic" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{0a6e009f-8705-43a3-a6c0-6bef05de7751}" version="1.0" desktopVersion="3.3.51327" product="ArcGISPro">
+    <Name>CreateReportBasic</Name>
+    <Description>CreateReportBasic description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>3/26/2024 07:09:52</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="CreateReportBasic_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="CreateReportBasic_Tab1" caption="New Tab">
+          <group refID="CreateReportBasic_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="CreateReportBasic_Group1" caption="Create Report" keytip="Gx" appearsOnAddInTab="true">
+          <button refID="CreateReportBasic_CreateReportBasic" size="large" />
+          <button refID="CreateReportBasic_ShowReportBasic" size="large" />
+          <button refID="CreateReportBasic_PreviewReportBasic" size="large" />
+        </group>
+      </groups>
+      <controls>
+        
+        <button id="CreateReportBasic_CreateReportBasic" caption="Create Simple Report" 
+                className="CreateReportBasic" loadOnClick="true" keytip="B0" 
+                smallImage="NewReport16" largeImage="NewReport32">
+          <tooltip heading="Create Simple Report">Takes the first feature class, selects all records, and creates a report<disabledText /></tooltip>
+        </button>
+        <button id="CreateReportBasic_ShowReportBasic" caption="Show Report Pane"
+                className="ShowReportBasic" loadOnClick="true" keytip="B0"
+                smallImage="Report16" largeImage="Report32">
+          <tooltip heading="Show Report Pane">
+            Displays a pane showing the newly created report<disabledText />
+          </tooltip>
+        </button>
+        <button id="CreateReportBasic_PreviewReportBasic" caption="Preview Simple Report"
+                className="PreviewReportBasic" loadOnClick="true" keytip="B0"
+                smallImage="ReportPreview16" largeImage="ReportPreview32">
+          <tooltip heading="Preview Simple Report">
+            Previews the current active report<disabledText />
+          </tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

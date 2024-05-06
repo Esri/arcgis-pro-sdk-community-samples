@@ -17,10 +17,10 @@ Language:              C#
 Subject:               NetworkDiagram
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  10/01/2023
-ArcGIS Pro:            3.2
+Date:                  04/04/2024
+ArcGIS Pro:            3.3
 Visual Studio:         2022
-.NET Target Framework: net6.0-windows
+.NET Target Framework: net8.0-windows
 ```
 
 ## Resources
@@ -36,7 +36,7 @@ Visual Studio:         2022
 1. In Visual Studio, click the Build menu. Then select Build Solution.
 2. Click Start button to open ArcGIS Pro.      
 3. ArcGIS Pro will open.      
-4. Open **C:\Data\UtilityNetwork\UtilityNetworkSamples.aprx**. Make sure the Electric FGDB Editor map is open as the active map.    
+4. Open **C:\Data\NetworkDiagrams\SDKSampleNetwork\SDKSampleNetwork.aprx**. Make sure the Electric FGDB Editor map is open as the active map.    
 5. Click on the Map tab on the ribbon. Then, in the Navigate group, expand Bookmarks and click Full Extent in the bookmark list.    
 6. In the Utility Network tab in the ribbon, in the Subnetwork group, click Find Subnetwork Features: The Find Subnetworks pane window opens.    
 7. Right-click the row corresponding to the RMT007 subnetwork and click Trace Subnetwork.    

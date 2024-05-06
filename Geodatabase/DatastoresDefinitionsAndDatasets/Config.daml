@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="DatastoresDefinitionsAndDatasets.dll" defaultNamespace="DatastoresDefinitionsAndDatasets" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{52f505f1-745f-4745-8d54-fc50b1084424}" version="1.0" desktopVersion="3.0.33761">
+  <AddInInfo id="{52f505f1-745f-4745-8d54-fc50b1084424}" version="1.0" desktopVersion="3.3.48105">
     <Name>DatastoresDefinitionsAndDatasets</Name>
     <Description>DatastoresDefinitionsAndDatasets description</Description>
     <Image>Images\AddinDesktop32.png</Image>

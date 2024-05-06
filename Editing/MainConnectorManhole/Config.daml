@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="MainConnectorManhole.dll" defaultNamespace="MainConnectorManhole" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{df0af2f7-e3f4-4a32-bdaf-08eb20fb044d}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{df0af2f7-e3f4-4a32-bdaf-08eb20fb044d}" version="1.0" desktopVersion="3.3.48105">
     <Name>MainConnectorManhole</Name>
     <Description>MainConnectorManhole description</Description>
     <Image>Images\AddinDesktop32.png</Image>

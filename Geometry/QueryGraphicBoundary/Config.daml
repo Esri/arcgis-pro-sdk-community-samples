@@ -19,7 +19,7 @@
 -->
 
 <ArcGIS defaultAssembly="QueryGraphicBoundary.dll" defaultNamespace="QueryGraphicBoundary" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{3c54b579-906a-4238-b724-577e5b7a35bb}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{3c54b579-906a-4238-b724-577e5b7a35bb}" version="1.0" desktopVersion="3.3.48105">
     <Name>QueryGraphicBoundary</Name>
     <Description>Demonstrates masking</Description>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>

@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="ExportDiagramToFeatureClasses.dll" defaultNamespace="ExportDiagramToFeatureClasses" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{4760fe4f-2cde-45be-a783-07f3701d705a}" version="1.0" desktopVersion="3.0.36056">
+  <AddInInfo id="{4760fe4f-2cde-45be-a783-07f3701d705a}" version="1.0" desktopVersion="3.3.48105">
     <Name>ExportDiagramToFeatureClasses</Name>
     <Description>Export a Diagram To Feature Classes</Description>
     <Image>Images\ExportDiagramToFeatureClasses32.png</Image>

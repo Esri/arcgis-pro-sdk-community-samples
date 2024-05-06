@@ -13,12 +13,12 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.-->
 <ArcGIS defaultAssembly="CreatePointsAlongLine3D.dll" defaultNamespace="CreatePointsAlongLine3D" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{cce4b717-9ab5-4563-8054-9ec08e86e253}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{cce4b717-9ab5-4563-8054-9ec08e86e253}" version="1.0" desktopVersion="3.3.48105">
     <Name>CreatePointsAlongLine3D</Name>
     <Description>Create points along a 3D line</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
-    <Company>Esri</Company>
+    <Company>esri, https://www.esri.com</Company>
     <Date>5/2020</Date>
     <Subject>Editing</Subject>
     <!-- Note subject can be one or more of these topics:

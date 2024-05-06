@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="ProWindowModal.dll" defaultNamespace="ProWindowModal" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{6a6cfa09-0314-4103-9f9b-c37834401bc3}" version="1.0" desktopVersion="3.1.0">
+  <AddInInfo id="{6a6cfa09-0314-4103-9f9b-c37834401bc3}" version="1.0" desktopVersion="3.3.48105">
     <Name>ProWindowModal</Name>
     <Description>ProWindowModal description</Description>
     <Image>Images\AddinDesktop32.png</Image>

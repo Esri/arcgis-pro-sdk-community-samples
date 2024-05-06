@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="RubiksCube.dll" defaultNamespace="RubiksCube" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{bc601abb-8c3b-4743-bf1a-54e50f9efd79}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{bc601abb-8c3b-4743-bf1a-54e50f9efd79}" version="1.0" desktopVersion="3.3.48105">
     <Name>RubiksCube</Name>
     <Description>RubiksCube description</Description>
     <Image>Images\AddinDesktop32.png</Image>

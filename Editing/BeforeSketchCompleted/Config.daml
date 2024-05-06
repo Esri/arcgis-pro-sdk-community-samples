@@ -14,7 +14,7 @@
 //   limitations under the License.
 -->
 <ArcGIS defaultAssembly="BeforeSketchCompleted.dll" defaultNamespace="BeforeSketchCompleted" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{a4d0d771-7b8d-43ce-8e4e-0be3ef520774}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{a4d0d771-7b8d-43ce-8e4e-0be3ef520774}" version="1.0" desktopVersion="3.3.48105">
     <Name>BeforeSketchCompleted</Name>
     <Description>Sample for BeforeSketchCompleted sketch event</Description>
     <Image>Images\AddinDesktop32.png</Image>

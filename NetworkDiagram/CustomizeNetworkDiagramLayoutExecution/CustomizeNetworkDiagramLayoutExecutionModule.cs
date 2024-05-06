@@ -51,7 +51,7 @@ namespace CustomizeNetworkDiagramLayoutExecution
   /// 1. In Visual Studio, click the Build menu. Then select Build Solution.    
   /// 1. Click Start button to open ArcGIS Pro.    
   /// 1. ArcGIS Pro will open.    
-  /// 1. Open **C:\Data\UtilityNetwork\UtilityNetworkSamples.aprx**. Make sure the Electric FGDB Editor map is open as the active map.  
+  /// 1. Open **C:\Data\NetworkDiagrams\SDKSampleNetwork\SDKSampleNetwork.aprx**. Make sure the Electric FGDB Editor map is open as the active map.  
   /// 1. Click on the Map tab on the ribbon. Then, in the Navigate group, expand Bookmarks and click Full Extent in the bookmark list.  
   /// 1. In the Utility Network tab in the ribbon, in the Subnetwork group, click Find Subnetwork Features: The Find Subnetworks pane window opens.  
   /// 1. Right-click the row corresponding to the RMT007 subnetwork and click Trace Subnetwork.  

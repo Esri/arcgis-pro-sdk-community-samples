@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "EditorInspectorUI": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\ArcGIS\\Pro\\bin\\ArcGISPro.exe",
+      "commandLineArgs": "\"C:\\DevSummit\\2024\\Extending Editor Inspector UI with custom Embeddable Controls\\Data\\InspectorUI\\InspectorUI.aprx\""
+    }
+  }
+}

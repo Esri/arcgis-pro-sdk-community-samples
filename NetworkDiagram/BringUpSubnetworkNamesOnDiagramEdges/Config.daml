@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2024 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="BringUpSubnetworkNamesOnDiagramEdges.dll" defaultNamespace="BringUpSubnetworkNamesOnDiagramEdges" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{90da991f-72ef-4dde-b6cb-b8843473fe48}" version="1.0" desktopVersion="3.3.50902">
+    <Name>BringUpSubnetworkNamesOnDiagramEdges</Name>
+    <Description>Fills up each diagram feature Info field with the subnetwork name it represents and the total count of network elements it aggregates</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>11/30/2023 9:17:24 AM</Date>
+    <Subject>NetworkDiagram</Subject>
+  </AddInInfo>
+  <modules>
+    <insertModule id="BringUpSubnetworkNamesOnDiagramEdges_Module" className="BringUpSubnetworkNamesOnDiagramEdgesModule" autoLoad="true" caption="Bring Up Subnetwork Names On Diagram Edges Module">
+      <groups>
+        <group id="BringUpSubnetworkNamesOnDiagramEdges_Group1" caption="Bring Up Info" 
+               appearsOnAddInTab="true" keytip="T0">
+          <button refID="BringUpSubnetworkNamesOnDiagramEdges_ToggleSwitches" size="large" />
+          <button refID="BringUpSubnetworkNamesOnDiagramEdges_UpdateInfo" size="large" />
+          <splitButton refID="BringUpSubnetworkNamesOnDiagramEdges_Template" />
+        </group>
+      </groups>
+      <controls>
+        <button id="BringUpSubnetworkNamesOnDiagramEdges_ToggleSwitches" 
+                caption="Toggle Switches" className="ToggleSwitches" 
+                loadOnClick="true" keytip="B0"
+                smallImage="Images/ToggleSwitches216.png" 
+                largeImage="Images/ToggleSwitches32.png" 
+                condition="BringUpSubnetworkNamesOnDiagramEdges_ToggleCondition">
+          <tooltip heading="Toggle Switches">
+            Toogles the status of the selected medium voltage switches, validates and saves the network topology, updates the related subnetworks and fills the diagram feature Info field
+            <disabledText>
+              This command is currently unavailable because there is currently no selected diagram features in the diagram map or there are unsaved edits
+            </disabledText></tooltip>
+        </button>
+        <button id="BringUpSubnetworkNamesOnDiagramEdges_UpdateInfo" 
+                caption="Update Info" className="UpdateInfo" 
+                loadOnClick="true" keytip="B1"
+                smallImage="EditingInfo32"
+                largeImage="EditingInfo16">
+          <tooltip heading="Update Info">
+            Fills the diagram feature Info field with the related subnetwork name and the total count of aggregated network elements<disabledText /></tooltip>
+        </button>
+        <button id="BringUpSubnetworkNamesOnDiagramEdges_NewDiagram" 
+                caption="New Diagram" className="NewDiagram"
+                loadOnClick="true" keytip="B2" extendedCaption="New diagram"
+                largeImage="NewDiagram32"
+                smallImage="NewDiagram16">
+          <tooltip heading="New Diagram">
+            Generates a new diagram based on the picked up diagram template from the set of features or objects currently selected in the network map and fills the diagram feature Info field with the related subnetwork name and the total count of aggregated network elements.
+            <disabledText>There is currently no selected features in the network map or there are unsaved edits.</disabledText>
+          </tooltip>
+        </button>
+      </controls>
+      <splitButtons>
+        <splitButton id="BringUpSubnetworkNamesOnDiagramEdges_Template">
+          <button refID="BringUpSubnetworkNamesOnDiagramEdges_NewDiagram" />
+          <gallery refID="BringUpSubnetworkNamesOnDiagramEdges_TemplateGallery" />
+        </splitButton>
+      </splitButtons>
+      <galleries>
+        <gallery id="BringUpSubnetworkNamesOnDiagramEdges_TemplateGallery" 
+                 caption="Diagram Gallery" className="TemplateGallery" itemsInRow="1" 
+                 itemWidth="250" loadingMessage="Loading..." showGroup="false" 
+                 showItemCaption="false" 
+                 dataTemplateFile="pack://application:,,,/BringUpSubnetworkNamesOnDiagramEdges;component//TemplateGalleryTemplate.xaml"
+                 templateID="TemplateGalleryItemTemplate" 
+                 resizable="true" keytip="G0"
+                 condition="BringUpSubnetworkNamesOnDiagramEdges_NewCondition">
+          <tooltip heading="New Diagram">
+            Generates a new diagram based on the picked up diagram template from the set of network features or objects currently selected in the network map and fills the diagram feature Info field with the related subnetwork name and the total count of aggregated network elements.<disabledText>There is currently no selected features in the network map or there are unsaved edits.</disabledText></tooltip>
+        </gallery>
+      </galleries>
+    </insertModule>
+  </modules>
+  <conditions>
+    <insertCondition id="BringUpSubnetworkNamesOnDiagramEdges_ToggleCondition" caption="Toggle Condition">
+      <and>
+        <state id="BringUpSubnetworkNamesOnDiagramEdges_IsUNV7" />
+        <state id="esri_mapping_mapTypeNetworkDiagramState" />
+        <state id="esri_mapping_activeMapView_hasFeatureSelectionState" />
+      </and>
+    </insertCondition>
+    <insertCondition id="BringUpSubnetworkNamesOnDiagramEdges_NewCondition" 
+                     caption="New Diagram Condition">
+      <and>
+        <state id="esri_mapping_mapPane" />
+        <state id="esri_mapping_activeMapView_hasFeatureSelectionState" />
+        <not>
+          <state id="esri_mapping_mapTypeNetworkDiagramState" />
+        </not>
+        <state id="BringUpSubnetworkNamesOnDiagramEdges_IsUNV7" />
+      </and>
+    </insertCondition>
+    <insertCondition id="BringUpSubnetworkNamesOnDiagramEdges_FillInfoCondition" 
+                     caption="Fill Condition">
+      <and>
+        <state id="BringUpSubnetworkNamesOnDiagramEdges_IsUNV7" />
+        <state id="esri_mapping_mapTypeNetworkDiagramState" />
+      </and>
+    </insertCondition>
+  </conditions>
+</ArcGIS>

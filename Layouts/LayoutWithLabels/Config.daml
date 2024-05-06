@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="LayoutWithLabels.dll" defaultNamespace="LayoutWithLabels" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{d7d66a28-e582-4044-b800-729b5d190114}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{d7d66a28-e582-4044-b800-729b5d190114}" version="1.0" desktopVersion="3.3.48105">
     <Name>LayoutWithLabels</Name>
     <Description>LayoutWithLabels description</Description>
     <Image>Images\AddinDesktop32.png</Image>

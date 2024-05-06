@@ -18,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="ToggleSwitches.dll" defaultNamespace="ToggleSwitches" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{d8685130-bbbd-4e69-a504-86d2c57a5246}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{d8685130-bbbd-4e69-a504-86d2c57a5246}" version="1.0" desktopVersion="3.3.48105">
     <Name>ToggleSwitches</Name>
     <Description>Toggle Switches Device Status</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>jacq0000</Author>
-    <Company>ESRI</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
     <Date>9/9/2021 12:10:47 PM</Date>
     <Subject>NetworkDiagram</Subject>
     <!-- Note subject can be one or more of these topics:

@@ -12,7 +12,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.-->
 <ArcGIS defaultAssembly="FeatureDynamicMenu.dll" defaultNamespace="FeatureDynamicMenu" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{f5740e36-b26d-46ed-8a0c-ba46427a78d0}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{f5740e36-b26d-46ed-8a0c-ba46427a78d0}" version="1.0" desktopVersion="3.3.48105">
     <Name>DynamicMenu</Name>
     <Description>This selection tool displays a dynamic context menu for each feature selected</Description>
     <Image>Images\AddinDesktop32.png</Image>

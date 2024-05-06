@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="SelectionFromDockpaneList.dll" defaultNamespace="SelectionFromDockpaneList" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{0f300517-2409-4c79-b298-a9d0f6824db1}" version="1.0" desktopVersion="3.2.48119">
+  <AddInInfo id="{0f300517-2409-4c79-b298-a9d0f6824db1}" version="1.0" desktopVersion="3.3.48105">
     <Name>SelectionFromDockpaneList</Name>
     <Description>SelectionFromDockpaneList description</Description>
     <Image>Images\AddinDesktop32.png</Image>

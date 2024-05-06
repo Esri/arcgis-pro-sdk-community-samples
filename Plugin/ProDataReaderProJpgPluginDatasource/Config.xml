@@ -8,7 +8,7 @@
   <Company>esri, https://www.esri.com</Company>
   <Date>5/9/2019 5:49:16 AM, 2019</Date>
   <Targets>
-    <Target name="ArcGISPro" version="3.0" />
+    <Target name="ArcGISPro" version="3.3" />
   </Targets>
   <!-- CLR should be set to the 4.7.2 set in the .csproj -->
   <AddIn language="CLR:PluginDS" library="ProDataReaderProJpgPluginDatasource.dll" namespace="ProDataReaderProJpgPluginDatasource">

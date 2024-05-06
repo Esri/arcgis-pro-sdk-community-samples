@@ -13,7 +13,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License. 
 -->
-  <AddInInfo id="{ef0d3f3a-7faa-4a4a-a800-fff87a824883}" version="1.0" desktopVersion="3.0.34921">
+  <AddInInfo id="{ef0d3f3a-7faa-4a4a-a800-fff87a824883}" version="1.0" desktopVersion="3.3.48105">
     <Name>ArcGISOnlineConnect</Name>
     <Description>ArcGISOnlineConnect description</Description>
     <Image>Images\AddinDesktop32.png</Image>

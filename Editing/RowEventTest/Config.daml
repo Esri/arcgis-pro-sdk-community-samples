@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2024 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="RowEventTest.dll" defaultNamespace="RowEventTest" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{c003493d-6cc1-430b-ba14-5938f2ad675a}" version="1.0" desktopVersion="3.3.48105">
+    <Name>RowEventTest</Name>
+    <Description>RowEventTest description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+      <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+      <Company>esri, https://www.esri.com</Company>
+    <Date>10/12/2023 05:49:21</Date>
+    <Subject>Editing</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="RowEventTest_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="RowEventTest_Tab1" caption="Row Events" keytip="XR">
+          <group refID="RowEventTest_Group1"/>
+          <group refID="RowEventTest_Group2"/>
+          <group refID="RowEventTest_Group3"/>
+          <group refID="RowEventTest_Group4"/>
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="RowEventTest_Group1" caption="Annotation Row Events" keytip="GT">
+          <comboBox refID="RowEventTest_TestAnnoRecordCount" size="middle" />
+          <button refID="RowEventTest_TestAnnoCreate" size="middle" />
+          <button refID="RowEventTest_TestAnnoModify" size="middle" />
+        </group>
+        <group id="RowEventTest_Group2" caption="Polygon Row Events" keytip="GT">
+          <comboBox refID="RowEventTest_TestPolyRecordCount" size="middle" />
+          <button refID="RowEventTest_TestPolyCreate" size="middle" />
+          <button refID="RowEventTest_TestPolyModify" size="middle" />
+        </group>
+        <group id="RowEventTest_Group3" caption="Reset Test Data" keytip="GR">
+          <button refID="RowEventTest_SaveDiscard" size="large" />
+          <button refID="RowEventTest_ClearData" size="large" />
+        </group>
+        <group id="RowEventTest_Group4" caption="Row Test Stats" keytip="GS">
+          <button refID="RowEventTest_ShowEventsView_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <comboBox id="RowEventTest_TestAnnoRecordCount" caption="# Records"
+          className="TestAnnoRecordCount" itemWidth="50" keytip="C0"
+          extendedCaption="# of records to create" isEditable="false"
+          isReadOnly="true" resizable="true">
+          <tooltip heading="# Records">
+            # of records to create during the respective test<disabledText />
+          </tooltip>
+        </comboBox>
+        <comboBox id="RowEventTest_TestPolyRecordCount" caption="# Records"
+          className="TestPolyRecordCount" itemWidth="50" keytip="C1"
+          extendedCaption="# of records to create" isEditable="false"
+          isReadOnly="true" resizable="true">
+          <tooltip heading="# Records">
+            # of records to create during the respective test<disabledText />
+          </tooltip>
+        </comboBox>
+        <button id="RowEventTest_TestAnnoCreate" caption="Test Anno Row Create" 
+                className="TestAnnoCreate" loadOnClick="true" keytip="A" 
+                smallImage="AnnotationAddLeader16" largeImage="AnnotationAddLeader32">
+          <tooltip heading="Test Anno Row Create">Automatically create an Annotation Feature and capture the row create event.<disabledText /></tooltip>
+        </button>
+        <button id="RowEventTest_TestAnnoModify" caption="Test Anno Row Modify" 
+                className="TestAnnoModify" loadOnClick="true" keytip="B" 
+                smallImage="EditingAnnoEditTool16" largeImage="EditingAnnoEditTool32">
+          <tooltip heading="Test Anno Row Modify">
+            Automatically modify an Annotation Feature and capture the row modify event.<disabledText /></tooltip>
+        </button>
+        <button id="RowEventTest_TestPolyCreate" caption="Test Polygon Row Create"
+                className="TestPolyCreate" loadOnClick="true" keytip="F"
+                smallImage="AddArea16" largeImage="AddArea32">
+          <tooltip heading="Test Polygon Row Create">
+            Automatically create Polygon Features and capture the row create event.<disabledText />
+          </tooltip>
+        </button>
+        <button id="RowEventTest_TestPolyModify" caption="Test Polygon Row Modify"
+                className="TestPolyModify" loadOnClick="true" keytip="G"
+                smallImage="EditingEditShape16" largeImage="EditingEditShape32">
+          <tooltip heading="Test Anno Row Modify">
+            Automatically modify Polygon Features and capture the row modify event.<disabledText />
+          </tooltip>
+        </button>
+        <button id="RowEventTest_ShowEventsView_ShowButton" caption="Show Row Events" 
+                className="ShowEventsView_ShowButton" loadOnClick="true" keytip="C" 
+                smallImage="TableOpen16" largeImage="TableOpen32">
+          <tooltip heading="Show Row Events">
+            Shows the Row Events Dockpane<disabledText /></tooltip>
+        </button>
+        <button id="RowEventTest_SaveDiscard" caption="Save or Discard" 
+                className="SaveDiscard" loadOnClick="true" keytip="D"
+                smallImage="EditingSaveEdits_B_16" largeImage="EditingSaveEdits_B_32">
+          <tooltip heading="Save or Discard">
+            Save or Discard all current edits<disabledText /></tooltip>
+        </button>
+        <button id="RowEventTest_ClearData" caption="Clear Data"
+                className="ClearData" loadOnClick="true" keytip="E"
+                smallImage="GenericDeleteRed16" largeImage="GenericDeleteRed32">
+          <tooltip heading="Clear Data">
+            Clear all data (all basic feature layers)<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="RowEventTest_ShowEventsView" caption="Show Events" 
+                  className="ShowEventsViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="ShowEventsViewView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

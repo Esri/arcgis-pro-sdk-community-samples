@@ -19,7 +19,7 @@
 -->
 
 <ArcGIS defaultAssembly="SymbolControls.dll" defaultNamespace="SymbolControls" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{228553d5-9b04-4b35-8fdf-c10852820d29}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{228553d5-9b04-4b35-8fdf-c10852820d29}" version="1.0" desktopVersion="3.3.48105">
     <Name>SymbolControls</Name>
     <Description>SymbolControls description</Description>
     <Image>Images\AddinDesktop32.png</Image>

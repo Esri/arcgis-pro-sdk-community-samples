@@ -19,7 +19,7 @@
 -->
 
 <ArcGIS defaultAssembly="DDLAddField2FeatureClass.dll" defaultNamespace="DDLAddField2FeatureClass" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{b6e1e8e1-0b90-4918-911c-71682e2395f0}" version="1.0" desktopVersion="3.0.33761">
+  <AddInInfo id="{b6e1e8e1-0b90-4918-911c-71682e2395f0}" version="1.0" desktopVersion="3.3.48105">
     <Name>DDLAddField2FeatureClass</Name>
     <Description>DDLAddField2FeatureClass Creates a FeatureClass using the Pro API</Description>
     <Image>Images\AddinDesktop32.png</Image>

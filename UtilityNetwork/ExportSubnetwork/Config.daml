@@ -18,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="ExportSubnetwork.dll" defaultNamespace="ExportSubnetwork" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{7f758a3f-d4a1-4075-b0ae-c854bbcd713b}" version="1.0" desktopVersion="3.1.41735">
+  <AddInInfo id="{7f758a3f-d4a1-4075-b0ae-c854bbcd713b}" version="1.0" desktopVersion="3.3.48105">
     <Name>ExportSubnetwork</Name>
     <Description>ExportSubnetwork description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>aas11333</Author>
-    <Company>ESRI</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
     <Date>1/9/2023 7:26:12 AM</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

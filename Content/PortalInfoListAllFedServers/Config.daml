@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="PortalInfoListAllFedServers.dll" defaultNamespace="PortalInfoListAllFedServers" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{e75af4c9-a8ad-4c12-a785-7b2885c5bc4d}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{e75af4c9-a8ad-4c12-a785-7b2885c5bc4d}" version="1.0" desktopVersion="3.3.48105">
     <Name>ListAllFedServers</Name>
     <Description>ListAllFedServers description</Description>
     <Image>Images\AddinDesktop32.png</Image>

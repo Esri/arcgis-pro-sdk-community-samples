@@ -22,26 +22,27 @@ using ArcGIS.Core.Data;
 using ArcGIS.Desktop.Mapping;
 
 namespace CustomIdentify
-{  /// <summary>
-   /// This sample shows how to author a tool that can be used to identify features and display the content in a pop-up window. 
-   /// The identify will also show Relationship Class information if one exists in that feature class. The result will be displayed in a pop-up window using html and dojo.
-   /// Note: The identify is authored to query the features in the topmost layer of the map.
-   /// </summary>
-   /// <remarks>
-   /// 1. In Visual Studio click the Build menu. Then select Build Solution.
-   /// 2. Launch the debugger to open ArcGIS Pro.
-   /// 4. Open a map view. The map should contain a few feature classes, preferably they should also contain Relates to other Feature classes.
-   /// 5. Click on the Add-In tab on the ribbon.
-   /// 5. Within this tab there is a Custom Identify tool. Click it to activate the tool.
-   /// 6. In the map click and drag a box around the features you want to identify.
-   /// 7. The pop-up window should display and you should see the results of the identify. The features you selected could have relates to other feature classes. 
-   /// This will be displayed also in a hierarchical manner. 
-   /// 8. As you click through the pop-up results the content is being generated dynamically for each feature.
-   ///
-   ///
-   ///![UI](screenshots/CustomIdentify.png)
-   /// </remarks>
-    internal class Module1 : Module
+{
+  /// <summary>
+  /// This sample shows how to author a tool that can be used to identify features and display the content in a pop-up window. 
+  /// The identify will also show Relationship Class information if one exists in that feature class. The result will be displayed in a pop-up window using html and dojo.
+  /// Note: The identify is authored to query the features in the topmost layer of the map.
+  /// </summary>
+  /// <remarks>
+  /// 1. In Visual Studio click the Build menu. Then select Build Solution.
+  /// 2. Launch the debugger to open ArcGIS Pro.
+  /// 4. Open a map view. The map should contain a few feature classes, preferably they should also contain Relates to other Feature classes.
+  /// 5. Click on the Add-In tab on the ribbon.
+  /// 5. Within this tab there is a Custom Identify tool. Click it to activate the tool.
+  /// 6. In the map click and drag a box around the features you want to identify.
+  /// 7. The pop-up window should display and you should see the results of the identify. The features you selected could have relates to other feature classes. 
+  /// This will be displayed also in a hierarchical manner. 
+  /// 8. As you click through the pop-up results the content is being generated dynamically for each feature.
+  ///
+  ///
+  ///![UI](screenshots/CustomIdentify.png)
+  /// </remarks>
+  internal class Module1 : Module
     {
         private static Module1 _this = null;
 

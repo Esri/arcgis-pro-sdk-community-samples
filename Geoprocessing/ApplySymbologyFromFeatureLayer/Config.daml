@@ -19,7 +19,7 @@
 -->
 
 <ArcGIS defaultAssembly="ApplySymbologyFromFeatureLayer.dll" defaultNamespace="ApplySymbologyFromFeatureLayer" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{0cda40eb-7037-4cde-a489-bee0d900c2ac}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{0cda40eb-7037-4cde-a489-bee0d900c2ac}" version="1.0" desktopVersion="3.3.48105">
     <Name>ApplySymbologyFromFeatureLayer</Name>
     <Description>ApplySymbologyFromFeatureLayer description</Description>
     <Image>Images\AddinDesktop32.png</Image>

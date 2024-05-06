@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="QueryBuilderControl.dll" defaultNamespace="QueryBuilderControl" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{d5a064ca-5631-42e0-85fa-924742c38fcc}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{d5a064ca-5631-42e0-85fa-924742c38fcc}" version="1.0" desktopVersion="3.3.48105">
     <Name>QueryBuilderControl</Name>
     <Description>QueryBuilderControl description</Description>
     <Image>Images\AddinDesktop32.png</Image>

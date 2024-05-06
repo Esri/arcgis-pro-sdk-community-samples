@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="ShowLicense.dll" defaultNamespace="ShowLicense" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{ecad0b41-2dd0-4d63-8cf6-664e506bce99}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{ecad0b41-2dd0-4d63-8cf6-664e506bce99}" version="1.0" desktopVersion="3.3.48105">
     <Name>ShowLicense</Name>
     <Description>Display license in the Add-In dialogue</Description>
     <Image>Images\AddinDesktop32.png</Image>

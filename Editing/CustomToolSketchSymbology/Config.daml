@@ -12,12 +12,12 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.-->
 <ArcGIS defaultAssembly="CustomToolSketchSymbology.dll" defaultNamespace="CustomToolSketchSymbology" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{a230ccca-a1a3-4d63-80da-edfac8911096}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{a230ccca-a1a3-4d63-80da-edfac8911096}" version="1.0" desktopVersion="3.3.48105">
     <Name>Cutom Tool Sketch Symbology</Name>
     <Description>Creates a custom line construction tool that uses it's own customized sketch symbology.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>ArcGIS Pro SDK Team</Author>
-    <Company>Esri</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
     <Date>8/19/2021 8:31:39 AM</Date>
     <Subject>Editing</Subject>
   </AddInInfo>

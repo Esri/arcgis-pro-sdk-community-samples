@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="ProWindowMVVM.dll" defaultNamespace="ProWindowMVVM" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{b649ed1a-e2f3-4edb-9745-9334a2e1a8c0}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{b649ed1a-e2f3-4edb-9745-9334a2e1a8c0}" version="1.0" desktopVersion="3.3.48105">
     <Name>ProWindowMVVM</Name>
     <Description>ProWindowMVVM description</Description>
     <Image>Images\AddinDesktop32.png</Image>

@@ -18,12 +18,12 @@
 
 -->
 <ArcGIS defaultAssembly="EditDiagramJunctionRotation.dll" defaultNamespace="EditDiagramJunctionRotation" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{87b6b471-6b9f-439f-b65b-5e1a9c988f53}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{87b6b471-6b9f-439f-b65b-5e1a9c988f53}" version="1.0" desktopVersion="3.3.48105">
     <Name>EditDiagramJunctionRotation</Name>
     <Description>EditDiagramJunctionRotation description</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>jacq0000</Author>
-    <Company>ESRI</Company>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
     <Date>9/14/2021 4:06:59 PM</Date>
     <Subject>NetworkDiagram</Subject>
     <!-- Note subject can be one or more of these topics:

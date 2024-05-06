@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="GraphicsLayers.dll" defaultNamespace="GraphicsLayers" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{616d6fd3-4704-4e7f-8ac6-7560cba65751}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{616d6fd3-4704-4e7f-8ac6-7560cba65751}" version="1.0" desktopVersion="3.3.48105">
     <Name>GraphicsLayers</Name>
     <Description>GraphicsLayers description</Description>
     <Image>Images\AddinDesktop32.png</Image>

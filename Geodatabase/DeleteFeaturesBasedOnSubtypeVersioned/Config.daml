@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="DeleteFeaturesBasedOnSubtypeVersioned.dll" defaultNamespace="DeleteFeaturesBasedOnSubtypeVersioned" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{c2b5214f-51cc-4c6d-9059-198fcf3f4faf}" version="1.0" desktopVersion="3.0.33761">
+  <AddInInfo id="{c2b5214f-51cc-4c6d-9059-198fcf3f4faf}" version="1.0" desktopVersion="3.3.48105">
     <Name>DeleteFeaturesBasedOnSubtypeVersioned</Name>
     <Description>This addin will list all subtypes for a Feature Class and allow deletion of all features in a new version which have the selected subtype</Description>
     <Image>Images\AddinDesktop32.png</Image>

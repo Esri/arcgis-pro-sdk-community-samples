@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="DragAndDrop.dll" defaultNamespace="DragAndDrop" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{9e25ed1d-9f47-4680-95e8-7b2b0d0e7234}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{9e25ed1d-9f47-4680-95e8-7b2b0d0e7234}" version="1.0" desktopVersion="3.3.48105">
     <Name>DragAndDrop</Name>
     <Description>DragAndDrop description</Description>
     <Image>Images\AddinDesktop32.png</Image>

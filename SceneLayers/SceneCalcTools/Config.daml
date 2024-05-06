@@ -18,7 +18,7 @@
 
 -->
 <ArcGIS defaultAssembly="SceneCalcTools.dll" defaultNamespace="SceneCalcTools" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{39250b85-f035-467d-a7fc-c2b072901a18}" version="1.0" desktopVersion="3.0.34047">
+  <AddInInfo id="{39250b85-f035-467d-a7fc-c2b072901a18}" version="1.0" desktopVersion="3.3.48105">
     <Name>Scene Volume Calc Tools</Name>
     <Description>Sample add-in which provides a workflow and tools for calculating volume using a scene layer mesh and point cloud file.</Description>
     <Image>Images\AddinDesktop32.png</Image>
