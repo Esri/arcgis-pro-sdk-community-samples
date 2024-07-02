@@ -419,7 +419,7 @@ namespace EditEventsSample.Dockpane
 
           //Editing and Edit Completed.
           EditCompletingEvent.Unsubscribe(_editevents[0]);
-          EditCompletingEvent.Unsubscribe(_editevents[1]);
+          EditCompletedEvent.Unsubscribe(_editevents[1]);
         _editevents.Clear();
       });
       
