@@ -85,8 +85,14 @@ namespace GeometryControl
         return insp.Shape;
       });
 
-      // bind to the view
-      Geometry = geom;
+			// project to the map's spatial reference if it exists
+			var map = MapView.Active?.Map;
+			var sr = map?.SpatialReference;
+			if (sr != null)
+				geom = GeometryEngine.Instance.Project(geom, sr);
+
+			// bind to the view
+			Geometry = geom;
     }
 
     private Geometry _geometry;
