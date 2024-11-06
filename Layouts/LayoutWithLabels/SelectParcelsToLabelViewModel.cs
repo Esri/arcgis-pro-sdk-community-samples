@@ -162,10 +162,8 @@ namespace LayoutWithLabels
 						{
 							if (cursor.MoveNext())
 							{
-								using (var parcelFeature = cursor.Current as Feature)
-								{
-									parcelPolygon = parcelFeature.GetShape().Clone();
-								}
+								using var parcelFeature = cursor.Current as Feature;
+								parcelPolygon = parcelFeature.GetShape().Clone();
 							}
 						}
 						if (parcelPolygon == null)
@@ -251,10 +249,8 @@ namespace LayoutWithLabels
 							{
 								if (cursor.MoveNext())
 								{
-									using (var parcelFeature = cursor.Current as Feature)
-									{
-										parcelPolygon = parcelFeature.GetShape().Clone();
-									}
+									using Feature parcelFeature = cursor.Current as Feature;
+									parcelPolygon = parcelFeature.GetShape().Clone();
 								}
 							}
 							if (parcelPolygon == null)
@@ -591,14 +587,12 @@ namespace LayoutWithLabels
 					WhereClause = $@"{selectedLabelrv.Row.Table.Columns[0]} = '{selectedLabelrv.Row[0]}'"
 				};
 				long ret = -1;
-				using (var cursor = labelLayer.Search(qf))
+				using (RowCursor cursor = labelLayer.Search(qf))
 				{
 					if (cursor.MoveNext())
 					{
-						using (var parcelFeature = cursor.Current as Feature)
-						{
-							ret = parcelFeature.GetObjectID();
-						}
+						using var parcelFeature = cursor.Current as Feature;
+						ret = parcelFeature.GetObjectID();
 					}
 				}
 				return ret;

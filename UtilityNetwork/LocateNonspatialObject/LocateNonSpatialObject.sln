@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34408.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocateNonspatialObject", "LocateNonspatialObject.csproj", "{79BB7E1E-5E60-4B23-B191-1D01CDE9266D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79BB7E1E-5E60-4B23-B191-1D01CDE9266D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79BB7E1E-5E60-4B23-B191-1D01CDE9266D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79BB7E1E-5E60-4B23-B191-1D01CDE9266D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79BB7E1E-5E60-4B23-B191-1D01CDE9266D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E37C0A1-5159-4E42-AA1A-E9B275DB181A}
+	EndGlobalSection
+EndGlobal

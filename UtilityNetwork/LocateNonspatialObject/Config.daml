@@ -1,0 +1,37 @@
+﻿<ArcGIS defaultAssembly="LocateNonspatialObject.dll" defaultNamespace="LocateNonspatialObject" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{f0472b9e-9821-40bd-b9e9-24214832db2b}" version="1.0" desktopVersion="3.4.55390" product="ArcGISPro">
+    <Name>LocateNonspatialObject</Name>
+    <Description>LocateNonspatialObject description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>aas11333</Author>
+    <Company>ESRI</Company>
+    <Date>10/16/2024 10:19:02 AM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="LocateNonspatialObject_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="LocateNonspatialObject_Tab1" caption="New Tab">
+          <group refID="LocateNonspatialObject_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="LocateNonspatialObject_Group1" caption="Locate" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="LocateNonspatialObject_Locate" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="LocateNonspatialObject_Locate" caption="Locate" className="Locate" loadOnClick="true" smallImage="GenericButtonBlue16" largeImage="GenericButtonBlue32">
+          <tooltip heading="Tooltip Heading">Locate non-spatial Object<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

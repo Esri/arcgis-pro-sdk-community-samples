@@ -39,6 +39,7 @@ using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Layouts;
 using System.Windows;
 using System.Windows.Controls;
+using ArcGIS.Desktop.Core;
 
 namespace StyleElements
 {
@@ -49,8 +50,6 @@ namespace StyleElements
   {
     public GeometrySymbolItem(SymbolStyleItem symbolStyleItem, StyleItemType styleItemType)
     {
-
-
       //int patchHeight ;
       //int patchWidth;
       //patchHeight = size.Height;
@@ -142,52 +141,20 @@ namespace StyleElements
 
       QueuedTask.Run(() =>
       {
-        #region Grid Style application. Use this until ApplyStyle can accept a Grid style item
+        //#region Grid Style application. 
         if (firstElement is MapFrame mapFrame)
         {
-          var symbolItemName = SymbolStyleItem.Name;
-          //var girdGraticuleObject = SymbolStyleItem.GetObject();
-
-          var cmf = mapFrame.GetDefinition() as CIMMapFrame;
-          //note, if page units are _not_ inches then grid's gridline
-          //lengths and offsets would need to be converted to the page units
-          var mapGrids = new List<CIMMapGrid>();
-          if (cmf.Grids != null)
-            mapGrids.AddRange(cmf.Grids);
-
-          var girdGraticuleObject = SymbolStyleItem.GetObject() as CIMMapGrid;
-
-          switch (girdGraticuleObject)
+          if (StyleItemType == StyleItemType.Grid) //grid styling is a little different
           {
-            case CIMGraticule:
-              var gridGraticule = girdGraticuleObject as CIMGraticule;
-              gridGraticule.Name = symbolItemName;
-              gridGraticule.SetGeographicCoordinateSystem(mapFrame.Map.SpatialReference);
-              //assign grid to the frame             
-              mapGrids.Add(gridGraticule);
-
-              break;
-              case CIMMeasuredGrid:
-              var gridMeasure = girdGraticuleObject as CIMMeasuredGrid;
-              gridMeasure.Name = symbolItemName;
-              gridMeasure.SetProjectedCoordinateSystem(mapFrame.Map.SpatialReference);
-              //assign grid to the frame
-              mapGrids.Add(gridMeasure);  
- 
-              break;
-              case CIMReferenceGrid:
-              var gridReference = girdGraticuleObject as CIMReferenceGrid;
-              gridReference.Name = symbolItemName;
-              //assign grid to the frame
-              mapGrids.Add(gridReference);
-              break;
-          }
-
-          cmf.Grids = mapGrids.ToArray();
-          mapFrame.SetDefinition(cmf);
+            //Apply the grid style to the map frame
+            var styleProjectItem = Project.Current.GetItems<StyleProjectItem>().FirstOrDefault(item => item.Name == SymbolStyleItem.StylePath);
+            var selectedGridStyleItem = styleProjectItem.SearchGrids(SymbolStyleItem.Name).FirstOrDefault();
+            mapFrame.AddGrid(selectedGridStyleItem);
+            return; // no need to apply any more styles
+          }          
           return; // no need to apply any more styles
         }
-        #endregion
+        //#endregion
         //Apply the style for all elements other than Grids and Graticules.
         foreach (var element in elements)
         {
@@ -201,8 +168,7 @@ namespace StyleElements
             else
               element.ApplyStyle(SymbolStyleItem);
           }
-        }
-        
+        }       
       });
     }
 

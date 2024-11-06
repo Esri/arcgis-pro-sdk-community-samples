@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2024 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="VersionUpdatePerformance.dll" defaultNamespace="VersionUpdatePerformance" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{ee7c2653-a8a9-43ef-8dd1-e3ac53025c4d}" version="1.0" desktopVersion="3.3.0" product="ArcGISPro">
+    <Name>VersionUpdatePerformance</Name>
+    <Description>VersionUpdatePerformance description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>7/31/2024 1:40:25 PM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="VersionUpdatePerformance_Module" className="Module1" autoLoad="false" caption="Module1">
+      <tabs>
+        <tab id="VersionUpdatePerformance_Tab1" caption="Performance" keytip="T0">
+          <group refID="VersionUpdatePerformance_Group1"/>
+        </tab>
+      </tabs>
+      <groups>
+        <group id="VersionUpdatePerformance_Group1" caption="Performance Tests" 
+               keytip="G0">
+          <button refID="VersionUpdatePerformance_VersionUpdate_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <button id="VersionUpdatePerformance_VersionUpdate_ShowButton" keytip="B0"
+                caption="Update /w Versions" className="VersionUpdate_ShowButton" 
+                loadOnClick="true" smallImage="VersionManager16" 
+                largeImage="VersionManager32">
+          <tooltip heading="Update /w Versions">
+            Show performance with updates to a versioned GeoDatabase<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="VersionUpdatePerformance_VersionUpdate" 
+                  caption="Version Update" className="VersionUpdateViewModel"
+                  smallImage="VersionManager16" largeImage="VersionManager32"
+                  dock="group" dockWith="esri_core_projectDockPane">
+          <content className="VersionUpdateView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

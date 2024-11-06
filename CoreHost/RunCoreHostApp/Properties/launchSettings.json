@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RunCoreHostApp": {
+      "commandName": "Project",
+      "commandLineArgs": "CoreHostTest31Build.dll C:\\Data\\FeatureTest\\FeatureTest.gdb"
+    }
+  }
+}

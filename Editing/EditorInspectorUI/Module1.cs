@@ -52,15 +52,14 @@ namespace EditorInspectorUI
   /// 1. Click the "Inspector UI" tab on the ribbon.
   /// 1. Click the "My Inspector Grid" button. This will display the Inspector dockpane.
   /// ![UI](screenshots/screen1.png)
-  /// 1. You can now modify this sample to use the InsepctorProvider class to customize the Inspector Grid. InsepctorProvider base class allows you to create a more customized version of the inspector grid. Open the MyProvider.cs class. Notice how it derives from the InspectorProvider base class and implements various callbacks to customize that specific aspect of the UI.
+  /// 1. This sample uses the MyInspector class implementing the InsepctorProvider class to customize the Inspector Grid. InsepctorProvider base class allows you to create a more customized version of the inspector grid. Open the MyProvider.cs class. Notice how it derives from the InspectorProvider base class and implements various callbacks to customize that specific aspect of the UI.
   /// 1. Given below are some examples of how you can customize the Inspector Grid using the InspectorProvider class callbacks:
   ///      * Change field visibility, 
   ///      * Sets fields to be read-only, highlighted, 
   ///      * Customizes field order in the grid,
   ///      * Adds validation
   ///      * Modifies field name display.
-  /// 1. Open the DockpaneInspectorUIViewModel.cs.Follow the "TODO" comments in the "Show" method in this class file to use the Inspector Provider class to customize the Inspector Grid.
-  /// 1. Hot reload the change in the code and click the "My Inspector Grid" tab on the ribbon. Notice the customized Inspector UI.
+  /// 1. Open the DockpaneInspectorUIViewModel.cs and find the "TODO" comments in the "Show" method in this class file to use the Inspector Provider class to customize the Inspector Grid.
   /// ![UI](screenshots/screen2.png)
   /// </remarks>
   internal class Module1 : Module

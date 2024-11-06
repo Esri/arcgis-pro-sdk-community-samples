@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2024 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="AsyncGeoProcessing.dll" defaultNamespace="AsyncGeoProcessing" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{e3f5970d-9995-44ba-bba2-d11b91ee1428}" version="1.0" desktopVersion="3.4.54006" product="ArcGISPro">
+    <Name>AsyncGeoProcessing</Name>
+    <Description>AsyncGeoProcessing description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, https://www.esri.com</Company>
+    <Date>7/26/2024 12:24:12 AM</Date>
+    <Subject>Geodatabase</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="AsyncGeoProcessing_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="AsyncGeoProcessing_Tab1" caption="Async GP Tools" keytip="T0">
+          <group refID="AsyncGeoProcessing_Group1" />
+					<group refID="AsyncGeoProcessing_Group2" />
+        </tab>
+      </tabs>
+      <groups>
+        <group id="AsyncGeoProcessing_Group1" caption="Async GeoProcessing" keytip="G1">
+					<toolPalette refID="esri_mapping_selectToolPalette" />
+					<comboBox refID="AsyncGeoProcessing_GPCycles" />
+          <button refID="AsyncGeoProcessing_GP_w_Progress" size="large" />
+					<button refID="AsyncGeoProcessing_GP_wo_Progress" size="large" />
+					<button refID="AsyncGeoProcessing_GP_wo_UI" size="large" />
+        </group>
+				<group id="AsyncGeoProcessing_Group2" caption="Cleanup" keytip="G2">
+					<button refID="esri_mapping_exploreTool" />
+					<button refID="AsyncGeoProcessing_ClearBufferData" size="large" />
+				</group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <comboBox id="AsyncGeoProcessing_GPCycles" caption="GPCycles" keytip="C0"
+									className="GPCycles" itemWidth="140" extendedCaption="Extended Caption" 
+									isEditable="false" isReadOnly="true" resizable="true">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </comboBox>
+        <button id="AsyncGeoProcessing_GP_w_Progress" caption="Run w/ Progress" 
+								className="RunGPTools" loadOnClick="true" keytip="B0"
+								smallImage="Layer_Send_Backward16" largeImage="Layer_Send_Backward32">
+          <tooltip heading="Run w/ Progress">
+						Run Buffer Tool: runs the buffer tool repeately in asynchronous mode with a Progressor<disabledText /></tooltip>
+        </button>
+				<button id="AsyncGeoProcessing_GP_wo_Progress" caption="Run w/o Progress"
+								className="RunGPToolsWo" loadOnClick="true" keytip="B3"
+								smallImage="Layer_Send_To_Back16" largeImage="Layer_Send_To_Back32">
+					<tooltip heading="Run w/o Progress">
+						Run Buffer Tool: runs the buffer tool repeately in asynchronous mode without a Progressor<disabledText />
+					</tooltip>
+				</button>
+				<button id="AsyncGeoProcessing_GP_wo_UI" caption="Run w/o Interface"
+								className="RunGPToolsWoInterface" loadOnClick="true" keytip="B3"
+								smallImage="RunSimulation16" largeImage="RunSimulation32">
+					<tooltip heading="Run w/o Interface">
+						Run Buffer Tool: runs the buffer tool repeately in asynchronous mode without interfacing until completion<disabledText />
+					</tooltip>
+				</button>
+        <button id="AsyncGeoProcessing_ClearBufferData" caption="Clear BufferData" 
+								className="ClearBufferData" loadOnClick="true" keytip="B1"
+								smallImage="EditUndo_B_16" largeImage="EditUndo_B_32">
+          <tooltip heading="Clear BufferData">Clear all GP data created by GP Tool from the GeoDatabase and from the Table of Content<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

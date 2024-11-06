@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2024 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="ZoomToSelectedFeatures.dll" defaultNamespace="ZoomToSelectedFeatures" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{0cd13e0d-ee2d-44eb-9529-27b22da15bb2}" version="1.0" desktopVersion="3.3.0" product="ArcGISPro">
+    <Name>ZoomToSelectedFeatures</Name>
+    <Description>ZoomToSelectedFeatures description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, https://www.esri.com</Company>
+		<Date>7/23/2024 7:42:58 PM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ZoomToSelectedFeatures_Module" className="Module1" autoLoad="true" caption="Module1">
+      <tabs>
+        <tab id="ZoomToSelectedFeatures_Tab1" caption="Zoom Selected" keytip="TZ">
+          <group refID="ZoomToSelectedFeatures_Group1" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ZoomToSelectedFeatures_Group1" caption="Zoom to Selected Features" keytip="G0">
+          <toolPalette refID="esri_mapping_selectToolPalette" />
+          <comboBox refID="ZoomToSelectedFeatures_SelectLayerComboBox" />
+          <comboBox refID="ZoomToSelectedFeatures_SelectionExpandRatio" />
+					<button refID="ZoomToSelectedFeatures_MoveBack" size="large" />
+          <button refID="ZoomToSelectedFeatures_MoveForward" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <comboBox id="ZoomToSelectedFeatures_SelectLayerComboBox" caption="Select Layer" className="SelectLayerComboBox" itemWidth="140" extendedCaption="Extended Caption" isEditable="false" keytip="C0" isReadOnly="true" resizable="true">
+          <tooltip heading="Select Layer">
+						Select the specific layer for which to navigate selected featured<disabledText /></tooltip>
+        </comboBox>
+				<comboBox id="ZoomToSelectedFeatures_SelectionExpandRatio" caption="Expand ratio (0...100)"
+									className="SelectionExpandRatio" itemWidth="140" 
+									extendedCaption="Extended Caption" isEditable="false" keytip="C1" 
+									isReadOnly="false" resizable="true">
+					<tooltip heading="Expand ratio">
+						Select the Expand ratio (0...100) to be used when moving to a selected featured<disabledText />
+					</tooltip>
+				</comboBox>
+				<button id="ZoomToSelectedFeatures_MoveBack" caption="Move Back" className="MoveBack" 
+                keytip="B1" 
+								loadOnClick="false" smallImage="SliderStepBack16" largeImage="SliderStepBack16">
+					<tooltip heading="Move Back">
+						Move Back to the previous selected feature<disabledText />
+					</tooltip>
+				</button>
+				<button id="ZoomToSelectedFeatures_MoveForward" caption="Next" className="MoveForward" keytip="B2"
+								loadOnClick="false" smallImage="SliderStepNext16"
+								largeImage="SliderStepNext16">
+					<tooltip heading="Next">
+						Move to the next selected feature<disabledText />
+					</tooltip>
+				</button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

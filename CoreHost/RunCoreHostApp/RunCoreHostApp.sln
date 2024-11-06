@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunCoreHostApp", "RunCoreHostApp.csproj", "{B3674C8F-6240-405D-B497-17354FD1EBF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3674C8F-6240-405D-B497-17354FD1EBF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3674C8F-6240-405D-B497-17354FD1EBF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3674C8F-6240-405D-B497-17354FD1EBF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3674C8F-6240-405D-B497-17354FD1EBF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE234112-ABE2-4089-96C0-5DFBB72A2AD7}
+	EndGlobalSection
+EndGlobal

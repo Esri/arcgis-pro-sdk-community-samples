@@ -25,23 +25,20 @@
 		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
 		<Company>esri, https://www.esri.com</Company>
     <Date>2/21/2023 12:51:38</Date>
-    <Subject>Framework</Subject>
+    <Subject>Geodatabase</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>
   <modules>
     <insertModule id="SimpleBufferExample_Module" className="Module1" autoLoad="false" caption="Module1">
-      <!-- uncomment to have the control hosted on a separate tab-->
       <tabs>
-        <!--<tab id="SimpleBufferExample_Tab1" caption="New Tab">
+        <tab id="SimpleBufferExample_Tab1" caption="Simple Buffer" keytip="T0">
           <group refID="SimpleBufferExample_Group1"/>
-        </tab>-->
+        </tab>
       </tabs>
       <groups>
-        <!-- comment this out if you have no controls on the Addin tab to avoid
-              an empty group-->
-        <group id="SimpleBufferExample_Group1" caption="Group 1" appearsOnAddInTab="true">
-          <!-- host controls within groups -->
+        <group id="SimpleBufferExample_Group1" caption="Group 1" 
+							 appearsOnAddInTab="true" keytip="G0">
           <button refID="SimpleBufferExample_SimpleBufferExample" size="large" />
           <tool refID="SimpleBufferExample_BufferGeometryTool" size="large" />
           <button refID="SimpleBufferExample_RestartDemo" size="large" />

@@ -58,7 +58,7 @@ namespace TableViewerTest
         _tablePaneOn = !_tablePaneOn;
         if (_tablePaneOn)
         {
-          // set the query defintion to show non-posted data only
+          // set the query definition to show non-posted data only
           SetCamaDefinitionQuery(camaTable, "posted = 0", "Queued Non-Posted records only");
 
           // run on UI thread

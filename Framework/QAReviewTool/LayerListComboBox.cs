@@ -31,49 +31,46 @@ using ArcGIS.Desktop.Mapping;
 
 namespace QAReviewTool
 {
+  /// <summary>
+  /// Represents the ComboBox
+  /// </summary>
+  internal class LayerListComboBox : ComboBox
+  {
     /// <summary>
-    /// Represents the ComboBox
+    /// Combo Box constructor
     /// </summary>
-    internal class LayerListComboBox : ComboBox
+    public LayerListComboBox()
     {
-        /// <summary>
-        /// Combo Box constructor
-        /// </summary>
-        public LayerListComboBox()
-        {
-            Module1.Current.LayerComboBox = this;
-        }
-
-        internal void AddItem(object comboitem)
-        {
-            Add(comboitem);
-        }
-
-        internal void ClearItems()
-        {
-            Clear();
-        }
-
-        /// <summary>
-        /// The on comboBox selection change event. 
-        /// </summary>
-        /// <param name="item">The newly selected combo box item</param>
-        protected override void OnSelectionChange(ComboBoxItem item)
-        {
-
-            if (item == null)
-                return;
-
-            if (string.IsNullOrEmpty(item.Text))
-                return;
-
-            Module1.Current.ResetTab();
-
-            // TODO  -  Set up so when selection changes, all controls on ribbon disable 
-            //          until refresh button is pressed. 
-        }
-
+      Module1.Current.LayerComboBox = this;
     }
+
+    internal void AddItem(object comboitem)
+    {
+      Add(comboitem);
+    }
+
+    internal void ClearItems()
+    {
+      Clear();
+    }
+
+    /// <summary>
+    /// The on comboBox selection change event. 
+    /// </summary>
+    /// <param name="item">The newly selected combo box item</param>
+    protected override void OnSelectionChange(ComboBoxItem item)
+    {
+
+      if (item == null)
+        return;
+
+      if (string.IsNullOrEmpty(item.Text))
+        return;
+
+      Module1.Current.LayerComboboxItemSelected = item;
+    }
+
+  }
 
 
 }

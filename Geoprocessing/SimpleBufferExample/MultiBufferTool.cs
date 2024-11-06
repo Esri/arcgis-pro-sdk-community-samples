@@ -77,7 +77,6 @@ namespace SimpleBufferExample
         progsrc.ExtendedStatus = $@"Creating buffer #: {iBuffer} of {numBuffers}";
         progsrc.Value = 100 * (iBuffer-1);
         progsrc.Max = 100 * numBuffers + 1;
-        
         var gpResult = await Geoprocessing.ExecuteToolAsync("analysis.Buffer", valueArray, null, progsrc.Progressor);
         if(gpResult.IsFailed)
         {
@@ -94,13 +93,12 @@ namespace SimpleBufferExample
           }
           break;
         }
-
-        // check if the operator cancelled
+        // check if the operator canceled
         if (progsrc.CancellationTokenSource.IsCancellationRequested) break;
       }
       if (progsrc.CancellationTokenSource.IsCancellationRequested)
       {
-        MessageBox.Show("The operation was cancelled.");
+        MessageBox.Show("The operation was canceled.");
       }
       return true;
     }

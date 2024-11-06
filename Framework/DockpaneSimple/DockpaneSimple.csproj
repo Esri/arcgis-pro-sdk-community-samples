@@ -60,7 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.md" />
-    <None Include="Backup-2.x.zip" />
     <None Include="DockpaneSimple (C# 6.0).md" />
     <None Include="DockpaneSimple (C#).md" />
   </ItemGroup>

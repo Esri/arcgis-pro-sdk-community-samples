@@ -47,43 +47,41 @@ namespace CustomAnimation
         var keyValuePairs = selection.ToDictionary().Where(kvp => (kvp.Key is BasicFeatureLayer) 
           && (kvp.Key as BasicFeatureLayer).ShapeType == esriGeometryType.esriGeometryPolyline);
 
-          foreach (var kvp in keyValuePairs)
-          {
-              var layer = kvp.Key as BasicFeatureLayer;
-              var oid = kvp.Value.First();
+				foreach (var kvp in keyValuePairs)
+				{
+					var layer = kvp.Key as BasicFeatureLayer;
+					var oid = kvp.Value.First();
 
-              //Get a cursor for the layer using the OID of the first selected feature.
-              var oidField = layer.GetTable().GetDefinition().GetObjectIDField();
-              var qf = new ArcGIS.Core.Data.QueryFilter() { WhereClause = string.Format("{0} = {1}", oidField, oid) };
-              var cursor = layer.Search(qf);
+					//Get a cursor for the layer using the OID of the first selected feature.
+					var oidField = layer.GetTable().GetDefinition().GetObjectIDField();
+					var qf = new ArcGIS.Core.Data.QueryFilter() { WhereClause = string.Format("{0} = {1}", oidField, oid) };
+					using var cursor = layer.Search(qf);
 
-              if (cursor.MoveNext())
-              {
-                  using (var row = cursor.Current as Feature)
-                  {
+					if (cursor.MoveNext())
+					{
+						using var row = cursor.Current as Feature;
 
-                      if (row == null)
-                          continue;
+						if (row == null)
+							continue;
 
-                      //If the feature doesn't have Z values in the geometry continue to the next layer.
-                      var polyline = row.GetShape();
-                      if (!polyline.HasZ)
-                          continue;
+						//If the feature doesn't have Z values in the geometry continue to the next layer.
+						var polyline = row.GetShape();
+						if (!polyline.HasZ)
+							continue;
 
-                      //If the layer doesn't have 3D properties set continue to the next layer.
-                      var layerDef = layer.GetDefinition();
-                      var layer3DProperties = layerDef.Layer3DProperties;
-                      if (layer3DProperties == null)
-                          continue;
+						//If the layer doesn't have 3D properties set continue to the next layer.
+						var layerDef = layer.GetDefinition();
+						var layer3DProperties = layerDef.Layer3DProperties;
+						if (layer3DProperties == null)
+							continue;
 
-                      //Get the vertical unit set on the layer and send it and the line feature to the module method to construct the keyframes.
-                      var verticalUnit = layer3DProperties.VerticalUnit;
-                      Animation.Current.CreateKeyframesAlongPath(polyline as Polyline, verticalUnit);
-                      return true;
-                  }
-              }
-          }
-        return false;
+						//Get the vertical unit set on the layer and send it and the line feature to the module method to construct the keyframes.
+						var verticalUnit = layer3DProperties.VerticalUnit;
+						Animation.Current.CreateKeyframesAlongPath(polyline as Polyline, verticalUnit);
+						return true;
+					}
+				}
+				return false;
       });
 
       //If at least 1 selected 3D feature was not found show a message box.

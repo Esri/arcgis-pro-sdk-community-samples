@@ -140,7 +140,7 @@ namespace StyleElements
     /// </summary>
     private async void UpdateSymbolCollection()
     {
-      if (LayoutView.Active?.Layout.GetSelectedElements().Count == 0 && MapView.Active?.Map.TargetGraphicsLayer.GetSelectedElements().Count == 0)
+      if (LayoutView.Active?.Layout?.GetSelectedElements().Count == 0 && MapView.Active?.Map?.TargetGraphicsLayer?.GetSelectedElements().Count == 0)
         return;
       _selectedElements.Clear();
 

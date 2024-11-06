@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Copyright 2024 Esri 
+    
+    
+    Licensed under the Apache License, Version 2.0 (the "License"); 
+    you may not use this file except in compliance with the License. 
+    You may obtain a copy of the License at 
+ 
+         https://www.apache.org/licenses/LICENSE-2.0 
+ 
+     Unless required by applicable law or agreed to in writing, software 
+    distributed under the License is distributed on an "AS IS" BASIS, 
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ 
+     See the License for the specific language governing permissions and 
+    limitations under the License. 
+ 
+ -->
+<ArcGIS defaultAssembly="SketchToolWithHalos.dll" defaultNamespace="SketchToolWithHalos" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{e4bbc021-e2a6-445d-a575-eda3e01619f5}" version="1.0" desktopVersion="3.4.54161" product="ArcGISPro">
+    <Name>SketchToolWithHalos</Name>
+    <Description>SketchToolWithHalos description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>Esri, https://www.esri.com</Company>
+    <Date>9/5/2024 6:43:29 PM</Date>
+    <Subject>Editing</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="SketchToolWithHalos_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="SketchToolWithHalos_Tab1" caption="New Tab">
+          <group refID="SketchToolWithHalos_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="SketchToolWithHalos_Group1" caption="SketchTool With Halos" 
+                keytip="G0" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <tool refID="SketchToolWithHalos_SketchToolHalo" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <tool id="SketchToolWithHalos_SketchToolHalo" caption="SketchTool with Halos" 
+              className="SketchToolHalo" loadOnClick="true"  keytip="T0"
+              smallImage="GenericButtonRed16" largeImage="GenericButtonRed32" 
+              condition="esri_mapping_mapPane">
+          <tooltip heading="SketchTool with Halos">Tool with a set of halos centered around the cursor.<disabledText /></tooltip>
+        </tool>
+      </controls>
+    </insertModule>
+  </modules>
+  <categories>
+    <updateCategory refID="esri_embeddableControls">
+      <insertComponent id="SketchToolWithHalos_HaloEmbeddableControl" className="HaloEmbeddableControlViewModel">
+        <content className="HaloEmbeddableControlView" />
+      </insertComponent>
+    </updateCategory>
+  </categories>
+</ArcGIS>

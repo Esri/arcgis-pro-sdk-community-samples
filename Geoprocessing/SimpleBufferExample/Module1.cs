@@ -38,24 +38,24 @@ using System.Windows.Input;
 
 namespace SimpleBufferExample
 {
-  /// <summary>
-  /// This sample shows how to call the 'Buffer' GP Tool from .Net.  It also calls the GP Tool in a loop to show the Progress dialog across multiple GP Tool calls.
-  /// </summary>
-  /// <remarks>
-  /// 1. You will need CommunitySampleData-ParcelFabric-03-16-2023.zip downloadable as an asset under the latest release.
-  /// 1. In Visual studio rebuild the solution.
-  /// 1. Debug the add-in.
-  /// 1. When ArcGIS Pro opens open 'C:\Data\ParcelFabric\Island\ParcelIsland.aprx'.
-  /// 1. Select the "Add-in" tab.
-  /// ![UI](Screenshots/Screen1.png)
-  /// 1. Click the "Make Simple Buffer" button to creater a buffer around the 'SouthShoreImpact' layer, the resulting buffer is called 'SouthShoreImpact_Buffer' and will be added to the map. 
-  /// ![UI](Screenshots/Screen2.png)
-  /// 1. In order to see the Progress Dialog being displayed you need to run ArcGIS Pro outside the Visual Studio debugger.  Running from with the VS Debugger will dispable the Progress Dialog display.
-  /// 1. Click the "Multi Buffer tool" and digitize a complex polygon onto the map.  Complete the polygon to start the 'Buffer GP Tool' loop.
-  /// ![UI](Screenshots/Screen3.png)
-  /// ![UI](Screenshots/Screen4.png)
-  /// </remarks>
-  internal class Module1 : Module
+	/// <summary>
+	/// This sample shows how to call the 'Buffer' GP Tool from .Net.  It also calls the GP Tool in a loop to show the Progress dialog across multiple GP Tool calls.
+	/// </summary>
+	/// <remarks>
+	/// 1. You will need CommunitySampleData-ParcelFabric-mm-dd-yyyy.zip down-loadable as an asset under the latest release.
+	/// 1. In Visual studio rebuild the solution.
+	/// 1. Debug the add-in.
+	/// 1. When ArcGIS Pro opens open 'C:\Data\ParcelFabric\Island\ParcelIsland.aprx'.
+	/// 1. Select the "Simple Buffer" tab.
+	/// ![UI](Screenshots/Screen1.png)
+	/// 1. Click the "Make Simple Buffer" button to create a buffer around the 'SouthShoreImpact' layer, the resulting buffer is called 'SouthShoreImpact_Buffer' and will be added to the map. 
+	/// ![UI](Screenshots/Screen2.png)
+	/// 1. In order to see the Progress Dialog being displayed you need to run ArcGIS Pro outside the Visual Studio debugger.  Running from with the VS Debugger will dispable the Progress Dialog display.
+	/// 1. Click the "Multi Buffer tool" and digitize a complex polygon onto the map.  Complete the polygon to start the 'Buffer GP Tool' loop.
+	/// ![UI](Screenshots/Screen3.png)
+	/// ![UI](Screenshots/Screen4.png)
+	/// </remarks>
+	internal class Module1 : Module
   {
     private static Module1 _this = null;
 

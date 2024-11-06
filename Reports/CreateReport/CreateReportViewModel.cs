@@ -68,7 +68,7 @@ namespace CreateReport
 			System.Windows.Data.BindingOperations.EnableCollectionSynchronization(_reportStyles, _reportStylesLock);
 			if (MapView.Active == null)
 				return;
-			GetLayersInMap();
+			GetLayersAndTablesInMap();
 			_ = UpdateCollectionsAsync(); //Gets the template types and styles.
 			_ = GetReportsInProjectAsync();			
 		}
@@ -110,19 +110,19 @@ namespace CreateReport
 				SetProperty(ref _heading, value, () => Heading);
 			}
 		}
-		private ObservableCollection<FeatureLayer> _layers = new ObservableCollection<FeatureLayer>();
+		private ObservableCollection<MapMember> _layers = new ObservableCollection<MapMember>();
 		/// <summary>
 		/// Collection of layers in the active map
 		/// </summary>
-		public ObservableCollection<FeatureLayer> Layers
+		public ObservableCollection<MapMember> Layers
 		{
 			get { return _layers; }
 		}
-		private FeatureLayer _selectedLayer;
+		private MapMember _selectedLayer;
 		/// <summary>
 		/// Selected feature layer
 		/// </summary>
-		public FeatureLayer SelectedLayer
+		public MapMember SelectedLayer
 		{
 			get { return _selectedLayer; }
 			set
@@ -409,7 +409,8 @@ namespace CreateReport
         }
 
         //Set Datasource
-        reportDataSource = new ReportDataSource(SelectedLayer, "", IsUseSelection, reportFields);
+        reportDataSource = new ReportDataSource(SelectedLayer, "", reportFields);
+
 
         try
         {
@@ -472,7 +473,7 @@ namespace CreateReport
 			//Create PDF format with appropriate settings
 			PDFFormat pdfFormat = new PDFFormat();
 			pdfFormat.Resolution = 300;
-			pdfFormat.OutputFileName = Path.Combine(Project.Current.HomeFolderPath, $"{report.Name}.pdf");
+			pdfFormat.OutputFileName = Path.Combine(Project.Current.HomeFolderPath);
 			await QueuedTask.Run(() =>
 			{
 				report?.ExportToPDF(ReportName, pdfFormat, exportOptions, IsUseSelection);
@@ -665,10 +666,21 @@ namespace CreateReport
 
 			await QueuedTask.Run((Action)(() =>
 			{
-				foreach (FieldDescription fd in SelectedLayer?.GetFieldDescriptions())
+        List<FieldDescription> fieldDescriptions = new List<FieldDescription>();
+        var selectedLayer = SelectedLayer as FeatureLayer;
+				if (selectedLayer != null)
 				{
-					string shapeField = SelectedLayer.GetFeatureClass().GetDefinition().GetShapeField();
-					if (fd.Name == shapeField) continue; //filter out the shape field.
+          var shapeField = selectedLayer.GetFeatureClass().GetDefinition().GetShapeField();
+					var layerFields = selectedLayer.GetFieldDescriptions().Where( i => i.Name != shapeField);
+          fieldDescriptions.AddRange(layerFields);
+
+        }
+        if (selectedLayer == null)
+          fieldDescriptions.AddRange((SelectedLayer as StandaloneTable).GetFieldDescriptions());
+				
+				foreach (FieldDescription fd in fieldDescriptions)
+				{
+
 								var defFieldAction = (Action)(() =>
 								{
 								   var field = new ReportField { IsSelected = false, DisplayName = fd.Alias, Name = fd.Name };
@@ -723,20 +735,24 @@ namespace CreateReport
 			ReportStyles = new ObservableCollection<string>(reportStylesList);
 			SelectedReportStyle = ReportStyles[0];
 		}
-		public void GetLayersInMap()
+		public void GetLayersAndTablesInMap()
 		{
 			System.Diagnostics.Debug.WriteLine($"MapView name: {MapView.Active?.Map.Name}");
 			if (MapView.Active?.Map == null) return;
 			_activeMap = MapView.Active.Map;
 			ReportName = $"Report_{_activeMap.Name}";
 			var lyrs = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>();
+			var tables = MapView.Active.Map.GetStandaloneTablesAsFlattenedList();
+			IList<MapMember> lyrsAndTables = new List<MapMember>();
+			lyrsAndTables = lyrs.ToList<MapMember>();
+			lyrsAndTables = lyrsAndTables.Concat(tables).ToList<MapMember>();
 			lock (_lock)
 			{
 				_layers.Clear();
-				foreach (var lyr in lyrs)
+				foreach (var item in lyrsAndTables)
 				{
-					_layers.Add(lyr);
-					System.Diagnostics.Debug.WriteLine($"LayerName name: {lyr.Name}");
+					_layers.Add(item);
+					System.Diagnostics.Debug.WriteLine($"LayerName name: {item.Name}");
 				}
 			}
 			SelectedLayer = Layers.Count > 0 ? Layers[0] : null;
@@ -764,7 +780,7 @@ namespace CreateReport
 			if (obj.IncomingView == null)
 				return;
 			System.Diagnostics.Debug.WriteLine("Incoming is not null");
-			GetLayersInMap();
+			GetLayersAndTablesInMap();
 		}
 		private void OnActivePaneChanged(PaneEventArgs obj)
 		{
@@ -775,7 +791,7 @@ namespace CreateReport
 			if (obj.IncomingPane is IMapPane)
 			{
 				System.Diagnostics.Debug.WriteLine("Incoming is a MapPane");
-				GetLayersInMap();
+				GetLayersAndTablesInMap();
 			}
 		}
 		private void OnProjectItemsChanged(ProjectItemsChangedEventArgs obj)

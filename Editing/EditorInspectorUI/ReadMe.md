@@ -14,8 +14,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  04/04/2024
-ArcGIS Pro:            3.3
+Date:                  11/04/2024
+ArcGIS Pro:            3.4
 Visual Studio:         2022
 .NET Target Framework: net8.0-windows
 ```
@@ -38,15 +38,14 @@ Visual Studio:         2022
 6. Click the "Inspector UI" tab on the ribbon.  
 7. Click the "My Inspector Grid" button. This will display the Inspector dockpane.  
 ![UI](screenshots/screen1.png)  
-8. You can now modify this sample to use the InsepctorProvider class to customize the Inspector Grid. InsepctorProvider base class allows you to create a more customized version of the inspector grid. Open the MyProvider.cs class. Notice how it derives from the InspectorProvider base class and implements various callbacks to customize that specific aspect of the UI.  
+8. This sample uses the MyInspector class implementing the InsepctorProvider class to customize the Inspector Grid. InsepctorProvider base class allows you to create a more customized version of the inspector grid. Open the MyProvider.cs class. Notice how it derives from the InspectorProvider base class and implements various callbacks to customize that specific aspect of the UI.  
 9. Given below are some examples of how you can customize the Inspector Grid using the InspectorProvider class callbacks:  
      * Change field visibility,   
      * Sets fields to be read-only, highlighted,   
      * Customizes field order in the grid,  
      * Adds validation  
      * Modifies field name display.  
-10. Open the DockpaneInspectorUIViewModel.cs.Follow the "TODO" comments in the "Show" method in this class file to use the Inspector Provider class to customize the Inspector Grid.  
-11. Hot reload the change in the code and click the "My Inspector Grid" tab on the ribbon. Notice the customized Inspector UI.  
+10. Open the DockpaneInspectorUIViewModel.cs and find the "TODO" comments in the "Show" method in this class file to use the Inspector Provider class to customize the Inspector Grid.  
 ![UI](screenshots/screen2.png)  
   
 

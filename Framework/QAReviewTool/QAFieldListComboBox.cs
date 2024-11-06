@@ -71,22 +71,7 @@ namespace QAReviewTool
                 return;
 
             Module1.Current.AddQAFieldToLayer();
-
         }
-
-
-        //protected void OnComboBoxClosed(object sender, EventArgs e)
-        //{
-        //    if (item == null)
-        //        return;
-
-        //    if (string.IsNullOrEmpty(item.Text))
-        //        return;
-
-        //    Module1.Current.AddQAFieldToLayer();
-        //}
-
-
 
         protected override void OnEnter()
         {

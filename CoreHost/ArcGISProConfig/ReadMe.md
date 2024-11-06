@@ -16,8 +16,8 @@ Language:              C#
 Subject:               CoreHost
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  04/04/2024
-ArcGIS Pro:            3.3
+Date:                  11/04/2024
+ArcGIS Pro:            3.4
 Visual Studio:         2022
 .NET Target Framework: net8.0-windows
 ```

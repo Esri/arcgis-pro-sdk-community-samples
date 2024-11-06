@@ -131,20 +131,24 @@ namespace EditorInspectorUI.InspectorUI
       if (_dockpaneVM._featureInspector == null || forceReload == true)
       {
         // the standard way of creating an inspector
-        //TODO: Comment this line to create an inspector using the provider
-        _dockpaneVM._featureInspector = new Inspector();
-        #region Inspector UI with Provider
-        //TODO: Uncomment this block to create an inspector using the provider
-        ////******an alternative way to create an inspector *****
-        ////allowing us to customize the grid view
+        #region Inspector UI with out-of-box Provider
+        //TODO: Use this line to create an inspector using the out-of-box provider
+        // but make sure to comment out the 'Inspector UI with Provider' code below
+        //_dockpaneVM._featureInspector = new Inspector();
+        #endregion Inspector UI with out-of-box Provider
 
-        ////create the provider
-        //_dockpaneVM._provider = new MyProvider();
-        //if (_dockpaneVM._featureInspector == null)
-        //  return;
-        ////create the inspector from the provider
-        //_dockpaneVM._featureInspector = _dockpaneVM._provider.Create();
-        #endregion
+        #region Inspector UI with Provider
+        //TODO: this block creates a customized inspector based on the provider
+        // this allows to customize the grid view
+        // but make sure to comment out the 'Inspector UI with out-of-box Provider' code above
+
+        //create the custom provider
+        _dockpaneVM._provider = new MyProvider();
+        //create the inspector from the provider
+        _dockpaneVM._featureInspector = _dockpaneVM._provider.Create();
+
+        #endregion Inspector UI with Provider
+
         // create the embeddable control from the inspector (to display on the pane)
         var icontrol = _dockpaneVM._featureInspector.CreateEmbeddableControl();
 
@@ -152,6 +156,7 @@ namespace EditorInspectorUI.InspectorUI
         _dockpaneVM.InspectorViewModel = icontrol.Item1;
         _dockpaneVM.InspectorView = icontrol.Item2;
       }
+
       #region Subscribe to Inspector PropertyChanged event
       _dockpaneVM._featureInspector.PropertyChanged += _featureInspector_PropertyChanged;
       #endregion

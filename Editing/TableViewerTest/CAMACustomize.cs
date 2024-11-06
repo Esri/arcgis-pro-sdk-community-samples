@@ -58,7 +58,7 @@ namespace TableViewerTest
 
         if (_tablePaneOn)
         {
-          // set the query defintion to show non-posted data only
+          // set the query definition to show non-posted data only
           SetDefinitionQuery(camaTable, "posted = 0", "Queued Non-Posted records only");
           System.Diagnostics.Debug.Assert(MapView.Active != null);
 
@@ -105,7 +105,7 @@ namespace TableViewerTest
     }
 
     /// <summary>
-    /// Update the query defintion for the given standalone table using the given whereclause and description
+    /// Update the query definition for the given standalone table using the given where clause and description
     /// </summary>
     /// <param name="standaloneTable">table for which to update the expression</param>
     /// <param name="whereClause"></param>

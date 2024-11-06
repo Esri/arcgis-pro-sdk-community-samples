@@ -28,9 +28,9 @@ using System.Windows.Shapes;
 
 namespace EditorInspectorUI.InspectorUIProvider
 {
-    class MyProvider : InspectorProvider
-    {
-      private List<string> _fields = new List<string>()
+  class MyProvider : InspectorProvider
+  {
+    private List<string> _hiddenFields = new List<string>()
       {
         "OBJECTID",
         "Shape",
@@ -46,15 +46,15 @@ namespace EditorInspectorUI.InspectorUIProvider
         "CenBlock20",
       };
 
-      private List<string> _fieldOrder = new List<string>()
+    private List<string> _fieldOrder = new List<string>()
       {
         "Job_Number",
-        "Job_Type",
+        "Ownership",
         "Address",
+        "Job_Type",
         "Job_Status",
         "Job_Desc",
-        "DateComplt",
-        "Ownership"       
+        "DateComplt"
       };
 
     public override IEnumerable<Attribute> AttributesOrder(IEnumerable<Attribute> attrs)
@@ -69,8 +69,9 @@ namespace EditorInspectorUI.InspectorUIProvider
       }
       return newList;
     }
+
     public override string CustomName(ArcGIS.Desktop.Editing.Attributes.Attribute attr)
-      {
+    {
       if (attr.FieldName == "Job_Number")
         return "ID";
       if (attr.FieldName == "Job_Type")
@@ -78,63 +79,63 @@ namespace EditorInspectorUI.InspectorUIProvider
       if (attr.FieldName == "Job_Status")
         return "Status";
       if (attr.FieldName == "Job_Desc")
-          return "Job Description";
-        if (attr.FieldName == "DateComplt")
-          return "Date Completed";
+        return "Job Description";
+      if (attr.FieldName == "DateComplt")
+        return "Date Completed";
 
-        return attr.FieldName;
-      }
-      public override bool? IsVisible(ArcGIS.Desktop.Editing.Attributes.Attribute attr)
-      {
+      return attr.FieldName;
+    }
+    public override bool? IsVisible(ArcGIS.Desktop.Editing.Attributes.Attribute attr)
+    {
 
-      foreach (var item in _fields)
+      foreach (var item in _hiddenFields)
       {
         if (attr.FieldName == item)
           return false;
       }
-      
 
-        return true;
-      }
 
-      public override bool? IsEditable(ArcGIS.Desktop.Editing.Attributes.Attribute attr)
-      {
-        if (attr.FieldName == "Ownership")
-          return false;
-
-        return true;
-      }
-      public override bool? IsHighlighted(ArcGIS.Desktop.Editing.Attributes.Attribute attr)
-      {
-        if (attr.FieldName == "Address")
-          return true;
-
-        return false;
-      }
-
-      // bug in 3.1.  Make sure you override this method and return non-null otherwise you will get a crash.
-      //  fixed in 3.1.3
-      //public override IEnumerable<Attribute> AttributesOrder(IEnumerable<Attribute> attrs)
-      //{
-      //  var newList = new List<ArcGIS.Desktop.Editing.Attributes.Attribute>();
-      //  foreach (var attr in attrs)
-      //  {
-      //    newList.Add(attr);
-      //  }
-      //  return newList;
-      //}
-
-      // use BeginLoad/EndLoad if you need the entire set of attributes at once
-      //  to perform any pre-processing
-      // EndLoad can be used to clear any cached values
-      public override void BeginLoad(IEnumerable<Attribute> attrs)
-      {
-        base.BeginLoad(attrs);
-      }
-
-      public override void EndLoad()
-      {
-        base.EndLoad();
-      }
+      return true;
     }
+
+    public override bool? IsEditable(ArcGIS.Desktop.Editing.Attributes.Attribute attr)
+    {
+      if (attr.FieldName == "Ownership")
+        return false;
+
+      return true;
+    }
+    public override bool? IsHighlighted(ArcGIS.Desktop.Editing.Attributes.Attribute attr)
+    {
+      if (attr.FieldName == "Address")
+        return true;
+
+      return false;
+    }
+
+    // bug in 3.1.  Make sure you override this method and return non-null otherwise you will get a crash.
+    //  fixed in 3.1.3
+    //public override IEnumerable<Attribute> AttributesOrder(IEnumerable<Attribute> attrs)
+    //{
+    //  var newList = new List<ArcGIS.Desktop.Editing.Attributes.Attribute>();
+    //  foreach (var attr in attrs)
+    //  {
+    //    newList.Add(attr);
+    //  }
+    //  return newList;
+    //}
+
+    // use BeginLoad/EndLoad if you need the entire set of attributes at once
+    //  to perform any pre-processing
+    // EndLoad can be used to clear any cached values
+    public override void BeginLoad(IEnumerable<Attribute> attrs)
+    {
+      base.BeginLoad(attrs);
+    }
+
+    public override void EndLoad()
+    {
+      base.EndLoad();
+    }
+  }
 }

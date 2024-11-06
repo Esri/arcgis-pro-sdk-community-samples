@@ -40,32 +40,30 @@ namespace GeometrySamples
       }
       QueuedTask.Run(() =>
       {
-        using (var fc = polyLayer.GetTable() as FeatureClass)
-        {
-          if (fc == null) return;
+				using var fc = polyLayer.GetTable() as FeatureClass;
+				if (fc == null) return;
 
-          var fcDefinition = fc.GetDefinition();
+				var fcDefinition = fc.GetDefinition();
 
-          var editOperation = new EditOperation();
-          editOperation.Name = "Create outer ring";
+				var editOperation = new EditOperation
+				{
+					Name = "Create outer ring"
+				};
 
-          using (var cursor = fc.Search())
-          {
-            while (cursor.MoveNext())
-            {
-              using (var feature = cursor.Current as Feature)
-              {
-                if (feature == null) continue;
+				using (var cursor = fc.Search())
+				{
+					while (cursor.MoveNext())
+					{
+						using var feature = cursor.Current as Feature;
+						if (feature == null) continue;
 
-                var outerRings = Module1.Current.GetOutermostRings(feature.GetShape() as Polygon);
-                if (outerRings != null)
-                  editOperation.Create(polyLayer, outerRings);
-              }
-            }
-          }
-          editOperation.Execute();
-        }
-      });
+						var outerRings = Module1.Current.GetOutermostRings(feature.GetShape() as Polygon);
+						if (outerRings != null)
+							editOperation.Create(polyLayer, outerRings);
+					}
+				}
+				editOperation.Execute();
+			});
     }
   }
 }

@@ -29,20 +29,27 @@
   </AddInInfo>
   <conditions>
     <!-- our custom condition -->
-    <insertCondition id="state_condition_set_1" caption="active state 1">
-      <state id="active_state_1" />
+    <insertCondition id="condition_LayerSelected" caption="Layer has been selected">
+      <state id="LayerSelectedState" />
     </insertCondition>
-    <insertCondition id="state_condition_set_2" caption="active state 2">
-      <state id="active_state_2" />
+    <insertCondition id="condition_CanStartReview" caption="Data review can be started">
+      <state id="CanStartReview" />
     </insertCondition>
-    <insertCondition id="state_condition_set_3" caption="active state 3">
-      <state id="active_state_3" />
+    <insertCondition id="condition_Navigation_Active" caption="Navigation is active (query defined)">
+      <state id="NavigationQueryDefined" />
+    </insertCondition>
+    <insertCondition id="condition_QANotation_Defined" caption="QA Notation is defined">
+      <state id="QANotationDefined" />
+    </insertCondition>
+    <insertCondition id="condition_QANotationsPerformed" caption="QA Notation have been performed">
+      <state id="QANotationPerformed" />
     </insertCondition>
   </conditions>
   <modules>
-    <insertModule id="QAReviewTool_Module" className="Module1" autoLoad="true" caption="Module1">
+    <insertModule id="QAReviewTool_Module" className="Module1" autoLoad="true" 
+                  caption="Module1">
       <tabs>
-        <tab id="QAReviewTool_Tab1" caption="Review">
+        <tab id="QAReviewTool_Tab1" caption="Review" keytip="T0">
           <group refID="QAReviewTool_Group1" />
           <group refID="QAReviewTool_Group2" />
           <group refID="QAReviewTool_Group3" />
@@ -50,27 +57,31 @@
         </tab>
       </tabs>
       <groups>
-        <group id="QAReviewTool_Group1" caption="Layer and Selection" appearsOnAddInTab="false">
+        <group id="QAReviewTool_Group1" caption="Review Layer Selection" 
+               appearsOnAddInTab="false" keytip="G0">
           <comboBox refID="QAReviewTool_LayerListComboBox" size="middle" />
-          <button refID="QAReviewTool_LayerRefreshButton" size="middle" />
-          <button refID="QAReviewTool_OpenTableButton" size="middle" />
+          <button refID="QAReviewTool_LayerStartFeatureReview" size="middle" />
+          <button refID="QAReviewTool_OpenAttributeTable" size="middle" />
         </group>
-        <group id="QAReviewTool_Group2" caption="Field Setting" appearsOnAddInTab="false">
+        <group id="QAReviewTool_Group2" caption="Feature Review Field Settings"
+               appearsOnAddInTab="false" keytip="G1">
           <comboBox refID="QAReviewTool_LayerFieldListComboBox" />
           <comboBox refID="QAReviewTool_ValueListComboBox" />
           <comboBox refID="QAReviewTool_QAFieldListComboBox" />
           <button refID="QAReviewTool_ButtonForward" size="middle" />
           <button refID="QAReviewTool_ButtonBackward" size="middle" />
         </group>
-        <group id="QAReviewTool_Group3" caption="Note Shortcuts" appearsOnAddInTab="false">
+        <group id="QAReviewTool_Group3" caption="Note Shortcuts" 
+               appearsOnAddInTab="false" keytip="G2">
           <button refID="QAReviewTool_EditCorrectButton" size="middle" />
           <button refID="QAReviewTool_EditRecheckButton" size="middle" />
           <button refID="QAReviewTool_EditWrongButton" size="middle" />
         </group>
-        <group id="QAReviewTool_Group4" caption="Custom Notes" appearsOnAddInTab="false">
-          <comboBox refID="QAReviewTool_EditNoteComboBox" />
-          <button refID="QAReviewTool_LoadNoteFileButton" size="middle" />
-          <button refID="QAReviewTool_SaveNoteFileButton" size="middle" />
+        <group id="QAReviewTool_Group4" caption="Custom Notes"
+               appearsOnAddInTab="false" keytip="G3">
+          <comboBox refID="QAReviewTool_NotationNoteComboBox" />
+          <button refID="QAReviewTool_NotationListLoad" size="middle" />
+          <button refID="QAReviewTool_NotationListSave" size="middle" />
           <button refID="QAReviewTool_EditCommitQANote" size="large" />
           <button refID="QAReviewTool_EditUndoButton" size="large" />
           <button refID="QAReviewTool_SaveEditsButton" size="large" />
@@ -79,59 +90,122 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <comboBox id="QAReviewTool_LayerListComboBox" caption=" Layer:" className="LayerListComboBox" itemWidth="200" extendedCaption="Extended Caption" isEditable="true" isReadOnly="true" resizable="true">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        <comboBox id="QAReviewTool_LayerListComboBox" caption=" Layer:" 
+                  className="LayerListComboBox" itemWidth="200" 
+                  extendedCaption="Select Feature Layer" isEditable="true" isReadOnly="true" 
+                  resizable="true" keytip="C0">
+          <tooltip heading="Layer">Select the Layer feature class used for the data quality review<disabledText /></tooltip>
         </comboBox>
-        <comboBox id="QAReviewTool_QAFieldListComboBox" caption="Note Field:" className="QAFieldListComboBox" itemWidth="140" extendedCaption="Extended Caption" isEditable="true" isReadOnly="false" resizable="true" condition="active_state_1">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        <comboBox id="QAReviewTool_QAFieldListComboBox" caption="Note Field:" 
+                  className="QAFieldListComboBox" itemWidth="140" 
+                  extendedCaption="Enter the name of a new or existing field to hold a QA notation" isEditable="true" isReadOnly="false"
+                  resizable="true" condition="LayerSelectedState" keytip="C1">
+          <tooltip heading="Note Field">
+            Name of a new or existing field to hold a QA notation<disabledText /></tooltip>
         </comboBox>
-        <button id="QAReviewTool_LayerRefreshButton" caption="Refresh Selection" className="LayerRefreshButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericRefresh16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericRefresh32.png">
-          <tooltip heading="Refresh">Refresh the layer along with field listing.<disabledText /></tooltip>
+        <button id="QAReviewTool_LayerStartFeatureReview" caption="Start Feature Review" 
+                className="LayerStartFeatureReview" loadOnClick="true" 
+                smallImage="GenericRefresh16" condition="CanStartReview"
+                largeImage="GenericRefresh32" keytip="B0">
+          <tooltip heading="Start Feature Review">
+            Starts the Feature by Feature Review by enabling the 'Feature Review Field Settings' group.<disabledText /></tooltip>
         </button>
-        <comboBox id="QAReviewTool_LayerFieldListComboBox" caption="Value Field:" className="LayerFieldListComboBox" itemWidth="140" extendedCaption="Extended Caption" isEditable="true" isReadOnly="true" resizable="true" condition="active_state_1">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        <comboBox id="QAReviewTool_LayerFieldListComboBox" caption="Value Field:" 
+                  className="NavigateFieldNameListCombo" itemWidth="140" keytip="C2"
+                  extendedCaption="Enter the Field name used for the selection query" isEditable="true" 
+                  isReadOnly="false" resizable="true" condition="LayerSelectedState">
+          <tooltip heading="Value Field">Field name used for the selection query<disabledText /></tooltip>
         </comboBox>
-        <comboBox id="QAReviewTool_ValueListComboBox" caption="Value:" className="ValueListComboBox" itemWidth="140" extendedCaption="Extended Caption" isEditable="true" isReadOnly="false" resizable="true" condition="active_state_1">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        <comboBox id="QAReviewTool_ValueListComboBox" caption="Field Value:" 
+                  className="NavigateValueListCombo" itemWidth="140" keytip="C3"
+                  extendedCaption="Value used for the selection query" isEditable="true" 
+                  isReadOnly="false" resizable="true" condition="LayerSelectedState">
+          <tooltip heading="Field Value">
+            Field value used for the selection query in conjunction with Field name<disabledText /></tooltip>
         </comboBox>
-        <button id="QAReviewTool_ButtonForward" caption="Forward" className="ForwardButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericBlueRightArrowLongTail16.png" condition="active_state_2">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
-        </button>
-        <button id="QAReviewTool_ButtonBackward" caption="Backward" className="BackwardButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericBlueLeftArrowLongTail16.png" condition="active_state_2">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
-        </button>
-        <button id="QAReviewTool_EditCorrectButton" caption="Correct" className="EditCorrectButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericCheckMark16.png" condition="active_state_3">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
-        </button>
-        <button id="QAReviewTool_EditRecheckButton" caption="Recheck" className="EditRecheckButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericUnknown16" condition="active_state_3">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
-        </button>
-        <button id="QAReviewTool_EditWrongButton" caption="Wrong" className="EditWrongButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericDeleteRed16.png" condition="active_state_3">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
-        </button>
-        <comboBox id="QAReviewTool_EditNoteComboBox" caption="Note Value:" className="EditNoteComboBox" itemWidth="140" extendedCaption="Extended Caption" isEditable="true" isReadOnly="false" resizable="true" condition="active_state_3">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        <comboBox id="QAReviewTool_NotationNoteComboBox" caption="Note Text:"
+                  className="NotationNoteComboBox" itemWidth="140" keytip="C4"
+                  extendedCaption="Enter a 'custom' QA notation here"
+                  isEditable="true" isReadOnly="false" resizable="true"
+                  condition="QANotationDefined">
+          <tooltip heading="Note Text">
+            Allows to manually enter a custom QA notation value<disabledText />
+          </tooltip>
         </comboBox>
-        <button id="QAReviewTool_EditCommitQANote" caption="Commit" className="EditCommitQANote" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericCheckMark32.png" condition="active_state_3">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        <button id="QAReviewTool_ButtonForward" caption="Forward" 
+                className="NavigateForward" loadOnClick="true" keytip="B1"
+                smallImage="GenericBlueRightArrowLongTail16"
+                condition="NavigationQueryDefined">
+          <tooltip heading="Forward">
+            Forward is used to change the Field Value to the next field value from the 'Value drop down' and performs an new selection query<disabledText /></tooltip>
         </button>
-        <button id="QAReviewTool_EditUndoButton" caption="Undo" className="EditUndoButton" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditUndo_B_32.png" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditUndo_B_16.png" condition="active_state_3">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        <button id="QAReviewTool_ButtonBackward" caption="Backward" 
+                className="NavigateBackward" loadOnClick="true" keytip="B2"
+                smallImage="GenericBlueLeftArrowLongTail16" 
+                condition="NavigationQueryDefined">
+          <tooltip heading="Backward">
+            Backward is used to change the Field Value to the previous field value from the 'Value drop down' and performs an new selection query<disabledText /></tooltip>
         </button>
-        <button id="QAReviewTool_OpenTableButton" caption="Open Attribute Table" className="OpenTableButton" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/TableOpen32.png" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/TableOpen16.png">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        <button id="QAReviewTool_EditCorrectButton" caption="Correct" 
+                className="NotationSetNoteToCorrect" loadOnClick="true" keytip="B3"
+                smallImage="GenericCheckMark16" condition="QANotationDefined">
+          <tooltip heading="Correct">
+            Stores 'Correct' in the QA notation field<disabledText /></tooltip>
         </button>
-        <button id="QAReviewTool_LoadNoteFileButton" caption="Load Note File" className="LoadNoteFileButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/DataReviewerResourcesAdd16.png" condition="active_state_3">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        <button id="QAReviewTool_EditRecheckButton" caption="Recheck" 
+                className="NotationSetNoteToRecheck" loadOnClick="true" keytip="B4"
+                smallImage="GenericUnknown16" condition="QANotationDefined">
+          <tooltip heading="Recheck">
+            Stores 'Recheck' in the QA notation field<disabledText /></tooltip>
         </button>
-        <button id="QAReviewTool_SaveNoteFileButton" caption="Save to Note File" className="SaveNoteFileButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericSave16.png" condition="active_state_3">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        <button id="QAReviewTool_EditWrongButton" caption="Wrong" 
+                className="NotationSetNoteToWrong" loadOnClick="true" keytip="B5"
+                smallImage="GenericDeleteRed16" condition="QANotationDefined">
+          <tooltip heading="Wrong">
+            Stores 'Wrong' in the QA notation field<disabledText /></tooltip>
         </button>
-        <button id="QAReviewTool_SaveEditsButton" caption="Save" className="SaveEditsButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingSaveEdits_B_16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingSaveEdits_B_32.png" condition="esri_editing_HasEditsCondition">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        <button id="QAReviewTool_EditCommitQANote" caption="Save Notation" 
+                className="EditCommitQANote" loadOnClick="true" keytip="B6"
+                largeImage="GenericCheckMark32" condition="QANotationDefined">
+          <tooltip heading="Save Notation">
+            Saves the QA Notation in the QA notation field<disabledText /></tooltip>
         </button>
-        <button id="QAReviewTool_DiscardEditsButton" caption="Discard" className="DiscardEditsButton" loadOnClick="true" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingDiscardEdits32.png" condition="esri_editing_HasEditsCondition">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        <button id="QAReviewTool_EditUndoButton" caption="Undo" 
+                className="NotationUndo" loadOnClick="true" keytip="B7"
+                largeImage="EditUndo_B_32" smallImage="EditUndo_B_16" 
+                condition="QANotationDefined">
+          <tooltip heading="Undo">
+            Undo the last QA notation<disabledText /></tooltip>
+        </button>
+        <button id="QAReviewTool_OpenAttributeTable" caption="Open Attribute Table" 
+                className="LayerOpenAttributeTable" loadOnClick="true" keytip="B8"
+                condition="CanStartReview"
+                largeImage="TableOpen32" smallImage="TableOpen16">
+          <tooltip heading="Open Attribute Table">Open the selected Layer's attribute table<disabledText /></tooltip>
+        </button>
+        <button id="QAReviewTool_NotationListLoad" caption="Load Saved Custom Notes" 
+                className="NotationListLoad" loadOnClick="true" keytip="B9"
+                smallImage="DataReviewerResourcesAdd16" condition="QANotationDefined">
+          <tooltip heading="Load Saved Custom Notes">
+            Loads Custom Notes that were saved before<disabledText /></tooltip>
+        </button>
+        <button id="QAReviewTool_NotationListSave" caption="Save Custom Notes to File" 
+                className="NotationListSave" loadOnClick="true" keytip="B10"
+                smallImage="GenericSave16" condition="QANotationDefined">
+          <tooltip heading="Save Custom Notes to File">Saves all Custom Notes to a file<disabledText /></tooltip>
+        </button>
+        <button id="QAReviewTool_SaveEditsButton" caption="Save" className="NotationSaveEdits" 
+                loadOnClick="true" keytip="B11"
+                smallImage="EditingSaveEdits_B_16" largeImage="EditingSaveEdits_B_32" 
+                condition="esri_editing_HasEditsCondition">
+          <tooltip heading="Save">Save all edits (to the QA Notation field)<disabledText /></tooltip>
+        </button>
+        <button id="QAReviewTool_DiscardEditsButton" caption="Discard" 
+                className="NotationDiscardEdits" loadOnClick="true" keytip="B12"
+                largeImage="EditingDiscardEdits32" 
+                condition="esri_editing_HasEditsCondition">
+          <tooltip heading="Discard">
+            Discard all edits (to the QA Notation field)t<disabledText /></tooltip>
         </button>
       </controls>
     </insertModule>

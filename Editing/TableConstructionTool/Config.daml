@@ -58,7 +58,13 @@
           </tooltip>
           <content guid="96d7fa9d-22e1-4def-b32e-6b3d32adf548" />
         </tool>
-        <tool id="TableConstructionTool_AdvancedTableConstructionTool" categoryRefID="esri_editing_construction_table" caption="Advanced" className="AdvancedTableConstructionTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/FireDragon16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/FireDragon32.png">
+        <tool id="TableConstructionTool_AdvancedTableConstructionTool"
+              categoryRefID="esri_editing_construction_table" 
+              caption="Advanced" 
+              className="AdvancedTableConstructionTool"
+              loadOnClick="true" keytip="FD"
+              smallImage="FireDragon16" 
+              largeImage="FireDragon32">
           <tooltip heading="Advanced Table Construction tool">
             <disabledText />
           </tooltip>
@@ -69,7 +75,8 @@
   </modules>
   <categories>
     <updateCategory refID="esri_editing_tool_options">
-      <insertComponent id="TableConstructionTool_TableConstructionToolOptions" className="TableConstructionToolOptionsViewModel">
+      <insertComponent id="TableConstructionTool_TableConstructionToolOptions" 
+                       className="TableConstructionToolOptionsViewModel">
         <content className="TableConstructionToolOptionsView" />
       </insertComponent>
     </updateCategory>

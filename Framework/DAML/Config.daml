@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
 
    Copyright 2019 Esri
@@ -55,6 +55,7 @@
           <menu refID="DAML_Menu_New_Menu" size="middle" />
           <button refID="DAML_Menu_Custom_menus_AddDataButton" size="large" />
           <button refID="DAML_Menu_Custom_menus_ContextButton" size="large" />
+          <button refID="DAML_LayersPropertySheet_LayersPropertySheet_ShowPropertySheet" size="large" />
         </group>
       </groups>
       <controls>
@@ -76,6 +77,9 @@
         </button>
         <button id="DAML_Menu_Custom_menus_ContextButton" caption="Custom context button" className="DAML.Menu.Custom_menus_ContextButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="DAML_LayersPropertySheet_LayersPropertySheet_ShowPropertySheet" caption="Show LayersPropertySheet" className="DAML.LayersPropertySheet.LayersPropertySheet_ShowButton" loadOnClick="true" smallImage="GenericButtonPurple16" largeImage="GenericButtonPurple32">
+          <tooltip heading="Show Property Sheet">Show Property Sheet<disabledText /></tooltip>
         </button>
       </controls>
       <menus>
@@ -191,15 +195,15 @@
       </menus>
     </updateModule>
     <!--End ProSnippet-->
-    <!--ProSnippet: Gallery:Inserts a new button to the Add Data gallery, which can be seen from the Add Data split button. -->
+    <!--ProSnippet: SplitButton: Inserts a new button to the Add Data split button -->
     <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/Add-button-to-Add-Data-Split-Button-Gallery.png" width="40%">-->
     <!--Note: "updateModule" tag should be within the "modules" tag-->
     <updateModule refID="esri_mapping">
-      <galleries>
-        <updateGallery refID="esri_mapping_addDataGallery">
-          <insertButton refID="DAML_Menu_Custom_menus_AddDataButton" />
-        </updateGallery>
-      </galleries>
+		<splitButtons>
+			<updateSplitButton refID="esri_mapping_addDataSplitButton">
+				<insertButton refID="EsriCommunity_MyAddData" />
+			</updateSplitButton>
+		</splitButtons>
     </updateModule>
     <!--End ProSnippet-->
     <!--ProSnippet: Subgroup: Insert and delete subgroups within a group. -->
@@ -253,6 +257,20 @@
         <content className="DAML.OptionsPropertySheet.OptionsDialogPropertyPageView" />
       </insertPage>
     </updateSheet>
+	  <!--End ProSnippet-->
+	  <!--ProSnippet: PropertySheet: Insert Property Page into the Layer Properties Property sheet-->
+	  <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/PropertySheetLayerProperties.png" width="40%">-->
+	<updateSheet refID="esri_mapping_featureLayerPropertySheet">
+	    <insertPage id="DAML_LayersPropertySheet_LayersPropertySheet" caption="My custom layer properties" className="DAML.LayersPropertySheet.LayersPropertySheetViewModel" placeWith="esri_mapping_layerSourcePropertyPage" insert="after" >
+		    <content className="DAML.LayersPropertySheet.LayersPropertySheetView" />
+	    </insertPage>
+	</updateSheet>
+	  <!--End ProSnippet-->
+    <insertSheet id="DAML_LayersPropertySheet_LayersPropertySheet" caption="LayersPropertySheet" hasGroups="true">
+      <page id="DAML_LayersPropertySheet_LayersPropertySheet" caption="LayersPropertySheet" className="DAML.LayersPropertySheet.LayersPropertySheetViewModel" group="Group 1">
+        <content className="DAML.LayersPropertySheet.LayersPropertySheetView" />
+      </page>
+    </insertSheet>
   </propertySheets>
-  <!--End ProSnippet-->
+
 </ArcGIS>
