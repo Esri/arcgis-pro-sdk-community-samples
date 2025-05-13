@@ -56,7 +56,8 @@
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="ModifyNewlyAddedFeatures_ModifyMonitor" caption="Modify Monitor" className="ModifyMonitorViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="ModifyNewlyAddedFeatures_ModifyMonitor" caption="Modify Monitor" 
+                  className="ModifyMonitorViewModel" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="ModifyMonitorView" />
         </dockPane>
       </dockPanes>

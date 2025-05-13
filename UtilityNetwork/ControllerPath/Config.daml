@@ -22,8 +22,8 @@
     <Name>Controller Path</Name>
     <Description>Finds the shortest path to the current feature's subnetwork controllers. Designed to work with Pressure Zones and Systems.</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>aas11333</Author>
-    <Company>ESRI</Company>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, https://www.esri.com</Company>
     <Date>4/8/2024 10:41:43 AM</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:

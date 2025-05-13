@@ -122,3 +122,4 @@ UpgradeLog*.XML
 /.vs
 .vs
 *.ide
+/.gitignore

@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="ViewAndEditData.TableControlDemoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
+             xmlns:ui="clr-namespace:ViewAndEditData"
+             xmlns:editing="clr-namespace:ArcGIS.Desktop.Editing.Controls;assembly=ArcGIS.Desktop.Editing"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"                       
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="300"
+             d:DataContext="{Binding Path=ui.TableControlDemoViewModel}">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
+      <TextBlock Text="{Binding Heading}" Style="{DynamicResource Esri_TextBlockDockPaneHeader}">
+        <TextBlock.ToolTip>
+          <WrapPanel Orientation="Vertical" MaxWidth="300">
+            <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
+          </WrapPanel>
+        </TextBlock.ToolTip>
+      </TextBlock>
+    </DockPanel>
+    <!--Table Control-->
+    <StackPanel Orientation="Vertical" Grid.Row="1" Margin="5" >
+      <editing:TableControl x:Name="MyTableControl" AutomationProperties.AutomationId="_tableControl"  
+             VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="350"
+            TableContent="{Binding Path=TableContent}" >
+      </editing:TableControl>
+
+    </StackPanel>
+    <!--This is the inspector-->
+    <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" Visibility="{Binding InspectorVisibility}">
+      <StackPanel Orientation="Vertical" >
+        <ContentPresenter Margin="0,6" Content="{Binding InspectorView}" Visibility="Visible" ></ContentPresenter>
+        <StackPanel Orientation="Horizontal" Background="Transparent" Margin="0,6" Visibility="Visible">
+          <Button Margin="6,0,0,0" Style="{DynamicResource Esri_Button}" Content="Apply"
+           IsEnabled="{Binding IsApplyEnabled}" Command="{Binding ApplyCommand}"/>
+          <Button Margin="6,0,0,0" Style="{DynamicResource Esri_Button}" Content="Cancel"
+           IsEnabled="{Binding IsCancelEnabled}" Command="{Binding CancelCommand}"/>
+        </StackPanel>
+      </StackPanel>
+
+    </ScrollViewer>
+    <!--This is the inspector end-->
+    <!--This stackpanel with the text and button should display only for External datasource items. These items need to be added to the map in order to use the inspector.-->
+    <StackPanel Orientation="Vertical" Grid.Row="2" Visibility="{Binding IsExternalDatasource}" Margin="5" >
+      <TextBlock Text="{Binding ExternalDatasourceText}" 
+                 Style="{DynamicResource Esri_TextBlockDockPaneHeader}" TextWrapping="Wrap" Margin="5,0,0,0" />
+    </StackPanel>
+  </Grid>
+</UserControl>

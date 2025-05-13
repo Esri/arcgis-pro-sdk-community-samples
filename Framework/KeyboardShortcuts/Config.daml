@@ -81,7 +81,8 @@
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="KeyboardShortcuts_Panes_SampleDockpane" caption="Sample Dockpane" className="KeyboardShortcuts.Panes.SampleDockpaneViewModel" dock="group" dockWith="esri_core_projectDockPane">
+        <dockPane id="KeyboardShortcuts_Panes_SampleDockpane" caption="Sample Dockpane" 
+                  className="KeyboardShortcuts.Panes.SampleDockpaneViewModel" dock="group" dockWith="esri_core_projectDockPane">
           <content className="KeyboardShortcuts.Panes.SampleDockpaneView" />
           <keyCommands>
             <keyCommand id="Dock_Pane_Cmd" caption="Pane Shortcut" tooltip="Pane Shortcut using keyCommand" image="BexDog16"/>

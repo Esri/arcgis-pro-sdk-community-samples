@@ -242,6 +242,11 @@ namespace TableFeatureClassOperations
             {
               // first find the int field
               bool Ignore = false;
+                        if (SelectedTable == null)
+                        {
+                            MessageBox.Show("No table selected");
+                            return;
+                        }
               var numericField = GetFieldByFieldType(SelectedTable, FieldType.Integer, ref Ignore);
 
               // Create StatisticsDescriptions
@@ -432,7 +437,7 @@ namespace TableFeatureClassOperations
     /// </summary>
     /// <param name="mapMember"></param>
     /// <param name="fieldType"></param>
-    /// <param name="IsDateField"
+        /// <param name="IsDateField"></param>
     /// <returns></returns>
     /// <exception cref="Exception"></exception>
     private static Field GetFieldByFieldType(MapMember mapMember, FieldType fieldType, ref bool IsDateField)

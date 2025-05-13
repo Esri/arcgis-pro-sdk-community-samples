@@ -45,10 +45,17 @@ namespace WebViewBrowser
 		private ObservableCollection<string> _NavList = new ObservableCollection<string>();
 		private int _NavPosition = -1;
 
-		/// <summary>
-		/// Consume the passed in CIMView. Call the base constructor to wire up the CIMView.
-		/// </summary>
-		public WebViewBrowserViewModel(CIMView view)
+		public event EventHandler WebViewClicked;
+
+		protected void OnWebViewClicked(EventArgs e)
+		{
+      WebViewClicked?.Invoke(this, e);
+    }
+
+    /// <summary>
+    /// Consume the passed in CIMView. Call the base constructor to wire up the CIMView.
+    /// </summary>
+    public WebViewBrowserViewModel(CIMView view)
 		  : base(view) 
 		  {
 			_NavList.CollectionChanged += _NavList_CollectionChanged;
@@ -155,6 +162,7 @@ namespace WebViewBrowser
 				return _NavPosition > 0;
 			}
 		}
+
 
 		public ICommand CmdNavigateForward
 		{

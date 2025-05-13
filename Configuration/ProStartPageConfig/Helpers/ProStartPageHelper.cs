@@ -192,7 +192,7 @@ namespace ProStartPageConfig.Helpers
       get
       {
 
-        return new RelayCommand((args) => BrowseToProject(), () => true); ;
+        return new RelayCommand((args) => BrowseToProject(), () => true);
       }
     }
 
@@ -201,7 +201,7 @@ namespace ProStartPageConfig.Helpers
       get
       {
 
-        return new RelayCommand((args) => BrowseToTemplate(), () => true); ;
+        return new RelayCommand((args) => BrowseToTemplate(), () => true);
       }
     }
   }

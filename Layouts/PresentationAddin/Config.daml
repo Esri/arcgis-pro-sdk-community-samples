@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2025 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="PresentationsAddin.dll" defaultNamespace="PresentationsAddin" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+	<AddInInfo id="{1328409e-5015-401f-ad7e-3347d1b9716d}" version="1.0" desktopVersion="3.5" product="ArcGISPro">
+		<Name>PresentationsAddin</Name>
+		<Description>PresentationsAddin description</Description>
+		<Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+		<Date>4/8/2025 3:00 PM</Date>
+		<Subject>Layouts</Subject>
+		<!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+	</AddInInfo>
+	<modules>
+		<insertModule id="PresentationsAddin_Module" className="Module1" autoLoad="false" caption="Module1">
+			<!-- uncomment to have the control hosted on a separate tab-->
+			<tabs>
+				<tab id="PresentationsAddin_Tab1" caption="Presentations" keytip="T0">
+					<group refID="PresentationsAddin_Group1" />
+					<group refID="PresentationsAddin_Group2" />
+					<group refID="PresentationsAddin_Group3" />
+					<group refID="PresentationsAddin_Group4" />
+				</tab>
+			</tabs>
+			<groups>
+				<!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+				<group id="PresentationsAddin_Group1" caption="Presentation" keytip="G0">
+					<button refID="PresentationsAddin_CreatePresentation" size="large" />
+					<button refID="PresentationsAddin_CreateViewPane" size="large" />
+				</group>
+				<group id="PresentationsAddin_Group2" caption="Presentation Pages" keytip="G1">
+					<button refID="PresentationsAddin_AddBlankPage" size="large" />
+					<button refID="PresentationsAddin_AddImagePage" size="large" />
+					<button refID="PresentationsAddin_AddVideoPage" size="large" />
+					<button refID="PresentationsAddin_AddMapPage" size="large" />
+					<button refID="PresentationsAddin_ZoomOnMap" size="large" />
+				</group>
+				<group id="PresentationsAddin_Group3" caption="Presentation Page Elements" keytip="G2" >
+					<button refID="PresentationsAddin_CreateElements" size="large" />
+					<button refID="PresentationsAddin_SelectVisibleElements" size="large" />
+					<button refID="PresentationsAddin_ManipulateElementSelection" size="large" />
+				</group>
+				<group id="PresentationsAddin_Group4" caption="Presentation Events" keytip="G3" >
+					<button refID="PresentationsAddin_EnablePresentationEvents" size="large" />
+					<button refID="PresentationsAddin_EnablePresentationViewEvents" size="large" />
+				</group>
+			</groups>
+			<controls>
+				<!-- add your controls here -->
+				<button id="PresentationsAddin_CreatePresentation" caption="Create Presentation"
+                className="CreatePresentation" loadOnClick="true" keytip="B0"
+                smallImage="InsertNewPresentation16" largeImage="InsertNewPresentation32">
+					<tooltip heading="Create Presentation">
+            Create a new Presentation<disabledText />
+					</tooltip>
+				</button>
+				<button id="PresentationsAddin_CreateViewPane" caption="Create Presentation View" 
+                className="CreateViewPane" loadOnClick="true" keytip="B1"
+                smallImage="PresentationView16" largeImage="PresentationView32">
+					<tooltip heading="Create Presentation View">
+            Show new Presentation View<disabledText />
+					</tooltip>
+				</button>
+				<button id="PresentationsAddin_AddBlankPage" caption="Add Blank Page"
+                className="AddBlankPage" loadOnClick="true" keytip="B2"
+                smallImage="PresentationBlankPage16" largeImage="PresentationBlankPage32">
+					<tooltip heading="Add Blank Page">
+						Add a blank page to the presentation<disabledText />
+					</tooltip>
+				</button>
+				<button id="PresentationsAddin_AddImagePage" caption="Add Image Page" 
+                className="AddImagePage" loadOnClick="true" keytip="B3"
+                smallImage="PresentationImagePage16" largeImage="PresentationImagePage32">
+					<tooltip heading="Add Image Page">
+						Add an image page the presentation<disabledText />
+					</tooltip>
+				</button>
+				<button id="PresentationsAddin_AddVideoPage" caption="Add Video Page" 
+                className="AddVideoPage" loadOnClick="true" keytip="B4"
+                smallImage="PresentationVideoPage16" largeImage="PresentationVideoPage32">
+					<tooltip heading="Add Video Page">
+            Add a Video Page to the presentation<disabledText />
+					</tooltip>
+				</button>
+				<button id="PresentationsAddin_AddMapPage" caption="Add Map Page" 
+                className="AddMapPage" loadOnClick="true" keytip="B5"
+                smallImage="PresentationMapPage16" largeImage="PresentationMapPage32">
+					<tooltip heading="Add Map Page">
+            Add a Map Page to the presentation<disabledText />
+					</tooltip>
+				</button>
+				<button id="PresentationsAddin_ZoomOnMap" caption="Interact with Map" 
+                className="InteractWithMap" loadOnClick="true" keytip="B6"
+                smallImage="ExportPresentationsToImages16" largeImage="ExportPresentationsToImages32">
+					<tooltip heading="Interact with Map">
+						Tooltip text<disabledText />
+					</tooltip>
+				</button>
+				<button id="PresentationsAddin_CreateElements" caption="Add Elements"
+                className="CreateElements" loadOnClick="true" keytip="B7"
+                smallImage="RasterOrthoAddPoint16" largeImage="RasterOrthoAddPoint32">
+					<tooltip heading="Add Elements">
+            Add Elements to the presentation<disabledText />
+					</tooltip>
+				</button>
+				<button id="PresentationsAddin_SelectVisibleElements" caption="Select Visible Elements"
+                className="SelectVisibleElements" loadOnClick="true" keytip="B8"
+                smallImage="TableShowAllRecords16" largeImage="TableShowAllRecords32">
+					<tooltip heading="Select Visible Elements">
+            Select Visible Elements in the active presentation<disabledText />
+					</tooltip>
+				</button>
+				<button id="PresentationsAddin_ManipulateElementSelection" caption="Manipulate Element Selection"
+                className="ManipulateElementSelection" loadOnClick="true" keytip="B9"
+                smallImage="ClausesGroupCentered16" largeImage="ClausesGroupCentered32">
+					<tooltip heading="Manipulate Element Selection">
+            Manipulate Element Selection<disabledText />
+					</tooltip>
+				</button>
+				<button id="PresentationsAddin_EnablePresentationEvents" caption="Enable Presentation Events"
+                className="EnablePresentationEvents" loadOnClick="true" keytip="BA"
+                smallImage="GenericButtonBlue16" largeImage="GenericButtonBlue32">
+					<tooltip heading="Tooltip Heading">
+						Tooltip text<disabledText />
+					</tooltip>
+				</button>
+				<button id="PresentationsAddin_EnablePresentationViewEvents" caption="Enable Presentation View Events"
+                className="EnablePresentationViewEvents" loadOnClick="true" keytip="BB"
+                smallImage="MergeEvents16" largeImage="MergeEvents32">
+					<tooltip heading="Enable Presentation View Events">
+            Enable Presentation View Events<disabledText />
+					</tooltip>
+				</button>
+			</controls>
+		</insertModule>
+	</modules>
+</ArcGIS>

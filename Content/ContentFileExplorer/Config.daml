@@ -52,7 +52,8 @@
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="ContentFileExplorer_FileExplorer" caption="FileExplorer" className="FileExplorerViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="ContentFileExplorer_FileExplorer" caption="FileExplorer"
+                  className="FileExplorerViewModel" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="FileExplorerView" />
         </dockPane>
       </dockPanes>

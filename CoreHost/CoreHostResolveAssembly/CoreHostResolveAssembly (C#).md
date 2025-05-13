@@ -15,8 +15,8 @@ Language:              C#
 Subject:               Console
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  11/04/2024
-ArcGIS Pro:            3.4
+Date:                  05/06/2025
+ArcGIS Pro:            3.5
 Visual Studio:         2022
 .NET Target Framework: 4.6.1
 ```

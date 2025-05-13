@@ -2,10 +2,11 @@
 
 <!-- TODO: Write a brief abstract explaining this sample -->
 This sample illustrates how to build a construction tool with options allowing users to provide parameters at run-time.    
-Two samples are included.  
+Three samples are included.  
 The first is the BufferedLineTool.  The line sketch geoemtry is buffered by a user defined distance to create a polygon feature.  
 The second sample is the CircleTool.  A user defined radius is used to create a circular arc with the point sketch geometry as the centroid.  This tool is registered with both the esri_editing_construction_polyline and esri_editing_construction_polygon categories allowing both polyline and polygon features to be created.  
 The CircleTool options follows the multiple tool options pattern (implementing ToolOptionsEmbeddableControl) allowing the users to select multiple templates in the manage templates dialog and change tool option values for those templates. The BufferedLineTool sample follows the single use pattern.  
+The third sample adds a custom user interface for polygon creation  
   
 
 
@@ -17,8 +18,8 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  11/04/2024
-ArcGIS Pro:            3.4
+Date:                  05/06/2025
+ArcGIS Pro:            3.5
 Visual Studio:         2022
 .NET Target Framework: net8.0-windows
 ```
@@ -45,6 +46,11 @@ Visual Studio:         2022
 9. Select the tool and see the Options page displaying the buffer distance  
 ![UI](Screenshots/ConstructionToolOptions_2.png)        
 10. Enter a buffer distance and sketch a line.See a buffer of the sketched line used to generate a new polygon feature.  
+11. Select the 'Edit' tab on the ArcGIS Pro ribbon and 'Create' new features    
+12. On the 'Create Features' pane select the test polygon feature layer to see the 'Polygon Selection' tool    
+13. Select the tool and see the Options page displaying the various selection tools provided by Pro  
+![UI](Screenshots/ConstructionToolOptions_3.png)          
+14. Choose a selection tool and select a polygon on the map. Note that the selected polygon is highlighted in the map view and the focus is restored to the create polygon tool.  
   
 
 <!-- End -->

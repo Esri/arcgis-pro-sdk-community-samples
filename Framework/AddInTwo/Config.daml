@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2025 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="AddInTwo.dll" defaultNamespace="AddInTwo" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{4b7a12c9-8191-4043-bf50-10091f9906db}" version="1.0" desktopVersion="3.5.56282" product="ArcGISPro">
+    <Name>AddInTwo</Name>
+    <Description>AddInTwo description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, https://www.esri.com</Company>
+    <Date>3/26/2025 12:19:09 PM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="AddInTwo_Module" className="ModuleAddInTwo" autoLoad="false" caption="AddInTwo Module">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="AddInTwo_Tab1" caption="AddIn 2 AddIn" keytip="T0">
+          <group refID="AddInTwo_Group1"/>
+        </tab>
+      </tabs>
+      <groups>
+        <group id="AddInTwo_Group1" caption="AddIn Two"
+							 keytip="G0">
+          <!-- host controls within groups -->
+          <comboBox refID="AddInTwo_ComboBoxStates" size="small" />
+          <customControl refID="AddInTwo_ShowEvents" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <comboBox id="AddInTwo_ComboBoxStates" caption="States" 
+									className="ComboBoxStates" itemWidth="140" 
+									extendedCaption="Extended Caption" keytip="C0"
+									isEditable="false" isReadOnly="true" resizable="true">
+          <tooltip heading="States">
+						The selected State is published through an event handler<disabledText /></tooltip>
+        </comboBox>
+        <customControl id="AddInTwo_ShowEvents" caption="Show Events" 
+											 className="ShowEventsViewModel" loadOnClick="true"
+											 keytip="C1"
+											 smallImage="GenericButtonPurple16" 
+											 largeImage="GenericButtonPurple32">
+          <content className="ShowEventsView" />
+          <tooltip heading="Show Events">
+						Show Events <disabledText /></tooltip>
+        </customControl>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

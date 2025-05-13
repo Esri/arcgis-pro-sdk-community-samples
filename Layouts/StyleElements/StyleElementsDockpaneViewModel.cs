@@ -63,7 +63,7 @@ namespace StyleElements
 
     protected override void OnShow(bool isVisible)
     {
-      if (LayoutView.Active == null || MapView.Active.Map == null) return;
+      if (LayoutView.Active == null || MapView.Active?.Map == null) return;
       if (isVisible)
       {
         UpdateSymbolCollection();

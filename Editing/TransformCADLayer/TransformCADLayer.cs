@@ -64,6 +64,8 @@ namespace TransformCADLayer
       }
       double dMetersPerUnit = 1.0;
       string CadFeatClassNameForSelectedLayer = "";
+      string message = "Please select the CAD layer in the table of contents." + Environment.NewLine +
+          "CAD data in a geographic coordinate system is not supported.";
       CadDataset cadDataset = null;
       //Run on MCT
       bool isValid = await QueuedTask.Run(() =>
@@ -78,9 +80,16 @@ namespace TransformCADLayer
         CadFileName = System.IO.Path.Combine(sCADFilePath, FeatDS.GetName());
         string fileExtension = System.IO.Path.GetExtension(CadFileName);
         fileExtension = fileExtension.ToLower();
-
-        var cadfileStore = new FileSystemDatastore(new FileSystemConnectionPath(new Uri(sCADFilePath), FileSystemDatastoreType.Cad));
-        cadDataset = cadfileStore.OpenDataset<CadDataset>(CadFileName);
+        try
+        {
+          var cadfileStore = new FileSystemDatastore(new FileSystemConnectionPath(new Uri(sCADFilePath), FileSystemDatastoreType.Cad));
+          cadDataset = cadfileStore.OpenDataset<CadDataset>(CadFileName);
+        }
+        catch
+        {
+          message += Environment.NewLine + "BIM Data not supported.";
+          return false;
+        }
 
         string sTargetFileName = System.IO.Path.GetFileNameWithoutExtension(CadFileName);
         sTargetWldFile = System.IO.Path.Combine(sCADFilePath, sTargetFileName + ".wld3");
@@ -103,8 +112,7 @@ namespace TransformCADLayer
       // if not a valid CAD file
       if (!isValid)
       {
-        System.Windows.MessageBox.Show("Please select the CAD layer in the table of contents." + Environment.NewLine +
-          "CAD data in a geographic coordinate system is not supported.", "Transform CAD Layer");
+        System.Windows.MessageBox.Show(message, "Transform CAD Layer");
         return;
       }
 

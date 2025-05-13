@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2025 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="CommandCustomizationFilter.dll" defaultNamespace="CommandCustomizationFilter" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{f31cbc45-89da-4632-aff2-30fb3a3ef052}" version="1.2" desktopVersion="3.5.56282" product="ArcGISPro">
+    <Name>CommandCustomizationFilter</Name>
+    <Description>CommandCustomizationFilter description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>4/1/2025 15:57:36</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="CommandCustomizationFilter_Module" className="Module1" autoLoad="true" caption="Command Filter">
+			<tabs>
+				<tab id="AddFeatureTest_Tab1" caption="Command Filter" keytip="T0">
+          <group refID="CommandCustomizationFilter_Group1"/>
+        </tab>
+			</tabs>
+      <groups>
+        <group id="CommandCustomizationFilter_Group1" keytip="G0" caption="Command Filters" appearsOnAddInTab="true">
+					<comboBox refID="CommandCustomizationFilter_FilterOptions" size="middle"/>
+					<button refID="esri_editing_ShowCreateFeaturesBtn" size="middle" />
+					<button refID="esri_editing_ShowEditFeaturesBtn" size="middle" />
+					<button refID="CommandCustomizationFilter_TestButton" size="large" />
+        </group>
+      </groups>
+			<controls>
+				<comboBox id="CommandCustomizationFilter_FilterOptions" keytip="C0"
+									caption="Filter Options" className="FilterOptions"
+									itemWidth="140" extendedCaption="Extended Caption"
+									isEditable="false" isReadOnly="true" resizable="true">
+					<tooltip heading="Filter Options">
+						Select the option for Command Filter operation<disabledText />
+					</tooltip>
+				</comboBox>
+				<button id="CommandCustomizationFilter_TestButton" caption="Test Button" className="TestButton" loadOnClick="true" keytip="B1" smallImage="SchedulerDisable16" largeImage="SchedulerDisable32">
+					<tooltip heading="Test Button">
+						Not used for this test, use 'Create' and 'Modify Features' on the 'Edit' tab instead<disabledText />
+					</tooltip>
+				</button>
+			</controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

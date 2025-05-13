@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2025 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="GPToolRightClick.dll" defaultNamespace="GPToolRightClick" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{5ed4953b-3577-4ea3-86d4-f7656b42ad68}" version="1.0" desktopVersion="3.5.56108" product="ArcGISPro">
+    <Name>GPToolRightClick</Name>
+    <Description>GPToolRightClick description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, https://www.esri.com</Company>
+    <Date>1/3/2025 11:39:33</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="GPToolRightClick_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="GPToolRightClick_Tab1" caption="New Tab">
+          <group refID="GPToolRightClick_Group1"/>
+        </tab>-->
+      </tabs>
+      <controls>
+        <!-- add your controls here -->
+        <button id="GPToolRightClick_GPToolRightClick" caption="GPTool right click" 
+                className="GPToolRightClick" loadOnClick="true" keytip="C1"
+                smallImage="GeoprocessingToolset16" 
+                largeImage="GeoprocessingToolset32">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+    <updateModule refID="esri_geoprocessing_module">
+      <menus>
+        <updateMenu refID="esri_geoprocessing_SystemToolMenu">
+          <insertButton refID="GPToolRightClick_GPToolRightClick" placeWith="esri_geoprocessing_BatchTool" />
+        </updateMenu>
+      </menus>
+    </updateModule>
+  </modules>
+</ArcGIS>

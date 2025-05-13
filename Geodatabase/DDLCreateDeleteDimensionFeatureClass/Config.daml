@@ -1,0 +1,41 @@
+﻿<ArcGIS defaultAssembly="DDLCreateDeleteDimensionFeatureClass.dll" defaultNamespace="DDLCreateDeleteDimensionFeatureClass" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{b97065f2-975a-484d-8c2e-3b3d91ccee0d}" version="1.0" desktopVersion="3.5.57265" product="ArcGISPro">
+    <Name>DDLCreateDeleteDimensionFeatureClass</Name>
+    <Description>DDLCreateDeleteDimensionFeatureClass description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>4/9/2025 12:16:25 PM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="DDLCreateDeleteDimensionFeatureClass_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="DDLCreateDeleteDimensionFeatureClass_Tab1" caption="New Tab">
+          <group refID="DDLCreateDeleteDimensionFeatureClass_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="DDLCreateDeleteDimensionFeatureClass_Group1" caption="Dimension Operations" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="DDLCreateDeleteDimensionFeatureClass_CreateDimensionFeatureClass" size="large" />
+          <button refID="DDLCreateDeleteDimensionFeatureClass_DeleteDimensionFeatureClass" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="DDLCreateDeleteDimensionFeatureClass_CreateDimensionFeatureClass" caption="Create Dimension FeatureClass" className="CreateDimensionFeatureClass" loadOnClick="true" smallImage="GenericButtonBlue16" largeImage="GenericButtonBlue32">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="DDLCreateDeleteDimensionFeatureClass_DeleteDimensionFeatureClass" caption="Delete Dimension FeatureClass" className="DeleteDimensionFeatureClass" loadOnClick="true" smallImage="GenericButtonBlue16" largeImage="GenericButtonBlue32">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

@@ -27,7 +27,7 @@
     <Content Include="Config.xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Windows.Compatibility" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="9.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProDataReaderImageMetadata\ProDataReaderImageMetadata.csproj">

@@ -1,0 +1,46 @@
+﻿<ArcGIS defaultAssembly="ViewAndEditData.dll" defaultNamespace="ViewAndEditData" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{8bf7774a-2d8b-45db-a8a2-834aa2f9834a}" version="1.0" desktopVersion="3.4.55405" product="ArcGISPro">
+    <Name>ViewAndEditData</Name>
+    <Description>ViewAndEditData description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>3/12/2025 1:23:58 PM</Date>
+    <Subject>Editing</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ViewAndEditData_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="ViewAndEditData_Tab1" caption="View / Edit" keytip="T1">
+          <group refID="ViewAndEditData_Group1"/>
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ViewAndEditData_Group1" caption="View and Edit" keytip="G1">
+          <!-- host controls within groups -->
+          <button refID="ViewAndEditData_TableControlDemo_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ViewAndEditData_TableControlDemo_ShowButton" caption="Show View Edit"
+                className="TableControlDemo_ShowButton" loadOnClick="true" keytip="B0"
+                smallImage="EditingAttributesWindowShow16" largeImage="EditingAttributesWindowShow32">
+          <tooltip heading="Show View Edit">Shows the 'View and Edit' Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="ViewAndEditData_TableControlDemo" caption="View Data" 
+                  className="TableControlDemoViewModel" dock="group" 
+                  dockWith="esri_core_projectDockPane" smallImage="EditingAttributesWindowShow16">
+          <content className="TableControlDemoView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

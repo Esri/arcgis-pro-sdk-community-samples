@@ -1,0 +1,19 @@
+
+```
+Language:              $progLanguageShort$  
+Subject:               $allSubjects$  
+Contributor:           $contributor$  
+Organization:          $organization$  
+Date:                  $processingDate$  
+ArcGIS Pro:            $proVersion$  
+Visual Studio:         $visualStudioVersion$  
+.NET Target Framework: $targetFramework$  
+```
+
+## ProSnippets for Geoprocessing Tools
+
+This document provides ProSnippets that aid in calling any ArcGIS Pro Geoprocessing tool from within your Add-in.
+
+** $GeoProcessingToolCount$ ProSnippets for Geoprocessing Tools by topic**  
+
+$GeoProcessingToolToc$

@@ -39,9 +39,16 @@ namespace WebViewBrowser
   /// </summary>
   public partial class WebViewBrowserView : UserControl
   {
-	public WebViewBrowserView()
-	{
-	  InitializeComponent();
-	}
+    public WebViewBrowserView()
+    {
+      InitializeComponent();
+      var viewModel = (WebViewBrowserViewModel)DataContext;
+      viewModel.WebViewClicked += ViewModel_WebViewClicked; ;
+    }
+
+    private void ViewModel_WebViewClicked(object sender, EventArgs e)
+    {
+      MessageBox.Show("Web view clicked");
+    }
   }
 }

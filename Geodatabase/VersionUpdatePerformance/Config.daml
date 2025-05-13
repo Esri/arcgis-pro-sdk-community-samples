@@ -54,7 +54,7 @@
       <dockPanes>
         <dockPane id="VersionUpdatePerformance_VersionUpdate" 
                   caption="Version Update" className="VersionUpdateViewModel"
-                  smallImage="VersionManager16" largeImage="VersionManager32"
+                  smallImage="VersionManager16" 
                   dock="group" dockWith="esri_core_projectDockPane">
           <content className="VersionUpdateView" />
         </dockPane>

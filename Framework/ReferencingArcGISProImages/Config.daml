@@ -82,7 +82,8 @@
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="ReferencingArcGISProImages_ReferenceFromXAML" caption="ReferenceFromXAML" className="ReferenceFromXAMLViewModel" dock="group" dockWith="esri_core_projectDockPane">
+        <dockPane id="ReferencingArcGISProImages_ReferenceFromXAML" caption="ReferenceFromXAML" 
+                  className="ReferenceFromXAMLViewModel" dock="group" dockWith="esri_core_projectDockPane">
           <content className="ReferenceFromXAMLView" />
         </dockPane>
       </dockPanes>

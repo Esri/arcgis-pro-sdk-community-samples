@@ -53,7 +53,8 @@
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="DynamicJoins_JoinsDockpane" caption="Joins Dockpane" className="JoinsDockpaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="DynamicJoins_JoinsDockpane" caption="Joins Dockpane" 
+                  className="JoinsDockpaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="JoinsDockpaneView" />
         </dockPane>
       </dockPanes>

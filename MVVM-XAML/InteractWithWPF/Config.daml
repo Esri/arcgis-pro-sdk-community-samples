@@ -1,0 +1,40 @@
+﻿<ArcGIS defaultAssembly="InteractWithWPF.dll" defaultNamespace="InteractWithWPF" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{5f50a7b0-f524-4a63-bbde-29850b83b27e}" version="1.0" desktopVersion="3.5.56536" product="ArcGISPro">
+    <Name>InteractWithWPF</Name>
+    <Description>InteractWithWPF description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>4/29/2025 10:35:51</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="InteractWithWPF_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="InteractWithWPF_Tab1" caption="New Tab">
+          <group refID="InteractWithWPF_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="InteractWithWPF_Group1" caption="Group 1" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="InteractWithWPF_UpdateProjectButtonCaption" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="InteractWithWPF_UpdateProjectButtonCaption" keytip="B0"
+                caption="Update Project Button Caption" className="UpdateProjectButtonCaption" 
+                loadOnClick="true" smallImage="GenericButtonBlue16" largeImage="GenericButtonBlue32">
+          <tooltip heading="Update Project Button Caption">
+            Update Project Button Captiont via WPF control update<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

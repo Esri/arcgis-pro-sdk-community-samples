@@ -1,0 +1,5 @@
+[Home](../wiki)
+
+### GP Tool ProSnippets: $subject$
+
+$sidebarTitles$

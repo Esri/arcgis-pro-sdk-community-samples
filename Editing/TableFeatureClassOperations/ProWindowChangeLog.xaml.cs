@@ -38,6 +38,9 @@ namespace TableFeatureClassOperations
     /// </summary>
     public partial class ProWindowChangeLog : ArcGIS.Desktop.Framework.Controls.ProWindow
     {
+        /// <summary>
+        /// Constructor for ProWindowChangeLog
+        /// </summary>
         public ProWindowChangeLog()
         {
             InitializeComponent();

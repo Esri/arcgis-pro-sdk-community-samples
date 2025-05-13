@@ -72,7 +72,7 @@
     <None Include="Screenshots\Screen1.png" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
   </ItemGroup>
   <PropertyGroup>
     <BuildDependsOn>

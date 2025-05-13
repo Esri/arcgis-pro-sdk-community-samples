@@ -39,6 +39,9 @@ namespace TableFeatureClassOperations
   /// </summary>
   public partial class TableOperationsView : UserControl
   {
+        /// <summary>
+        /// Constructor for TableOperationsView
+        /// </summary>
     public TableOperationsView()
     {
       InitializeComponent();

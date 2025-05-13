@@ -1,0 +1,16 @@
+  
+```
+Language:              $progLanguageShort$  
+Subject:               $subject$  
+Contributor:           $contributor$  
+Organization:          $organization$  
+Date:                  $processingDate$  
+ArcGIS Pro:            $proVersion$  
+Visual Studio:         $visualStudioVersion$  
+.NET Target Framework: $targetFramework$  
+```
+
+<!-- Auto generated page -->
+
+$snippets$
+

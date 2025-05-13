@@ -56,10 +56,14 @@
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="DragAndDrop_DragAndDropDockpane1" caption="Drag and Drop Dockpane" className="DragAndDropDockpane1ViewModel" dock="group" dockWith="esri_core_contentsDockPane" isDropTarget="false">
+        <dockPane id="DragAndDrop_DragAndDropDockpane1" caption="Drag and Drop Dockpane" 
+                  className="DragAndDropDockpane1ViewModel" dock="group" dockWith="esri_core_contentsDockPane"
+                  isDropTarget="false">
           <content className="DragAndDropDockpane1View" />
         </dockPane>
-        <dockPane id="DragAndDrop_DragAndDropTOCItems" caption="Drag and drop TOC items" className="DragAndDropTOCItemsViewModel" dock="group" dockWith="esri_core_contentsDockPane" isDropTarget="false">
+        <dockPane id="DragAndDrop_DragAndDropTOCItems" caption="Drag and drop TOC items" 
+                  className="DragAndDropTOCItemsViewModel" dock="group" dockWith="esri_core_contentsDockPane" 
+                  isDropTarget="false">
           <content className="DragAndDropTOCItemsView" />
         </dockPane>
       </dockPanes>

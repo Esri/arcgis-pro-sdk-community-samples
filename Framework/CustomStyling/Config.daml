@@ -52,7 +52,9 @@
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="CustomStyling_Dockpane1" caption="Dockpane 1" className="CustomStyling.UI.Dockpane1ViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="CustomStyling_Dockpane1" caption="Dockpane 1"
+                  className="CustomStyling.UI.Dockpane1ViewModel" dock="group" 
+                  dockWith="esri_core_contentsDockPane">
           <content className="CustomStyling.UI.Dockpane1View" />
         </dockPane>
       </dockPanes>

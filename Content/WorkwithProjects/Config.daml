@@ -49,7 +49,9 @@
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="WorkwithProjects_WorkWithProjects" caption="Working With Projects " className="WorkWithProjectsViewModel" dock="group" dockWith="esri_core_contentsDockPane" condition="esri_mapping_openProjectCondition">
+        <dockPane id="WorkwithProjects_WorkWithProjects" caption="Working With Projects" 
+                  className="WorkWithProjectsViewModel" dock="group" dockWith="esri_core_contentsDockPane"
+                  condition="esri_mapping_openProjectCondition">
           <content className="WorkWithProjectsView" />
         </dockPane>
       </dockPanes>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2025 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="GPToolInspector.dll" defaultNamespace="GPToolInspector" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{e684d0ac-5ad5-48cf-a353-77f1ba1d92c9}" version="1.0" desktopVersion="3.4.55405" product="ArcGISPro">
+    <Name>GPToolInspector</Name>
+    <Description>GPToolInspector description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, https://www.esri.com</Company>
+    <Date>10/29/2024 07:44:48</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="GPToolInspector_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="GPToolInspector_Tab1" caption="GP Tools" keytip="T0">
+          <group refID="GPToolInspector_Group1"/>
+        </tab>
+      </tabs>
+      <groups>
+        <group id="GPToolInspector_Group1" caption="GP Tools" keytip="G0">
+          <button refID="GPToolInspector_InspectGPTool_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="GPToolInspector_InspectGPTool_ShowButton" 
+                caption="Show GP Tool Inspector" className="InspectGPTool_ShowButton"
+                loadOnClick="true" keytip="B0"
+                smallImage="ToolboxesFolder16"
+                largeImage="ToolboxesFolder32">
+          <tooltip heading="Show GP Tool Inspector">Shows the GP Tool Inspector Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="GPToolInspector_InspectGPTool" caption="Inspect GP Tools"
+                  className="InspectGPToolViewModel" image="ToolboxesFolder16"
+                  dock="group" dockWith="esri_core_projectDockPane">
+          <content className="InspectGPToolView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

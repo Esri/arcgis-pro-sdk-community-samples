@@ -1,0 +1,47 @@
+﻿<ArcGIS defaultAssembly="DockpaneWithComboDropdown.dll" defaultNamespace="DockpaneWithComboDropdown" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{8139f5b2-f7aa-41af-8bab-40f0461a2395}" version="1.0" desktopVersion="3.5.56536" product="ArcGISPro">
+    <Name>DockpaneWithComboDropdown</Name>
+    <Description>DockpaneWithComboDropdown description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>4/21/2025 05:32:48</Date>
+    <Subject>MVVM-XAML</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="DockpaneWithComboDropdown_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="DockpaneWithComboDropdown_Tab1" caption="New Tab">
+          <group refID="DockpaneWithComboDropdown_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="DockpaneWithComboDropdown_Group1" caption="MVVM-XML" appearsOnAddInTab="true" keytip="G0">
+          <!-- host controls within groups -->
+          <button refID="DockpaneWithComboDropdown_DockpaneCombo_ShowButton" size="large" />
+          <comboBox refID="DockpaneWithComboDropdown_ComboBoxCapital" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="DockpaneWithComboDropdown_DockpaneCombo_ShowButton" caption="ComboBox Demo Dockpane" className="DockpaneCombo_ShowButton" loadOnClick="true" keytip="B1" smallImage="ElementNudgeDown16" largeImage="ElementNudgeDown32">
+          <tooltip heading="ComboBox Demo Dockpane">
+            Shows the ComboBox Demo Dockpane<disabledText /></tooltip>
+        </button>
+        <comboBox id="DockpaneWithComboDropdown_ComboBoxCapital" caption="ComboBoxCapital" className="ComboBoxCapital" itemWidth="140" extendedCaption="Extended Caption" isEditable="false" isReadOnly="true" resizable="true">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </comboBox>
+      </controls>
+      <dockPanes>
+        <dockPane id="DockpaneWithComboDropdown_DockpaneCombo" caption="DockpaneCombo" className="DockpaneComboViewModel" dock="group" dockWith="esri_core_projectDockPane" smallImage="ElementNudgeDown16">
+          <content className="DockpaneComboView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

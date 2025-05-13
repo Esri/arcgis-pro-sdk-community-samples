@@ -1,0 +1,9 @@
+﻿<html>
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js">
+  </script>
+  <body>
+    <pre class="prettyprint">
+      <code class="language-cs">$codehere$</code>
+    </pre>
+  </body>
+</html>

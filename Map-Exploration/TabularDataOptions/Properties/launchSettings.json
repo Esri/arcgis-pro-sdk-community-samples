@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TabularDataOptions": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\ArcGIS\\Pro\\bin\\ArcGISPro.exe"
+    }
+  }
+}

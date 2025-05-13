@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2025 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="WorkflowManagerSampleAddIn.dll" 
+				defaultNamespace="WorkflowManagerSampleAddIn"
+				xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+<AddInInfo id="{162b60c3-d569-4c9c-a4b2-99e36a42b78e}" version="1.0" desktopVersion="3.2.49743">
+	<Name>WorkflowManagerSampleAddIns</Name>
+	<Description>Sample Add-Ins for WorkflowManager</Description>
+	<Image>Images\AddinDesktop32.png</Image>
+	<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+	<Company>esri, https://www.esri.com</Company>
+	<Date>11/14/2023 10:24:25 AM</Date>
+	<Subject>Workflow Manager</Subject>
+	<!-- Note subject can be one or more of these topics:
+                Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+</AddInInfo>
+<modules>
+	<insertModule id="WorkflowManagerSampleAddIn_Module" className="Module1" 
+								autoLoad="false" caption="Module1">
+		<!-- uncomment to have the control hosted on a separate tab-->
+		<tabs>
+			<tab id="WorkflowManagerSampleAddIn_Tab1" 
+					 caption="Workflow Manager Add-In">
+				<group refID="WorkflowManagerSampleAddIn_Group_Start" />
+				<group refID="WorkflowManagerSampleAddIn_Group_Info" />
+				<group refID="WorkflowManagerSampleAddIn_Group_Steps" />
+			</tab>
+		</tabs>
+		<groups>
+			<group id="WorkflowManagerSampleAddIn_Group_Start" caption="Start">
+				<button refID="esri_workflow_client_open_workflow_pane" size="large" />
+			</group>
+			<group id="WorkflowManagerSampleAddIn_Group_Info" caption="Info" 
+						 appearsOnAddInTab="false">
+				<!-- host controls within groups -->
+				<button refID="WorkflowManagerSampleAddIn_GetConnectionInfo" size="middle" />
+				<button refID="WorkflowManagerSampleAddIn_SearchJobs" size="middle" />
+				<button refID="WorkflowManagerSampleAddIn_ActiveMapJobId" size="middle" />
+				<button refID="WorkflowManagerSampleAddIn_GetJobInformation" size="middle" />
+				<button refID="WorkflowManagerSampleAddIn_JobStatistics" size="middle" />
+			</group>
+			<group id="WorkflowManagerSampleAddIn_Group_Steps" caption="Steps" 
+						 appearsOnAddInTab="false">
+				<!-- host controls within groups -->
+				<button refID="WorkflowManagerSampleAddIn_RunSteps" size="middle" />
+				<button refID="WorkflowManagerSampleAddIn_RunSpecificSteps" size="middle" />
+				<button refID="WorkflowManagerSampleAddIn_UpdateStepAssignments" size="middle" />
+				<button refID="WorkflowManagerSampleAddIn_SetCurrentStep" size="middle" />
+			</group>
+		</groups>
+		<controls>
+			<!-- add your controls here -->
+			<button id="WorkflowManagerSampleAddIn_GetConnectionInfo" 
+							caption="Get Connection Info" className="GetConnectionInfoButton" 
+							loadOnClick="true" 
+							smallImage="GenericInformation16" 
+							largeImage="GenericInformation32">
+				<tooltip heading="Get Connection Info">
+					Get Workflow Manager connection info for the project<disabledText />
+				</tooltip>
+			</button>
+			<button id="WorkflowManagerSampleAddIn_ActiveMapJobId" 
+							caption="Active Map JobId" className="ActiveMapJobIdButton" 
+							loadOnClick="true" 
+							smallImage="MapRibbonLabeling16" 
+							largeImage="MapRibbonLabeling32">
+				<tooltip heading="Active Map Job Id">
+					Get the job Id associated with the active map<disabledText />
+				</tooltip>
+			</button>
+			<button id="WorkflowManagerSampleAddIn_RunSteps" caption="Run Steps"
+							className="RunStepsButton" loadOnClick="true" 
+							smallImage="JobRelated16" 
+							largeImage="JobRelated32">
+				<tooltip heading="Run Step(s)">
+					Run all current step(s) on a job<disabledText />
+				</tooltip>
+			</button>
+			<button id="WorkflowManagerSampleAddIn_RunSpecificSteps" 
+							caption="Run Specific Steps" className="RunSpecificStepsButton" 
+							loadOnClick="true" 
+							smallImage="WorkflowManagerLogo16"
+							largeImage="WorkflowManagerLogo32">
+				<tooltip heading="Run Specific Step(s)">
+					Run specific current step(s) on a job<disabledText />
+				</tooltip>
+			</button>
+			<button id="WorkflowManagerSampleAddIn_UpdateStepAssignments" 
+							caption="Update Step Assignments" 
+							className="UpdateStepAssignments" 
+							loadOnClick="true" 
+							smallImage="WorkflowManagerLogo16" 
+							largeImage="WorkflowManagerLogo32">
+				<tooltip heading="Update Steps and Assignments">
+					Update the current step and the assignments on steps<disabledText />
+				</tooltip>
+			</button>
+			<button id="WorkflowManagerSampleAddIn_SetCurrentStep" caption="Set Current Step" 
+							className="SetCurrentStep" loadOnClick="true" 
+							smallImage="WorkflowManagerLogo16" 
+							largeImage="WorkflowManagerLogo32">
+				<tooltip heading="Set Current Step">
+					Update the current step to another step in the job<disabledText />
+				</tooltip>
+			</button>
+			<button id="WorkflowManagerSampleAddIn_GetJobInformation" caption="Get Job Information"
+							className="GetJobInformation" loadOnClick="true" 
+							smallImage="GenericInformation16" 
+							largeImage="GenericInformation32">
+				<tooltip heading="Get Job Information">
+					Get the job information, including extended properties and holds<disabledText />
+				</tooltip>
+			</button>
+			<button id="WorkflowManagerSampleAddIn_SearchJobs" caption="Search Jobs" 
+							className="SearchJobs" loadOnClick="true" 
+							smallImage="SearchWindowShow16" 
+							largeImage="SearchWindowShow32">
+				<tooltip heading="Search Jobs">
+					Search for jobs based on a search query.  Use the first Job as the current Job<disabledText />
+				</tooltip>
+			</button>
+			<button id="WorkflowManagerSampleAddIn_JobStatistics" caption="Job Statistics"
+							className="JobStatistics" loadOnClick="true" 
+							smallImage="StatisticsPane16" 
+							largeImage="StatisticsPane32">
+				<tooltip heading="Get Job Statistics">
+					Get statistics for jobs based on a query<disabledText />
+				</tooltip>
+			</button>
+		</controls>
+	</insertModule>
+</modules>
+</ArcGIS>

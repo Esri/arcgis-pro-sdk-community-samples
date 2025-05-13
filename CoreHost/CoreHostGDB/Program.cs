@@ -68,7 +68,7 @@ namespace CoreHostGDB {
                 //Initialize CoreHost (we can do it in Window Initialize but this way
                 //we don't even pop the form if Initialize fails
 
-                ArcGIS.Core.Hosting.Host.Initialize();//this will throw!
+                //ArcGIS.Core.Hosting.Host.Initialize();//this will throw!
 
             Application app = new Application();
             w = new Window

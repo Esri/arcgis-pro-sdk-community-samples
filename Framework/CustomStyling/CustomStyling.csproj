@@ -63,8 +63,6 @@
     <None Include="ReadMe.md" />
     <None Include="Screenshots\Screen1.png" />
     <None Include="Screenshots\Screen2.png" />
-    <None Include="Backup-2.x.zip" />
-    <None Include="CustomStyling (C# 6.0).md" />
     <None Include="CustomStyling (C#).md" />
   </ItemGroup>
   <Import Project="C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets" Condition="Exists('C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets') AND !Exists('Esri.ArcGISPro.Extensions.targets')" />

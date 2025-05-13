@@ -33,5 +33,10 @@ namespace ConfigWithStartWizard.UI.StartPages {
             vm.ExecuteItemAction(e.Uri.ToString());
             e.Handled = true;
         }
+
+    private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+
     }
+  }
 }

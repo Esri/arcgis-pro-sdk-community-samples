@@ -26,8 +26,14 @@ using System.Threading.Tasks;
 
 namespace TableFeatureClassOperations
 {
+    /// <summary>
+    /// Visualization for ProWindowChangeLogViewModel.xaml
+    /// </summary>
   public class ProWindowChangeLogViewModel : PropertyChangedBase
   {
+        /// <summary>
+        /// Constructor for ProWindowChangeLogViewModel
+        /// </summary>
     public ProWindowChangeLogViewModel()
     {
     }
@@ -35,6 +41,9 @@ namespace TableFeatureClassOperations
     #region Properties
 
     private TableControlContent _tableContent;
+        /// <summary>
+        /// Property for TableContent
+        /// </summary>
     public TableControlContent TableContent
     {
       get { return _tableContent; }

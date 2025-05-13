@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2025 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="TabularDataOptions.dll" defaultNamespace="TabularDataOptions" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{dc80fafe-a7d2-4a52-b794-6e5387531708}" version="1.0" desktopVersion="3.5.56453" product="ArcGISPro">
+    <Name>TabularDataOptions</Name>
+    <Description>TabularDataOptions description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, https://www.esri.com</Company>
+    <Date>2/12/2025 05:57:04</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="TabularDataOptions_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="TabularDataOptions_Tab1" caption="Tabular Data" keytip="T1">
+          <group refID="TabularDataOptions_Group1" />
+					<group refID="esri_mapping_selectionGroup"/>
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="TabularDataOptions_Group1" caption="Tabular Data Options" keytip="G0">
+          <!-- host controls within groups -->
+          <button refID="TabularDataOptions_WPFDataGrid_ShowButton" size="large" />
+          <button refID="TabularDataOptions_TableView_ShowButton" size="large" />
+          <button refID="TabularDataOptions_TableControl_ShowButton" size="large" />
+          <button refID="TabularDataOptions_Inspector_ShowButton" size="large" />
+          <button refID="TabularDataOptions_GeometryControl_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="TabularDataOptions_WPFDataGrid_ShowButton" caption="WPF DataGrid Sample" 
+                keytip="B0" className="WPFDataGrid_ShowButton" loadOnClick="true" 
+                smallImage="TableField16" largeImage="TableField32">
+          <tooltip heading="Show WPF DataGrid sample">Shows a Dockpane that demonstrates the WPF DataGrid sample<disabledText /></tooltip>
+        </button>
+        <button id="TabularDataOptions_TableView_ShowButton" caption="TableView Sample"
+                className="TableView_ShowButton" loadOnClick="true" keytip="B1"
+                smallImage="TableEditing16" largeImage="TableEditing32">
+          <tooltip heading="Show TableView Sample">Show a Dockpane to demonstrate TableView control<disabledText /></tooltip>
+        </button>
+        <button id="TabularDataOptions_TableControl_ShowButton" caption="TableControl Sample" 
+                className="TableControl_ShowButton" loadOnClick="true" keytip="B2"
+                smallImage="SuitabilityAttributeTable16" largeImage="SuitabilityAttributeTable32">
+          <tooltip heading="Show TableControl Dockpane">Show a Dockpane with a TableControl<disabledText /></tooltip>
+        </button>
+        <button id="TabularDataOptions_Inspector_ShowButton" caption="Inspector Sample" 
+                className="Inspector_ShowButton" loadOnClick="true" keytip="B3"
+                smallImage="OpenSelectedInspection16" largeImage="OpenSelectedInspection32">
+          <tooltip heading="Show Inspector Dockpane">
+            Shows a Dockpane with an Inspector UI<disabledText /></tooltip>
+        </button>
+        <button id="TabularDataOptions_GeometryControl_ShowButton" caption="Geometry Control" 
+                className="GeometryControl_ShowButton" loadOnClick="true" keytip="B4"
+                smallImage="ReviewerDuplicateVertex16" largeImage="ReviewerDuplicateVertex32">
+          <tooltip heading="Show Geometry Control">Shows a Dockpane with a GeometryControl<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="TabularDataOptions_WPFDataGrid" caption="WPF DataGrid sample" 
+									smallImage="TableField16"
+                  className="WPFDataGridViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="WPFDataGridView" />
+        </dockPane>
+        <dockPane id="TabularDataOptions_TableView" caption="TableView Sample" 
+									smallImage="TableEditing16"
+                  className="TableViewViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="TableViewView" />
+        </dockPane>
+        <dockPane id="TabularDataOptions_TableControl" caption="TableControl Sample"
+									smallImage="SuitabilityAttributeTable16"
+                  className="TableControlViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="TableControlView" />
+        </dockPane>
+        <dockPane id="TabularDataOptions_Inspector" caption="Inspector Sample" 
+									smallImage="OpenSelectedInspection16"
+                  className="InspectorViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="InspectorView" />
+        </dockPane>
+        <dockPane id="TabularDataOptions_GeometryControl" caption="Geometry Control Sample" 
+									smallImage="ReviewerDuplicateVertex16"
+                  className="GeometryControlViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="GeometryControlView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

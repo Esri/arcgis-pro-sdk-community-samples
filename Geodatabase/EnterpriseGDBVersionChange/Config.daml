@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2025 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="EnterpriseGDBVersionChange.dll" defaultNamespace="EnterpriseGDBVersionChange" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{237db5d3-236c-4176-a140-76b71e7c16ee}" version="1.0" desktopVersion="3.3.0" product="ArcGISPro">
+    <Name>EnterpriseGDBVersionChange</Name>
+    <Description>EnterpriseGDBVersionChange description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, https://www.esri.com</Company>
+    <Date>3/20/2025 1:11:46 PM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="EnterpriseGDBVersionChange_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="EnterpriseGDBVersionChange_Tab1" caption="Enterprise GDB" keytip="T0">
+          <group refID="EnterpriseGDBVersionChange_Group1"/>
+        </tab>
+      </tabs>
+      <groups>
+        <group id="EnterpriseGDBVersionChange_Group1" caption="Enterprise GDB Versions" keytip="G0">
+          <!-- host controls within groups -->
+          <button refID="EnterpriseGDBVersionChange_VersionDockpane_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="EnterpriseGDBVersionChange_VersionDockpane_ShowButton" keytip="B0"
+								caption="Show Version Change" className="VersionDockpane_ShowButton" loadOnClick="true" 
+								smallImage="VersionChanges16" largeImage="VersionChanges32">
+          <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="EnterpriseGDBVersionChange_VersionDockpane" caption="Version Change"
+									className="VersionDockpaneViewModel" dock="group"
+									smallImage="VersionChanges16"
+									dockWith="esri_core_projectDockPane">
+          <content className="VersionDockpaneView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

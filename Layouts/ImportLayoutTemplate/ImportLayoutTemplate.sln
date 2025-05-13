@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35728.132 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportLayoutTemplate", "ImportLayoutTemplate.csproj", "{A8D7BE33-6D3F-4561-95BE-0B0AA0B06AE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProSnippets", "ProSnippets", "{09EE2442-E4B0-4A69-A6BD-DF94A4652E15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Layouts", "..\ProSnippets\Layouts\Layouts.csproj", "{AFD0A089-F8D5-4398-84CA-96E46587B306}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8D7BE33-6D3F-4561-95BE-0B0AA0B06AE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8D7BE33-6D3F-4561-95BE-0B0AA0B06AE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8D7BE33-6D3F-4561-95BE-0B0AA0B06AE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8D7BE33-6D3F-4561-95BE-0B0AA0B06AE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFD0A089-F8D5-4398-84CA-96E46587B306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFD0A089-F8D5-4398-84CA-96E46587B306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFD0A089-F8D5-4398-84CA-96E46587B306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFD0A089-F8D5-4398-84CA-96E46587B306}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

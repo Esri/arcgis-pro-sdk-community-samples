@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2025 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="CopyFeatureClass.dll" defaultNamespace="CopyFeatureClass" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{470fbb8a-838c-407f-999d-241259c3eb0c}" version="1.0" desktopVersion="3.5.56108" product="ArcGISPro">
+    <Name>CopyFeatureClass</Name>
+    <Description>CopyFeatureClass description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, https://www.esri.com</Company>
+    <Date>1/7/2025 11:00:39</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="CopyFeatureClass_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="CopyFeatureClass_Tab1" caption="New Tab">
+          <group refID="CopyFeatureClass_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="CopyFeatureClass_Group1" caption="Copy Feature Layer" appearsOnAddInTab="true" keytip="G0">
+          <!-- host controls within groups -->
+          <button refID="CopyFeatureClass_CopyFeatureClass_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="CopyFeatureClass_CopyFeatureClass_ShowButton" caption="Copy Feature Layer" 
+                className="CopyFeatureClass_ShowButton" loadOnClick="true" keytip="B0"
+                smallImage="GenericButtonPurple16" largeImage="GenericButtonPurple32">
+          <tooltip heading="Copy Feature Layer">
+            Shows the Dockpane to configure and run the 'Copy Feature Layer' process<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="CopyFeatureClass_CopyFeatureClass" caption="Copy Feature Layer" 
+                  className="CopyFeatureClassViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="CopyFeatureClassView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

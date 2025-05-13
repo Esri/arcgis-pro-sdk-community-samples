@@ -12,13 +12,13 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License. -->
 <ArcGIS defaultAssembly="TransformCADLayer.dll" defaultNamespace="TransformCADLayer" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{f646036e-56c1-4175-b4db-4f76920b43e1}" version="2.0" desktopVersion="3.3.49743">
+  <AddInInfo id="{f646036e-56c1-4175-b4db-4f76920b43e1}" version="2.1" desktopVersion="3.2.49743">
     <Name>Transform CAD Layer</Name>
     <Description>Transform a CAD Layer using rotate, scale and shift parameters.</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, https://www.esri.com</Company>
-    <Date>11/21/2023 12:00:01 PM</Date>
+    <Date>12/12/2024 4:00:00 PM</Date>
     <Subject>Editing</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->

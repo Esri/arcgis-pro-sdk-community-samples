@@ -47,7 +47,8 @@
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="LayerSnapModes_LayerSnapModesPane" caption="LayerSnapModes" className="LayerSnapModesPaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="LayerSnapModes_LayerSnapModesPane" caption="LayerSnapModes" 
+                  className="LayerSnapModesPaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="LayerSnapModesPaneView" />
         </dockPane>
       </dockPanes>

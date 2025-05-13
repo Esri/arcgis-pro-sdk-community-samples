@@ -11,6 +11,10 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Images\colorwheel-16.png" />
+    <None Remove="Images\colorwheel-32.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="ArcGIS.Desktop.Framework">
       <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Framework.dll</HintPath>
       <CopyLocal>False</CopyLocal>
@@ -63,6 +67,8 @@
     <Content Include="Images\AddInDesktop32.png" />
     <Content Include="DarkImages\AddInDesktop16.png" />
     <Content Include="DarkImages\AddInDesktop32.png" />
+    <Content Include="Images\colorwheel-16.png" />
+    <Content Include="Images\colorwheel-32.png" />
     <Content Include="Images\GenericButtonRed16.png" />
     <Content Include="Images\GenericButtonRed32.png" />
     <Content Include="DarkImages\GenericButtonRed16.png" />

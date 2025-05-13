@@ -1,0 +1,188 @@
+{
+    "type": "FunctionTool",
+    "guid": "{69e99367-dead-457a-89a0-a2c4b9144960}",
+    "displayname": "$rc:title",
+    "helpcontent": "3050025",
+    "description": "$rc:description",
+    "product": "300",
+    "params": 
+    {
+        "in_features": {
+            "displayname": "$rc:in_features.title",
+            "datatype": {
+                "type": "GPFeatureLayer"
+            },
+            "domain": {
+                "type": "GPFeatureClassDomain",
+                "geometrytype": [
+                    "Polyline"
+                ]
+            },
+            "description": "$rc:in_features.descr"
+        },
+        "out_feature_class": {
+            "direction": "out",
+            "displayname": "$rc:out_feature_class.title",
+            "datatype": {
+                "type": "DEFeatureClass"
+            },
+            "description": "$rc:out_feature_class.descr"
+        },
+        "dissolve_field": {
+            "type": "optional",
+            "displayname": "$rc:dissolve_field.title",
+            "datatype": {
+                "type": "GPMultiValue",
+                "datatype": {
+                    "type": "Field"
+                }
+            },
+            "domain": {
+                "type": "GPFieldDomain",
+                "fieldtype": [
+                    "Short",
+                    "Long",
+                    "Float",
+                    "Double",
+                    "Text",
+                    "Date",
+                    "OID",
+                    "BigInteger"
+                ]
+            },
+            "depends": [
+                "in_features"
+            ],
+            "description": "$rc:dissolve_field.descr"
+        },
+        "statistics_fields": {
+            "type": "optional",
+            "displayname": "$rc:statistics_fields.title",
+            "datatype": {
+                "type": "GPValueTable",
+                "datatypes": [
+                    {
+                        "type": "Field",
+                        "displayname": "$rc:statistics_fields.dt.title1"
+                    },
+                    {
+                        "type": "GPString",
+                        "displayname": "$rc:statistics_fields.dt.title2"
+                    }
+                ]
+            },
+            "domain": {
+                "type": "GPCompositeDomain",
+                "items": [
+                    {
+                        "type": "GPFieldDomain",
+                        "fieldtype": [
+                            "Short",
+                            "Long",
+                            "Float",
+                            "Double",
+                            "Text",
+                            "OID",
+                            "BigInteger"
+                        ]
+                    },
+                    {
+                        "type": "GPCodedValueDomain",
+                        "items": [
+                            {
+                                "value": "SUM",
+                                "code": "$rc:statistics_fields.domain.item2.SUM"
+                            },
+                            {
+                                "value": "MEAN",
+                                "code": "$rc:statistics_fields.domain.item2.MEAN"
+                            },
+                            {
+                                "value": "MIN",
+                                "code": "$rc:statistics_fields.domain.item2.MIN"
+                            },
+                            {
+                                "value": "MAX",
+                                "code": "$rc:statistics_fields.domain.item2.MAX"
+                            },
+                            {
+                                "value": "RANGE",
+                                "code": "$rc:statistics_fields.domain.item2.RANGE"
+                            },
+                            {
+                                "value": "STD",
+                                "code": "$rc:statistics_fields.domain.item2.STD"
+                            },
+                            {
+                                "value": "COUNT",
+                                "code": "$rc:statistics_fields.domain.item2.COUNT"
+                            },
+                            {
+                                "value": "FIRST",
+                                "code": "$rc:statistics_fields.domain.item2.FIRST"
+                            },
+                            {
+                                "value": "LAST",
+                                "code": "$rc:statistics_fields.domain.item2.LAST"
+                            },
+                            {
+                                "value": "MEDIAN",
+                                "code": "$rc:statistics_fields.domain.item2.MEDIAN"
+                            },
+                            {
+                                "value": "VARIANCE",
+                                "code": "$rc:statistics_fields.domain.item2.VARIANCE"
+                            },
+                            {
+                                "value": "UNIQUE",
+                                "code": "$rc:statistics_fields.domain.item2.UNIQUE"
+                            },
+                            {
+                                "value": "CONCATENATE",
+                                "code": "$rc:statistics_fields.domain.item2.CONCATENATE"
+                            },
+                            {
+                                "value": "MODE",
+                                "code": "$rc:statistics_fields.domain.item2.MODE"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "depends": [
+                "in_features"
+            ],
+            "description": "$rc:statistics_fields.descr"
+        },
+        "concatenation_separator": {
+            "type": "optional",
+            "displayname": "$rc:concatenation_separator.title",
+            "datatype": {
+                "type": "GPString"
+            },
+            "description": "$rc:concatenation_separator.descr"
+        }
+    },
+    "environments": [
+        "MDomain",
+        "MResolution",
+        "MTolerance",
+        "XYDomain",
+        "XYResolution",
+        "XYTolerance",
+        "ZDomain",
+        "ZResolution",
+        "ZTolerance",
+        "autoCommit",
+        "configKeyword",
+        "extent",
+        "geographicTransformations",
+        "outputCoordinateSystem",
+        "outputMFlag",
+        "outputZFlag",
+        "outputZValue",
+        "qualifiedFieldNames",
+        "scratchWorkspace",
+        "workspace"
+    ]
+}

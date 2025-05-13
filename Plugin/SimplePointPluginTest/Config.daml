@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 
    Copyright 2018 Esri
@@ -40,30 +40,24 @@
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="SimplePointPluginTest_Group1" keytip="G1"
-               caption="Simple Point Plugin" 
-               appearsOnAddInTab="true">
+        <group id="SimplePointPluginTest_Group1" keytip="G1" caption="Simple Point Plugin" appearsOnAddInTab="true">
           <!-- host controls within groups -->
           <button refID="SimplePointPluginTest_TestCsv1" size="large" />
           <button refID="SimplePointPluginTest_TestCsv2" size="large" />
+          <button refID="SimplePointPluginTest_PlugInWithRelUri" size="large" />
         </group>
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="SimplePointPluginTest_TestCsv1" 
-                caption="Debug Add-in Code" className="TestCsv1" 
-                loadOnClick="true" keytip="B1"
-                smallImage="Images\GenericButtonBlue16.png"
-                largeImage="Images\GenericButtonBlue32.png">
+        <button id="SimplePointPluginTest_TestCsv1" caption="Debug Add-in Code" className="TestCsv1" loadOnClick="true" keytip="B1" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
           <tooltip heading="Debug Add-in Code">
             Use this button after you set a break point in the TestCsv1 code-behind<disabledText /></tooltip>
         </button>
-        <button id="SimplePointPluginTest_TestCsv2" 
-                caption="Add Plugin Data to Map" className="TestCsv2"
-                loadOnClick="true" keytip="B2"
-                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png"
-                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+        <button id="SimplePointPluginTest_TestCsv2" caption="Add Plugin Data to Map" className="TestCsv2" loadOnClick="true" keytip="B2" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
           <tooltip heading="Add Plugin Data to Map">Use this button to add the Plugin Data to the current Map<disabledText /></tooltip>
+        </button>
+        <button id="SimplePointPluginTest_PlugInWithRelUri" caption="PlugInWithRelUri" className="PlugInWithRelUri" loadOnClick="true" smallImage="GenericButtonBlue16" largeImage="GenericButtonBlue32">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
       </controls>
     </insertModule>

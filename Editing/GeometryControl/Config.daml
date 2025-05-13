@@ -52,7 +52,8 @@
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="GeometryControl_GeometryViewDockpane" caption="GeometryViewDockpane" className="GeometryViewDockpaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="GeometryControl_GeometryViewDockpane" caption="GeometryViewDockpane"
+                  className="GeometryViewDockpaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="GeometryViewDockpaneView" />
         </dockPane>
       </dockPanes>

@@ -52,7 +52,8 @@
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="ProAppModule3_Dockpane1" caption="Filter Features Within Selected Extent" className="Dockpane1ViewModel" keytip="DockPane" initiallyVisible="true" dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="ProAppModule3_Dockpane1" caption="Filter Features Within Selected Extent" className="Dockpane1ViewModel" 
+                  initiallyVisible="true" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="Dockpane1View" />
         </dockPane>
       </dockPanes>

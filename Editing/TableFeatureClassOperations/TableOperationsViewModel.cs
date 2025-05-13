@@ -37,6 +37,7 @@ using ArcGIS.Desktop.Mapping.Events;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Common;
 using System.Linq;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
@@ -53,7 +54,7 @@ namespace TableFeatureClassOperations
     private const string _dockPaneID = "TableFeatureClassOperations_TableOperations";
 
     private ObservableCollection<StandaloneTable> _tables = new();
-    private Uri _logTableUri = null;
+        //private Uri _logTableUri = null;
     private static readonly object _theLock = new();
 
     protected TableOperationsViewModel()
@@ -78,7 +79,7 @@ namespace TableFeatureClassOperations
       }
       catch (Exception ex)
       {
-        MessageBox.Show(ex.Message, "Error creating log table");
+                ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(ex.Message, "Error creating log table");
       }
       return base.InitializeAsync();
     }
@@ -120,7 +121,7 @@ namespace TableFeatureClassOperations
       }
       catch (Exception ex)
       {
-        MessageBox.Show(ex.ToString());
+                ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(ex.ToString());
         return string.Empty;
       }
     }
@@ -143,10 +144,10 @@ namespace TableFeatureClassOperations
 
     internal void PopulateTableList()
     {
+            Tables.Clear();
       if (MapView.Active == null)
         return;
 
-      Tables.Clear();
       var lstTables = MapView.Active.Map.GetStandaloneTablesAsFlattenedList();
       Tables.AddRange(new ObservableCollection<StandaloneTable> (lstTables));
     }
@@ -205,7 +206,7 @@ namespace TableFeatureClassOperations
             var logStandaloneTable = MapView.Active.Map.GetStandaloneTablesAsFlattenedList().FirstOrDefault(t => t.Name == Module1.LogTableName);
             if (logStandaloneTable == null)
             {
-              MessageBox.Show("Log standalone table not found");
+                            ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Log standalone table not found");
               return;
             }
             var vm = new ProWindowChangeLogViewModel();
@@ -224,7 +225,7 @@ namespace TableFeatureClassOperations
           }
           catch (Exception ex)
           {
-            MessageBox.Show(ex.ToString());
+                        ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(ex.ToString());
           }
         });
       }
@@ -236,6 +237,12 @@ namespace TableFeatureClassOperations
       {
         return new RelayCommand(async () =>
         {
+                    if (SelectedTable == null)
+                    {
+                        ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Please select a table from the drop down list");
+                        return;
+
+                    }
           // use the selected feature layer to find the max value of the first numeric field
           try
           {
@@ -260,12 +267,12 @@ namespace TableFeatureClassOperations
               {
                 maxVal = statisticsResult.StatisticsResults[0].Max;
               }
-              MessageBox.Show($"Max {numericField.Name} Value: {maxVal}");
+                    ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show($"Max {numericField.Name} Value: {maxVal}");
             });
           }
           catch (Exception ex)
           {
-            MessageBox.Show(ex.ToString());
+                        ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(ex.ToString());
           }
         });
       }
@@ -289,12 +296,12 @@ namespace TableFeatureClassOperations
             var logStandaloneTable = MapView.Active.Map.GetStandaloneTablesAsFlattenedList().FirstOrDefault(t => t.Name == Module1.LogTableName);
             if (logStandaloneTable == null)
             {
-              MessageBox.Show("Log standalone table not found");
+                            ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Log standalone table not found");
               return;
             }
             if (SelectedTable == null)
             {
-              MessageBox.Show("No table selected");
+                            ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("No table selected");
               return;
             }
             await QueuedTask.Run(() =>
@@ -303,7 +310,7 @@ namespace TableFeatureClassOperations
               var sourceSelection = SelectedTable.GetSelection();
               if (sourceSelection.GetCount() == 0)
               {
-                MessageBox.Show($@"No records in '{SelectedTable.Name}' selected");
+                        ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show($@"No records in '{SelectedTable.Name}' selected");
                 return;
               }
               // Get the first string field in SelectedTable in order to update the text later
@@ -334,7 +341,7 @@ namespace TableFeatureClassOperations
                 var newSelection = SelectedTable.GetSelection();
                 if (newSelection.GetCount() == 0)
                 {
-                  MessageBox.Show($@"No new records in '{SelectedTable.Name}' were selected");
+                            ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show($@"No new records in '{SelectedTable.Name}' were selected");
                   return;
                 }
                 // we use Inspector to perform these single record edits
@@ -366,7 +373,7 @@ namespace TableFeatureClassOperations
                 foreach (var newOid in newSelection.GetObjectIDs())
                 {
                   inspector.Load(SelectedTable, new List<long>() { newOid });
-                  inspector[dateField.Name] = IsDateField ? DateTime.Now : DateTime.Now.ToShortDateString();
+                            inspector[dateField.Name] = DateTime.Now.ToShortDateString();
                   secondChainedEditOperation.Modify(inspector);
                   // add a log record for each new record
                   Dictionary<string, object> logAttributes = new()
@@ -392,7 +399,7 @@ namespace TableFeatureClassOperations
           }
           catch (Exception ex)
           {
-            MessageBox.Show(ex.ToString());
+                        ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(ex.ToString());
           }
         });
       }
@@ -434,7 +441,7 @@ namespace TableFeatureClassOperations
     /// </summary>
     /// <param name="mapMember"></param>
     /// <param name="fieldType"></param>
-    /// <param name="IsDateField"
+        /// <param name="IsDateField"></param>
     /// <returns></returns>
     /// <exception cref="Exception"></exception>
     private static Field GetFieldByFieldType (MapMember mapMember, FieldType fieldType, ref bool IsDateField)
