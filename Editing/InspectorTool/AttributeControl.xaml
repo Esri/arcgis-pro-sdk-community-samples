@@ -31,8 +31,13 @@
   </UserControl.Resources>
   <Grid>
     <Border BorderBrush="{DynamicResource Esri_Gray125}" BorderThickness="2">
-      <DockPanel LastChildFill="true" Margin="2">
-        <TreeView x:Name="treeView" VerticalAlignment="Top" Width="Auto" DockPanel.Dock="Top" ItemsSource="{Binding SelectedMapFeatures}" SelectedItemChanged="treeView_SelectedItemChanged"
+      <Grid Margin="2">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TreeView x:Name="treeView" Grid.Row="0" VerticalAlignment="Top" Width="Auto" DockPanel.Dock="Top" ItemsSource="{Binding SelectedMapFeatures}" SelectedItemChanged="treeView_SelectedItemChanged"
                           Style="{DynamicResource {x:Type TreeView}}">
           <TreeView.ItemContainerStyle>
             <Style TargetType="{x:Type TreeViewItem}">
@@ -50,8 +55,14 @@
             </HierarchicalDataTemplate>
           </TreeView.ItemTemplate>
         </TreeView>
-        <ContentPresenter Content="{Binding InspectorView}"></ContentPresenter>
-      </DockPanel>
+        <ContentPresenter Grid.Row="1" Content="{Binding InspectorView}"></ContentPresenter>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="Transparent" Margin="0,6">
+          <Button Margin="6,0,0,0" Content="Apply" Style="{DynamicResource Esri_Button}"
+               IsEnabled="{Binding IsApplyEnabled}" Command="{Binding ApplyCommand}"/>
+          <Button Margin="6,0,0,0" Content="Cancel" Style="{DynamicResource Esri_Button}"
+               IsEnabled="{Binding IsCancelEnabled}" Command="{Binding CancelCommand}"/>
+        </StackPanel>
+      </Grid>
     </Border>
   </Grid>
 </UserControl>
