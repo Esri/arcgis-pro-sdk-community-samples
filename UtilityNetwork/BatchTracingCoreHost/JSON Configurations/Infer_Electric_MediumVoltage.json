@@ -1,0 +1,20 @@
+{
+	"analysisName": "MV Circuits",
+	"type": "InferSubnetworks",
+	"domainNetworkName": "Electric",
+	"tierName": "Electric Distribution",
+	"terminals": "Downstream",
+	"definitionQuery": "",
+	"inputWorkspace": "D:\\Projects\\Electric_UtilityNetwork.gdb",
+	"portalUrl": "",
+	"portalUsername": "",
+	"portalPassword": "",
+	"sourceUtilityNetwork": "Network",
+	"outputFile": "D:\\Projects\\InferredSubnetworks.csv",
+	"outputWorkspace": "D:\\Projects\\Analysis Results.gdb",
+	"outputPoints": "ElecDist_Points",
+	"outputPolylines": "ElecDist_Lines",
+	"outputPolygons": "ElecDist_Polygons",
+	"outputTable": "",
+	"outputFunctionCount": 5
+}

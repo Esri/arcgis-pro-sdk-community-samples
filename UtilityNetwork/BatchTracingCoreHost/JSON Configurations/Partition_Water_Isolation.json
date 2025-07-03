@@ -1,0 +1,16 @@
+{
+	"analysisName": "Isolation Zones",
+	"type": "Partition",
+	"networkSourceName": "waterline",
+	"assetGroupCode": 2,
+	"definitionQuery": "",
+	"namedTraceConfigurtion": "Isolation Zones",
+	"inputWorkspace": "D:\\Projects\\WaterEssentials_UtilityNetwork.gdb",
+	"sourceUtilityNetwork": "Network",
+	"sourceResultField": "assetid",
+	"outputWorkspace": "D:\\Projects\\Analysis Results.gdb",
+	"outputPoints": "Isolation_Points",
+	"outputPolylines": "Isolation_Lines",
+	"outputPolygons": "Isolation_Polygons",
+	"outputTable": "Isolation_Analysis"
+}

@@ -14,6 +14,7 @@ This repository contains ArcGIS Pro Add-In Samples for the ArcGIS Pro 3.5 SDK fo
 This folder contains ArcGIS Pro Add-In Samples that fall under the 'Utility Network' topic:
 
 * [AlternativeEnergizationAddIn (c#)](../../../tree/master/UtilityNetwork/AlternativeEnergizationAddIn)  
+* [BatchTracingCoreHost (c#)](../../../tree/master/UtilityNetwork/BatchTracingCoreHost)  
 * [CategoriesUsage (c#)](../../../tree/master/UtilityNetwork/CategoriesUsage)  
 * [ConfigurationPathsAddIn (c#)](../../../tree/master/UtilityNetwork/ConfigurationPathsAddIn)  
 * [ControllerPath (c#)](../../../tree/master/UtilityNetwork/ControllerPath)  

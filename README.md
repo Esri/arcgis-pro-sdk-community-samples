@@ -119,7 +119,6 @@ Below is the list of 311 ArcGIS Pro samples that are included in this repository
 
 * [ConfigWithMap (c#)](../../tree/master/Configuration/ConfigWithMap)  
 * [ConfigWithStartWizard (c#)](../../tree/master/Configuration/ConfigWithStartWizard)  
-* [GetRecentPortalProjects (c#)](../../tree/master/Configuration/GetRecentPortalProjects)  
 * [ProConfigWithAnimatedSplash (c#)](../../tree/master/Configuration/ProConfigWithAnimatedSplash)  
 * [ProStartPageConfig (c#)](../../tree/master/Configuration/ProStartPageConfig)  
 
@@ -451,6 +450,7 @@ Below is the list of 311 ArcGIS Pro samples that are included in this repository
 #### Utility Network
 
 * [AlternativeEnergizationAddIn (c#)](../../tree/master/UtilityNetwork/AlternativeEnergizationAddIn)  
+* [BatchTracingCoreHost (c#)](../../tree/master/UtilityNetwork/BatchTracingCoreHost)  
 * [CategoriesUsage (c#)](../../tree/master/UtilityNetwork/CategoriesUsage)  
 * [ConfigurationPathsAddIn (c#)](../../tree/master/UtilityNetwork/ConfigurationPathsAddIn)  
 * [ControllerPath (c#)](../../tree/master/UtilityNetwork/ControllerPath)  

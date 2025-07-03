@@ -1,0 +1,16 @@
+{
+	"analysisName": "Local Drainage",
+	"type": "Partition",
+	"networkSourceName": "main.stormwaterline",
+	"assetGroupCode": 4,
+	"definitionQuery": "",
+	"namedTraceConfigurtion": "Outfall Area",
+	"inputWorkspace": "D:\\Projects\\Stormwater_UtilityNetwork.geodatabase",
+	"sourceUtilityNetwork": "main.Network",
+	"sourceResultField": "assetid",
+	"outputWorkspace": "D:\\Projects\\Analysis Results.gdb",
+	"outputPoints": "LocalWatershed_Points",
+	"outputPolylines": "LocalWatershed_Lines",
+	"outputPolygons": "LocalWatershed_Polygons",
+	"outputTable": "LocalWatershed_Analysis"
+}

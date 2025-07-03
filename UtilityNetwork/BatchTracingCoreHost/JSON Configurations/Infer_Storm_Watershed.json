@@ -1,0 +1,18 @@
+{
+	"analysisName": "Stormwater Management Area",
+	"type": "InferSubnetworks",
+	"domainNetworkName": "Stormwater",
+	"tierName": "Stormwater Management Area",
+	"terminals": "Upstream",
+	"definitionQuery": "",
+	"useDigitizedDirection": true,
+	"inputWorkspace": "D:\\Projects\\Stormwater_UtilityNetwork.geodatabase",
+	"sourceUtilityNetwork": "main.Network",
+	"outputFile": "D:\\Projects\\InferredSubnetworks.csv",
+	"outputWorkspace": "D:\\Projects\\Analysis Results.gdb",
+	"outputPoints": "SMA_Points",
+	"outputPolylines": "SMA_Lines",
+	"outputPolygons": "SMA_Polygons",
+	"outputTable": "SMA_Analysis",
+	"identifyBarriers": true
+}

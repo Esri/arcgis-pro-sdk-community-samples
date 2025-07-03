@@ -1,0 +1,17 @@
+{
+	"analysisName": "Lift Zone",
+	"type": "Trace",
+	"networkSourceName": "main.sewerdevice",
+	"assetGroupCode": 55,
+	"terminalName": "Low Pressure In",
+	"definitionQuery": "assettype=7",
+	"namedTraceConfigurtion": "Upstream",
+	"inputWorkspace": "D:\\Projects\\SewerEssentials_UtilityNetwork.geodatabase",
+	"sourceUtilityNetwork": "main.Network",
+	"sourceResultField": "assetid",
+	"outputWorkspace": "D:\\Projects\\Analysis Results.gdb",
+	"outputPoints": "LiftZone_Points",
+	"outputPolylines": "LiftZone_Lines",
+	"outputPolygons": "LiftZone_Polygons",
+	"outputTable": "LiftZone_Analysis"
+}

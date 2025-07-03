@@ -15,7 +15,6 @@ This folder contains ArcGIS Pro Add-In Samples that fall under the 'Configuratio
 
 * [ConfigWithMap (c#)](../../../tree/master/Configuration/ConfigWithMap)  
 * [ConfigWithStartWizard (c#)](../../../tree/master/Configuration/ConfigWithStartWizard)  
-* [GetRecentPortalProjects (c#)](../../../tree/master/Configuration/GetRecentPortalProjects)  
 * [ProConfigWithAnimatedSplash (c#)](../../../tree/master/Configuration/ProConfigWithAnimatedSplash)  
 * [ProStartPageConfig (c#)](../../../tree/master/Configuration/ProStartPageConfig)  
 

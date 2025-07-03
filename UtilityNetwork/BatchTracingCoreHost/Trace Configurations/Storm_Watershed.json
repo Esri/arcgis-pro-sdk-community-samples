@@ -1,0 +1,71 @@
+[
+  {
+    "creator": "rob12336",
+    "name": "Watershed",
+    "description": "",
+    "traceType": 4,
+    "configuration": {
+      "includeContainers": true,
+      "includeContent": false,
+      "includeStructures": false,
+      "includeBarriers": true,
+      "validateConsistency": true,
+      "validateLocatability": false,
+      "synthesizeGeometries": false,
+      "includeIsolated": false,
+      "ignoreBarriersAtStartingPoints": false,
+      "includeUpToFirstSpatialContainer": false,
+      "allowIndeterminateFlow": true,
+      "useDigitizedDirection": true,
+      "domainNetworkName": "",
+      "tierName": "",
+      "targetTierName": "",
+      "subnetworkName": "",
+      "diagramTemplateName": "",
+      "shortestPathNetworkAttributeName": "",
+      "filterBitsetNetworkAttributeName": "",
+      "traversabilityScope": "junctionsAndEdges",
+      "numPaths": -1,
+      "maxHops": -1,
+      "conditionBarriers": [
+      ],
+      "functionBarriers": [
+      ],
+      "arcadeExpressionBarrier": "",
+      "filterBarriers": [
+      ],
+      "filterFunctionBarriers": [
+      ],
+      "filterScope": "junctionsAndEdges",
+      "functions": [
+      ],
+      "nearestNeighbor": {
+        "count": -1,
+        "costNetworkAttributeName": "",
+        "nearestCategories": [
+        ],
+        "nearestAssets": [
+        ]
+      },
+      "outputFilters": [
+      ],
+      "outputConditions": [
+        {
+          "name": "Category",
+          "type": "category",
+          "operator": "equal",
+          "value": "Surface Inlet",
+          "combineUsingOr": false,
+          "isSpecificValue": true
+        }
+      ],
+      "propagators": [
+      ]
+    },
+    "resultTypes": [
+    ],
+    "creationDate": 1748297507000,
+    "tags": [
+    ]
+  }
+]

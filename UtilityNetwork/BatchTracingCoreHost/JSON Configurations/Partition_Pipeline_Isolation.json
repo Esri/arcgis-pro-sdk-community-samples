@@ -1,0 +1,16 @@
+{
+	"analysisName": "Isolation Zones",
+	"type": "Partition",
+	"networkSourceName": "main.pipelineline",
+	"assetGroupCode": 2,
+	"definitionQuery": "1=1",
+	"namedTraceConfigurtion": "Isolation Zones",
+	"inputWorkspace": "D:\\Projects\\Pipeline_UtilityNetwork.geodatabase",
+	"sourceUtilityNetwork": "main.Network",
+	"sourceResultField": "ASSETID",
+	"outputWorkspace": "D:\\Projects\\Analysis Results.gdb",
+	"outputPoints": "Isolation_Points",
+	"outputPolylines": "Isolation_Lines",
+	"outputPolygons": "Isolation_Polygons",
+	"outputTable": ""
+}

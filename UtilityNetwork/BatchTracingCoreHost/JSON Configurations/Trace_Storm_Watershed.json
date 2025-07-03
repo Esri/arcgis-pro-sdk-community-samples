@@ -1,0 +1,17 @@
+{
+	"analysisName": "Total Drainage Area",
+	"type": "Trace",
+	"networkSourceName": "main.stormwaterdevice",
+	"assetGroupCode": 22,
+	"terminalName": "Inlet Port",
+	"definitionQuery": "1=1",
+	"namedTraceConfigurtion": "Watershed Polygons",
+	"inputWorkspace": "D:\\Projects\\Stormwater_UtilityNetwork.geodatabase",
+	"sourceUtilityNetwork": "main.Network",
+	"sourceResultField": "ASSETID",
+	"outputWorkspace": "D:\\Projects\\Analysis Results.gdb",
+	"outputPoints": "Watershed_Points",
+	"outputPolylines": "Watershed_Lines",
+	"outputPolygons": "Watershed_Polygons",
+	"outputTable": "Watershed_Analysis"
+}

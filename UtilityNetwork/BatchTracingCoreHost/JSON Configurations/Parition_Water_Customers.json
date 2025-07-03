@@ -1,0 +1,16 @@
+{
+	"analysisName": "Customer to Tap",
+	"type": "Partition",
+	"networkSourceName": "waterdevice",
+	"assetGroupCode": 12,
+	"definitionQuery": "",
+	"namedTraceConfigurtion": "Customer to Tap",
+	"inputWorkspace": "D:\\Projects\\WaterEssentials_UtilityNetwork.gdb",
+	"sourceUtilityNetwork": "Network",
+	"sourceResultField": "accountid",
+	"outputWorkspace": "D:\\Projects\\Analysis Results.gdb",
+	"outputPoints": "",
+	"outputPolylines": "CustomerTap_Lines",
+	"outputPolygons": "",
+	"outputTable": "CustomerTap_Analysis"
+}

@@ -1,0 +1,16 @@
+{
+	"analysisName": "Pressure Zone",
+	"type": "InferSubnetworks",
+	"domainNetworkName": "Water",
+	"tierName": "Water Pressure",
+	"terminals": "Downstream",
+	"definitionQuery": "",
+	"inputWorkspace": "D:\\Projects\\WaterEssentials_UtilityNetwork.gdb",
+	"sourceUtilityNetwork": "Network",
+	"outputFile": "D:\\Projects\\InferredSubnetworks.csv",
+	"outputWorkspace": "D:\\Projects\\Analysis Results.gdb",
+	"outputPoints": "Pressure_Points",
+	"outputPolylines": "Pressure_Lines",
+	"outputPolygons": "Pressure_Polygons",
+	"outputTable": "Pressure_Analysis"
+}

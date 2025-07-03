@@ -1,0 +1,17 @@
+{
+	"analysisName": "BMP Areas",
+	"type": "Trace",
+	"networkSourceName": "main.stormwaterdevice",
+	"assetGroupCode": 29,
+	"terminalName": "",
+	"definitionQuery": "",
+	"namedTraceConfigurtion": "BMP Area",
+	"inputWorkspace": "D:\\Projects\\Stormwater_UtilityNetwork.geodatabase",
+	"sourceUtilityNetwork": "main.Network",
+	"sourceResultField": "ASSETID",
+	"outputWorkspace": "D:\\Projects\\Analysis Results.gdb",
+	"outputPoints": "BMP_Points",
+	"outputPolylines": "BMP_Lines",
+	"outputPolygons": "BMP_Polygons",
+	"outputTable": "BMP_Analysis"
+}

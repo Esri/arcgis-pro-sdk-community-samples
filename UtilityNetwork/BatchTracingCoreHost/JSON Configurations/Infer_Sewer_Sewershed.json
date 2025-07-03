@@ -1,0 +1,18 @@
+{
+	"analysisName": "Sewershed",
+	"type": "InferSubnetworks",
+	"domainNetworkName": "Sewer",
+	"tierName": "Sewer Collection System",
+	"terminals": "Upstream",
+	"definitionQuery": "",
+	"useDigitizedDirection": true,
+	"inputWorkspace": "D:\\Projects\\SewerEssentials_UtilityNetwork.geodatabase",
+	"sourceUtilityNetwork": "main.Network",
+	"outputFile": "D:\\Projects\\InferredSubnetworks.csv",
+	"outputWorkspace": "D:\\Projects\\Analysis Results.gdb",
+	"outputPoints": "SCA_Points",
+	"outputPolylines": "SCA_Lines",
+	"outputPolygons": "SCA_Polygons",
+	"outputTable": "SCA_Analysis",
+	"identifyBarriers": false
+}

@@ -1,0 +1,17 @@
+{
+	"analysisName": "Watershed",
+	"type": "Trace",
+	"networkSourceName": "main.stormwaterdevice",
+	"assetGroupCode": 22,
+	"terminalName": "Inlet Port",
+	"definitionQuery": "",
+	"namedTraceConfigurtion": "Upstream",
+	"inputWorkspace": "D:\\Projects\\Stormwater_UtilityNetwork.geodatabase",
+	"sourceUtilityNetwork": "main.Network",
+	"sourceResultField": "ASSETID",
+	"outputWorkspace": "D:\\Projects\\Analysis Results.gdb",
+	"outputPoints": "Upstream_Points",
+	"outputPolylines": "Upstream_Lines",
+	"outputPolygons": "Upstream_Polygons",
+	"outputTable": "Upstream_Analysis"
+}

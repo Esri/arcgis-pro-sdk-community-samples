@@ -1,4 +1,4 @@
-## LocateNonSpatialObject
+## LocateNonspatialObject
 
 <!-- TODO: Write a brief abstract explaining this sample -->
 This example demonstrates how to obtain spatial ancestors or containers for a non-spatial object in a Utility Network.  
