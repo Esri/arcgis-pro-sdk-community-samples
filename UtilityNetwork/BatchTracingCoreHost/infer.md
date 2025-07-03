@@ -38,10 +38,10 @@ These additional parameters are avaialble when running this analysis:
   - definitionQuery (optional): The definition query to be applied to start locations
 - Output
   - outputWorkspace: Location of the geodatabase to store the output
-  - [outputPoints](readme.md#aggregated-geometry-point-line-polygon) (optional): Name of the Aggregated Point output class
-  - [outputPolylines](readme.md#aggregated-geometry-point-line-polygon) (optional): Name of the Aggregated Line output class
-  - [outputPolygons](readme.md#aggregated-geometry-point-line-polygon) (optional): Name of the Aggregated Polygon output class
-  - [outputTable](readme.md#output-table) (optional): Name of the table to persist the results of the analysis
+  - [outputPoints](ReadMe.md#aggregated-geometry-point-line-polygon) (optional): Name of the Aggregated Point output class
+  - [outputPolylines](ReadMe.md#aggregated-geometry-point-line-polygon) (optional): Name of the Aggregated Line output class
+  - [outputPolygons](ReadMe.md#aggregated-geometry-point-line-polygon) (optional): Name of the Aggregated Polygon output class
+  - [outputTable](ReadMe.md#output-table) (optional): Name of the table to persist the results of the analysis
   - outputBarriers (optional): When set to true the output table will only include controllers, barriers, and subnetwork lines. When set to false the table will include all subnetwork features. Setting this value to true will affect the performance of the trace.
 
 - outputFile (optional): The Subnetwork Controllers CSV file to create

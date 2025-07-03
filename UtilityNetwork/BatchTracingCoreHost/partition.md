@@ -34,9 +34,9 @@ These additional parameters are avaialble when running this analysis:
   - sourceUtilityNetwork: Name of the utility network
 - Output
   - outputWorkspace: Location of the geodatabase to store the output
-  - [outputPoints](readme.md#aggregated-geometry-point-line-polygon) (optional): Name of the Aggregated Point output class
-  - [outputPolylines](readme.md#aggregated-geometry-point-line-polygon) (optional): Name of the Aggregated Line output class
-  - [outputPolygons](readme.md#aggregated-geometry-point-line-polygon) (optional): Name of the Aggregated Polygon output class
-  - [outputTable](readme.md#output-table) (optional): Name of the table to persist the results of the analysis
+  - [outputPoints](ReadMe.md#aggregated-geometry-point-line-polygon) (optional): Name of the Aggregated Point output class
+  - [outputPolylines](ReadMe.md#aggregated-geometry-point-line-polygon) (optional): Name of the Aggregated Line output class
+  - [outputPolygons](ReadMe.md#aggregated-geometry-point-line-polygon) (optional): Name of the Aggregated Polygon output class
+  - [outputTable](ReadMe.md#output-table) (optional): Name of the table to persist the results of the analysis
   - sourceResultField (optional): The field name on the source feature that contains the result name that will be stored in the output table
   - outputFunctionCount (optional): How many output fields should be added to the output feature classes to store Function results from the named trace configuration. Aliases must be applied manually once the table is created.
