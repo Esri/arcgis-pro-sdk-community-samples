@@ -20,10 +20,8 @@ using ArcGIS.Core.CIM;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Dialogs;
-using Python.Runtime;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,13 +76,15 @@ namespace GPToolInspector.TreeHelpers
       try
       {
         stm = System.IO.File.OpenRead(path);
-        using var ms = new System.IO.MemoryStream();
-        stm.CopyTo(ms);
-        var buff = ms.GetBuffer();
-        //check and skip BOM
-        if (ms.Length > 2 && buff[0] == 0xEF && buff[1] == 0xBB && buff[2] == 0xBF)
-          return new(buff, 3, (int)ms.Length - 3);
-        return buff;
+        using (var ms = new System.IO.MemoryStream())
+        {
+          stm.CopyTo(ms);
+          var buff = ms.GetBuffer();
+          //check and skip BOM
+          if (ms.Length > 2 && buff[0] == 0xEF && buff[1] == 0xBB && buff[2] == 0xBF)
+            return new(buff, 3, (int)ms.Length - 3);
+          return buff;
+        }
       }
       catch { return null; }
       finally { stm?.Dispose(); }
@@ -133,7 +133,7 @@ namespace GPToolInspector.TreeHelpers
             addTool.ToolName = parts[0];
             addTool.ToolRelativePath = parts[1];
           }
-          var tbxPath = Path.Combine(contentBasePath, addTool.ToolRelativePath);
+          var tbxPath = System.IO.Path.Combine(contentBasePath, addTool.ToolRelativePath);
           var (Ok, ErrorMessage) = TbxToolInfo.ReadToolContent(tbxPath, 
                                     out TbxToolInfo toolDescription);
           if (!Ok)
@@ -178,23 +178,23 @@ namespace GPToolInspector.TreeHelpers
 
 		#endregion ToolBoxSet classes
 
-    static public string InstallPath { get; } = Path.GetDirectoryName(       // <InstallPath>/bin
-                                                  Path.GetDirectoryName(     // <InstallPath>/bin/Extensions
-                                                    Path.GetDirectoryName(   // <InstallPath>/bin/Extensions/GeoProcessing
-                                                      Path.GetDirectoryName( // <InstallPath>/bin/Extensions/GeoProcessing/ArcGIS.Desktop.GeoProcessing.dll
+    static public string InstallPath { get; } = System.IO.Path.GetDirectoryName(       // <InstallPath>/bin
+                                                  System.IO.Path.GetDirectoryName(     // <InstallPath>/bin/Extensions
+                                                    System.IO.Path.GetDirectoryName(   // <InstallPath>/bin/Extensions/GeoProcessing
+                                                      System.IO.Path.GetDirectoryName( // <InstallPath>/bin/Extensions/GeoProcessing/ArcGIS.Desktop.GeoProcessing.dll
                                                         System.Reflection.Assembly.GetCallingAssembly().Location
                                                  ))));
 
-    public static string gpHelpPathEN { get; } = Path.Combine(InstallPath, "Resources", "Help", "gp");
+    public static string gpHelpPathEN { get; } = System.IO.Path.Combine(InstallPath, "Resources", "Help", "gp");
 
-    static Lazy<string> _gpHelpPath = new(() =>
+    static System.Lazy<string> _gpHelpPath = new Lazy<string>(() =>
     {
       foreach (var lng in new string[]{ System.Globalization.CultureInfo.CurrentUICulture.Name,
                                          System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName})
       {
         try
         {
-          var path = Path.Combine(InstallPath, "Resources", "Help", lng, "gp");
+          var path = System.IO.Path.Combine(InstallPath, "Resources", "Help", lng, "gp");
           if (System.IO.Directory.Exists(path))
             return path;
         }
@@ -239,63 +239,12 @@ namespace GPToolInspector.TreeHelpers
     {
       List<(string Name, string Dir)> tools = [];
 			var keyWordMap = TbxUtils.GetToolBoxContentRcMap(toolBoxBasePath);
-			var contentFilePath = Path.Combine(toolBoxBasePath, ToolBoxContentFileName);
-      json_toolbox_content toolbox_content = null;
-      if (File.Exists(contentFilePath))
-      {
-        // here we have a GeoProcessing Toolbox
-        var json = System.IO.File.ReadAllText(contentFilePath, Encoding.UTF8);
-        json = TbxReader.ReplaceUsingMap(json, keyWordMap);
-        toolbox_content = System.Text.Json.JsonSerializer.Deserialize<json_toolbox_content>(json, TbxUtils.JsonOpt);
-      }
-      else 
-      {
-        // here we have a .pyt file
-        // check if we have a .pyt file with embedded content
-        var pytFilePath = Path.Combine(toolBoxBasePath, "toolboxes");
-        var pytFiles = Directory.GetFiles(pytFilePath, "*.pyt", SearchOption.TopDirectoryOnly);
-        if (pytFiles.Length == 0) throw new FileNotFoundException($"No {ToolBoxContentFileName} found for toolbox {toolBoxBasePath} and no .pyt file found in expected location {pytFilePath}");
-        foreach (var file in pytFiles)
-        {
-          using (Py.GIL())
-          {
-            using var scope = Py.CreateScope();
-            string code = File.ReadAllText(file); // Get the python file as raw text
-            var scriptCompiled = PythonEngine.Compile(code, file); // Compile the code/file
-            scope.Execute(scriptCompiled); // Execute the compiled python so we can start calling it.
-            dynamic toolboxClass = scope.GetAttr("Toolbox"); // Get the class in python
-            // create an instance of the Toolbox class (this calls __init__ in python)
-            using PyObject toolboxInstance = toolboxClass.Invoke();
-            var toolboxName = toolboxInstance.GetAttr("label").As<string>();
-            toolbox_content = new json_toolbox_content(toolboxName, toolboxName, new Dictionary<string, json_toolset>());
-            using PyObject toolboxToolList = toolboxInstance.GetAttr("tools");
-            for (int idx = 0; idx < toolboxToolList.Length(); idx++)
-            {
-              using PyObject toolClass = toolboxToolList[idx];
-              using PyObject toolClassInstance = toolClass.Invoke(); // call __init__ for each tool to ensure properties are populated, we don't actually need the instance for anything else
-              using PyObject paramInfoList = toolClassInstance.InvokeMethod("getParameterInfo");
-              var toolName = toolClassInstance.GetAttr("label").As<string>();
-              toolbox_content.toolsets.Add(toolName, new json_toolset([]));
-              for (int idxParam = 0; idxParam < paramInfoList.Length(); idxParam++)
-              {
-                using PyObject param = paramInfoList[idxParam];
-                var paramName = param.GetAttr("name");
-                var paramDisplayName = param.GetAttr("displayName");
-                var paramDataType = param.GetAttr("datatype");
-                var paramParameterType = param.GetAttr("parameterType");
-                var paramDirection = param.GetAttr("direction");
-              }
-              System.Diagnostics.Trace.WriteLine($@"### Created python toolbox instance from {file}");
-            }
-          }
-          if (Path.GetFileNameWithoutExtension(file).Equals(Path.GetFileName(toolBoxBasePath), StringComparison.OrdinalIgnoreCase))
-          {
-            pytFilePath = file;
-            break;
-          }
-        }
-      }
-      List<ToolSet> toolSets = [];
+			var contentFilePath = System.IO.Path.Combine(toolBoxBasePath, ToolBoxContentFileName);
+			var json = System.IO.File.ReadAllText(contentFilePath, Encoding.UTF8);
+			json = TbxReader.ReplaceUsingMap(json, keyWordMap);
+
+			var toolbox_content = System.Text.Json.JsonSerializer.Deserialize<json_toolbox_content>(json, TbxUtils.JsonOpt);
+			List<ToolSet> toolSets = [];
       List<string> names = [];
       var displayname = toolbox_content.displayname;
       System.Diagnostics.Trace.WriteLine($@"### {toolBoxBasePath} {displayname}: {toolbox_content.toolsets.Count()}");

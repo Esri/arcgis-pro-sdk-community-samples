@@ -234,13 +234,6 @@ namespace GPToolInspector
         Title = "System Toolboxes"
       };
       TbxItems.Add(systemTbxItemRoot);
-      string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-      var userToolBoxPath = Path.Combine(localAppDataPath, @"ESRI\ArcGISPro\Toolboxes");
-      var userTbxItemRoot = new TbxItem(null, userToolBoxPath)
-      {
-        Title = "User Toolboxes"
-      };
-      TbxItems.Add(userTbxItemRoot);
     }
 
     private List<(string Path, string Category, TbxItem TbxItem)> cachedTbxItems;
