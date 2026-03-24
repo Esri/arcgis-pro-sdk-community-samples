@@ -97,7 +97,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Xaml.Behaviors">
-      <HintPath>..\..\..\..\..\..\..\..\Program Files\ArcGIS\Pro\bin\Microsoft.Xaml.Behaviors.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Microsoft.Xaml.Behaviors.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
