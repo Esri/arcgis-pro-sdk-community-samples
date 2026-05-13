@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2024 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -253,11 +253,11 @@ namespace VersionUpdatePerformance
                 destFc = null;
                 FeatureClassDefinition fcDef = sourceFc.GetDefinition();
                 List<ArcGIS.Core.Data.DDL.FieldDescription> fieldDescriptions = new();
-                foreach (var field in fcDef.GetFields())
+                foreach (var @field in fcDef.GetFields())
                 {
-                  if (field.FieldType != FieldType.Geometry
-                    && !field.ModelName.StartsWith("Shape."))
-                    fieldDescriptions.Add(new ArcGIS.Core.Data.DDL.FieldDescription(field));
+                  if (@field.FieldType != FieldType.Geometry
+                    && !@field.ModelName.StartsWith("Shape."))
+                    fieldDescriptions.Add(new ArcGIS.Core.Data.DDL.FieldDescription(@field));
                 }
                 // Create a TableDescription object to describe the table to create
                 FeatureClassDescription featureClassDescription = new(newFcName,

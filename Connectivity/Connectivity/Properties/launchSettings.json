@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Connectivity": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\ArcGIS\\Pro\\bin\\ArcGISPro.exe"
+    }
+  }
+}

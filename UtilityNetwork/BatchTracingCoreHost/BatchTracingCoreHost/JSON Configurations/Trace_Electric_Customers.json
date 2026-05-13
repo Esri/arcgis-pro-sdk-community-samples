@@ -1,0 +1,18 @@
+{
+	"analysisName": "Downstream Secondary",
+	"type": "Trace",
+	"networkSourceName": "electricdevice",
+	"assetGroupCode": 38,
+	"terminalName": "2wXFR:Secondary",
+	"definitionQuery": "SUBNETWORKNAME <> 'Unknown' AND TIERNAME <> 6 AND ASSETTYPE IN (781,782,783,784,785,786,788,789,792,793,794,795,796,797,798,803,804,807,808,811,812,813,816,818,820)",
+	"namedTraceConfiguration": "Downstream Secondary",
+	"inputWorkspace": "D:\\Projects\\Electric_UtilityNetwork.gdb",
+	"sourceUtilityNetwork": "Network",
+	"sourceResultField": "ASSETID",
+	"outputWorkspace": "D:\\Projects\\Analysis Results.gdb",
+	"outputPoints": "Cust_Points",
+	"outputPolylines": "Cust_Lines",
+	"outputPolygons": "Cust_Polygons",
+	"outputTable": "Cust_Analysis",
+	"outputFunctionCount": 2
+}

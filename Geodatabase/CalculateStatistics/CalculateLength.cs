@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2020 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -45,7 +45,7 @@ namespace CalculateStatistics
                 var featureLayer = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().Where(fl => fl.Name.Contains("TestLines")).FirstOrDefault();
                 var len = QueuedTask.Run(() =>
                 {
-                    var fc = featureLayer.GetFeatureClass();
+                    using var fc = featureLayer.GetFeatureClass();
                     return GetLength(fc);
                 });
                 MessageBox.Show($@"Len: {len.Result}");

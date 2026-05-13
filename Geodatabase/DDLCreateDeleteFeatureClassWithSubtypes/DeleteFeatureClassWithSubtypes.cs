@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2023 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -48,7 +48,7 @@ namespace DDLCreateDeleteFeatureClassWithSubtypes
                     SchemaBuilder schemaBuilder = new SchemaBuilder(geodatabase);
                     using (FeatureClass feature = geodatabase.OpenDataset<FeatureClass>("Building"))
                     {
-                        FeatureClassDefinition featureClassDefinition = feature.GetDefinition();
+                        using FeatureClassDefinition featureClassDefinition = feature.GetDefinition();
                         DeleteSubtypeFromFeatureClass(schemaBuilder, featureClassDefinition);
                     }
 

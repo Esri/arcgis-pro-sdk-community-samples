@@ -1,6 +1,6 @@
 <!--
 
-   Copyright 2025 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -67,15 +67,24 @@
       <TextBlock Grid.Row="0" Grid.Column="0" Margin="5" Text="Tier" VerticalAlignment="Center"/>
       <ComboBox Grid.Row="0"  Grid.Column="1" Margin="5" ItemsSource="{Binding Tiers}" SelectedItem="{Binding Tier}"/>
       <TextBlock Grid.Row="1" Grid.Column="0" Margin="5" Text="Subnetworks" VerticalAlignment="Center"/>
-      <ComboBox Grid.Row="1"  Grid.Column="1" Margin="5" ItemsSource="{Binding Subnetworks}" SelectedItem="{Binding Subnetwork}"/>
-      <Button Grid.Row="2" Grid.Column="0" Margin="5" Content="Analyze Tier" Command="{Binding CmdAnalyzeTier}"  Visibility="{Binding ShowAnalyzeTier,Converter={StaticResource VisibleIfTrueConverter}}" Style="{DynamicResource Esri_Button}" />
-      <Button Grid.Row="2" Grid.Column="1" Margin="5" Content="Analyze Subnetwork" Command="{Binding CmdAnalyzeSubnetwork}" Style="{DynamicResource Esri_Button}"/>
+      <ComboBox Grid.Row="1"  Grid.Column="1" Margin="5" ItemsSource="{Binding Subnetworks}" SelectedItem="{Binding Subnetwork}">
+        <ComboBox.ItemsPanel>
+          <ItemsPanelTemplate>
+            <VirtualizingStackPanel/>
+          </ItemsPanelTemplate>
+        </ComboBox.ItemsPanel>
+      </ComboBox>
+      <StackPanel Grid.Row="2" Grid.Column="1" >
+        <Button Margin="5" Content="Analyze Subnetwork" Command="{Binding CmdAnalyzeSubnetwork}" Style="{DynamicResource Esri_Button}"/>
+        <Button Margin="5" Content="Analyze Tier" Command="{Binding CmdAnalyzeTier}" Visibility="{Binding ShowAnalyzeTier,Converter={StaticResource VisibleIfTrueConverter}}" Style="{DynamicResource Esri_Button}" />
+      </StackPanel>
+
       <Button Grid.Row="3" Grid.Column="0" Margin="5" Content="Stop" Command="{Binding CmdStop}" Visibility="{Binding Path=Running,Converter={StaticResource VisibleIfTrueConverter}}" Style="{DynamicResource Esri_Button}" />
       <CheckBox Grid.Row="3" Grid.Column="1" Margin="5" Content="Include Dirty" IsChecked="{Binding IncludeDirtySubnetworks}"/>
       <CheckBox Grid.Row="4" Grid.Column="0" Margin="5" Content="Apply filter" IsChecked="{Binding ApplyFilter}"/>
       <CheckBox Grid.Row="4" Grid.Column="1" Margin="5" Content="Clear previous results" IsChecked="{Binding ClearResults}"/>
-      <ScrollViewer Grid.Row="5" Grid.ColumnSpan="2" Margin="5" >
-        <TextBlock Text="{Binding Messages}" TextWrapping="Wrap"/>
+      <ScrollViewer Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" >
+        <TextBox Text="{Binding Messages}" IsReadOnly="True" IsReadOnlyCaretVisible="True"/>
       </ScrollViewer>
     </Grid>
     <DockPanel Grid.Row="2" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30" Margin="5">

@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2022 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -48,8 +48,6 @@ namespace DDLAddField2FeatureClass
   /// 1. Open any project in ArcGIS Pro with a Map that contains a feature layer with a File Geodatabase or Enterprise Geodatabase data source. 
   /// 1. After the map view is open switch on the Pro Ribbon to the 'Add-in' tab.
   /// ![UI](Screenshots/Screen1.png)
-  /// 1. Select a feature layer on the map's content dockpane.  Make sure the feature layer's datasource is either a file Geodatabase or an Enterprise Geodatabase. 
-  /// 1. The selected feature layer's datasource will be used to modify the feature class by adding a set of new attribute fields with different datatypes using the DLL API.  
   /// 1. Click the "Add Fields to FeatureClass" button.  Refresh the Databases node on the Catalog dockpane and opened the layer's attribute table to see the newly added fields.
   /// ![UI](Screenshots/Screen2.png)
   /// </remarks>

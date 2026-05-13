@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2019 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -84,9 +84,12 @@ namespace CoreHostSample {
                 using (var gdb = new Geodatabase(new FileGeodatabaseConnectionPath(new Uri(gdbPath, UriKind.Absolute))))
                 {
                     IReadOnlyList<TableDefinition> definitions = gdb.GetDefinitions<FeatureClassDefinition>();
-                    foreach (var fdsDef in definitions)
+                    foreach (TableDefinition definition in definitions)
                     {
-                        Console.WriteLine(TableString(fdsDef as TableDefinition));
+                        using (definition)
+                        {
+                            Console.WriteLine(TableString(definition));
+                        }
                     }
                 }
                 Console.WriteLine("Press any key to close this app.");

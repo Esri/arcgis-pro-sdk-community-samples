@@ -1,4 +1,4 @@
-//Copyright 2019 Esri
+//Copyright 2026 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -110,7 +110,7 @@ namespace AdvancedUIDemo
         case System.Collections.Specialized.NotifyCollectionChangedAction.Remove:
           {
             Map map = mapItem.GetMap();
-            // if this is the selected map, resest
+            // if this is the selected map, reset
             if (SelectedMap == map)
               SelectedMap = null;
 

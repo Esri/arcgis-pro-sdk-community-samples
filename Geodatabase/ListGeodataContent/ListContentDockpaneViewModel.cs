@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2019 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -131,7 +131,10 @@ namespace ListGeodataContent
                         _gdbDefinitions.Clear();
                         foreach (var definition in fcdefinitions)
                         {
-                            _gdbDefinitions.Add(new GdbItem() {Name = definition.GetName(), Type = definition.DatasetType.ToString()});
+                            using (definition)
+                            {
+                                _gdbDefinitions.Add(new GdbItem() {Name = definition.GetName(), Type = definition.DatasetType.ToString()});
+                            }
                         }
                     }
                     IReadOnlyList<TableDefinition> tbdefinitions = fileGeodatabase.GetDefinitions<TableDefinition>();
@@ -139,7 +142,10 @@ namespace ListGeodataContent
                     {
                         foreach (var definition in tbdefinitions)
                         {
-                            _gdbDefinitions.Add(new GdbItem() { Name = definition.GetName(), Type = definition.DatasetType.ToString() });
+                            using (definition)
+                            {
+                                _gdbDefinitions.Add(new GdbItem() { Name = definition.GetName(), Type = definition.DatasetType.ToString() });
+                            }
                         }
                     }
 

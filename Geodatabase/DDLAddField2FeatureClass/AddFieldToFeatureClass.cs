@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2022 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -40,62 +40,53 @@ namespace DDLAddField2FeatureClass
 {
   internal class AddFieldToFeatureClass : Button
   {
-	protected override async void OnClick()
-	{
-	  var selectedLayer = MapView.Active.GetSelectedLayers().FirstOrDefault();
-	  if (selectedLayer == null || !(selectedLayer is FeatureLayer))
-	  {
-		MessageBox.Show("You have to select a feature layer.  The selected layer's database connection is then used to create the new FeatureClass.");
-		return;
-	  }
-	  var selectedFeatureLayer = selectedLayer as FeatureLayer;
+    protected override async void OnClick()
+    {
+      await QueuedTask.Run(() =>
+      {
+        var stringFieldDescription = new ArcGIS.Core.Data.DDL.FieldDescription("TheString", FieldType.String);
+        var intFieldDescription = new ArcGIS.Core.Data.DDL.FieldDescription("TheInteger", FieldType.Integer);
+        var dblFieldDescription = new ArcGIS.Core.Data.DDL.FieldDescription("TheDouble", FieldType.Double)
+        {
+          Precision = 9,
+          Scale = 5
+        };
+        var dateFieldDescription = new ArcGIS.Core.Data.DDL.FieldDescription("TheDate", FieldType.Date);
 
-	  await QueuedTask.Run(() =>
-	  {
-		var selectedLayerTable = selectedFeatureLayer.GetTable();
-		var stringFieldDescription = new ArcGIS.Core.Data.DDL.FieldDescription("TheString", FieldType.String);
-		var intFieldDescription = new ArcGIS.Core.Data.DDL.FieldDescription("TheInteger", FieldType.Integer);
-		var dblFieldDescription = new ArcGIS.Core.Data.DDL.FieldDescription("TheDouble", FieldType.Double)
-		{
-		  Precision = 9,
-		  Scale = 5
-		};
-		var dateFieldDescription = new ArcGIS.Core.Data.DDL.FieldDescription("TheDate", FieldType.Date);
+        using Geodatabase geoDb = new Geodatabase(new FileGeodatabaseConnectionPath(new Uri(@"C:\Data\MyGDB.gdb")));
+        {
+          var fcName = "MyFeatureClass";
+          try
+          {
+            FeatureClassDefinition originalFeatureClassDefinition = geoDb.GetDefinition<FeatureClassDefinition>(fcName);
+            FeatureClassDescription originalFeatureClassDescription = new FeatureClassDescription(originalFeatureClassDefinition);
 
-		using (var geoDb = selectedLayerTable.GetDatastore() as Geodatabase)
-		{
-		  var fcName = selectedLayerTable.GetName();
-		  try
-		  {
-			FeatureClassDefinition originalFeatureClassDefinition = geoDb.GetDefinition<FeatureClassDefinition>(fcName);
-			FeatureClassDescription originalFeatureClassDescription = new FeatureClassDescription(originalFeatureClassDefinition);
+            // Assemble a list of all of new field descriptions
+            var fieldDescriptions = new List<ArcGIS.Core.Data.DDL.FieldDescription>() {
+                    stringFieldDescription,
+                    intFieldDescription,
+                    dblFieldDescription,
+                    dateFieldDescription
+                  };
+            // Create a FeatureClassDescription object to describe the feature class to create
+            var fcDescription =
+              new FeatureClassDescription(fcName, fieldDescriptions, originalFeatureClassDescription.ShapeDescription);
 
-			// Assemble a list of all of new field descriptions
-			var fieldDescriptions = new List<ArcGIS.Core.Data.DDL.FieldDescription>() {
-										stringFieldDescription,
-										intFieldDescription,
-										dblFieldDescription,
-										dateFieldDescription
-							  };
-				  // Create a FeatureClassDescription object to describe the feature class to create
-				  var fcDescription =
-					  new FeatureClassDescription(fcName, fieldDescriptions, originalFeatureClassDescription.ShapeDescription);
+            // Create a SchemaBuilder object
+            SchemaBuilder schemaBuilder = new SchemaBuilder(geoDb);
 
-				  // Create a SchemaBuilder object
-				  SchemaBuilder schemaBuilder = new SchemaBuilder(geoDb);
+            // Add the modification to the feature class to our list of DDL tasks
+            schemaBuilder.Modify(fcDescription);
 
-				  // Add the modification to the feature class to our list of DDL tasks
-				  schemaBuilder.Modify(fcDescription);
-
-				  // Execute the DDL
-				  bool success = schemaBuilder.Build();
-		  }
-		  catch (Exception ex)
-		  {
-			MessageBox.Show($@"Exception: {ex}");
-		  }
-		}
-	  });
-	}
+            // Execute the DDL
+            bool success = schemaBuilder.Build();
+          }
+          catch (Exception ex)
+          {
+            MessageBox.Show($@"Exception: {ex}");
+          }
+        }
+      });
+    }
   }
 }

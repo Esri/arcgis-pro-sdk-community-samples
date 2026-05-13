@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 
-   Copyright 2019 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -47,10 +47,7 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="Symbology_SymbologyPane_ShowButton" caption="Symbology Sample Pane" 
-                className="SymbologyPane_ShowButton" loadOnClick="true" keytip="B1"
-                smallImage="GenericLayerSymbology16" 
-                largeImage="GenericLayerSymbology32">
+        <button id="Symbology_SymbologyPane_ShowButton" caption="Symbology Sample Pane" className="SymbologyPane_ShowButton" loadOnClick="true" keytip="B1" smallImage="GenericLayerSymbology16" largeImage="GenericLayerSymbology32">
           <tooltip heading="Show Symbology Sample Pane">Show Symbology Sample options<disabledText /></tooltip>
         </button>
       </controls>

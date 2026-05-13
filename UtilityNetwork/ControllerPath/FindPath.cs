@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2024 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -137,7 +137,7 @@ namespace ControllerPath
       {
         MapMember layer = kvp.Key;
         FeatureLayer featureLayer = layer as FeatureLayer;
-        FeatureClass featureClass = featureLayer?.GetFeatureClass();
+        using FeatureClass featureClass = featureLayer?.GetFeatureClass();
 
         if (featureClass != null && !featureClass.IsControllerDatasetSupported())
         {
@@ -170,14 +170,15 @@ namespace ControllerPath
       {
         MapMember layer = kvp.Key;
         FeatureLayer featureLayer = layer as FeatureLayer;
-        FeatureClass featureClass = featureLayer?.GetFeatureClass();
+        using FeatureClass featureClass = featureLayer?.GetFeatureClass();
 
         if (featureClass != null)
         {
-          RowCursor featureCursor = featureClass.Search(new QueryFilter() { ObjectIDs = kvp.Value, SubFields = "" }, true);
+          using RowCursor featureCursor = featureClass.Search(new QueryFilter() { ObjectIDs = kvp.Value, SubFields = "" }, true);
           while (featureCursor.MoveNext())
           {
-            NetworkElement startingElement = utilityNetwork.CreateElement(featureCursor.Current);
+            using Row row = featureCursor.Current;
+            NetworkElement startingElement = utilityNetwork.CreateElement(row);
             startingElements.Add(startingElement);
             break;
           }
@@ -215,7 +216,7 @@ namespace ControllerPath
       {
         // This doesn't take into account non-spatial objects
         FeatureLayer featureLayer = layer as FeatureLayer;
-        FeatureClass featureClass = featureLayer?.GetFeatureClass();
+        using FeatureClass featureClass = featureLayer?.GetFeatureClass();
         if (featureClass == null)
         {
           continue;

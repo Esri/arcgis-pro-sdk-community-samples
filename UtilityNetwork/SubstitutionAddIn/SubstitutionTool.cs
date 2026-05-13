@@ -1,4 +1,4 @@
-﻿using ArcGIS.Core.CIM;
+using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
 using ArcGIS.Core.Data.UtilityNetwork;
 using ArcGIS.Core.Data.UtilityNetwork.Trace;
@@ -41,7 +41,7 @@ using FrameworkApplication = ArcGIS.Desktop.Framework.FrameworkApplication;
 
 namespace SubstitutionAddIn
 {
-  //   Copyright 2019 Esri
+  //   Copyright 2026 Esri
   //   Licensed under the Apache License, Version 2.0 (the "License");
   //   you may not use this file except in compliance with the License.
   //   You may obtain a copy of the License at
@@ -222,7 +222,8 @@ namespace SubstitutionAddIn
 
             await QueuedTask.Run(async () =>
             {
-              UtilityNetwork utilityNetwork = Utilities.GetUtilityNetwork(_pointFeatureLayer.GetFeatureClass());
+              using FeatureClass pointFeatureClass = _pointFeatureLayer.GetFeatureClass();
+              using UtilityNetwork utilityNetwork = Utilities.GetUtilityNetwork(pointFeatureClass);
               if (substitution.IsPermanent != null && substitution.ChosenSubstitution != null)
               {
                 var options = ApplicationOptions.EditingOptions;
@@ -291,7 +292,7 @@ namespace SubstitutionAddIn
         results = null;
         TraceConfiguration traceConfiguration = tier.GetTraceConfiguration();
 
-        TraceManager traceManager = utilityNetwork.GetTraceManager();
+        using TraceManager traceManager = utilityNetwork.GetTraceManager();
         DownstreamTracer tracer = traceManager.GetTracer<DownstreamTracer>();
 
         List<Element> startingPointList = new List<Element>();
@@ -388,7 +389,7 @@ namespace SubstitutionAddIn
           ObjectIDs = queryFilterObjectIDs
         };
 
-        Table table = utilityNetwork.GetTable(networkSource);
+        using Table table = utilityNetwork.GetTable(networkSource);
 
         using (RowCursor rowCursor = table.Search(filter, false))
         {

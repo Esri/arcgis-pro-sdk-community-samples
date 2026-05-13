@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 
-   Copyright 2019 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -43,30 +43,16 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="Notifications_ToastNotification" caption="Toast Notification" 
-								className="ToastNotification" loadOnClick="true" keytip="B1"
-								smallImage="Success_Toast48"
-								largeImage="Success_Toast48">
+        <button id="Notifications_ToastNotification" caption="Toast Notification" className="ToastNotification" loadOnClick="true" keytip="B1" smallImage="Success_Toast48" largeImage="Success_Toast48">
           <tooltip heading="Toast Notification">Display a Toast Notification message<disabledText /></tooltip>
         </button>
-        <button id="Notifications_MyToastNotification" 
-								caption="Notification with Feedback" keytip="B2"
-								className="ToastNotificationWithFeedback" loadOnClick="true" 
-								smallImage="Warning_Toast48" 
-								largeImage="Warning_Toast48">
+        <button id="Notifications_MyToastNotification" caption="Notification with Feedback" keytip="B2" className="ToastNotificationWithFeedback" loadOnClick="true" smallImage="Warning_Toast48" largeImage="Warning_Toast48">
           <tooltip heading="Notification with Feedback">Display a Toast Notification with Click handler<disabledText /></tooltip>
         </button>
-        <button id="Notifications_AddNotification" caption="Add Set of Notifications" 
-								className="AddNotificationSet" loadOnClick="true" keytip="B3"
-								smallImage="NotificationIndicator16" 
-								largeImage="NotificationIndicator16">
+        <button id="Notifications_AddNotification" caption="Add Set of Notifications" className="AddNotificationSet" loadOnClick="true" keytip="B3" smallImage="NotificationIndicator16" largeImage="NotificationIndicator16">
           <tooltip heading="Add Set of Notifications">Adds a whole set of notifications with different categories.  Each notification has feedback<disabledText /></tooltip>
         </button>
-        <button id="Notifications_RemoveNotification" 
-								caption="Remove Notifications" keytip="B4"
-								className="RemoveNotification" loadOnClick="true" 
-								smallImage="RemoveRaster16" 
-								largeImage="RemoveRaster32">
+        <button id="Notifications_RemoveNotification" caption="Remove Notifications" keytip="B4" className="RemoveNotification" loadOnClick="true" smallImage="RemoveRaster16" largeImage="RemoveRaster32">
           <tooltip heading="Remove Notifications">Removes categories of notifications<disabledText /></tooltip>
         </button>
       </controls>

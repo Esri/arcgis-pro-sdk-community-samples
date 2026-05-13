@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2025 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -115,25 +115,34 @@ namespace GPToolInspector.TreeHelpers
 				// All levels except the first level are loaded here:
 				// lazy load tools in toolList
 				// use ToolListRootFolder to determine the root folder to process
-				foreach (var children in ProcessHeader (ToolListRootFolder, ToolSets, CurrentFolder))
+				foreach (var child in ProcessHeader (ToolListRootFolder, ToolSets, CurrentFolder))
 				{
-          if (children.IsTool)
+          if (child.IsTool)
           {
             // Process tools here
-            var itemToolPath = System.IO.Path.Combine(this.Path, children.Path);
-            var itemTool = new TbxItemTool(this, this.Alias, itemToolPath);
-            AddTbxItem(itemTool);
+            var itemToolPath = System.IO.Path.Combine(this.Path, child.Path);
+            if (child.TbxToolInfoPython == null)
+            {
+              var itemTool = new TbxItemTool(this, this.Alias, itemToolPath);
+              AddTbxItem(itemTool);
+            }
+            else
+            {
+              var itemTool = new TbxItemTool(this, child.TbxToolInfoPython);
+              if (string.IsNullOrEmpty(itemTool.Title)) itemTool.Title = child.Name;
+              AddTbxItem(itemTool);
+            }
           }
           else
           {
 						var tbxItem = new TbxItem(this, this.Path);
-            var parts = children.Name.Split('\\');
+            var parts = child.Name.Split('\\');
             var lastPart = parts[^1];
             tbxItem.ToolSets = this.ToolSets;
             tbxItem.Alias = this.Alias;
-						tbxItem.Name = children.Name;
+						tbxItem.Name = child.Name;
             tbxItem.Title = lastPart;
-            tbxItem.CurrentFolder = children.Path;
+            tbxItem.CurrentFolder = child.Path;
             AddTbxItem(tbxItem);
 					}
 				}

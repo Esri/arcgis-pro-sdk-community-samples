@@ -1,4 +1,4 @@
-// Copyright 2019 Esri 
+// Copyright 2026 Esri 
 //
 // 
 //   Licensed under the Apache License, Version 2.0 (the "License"); 
@@ -49,9 +49,9 @@ namespace RibbonControls
   /// Note: this is how you can make use of the KeyTips you defined in your config.daml:
   /// To use KeyTips you must first press the Alt key or the F10 key, this shows the available KeyTip letters for the tabs on the Pro ribbon:
   /// ![UI](Screenshots/Screen1.png)
-  /// Next you press any of displayed KeyTips letters (white and framed in black).  So for example to get to the “Sample Tab” I simply press the ‘X’ key.  Now the UI is updated to show the ‘Sample Tab’s’ Key Tips:
+  /// Next you press any of displayed KeyTips letters (white and framed in black).  So for example to get to the ï¿½Sample Tabï¿½ I simply press the ï¿½Xï¿½ key.  Now the UI is updated to show the ï¿½Sample Tabï¿½sï¿½ Key Tips:
   /// ![UI](Screenshots/Screen2.png)
-  /// Finally I can choose a KeyTip from the selected ‘Sample Tab’ tab.  For example if I want to execute the ‘Button 2’ command on the ‘Sample Tab’, I simply press the ‘X’ key followed by the ‘E’ key.  The command is executed and I get this:
+  /// Finally I can choose a KeyTip from the selected ï¿½Sample Tabï¿½ tab.  For example if I want to execute the ï¿½Button 2ï¿½ command on the ï¿½Sample Tabï¿½, I simply press the ï¿½Xï¿½ key followed by the ï¿½Eï¿½ key.  The command is executed and I get this:
   /// ![UI](Screenshots/Screen3.png)
   /// </remarks>
   internal class Module1 : Module

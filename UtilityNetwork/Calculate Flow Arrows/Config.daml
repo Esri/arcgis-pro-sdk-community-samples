@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--
 
-   Copyright 2025 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
 
-  <AddInInfo id="{d40feac3-81c8-4db8-a555-253f0676dc79}" version="1.0" desktopVersion="3.5.57366" product="ArcGISPro">
+  <AddInInfo id="{d40feac3-81c8-4db8-a555-253f0676dc79}" version="1.0" desktopVersion="3.5" product="ArcGISPro">
     <Name>CalculateFlowArrows</Name>   
     <Description>Calculate flow arrows for a given subnetwork</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -39,13 +39,13 @@
   <modules>
     <insertModule id="CalculateFlowArrows_Module" className="FlowModule" autoLoad="false" caption="Module1">
       <groups>
-        <group id="CalculateFlowArrows_Group" caption="Flow Arrows" appearsOnAddInTab="true">
-          <button refID="DockpaneWithComboDropdown_DockpaneCombo_ShowButton" size="large" />
+        <group id="CalculateFlowArrows_Group" caption="Calculate Arrows" appearsOnAddInTab="true">
+          <button refID="CalculateFlowArrows_DockpaneCombo_ShowButton" size="large" />
         </group>
       </groups>
 
       <controls>
-        <button id="DockpaneWithComboDropdown_DockpaneCombo_ShowButton" caption="Show Flow Arrows Pane" className="Calculate_Flow_Arrows.DockpaneCombo_ShowButton" loadOnClick="true" keytip="B1" smallImage="ElementNudgeDown16" largeImage="ElementNudgeDown32">
+        <button id="CalculateFlowArrows_DockpaneCombo_ShowButton" caption="Calculate Flow Arrows Pane" className="Calculate_Flow_Arrows.DockpaneCombo_ShowButton" loadOnClick="true" keytip="B1" smallImage="ElementNudgeDown16" largeImage="ElementNudgeDown32">
           <tooltip heading="Show Flow Arrows Pane">
           Show Flow Arrows Pane<disabledText />
           </tooltip>
@@ -53,7 +53,7 @@
       </controls>
 
       <dockPanes>
-        <dockPane id="DockpaneWithComboDropdown_DockpaneCombo" caption="Calculate Flow Arrows" className="Calculate_Flow_Arrows.DockpaneComboViewModel" dock="group" dockWith="esri_core_projectDockPane" smallImage="ElementNudgeDown16">
+        <dockPane id="CalculateFlowArrows_DockpaneCombo" caption="Calculate Flow Arrows" className="Calculate_Flow_Arrows.DockpaneComboViewModel" dock="group" dockWith="esri_core_projectDockPane" smallImage="ElementNudgeDown16">
          <content className="DockpaneComboView" />
         </dockPane>
       </dockPanes>

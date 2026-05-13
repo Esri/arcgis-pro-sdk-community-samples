@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2019 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -47,11 +47,33 @@ namespace EditOperationRowEvent
     {
       QueuedTask.Run(async() =>
         {
-          //find layer and derive geodatabase
-          var cpLayer = MapView.Active.Map.FindLayers("CrowdPlanning").FirstOrDefault() as FeatureLayer;
+          // get the first feature layer in the current map and derive geodatabase
+          // Get the active map view
+          var activeMapView = MapView.Active;
 
-          if (cpLayer == null) return;
-          var geodatabase = cpLayer.GetFeatureClass().GetDatastore() as Geodatabase;
+          // Check if there is an active map view
+          if (activeMapView == null)
+          {
+            MessageBox.Show("No active map view found.", "Error");
+            return;
+          }
+
+          // Get the first feature layer in the current map
+          var featureLayer = activeMapView.Map.GetLayersAsFlattenedList()
+                                             .OfType<FeatureLayer>()
+                                             .FirstOrDefault();
+
+          // Check if a feature layer was found
+          if (featureLayer == null)
+          {
+            MessageBox.Show("No feature layer found in the current map.", "Error");
+            return;
+          }
+
+          // Use the feature layer as needed
+          MessageBox.Show($"Feature Layer Found: {featureLayer.Name}", "Success");
+
+          var geodatabase = featureLayer.GetFeatureClass().GetDatastore() as Geodatabase;
 
           //Advise if the project has edits. Need to clear edits to make schema changes.
           if (Project.Current.HasEdits)
@@ -60,13 +82,13 @@ namespace EditOperationRowEvent
             return;
           }
 
-          //Delete and Create the editlog table
+          //Delete and Create the edit log table
           //For the purpose of this sample, start with a fresh table
           var mva = Geoprocessing.MakeValueArray(geodatabase.GetPath().AbsolutePath,"EditLog");
           var cts = new System.Threading.CancellationTokenSource();
            await Geoprocessing.ExecuteToolAsync("CreateTable_management", mva);
 
-          //add fields to editlog
+          //add fields to edit log
           var tablePath = geodatabase.GetPath().AbsolutePath + @"\EditLog";
           mva = Geoprocessing.MakeValueArray(tablePath, "Layer", "STRING");
           await Geoprocessing.ExecuteToolAsync("AddField_management", mva);
@@ -81,11 +103,11 @@ namespace EditOperationRowEvent
 
           //setup row events for layer
           if (_rowChangedToken == null)
-            _rowChangedToken = RowChangedEvent.Subscribe(OnRowEvent,cpLayer.GetTable());
+            _rowChangedToken = RowChangedEvent.Subscribe(OnRowEvent,featureLayer.GetTable());
           if (_rowCreatedToken == null)
-            _rowCreatedToken = RowCreatedEvent.Subscribe(OnRowEvent, cpLayer.GetTable());
+            _rowCreatedToken = RowCreatedEvent.Subscribe(OnRowEvent, featureLayer.GetTable());
           if (_rowDeletedToken == null)
-            _rowDeletedToken = RowDeletedEvent.Subscribe(OnRowEvent, cpLayer.GetTable());
+            _rowDeletedToken = RowDeletedEvent.Subscribe(OnRowEvent, featureLayer.GetTable());
         });
     }
 

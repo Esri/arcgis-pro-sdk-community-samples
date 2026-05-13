@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2020 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -96,7 +96,7 @@ namespace GPToolInspector
     private bool _IncludeToolEnvironments;
 
     /// <summary>
-    /// True to include tool environment setttings in the code snippet
+    /// True to include tool environment settings in the code snippet
     /// </summary>
     public bool IncludeToolEnvironments
     {

@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2024 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Versioning;
 
 namespace RunCoreHostApp
 {
@@ -55,6 +56,7 @@ namespace RunCoreHostApp
     /// </summary>
     public static readonly string RegistryKeyAllSourceUseForFallback = "ArcGISAllSource";
 
+    [SupportedOSPlatform("windows")]
     public static (string Folder, string Version)? GetInstallDirAndVersion()
     {
       return GetInstallDirAndVersion(string.Empty);
@@ -64,16 +66,16 @@ namespace RunCoreHostApp
     /// </summary>
     /// <param name="productName"></param>
     /// <returns>empty strings if no information found. Otherwise return directory and version.</returns>
+    [SupportedOSPlatform("windows")]
     public static (string Folder, string Version)? GetInstallDirAndVersion(string productName)
     {
-      string upgradeCode = string.Empty;
-      string productNameRegKey = string.Empty;
+      string upgradeCode;
+      string productNameRegKey;
       if (productName == "ArcGISPro" || string.IsNullOrEmpty(productName))
       {
         upgradeCode = ArcGISProUpgradeId;
         productNameRegKey = RegistryKeyUseForFallback;
       }
-
       else if (productName == "AllSource")
       {
         upgradeCode = ArcGISAllSourceUpgradeId;
@@ -84,7 +86,6 @@ namespace RunCoreHostApp
         return null;
       }
       StringBuilder productCode = new(255);
-
       if (MsiEnumRelatedProducts(upgradeCode, 0, 0, productCode) != 0)
       {
         //Houston, we have a problem
@@ -92,7 +93,7 @@ namespace RunCoreHostApp
         //release - fallback on the hardcoded reg key
         return GetInstallDirAndVersionFromReg(productName);
       }
-      string[] properties = new string[] { "InstallLocation", "VersionString" };
+      string[] properties = ["InstallLocation", "VersionString"];
       string[] results = new string[properties.Length];
       int size = 1024;
       StringBuilder buffer = new(size);
@@ -118,24 +119,20 @@ namespace RunCoreHostApp
     /// <param name="productNameRegKey"></param>
     /// <returns>Returns empty strings if no registry is found. Otherwise returns installDir, Version</returns>
     /// <exception cref="System.Exception"></exception>
+    [SupportedOSPlatform("windows")]
     private static (string Folder, string Version)? GetInstallDirAndVersionFromReg(string productNameRegKey)
     {
       string regKeyName = productNameRegKey;
       string regPath = string.Format(@"SOFTWARE\ESRI\{0}", regKeyName);
-      string regPathInstallDir = string.Format(@"HKLM\{0}\{1}", regPath, "InstallDir");
-      string regPathVersion = string.Format(@"HKLM\{0}\{1}", regPath, "Version");
-      var productDesignation = productNameRegKey == "ArcGISPro" ? "Pro" : "AllSource";
-
       object? path;
       object? version;
       try
       {
-        RegistryKey localKey = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
-        RegistryKey esriKey = localKey.OpenSubKey(regPath);
-
+        RegistryKey localKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64);
+        RegistryKey? esriKey = localKey.OpenSubKey(regPath);
         if (esriKey == null)
         {
-          localKey = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.CurrentUser, RegistryView.Registry64);
+          localKey = RegistryKey.OpenBaseKey(RegistryHive.CurrentUser, RegistryView.Registry64);
           esriKey = localKey.OpenSubKey(regPath);
         }
         if (esriKey == null)
@@ -149,7 +146,6 @@ namespace RunCoreHostApp
           //this is an error
           return (string.Empty, string.Empty);
         }
-
         version = esriKey.GetValue("Version");
         if (version == null)
         {
@@ -157,18 +153,17 @@ namespace RunCoreHostApp
           return (string.Empty, string.Empty);
         }
       }
-      catch (InvalidOperationException ie)
+      catch (InvalidOperationException)
       {
         //this is ours
         throw;
       }
-      catch (Exception ex)
+      catch (Exception)
       {
         throw;
       }
       if (path == null || version == null) return null;
-
-      return (path.ToString(), version.ToString());
+      return (path.ToString() ?? string.Empty, version.ToString() ?? string.Empty);
     }
   }
 }

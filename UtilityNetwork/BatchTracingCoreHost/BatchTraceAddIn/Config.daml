@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2026 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="BatchTraceAddIn.dll" defaultNamespace="BatchTraceAddIn" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{9d23706c-aa8e-4e93-b41b-9991aa7b37bd}" version="1.0" desktopVersion="3.5" product="ArcGISPro">
+    <Name>BatchTraceAddIn</Name>
+    <Description>BatchTraceAddIn description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>12/1/2025 9:46:01 PM</Date>
+    <Subject>Utility network</Subject>
+  </AddInInfo>
+  <modules>
+    <insertModule id="BatchTraceAddIn_Module" className="Module1" autoLoad="false" caption="Module1">
+      <tabs>
+      </tabs>
+      <groups>
+        <group id="BatchTraceAddIn_Group1" caption="Batch Trace" appearsOnAddInTab="true">
+          <button refID="BatchTraceAddIn_BatchTraceButton" size="large" />
+          <button refID="BatchTraceAddIn_TraceButton" size="large" />
+          <button refID="BatchTraceAddIn_ExportButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <button id="BatchTraceAddIn_TraceButton" caption="Trace Only" className="TraceButton" loadOnClick="true" smallImage="GenericButtonBlue16" largeImage="GenericButtonBlue32">
+          <tooltip heading="Trace Only">Runs the batch trace analysis for the given JSON configuration file. Performs the trace to perform the analysis, but does not export the results or generate any output.<disabledText /></tooltip>
+        </button>
+        <button id="BatchTraceAddIn_ExportButton" caption="Trace and Export " className="ExportButton" loadOnClick="true" smallImage="GenericButtonBlue16" largeImage="GenericButtonBlue32">
+          <tooltip heading="Export Only">Runs the batch trace analysis for the given JSON configuration file. Performs the trace and export required to perform the analysis, but does not generate any output.<disabledText /></tooltip>
+        </button>
+        <button id="BatchTraceAddIn_BatchTraceButton" caption="Run" className="BatchTraceButton" loadOnClick="true" smallImage="GenericButtonBlue16" largeImage="GenericButtonBlue32">
+          <tooltip heading="Run Batch Trace">Runs the batch trace analysis for the given JSON configuration file. Performs the full analysis and outputs the expected result.<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

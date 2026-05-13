@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2026 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+
+<ArcGIS defaultAssembly="ShowFlowArrows.dll"
+        defaultNamespace="Show_Flow_Arrows"
+        xmlns="http://schemas.esri.com/DADF/Registry"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+
+  <AddInInfo id="{d40feac3-81c8-4db8-a555-253f0676dc78}" version="1.0" desktopVersion="3.7" product="ArcGISPro">
+    <Name>ShowFlowArrows</Name>   
+    <Description>Show flow arrows for a given subnetwork or JSON export</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>8/13/2025 11:32:30 AM</Date>
+    <Subject>UtilityNetwork</Subject>
+  </AddInInfo>
+
+  <modules>
+    <insertModule id="ShowFlowArrows_Module" className="FlowModule" autoLoad="false" caption="Module1">
+      <groups>
+        <group id="ShowFlowArrows_Group" caption="Show Arrows" appearsOnAddInTab="true">
+          <button refID="ShowFlowArrows_DockpaneCombo_ShowButton" size="large" />
+        </group>
+      </groups>
+
+      <controls>
+        <button id="ShowFlowArrows_DockpaneCombo_ShowButton" caption="Show Flow Arrows Pane" className="Show_Flow_Arrows.DockpaneCombo_ShowButton" loadOnClick="true" keytip="B1" smallImage="ElementNudgeDown16" largeImage="ElementNudgeDown32">
+          <tooltip heading="Show Flow Arrows Pane">
+          Show Flow Arrows Pane<disabledText />
+          </tooltip>
+        </button>
+      </controls>
+
+      <dockPanes>
+        <dockPane id="ShowFlowArrows_DockpaneCombo" caption="Show Flow Arrows" className="Show_Flow_Arrows.DockpaneComboViewModel" dock="group" dockWith="esri_core_projectDockPane" smallImage="ElementNudgeDown16">
+         <content className="DockpaneComboView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

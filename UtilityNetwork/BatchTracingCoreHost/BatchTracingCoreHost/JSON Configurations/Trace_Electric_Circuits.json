@@ -1,0 +1,18 @@
+{
+	"analysisName": "Distribution Circuits",
+	"type": "Trace",
+	"networkSourceName": "electricdevice",
+	"assetGroupCode": 26,
+	"terminalName": "CBD:Line Side",
+	"definitionQuery": "ISSUBNETWORKCONTROLLER=1",
+	"namedTraceConfiguration": "Downstream - Distribution Trace",
+	"inputWorkspace": "D:\\Projects\\Naperville Archive\\Q2 2023\\ElectricUtilityNetworkFoundationV2_1\\Database\\Electric_UtilityNetwork.gdb",
+	"sourceUtilityNetwork": "Network",
+	"sourceResultField": "ASSETID",
+	"outputWorkspace": "D:\\Projects\\Naperville Archive\\Q2 2023\\ElectricUtilityNetworkFoundationV2_1\\ElectricUtilityNetworkFoundation.gdb",
+	"outputPoints": "",
+	"outputPolylines": "",
+	"outputPolygons": "",
+	"outputTable": "",
+	"outputFunctionCount": 0
+}

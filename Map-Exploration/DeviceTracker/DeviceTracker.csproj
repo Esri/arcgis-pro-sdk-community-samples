@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
@@ -86,6 +86,9 @@
       <Private>False</Private>
       <CopyLocal>False</CopyLocal>
     </Reference>
+    <Reference Include="System.IO.Ports">
+      <HintPath>..\..\..\..\..\Program Files\ArcGIS\Pro\bin\System.IO.Ports.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Config.daml" />
@@ -107,7 +110,7 @@
     <None Include="ReadMe.md" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="System.IO.Ports" Version="9.0.1" />
+    <PackageReference Include="System.IO.Ports" Version="10.0.5" />
   </ItemGroup>
   <Import Project="C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets" Condition="Exists('C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets') AND !Exists('Esri.ArcGISPro.Extensions.targets')" />
 </Project>

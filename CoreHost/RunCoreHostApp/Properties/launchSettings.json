@@ -2,7 +2,7 @@
   "profiles": {
     "RunCoreHostApp": {
       "commandName": "Project",
-      "commandLineArgs": "CoreHostTest31Build.dll C:\\Data\\FeatureTest\\FeatureTest.gdb"
+      "commandLineArgs": "\"E:\\Repos\\ArcGISRepos\\arcgis-pro-sdk-community-samples\\CoreHost\\CoreHostResolveAssembly\\bin\\Debug\\net10.0-windows\\CoreHostResolveAssembly.dll\" C:\\Data\\FeatureTest\\FeatureTest.gdb"
     }
   }
 }

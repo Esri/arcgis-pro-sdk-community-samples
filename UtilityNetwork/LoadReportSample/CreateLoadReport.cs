@@ -1,4 +1,4 @@
-//   Copyright 2019 Esri
+//   Copyright 2026 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -452,8 +452,8 @@ namespace LoadReportSample
         {
           DomainNetwork electricDomainNetwork = utilityNetworkDefinition.GetDomainNetwork(ElectricDomainNetwork);
           Tier mediumVoltageTier = electricDomainNetwork.GetTier(MediumVoltageTier);
-          NetworkAttribute phaseNetworkAttribute = utilityNetworkDefinition.GetNetworkAttribute(PhaseAttributeName);
-          NetworkAttribute loadNetworkAttribute = utilityNetworkDefinition.GetNetworkAttribute(LoadAttributeName);
+          using NetworkAttribute phaseNetworkAttribute = utilityNetworkDefinition.GetNetworkAttribute(PhaseAttributeName);
+          using NetworkAttribute loadNetworkAttribute = utilityNetworkDefinition.GetNetworkAttribute(LoadAttributeName);
           if (utilityNetworkDefinition.GetAvailableCategories().Contains(ServicePointCategory))
           {
             dataModelIsValid = true;

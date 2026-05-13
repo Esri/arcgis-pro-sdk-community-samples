@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--//Copyright 2019 Esri
+<!--//Copyright 2026 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -35,8 +35,7 @@
     <insertModule id="WorkingWithDAML" className="Module1" autoLoad="false" caption="Module1">
       <tabGroups>
         <!--The new Tab Group is created here-->
-        <tabGroup caption="Example State Solution" id="working_with_DAML_ExampleStateTabGroup">
-        </tabGroup>
+        <tabGroup caption="Example State Solution" id="working_with_DAML_ExampleStateTabGroup"></tabGroup>
       </tabGroups>
       <!-- uncomment to have the control hosted on a separate tab-->
       <tabs>

@@ -1,4 +1,4 @@
-﻿using ArcGIS.Core.CIM;
+using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
 using ArcGIS.Core.Data.UtilityNetwork;
 using ArcGIS.Core.Data.UtilityNetwork.Trace;
@@ -31,7 +31,7 @@ using QueryFilter = ArcGIS.Core.Data.QueryFilter;
 
 namespace AlternativeEnergizationAddIn
 {
-  //   Copyright 2019 Esri
+  //   Copyright 2026 Esri
   //   Licensed under the Apache License, Version 2.0 (the "License");
   //   you may not use this file except in compliance with the License.
   //   You may obtain a copy of the License at
@@ -197,7 +197,7 @@ namespace AlternativeEnergizationAddIn
     // a way to do alternative energization
     private void GetUpstreamTap(UtilityNetwork utilityNetwork, Element startingPointElement)
     {
-      TraceManager traceManager = utilityNetwork.GetTraceManager();
+      using TraceManager traceManager = utilityNetwork.GetTraceManager();
       UpstreamTracer tracer = traceManager.GetTracer<UpstreamTracer>();
 
       List<Element> startingPointList = new List<Element>();
@@ -205,7 +205,7 @@ namespace AlternativeEnergizationAddIn
 
       TraceArgument traceArgument = new TraceArgument(startingPointList);
 
-      UtilityNetworkDefinition undef = utilityNetwork.GetDefinition();
+      using UtilityNetworkDefinition undef = utilityNetwork.GetDefinition();
 
       DomainNetwork dn = undef.GetDomainNetwork(Utilities.domainNetworkName);
 
@@ -289,7 +289,7 @@ namespace AlternativeEnergizationAddIn
                 QueryFilter filter = new QueryFilter();
 
                 filter.WhereClause = "OBJECTID = " + element.ObjectID;
-                Table table = utilityNetwork.GetTable(element.NetworkSource);
+                using Table table = utilityNetwork.GetTable(element.NetworkSource);
 
                 using RowCursor rowCursor = table.Search(filter, false);
                 while (rowCursor.MoveNext())
@@ -324,7 +324,7 @@ namespace AlternativeEnergizationAddIn
                 QueryFilter filter = new QueryFilter();
 
                 filter.WhereClause = "OBJECTID = " + element.ObjectID;
-                Table table = utilityNetwork.GetTable(element.NetworkSource);
+                using Table table = utilityNetwork.GetTable(element.NetworkSource);
 
                 using RowCursor rowCursor = table.Search(filter, false);
                 while (rowCursor.MoveNext())
@@ -357,7 +357,7 @@ namespace AlternativeEnergizationAddIn
                 QueryFilter filter = new QueryFilter();
 
                 filter.WhereClause = "OBJECTID = " + element.ObjectID;
-                Table table = utilityNetwork.GetTable(element.NetworkSource);
+                using Table table = utilityNetwork.GetTable(element.NetworkSource);
 
                 using RowCursor rowCursor = table.Search(filter, false);
                 while (rowCursor.MoveNext())
@@ -398,7 +398,7 @@ namespace AlternativeEnergizationAddIn
     private void GetDownstreamProtective(UtilityNetwork utilityNetwork, Element startingPointElement)
     {
       try { 
-      TraceManager traceManager = utilityNetwork.GetTraceManager();
+      using TraceManager traceManager = utilityNetwork.GetTraceManager();
       DownstreamTracer tracer = traceManager.GetTracer<DownstreamTracer>();
 
       List<Element> startingPointList = new List<Element>();
@@ -406,7 +406,7 @@ namespace AlternativeEnergizationAddIn
 
       TraceArgument traceArgument = new TraceArgument(startingPointList);
 
-      UtilityNetworkDefinition undef = utilityNetwork.GetDefinition();
+      using UtilityNetworkDefinition undef = utilityNetwork.GetDefinition();
 
       DomainNetwork dn = undef.GetDomainNetwork(Utilities.domainNetworkName);
 
@@ -451,7 +451,7 @@ namespace AlternativeEnergizationAddIn
     private void GetProtectiveBeforeOpen(UtilityNetwork utilityNetwork, Element startingPointElement)
     {
       try {
-      TraceManager traceManager = utilityNetwork.GetTraceManager();
+      using TraceManager traceManager = utilityNetwork.GetTraceManager();
       DownstreamTracer tracer = traceManager.GetTracer<DownstreamTracer>();
 
       List<Element> startingPointList = new List<Element>();
@@ -459,7 +459,7 @@ namespace AlternativeEnergizationAddIn
 
       TraceArgument traceArgument = new TraceArgument(startingPointList);
 
-      UtilityNetworkDefinition undef = utilityNetwork.GetDefinition();
+      using UtilityNetworkDefinition undef = utilityNetwork.GetDefinition();
 
       DomainNetwork dn = undef.GetDomainNetwork(Utilities.domainNetworkName);
 
@@ -494,7 +494,7 @@ namespace AlternativeEnergizationAddIn
     private bool GetOpenPointCheck(UtilityNetwork utilityNetwork, Element startingPointElement)
     {
       try {
-      TraceManager traceManager = utilityNetwork.GetTraceManager();
+      using TraceManager traceManager = utilityNetwork.GetTraceManager();
       DownstreamTracer tracer = traceManager.GetTracer<DownstreamTracer>();
 
       List<Element> startingPointList = new List<Element>();
@@ -502,7 +502,7 @@ namespace AlternativeEnergizationAddIn
 
       TraceArgument traceArgument = new TraceArgument(startingPointList);
 
-      UtilityNetworkDefinition undef = utilityNetwork.GetDefinition();
+      using UtilityNetworkDefinition undef = utilityNetwork.GetDefinition();
 
       DomainNetwork dn = undef.GetDomainNetwork(Utilities.domainNetworkName);
 
@@ -539,7 +539,7 @@ namespace AlternativeEnergizationAddIn
     private void GetOpenPoint(UtilityNetwork utilityNetwork, Element startingPointElement)
     {
       try {
-      TraceManager traceManager = utilityNetwork.GetTraceManager();
+      using TraceManager traceManager = utilityNetwork.GetTraceManager();
       DownstreamTracer tracer = traceManager.GetTracer<DownstreamTracer>();
 
       List<Element> startingPointList = new List<Element>();
@@ -547,7 +547,7 @@ namespace AlternativeEnergizationAddIn
 
       TraceArgument traceArgument = new TraceArgument(startingPointList);
 
-      UtilityNetworkDefinition undef = utilityNetwork.GetDefinition();
+      using UtilityNetworkDefinition undef = utilityNetwork.GetDefinition();
 
       DomainNetwork dn = undef.GetDomainNetwork(Utilities.domainNetworkName);
 
@@ -595,7 +595,7 @@ namespace AlternativeEnergizationAddIn
             QueryFilter filter = new QueryFilter();
 
             filter.WhereClause = "OBJECTID = " + element2.ObjectID;
-            Table table = utilityNetwork.GetTable(element2.NetworkSource);
+            using Table table = utilityNetwork.GetTable(element2.NetworkSource);
 
             using RowCursor rowCursor = table.Search(filter, false);
             while (rowCursor.MoveNext())
@@ -625,7 +625,7 @@ namespace AlternativeEnergizationAddIn
     {
       try
       { 
-          TraceManager traceManager = utilityNetwork.GetTraceManager();
+          using TraceManager traceManager = utilityNetwork.GetTraceManager();
           IsolationTracer tracer = traceManager.GetTracer<IsolationTracer>();
 
           List<Element> startingPointList = new List<Element>();
@@ -633,7 +633,7 @@ namespace AlternativeEnergizationAddIn
 
           TraceArgument traceArgument = new TraceArgument(startingPointList);
 
-          UtilityNetworkDefinition undef = utilityNetwork.GetDefinition();
+          using UtilityNetworkDefinition undef = utilityNetwork.GetDefinition();
 
           DomainNetwork dn = undef.GetDomainNetwork(Utilities.domainNetworkName);
 

@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2025 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 
 */
 using ArcGIS.Core.Data;
+using ArcGIS.Core.Data.Exceptions;
 using ArcGIS.Core.Data.UtilityNetwork;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
@@ -38,7 +39,7 @@ namespace Calculate_Flow_Arrows
 
         #region Members
 
-        private const string _dockPaneID = "DockpaneWithComboDropdown_DockpaneCombo";
+        private const string _dockPaneID = "CalculateFlowArrows_DockpaneCombo";
 
         // Create a dictionary by all state names with the capitals as the value
         // This is used to populate the ComboBox in the DockPane
@@ -47,7 +48,7 @@ namespace Calculate_Flow_Arrows
         private UtilityNetwork _utilityNetwork = null;
 
         // By default, limit the number of subnetworks shown in the dropdown for performance reasons
-        private int _maxSubnetworks = 2000;
+        private int _maxSubnetworks = 500000;
 
         #endregion
 
@@ -241,6 +242,7 @@ namespace Calculate_Flow_Arrows
         public string Messages
         {
             get => string.Join(Environment.NewLine, _messages);
+            set { return; }
         }
 
         /// <summary>
@@ -295,9 +297,9 @@ namespace Calculate_Flow_Arrows
                         Status = _includeDirtySubnetworks
                         ? "No subnetworks for the selected tier."
                         : "No clean subnetworks for the selected tier.";
-                    else if (subnetworkCount > 100)
+                    else if (subnetworkCount > _maxSubnetworks)
                     {
-                        foreach (var subnetwork in allSubnetworks.Take(100))
+                        foreach (var subnetwork in allSubnetworks.Take(_maxSubnetworks))
                             _subnetworkList.Add(subnetwork.Name);
 
                         Status = "Select a subnetwork (first 100 subnetworks displayed).";
@@ -476,8 +478,8 @@ namespace Calculate_Flow_Arrows
                                 return;
                             }
 
-                            var subnetworkControllers = selectedSubnetwork.GetControllers();
-                            if (subnetworkControllers.Count > 1)
+                            var subnetworkControllers = selectedSubnetwork.GetControllers().Where(controller => controller.Element.ObjectID != -1);
+                            if (subnetworkControllers.Count() > 1)
                             {
                                 _messages.Add("Flow arrows may not be accurate when there are multiple subnetwork controllers.");
                                 NotifyPropertyChanged("Messages");
@@ -490,48 +492,26 @@ namespace Calculate_Flow_Arrows
                                 NotifyPropertyChanged("Messages");
                             }
 
+                            var subnetworkName = selectedSubnetwork.Name;
                             var activeProject = ArcGIS.Desktop.Core.Project.Current;
                             var homeFolderPath = activeProject.HomeFolderPath;
-                            var exportFile = string.Format("{0}\\{1}.json", homeFolderPath, selectedSubnetwork.Name);
+                            var exportFile = string.Format("{0}\\{1}.json", homeFolderPath, subnetworkName);
+                            if (subnetworkName.Contains("/"))
+                                exportFile.Replace("/", "_");
 
+                            int featureCount = 0;
                             FeatureClass outputClass = null;
-                            var subnetworkState = selectedSubnetwork.GetState();
 
                             try
                             {
 
-                                if (subnetworkState == SubnetworkStates.Clean)
+                                if (_includeDirtySubnetworks)
                                 {
-
-                                    #region Analyze a clean subnetwork
-
-                                    _messages.Add("Exporting subnetwork: " + selectedSubnetwork.Name);
-                                    NotifyPropertyChanged("Messages");
-
-                                    if (!TraceHelper.ExportSubnetwork(_utilityNetwork, selectedSubnetwork, exportFile, [statusInfo.fieldName]))
-                                    {
-                                        _messages.Add("Unable to read connectivity information from subnetwork.");
-                                        NotifyPropertyChanged("Messages");
-                                        return;
-                                    }
-
-                                    Status = "Analyzing flow";
-                                    _messages.Add("Analyzing subnetwork: " + selectedSubnetwork.Name);
-                                    NotifyPropertyChanged("Messages");
-
-                                    var subnetworkParser = new SubnetworkParser(utilityNetworkDefinition, selectedTier);
-                                    outputClass = subnetworkParser.ParseThis(selectedSubnetwork.Name, exportFile, statusInfo.fieldName, statusInfo.statusValue, _clearResults);
-
-
-                                    #endregion
-
-                                }
-                                else if (subnetworkState == SubnetworkStates.Dirty)
-                                {
+                                    // For consistency's sake, always use this method when in this mode
 
                                     #region Analyze a dirty subnetwork
 
-                                    _messages.Add("Exporting subnetwork: " + selectedSubnetwork.Name);
+                                    _messages.Add("Exporting subnetwork: " + subnetworkName);
                                     NotifyPropertyChanged("Messages");
 
                                     if (!TraceHelper.ExportDirtySubnetwork(_utilityNetwork, selectedSubnetwork, exportFile, [statusInfo.fieldName]))
@@ -542,7 +522,7 @@ namespace Calculate_Flow_Arrows
                                     }
 
                                     Status = "Analyzing flow";
-                                    _messages.Add("Analyzing subnetwork: " + selectedSubnetwork.Name);
+                                    _messages.Add("Analyzing subnetwork: " + subnetworkName);
                                     NotifyPropertyChanged("Messages");
 
                                     var subnetworkParser = new SubnetworkParser(utilityNetworkDefinition, selectedTier);
@@ -554,21 +534,63 @@ namespace Calculate_Flow_Arrows
 
                                     // The Trace response doesn't include a spatial reference
                                     // Use the spatial reference from the structure junction class
-                                    var networkSource = utilityNetworkDefinition.GetNetworkSources().First(source => source.UsageType == SourceUsageType.StructureJunction);
-                                    var structureJunctionClass = (FeatureClass)_utilityNetwork.GetTable(networkSource);
-                                    var structureJunctionClassDefinition = structureJunctionClass.GetDefinition();
+                                    using var networkSource = utilityNetworkDefinition.GetNetworkSources().First(source => source.UsageType == SourceUsageType.StructureJunction);
+                                    using var structureJunctionClass = (FeatureClass)_utilityNetwork.GetTable(networkSource);
+                                    using var structureJunctionClassDefinition = structureJunctionClass.GetDefinition();
                                     var spatialReference = structureJunctionClassDefinition.GetSpatialReference();
 
-                                    outputClass = subnetworkParser.ParseThis(selectedSubnetwork.Name, exportFile, statusInfo.fieldName, statusInfo.statusValue, _clearResults, startingElements, spatialReference);
+                                    featureCount = subnetworkParser.ParseSubnetwork(subnetworkName, exportFile, statusInfo.fieldName, statusInfo.statusValue, _clearResults, startingElements);
+                                    if (featureCount == 0)
+                                    {
+                                        _messages.Add("Subnetwork contains no connectivity/features: " + subnetworkName);
+                                        NotifyPropertyChanged("Messages");
+                                        return;
+                                    }
+
+                                    outputClass = subnetworkParser.OutputGeometry(spatialReference, subnetworkName, deleteAllRows: _clearResults);
 
                                     #endregion
 
                                 }
                                 else
                                 {
-                                    _messages.Add("Subnetwork '" + selectedSubnetwork.Name + "' in an unsupported state: " + subnetworkState);
+
+                                    #region Analyze a clean subnetwork
+
+                                    _messages.Add("Exporting subnetwork: " + subnetworkName);
                                     NotifyPropertyChanged("Messages");
-                                    return;
+
+                                    if (!TraceHelper.ExportSubnetwork(_utilityNetwork, selectedSubnetwork, exportFile, [statusInfo.fieldName]))
+                                    {
+                                        _messages.Add("Unable to read connectivity information from subnetwork.");
+                                        NotifyPropertyChanged("Messages");
+                                        return;
+                                    }
+
+                                    Status = "Analyzing flow";
+                                    _messages.Add("Analyzing subnetwork: " + subnetworkName);
+                                    NotifyPropertyChanged("Messages");
+
+                                    // The Trace response doesn't include a spatial reference
+                                    // Use the spatial reference from the structure junction class
+                                    using var networkSource = utilityNetworkDefinition.GetNetworkSources().First(source => source.UsageType == SourceUsageType.StructureJunction);
+                                    using var structureJunctionClass = (FeatureClass)_utilityNetwork.GetTable(networkSource);
+                                    using var structureJunctionClassDefinition = structureJunctionClass.GetDefinition();
+                                    var spatialReference = structureJunctionClassDefinition.GetSpatialReference();
+
+                                    var subnetworkParser = new SubnetworkParser(utilityNetworkDefinition, selectedTier);
+                                    featureCount = subnetworkParser.ParseSubnetwork(subnetworkName, exportFile, statusInfo.fieldName, statusInfo.statusValue, _clearResults);
+                                    if (featureCount == 0)
+                                    {
+                                        _messages.Add("Subnetwork contains no connectivity/features: " + subnetworkName);
+                                        NotifyPropertyChanged("Messages");
+                                        return;
+                                    }
+
+                                    outputClass = subnetworkParser.OutputGeometry(spatialReference, subnetworkName, deleteAllRows: _clearResults);
+
+                                    #endregion
+
                                 }
                             }
                             catch (Exception ex)
@@ -742,8 +764,17 @@ namespace Calculate_Flow_Arrows
                                 return;
                             }
 
+                            using var networkSource = utilityNetworkDefinition.GetNetworkSources().First(source => source.UsageType == SourceUsageType.StructureJunction);
+                            using var structureJunctionClass = (FeatureClass)_utilityNetwork.GetTable(networkSource);
+                            using var structureJunctionClassDefinition = structureJunctionClass.GetDefinition();
+                            var spatialReference = structureJunctionClassDefinition.GetSpatialReference();
+
                             FeatureClass outputClass = null;
                             int index = 0;
+                            double totalExportTime = 0;
+                            double totalAnalysisTime = 0;
+                            var timingMessages = new List<string>();
+
                             int subnetworkCount = subnetworks.Count;
                             foreach (var selectedSubnetwork in subnetworks.OrderBy(subnetwork => subnetwork.Name))
                             {
@@ -757,79 +788,113 @@ namespace Calculate_Flow_Arrows
 
                                 index += 1;
 
+                                double featureCount = 0, exportTime = 0, analysisTime = 0;
                                 var subnetworkName = selectedSubnetwork.Name;
                                 var exportFile = string.Format("{0}\\{1}.json", homeFolderPath, subnetworkName);
+                                if (subnetworkName.Contains("/"))
+                                    exportFile.Replace("/", "_");
 
                                 try
                                 {
-                                    var subnetworkState = selectedSubnetwork.GetState();
-                                    if (subnetworkState == SubnetworkStates.Clean)
+                                    Status = string.Format("Analyzing Subnetwork {0} ({1} of {2})", subnetworkName, index, subnetworkCount);
+
+
+                                    if (_includeDirtySubnetworks)
                                     {
 
                                         #region Analyze a dirty subnetwork
 
-                                        Status = string.Format("Analyzing Subnetwork {0} ({1} of {2})", subnetworkName, index, subnetworkCount);
-
-                                        if (!TraceHelper.ExportSubnetwork(_utilityNetwork, selectedSubnetwork, exportFile, [statusInfo.fieldName]))
-                                        {
-                                            _messages.Add("Unable to read connectivity information from subnetwork: " + subnetworkName);
-                                            NotifyPropertyChanged("Messages");
-                                            return;
-                                        }
-
-                                        var subnetworkParser = new SubnetworkParser(utilityNetworkDefinition, selectedTier);
-                                        outputClass = subnetworkParser.ParseThis(selectedSubnetwork.Name,exportFile, statusInfo.fieldName, statusInfo.statusValue, _clearResults);
-                                        _messages.Add("Analyzed subnetwork: " + subnetworkName);
-                                        NotifyPropertyChanged("Messages");
-
-                                        #endregion
-
-                                    }
-                                    else if (subnetworkState == SubnetworkStates.Dirty)
-                                    {
-
-                                        #region Analyze a dirty subnetwork
-
-                                        _messages.Add("Exporting subnetwork: " + selectedSubnetwork.Name);
-                                        NotifyPropertyChanged("Messages");
-
+                                        var start = DateTime.Now;
                                         if (!TraceHelper.ExportDirtySubnetwork(_utilityNetwork, selectedSubnetwork, exportFile, [statusInfo.fieldName]))
                                         {
-                                            _messages.Add("Unable to read connectivity information from subnetwork.");
+                                            _messages.Add("Unable to export dirty subnetwork using trace.");
                                             NotifyPropertyChanged("Messages");
+                                            timingMessages.Add(string.Format("{0}\t{1}\t{2}\t{3}\tUnable to export", subnetworkName, featureCount, exportTime, analysisTime));
                                             return;
                                         }
-
-                                        Status = "Analyzing flow";
-                                        _messages.Add("Analyzing subnetwork: " + selectedSubnetwork.Name);
-                                        NotifyPropertyChanged("Messages");
+                                        exportTime = (DateTime.Now - start).TotalSeconds;
+                                        totalExportTime += exportTime;
 
                                         var subnetworkParser = new SubnetworkParser(utilityNetworkDefinition, selectedTier);
 
-                                        var subnetworkControllers = selectedSubnetwork.GetControllers();
+                                        var subnetworkControllers = selectedSubnetwork.GetControllers().Where(controller => controller.Element.ObjectID != -1);
                                         var subnetworkControllerElements = subnetworkControllers.Select(controller => controller.Element);
                                         var startingElements = subnetworkParser.GetStartingElementKeys(subnetworkControllerElements).ToArray();
 
-                                        var networkSource = utilityNetworkDefinition.GetNetworkSources().First(source => source.UsageType == SourceUsageType.StructureJunction);
-                                        var structureJunctionClass = (FeatureClass)_utilityNetwork.GetTable(networkSource);
-                                        var structureJunctionClassDefinition = structureJunctionClass.GetDefinition();
-                                        var spatialReference = structureJunctionClassDefinition.GetSpatialReference();
+                                        start = DateTime.Now;
+                                        featureCount = subnetworkParser.ParseSubnetwork(selectedSubnetwork.Name, exportFile, statusInfo.fieldName, statusInfo.statusValue, _clearResults, startingElements);
+                                        if(featureCount == 0)
+                                        {
+                                            _messages.Add("Subnetwork contains no connectivity/features: "  + subnetworkName);
+                                            NotifyPropertyChanged("Messages");
+                                            timingMessages.Add(string.Format("{0}\t{1}\t{2}\t{3}\tNo connectivity/features", subnetworkName, featureCount, exportTime, analysisTime));
+                                            continue;
+                                        }
 
-                                        outputClass = subnetworkParser.ParseThis(selectedSubnetwork.Name, exportFile, statusInfo.fieldName, statusInfo.statusValue, _clearResults, startingElements, spatialReference);
+                                        outputClass = subnetworkParser.OutputGeometry(spatialReference, selectedSubnetwork.Name, deleteAllRows: false);
+                                        analysisTime = (DateTime.Now - start).TotalSeconds;
+                                        totalAnalysisTime += analysisTime;
+
+                                        timingMessages.Add(string.Format("{0}\t{1}\t{2}\t{3}\tSuccess", subnetworkName, featureCount, exportTime, analysisTime));
+                                        NotifyPropertyChanged("Messages");
 
                                         #endregion
 
                                     }
                                     else
                                     {
-                                        _messages.Add("Subnetwork '" + selectedSubnetwork.Name + "' in an unsupported state: " + subnetworkState);
+
+                                        #region Analyze a clean subnetwork
+
+                                        var start = DateTime.Now;
+                                        if (!TraceHelper.ExportSubnetwork(_utilityNetwork, selectedSubnetwork, exportFile, [statusInfo.fieldName]))
+                                        {
+                                            _messages.Add("Unable to export subnetwork: " + subnetworkName);
+                                            NotifyPropertyChanged("Messages");
+                                            timingMessages.Add(string.Format("{0}\t{1}\t{2}\t{3}\tUnable to export", subnetworkName, featureCount, exportTime, analysisTime));
+                                            return;
+                                        }
+                                        exportTime = (DateTime.Now - start).TotalSeconds;
+                                        totalExportTime += exportTime;
+
+                                        var subnetworkParser = new SubnetworkParser(utilityNetworkDefinition, selectedTier);
+                                        start = DateTime.Now;
+                                        featureCount = subnetworkParser.ParseSubnetwork(selectedSubnetwork.Name, exportFile, statusInfo.fieldName, statusInfo.statusValue, _clearResults);
+                                        if (featureCount == 0)
+                                        {
+                                            _messages.Add("Subnetwork contains no connectivity/features: " + subnetworkName);
+                                            NotifyPropertyChanged("Messages");
+                                            timingMessages.Add(string.Format("{0}\t{1}\t{2}\t{3}\tNo connectivity/features", subnetworkName, featureCount, exportTime, analysisTime));
+                                            continue;
+                                        }
+
+                                        outputClass = subnetworkParser.OutputGeometry(spatialReference, selectedSubnetwork.Name, deleteAllRows: false);
+                                        analysisTime = (DateTime.Now - start).TotalSeconds;
+                                        totalAnalysisTime += analysisTime;
+
+                                        timingMessages.Add(string.Format("{0}\t{1}\t{2}\t{3}\tSuccess", subnetworkName, featureCount, exportTime, analysisTime));
                                         NotifyPropertyChanged("Messages");
-                                        return;
+
+                                        #endregion
+
                                     }
+                                }
+                                catch (GeodatabaseException ex)
+                                {
+                                    _messages.Add("Analyzing subnetwork failed: " + subnetworkName + " - " + ex.Message);
+                                    if(ex.Message.Contains("One or more dirty areas were discovered."))
+                                        timingMessages.Add(string.Format("{0}\t{1}\t{2}\t{3}\t{4}", subnetworkName, featureCount, exportTime, analysisTime, "One or more dirty areas were discovered."));
+                                    else
+                                        timingMessages.Add(string.Format("{0}\t{1}\t{2}\t{3}\t{4}", subnetworkName, featureCount, exportTime, analysisTime, ex.Message));
+                                    NotifyPropertyChanged("Messages");
+
+                                    Debug.WriteLine("Analyzing subnetwork failed: " + subnetworkName);
+                                    Debug.WriteLine(ex.ToString());
                                 }
                                 catch (Exception ex)
                                 {
                                     _messages.Add("Analyzing subnetwork failed: " + subnetworkName);
+                                    timingMessages.Add(string.Format("{0}\t{1}\t{2}\t{3}\tUnknown Error", subnetworkName, featureCount, exportTime, analysisTime));
                                     NotifyPropertyChanged("Messages");
 
                                     Debug.WriteLine("Analyzing subnetwork failed: " + subnetworkName);
@@ -842,15 +907,23 @@ namespace Calculate_Flow_Arrows
                                 }
                             }
 
+                            _messages.Add("");
+                            _messages.Add("Total Subnetworks Analyzed: " + index);
+                            _messages.Add("Total Export Time: " + totalExportTime);
+                            _messages.Add("Average Export Time: " + (totalExportTime/index));
+                            _messages.Add("Total Analysis Time: " + totalAnalysisTime);
+                            _messages.Add("Average Analysis Time: " + (totalAnalysisTime/index));
+                            _messages.Add("Subnetwork\tFeatures\tExport Time\tAnalysis Time\tMessage");
+                            foreach (var message in timingMessages)
+                                _messages.Add(message);
+                            NotifyPropertyChanged("Messages");
+
                             if (outputClass == null)
                             {
                                 _messages.Add("Failed to analyze flow for subnetwork.");
                                 NotifyPropertyChanged("Messages");
                                 return;
                             }
-
-                            _messages.Add("Analysis complete.");
-                            NotifyPropertyChanged("Messages");
 
                             var activeMapView = MapView.Active;
                             var activeMap = activeMapView.Map;

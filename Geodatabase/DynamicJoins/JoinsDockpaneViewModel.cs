@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2019 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -198,8 +198,8 @@ namespace DynamicJoins
 				}
 				else
 				{
-					var field = LeftFields.FirstOrDefault((f) => f.Name == value);
-					_leftField = field.Field;
+					var @field = LeftFields.FirstOrDefault((f) => f.Name == value);
+					_leftField = @field.Field;
 				}
         NotifyPropertyChanged(() => LeftField);
 				VisibleRelationship = string.IsNullOrEmpty(LeftField) && string.IsNullOrEmpty(RightField)
@@ -218,8 +218,8 @@ namespace DynamicJoins
 				}
 				else
 				{
-					var field = RightFields.FirstOrDefault((f) => f.Name == value);
-					_rightField = field.Field;
+					var @field = RightFields.FirstOrDefault((f) => f.Name == value);
+					_rightField = @field.Field;
 				}
 				NotifyPropertyChanged(() => RightField);
 				VisibleRelationship = string.IsNullOrEmpty(LeftField) && string.IsNullOrEmpty(RightField)
@@ -258,8 +258,8 @@ namespace DynamicJoins
 									fields.AddRange(LeftFields.Select(item => $"{leftTable.GetName()}.{item.Field.Name}"));
 									fields.AddRange(RightFields.Select(item => $"{rightTable.GetName()}.{item.Field.Name}"));
 									var stringBuilder = new StringBuilder();
-									foreach (var field in fields)
-										stringBuilder.Append(field).Append(",");
+									foreach (var @field in fields)
+										stringBuilder.Append(@field).Append(",");
 									stringBuilder.Remove(stringBuilder.Length - 1, 1);
 									commaSeparatedFields = stringBuilder.ToString();
 								}

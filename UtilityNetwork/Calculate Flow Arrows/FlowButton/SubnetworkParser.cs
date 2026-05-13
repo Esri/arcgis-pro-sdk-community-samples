@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2025 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -19,10 +19,8 @@
 using ArcGIS.Core.Data;
 using ArcGIS.Core.Data.DDL;
 using ArcGIS.Core.Data.UtilityNetwork;
-using ArcGIS.Core.Data.UtilityNetwork.Trace;
 using ArcGIS.Core.Geometry;
 using ArcGIS.Desktop.Core;
-using ArcGIS.Desktop.Layouts.Events;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -35,10 +33,11 @@ namespace Calculate_Flow_Arrows.FlowButton
 {
     internal class SubnetworkParser
     {
-        public SubnetworkParser(UtilityNetworkDefinition utilityNetworkDefinition, Tier sourceTier)
+        public SubnetworkParser(UtilityNetworkDefinition utilityNetworkDefinition, Tier sourceTier, bool synthesizeGeometry = true)
         {
             _isSourceBasedDomain = sourceTier.DomainNetwork.SubnetworkControllerType == SubnetworkControllerType.Source;
             _tierName = sourceTier.Name;
+            _synthesizeGeometry = synthesizeGeometry;
             LoadTerminalConfigurations(utilityNetworkDefinition);
         }
 
@@ -48,10 +47,19 @@ namespace Calculate_Flow_Arrows.FlowButton
             return _lastNetworkID++;
         }
 
+        private Dictionary<int, string> _DirectionLookup =
+            new()
+            {
+                {1, "With Digitized Direcction"},
+                {2, "Against Digitized Direcction"},
+                {3, "Indeterminate"},
+                {4, "Bi-Directional"}
+            };
+
         /// <summary>
         /// The graph stores all the connectivity for each element.
         /// The key is the element's unique identifier
-        /// The value is the edge and 
+        /// The value is the edge and to element
         /// </summary>
         private Dictionary<long, List<(long viaElement, long toElement, bool withDigitizedDirection)>> _graph = new Dictionary<long, List<(long viaElement, long toElement, bool withDigitizedDirection)>>();
 
@@ -67,13 +75,17 @@ namespace Calculate_Flow_Arrows.FlowButton
         private Dictionary<(long networkSourceId, string globalId, double fromPosition, double toPosition), long> _edges = new Dictionary<(long networkSourceId, string globalId, double fromPosition, double toPosition), long>();
         private Dictionary<long, (long networkSourceId, string globalId, double fromPosition, double toPosition)> _edgesReverseLookup = new Dictionary<long, (long networkSourceId, string globalId, double fromPosition, double toPosition)>();
 
+        private Dictionary<long, (long fromNode, long toNode)> _edgeNodes = new Dictionary<long, (long fromNode, long toNode)>();
+
         private Dictionary<long, bool> _barriers = new Dictionary<long, bool>();
 
         private Dictionary<long, JObject> _edgeGeometry = new Dictionary<long, JObject>();
+        private Dictionary<long, JObject> _pointGeometry = new Dictionary<long, JObject>();
 
         private Dictionary<long, Terminal> _terminalDefinitions = new Dictionary<long, Terminal>();
 
         private bool _isSourceBasedDomain = true;
+        private bool _synthesizeGeometry = true;
         private string _tierName = string.Empty;
         private long _singleTerminalId = -1;
 
@@ -86,197 +98,164 @@ namespace Calculate_Flow_Arrows.FlowButton
                 .First(terminal => terminal.Value.Name.Equals("Single Terminal", StringComparison.InvariantCultureIgnoreCase)).Key;
         }
 
-        public FeatureClass ParseThis(string subnetworkName, string subnetworkExportPath, string statusNetworkAttribute = "E:Device Status", long statusNetworkValue = 1, bool deletePreviousResults = false, IEnumerable<long> startingElements = null, SpatialReference spatialReference = null)
+        public int ParseSubnetwork(string subnetworkName, string subnetworkExportPath, string statusNetworkAttribute = "E:Device Status", long statusNetworkValue = 1, bool deletePreviousResults = false, IEnumerable<long> startingElements = null)
         {
-            try
+
+            #region Prepare internal members to store the results
+
+            // In case a user calls this method twice
+            if (startingElements == null)
             {
-
-                #region Prepare internal members to store the results
-
-                // In case a user calls this method twice
-                if(startingElements == null)
-                {
-                    _graph.Clear();
-
-                    _nodes.Clear();
-                    _nodesReverseLookup.Clear();
-
-                    _edges.Clear();
-                    _edgesReverseLookup.Clear();
-                    _edgeGeometry.Clear();
-                }
-
-                _barriers.Clear();
-
-                var connectivity = new List<JObject>();
-                var controllers = new List<JObject>();
-                var featureElements = new List<JObject>();
-                var sourceMapping = new List<JObject>();
-                JObject spatialReferenceElement = null;
-
-                #endregion
-
-                #region Parse the JSON file
-
-                // The subnetwork name isn't stored in the file ... so we remember the export name
-                var exportName = Path.GetFileNameWithoutExtension(subnetworkExportPath);
-
-                using Stream fileStream = new FileStream(subnetworkExportPath, FileMode.Open);
-                using var streamReader = new StreamReader(fileStream);
-                var jsonReader = new JsonTextReader(streamReader);
-                var serializer = new Newtonsoft.Json.JsonSerializer();
-
-                // Read the opening object
-                if (!jsonReader.Read())
-                    throw new ArgumentException("Unable to process file: Unable to read file.", "Subnetwork export");
-                if (jsonReader.TokenType != JsonToken.StartObject)
-                    throw new ArgumentException("Unable to process file: Invalid start token", "Subnetwork export");
-
-                while (jsonReader.Read())
-                {
-                    if (jsonReader.TokenType != JsonToken.PropertyName)
-                        continue;
-
-                    var propertyName = jsonReader.Value.ToString();
-                    if (!jsonReader.Read())
-                        break;
-
-                    switch (jsonReader.TokenType)
-                    {
-                        case JsonToken.StartObject:
-                            // Debug.WriteLine("Object: " + propertyName);
-                            var thisObject = serializer.Deserialize<Newtonsoft.Json.Linq.JObject>(jsonReader);
-                            //Debug.WriteLine(thisObject);
-
-                            if (propertyName.Equals("spatialReference", StringComparison.InvariantCultureIgnoreCase))
-                                spatialReferenceElement = thisObject;
-                            break;
-                        case JsonToken.StartArray:
-                            // Debug.WriteLine("Array: " + propertyName);
-                            var elementCount = 0;
-                            while (jsonReader.TokenType != JsonToken.EndArray)
-                            {
-                                elementCount += 1;
-                                jsonReader.Read();
-                                if (jsonReader.TokenType == JsonToken.EndArray)
-                                    break;
-
-                                var thisElement = serializer.Deserialize<Newtonsoft.Json.Linq.JObject>(jsonReader);
-                                switch (propertyName)
-                                {
-                                    case "connectivity":
-                                        connectivity.Add(thisElement);
-                                        break;
-                                    case "controllers":
-                                        controllers.Add(thisElement);
-                                        break;
-                                    case "featureElements":
-                                        featureElements.Add(thisElement);
-                                        break;
-                                    case "sourceMapping":
-                                        sourceMapping.Add(thisElement);
-                                        break;
-                                }
-                            }
-                            // Debug.WriteLine(elementCount + " elements");
-                            break;
-                        default:
-                            Debug.WriteLine("Unhandled property: " + propertyName);
-                            break;
-                    }
-                }
-
-                jsonReader.Close();
-                streamReader.Close();
-                fileStream.Close();
-
-                #endregion
-
-                #region Load Connectivity
-
-                if (connectivity == null)
-                    throw new ArgumentException("Unable to process file: No connectivity element", "Subnetwork export");
-                else if (connectivity.Count == 0)
-                    throw new ArgumentException("Unable to process file: No connectivity information in export", "Subnetwork export");
-                LoadGraph(connectivity);
-                //Debug.WriteLine("Nodes: " + _nodes.Count);
-                //Debug.WriteLine("Edges: " + _edges.Count);
-                //Debug.WriteLine("Connections: " + _graph.Count);
-
-                #endregion
-
-                #region Load Features / Barriers
-
-                if (featureElements == null)
-                    throw new ArgumentException("Unable to process file: No feature element", "Subnetwork export");
-                else if (featureElements.Count == 0)
-                    throw new ArgumentException("Unable to process file: No features", "Subnetwork export");
-
-                // Processing features will load geometry and flag any features as barriers
-                // We currently only support open/closed status.
-                // There is currently no support for additional barriers (lifecycle status) or propagation
-                ProcessFeatures(featureElements, statusNetworkAttribute, statusNetworkValue);
-
-                #endregion
-
-                #region Load spatial reference (if not provided)
-
-                if(spatialReference == null)
-                {
-                    if (spatialReferenceElement == null)
-                        throw new ArgumentException("Unable to process file: No spatial reference element", "Subnetwork export");
-
-                    spatialReference = SpatialReferenceBuilder.FromJson(spatialReferenceElement.ToString());
-                    if (spatialReference == null)
-                        throw new ArgumentException("Unable to process file: Invalid spatial reference element", "Subnetwork export");
-                }
-
-                #endregion
-
-                #region Set subnetwork controllers as starting elements (if not provided)
-
-                // Breadth first is fast, but has known issues with how it detects loops
-                if (startingElements == null)
-                {
-                    if (controllers == null)
-                        throw new ArgumentException("Unable to process file: No subnetwork controller element", "Subnetwork export");
-                    else if (controllers.Count == 0)
-                        throw new ArgumentException("Unable to process file: No subnetwork controllers", "Subnetwork export");
-
-                    startingElements = controllers.Select(controller => GetKey(controller));
-                }
-
-                #endregion
-
-                #region Walk the graph
-
-                // Depth first is better at loop detection
-                Dictionary<long, int> flowDirections = WalkGraphDepthFirst(startingElements);
-
-                #endregion
-
-                #region Persist the results
-
-                return ConstructGeometryWithFlow(flowDirections, spatialReference, subnetworkName, deleteAllRows: deletePreviousResults);
-
-                #endregion
-            }
-            finally
-            {
-
-                #region Clear internal variables
-
                 _graph.Clear();
+
                 _nodes.Clear();
                 _nodesReverseLookup.Clear();
+
                 _edges.Clear();
                 _edgesReverseLookup.Clear();
                 _edgeGeometry.Clear();
-                _barriers.Clear();
 
-                #endregion
-
+                _edgeNodes.Clear();
             }
+
+            _barriers.Clear();
+
+            var connectivity = new List<JObject>();
+            var controllers = new List<JObject>();
+            var featureElements = new List<JObject>();
+            var sourceMapping = new List<JObject>();
+            JObject spatialReferenceElement = null;
+
+            #endregion
+
+            #region Parse the JSON file
+
+            // The subnetwork name isn't stored in the file ... so we remember the export name
+            var exportName = Path.GetFileNameWithoutExtension(subnetworkExportPath);
+
+            using Stream fileStream = new FileStream(subnetworkExportPath, FileMode.Open);
+            using var streamReader = new StreamReader(fileStream);
+            var jsonReader = new JsonTextReader(streamReader);
+            var serializer = new Newtonsoft.Json.JsonSerializer();
+
+            // Read the opening object
+            if (!jsonReader.Read())
+                throw new ArgumentException("Unable to process file: Unable to read file.", "Subnetwork export");
+            if (jsonReader.TokenType != JsonToken.StartObject)
+                throw new ArgumentException("Unable to process file: Invalid start token", "Subnetwork export");
+
+            while (jsonReader.Read())
+            {
+                if (jsonReader.TokenType != JsonToken.PropertyName)
+                    continue;
+
+                var propertyName = jsonReader.Value.ToString();
+                if (!jsonReader.Read())
+                    break;
+
+                switch (jsonReader.TokenType)
+                {
+                    case JsonToken.StartObject:
+                        // Debug.WriteLine("Object: " + propertyName);
+                        var thisObject = serializer.Deserialize<Newtonsoft.Json.Linq.JObject>(jsonReader);
+                        //Debug.WriteLine(thisObject);
+
+                        if (propertyName.Equals("spatialReference", StringComparison.InvariantCultureIgnoreCase))
+                            spatialReferenceElement = thisObject;
+                        break;
+                    case JsonToken.StartArray:
+                        // Debug.WriteLine("Array: " + propertyName);
+                        var elementCount = 0;
+                        while (jsonReader.TokenType != JsonToken.EndArray)
+                        {
+                            elementCount += 1;
+                            jsonReader.Read();
+                            if (jsonReader.TokenType == JsonToken.EndArray)
+                                break;
+
+                            var thisElement = serializer.Deserialize<Newtonsoft.Json.Linq.JObject>(jsonReader);
+                            switch (propertyName)
+                            {
+                                case "connectivity":
+                                    connectivity.Add(thisElement);
+                                    break;
+                                case "controllers":
+                                    controllers.Add(thisElement);
+                                    break;
+                                case "featureElements":
+                                    featureElements.Add(thisElement);
+                                    break;
+                                case "sourceMapping":
+                                    sourceMapping.Add(thisElement);
+                                    break;
+                            }
+                        }
+                        // Debug.WriteLine(elementCount + " elements");
+                        break;
+                    default:
+                        Debug.WriteLine("Unhandled property: " + propertyName);
+                        break;
+                }
+            }
+
+            jsonReader.Close();
+            streamReader.Close();
+            fileStream.Close();
+
+            #endregion
+
+            #region Load Features / Barriers
+
+            if (featureElements == null)
+                throw new ArgumentException("Unable to process file: No feature element", "Subnetwork export");
+            else if (featureElements.Count == 0)
+                return 0;
+
+            // Processing features will load geometry and flag any features as barriers
+            // We currently only support open/closed status.
+            // There is currently no support for additional barriers (lifecycle status) or propagation
+            // Process features before connectivity, so we can synthesize geometries
+            ProcessFeatures(featureElements, statusNetworkAttribute, statusNetworkValue);
+
+            #endregion
+
+            #region Load Connectivity
+
+            if (connectivity == null)
+                throw new ArgumentException("Unable to process file: No connectivity element", "Subnetwork export");
+            else if (connectivity.Count == 0)
+                return 0;
+
+            LoadGraph(connectivity);
+            //Debug.WriteLine("Nodes: " + _nodes.Count);
+            //Debug.WriteLine("Edges: " + _edges.Count);
+            //Debug.WriteLine("Connections: " + _graph.Count);
+
+            #endregion
+
+            #region Set subnetwork controllers as starting elements (if not provided)
+
+            // Breadth first is fast, but has known issues with how it detects loops
+            if (startingElements == null)
+            {
+                if (controllers == null)
+                    throw new ArgumentException("Unable to process file: No subnetwork controller element", "Subnetwork export");
+                else if (controllers.Count == 0)
+                    throw new ArgumentException("Unable to process file: No subnetwork controllers", "Subnetwork export");
+
+                startingElements = controllers.Select(controller => GetKey(controller));
+            }
+
+            #endregion
+
+            #region Walk the graph
+
+            // Depth first is better at loop detection
+            _flowDirections = WalkGraphDepthFirst(startingElements);
+
+            #endregion
+
+            return featureElements.Count;
         }
 
         internal IEnumerable<long> GetStartingElementKeys(IEnumerable<Element> startingElements)
@@ -375,18 +354,57 @@ namespace Calculate_Flow_Arrows.FlowButton
                     edges = _graph[toKey] = new List<(long viaElement, long toElement, bool withDigitizedDirection)>();
                 edges.Add(new(viaKey, fromKey, false));
 
+                _edgeNodes[viaKey] = (fromKey, toKey);
+
+                if (_edgeGeometry.ContainsKey(viaKey))
+                    continue;
+
                 // Only proceed if there is a via geometry
-                if (!connectivityElement.TryGetValue("viaGeometry", out var viaGeometryObject))
-                    continue;
+                if (connectivityElement.TryGetValue("viaGeometry", out var viaGeometryObject))
+                {
+                    if (viaGeometryObject is not JObject viaGeometry)
+                        continue;
 
-                if (viaGeometryObject is not JObject viaGeometry)
-                    continue;
+                    // Only proceed if the geometry is present
+                    if (!viaGeometry.TryGetValue("geometry", out var geometryObject))
+                    {
+                        if (!_synthesizeGeometry)
+                            continue;
 
-                // Only proceed if the geometry is present
-                if (!viaGeometry.TryGetValue("geometry", out var geometryObject))
-                    continue;
+                        if (!_pointGeometry.TryGetValue(fromKey, out var fromGeometry))
+                        {
+                            if (!connectivityElement.TryGetValue("fromGeometry", out var fromGeometryObject))
+                                continue;
+                            fromGeometry = (JObject)fromGeometryObject;
+                            if (!fromGeometry.ContainsKey("x"))
+                                continue;
+                        }
+                        if (!_pointGeometry.TryGetValue(toKey, out var toGeometry))
+                        {
+                            if (!connectivityElement.TryGetValue("toGeometry", out var toGeometryObject))
+                                continue;
+                            toGeometry = (JObject)toGeometryObject;
+                            if (!toGeometry.ContainsKey("x"))
+                                continue;
+                        }
 
-                _edgeGeometry[viaKey] = (JObject)geometryObject;
+                        geometryObject = new JObject
+                        {
+                            ["hasZ"] = true,
+                            ["hasM"] = false,
+                            ["paths"] = new JArray
+                                {
+                                    new JArray
+                                    {
+                                        new JArray{ fromGeometry["x"], fromGeometry["y"], fromGeometry["z"], fromGeometry["m"] },
+                                        new JArray{toGeometry["x"], toGeometry["y"], toGeometry["z"], toGeometry["m"] },
+                                    }
+                                }
+                        };
+                    }
+
+                    _edgeGeometry[viaKey] = (JObject)geometryObject;
+                }
             }
         }
 
@@ -398,6 +416,7 @@ namespace Calculate_Flow_Arrows.FlowButton
         private List<long> _currentPath = new List<long>();
         private Stack<(int depth, long junctionId)> _pendingPaths = new Stack<(int depth, long junctionId)>();
         private Dictionary<long, long[]> _visitedPaths = new Dictionary<long, long[]>();
+        private Dictionary<long, int> _flowDirections = new Dictionary<long, int>();
 
         private Dictionary<long, int> WalkGraphDepthFirst(IEnumerable<long> startingElements)
         {
@@ -619,12 +638,19 @@ namespace Calculate_Flow_Arrows.FlowButton
         private void LoadGeometry(JObject featureElement)
         {
             // Only store the geometry when there is a position from, this filters out internal edges
-            if (!featureElement.ContainsKey("positionFrom") ||
-                !featureElement.ContainsKey("geometry"))
+            if (!featureElement.ContainsKey("geometry"))
                 return;
 
-            var edgeKey = GetKey(featureElement);
-            _edgeGeometry[edgeKey] = (JObject)featureElement["geometry"];
+            var featureKey= GetKey(featureElement);
+            if (featureElement.ContainsKey("positionFrom"))
+            {
+                _edgeGeometry[featureKey] = (JObject)featureElement["geometry"];
+                return;
+            }
+
+            if (!_synthesizeGeometry) return;
+
+            _pointGeometry[featureKey] = (JObject)featureElement["geometry"];
             return;
         }
 
@@ -686,7 +712,7 @@ namespace Calculate_Flow_Arrows.FlowButton
             }
         }
 
-        private FeatureClass ConstructGeometryWithFlow(Dictionary<long, int> flowDirections, SpatialReference spatialReference, string exportName, string geodatabasePath = null, bool deleteAllRows = false)
+        internal FeatureClass OutputGeometry(SpatialReference spatialReference, string exportName, string geodatabasePath = null, bool deleteAllRows = false)
         {
             if(string.IsNullOrEmpty(geodatabasePath))
             {
@@ -729,7 +755,7 @@ namespace Calculate_Flow_Arrows.FlowButton
 
                 using var rowBuffer = outputClass.CreateRowBuffer();
                 using var insertCursor = outputClass.CreateInsertCursor();
-                foreach (var flowDirection in flowDirections)
+                foreach (var flowDirection in _flowDirections)
                 {
                     // Skip over any internal edges
                     if (!_edgeGeometry.ContainsKey(flowDirection.Key))
@@ -742,25 +768,10 @@ namespace Calculate_Flow_Arrows.FlowButton
                     if (lineGeometry == null || lineGeometry.Length <= 0)
                         continue;
 
-                    switch(flowDirection.Value)
-                    {
-                        case 1:
-                            rowBuffer["CalculatedFlow"] = "With Digitized Direcction";
-                            break;
-                        case 2:
-                            rowBuffer["CalculatedFlow"] = "Against Digitized Direcction";
-                            break;
-                        case 3:
-                            rowBuffer["CalculatedFlow"] = "Indeterminate";
-                            break;
-                        case 4:
-                            rowBuffer["CalculatedFlow"] = "Bi-Directional";
-                            break;
-                        default:
-                            rowBuffer["CalculatedFlow"] = flowDirection.Value;
-                            break;
-                    }
+                    if (!_DirectionLookup.TryGetValue(flowDirection.Value, out var flowDirectionName))
+                        flowDirectionName = "Unknown";
 
+                    rowBuffer["CalculatedFlow"] = flowDirectionName;
                     rowBuffer["ExportName"] = exportName;
                     rowBuffer["TierName"] = _tierName;
                     rowBuffer["LastCalculated"] = lastCalculated;

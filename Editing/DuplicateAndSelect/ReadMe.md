@@ -13,10 +13,10 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  11/01/2025
-ArcGIS Pro:            3.6
-Visual Studio:         2022
-.NET Target Framework: net8.0-windows
+Date:                  2/16/2026
+ArcGIS Pro:            3.7
+Visual Studio:         2026
+Target Framework:      net10.0-windows
 ```
 
 ## Resources
@@ -34,16 +34,16 @@ Visual Studio:         2022
 3. Click the Start button to run the solution.  ArcGIS Pro will open.  
 4. Open an existing Project the contains a Map showing a FeatureLayer and a StandAloneTable.  
 5. Click on the "Add-in" tab and note the "Feature Duplicate and Select" and "Row Duplicate and Select" button groups.  
-![UI](Screenshot/Screenshot1.png)  
+![UI](Screenshots/Screen1.png)  
 6. Click the "Attributes" button to bring up the "Attributes" dockpane and make sure that the "selection" tab is selected.  
 7. Select one Feature and one Row (in the Standalone Table).  
-![UI](Screenshot/Screenshot2.png)  
+![UI](Screenshots/Screen2.png)  
 8. Click the "Duplicate Add Selection" button to create a duplicate of the first selected feature and add the newly created feature to the existing selection.  
-![UI](Screenshot/Screenshot3.png)  
+![UI](Screenshots/Screen3.png)  
 9. Next to perform the same operation on a Standalone Table  
-![UI](Screenshot/Screenshot4.png)  
+![UI](Screenshots/Screen4.png)  
 10. Click the "Table Dupl. Add Selection" button to duplicate the first selected row and add the newly created row to the selected set.  
-![UI](Screenshot/Screenshot5.png)  
+![UI](Screenshots/Screen5.png)  
   
 
 <!-- End -->

@@ -1,4 +1,4 @@
-//   Copyright 2019 Esri
+//   Copyright 2026 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -68,7 +68,8 @@ namespace FilterFeaturesBasedOnAttributesWithinAnExtent
       {
         using (var table = _featureLayer.GetTable())
         {
-          var newFields = new ObservableCollection<string>(table.GetDefinition().GetFields().Select(field => field.Name));
+          using var tableDefinition = table.GetDefinition();
+          var newFields = new ObservableCollection<string>(tableDefinition.GetFields().Select(field => field.Name));
           lock (_collectionLock)
           {
             Fields.Clear();
@@ -278,7 +279,8 @@ namespace FilterFeaturesBasedOnAttributesWithinAnExtent
         {
           using (var table = featureLayer.GetTable())
           {
-            resultField = table.GetDefinition().GetFields().FirstOrDefault(field => field.Name == fieldName);
+            using var tableDefinition = table.GetDefinition();
+            resultField = tableDefinition.GetFields().FirstOrDefault(field => field.Name == fieldName);
           }
         }
         return resultField;

@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2025 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -250,19 +250,14 @@ namespace ImportCsv
               MessageBox.Show($@"Failed to create feature class {NewFCName} in {GDBPath}");
               return;
             }
-            // add the new FeatureClass to the map
-            var newFc = await QueuedTask.Run(() =>
-            {
-              using Geodatabase geodatabase = new(new FileGeodatabaseConnectionPath(new Uri(Project.Current.DefaultGeodatabasePath)));
-              return geodatabase.OpenDataset<FeatureClass>(NewFCName);
-              //return LayerFactory.Instance.CreateLayer<FeatureLayer>(new FeatureLayerCreationParams(newFc) { Name = NewFCName }, MapView.Active.Map);
-            });
             // Copy the data from the CSV
             await QueuedTask.Run(() =>
             {
-              // spatial reference of the new feature class
-              var spatialRef = newFc.GetDefinition().GetSpatialReference();
-              (newFc.GetDatastore() as Geodatabase).ApplyEdits(() =>
+              using Geodatabase geodatabase = new(new FileGeodatabaseConnectionPath(new Uri(Project.Current.DefaultGeodatabasePath)));
+              using FeatureClass newFc = geodatabase.OpenDataset<FeatureClass>(NewFCName);
+              using FeatureClassDefinition newFcDefinition = newFc.GetDefinition();
+              var spatialRef = newFcDefinition.GetSpatialReference();
+              geodatabase.ApplyEdits(() =>
               {
                 // copy the data using geodatabase f/c only
 
@@ -284,11 +279,11 @@ namespace ImportCsv
                   MapPoint geom = GeometryEngine.Instance.Project(
                     pointWGS84, spatialRef) as MapPoint;
                   // copy the data
-                  var newRowBuffer = newFc.CreateRowBuffer();
+                  using var newRowBuffer = newFc.CreateRowBuffer();
                   newRowBuffer["Shape"] = geom;
                   newRowBuffer["LineNo"] = lineNo;
                   newRowBuffer["Name"] = values[2];
-                  newFc.CreateRow(newRowBuffer);
+                  using Row newRow = newFc.CreateRow(newRowBuffer);
                   lineNo++;
                 }
               });

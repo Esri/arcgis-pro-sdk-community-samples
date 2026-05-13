@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2019 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -170,17 +170,25 @@ namespace QueryBuilderControl
       // set up for the next selected mapMember
       BuildControlProperties(args.MapView);
     }
-
+    private DelayedInvoker _invoker = new DelayedInvoker(50);
     private void OnMapMemberPropertiesChanged(MapMemberPropertiesChangedEventArgs args)
     {
+      // check eventHint for ones we care about
+      if (!args.EventHints.Contains(MapMemberEventHint.DefinitionQuery) && !args.EventHints.Contains(MapMemberEventHint.Any))
+        return;
+
       //get all the mapMembers that have changed
       List<MapMember> changedMapMembers = args.MapMembers.ToList();
       //check if the list of mapMembers changed name is the same as the MapMemberName property
       var changedMapMember = changedMapMembers.FirstOrDefault(m => m.Name == MapMemberName);
       if (changedMapMember == null)
         return;
-      //Populate the definition query control if the mapMember is the same
-      BuildControlProperties(changedMapMember);
+      _invoker.Invoke(() =>
+      {
+        //Populate the definition query control if the mapMember is the same
+        // must run on UI thread
+        Utilities.RunOnUIThread(() => BuildControlProperties(changedMapMember));
+      });      
     }
     #endregion
 

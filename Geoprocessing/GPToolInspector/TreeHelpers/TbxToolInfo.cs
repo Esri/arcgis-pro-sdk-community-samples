@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2025 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data.UtilityNetwork.Trace;
 using ArcGIS.Core.Internal.CIM;
 using ArcGIS.Desktop.Framework.Contracts;
+using ArcGIS.Desktop.Internal.Core.Assistant;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -38,6 +39,17 @@ namespace GPToolInspector.TreeHelpers
 {
   public class Param
   {
+    // ctor
+    public Param(string name, string direction, string type, string displayname, Datatype dataType, Domain domain)
+    {
+      this.ParamName = name;
+      this.direction = direction;
+      this.type = type;
+      this.displayname = name;
+      this.datatype = dataType;
+      this.domain = domain;
+    }
+
     public string ParamName { get; set; }
     public string type { get; set; }
     public string control_guid { get; set; }
@@ -60,7 +72,7 @@ namespace GPToolInspector.TreeHelpers
   }
 
   /// <summary>
-  /// The domain class is used when the tool json is deserilized to a TbxToolInfo object.
+  /// The domain class is used when the tool json is de-serialized to a TbxToolInfo object.
   /// </summary>
   public class Domain
   {
@@ -181,7 +193,7 @@ namespace GPToolInspector.TreeHelpers
         json = TbxReader.ReplaceUsingMap(json, keyWordMap);
         //File.WriteAllText(@"C:\temp\test.json", json);
 
-        tool = System.Text.Json.JsonSerializer.Deserialize<TbxToolInfo>(json, TbxUtils.JsonOpt);
+        tool = JsonConvert.DeserializeObject<TbxToolInfo>(json);
         foreach (var theParamKey in tool.@params.Keys)
         {
           var theParam = tool.@params[theParamKey];
@@ -224,7 +236,7 @@ namespace GPToolInspector.TreeHelpers
               realDomain.DomainCodedValues = [];
             foreach (var theItem in domain.items)
             {
-              var itemDict = ((JsonElement)theItem).Deserialize<Dictionary<string, string>>();
+              var itemDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(theItem.ToString());
               if (itemDict != null)
               {
                 var codedValue = new CodedValue();
@@ -383,7 +395,7 @@ namespace GPToolInspector.TreeHelpers
     {
       foreach (var theItem in domain.items)
       {
-        var itemDict = ((JsonElement)theItem).Deserialize<Dictionary<string, object>>();
+        var itemDict = JsonConvert.DeserializeObject<Dictionary<string, object>>(theItem.ToString());
         if (itemDict == null)
         {
           System.Diagnostics.Trace.Assert(false);
@@ -396,34 +408,42 @@ namespace GPToolInspector.TreeHelpers
           case "GPSceneServiceLayerDomain":
             if (itemDict.Remove("servicelayertype", out object oServiceLayerType))
             {
-              var thisRealDomain = new RealDomain();
-              thisRealDomain.DomainType = sType;
-              thisRealDomain.ServiceLayerTypes = ((JsonElement)oServiceLayerType).Deserialize<List<string>>();
+              var thisRealDomain = new RealDomain
+              {
+                DomainType = sType,
+                ServiceLayerTypes = JsonConvert.DeserializeObject<List<string>>(oServiceLayerType.ToString())
+              };
               realDomains.Add(thisRealDomain);
             }
             break;
           case "GPFileDomain":
             if (itemDict.Remove("filetypes", out object ofiletypes))
             {
-              var thisRealDomain = new RealDomain();
-              thisRealDomain.DomainType = sType;
-              thisRealDomain.FileTypes = ((JsonElement)ofiletypes).Deserialize<List<string>>();
+              var thisRealDomain = new RealDomain
+              {
+                DomainType = sType,
+                FileTypes = JsonConvert.DeserializeObject<List<string>>(ofiletypes.ToString())
+              };
               realDomains.Add(thisRealDomain);
             }
             break;
           case "GPWorkspaceDomain":
             if (itemDict.Remove("workspacetype", out object oworkspacetypes))
             {
-              var thisRealDomain = new RealDomain();
-              thisRealDomain.DomainType = sType;
-              thisRealDomain.WorkspaceType = ((JsonElement)oworkspacetypes).Deserialize<List<string>>();
+              var thisRealDomain = new RealDomain
+              {
+                DomainType = sType,
+                WorkspaceType = JsonConvert.DeserializeObject<List<string>>(oworkspacetypes.ToString())
+              };
               realDomains.Add(thisRealDomain);
             }
             break;
           case "GPLayersAndTablesDomain":
             {
-              var thisRealDomain = new RealDomain();
-              thisRealDomain.DomainType = sType;
+              var thisRealDomain = new RealDomain
+              {
+                DomainType = sType
+              };
               realDomains.Add(thisRealDomain);
             }
             break;
@@ -431,40 +451,50 @@ namespace GPToolInspector.TreeHelpers
             {
               if (itemDict.Remove("geometrytype", out object ogeometrytypes))
               {
-                var thisRealDomain = new RealDomain();
-                thisRealDomain.DomainType = sType;
-                thisRealDomain.GeometryTypes = ((JsonElement)ogeometrytypes).Deserialize<List<string>>();
+                var thisRealDomain = new RealDomain
+                {
+                  DomainType = sType,
+                  GeometryTypes = JsonConvert.DeserializeObject<List<string>>(ogeometrytypes.ToString())
+                };
                 realDomains.Add(thisRealDomain);
               }
               if (itemDict.Remove("has_z", out object ohas_z))
               {
-                var thisRealDomain = new RealDomain();
-                thisRealDomain.DomainType = sType;
-                thisRealDomain.HasZ = ohas_z.ToString();
+                var thisRealDomain = new RealDomain
+                {
+                  DomainType = sType,
+                  HasZ = ohas_z.ToString()
+                };
                 realDomains.Add(thisRealDomain);
               }
               if (itemDict.Remove("include_z", out object oinclude_z))
               {
-                var thisRealDomain = new RealDomain();
-                thisRealDomain.DomainType = sType;
-                thisRealDomain.IncludeZ = oinclude_z.ToString();
+                var thisRealDomain = new RealDomain
+                {
+                  DomainType = sType,
+                  IncludeZ = oinclude_z.ToString()
+                };
                 realDomains.Add(thisRealDomain);
               }
             }
             break;
           case "null":
             {
-              var thisRealDomain = new RealDomain();
-              thisRealDomain.DomainType = sType;
+              var thisRealDomain = new RealDomain
+              {
+                DomainType = sType
+              };
               realDomains.Add(thisRealDomain);
             }
             break;
           case "GPDatasetDomain":
             if (itemDict.Remove("datasettype", out object odatasettypes))
             {
-              var thisRealDomain = new RealDomain();
-              thisRealDomain.DomainType = sType;
-              thisRealDomain.DatasetTypes = ((JsonElement)odatasettypes).Deserialize<List<string>>();
+              var thisRealDomain = new RealDomain
+              {
+                DomainType = sType,
+                DatasetTypes = JsonConvert.DeserializeObject<List<string>>(odatasettypes.ToString())
+              };
               realDomains.Add(thisRealDomain);
             }
             break;
@@ -477,16 +507,20 @@ namespace GPToolInspector.TreeHelpers
             {
               if (itemDict.Remove("fieldtype", out object ofieldtypes))
               {
-                var thisRealDomain = new RealDomain();
-                thisRealDomain.DomainType = sType;
-                thisRealDomain.FieldTypes = ((JsonElement)ofieldtypes).Deserialize<List<string>>();
+                var thisRealDomain = new RealDomain
+                {
+                  DomainType = sType,
+                  FieldTypes = JsonConvert.DeserializeObject<List<string>>(ofieldtypes.ToString())
+                };
                 realDomains.Add(thisRealDomain);
               }
               if (itemDict.Remove("exclude.field", out object oexcludefields))
               {
-                var thisRealDomain = new RealDomain();
-                thisRealDomain.DomainType = sType;
-                thisRealDomain.ExcludeFields = ((JsonElement)oexcludefields).Deserialize<List<string>>();
+                var thisRealDomain = new RealDomain
+                {
+                  DomainType = sType,
+                  ExcludeFields = JsonConvert.DeserializeObject<List<string>>(oexcludefields.ToString())
+                };
                 realDomains.Add(thisRealDomain);
               }
             }
@@ -498,7 +532,7 @@ namespace GPToolInspector.TreeHelpers
               //System.Diagnostics.Trace.Assert(false);
               break;
             }
-            var valueDicts = ((JsonElement)itemDict["items"]).Deserialize<Dictionary<string, string>[]>();
+            var valueDicts = JsonConvert.DeserializeObject<Dictionary<string, string>[]>((itemDict["items"]).ToString());
             foreach (var valueDict in valueDicts)
             {
               var codedValue = new CodedValue();
@@ -599,7 +633,7 @@ namespace GPToolInspector.TreeHelpers
               };
               if (itemDict.Remove("geometrytype", out object ogeometrytype))
               {
-                thisRealDomain.GeometryTypes = ((JsonElement)ogeometrytype).Deserialize<List<string>>();
+                thisRealDomain.GeometryTypes = JsonConvert.DeserializeObject<List<string>>(ogeometrytype.ToString());
               }
               realDomains.Add(thisRealDomain);
             }
@@ -612,7 +646,7 @@ namespace GPToolInspector.TreeHelpers
               if (itemDict.ContainsKey("items"))
               {
                 var items = itemDict["items"];
-                var dict = ((JsonElement)items).Deserialize<Dictionary<string, object>[]>();
+                var dict = JsonConvert.DeserializeObject<Dictionary<string, object>[]>(items.ToString());
                 if (dict.Length > 1)
                 {
                   System.Diagnostics.Trace.Assert(false);

@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2024 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -35,8 +35,8 @@ namespace VersionUpdatePerformance
     /// <param name="toFc"></param>
     public FieldMap(FeatureClass fromFc, FeatureClass toFc)
     {
-      var fromFcDef = fromFc.GetDefinition();
-      var toFcDef = toFc.GetDefinition();
+      using var fromFcDef = fromFc.GetDefinition();
+      using var toFcDef = toFc.GetDefinition();
       var excludeNames = new List<string>
       {
         fromFcDef.GetShapeField(),

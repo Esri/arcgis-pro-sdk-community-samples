@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2019 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -42,16 +42,65 @@ namespace EditOperationRowEvent
     {
       QueuedTask.Run(() =>
       {
-        //creates a crowd planning zone
-        var cpLayer = MapView.Active.Map.FindLayers("CrowdPlanning").FirstOrDefault() as FeatureLayer;
-        var geom = MapView.Active.Extent.Expand(0.1, 0.1, true);
-        var poly = new PolygonBuilderEx(geom).ToGeometry();
+        // create a new record
 
-        //create an edit operation and execute
-        var editOp = new EditOperation();
-        editOp.Name = "Create crowd plan";
-        editOp.Create(cpLayer,poly);
-        editOp.Execute();
+        // Get the active map view
+        var activeMapView = MapView.Active;
+
+        // Check if there is an active map view
+        if (activeMapView == null)
+        {
+          MessageBox.Show("No active map view found.", "Error");
+          return;
+        }
+
+        // Get the first feature layer in the current map
+        var featureLayer = activeMapView.Map.GetLayersAsFlattenedList()
+                                           .OfType<FeatureLayer>()
+                                           .FirstOrDefault();
+
+        // Check if a feature layer was found
+        if (featureLayer == null)
+        {
+          MessageBox.Show("No feature layer found in the current map.", "Error");
+          return;
+        }
+
+        // Use the feature layer as needed
+        MessageBox.Show($"Feature Layer Found: {featureLayer.Name}", "Success");
+
+        // Determine the type of geometry supported by the feature layer
+        var shapeType = featureLayer.GetFeatureClass().GetDefinition().GetShapeType();
+
+        switch(shapeType)
+        {
+          case GeometryType.Point:
+            MessageBox.Show("The feature layer supports Point geometry. This sample only works with polygon layers", "Geometry Type");
+            break;
+          case GeometryType.Multipoint:
+            MessageBox.Show("The feature layer supports Multipoint geometry. This sample only works with polygon layers", "Geometry Type");
+            break;
+          case GeometryType.Polyline:
+            MessageBox.Show("The feature layer supports Polyline geometry. This sample only works with polygon layers", "Geometry Type");
+            break;
+          case GeometryType.Polygon:
+            MessageBox.Show("The feature layer supports Polygon geometry.", "Geometry Type");
+
+            // Example: Create a polygon geometry
+            var geom = MapView.Active.Extent.Expand(0.1, 0.1, true);
+            var poly = new PolygonBuilderEx(geom).ToGeometry();
+
+            // Create an edit operation and execute
+            var editOp = new EditOperation();
+            editOp.Name = "Create crowd plan";
+            editOp.Create(featureLayer, poly);
+            editOp.Execute();
+            break;
+          default:
+            MessageBox.Show("Unknown geometry type.", "Geometry Type");
+            break;
+        }
+
       });
     }
   }

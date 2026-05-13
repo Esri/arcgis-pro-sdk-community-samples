@@ -13,10 +13,10 @@ Language:              C#
 Subject:               Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  11/01/2025
-ArcGIS Pro:            3.6
-Visual Studio:         2022
-.NET Target Framework: net8.0-windows
+Date:                  2/16/2026
+ArcGIS Pro:            3.7
+Visual Studio:         2026
+Target Framework:      net10.0-windows
 ```
 
 ## Resources
@@ -36,9 +36,7 @@ Using the sample:
 3. Open any project in ArcGIS Pro with a Map that contains a feature layer with a File Geodatabase or Enterprise Geodatabase data source.   
 4. After the map view is open switch on the Pro Ribbon to the 'Add-in' tab.  
 ![UI](Screenshots/Screen1.png)  
-5. Select a feature layer on the map's content dockpane.  Make sure the feature layer's datasource is either a file Geodatabase or an Enterprise Geodatabase.   
-6. The selected feature layer's datasource will be used to modify the feature class by adding a set of new attribute fields with different datatypes using the DLL API.    
-7. Click the "Add Fields to FeatureClass" button.  Refresh the Databases node on the Catalog dockpane and opened the layer's attribute table to see the newly added fields.  
+5. Click the "Add Fields to FeatureClass" button.  Refresh the Databases node on the Catalog dockpane and opened the layer's attribute table to see the newly added fields.  
 ![UI](Screenshots/Screen2.png)  
   
 

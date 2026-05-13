@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CoreHostResolveAssembly": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Data\\Admin\\AdminSample.gdb"
+    }
+  }
+}

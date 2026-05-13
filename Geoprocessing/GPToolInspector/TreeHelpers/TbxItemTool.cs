@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2025 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -32,6 +32,14 @@ namespace GPToolInspector.TreeHelpers
 {
   internal class TbxItemTool : TbxItemBase
   {
+    public TbxItemTool(TbxItemBase parent, TbxToolInfo tbxToolInfoPython) : base(parent)
+    {
+      this.TbxToolInfo = tbxToolInfoPython;
+      IsSelected = false;
+      tbxToolInfoPython.Category = tbxToolInfoPython.FileName;
+      tbxToolInfoPython.FileName = tbxToolInfoPython.displayname;
+    }
+
     public TbxItemTool(TbxItemBase parent, string category, string tbxPath) : base(parent) 
     {
       CurrentFolder = string.Empty;
@@ -76,7 +84,7 @@ namespace GPToolInspector.TreeHelpers
     /// <summary>
     /// Command to open the tool dialog for the toolbox item
     /// </summary>
-    public virtual ICommand CmdToolDialog
+    public override ICommand CmdToolDialog
     {
       get => new RelayCommand((args) =>
       {
@@ -89,7 +97,7 @@ namespace GPToolInspector.TreeHelpers
     /// <summary>
     /// Command to open the tool inspector for the toolbox item
     /// </summary>
-    public virtual ICommand CmdToolInspector
+    public override ICommand CmdToolInspector
     {
       get
       {

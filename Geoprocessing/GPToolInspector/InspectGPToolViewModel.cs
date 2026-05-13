@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2025 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -54,7 +54,7 @@ namespace GPToolInspector
     private const string _dockPaneID = "GPToolInspector_InspectGPTool";
     private ObservableCollection<GeoprocessingProjectItem> _GeoProcessingProjItems = [];
     private ObservableCollection<TbxItemBase> _SearchResults = [];
-    private object _lock = new();
+    private readonly object _lock = new();
 
     protected InspectGPToolViewModel()
     {
@@ -234,6 +234,13 @@ namespace GPToolInspector
         Title = "System Toolboxes"
       };
       TbxItems.Add(systemTbxItemRoot);
+      string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+      var userToolBoxPath = Path.Combine(localAppDataPath, @"ESRI\ArcGISPro\Toolboxes");
+      var userTbxItemRoot = new TbxItem(null, userToolBoxPath)
+      {
+        Title = "User Toolboxes"
+      };
+      TbxItems.Add(userTbxItemRoot);
     }
 
     private List<(string Path, string Category, TbxItem TbxItem)> cachedTbxItems;
@@ -311,23 +318,6 @@ namespace GPToolInspector
 
     #endregion Helpers
 
-  }
-
-  internal class ContextMenuButton1 : Button
-  {
-    protected override void OnClick()
-    {
-      // TODO: Replace with your desired logic
-      ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("First Action triggered from context menu.", "GPToolInspector");
-    }
-  }
-  internal class ContextMenuButton2 : Button
-  {
-    protected override void OnClick()
-    {
-      // TODO: Replace with your desired logic
-      ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("First Action triggered from context menu.", "GPToolInspector");
-    }
   }
 
   /// <summary>

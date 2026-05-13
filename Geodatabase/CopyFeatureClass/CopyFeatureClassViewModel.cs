@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2025 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -161,10 +161,9 @@ namespace CopyFeatureClass
       // feature class using the source F/C schema
       var isOk = await QueuedTask.Run<bool>(() =>
       {
-        var LayerDef = featureLayer.GetFeatureClass().GetDefinition();
         using Geodatabase geodatabase = new(new FileGeodatabaseConnectionPath(new Uri(Project.Current.DefaultGeodatabasePath)));
-        // Creating the attribute fields
-        FeatureClassDefinition originalFeatureClassDefinition = featureLayer.GetFeatureClass().GetDefinition();
+        using FeatureClass sourceFeatureClass = featureLayer.GetFeatureClass();
+        using FeatureClassDefinition originalFeatureClassDefinition = sourceFeatureClass.GetDefinition();
         FeatureClassDescription originalFeatureClassDescription = new(originalFeatureClassDefinition);
         FeatureClassDescription LayerDescription = new(destinationFeatureClassName, originalFeatureClassDescription.FieldDescriptions, originalFeatureClassDescription.ShapeDescription);
         SchemaBuilder schemaBuilder = new(geodatabase);
@@ -185,7 +184,7 @@ namespace CopyFeatureClass
       var newLyr = await QueuedTask.Run(() =>
       {
         using Geodatabase geodatabase = new(new FileGeodatabaseConnectionPath(new Uri(Project.Current.DefaultGeodatabasePath)));
-        var newFc = geodatabase.OpenDataset<FeatureClass>(destinationFeatureClassName);
+        using FeatureClass newFc = geodatabase.OpenDataset<FeatureClass>(destinationFeatureClassName);
         return LayerFactory.Instance.CreateLayer<FeatureLayer>(new FeatureLayerCreationParams(newFc) { Name = $@"Copied: {destinationFeatureClassName}" }, MapView.Active.Map);
       });
       // copy all data

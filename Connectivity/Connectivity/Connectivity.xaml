@@ -1,0 +1,55 @@
+<!--
+
+   Copyright 2026 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<UserControl x:Class="Connectivity.ConnectivityView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Connectivity"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             DataContext="local:ConnectivityViewModel">
+
+  <Grid>
+    <StackPanel Orientation="Vertical" Margin="10">
+      <!-- Heading -->
+      <TextBlock Text="{Binding Heading}" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" />
+
+      <!-- Airplane Mode -->
+      <StackPanel Orientation="Horizontal" Margin="0,5">
+        <TextBlock Text="Airplane Mode:" VerticalAlignment="Center" />
+        <Image Source="{Binding AirplaneStatusIcon}" Width="24" Height="24" Margin="5,0,0,0" Visibility="Visible" />
+      </StackPanel>
+
+      <!-- Mobile Device -->
+      <StackPanel Orientation="Horizontal" Margin="0,5">
+        <TextBlock Text="Mobile Device:" VerticalAlignment="Center" />
+        <Image Source="pack://application:,,,/Connectivity;component/Images/laptop_icon.png" Width="24" Height="24" Margin="5,0,0,0"
+                       Visibility="{Binding isMobileDevice}" />
+        <Image Source="pack://application:,,,/Connectivity;component/Images/desktop_icon.png" Width="24" Height="24" Margin="5,0,0,0"
+                       Visibility="{Binding isDesktop}" />
+      </StackPanel>
+
+      <!-- Internet Connection Status -->
+      <StackPanel Orientation="Horizontal" Margin="0,5">
+        <TextBlock Text="Connection Status:" VerticalAlignment="Center" />
+        <Image Width="24" Height="24" Margin="5,0,0,0" Source="{Binding InternetConnectionStatusIcon}" Visibility="Visible"/>
+      </StackPanel>
+    </StackPanel>
+  </Grid>
+</UserControl>

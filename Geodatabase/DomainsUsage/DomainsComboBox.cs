@@ -1,4 +1,4 @@
-//   Copyright 2019 Esri
+//   Copyright 2026 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -127,15 +127,16 @@ namespace DomainsUsage
                          return;
                      }
 
-                     var newTable = geodatabase.OpenDataset<Table>(tableName);
-
-                     using (RowCursor rowCursor = newTable.Search(null, false))
+                      using (var newTable = geodatabase.OpenDataset<Table>(tableName))
                      {
-                         while (rowCursor.MoveNext())
+                          using (RowCursor rowCursor = newTable.Search(null, false))
                          {
-                             using (Row row = rowCursor.Current)
+                              while (rowCursor.MoveNext())
                              {
-                                 Add(new ComboBoxItem(row["Name"].ToString()));
+                                  using (Row row = rowCursor.Current)
+                                  {
+                                      Add(new ComboBoxItem(row["Name"].ToString()));
+                                  }
                              }
                          }
                      }

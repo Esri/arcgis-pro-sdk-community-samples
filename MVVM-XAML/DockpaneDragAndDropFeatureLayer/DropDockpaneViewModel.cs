@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2024 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -35,10 +35,12 @@ using ArcGIS.Desktop.Mapping;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Xml.Serialization;
 
 namespace DockpaneDragAndDropFeatureLayer
 {
@@ -92,20 +94,21 @@ namespace DockpaneDragAndDropFeatureLayer
 		//TODO:Implement the drag and drop overrides for the dockpane class
 		public override void OnDragOver(DropInfo dropInfo)
     {
-      //default is to accept our data types
+      // default is to accept our data types
       dropInfo.Effects = DragDropEffects.All;
     }
 
     public override void OnDrop(DropInfo dropInfo)
     {
-      //eg, if you are accessing a dropped file
-      string filePath = dropInfo.Items[0].Data.ToString();
+      string catalogPath;
 
-      if (dropInfo.Data is List<ClipboardItem> clipboardItems) //Dropped from Catalog 
-      {
-				StringBuilder info = new StringBuilder();
+      if (dropInfo.Data is List<ClipboardItem> clipboardItems) 
+      {	// DEPRECATED:
+        // Dropped from Catalog in 3.6 or earlier
+        // Will always be _false_ at 3.7 or later
+        StringBuilder info = new();
         var thisItem = clipboardItems.FirstOrDefault();
-        var itemInfo = thisItem.ItemInfoValue.typeID;
+        var itemInfo = thisItem?.ItemInfoValue.typeID;
         // use the itemInfo to determine the type of item dropped
 				info.AppendLine(@$"Item type dropped: {itemInfo}");
 				TableOrFeatureClass = string.Empty;
@@ -132,11 +135,62 @@ namespace DockpaneDragAndDropFeatureLayer
 				if (!string.IsNullOrEmpty(TableOrFeatureClass))
 				{
 					PopulateTableAsync(TableOrFeatureClass, itemInfo);
-				}
-				//set to true if you handled the drop
-				dropInfo.Handled = true;
+          //set to true if you handled the drop
+          dropInfo.Handled = true;
+        }
       }
-		}
+      else if (dropInfo.Data is string xmlString)
+      {
+				// This is new for 3.7+!!! Note that it checks for type of "string"
+				// -not- binary format as above
+        var serializer = new XmlSerializer(typeof(ClipboardItem[]));
+        using var reader = new StringReader(xmlString);
+        // Deserialize
+        var clipBoardItems = (ClipboardItem[])serializer.Deserialize(reader);
+        //returns null if dropInfo.Data 
+        //did not come from Pro
+        // Use clipBoardItems as needed
+        // For example, you can process the first item:
+        var thisItem = clipBoardItems?.FirstOrDefault();
+        if (thisItem != null)
+        {
+          var itemInfo = thisItem.ItemInfoValue.typeID;
+          if (itemInfo != "database_fgdb"
+            && itemInfo != "fgdb_table") 
+          {
+            //Not a file gdb
+            dropInfo.Handled = false;
+            ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show($"Drag and drop File GDB only here");
+            return;
+          }
+          catalogPath = thisItem.CatalogPath;
+          if (!string.IsNullOrEmpty(catalogPath))
+          {
+            PopulateTableAsync(catalogPath, itemInfo);
+            //set to true if you handled the drop
+            dropInfo.Handled = true;
+          }
+        }
+      }
+      else
+      {
+        // Dropped from File Explorer
+        // Eg, if you are accessing a dropped file
+        string filePath = dropInfo.Items[0].Data.ToString();
+        FileInfo file = new(filePath);
+        if (string.Compare(file.Extension, ".gdb", true) == 0) //.gdb
+        {
+          catalogPath = filePath;
+          dropInfo.Handled = true;
+        }
+        else //Not a .gdb
+        {
+          dropInfo.Handled = false;
+          ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show($"Drag and drop File GDB only here");
+          return;
+        }
+      }
+    }
 
     private async void PopulateTableAsync (string catalogPath, string itemInfo)
     {
@@ -147,6 +201,7 @@ namespace DockpaneDragAndDropFeatureLayer
 				if (parts.Length != 2)
 				{
 					ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show($@"Unable to determine the geodatabase and table path from the catalog path: {catalogPath}");
+					return;
 				}
 				string gdbPath = parts[0] + ".gdb";
 				var fcNameParts = parts[1].Split(new string[] { "\\" }, StringSplitOptions.RemoveEmptyEntries);
@@ -165,24 +220,22 @@ namespace DockpaneDragAndDropFeatureLayer
 						bool bDefineColumns = true;
 						while (rowCursor.MoveNext())
 						{
-							using (var anyRow = rowCursor.Current)
-							{
-								if (bDefineColumns)
-								{
-									foreach (var fld in anyRow.GetFields().Where(fld => fld.FieldType != FieldType.Geometry))
-									{
-										listColumnNames.Add(new KeyValuePair<string, string>(fld.Name, fld.AliasName));
-									}
-								}
-								var newRow = new List<string>();
-								foreach (var fld in anyRow.GetFields().Where(fld => fld.FieldType != FieldType.Geometry))
-								{
-									newRow.Add((anyRow[fld.Name] == null) ? string.Empty : anyRow[fld.Name].ToString());
-								}
-								listValues.Add(newRow);
-								bDefineColumns = false;
-							}
-						}
+              using var anyRow = rowCursor.Current;
+              if (bDefineColumns)
+              {
+                foreach (var fld in anyRow.GetFields().Where(fld => fld.FieldType != FieldType.Geometry))
+                {
+                  listColumnNames.Add(new KeyValuePair<string, string>(fld.Name, fld.AliasName));
+                }
+              }
+              var newRow = new List<string>();
+              foreach (var fld in anyRow.GetFields().Where(fld => fld.FieldType != FieldType.Geometry))
+              {
+                newRow.Add((anyRow[fld.Name] == null) ? string.Empty : anyRow[fld.Name].ToString());
+              }
+              listValues.Add(newRow);
+              bDefineColumns = false;
+            }
 					}
 					var newDataTable = new DataTable();
 					foreach (var col in listColumnNames)

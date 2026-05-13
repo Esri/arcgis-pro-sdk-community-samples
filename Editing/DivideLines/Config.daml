@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-//   Copyright 2019 Esri
+//   Copyright 2026 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -49,15 +49,9 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <tool id="esri_sample_divideLinesTool" caption="Divide Lines" keytip="ZD"
-              className="DivideLinesTool"
-              smallImage="Images\CadastralSplitLineString16.png"
-              largeImage="Images\CadastralSplitLineString32.png"
-              condition="esri_mapping_mapPane"
-              categoryRefID="esri_editing_CommandList">
+        <tool id="esri_sample_divideLinesTool" caption="Divide Lines" keytip="ZD" className="DivideLinesTool" smallImage="Images\CadastralSplitLineString16.png" largeImage="Images\CadastralSplitLineString32.png" condition="esri_mapping_mapPane" categoryRefID="esri_editing_CommandList">
           <tooltip heading="Divide">
-            Divide a line into equal number of parts or parts of a specified length.<disabledText />
-          </tooltip>
+            Divide a line into equal number of parts or parts of a specified length.<disabledText /></tooltip>
           <content L_group="Divide" gallery2d="false" gallery3d="false" />
         </tool>
       </controls>

@@ -1,0 +1,16 @@
+{
+	"analysisName": "Pressure Zone",
+	"type": "InferSubnetworks",
+	"domainNetworkName": "Pipeline",
+	"tierName": "Pressure",
+	"terminals": "Downstream",
+	"definitionQuery": "",
+	"inputWorkspace": "D:\\Projects\\Pipeline_UtilityNetwork.geodatabase",
+	"sourceUtilityNetwork": "main.Network",
+	"outputFile": "D:\\Projects\\InferredSubnetworks.csv",
+	"outputWorkspace": "D:\\Projects\\Analysis Results.gdb",
+	"outputPoints": "Pressure_Points",
+	"outputPolylines": "Pressure_Lines",
+	"outputPolygons": "Pressure_Polygons",
+	"outputTable": "Pressure_Analysis"
+}

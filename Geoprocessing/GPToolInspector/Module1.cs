@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2025 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -30,8 +30,11 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.KnowledgeGraph;
 using ArcGIS.Desktop.Layouts;
 using ArcGIS.Desktop.Mapping;
+using Microsoft.Win32;
+using Python.Runtime;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,6 +81,41 @@ namespace GPToolInspector
       return true;
     }
 
+    protected override bool Initialize()
+    {
+      // initialize the python engine
+      Runtime.PythonDLL = PythonDllPath();
+      
+      PythonEngine.Initialize();
+      PythonEngine.BeginAllowThreads();
+      return true;
+    }
+
+    private static string PythonDllPath()
+    {
+      var keyName = Registry.LocalMachine + "\\SOFTWARE\\ESRI\\ArcGISPro";
+      const string condaRoot = "PythonCondaRoot";
+      const string condaEnv = "PythonCondaEnv";
+      var pythonCondaRoot = Registry.GetValue(keyName, condaRoot, null).ToString();
+      var pythonCondaEnv = Registry.GetValue(keyName, condaEnv, null).ToString();
+      var pythonExePath = System.IO.Path.Combine(pythonCondaRoot, "envs", pythonCondaEnv);
+      var dllFiles = Directory.GetFiles(pythonExePath, "python???.dll");
+      SortedList<string, string> sortedDllFiles = new SortedList<string, string>();
+      foreach (var dllFile in dllFiles)
+      {
+        sortedDllFiles.Add(Path.GetFileName(dllFile), dllFile);
+      }      
+      return dllFiles.LastOrDefault();
+    }
+
+    protected override void Uninitialize()
+    {
+      try
+      {
+        PythonEngine.Shutdown();
+      }
+      catch { }
+    }
     #endregion Overrides
 
   }

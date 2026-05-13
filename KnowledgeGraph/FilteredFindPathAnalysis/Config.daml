@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2026 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+
+<ArcGIS defaultAssembly="FilteredFindPathAnalysis.dll" defaultNamespace="FilteredFindPathAnalysis" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{e506a56a-8cb7-48cd-a497-caca17b6c626}" version="1.0" desktopVersion="3.7.0" product="ArcGISPro">
+    <Name>FilteredFindPathAnalysis</Name>
+    <Description>FilteredFindPathAnalysis description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+    <Company>esri, https://www.esri.com</Company>
+    <Date>11/19/2025 11:13:24 AM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <dependencies>
+    <dependency name="ADKnowledgeGraph.daml" />
+    <dependency name="ADMapping.daml" />
+    <dependency name="Editing.daml" />
+  </dependencies>
+  <modules>
+    <insertModule id="FilteredFindPathAnalysis_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="FilteredFindPathAnalysis_Tab1" caption="FFP Analysis Samples" keytip="T1">
+          <group refID="FilteredFindPathAnalysis_Group1" />
+          <group refID="FilteredFindPathAnalysis_Group2" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="FilteredFindPathAnalysis_Group1" caption="Utilities" appearsOnAddInTab="false" keytip="G0">
+          <!-- host controls within groups -->
+          <button refID="FilteredFindPathAnalysis_Ribbon_CreateLinkChart" size="large" />
+          <button refID="esri_editing_LinkChartSplitButton" size="large" />
+          <button refID="esri_mapping_clearSelectionButton" size="large" />
+          <button refID="esri_knowledgeGraph_filteredFindPaths" size="large" />
+        </group>
+        <group id="FilteredFindPathAnalysis_Group2" caption="Analysis" appearsOnAddInTab="false" keytip="G1">
+          <!-- host controls within groups -->
+          <button refID="FilteredFindPathAnalysis_Ribbon_KG_Run_FFP" size="large" />
+          <button refID="FilteredFindPathAnalysis_Ribbon_KG_Run_Expand" size="large" />
+          <button refID="FilteredFindPathAnalysis_Ribbon_KG_Run_Filtered_Expand" size="large" />
+          <button refID="FilteredFindPathAnalysis_Ribbon_KG_Run_Connect" size="large" />
+          <button refID="FilteredFindPathAnalysis_Ribbon_KG_Run_FindBetween" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="FilteredFindPathAnalysis_Ribbon_CreateLinkChart" caption="CreateLinkChart" 
+                className="FilteredFindPathAnalysis.Utilities.CreateLinkChart" loadOnClick="true" keytip="BC"
+                smallImage="GenericButtonBlue16" largeImage="panda32">
+          <tooltip heading="Tooltip Heading">
+						Create the initial link chart for the samples<disabledText /></tooltip>
+        </button>
+        <button id="FilteredFindPathAnalysis_Ribbon_KG_Run_FFP" caption="KG _Run_FFP" 
+                className="FilteredFindPathAnalysis.Ribbon.KG_Run_FFP" loadOnClick="true" keytip="BA"
+                smallImage="GenericButtonBlue16" largeImage="MarsCat32"
+                condition="esri_knowledgeGraph_LinkChartEditCondition">
+          <tooltip heading="Tooltip Heading">
+						Run an FFP Analysis
+						<disabledText>Click the Edit button in the Edit ribbon to enable this command.</disabledText></tooltip>
+        </button>
+        <button id="FilteredFindPathAnalysis_Ribbon_KG_Run_Expand" caption="KG _Run_Expand" 
+                className="FilteredFindPathAnalysis.Ribbon.KG_Run_Expand" loadOnClick="true" keytip="BB"
+                smallImage="GenericButtonBlue16" largeImage="BexDog32"
+                condition="esri_knowledgeGraph_LinkChartEditAndSelectionCondition">
+          <tooltip heading="Tooltip Heading">Run KG Expand
+					<disabledText>There is currently no selected entity in the Link Chart, or editing is disabled (Edit button in Edit ribbon).</disabledText></tooltip>
+        </button>
+        <button id="FilteredFindPathAnalysis_Ribbon_KG_Run_Filtered_Expand" caption="KG _Run_Filtered_Expand" 
+                className="FilteredFindPathAnalysis.Ribbon.KG_Run_Filtered_Expand" keytip="BR"
+                loadOnClick="true" smallImage="GenericButtonBlue16" largeImage="EvilGenius32"
+                condition="esri_knowledgeGraph_LinkChartEditAndSelectionCondition">
+          <tooltip heading="Tooltip Heading">
+						Run KG Filtered Expand
+						<disabledText>There is currently no selected entity in the Link Chart, or editing is disabled (Edit button in Edit ribbon).</disabledText></tooltip>
+        </button>
+        <button id="FilteredFindPathAnalysis_Ribbon_KG_Run_Connect" caption="KG _Run_Connect" 
+                className="FilteredFindPathAnalysis.Ribbon.KG_Run_Connect" loadOnClick="true" keytip="BX"
+                smallImage="GenericButtonBlue16" largeImage="T-Rex32" 
+                condition="esri_knowledgeGraph_LinkChartEditCondition">
+          <tooltip heading="Tooltip Heading">Run KG Connect
+					<disabledText>Click the Edit button in the Edit ribbon to enable this command.</disabledText></tooltip>
+        </button>
+        <button id="FilteredFindPathAnalysis_Ribbon_KG_Run_FindBetween" caption="KG _Run_FindBetween" 
+                className="FilteredFindPathAnalysis.Ribbon.KG_Run_FindBetween" loadOnClick="true" 
+                smallImage="GenericButtonBlue16" largeImage="Rabbit32" keytip="BF"
+                condition="esri_knowledgeGraph_LinkChartEditAndAtLeastTwoSelectionCondition">
+          <tooltip heading="Tooltip Heading">Run KG Find Between. At least 2 but no more than
+					10 entities must be selected<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>

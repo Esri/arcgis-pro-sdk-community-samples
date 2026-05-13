@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--//Copyright 2019 Esri
+<!--//Copyright 2026 Esri
 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -42,15 +42,12 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="DockpaneSimple_BookmarkDockpane_ShowButton" caption="Show My Bookmarks" 
-                className="BookmarkDockpane_ShowButton" loadOnClick="true" keytip="B1"
-                smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+        <button id="DockpaneSimple_BookmarkDockpane_ShowButton" caption="Show My Bookmarks" className="BookmarkDockpane_ShowButton" loadOnClick="true" keytip="B1" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
           <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="DockpaneSimple_BookmarkDockpane" caption="My Bookmarks" className="BookmarkDockpaneViewModel" 
-                  initiallyVisible="true" dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="DockpaneSimple_BookmarkDockpane" caption="My Bookmarks" className="BookmarkDockpaneViewModel" initiallyVisible="true" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="BookmarkDockpaneView" />
         </dockPane>
       </dockPanes>

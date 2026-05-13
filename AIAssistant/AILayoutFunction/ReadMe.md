@@ -1,7 +1,7 @@
 ## AILayoutFunction
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates how to add custom behavior to the ArcGIS Pro Assistant using the AIAssistantExtension and AIAssistantFunction attributes.  
+Demonstrates how to add custom behavior to the ArcGIS Pro Assistant using the AIAssistantExtension and AIAssistantFunction attributes.  
   
 
 
@@ -13,10 +13,10 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  11/01/2025
-ArcGIS Pro:            3.6
-Visual Studio:         2022
-.NET Target Framework: net8.0-windows
+Date:                  2/16/2026
+ArcGIS Pro:            3.7
+Visual Studio:         2026
+Target Framework:      net10.0-windows
 ```
 
 ## Resources
@@ -29,17 +29,17 @@ Visual Studio:         2022
 
 ## How to use the sample
 <!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
-1. This sample is based on the instructions found at https://github.com/Esri/arcgis-pro-sdk/wiki/ProGuide-Create-an-AI-Assistant-Function
-2. (Optional)Download the Community Sample data (see under the 'Resources' section for downloading sample data). The sample data can be used to test this add-in with prepackaged map documents.  
-3. In Visual Studio click the Build menu. Then select Build Solution.   
-4. Launch the debugger to open ArcGIS Pro.  
-5. Use any existing project or create a new project in ArcGIS Pro with some content.  
-6. Click the Help tab. You should get the AI Assistant button.  
+1. This sample is based on the instructions found at: https://github.com/Esri/arcgis-pro-sdk/wiki/ProGuide-Create-an-AI-Assistant-Function
+2. (Optional) Download the Community Sample Data (see the 'Resources' section for instructions). This data can be used to test the add-in with prepackaged map documents.    
+3. In Visual Studio, click the **Build** menu and select **Build Solution**.    
+4. Launch the debugger to open ArcGIS Pro.    
+5. Use an existing project or create a new one in ArcGIS Pro with some content.    
+6. Click the **Help** tab. You should see the **AI Assistant** button.    
      ![UI](screenshots/AIAssistantButton.png)  
-7. This button opens the AI Assitant pane, in which you can interact with the AI Assistant.   
-8. Type "Create a layout using the current map" in the AI Assistant pane and press the Enter key (or click the arrow).  
-9. Also try typing "create a layout for the current map with a legend, a scalebar, a north arrow and titled "Enhanced layout" and press the Enter key (or click the arrow).  
-10. You can try various combination of the parameters to confirm this works the way intended.  
+7. Click the button to open the AI Assistant pane, where you can interact with the assistant.    
+8. Type "Create a layout using the current map" in the AI Assistant pane and press **Enter** (or click the arrow).    
+9. You can also try: "Create a layout for the current map with a legend, a scale bar, a north arrow, and title it 'Enhanced layout'", then press **Enter** (or click the arrow).    
+10. Experiment with different combinations of parameters to confirm the functionality works as intended.  
   
 
 <!-- End -->

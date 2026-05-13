@@ -1,4 +1,4 @@
-//   Copyright 2019 Esri
+//   Copyright 2026 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -57,11 +57,15 @@ namespace DeleteFeaturesBasedOnSubtypeVersioned
            if (layer is FeatureLayer)
            {
              var featureLayer = layer as FeatureLayer;
-             if (featureLayer.GetTable().GetDatastore() is UnknownDatastore)
-               return;
              using (var table = featureLayer.GetTable())
              {
-               var readOnlyList = table.GetDefinition().GetSubtypes();
+                using (var datastore = table.GetDatastore())
+                {
+                  if (datastore is UnknownDatastore)
+                    return;
+                }
+                using var tableDefinition = table.GetDefinition();
+                var readOnlyList = tableDefinition.GetSubtypes();
                foreach (var subtype in readOnlyList)
                {
                  Add(new ComboBoxItem(subtype.GetName()));
@@ -117,8 +121,9 @@ namespace DeleteFeaturesBasedOnSubtypeVersioned
             using (Geodatabase newVersionGeodatabase = newVersion.Connect())
             using (Table newVersionTable = newVersionGeodatabase.OpenDataset<Table>(table.GetName()))
             {
-              string subtypeField = table.GetDefinition().GetSubtypeField();
-              int code = table.GetDefinition().GetSubtypes().First(subtype => subtype.GetName().Equals(item.Text)).GetCode();
+              using var tableDefinition = table.GetDefinition();
+              string subtypeField = tableDefinition.GetSubtypeField();
+              int code = tableDefinition.GetSubtypes().First(subtype => subtype.GetName().Equals(item.Text)).GetCode();
               QueryFilter queryFilter = new QueryFilter { WhereClause = string.Format("{0}={1}", subtypeField, code) };
 
               using (var rowCursor = newVersionTable.Search(queryFilter, false))

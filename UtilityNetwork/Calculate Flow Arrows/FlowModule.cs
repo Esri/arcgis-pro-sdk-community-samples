@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2025 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -16,21 +16,8 @@
    limitations under the License.
 
 */
-using ActiproSoftware.Windows.Controls.Ribbon.Controls;
-using ArcGIS.Core.Data.UtilityNetwork;
-using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
-using ArcGIS.Desktop.Mapping;
-using Newtonsoft.Json;
-using System.ComponentModel;
-using System.Configuration;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Media;
-using static System.Net.WebRequestMethods;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Calculate_Flow_Arrows
 {

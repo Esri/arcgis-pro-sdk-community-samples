@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2023 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -80,12 +80,12 @@ namespace GeoProcesssingEventsWithUI
         var gpResult = await Geoprocessing.ExecuteToolAsync(toolName, values,
                 null, null, (eventName, o) =>
                 {
-                  //     • "OnValidate" - (o as IGPMessage[])
-                  //     • "OnMessage" - (o as IGPMessage)
-                  //     • "OnProgressMessage" - (string)o
-                  //     • "OnProgressPos" - (int)o
-                  //     • "OnBeginExecute" - o = null
-                  //     • "OnEndExecute" - (o as IGPResult)
+                  //     ï¿½ "OnValidate" - (o as IGPMessage[])
+                  //     ï¿½ "OnMessage" - (o as IGPMessage)
+                  //     ï¿½ "OnProgressMessage" - (string)o
+                  //     ï¿½ "OnProgressPos" - (int)o
+                  //     ï¿½ "OnBeginExecute" - o = null
+                  //     ï¿½ "OnEndExecute" - (o as IGPResult)
                   switch (eventName)
                   {
                     case "OnValidate":

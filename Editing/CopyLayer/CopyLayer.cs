@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2023 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace CopyLayer
 {
@@ -42,97 +43,133 @@ namespace CopyLayer
   {
     protected override async void OnClick()
     {
-      var originalLayer = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault();
-      if (originalLayer ==  null)
+      try
       {
-        MessageBox.Show("Unable to find a FeatureLayer in the Table of Content");
-        return;
-      }
-      var newLayerName = $@"New_{originalLayer.Name}";
-      var isOk = await QueuedTask.Run<bool>(() =>
-      {
-        var LayerDef = originalLayer.GetFeatureClass().GetDefinition();
-        using Geodatabase geodatabase = new(new FileGeodatabaseConnectionPath(new Uri(Project.Current.DefaultGeodatabasePath)));
+        var originalLayer = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().FirstOrDefault();
+        if (originalLayer == null)
+        {
+          MessageBox.Show("Unable to find a FeatureLayer in the Table of Content");
+          return;
+        }
+        var newLayerName = MakeValidFeatureClassName($@"New_{originalLayer.Name}");
+        var isOk = await QueuedTask.Run<bool>(() =>
+        {
+          //var LayerDef = originalLayer.GetFeatureClass().GetDefinition();
+          using Geodatabase geodatabase = new(new FileGeodatabaseConnectionPath(new Uri(Project.Current.DefaultGeodatabasePath)));
           // Creating the attribute fields
+          // This static helper routine creates a FieldDescription for a GlobalID field with default values
+          ArcGIS.Core.Data.DDL.FieldDescription globalIDFieldDescription = ArcGIS.Core.Data.DDL.FieldDescription.CreateGlobalIDField();
+
+          // This static helper routine creates a FieldDescription for an ObjectID field with default values
           ArcGIS.Core.Data.DDL.FieldDescription objectIDFieldDescription = ArcGIS.Core.Data.DDL.FieldDescription.CreateObjectIDField();
+
+          //ArcGIS.Core.Data.DDL.FieldDescription objectIDFieldDescription = ArcGIS.Core.Data.DDL.FieldDescription.CreateObjectIDField();
           ArcGIS.Core.Data.DDL.FieldDescription field1 = new("field1", FieldType.Double);
           ArcGIS.Core.Data.DDL.FieldDescription field2 = new("field2", FieldType.Double);
-        List<ArcGIS.Core.Data.DDL.FieldDescription> fieldDescriptions = new()
+          List<ArcGIS.Core.Data.DDL.FieldDescription> fieldDescriptions =
+          [
+            globalIDFieldDescription, objectIDFieldDescription, field1, field2
+          ];
+          FeatureClassDefinition originalFeatureClassDefinition = originalLayer.GetFeatureClass().GetDefinition();
+          // Alternatively, ShapeDescriptions can be created from another feature class.  In this case, the new feature class will inherit the same shape properties of the existing class
+          ShapeDescription copiedShapeDescription = new(originalFeatureClassDefinition);
+          FeatureClassDescription LayerDescription = new(newLayerName, fieldDescriptions, copiedShapeDescription);
+          SchemaBuilder schemaBuilder = new(geodatabase);
+          schemaBuilder.Create(LayerDescription);
+          bool success = schemaBuilder.Build();
+          return success;
+        });
+        if (!isOk)
         {
-          objectIDFieldDescription, field1, field2
-        };
-        FeatureClassDefinition originalFeatureClassDefinition = originalLayer.GetFeatureClass().GetDefinition();
-        FeatureClassDescription originalFeatureClassDescription = new(originalFeatureClassDefinition);
-        FeatureClassDescription LayerDescription = new(newLayerName, fieldDescriptions, originalFeatureClassDescription.ShapeDescription);
-        SchemaBuilder schemaBuilder = new(geodatabase);
-        schemaBuilder.Create(LayerDescription);
-        bool success = schemaBuilder.Build();
-        return success;
-      });
-      if (!isOk)
-      {
-        MessageBox.Show($@"Failed to create {newLayerName}");
-        return;
-      }
-      // add the new FeatureClass to the map
-      var newLyr = await QueuedTask.Run(() =>
-      {
-        using Geodatabase geodatabase = new(new FileGeodatabaseConnectionPath(new Uri(Project.Current.DefaultGeodatabasePath)));
-        var newFc = geodatabase.OpenDataset<FeatureClass>(newLayerName);
-        return LayerFactory.Instance.CreateLayer<FeatureLayer>(new FeatureLayerCreationParams(newFc) { Name = $@"New: {newLayerName}" }, MapView.Active.Map);
-      });
+          MessageBox.Show($@"Failed to create {newLayerName}");
+          return;
+        }
+        // add the new FeatureClass to the map
+        var newLyr = await QueuedTask.Run(() =>
+        {
+          using Geodatabase geodatabase = new(new FileGeodatabaseConnectionPath(new Uri(Project.Current.DefaultGeodatabasePath)));
+          var newFc = geodatabase.OpenDataset<FeatureClass>(newLayerName);
+          return LayerFactory.Instance.CreateLayer<FeatureLayer>(new FeatureLayerCreationParams(newFc) { Name = $@"New: {newLayerName}" }, MapView.Active.Map);
+        });
 
-      // copy some data
-      await QueuedTask.Run(() =>
-      {
-        // create an edit operation
-        EditOperation copyOperation = new EditOperation()
+        // copy some data
+        await QueuedTask.Run(() =>
         {
-          Name = "Copy Data",
-          ProgressMessage = "Working...",
-          CancelMessage = "Operation canceled.",
-          ErrorMessage = "Error copying polygons",
-          SelectModifiedFeatures = false,
-          SelectNewFeatures = false
-        };
-        using var rowCursor = originalLayer.Search();
-        while (rowCursor.MoveNext())
-        {
-          using (var row = rowCursor.Current as Feature)
+          // create an edit operation
+          EditOperation copyOperation = new EditOperation()
           {
-            var geom = row.GetShape().Clone();
-            if (geom == null)
-              continue;
-            var newAttributes = new Dictionary<string, object>
+            Name = "Copy Data",
+            ProgressMessage = "Working...",
+            CancelMessage = "Operation canceled.",
+            ErrorMessage = "Error copying polygons",
+            SelectModifiedFeatures = false,
+            SelectNewFeatures = false
+          };
+          using var rowCursor = originalLayer.Search();
+          while (rowCursor.MoveNext())
+          {
+            using (var row = rowCursor.Current as Feature)
             {
+              var geom = row.GetShape().Clone();
+              if (geom == null)
+                continue;
+              var newAttributes = new Dictionary<string, object>
+              {
               { "field1", 1.0 },
               { "field2", 2.0 }
-            };
-            copyOperation.Create(newLyr, geom, newAttributes);
+              };
+              copyOperation.Create(newLyr, geom, newAttributes);
+            }
+          }
+          // execute the operation only if changes where made
+          if (!copyOperation.IsEmpty
+              && !copyOperation.Execute())
+          {
+            MessageBox.Show($@"Copy operation failed {copyOperation.ErrorMessage}");
+            return;
+          }
+        });
+        // check for edits
+        if (Project.Current.HasEdits)
+        {
+          var saveEdits = MessageBox.Show("Save edits?",
+                        "Save Edits?", System.Windows.MessageBoxButton.YesNoCancel);
+          if (saveEdits == System.Windows.MessageBoxResult.Cancel)
+            return;
+          else if (saveEdits == System.Windows.MessageBoxResult.No)
+            _ = Project.Current.DiscardEditsAsync();
+          else
+          {
+            _ = Project.Current.SaveEditsAsync();
           }
         }
-        // execute the operation only if changes where made
-        if (!copyOperation.IsEmpty
-            && !copyOperation.Execute())
-        {
-          MessageBox.Show($@"Copy operation failed {copyOperation.ErrorMessage}");
-          return;
-        }
-      });
-      // check for edits
-      if (Project.Current.HasEdits)
+      }
+      catch (Exception ex)
       {
-        var saveEdits = MessageBox.Show("Save edits?",
-                      "Save Edits?", System.Windows.MessageBoxButton.YesNoCancel);
-        if (saveEdits == System.Windows.MessageBoxResult.Cancel)
-          return;
-        else if (saveEdits == System.Windows.MessageBoxResult.No)
-          _ = Project.Current.DiscardEditsAsync();
-        else
-        {
-          _ = Project.Current.SaveEditsAsync();
-        }
+        MessageBox.Show($@"Error: {ex.Message}");
       }
     }
+
+    public static string MakeValidFeatureClassName(string name)
+    {
+      if (string.IsNullOrWhiteSpace(name))
+        return "FeatureClass1";
+
+      // Remove invalid characters (keep letters, numbers, underscores)
+      string valid = Regex.Replace(name, @"[^a-zA-Z0-9_]", "_");
+
+      // Ensure it starts with a letter
+      if (!char.IsLetter(valid, 0))
+        valid = "F" + valid;
+
+      // Truncate to 160 characters
+      if (valid.Length > 160)
+        valid = valid.Substring(0, 160);
+
+      // Optionally: check for reserved words here
+
+      return valid;
+    }
+
   }
 }

@@ -1,4 +1,4 @@
-//   Copyright 2019 Esri
+//   Copyright 2026 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -258,7 +258,8 @@ namespace FavoriteQueries
         protected static List<object> PopulateResultData(Table table, QueryFilter queryFilter)
         {
             var list = new List<object>();
-            IReadOnlyList<Subtype> subtypes = table.GetDefinition().GetSubtypes();
+            using var tableDefinition = table.GetDefinition();
+            IReadOnlyList<Subtype> subtypes = tableDefinition.GetSubtypes();
             using (RowCursor rowCursor = table.Search(queryFilter, false))
             {
                 while (rowCursor.MoveNext())

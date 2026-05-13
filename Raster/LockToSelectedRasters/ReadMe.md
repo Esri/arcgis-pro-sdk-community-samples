@@ -13,10 +13,10 @@ Language:              C#
 Subject:               Raster
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  11/01/2025
-ArcGIS Pro:            3.6
-Visual Studio:         2022
-.NET Target Framework: net8.0-windows
+Date:                  2/16/2026
+ArcGIS Pro:            3.7
+Visual Studio:         2026
+Target Framework:      net10.0-windows
 ```
 
 ## Resources

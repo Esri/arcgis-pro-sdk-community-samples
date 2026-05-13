@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!--//   Copyright 2023 Esri
+<!--//   Copyright 2026 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -73,9 +73,22 @@
             Open Pane<disabledText />
           </tooltip>
         </button>
-        <tool id="KeyboardShortcuts_Tools_SampleTool" caption="Sample Tool" keytip="t" className="KeyboardShortcuts.Tools.SampleTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
+        <tool id="KeyboardShortcuts_Tools_SampleTool" caption="Sample Tool" keytip="t" className="KeyboardShortcuts.Tools.SampleTool" 
+              loadOnClick="true" 
+              smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png"
+              largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png"
+              condition="esri_mapping_mapPane" categoryRefID="esri_editing_CommandList">
           <tooltip heading="Tooltip Heading">Type "n" before and after clicking. A message will only appear when the tool is activated.<disabledText /></tooltip>
         </tool>
+        <tool id="KeyboardShortcuts_Extend_Tool" caption="Extend" className="KeyboardShortcuts.Tools.Extend" loadOnClick="true" keytip="ZZ" 
+              smallImage="EditingTopologyExtend16"
+              largeImage="EditingTopologyExtend32"
+              condition="esri_mapping_mapPane" categoryRefID="esri_editing_CommandList">
+          <tooltip heading="Extend">
+            Extend a line to the intersection of another feature.<disabledText />
+          </tooltip>
+          <content L_group="Sample Tools" />
+        </tool>        
         <button id="KeyboardShortcuts_Panes_SampleDockpane_ShowButton" caption="Show Sample Dockpane" keytip="d" className="KeyboardShortcuts.Panes.SampleDockpane_ShowButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
           <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
         </button>
@@ -104,9 +117,9 @@
       <state id="StateA" />
     </insertCondition>
   </conditions>
-  <accelerators>
+  <!--<accelerators>
     <insertAccelerator refID="KeyboardShortcuts_Buttons_SampleButton" key="h" isReadOnly="true"/>
-  </accelerators>
+  </accelerators>-->
   <shortcutTables>
     <!--Contextual Shortcut is invoked when Map Pane is active, on key up-->
     <insertShortcutTable id="mapViewOnly" caption="MapView Only" category="Mapping" targetID="esri_mapping_mapPane">
@@ -132,8 +145,11 @@
     </insertShortcutTable>
 
     <!--Shortcut is invoked when KeyboardShortcuts_Tools_SampleTool is active-->
-    <insertShortcutTable id="ToolOnly" caption="Tool Only" category="Mapping" targetID="KeyboardShortcuts_Tools_SampleTool">
+    <insertShortcutTable id="ToolOnly" caption="Tool Only" category="Mapping"  targetID="esri_mapping_mapPane">
       <shortcut refID="KeyboardShortcuts_Buttons_SampleButton" key="n" flags="None" />
+    </insertShortcutTable>
+    <insertShortcutTable id="ExtendTool" caption="Tool Only" category="Mapping"  targetID="esri_mapping_mapPane">
+      <shortcut refID="KeyboardShortcuts_Extend_Tool" key="i" flags="None" />
     </insertShortcutTable>
   </shortcutTables>
 </ArcGIS>

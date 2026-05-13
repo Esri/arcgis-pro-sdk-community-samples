@@ -1,0 +1,70 @@
+[
+  {
+    "creator": "rob12336",
+    "name": "BMP Area",
+    "description": "",
+    "traceType": 4,
+    "configuration": {
+      "includeContainers": false,
+      "includeContent": false,
+      "includeStructures": false,
+      "includeBarriers": true,
+      "validateConsistency": false,
+      "validateLocatability": false,
+      "synthesizeGeometries": false,
+      "includeIsolated": false,
+      "ignoreBarriersAtStartingPoints": true,
+      "includeUpToFirstSpatialContainer": false,
+      "allowIndeterminateFlow": true,
+      "useDigitizedDirection": true,
+      "domainNetworkName": "",
+      "tierName": "",
+      "targetTierName": "",
+      "subnetworkName": "",
+      "diagramTemplateName": "",
+      "shortestPathNetworkAttributeName": "",
+      "filterBitsetNetworkAttributeName": "",
+      "traversabilityScope": "junctionsAndEdges",
+      "numPaths": -1,
+      "maxHops": -1,
+      "inferConnectivity": false,
+      "circuitName": "",
+      "conditionBarriers": [
+        {
+          "name": "Source ID",
+          "type": "networkAttribute",
+          "operator": "equal",
+          "value": 9,
+          "combineUsingOr": false,
+          "isSpecificValue": true
+        },
+        {
+          "name": "Asset group",
+          "type": "networkAttribute",
+          "operator": "equal",
+          "value": 29,
+          "combineUsingOr": false,
+          "isSpecificValue": true
+        }
+      ],
+      "functionBarriers": [],
+      "arcadeExpressionBarrier": "",
+      "filterBarriers": [],
+      "filterFunctionBarriers": [],
+      "filterScope": "junctionsAndEdges",
+      "functions": [],
+      "nearestNeighbor": {
+        "count": -1,
+        "costNetworkAttributeName": "",
+        "nearestCategories": [],
+        "nearestAssets": []
+      },
+      "outputFilters": [],
+      "outputConditions": [],
+      "propagators": []
+    },
+    "resultTypes": [],
+    "creationDate": 1750270650000,
+    "tags": []
+  }
+]

@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2019 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -286,7 +286,7 @@ namespace Symbology
     #region Snippet Animation water
     /// <summary>
     /// Constructs a water fill of specific color, waterbody size and wave strength. This fill can be used on polygon feature classes in a Scene view only.
-    /// ![ConstructWaterFill](https://github.com/ArcGIS/arcgis-pro-sdk/blob/master/Images/waterAnimation.gif)
+    /// ![ConstructWaterFill](https://github.com/Esri/arcgis-pro-sdk/blob/master/Images/waterAnimation.gif)
     /// </summary>
     /// <returns></returns>
     private static Task<CIMPolygonSymbol> CreateWaterFillPolygonAsync()

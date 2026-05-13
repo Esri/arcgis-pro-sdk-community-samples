@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BatchTracingCoreHost": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Code\\arcgis-pro-sdk-community-samples\\UtilityNetwork\\BatchTracingCoreHost\\BatchTracingCoreHost\\JSON Configurations\\Trace_Water_Pressure.json\""
+    }
+  }
+}

@@ -1,4 +1,4 @@
-//   Copyright 2019 Esri
+//   Copyright 2026 Esri
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
@@ -56,14 +56,18 @@ namespace DeleteFeaturesBasedOnSubtype
                     if (layer is FeatureLayer)
                     {
                         var featureLayer = layer as FeatureLayer;
-                        if (featureLayer.GetTable().GetDatastore() is UnknownDatastore)
-                            return;
                         using (var table = featureLayer.GetTable())
                         {
+                            using (var datastore = table.GetDatastore())
+                            {
+                                if (datastore is UnknownDatastore)
+                                    return;
+                            }
                             IReadOnlyList<Subtype> readOnlyList;
                             try
                             {
-                                readOnlyList = table.GetDefinition().GetSubtypes();
+                                using var tableDefinition = table.GetDefinition();
+                                readOnlyList = tableDefinition.GetSubtypes();
                             }
                             catch (Exception e)
                             {
@@ -100,12 +104,16 @@ namespace DeleteFeaturesBasedOnSubtype
                 if (layer is FeatureLayer)
                 {
                     var featureLayer = layer as FeatureLayer;
-                    if (featureLayer.GetTable().GetDatastore() is UnknownDatastore)
-                        return;
                     using (var table = featureLayer.GetTable())
                     {
-                        var subtypeField = table.GetDefinition().GetSubtypeField();
-                        var code = table.GetDefinition().GetSubtypes().First(subtype => subtype.GetName().Equals(item.Text)).GetCode();
+                        using (var datastore = table.GetDatastore())
+                        {
+                            if (datastore is UnknownDatastore)
+                                return;
+                        }
+                        using var tableDefinition = table.GetDefinition();
+                        var subtypeField = tableDefinition.GetSubtypeField();
+                        var code = tableDefinition.GetSubtypes().First(subtype => subtype.GetName().Equals(item.Text)).GetCode();
                         var queryFilter = new QueryFilter { WhereClause = string.Format("{0} = {1}", subtypeField, code) };
                         try
                         {

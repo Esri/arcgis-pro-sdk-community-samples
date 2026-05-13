@@ -1,0 +1,16 @@
+{
+	"analysisName": "Pressure Zone",
+	"type": "InferSubnetworks",
+	"domainNetworkName": "Water",
+	"tierName": "Water Pressure",
+	"terminals": "Downstream",
+	"definitionQuery": "",
+	"inputWorkspace": "D:\\Projects\\Naperville Archive\\v5\\Water_Distribution_Utility_Network_Foundation_v1_2\\Databases\\WaterDistribution_UtilityNetwork.gdb",
+	"sourceUtilityNetwork": "Network",
+	"outputFile": "D:\\Projects\\InferredSubnetworks.csv",
+	"outputWorkspace": "D:\\Projects\\Naperville Archive\\v5\\Water_Distribution_Utility_Network_Foundation_v1_2\\Water Distribution Utility Network Foundation.gdb",
+	"outputPoints": "Pressure_Points",
+	"outputPolylines": "Pressure_Lines",
+	"outputPolygons": "Pressure_Polygons",
+	"outputTable": "Pressure_Analysis"
+}

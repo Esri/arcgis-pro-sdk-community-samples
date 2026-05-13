@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilteredFindPathAnalysis", "FilteredFindPathAnalysis.csproj", "{B4F83ABB-D6F9-49B5-9720-C085B927ED1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4F83ABB-D6F9-49B5-9720-C085B927ED1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4F83ABB-D6F9-49B5-9720-C085B927ED1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4F83ABB-D6F9-49B5-9720-C085B927ED1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4F83ABB-D6F9-49B5-9720-C085B927ED1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF10DDE0-BD31-4D76-8A67-6312EB8CEFC6}
+	EndGlobalSection
+EndGlobal

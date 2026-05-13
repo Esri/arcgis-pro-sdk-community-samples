@@ -1,0 +1,63 @@
+[
+  {
+    "creator": "rob12336",
+    "name": "Watershed Polygons",
+    "description": "None",
+    "traceType": 4,
+    "configuration": {
+      "includeContainers": true,
+      "includeContent": false,
+      "includeStructures": false,
+      "includeBarriers": true,
+      "validateConsistency": true,
+      "validateLocatability": false,
+      "synthesizeGeometries": true,
+      "includeIsolated": false,
+      "ignoreBarriersAtStartingPoints": false,
+      "includeUpToFirstSpatialContainer": false,
+      "allowIndeterminateFlow": true,
+      "useDigitizedDirection": true,
+      "domainNetworkName": "",
+      "tierName": "",
+      "targetTierName": "",
+      "subnetworkName": "",
+      "diagramTemplateName": "",
+      "shortestPathNetworkAttributeName": "",
+      "filterBitsetNetworkAttributeName": "",
+      "traversabilityScope": "junctionsAndEdges",
+      "numPaths": -1,
+      "maxHops": -1,
+      "inferConnectivity": false,
+      "circuitName": "",
+      "conditionBarriers": [],
+      "functionBarriers": [],
+      "arcadeExpressionBarrier": "",
+      "filterBarriers": [],
+      "filterFunctionBarriers": [],
+      "filterScope": "junctionsAndEdges",
+      "functions": [],
+      "nearestNeighbor": {
+        "count": -1,
+        "costNetworkAttributeName": "",
+        "nearestCategories": [],
+        "nearestAssets": []
+      },
+      "outputFilters": [],
+      "outputConditions": [],
+      "propagators": []
+    },
+    "resultTypes": [
+      {
+        "type": "aggregatedGeometry",
+        "includeGeometry": false,
+        "includePropagatedValues": false,
+        "includeDomainDescriptions": false,
+        "networkAttributeNames": [],
+        "diagramTemplateName": "",
+        "resultTypeFields": []
+      }
+    ],
+    "creationDate": 1749744152000,
+    "tags": []
+  }
+]

@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2023 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -54,7 +54,7 @@ namespace MemoryGeodatabase
         await QueuedTask.Run(() =>
         {
           using var geoDb = new Geodatabase(memoryCPs);
-          var fc = geoDb.OpenDataset<FeatureClass>(Module1.TestFcName);
+          using var fc = geoDb.OpenDataset<FeatureClass>(Module1.TestFcName);
           var flyrCreateParam = new FeatureLayerCreationParams(fc)
           {
             Name = "Memory GDB points",
@@ -66,7 +66,7 @@ namespace MemoryGeodatabase
         await QueuedTask.Run(() =>
         {
           using var geoDb = new Geodatabase(fileGdbPath);
-          var fc = geoDb.OpenDataset<FeatureClass>(Module1.TestFcName);
+          using var fc = geoDb.OpenDataset<FeatureClass>(Module1.TestFcName);
           var flyrCreateParam = new FeatureLayerCreationParams(fc)
           {
             Name = "File GDB points",

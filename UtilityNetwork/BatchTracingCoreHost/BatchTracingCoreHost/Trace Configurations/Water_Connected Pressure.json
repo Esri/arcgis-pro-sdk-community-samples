@@ -1,0 +1,95 @@
+[
+  {
+    "creator": "rob12336",
+    "name": "Connected Pressure",
+    "description": "",
+    "traceType": 1,
+    "configuration": {
+      "includeContainers": false,
+      "includeContent": false,
+      "includeStructures": false,
+      "includeBarriers": true,
+      "validateConsistency": false,
+      "validateLocatability": false,
+      "synthesizeGeometries": false,
+      "includeIsolated": false,
+      "ignoreBarriersAtStartingPoints": false,
+      "includeUpToFirstSpatialContainer": false,
+      "allowIndeterminateFlow": true,
+      "useDigitizedDirection": false,
+      "domainNetworkName": "",
+      "tierName": "",
+      "targetTierName": "",
+      "subnetworkName": "",
+      "diagramTemplateName": "",
+      "shortestPathNetworkAttributeName": "",
+      "filterBitsetNetworkAttributeName": "",
+      "traversabilityScope": "junctionsAndEdges",
+      "numPaths": -1,
+      "maxHops": -1,
+      "conditionBarriers": [
+        {
+          "name": "P:Device Status",
+          "type": "networkAttribute",
+          "operator": "equal",
+          "value": 0,
+          "combineUsingOr": true,
+          "isSpecificValue": true
+        },
+        {
+          "name": "Lifecycle Status",
+          "type": "networkAttribute",
+          "operator": "doesNotIncludeAny",
+          "value": 24,
+          "combineUsingOr": true,
+          "isSpecificValue": true
+        },
+        {
+          "name": "Category",
+          "type": "category",
+          "operator": "equal",
+          "value": "CP Only",
+          "combineUsingOr": true,
+          "isSpecificValue": true
+        },
+        {
+          "name": "Category",
+          "type": "category",
+          "operator": "equal",
+          "value": "Subnetwork Controller",
+          "combineUsingOr": false,
+          "isSpecificValue": true
+        }
+      ],
+      "functionBarriers": [
+      ],
+      "arcadeExpressionBarrier": "",
+      "filterBarriers": [
+      ],
+      "filterFunctionBarriers": [
+      ],
+      "filterScope": "junctionsAndEdges",
+      "functions": [
+      ],
+      "nearestNeighbor": {
+        "count": -1,
+        "costNetworkAttributeName": "",
+        "nearestCategories": [
+        ],
+        "nearestAssets": [
+        ]
+      },
+      "outputFilters": [
+      ],
+      "outputConditions": [
+      ],
+      "propagators": [
+      ]
+    },
+    "resultTypes": [
+    ],
+    "creationDate": 1748730223000,
+    "tags": [
+    ]
+  }
+]

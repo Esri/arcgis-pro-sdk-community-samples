@@ -24,7 +24,7 @@ Organization:          Esri, https://www.esri.com
 Date:                  04/04/2024
 ArcGIS Pro:            3.3
 Visual Studio:         2022
-.NET Target Framework: net8.0-windows
+.NET Target Framework: net10.0-windows
 ```
 
 ## Resources

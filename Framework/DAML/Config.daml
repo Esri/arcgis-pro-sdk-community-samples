@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 
-   Copyright 2019 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -199,11 +199,11 @@
     <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/Add-button-to-Add-Data-Split-Button-Gallery.png" width="40%">-->
     <!--Note: "updateModule" tag should be within the "modules" tag-->
     <updateModule refID="esri_mapping">
-		<splitButtons>
-			<updateSplitButton refID="esri_mapping_addDataSplitButton">
-				<insertButton refID="EsriCommunity_MyAddData" />
-			</updateSplitButton>
-		</splitButtons>
+      <splitButtons>
+        <updateSplitButton refID="esri_mapping_addDataSplitButton">
+          <insertButton refID="EsriCommunity_MyAddData" />
+        </updateSplitButton>
+      </splitButtons>
     </updateModule>
     <!--End ProSnippet-->
     <!--ProSnippet: Subgroup: Insert and delete subgroups within a group. -->
@@ -257,20 +257,19 @@
         <content className="DAML.OptionsPropertySheet.OptionsDialogPropertyPageView" />
       </insertPage>
     </updateSheet>
-	  <!--End ProSnippet-->
-	  <!--ProSnippet: PropertySheet: Insert Property Page into the Layer Properties Property sheet-->
-	  <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/PropertySheetLayerProperties.png" width="40%">-->
-	<updateSheet refID="esri_mapping_featureLayerPropertySheet">
-	    <insertPage id="DAML_LayersPropertySheet_LayersPropertySheet" caption="My custom layer properties" className="DAML.LayersPropertySheet.LayersPropertySheetViewModel" placeWith="esri_mapping_layerSourcePropertyPage" insert="after" >
-		    <content className="DAML.LayersPropertySheet.LayersPropertySheetView" />
-	    </insertPage>
-	</updateSheet>
-	  <!--End ProSnippet-->
+    <!--End ProSnippet-->
+    <!--ProSnippet: PropertySheet: Insert Property Page into the Layer Properties Property sheet-->
+    <!--<img src="https://ArcGIS.github.io/arcgis-pro-sdk/images/ProSnippetsDAML/PropertySheetLayerProperties.png" width="40%">-->
+    <updateSheet refID="esri_mapping_featureLayerPropertySheet">
+      <insertPage id="DAML_LayersPropertySheet_LayersPropertySheet" caption="My custom layer properties" className="DAML.LayersPropertySheet.LayersPropertySheetViewModel" placeWith="esri_mapping_layerSourcePropertyPage" insert="after">
+        <content className="DAML.LayersPropertySheet.LayersPropertySheetView" />
+      </insertPage>
+    </updateSheet>
+    <!--End ProSnippet-->
     <insertSheet id="DAML_LayersPropertySheet_LayersPropertySheet" caption="LayersPropertySheet" hasGroups="true">
       <page id="DAML_LayersPropertySheet_LayersPropertySheet" caption="LayersPropertySheet" className="DAML.LayersPropertySheet.LayersPropertySheetViewModel" group="Group 1">
         <content className="DAML.LayersPropertySheet.LayersPropertySheetView" />
       </page>
     </insertSheet>
   </propertySheets>
-
 </ArcGIS>

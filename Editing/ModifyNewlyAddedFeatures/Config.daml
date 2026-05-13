@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 
-   Copyright 2019 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -56,8 +56,7 @@
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="ModifyNewlyAddedFeatures_ModifyMonitor" caption="Modify Monitor" 
-                  className="ModifyMonitorViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="ModifyNewlyAddedFeatures_ModifyMonitor" caption="Modify Monitor" className="ModifyMonitorViewModel" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="ModifyMonitorView" />
         </dockPane>
       </dockPanes>

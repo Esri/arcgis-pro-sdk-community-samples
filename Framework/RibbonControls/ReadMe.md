@@ -13,10 +13,10 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  11/01/2025
-ArcGIS Pro:            3.6
-Visual Studio:         2022
-.NET Target Framework: net8.0-windows
+Date:                  2/16/2026
+ArcGIS Pro:            3.7
+Visual Studio:         2026
+Target Framework:      net10.0-windows
 ```
 
 ## Resources
@@ -45,9 +45,9 @@ Visual Studio:         2022
 Note: this is how you can make use of the KeyTips you defined in your config.daml:  
 To use KeyTips you must first press the Alt key or the F10 key, this shows the available KeyTip letters for the tabs on the Pro ribbon:  
 ![UI](Screenshots/Screen1.png)  
-Next you press any of displayed KeyTips letters (white and framed in black).  So for example to get to the “Sample Tab” I simply press the ‘X’ key.  Now the UI is updated to show the ‘Sample Tab’s’ Key Tips:  
+Next you press any of displayed KeyTips letters (white and framed in black).  So for example to get to the �Sample Tab� I simply press the �X� key.  Now the UI is updated to show the �Sample Tab�s� Key Tips:  
 ![UI](Screenshots/Screen2.png)  
-Finally I can choose a KeyTip from the selected ‘Sample Tab’ tab.  For example if I want to execute the ‘Button 2’ command on the ‘Sample Tab’, I simply press the ‘X’ key followed by the ‘E’ key.  The command is executed and I get this:  
+Finally I can choose a KeyTip from the selected �Sample Tab� tab.  For example if I want to execute the �Button 2� command on the �Sample Tab�, I simply press the �X� key followed by the �E� key.  The command is executed and I get this:  
 ![UI](Screenshots/Screen3.png)  
   
 

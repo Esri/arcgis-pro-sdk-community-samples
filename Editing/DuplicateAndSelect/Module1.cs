@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2023 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -47,16 +47,16 @@ namespace DuplicateAndSelect
   /// 1. Click the Start button to run the solution.  ArcGIS Pro will open.
   /// 1. Open an existing Project the contains a Map showing a FeatureLayer and a StandAloneTable.
   /// 1. Click on the "Add-in" tab and note the "Feature Duplicate and Select" and "Row Duplicate and Select" button groups.
-  /// ![UI](Screenshot/Screenshot1.png)
+  /// ![UI](Screenshots/Screen1.png)
   /// 1. Click the "Attributes" button to bring up the "Attributes" dockpane and make sure that the "selection" tab is selected.
   /// 1. Select one Feature and one Row (in the Standalone Table).
-  /// ![UI](Screenshot/Screenshot2.png)
+  /// ![UI](Screenshots/Screen2.png)
   /// 1. Click the "Duplicate Add Selection" button to create a duplicate of the first selected feature and add the newly created feature to the existing selection.
-  /// ![UI](Screenshot/Screenshot3.png)
+  /// ![UI](Screenshots/Screen3.png)
   /// 1. Next to perform the same operation on a Standalone Table
-  /// ![UI](Screenshot/Screenshot4.png)
+  /// ![UI](Screenshots/Screen4.png)
   /// 1. Click the "Table Dupl. Add Selection" button to duplicate the first selected row and add the newly created row to the selected set.
-  /// ![UI](Screenshot/Screenshot5.png)
+  /// ![UI](Screenshots/Screen5.png)
   /// </remarks>
   internal class Module1 : Module
   {

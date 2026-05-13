@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2025 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -37,348 +37,396 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Documents;
 using System.Windows.Input;
+using Version = ArcGIS.Core.Data.Version;
 
 namespace EnterpriseGDBVersionChange
 {
-	internal class VersionDockpaneViewModel : DockPane
-	{
-		private const string _dockPaneID = "EnterpriseGDBVersionChange_VersionDockpane";
+  internal class VersionDockpaneViewModel : DockPane
+  {
+    private const string _dockPaneID = "EnterpriseGDBVersionChange_VersionDockpane";
+    private FeatureLayer _FeatureLayer = null;
+    protected VersionDockpaneViewModel()
+    {
+      // subscribe to TOC selection changed event
+      ArcGIS.Desktop.Mapping.Events.TOCSelectionChangedEvent.Subscribe(async (args) =>
+      {
+        try
+        {
+          if (args == null)
+            return;
+          var featLayer = args.MapView?.GetSelectedLayers().OfType<FeatureLayer>().FirstOrDefault();
+          if (featLayer == null)
+          {
+            return;
+          }
+          _FeatureLayer = featLayer;
+          ClearProperties();
+          var timer = new Stopwatch();
+          timer.Start();
+          CurrentLayer = await QueuedTask.Run<string>(() =>
+          {
+            using (Table table = _FeatureLayer.GetTable())
+            {
+              return table.GetName();
+            }
+          });
 
-		private FeatureLayer _FeatureLayer = null;
+          GDBType = await GetGeoDatabaseType(_FeatureLayer);
+          CurrentVersion = await GetCurrentVersion(_FeatureLayer);
+          var versionList = await GetVersionsForFeatureLayer(_FeatureLayer);
+          if (versionList.VersionType != null)
+          {
+            CurrentVersionType = versionList.Item1.ToString();
+            ToVersions = new ObservableCollection<string>(versionList.Item2);
+          }
+          timer.Stop();
+          var elapsedTime = timer.Elapsed;
+          await RunOnUIThread(() =>
+          {
+            Status += $@"Selected {_FeatureLayer.Name}: {elapsedTime:m\:ss\.fff} min.{Environment.NewLine}";
+          });
+        }
+        catch (Exception ex)
+        {
+          MessageBox.Show($@"Exception: {ex.Message}");
+        }
+      });
+    }
 
-		protected VersionDockpaneViewModel()
-		{
-			// subscribe to TOC selection changed event
-			ArcGIS.Desktop.Mapping.Events.TOCSelectionChangedEvent.Subscribe(async (args) =>
-			{
-				try
-				{
-					if (args == null)
-						return;
-					var featLayer = args.MapView?.GetSelectedLayers().OfType<FeatureLayer>().FirstOrDefault();
-					if (featLayer == null)
-					{
-						return;
-					}
-					_FeatureLayer = featLayer;
-					ClearProperties();
-					var timer = new Stopwatch();
-					timer.Start();
-					CurrentLayer = await QueuedTask.Run<string>(() => _FeatureLayer.GetTable().GetName());
-					GDBType = await GetGeoDatabaseType(_FeatureLayer);
-					CurrentVersion = await GetCurrentVersion(_FeatureLayer);
-					var versionList = await GetVersionsForFeatureLayer(_FeatureLayer);
-					if (versionList.VersionType != null)
-					{
-						CurrentVersionType = versionList.Item1.ToString();
-						ToVersions = new ObservableCollection<string>(versionList.Item2);
-					}
-					timer.Stop();
-					var elapsedTime = timer.Elapsed;
-					await RunOnUIThread(() =>
-					{
-						Status += $@"Selected {_FeatureLayer.Name}: {elapsedTime:m\:ss\.fff} min.{System.Environment.NewLine}";
-					});
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show ($@"Exception: {ex.Message}");
-				}
-			});
-		}
+    private void ClearProperties()
+    {
+      CurrentLayer = string.Empty;
+      GDBType = string.Empty;
+      CurrentVersionType = string.Empty;
+      ToVersions = null;
+    }
+    #region Helpers
 
-		private void ClearProperties()
-		{
-			CurrentLayer = string.Empty;
-			GDBType = string.Empty;
-			CurrentVersionType = string.Empty;
-			ToVersions = null;
-		}
+    private static async Task<string> GetVersionNameAsync(Geodatabase geodatabase)
+    {
+      return await QueuedTask.Run<string>(() =>
+      {
+        using (VersionManager versionManager = geodatabase.GetVersionManager())
+        {
+          VersionBaseType versionBaseType = versionManager.GetCurrentVersionBaseType();
+          if (versionBaseType == VersionBaseType.Version)
+          {
+            using (Version version = versionManager.GetCurrentVersion())
+            {
+              return version.GetName();
+            }
+          }
+          if (versionBaseType == VersionBaseType.HistoricalVersion)
+          {
+            using (HistoricalVersion historicalVersion = versionManager.GetCurrentHistoricalVersion())
+            {
+              return historicalVersion.GetName();
+            }
+          }
+          return string.Empty;
+        }
+      });
+    }
 
-		#region Helpers
+    private static async Task<string> GetGeoDatabaseType(FeatureLayer featureLayer)
+    {
+      try
+      {
+        return await QueuedTask.Run<string>(() =>
+        {
+          using (FeatureClass featureClass = featureLayer.GetFeatureClass())
+          using (Datastore dataStore = featureClass.GetDatastore())
+          using (Geodatabase geodatabase = dataStore as Geodatabase)
+          {
+            return geodatabase == null ? "Not a GDB" : geodatabase.GetGeodatabaseType().ToString();
+          }
+        });
+      }
+      catch (Exception ex)
+      {
+        return $@"Exception: {ex.Message}";
+      }
+    }
 
-		private static async Task<string> GetVersionNameAsync(Geodatabase geodatabase)
-		{
-			return await QueuedTask.Run<string>(() =>
-			{
-				using VersionManager versionManager = geodatabase.GetVersionManager();
-				VersionBaseType versionBaseType = versionManager.GetCurrentVersionBaseType();
-				if (versionBaseType == VersionBaseType.Version)
-				{
-					ArcGIS.Core.Data.Version version = versionManager.GetCurrentVersion();
-					return version.GetName();
-				}
-				if (versionBaseType == VersionBaseType.HistoricalVersion)
-				{
-					HistoricalVersion historicalVersion = versionManager.GetCurrentHistoricalVersion();
-					return historicalVersion.GetName();
-				}
-				return string.Empty;
-			});
-		}
+    private static async Task<string> GetCurrentVersion(FeatureLayer featureLayer)
+    {
+      return await QueuedTask.Run<string>(() =>
+      {
+        using (FeatureClass featureClass = featureLayer.GetFeatureClass())
+        using (Datastore dataStore = featureClass.GetDatastore())
+        using (Geodatabase geodatabase = dataStore as Geodatabase)
+        {
+          if (geodatabase == null)
+            return "Not a GDB";
+          if (!geodatabase.IsVersioningSupported()) return "Versions are NOT supported";
 
-		private static async Task<string> GetGeoDatabaseType(FeatureLayer featureLayer)
-		{
-			try
-			{
-				return await QueuedTask.Run<string>(() =>
-				{
-					Datastore dataStore = featureLayer.GetFeatureClass().GetDatastore();
-					Geodatabase geodatabase = dataStore as Geodatabase;
-					if (geodatabase == null)
-						return "Not a GDB";
-					return geodatabase.GetGeodatabaseType().ToString();
-				});
-			}
-			catch (Exception ex)
-			{
-				return $@"Exception: {ex.Message}";
-			}
-		}
+          using (VersionManager versionManager = geodatabase.GetVersionManager())
+          {
+            VersionBaseType versionBaseType = versionManager.GetCurrentVersionBaseType();
+            if (versionBaseType == VersionBaseType.Version)
+            {
+              using (Version version = versionManager.GetCurrentVersion())
+              {
+                return version.GetName();
+              }
+            }
+            if (versionBaseType == VersionBaseType.HistoricalVersion)
+            {
+              using (HistoricalVersion historicalVersion = versionManager.GetCurrentHistoricalVersion())
+              {
+                return historicalVersion.GetName();
+              }
+            }
+            return string.Empty;
+          }
+        }
+      });
+    }
 
-		private static async Task<string> GetCurrentVersion (FeatureLayer featureLayer)
-		{
-			return await QueuedTask.Run<string>(() =>
-			{
-				Datastore dataStore = featureLayer.GetFeatureClass().GetDatastore();
-				Geodatabase geodatabase = dataStore as Geodatabase;
-				if (geodatabase == null)
-					return "Not a GDB";
-				if (!geodatabase.IsVersioningSupported()) return "Versions are NOT supported";
-				using VersionManager versionManager = geodatabase.GetVersionManager();
-				VersionBaseType versionBaseType = versionManager.GetCurrentVersionBaseType();
-				if (versionBaseType == VersionBaseType.Version)
-				{
-					ArcGIS.Core.Data.Version version = versionManager.GetCurrentVersion();
-					return version.GetName();
-				}
-				if (versionBaseType == VersionBaseType.HistoricalVersion)
-				{
-					HistoricalVersion historicalVersion = versionManager.GetCurrentHistoricalVersion();
-					return historicalVersion.GetName();
-				}
-				return string.Empty;
-			});
-		}
+    private static async Task<(VersionBaseType? VersionType, List<string> VersionNames)> GetVersionsForFeatureLayer(FeatureLayer featureLayer)
+    {
+      return await QueuedTask.Run<(VersionBaseType? VersionType, List<string> VersionNames)>(() =>
+      {
+        using (FeatureClass featureClass = featureLayer.GetFeatureClass())
+        using (Datastore dataStore = featureClass.GetDatastore())
+        using (Geodatabase geodatabase = dataStore as Geodatabase)
+        {
+          if (geodatabase == null)
+            return (null, null);
+          if (!geodatabase.IsVersioningSupported()) return (null, null);
 
-		private static async Task<(VersionBaseType? VersionType, List<string> VersionNames)> GetVersionsForFeatureLayer (FeatureLayer featureLayer)
-		{
-			return await QueuedTask.Run<(VersionBaseType? VersionType, List<string> VersionNames)>(() =>
-			{
-				Datastore dataStore = featureLayer.GetFeatureClass().GetDatastore();
-				Geodatabase geodatabase = dataStore as Geodatabase;
-				if (geodatabase == null)
-					return (null, null);
-				if (!geodatabase.IsVersioningSupported()) return (null, null);
-				using VersionManager versionManager = geodatabase.GetVersionManager();
-				VersionBaseType versionBaseType = versionManager.GetCurrentVersionBaseType();
-				if (versionBaseType == VersionBaseType.Version)
-				{
-					List<string> versionNames = new List<string>(versionManager.GetVersionNames());
-					versionNames.Remove(versionManager.GetCurrentVersion().GetName());
-					return (versionBaseType, versionNames);
-				}
-				if (versionBaseType == VersionBaseType.HistoricalVersion)
-				{
-					var histVersions = versionManager.GetHistoricalVersions();
-					List<string> versionNames = new List<string>(histVersions.Select((h) => h.GetName()));
-					versionNames.Remove(versionManager.GetCurrentHistoricalVersion().GetName());
-					return (versionBaseType, versionNames);
-				}
-				return (null, null);
-			});
-		}
+          using VersionManager versionManager = geodatabase.GetVersionManager();
+          {
+            VersionBaseType versionBaseType = versionManager.GetCurrentVersionBaseType();
+            if (versionBaseType == VersionBaseType.Version)
+            {
+              List<string> versionNames = new List<string>(versionManager.GetVersionNames());
+              using (Version version = versionManager.GetCurrentVersion())
+              {
+                versionNames.Remove(version.GetName());
+                return (versionBaseType, versionNames);
+              }
+            }
 
-		private static void ChangeVersions(FeatureLayer featureLayer, string toVersionName)
-		{
-			Datastore dataStore = featureLayer.GetFeatureClass().GetDatastore();
-			Geodatabase geodatabase = dataStore as Geodatabase;
-			using VersionManager versionManager = geodatabase.GetVersionManager();
-			VersionBaseType versionBaseType = versionManager.GetCurrentVersionBaseType();
-			if (versionBaseType == VersionBaseType.Version)
-			{
-				ArcGIS.Core.Data.Version fromVersion = versionManager.GetCurrentVersion();
-				ArcGIS.Core.Data.Version toVersion = versionManager.GetVersion(toVersionName);
+            if (versionBaseType == VersionBaseType.HistoricalVersion)
+            {
+              var versionNames = new List<string>();
+              foreach (HistoricalVersion histVersion in versionManager.GetHistoricalVersions())
+              {
+                using (histVersion)
+                {
+                  versionNames.Add(histVersion.GetName());
+                }
+              }
+              
+              using (HistoricalVersion curHistoricalVersion = versionManager.GetCurrentHistoricalVersion())
+              {
+                versionNames.Remove(curHistoricalVersion.GetName());
+                return (versionBaseType, versionNames);
+              }
+            }
+            return (null, null);
+          }
+        }
+      });
+    }
 
-				// Switch between versions
-				MapView.Active.Map.ChangeVersion(fromVersion, toVersion);
-			}
-			if (versionBaseType == VersionBaseType.HistoricalVersion)
-			{
-				HistoricalVersion fromHistoricalVersion = versionManager.GetCurrentHistoricalVersion();
-				HistoricalVersion toHistoricalVersion = versionManager.GetHistoricalVersion(toVersionName);
+    private static void ChangeVersions(FeatureLayer featureLayer, string toVersionName)
+    {
+      using (FeatureClass featureClass = featureLayer.GetFeatureClass())
+      using (Datastore dataStore = featureClass.GetDatastore())
+      using (Geodatabase geodatabase = dataStore as Geodatabase)
+      using (VersionManager versionManager = geodatabase.GetVersionManager())
+      {
+        VersionBaseType versionBaseType = versionManager.GetCurrentVersionBaseType();
 
-				// Switch between historical versions
-				MapView.Active.Map.ChangeVersion(fromHistoricalVersion, toHistoricalVersion);
-			}
-		}
+        if (versionBaseType == VersionBaseType.Version)
+        {
+          using (Version fromVersion = versionManager.GetCurrentVersion())
+          using (Version toVersion = versionManager.GetVersion(toVersionName))
+          {
+            // Switch between versions
+            MapView.Active.Map.ChangeVersion(fromVersion, toVersion);
+          }
+        }
 
-		#endregion Helpers
+        if (versionBaseType == VersionBaseType.HistoricalVersion)
+        {
+          using (HistoricalVersion fromHistoricalVersion = versionManager.GetCurrentHistoricalVersion())
+          using (HistoricalVersion toHistoricalVersion = versionManager.GetHistoricalVersion(toVersionName))
+          {
+            // Switch between historical versions
+            MapView.Active.Map.ChangeVersion(fromHistoricalVersion, toHistoricalVersion);
+          }
+        }
+      }
+    }
 
-		#region Properties
+    #endregion Helpers
 
-		/// <summary>
-		/// CurrentLayer name
-		/// </summary>
-		private string _CurrentLayer;
-		public string CurrentLayer
-		{
-			get => _CurrentLayer;
-			set => SetProperty(ref _CurrentLayer, value);
-		}
+    #region Properties
 
-		private string _GDBType;
-		public string GDBType
-		{
-			get => _GDBType;
-			set => SetProperty(ref _GDBType, value);
-		}
+    /// <summary>
+    /// CurrentLayer name
+    /// </summary>
+    private string _CurrentLayer;
+    public string CurrentLayer
+    {
+      get => _CurrentLayer;
+      set => SetProperty(ref _CurrentLayer, value);
+    }
 
-		private string _CurrentVersionType;
-		public string CurrentVersionType
-		{
-			get => _CurrentVersionType;
-			set => SetProperty(ref _CurrentVersionType, value);
-		}
+    private string _GDBType;
+    public string GDBType
+    {
+      get => _GDBType;
+      set => SetProperty(ref _GDBType, value);
+    }
 
-		private string _CurrentVersion;
-		public string CurrentVersion
-		{
-			get => _CurrentVersion;
-			set => SetProperty(ref _CurrentVersion, value);
-		}
+    private string _CurrentVersionType;
+    public string CurrentVersionType
+    {
+      get => _CurrentVersionType;
+      set => SetProperty(ref _CurrentVersionType, value);
+    }
 
-		private ObservableCollection<string> _ToVersions;
-		public ObservableCollection<string> ToVersions
-		{
-			get => _ToVersions;
-			set => SetProperty(ref _ToVersions, value);
-		}
+    private string _CurrentVersion;
+    public string CurrentVersion
+    {
+      get => _CurrentVersion;
+      set => SetProperty(ref _CurrentVersion, value);
+    }
 
-		private string _ToVersion;
-		public string ToVersion
-		{
-			get => _ToVersion;
-			set => SetProperty(ref _ToVersion, value);
-		}
+    private ObservableCollection<string> _ToVersions;
+    public ObservableCollection<string> ToVersions
+    {
+      get => _ToVersions;
+      set => SetProperty(ref _ToVersions, value);
+    }
 
-		private string _Status;
-		public string Status
-		{
-			get => _Status;
-			set => SetProperty(ref _Status, value);
-		}
+    private string _ToVersion;
+    public string ToVersion
+    {
+      get => _ToVersion;
+      set => SetProperty(ref _ToVersion, value);
+    }
 
-		public ICommand CmdChangeVersion
-		{
-			get => new RelayCommand((args) => 
-			{
-				// change version 
-				try
-				{
-					QueuedTask.Run(async () =>
-					{
-						var timer = new Stopwatch();
-						timer.Start();
-						ChangeVersions(_FeatureLayer, ToVersion);
-						CurrentVersion = await GetCurrentVersion(_FeatureLayer);
-						var versionList = await GetVersionsForFeatureLayer(_FeatureLayer);
-						if (versionList.VersionType != null)
-						{
-							CurrentVersionType = versionList.VersionType.ToString();
-							ToVersions = new ObservableCollection<string>(versionList.VersionNames);
-						}
-						timer.Stop();
-						var elapsedTime = timer.Elapsed;
-						await RunOnUIThread(() =>
-						{
-							Status += $@"Change Version {_FeatureLayer.Name} {elapsedTime:m\:ss\.fff} min.{System.Environment.NewLine}";
-						});
+    private string _Status;
+    public string Status
+    {
+      get => _Status;
+      set => SetProperty(ref _Status, value);
+    }
 
-					});
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show($@"Can't change version: {ex.Message}");
-				}
-			}, () => (ToVersion != null && _FeatureLayer != null));
-		}
+    public ICommand CmdChangeVersion
+    {
+      get => new RelayCommand((args) =>
+      {
+        // change version 
+        try
+        {
+          QueuedTask.Run(async () =>
+          {
+            var timer = new Stopwatch();
+            timer.Start();
+            ChangeVersions(_FeatureLayer, ToVersion);
+            CurrentVersion = await GetCurrentVersion(_FeatureLayer);
+            var versionList = await GetVersionsForFeatureLayer(_FeatureLayer);
+            if (versionList.VersionType != null)
+            {
+              CurrentVersionType = versionList.VersionType.ToString();
+              ToVersions = new ObservableCollection<string>(versionList.VersionNames);
+            }
+            timer.Stop();
+            var elapsedTime = timer.Elapsed;
+            await RunOnUIThread(() =>
+            {
+              Status += $@"Change Version {_FeatureLayer.Name} {elapsedTime:m\:ss\.fff} min.{Environment.NewLine}";
+            });
 
-		public System.Windows.Media.ImageSource ImgChangeVersion
-		{
-			get { return System.Windows.Application.Current.Resources["VersionChanges16"] as System.Windows.Media.ImageSource; }
-		}
+          });
+        }
+        catch (Exception ex)
+        {
+          MessageBox.Show($@"Can't change version: {ex.Message}");
+        }
+      }, () => (ToVersion != null && _FeatureLayer != null));
+    }
 
-		#endregion Properties
+    public System.Windows.Media.ImageSource ImgChangeVersion
+    {
+      get { return System.Windows.Application.Current.Resources["VersionChanges16"] as System.Windows.Media.ImageSource; }
+    }
+
+    #endregion Properties
 
 
-		/// <summary>
-		/// Show the DockPane.
-		/// </summary>
-		internal static void Show()
-		{
-			DockPane pane = FrameworkApplication.DockPaneManager.Find(_dockPaneID);
-			if (pane == null)
-				return;
+    /// <summary>
+    /// Show the DockPane.
+    /// </summary>
+    internal static void Show()
+    {
+      DockPane pane = FrameworkApplication.DockPaneManager.Find(_dockPaneID);
+      if (pane == null)
+        return;
 
-			pane.Activate();
-		}
+      pane.Activate();
+    }
 
-		/// <summary>
-		/// Text shown near the top of the DockPane.
-		/// </summary>
-		private string _heading = "Switch GDB Version";
-		public string Heading
-		{
-			get => _heading;
-			set => SetProperty(ref _heading, value);
-		}
+    /// <summary>
+    /// Text shown near the top of the DockPane.
+    /// </summary>
+    private string _heading = "Switch GDB Version";
+    public string Heading
+    {
+      get => _heading;
+      set => SetProperty(ref _heading, value);
+    }
 
-		#region Helper functions
+    #region Helper functions
 
-		/// <summary>
-		/// Utility function to enable an action to run on the UI thread (if not already)
-		/// </summary>
-		/// <param name="action">the action to execute</param>
-		/// <returns></returns>
-		internal static Task RunOnUIThread(Action action)
-		{
-			if (OnUIThread)
-			{
-				action();
-				return Task.FromResult(0);
-			}
-			else
-				return Task.Factory.StartNew(action, System.Threading.CancellationToken.None, TaskCreationOptions.None, QueuedTask.UIScheduler);
-		}
+    /// <summary>
+    /// Utility function to enable an action to run on the UI thread (if not already)
+    /// </summary>
+    /// <param name="action">the action to execute</param>
+    /// <returns></returns>
+    internal static Task RunOnUIThread(Action action)
+    {
+      if (OnUIThread)
+      {
+        action();
+        return Task.FromResult(0);
+      }
+      else
+        return Task.Factory.StartNew(action, System.Threading.CancellationToken.None, TaskCreationOptions.None, QueuedTask.UIScheduler);
+    }
 
-		/// <summary>
-		/// Determines if the application is currently on the UI thread
-		/// </summary>
-		private static bool OnUIThread
-		{
-			get
-			{
-				if (FrameworkApplication.TestMode)
-					return QueuedTask.OnWorker;
-				else
-					return System.Windows.Application.Current.Dispatcher.CheckAccess();
-			}
-		}
+    /// <summary>
+    /// Determines if the application is currently on the UI thread
+    /// </summary>
+    private static bool OnUIThread
+    {
+      get
+      {
+        if (FrameworkApplication.TestMode)
+          return QueuedTask.OnWorker;
+        else
+          return System.Windows.Application.Current.Dispatcher.CheckAccess();
+      }
+    }
 
-		#endregion Helper functions
-	}
+    #endregion Helper functions
+  }
 
-	/// <summary>
-	/// Button implementation to show the DockPane.
-	/// </summary>
+  /// <summary>
+  /// Button implementation to show the DockPane.
+  /// </summary>
 	internal class VersionDockpane_ShowButton : Button
-	{
-		protected override void OnClick()
-		{
-			VersionDockpaneViewModel.Show();
-		}
-	}
+  {
+    protected override void OnClick()
+    {
+      VersionDockpaneViewModel.Show();
+    }
+  }
 }

@@ -1,4 +1,4 @@
-﻿using ArcGIS.Core.Data.UtilityNetwork;
+using ArcGIS.Core.Data.UtilityNetwork;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Internal.Core.CommonControls;
 using System;
@@ -19,7 +19,7 @@ using System.Windows.Shapes;
 
 namespace ToFromWarehouse
 {
-    //   Copyright 2019 Esri
+    //   Copyright 2026 Esri
     //   Licensed under the Apache License, Version 2.0 (the "License");
     //   you may not use this file except in compliance with the License.
     //   You may obtain a copy of the License at

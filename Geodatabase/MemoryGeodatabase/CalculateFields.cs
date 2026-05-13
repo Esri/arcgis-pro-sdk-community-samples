@@ -1,6 +1,6 @@
 /*
 
-   Copyright 2023 Esri
+   Copyright 2026 Esri
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -97,7 +97,7 @@ namespace MemoryGeodatabase
       string fcName, long recordCount, Camera camera)
     {
       using var geoDb = new Geodatabase(memoryCPs);
-      var fc = geoDb.OpenDataset<FeatureClass>(fcName);
+      using var fc = geoDb.OpenDataset<FeatureClass>(fcName);
       UpdateRecordsInFeatureClass(geoDb, fc, recordCount, camera);
     }
 
@@ -105,7 +105,7 @@ namespace MemoryGeodatabase
       string fcName, long recordCount, Camera camera)
     {
       using var geoDb = new Geodatabase(connectionPath);
-      var fc = geoDb.OpenDataset<FeatureClass>(fcName);
+      using var fc = geoDb.OpenDataset<FeatureClass>(fcName);
       UpdateRecordsInFeatureClass(geoDb, fc, recordCount, camera);
     }
 
