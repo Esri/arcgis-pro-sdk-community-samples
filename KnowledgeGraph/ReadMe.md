@@ -13,7 +13,7 @@ This repository contains ArcGIS Pro Add-In Samples for the ArcGIS Pro 3.7 SDK fo
 
 This folder contains ArcGIS Pro Add-In Samples that fall under the 'Knowledge Graph' topic:
 
-* [FilteredFindPathAnalysis (c#)](../../../tree/master/Knowledgegraph/FilteredFindPathAnalysis)  
+* [FilteredFindPathAnalysis (c#)](../../../tree/master/KnowledgeGraph/FilteredFindPathAnalysis)  
 
 
 ## Instructions
