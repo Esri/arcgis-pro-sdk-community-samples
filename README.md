@@ -257,7 +257,7 @@ Below is the list of 325 ArcGIS Pro samples that are included in this repository
 
 #### Knowledge Graph
 
-* [FilteredFindPathAnalysis (c#)](../../tree/master/Knowledgegraph/FilteredFindPathAnalysis)  
+* [FilteredFindPathAnalysis (c#)](../../tree/master/KnowledgeGraph/FilteredFindPathAnalysis)  
 
 
 #### Geoprocessing
