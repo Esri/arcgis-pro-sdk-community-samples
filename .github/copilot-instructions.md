@@ -17,4 +17,4 @@ I am developing ArcGIS Pro Add-ins using the ArcGIS Pro SDK.
 - If a task involves UI, follow the ArcGIS Pro Add-in UI guidelines.
 - CIMSymbol has an extension method called MakeSymbolReference.  Use MakeSymbolReference to convert any CIMSymbol to a CIMSymbolReference.
 
-Always ensure that code suggestions are compatible with the latest supported version of ArGIS Pro SDK.
+Always ensure that code suggestions are compatible with the latest supported version of ArcGIS Pro SDK.
