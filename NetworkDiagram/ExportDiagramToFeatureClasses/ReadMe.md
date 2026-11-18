@@ -1,7 +1,7 @@
 ## ExportDiagramToFeatureClasses
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-There are some ArcGIS Pro functions you can use to export diagrams. For example, the Export Diagram Content geoprocessing tool allows you to export a JSON file that describes a network diagram content (see https://pro.arcgis.com/en/pro-app/latest/tool-reference/network-diagram/export-diagram-content.htm). The output JSON file can then be used for network calculation and analysis or to feed external system.   
+Exports network-diagram content to geodatabase feature classes through a dockpane that configures output fields and preserves selected source attributes.  
 Starting from an open network diagram map, you can also use the Export Map functions available on the Share tab in the Output group, to export the active diagram map as a file including vector and raster formats.  
   
 This add-in demonstrates another way to export a network diagram. It applies to any network diagram present in an active diagram map and exports its content into a set of feature classes in a feature dataset in a local geodatabase (File or Mobile). The output feature dataset can then be added to a map, shared with others, and so on.  
@@ -22,9 +22,9 @@ Language:              C#
 Subject:               NetworkDiagram
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

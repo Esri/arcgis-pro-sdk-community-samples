@@ -1,8 +1,7 @@
 ## AddInOne
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This Add-in demonstrates who to consume the IAddInToAddIn interface to communicate between two Add-ins.  
-An add-in can raise an event and another add-in can subscribe to that event.  
+Exchanges selection-change events with the companion AddInTwo add-in through IAddInToAddIn and displays received events in a custom control.  
   
 
 
@@ -14,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

@@ -38,9 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace TableControl
 {
   /// <summary>
-  /// This sample demonstrates using the TableControl on a dockpane. 
-  /// In this example we will populate the tablecontrol with content from the selected item in the Catalog pane. 
-  /// We will add toolbar buttons to the dockPane to modify the selected rows of the tablecontrol data. We will also customize the default row context menu. 
+  /// Displays the selected Catalog item's records in a dockpane TableControl with row-editing toolbar commands, a custom row context menu, and a map identify tool.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

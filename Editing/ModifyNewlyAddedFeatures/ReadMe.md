@@ -1,7 +1,7 @@
 ## ModifyNewlyAddedFeatures
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows how to:  
+Monitors feature row events to update polygon shapes and attributes and record changes in a separate tracking feature class.  
 * Update shape and attribute columns for a newly created or modified polygon feature  
 * Create a logging/tracking entry for each change in a second feature class  
 The workflow implemented in this sample examines every newly created or modified polygon and assure that it doesn't overlap any existing polygons in the same feature layer.  If the new polygon geometry overlaps any existing polygons, the geometry is corrected so that it doesn't overlap and a 'Description' attribute column is updated to show the action taken on the geometry.  
@@ -18,9 +18,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

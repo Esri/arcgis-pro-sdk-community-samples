@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace DDLCreateDeleteRelationshipClass
 {
   /// <summary>
-  /// This sample illustrates how to use the DDL APIs to create and delete relationship classes and move a relationship class in and out of a feature data set.
+    /// Creates, modifies, and deletes relationship classes, including attributed relationships and relationship rules, and moves relationships into or out of feature datasets.
   /// </summary>
   /// <remarks>
   /// 1. Open this solution in Visual Studio.  

@@ -1,7 +1,7 @@
 ## QAReviewTool
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample is a simplified data quality assurance(QA) review workflow.  It provides a set of controls guiding an operator through a data quality assurance review workflow to visually inspecting each feature and optionally add a QA notation to the record.  
+Guides feature-by-feature quality review with layer and field selection, navigation controls, editable QA notes, and commands to save, discard, or undo review edits.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace DDLCreateDeleteAttributeAndSpatialIndexes
 {
   /// <summary>
-  /// This sample shows how to use the DDL APIs to generate and delete Spatial Indexes and Attribute Indexes. 
+    /// Creates feature classes with indexes and adds or removes attribute and spatial indexes on existing datasets using SchemaBuilder.
   /// </summary>
   /// <remarks>
   /// Using the sample:

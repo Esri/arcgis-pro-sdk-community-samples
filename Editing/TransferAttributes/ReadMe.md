@@ -1,7 +1,7 @@
 ## TransferAttributes
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates two ways to transfer attributes to a target feature using the application Field Mapping options set between two layers.   
+Transfers attributes from source features or editing templates to target features using configured layer field mappings.  
 The Field Mapping options are where a user can specify how attribute field values on a source layer are processed and copied to fields on a target layer.   
 This sample also includes access to the Field Mapping page to allow editing of the options.   
   
@@ -15,9 +15,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

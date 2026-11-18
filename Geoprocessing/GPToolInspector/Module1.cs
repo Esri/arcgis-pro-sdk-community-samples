@@ -43,7 +43,7 @@ using System.Windows.Input;
 namespace GPToolInspector
 {
 	/// <summary>
-	/// GPToolInspector is an Add-in that reads the ArcGIS Pro toolboxes folder and displays all discovered toolboxes and tools in a tree view.  The tree view can be used to 'drill down' to find any tool by category, or the tree view can be searched by tool description for locating a specific tool.  Clicking on a tool node displays a popup dialog showing the tool usage in form of a code snippet that is ready to be applied within your add-in or managed configuration code.
+  /// Browses and searches installed geoprocessing toolboxes in a tree view and opens tool details with generated C# invocation snippets.
 	/// </summary>
 	/// <remarks>
 	/// 1. Download this repo onto your local machine and open the GPToolInspector solution using Visual Studio 2022.

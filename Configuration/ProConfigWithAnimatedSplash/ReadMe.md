@@ -1,7 +1,7 @@
 ## ProConfigWithAnimatedSplash
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows an ArcGIS Pro Configuration with an animated GIF in the splash screen  
+Provides an ArcGIS Pro configuration with an animated GIF splash screen, custom branding, and a start page for browsing and opening recent projects.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Configuation
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

@@ -1,7 +1,7 @@
 ## UpdateAttributesWithSketch
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample creates a sketch tool that can be used to update the attributes of features that it intersects. It shows an example of creating a sketch tool, finding intersecting features, updating attributes and performing the edit through an edit operation.  
+Updates attributes on features intersected by a sketch in the selected feature layer using an Inspector and an edit operation.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

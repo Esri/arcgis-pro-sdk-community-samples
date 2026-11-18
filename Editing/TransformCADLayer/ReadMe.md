@@ -1,7 +1,7 @@
 ## TransformCADLayer
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample can be used to transform a CAD layer by entering a scale factor, rotation, local coordinates and corresponding grid coordinates. The parameters are entered and a world file is created. The CAD layer's map location is updated based on the new world file transformation parameters corresponding with the entered values.   
+Georeferences a selected CAD layer by writing a world file from entered scale, rotation, local coordinates, and corresponding grid coordinates.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

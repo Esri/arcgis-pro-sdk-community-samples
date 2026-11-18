@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace IdentifyWindow
 {
   /// <summary>
-  /// This sample illustrates working with ArcGIS Pro's map view and how to interact.  The sample provides the following functionality
+    /// Displays active-map layers and selected-feature attributes in a dockpane and navigates to selected features:
   /// 1. Show the layer for the current active map view.
   /// 1. Select features on the current active map view.
   /// 1. Display the attribute data for all selected features.

@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Mapping.Voxel.Events;
 namespace VoxelSample
 {
   /// <summary>
-  /// Illustrates use of various aspects of the Voxel API.
+  /// Creates voxel layers and manages variables, visualization, slices, sections, and isosurfaces, including conversions between voxel and world coordinates.
   /// </summary>
   /// <remarks>
   /// 1. This sample specificially requires the sample data in CommunitySampleData-VoxelLayer-mm-dd-yyyy.zip (see Sample data link above).

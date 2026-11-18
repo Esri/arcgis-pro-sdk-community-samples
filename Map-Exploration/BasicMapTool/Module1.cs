@@ -28,9 +28,7 @@ using System.Threading.Tasks;
 namespace BasicMapTool
 {
     /// <summary>
-    /// Provides a basic map tool that can be Copy/Paste inherited as a starting point for more
-    /// sophisticated tool development.It has all the basic features such as key handling, simple mouse click
-    /// implementation, and an associated embeddable control that can be moved around the Map View.
+    /// Provides an extensible map tool with keyboard and mouse handling, camera navigation, and a movable embedded map-view control.
     /// </summary>
     /// <remarks>   
     /// 1. Open this solution in Visual Studio.  

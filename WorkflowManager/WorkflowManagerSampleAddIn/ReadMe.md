@@ -1,7 +1,7 @@
 ## WorkflowManagerSampleAddIn
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This ArcGIS Pro Add-In sample utilizes the Workflow Manager Pro SDK to perform various operations against ArcGIS Workflow Manager items.  
+Queries Workflow Manager jobs and statistics, retrieves connection and active-job information, runs and assigns workflow steps, sends step responses, and subscribes to job notifications.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Workflow Manager
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

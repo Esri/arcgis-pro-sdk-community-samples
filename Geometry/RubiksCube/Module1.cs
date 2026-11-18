@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Mapping;
 namespace RubiksCube
 {
   /// <summary>
-  /// This sample illustrates creating a multipatch, applying materials and applying textures using the MultipatchBuilderEx class. 
+  /// Creates a cube multipatch feature and applies face materials and image textures to produce a Rubik's Cube-style visualization.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.

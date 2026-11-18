@@ -1,7 +1,7 @@
 ## GeoprocessingExecuteAsync
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample adds a tool button to Addin Tab. You click on the BufferGeometryTool button and draw a line on the map. The tool then passes the line geometry to Geoprocessing ExecuteToolAsync method which draws a buffer around that line.  
+Buffers a sketched line by 800 meters by passing its geometry directly to the asynchronous Buffer geoprocessing tool.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Geoprocessing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

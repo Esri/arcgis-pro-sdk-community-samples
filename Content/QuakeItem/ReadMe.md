@@ -1,7 +1,7 @@
 ## QuakeItem
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample covers how to 'customize' Pro's access to content by using custom items and project custom items.  Specifically we are reading a 'custom' formatted XML file containing earthquake data.  
+Integrates earthquake XML files into Catalog as custom project items, exposes their earthquake events, and draws event locations as map graphics.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

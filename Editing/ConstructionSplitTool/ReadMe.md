@@ -1,6 +1,8 @@
 ## ConstructionSplitTool
 
 <!-- TODO: Write a brief abstract explaining this sample -->
+Provides construction tools that create point or line features and split intersecting lines or polygons using the sketch geometry.  
+  
 
 
 <a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
@@ -11,9 +13,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

@@ -25,8 +25,7 @@ using ArcGIS.Desktop.Framework.Events;
 namespace MetadataViewer
 {
     /// <summary>
-    /// This sample demonstrates how to view the Metadata of a Project item using the Pro API.
-    /// Note: Metadata of certain items such as system styles cannot be viewed.
+    /// Displays the selected Catalog item's metadata as formatted XML in an editor dockpane and locates XML validation errors.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution. 

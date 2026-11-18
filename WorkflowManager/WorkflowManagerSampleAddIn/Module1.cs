@@ -41,7 +41,7 @@ using ArcGIS.Desktop.Workflow.Client.Steps;
 namespace WorkflowManagerSampleAddIn
 {
     /// <summary>
-    /// This ArcGIS Pro Add-In sample utilizes the Workflow Manager Pro SDK to perform various operations against ArcGIS Workflow Manager items.
+    /// Queries Workflow Manager jobs and statistics, retrieves connection and active-job information, runs and assigns workflow steps, sends step responses, and subscribes to job notifications.
     /// </summary>
     /// <remarks>
     /// 1. Prerequisite: This sample requires [ArcGIS Workflow Manager](https://pro.arcgis.com/en/pro-app/latest/help/workflow/an-introduction-to-arcgis-workflow-manager.htm) and a connection to a workflow item.  For details see [Manage workflow item connections](https://pro.arcgis.com/en/pro-app/latest/help/workflow/manage-workflow-item-connections.htm).

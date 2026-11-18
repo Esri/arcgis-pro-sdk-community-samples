@@ -1,7 +1,7 @@
 ## Localization
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This localization sample shows how to 'Globalize' an add-in by providing an add-in with  text translated into different languages and showing support for different regions (locale).  
+Localizes a dockpane's labels and tabular data using translated resources and locale-aware presentation.  
 A ProTutorial based on this sample is also available.  
   
 
@@ -14,9 +14,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

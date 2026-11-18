@@ -41,7 +41,7 @@ using System.Windows;
 namespace SceneCalcTools
 {
 	/// <summary>
-	/// This sample illustrates how an add-in can be used to provide tools which leverage a 3D scene layer package and point cloud dataset created from a drone survey with Drone2Map for ArcGIS software.  The tools allow you to interact with the scene layers and illustrate a workflow to calculate volume and other metrics on asphalt gravel stockpiles for general supply tracking.
+	/// Uses sketched stockpile boundaries and elevation inputs with drone-derived scene and point-cloud data to calculate stockpile volumes and related supply metrics.
 	/// </summary>
 	/// <remarks>
 	/// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data). The sample data contains a dataset called VolumeCalcTools.  Make sure that the Sample data is unzipped under C:\Data and the folder "C:\Data\VolumeCalcTools\" is available.  

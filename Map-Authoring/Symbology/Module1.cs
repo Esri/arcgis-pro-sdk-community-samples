@@ -28,8 +28,7 @@ using System.Threading.Tasks;
 namespace Symbology
 {
   /// <summary>
-  /// This sample creates custom point, line and polygon symbol items that you can use to render feature layers.  
-  /// These symbol items are stored in a personal style file in your project that you can re-use.
+    /// Constructs custom point, line, polygon, and mesh symbols, displays them in a dockpane, and stores reusable symbol items in a personal project style.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.  

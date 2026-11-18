@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace EditOperationRowEvent
 {
   /// <summary>
-  /// This sample shows how to reference and use the running EditOperation in row events.
+  /// Uses the active edit operation inside row-event handlers to make related edits and creates sample zones and a tracking table for the workflow.
   /// </summary>
   /// <remarks>
   /// This sample shows an example of the edit log being populated from either the default tools or a custom edit tool using the running Edit Operation within row events.

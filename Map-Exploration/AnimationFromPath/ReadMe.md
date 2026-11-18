@@ -1,8 +1,7 @@
 ## AnimationFromPath
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample allows creation of animation from path. A couple of different options have been proovided including View Along, Top-Down, Face-Target etc.  
-The add-in also allows for setting Z-Offset, Duration and Custom Pitch.  
+Creates camera animation keyframes along a selected path with along-path, top-down, and target-facing views and configurable height offset, duration, and pitch.  
 The Set Target tool can be used to specify a target that the camera will always face in the created animation. Set-target tool is used with the Face-Target view mode.  
 In addition to the view you would like, the add-in also provides three different options for creating the keyframes. You can choose to:  
 - Keyframes along path - creates fewer keyframes but tries to keep you on the path    while avoiding sharp turns at corners  
@@ -19,9 +18,9 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

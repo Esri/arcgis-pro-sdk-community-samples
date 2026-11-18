@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace CoordinateSystemPicker
 {
   /// <summary>
-  /// This sample provides an example of the Coordinate Picker and Coordinate Details User Controls. 
+  /// Opens a coordinate-system selection dialog that embeds coordinate picker and coordinate details controls.
   /// Embed within your Add-in if you need to provide a similar UI. The list of Coordinate systems 
   /// is loaded the first time the dialog is opened and remains cached for the duration of the Pro 
   /// session. When a user picks a Coordinate System in the top half of the dialog, the 

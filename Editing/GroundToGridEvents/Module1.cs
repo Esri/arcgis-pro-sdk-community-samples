@@ -32,7 +32,7 @@ using ArcGIS.Desktop.Mapping;
 namespace G2GEvents
 {
 	/// <summary>
-	/// This sample demonstrates listening for change events when ground to grid properties are altered for the active map. 
+	/// Monitors changes to the active map's ground-to-grid correction settings and displays the changes in a dockpane.
 	/// </summary>
 	/// <remarks>
 	/// 1. Build or debug the sample through Visual Studio.

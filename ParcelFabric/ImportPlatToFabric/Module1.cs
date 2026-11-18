@@ -39,7 +39,7 @@ using ArcGIS.Desktop.Mapping;
 namespace ImportPlatToFabric
 {
   /// <summary>
-  /// ParcelFabricAPI shows the following Parcel Fabric API capabilities:
+  /// Imports plat geometry into a parcel fabric, creates and activates parcel records, and fixes imported line data through a dockpane workflow:
   /// 1. Create a Record – a new Record feature in the Records feature class
   /// 1. Setting the created Record as the active record
   /// 1. Copy lines from an existing import feature class selection of non-fabric features into a parcel type called "Tax" in a parcel fabric. Parcel seeds are created automatically.

@@ -1,7 +1,7 @@
 ## IdentifyWindow
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates working with ArcGIS Pro's map view and how to interact.  The sample provides the following functionality  
+Displays active-map layers and selected-feature attributes in a dockpane and navigates to selected features:  
   
 1. Show the layer for the current active map view.  
 2. Select features on the current active map view.  
@@ -18,9 +18,9 @@ Language:              C#
 Subject:               Map-Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

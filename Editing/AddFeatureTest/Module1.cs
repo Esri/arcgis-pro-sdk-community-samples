@@ -40,7 +40,7 @@ using System.Threading;
 namespace AddFeatureTest
 {
   /// <summary>
-	/// This sample shows how to create new featureclasses with attributes and also how to add new features to those newly created featureclasses.
+  /// Creates point and polygon feature classes with attribute fields and populates them with features through edit operations.
 	/// </summary>
 	/// <remarks>
 	/// 1. In Visual studio rebuild the solution.

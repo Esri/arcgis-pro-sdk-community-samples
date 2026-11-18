@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace WebViewBrowser
 {
   /// <summary>
-  /// This sample shows how to implement pane that contains an Edge WebView2 control using the built-in ArcGIS Pro SDK's WebBrowser control.  For details on how to utilize the WebBrowser control in an add-in see here: https://github.com/Esri/arcgis-pro-sdk/wiki/ProConcepts-Framework#webviewbrowser-control  For details on how to utilize the Microsoft Edge web browser control in an add-in see here: https://github.com/Esri/arcgis-pro-sdk/wiki/ProConcepts-Framework#webbrowser-control  
+	/// Hosts the ArcGIS Pro WebView browser control in a custom pane with address navigation and a managed list of visited locations.
   /// </summary>    
   /// <remarks>    
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.

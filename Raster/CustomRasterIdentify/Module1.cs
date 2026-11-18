@@ -23,9 +23,7 @@ using System.Threading.Tasks;
 namespace CustomRasterIdentify
 {
   /// <summary>
-  /// This sample shows how to author a tool that can be used to identify raster pixel values and display 
-  /// the results in a custom pop-up window. The popup window will show pixel values for the 
-  /// rendered raster and the source raster dataset.
+    /// Identifies pixel values in a selected raster or mosaic image layer and displays rendered and source-dataset values in a custom popup.
   /// Note: The identify is authored to query any raster, mosaic or image service layer(s) in the map that 
   /// are selected in the Contents pane.
   /// </summary>

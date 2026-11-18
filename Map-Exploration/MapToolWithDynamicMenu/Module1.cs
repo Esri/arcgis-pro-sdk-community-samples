@@ -28,8 +28,7 @@ using System.Threading.Tasks;
 namespace MapToolWithDynamicMenu
 {
     /// <summary>
-    /// This sample shows how to author a dynamic pop-up menu as an extension of a map exploration tool. 
-    /// In this example a mouse click on a map that contains a high density points is used to pop-up a dynamic menu showing all point features intersecting the mouse click area.  The dynamic pop-up can then be used to select a single feature. 
+    /// Builds a dynamic menu of point features near a map click so the user can select an individual feature in a densely populated area.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

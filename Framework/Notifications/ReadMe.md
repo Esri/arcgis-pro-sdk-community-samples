@@ -1,7 +1,7 @@
 ## Notifications
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates notifications in the application.  There are two main categories of notifications - toast notifications which are transient message to the user that contains relevant, time-sensitive information and provides quick access to related  content in an application; these appear in the top right hand corner of the display and last for a few seconds. The second category  of notification are more permanent and are displayed in the notification dock pane.  These type of notifications can be further  classified into application and project notifications.   
+Creates and removes application notifications, including transient toast notifications which are transient message to the user that contains relevant, time-sensitive information and provides quick access to related  content in an application; these appear in the top right hand corner of the display and last for a few seconds. The second category  of notification are more permanent and are displayed in the notification dock pane.  These type of notifications can be further  classified into application and project notifications.   
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

@@ -1,7 +1,7 @@
 ## DocToolBoxEmbedding
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates how to 'attach' files (such as documents), images, and toolboxes in your add-in's project file and how to use those attachments in your add-in.  
+Packages documents, images, and toolboxes with an add-in and provides a command to open a bundled document.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

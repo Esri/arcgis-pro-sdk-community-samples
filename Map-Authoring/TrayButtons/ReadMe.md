@@ -1,7 +1,7 @@
 ## TrayButtons
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates how to build custom tray buttons.    
+Adds map and layout tray controls for zooming to visible layers, choosing colors, configuring the editing toolbar, and toggling layout guides.  
 Three samples are included.  
 The first is a simple map tray button, ZoomToVisibleExtentTrayButton. This tray button will change the map extent to the visible extent of all layers in the map.  
 The second sample is the layout tray toggle button.  This tray button is the Toggle button type created to be used in layout only.   
@@ -18,9 +18,9 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

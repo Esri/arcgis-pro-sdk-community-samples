@@ -35,7 +35,7 @@ using static ToggleSwitches.CommonTools;
 namespace ToggleSwitches
 {
   /// <summary>
-  /// This add-in demonstrates toggling switches in an electric distribution network and the visual network diagram feedback.  
+  /// Toggles electric-network switch status from a diagram and colors diagram edges to visualize the resulting network state.
   /// Attributes cannot be manually edited from network diagrams; nor the attributes stored in the diagram feature classes, nor those coming from the join with the associated network source classes.
   /// However, any editable attributes on the joined network feature class can be edited by code. In this add-in sample, you will learn about how to edit the Status attribute available on Switch devices.
   /// This code sample is tied to the sample network dataset referenced in the workflow steps detailed below. But, it can be easily adapted for any utility network dataset.

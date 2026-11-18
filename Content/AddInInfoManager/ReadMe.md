@@ -1,7 +1,7 @@
 ## AddInInfoManager
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates how to retrieve Add-In metadata information similar to the 'Add-in Manager' available out-of-box in the ArcGIS Pro backstage.  
+Lists installed add-ins and their metadata in a dockpane, supports deleting add-in packages, and displays version information read from Config.daml.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Content
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

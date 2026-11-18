@@ -23,9 +23,7 @@ using System.Threading.Tasks;
 namespace AnimationFromPath
 {
   /// <summary>
-  /// This sample allows creation of animation from path. A couple of different
-  /// options have been proovided including View Along, Top-Down, Face-Target etc.
-  /// The add-in also allows for setting Z-Offset, Duration and Custom Pitch.
+  /// Creates camera animation keyframes along a selected path with along-path, top-down, and target-facing views and configurable height offset, duration, and pitch.
   /// The Set Target tool can be used to specify a target that the camera will always
   /// face in the created animation. Set-target tool is used with the Face-Target view mode.
   /// In addition to the view you would like, the add-in also provides three different

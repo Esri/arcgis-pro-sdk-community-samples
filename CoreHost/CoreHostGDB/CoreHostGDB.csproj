@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <CETCompat>false</CETCompat>
     <TargetFramework>net10.0-windows</TargetFramework>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
@@ -8,6 +9,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <NoWarn>1591;CA1416</NoWarn>
     <OutputType>Exe</OutputType>
+    <PlatformTarget>x64</PlatformTarget>
     <UseWindowsForms>true</UseWindowsForms>
     <UseWPF>true</UseWPF>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -32,7 +34,5 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ReadMe.md" />
-    <None Include="CoreHostGDB (C# 6.0).md" />
-    <None Include="CoreHostGDB (C#).md" />
   </ItemGroup>
 </Project>

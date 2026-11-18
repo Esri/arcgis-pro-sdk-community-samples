@@ -23,7 +23,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace MapToolZoom
 {
     /// <summary>
-    /// ProGuide example for simple MapView interaction is demonstrated in this sample with a tool that allows to zoom in and out of the current MapView.  The left mouse click will zoom in and the right mouse click will zoom out.  Unlike the other Map Tool samples this example does not use the sketch capabilities of the MapTool base class instead the sample overrides mouse and keyboard events.  
+    /// Provides mouse and keyboard navigation that zooms the active map in or out without using a sketch.
     /// </summary>
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a dataset called 'Interacting with Maps' with both 2D and 3D data.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.

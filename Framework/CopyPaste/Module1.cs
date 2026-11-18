@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace CopyPaste
 {
   /// <summary>
-  /// This sample shows how to implement a custom copy/paste handler via the Module class.  The sample allows the operator to use the copy paste functionality of ArcGIS Pro to implement a custom implementation.
+  /// Implements module-level copy and paste handlers that serialize sketched geometry to the clipboard and paste geometry into a selected feature layer.
   /// </summary>
   /// <remarks>   
   /// 1. Open this solution in Visual Studio.  

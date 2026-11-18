@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace SLR_Analyst
 {
 	/// <summary>
-	/// This demonstration illustrates custom ArcGIS Pro map exploration functionality provided through a Pro SDK add-in.  The scenario uses a sample Pro add-in, Sea Level Rise Analyst, which can assist urban planning and public safety organizations in quickly identifying areas affected by sea level rise within a study area in Miami Beach, Florida.  
+	/// Explores sea-level-rise scenarios in Miami Beach by switching inundation layers, identifying affected land use, parcels, and streets, and displaying selected parcel information.
 	/// The general concept of the add-in is based on the [NOAA Sea Level Rise Viewer](https://coast.noaa.gov/slr/) web application.	The add-in and dataset allow for identification and selection from three layers � land use, parcels and streets.  
 	/// The custom add-in demonstrates three main Pro SDK capabilities:
 	/// -	Interaction with and selection of layers within the project from a custom add-in pane.

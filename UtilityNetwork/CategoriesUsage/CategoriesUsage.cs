@@ -28,8 +28,7 @@ using System.Threading.Tasks;
 namespace CategoriesUsage
 {
   /// <summary>
-  /// This add-in creates temporary tables listing out the asset types in a utility network that support a particular 
-  /// utility network category.
+  /// Lists available utility-network categories and creates a temporary report table of asset types supporting the selected category.
   /// 
   /// Community Sample data (see under the "Resources" section for downloading sample data) has a UtilityNetworkSamples.aprx 
   /// project that contains a utility network that can be used with this sample.  This project can be found under the 

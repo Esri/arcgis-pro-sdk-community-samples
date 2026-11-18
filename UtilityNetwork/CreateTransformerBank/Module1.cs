@@ -28,8 +28,7 @@ using System.Threading.Tasks;
 namespace CreateTransformerBank
 {
   /// <summary>
-  /// This add-in demonstrates the creation of an electric distribution transformer bank.  It creates the bank feature, three transformer features (one per phase),
-  /// three fuses, three arresters and the associations between them.  It demonstrates how to accomplish this within a single EditOperation.
+  /// Creates an electric transformer bank with three phase-specific transformers, fuses, arresters, and their network associations in a single edit operation.
   ///  
   /// Community Sample data (see under the "Resources" section for downloading sample data) has a UtilityNetworkSamples.aprx 
   /// project that contains a utility network that can be used with this sample.  This project can be found under the 

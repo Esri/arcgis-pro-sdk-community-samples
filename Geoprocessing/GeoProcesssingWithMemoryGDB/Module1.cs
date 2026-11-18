@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace GeoProcesssingWithMemoryGDB
 {
   /// <summary>
-  /// This sample shows how to create create a memory Geodatabase and then uses the Memory Geodatabase for geo processing.
+  /// Creates and populates an in-memory geodatabase, runs buffer, densify, and dissolve geoprocessing tools on its data, and displays workflow statistics.
   /// </summary>
   /// <remarks>
   /// 1. In Visual studio rebuild the solution.

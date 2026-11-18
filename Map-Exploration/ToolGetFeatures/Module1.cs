@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Mapping;
 namespace ToolGetFeatures
 {
   /// <summary>
-  /// This sample demonstrates how to get underlying features from a map using a map tool click.  The sample shows two methods: GetFeatures and a spatial query. 
+    /// Retrieves features near a map click using either MapView.GetFeatures or a spatial query and draws the search area as an overlay.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data(see under the "Resources" section for downloading sample data).  Make sure that the Sample data is unzipped in c:\data and "C:\Data\FeatureTest\FeatureTest.aprx" is available.

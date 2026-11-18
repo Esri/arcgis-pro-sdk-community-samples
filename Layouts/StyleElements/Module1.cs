@@ -41,7 +41,7 @@ using System.Windows.Input;
 namespace StyleElements
 {
   /// <summary>
-  /// This sample illustrates how apply a style to graphic elements in a MapView or layout elements in a Layout View. Graphics in a Map View can be point, line, polygon and text graphics. In the Layout view, additional graphics such as North Arrow, Scale bar, table frame and Grids and Graticule can be changed using the Pro SDK.
+  /// Applies project style items to selected map graphics and layout elements, including symbols, legends, north arrows, scale bars, table frames, and grids.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio, build the solution.

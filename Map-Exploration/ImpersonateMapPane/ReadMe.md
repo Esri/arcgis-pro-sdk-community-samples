@@ -1,8 +1,7 @@
 ## ImpersonateMapPane
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates how to create a new map pane that impersonates an existing map pane. A control will be added to the new pane allowing you to view the map CIM.  A custom  
-TOC implementation will also be demonstrated.A new Visual Studio template 'ArcGIS Pro Map Pane Impersonation' has been added at ArcGIS Pro 2.0.    
+Creates a custom map pane that impersonates an existing map view, displays its CIM content, and supplies a custom Contents interface.  
   
 
 
@@ -14,9 +13,9 @@ Language:              C#
 Subject:               Map-Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

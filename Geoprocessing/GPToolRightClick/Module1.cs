@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Mapping;
 namespace GPToolRightClick
 {
   /// <summary>
-  /// GPToolRightClick is a sample add-in that demonstrates how to create a custom context menu for a geoprocessing tool and who to retrieve the clicked on tool's detailed information.
+    /// Adds a geoprocessing-tool context-menu command that retrieves information about the clicked tool.
   /// </summary>
   /// <remarks>
   /// 1. Download this repo onto your local machine and open the GPToolRightClick solution using Visual Studio 2022.

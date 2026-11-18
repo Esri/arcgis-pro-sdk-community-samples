@@ -176,17 +176,20 @@ namespace InspectorTool
                 var pointSelection = pointLayer.Select(spatialQuery);
 
                 List<long> oids = pointSelection.GetObjectIDs().ToList();
-                if (oids.Count == 0)
-                  return;
+                var count = oids.Count;
 
                 // set up a dictionary to store the layer and the object IDs of the selected features
                 var selectionDictionary = new Dictionary<MapMember, List<long>>();
-                selectionDictionary.Add(pointLayer as MapMember, pointSelection.GetObjectIDs().ToList());
+                if (count > 0)
+                  selectionDictionary.Add(pointLayer as MapMember, pointSelection.GetObjectIDs().ToList());
 
                 // assign the dictionary to the view model
                 _attributeVM.SelectedMapFeatures = selectionDictionary;
-                // load the first feature into the attribute inspector
-                _attributeVM.AttributeInspector.Load(pointLayer, pointSelection.GetObjectIDs().First());
+                if (count > 0)
+                  // load the first feature into the attribute inspector
+                  _attributeVM.AttributeInspector.Load(pointLayer, pointSelection.GetObjectIDs().First());
+                else
+                  _attributeVM.AttributeInspector.Clear();
             });
 
             return Task.FromResult(true);

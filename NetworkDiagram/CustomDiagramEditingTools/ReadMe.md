@@ -1,7 +1,7 @@
 ## DiagramEditing
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This add-in demonstrates how to develop some helpful custom diagram editing commands to swap two diagram features, mirror a set of diagram features, and align diagram junctions.  
+Adds diagram-editing commands that swap feature positions, mirror selected diagram features, and align diagram junctions, including alignment by angle.  
 These custom commands are available on the Add-In tab in the Diagram Editing group:  
 ![UI](Screenshots/CustomDiagramEditingTools_Tab.png)  
 NOTE: The CustomDiagramEditingTools add-in code is a generic code sample that applies to any network diagram related to any utility or trace network dataset.This add-in demonstrates how to develop some helpful custom diagram editing commands to swap two diagram features, mirror a set of diagram features, and align diagram junctions.  
@@ -19,9 +19,9 @@ Language:              C#
 Subject:               NetworkDiagram
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

@@ -1,7 +1,7 @@
 ## AddFeatureTest
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows how to create new featureclasses with attributes and also how to add new features to those newly created featureclasses.  
+Creates point and polygon feature classes with attribute fields and populates them with features through edit operations.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

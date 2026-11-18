@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Mapping;
 namespace MyCopilotAddin
 {
   /// <summary>
-  /// Shows a sample addin development workflow using GitHub Copilot to assist in the implementation.  This ArcGIS Pro sample add-in uses a DockPane to guide the user through a GIS workflow.  The matching ProGuide can be found here: [ProGuide writing an addin with copilot](https://github.com/Esri/arcgis-pro-sdk/wiki/ProGuide-writing-an-addin-with-copilot)
+    /// Guides 3D lot creation in a dockpane by using selected parcel geometry, sampling surface elevations, and building elevated multipatch geometry.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data). Make sure that the Sample data is unzipped in c:\data and "C:\Data\Elevation\" is available.

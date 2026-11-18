@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace ProIcons
 {
   /// <summary>
-  /// This sample shows a list of all icons defined in ArcGIS Pro.  It allows to get the pack URI for those icons and has a utility to inspect the icons using the light and dark themes.
+  /// Browses ArcGIS Pro icons, copies their resource identifiers and pack URIs, previews light and dark theme variants, and exports icon images.
   /// </summary>
   /// <remarks>
   /// 1. In Visual studio rebuild the solution.

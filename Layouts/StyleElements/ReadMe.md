@@ -1,7 +1,7 @@
 ## StyleElements
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates how apply a style to graphic elements in a MapView or layout elements in a Layout View. Graphics in a Map View can be point, line, polygon and text graphics. In the Layout view, additional graphics such as North Arrow, Scale bar, table frame and Grids and Graticule can be changed using the Pro SDK.  
+Applies project style items to selected map graphics and layout elements, including symbols, legends, north arrows, scale bars, table frames, and grids.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

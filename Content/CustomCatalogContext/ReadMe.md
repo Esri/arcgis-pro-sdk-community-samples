@@ -1,7 +1,7 @@
 ## CustomCatalogContext
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-Shows how to modify a sampling of different context menus for the ArcGIS Pro Catalog (dockpane) context menu  
+Adds custom commands to Catalog context menus for different project item types.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Content
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

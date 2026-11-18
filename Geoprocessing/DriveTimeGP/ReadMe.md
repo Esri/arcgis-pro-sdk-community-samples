@@ -1,7 +1,7 @@
 ## DriveTimeGP
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This samples shows how to call the esri drive time geoprocessing service @ http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Network/ESRI_DriveTime_US/GPServer/CreateDriveTimePolygons  and then displays the drive time areas for 3 times.  
+Submits a sketched location to a drive-time geoprocessing service to create polygons for one-, two-, and three-minute travel times.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Geoprocessing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

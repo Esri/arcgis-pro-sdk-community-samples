@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace GetAddins
 {
     /// <summary>
-    /// This sample shows how to create a new Backstage Tab called Get Add-Ins. This will display all the add-ins available for download on ArcGIS Online.
+    /// Adds a backstage page that searches ArcGIS Online for ArcGIS Pro add-ins and downloads selected add-in packages.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

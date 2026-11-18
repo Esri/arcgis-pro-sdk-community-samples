@@ -1,7 +1,7 @@
 ## ScreenCoordsToMapPoint
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates how to convert screen coordinates to a map point  
+Converts map-tool screen coordinates to map points and marks the resulting locations with point overlays.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

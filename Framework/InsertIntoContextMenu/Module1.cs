@@ -23,9 +23,7 @@ using System.Threading.Tasks;
 namespace InsertIntoContextMenu
 {
     /// <summary>
-    /// This sample provides a custom control button that will be available
-    /// in the context menu for a feature layer in the TOC. Selecting this
-    /// option will display a window containing the metadata for the layer.
+    /// Adds a feature-layer context-menu command that opens a window showing the selected layer's CIM definition as formatted XML.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

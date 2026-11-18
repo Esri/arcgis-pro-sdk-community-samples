@@ -1,7 +1,7 @@
 ## CopyPaste
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows how to implement a custom copy/paste handler via the Module class.  The sample allows the operator to use the copy paste functionality of ArcGIS Pro to implement a custom implementation.  
+Implements module-level copy and paste handlers that serialize sketched geometry to the clipboard and paste geometry into a selected feature layer.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

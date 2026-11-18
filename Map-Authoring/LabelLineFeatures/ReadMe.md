@@ -1,7 +1,7 @@
 ## LabelLineFeatures
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates how to select line features and label them. New label classes are created in code that are used to label the selected features. Two methods to label selected features are demonstrated.  
+Labels sketched selections of line features by creating label classes and updating labeling attributes, with a command to clear the generated labels.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

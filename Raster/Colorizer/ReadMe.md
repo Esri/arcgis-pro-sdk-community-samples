@@ -1,7 +1,7 @@
 ## Colorizer
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates how to change colors for rasters that have attribute tables.  The colorizer has to contain the attribute field name that is then used on the TOC and is also used to define the colors.  
+Recolors rasters using attribute-table values and a style color ramp, configuring the colorizer's field names for legend display.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Raster
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

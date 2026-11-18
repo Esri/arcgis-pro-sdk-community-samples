@@ -39,8 +39,7 @@ using ArcGIS.Desktop.Mapping;
 namespace MultipatchBuilderEx
 {
   /// <summary>
-  /// This sample demonstrates how to construct multipatch geometries using the MultipatchBuilderEx class found in the ArcGIS.Core.Geometry namespace. 
-  /// The MultipatchBuilderEx class also allows you to modify properties of a multipatch including the materials and textures.
+  /// Creates multipatch features and map overlays with MultipatchBuilderEx and modifies their patch materials and image textures.
   /// This add-in contains a number of buttons which create and modify multipatch features. 
   /// </summary>
   /// <remarks>

@@ -36,7 +36,7 @@ using ArcGIS.Desktop.Mapping.Events;
 namespace MapPuzzle
 {
   /// <summary>
-  /// This sample shows how to create and manipulate layout elements.
+  /// Creates a map-based puzzle board in a layout and provides commands to scramble, move, and reset its layout-element pieces.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.  

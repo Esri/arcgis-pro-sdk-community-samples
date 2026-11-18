@@ -22,7 +22,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace KnowledgeGraphConstructionTools
 {
   /// <summary>
-  /// This sample illustrates how to build construction tools for KnowledgeGraph entity and relationships. 
+  /// Provides construction tools to create knowledge-graph entities and relationships by sketching features and identifying their origin and destination entities.
   /// The sketch tool displays a UI on the overlay using the OverlayControlID property of the MapTool. 
   /// The UI requires the user to specify the source and destination entity types along with the relate type and 
   /// the relate direction. 

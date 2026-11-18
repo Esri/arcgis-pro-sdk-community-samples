@@ -1,7 +1,7 @@
 ## SimplePointPluginTest
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-SimplePointPluginTest implements a custom plugin datasource for reading csv files.  SimplePointPluginTest is an add-in that allows to access the custom datasource.  SimplePointPlugin contains the actual custom plugin datasource implementation to access csv data from within ArcGIS Pro.   
+Opens CSV point datasets through the companion SimplePointPlugin datasource, reads their features, and exercises absolute and relative datasource paths.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

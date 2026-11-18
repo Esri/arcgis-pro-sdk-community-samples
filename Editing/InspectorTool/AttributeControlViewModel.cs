@@ -19,6 +19,7 @@ using ArcGIS.Desktop.Framework.Controls;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Xml.Linq;
@@ -96,7 +97,27 @@ namespace InspectorTool
     public Dictionary<MapMember, List<long>> SelectedMapFeatures
     {
       get => _selection;
-      set => SetProperty(ref _selection, value);
+      set
+      {
+        SetProperty(ref _selection, value);
+        MapMemberIDSet = MapMemberIDSet.FromDictionary(value);
+        var mm = _selection?.Keys.FirstOrDefault();
+        Map = mm?.Map;
+      }
+    }
+
+    private MapMemberIDSet _mapMemberIDSet;
+    public MapMemberIDSet MapMemberIDSet
+    {
+      get => _mapMemberIDSet;
+      set => SetProperty(ref _mapMemberIDSet, value);
+    }
+
+    private Map _map;
+    public Map Map
+    {
+      get => _map;
+      set => SetProperty(ref _map, value);
     }
 
     /// <summary>

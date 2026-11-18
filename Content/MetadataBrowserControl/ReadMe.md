@@ -1,8 +1,7 @@
 ## MetadataBrowserControl
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates how to view the Metadata of a Project item using the Pro API in a browser control with a transform applied to it.  
-Note: Metadata of certain items such as system styles cannot be viewed.  
+Displays the selected Catalog item's metadata in a browser dockpane after applying a selectable XSL transformation.  
   
 
 
@@ -14,9 +13,9 @@ Language:              C#
 Subject:               Content
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

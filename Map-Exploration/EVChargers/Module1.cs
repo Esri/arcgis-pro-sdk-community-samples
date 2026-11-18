@@ -39,8 +39,7 @@ using System.Windows.Input;
 namespace EVChargers
 {
   /// <summary>
-  /// This sample uses an embeddable control on a Mapview to allow advanced filter search of USA and Canada Electrical vehicle charger locations. You can search locations, charger and connector types.
-  /// The results will be displayed in a dockpane.
+  /// Searches electric-vehicle charger locations in the United States and Canada by area, charger type, and connector type, displaying selectable results in a dockpane.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a Pro package called 'LocationOfEVChargers' in c:\Data\DisplayFilters.  

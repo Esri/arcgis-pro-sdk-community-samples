@@ -17,7 +17,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace DeleteFeaturesBasedOnSubtype
 {
 	/// <summary>
-	/// This addin lists all subtypes for a Feature Class and allows deleting all features with a specific subtype
+	/// Lists the selected feature class's subtypes in a ribbon combo box and deletes features belonging to the chosen subtype.
 	/// </summary>    
 	/// <remarks>
 	/// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.

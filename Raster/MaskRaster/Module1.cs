@@ -23,9 +23,7 @@ using System.Threading.Tasks;
 namespace MaskRaster
 {
   /// <summary>
-  /// This sample shows how to author a tool that can be used to mask raster pixel values in a ractangle 
-  /// defined by the user. The masked output is saved as a new raster dataset in the project folder. This 
-  /// sample only works on a single raster layer at a time.
+    /// Masks pixel values within a user-sketched rectangle on a selected raster layer and saves the result as a new raster dataset in the project folder.
   /// Note: You will need write access to the project folder in order to use this sample. The sample saves
   /// your input image before masking it so if you use a large image the save can take a while.
   /// </summary>

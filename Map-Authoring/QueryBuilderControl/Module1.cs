@@ -28,18 +28,17 @@ using System.Threading.Tasks;
 namespace QueryBuilderControl
 {
   /// <summary>
-  /// This sample provides an illustration of how to use the QueryBuilderControl.  This add-in contains a dockPane which hosts the QueryBuilderControl.  
-  /// The dockPane is used to view and modify the definition query for feature layers and standalone tables.  You can set attribute and spatial queries with this control. 
+  /// Hosts DefinitionQueryBuilderControl in a dockpane for viewing and changing attribute and spatial definition queries on feature layers and standalone tables.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.
   /// 1. Launch the debugger to open ArcGIS Pro.
-  /// 1. Open an existing project.
+  /// 1. Open any existing project that contains feature layers or standalone tables with definition queries.
   /// 1. Click on the Add-In tab.
   /// 1. Click on the *Show DefinitionQueryDockPane* button. 
   /// 1. The Definition Query dock pane will open up.
   /// ![UI](Screenshots/QueryBuilderDockPane.png)
-  /// 1. Select a feature layer or standalone table in the TOC. The dock pane will display the definition query for the highlighted TOC item. 
+  /// 1. Select a feature layer or standalone table in the TOC. If the layer has a definition query, the dockpane will display the definition query for the highlighted TOC item. 
   /// 1. Use the query builder control to update the definition query for the highlighted TOC item. 
   /// 1. Use the Apply button to write the updated definition query to the highlighted layer.
   /// ![UI](Screenshots/QueryBuilderDockPane_Layer.png)

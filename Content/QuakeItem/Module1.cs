@@ -40,7 +40,7 @@ using QuakeItem.Items;
 namespace QuakeItem
 {   
     /// <summary>
-    /// This sample covers how to 'customize' Pro's access to content by using custom items and project custom items.  Specifically we are reading a 'custom' formatted XML file containing earthquake data.
+    /// Integrates earthquake XML files into Catalog as custom project items, exposes their earthquake events, and draws event locations as map graphics.
     /// </summary>
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

@@ -40,7 +40,7 @@ using System.Windows.Input;
 namespace DatagridMultiSelect
 {
 	/// <summary>
-	/// This sample shows how to use the WPF DataGrid's 'Multi-Select' feature to select multiple rows from a DataGrid in MVVM.  The DataGrid is displayed in a DockPane.
+  /// Displays map-feature data in a dockpane WPF DataGrid and manages multiple selected rows through an MVVM view model.
   /// </summary>
 	/// <remarks>
 	/// 1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\FeatureTest\FeatureTest.aprx" is available.

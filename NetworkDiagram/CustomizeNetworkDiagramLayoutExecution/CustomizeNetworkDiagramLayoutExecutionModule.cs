@@ -41,7 +41,7 @@ using System.Windows.Input;
 namespace CustomizeNetworkDiagramLayoutExecution
 {
   /// <summary>
-  /// With this add-in sample, you will get familiar with the Geometry, NetworkDiagrams, and Mapping API methods that allow you to develop your own diagram layout algorithm (see CustomDispatchLayout source code file).  
+  /// Extends the diagram Layout gallery with a custom dispatch layout and a preset smart-tree layout, applying layouts directly to diagram features through add-in commands.
   /// You will also learn how to preset parameters for any network diagram core layouts, and execute them through add-in commands instead of the core Apply xx Layout geoprocessing tool(see PredefinedSmartTreeLayout code source file). Applying network diagram layouts to your diagrams in  this way is really fast and easy for users.  
   /// You will also know more about how to extend the Layout gallery with your preset network diagrams and with your own custom layout (see config.daml file).  
   /// Sample data for ArcGIS Pro SDK Community Samples can be downloaded from the [Releases](https://github.com/Esri/arcgis-pro-sdk-community-samples/releases) page. 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0-windows</TargetFramework>
@@ -79,8 +79,6 @@
     <None Include="Screenshots\InspectorTool.PNG" />
     <None Include="Screenshots\SelectedFeaturesTreeViewAndInspector.PNG" />
     <None Include="Screenshots\SelectionPointFeatures.PNG" />
-    <None Include="InspectorTool (C# 6.0).md" />
-    <None Include="InspectorTool (C#).md" />
   </ItemGroup>
   <Import Project="C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets" Condition="Exists('C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets') AND !Exists('Esri.ArcGISPro.Extensions.targets')" />
 </Project>

@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace ListGeodataContent
 {
     /// <summary>
-    /// This sample illustrates how to list the feature classes and tables of a geodatabase.
+    /// Browses for a geodatabase and lists its feature classes and tables in a dockpane.
     /// </summary>
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a geodatabase called 'ReviewerWorkspace.gdb' with both tables and feature classes.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\DataReviewer\ReviewerWorkspace.gdb" is available.

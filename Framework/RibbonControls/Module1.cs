@@ -30,7 +30,7 @@ using System.CodeDom.Compiler;
 namespace RibbonControls
 {
   /// <summary>
-  /// This sample illustrates every type of ribbon control currently available in ArcGIS Pro.  Ribbon controls are declared in DAML with code classes containing the control implementation.
+  /// Provides ribbon buttons, menus, galleries, combo boxes, edit boxes, spinners, split buttons, a map tool, and a custom control with synchronized control values.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  Make sure that the Sample data is unzipped in c:\data.

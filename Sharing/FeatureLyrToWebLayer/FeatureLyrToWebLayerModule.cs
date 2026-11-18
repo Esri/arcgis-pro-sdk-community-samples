@@ -22,7 +22,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace FeatureLyrToWebLayer
 {
   /// <summary>
-  /// This Button add-in, when clicked, uses the first feature layer in the Map and publishes it as a Web Layer using a custom Python script.
+  /// Publishes the map's first feature layer as a web layer by passing portal sharing parameters to a custom Python geoprocessing tool.
   /// </summary>
   /// <remarks>
   /// 1. This solution file includes an example python script named MySharing.pyt which is included as 'Content' (Build action) in the add-in.

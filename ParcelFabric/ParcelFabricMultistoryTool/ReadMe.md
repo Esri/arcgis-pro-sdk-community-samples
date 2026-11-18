@@ -1,7 +1,7 @@
 ## ParcelFabricMultistoryTool
 
 <!-- TODO: Write a brief abstract explaining this sample -->
- This sample illustrates how an add-in can create a new group of controls focused in support of a 3D parcel fabric editing workflow.  The 3D scene provides rendering of multistory parcel polygons, allowing an editor to accurately select and vertically duplicate parcels.     
+ Supports multistory parcel editing in a 3D scene with controls to activate records, vertically duplicate parcels, build parcels, validate extents, and inspect attributes.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               ParcelFabric
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

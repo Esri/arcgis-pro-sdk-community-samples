@@ -22,7 +22,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace AdvancedUIDemo
 {
     /// <summary>
-    /// This sample shows how to:  
+    /// Manages map bookmarks in a dockpane, including creating, deleting, and navigating to bookmarks while tracking project map changes.
     /// * Handle project item collection changes
     /// * Add and delete a bookmark
     /// * Leverage existing ArcGIS Pro commands

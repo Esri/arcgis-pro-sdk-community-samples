@@ -28,7 +28,7 @@ using System.Text.Json.Nodes;
 namespace BatchTracingCoreHost
 {
     /// <summary>
-    /// Standalone application that batch traces a utility network
+    /// Initializes CoreHost and processes one or more JSON configuration files to run utility-network batch traces, partition analyses, or subnetwork inference, reporting progress and errors to the console.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu.  Then select Build Solution.

@@ -1,7 +1,7 @@
 ## CategoriesUsage
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This add-in creates temporary tables listing out the asset types in a utility network that support a particular  utility network category.  
+Lists available utility-network categories and creates a temporary report table of asset types supporting the selected category.  
   
 Community Sample data (see under the "Resources" section for downloading sample data) has a UtilityNetworkSamples.aprx  project that contains a utility network that can be used with this sample.  This project can be found under the   
 C:\Data\UtilityNetwork folder. Alternatively, you can also use any utility network data with this sample.  
@@ -17,9 +17,9 @@ Language:              C#
 Subject:               UtilityNetwork
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

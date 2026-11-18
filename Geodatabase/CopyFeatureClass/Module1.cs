@@ -41,7 +41,7 @@ namespace CopyFeatureClass
 {
 
   /// <summary>
-  /// This sample shows how to implement a how to duplicate a feature layer schema in the local geodatabase and then copy all features from the feature layer into the local copy of the newly generated feature class.  This addin utilitzed the SchemaBuilder class and the EditOperation Class.
+    /// Copies a selected feature layer's schema and records to a local geodatabase using SchemaBuilder, field mappings, and edit operations.
   /// </summary>
   /// <remarks>   
   /// 1. Open this solution in Visual Studio.  

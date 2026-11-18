@@ -1,7 +1,7 @@
 ## ToFromWarehouse
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample provides a quick way of moving features to and from a warehouse.  A warehouse is designated by adding a new category to the utility network. That category value can then be assinged to certain asset types.  
+Moves utility-network features into or out of selected warehouses identified by a Warehouse network category and their associations.  
 To create your own warehouse category you can follow these steps:  
   
 1. Run the gp tool Add Network Category and create a category called 'Warehouse'.  
@@ -20,9 +20,9 @@ Language:              C#
 Subject:               Utility Network
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

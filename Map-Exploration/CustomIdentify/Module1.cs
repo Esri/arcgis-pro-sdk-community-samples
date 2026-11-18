@@ -24,8 +24,7 @@ using ArcGIS.Desktop.Mapping;
 namespace CustomIdentify
 {
   /// <summary>
-  /// This sample shows how to author a tool that can be used to identify features and display the content in a pop-up window. 
-  /// The identify will also show Relationship Class information if one exists in that feature class. The result will be displayed in a pop-up window using html and dojo.
+    /// Identifies map features and displays their attributes and related-record information in a dynamically generated HTML popup.
   /// Note: The identify is authored to query the features in the topmost layer of the map.
   /// </summary>
   /// <remarks>

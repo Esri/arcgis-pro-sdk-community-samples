@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace SplitPolygon
 {
   /// <summary>
-  /// This sample demonstrates how to split a polygon and then update the newly created split parts.
+  /// Splits selected polygons with selected line features, captures newly created rows, and updates the resulting polygon parts.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\FeatureTest" is available.    

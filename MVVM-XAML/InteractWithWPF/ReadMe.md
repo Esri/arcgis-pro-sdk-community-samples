@@ -1,7 +1,7 @@
 ## InteractWithWPF
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates how to interact with WPF controls in ArcGIS Pro's UI.  Sometimes ArcGIS Pro UI elements are not accessible via the ArcGIS Pro API and in some of those cases WPF controls can be used to modify the UI.    
+Finds ArcGIS Pro's Project application button in the WPF visual tree and changes its caption through reflection.  
 Indeed the "Project" button is not a standard Framework Plugin (button) like the other tabs on the ArcGIS Pro ribbon.  But, since ArcGIS Pro is a WPF application, and we can 'spy' the WPF visual tree (use Visual Studio to do so) to find which control implements the "Project" button.   It turns out that the "Project" control's name is "appButton" and the type of the control is "ActiproSoftware.Windows.Controls.Bars.RibbonApplicationButton".  Once ArcGIS Pro is open you can use the code in this add-in to update the "Project" button to "New Caption".  
 Note: since we can't access any ActiProSoftware resources the code is using reflection to make the .Content property update.  
   
@@ -15,9 +15,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

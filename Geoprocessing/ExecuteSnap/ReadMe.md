@@ -1,7 +1,7 @@
 ## ExecuteSnap
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample runs the Snap (Editing) geoprocessing tool.  The tool moves points or vertices to coincide exactly with the vertices, edges, or end points of other features.   
+Executes the Snap geoprocessing tool with configured snapping environments to align feature vertices with nearby feature vertices, edges, or endpoints.  
 [Snap (Editing) help](https://pro.arcgis.com/en/pro-app/latest/tool-reference/editing/snap.htm)  
   
 
@@ -14,9 +14,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

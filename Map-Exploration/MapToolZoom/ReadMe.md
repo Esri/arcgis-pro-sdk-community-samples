@@ -1,7 +1,7 @@
 ## MapToolZoom
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-ProGuide example for simple MapView interaction is demonstrated in this sample with a tool that allows to zoom in and out of the current MapView.  The left mouse click will zoom in and the right mouse click will zoom out.  Unlike the other Map Tool samples this example does not use the sketch capabilities of the MapTool base class instead the sample overrides mouse and keyboard events.    
+Provides mouse and keyboard navigation that zooms the active map in or out without using a sketch.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Map-Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

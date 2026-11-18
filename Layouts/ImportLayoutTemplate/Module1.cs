@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Mapping;
 namespace ImportLayoutTemplate
 {
   /// <summary>
-  /// This sample demonstrates how import a layout template and then change the map for the template's map frame.
+    /// Imports a layout template into the project and assigns a project map to the imported layout's map frame.
   /// </summary>
   /// <remarks>
   /// Using the sample:

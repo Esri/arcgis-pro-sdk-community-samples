@@ -1,7 +1,7 @@
 ## ConstructionToolWithOptions
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates how to build a construction tool with options allowing users to provide parameters at run-time.    
+Provides configurable construction tools for buffered-line polygons, circles with a specified radius, and polygons created through a custom input interface.  
 Three samples are included.  
 The first is the BufferedLineTool.  The line sketch geoemtry is buffered by a user defined distance to create a polygon feature.  
 The second sample is the CircleTool.  A user defined radius is used to create a circular arc with the point sketch geometry as the centroid.  This tool is registered with both the esri_editing_construction_polyline and esri_editing_construction_polygon categories allowing both polyline and polygon features to be created.  
@@ -18,9 +18,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

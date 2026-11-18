@@ -18,7 +18,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace CreatePointsAlongLine3D
 {
   /// <summary>
-  /// This sample provides a point construction tool to create points along a 3D line.
+  /// Provides a point construction tool and options control for creating points along selected 3D line features.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio, build the solution.

@@ -39,7 +39,7 @@ using ArcGIS.Core.Data.DDL;
 namespace QAReviewTool
 {
   /// <summary>
-  /// This sample is a simplified data quality assurance(QA) review workflow.  It provides a set of controls guiding an operator through a data quality assurance review workflow to visually inspecting each feature and optionally add a QA notation to the record.
+  /// Guides feature-by-feature quality review with layer and field selection, navigation controls, editable QA notes, and commands to save, discard, or undo review edits.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data(see under the 'Resources' section for downloading sample data). Make sure that the Sample dataset is unzipped under c:\data and that the sample data contains the folder C:\Data\QAReviewTool containing a map package named "QA_Review_Tool.ppkx" which is required for this sample.

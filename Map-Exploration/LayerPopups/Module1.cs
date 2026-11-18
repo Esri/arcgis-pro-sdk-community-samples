@@ -28,7 +28,7 @@ using ArcGIS.Desktop.Mapping;
 
 namespace LayerPopups
 {   /// <summary>
-    /// This sample illustrates how to customize ArcGIS Pro's Layer Pop-up screen.  The sample shows how to define layer popups that will be persisted in the layer's CIM definition and defines a set of 'helper' classes modelled after the similar pattern ArcGIS.Desktop.Mapping implements for Renderer definitions. Popups can be defined that incorporate text, field values, images, charts, etc.
+    /// Configures persistent layer popups with text, field values, images, and charts through CIM popup definitions and provides commands to apply or reset popup styles.
     /// </summary>
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a project called 'AdminSample.aprx' that includes data that is used by this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Admin" is available.

@@ -1,7 +1,7 @@
 ## GPToolRightClick
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-GPToolRightClick is a sample add-in that demonstrates how to create a custom context menu for a geoprocessing tool and who to retrieve the clicked on tool's detailed information.  
+Adds a geoprocessing-tool context-menu command that retrieves information about the clicked tool.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

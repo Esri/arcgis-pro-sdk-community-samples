@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace DuplicateLayout
 {
     /// <summary>
-    /// This sample shows how make a copy of a Layout.  This sample will insert a new Clone button into the contenxt menu of a Layout Project item.
+    /// Adds a Clone command to layout project-item context menus that duplicates the selected layout and opens the copy in a layout pane.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

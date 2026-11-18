@@ -1,7 +1,7 @@
 ## ProceduralSymbolLayersWithRulePackages
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates rendering a polygon feature layer with a City Engine rule package. The procedural symbol layer that is created is then saved as an item in a personal style in the project.  
+Finds CityEngine rule packages, applies them as procedural symbols to polygon layers, and saves the resulting symbols to a personal project style.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Map-Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

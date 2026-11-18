@@ -40,8 +40,7 @@ using System.Windows.Input;
 namespace EditorInspectorUI
 {
   /// <summary>
-  /// This sample demonstrates how to use the Inspector class to display field names and values of a feature in a grid like manner.
-  /// You can also use the InspectorProvider class to create a more customized version of the inspector grid.
+  /// Displays and edits feature attributes in embedded Inspector grids, including grids customized with InspectorProvider implementations.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.  

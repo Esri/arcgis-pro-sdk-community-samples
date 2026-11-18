@@ -24,7 +24,7 @@ using System.Threading.Tasks;
 namespace LockToSelectedRasters
 {
 	/// <summary>
-	/// This sample demonstrates how to create a tool that locks to selected rasters on a mosaic layer.
+    /// Locks a mosaic layer's displayed imagery to the rasters identified by selected footprint records.
 	/// </summary>
 	/// <remarks>
 	/// 1. In Visual Studio click the Build menu. Then select Build Solution.

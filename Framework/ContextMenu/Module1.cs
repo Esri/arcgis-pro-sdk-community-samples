@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace ContextMenu
 {
 	/// <summary>
-	/// This sample demonstrates three methods for associating, and showing, a context menu with a map tool. It is also the accompanying sample for the ArcGIS Pro SDK ProGuide Context Menus.
+	/// Provides map tools with declared and dynamically created context menus, including menus populated from line features in the map.
 	/// </summary>
 	/// <remarks>
 	/// 1. Example 1, ContextMenuTool1.cs illustrates the simplest and most straightforward approach - associating a predefined menu with the map tool ContextMenuID property. For example 1, right-click behavior is "built in".	/// 

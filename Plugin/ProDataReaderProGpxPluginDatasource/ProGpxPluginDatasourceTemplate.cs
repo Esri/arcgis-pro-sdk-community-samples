@@ -29,7 +29,14 @@ using ArcGIS.Core.Geometry;
 
 namespace ProDataReaderProGpxPluginDatasource
 {
-    public class ProGpxPluginDatasourceTemplate : PluginDatasourceTemplate
+  /// <summary>
+  /// ProDataReader implements two plugin datasources to allowing Pro viewing of the following formats:
+  /// - Gpx data: GPX (the GPS eXchange Format) is a data format for exchanging GPS data between programs and implemented by many GPS tracking devices. ProGpxPluginDatasource allows to access Gpx files as a read-only feature class. 
+  /// </summary>
+  /// <remarks>
+  /// [see detailed usage instructions in the README.md file for the main project file](../ProDataReader/ReadMe.md)
+  /// </remarks>
+  public class ProGpxPluginDatasourceTemplate : PluginDatasourceTemplate
     {
 		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		[DllImport("kernel32.dll")]

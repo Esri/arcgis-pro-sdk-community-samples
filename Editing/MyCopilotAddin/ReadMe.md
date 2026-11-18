@@ -1,7 +1,7 @@
 ## MyCopilotAddin
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-Shows a sample addin development workflow using GitHub Copilot to assist in the implementation.  This ArcGIS Pro sample add-in uses a DockPane to guide the user through a GIS workflow.  The matching ProGuide can be found here: [ProGuide writing an addin with copilot](https://github.com/Esri/arcgis-pro-sdk/wiki/ProGuide-writing-an-addin-with-copilot)  
+Guides 3D lot creation in a dockpane by using selected parcel geometry, sampling surface elevations, and building elevated multipatch geometry.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

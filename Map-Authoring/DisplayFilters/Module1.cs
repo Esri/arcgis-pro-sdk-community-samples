@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace DisplayFilters
 {
     /// <summary>
-    /// This sample demonstrates how to add Display Filters to Feature Layers.
+    /// Applies feature-layer display filters through CIM definitions and layer documents to control which features are drawn.
     /// </summary>
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\DisplayFilters' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\DisplayFilters" is available.

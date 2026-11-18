@@ -47,7 +47,7 @@ namespace QueryGraphicBoundary
 	}
 
   /// <summary>
-  /// This sample demonstrates the use of the BasicFeatureLayer QueryDrawingOutline(...) API methods
+	/// Queries rendered feature outlines and generates configurable mask geometries and map overlays using BasicFeatureLayer.QueryDrawingOutline.
   /// Various cartographic workflows require updating and replacing existing feature masks to accomodate edits to the underlying (masked) features &lt;br/&gt;The &lt;b&gt;UpdateOutline&lt;/b&gt; tool uses QueryDrawingOutline to generate the feature outline geometry. The "PostProcess" logic in the Module1 class replicates the post process logic of the Geoprocessing 
   /// &lt;a href="https://pro.arcgis.com/en/pro-app/tool-reference/cartography/feature-outline-masks.htm"&gt; Feature Outline Masks (Cartography)&lt;/a&gt; tool. The sample works with any point, line, polygon, or annotation feature dataset
   /// </summary>

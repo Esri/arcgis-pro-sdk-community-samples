@@ -39,9 +39,7 @@ using ArcGIS.Desktop.Framework.Controls;
 namespace CustomCategoriesExample
 {
   /// <summary>
-  /// An example of implementing a custom category. In this case we declare
-  /// a custom category **AcmeCustom_Reports** and a contract:
-  /// **IAcmeCustomReport**
+  /// Discovers report implementations registered in the AcmeCustom_Reports DAML category and runs them through the IAcmeCustomReport contract in a reports window.
   /// </summary>
   /// <remarks>
   /// CustomCategoriesExample add-in declares the category AcmeCustom_Reports.

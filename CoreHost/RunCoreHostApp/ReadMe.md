@@ -1,7 +1,7 @@
 ## RunCoreHostApp
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This application can be used to run a CoreHost standalone CoreHost application on ArcGIS Pro 3.3 or later, even so the CoreHost App is build for 3.0, 3.1 or 3.2.  
+Detects the installed ArcGIS Pro release, selects a compatible installed .NET runtime, and launches a supplied CoreHost DLL with dotnet exec while forwarding its command-line arguments.  
   
 
 
@@ -13,10 +13,10 @@ Language:              C#
 Subject:               Console
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
-Target Framework:      net10.0
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
+Target Framework:      net10.0-windows
 ```
 
 ## Resources

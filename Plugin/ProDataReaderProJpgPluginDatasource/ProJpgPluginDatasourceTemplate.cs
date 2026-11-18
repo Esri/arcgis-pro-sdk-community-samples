@@ -30,7 +30,14 @@ using ArcGIS.Core.Data.Exceptions;
 
 namespace ProDataReaderProJpgPluginDatasource
 {
-    public class ProJpgPluginDatasourceTemplate : PluginDatasourceTemplate
+  /// <summary>
+  /// ProDataReader implements two plugin datasources to allowing Pro viewing of the following formats:
+  /// - Jpg photos with GPS metadata: smart phone and digital cameras have the option to capture GPS information when a photo is taken.  ProJpgPluginDatasource allows to access these GPS enable photos as a read-only feature class.
+  /// </summary>
+  /// <remarks>
+  /// [see detailed usage instructions in the README.md file for the main project file](../ProDataReader/ReadMe.md)
+  /// </remarks>
+  public class ProJpgPluginDatasourceTemplate : PluginDatasourceTemplate
 	{
 		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		[DllImport("kernel32.dll")]

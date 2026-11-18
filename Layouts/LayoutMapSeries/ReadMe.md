@@ -1,7 +1,7 @@
 ## LayoutMapSeries
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-LayoutMapSeries exercises a collection of programmatic interactions with the layout API including the application of map series  
+Generates layouts with map series, configures page elements, and provides page-list and sequential navigation through the generated series.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Layouts
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

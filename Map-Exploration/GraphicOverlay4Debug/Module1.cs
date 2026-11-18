@@ -39,7 +39,7 @@ using ActiproSoftware.Windows.Extensions;
 namespace GraphicOverlay4Debug
 {
     /// <summary>
-    /// "GraphicOverlay4Debug" shows how to use the graphics overlay to add point, line, and polygon features mainly to allow 'visual debugging' of geometries in your mapview.
+    /// Draws sketched point, line, and polygon geometries as temporary map overlays for visual debugging and provides a command to clear them.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

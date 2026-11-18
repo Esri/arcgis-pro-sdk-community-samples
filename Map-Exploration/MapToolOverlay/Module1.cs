@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace MapToolOverlay
 {
   /// <summary>
-  /// This sample used map tools to demontrate graphic overlays (for MapTool) in form of Text, line, point, and arrow line graphic overlays.
+  /// Provides map tools that create and update text, line, point, and arrow-line overlays while interacting with the map.
   /// </summary>
   /// <remarks>
   /// 1. In Visual studio rebuild the solution.

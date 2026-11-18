@@ -1,7 +1,7 @@
 ## ArcGISProConfigCoreHost
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows how to remote start and remote control ArcGIS Pro from an ArcGIS Corehost application.  
+Launches ArcGIS Pro with the companion managed configuration, sends a project-open command through a named pipe, and monitors the ArcGIS Pro process until it exits.  
 This sample is comprised of two samples:  
 - Corehost **server application** that starts and controls the ArcGIS Pro client: ArcGISProConfigCoreHost  
 - ArcGIS Pro **client application** that is started and controlled: ArcGISProConfig  
@@ -16,9 +16,9 @@ Language:              C#
 Subject:               Console
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      .NET 10.0
 ```
 

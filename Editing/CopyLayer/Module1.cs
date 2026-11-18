@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace CopyLayer
 {
   /// <summary>
-  /// This sample shows how to take an existing feature layer and create a copy of the feature class in the default geodatabase.  The spatial column's attributes are recreated in the new feature class and two columns are added.  Finally the existing spatial data is copied and the new feature class is added to the map's layers.
+  /// Copies a feature layer's geometry into a new feature class in the default geodatabase, creates its schema with additional fields, and adds the result to the map.
   /// </summary>
   /// <remarks>   
   /// 1. Open this solution in Visual Studio.  

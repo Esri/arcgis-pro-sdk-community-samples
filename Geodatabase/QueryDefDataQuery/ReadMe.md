@@ -1,7 +1,7 @@
 ## QueryDefDataQuery
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This addin illustrates how to preform related tabular queries in a GeoDatabase using QueryDef  
+Executes related-table geodatabase queries with QueryDef and displays the returned records in a dockpane.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

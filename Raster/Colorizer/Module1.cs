@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace Colorizer
 {
     /// <summary>
-    /// This sample demonstrates how to change colors for rasters that have attribute tables.  The colorizer has to contain the attribute field name that is then used on the TOC and is also used to define the colors.
+    /// Recolors rasters using attribute-table values and a style color ramp, configuring the colorizer's field names for legend display.
     /// </summary>
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Raster\Landuse' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Raster\Landuse" is available.

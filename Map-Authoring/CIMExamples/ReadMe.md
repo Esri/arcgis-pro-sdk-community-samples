@@ -1,7 +1,7 @@
 ## CIMExamples
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-Shows the following CIM capabilities:  
+Customizes layer data sources, selection colors, unique-value renderers, raster stretch colorizers, and symbol-level drawing through CIM definitions:  
   
 1. Provide sample to create CIMUniqueValueRenderer from scratch  
 2. Same as above but using the UniqueValueRendererDefinition class and the layer to configure the underlying Renderer  
@@ -19,9 +19,9 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

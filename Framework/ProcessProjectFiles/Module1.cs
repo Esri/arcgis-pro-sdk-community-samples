@@ -40,7 +40,7 @@ using System.Windows.Input;
 namespace ProcessProjectFiles
 {
   /// <summary>
-  /// This add-in sample reads a series of ArcGIS Pro project files, performs some customization on the project file and then saves the modified project file.
+  /// Processes ArcGIS Pro projects found under a selected folder, applies project customizations, saves each project, and records processing status in a dockpane.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.

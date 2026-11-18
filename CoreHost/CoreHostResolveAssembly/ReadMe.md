@@ -1,8 +1,7 @@
 ## CoreHostResolveAssembly
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates how to deploy a standalone CoreHost application that resolves the ArcGIS Pro location in order to load the dependent assemblies such as ArcGIS.Core.dll and ArcGIS.CoreHost.dll from the ArcGIS Pro install location.  
-Except for the dynamic assembly loading logic this sample is identical to the "CoreHostSample".   
+Resolves ArcGIS Pro assemblies from the installation path stored in the registry, initializes CoreHost, and prints feature-class names and field definitions from a file geodatabase.  
 The references to ArcGIS.Core.dll and ArcGIS.CoreHost.dll in Visual Studio have the "Copy Local" property set to "false".   
   
 
@@ -15,9 +14,9 @@ Language:              C#
 Subject:               Console
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      .NET 10.0
 ```
 

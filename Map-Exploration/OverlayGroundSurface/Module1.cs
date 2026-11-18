@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace OverlayGroundSurface
 {
   /// <summary>
-  /// OverlayGroundSurface illustrates how to draw geometries over a ground surface using AddOverlay.  
+  /// Draws polygons and multipatches over a ground surface with configurable elevation and resolution, and imports or exports the source geometry.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Configurations\Projects' with sample data required for this solution.  Make sure that the Sample data (specifically CommunitySampleData-3D-mm-dd-yyyy.zip) is unzipped into c:\data and c:\data\PolyTest is available.

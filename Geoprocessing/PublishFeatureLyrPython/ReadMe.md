@@ -1,9 +1,7 @@
 ## PublishFeatureLyrPython
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-Create an ArcGIS Pro SDK Add-in that has Python scripts embedded.  This adds your Add-in’s Python script toolbox to Pro’s GP toolboxes.  
-Once the Add-in is registered in ArcGIS Pro, you can run the Add-in’s Python scripts through ArcGIS Pro’s ‘GP Toolboxes’.  
-This sample also demonstrates how to call the embedded Python script programmatically with parameters  
+Registers a bundled Python toolbox and runs its feature-layer publishing tool with sharing parameters, including inspection of geoprocessing tool parameters.  
   
 
 
@@ -15,10 +13,10 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
-Target Framework:      net10.0-windows7.0
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
+Target Framework:      net10.0-windows
 ```
 
 ## Resources

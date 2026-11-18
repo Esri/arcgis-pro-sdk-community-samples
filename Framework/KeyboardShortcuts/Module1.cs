@@ -34,7 +34,7 @@ using System.Windows.Input;
 namespace KeyboardShortcuts
 {
   /// <summary>
-  /// This sample provides an overview of the Keyboard Shortcuts framework. Examples include: Global Accelerator, keyUp shortcut, conditional shortcut, Pane and Dockpane shortcut via keyCommand
+  /// Registers global, key-up, conditional, pane, dockpane, and map-tool keyboard shortcuts, including shortcuts enabled by custom application states.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.

@@ -23,7 +23,7 @@ using System.Threading.Tasks;
 namespace TextElementAddin
 {
     /// <summary>
-    /// This sample add-in references a text element on a layout view and changes it's text and (optionally) placement properties.
+    /// Updates a layout text element's content and optionally changes its anchor and placement while preserving its position.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

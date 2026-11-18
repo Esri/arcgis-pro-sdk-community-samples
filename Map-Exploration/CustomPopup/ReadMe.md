@@ -1,9 +1,7 @@
 ## CustomPopup
 
 <!-- TODO: Write a brief abstract explaining this sample -->
- This sample shows how to author custom pop-up content to display in a pop-up window.   
- In this example we are generating html and javascript code using the Google Charts api to create rich and interactive content in the pop-up.   
- This example also shows how to add your own commands to the bottom of the pop-up window.   
+ Displays identified features in custom HTML popups with interactive Google Charts, numeric-field statistics, and custom popup commands.  
    
 
 
@@ -15,9 +13,9 @@ Language:              C#
 Subject:               Map-Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

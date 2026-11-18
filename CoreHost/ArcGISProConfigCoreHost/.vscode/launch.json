@@ -1,0 +1,31 @@
+{
+    "version":  "0.2.0",
+    "configurations":  [
+                           {
+                               "name":  "ArcGISProConfigCoreHost Debug",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "${workspaceFolder}/bin/Debug/net10.0-windows/ArcGISProConfigCoreHost.dll",
+                               "args":  [
+
+                                        ],
+                               "cwd":  "${workspaceFolder}",
+                               "console":  "integratedTerminal",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-debug"
+                           },
+                           {
+                               "name":  "ArcGISProConfigCoreHost Release",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "${workspaceFolder}/bin/Release/net10.0-windows/ArcGISProConfigCoreHost.dll",
+                               "args":  [
+
+                                        ],
+                               "cwd":  "${workspaceFolder}",
+                               "console":  "integratedTerminal",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-release"
+                           }
+                       ]
+}

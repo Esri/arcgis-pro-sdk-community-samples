@@ -26,7 +26,7 @@ using ArcGIS.Core.Geometry;
 
 namespace TopologyAPI {
   /// <summary>
-  /// Corehost standalone application shows how to open a Topology dataset and inspect the Topology rules and definitions. 
+  /// Opens a file-geodatabase topology through CoreHost to inspect its definition, rules, errors, and graph, mark and unmark exceptions, and validate topology after feature edits.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Topology\GrandTeton.gdb" is available.

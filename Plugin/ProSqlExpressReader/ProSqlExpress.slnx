@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="../ProSqlExpressDb/ProSqlExpressDb.csproj" />
+  <Project Path="../ProSqlExpressPluginDatasource/ProSqlExpressPluginDatasource.csproj" />
+  <Project Path="ProSqlExpressReader.csproj">
+    <BuildDependency Project="../ProSqlExpressPluginDatasource/ProSqlExpressPluginDatasource.csproj" />
+  </Project>
+</Solution>

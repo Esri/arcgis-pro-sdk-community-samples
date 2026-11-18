@@ -1,7 +1,7 @@
 ## WorkingWithDAML
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows how to:  
+Customizes ribbon tabs, groups, and buttons through DAML and uses application state to control command availability.  
 * Customize ArcGIS Pro using DAML  
 * Add new elements like Button, Tab, and Group declaratively using DAML  
 * Customize the ArcGIS Pro Ribbons (ie Tabs) using DAML  
@@ -17,9 +17,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

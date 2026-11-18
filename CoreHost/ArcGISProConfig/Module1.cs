@@ -40,10 +40,7 @@ using System.Windows.Input;
 namespace ArcGISProConfig
 {
   /// <summary>
-  /// This sample shows how to remote start and remote control ArcGIS Pro from an ArcGIS Corehost application.
-  /// This sample is comprised of two samples:
-  /// - Corehost **server application** that starts and controls the ArcGIS Pro client: ArcGISProConfigCoreHost
-  /// - ArcGIS Pro **client application** that is started and controlled: ArcGISProConfig
+  /// Provides an ArcGIS Pro configuration that receives commands through a named pipe from a companion CoreHost application for remote startup and control.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  Make sure that the Sample data is unzipped in c:\data and "C:\Data\FeatureTest\FeatureTest.aprx" is available.

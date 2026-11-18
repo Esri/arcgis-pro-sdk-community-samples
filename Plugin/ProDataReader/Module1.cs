@@ -39,7 +39,7 @@ namespace ProDataReader
 {
 
   /// <summary>
-  /// ProDataReader implements two plugin datasources to allowing Pro viewing of the following formats:
+    /// Integrates GPS-tagged JPEG photographs and GPX files into Catalog through custom project items and read-only plug-in feature classes:
   /// - Jpg photos with GPS metadata: smart phone and digital cameras have the option to capture GPS information when a photo is taken.  ProJpgPluginDatasource allows to access these GPS enable photos as a read-only feature class.
   /// - Gpx data: GPX (the GPS eXchange Format) is a data format for exchanging GPS data between programs and implemented by many GPS tracking devices. ProGpxPluginDatasource allows to access Gpx files as a read-only feature class. 
   /// </summary>
@@ -59,7 +59,7 @@ namespace ProDataReader
   /// 1. The ProDataProjectItem class is triggered by an entry in config.daml specifically the 'insertComponent' tag for id: ProDataReader_ProDataReader.  Under the 'content' tag you find the attribute fileExtension="xlnk" which triggers the instantiation of the ProDataProjectItem class whenever a file with this extension (case sensitive) is encountered.  
   /// 1. &lt;B&gt;Note: the fileExtension attribute is case sensitive, hence only file extensions matching a case sensitive compare with the fileExtension attribute will work&lt;/B&gt;
   /// ![UI](Screenshots/Screen3.png)  
-  /// 1. Under the 'LinkToCustomPluginData.xlnk' node you can see '2019-March-31-Hike' which represents a line feature class (GPS Track) and 'Berlin-Devsummit-17' which represents a point feature datasets containing the point location where the photo was taken.  In source code, the ProDataSubItem class is used to prepresent each node in the catalog browser.
+  /// 1. Under the 'LinkToCustomPluginData.xlnk' node you can see '2019-March-31-Hike' which represents a line feature class (GPS Track) and 'Berlin-Devsummit-17' which represents a point feature datasets containing the point location where the photo was taken.  In source code, the ProDataSubItem class is used to represent each node in the catalog browser.
   /// 1. Right clicking on any of the feature classes or the 'MiscPictures Jpeg Images' image folder node allows the feature class(es) to be added to the current map.  In the source code this is done in the AddToCurrentMap button class.
   /// 1. After you add an item to the current map, the ProPluginDatasource plug-in is used to convert the source data to a feature class that can be added to a map and displayed as an attribute table.
   /// ![UI](Screenshots/Screen5.png) 

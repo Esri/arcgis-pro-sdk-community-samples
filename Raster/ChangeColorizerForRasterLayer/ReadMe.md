@@ -1,7 +1,7 @@
 ## ChangeColorizerForRasterLayer
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates how to use the raster colorizer definitions to create a specific colorizer, and apply the new colorizer to the selected raster layer.    
+Adds an image-service layer and creates applicable raster colorizers from colorizer definitions for the selected raster layer.  
 The sample includes these functions:  
   
 1. Creates a new image service layer and adds the layer to the current map.  
@@ -18,9 +18,9 @@ Language:              C#
 Subject:               Raster
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

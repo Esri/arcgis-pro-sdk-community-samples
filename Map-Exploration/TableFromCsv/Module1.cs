@@ -38,7 +38,7 @@ using System.Windows.Input;
 
 namespace TableFromCsv
 {/// <summary>
- /// This add-in demonstrates how to easily load a csv file into a StandaloneTable.
+ /// Adds a CSV file to the active map as a standalone table using StandaloneTableFactory.
  /// </summary>
  /// <remarks>
  /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a dataset called 'Interacting with Maps' with both 2D and 3D data.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\SimplePointPlugin\SimplePointData\Meteorites_UK.csv" is available.

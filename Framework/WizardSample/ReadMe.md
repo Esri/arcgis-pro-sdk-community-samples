@@ -1,7 +1,7 @@
 ## WizardSample
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates the usage of the ArcGIS Pro Framework's Wizard Control.    
+Opens a multi-page framework wizard, shares data between its pages, and processes the completed wizard's result.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

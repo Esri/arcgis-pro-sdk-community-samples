@@ -1,7 +1,7 @@
 ## MapToolOverlay
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample used map tools to demontrate graphic overlays (for MapTool) in form of Text, line, point, and arrow line graphic overlays.  
+Provides map tools that create and update text, line, point, and arrow-line overlays while interacting with the map.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

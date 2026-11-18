@@ -117,7 +117,7 @@ namespace CustomEvent
     }
 
     /// <summary>
-    /// Create a custom event argument class to contain any information that needs to be passed with your event. In this case, the old and new caption for our custom app name changed event.
+    /// Publishes and subscribes to a custom application-name-changed event that carries the previous and new captions.
     /// Derived from [ArcGIS.Core.Events.EventBase](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic7815.html)
     /// </summary>
     /// <remarks>

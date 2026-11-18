@@ -1,7 +1,7 @@
 ## MapTopologyAddIn
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample provides two buttons on the AddIn tab in ArcGIS Pro. One of them (Build Map Topology Graph button), builds the map topology graph  for the current map view extent and shows the number of nodes and edges in that graph in a popup window.  
+Builds the map topology graph for the current view extent and reports its node and edge counts.  
 The 2nd button ("Show Topology connections") allows you to open up a custom dock pane that will help you identify all the topologically  connected features for the currently selected feature in the map.  
   
 
@@ -14,9 +14,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

@@ -23,8 +23,7 @@ using System.Threading.Tasks;
 namespace AddRasterLayer
 {
     /// <summary>
-    /// This sample provides a new tab and a button on the tab to create a new raster layer 
-    /// and add it to the current map.
+    /// Creates a raster layer in a project map and configures its raster display through the layer colorizer.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

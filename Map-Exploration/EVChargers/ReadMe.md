@@ -1,8 +1,7 @@
 ## EVChargers
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample uses an embeddable control on a Mapview to allow advanced filter search of USA and Canada Electrical vehicle charger locations. You can search locations, charger and connector types.  
-The results will be displayed in a dockpane.  
+Searches electric-vehicle charger locations in the United States and Canada by area, charger type, and connector type, displaying selectable results in a dockpane.  
   
 
 
@@ -14,9 +13,9 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

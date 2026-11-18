@@ -23,7 +23,7 @@ using ArcGIS.Desktop.Framework.Dialogs;
 namespace FilteredFindPathAnalysis
 {
   /// <summary>
-  /// This sample demonstrates how to use the Knowledge Graph API to do Filtered Find Path Analysis.
+  /// Runs filtered find-path analyses on knowledge-graph link-chart selections, reports results, and creates link charts containing the resulting paths.
   /// </summary>
   /// <remarks>
   /// **Sample Data:**

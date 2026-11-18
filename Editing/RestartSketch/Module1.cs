@@ -23,7 +23,7 @@ using System.Threading.Tasks;
 namespace RestartSketch
 {
     /// <summary>
-    /// This sample provides an edit sketch context menu to restart the sketch from the last vertex.
+    /// Adds an edit-sketch context-menu command that clears the current line or polygon sketch while retaining its last vertex as the new starting point.
     /// </summary>
     /// <remarks>
     /// The main use case for this functionality is to start creating a new feature relative to somewhere else such as a distance and bearing from a road intersection or a distance along a stream.

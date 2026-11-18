@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace LayoutWithLabels
 {
 		/// <summary>
-		/// This sample shows how to create a layout with custom labeling for a selected set of polygon features.  In order to do this the sample is using the following functionality:
+				/// Creates a layout with custom polygon labels by loading a labeling layer and populating it from selected parcel identifiers and text in a CSV file:
 		/// * A layer file containing a 'labeled' polygon layer is loaded by the add-in and dynamically added to the map
 		/// * The add-in then reads a csv file containing some Ids of polygon features that have to be labeled with 'customized' text strings
 		/// * The labels (using call-out labels) are placed on the map (using the dynamically loaded 'labeled' polygon layer

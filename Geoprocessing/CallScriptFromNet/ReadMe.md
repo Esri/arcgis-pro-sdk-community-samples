@@ -1,7 +1,7 @@
 ## CallScriptFromNet
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This Button add-in, when clicked, uses the first Polygon layer in the Map and runs a buffer operation with help of a Python script.  It reads the text stream output from python and displays it.   
+Runs a Python buffer script for the map's first polygon layer in an external process and displays standard output, errors, and the exit code in a dockpane.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Geoprocessing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

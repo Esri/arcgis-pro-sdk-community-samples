@@ -50,7 +50,7 @@ using static ArcGIS.Desktop.Internal.Framework.EsriPBf.Tile.Types;
 namespace ConstructionSplitTool
 {
   /// <summary>
-  /// 
+    /// Provides construction tools that create point or line features and split intersecting lines or polygons using the sketch geometry.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.

@@ -1,7 +1,7 @@
 ## CustomStyling
 
 <!-- TODO: Write a brief abstract explaining this sample -->
- Show how to apply custom styles to a UserControl that work in both Light and Dark modes.  
+ Hosts a custom-styled user control in a dockpane with styles that adapt to ArcGIS Pro's light and dark themes.  
    
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

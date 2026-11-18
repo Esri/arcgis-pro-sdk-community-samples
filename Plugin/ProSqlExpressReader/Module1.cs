@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace ProSqlExpressReader
 {
   /// <summary>
-  /// ProSqlExpressReader implements a plugin datasource to read the following data from a SQL Server Express database:
+  /// Integrates SQL Server Express data into Catalog through custom project items and a plug-in datasource for browsing and mapping legacy geodatabase content:
   /// - Classic ArcGIS Personal Geodatabase stored in a SQL Server Express database.
   /// A classic ArcGIS personal geodatabase was used in the past by ArcMap. It was Microsoft Access database that allowed to store, query, and manage both spatial and nonspatial data.
   /// The sample data includes a SQL Server Express database that contains the data of such a 'classic' Microsoft Access Geodatabase.

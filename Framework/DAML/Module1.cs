@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace DAML
 {
     /// <summary>
-    /// This sample demonstrates how to modify the Pro UI using DAML
+    /// Customizes ArcGIS Pro menus, backstage content, layer property sheets, and Options pages through DAML declarations and associated views.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.  

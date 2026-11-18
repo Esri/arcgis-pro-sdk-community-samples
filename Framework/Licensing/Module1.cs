@@ -24,7 +24,7 @@ using Licensing.UI;
 namespace Licensing {
 
     /// <summary>
-    /// Show how to make a "Configurable Extension" that can be added to the Pro Backstage Licensing Tab
+    /// Registers a configurable extension on the backstage Licensing tab, provides a registration dialog, and includes a feature-selection command.
     /// </summary>
     /// <remarks>
     /// At 10.x, add-ins implemented the IExtensionConfig interface to create a "configurable extension".

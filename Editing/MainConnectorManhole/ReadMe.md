@@ -1,7 +1,7 @@
 ## MainConnectorManhole
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample creates a sketch tool that creates multiple features in 3D. It demonstrates a line sketch tool, working with 3D geometry, and edit templates.  
+Creates connected 3D main, connector, and manhole features from a line sketch using editing templates and 3D geometry.  
 
 
 <a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
@@ -12,9 +12,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

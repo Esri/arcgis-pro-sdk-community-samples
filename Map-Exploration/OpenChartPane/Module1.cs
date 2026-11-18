@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Mapping;
 namespace OpenChartPane
 {
   /// <summary>
-  /// This sample demonstrates how create an Chart in the map toc.
+    /// Opens a chart from the map's Contents pane and provides commands that import and configure layouts using project maps.
   /// </summary>
   /// <remarks>
   /// Using the sample:

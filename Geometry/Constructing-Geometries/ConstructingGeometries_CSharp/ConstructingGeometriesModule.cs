@@ -32,7 +32,7 @@ using ArcGIS.Desktop.Core;
 namespace ConstructingGeometries_CSharp
 {
   /// <summary>
-  /// This sample provide four buttons showing the construction of geometry types of type MapPoint, Multipoint, Polyline, and Polygon and shows how to:
+  /// Constructs point, multipoint, polyline, and polygon features with geometry builders and GeometryEngine operations:
   /// * Construct and manipulate geometries
   /// * Use GeometryEngine functionality
   /// * Search and retrieve features

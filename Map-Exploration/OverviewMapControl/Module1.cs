@@ -24,9 +24,7 @@ using ArcGIS.Desktop.Mapping.Events;
 namespace OverviewMapControl
 {
     /// <summary>
-    /// This sample shows how to author a map control.  
-    /// In this example we will be creating a map control that will act as an overview window of the active map. 
-    /// When the view changes, the map control will display the changed view. You will also be able navigate inside the map control and see the Active map view mirror the map control's extent.
+    /// Hosts an overview MapControl in a dockpane with extent graphics and bidirectional navigation synchronized with the active map view.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

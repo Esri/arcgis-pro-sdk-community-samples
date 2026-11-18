@@ -40,7 +40,7 @@ using System.Windows.Input;
 namespace ZoomToSelectedFeatures
 {
 	/// <summary>
-	/// This sample uses a dropdown of all layers with selected features and once a layer with selections is chosen two button allow scrolling through the selected features..
+	/// Lists layers with selected features and provides forward and backward navigation through their selected records with a configurable zoom expansion ratio.
 	/// </summary>
 	/// <remarks>
 	/// 1. In Visual studio rebuild the solution.

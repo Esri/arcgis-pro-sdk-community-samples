@@ -28,8 +28,7 @@ using System.Threading.Tasks;
 namespace DriveTimeGP
 {
     /// <summary>
-    /// This samples shows how to call the esri drive time geoprocessing service @ http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Network/ESRI_DriveTime_US/GPServer/CreateDriveTimePolygons 
-    /// and then displays the drive time areas for 3 times.
+    /// Submits a sketched location to a drive-time geoprocessing service to create polygons for one-, two-, and three-minute travel times.
     /// </summary>
     /// <remarks>    
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

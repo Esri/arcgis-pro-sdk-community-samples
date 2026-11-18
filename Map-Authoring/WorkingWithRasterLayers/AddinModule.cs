@@ -24,7 +24,7 @@ using ArcGIS.Desktop.Mapping;
 namespace WorkingWithRasterLayers
 {
   /// <summary>
-  /// This sample demonstrates how to work with raster layers in ArcGIS Pro.  The samples includes these functions:
+  /// Adds image-service layers and changes their compression, resampling, stretch, and processing-template settings:
   /// 1.) Create a new image service layer and add the layer to the current map.
   /// 2.) Set the compression type and quality to JPEG and 85 on the selected image service layer.
   /// 3.) Set the processing template to Natural Color on the selected image service layer.

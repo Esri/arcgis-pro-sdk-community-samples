@@ -24,7 +24,7 @@ using System.Threading.Tasks;
 namespace WorkingWithDAML
 {
     /// <summary>
-    /// This sample shows how to:
+    /// Customizes ribbon tabs, groups, and buttons through DAML and uses application state to control command availability.
     /// * Customize ArcGIS Pro using DAML
     /// * Add new elements like Button, Tab, and Group declaratively using DAML
     /// * Customize the ArcGIS Pro Ribbons (ie Tabs) using DAML

@@ -1,7 +1,7 @@
 ## ConfigurationPathsAddIn
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample provides a mechanism for a user to change a network path for a feature that has multiple paths configured in the terminal configuration.  
+Identifies a utility-network device or junction object and lets the user change its active terminal-configuration path.  
 The conditions are:    
 - The selected feature is from the Device or Junction Object class  
 - The selected feature is configured with a terminal configration  
@@ -17,9 +17,9 @@ Language:              C#
 Subject:               Utility Network
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

@@ -20,10 +20,7 @@ using System.Threading.Tasks;
 namespace WorkwithProjects
 {
     /// <summary>
-    /// This sample illustrates working with ArcGIS Projects.  The sample provides the following functionality
-    /// 1. Open an existing project.
-    /// 1. Opens an existing project, imports a map document (via a folder connection), and saves the project to a different location
-    /// 1. Creates a new project using the supplied name from a project template.
+    /// Opens existing projects, adds folder connections and imports map documents, saves projects to new locations, and creates projects from selected templates.
     /// </summary>
     /// <remarks>
     /// 1. Open this solution in Visual Studio.  

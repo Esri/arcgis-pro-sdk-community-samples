@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace GeocodingTools
 {
     /// <summary>
-    /// This sample demonstrates adding geocoding functionalities to your application.  3 different methods of geocoding are presented.
+    /// Geocodes locations through a direct API call, an embedded LocatorControl, or a custom search dockpane, and displays results on the map.
     /// - simple geocoding using an API method and no custom UI
     /// - using the LocatorControl on a dockpane
     /// - more advanced geocoding using API methods with a custom UI providing search capabilities and viewing of results. 

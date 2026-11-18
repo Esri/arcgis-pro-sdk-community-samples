@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace DocToolBoxEmbedding
 {
     /// <summary>
-    /// This sample illustrates how to 'attach' files (such as documents), images, and toolboxes in your add-in's project file and how to use those attachments in your add-in.
+    /// Packages documents, images, and toolboxes with an add-in and provides a command to open a bundled document.
     /// </summary>
     /// <remarks>
     /// 1. In Visual studio click the Build menu. Then select Build Solution.

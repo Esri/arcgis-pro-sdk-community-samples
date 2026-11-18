@@ -1,7 +1,7 @@
 ## ExcelDropHandler
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-ArcGIS Pro Addin allows to Drag and drop *.xlsx file on ArcGIS Pro and execute the necessary Geoprocessing Tools automatically.   
+Handles Excel workbooks dropped onto ArcGIS Pro and runs geoprocessing tools to turn worksheet coordinates into map layers.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Content
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

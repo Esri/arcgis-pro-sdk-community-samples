@@ -25,7 +25,7 @@ using ArcGIS.Core.Data;
 namespace FeatureSelection
 {
   /// <summary>
-  /// This sample provides a map tool and a dock pane that allow you to create new selections and manipulate existing selections within the map.
+  /// Provides a sketch-selection tool and dockpane for choosing feature layers and creating, extending, or subtracting map selections.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.

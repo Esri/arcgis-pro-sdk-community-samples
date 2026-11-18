@@ -1,9 +1,7 @@
 ## FeatureDynamicMenu
 
 <!-- TODO: Write a brief abstract explaining this sample -->
- This sample shows how to display a dynamic context menu. The sample also have an embeddabel control on the map that allows you pick the layer you want to select.     
- When you select features with this tool, the oids of the features will be displayed in a dynamic context menu.   
- When you click one of the OIDs in this context menu, that feature will flash on the Map View and display a pop-up.   
+ Uses an embedded layer picker and map clicks to build a dynamic menu of nearby feature identifiers, then flashes the chosen feature and opens its popup.  
    
 
 
@@ -15,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

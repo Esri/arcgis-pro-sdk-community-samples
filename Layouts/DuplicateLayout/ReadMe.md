@@ -1,7 +1,7 @@
 ## DuplicateLayout
 
 <!-- TODO: Write a brief abstract explaining this sample -->
- This sample shows how make a copy of a Layout.  This sample will insert a new Clone button into the contenxt menu of a Layout Project item.  
+ Adds a Clone command to layout project-item context menus that duplicates the selected layout and opens the copy in a layout pane.  
    
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

@@ -39,7 +39,7 @@ using ArcGIS.Desktop.Mapping.Events;
 namespace CreateReport
 {
   /// <summary>
-  /// This sample demonstrate how to create a report and modify that report.
+    /// Creates and modifies reports through a dockpane with configurable data sources, fields, statistics, templates, and report styles.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution. 

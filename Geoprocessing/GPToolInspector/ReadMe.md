@@ -1,7 +1,7 @@
 ## GPToolInspector
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-GPToolInspector is an Add-in that reads the ArcGIS Pro toolboxes folder and displays all discovered toolboxes and tools in a tree view.  The tree view can be used to 'drill down' to find any tool by category, or the tree view can be searched by tool description for locating a specific tool.  Clicking on a tool node displays a popup dialog showing the tool usage in form of a code snippet that is ready to be applied within your add-in or managed configuration code.  
+Browses and searches installed geoprocessing toolboxes in a tree view and opens tool details with generated C# invocation snippets.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

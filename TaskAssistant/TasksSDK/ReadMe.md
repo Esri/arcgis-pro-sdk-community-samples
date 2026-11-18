@@ -1,7 +1,7 @@
 ## TasksSDK
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates the methods available in the Tasks API.  The methods provide the following functionality  
+Opens and closes task items, exports task files, and retrieves task metadata through the Task Assistant API:  
   
 1. Open a task file (.esriTasks)  
 2. Close a specified task item  
@@ -17,9 +17,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace ReusingProCommands
 {
     /// <summary>
-    /// This sample demonstrates how you can re-use existing ArcGIS Pro Commands in your Add-in.  There are multiple variations of re-using ArcGIS Pro out-of-box Commands in your Add-in including:
+    /// Reuses built-in ArcGIS Pro commands in ribbon controls and a bookmark dockpane through DAML references, command wrappers, and MVVM bindings:
     /// * Reusing ArcGIS Pro Commands in your Add-in Ribbon UI by reference
     /// * Reusing ArcGIS Pro Commands in your Add-in Ribbon UI in code-behind
     /// * Reusing ArcGIS Pro Commands in MVVM

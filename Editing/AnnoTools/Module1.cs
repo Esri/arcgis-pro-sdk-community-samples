@@ -24,8 +24,7 @@ using System.Threading.Tasks;
 namespace AnnoTools
 {
 	/// <summary>
-	/// This sample illustrates construction tools and modify tools for annotation feature classes.  The modify tools show how to modify the text, geometry and symbol of 
-	/// annotation features.  There are also some tools illustrating how to add callouts and leader lines to annotation features. 
+	/// Provides tools to create annotation features and templates, modify annotation text, baseline geometry, and symbols, and add balloon and line callouts.
 	/// Annotation has the following special considerations
 	/// 1.  Annotation feature classes store polygon geometry.  This polygon is the bounding box of the text of an annotation feature. The 
 	/// bounding box is calculated from the text string, font, font size, angle orientation and other text formatting attributes of the feature. 

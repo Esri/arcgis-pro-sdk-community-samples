@@ -1,7 +1,7 @@
 ## DeviceTracker
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates functionality associated with GNSS devices and snapshot location data. In order to use this sample you must either have a GNSS device or have configured an appropriate simulator.   
+Displays GNSS device sources, properties, and location snapshots in a dockpane and tracks incoming device locations; a GNSS device or simulator is required.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

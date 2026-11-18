@@ -1,8 +1,7 @@
 ## SketchToolWithHalos
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates how to build a sketch tool that has a number of halos of specific distances that follow the cursor.    
-The halos are implemented as an embeddable control that is displayed as a SketchTip.   
+Displays configurable distance halos around the sketch cursor through an embedded SketchTip control that responds to map scale changes.  
   
 
 
@@ -14,9 +13,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

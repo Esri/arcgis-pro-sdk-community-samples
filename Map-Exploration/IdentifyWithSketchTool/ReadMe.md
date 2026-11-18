@@ -1,7 +1,7 @@
 ## IdentifyWithSketchTool
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows how to:   
+Provides sketch tools that identify features or select and zoom to features in 2D and 3D map views:  
 * Add a custom sketch tool to work with map views  
 * Use the sketch to create a new selection and zoom to the result in 2D or 3D  
 * Create a custom identify tool for 2D and 3D  
@@ -16,9 +16,9 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

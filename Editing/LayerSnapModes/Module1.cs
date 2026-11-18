@@ -19,8 +19,7 @@ namespace LayerSnapModes
 {
 
   /// <summary>
-  /// This sample illustrates the use of layer snap modes, which provides the ability to set the snap mode (vertex, edge, end etc) on a per layer basis.
-  /// The layer snap modes are presented in a datagrid hosted by a simple dockpane.
+  /// Displays and changes per-layer snapping modes, including vertex, edge, and endpoint snapping, in a dockpane grid.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio, build the solution.

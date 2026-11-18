@@ -40,7 +40,7 @@ using System.Windows.Input;
 namespace TINApiSamples
 {
   /// <summary>
-  /// This sample illustrates TIN Api methods available to iterate and work with TIN Nodes, edges and Triangles.
+  /// Provides tools to inspect TIN extents, find and search nodes, edges, and triangles, explore neighboring triangles, and change TIN layer renderers.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

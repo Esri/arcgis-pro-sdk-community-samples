@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Mapping;
 namespace CustomMessageBox
 {
 	/// <summary>
-	/// This sample provides sample code to a message box that is fully customized including the yes, no, and cancel button captions.
+    /// Displays custom message dialogs with configurable button captions, dialog results, clipboard support, and help integration.
 	/// </summary>
 	/// <remarks>
 	/// 1. In Visual Studio click the Build menu. Then select Build Solution.

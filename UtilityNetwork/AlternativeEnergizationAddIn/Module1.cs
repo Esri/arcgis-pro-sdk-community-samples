@@ -40,7 +40,7 @@ using System.Windows.Media;
 namespace AlternativeEnergizationAddIn
 {
     /// <summary>
-    /// This sample a tool to click on a utility network feature and run an isolation trace and then check for alternative energization capabilities.  The 'alternative energization' button shows red circle graphics on features that need to be disabled to isolate the selected feature and green circles on features that need to be enabled.
+    /// Runs isolation and alternative-energization traces from a clicked utility-network feature and marks devices to disable or enable with red and green graphics.
     /// </summary>
     /// <remarks>
     /// For sample data, download CommunitySampleData-UtilityNetwork-mm-dd-yyyy.zip from https://github.com/Esri/arcgis-pro-sdk-community-samples/releases

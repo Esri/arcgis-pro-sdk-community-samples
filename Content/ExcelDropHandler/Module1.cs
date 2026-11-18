@@ -20,7 +20,7 @@ using ArcGIS.Desktop.Mapping;
 namespace ExcelDropHandler
 {
     /// <summary>
-    /// ArcGIS Pro Addin allows to Drag and drop *.xlsx file on ArcGIS Pro and execute the necessary Geoprocessing Tools automatically. 
+    /// Handles Excel workbooks dropped onto ArcGIS Pro and runs geoprocessing tools to turn worksheet coordinates into map layers.
     /// </summary>
     /// <remarks> 
     /// This sample uses Excel files in Pro.   To use Excel files in Pro, you need Microsoft Access Database Engine 2016. Refer to the [Work with Microsoft Excel files in ArcGIS Pro](https://pro.arcgis.com/en/pro-app/help/data/excel/work-with-excel-in-arcgis-pro.htm)

@@ -23,7 +23,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace MapToolIdentifyWithDockpane
 {
     /// <summary>
-    /// ProGuide example of a simple tool that performs feature identify function on a map.  The sample tool allows the operator to view the number of features by drawing a rectangle on the map.  I Dockpane is used to display the feature data.  
+    /// Identifies features within a rectangle sketch and displays their counts and attribute data in a dockpane.
     /// </summary>
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a dataset called 'Interacting with Maps' with both 2D and 3D data.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.

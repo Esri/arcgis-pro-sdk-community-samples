@@ -22,7 +22,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace CallScriptFromNet
 {
   /// <summary>
-  /// This Button add-in, when clicked, uses the first Polygon layer in the Map and runs a buffer operation with help of a Python script.  It reads the text stream output from python and displays it. 
+  /// Runs a Python buffer script for the map's first polygon layer in an external process and displays standard output, errors, and the exit code in a dockpane.
   /// </summary>
   /// <remarks>
   /// 1. This solution file includes an example python script named test1.py which is included as 'Content' (Build action) in the add-in.

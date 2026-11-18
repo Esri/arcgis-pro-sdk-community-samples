@@ -42,7 +42,7 @@ using System.Windows.Input;
 namespace RowEventTest
 {
     /// <summary>
-    /// This sample shows how to add row events to track creating and or modifying features in a map.
+    /// Creates and modifies polygon and annotation features while logging and counting row events, with commands to save, discard, and clear test edits.
     /// </summary>
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace ContentFileExplorer
 {
 	/// <summary>
-	/// This sample illustrates how to search for shapefiles and geodatabases in the file system and then add any of those discovered layer sources to the current map view.
+	/// Browses folders, shapefiles, and geodatabase feature classes in a dockpane and adds selected datasets to the active map.
 	/// </summary>
 	/// <remarks>
 	/// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

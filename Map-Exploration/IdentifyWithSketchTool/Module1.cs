@@ -23,7 +23,7 @@ using System.Threading.Tasks;
 namespace IdentifyWithSketchTool
 {
     /// <summary>
-    /// This sample shows how to: 
+    /// Provides sketch tools that identify features or select and zoom to features in 2D and 3D map views:
     /// * Add a custom sketch tool to work with map views
     /// * Use the sketch to create a new selection and zoom to the result in 2D or 3D
     /// * Create a custom identify tool for 2D and 3D

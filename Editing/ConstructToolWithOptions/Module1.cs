@@ -51,7 +51,7 @@ namespace ConstructToolWithOptions
 
 
 	/// <summary>
-	/// This sample illustrates how to build a point construction tool with the option to select the feature subtype when the point is created.  
+	/// Provides a point construction tool with template options for choosing the subtype of newly created facility features.
 	/// </summary>
 	/// <remarks>
 	/// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

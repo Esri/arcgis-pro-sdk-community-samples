@@ -39,7 +39,7 @@ using System.Windows.Threading;
 namespace MapUnits
 {
 	/// <summary>
-	/// This sample demonstrates Map Display Units. The Pro SDK allows you can change the defaults for the current Project Units.  You can also change the Display Units used by a Map or Scene and the Elevation units used by a Scene.
+	/// Displays and changes project default unit formats, map and scene location display units, and scene elevation units while monitoring unit-format changes.
 	/// </summary>
 	/// <remarks>
 	/// 1. In Visual Studio click the Build menu. Then select Build Solution.  

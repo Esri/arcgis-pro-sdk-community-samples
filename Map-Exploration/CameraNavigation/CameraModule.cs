@@ -21,8 +21,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace CameraNavigation
 {
   /// <summary>
-  /// This sample provides a new tab and controls that allow you to get the camera of an existing view 
-  /// and zoom to or pan to a new camera position.
+  /// Displays the active view's camera settings in a dockpane and navigates to edited camera positions while tracking view changes.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.

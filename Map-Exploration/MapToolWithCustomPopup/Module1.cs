@@ -23,9 +23,7 @@ using System.Threading.Tasks;
 namespace MapToolWithCustomPopup
 {
     /// <summary>
-    /// This sample shows how to author custom pop-up content to display in a pop-up window. 
-    /// In this example we are generating html and javascript code using the Google Charts api to create rich and interactive content in the pop-up. 
-    /// This example also shows how to add your own commands to the bottom of the pop-up window. 
+    /// Identifies map features and generates custom HTML popup content with Google Charts based on visible numeric attribute fields.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

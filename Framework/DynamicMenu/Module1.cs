@@ -21,9 +21,7 @@ using System.Threading.Tasks;
 
 namespace  FeatureDynamicMenu
 {/// <summary>
- /// This sample shows how to display a dynamic context menu. The sample also have an embeddabel control on the map that allows you pick the layer you want to select.   
- /// When you select features with this tool, the oids of the features will be displayed in a dynamic context menu. 
- /// When you click one of the OIDs in this context menu, that feature will flash on the Map View and display a pop-up. 
+ /// Uses an embedded layer picker and map clicks to build a dynamic menu of nearby feature identifiers, then flashes the chosen feature and opens its popup.
  /// </summary>
  /// <remarks>
  /// 1. In Visual Studio click the Build menu. Then select Build Solution.

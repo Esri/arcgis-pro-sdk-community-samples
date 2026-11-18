@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace DynamicJoins
 {
 	/// <summary>
-	/// This sample illustrates the use of dynamic joins of tables and feature classes.
+  /// Configures dynamic joins between tables and feature classes in a dockpane, allowing users to choose join fields and output fields.
 	/// </summary>
 	/// <remarks>
 	/// 1. This solution is using the **Newtonsoft.Json NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".

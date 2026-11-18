@@ -31,7 +31,7 @@ using System.IO;
 namespace BackStage_PropertyPage
 {
     /// <summary>
-    /// This sample illustrates how to 
+    /// Adds a custom backstage tab and Options pages for editing and persisting application-wide and project-specific settings.
     /// 1. add a new backstage item  
     /// 2. add property sheet items into the Options property pages
     /// 3. save and restore project settings

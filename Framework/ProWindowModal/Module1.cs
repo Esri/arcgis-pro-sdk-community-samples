@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace ProWindowModal
 {
   /// <summary>
-  /// This sample demonstrates a modal MVVM ProWindow and a modal non-MVVM ProWindow. 
+  /// Opens modal ProWindow dialogs implemented with both code-behind and MVVM patterns.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio rebuild this Solution.

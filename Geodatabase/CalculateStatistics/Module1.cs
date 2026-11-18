@@ -37,7 +37,7 @@ using ArcGIS.Desktop.Mapping;
 
 namespace CalculateStatistics
 {   /// <summary>
-    /// This sample illustrates the use of the CalculateStatistics class.
+    /// Calculates sums of line-length and polygon-area fields using feature-class statistics queries.
     /// </summary>
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a dataset called 'FeatureTest' with sample data for use by this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\FeatureTest" is available.  

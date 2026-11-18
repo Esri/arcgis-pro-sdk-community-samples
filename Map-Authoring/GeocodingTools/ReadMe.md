@@ -1,7 +1,7 @@
 ## GeocodingTools
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates adding geocoding functionalities to your application.  3 different methods of geocoding are presented.  
+Geocodes locations through a direct API call, an embedded LocatorControl, or a custom search dockpane, and displays results on the map.  
 - simple geocoding using an API method and no custom UI  
 - using the LocatorControl on a dockpane  
 - more advanced geocoding using API methods with a custom UI providing search capabilities and viewing of results.   
@@ -21,9 +21,9 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

@@ -1,9 +1,7 @@
 ## EditingTemplates
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates creating and modifying editing templates largely using the Cartographic Information Model (CIM).   
-In this example we will create and modify templates including group templates.    
-We will also show how to retrieve and use templates to create features; overriding default attribute values.   
+Creates and modifies editing templates and group templates through CIM definitions and extension methods, then uses those templates to create features with overridden attributes.  
   
 
 
@@ -15,9 +13,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

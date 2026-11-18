@@ -37,7 +37,7 @@ using ArcGIS.Desktop.Mapping;
 
 namespace DockpaneWithHelp
 {/// <summary>
- /// This sample shows how to use the help button on Dockpane
+ /// Provides a dockpane with a Help button that opens an ArcGIS Pro help page through its help-request handler.
  /// </summary>
  /// <remarks>
  /// 1. In Visual Studio click the Build menu. Then select Build Solution.

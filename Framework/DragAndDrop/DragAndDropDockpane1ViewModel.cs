@@ -16,14 +16,6 @@
    limitations under the License.
 
 */
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
 using ArcGIS.Core.Geometry;
@@ -37,6 +29,15 @@ using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.DragDrop;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Xml.Serialization;
 
 
 namespace DragAndDrop
@@ -108,7 +109,27 @@ namespace DragAndDrop
 				}
 				Name = thisItem.CatalogPath;
 			}
-			else //Dropped from File Explorer
+            else if (dropInfo.Data is string xml)//Dropped from Catalog 3.7 (new)
+            {
+                var serializer = new XmlSerializer(typeof(ClipboardItem[]));
+                using (var reader = new StringReader(xml))
+                {
+                    var clipBoardItems = (ClipboardItem[])serializer.Deserialize(reader);
+                    var thisItem = clipBoardItems.FirstOrDefault();
+                    if (thisItem != null)
+                    {
+                        var itemInfo = thisItem.ItemInfoValue.typeID;
+						if (itemInfo != "database_fgdb") //Not a file gdb
+						{
+							dropInfo.Handled = false;
+							ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show($"Drag and drop File GDB only here");
+							return;
+						}
+                    }
+                    Name = thisItem.CatalogPath;
+                }
+            }
+            else //Dropped from File Explorer
 			{
 				FileInfo file = new FileInfo(filePath);
 				if (string.Compare(file.Extension, ".gdb", true) == 0) //.gdb

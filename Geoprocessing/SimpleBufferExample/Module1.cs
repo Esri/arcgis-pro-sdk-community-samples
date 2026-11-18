@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace SimpleBufferExample
 {
 	/// <summary>
-	/// This sample shows how to call the 'Buffer' GP Tool from .Net.  It also calls the GP Tool in a loop to show the Progress dialog across multiple GP Tool calls.
+  /// Runs single and repeated Buffer geoprocessing operations with progress reporting and provides a command to remove generated outputs.
 	/// </summary>
 	/// <remarks>
 	/// 1. You will need CommunitySampleData-ParcelFabric-mm-dd-yyyy.zip down-loadable as an asset under the latest release.

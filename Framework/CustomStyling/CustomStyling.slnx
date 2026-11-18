@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../CustomStylingUserControl/CustomUserControl.csproj" />
+  <Project Path="CustomStyling.csproj" />
+</Solution>

@@ -40,8 +40,7 @@ using ArcGIS.Desktop.Mapping;
 
 namespace AddInOne
 {  /// <summary>
-	 /// This Add-in demonstrates who to consume the IAddInToAddIn interface to communicate between two Add-ins.
-	 /// An add-in can raise an event and another add-in can subscribe to that event.
+	 /// Exchanges selection-change events with the companion AddInTwo add-in through IAddInToAddIn and displays received events in a custom control.
 	 /// </summary>
 	 /// <remarks>
 	 /// 1. In Visual Studio click the Build menu. Then select Build Solution.

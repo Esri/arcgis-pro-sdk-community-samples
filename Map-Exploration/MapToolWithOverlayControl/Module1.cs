@@ -23,7 +23,7 @@ using System.Threading.Tasks;
 namespace MapToolWithOverlayControl
 {
   /// <summary>
-  /// This sample provides a map tool that when you left click in the view will show the map coordinates of the click location in the top left corner of the view.
+  /// Displays the map coordinates of clicked locations in an overlay control in the map view.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.

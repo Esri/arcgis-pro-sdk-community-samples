@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace GeoProcessingHistory
 {
   /// <summary>
-  /// This sample shows how to utilize the GeoProcessing History API.
+  /// Runs sample geoprocessing tools and exposes their execution-history records and events through a dockpane for inspecting geoprocessing history.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\FeatureTest" is available.    

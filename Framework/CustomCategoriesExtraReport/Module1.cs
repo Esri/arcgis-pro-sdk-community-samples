@@ -38,9 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace CustomCategoriesExtraReport
 {
   /// <summary>
-  /// An example of implementing a custom category. In this case we declare
-  /// a custom category **AcmeCustom_Reports** and a contract:
-  /// **IAcmeCustomReport**
+  /// Contributes an additional report implementation to the AcmeCustom_Reports category for discovery by the companion CustomCategories add-in.
   /// </summary>
   /// <remarks>
   /// CustomCategoriesExample add-in declares the category AcmeCustom_Reports.

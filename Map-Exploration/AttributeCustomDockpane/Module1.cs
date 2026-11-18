@@ -41,7 +41,7 @@ using System.Windows.Input;
 namespace AttributeCustomDockpane
 {
 	/// <summary>
-	/// This sample shows a custom dockpane to display attribute columns and geometry for a single feature.
+	/// Selects a feature with a map sketch and displays its attributes and geometry in a custom dockpane with an embedded Inspector.
 	/// </summary>
 	/// <remarks>
 	/// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

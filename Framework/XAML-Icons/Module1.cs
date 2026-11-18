@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace XamlIcons
 {
     /// <summary>
-    /// This sample shows how to use XAML Vector based icons in Ribbon UI elements such as buttons. 
+    /// Displays XAML vector icons on ribbon controls alongside raster-icon examples.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

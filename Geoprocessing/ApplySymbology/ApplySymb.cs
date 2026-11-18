@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace ApplySymbology
 {
   /// <summary>
-  /// This sample shows how to move Symbology from one layer to another layer using the 'Apply Symbology From Layer' GeoProcessing tool.  
+    /// Prompts for a layer file and applies its symbology to a target layer with the Apply Symbology From Layer geoprocessing tool.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available. 

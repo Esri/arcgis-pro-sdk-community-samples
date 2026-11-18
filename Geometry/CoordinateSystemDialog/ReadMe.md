@@ -1,7 +1,7 @@
 ## CoordinateSystemPicker
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample provides an example of the Coordinate Picker and Coordinate Details User Controls.   
+Opens a coordinate-system selection dialog that embeds coordinate picker and coordinate details controls.  
 Embed within your Add-in if you need to provide a similar UI. The list of Coordinate systems  is loaded the first time the dialog is opened and remains cached for the duration of the Pro  session. When a user picks a Coordinate System in the top half of the dialog, the   
 Coordinate Details control is populated with that coordinate system via the SpatialReference property.  
   
@@ -15,9 +15,9 @@ Language:              C#
 Subject:               Geometry
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

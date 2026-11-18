@@ -1,7 +1,7 @@
 ## SymbolSearcherControl
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-SymbolSearcherControl exercises both the SymbolSearcherControl and the SymbolPickerControl controls.  Both controls can be used to provide a Pro like user interface experience when searching and selecting symbology and/or as standalone controls.  
+Provides dockpane examples of SymbolSearcherControl and SymbolPickerControl for searching and selecting symbols from project and selected style files.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 
@@ -35,11 +35,11 @@ Target Framework:      net10.0-windows
 4. Click the Start button to open ArCGIS Pro. ArcGIS Pro will open.      
 5. Open the "C:\Data\FeatureTest\FeatureTest.aprx" project.    
 6. The Add-in tab contains four buttons to exercise the SymbolSearchControl and the SymbolPickerControl controls in four dockpanes:  
-7. The "Pro Symbol Searcher" shows a Pro like user interface that combines symbol searcher and symbol picker:  
+7. The "Simple Symbol Searcher" shows a Pro like user interface that combines symbol searcher and symbol picker:  
 ![UI](Screenshots/Screen1.png)  
-8. The "Pro Symbol Searcher" shows a simplified user interface that combines symbol searcher and symbol picker by using default settings:  
+8. The "Simple Symbol Searcher" shows a simplified user interface that combines symbol searcher and symbol picker by using default settings:  
 ![UI](Screenshots/Screen2.png)  
-9. The "Simple Symbol Searcher" shows a user interface that uses the symbol searcher control and a listbox for symbol selection:  
+9. The "Very Simple Symbol Searcher" shows a user interface that uses the symbol searcher control and a listbox for symbol selection:  
 ![UI](Screenshots/Screen3.png)  
 10. The "Show Symbol Picker" shows a user interface that contains the symbol picker as a standalone control:  
 ![UI](Screenshots/Screen4.png)  

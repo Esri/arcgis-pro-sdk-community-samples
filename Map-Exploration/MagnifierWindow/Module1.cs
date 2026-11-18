@@ -23,9 +23,7 @@ using System.Threading.Tasks;
 namespace MagnifierWindow
 {
     /// <summary>
-    /// This sample provides a map tool and a window with map control.
-    /// The position of the map control window is updated based on the current map tool position.
-    /// The map control content is created from the currently active MAP view and the map control shows a magnified view of where the mouse is positioned in the active MAP view.
+    /// Shows a movable magnifier window backed by MapControl that follows the map-tool cursor and magnifies the active map at its location.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

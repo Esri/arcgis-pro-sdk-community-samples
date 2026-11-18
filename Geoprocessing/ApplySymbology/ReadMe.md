@@ -1,7 +1,7 @@
 ## ApplySymbology
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows how to move Symbology from one layer to another layer using the 'Apply Symbology From Layer' GeoProcessing tool.    
+Prompts for a layer file and applies its symbology to a target layer with the Apply Symbology From Layer geoprocessing tool.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

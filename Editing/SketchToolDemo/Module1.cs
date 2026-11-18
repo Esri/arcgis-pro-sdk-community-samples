@@ -26,7 +26,7 @@ using System.Linq;
 namespace SketchToolDemo
 {
     /// <summary>
-    /// This sample demonstrates a 'cut' tool that allows an editor to sketch a line over a set of existing features, if a polygon is intersected by the sketch line, the polygon will be cut by the sketched line.  
+    /// Splits editable polygon features with a sketched line and reports affected row counts through edit-completed events.
     /// </summary>
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace ChangeDataSource
 {
 	/// <summary>
-	/// This sample demonstrates how to change the underlying datasource of a feature layer.
+	/// Browses for a replacement geodatabase and updates a feature layer's data connection through a dockpane.
 	/// </summary>
 	/// <remarks>
 	/// 1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\FeatureTest\FeatureNewTest.gdb" is available.

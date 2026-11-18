@@ -23,9 +23,7 @@ using System.Threading.Tasks;
 namespace CustomSymbolPicker
 {
     /// <summary>
-    /// This sample provides a new dock pane with options for searching for symbols in styles in current project, 
-    /// build a gallery with preview images for returned results and this sample also allows picking a symbol from this custom gallery
-    /// to apply to the currently selected feature layer in the Contents pane
+    /// Searches project styles in a custom symbol-gallery dockpane and applies the selected symbol to the feature layer selected in the Contents pane.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

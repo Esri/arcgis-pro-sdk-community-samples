@@ -1,8 +1,7 @@
 ## RemoveAddins
 
 <!-- TODO: Write a brief abstract explaining this sample -->
- This sample shows how to customize the backstage by adding a new tab.   
- In this example we will add a new tab in the backstage called Remove Add-Ins. Add-ins installed on that machine will be listed in that tab and you will be able to delete them.  
+ Adds a backstage page that discovers installed add-in packages and deletes selected packages from their installation folders.  
  Adding and removing add-ins requires an application restart to take effect.  
    
 
@@ -15,9 +14,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

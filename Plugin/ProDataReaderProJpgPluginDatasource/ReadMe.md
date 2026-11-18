@@ -1,7 +1,37 @@
 ## ProDataReaderProJpgPluginDatasource
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This project is an assembly used by [ProDataReader](../ProDataReader/ReadMe.md)
+ProDataReader implements two plugin datasources to allowing Pro viewing of the following formats:  
+- Jpg photos with GPS metadata: smart phone and digital cameras have the option to capture GPS information when a photo is taken.  ProJpgPluginDatasource allows to access these GPS enable photos as a read-only feature class.  
+  
+
+
+<a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
+
+<!-- TODO: Fill this section below with metadata about this sample-->
+```
+Language:              C#
+Subject:               $subject$
+Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
+Organization:          Esri, https://www.esri.com
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
+Target Framework:      net10.0-windows
+```
+
+## Resources
+
+[Community Sample Resources](https://github.com/Esri/arcgis-pro-sdk-community-samples#resources)
+
+### Samples Data
+
+* Sample data for ArcGIS Pro SDK Community Samples can be downloaded from the [Releases](https://github.com/Esri/arcgis-pro-sdk-community-samples/releases) page.  
+
+## How to use the sample
+<!-- TODO: Explain how this sample can be used. To use images in this section, create the image file in your sample project's screenshots folder. Use relative url to link to this image using this syntax: ![My sample Image](FacePage/SampleImage.png) -->
+[see detailed usage instructions in the README.md file for the main project file](../ProDataReader/ReadMe.md)  
+  
 
 <!-- End -->
 

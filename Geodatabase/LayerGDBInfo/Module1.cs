@@ -38,7 +38,7 @@ using System.Windows.Input;
 
 namespace LayerGDBInfo
 {  /// <summary>
-   /// This add-in sample reads a series of ArcGIS Pro project files, performs some customization on thr project file and then saves the modified project file.
+  /// Inspects the selected feature layer's datastore and reports its geodatabase type and dataset registration or versioning information.
    /// </summary>
    /// <remarks>
    /// 1. In Visual Studio click the Build menu. Then select Build Solution.

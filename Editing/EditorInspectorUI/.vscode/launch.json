@@ -1,0 +1,25 @@
+{
+    "version":  "0.2.0",
+    "configurations":  [
+                           {
+                               "name":  "EditorInspectorUI Debug",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "C:\\Program Files\\ArcGIS\\Pro\\bin\\ArcGISPro.exe",
+                               "args":  ["C:\\DevSummit\\2024\\Extending Editor Inspector UI with custom Embeddable Controls\\Data\\InspectorUI\\InspectorUI.aprx"],
+                               "cwd":  "C:\\Program Files\\ArcGIS\\Pro\\bin",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-debug"
+                           },
+                           {
+                               "name":  "EditorInspectorUI Release",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "C:\\Program Files\\ArcGIS\\Pro\\bin\\ArcGISPro.exe",
+                               "args":  ["C:\\DevSummit\\2024\\Extending Editor Inspector UI with custom Embeddable Controls\\Data\\InspectorUI\\InspectorUI.aprx"],
+                               "cwd":  "C:\\Program Files\\ArcGIS\\Pro\\bin",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-release"
+                           }
+                       ]
+}

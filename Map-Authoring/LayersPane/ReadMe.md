@@ -1,7 +1,7 @@
 ## LayersPane
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-The Layers pane sample uses a docking pane to query and display feature classes and their content.  Access to feature classes is provided through the layers of the active map.  
+Queries feature classes exposed by the active map's layers and displays their records in a custom layers pane.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Map-Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

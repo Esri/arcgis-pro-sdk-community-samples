@@ -40,7 +40,7 @@ using System.Windows.Input;
 namespace VersionUpdatePerformance
 {
   /// <summary>
-  /// This sample exercises the update performance to Enterprise Geodatabases.  The updates can be measured against version updates and default version updates.
+  /// Measures enterprise-geodatabase update performance for default and named versions through a dockpane workflow with source and target dataset selection.
   /// </summary>
   /// <remarks>
   /// 1. This sample requires an ArcGIS Pro project with a connection file to an Enterprise Geodatabase (.SDE).  When running the performance test the test will create a copy of a source feature class, so 'create' level access is required.

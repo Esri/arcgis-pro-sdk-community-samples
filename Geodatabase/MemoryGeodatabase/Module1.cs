@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace MemoryGeodatabase
 {
   /// <summary>
-  /// This sample shows how to create create a memory Geodatabase and then compares the performances of a Memory GDB Point Feature class with a File GDB Point Feature class.
+  /// Creates in-memory and file-geodatabase point feature classes and compares record insertion, field calculation, and counting performance in a statistics dockpane.
   /// </summary>
   /// <remarks>
   /// 1. In Visual studio rebuild the solution.

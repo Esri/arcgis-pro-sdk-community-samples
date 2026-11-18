@@ -1,0 +1,27 @@
+{
+    "version":  "0.2.0",
+    "configurations":  [
+                           {
+                               "name":  "CoreHostResolveAssembly Debug",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "${workspaceFolder}/bin/Debug/net10.0-windows/CoreHostResolveAssembly.dll",
+                               "args":  ["C:\\Data\\Admin\\AdminSample.gdb"],
+                               "cwd":  "${workspaceFolder}",
+                               "console":  "integratedTerminal",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-debug"
+                           },
+                           {
+                               "name":  "CoreHostResolveAssembly Release",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "${workspaceFolder}/bin/Release/net10.0-windows/CoreHostResolveAssembly.dll",
+                               "args":  ["C:\\Data\\Admin\\AdminSample.gdb"],
+                               "cwd":  "${workspaceFolder}",
+                               "console":  "integratedTerminal",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-release"
+                           }
+                       ]
+}

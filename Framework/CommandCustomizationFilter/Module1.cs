@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Mapping;
 namespace CommandCustomizationFilter
 {
 	/// <summary>
-	/// This sample implements "Command Filters", a.k.a. "Customization Filters", giving developers the opportunity to limit ArcGIS Pro DAML command functionality by stopping a command before its execution or by disabling a command in the UI.  This is useful when you want to prevent a command from executing based on certain conditions, such as the current state of the application or the user's permissions.
+	/// Registers a customization filter that can disable ArcGIS Pro commands or intercept their execution according to configurable filtering options.
 	/// ** Note:** For your "Command Filter" class to work, the class must be registered with ArcGIS Pro using the `ArcGIS.Desktop.Framework.FrameworkApplication.RegisterCustomizationFilter` method.
 	/// </summary>    
 	/// <remarks>    

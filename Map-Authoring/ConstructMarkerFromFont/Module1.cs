@@ -32,8 +32,7 @@ using ArcGIS.Desktop.Mapping.Events;
 namespace ConstructMarkerFromFont
 {
   /// <summary>
-  /// This sample demonstrate how to create a CIMMarker from a font file and use it to render a point feature layer.
-  /// The marker is then added to a personal style item in the current project.
+  /// Browses font families and characters, builds a marker symbol from the selected glyph, applies it to a point layer, and saves it to a personal style.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution. 

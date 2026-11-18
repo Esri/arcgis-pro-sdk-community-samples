@@ -1,8 +1,8 @@
 {
   "profiles": {
     "DDLCreateFromSchema": {
-      "commandName": "Project",
-      "commandLineArgs": "C:\\Users\\seli2607\\source\\repos\\arcgis-pro-sdk-community-samples\\Geodatabase\\DDLCreateFromSchema\\SampleSchema\\DBSchema.xml\r\nC:\\Users\\seli2607\\source\\repos\\arcgis-pro-sdk-community-samples\\Geodatabase\\DDLCreateFromSchema\\SampleSchema\\SQLServer-sdk5-SDKTest.sde\r\n"
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\ArcGIS\\Pro\\bin\\ArcGISPro.exe"
     }
   }
 }

@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace ConfigureGallery
 {
   /// <summary>
-  /// This sample shows how to use custom categories to configure buttons and tools into a gallery on Pro's ribbon.
+  /// Builds a ribbon gallery from commands registered in a custom DAML category and executes the selected button or construction tool.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.

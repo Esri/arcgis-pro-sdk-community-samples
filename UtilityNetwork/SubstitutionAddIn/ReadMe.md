@@ -1,9 +1,7 @@
 ## SubstitutionAddIn
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample provides a mechanism for a user to choose to turn a simple substitution setting into a permanent substitution.    
-This means it will end up copying the calculated values for propagated attribute into the original attribute that was propagated.    
-In electric networks this usually means copying the phases energized values back into the phases current values.  
+Makes utility-network substitutions permanent by copying calculated propagated values into their source attributes, such as energized phases into current phases.  
   
 
 
@@ -15,9 +13,9 @@ Language:              C#
 Subject:               Utility Network
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

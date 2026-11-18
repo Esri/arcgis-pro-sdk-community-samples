@@ -1,7 +1,7 @@
 ## CountAggregatedNetworkElements
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This add-in demonstrates how to fill the new Info field added with utility network version 7 using the attributes retrieved from the network elements associated with diagram features.  
+Counts network elements aggregated by diagram features, filters counts by selected asset groups and types, and stores the totals in each diagram feature's Info field.  
 In this sample, the developed add-in command opens a custom pane where the user can set the specific type of network elements he wants to retrieve and count among all the aggregated network elements related to any diagram feature.  
 The add ins code sample then stores two different information separated using a single vertical line in the Info field for each diagram feature.The 1st information is the total count of network elements that the diagram feature aggregates.  
 The 2nd information is the count of the specific aggregated network elements that the user wishes.  
@@ -17,9 +17,9 @@ Language:              C#
 Subject:               NetworkDiagram
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

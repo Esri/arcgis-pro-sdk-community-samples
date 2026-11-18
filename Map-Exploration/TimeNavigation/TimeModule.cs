@@ -25,7 +25,7 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 namespace TimeNavigation
 {
 	/// <summary>
-	/// This sample provides a new tab and controls that allow you to set the time in the map view, step through time, and navigate between time enabled bookmarks in the map.
+  /// Sets the map view's time extent, steps through time, and navigates among time-enabled bookmarks using ribbon controls and dockpanes.
 	/// </summary>
 	/// <remarks>
 	/// 1. Download the Community Sample data(see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.

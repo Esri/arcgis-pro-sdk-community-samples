@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace CIMExamples
 {
     /// <summary>
-    /// Shows the following CIM capabilities:
+    /// Customizes layer data sources, selection colors, unique-value renderers, raster stretch colorizers, and symbol-level drawing through CIM definitions:
     /// 1. Provide sample to create CIMUniqueValueRenderer from scratch
     /// 1. Same as above but using the UniqueValueRendererDefinition class and the layer to configure the underlying Renderer
     /// 1. How to create the equivalent of symbol levels in Pro.

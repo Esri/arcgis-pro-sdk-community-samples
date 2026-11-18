@@ -17,7 +17,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace DockpaneSimple
 {   
     /// <summary>
-    /// This sample shows how to: 
+    /// Provides an MVVM dockpane for choosing project maps and navigating to their bookmarks, updating its contents as project items change.
     /// * Create a Dockpane using DAML
     /// * Use the MVVM Pattern with ArcGIS Pro
     /// * Change the Dockpane title

@@ -17,6 +17,7 @@
 
 */
 using ArcGIS.Desktop.Editing.Attributes;
+using ArcGIS.Desktop.Editing.Controls;
 using ArcGIS.Desktop.Mapping;
 using System;
 using System.Collections.Generic;
@@ -49,25 +50,22 @@ namespace InspectorTool
             _vm = this.DataContext as AttributeControlViewModel;
         }
 
-        private void treeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-            _vm = this.DataContext as AttributeControlViewModel;
+        
+    private void MapMemberIDSetControl_HighlightedItemsChanged(object sender, EventArgs e)
+    {
+      var ctrl = sender as MapMemberIDSetControl;
+      if (ctrl is null)
+        return;
 
-            var layerTreeView = sender as TreeView;
-            
-            var selectedFeature = layerTreeView.Items.CurrentItem;
-            var selectionLayer = ((KeyValuePair < MapMember, List< long >> )selectedFeature).Key;
-
-            if (layerTreeView.SelectedItem.GetType() == typeof(System.Int64))
-            {
-                var selectedOID = Convert.ToInt64(layerTreeView.SelectedItem);
-
-                _vm.AttributeInspector?.LoadAsync(selectionLayer, selectedOID);
-            }
-            else
-            {
-                _vm.AttributeInspector.ClearAsync();
-            }
-        }
+      _vm = this.DataContext as AttributeControlViewModel;
+      var selectedItems = ctrl.HighlightedItems;
+      var selectedItemsDict = selectedItems?.ToDictionary();
+      var selectedLayer = selectedItemsDict?.Keys.FirstOrDefault();
+      if (selectedLayer != null)
+      {
+        var selectedOID = selectedItemsDict[selectedLayer].FirstOrDefault();
+        _vm.AttributeInspector?.LoadAsync(selectedLayer, selectedOID);
+      }
     }
+  }
 }

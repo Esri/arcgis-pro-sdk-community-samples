@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace QueryDefDataQuery
 {
     /// <summary>
-    /// This addin illustrates how to preform related tabular queries in a GeoDatabase using QueryDef
+    /// Executes related-table geodatabase queries with QueryDef and displays the returned records in a dockpane.
     /// </summary>
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.

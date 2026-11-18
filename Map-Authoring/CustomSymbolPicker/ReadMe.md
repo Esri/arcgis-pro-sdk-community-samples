@@ -1,7 +1,7 @@
 ## CustomSymbolPicker
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample provides a new dock pane with options for searching for symbols in styles in current project,  build a gallery with preview images for returned results and this sample also allows picking a symbol from this custom gallery to apply to the currently selected feature layer in the Contents pane  
+Searches project styles in a custom symbol-gallery dockpane and applies the selected symbol to the feature layer selected in the Contents pane.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

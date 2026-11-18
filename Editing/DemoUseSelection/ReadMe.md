@@ -1,7 +1,7 @@
 ## DemoUseSelection
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows two tools that are using keys to toggle into selection mode while the tool is active.<br />  
+Provides polygon-difference tools with keyboard-controlled selection modes and commands to enable or disable project editing.<br />  
 The first is the use of ActivateSelectAsync in conjunction with UseSelection in a couple of example editing tools.  
 The two tools both do the same thing - a Difference operation against any selected polygons intersected by the sketch.<p />  
 DifferenceTool 1 shows use of UseSelection = <b>true</b> and leverages built-in behavior of the SHIFT key to toggle the tool into selection mode.<br />  
@@ -18,9 +18,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

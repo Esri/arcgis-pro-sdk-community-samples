@@ -1,7 +1,7 @@
 ## FeatureLyrToWebLayer
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This Button add-in, when clicked, uses the first feature layer in the Map and publishes it as a Web Layer using a custom Python script.  
+Publishes the map's first feature layer as a web layer by passing portal sharing parameters to a custom Python geoprocessing tool.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Sharing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

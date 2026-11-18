@@ -1,7 +1,7 @@
 ## ShowFlowArrows
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This add-in allows a user to calculate and draw flow arrows for a subnetwork and display them in their map.  
+Provides a dockpane for choosing utility-network tiers and subnetworks and displaying calculated subnetwork flow arrows on the map.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               UtilityNetwork
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 
@@ -34,19 +34,19 @@ Target Framework:      net10.0-windows
 3. ArcGIS Pro will open.   
 4. Open a project and map that contains a utility network with one or more valid subnetworks.  
 5. Open the 'Add-in' tab on the Pro ribbon and note the 'Show Flow Arrows' command.  
-![UI] (Screenshots/LaunchAddIn.png)  
+![UI](Screenshots/LaunchAddIn.png)  
 6. Click the 'Show Flow Arrows' command to open the dock pane for the add-in.  
-! [UI](Screenshots / OpenDockpane.png)  
+! [UI](Screenshots/OpenDockpane.png)  
 7.Select the Tier you want to visualize in the dropdown, this will populate the clean subnetworks for that tier.  
 8.Select the Subnetwork you want to visualize and click the Visualize Subnetwork button.  
-![UI](Screenshots / SelectedSubnetwork.png)  
+![UI](Screenshots/SelectedSubnetwork.png)  
 9.The tool will output several log messages as it exports and visualizes the flow direction.  
-![UI](Screenshots / AnalysisComplete.png)  
+![UI](Screenshots/AnalysisComplete.png)  
 10.Once the tool has finished, add the FlowArrows layer to your map to visualize the results.A sample layer file is included in the project that includes suggested symbology.  
-![UI](Screenshots / CalculatedFlow.png)  
+![UI](Screenshots/CalculatedFlow.png)  
 11.If the tool was run with the Apply Filter option selected, a definition query will be placed on the FlowArrows layer and the map will zoom to the selected subnetwork.  
 12.You can change the active subnetwork, or remove the filter, by modifying the definition query on the Flow Lines layer using the Ribbon or the layer properties dialog.  
-![UI](Screenshots / DefinitionQuery.png)  
+![UI](Screenshots/DefinitionQuery.png)  
 13.You can also use the tool to visualize a JSON file exported using your own trace by using the Visualize Trace button.  
   
 # Options  

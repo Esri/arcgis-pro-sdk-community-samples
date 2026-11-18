@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace ColorPickerControl
 {
 	/// <summary>
-	/// This sample shows how to use the Pro API's ColorPicker Control from a Dockpane.
+	/// Hosts a ColorPicker control in a dockpane and applies the selected color to polygon-layer symbology.
 	/// </summary>
 	/// <remarks>
 	/// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

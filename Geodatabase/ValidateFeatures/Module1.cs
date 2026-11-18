@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace ValidateFeatures
 {
   /// <summary>
-  /// This addin shows how to validate a selected set of features, displaying the results in a dockpane.  
+  /// Validates selected feature and table records and displays invalid-data details in a results dockpane.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.  

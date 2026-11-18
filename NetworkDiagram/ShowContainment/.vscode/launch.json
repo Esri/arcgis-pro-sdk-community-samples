@@ -1,0 +1,25 @@
+{
+    "version":  "0.2.0",
+    "configurations":  [
+                           {
+                               "name":  "ShowContainment Debug",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "C:\\ArcGIS\\bin\\ArcGISPro.exe",
+                               "args":  [],
+                               "cwd":  "C:\\ArcGIS\\bin",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-debug"
+                           },
+                           {
+                               "name":  "ShowContainment Release",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "C:\\ArcGIS\\bin\\ArcGISPro.exe",
+                               "args":  [],
+                               "cwd":  "C:\\ArcGIS\\bin",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-release"
+                           }
+                       ]
+}

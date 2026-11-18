@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="../SimplePointPlugin/SimplePointPlugin.csproj" />
+  <Project Path="SimplePointPluginTest.csproj">
+    <BuildDependency Project="../SimplePointPlugin/SimplePointPlugin.csproj" />
+  </Project>
+</Solution>

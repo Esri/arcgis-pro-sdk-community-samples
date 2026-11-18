@@ -16,31 +16,13 @@
    limitations under the License.
 
 */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Input;
-using System.Threading.Tasks;
-using ArcGIS.Core.CIM;
-using ArcGIS.Core.Data;
-using ArcGIS.Core.Geometry;
-using ArcGIS.Desktop.Catalog;
-using ArcGIS.Desktop.Core;
-using ArcGIS.Desktop.Editing;
-using ArcGIS.Desktop.Extensions;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
-using ArcGIS.Desktop.Framework.Dialogs;
-using ArcGIS.Desktop.Framework.Threading.Tasks;
-using ArcGIS.Desktop.Mapping;
 
 namespace EditingTemplates
 {
   /// <summary>
-  /// This sample demonstrates creating and modifying editing templates largely using the Cartographic Information Model (CIM). 
-  /// In this example we will create and modify templates including group templates.  
-  /// We will also show how to retrieve and use templates to create features; overriding default attribute values. 
+  /// Creates and modifies editing templates and group templates through CIM definitions and extension methods, then uses those templates to create features with overridden attributes.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

@@ -17,7 +17,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace ChangeColorizerForRasterLayer
 {
     /// <summary>
-    /// This sample demonstrates how to use the raster colorizer definitions to create a specific colorizer, and apply the new colorizer to the selected raster layer.  
+    /// Adds an image-service layer and creates applicable raster colorizers from colorizer definitions for the selected raster layer.
     /// The sample includes these functions:
     /// 1. Creates a new image service layer and adds the layer to the current map.
     /// 1. Displays a collection of colorizers in a combo box that can be applied to the selected layer.  

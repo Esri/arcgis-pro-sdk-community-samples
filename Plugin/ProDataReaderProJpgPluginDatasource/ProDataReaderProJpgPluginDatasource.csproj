@@ -27,8 +27,9 @@
     <Content Include="Config.xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Windows.Compatibility" Version="9.0.1" />
-    <PackageReference Include="System.Security.Cryptography.Xml" Version="10.0.7" />
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="11.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="11.0.0" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="11.0.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProDataReaderImageMetadata\ProDataReaderImageMetadata.csproj">

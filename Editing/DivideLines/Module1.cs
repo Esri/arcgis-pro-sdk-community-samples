@@ -23,8 +23,7 @@ using System.Threading.Tasks;
 namespace DivideLines
 {
   /// <summary>
-  /// This sample provides a tool that divides a line into an equal number of parts or a number of parts of a given length.
-  /// The sample creates a map tool that is similar to other editing tools in the Modify Features pane, in that it opens a control within the pane with a dialog for user input. It follows the MVVM pattern used by the editing tools.
+  /// Adds a Modify Features tool that divides selected lines into a specified number of equal parts or into parts of a specified length.
   /// </summary>
   /// <remarks>
   /// 1. Debug through Visual Studio or compile and run ArcGIS Pro.

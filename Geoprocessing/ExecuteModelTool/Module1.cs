@@ -40,7 +40,7 @@ namespace ExecuteModelTool
 {
 
   /// <summary>
-  /// This sample shows how to embed a Model GP Tool into an Add-in.
+  /// Executes a bundled geoprocessing model for a selected polyline layer, either directly or through its tool dialog, and provides a command to reset generated data.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

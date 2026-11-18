@@ -38,7 +38,7 @@ using System.Windows.Input;
 
 namespace DockpaneWithListCheckbox
 {  /// <summary>
-   /// This MVVM / XAML sample shows how to implement a multi-select ListBox in an ArcGIS Pro API Dockpane using MVVM.
+  /// Populates an MVVM dockpane list with checkable items and reads the selected items through view-model commands.
    /// </summary>
    /// <remarks>
    /// 1. In Visual Studio build the solution and run the debugger to open ArcGIS Pro.

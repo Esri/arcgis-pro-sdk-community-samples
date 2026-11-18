@@ -1,7 +1,7 @@
 ## ReplaceSketch
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample adds the ReplaceSketch command to the sketch context menu.   
+Adds a sketch context-menu command that replaces the active edit sketch with the geometry of a nearby line or polygon feature.  
 This allows you to add the shape of a line or polygon to the edit sketch by right clicking on the feature and choosing this command.  
 It is equivalent to the ArcMap editing sketch context menu item.  
 The replace sketch functionality is useful when you want to create a sketch from an underlying feature.  
@@ -17,9 +17,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

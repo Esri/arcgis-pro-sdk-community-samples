@@ -40,7 +40,7 @@ using System.Windows.Input;
 namespace DockpaneDragAndDropFeatureLayer
 {
 	/// <summary>
-	/// This sample shows how to process drag and drop events in an ArcGIS Pro dockpane extension.
+  /// Accepts feature layers dropped onto a dockpane and displays their nongeometry field values.
 	/// </summary>
 	/// <remarks>
 	/// 1. In Visual Studio click the Build menu. Then select Build Solution.

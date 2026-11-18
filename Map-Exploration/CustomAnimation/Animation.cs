@@ -28,7 +28,7 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 namespace CustomAnimation
 {
   /// <summary>
-  /// This sample shows how to create custom animations such as flying along a 3D line feature and rotating around a point of interest.
+  /// Creates fly-along-path and orbit-around-point camera animations with configurable path and timing settings and a command to clear animation keyframes.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.

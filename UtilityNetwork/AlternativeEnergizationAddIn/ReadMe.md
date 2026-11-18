@@ -1,7 +1,7 @@
 ## AlternativeEnergizationAddIn
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample a tool to click on a utility network feature and run an isolation trace and then check for alternative energization capabilities.  The 'alternative energization' button shows red circle graphics on features that need to be disabled to isolate the selected feature and green circles on features that need to be enabled.  
+Runs isolation and alternative-energization traces from a clicked utility-network feature and marks devices to disable or enable with red and green graphics.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Utility Network
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

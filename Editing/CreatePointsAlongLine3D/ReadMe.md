@@ -1,7 +1,7 @@
 ## CreatePointsAlongLine3D
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample provides a point construction tool to create points along a 3D line.  
+Provides a point construction tool and options control for creating points along selected 3D line features.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

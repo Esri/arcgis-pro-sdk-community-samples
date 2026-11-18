@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace ShowLicense
 {
     /// <summary>
-    /// This sample shows licensing info and expiration dates in a pop-up message box.
+    /// Displays ArcGIS Pro license levels, licensed components, expiration dates, and portal licensing information in a message dialog.
     /// </summary>    
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

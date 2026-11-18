@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace DuplicateAndSelect
 {
   /// <summary>
-  /// This sample provides a set of controls which guide the user through a data quality assurance(QA) review workflow, with tools for visually reviewing and notating datasets based on their accuracy.
+  /// Duplicates selected features or table rows through edit operations and selects the new records, either replacing or extending the existing selection.
   /// </summary>
   /// <remarks>
   /// 1. Open this solution in Visual Studio.

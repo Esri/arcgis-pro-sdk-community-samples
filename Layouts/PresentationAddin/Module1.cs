@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Mapping;
 namespace PresentationsAddin
 {
   /// <summary>
-  /// This sample demonstrates the use of the ArcGIS Pro API for creating and working with presentations programatically.
+    /// Creates presentations with blank, image, map, and video pages, adds and selects page elements, interacts with map pages, and monitors presentation events.
   /// </summary>
   /// <remarks>
   /// 1. In Visual studio rebuild the solution.

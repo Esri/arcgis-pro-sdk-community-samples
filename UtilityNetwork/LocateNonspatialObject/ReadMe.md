@@ -1,7 +1,7 @@
 ## LocateNonSpatialObject
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This example demonstrates how to obtain spatial ancestors or containers for a non-spatial object in a Utility Network.  
+Locates a nonspatial utility-network object by finding its spatial ancestors or associated containers.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 
@@ -35,7 +35,7 @@ For sample data, download CommunitySampleData-NetworkDiagrams-mm-dd-yyyy.zip fro
 2. Click Start button to open ArcGIS Pro.  
 3. Add Utility Network to the map from Communications_UtilityNetwork.geodatabase  
 4. Then, click the LocateObject button.  
-![UI] (Screenshots/Screenshot1.png)  
+![UI](Screenshots/Screenshot1.png)  
   
 
 <!-- End -->

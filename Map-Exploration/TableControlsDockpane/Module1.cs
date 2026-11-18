@@ -38,9 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace TableControlsDockpane
 {
     /// <summary>
-    /// This sample demonstrates using multiple TableControls on a dockpane. 
-    /// The example shows multiple table controls selectable by a tab control.  A TableControl is filled with content from selected items on the map's Contents TOC dockpane. 
-    /// A context menu is added to each table control allowing access to row functionality in the table control. 
+    /// Opens selected map layers and tables in tabbed dockpane TableControls with per-table row context menus and Inspector-based row access.
     /// </summary>
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

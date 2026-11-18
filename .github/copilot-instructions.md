@@ -1,20 +1,31 @@
-# Copilot Custom Instructions for ArcGIS Pro SDK Add-in Development
+<!--
+Copyright 2026 Esri
+ 
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+ 
+    https://www.apache.org/licenses/LICENSE-2.0
+ 
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+```
+license: Apache-2.0
+metadata:
+  author: Esri, Inc.
+  version: "1.0.0"
+```
+# ArcGIS Pro SDK Copilot Instructions (.NET)
 
-I am developing ArcGIS Pro Add-ins using the ArcGIS Pro SDK.
+These instructions apply to ArcGIS Pro SDK for .NET workspaces in this repository.
+ArcGIS Pro SDK extends ArcGIS Pro, a .NET desktop GIS application.
 
-- Use the authoritative ArcGIS Pro SDK API documentation as the primary reference: https://pro.arcgis.com/en/pro-app/latest/sdk/api-reference and https://github.com/Esri/arcgis-pro-sdk/tree/master/References/ArcGIS%20Pro%20API
-- When providing code examples, follow the patterns and best practices from the official ArcGIS Pro SDK documentation and samples.
-- Prefer C# for all code snippets and explanations.
-- Reference and leverage the code snippets available at: https://github.com/Esri/arcgis-pro-sdk-snippets and at: https://github.com/Esri/arcgis-pro-sdk
-- Assume the development environment is Visual Studio 2022 or later.
-- Use a tab size as defined in the Visual Studio settings (usually 2 spaces).
-- To open ArcGIS Pro items, use the OpenItemDialog rather than the standard OpenFileDialog.
-- To display a message box, use the ArcGIS.Desktop.Framework.Dialogs.MessageBox class.
-- Use modern .NET and ArcGIS Pro SDK conventions.
-- Use the https://github.com/Esri/arcgis-pro-sdk/blob/master/References/ArcGIS.Desktop.Framework.xsd xml schema when making changes to any config.daml desktop add-in markup language file.
-- For UI development, use the MVVM (Model-View-ViewModel) programming pattern as recommended by the ArcGIS Pro SDK.
-- When possible, provide concise explanations and relevant links to documentation.
-- If a task involves UI, follow the ArcGIS Pro Add-in UI guidelines.
-- CIMSymbol has an extension method called MakeSymbolReference.  Use MakeSymbolReference to convert any CIMSymbol to a CIMSymbolReference.
+## Routing Policy Related to ArcGIS Pro SDK .NET 
+- For questions and guidance related to ArcGIS Pro SDK for .NET, always follow the routing policies outlined below.
+- Questions and requests for code examples, route to `.github/instructions/arcgis-pro-sdk-community-samples.instructions.md`
+- When generating code for ArcGIS Pro SDK .NET implementations, route to `.github/instructions/arcgis-pro-sdk-best-practices.instructions.md`
 
-Always ensure that code suggestions are compatible with the latest supported version of ArGIS Pro SDK.

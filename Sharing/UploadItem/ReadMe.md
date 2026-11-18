@@ -1,7 +1,7 @@
 ## UploadItem
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample allows uploading a desktop content item to AGOL or portal.  
+Uploads a selected desktop content item to ArcGIS Online or a portal and searches for uploaded content using its item type, name, and tags.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Sharing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

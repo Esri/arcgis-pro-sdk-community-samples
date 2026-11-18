@@ -25,7 +25,7 @@ using System.Threading.Tasks;
 namespace ConstructionToolWithOptions
 {
   /// <summary>
-  /// This sample illustrates how to build a construction tool with options allowing users to provide parameters at run-time.  
+  /// Provides configurable construction tools for buffered-line polygons, circles with a specified radius, and polygons created through a custom input interface.
   /// Three samples are included.
   /// The first is the BufferedLineTool.  The line sketch geoemtry is buffered by a user defined distance to create a polygon feature.
   /// The second sample is the CircleTool.  A user defined radius is used to create a circular arc with the point sketch geometry as the centroid.  This tool is registered with both the esri_editing_construction_polyline and esri_editing_construction_polygon categories allowing both polyline and polygon features to be created.

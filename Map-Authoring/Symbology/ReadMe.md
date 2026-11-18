@@ -1,8 +1,7 @@
 ## Symbology
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample creates custom point, line and polygon symbol items that you can use to render feature layers.    
-These symbol items are stored in a personal style file in your project that you can re-use.  
+Constructs custom point, line, polygon, and mesh symbols, displays them in a dockpane, and stores reusable symbol items in a personal project style.  
   
 
 
@@ -14,9 +13,9 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

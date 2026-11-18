@@ -1,7 +1,7 @@
 ## InspectorTool
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates an Editing tool using the inspector class to modify data.  
+Provides a map-selection tool with an embedded Inspector for loading, editing, applying, or canceling feature attribute changes.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 
@@ -35,12 +35,12 @@ Target Framework:      net10.0-windows
 4. In Visual Studio click the Build menu. Then select Build Solution.  
 5. Launch the debugger to open ArcGIS Pro.  
 6. ArcGIS Pro will open, select the FeatureTest.aprx project  
-7. Activate the Edit tab and click the modify button.  
+7. Activate the Edit tab and click the Nodify button.  
 8. Navigate to the Pro SDK template in the Modify Features pane.  
 ![UI](Screenshots/InspectorTool.PNG)  
 9. Click the 'Select Inspector Tool' and draw rectangle around point features.  
 ![UI](Screenshots/SelectionPointFeatures.PNG)  
-10. Click on an ObjectID in the tree view.  
+10. Click on an item in the tree view.  
 ![UI](Screenshots/SelectedFeaturesTreeViewAndInspector.PNG)  
 11. Change the text for the 'Description' attribute.  
 ![UI](Screenshots/ChangeDescriptionValue.PNG)  

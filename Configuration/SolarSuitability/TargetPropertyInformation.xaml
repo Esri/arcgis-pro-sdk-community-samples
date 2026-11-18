@@ -1,0 +1,172 @@
+<!--
+
+   Copyright 2026 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<UserControl x:Class="SolarSuitability.TargetPropertyInformationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ui="clr-namespace:SolarSuitability"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{Binding Path=ui.TargetPropertyInformationViewModel}">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+
+      <!-- Alternate row background styles -->
+      <Style x:Key="EvenRowTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource Esri_TextBlockH5}">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Margin" Value="4"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+      </Style>
+
+      <Style x:Key="OddRowTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource Esri_TextBlockH5}">
+        <Setter Property="Background" Value="{DynamicResource Esri_Gray100}"/>
+        <Setter Property="Margin" Value="4"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+      </Style>
+
+      <!-- Alternate row background styles -->
+      <Style x:Key="EvenRowStyle" TargetType="StackPanel">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Margin" Value="4"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+      </Style>
+
+      <Style x:Key="OddRowStyle" TargetType="StackPanel">
+        <Setter Property="Background" Value="{DynamicResource Esri_Gray100}"/>
+        <Setter Property="Margin" Value="4"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+      </Style>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Border BorderBrush="#F57A00" BorderThickness="5" Padding="2" Background="White" Visibility="{Binding ControlVisibility}">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <!-- Row 0 -->
+      <StackPanel Orientation="Horizontal" 
+                  Grid.Row="0" 
+                  Grid.Column="0" 
+                  Grid.ColumnSpan="2"                  
+                  Style="{StaticResource EvenRowStyle}"
+                  Name="Row0">
+        <TextBlock Text="Address"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Style="{DynamicResource Esri_TextBlockH5}"
+                    Margin="2"
+                    FontWeight="Bold"/>
+        <TextBlock Text="W 450 Stuart Ave."
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Style="{DynamicResource Esri_TextBlockH5}"
+                 />
+      </StackPanel>
+      <!-- Row 1 -->
+      <StackPanel Orientation="Horizontal" 
+                  Grid.Row="1" 
+                  Grid.Column="0" 
+                  Grid.ColumnSpan="2"                  
+                  Style="{StaticResource OddRowStyle}"
+                  Name="Row1">
+        <TextBlock Text="Improvements Value"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Style="{DynamicResource Esri_TextBlockH5}"
+                   Margin="2"
+                   FontWeight="Bold"/>
+        <TextBlock Text="$3,450,000"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Style="{DynamicResource Esri_TextBlockH5}"
+                 />
+      </StackPanel>
+
+      <!-- Row 2 -->
+      <StackPanel Orientation="Horizontal" 
+                  Grid.Row="2" 
+                  Grid.Column="0" 
+                  Grid.ColumnSpan="2"                  
+                  Style="{StaticResource EvenRowStyle}"
+                  Name="Row2">
+        <TextBlock Text="Monthly Solar Potential"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Style="{DynamicResource Esri_TextBlockH5}"
+                   Margin="2"
+                   FontWeight="Bold"/>
+        <TextBlock Text="10.71 MWh"
+                   Style="{DynamicResource Esri_TextBlockH5}"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"/>
+      </StackPanel>
+
+      <!-- Row 3 -->
+      <StackPanel Orientation="Horizontal" 
+                  Grid.Row="3" 
+                  Grid.Column="0" 
+                  Grid.ColumnSpan="2"                  
+                  Style="{StaticResource OddRowStyle}"
+                  Name="Row3">
+        <TextBlock Text="Zoning"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Style="{DynamicResource Esri_TextBlockH5}"
+                   Margin="2"
+                   FontWeight="Bold"/>
+        <TextBlock Text="SP45/TC"
+                   Style="{DynamicResource Esri_TextBlockH5}"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"/>
+      </StackPanel>
+      <!-- Row 4 -->
+      <StackPanel Orientation="Horizontal" 
+                  Grid.Row="4" 
+                  Grid.Column="0" 
+                  Grid.ColumnSpan="2"                  
+                  Style="{StaticResource EvenRowStyle}"
+                  Name="Row4">
+        <TextBlock Text="Constructed"
+                   Style="{DynamicResource Esri_TextBlockH5}"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   FontWeight="Bold"
+                   Margin="2"/>
+        <TextBlock Text="2017"
+                   Style="{DynamicResource Esri_TextBlockH5}"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"/>
+      </StackPanel>
+    </Grid>
+  </Border>
+</UserControl>

@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace GeoProcesssingEventsWithUI
 {
   /// <summary>
-  /// This sample shows how to capture GP Tool runtime events including the percentage completion event.
+  /// Runs a buffer geoprocessing tool and displays runtime messages, events, and percentage-complete feedback in a dockpane.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a project called 'AdminSample.aprx' that includes data that is used by this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Admin" is available.

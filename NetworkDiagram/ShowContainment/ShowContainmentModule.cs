@@ -22,7 +22,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace ShowContainment
 {
   /// <summary>
-  /// This is a very simple add-in code sample. The purpose is to demonstrate how to create a new diagram from diagram features selected in any open diagram.
+  /// Creates new network diagrams showing full or partial containment content for container features selected in an open diagram.
   ///
   /// In this sample, the two add-in command codes expect a diagram feature representing a container feature or container object in the utility network to be selected in any open diagram map.
   /// Then they use this utility network container feature or object as the only input network element to generate another diagram.

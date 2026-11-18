@@ -38,7 +38,7 @@ namespace PortalInfoListAllFedServers
 
 		protected PortalInfoDockpaneViewModel()
 		{
-			_CommandDoQuery = new RelayCommand(() => CmdDoQuery());
+			_CommandDoQuery = new RelayCommand(async () => await CmdDoQueryAsync());
 		}
 
 		/// <summary>
@@ -114,189 +114,39 @@ namespace PortalInfoListAllFedServers
 		/// 2. advanced portal self calls;
 		/// 3. fed server and registered ds.
 		/// </summary>
-		private async void CmdDoQuery()
+		private async Task CmdDoQueryAsync()
 		{
-			#region setup
 			StringBuilder out_str = new StringBuilder();
 			ArcGISPortal arcGISportal = ArcGISPortalManager.Current.GetActivePortal();
 			if (arcGISportal == null)
 				return;
-      await QueuedTask.Run(() =>
-      {
-        if (!arcGISportal.IsSignedOn())
-        {
-          //Calling "SignIn" will trigger the OAuth popup if your credentials are
-          //not cached (eg from a previous sign in in the session)
 
-          SignInResult result = arcGISportal.SignIn();
-          if (result.success)
-          {
-            envFailure = false;
-          }
-          else
-            envFailure = true;
-        }//fill in username and password manually
-				#endregion
-
-				#region portal basic info
-				var online = ArcGISPortalManager.Current.GetPortal(new Uri(_portalUrl));
-
-				//print out portal info
-				
-				out_str.AppendLine("Portal URL: " + arcGISportal.PortalUri);
-				out_str.AppendLine("User name: " + arcGISportal.GetSignOnUsername());
-				#endregion
-			});
-
-
-			/*
-			 * the following calls are only present for portals; For online, just print the info generated above.
-			 */
-			if (!_portalUrl.Contains("arcgis.com"))
+			try
 			{
-				//get web adapter
-				string wa = arcGISportal.PortalUri.Segments[1];
-				_portalUrl = arcGISportal.PortalUri.ToString();
+				envFailure = false;
+				await EnsureSignedInAsync(arcGISportal);
+				AppendBasicPortalInfo(out_str, arcGISportal);
 
-				/*
-				 * Make Portal self call to understand the current role - user, publisher or admin? and other portal info
-				 */
-				#region portal self call
-				//get portal self call's response
-				UriBuilder selfURL = new UriBuilder(new Uri(_portalUrl))
+				if (!arcGISportal.PortalUri.ToString().Contains("arcgis.com", StringComparison.OrdinalIgnoreCase))
 				{
-					Path = wa + "sharing/rest/portals/self",
-					Query = "f=json"
-				};
-				EsriHttpResponseMessage response = new EsriHttpClient().Get(selfURL.Uri.ToString());
-
-				dynamic portalSelf = JObject.Parse(response.Content.ReadAsStringAsync().Result);
-				// if the response doesn't contain the user information then it is essentially
-				// an anonymous request against the portal
-				if (portalSelf.user == null)
-					return;
-				string userRole = portalSelf.user.role;
-				string[] userPriviledges = portalSelf.user.privileges.ToObject<string[]>();
-
-				if (portalSelf.isPortal == null)
-					return;
-				string IsPortal = (bool)(portalSelf.isPortal) ? "True" : "False";
-
-				if (portalSelf.supportsSceneServices == null)
-					return;
-				string SupportsSceneServices = (bool)(portalSelf.supportsSceneServices) ? "True" : "False";
-
-				if (portalSelf.helperServices == null)
-					return;
-
-				var elevationService = portalSelf.helperServices.elevation;
-				var routeService = portalSelf.helperServices.route;
-
-				out_str.AppendLine("User role: " + userRole);
-				out_str.AppendLine("User Privileges:");
-				userPriviledges.ToList().ForEach(i => out_str.Append("\t" + i));
-
-				out_str.AppendLine();
-				out_str.AppendLine("Supports Scene services? " + SupportsSceneServices);
-				out_str.AppendLine("Is it a portal? " + IsPortal);
-				out_str.AppendLine("Helper Services: (1) elevation: " + ((elevationService == null) ? "null" : elevationService.url) + "\t" +
-														"(2) Route: " + ((routeService == null) ? "null" : routeService.url));
-				#endregion
-
-				/*
-				 * Make rest calls to get the list of fed servers, signaling which is the hosting fed server;
-				 * Also to print the registered data sources
-				 */
-				#region portal self server call
-				selfURL = new UriBuilder(new Uri(_portalUrl))
-				{
-					Path = wa + "sharing/rest/portals/self/servers",
-					Query = "f=json" 
-				};
-				response = new EsriHttpClient().Get(selfURL.Uri.ToString());
-
-				dynamic portalSelf_servers = JObject.Parse(response.Content.ReadAsStringAsync().Result);
-				// if the response doesn't contain the user information then it is essentially
-				// an anonymous request against the portal
-				if (portalSelf_servers == null)
-					return;
-				out_str.AppendLine();
-				out_str.AppendLine("Fed servers:");
-				int cnt = 0;
-				foreach (var server in portalSelf_servers.servers)
-				{
-					out_str.Append("\t(" + (++cnt) + ") {" + server.url + ", " + server.adminUrl + ", " + server.serverRole + "}");
-
-					/* 
-					 * generate a new token from portal
-					 * re-using old tokens would only yield empty item list for data sources
-					 */
-					#region generate server token
-					ArcGISPortal arcGISportal_2 = ArcGISPortalManager.Current.GetActivePortal();
-					string server_token = arcGISportal_2.GetToken();
-					#endregion
-
-					/*
-					 * get the registered data source from each server
-					 */
-					#region data sources
-					string wa_2 = (new Uri(server.adminUrl.Value)).Segments[1];
-					//1. get registered shared folder
-					selfURL = new UriBuilder(new Uri(server.adminUrl.Value))
-					{
-						Path = wa_2 + "/admin/data/findItems/",
-						Query = "f=json&parentPath=/fileShares&types=folder&token=" + server_token
-					};
-					response = new EsriHttpClient().Get(selfURL.Uri.ToString());
-
-					dynamic server_registeredFolder = JObject.Parse(response.Content.ReadAsStringAsync().Result);
-					// if the response doesn't contain the user information then it is essentially
-					// an anonymous request against the portal
-					if (server_registeredFolder == null)
-						return;
-					out_str.AppendLine();
-					out_str.AppendLine();
-					out_str.Append("Registered Folder:\t");
-					if (server_registeredFolder.items == null)
-						out_str.Append("\tRegistered Folder not accessible\t");
-					foreach (var item in server_registeredFolder.items)
-					{
-						out_str.Append("\t{" + item.type + " - " + item.info.path + "}");
-					}
-
-					//2. get registered shared egdb
-					selfURL = new UriBuilder(new Uri(server.adminUrl.Value))
-					{
-						Path = wa_2 + "/admin/data/findItems/",
-						Query = "f=json&parentPath=enterpriseDatabases&types=egdb&token=" + server_token
-					};
-					response = new EsriHttpClient().Get(selfURL.Uri.ToString());
-
-					dynamic server_registeredDS = JObject.Parse(response.Content.ReadAsStringAsync().Result);
-					// if the response doesn't contain the user information then it is essentially
-					// an anonymous request against the portal
-					if (server_registeredDS == null)
-						return;
-					out_str.AppendLine();
-					out_str.AppendLine();
-					out_str.Append("Registered egdb:\t");
-					if (server_registeredDS.items == null)
-						out_str.Append("\tRegistered egdb not accessible\t");
-					foreach (var ds in server_registeredDS.items)
-					{
-						out_str.Append("\t{" + ds.type + " - " + ds.path + "}");
-					}
-
-					//3. get registered nosql
-					//query="f=json&parentPath=nosqlDatabases&types=nosql"
-					#endregion
+					string webAdapter = arcGISportal.PortalUri.Segments[1];
+					_portalUrl = arcGISportal.PortalUri.ToString();
+					await AppendPortalSelfInfoAsync(out_str, _portalUrl, webAdapter);
+					await AppendPortalServerInfoAsync(out_str, _portalUrl);
 				}
-				#endregion
+				else
+				{
+					out_str.AppendLine();
+					out_str.AppendLine(@"To see further Portal Info details you have to connect to a portal other then ArcGIS Online");
+				}
 			}
-			else
+			catch (Exception ex)
 			{
+				envFailure = true;
 				out_str.AppendLine();
-				out_str.AppendLine($@"To see further Portal Info details you have to connect to a portal other then ArcGIS Online");
+				out_str.AppendLine("Error while retrieving portal information.");
+				out_str.AppendLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex);
 			}
 
 			if (envFailure)
@@ -309,6 +159,138 @@ namespace PortalInfoListAllFedServers
 			}
 
 			System.Diagnostics.Debug.WriteLine(QueryResult);
+		}
+
+		private async Task EnsureSignedInAsync(ArcGISPortal arcGISportal)
+		{
+			await QueuedTask.Run(() =>
+			{
+				if (!arcGISportal.IsSignedOn())
+				{
+					SignInResult result = arcGISportal.SignIn();
+					envFailure = !result.success;
+				}
+			});
+		}
+
+		private static void AppendBasicPortalInfo(StringBuilder out_str, ArcGISPortal arcGISportal)
+		{
+			out_str.AppendLine("Portal URL: " + arcGISportal.PortalUri);
+			out_str.AppendLine("User name: " + arcGISportal.GetSignOnUsername());
+		}
+
+		private async Task AppendPortalSelfInfoAsync(StringBuilder out_str, string portalUrl, string webAdapter)
+		{
+			UriBuilder selfURL = new UriBuilder(new Uri(portalUrl))
+			{
+				Path = webAdapter + "sharing/rest/portals/self",
+				Query = "f=json"
+			};
+
+			JObject portalSelf = await GetJsonResponseAsync(selfURL.Uri.ToString());
+			if (portalSelf["user"] == null)
+				return;
+
+			string userRole = portalSelf["user"]?["role"]?.ToString();
+			string[] userPriviledges = portalSelf["user"]?["privileges"]?.ToObject<string[]>() ?? Array.Empty<string>();
+			string isPortal = (bool?)portalSelf["isPortal"] == true ? "True" : "False";
+			string supportsSceneServices = (bool?)portalSelf["supportsSceneServices"] == true ? "True" : "False";
+			string elevationServiceUrl = portalSelf["helperServices"]?["elevation"]?["url"]?.ToString() ?? "null";
+			string routeServiceUrl = portalSelf["helperServices"]?["route"]?["url"]?.ToString() ?? "null";
+
+			out_str.AppendLine("User role: " + userRole);
+			out_str.AppendLine("User Privileges:");
+			userPriviledges.ToList().ForEach(i => out_str.Append("\t" + i));
+			out_str.AppendLine();
+			out_str.AppendLine("Supports Scene services? " + supportsSceneServices);
+			out_str.AppendLine("Is it a portal? " + isPortal);
+			out_str.AppendLine("Helper Services: (1) elevation: " + elevationServiceUrl + "\t" +
+										"(2) Route: " + routeServiceUrl);
+		}
+
+		private async Task AppendPortalServerInfoAsync(StringBuilder out_str, string portalUrl)
+		{
+			UriBuilder selfURL = new UriBuilder(new Uri(portalUrl))
+			{
+				Path = ArcGISPortalManager.Current.GetActivePortal().PortalUri.Segments[1] + "sharing/rest/portals/self/servers",
+				Query = "f=json"
+			};
+
+			JObject portalSelfServers = await GetJsonResponseAsync(selfURL.Uri.ToString());
+			JArray servers = portalSelfServers["servers"] as JArray;
+			if (servers == null)
+				return;
+
+			out_str.AppendLine();
+			out_str.AppendLine("Fed servers:");
+
+			int cnt = 0;
+			foreach (var server in servers)
+			{
+				string serverUrl = server["url"]?.ToString() ?? string.Empty;
+				string serverAdminUrl = server["adminUrl"]?.ToString() ?? string.Empty;
+				string serverRole = server["serverRole"]?.ToString() ?? string.Empty;
+				out_str.Append("\t(" + (++cnt) + ") {" + serverUrl + ", " + serverAdminUrl + ", " + serverRole + "}");
+
+				ArcGISPortal arcGISportal = ArcGISPortalManager.Current.GetActivePortal();
+				string serverToken = arcGISportal.GetToken();
+				await AppendRegisteredDataSourcesAsync(out_str, serverAdminUrl, serverToken);
+			}
+		}
+
+		private async Task AppendRegisteredDataSourcesAsync(StringBuilder out_str, string serverAdminUrl, string serverToken)
+		{
+			if (string.IsNullOrEmpty(serverAdminUrl))
+				return;
+
+			string webAdapter = (new Uri(serverAdminUrl)).Segments[1];
+			JObject serverRegisteredFolder = await GetJsonResponseAsync(BuildDataFindItemsUrl(serverAdminUrl, webAdapter, "/fileShares", "folder", serverToken));
+			out_str.AppendLine();
+			out_str.AppendLine();
+			out_str.Append("Registered Folder:\t");
+			AppendItems(out_str, serverRegisteredFolder["items"] as JArray, "\tRegistered Folder not accessible\t", "info", "path");
+
+			JObject serverRegisteredDS = await GetJsonResponseAsync(BuildDataFindItemsUrl(serverAdminUrl, webAdapter, "enterpriseDatabases", "egdb", serverToken));
+			out_str.AppendLine();
+			out_str.AppendLine();
+			out_str.Append("Registered egdb:\t");
+			AppendItems(out_str, serverRegisteredDS["items"] as JArray, "\tRegistered egdb not accessible\t", null, "path");
+		}
+
+		private static string BuildDataFindItemsUrl(string serverAdminUrl, string webAdapter, string parentPath, string type, string serverToken)
+		{
+			UriBuilder selfURL = new UriBuilder(new Uri(serverAdminUrl))
+			{
+				Path = webAdapter + "/admin/data/findItems/",
+				Query = "f=json&parentPath=" + parentPath + "&types=" + type + "&token=" + serverToken
+			};
+
+			return selfURL.Uri.ToString();
+		}
+
+		private static void AppendItems(StringBuilder out_str, JArray items, string emptyMessage, string nestedProperty, string pathProperty)
+		{
+			if (items == null)
+			{
+				out_str.Append(emptyMessage);
+				return;
+			}
+
+			foreach (var item in items)
+			{
+				string type = item["type"]?.ToString() ?? string.Empty;
+				string path = nestedProperty == null
+					? item[pathProperty]?.ToString() ?? string.Empty
+					: item[nestedProperty]?[pathProperty]?.ToString() ?? string.Empty;
+				out_str.Append("\t{" + type + " - " + path + "}");
+			}
+		}
+
+		private static async Task<JObject> GetJsonResponseAsync(string url)
+		{
+			EsriHttpResponseMessage response = new EsriHttpClient().Get(url);
+			string responseText = await response.Content.ReadAsStringAsync();
+			return JObject.Parse(responseText);
 		}
 	}
 }

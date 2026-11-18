@@ -1,7 +1,7 @@
 ## EnterpriseGDBVersionChange
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates how to switch versions for an Enterprise Geodatabase connection.  
+Lists versions for a selected enterprise-geodatabase layer and switches the connection to the chosen version through a dockpane.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

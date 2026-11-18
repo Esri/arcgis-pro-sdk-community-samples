@@ -1,0 +1,47 @@
+{
+    "version":  "2.0.0",
+    "tasks":  [
+                  {
+                      "type":  "process",
+                      "label":  "build-debug",
+                      "command":  "dotnet",
+                      "args":  [
+                                   "build",
+                                   "TraceNetworkSample.csproj",
+                                   "-c",
+                                   "Debug",
+                                   "/property:GenerateFullPaths=true",
+                                   "/consoleloggerparameters:NoSummary"
+                               ],
+                      "options":  {
+                                      "cwd":  "${workspaceFolder}"
+                                  },
+                      "group":  {
+                                    "kind":  "build",
+                                    "isDefault":  false
+                                },
+                      "problemMatcher":  "$msCompile"
+                  },
+                  {
+                      "type":  "process",
+                      "label":  "build-release",
+                      "command":  "dotnet",
+                      "args":  [
+                                   "build",
+                                   "TraceNetworkSample.csproj",
+                                   "-c",
+                                   "Release",
+                                   "/property:GenerateFullPaths=true",
+                                   "/consoleloggerparameters:NoSummary"
+                               ],
+                      "options":  {
+                                      "cwd":  "${workspaceFolder}"
+                                  },
+                      "group":  {
+                                    "kind":  "build",
+                                    "isDefault":  true
+                                },
+                      "problemMatcher":  "$msCompile"
+                  }
+              ]
+}

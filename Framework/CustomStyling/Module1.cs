@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace CustomStyling
 {
     /// <summary>
-    /// Show how to apply custom styles to a UserControl that work in both Light and Dark modes.
+    /// Hosts a custom-styled user control in a dockpane with styles that adapt to ArcGIS Pro's light and dark themes.
     /// </summary>
     /// <remarks>
     /// New at 1.4, ArcGIS Pro supports a Light theme, Dark theme, and a variant of the Dark theme for use with High Contrast. Developers who want their Add-ins to blend in with Pro must likewise style their Add-in UIs to provide a Light and Dark themeing. In most cases, developers need only apply 'ESRI' styles to their UserControl content (refer to the ProGuide at [ProGuide: Style Guide](https://github.com/esri/arcgis-pro-sdk/wiki/proguide-style-guide). However, there may be situations where you need to derive your own styles and have them switch between a custom Light and Dark mode to mirror the current theme being applied to Pro. This sample shows you how.  

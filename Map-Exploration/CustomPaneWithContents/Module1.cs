@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace CustomPaneWithContents
 {
   /// <summary>
-  /// This sample illustrates the implementation of a custom pane that implements both IContentsProvider and IContentsControl.  
+  /// Creates a custom pane with its own Contents interface by implementing IContentsProvider and IContentsControl.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu then select Build Solution. 

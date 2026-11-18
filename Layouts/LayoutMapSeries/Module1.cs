@@ -27,7 +27,7 @@ using System.Threading.Tasks;
 
 namespace LayoutMapSeries
 {  /// <summary>
-   /// LayoutMapSeries exercises a collection of programmatic interactions with the layout API including the application of map series
+    /// Generates layouts with map series, configures page elements, and provides page-list and sequential navigation through the generated series.
    /// </summary>
    /// <remarks>
    /// 1. This solution is using the **Newtonsoft.Json NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".

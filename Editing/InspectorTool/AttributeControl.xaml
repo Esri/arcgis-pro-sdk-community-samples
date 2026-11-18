@@ -19,6 +19,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"       
              xmlns:local="clr-namespace:InspectorTool"
              xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             xmlns:editingControls="clr-namespace:ArcGIS.Desktop.Editing.Controls;assembly=ArcGIS.Desktop.Editing"
              mc:Ignorable="d" 
              d:DataContext="{Binding Path=AttributeControlViewModel}"
              d:DesignHeight="300" d:DesignWidth="300">
@@ -37,24 +38,10 @@
           <RowDefinition Height="*"/>
           <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TreeView x:Name="treeView" Grid.Row="0" VerticalAlignment="Top" Width="Auto" DockPanel.Dock="Top" ItemsSource="{Binding SelectedMapFeatures}" SelectedItemChanged="treeView_SelectedItemChanged"
-                          Style="{DynamicResource {x:Type TreeView}}">
-          <TreeView.ItemContainerStyle>
-            <Style TargetType="{x:Type TreeViewItem}">
-              <Setter Property="IsExpanded" Value="True" />
-            </Style>
-          </TreeView.ItemContainerStyle>
-          <TreeView.ItemTemplate >
-            <HierarchicalDataTemplate ItemsSource="{Binding Path=Value}" >
-              <TreeViewItem Header="{Binding Path=Key}" Foreground="{DynamicResource Esri_Gray155}" FontStyle="Italic" FontWeight="Bold" />
-              <HierarchicalDataTemplate.ItemTemplate>
-                <DataTemplate>
-                  <TextBlock Text="{Binding}" Style="{DynamicResource ProTextStyle}"/>
-                </DataTemplate>
-              </HierarchicalDataTemplate.ItemTemplate>
-            </HierarchicalDataTemplate>
-          </TreeView.ItemTemplate>
-        </TreeView>
+
+        <editingControls:MapMemberIDSetControl Grid.Row="0" VerticalAlignment="Top" DockPanel.Dock="Top"
+                                               HighlightedItemsChanged="MapMemberIDSetControl_HighlightedItemsChanged"
+                                          Map="{Binding Map}" MapMemberIDSet="{Binding MapMemberIDSet}"/>
         <ContentPresenter Grid.Row="1" Content="{Binding InspectorView}"></ContentPresenter>
         <StackPanel Grid.Row="2" Orientation="Horizontal" Background="Transparent" Margin="0,6">
           <Button Margin="6,0,0,0" Content="Apply" Style="{DynamicResource Esri_Button}"

@@ -22,7 +22,6 @@ using ArcGIS.Core.Data.Exceptions;
 using ArcGIS.Core.Data.UtilityNetwork;
 using ArcGIS.Core.Data.UtilityNetwork.Trace;
 using ArcGIS.Core.Geometry;
-using System.Diagnostics;
 
 namespace BatchTracingCoreCommon.Classes
 {
@@ -101,7 +100,7 @@ namespace BatchTracingCoreCommon.Classes
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex);
+                System.Diagnostics.Debug.WriteLine(ex);
                 Console.WriteLine(ex);
 
                 return false;
@@ -403,20 +402,20 @@ namespace BatchTracingCoreCommon.Classes
                 catch (NotSupportedException notSupportException)
                 {
                     Console.WriteLine(string.Format("{0}: Error tracing element {1}\r\n{2}", DateTime.Now.ToString(), startingIdentifier, notSupportException.Message));
-                    Debug.WriteLine(notSupportException);
+                    System.Diagnostics.Debug.WriteLine(notSupportException);
                     return;
                 }
                 catch (GeodatabaseUtilityNetworkException geoUnException)
                 {
                     // This handles things like starting point outside the current tier
                     Console.WriteLine(string.Format("{0}: Error tracing element {1}\r\n{2}", DateTime.Now.ToString(), startingIdentifier, geoUnException.Message));
-                    Debug.WriteLine(geoUnException);
+                    System.Diagnostics.Debug.WriteLine(geoUnException);
                     continue;
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
-                    Debug.WriteLine(ex);
+                    System.Diagnostics.Debug.WriteLine(ex);
                     throw new Exception(string.Format("Encountered an error while tracing element {0}", startingIdentifier));
                 }
 

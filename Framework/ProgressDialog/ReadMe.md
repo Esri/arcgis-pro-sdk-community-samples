@@ -1,7 +1,7 @@
 ## ProgressDialog
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This Sample shows different patterns that exercise the progress dialog.    
+Runs sample operations with progress dialogs, including cancelable progress reporting and alternative progress-dialog patterns.  
   
 1. Simple progress dialog  
 2. Cancelable progress dialog  
@@ -17,9 +17,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

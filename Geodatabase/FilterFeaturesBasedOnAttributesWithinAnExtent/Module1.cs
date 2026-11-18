@@ -20,7 +20,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace FilterFeaturesBasedOnAttributesWithinAnExtent
 { 
     /// <summary>
-    /// This addin will list all subtypes for a Feature Class and allow deletion of all features which have the selected subtype
+    /// Queries a selected layer by field value with optional extent or selection constraints and displays matching records and their count in a dockpane.
     /// </summary>
 	/// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.

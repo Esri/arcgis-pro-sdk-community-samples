@@ -23,9 +23,7 @@ using System.Threading.Tasks;
 namespace GeoprocessingExecuteAsync
 {
     /// <summary>
-    /// This sample adds a tool button to Addin Tab. You click on the BufferGeometryTool button and draw a line
-    /// on the map. The tool then passes the line geometry to Geoprocessing ExecuteToolAsync
-    /// method which draws a buffer around that line.
+    /// Buffers a sketched line by 800 meters by passing its geometry directly to the asynchronous Buffer geoprocessing tool.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

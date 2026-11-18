@@ -1,8 +1,8 @@
 ## TraceNetworkSample
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This console application demonstrates downstream trace from a Medium Voltage Transformer to Service Points on the Utility Network. Rather than coding particular logic to pick a starting point, the sample uses a known medium voltage transformer as a starting point for trace. The example illustrates a simple use case for using the Utility Network in the CoreHost application.  
-The sample uses the NapervilleElectric.gdb, a file geodatabase available in the Community Sample data at C:\Data\UtilityNetwork (see under the "Resources" section for downloading sample data).  
+Runs a CoreHost utility-network downstream trace from a known medium-voltage transformer's downstream terminal and prints the resulting network elements and function outputs to the console.  
+The sample uses NapervilleElectricSDKData.gdb, a file geodatabase available in the Community Sample data at C:\Data\UtilityNetwork (see under the "Resources" section for downloading sample data).  
 You can also use any utility network data with this sample, although constant values may need to be changed.  
   
 
@@ -15,9 +15,9 @@ Language:              C#
 Subject:               Console
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      .NET 10.0
 ```
 

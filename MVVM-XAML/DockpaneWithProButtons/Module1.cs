@@ -38,7 +38,7 @@ using System.Windows.Input;
 
 namespace DockpaneWithProButtons
 {  /// <summary>
-   /// This MVVM / XAML sample shows how to implement ArcGIS Pro button functionality using a Button on an ArcGIS Pro API Dockpane using MVVM.
+  /// Invokes ArcGIS Pro commands from MVVM dockpane buttons, including opening projects and passing bound text values as command parameters.
    /// </summary>
    /// <remarks>
    /// 1. In Visual Studio build the solution and run the debugger to open ArcGIS Pro.

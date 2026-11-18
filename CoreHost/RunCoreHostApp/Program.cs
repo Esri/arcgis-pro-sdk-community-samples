@@ -22,7 +22,7 @@ using System.Text;
 
 namespace RunCoreHostApp
 {  /// <summary>
-   /// This application can be used to run a CoreHost standalone CoreHost application on ArcGIS Pro 3.3 or later, even so the CoreHost App is build for 3.0, 3.1 or 3.2.
+  /// Detects the installed ArcGIS Pro release, selects a compatible installed .NET runtime, and launches a supplied CoreHost DLL with dotnet exec while forwarding its command-line arguments.
    /// </summary>
    /// <remarks>
    /// If you write a CoreHost standalone app for ArcGIS Pro 3.1 you can achieve forward compatibility as well, but there are a few caveats:

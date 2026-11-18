@@ -1,7 +1,7 @@
 ## RibbonControls
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates every type of ribbon control currently available in ArcGIS Pro.  Ribbon controls are declared in DAML with code classes containing the control implementation.  
+Provides ribbon buttons, menus, galleries, combo boxes, edit boxes, spinners, split buttons, a map tool, and a custom control with synchronized control values.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

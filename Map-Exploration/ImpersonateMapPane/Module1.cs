@@ -25,8 +25,7 @@ using System.Threading.Tasks;
 namespace ImpersonateMapPane
 {
   /// <summary>
-  /// This sample illustrates how to create a new map pane that impersonates an existing map pane. A control will be added to the new pane allowing you to view the map CIM.  A custom
-  /// TOC implementation will also be demonstrated.A new Visual Studio template 'ArcGIS Pro Map Pane Impersonation' has been added at ArcGIS Pro 2.0.  
+  /// Creates a custom map pane that impersonates an existing map view, displays its CIM content, and supplies a custom Contents interface.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

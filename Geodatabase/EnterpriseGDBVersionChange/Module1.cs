@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Mapping;
 namespace EnterpriseGDBVersionChange
 {
 	/// <summary>
-	/// This sample illustrates how to switch versions for an Enterprise Geodatabase connection.
+    /// Lists versions for a selected enterprise-geodatabase layer and switches the connection to the chosen version through a dockpane.
 	/// </summary>
 	/// <remarks>
 	/// 1. Open this solution in Visual Studio.  

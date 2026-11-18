@@ -25,6 +25,9 @@
     <Content Include="Config.xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.1" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\ProSqlExpressDb\ProSqlExpressDb.csproj">
       <Project>{00b0aac0-bf42-44d6-8638-15b563782ce2}</Project>
       <Name>SqlExpressDb</Name>

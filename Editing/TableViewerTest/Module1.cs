@@ -43,7 +43,7 @@ using TableViewerTest.Helper;
 namespace TableViewerTest
 {
   /// <summary>
-  /// This sample exercises TableView functionality.
+  /// Customizes table views and manages a queue of parcel changes for a CAMA posting workflow, with commands to inspect, post, and reset sample changes.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data) specifically the CommunitySampleData-ParcelFabric data.  Make sure that the Sample data is unzipped in c:\data\ParcelFabric.

@@ -22,7 +22,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace DDLCreateDeleteDimensionFeatureClass
 {
   /// <summary>
-  /// This sample illustrates how to use the DDL APIs to create and delete dimension feature class.  
+  /// Creates and deletes dimension feature classes through SchemaBuilder DDL operations.
   /// </summary>
   /// <remarks>
   /// 1. Open this solution in Visual Studio.

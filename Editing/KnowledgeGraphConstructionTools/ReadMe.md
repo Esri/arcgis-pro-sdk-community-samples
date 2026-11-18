@@ -1,7 +1,7 @@
 ## KnowledgeGraphConstructionTools
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates how to build construction tools for KnowledgeGraph entity and relationships.   
+Provides construction tools to create knowledge-graph entities and relationships by sketching features and identifying their origin and destination entities.  
 The sketch tool displays a UI on the overlay using the OverlayControlID property of the MapTool.   
 The UI requires the user to specify the source and destination entity types along with the relate type and  the relate direction.   
 The tool uses the SketchTip property to direct the user to identify a single source entity. Once a source entity has been found, the SketchTip is updated to direct the user to identify destination entities.   
@@ -17,9 +17,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

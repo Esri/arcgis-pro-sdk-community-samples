@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace TransformCADLayer
 {
   /// <summary>
-  /// This sample can be used to transform a CAD layer by entering a scale factor, rotation, local coordinates and corresponding grid coordinates. The parameters are entered and a world file is created. The CAD layer's map location is updated based on the new world file transformation parameters corresponding with the entered values. 
+  /// Georeferences a selected CAD layer by writing a world file from entered scale, rotation, local coordinates, and corresponding grid coordinates.
   /// </summary>
   /// <remarks>
   /// 1. Build or debug the sample through Visual Studio.

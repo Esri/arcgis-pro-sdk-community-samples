@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Mapping;
 namespace AILayoutFunction
 {
   /// <summary>
-  /// Demonstrates how to add custom behavior to the ArcGIS Pro Assistant using the AIAssistantExtension and AIAssistantFunction attributes.
+    /// Extends the ArcGIS Pro Assistant with functions that create layouts containing optional titles, legends, scale bars, and north arrows.
   /// </summary>
   /// <remarks>
   /// 1. This sample is based on the instructions found at: https://github.com/Esri/arcgis-pro-sdk/wiki/ProGuide-Create-an-AI-Assistant-Function  

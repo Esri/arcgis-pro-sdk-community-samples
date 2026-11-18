@@ -17,7 +17,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace ExtendTool
 {
     /// <summary>
-    /// This sample creates a sketch tool that emulates the Extend functionality from ArcMap. It demonstrates creating a point sketch tool, working with geometry and performing the edit through an edit operation.
+    /// Provides a point-sketch tool that extends a selected line to a clicked feature and applies the geometry change through an edit operation.
     /// </summary>
     /// <remarks>
     /// To use this sample:

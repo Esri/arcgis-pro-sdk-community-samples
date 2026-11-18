@@ -17,8 +17,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace Localization
 {
     /// <summary>
-    /// This localization sample shows how to 'Globalize' an add-in by providing an add-in with 
-    /// text translated into different languages and showing support for different regions (locale).
+    /// Localizes a dockpane's labels and tabular data using translated resources and locale-aware presentation.
     /// A ProTutorial based on this sample is also available.
     /// </summary>
     /// <remarks>

@@ -1,7 +1,7 @@
 ## CheckSelectionLayer
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This Button add-in, when clicked after a layer has been selected in the map's table of content, displays if a layer was created using "Make Layer From Selected Features" or not.  
+Inspects the selected feature layer's CIM definition and reports whether it is a selection layer created from selected features.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

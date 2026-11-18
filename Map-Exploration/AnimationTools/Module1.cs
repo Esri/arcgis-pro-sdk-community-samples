@@ -39,7 +39,7 @@ using ArcGIS.Desktop.Core.Geoprocessing;
 namespace AnimationTools
 {
   /// <summary>
-  /// This sample illustrates how animation keyframes can be generated with camera positions which follow 3D vehicle features.  There is the option to create keyframes with durations which simulate vehicle speed, or a brief 10-second animation. The animations are ready for export to video using the standard animation tools.  
+    /// Generates camera animation keyframes that follow selected 3D vehicle point sequences, using either simulated vehicle speed or a fixed ten-second duration.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data). The sample data contains a dataset called 'VehicleAnimation'.  Make sure that the Sample data is unzipped under c:\data and the folder "C:\Data\VehicleAnimation\" is available.

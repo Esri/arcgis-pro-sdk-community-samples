@@ -1,7 +1,7 @@
 ## COGOLineFeatures
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This custom feature template construction tool is used to click two locations on the map and presents measured COGO attribute values, then allows those attributes to be edited without altering the end point location of the created line. This can be used as an enhanced Direction Distance constraint tool or as an enhanced measure tool that holds fixed the locations snapped on the map, while also maintaining the entered values.  
+Constructs COGO lines and circular arcs from map locations and entered survey values, allowing COGO attributes to differ from the geometry while preserving snapped endpoints.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Editing, Geometry
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

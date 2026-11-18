@@ -23,7 +23,7 @@ using System.Threading.Tasks;
 namespace UpdateAttributesWithSketch
 {
   /// <summary>
-  /// This sample creates a sketch tool that can be used to update the attributes of features that it intersects. It shows an example of creating a sketch tool, finding intersecting features, updating attributes and performing the edit through an edit operation.
+    /// Updates attributes on features intersected by a sketch in the selected feature layer using an Inspector and an edit operation.
   /// </summary>
   /// <remarks>
   /// 1. Examine the code within AttributeWithSketch.cs.

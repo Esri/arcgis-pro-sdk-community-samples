@@ -1,7 +1,7 @@
 ## ValidateChanges
 
 <!-- TODO: Write a brief abstract explaining this sample -->
- This add-in demonstrates running Validate Network Topology on data changes.  When used on a file geodatabase or on the default version of a branch-versioned feature service, it runs Validate Network Topology on the entire network.  
+ Validates utility-network topology for changed data, using the full network for file geodatabases and default versions or the dirty-area differences extent for named branch versions.  
  If used on a named version of a branch-versioned feature service, it does a version differences on the dirty areas table, and uses the resulting extent for the Validate Network Topology operation.  
   
  Community Sample data(see under the "Resources" section for downloading sample data) has a UtilityNetworkSamples.aprx project that contains a utility network that can be used with this sample.This project can be found under the  
@@ -17,9 +17,9 @@ Language:              C#
 Subject:               UtilityNetwork
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

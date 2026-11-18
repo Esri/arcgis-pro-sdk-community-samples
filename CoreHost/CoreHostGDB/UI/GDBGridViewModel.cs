@@ -286,41 +286,39 @@ namespace CoreHostGDB.UI
       {
         await TaskUtils.StartSTATask<int>(() =>
         {
-          using (Geodatabase gdb = new Geodatabase(
-              new FileGeodatabaseConnectionPath(new Uri(_gdbPath, UriKind.Absolute))))
-          {
+          using Geodatabase gdb = new Geodatabase(
+              new FileGeodatabaseConnectionPath(new Uri(_gdbPath, UriKind.Absolute)));
 
-            IReadOnlyList<Definition> fcList = gdb.GetDefinitions<FeatureClassDefinition>();
-            IReadOnlyList<Definition> tables = gdb.GetDefinitions<TableDefinition>();
+          IReadOnlyList<Definition> fcList = gdb.GetDefinitions<FeatureClassDefinition>();
+          IReadOnlyList<Definition> tables = gdb.GetDefinitions<TableDefinition>();
+
+          //////Uncomment for just Feature class in Feature Datasets
+          ////IReadOnlyList<Definition> fdsList = gdb.GetDefinitions<FeatureDatasetDefinition>();
+
+          lock (_theLock)
+          {
+            //Feature class
+            foreach (var fcDef in fcList)
+            {
+              _tables.Add(TableString(fcDef as TableDefinition));
+            }
+            //Tables
+            foreach (var def in tables)
+            {
+              _tables.Add(TableString(def as TableDefinition));
+            }
 
             //////Uncomment for just Feature class in Feature Datasets
-            ////IReadOnlyList<Definition> fdsList = gdb.GetDefinitions<FeatureDatasetDefinition>();
+            ////foreach (var fdsDef in fdsList) {
+            ////    IReadOnlyList<Definition> tableDefsInDataset = gdb.GetRelatedDefinitions(fdsDef,
+            ////        DefinitionRelationshipType.DatasetInFeatureDataset);
 
-            lock (_theLock)
-            {
-              //Feature class
-              foreach (var fcDef in fcList)
-              {
-                _tables.Add(TableString(fcDef as TableDefinition));
-              }
-              //Tables
-              foreach (var def in tables)
-              {
-                _tables.Add(TableString(def as TableDefinition));
-              }
+            ////    foreach (var def in tableDefsInDataset) {
+            ////        if (def.DatasetType == DatasetType.FeatureClass)
+            ////            _tables.Add(TableString(def as TableDefinition));
+            ////    }
+            ////}
 
-              //////Uncomment for just Feature class in Feature Datasets
-              ////foreach (var fdsDef in fdsList) {
-              ////    IReadOnlyList<Definition> tableDefsInDataset = gdb.GetRelatedDefinitions(fdsDef,
-              ////        DefinitionRelationshipType.DatasetInFeatureDataset);
-
-              ////    foreach (var def in tableDefsInDataset) {
-              ////        if (def.DatasetType == DatasetType.FeatureClass)
-              ////            _tables.Add(TableString(def as TableDefinition));
-              ////    }
-              ////}
-
-            }
           }
           return 0;
         });

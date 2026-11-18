@@ -29,12 +29,11 @@ using System.Xml.Linq;
 namespace DDLCreateFromSchema
 {
   /// <summary>
-  /// This sample creates a command line utility that takes 2 parameters:
+  /// Parses an exported XML workspace schema and uses CoreHost SchemaBuilder operations to create feature classes in an enterprise geodatabase. The command-line utility takes two parameters:
   /// - a schema XML file (created using the Pro Export XML Workspace Document Geoprocessing tool with Export Options "Schema only")
   /// - a .SDE connection file that points to the target Geodatabase (with a user that has rights to create feature classes)
   /// 
-  /// The utility uses the CoreHost library and .NET to parse the XML file into an object structure that is then used 
-  /// to create feature classes in the target geodatabase
+  /// Existing feature classes are skipped; new classes are created with the parsed field and geometry definitions.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.

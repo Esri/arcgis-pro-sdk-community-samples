@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace DDLCreateDeleteFeatureClassWithSubtypes
 {
     /// <summary>
-    /// This sample shows how to use the DDL APIs to create a feature class with subtypes and delete them in a file geodatabase.  
+    /// Creates a file-geodatabase feature class with subtype definitions and deletes it using SchemaBuilder DDL operations.
     /// </summary>
     /// <remarks>
     /// Using the sample:

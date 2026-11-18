@@ -25,8 +25,7 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 namespace GeometrySamples
 {
   /// <summary>
-  /// This sample show how to convert a multi part geometry in single part 
-  /// geometries and how to retrieve the outermost ring(s) of a polygon.
+  /// Separates multipart geometry into single parts and creates polygon features from the outermost rings of existing polygons.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a folder called 'C:\Data\Working with Core Geometry and Data' with sample data required for this solution.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Working with Core Geometry and Data" is available.

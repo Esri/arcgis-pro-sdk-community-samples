@@ -34,7 +34,7 @@ using ArcGIS.Desktop.Mapping;
 namespace CustomToolSketchSymbology
 {
   /// <summary>
-  /// This sample provides a custom line construction tool and a MapTool.
+  /// Customizes sketch segment, vertex, and completed-sketch symbols in line-construction and polygon-sketch tools, restoring application sketch symbols when the tools deactivate.
   /// The custom line construction tool for polyline templates when activated, modifies the sketch symbology just for that particular tool. By the term "Sketch Symbology" here, we are referring to the symbology of the sketch segment, and vertices. The sketch vertices have 4 different symbologies for unselected vertex, selected vertex, current vertex unselected, and current vertex selected.
   /// ![UI](Screenshots/SketchSymbologyExplanation.jpg)
   /// ![UI](Screenshots/SketchSymbologyExplanation2.jpg)

@@ -24,7 +24,7 @@ using System.Threading.Tasks;
 namespace Notifications
 {
   /// <summary>
-  /// This sample illustrates notifications in the application.  There are two main categories of notifications - toast notifications
+  /// Creates and removes application notifications, including transient toast notifications
   /// which are transient message to the user that contains relevant, time-sensitive information and provides quick access to related 
   /// content in an application; these appear in the top right hand corner of the display and last for a few seconds. The second category 
   /// of notification are more permanent and are displayed in the notification dock pane.  These type of notifications can be further 

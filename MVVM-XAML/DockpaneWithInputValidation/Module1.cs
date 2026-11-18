@@ -40,7 +40,7 @@ using ArcGIS.Desktop.KnowledgeGraph;
 namespace DockpaneWithInputValidation
 {
 	/// <summary>
-	/// This sample illustrates who to validate data input in a dockpane using the INotifyDataErrorInfo interface for feedback.
+    /// Validates dockpane input through INotifyDataErrorInfo and displays property-specific validation feedback through WPF bindings.
 	/// </summary>
 	/// <remarks>
 	/// 1. Open this solution in Visual Studio.

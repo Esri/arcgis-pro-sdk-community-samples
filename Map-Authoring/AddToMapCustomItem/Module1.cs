@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace AddToMapCustomItem
 {
   /// <summary>
-  /// This sample illustrates how to add a custom item to the map using the IMappable and IMappebleEX Interfaces.  Item content can be added to ArcGIS Pro using the following application workflows:
+  /// Makes custom data items mappable through IMappable interfaces, including conversion of coordinate CSV content to feature data through standard add-data workflows:
   /// * "Add Data" dialog
   /// * "Add Data from Path" dialog
   /// * drag/drop of the item from the catalog window to a map

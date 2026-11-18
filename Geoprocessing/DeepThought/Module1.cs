@@ -39,7 +39,7 @@ using ArcGIS.Desktop.Mapping;
 namespace DeepThought
 {
   /// <summary>
-  /// This samples shows how to programmatically add a geoprocessing toolbox to run a simply python script.
+  /// Runs a bundled Python toolbox's DeepThought tool programmatically or opens its parameter dialog, then displays its messages and return value.
   /// </summary>
   /// <remarks>    
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.

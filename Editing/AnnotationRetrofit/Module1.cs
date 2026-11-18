@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Mapping;
 namespace AnnotationRetrofit
 {
 	/// <summary>
-	/// This sample illustrates how to implement an annotation feature construction tool that uses a tool to select a set of point features, and then creates a new annotation feature for each selected point by using the selected point's geometry and text.
+    /// Creates annotation features from selected point features using their locations and text together with an annotation editing template.
 	/// </summary>
 	/// <remarks>
 	/// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace ComboBoxShowingLayers
 {
   /// <summary>
-  /// This sample shows how to use a Combo Box plugin to display the list of feature layers (from the map) in its dropdown menu.
+  /// Lists the active map's feature layers in a ribbon combo box and refreshes the list when maps or layers change.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.

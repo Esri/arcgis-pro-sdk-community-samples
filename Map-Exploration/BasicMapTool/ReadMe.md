@@ -1,7 +1,7 @@
 ## BasicMapTool
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-Provides a basic map tool that can be Copy/Paste inherited as a starting point for more sophisticated tool development.It has all the basic features such as key handling, simple mouse click implementation, and an associated embeddable control that can be moved around the Map View.  
+Provides an extensible map tool with keyboard and mouse handling, camera navigation, and a movable embedded map-view control.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

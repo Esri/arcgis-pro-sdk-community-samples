@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace AddRemoveFields
 {
   /// <summary>
-  /// This sample shows how to use the DDL APIs to add and remove fields in a FeatureClass.
+    /// Uses SchemaBuilder to create a file geodatabase, add fields to a Parcels feature class, remove fields from a Parcels table, and add a coded-value-domain field to a Pipes feature class.
   /// </summary>
   /// <remarks>
   /// 1. Open this solution in Visual Studio.  

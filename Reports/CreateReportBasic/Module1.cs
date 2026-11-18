@@ -40,7 +40,7 @@ using System.Windows.Input;
 namespace CreateReportBasic
 {
   /// <summary>
-  /// This sample demonstrates how to create a very simple report.  The add-in takes the first feature class, selects all records, and creates a report.   
+  /// Creates a basic report from a feature layer's records and provides commands to open, preview, and reset the report.
   /// </summary>
   /// <remarks>
   /// 1. Open this solution in Visual Studio.  

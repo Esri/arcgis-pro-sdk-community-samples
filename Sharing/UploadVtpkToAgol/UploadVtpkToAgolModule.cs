@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace UploadVtpkToAgol
 {
     /// <summary>
-    /// This sample shows how to add a vector tile package file to a map both from disk and ArcGIS Online.  The sample also has code to 'upload' a vtpk file to ArcGIS Online.  
+    /// Uploads vector tile packages to ArcGIS Online, queries online content, and adds vector tiles to a map from local files or portal items.
     /// </summary>
     /// <remarks>
     /// 1. Make sure that the Sample data is unzipped in c:\data     

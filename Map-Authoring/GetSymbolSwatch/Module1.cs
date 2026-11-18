@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace GetSymbolSwatch
 {
   /// <summary>
-  /// This sample shows how to create the swatches for different types of Symbology for use in WPF
+  /// Extracts feature-layer renderer symbols and displays their generated swatch images in a WPF dockpane.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

@@ -1,7 +1,7 @@
 ## GetSymbolSwatch
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows how to create the swatches for different types of Symbology for use in WPF  
+Extracts feature-layer renderer symbols and displays their generated swatch images in a WPF dockpane.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Map-Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

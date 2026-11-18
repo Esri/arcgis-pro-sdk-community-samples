@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace DragAndDrop
 {
   /// <summary>
-  /// This sample shows how to implement drag &amp; drop using a custom dockpane tree control.
+    /// Supports drag and drop between custom dockpane trees and ArcGIS Pro, including geodatabase datasets and map members dragged from the Contents pane.
   /// </summary>
   /// <remarks> 
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

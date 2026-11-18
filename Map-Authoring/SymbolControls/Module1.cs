@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Mapping.Events;
 namespace SymbolControls
 {
   /// <summary>
-  /// This sample demonstrate how to work with the SymbolPicker and SymbolSearcher controls.
+  /// Hosts SymbolPicker and SymbolSearcher controls in a dockpane, keeping symbol choices synchronized with project styles and map-layer changes.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution. 

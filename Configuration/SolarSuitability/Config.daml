@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+   Copyright 2026 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+<ArcGIS defaultAssembly="SolarSuitability.dll" defaultNamespace="SolarSuitability" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{f7e01291-1817-44cd-997b-0fabfa74182c}" version="1.0" desktopVersion="3.6.0">
+    <Name>SolarSuitability</Name>
+    <Description>SolarSuitability description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>uma2526</Author>
+    <Company>Acme</Company>
+    <Date>2/28/2026 8:12:28 AM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <Configuration>
+    <ConfigurationManager className="ConfigurationManager1" />
+  </Configuration>
+  <modules>
+    <insertModule id="SolarSuitability_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="SolarSuitability_Tab1" caption="Solar Suitability">
+          <group refID="SolarSuitability_MainGroup" />
+        </tab>
+      </tabs>
+      <groups>
+        <group id="SolarSuitability_MainGroup" caption="Main" keytip="Z3" condition="SolarSuitability_editing">
+            <button refID="esri_core_showProjectDockPane" size="large"/>
+          <button refID="SolarSuitability_ShowButton" size="large" />
+          <button refID="SolarSuitability_FullExtent" size="large" />
+          <button refID="SolarSuitability_ZoomToCandidate" size="large" />
+          <button refID="esri_mapping_exploreSplitButton" size="large" />
+          <button refID="SolarSuitability_ResetDemo" size="large" />
+          <button refID="esri_geoprocessing_environmentsButton" />
+          <button refID="SolarSuitability_Visualize3D" size="large" />
+          <button refID="esri_mapping_layerSwipeTool" size="large"/>
+          <button refID="esri_editing_table_openTablePaneButton" size="large"/>
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="SolarSuitability_ShowButton" caption="Show Solar Suitability" className="SolarSuitability_ShowButton" loadOnClick="true" smallImage="Sun16" largeImage="Sun32" keytip="X1">
+          <tooltip heading="Solar Suitability Dockpane">
+											The Solar Suitability Dockpane allows to customize all suitability parameters.<disabledText /></tooltip>
+        </button>
+        <button id="SolarSuitability_FullExtent" caption="Redlands Packing house district" className="FullExtent" loadOnClick="true" smallImage="BusinessAnalystLeftArrow16" largeImage="BusinessAnalystLeftArrow32">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="SolarSuitability_ZoomToCandidate" caption="Redlands Packing house district: Result" className="ZoomToCandidate" loadOnClick="true" smallImage="BusinessAnalystRightArrow16" largeImage="BusinessAnalystRightArrow32">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="SolarSuitability_ResetDemo" caption="Reset Demo" className="ResetDemo" loadOnClick="true" smallImage="GenericReset16" largeImage="GenericReset32">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <tool id="SolarSuitability_MapToolTargetPropertyTrigger" caption="Target Property Info" className="MapToolTargetPropertyTrigger" loadOnClick="true" smallImage="GenericButtonRed16" largeImage="GenericButtonRed32" condition="esri_mapping_mapPane">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </tool>
+        <button id="SolarSuitability_Visualize3D" caption="Visualize 3D" className="Visualize3D" loadOnClick="true" smallImage="3D2DDisplay16" largeImage="3D2DDisplay32">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="SolarSuitability_SolarSuitability" caption="" smallImage="Sun16" width="484" className="SolarSuitabilityViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="SolarSuitabilityView" />
+        </dockPane>
+      </dockPanes>
+        <customToolbars>
+            <toolbar id="CustomToolbarsOnPanes_Toolbar1" caption="Solar Estimation tools" >
+                <button refID="SolarSuitability_Visualize3D" size="large" />
+                <button refID="esri_mapping_layerSwipeTool" size="large"/>
+                <button refID="esri_editing_table_openTablePaneButton" size="large"/>
+            </toolbar>
+        </customToolbars>
+    </insertModule>
+      <updateModule refID="esri_mapping">
+          <panes>
+              <!-- custom toolbars being added to the mapview -->
+              <updatePane refID="esri_mapping_mapPane">
+                  <toolbars>
+                      <insertToolbar refID="CustomToolbarsOnPanes_Toolbar1" dock="Right" />
+                  </toolbars>
+              </updatePane>
+          </panes>
+      </updateModule>
+  </modules>
+  <categories>
+    <updateCategory refID="esri_embeddableControls">
+      <insertComponent id="SolarSuitability_TargetPropertyInformation" className="TargetPropertyInformationViewModel">
+        <content className="TargetPropertyInformationView" />
+      </insertComponent>
+    </updateCategory>
+  </categories>
+</ArcGIS>

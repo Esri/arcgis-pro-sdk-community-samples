@@ -24,8 +24,7 @@ namespace RemoveAddins
 {
 
     /// <summary>
-    /// This sample shows how to customize the backstage by adding a new tab. 
-    /// In this example we will add a new tab in the backstage called Remove Add-Ins. Add-ins installed on that machine will be listed in that tab and you will be able to delete them.
+    /// Adds a backstage page that discovers installed add-in packages and deletes selected packages from their installation folders.
     /// Adding and removing add-ins requires an application restart to take effect.
     /// </summary>
     /// <remarks>

@@ -1,7 +1,7 @@
 ## CustomEvent
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-Create a custom event argument class to contain any information that needs to be passed with your event. In this case, the old and new caption for our custom app name changed event.  
+Publishes and subscribes to a custom application-name-changed event that carries the previous and new captions.  
 Derived from [ArcGIS.Core.Events.EventBase](https://pro.arcgis.com/en/pro-app/sdk/api-reference/#topic7815.html)  
   
 
@@ -14,9 +14,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

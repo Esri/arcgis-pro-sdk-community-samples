@@ -19,8 +19,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace SketchToolWithHalos
 {
   /// <summary>
-  /// This sample illustrates how to build a sketch tool that has a number of halos of specific distances that follow the cursor.  
-  /// The halos are implemented as an embeddable control that is displayed as a SketchTip. 
+  /// Displays configurable distance halos around the sketch cursor through an embedded SketchTip control that responds to map scale changes.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

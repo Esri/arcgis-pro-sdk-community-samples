@@ -1,0 +1,25 @@
+{
+    "version":  "0.2.0",
+    "configurations":  [
+                           {
+                               "name":  "EditingTemplates Debug",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "C:\\Program Files\\ArcGIS\\Pro\\bin\\ArcGISPro.exe",
+                               "args":  [],
+                               "cwd":  "C:\\Program Files\\ArcGIS\\Pro\\bin",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-debug"
+                           },
+                           {
+                               "name":  "EditingTemplates Release",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "C:\\Program Files\\ArcGIS\\Pro\\bin\\ArcGISPro.exe",
+                               "args":  [],
+                               "cwd":  "C:\\Program Files\\ArcGIS\\Pro\\bin",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-release"
+                           }
+                       ]
+}

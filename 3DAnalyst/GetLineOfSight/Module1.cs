@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace GetLineOfSight
 {
   /// <summary>
-  /// This sample illustrates how to calculate the line of sight between an observer point and a target point. The line of sight is calculated based on a TIN dataset.  
+  /// Provides a sketch tool for calculating observer-to-target visibility on a TIN surface, with configurable TIN layer and observer and target heights.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

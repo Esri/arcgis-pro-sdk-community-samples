@@ -34,7 +34,7 @@ using System.Windows.Input;
 namespace ConfigurationPathsAddIn
 {
   /// <summary>
-  /// This sample provides a mechanism for a user to change a network path for a feature that has multiple paths configured in the terminal configuration.
+    /// Identifies a utility-network device or junction object and lets the user change its active terminal-configuration path.
   /// The conditions are:  
   /// - The selected feature is from the Device or Junction Object class
   /// - The selected feature is configured with a terminal configration

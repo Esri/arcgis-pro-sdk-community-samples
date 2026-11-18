@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Mapping;
 namespace TimeLayerAttributes
 {
   /// <summary>
-  /// This sample utilizes a time-enabled layer to emulate real-time data streaming through time extent change events captured by a dockpane.  The dockpane uses a data grid to display the 'streamed' (via time selection) data.
+  /// Emulates streaming feature data by querying a time-enabled layer as the map's time extent changes and refreshing the matching records in a dockpane grid.
   /// </summary>
   /// <remarks>
 	/// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.

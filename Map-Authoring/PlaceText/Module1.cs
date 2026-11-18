@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace PlaceText
 {
   /// <summary>
-  /// This sample shows how to place point markers with text inside the point marker.
+  /// Places text inside composite point markers as map overlays and provides a command to clear the placed graphics.
   /// </summary>
   /// <remarks>
   /// 1. In Visual studio rebuild the solution.

@@ -1,0 +1,31 @@
+﻿{
+    "version":  "0.2.0",
+    "configurations":  [
+                           {
+                               "name":  "CircuitManagement Debug",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "${workspaceFolder}/bin/Debug/net10.0-windows/CircuitManagement.dll",
+                               "args":  [
+
+                                        ],
+                               "cwd":  "${workspaceFolder}",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-debug",
+                               "console":  "integratedTerminal"
+                           },
+                           {
+                               "name":  "CircuitManagement Release",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "${workspaceFolder}/bin/Release/net10.0-windows/CircuitManagement.dll",
+                               "args":  [
+
+                                        ],
+                               "cwd":  "${workspaceFolder}",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-release",
+                               "console":  "integratedTerminal"
+                           }
+                       ]
+}

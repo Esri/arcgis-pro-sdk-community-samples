@@ -28,8 +28,7 @@ using System.Threading.Tasks;
 
 namespace CommandFilter {
     /// <summary>
-    /// This sample shows how to implement and register a command filter. Any ICommand (IPluginWrapper);
-    /// can be filtered. Simply return false from the filter to prevent execution of the relevant command
+    /// Provides a dockpane for configuring command filters that intercept command execution and notify the user when commands are filtered.
     /// </summary>    
     /// <remarks>    
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

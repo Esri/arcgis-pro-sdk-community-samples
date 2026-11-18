@@ -25,8 +25,7 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 namespace RasterInspector
 {
   /// <summary>
-  /// This sample show how to:
-  /// * Retrieve raster values
+  /// Reads a three-by-three pixel neighborhood at the map cursor and displays values for the selected raster band in a dockpane.
   /// </summary>
   /// <remarks>
   /// 1. This solution is using the **Gu.Wpf.DataGrid2D**.  If needed, you can install the Nuget from the "Nuget Package Manager Console" by using this script: "Install-Package Gu.Wpf.DataGrid2D".

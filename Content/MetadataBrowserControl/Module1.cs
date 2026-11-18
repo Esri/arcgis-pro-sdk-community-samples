@@ -25,8 +25,7 @@ using ArcGIS.Desktop.Framework.Events;
 namespace MetadataBrowserControl
 {
     /// <summary>
-    /// This sample demonstrates how to view the Metadata of a Project item using the Pro API in a browser control with a transform applied to it.
-    /// Note: Metadata of certain items such as system styles cannot be viewed.
+    /// Displays the selected Catalog item's metadata in a browser dockpane after applying a selectable XSL transformation.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution. 

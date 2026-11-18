@@ -39,7 +39,7 @@ using ArcGIS.Desktop.Mapping;
 namespace ApplySymbologyFromFeatureLayer
 {
   /// <summary>
-  /// This sample demonstrates how to the "ApplySymbologyFromLayer_management" geoprocessing task
+  /// Copies symbology between feature layers with field mappings by executing the Apply Symbology From Layer geoprocessing tool.
   /// </summary>
   /// <remarks>
   /// Requirements to run this sample:

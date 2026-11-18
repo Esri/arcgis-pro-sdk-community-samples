@@ -1,7 +1,7 @@
 ## ConstructingGeometries_CSharp
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample provide four buttons showing the construction of geometry types of type MapPoint, Multipoint, Polyline, and Polygon and shows how to:  
+Constructs point, multipoint, polyline, and polygon features with geometry builders and GeometryEngine operations:  
 * Construct and manipulate geometries  
 * Use GeometryEngine functionality  
 * Search and retrieve features  
@@ -16,9 +16,9 @@ Language:              C#
 Subject:               Geometry, Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

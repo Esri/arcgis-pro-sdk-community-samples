@@ -1,7 +1,7 @@
 ## SeqNum
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample is a custom edit tool that sequentially numbers point, line or polygon features along a sketch.  
+Assigns sequential attribute values to point, line, or polygon features along a sketch, with configurable numbering and parcel-identifier formatting.  
 The sample has been enhanced from previous ArcMap samples (viperpin and snakepin) to also number line and point feature classes and to format text strings for parcel pin numbering.  
   
 
@@ -14,9 +14,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

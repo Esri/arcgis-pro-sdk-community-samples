@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Mapping;
 namespace GetRecentPortalProjects
 {
   /// <summary>
-  /// This sample illustrates how to retrieve recently opened projects. This includes projects that are opened from the local machine and from a portal. The sample also shows how to open a project from the recent projects list.
+    /// Presents recent local and portal projects on a custom ArcGIS Pro start page and opens the selected project.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.

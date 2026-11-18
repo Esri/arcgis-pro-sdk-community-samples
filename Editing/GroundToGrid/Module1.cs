@@ -33,7 +33,7 @@ using ArcGIS.Desktop.Mapping;
 namespace SetGroundToGrid
 {
   /// <summary>
-  /// This sample demonstrates accessing and updating the ground to grid corrections for the active map.
+  /// Reads and updates the active map's ground-to-grid correction settings.
   /// </summary>
   /// <remarks>
   /// To use this sample:

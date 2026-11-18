@@ -44,8 +44,7 @@ using System.Windows.Media.Imaging;
 namespace CreateDiagramWithACustomLayout
 {
   /// <summary>
-  /// With this add-in sample, you will get familiar with the Geometry, NetworkDiagrams and Mapping API methods that allow you to develop your own diagram layout algorithm (see EnclosureLayout source code file) and learn how to extend the Layout gallery with your own custom layout (see config.daml file).  
-  /// You will also learn how to develop an add-in command to generate diagrams and execute your own layout to them before their display.  
+  /// Adds a custom enclosure-layout algorithm to the diagram Layout gallery and generates network diagrams with that layout applied before display.
   /// &gt; NOTE: The EnclosureLayout diagram layout is developed as a sample add-in to use with the particular sample UN dataset provided with it.Moreover, the code sample is very tied to the content of diagrams based on the Enclosure Diagram template.  
   /// Sample data for ArcGIS Pro SDK Community Samples can be downloaded from the [Releases](https://github.com/Esri/arcgis-pro-sdk-community-samples/releases) page.  
   /// </summary> 

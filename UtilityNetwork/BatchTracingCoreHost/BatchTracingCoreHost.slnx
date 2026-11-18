@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="BatchTraceAddIn/BatchTraceAddIn.csproj" />
+  <Project Path="BatchTraceCommon/BatchTraceCommon.csproj" />
+  <Project Path="BatchTracingCoreHost/BatchTracingCoreHost.csproj" />
+</Solution>

@@ -1,0 +1,25 @@
+{
+    "version":  "0.2.0",
+    "configurations":  [
+                           {
+                               "name":  "ConfigWithStartWizard Debug",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "C:\\Program Files\\ArcGIS\\Pro\\bin\\ArcGISPro.exe",
+                               "args":  ["/config:ConfigWithStartWizard"],
+                               "cwd":  "C:\\Program Files\\ArcGIS\\Pro\\bin",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-debug"
+                           },
+                           {
+                               "name":  "ConfigWithStartWizard Release",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "C:\\Program Files\\ArcGIS\\Pro\\bin\\ArcGISPro.exe",
+                               "args":  ["/config:ConfigWithStartWizard"],
+                               "cwd":  "C:\\Program Files\\ArcGIS\\Pro\\bin",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-release"
+                           }
+                       ]
+}

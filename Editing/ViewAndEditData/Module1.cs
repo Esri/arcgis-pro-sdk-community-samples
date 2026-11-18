@@ -40,7 +40,7 @@ using ArcGIS.Desktop.KnowledgeGraph;
 namespace ViewAndEditData
 {
   /// <summary>
-  /// This sample illustrates how to display tabular data using a Table Control. Additionally, this sample also illustrates how to use the Inspector to edit records in your tabular data
+    /// Displays layer and dataset records in a dockpane TableControl and embeds an Inspector for editing record attributes.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.

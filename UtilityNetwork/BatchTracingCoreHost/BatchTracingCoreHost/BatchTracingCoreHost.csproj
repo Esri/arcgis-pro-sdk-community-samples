@@ -1,13 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <CETCompat>false</CETCompat>
     <TargetFramework>net10.0-windows</TargetFramework>
     <OutputType>Exe</OutputType>
+    <PlatformTarget>x64</PlatformTarget>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <NoWarn>CA1416</NoWarn>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <FrameworkReference Include="Microsoft.WindowsDesktop.App" />
     <Compile Remove="Classes\**" />
     <EmbeddedResource Remove="Classes\**" />
     <None Remove="Classes\**" />

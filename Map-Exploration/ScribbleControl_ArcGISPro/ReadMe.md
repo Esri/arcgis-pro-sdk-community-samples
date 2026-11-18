@@ -1,7 +1,7 @@
 ## ScribbleControl_ArcGISPro
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample provides a control that allows you to do on-screen drawing  on top of map/scene views. This sample is an example of adding custom overlay controls to map views.  
+Adds an InkCanvas overlay for drawing freehand marks and shapes over map and scene views, with commands to add or remove the drawing control.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

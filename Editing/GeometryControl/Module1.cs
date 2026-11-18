@@ -33,7 +33,7 @@ using ArcGIS.Desktop.Mapping;
 namespace GeometryControl
 {
     /// <summary>
-    /// This sample demonstrates the UI GeometryControl.  You can use this control to view sketch vertices or geometry vertices. 
+    /// Displays selected-feature and active-sketch vertices with GeometryControl in a dockpane and a custom sketch-properties control.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio, build the solution.

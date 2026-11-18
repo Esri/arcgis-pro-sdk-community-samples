@@ -58,7 +58,8 @@ namespace AddRemoveFields
             // Global ID
             // Parcel_ID
             // Tax_Code
-            // Parcel_Address       // The FeatureClass to add fields
+            // Parcel_Address
+            // The FeatureClass to add fields
             string featureClassName = "Parcels"; 
             FeatureClassDefinition originalFeatureClassDefinition = geodatabase.GetDefinition<FeatureClassDefinition>(featureClassName);
             FeatureClassDescription originalFeatureClassDescription = new FeatureClassDescription(originalFeatureClassDefinition); // The four new fields to add on the 'Parcels' FeatureClass

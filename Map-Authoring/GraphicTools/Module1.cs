@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Layouts;
 namespace GraphicTools
 {
   /// <summary>
-  /// This sample demonstrates tools that can be created around a graphic element creation workflow using map 'markups' for identifying and managing status of field inspection or survey locations.
+    /// Creates point and polygon map markups with editable text and status colors for inspection workflows and provides a tool for querying mapped locations.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data(see under the 'Resources' section for downloading sample data). The sample data contains a dataset called GraphicTools.Make sure that the Sample data is unzipped under C:\Data and the folder "C:\Data\GraphicTools" is available.

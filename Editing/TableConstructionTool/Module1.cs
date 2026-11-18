@@ -23,7 +23,7 @@ using ArcGIS.Desktop.Mapping;
 namespace TableConstructionTool
 {
   /// <summary>
-  /// This sample demonstrates 3 workflows that use the "Table Construction tool" - Basic, Intermediate and Advanced. To use this sample, you will need the TableConstructionTool.ppkx project package available in the ArcGIS Pro Community sample data.
+  /// Provides basic, intermediate, and configurable table construction tools that create template-based rows, including rows populated from selected map features.
   /// </summary>
   /// <remarks>
   /// 1. Open this solution in Visual Studio.  

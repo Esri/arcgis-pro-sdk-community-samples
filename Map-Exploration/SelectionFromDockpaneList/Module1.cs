@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace SelectionFromDockpaneList
 {
   /// <summary>
-  /// This add-in contains a Dockpane with a listbox that controls the selection of features for the 'States' feature layer.
+  /// Selects features in the States layer from state names chosen in a dockpane list.
   /// </summary>
   /// <remarks> 
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

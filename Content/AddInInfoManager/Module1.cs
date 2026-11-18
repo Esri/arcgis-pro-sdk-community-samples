@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace AddInInfoManager
 {
 	/// <summary>
-	/// This sample illustrates how to retrieve Add-In metadata information similar to the 'Add-in Manager' available out-of-box in the ArcGIS Pro backstage.
+	/// Lists installed add-ins and their metadata in a dockpane, supports deleting add-in packages, and displays version information read from Config.daml.
 	/// </summary>
 	/// <remarks>
 	/// 1. In Visual studio click the Build menu. Then select Build Solution.

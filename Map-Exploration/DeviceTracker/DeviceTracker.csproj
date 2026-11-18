@@ -87,7 +87,9 @@
       <CopyLocal>False</CopyLocal>
     </Reference>
     <Reference Include="System.IO.Ports">
-      <HintPath>..\..\..\..\..\Program Files\ArcGIS\Pro\bin\System.IO.Ports.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\ArcGIS\Pro\bin\System.IO.Ports.dll</HintPath>
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -108,9 +110,6 @@
   <ItemGroup>
     <None Include="DeviceTracker (C#).md" />
     <None Include="ReadMe.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="System.IO.Ports" Version="10.0.5" />
   </ItemGroup>
   <Import Project="C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets" Condition="Exists('C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets') AND !Exists('Esri.ArcGISPro.Extensions.targets')" />
 </Project>

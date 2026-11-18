@@ -1,7 +1,7 @@
 ## ProIcons
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows a list of all icons defined in ArcGIS Pro.  It allows to get the pack URI for those icons and has a utility to inspect the icons using the light and dark themes.  
+Browses ArcGIS Pro icons, copies their resource identifiers and pack URIs, previews light and dark theme variants, and exports icon images.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

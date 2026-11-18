@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../AddInShared/AddInShared.csproj" />
+  <Project Path="AddInOne.csproj" />
+</Solution>

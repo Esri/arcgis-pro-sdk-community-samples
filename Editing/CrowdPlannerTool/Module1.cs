@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace CrowdPlannerTool
 {
     /// <summary>
-    /// This sample shows the use of a construction tool to implement a crowd planning workflow.
+    /// Creates crowd-planning polygons with a construction tool and uses a dockpane to inspect and manage their planning attributes.
     /// </summary>
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains a map package called 'CrowdPlannerProject.ppkx' which is required for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\CrowdPlanner" is available.

@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Mapping;
 namespace DockpaneWithComboDropdown
 {
   /// <summary>
-  /// This MVVM / XAML sample shows how to implement ComboBoxes on the ArcGIS Pro Ribbon and in an ArcGIS Pro API Dockpane using MVVM, where the combobox dropdown is populates from a dictionary.
+    /// Populates ribbon and dockpane combo boxes from dictionary data using MVVM bindings.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio build the solution and run the debugger to open ArcGIS Pro.

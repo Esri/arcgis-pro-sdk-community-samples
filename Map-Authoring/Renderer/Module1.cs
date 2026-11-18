@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace Renderer
 {
   /// <summary>
-  /// This sample renders feature layers with various types of renderers. There are examples for the following types of renderers in this sample:
+    /// Applies simple, unique-value, class-break, chart, dot-density, heat-map, proportional, and attribute-driven symbology to feature layers:
   ///   * Simple Renderers
   ///   * Unique Value Renderer
   ///   * Class breaks renderers

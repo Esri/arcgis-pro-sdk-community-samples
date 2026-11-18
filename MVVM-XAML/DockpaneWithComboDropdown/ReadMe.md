@@ -1,7 +1,7 @@
 ## DockpaneWithComboDropdown
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This MVVM / XAML sample shows how to implement ComboBoxes on the ArcGIS Pro Ribbon and in an ArcGIS Pro API Dockpane using MVVM, where the combobox dropdown is populates from a dictionary.  
+Populates ribbon and dockpane combo boxes from dictionary data using MVVM bindings.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               MVVM-XAML
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

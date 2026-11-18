@@ -1,0 +1,33 @@
+{
+    "version":  "0.2.0",
+    "configurations":  [
+                           {
+                               "name":  "RunCoreHostApp Debug",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "${workspaceFolder}/bin/Debug/net10.0/RunCoreHostApp.dll",
+                               "args":  [
+                                            "E:\\Repos\\ArcGISRepos\\arcgis-pro-sdk-community-samples\\CoreHost\\CoreHostResolveAssembly\\bin\\Debug\\net10.0-windows\\CoreHostResolveAssembly.dll",
+                                            "C:\\Data\\FeatureTest\\FeatureTest.gdb"
+                                        ],
+                               "cwd":  "${workspaceFolder}",
+                               "console":  "integratedTerminal",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-debug"
+                           },
+                           {
+                               "name":  "RunCoreHostApp Release",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "${workspaceFolder}/bin/Release/net10.0/RunCoreHostApp.dll",
+                               "args":  [
+                                            "E:\\Repos\\ArcGISRepos\\arcgis-pro-sdk-community-samples\\CoreHost\\CoreHostResolveAssembly\\bin\\Debug\\net10.0-windows\\CoreHostResolveAssembly.dll",
+                                            "C:\\Data\\FeatureTest\\FeatureTest.gdb"
+                                        ],
+                               "cwd":  "${workspaceFolder}",
+                               "console":  "integratedTerminal",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-release"
+                           }
+                       ]
+}

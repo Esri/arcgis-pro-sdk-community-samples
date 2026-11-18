@@ -40,7 +40,7 @@ using System.Windows.Input;
 namespace ProConfigWithAnimatedSplash
 {
   /// <summary>
-  /// This sample shows an ArcGIS Pro Configuration with an animated GIF in the splash screen
+  /// Provides an ArcGIS Pro configuration with an animated GIF splash screen, custom branding, and a start page for browsing and opening recent projects.
   /// </summary>
   /// <remarks>
   /// 1. This solution is using the **WpfAnimatedGif NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package Newtonsoft.Json".

@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace OpenItemDialogBrowseFilter
 {
     ///<summary>
-    ///This sample demonstrates working with browse dialog filters.  
+    ///Provides commands and a gallery for exploring built-in and custom item-browse filters and configuring which item types a browse dialog displays or opens.
     ///</summary>
     ///<remarks>
     ///Using the sample:

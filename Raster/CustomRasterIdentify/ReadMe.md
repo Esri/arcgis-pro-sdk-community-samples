@@ -1,7 +1,7 @@
 ## CustomRasterIdentify
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows how to author a tool that can be used to identify raster pixel values and display  the results in a custom pop-up window. The popup window will show pixel values for the  rendered raster and the source raster dataset.  
+Identifies pixel values in a selected raster or mosaic image layer and displays rendered and source-dataset values in a custom popup.  
 Note: The identify is authored to query any raster, mosaic or image service layer(s) in the map that  are selected in the Contents pane.  
   
 
@@ -14,9 +14,9 @@ Language:              C#
 Subject:               Raster
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

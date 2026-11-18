@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace LabelLineFeatures
 {
     /// <summary>
-    /// This sample demonstrates how to select line features and label them. New label classes are created in code that are used to label the selected features. Two methods to label selected features are demonstrated.
+    /// Labels sketched selections of line features by creating label classes and updating labeling attributes, with a command to clear the generated labels.
     /// </summary>
     /// <remarks>
     /// Using the sample:

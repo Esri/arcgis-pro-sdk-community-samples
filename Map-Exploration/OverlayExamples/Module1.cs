@@ -36,7 +36,7 @@ using ArcGIS.Desktop.Mapping;
 namespace OverlayExamples
 {
   /// <summary>
-  /// This sample contains three different examples of working with Pro's graphic overlay
+  /// Provides tools for drawing line overlays, snapping overlay sketches, and updating overlay markers as the mouse moves along features.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

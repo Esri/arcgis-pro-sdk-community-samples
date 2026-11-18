@@ -39,8 +39,7 @@ using ArcGIS.Desktop.Mapping;
 namespace MultipatchBuilder
 {
   /// <summary>
-  /// This sample demonstrates how to construct multipatch geometries using the MultipatchBuilderEx class found in the ArcGIS.Core.Geometry namespace. 
-  /// The MultipatchBuilderEx class also allows modifying the multipatch geometry including the materials and textures.
+    /// Builds and inspects multipatch geometry from building footprints, creates walls and triangle patches, and configures materials and textures with MultipatchBuilderEx.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.    

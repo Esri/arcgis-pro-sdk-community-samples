@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../CustomCategoriesExtraReport/CustomCategoriesExtraReport.csproj" />
+  <Project Path="CustomCategoriesExample.csproj" />
+</Solution>

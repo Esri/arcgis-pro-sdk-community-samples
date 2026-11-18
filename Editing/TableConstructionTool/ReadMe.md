@@ -1,7 +1,7 @@
 ## TableConstructionTool
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates 3 workflows that use the "Table Construction tool" - Basic, Intermediate and Advanced. To use this sample, you will need the TableConstructionTool.ppkx project package available in the ArcGIS Pro Community sample data.  
+Provides basic, intermediate, and configurable table construction tools that create template-based rows, including rows populated from selected map features.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

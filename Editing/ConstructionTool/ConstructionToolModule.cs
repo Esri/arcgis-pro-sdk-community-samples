@@ -26,9 +26,7 @@ using ArcGIS.Core.Data;
 namespace ConstructionTool
 {
     /// <summary>
-    /// This shows how to:
-    /// * Use the SketchTool to construct features
-    /// * Perform attribute edits
+    /// Creates features from sketches using the current editing template and updates string attributes on selected features through edit operations.
     /// </summary>
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

@@ -27,7 +27,7 @@ using System.Windows.Media;
 namespace ReplaceSketch
 {
   /// <summary>
-  /// This sample adds the ReplaceSketch command to the sketch context menu. 
+  /// Adds a sketch context-menu command that replaces the active edit sketch with the geometry of a nearby line or polygon feature.
   /// This allows you to add the shape of a line or polygon to the edit sketch by right clicking on the feature and choosing this command.
   /// It is equivalent to the ArcMap editing sketch context menu item.
   /// The replace sketch functionality is useful when you want to create a sketch from an underlying feature.

@@ -1,7 +1,7 @@
 ## ContextMenu
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates three methods for associating, and showing, a context menu with a map tool. It is also the accompanying sample for the ArcGIS Pro SDK ProGuide Context Menus.  
+Provides map tools with declared and dynamically created context menus, including menus populated from line features in the map.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

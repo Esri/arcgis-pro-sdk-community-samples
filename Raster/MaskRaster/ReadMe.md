@@ -1,7 +1,7 @@
 ## MaskRaster
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows how to author a tool that can be used to mask raster pixel values in a ractangle  defined by the user. The masked output is saved as a new raster dataset in the project folder. This  sample only works on a single raster layer at a time.  
+Masks pixel values within a user-sketched rectangle on a selected raster layer and saves the result as a new raster dataset in the project folder.  
 Note: You will need write access to the project folder in order to use this sample. The sample saves your input image before masking it so if you use a large image the save can take a while.  
   
 
@@ -14,9 +14,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

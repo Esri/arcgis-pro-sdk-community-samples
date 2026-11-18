@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace CreateLineOfSight
 {
   /// <summary>
-  /// This sample demonstrates how to perform a line of sight analysis between an observer and a target point on a TIN surface.
+  /// Analyzes lines of sight from an observer to target points on a TIN surface and creates features for visible and invisible sight-line segments and obstruction points.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.  

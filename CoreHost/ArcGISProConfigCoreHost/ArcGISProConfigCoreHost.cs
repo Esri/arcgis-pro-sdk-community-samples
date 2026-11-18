@@ -32,7 +32,7 @@ using System.Threading.Tasks;
 namespace ArcGISProConfigCoreHost
 {
   /// <summary>
-  /// This sample shows how to remote start and remote control ArcGIS Pro from an ArcGIS Corehost application.
+  /// Launches ArcGIS Pro with the companion managed configuration, sends a project-open command through a named pipe, and monitors the ArcGIS Pro process until it exits.
   /// This sample is comprised of two samples:
   /// - Corehost **server application** that starts and controls the ArcGIS Pro client: ArcGISProConfigCoreHost
   /// - ArcGIS Pro **client application** that is started and controlled: ArcGISProConfig

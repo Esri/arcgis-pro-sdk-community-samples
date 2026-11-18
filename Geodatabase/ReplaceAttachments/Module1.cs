@@ -23,7 +23,7 @@ using System.Threading.Tasks;
 namespace ReplaceAttachments
 {
     /// <summary>
-    /// This is a sample to update attachments with a given name
+    /// Replaces attachments that match a specified name
     /// with new attachment data, in all Tables/FeatureClasses 
     /// related to the Table/FeatureClass associated with the
     /// layer selected

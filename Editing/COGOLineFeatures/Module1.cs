@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace COGOLineFeatures
 {
   /// <summary>
-  /// This custom feature template construction tool is used to click two locations on the map and presents measured COGO attribute values, then allows those attributes to be edited without altering the end point location of the created line. This can be used as an enhanced Direction Distance constraint tool or as an enhanced measure tool that holds fixed the locations snapped on the map, while also maintaining the entered values.
+  /// Constructs COGO lines and circular arcs from map locations and entered survey values, allowing COGO attributes to differ from the geometry while preserving snapped endpoints.
   /// </summary>
   /// <remarks>
   /// 1. Build or debug the sample through Visual Studio.  

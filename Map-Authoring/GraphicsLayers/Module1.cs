@@ -41,7 +41,7 @@ using ArcGIS.Desktop.Layouts.Events;
 namespace GraphicsLayers
 {
   /// <summary>
-  /// This sample demonstrates working with graphics layers and graphic elements in a map.
+  /// Creates graphics layers and graphic elements and provides tools for selection, alignment, grouping, ordering, movement, deletion, and clipboard operations.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.

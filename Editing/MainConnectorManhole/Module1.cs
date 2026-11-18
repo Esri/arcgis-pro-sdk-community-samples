@@ -22,7 +22,7 @@ using System.Threading.Tasks;
 
 namespace MainConnectorManhole
 {
-  /// <summary>This sample creates a sketch tool that creates multiple features in 3D. It demonstrates a line sketch tool, working with 3D geometry, and edit templates.</summary>
+  /// <summary>Creates connected 3D main, connector, and manhole features from a line sketch using editing templates and 3D geometry.</summary>
   /// <remarks>
   /// 1. The data for this sample is available in the CommunitySampleData-3D-05-11-2022.zip download (see link below). After unzipping the content, use the project foudn in this location:  c:\Data\MainManhole\MainManhole.ppkx
   /// 1. The sample requires a main (line), connector (line) and manhole (point) 3D layers in a scene. You can use the "scene" in this project to run the add-in.

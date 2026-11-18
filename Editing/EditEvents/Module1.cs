@@ -29,7 +29,7 @@ using ArcGIS.Desktop.Mapping;
 namespace EditEventsSample
 {
 	/// <summary>
-	/// The EditEventsSpy dockpane listens to the editing Row, Completing, and Completed events
+  /// Monitors row-edit, edit-completing, and edit-completed events in an event-spy dockpane and provides sample edits for observing event sequences.
 	/// </summary>
 	/// <remarks>
 	/// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.

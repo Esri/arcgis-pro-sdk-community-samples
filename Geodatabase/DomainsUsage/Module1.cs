@@ -23,8 +23,7 @@ using System.Threading.Tasks;
 namespace DomainsUsage
 {
     /// <summary>
-    /// This addin will list all domains in the workspace corresponding to the selected layer and on selecting a domain
-    /// a query layer will be generated which lists the datasets which reference the selected domains
+    /// Lists domains in the selected layer's geodatabase and generates a query layer identifying datasets that reference the chosen domain.
     /// 
     /// NOTE: In order to list the domains, the owner of the GDB_ITEMS is used which is inferred using the owner of the default version
     ///       It is assumed that the default version will either be dbo.DEFAULT or sde.DEFAULT

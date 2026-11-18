@@ -44,7 +44,7 @@ using ArcGIS.Desktop.Mapping.Events;
 namespace SymbolLookup
 {
     /// <summary>
-    /// This sample demonstrate how to get the JSON representation for a symbol.
+    /// Inspects symbols for selected map features in a dockpane and copies their JSON representations to the clipboard.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution. 

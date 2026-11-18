@@ -1,7 +1,7 @@
 ## GeometrySamples
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample show how to convert a multi part geometry in single part  geometries and how to retrieve the outermost ring(s) of a polygon.  
+Separates multipart geometry into single parts and creates polygon features from the outermost rings of existing polygons.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Geometry
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

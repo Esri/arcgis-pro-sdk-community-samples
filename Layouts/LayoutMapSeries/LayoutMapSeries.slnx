@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../LayoutMapSeriesRecordNavigator/RecordNavigator.csproj" />
+  <Project Path="LayoutMapSeries.csproj" />
+</Solution>

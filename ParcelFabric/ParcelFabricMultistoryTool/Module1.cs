@@ -42,7 +42,7 @@ using System.Windows;
 namespace ParcelFabricMultistoryTool
 {
     ///<summary>
-    /// This sample illustrates how an add-in can create a new group of controls focused in support of a 3D parcel fabric editing workflow.  The 3D scene provides rendering of multistory parcel polygons, allowing an editor to accurately select and vertically duplicate parcels.   
+    /// Supports multistory parcel editing in a 3D scene with controls to activate records, vertically duplicate parcels, build parcels, validate extents, and inspect attributes.
     ///</summary>
     ///<remarks>
     /// Using the sample:

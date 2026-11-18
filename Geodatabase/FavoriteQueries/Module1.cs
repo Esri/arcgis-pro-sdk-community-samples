@@ -20,7 +20,7 @@ using System.Threading.Tasks;
 namespace FavoriteQueries
 {
     /// <summary>
-    /// This addin lists all subtypes for a Feature Class and allows deleting all features which have a selected subtype
+    /// Runs predefined classified and unclassified crime queries against a selected feature table and displays their records and result counts in a dockpane.
     /// </summary>
     /// <remarks>
     /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.

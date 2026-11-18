@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace WizardSample
 {
   /// <summary>
-  /// This sample illustrates the usage of the ArcGIS Pro Framework's Wizard Control.  
+  /// Opens a multi-page framework wizard, shares data between its pages, and processes the completed wizard's result.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu then select Build Solution. 

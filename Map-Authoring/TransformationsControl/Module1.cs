@@ -35,7 +35,7 @@ using System.Windows.Input;
 namespace TransformationsControl
 {
   /// <summary>
-  /// This sample shows how to use the Pro API's Transformations Control from a Dockpane.
+  /// Hosts the Transformations control in a dockpane for choosing transformations between configured source and target spatial references.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

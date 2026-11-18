@@ -1,7 +1,7 @@
 ## ImportPlatToFabric
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-ParcelFabricAPI shows the following Parcel Fabric API capabilities:  
+Imports plat geometry into a parcel fabric, creates and activates parcel records, and fixes imported line data through a dockpane workflow:  
   
 1. Create a Record – a new Record feature in the Records feature class  
 2. Setting the created Record as the active record  
@@ -20,9 +20,9 @@ Language:              C#
 Subject:               Parcel Fabric
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

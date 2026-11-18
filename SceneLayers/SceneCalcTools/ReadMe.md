@@ -1,7 +1,7 @@
 ## SceneCalcTools
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates how an add-in can be used to provide tools which leverage a 3D scene layer package and point cloud dataset created from a drone survey with Drone2Map for ArcGIS software.  The tools allow you to interact with the scene layers and illustrate a workflow to calculate volume and other metrics on asphalt gravel stockpiles for general supply tracking.  
+Uses sketched stockpile boundaries and elevation inputs with drone-derived scene and point-cloud data to calculate stockpile volumes and related supply metrics.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               SceneLayers
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

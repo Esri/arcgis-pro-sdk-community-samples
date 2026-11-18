@@ -38,7 +38,7 @@ using System.Windows.Input;
 
 namespace ReferencingArcGISProImages
 {  /// <summary>
-   /// ReferencingArcGISProImages shows how to reference ArcGIS Pro images (icons etc.) from your Add-in.
+  /// Displays built-in ArcGIS Pro icons referenced from DAML, XAML, and view-model code in ribbon controls and a dockpane.
    /// </summary>
    /// <remarks>
    /// 1. In Visual Studio click the Build menu. Then select Build Solution.

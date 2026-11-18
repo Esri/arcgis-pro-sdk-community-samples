@@ -38,7 +38,7 @@ using System.Windows.Input;
 
 namespace DockpaneWithLayerFieldSelection
 {  /// <summary>
-   /// This MVVM / XAML sample shows how to implement a dropdown Feature Layers and Fields in an ArcGIS Pro API Dockpane using MVVM.
+  /// Provides linked feature-layer and field dropdowns in an MVVM dockpane, refreshing available choices when the active map or its layers change.
    /// </summary>
    /// <remarks>
    /// 1. In Visual Studio build the solution and run the debugger to open ArcGIS Pro.

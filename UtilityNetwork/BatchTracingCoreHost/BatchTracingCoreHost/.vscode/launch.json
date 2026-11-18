@@ -1,0 +1,27 @@
+{
+    "version":  "0.2.0",
+    "configurations":  [
+                           {
+                               "name":  "BatchTracingCoreHost Debug",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "${workspaceFolder}/bin/Debug/net10.0-windows/BatchTracingCoreHost.dll",
+                               "args":  ["C:\\Code\\arcgis-pro-sdk-community-samples\\UtilityNetwork\\BatchTracingCoreHost\\BatchTracingCoreHost\\JSON Configurations\\Trace_Water_Pressure.json"],
+                               "cwd":  "${workspaceFolder}",
+                               "console":  "integratedTerminal",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-debug"
+                           },
+                           {
+                               "name":  "BatchTracingCoreHost Release",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "${workspaceFolder}/bin/Release/net10.0-windows/BatchTracingCoreHost.dll",
+                               "args":  ["C:\\Code\\arcgis-pro-sdk-community-samples\\UtilityNetwork\\BatchTracingCoreHost\\BatchTracingCoreHost\\JSON Configurations\\Trace_Water_Pressure.json"],
+                               "cwd":  "${workspaceFolder}",
+                               "console":  "integratedTerminal",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-release"
+                           }
+                       ]
+}

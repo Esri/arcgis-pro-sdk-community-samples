@@ -1,7 +1,7 @@
 ## AddRasterLayer
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample provides a new tab and a button on the tab to create a new raster layer  and add it to the current map.  
+Creates a raster layer in a project map and configures its raster display through the layer colorizer.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

@@ -40,7 +40,7 @@ using System.Windows.Input;
 namespace ContextualRibbonTab
 {
   /// <summary>
-  /// This sample illustrates how to control the visibility of a Tab control on the ArcGIS Pro Ribbon.
+  /// Controls a contextual ribbon tab's visibility through application state and a custom dockpane.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  Make sure that the Sample data is unzipped in c:\data.

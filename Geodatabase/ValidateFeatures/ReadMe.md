@@ -1,7 +1,7 @@
 ## ValidateFeatures
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This addin shows how to validate a selected set of features, displaying the results in a dockpane.    
+Validates selected feature and table records and displays invalid-data details in a results dockpane.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

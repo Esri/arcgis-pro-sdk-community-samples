@@ -23,7 +23,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace MapControl
 {
     /// <summary>
-    /// This sample shows how to use a MapControl to display an overview map. 
+    /// Displays an overview map in a separate window using MapControl and updates its content when the active map view changes.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

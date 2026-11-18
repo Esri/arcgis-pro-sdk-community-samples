@@ -45,7 +45,7 @@ using System.Windows.Input;
 namespace LASDatasetAPISamples
 {
   /// <summary>
-  /// This sample illustrates LAS Dataset layer Api methods available.
+  /// Filters LAS dataset points by classification, return values, and flags, retrieves points within a sketch, and applies LAS layer renderers.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

@@ -23,7 +23,7 @@ using System.Threading.Tasks;
 namespace DeleteFeaturesBasedOnSubtypeVersioned
 {
     /// <summary>
-    /// This addin will list all subtypes for a Feature Class and allow deletion of all features in a new version which have the selected subtype
+    /// Creates a geodatabase version and deletes features of a selected subtype in that version.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace TrayButtons
 {
   /// <summary>
-  /// This sample illustrates how to build custom tray buttons.  
+  /// Adds map and layout tray controls for zooming to visible layers, choosing colors, configuring the editing toolbar, and toggling layout guides.
   /// Three samples are included.
   /// The first is a simple map tray button, ZoomToVisibleExtentTrayButton. This tray button will change the map extent to the visible extent of all layers in the map.
   /// The second sample is the layout tray toggle button.  This tray button is the Toggle button type created to be used in layout only. 

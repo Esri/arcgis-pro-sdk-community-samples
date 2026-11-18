@@ -25,7 +25,7 @@ using ArcGIS.Desktop.Mapping;
 namespace BookmarkComboBox
 {    
     /// <summary>
-    /// This sample shows how to:
+    /// Populates a ribbon combo box with the active map's bookmarks and navigates to the selected bookmark.
     /// * Create a ComboBox control on the ArcGIS Pro ribbon
     /// * Populate a comboBox with a collection of bookmarks in the current project
     /// * Use the combo box's selection change event to zoom to that bookmark

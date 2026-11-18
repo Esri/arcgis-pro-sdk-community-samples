@@ -1,7 +1,7 @@
 ## ControllerPath
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This add-in demonstrates how to use the Pro SDK for .Net to find the shortest path between a feature  and its subnetwork controller by leveraging the Utility Network Trace API. The add-in is designed to work with pressure zones and pressure systems.  
+Runs controller and shortest-path traces to find the route between a utility-network feature and its subnetwork controller in pressure zones and pressure systems.  
   
 The functionality includes:  
   
@@ -25,9 +25,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

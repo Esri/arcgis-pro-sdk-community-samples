@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Mapping;
 namespace ImportCsv
 {
   /// <summary>
-  /// This sample demonstrates how to import a CSV datasource and create a new Featureclass for the CSV data to be copied to.
+    /// Imports coordinate records from a selected CSV file into a new point feature class, projecting input locations to the destination spatial reference.
   /// </summary>
   /// <remarks>
   /// Using the sample:

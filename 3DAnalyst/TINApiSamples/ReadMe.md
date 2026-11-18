@@ -1,7 +1,7 @@
 ## TINApiSamples
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates TIN Api methods available to iterate and work with TIN Nodes, edges and Triangles.  
+Provides tools to inspect TIN extents, find and search nodes, edges, and triangles, explore neighboring triangles, and change TIN layer renderers.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               3DAnalyst
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

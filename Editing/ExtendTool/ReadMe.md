@@ -1,7 +1,7 @@
 ## ExtendTool
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample creates a sketch tool that emulates the Extend functionality from ArcMap. It demonstrates creating a point sketch tool, working with geometry and performing the edit through an edit operation.  
+Provides a point-sketch tool that extends a selected line to a clicked feature and applies the geometry change through an edit operation.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

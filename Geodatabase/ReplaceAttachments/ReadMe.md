@@ -1,7 +1,7 @@
 ## ReplaceAttachments
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This is a sample to update attachments with a given name with new attachment data, in all Tables/FeatureClasses  related to the Table/FeatureClass associated with the layer selected  
+Replaces attachments that match a specified name with new attachment data, in all Tables/FeatureClasses  related to the Table/FeatureClass associated with the layer selected  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

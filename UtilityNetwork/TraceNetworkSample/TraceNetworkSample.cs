@@ -28,8 +28,8 @@ using System.Linq;
 namespace TraceNetworkSample
 {
   /// <summary>
-  /// This console application demonstrates downstream trace from a Medium Voltage Transformer to Service Points on the Utility Network. Rather than coding particular logic to pick a starting point, the sample uses a known medium voltage transformer as a starting point for trace. The example illustrates a simple use case for using the Utility Network in the CoreHost application.
-  /// The sample uses the NapervilleElectric.gdb, a file geodatabase available in the Community Sample data at C:\Data\UtilityNetwork (see under the "Resources" section for downloading sample data).
+  /// Runs a CoreHost utility-network downstream trace from a known medium-voltage transformer's downstream terminal and prints the resulting network elements and function outputs to the console.
+  /// The sample uses NapervilleElectricSDKData.gdb, a file geodatabase available in the Community Sample data at C:\Data\UtilityNetwork (see under the "Resources" section for downloading sample data).
   /// You can also use any utility network data with this sample, although constant values may need to be changed.
   /// </summary>  
   /// <remarks>

@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace ScreenCoordsToMapPoint
 {
   /// <summary>
-  /// This sample demonstrates how to convert screen coordinates to a map point
+  /// Converts map-tool screen coordinates to map points and marks the resulting locations with point overlays.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.

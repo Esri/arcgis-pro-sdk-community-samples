@@ -40,7 +40,7 @@ using System.Windows.Input;
 namespace DockpaneWithTextBox
 {
   /// <summary>
-  /// This sample shows how to use WPF bindings for Text boxes. 
+  /// Binds dockpane text boxes to view-model properties to exchange text values through WPF data binding.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.

@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace OfflineMapping
 {
   /// <summary>
-  /// This sample demonstrates how maps in Pro containing sync-enabled feature service content can be taken "offline".
+  /// Takes sync-enabled map content offline by generating replicas and tile caches, synchronizes offline edits, and removes local replicas.
   /// </summary>
   /// <remarks>
   /// Using the sample:

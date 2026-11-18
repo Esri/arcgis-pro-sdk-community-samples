@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 
 namespace LivingAtlasOfTheWorld {
     /// <summary>
-    /// Mimics the Browse Esri Map Layers dialog from the arcgis online webmap viewer.
+    /// Browses Living Atlas and other online map content in a custom dialog and adds selected layers or web maps to the project.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

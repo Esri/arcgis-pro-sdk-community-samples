@@ -1,8 +1,7 @@
 ## CustomCategoriesExample
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-An example of implementing a custom category. In this case we declare a custom category **AcmeCustom_Reports** and a contract:  
-**IAcmeCustomReport**  
+Discovers report implementations registered in the AcmeCustom_Reports DAML category and runs them through the IAcmeCustomReport contract in a reports window.  
   
 
 
@@ -14,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

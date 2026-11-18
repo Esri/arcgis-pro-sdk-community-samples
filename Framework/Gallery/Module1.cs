@@ -22,7 +22,7 @@ using System.Threading.Tasks;
 namespace GalleryDemo
 {
     /// <summary>
-    /// This sample shows how to author a gallery on the ArcGIS Pro Ribbon.  
+    /// Searches ArcGIS Online for web maps, displays them in an inline ribbon gallery, and opens the selected web map in ArcGIS Pro.
     /// In this example we will be creating an inline gallery control that will host a collection of web maps downloaded from ArcGIS Online. 
     /// When you click on a web map item in the gallery, it will open in a map pane in ArcGIS Pro. 
     /// </summary>

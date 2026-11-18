@@ -1,7 +1,7 @@
 ## AnnoTools
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates construction tools and modify tools for annotation feature classes.  The modify tools show how to modify the text, geometry and symbol of  annotation features.  There are also some tools illustrating how to add callouts and leader lines to annotation features.   
+Provides tools to create annotation features and templates, modify annotation text, baseline geometry, and symbols, and add balloon and line callouts.  
 Annotation has the following special considerations  
   
 1.  Annotation feature classes store polygon geometry.  This polygon is the bounding box of the text of an annotation feature. The  bounding box is calculated from the text string, font, font size, angle orientation and other text formatting attributes of the feature.   
@@ -23,9 +23,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

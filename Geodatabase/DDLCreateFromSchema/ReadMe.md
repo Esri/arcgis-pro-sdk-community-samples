@@ -1,11 +1,11 @@
 ## DDLCreateFromSchema
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample creates a command line utility that takes 2 parameters:  
+Parses an exported XML workspace schema and uses CoreHost SchemaBuilder operations to create feature classes in an enterprise geodatabase. The command-line utility takes two parameters:  
 - a schema XML file (created using the Pro Export XML Workspace Document Geoprocessing tool with Export Options "Schema only")  
 - a .SDE connection file that points to the target Geodatabase (with a user that has rights to create feature classes)  
   
-The utility uses the CoreHost library and .NET to parse the XML file into an object structure that is then used  to create feature classes in the target geodatabase  
+Existing feature classes are skipped; new classes are created with the parsed field and geometry definitions.  
   
 
 
@@ -17,9 +17,9 @@ Language:              C#
 Subject:               Console
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      .NET 10.0
 ```
 

@@ -18,7 +18,7 @@ using ArcGIS.Desktop.Mapping;
 namespace PreRel_UndoRedo
 {
     /// <summary>
-    /// This sample demonstrates how to add operations onto the undo/redo stack.   
+    /// Adds custom and composite operations to undo/redo stacks, supports undoable map navigation, and manages operations from a dockpane.
     /// </summary>
     /// <remarks>
     /// ArcGIS Pro does not contain a single undo/redo operation stack for the application; it has multiple undo/redo stacks. Each pane and dockpane decides how it's 

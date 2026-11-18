@@ -1,7 +1,7 @@
 ## TableFeatureClassOperations
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This code sample demonstrates how to perform some a sequence of edit operations.   It will compute the maximum value of a specific field, duplicate records, select newly created records, update old records, and create a log of the changes performed on a table.  
+Runs table and feature-class edit workflows that calculate maximum field values, duplicate and select records, update existing records, and log changes in a separate table.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

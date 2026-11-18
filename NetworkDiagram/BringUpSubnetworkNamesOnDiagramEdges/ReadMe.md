@@ -1,7 +1,7 @@
 ## BringUpSubnetworkNamesOnDiagramEdges
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This add-in demonstrates how to retrieve attributes on network elements associated with diagram features whether these network elements are aggregated in the diagram.It also exemplifies how to fill the new Info field added with utility network version 7 using the retrieved attributes.  
+Retrieves subnetwork names from network elements represented by diagram edges, stores them in diagram Info fields for rendering, and refreshes the information after toggling switches.  
 In particular, how to verify that all the aggregated network elements belong to a same subnetwork and save the name of the related subnetwork in the Info field.  
 **Note:** This code sample is generic and can be used for any utility network dataset once upgraded to version 7. However, for the rendering of the diagram edges based on the Info field values and, in particular, to display them in a specific color regarding their subnetwork name, you need to set up a custom diagram layer definition on the diagram template.    
 **Comment:** This add-in sample code works with ArcGIS Pro 3.3 and utility network version 7. For prior ArcGIS Pro and utility network versions, we provide another add-in code sample command called ToggleSwitches that allows to get quite similar results. The difference between the two add-ins mainly concerns the management of the diagram edge colors.  
@@ -18,9 +18,9 @@ Language:              C#
 Subject:               NetworkDiagram
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

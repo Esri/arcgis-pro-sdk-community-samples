@@ -1,7 +1,7 @@
 ## AsyncGeoProcessing
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows who to run GP tools with and without progressors and the effect on UI responsiveness.  
+Runs repeated buffer geoprocessing operations with alternative progress-reporting patterns to compare application responsiveness, and removes generated buffer data.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Geodatabase
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

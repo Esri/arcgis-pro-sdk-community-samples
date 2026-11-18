@@ -23,7 +23,7 @@ using System.Threading.Tasks;
 namespace LoadReportSample
 {
   /// <summary>
-  /// This add-in demonstrates the creation of a simple electric distribution report.  It traces downstream from a given point and adds up the count of customers and total load per phase.  This sample is meant to be a demonstration on how to use the Utility Network portions of the SDK.  The report display is rudimentary.  Look elsewhere in the SDK for better examples on how to display data.  Rather than coding special logic to pick a starting point, this sample leverages the existing Set Trace Locations tool that is included with the product.  That tool writes rows to a table called UN_Temp_Starting_Points, which is stored in the default project workspace.  This sample reads rows from that table and uses them as starting points for our downstream trace.
+  /// Traces downstream from utility-network starting points set with the built-in trace-location tool and reports customer counts and total electric load by phase.
   /// 
   /// Community Sample data (see under the "Resources" section for downloading sample data) has a UtilityNetworkSamples.aprx 
   /// project that contains a utility network that can be used with this sample.  This project can be found under the 

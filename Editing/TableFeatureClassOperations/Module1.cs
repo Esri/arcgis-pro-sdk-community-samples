@@ -40,7 +40,7 @@ using System.Windows.Input;
 namespace TableFeatureClassOperations
 {
   /// <summary>
-  /// This code sample demonstrates how to perform some a sequence of edit operations.   It will compute the maximum value of a specific field, duplicate records, select newly created records, update old records, and create a log of the changes performed on a table.
+  /// Runs table and feature-class edit workflows that calculate maximum field values, duplicate and select records, update existing records, and log changes in a separate table.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data). The sample data contains an ArcGIS Pro project and data to be used for this sample. Make sure that the Sample data is unzipped in c:\data and C:\Data\Admin is available.

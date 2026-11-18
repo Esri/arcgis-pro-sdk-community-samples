@@ -1,7 +1,7 @@
 ## CrowdPlannerTool
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows the use of a construction tool to implement a crowd planning workflow.  
+Creates crowd-planning polygons with a construction tool and uses a dockpane to inspect and manage their planning attributes.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

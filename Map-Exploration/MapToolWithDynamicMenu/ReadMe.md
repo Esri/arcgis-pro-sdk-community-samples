@@ -1,8 +1,7 @@
 ## MapToolWithDynamicMenu
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows how to author a dynamic pop-up menu as an extension of a map exploration tool.   
-In this example a mouse click on a map that contains a high density points is used to pop-up a dynamic menu showing all point features intersecting the mouse click area.  The dynamic pop-up can then be used to select a single feature.   
+Builds a dynamic menu of point features near a map click so the user can select an individual feature in a densely populated area.  
   
 
 
@@ -14,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

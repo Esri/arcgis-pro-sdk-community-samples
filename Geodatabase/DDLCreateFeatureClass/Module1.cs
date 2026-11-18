@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace DDLCreateFeatureClass
 {
 	/// <summary>
-	/// This sample demonstrates how to create a new FeatureClass using the DDL functionality in the Pro API.
+	/// Creates a feature class with SchemaBuilder using the selected feature layer's geodatabase as the destination.
 	/// </summary>
 	/// <remarks>
 	/// Using the sample:

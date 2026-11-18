@@ -1,8 +1,7 @@
 ## Connectivity
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample is used to demonstrate how to use the ArcGIS.Core.SystemCore.Connectivity class to determine the connectivity status of the machine running ArcGIS Pro. It also demonstrates how to listen for connectivity changes by subscribing to the ConnectivityChanged event on the Connectivity class.  
-The results are displayed in a DockPane, which is opened by clicking the "Connectivity" button on the "Add-In" tab of the ArcGIS Pro ribbon. The DockPane displays whether the machine is a mobile device or desktop, whether it is in airplane mode, and the internet connection status. The icons and text update when connectivity changes are detected.  
+Displays device type, airplane mode, and internet connectivity in a dockpane and refreshes the display when system connectivity changes.  
   
 
 
@@ -14,10 +13,10 @@ Language:              C#
 Subject:               Connectivity
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
-Target Framework:      net10.0-windows7.0
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
+Target Framework:      net10.0-windows
 ```
 
 ## Resources

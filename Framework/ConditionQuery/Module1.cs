@@ -27,7 +27,7 @@ using System.Threading.Tasks;
 
 namespace ConditionQuery {
     /// <summary>
-    /// This Sample queries the application state to determine which conditions are currently enabled.
+    /// Reads DAML condition definitions and displays their component states and current evaluation results in a dockpane.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace MapToolWithEmbeddableControl
 {
   /// <summary>
-  /// This sample demonstrates a MapTool that is using an embeddable control to input wgs84 coordinates that can be searched for an the map.  The found location is marked on the map.
+  /// Accepts WGS84 coordinates through an embedded map-tool control, marks the resulting location, and zooms the map to it.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data)

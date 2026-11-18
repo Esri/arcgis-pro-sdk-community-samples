@@ -34,9 +34,7 @@ using System.Windows.Input;
 namespace SubstitutionAddIn
 {
   /// <summary>
-  /// This sample provides a mechanism for a user to choose to turn a simple substitution setting into a permanent substitution.  
-  /// This means it will end up copying the calculated values for propagated attribute into the original attribute that was propagated.  
-  /// In electric networks this usually means copying the phases energized values back into the phases current values.
+    /// Makes utility-network substitutions permanent by copying calculated propagated values into their source attributes, such as energized phases into current phases.
   /// </summary>
   /// <remarks>
   /// For sample data, download CommunitySampleData-UtilityNetwork-mm-dd-yyyy.zip from https://github.com/Esri/arcgis-pro-sdk-community-samples/releases

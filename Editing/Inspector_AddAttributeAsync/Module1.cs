@@ -39,9 +39,7 @@ using ArcGIS.Desktop.Mapping;
 namespace Inspector_AddAttributeAsync
 {
   /// <summary>
-  /// This sample demonstrates how to use the Inspector.AddAttributeAsync method. The sample contains a single map tool which displays a grid requesting attribute values
-  /// from the user. After entering values into the grid, the user sketches a rectangle to identify features.  The attributes will be applied to the features that are 
-  /// identified by the tool.
+  /// Builds an Inspector attribute-entry grid with validation and applies the entered values to point features selected by a rectangle sketch.
   /// 
   /// In this example we are using Inspector.AddAttributeAsync to only add a few fields from a single specific layer.  It is possible to add fields from multiple layers to 
   /// display in the grid. 

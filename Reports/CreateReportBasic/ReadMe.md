@@ -1,7 +1,7 @@
 ## CreateReportBasic
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates how to create a very simple report.  The add-in takes the first feature class, selects all records, and creates a report.     
+Creates a basic report from a feature layer's records and provides commands to open, preview, and reset the report.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

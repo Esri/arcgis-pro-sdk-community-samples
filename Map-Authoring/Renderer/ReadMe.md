@@ -1,7 +1,7 @@
 ## Renderer
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample renders feature layers with various types of renderers. There are examples for the following types of renderers in this sample:  
+Applies simple, unique-value, class-break, chart, dot-density, heat-map, proportional, and attribute-driven symbology to feature layers:  
   * Simple Renderers  
   * Unique Value Renderer  
   * Class breaks renderers  
@@ -24,9 +24,9 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

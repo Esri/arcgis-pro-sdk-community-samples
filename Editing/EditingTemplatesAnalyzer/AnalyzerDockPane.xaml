@@ -1,0 +1,156 @@
+<!--
+
+   Copyright 2026 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->  
+<UserControl x:Class="EditingTemplatesAnalyzer.AnalyzerDockPaneView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
+             xmlns:ui="clr-namespace:EditingTemplatesAnalyzer"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
+             xmlns:behaviors="clr-namespace:EditingTemplatesAnalyzer"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{Binding Path=ui.AnalyzerDockPaneViewModel}">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+			<BooleanToVisibilityConverter x:Key="BoolToVis"/>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="10"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<TextBlock Grid.Row="1" Text="Find group templates in the current map that have warnings or errors." TextWrapping="WrapWithOverflow"
+		FontWeight="Bold" Margin="4,0,0,4"/>
+		<StackPanel Grid.Row="2" Margin="4,0,0,0">
+			<Grid  Margin="0,0,0,4" HorizontalAlignment="Left" Width="Auto">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+
+				<Button Grid.Column="0"
+						Content="Find templates"
+						Style="{DynamicResource Esri_Button}"
+						Command="{Binding BrokenGroupTemplatesCommand}"/>
+			</Grid>
+		</StackPanel>
+		<ScrollViewer Grid.Row="3" Margin="4,0,0,0" VerticalScrollBarVisibility="Auto">
+			<StackPanel>
+				<StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+					<TextBlock VerticalAlignment="Center" Margin="0,0,8,0" 
+							Visibility="{Binding ShowCategoryFilter, Converter={StaticResource BoolToVis}}">Filter results by:</TextBlock>
+					<ComboBox Width="180" ItemsSource="{Binding Categories}" 
+						  SelectedItem="{Binding SelectedCategory, Mode=TwoWay}" Visibility="{Binding ShowCategoryFilter, 
+						  Converter={StaticResource BoolToVis}}"/>
+				</StackPanel>
+
+				<GroupBox Header="Templates" Margin="0,0,0,4">
+					<Grid Height="300" VerticalAlignment="Top">
+						<ListBox ItemsSource="{Binding DisplayedTemplates}" 
+						SelectionMode="Extended" behaviors:ListBoxSelectedItemsBehavior.BindableSelectedItems="{Binding SelectedTemplates, Mode=TwoWay}">
+							<ListBox.ItemTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding}"/>
+								</DataTemplate>
+							</ListBox.ItemTemplate>
+						</ListBox>
+						<TextBlock Text="No results returned!" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="6,6,0,0" Foreground="Gray"
+						Visibility="{Binding NoResults, Converter={StaticResource BoolToVis}}" />
+					</Grid>
+				</GroupBox>
+
+				<Grid HorizontalAlignment="Stretch" Margin="0,8,0,0">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+					</Grid.RowDefinitions>
+
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+
+					<Button Grid.Row="0" Grid.Column="0" Content="Delete"
+						Style="{DynamicResource Esri_Button}"
+						Command="{Binding DeleteSelectedCommand}"/>
+
+					<Button Grid.Row="0" Grid.Column="2" Content="Clear results"
+						Style="{DynamicResource Esri_Button}"
+						Command="{Binding ClearResultsCommand}"/>
+
+				</Grid>
+			</StackPanel>
+		</ScrollViewer>
+
+		<Expander Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" IsExpanded="False" Header="Help" Margin="0,8,0,0">
+			<ScrollViewer MaxHeight="270" VerticalScrollBarVisibility="Auto">
+				<StackPanel Margin="6">
+					<TextBlock Text="The following sections describe how to troubleshoot unexpected warnings and errors when working with editing templates in the Create Features and Manage Templates panes." TextWrapping="Wrap" FontWeight="Bold" Margin="0,0,0,6"/>
+					<TextBlock TextWrapping="Wrap" Margin="0,4,0,0">
+						<Bold>Missing primary/secondary template</Bold>
+						<LineBreak/>
+						<Bold>Cause: </Bold> The Group template or one of its secondary templates references a layer or a dataset that is missing, or the data source has been moved, renamed or deleted.
+						<LineBreak/>
+						<Bold>Solution: </Bold> Add the layer to the map or repair the broken data source. Next, restore the missing secondary templates or delete and recreate the Group template.
+					</TextBlock>
+					<TextBlock TextWrapping="Wrap" Margin="0,6,0,0">
+						<Bold>Missing feature from preset</Bold>
+						<LineBreak/>
+						<Bold>Cause: </Bold> One or more layers referenced by the Preset template are missing.
+						<LineBreak/>
+						<Bold>Solution: </Bold> Remove the missing features in the Template Properties dialog box. Alternatively, add the layers for the missing features, recreate the Preset template, and delete the original one.
+					</TextBlock>
+					<TextBlock TextWrapping="Wrap" Margin="0,6,0,0">
+						<Bold>Failed definition query</Bold>
+						<LineBreak/>
+						<Bold>Cause: </Bold> A layer's definition query is causing the template to create nonvisible features. A warning or an error icon appears next to the template name in the Create Features and Manage Templates panes.
+						<LineBreak/>
+						<Bold>Solution: </Bold> No action is required. To resolve the error, remove the definition query, change the template's feature attributes, or create the feature and then update the feature attributes.
+					</TextBlock>
+					<TextBlock TextWrapping="Wrap" Margin="0,6,0,0">
+						<Bold>Missing feature builder</Bold>
+						<LineBreak/>
+						<Bold>Cause: </Bold> A feature builder in the group template is not configured properly.
+						<LineBreak/>
+						<Bold>Solution: </Bold> Configure the feature builder properly.
+					</TextBlock>
+					<TextBlock TextWrapping="Wrap" Margin="0,6,0,0">
+						<Bold>Missing tags or description</Bold>
+						<LineBreak/>
+						<Bold>Cause: </Bold> The template is missing a tag or a description.
+						<LineBreak/>
+						<Bold>Solution: </Bold> Add one or more tags and a description that is useful to others in the Template Properties dialog box.
+					</TextBlock>
+				</StackPanel>
+			</ScrollViewer>
+		</Expander>
+	</Grid>
+</UserControl>

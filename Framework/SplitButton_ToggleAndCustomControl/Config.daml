@@ -1,0 +1,73 @@
+﻿<!--
+
+   Copyright 2026 Esri
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+-->
+
+<ArcGIS defaultAssembly="SplitButton_ToggleAndCustomControl.dll" defaultNamespace="SplitButton_ToggleAndCustomControl" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{60ac747d-b7c0-4462-94df-a1695dae9de1}" version="1.0" desktopVersion="3.8.3104" product="ArcGISPro">
+    <Name>SplitButton_ToggleAndCustomControl</Name>
+    <Description>SplitButton_ToggleAndCustomControl description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+		<Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
+		<Company>esri, https://www.esri.com</Company>
+    <Date>9/16/2026 7:54:28 AM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="SplitButton_ToggleAndCustomControl_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="SplitButton_ToggleAndCustomControl_Tab1" caption="New Tab">
+          <group refID="SplitButton_ToggleAndCustomControl_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="SplitButton_ToggleAndCustomControl_Group1" caption="Editing Toolbar" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+					<splitButton refID="SplitButton_ToggleAndCustomControl_EditingToolbarSplitButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+				<button id="SplitButton_ToggleAndCustomControl_EditingToolbarToggleButton" caption="Editing Toolbar" className="EditingToolbarToggleButton" loadOnClick="false" smallImage="GenericButtonBlue16" largeImage="GenericButtonBlue32">
+					<tooltip heading="Editing Toolbar">
+						Toggle the visibility of the Editing toolbar.<disabledText />
+					</tooltip>
+				</button>
+				<customControl id="SplitButton_ToggleAndCustomControl_EditingToolbarControl" caption="Editing Toolbar" className="EditingToolbarControlViewModel" loadOnClick="true" smallImage="GenericButtonPurple16" largeImage="GenericButtonPurple32">
+					<content className="EditingToolbarControlView" />
+					<tooltip heading="Editing Toolbar">
+						Customize the Editing toolbar settings.<disabledText />
+					</tooltip>
+				</customControl>
+      </controls>
+			<splitButtons>
+				<splitButton id="SplitButton_ToggleAndCustomControl_EditingToolbarSplitButton"
+							caption="Editing Toolbar" extendedCaption="Toggle Editing Toolbar"
+							keytip="S" condition="esri_editing_MapCondition"
+							loadOnClick="false" helpContextID="" hideTooltip="true" >
+					<button refID="SplitButton_ToggleAndCustomControl_EditingToolbarToggleButton"/>
+					<customControl refID="SplitButton_ToggleAndCustomControl_EditingToolbarControl"/>
+				</splitButton>
+			</splitButtons>
+    </insertModule>
+  </modules>
+</ArcGIS>

@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace ValidateChanges
 {
     /// <summary>
-    /// This add-in demonstrates running Validate Network Topology on data changes.  When used on a file geodatabase or on the default version of a branch-versioned feature service, it runs Validate Network Topology on the entire network.
+    /// Validates utility-network topology for changed data, using the full network for file geodatabases and default versions or the dirty-area differences extent for named branch versions.
     /// If used on a named version of a branch-versioned feature service, it does a version differences on the dirty areas table, and uses the resulting extent for the Validate Network Topology operation.
     ///
     /// Community Sample data(see under the "Resources" section for downloading sample data) has a UtilityNetworkSamples.aprx project that contains a utility network that can be used with this sample.This project can be found under the

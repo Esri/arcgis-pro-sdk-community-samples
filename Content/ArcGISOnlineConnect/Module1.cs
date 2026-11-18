@@ -17,7 +17,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace ArcGISOnlineConnect
 {
   /// <summary>
-  /// ArcGISOnlineConnect exercises a collection of programmatic interactions with ArcGIS Online using EsriHttpClient
+    /// Queries ArcGIS Online through EsriHttpClient and displays portal users, groups, folders, items, and search results in a dockpane.
   /// </summary>
   /// <remarks>
   /// 1. This sample is using the ArcGIS REST API which is published here https://resources.arcgis.com/en/help/arcgis-rest-api  

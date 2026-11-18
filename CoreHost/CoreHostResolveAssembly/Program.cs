@@ -30,8 +30,7 @@ using System.Threading.Tasks;
 namespace CoreHostResolveAssembly
 {
   /// <summary>
-  /// This sample illustrates how to deploy a standalone CoreHost application that resolves the ArcGIS Pro location in order to load the dependent assemblies such as ArcGIS.Core.dll and ArcGIS.CoreHost.dll from the ArcGIS Pro install location.
-  /// Except for the dynamic assembly loading logic this sample is identical to the "CoreHostSample". 
+  /// Resolves ArcGIS Pro assemblies from the installation path stored in the registry, initializes CoreHost, and prints feature-class names and field definitions from a file geodatabase.
   /// The references to ArcGIS.Core.dll and ArcGIS.CoreHost.dll in Visual Studio have the "Copy Local" property set to "false". 
   /// </summary>
   /// <remarks>

@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="../ProDataReaderImageMetadata/ProDataReaderImageMetadata.csproj" />
+  <Project Path="../ProDataReaderProGpxPluginDatasource/ProDataReaderProGpxPluginDatasource.csproj" />
+  <Project Path="../ProDataReaderProJpgPluginDatasource/ProDataReaderProJpgPluginDatasource.csproj" />
+  <Project Path="ProDataReader.csproj">
+    <BuildDependency Project="../ProDataReaderProGpxPluginDatasource/ProDataReaderProGpxPluginDatasource.csproj" />
+    <BuildDependency Project="../ProDataReaderProJpgPluginDatasource/ProDataReaderProJpgPluginDatasource.csproj" />
+  </Project>
+</Solution>

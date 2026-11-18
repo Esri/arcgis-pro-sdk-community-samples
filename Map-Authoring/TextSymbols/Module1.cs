@@ -32,7 +32,7 @@ using System.Windows;
 namespace TextSymbols
 {
     /// <summary>
-    /// This sample creates custom text symbol items that you can use to label feature layers and Annotation layers.  
+    /// Builds a gallery of custom text symbols for feature labeling and annotation and saves the symbols to a reusable personal style.
     /// These text symbol items are stored in a personal style file in your project that you can re-use. 
     /// Community Sample data (see under the "Resources" section for downloading sample data) has a TextSymbols.ppkx 
     /// project package that contains Annotation and Feature layers that can be used for this sample. 

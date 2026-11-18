@@ -1,11 +1,8 @@
 ## ProStartPageConfig
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-Provides an example Pro start page  
-Shows how to replicate the Pro 3.0 start page.   
-This may be useful for Configurations which want to show a "stock" or "near stock" start page with a few (custom) modifications.  
-Configurations would be responsible for making their own resources page.  
-A placeholder is provided in <b>ProStartPageResources.xaml</b>  
+Recreates the ArcGIS Pro start-page experience in a managed configuration, including recent projects, project templates, a new-project dialog, and a customizable resources page.  
+  
 
 
 <a href="https://pro.arcgis.com/en/pro-app/sdk/" target="_blank">View it live</a>
@@ -16,9 +13,9 @@ Language:              C#
 Subject:               Configuation
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

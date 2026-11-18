@@ -1,7 +1,7 @@
 ## Inspector_AddAttributeAsync
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates how to use the Inspector.AddAttributeAsync method. The sample contains a single map tool which displays a grid requesting attribute values from the user. After entering values into the grid, the user sketches a rectangle to identify features.  The attributes will be applied to the features that are  identified by the tool.  
+Builds an Inspector attribute-entry grid with validation and applies the entered values to point features selected by a rectangle sketch.  
   
 In this example we are using Inspector.AddAttributeAsync to only add a few fields from a single specific layer.  It is possible to add fields from multiple layers to  display in the grid.   
   
@@ -15,9 +15,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

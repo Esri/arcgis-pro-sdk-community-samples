@@ -8,7 +8,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <NoWarn>1591;CA1416</NoWarn>
     <UseWPF>true</UseWPF>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ArcGIS.Desktop.Framework">
@@ -82,7 +82,6 @@
     <None Include="screenshots\Templates_GroupTemplate.png" />
     <None Include="screenshots\Templates_NewCIMTemplate.png" />
     <None Include="screenshots\Templates_NewExtensionTemplate.png" />
-    <None Include="EditingTemplates (C#).md" />
   </ItemGroup>
   <Import Project="C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets" Condition="Exists('C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets') AND !Exists('Esri.ArcGISPro.Extensions.targets')" />
 </Project>

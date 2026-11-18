@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace LayersPane
 {
   /// <summary>
-  /// The Layers pane sample uses a docking pane to query and display feature classes and their content.  Access to feature classes is provided through the layers of the active map.
+  /// Queries feature classes exposed by the active map's layers and displays their records in a custom layers pane.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.    

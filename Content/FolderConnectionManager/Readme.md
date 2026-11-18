@@ -1,7 +1,7 @@
 ## FolderConnectionManager
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-Allows saving and loading folder connections to a Project showing how to manage folder connections in ArcGIS Pro from within an Add-in.  
+Displays project folder connections, saves their paths to a text file, and restores connections from a saved file.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Content
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

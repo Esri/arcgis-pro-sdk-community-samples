@@ -1,7 +1,7 @@
 ## AddToMapCustomItem
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates how to add a custom item to the map using the IMappable and IMappebleEX Interfaces.  Item content can be added to ArcGIS Pro using the following application workflows:  
+Makes custom data items mappable through IMappable interfaces, including conversion of coordinate CSV content to feature data through standard add-data workflows:  
 * "Add Data" dialog  
 * "Add Data from Path" dialog  
 * drag/drop of the item from the catalog window to a map  
@@ -19,9 +19,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

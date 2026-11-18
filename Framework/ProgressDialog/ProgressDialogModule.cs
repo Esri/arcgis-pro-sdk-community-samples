@@ -21,7 +21,7 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 namespace ProgressDialog {
 
     /// <summary>
-    /// This Sample shows different patterns that exercise the progress dialog.  
+    /// Runs sample operations with progress dialogs, including cancelable progress reporting and alternative progress-dialog patterns.
     /// 1. Simple progress dialog
     /// 2. Cancelable progress dialog
     /// 3. Manually control a progress dialog

@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace TransferAttributes
 {
   /// <summary>
-  /// This sample demonstrates two ways to transfer attributes to a target feature using the application Field Mapping options set between two layers. 
+  /// Transfers attributes from source features or editing templates to target features using configured layer field mappings.
   /// The Field Mapping options are where a user can specify how attribute field values on a source layer are processed and copied to fields on a target layer. 
   /// This sample also includes access to the Field Mapping page to allow editing of the options. 
   /// </summary>

@@ -27,7 +27,7 @@ using System.Threading.Tasks;
 
 namespace OpenMapViews
 {    /// <summary>
-     /// This sample shows how to show / hide mapview panes associated with multiple maps. 
+    /// Creates and manages multiple project maps from a dockpane that opens or hides their associated map-view panes.
      /// </summary>
      /// <remarks>
      /// 1. In Visual Studio click the Build menu. Then select Build Solution.

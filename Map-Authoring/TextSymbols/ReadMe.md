@@ -1,7 +1,7 @@
 ## TextSymbols
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample creates custom text symbol items that you can use to label feature layers and Annotation layers.    
+Builds a gallery of custom text symbols for feature labeling and annotation and saves the symbols to a reusable personal style.  
 These text symbol items are stored in a personal style file in your project that you can re-use.   
 Community Sample data (see under the "Resources" section for downloading sample data) has a TextSymbols.ppkx  project package that contains Annotation and Feature layers that can be used for this sample.   
 This project package is can be found under C:\Data\TextSymbols folder. Alternatively, you can also use any Annotation and Feature layers to work with this sample.  
@@ -16,9 +16,9 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

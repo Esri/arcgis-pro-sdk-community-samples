@@ -1,7 +1,7 @@
 ## TableControlSample
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows how to create a custom table control.  This example creates a table control that allows to display content from active maps or through the Catalog view.  The table control responds to selected layer or table and active map view changes as long as the table type is supported.  
+Displays supported layer, table, and Catalog-item records in a custom TableControl pane that follows item selection and active-map changes.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

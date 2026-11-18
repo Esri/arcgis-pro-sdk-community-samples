@@ -1,7 +1,7 @@
 ## CreateTransformerBank
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This add-in demonstrates the creation of an electric distribution transformer bank.  It creates the bank feature, three transformer features (one per phase), three fuses, three arresters and the associations between them.  It demonstrates how to accomplish this within a single EditOperation.  
+Creates an electric transformer bank with three phase-specific transformers, fuses, arresters, and their network associations in a single edit operation.  
    
 Community Sample data (see under the "Resources" section for downloading sample data) has a UtilityNetworkSamples.aprx  project that contains a utility network that can be used with this sample.  This project can be found under the   
 C:\Data\UtilityNetwork folder. Alternatively, you can also use any utility network data with this sample, although constant  values may need to be changed.  
@@ -17,9 +17,9 @@ Language:              C#
 Subject:               UtilityNetwork
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

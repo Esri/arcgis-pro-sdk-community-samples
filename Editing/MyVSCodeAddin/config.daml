@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArcGIS defaultAssembly="MyVSCodeAddin.dll"
+        defaultNamespace="MyVSCodeAddin"
+        xmlns="http://schemas.esri.com/DADF/Registry"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+
+  <AddInInfo id="{5519ad48-5592-4cbf-8165-427591ac94eb}" version="1.0" desktopVersion="3.8.3238" product="ArcGISPro">
+    <Name>MyVSCodeAddin</Name>
+    <Description>MyVSCodeAddin description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>wolf2125</Author>
+    <Company>AVWORLD</Company>
+    <Date>9/23/2026, 9:37:06 AM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+
+  <modules>
+    <insertModule id="MyVSCodeAddin_Module" className="Module1" autoLoad="false" caption="Module1">
+      <tabs>
+        <tab id="MyVSCodeAddin_ThreeDLotsTab" caption="3D Lots" keytip="3L">
+          <group refID="MyVSCodeAddin_LotsCreationGroup"/>
+        </tab>
+      </tabs>
+
+      <groups>
+        <group id="MyVSCodeAddin_LotsCreationGroup" caption="Lots creation" keytip="LC" appearsOnAddInTab="false">
+          <button refID="MyVSCodeAddin_ThreeDLotsCreationDockpane_ShowButton" size="large"/>
+        </group>
+      </groups>
+      
+      <controls>
+        <!-- This launcher is the initial user-accessible path to the dockpane below. -->
+        <button id="MyVSCodeAddin_ThreeDLotsCreationDockpane_ShowButton" caption="Show 3D Lots Creation" className="ThreeDLotsCreationDockpane_ShowButton" keytip="SC" loadOnClick="true" smallImage="3DAnalystSurfaceVolume32" largeImage="3DAnalystSurfaceVolume32">
+          <tooltip heading="Show 3D Lots Creation">Open the 3D Lots Creation dockpane.<disabledText /></tooltip>
+        </button>
+      </controls>
+
+      <dockPanes>
+        <dockPane id="MyVSCodeAddin_ThreeDLotsCreationDockpane" caption="3D Lots Creation" smallImage="3DAnalystSurfaceVolume32" className="ThreeDLotsCreationDockpaneViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="ThreeDLotsCreationDockpaneView"/>
+        </dockPane>
+      </dockPanes>
+
+    </insertModule>
+  </modules>
+</ArcGIS>

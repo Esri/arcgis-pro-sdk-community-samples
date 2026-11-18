@@ -1,7 +1,7 @@
 ## ComboBoxSelectFeature
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows how to use a Combo Box on the Pro Ribbon to display the list of features in its dropdown menu.  
+Lists state features in a ribbon combo box and zooms the active map to the chosen feature's geometry.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

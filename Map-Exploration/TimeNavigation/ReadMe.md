@@ -1,7 +1,7 @@
 ## TimeNavigation
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample provides a new tab and controls that allow you to set the time in the map view, step through time, and navigate between time enabled bookmarks in the map.  
+Sets the map view's time extent, steps through time, and navigates among time-enabled bookmarks using ribbon controls and dockpanes.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Map-Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

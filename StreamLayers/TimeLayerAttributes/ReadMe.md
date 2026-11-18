@@ -1,7 +1,7 @@
 ## TimeLayerAttributes
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample utilizes a time-enabled layer to emulate real-time data streaming through time extent change events captured by a dockpane.  The dockpane uses a data grid to display the 'streamed' (via time selection) data.  
+Emulates streaming feature data by querying a time-enabled layer as the map's time extent changes and refreshing the matching records in a dockpane grid.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

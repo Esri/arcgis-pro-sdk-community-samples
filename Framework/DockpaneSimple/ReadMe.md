@@ -1,7 +1,7 @@
 ## DockpaneSimple
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows how to:   
+Provides an MVVM dockpane for choosing project maps and navigating to their bookmarks, updating its contents as project items change.  
 * Create a Dockpane using DAML  
 * Use the MVVM Pattern with ArcGIS Pro  
 * Change the Dockpane title  
@@ -20,9 +20,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

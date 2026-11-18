@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace ExecuteSnap
 {
   /// <summary>
-  /// This sample runs the Snap (Editing) geoprocessing tool.  The tool moves points or vertices to coincide exactly with the vertices, edges, or end points of other features. 
+    /// Executes the Snap geoprocessing tool with configured snapping environments to align feature vertices with nearby feature vertices, edges, or endpoints.
   /// [Snap (Editing) help](https://pro.arcgis.com/en/pro-app/latest/tool-reference/editing/snap.htm)
   /// </summary>
   /// <remarks>

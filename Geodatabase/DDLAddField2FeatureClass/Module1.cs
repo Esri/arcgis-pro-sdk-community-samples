@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace DDLAddField2FeatureClass
 {
   /// <summary>
-  /// This sample demonstrates how to add new attribute fields to a FeatureClass using the DDL functionality in the Pro API.
+	/// Adds attribute fields to an existing feature class by modifying its schema with SchemaBuilder.
   /// </summary>
   /// <remarks>
   /// Using the sample:

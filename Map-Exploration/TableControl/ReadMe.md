@@ -1,9 +1,7 @@
 ## TableControl
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates using the TableControl on a dockpane.   
-In this example we will populate the tablecontrol with content from the selected item in the Catalog pane.   
-We will add toolbar buttons to the dockPane to modify the selected rows of the tablecontrol data. We will also customize the default row context menu.   
+Displays the selected Catalog item's records in a dockpane TableControl with row-editing toolbar commands, a custom row context menu, and a map identify tool.  
   
 
 
@@ -15,9 +13,9 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

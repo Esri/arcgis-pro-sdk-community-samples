@@ -23,9 +23,7 @@ using System.Threading.Tasks;
 namespace Geocode
 {
     /// <summary>
-    /// This sample provides a new tab and controls that launches a Geocode dialog window. 
-    /// This dialog window will allow you to enter an address or place name and will geocode 
-    /// the results and then zoom to and place a graphic at the location on the map. 
+    /// Geocodes entered addresses or place names in a custom dialog, displays candidate results, and navigates to their locations with map graphics.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

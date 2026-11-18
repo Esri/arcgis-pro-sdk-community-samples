@@ -1,7 +1,7 @@
 ## CopyFeatureClass
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows how to implement a how to duplicate a feature layer schema in the local geodatabase and then copy all features from the feature layer into the local copy of the newly generated feature class.  This addin utilitzed the SchemaBuilder class and the EditOperation Class.  
+Copies a selected feature layer's schema and records to a local geodatabase using SchemaBuilder, field mappings, and edit operations.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

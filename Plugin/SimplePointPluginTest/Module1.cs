@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace SimplePointPluginTest
 {
   /// <summary>
-  /// SimplePointPluginTest implements a custom plugin datasource for reading csv files.  SimplePointPluginTest is an add-in that allows to access the custom datasource.  SimplePointPlugin contains the actual custom plugin datasource implementation to access csv data from within ArcGIS Pro. 
+  /// Opens CSV point datasets through the companion SimplePointPlugin datasource, reads their features, and exercises absolute and relative datasource paths.
   /// </summary>
   /// <remarks>
   /// 1. This solution is using the **RBush NuGet**.  If needed, you can install the NuGet from the "NuGet Package Manager Console" by using this script: "Install-Package RBush".

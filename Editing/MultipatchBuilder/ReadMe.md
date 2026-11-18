@@ -1,8 +1,7 @@
 ## MultipatchBuilder
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates how to construct multipatch geometries using the MultipatchBuilderEx class found in the ArcGIS.Core.Geometry namespace.   
-The MultipatchBuilderEx class also allows modifying the multipatch geometry including the materials and textures.  
+Builds and inspects multipatch geometry from building footprints, creates walls and triangle patches, and configures materials and textures with MultipatchBuilderEx.  
   
 
 
@@ -14,9 +13,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

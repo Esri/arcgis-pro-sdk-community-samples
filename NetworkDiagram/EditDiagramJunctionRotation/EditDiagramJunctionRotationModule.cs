@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace EditDiagramJunctionRotation
 {
   /// <summary>
-  /// This add-in demonstrates the programmatic rotation of Junctions in a Network Diagram.
+  /// Rotates selected network-diagram junctions by querying diagram elements and updating their editable rotation attributes.
   /// Attributes cannot be manually edited from network diagrams; nor the attributes stored in the diagram feature classes, nor those coming from the join with the associated network source classes.
   /// However, there are two attributes on the network diagram side that are editable by code; the diagram feature Shape and diagram junction Rotation attributes. In this add-in sample, you will learn about how to edit the Rotation attribute on the diagram junction class.
   /// NOTE: The workflow steps detailed below is based on a sample utility network dataset for which the diagram layer definition on the related diagram templates have been set up so the junction symbol rotates according to this Rotation attribute value. The code provided with this add-in sample can apply to any utility network dataset. However, to get the diagram junction symbols being rotated according to the Rotation field value, you must set up the diagram layer definition on your templates.

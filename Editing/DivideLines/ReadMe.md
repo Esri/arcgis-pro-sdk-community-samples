@@ -1,8 +1,7 @@
 ## DivideLines
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample provides a tool that divides a line into an equal number of parts or a number of parts of a given length.  
-The sample creates a map tool that is similar to other editing tools in the Modify Features pane, in that it opens a control within the pane with a dialog for user input. It follows the MVVM pattern used by the editing tools.  
+Adds a Modify Features tool that divides selected lines into a specified number of equal parts or into parts of a specified length.  
   
 
 
@@ -14,9 +13,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

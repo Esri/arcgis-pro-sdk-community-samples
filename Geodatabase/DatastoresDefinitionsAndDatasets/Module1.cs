@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace DatastoresDefinitionsAndDatasets
 {
 	/// <summary>
-	/// This sample illustrates the use of Datastore, Definitions, and Datasets of the Geodatabase API.
+  /// Opens supported datastores and displays their dataset definitions and dataset information in a dockpane, including geodatabase and shapefile content.
 	/// </summary>
 	/// <remarks>
 	/// 1. In Visual studio click the Build menu. Then select Build Solution.

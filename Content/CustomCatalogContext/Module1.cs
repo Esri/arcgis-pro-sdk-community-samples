@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace CustomCatalogContext
 {
 	/// <summary>
-	/// Shows how to modify a sampling of different context menus for the ArcGIS Pro Catalog (dockpane) context menu
+  /// Adds custom commands to Catalog context menus for different project item types.
 	/// </summary>
 	/// <remarks>
 	/// 1. In Visual Studio click the Build menu. Then select Build Solution.

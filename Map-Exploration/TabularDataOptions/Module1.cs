@@ -40,7 +40,7 @@ using ArcGIS.Desktop.Mapping;
 namespace TabularDataOptions
 {
 	/// <summary>
-	/// This sample illustrates Visualization Options for Tabular Data:
+	/// Presents selected-feature data through WPF DataGrid, TableControl, TableView, Inspector, and GeometryControl interfaces:
 	/// - .Net (WPF out-of-box) options to display tabular data:
 	///   - WPF DataGrid Control – read only
 	/// - ArcGIS Pro options to display tabular data:

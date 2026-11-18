@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace DockpaneAndThreads
 {
   /// <summary>
-  /// This sample shows how to refresh the content of a dockpane listbox asynchronously from a background thread
+  /// Loads portal search results asynchronously into a dockpane list and opens selected portal items as maps.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.

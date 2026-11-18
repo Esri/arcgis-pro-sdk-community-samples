@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace ProWindowMVVM
 {
   /// <summary>
-  /// the ProWindowMVVM sample demonstrates how to implement a ProWindow using the Model-View-ViewModel pattern (MVVM).  
+  /// Opens a modal ProWindow backed by an MVVM view model and processes the dialog result.
   /// </summary>
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.

@@ -1,7 +1,7 @@
 ## GraphicElementSymbolPicker
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates creating graphic elements in a map and a layout.  
+Provides sketch-tool and symbol galleries for creating point, line, polygon, and text graphic elements in maps and layouts.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Map Authoring
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

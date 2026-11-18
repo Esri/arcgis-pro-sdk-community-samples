@@ -1,7 +1,7 @@
 ## ExportSubnetwork
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This add-in demonstrates how to use the Export Subnetwork GP tool to export subnetwork from the Utility Network using the Pro SDK for .Net.   
+Exports a utility-network subnetwork to JSON through Subnetwork.Export with configured network attributes, source fields, and export options.  
 The sample uses the NapervilleElectricSDKData.gdb, a file geodatabase available in the Community Sample data at C:\Data\UtilityNetwork (see under the "Resources" section for downloading sample data).    
 You can use any utility network data with this sample, although constant values may need to be changed.  
   
@@ -15,9 +15,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

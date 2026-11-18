@@ -38,8 +38,7 @@ using System.Windows.Input;
 namespace SketchRemoveCurves
 {
   /// <summary>
-  /// This sample demonstrates the use of the BeforeSketchCompleted event to modify the sketch geometry before the sketch is completed.
-  /// The example removes all curves from the sketch before the sketch is completed.
+  /// Handles BeforeSketchCompleted events to replace curved sketch segments with straight segments before completing a line or polygon sketch.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  The sample data contains a project called "FeatureTest.aprx" with data suitable for this sample.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\SDK\SDK.gdb" is available.

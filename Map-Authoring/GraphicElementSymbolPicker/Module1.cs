@@ -41,7 +41,7 @@ using System.Windows.Input;
 namespace GraphicElementSymbolPicker
 {
     /// <summary>
-    /// This sample demonstrates creating graphic elements in a map and a layout.
+    /// Provides sketch-tool and symbol galleries for creating point, line, polygon, and text graphic elements in maps and layouts.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

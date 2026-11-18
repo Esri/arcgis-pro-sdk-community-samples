@@ -1,7 +1,7 @@
 ## GetLineOfSight
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates how to calculate the line of sight between an observer point and a target point. The line of sight is calculated based on a TIN dataset.    
+Provides a sketch tool for calculating observer-to-target visibility on a TIN surface, with configurable TIN layer and observer and target heights.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               3DAnalyst
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

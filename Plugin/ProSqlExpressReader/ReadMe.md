@@ -1,7 +1,7 @@
 ## ProSqlExpressReader
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-ProSqlExpressReader implements a plugin datasource to read the following data from a SQL Server Express database:  
+Integrates SQL Server Express data into Catalog through custom project items and a plug-in datasource for browsing and mapping legacy geodatabase content:  
 - Classic ArcGIS Personal Geodatabase stored in a SQL Server Express database.  
 A classic ArcGIS personal geodatabase was used in the past by ArcMap. It was Microsoft Access database that allowed to store, query, and manage both spatial and nonspatial data.  
 The sample data includes a SQL Server Express database that contains the data of such a 'classic' Microsoft Access Geodatabase.  
@@ -17,9 +17,9 @@ Language:              C#
 Subject:               Plugin
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

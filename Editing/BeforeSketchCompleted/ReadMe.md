@@ -1,8 +1,7 @@
 ## BeforeSketchCompleted
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates the use of the BeforeSketchCompleted event to modify the sketch geometry before the sketch is completed.  
-The example sets the Z values of the sketch to the specified elevation surface regardless of the current Z environment and any existing Z values the sketch may have.  
+Handles BeforeSketchCompleted events to replace sketch Z values with elevations from a specified surface before feature creation finishes.  
   
 
 
@@ -14,9 +13,9 @@ Language:              C#
 Subject:               Editing Sketch Events
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

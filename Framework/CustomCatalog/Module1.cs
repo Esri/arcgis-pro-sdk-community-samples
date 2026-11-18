@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace CustomCatalog
 {
 	/// <summary>
-	/// This sample demonstrates how you can create a custom dockpane to resemble ArcGIS Pro's Catalog dockpane.  
+    /// Provides a Catalog-style dockpane with Project and Portal headers, selectable subpanels, tab indicators, and an options menu.
 	/// A Listbox control is styled using the "Esri_ListBoxPanelIndicator" style to create the Project and Portal Tab headers in the dockpane.
 	/// An ArcGIS Pro custom control called the "TabIndicator" is used to create a collection of images.
 	/// These images are presented in a horizontal view at the top of the dockpane with a custom indicator embellishment.

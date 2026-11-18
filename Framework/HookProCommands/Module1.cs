@@ -18,7 +18,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace HookProCommands
 {
     /// <summary>
-    /// This sample shows how to use existing ArcGIS Pro commands in your own add-in User Interface plug-ins
+    /// Wraps existing ArcGIS Pro commands in custom add-in buttons for adding bookmarks and closing the application.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

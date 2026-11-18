@@ -24,7 +24,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace DeviceTracker
 {
   /// <summary>
-  /// This sample illustrates functionality associated with GNSS devices and snapshot location data. In order to use this sample you must either have a GNSS device or have configured an appropriate simulator. 
+  /// Displays GNSS device sources, properties, and location snapshots in a dockpane and tracks incoming device locations; a GNSS device or simulator is required.
   /// </summary>
   /// <remarks>
   /// 1. Start your GNSS device or simulator. 

@@ -1,8 +1,7 @@
 ## Geocode
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample provides a new tab and controls that launches a Geocode dialog window.   
-This dialog window will allow you to enter an address or place name and will geocode  the results and then zoom to and place a graphic at the location on the map.   
+Geocodes entered addresses or place names in a custom dialog, displays candidate results, and navigates to their locations with map graphics.  
   
 
 
@@ -14,9 +13,9 @@ Language:              C#
 Subject:               Geoprocessing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

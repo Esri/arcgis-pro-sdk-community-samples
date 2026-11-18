@@ -1,7 +1,7 @@
 ## AnnotationRetrofit
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates how to implement an annotation feature construction tool that uses a tool to select a set of point features, and then creates a new annotation feature for each selected point by using the selected point's geometry and text.  
+Creates annotation features from selected point features using their locations and text together with an annotation editing template.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace ExportSubnetwork
 {
   /// <summary>
-  /// This add-in demonstrates how to use the Export Subnetwork GP tool to export subnetwork from the Utility Network using the Pro SDK for .Net. 
+  /// Exports a utility-network subnetwork to JSON through Subnetwork.Export with configured network attributes, source fields, and export options.
   /// The sample uses the NapervilleElectricSDKData.gdb, a file geodatabase available in the Community Sample data at C:\Data\UtilityNetwork (see under the "Resources" section for downloading sample data).  
   /// You can use any utility network data with this sample, although constant values may need to be changed.
   /// </summary>

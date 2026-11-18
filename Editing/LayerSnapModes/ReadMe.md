@@ -1,8 +1,7 @@
 ## LayerSnapModes
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample illustrates the use of layer snap modes, which provides the ability to set the snap mode (vertex, edge, end etc) on a per layer basis.  
-The layer snap modes are presented in a datagrid hosted by a simple dockpane.  
+Displays and changes per-layer snapping modes, including vertex, edge, and endpoint snapping, in a dockpane grid.  
   
 
 
@@ -14,9 +13,9 @@ Language:              C#
 Subject:               Editing
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

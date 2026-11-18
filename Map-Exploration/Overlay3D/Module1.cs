@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace Overlay3D
 {
   /// <summary>
-  /// This sample shows how to add overlay graphics to 3D map view.
+  /// Builds 3D map overlays from feature locations and sampled surface elevations and displays them through a custom dockpane workflow.
   /// </summary>
   /// <remarks>
   /// 1. Download the Community Sample data (see under the 'Resources' section for downloading sample data).  The sample data contains required data for this sample add-in.  Make sure that the Sample data is unzipped in c:\data and "C:\Data\Interacting with Maps" is available.

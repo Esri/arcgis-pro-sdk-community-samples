@@ -23,7 +23,7 @@ using System.Threading.Tasks;
 namespace TasksSDK
 {
   /// <summary>
-  /// This sample illustrates the methods available in the Tasks API.  The methods provide the following functionality
+  /// Opens and closes task items, exports task files, and retrieves task metadata through the Task Assistant API:
   /// 1. Open a task file (.esriTasks)
   /// 1. Close a specified task item
   /// 1. Export a specified task item to an .esriTasks file

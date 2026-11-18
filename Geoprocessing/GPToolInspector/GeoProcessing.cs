@@ -46,7 +46,7 @@ namespace GPToolInspector
   internal partial class Commands { } //forward declaration
 
   /// <summary>
-  /// Geoprocessing module
+  /// Provides the geoprocessing execution and tool-dialog backend used by GPToolInspector to inspect tool definitions and generate invocation examples.
   /// </summary>
   public sealed class GeoprocessingModule : ArcGIS.Desktop.Framework.Contracts.Module, IGeoprocessing2, IDisposable, IGPToolDialogHelper, IGPSettingsInternal
   {

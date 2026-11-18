@@ -23,7 +23,7 @@ using System.Threading.Tasks;
 namespace FolderConnectionManager
 {
   /// <summary>
-  /// Allows saving and loading folder connections to a Project showing how to manage folder connections in ArcGIS Pro from within an Add-in.
+  /// Displays project folder connections, saves their paths to a text file, and restores connections from a saved file.
   /// </summary>
   /// <remarks> 
   /// 1. Open this solution in Visual Studio.

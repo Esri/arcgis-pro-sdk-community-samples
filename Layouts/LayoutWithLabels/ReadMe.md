@@ -1,7 +1,7 @@
 ## LayoutWithLabels
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows how to create a layout with custom labeling for a selected set of polygon features.  In order to do this the sample is using the following functionality:  
+Creates a layout with custom polygon labels by loading a labeling layer and populating it from selected parcel identifiers and text in a CSV file:  
 * A layer file containing a 'labeled' polygon layer is loaded by the add-in and dynamically added to the map  
 * The add-in then reads a csv file containing some Ids of polygon features that have to be labeled with 'customized' text strings  
 * The labels (using call-out labels) are placed on the map (using the dynamically loaded 'labeled' polygon layer  
@@ -18,9 +18,9 @@ Language:              C#
 Subject:               Layouts
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

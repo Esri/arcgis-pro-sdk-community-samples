@@ -34,7 +34,7 @@ namespace CoreHostSample {
     //using ArcGIS.Core.Hosting;
 
 	/// <summary>
-	/// ArcGIS Pro based console application reading from File Geodatabase
+    /// Initializes CoreHost, opens the file geodatabase specified on the command line, and prints feature-class names, aliases, and field definitions to the console.
 	/// </summary>
 	/// <remarks>
 	/// 1. Download the Community Sample data (see under the "Resources" section for downloading sample data).  Make sure that the Sample data is unzipped in c:\data and "C:\Data\SDK\SDK.gdb" is available.

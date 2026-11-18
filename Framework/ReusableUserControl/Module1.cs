@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace ReusableUserControl
 {
   /// <summary>
-  /// This sample shows how to create a user control that can be utilized in an ArcGIS Pro Dockpane and an ArcGIS Pro ProWindow.
+  /// Hosts the same reusable user control in a dockpane and a ProWindow using shared data-model and view-model patterns.
   /// </summary>
   /// <remarks>
   /// 1. Open this solution in Visual Studio.  

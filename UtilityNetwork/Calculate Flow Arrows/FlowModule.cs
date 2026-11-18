@@ -22,7 +22,7 @@ using ArcGIS.Desktop.Framework.Contracts;
 namespace Calculate_Flow_Arrows
 {
     /// <summary>
-    /// This add-in allows a user to calculate and draw flow arrows for a subnetwork and display them in their map.
+    /// Selects a utility-network tier and subnetwork, calculates flow directions, and draws flow arrows on the map.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio open this solution and then rebuild the solution.

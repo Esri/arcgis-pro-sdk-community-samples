@@ -1,7 +1,7 @@
 ## GalleryDemo
 
 <!-- TODO: Write a brief abstract explaining this sample -->
- This sample shows how to author a gallery on the ArcGIS Pro Ribbon.    
+ Searches ArcGIS Online for web maps, displays them in an inline ribbon gallery, and opens the selected web map in ArcGIS Pro.  
  In this example we will be creating an inline gallery control that will host a collection of web maps downloaded from ArcGIS Online.   
  When you click on a web map item in the gallery, it will open in a map pane in ArcGIS Pro.   
    
@@ -15,9 +15,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

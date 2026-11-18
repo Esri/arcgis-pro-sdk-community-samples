@@ -39,7 +39,7 @@ using System.Windows.Input;
 namespace CheckSelectionLayer
 {
   /// <summary>
-  /// This Button add-in, when clicked after a layer has been selected in the map's table of content, displays if a layer was created using "Make Layer From Selected Features" or not.
+  /// Inspects the selected feature layer's CIM definition and reports whether it is a selection layer created from selected features.
   /// </summary>
   /// <remarks>
   /// 1. Rebuild the project in Visual Studio and debug. 

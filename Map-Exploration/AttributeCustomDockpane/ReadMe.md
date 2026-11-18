@@ -1,7 +1,7 @@
 ## AttributeCustomDockpane
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample shows a custom dockpane to display attribute columns and geometry for a single feature.  
+Selects a feature with a map sketch and displays its attributes and geometry in a custom dockpane with an embedded Inspector.  
   
 
 
@@ -13,9 +13,9 @@ Language:              C#
 Subject:               Framework
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

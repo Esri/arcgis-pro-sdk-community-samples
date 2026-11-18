@@ -39,7 +39,7 @@ using ArcGIS.Desktop.Editing.Attributes;
 namespace DatasetCompatibility
 {
   /// <summary>
-  /// Shows how to interrogate the underlying datasource of a feature layer for its dataset compatibility
+  /// Reports feature layers' geodatabase types, registration types, and compatible edit-operation types by inspecting their underlying datasets.
   /// </summary>
   /// <remarks>
   /// Dataset compatibility can be useful if you are writing an editing addin and want to know if the datasets loaded into your TOC have long or short transaction semantics. 

@@ -1,9 +1,7 @@
 ## MagnifierWindow
 
 <!-- TODO: Write a brief abstract explaining this sample -->
- This sample provides a map tool and a window with map control.  
- The position of the map control window is updated based on the current map tool position.  
- The map control content is created from the currently active MAP view and the map control shows a magnified view of where the mouse is positioned in the active MAP view.  
+ Shows a movable magnifier window backed by MapControl that follows the map-tool cursor and magnifies the active map at its location.  
    
 
 
@@ -15,9 +13,9 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

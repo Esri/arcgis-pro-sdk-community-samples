@@ -40,7 +40,7 @@ using System.Windows.Input;
 namespace AsyncGeoProcessing
 {
 	/// <summary>
-	/// This sample shows who to run GP tools with and without progressors and the effect on UI responsiveness.
+	/// Runs repeated buffer geoprocessing operations with alternative progress-reporting patterns to compare application responsiveness, and removes generated buffer data.
 	/// </summary>
 	/// <remarks>
 	/// 1. In Visual studio rebuild the solution.

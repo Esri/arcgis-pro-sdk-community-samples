@@ -22,8 +22,7 @@ using System.Threading.Tasks;
 namespace MappingSampleAddIns
 {
     /// <summary>
-    /// This sample provides buttons to change basemap layer and to add new layer 
-    /// to the active map.
+    /// Changes the active map's basemap and adds layers from locations selected in a custom dialog.
     /// </summary>
     /// <remarks>
     /// 1. In Visual Studio click the Build menu. Then select Build Solution.

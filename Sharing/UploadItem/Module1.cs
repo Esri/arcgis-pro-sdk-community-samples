@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace UploadItem
 {
   /// <summary>
-  /// This sample allows uploading a desktop content item to AGOL or portal.
+    /// Uploads a selected desktop content item to ArcGIS Online or a portal and searches for uploaded content using its item type, name, and tags.
   /// </summary>    
   /// <remarks>
   /// 1. In Visual Studio click the Build menu. Then select Build Solution.

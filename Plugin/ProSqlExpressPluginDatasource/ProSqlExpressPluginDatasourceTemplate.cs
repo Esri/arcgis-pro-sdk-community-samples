@@ -31,9 +31,11 @@ using ProSqlExpressDb;
 namespace ProSqlExpressPluginDatasource
 {
   /// <summary>
-  /// Defines the data source to sql SQL Express personal geodatabases and
-  /// made available to ArcGIS Pro via a plug-in data source add-in.
+  /// Defines the data source to SQL Express personal geodatabases (classic ArcMap) and made available to ArcGIS Pro via a plug-in data source add-in.
   /// </summary>
+  /// <remarks>
+  /// [see detailed usage instructions in the README.md file for the main project file](../ProSqlExpressDb/ReadMe.md)
+  /// </remarks>
   public class ProSqlExpressPluginDatasourceTemplate : PluginDatasourceTemplate
   {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]

@@ -34,7 +34,7 @@ using System.Windows.Input;
 namespace ToFromWarehouse
 {
   /// <summary>
-  /// This sample provides a quick way of moving features to and from a warehouse.  A warehouse is designated by adding a new category to the utility network. That category value can then be assinged to certain asset types.
+    /// Moves utility-network features into or out of selected warehouses identified by a Warehouse network category and their associations.
   /// To create your own warehouse category you can follow these steps:
   /// 1. Run the gp tool Add Network Category and create a category called 'Warehouse'.
   /// 1. Run the gp tool Set Network Category and assign the newly created Warehouse category to an asset group and asset type for a polygon feature from the structure boundary class.

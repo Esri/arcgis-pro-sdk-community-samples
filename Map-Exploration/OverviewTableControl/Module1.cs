@@ -38,7 +38,7 @@ using ArcGIS.Desktop.Mapping;
 namespace TableControlSample
 {
     /// <summary>
-    /// This sample shows how to create a custom table control.  This example creates a table control that allows to display content from active maps or through the Catalog view.  The table control responds to selected layer or table and active map view changes as long as the table type is supported.
+    /// Displays supported layer, table, and Catalog-item records in a custom TableControl pane that follows item selection and active-map changes.
     /// </summary>
     /// <remarks>  
     /// 1. In Visual Studio, click the Build menu. Then select Build Solution.  

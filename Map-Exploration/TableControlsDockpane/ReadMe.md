@@ -1,9 +1,7 @@
 ## TableControlsDockpane
 
 <!-- TODO: Write a brief abstract explaining this sample -->
-This sample demonstrates using multiple TableControls on a dockpane.   
-The example shows multiple table controls selectable by a tab control.  A TableControl is filled with content from selected items on the map's Contents TOC dockpane.   
-A context menu is added to each table control allowing access to row functionality in the table control.   
+Opens selected map layers and tables in tabbed dockpane TableControls with per-table row context menus and Inspector-based row access.  
   
 
 
@@ -15,9 +13,9 @@ Language:              C#
 Subject:               Map Exploration
 Contributor:           ArcGIS Pro SDK Team <arcgisprosdk@esri.com>
 Organization:          Esri, https://www.esri.com
-Date:                  2/16/2026
-ArcGIS Pro:            3.7
-Visual Studio:         2026
+Date:                  11/01/2026
+ArcGIS Pro:            3.8
+Visual Studio:         2026, VS Code
 Target Framework:      net10.0-windows
 ```
 

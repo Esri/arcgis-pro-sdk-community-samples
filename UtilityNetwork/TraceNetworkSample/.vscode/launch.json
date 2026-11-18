@@ -1,0 +1,31 @@
+{
+    "version":  "0.2.0",
+    "configurations":  [
+                           {
+                               "name":  "TraceNetworkSample Debug",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "${workspaceFolder}/bin/Debug/net10.0-windows/TraceNetworkSample.dll",
+                               "args":  [
+
+                                        ],
+                               "cwd":  "${workspaceFolder}",
+                               "console":  "integratedTerminal",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-debug"
+                           },
+                           {
+                               "name":  "TraceNetworkSample Release",
+                               "type":  "coreclr",
+                               "request":  "launch",
+                               "program":  "${workspaceFolder}/bin/Release/net10.0-windows/TraceNetworkSample.dll",
+                               "args":  [
+
+                                        ],
+                               "cwd":  "${workspaceFolder}",
+                               "console":  "integratedTerminal",
+                               "stopAtEntry":  false,
+                               "preLaunchTask":  "build-release"
+                           }
+                       ]
+}
